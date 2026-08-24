@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -82,7 +82,18 @@ writes (the same defect class as the L18 `remove_subtask` fix), and the applicat
 merges the standard task-doc identity into those raw operation payloads via
 `_sprint_doc_identity`. The new wire-shape behavior is pinned by `mcp/tests/test_task_doc_wire_shape.py`.
 
+## 260821-CLIVE Discard And Projection-Effect Response Models
+
+`TaskDocResponse` now carries bounded `projectionEffects` for every accepted task mutation. Its
+discard-unstarted branch distinguishes preview, applied, already-discarded, started refusal, and
+ambiguous refusal; it returns the typed parent audit, exact source-state proof, centralized
+unstarted-evidence fingerprint/facts, deleted-or-would-delete paths, and executable next action.
+Planning discard is therefore observable without treating queue state as task history or silently
+turning a started leaf into completion.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged typed discard-unstarted evidence/audit and projection effects into the response model card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

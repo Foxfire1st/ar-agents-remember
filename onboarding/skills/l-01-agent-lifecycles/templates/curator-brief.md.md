@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -49,10 +49,18 @@ No Domain Documentation source is configured.
 | Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:154-154 |
 | Manager doctrine owns the ordered pre-curator gate and complete brief. | "Curator coherence pass — mandatory, not skippable." | skills/l-01-agent-lifecycles/roles/manager.md:137-161 |
 
+## 260821-DAGQC-L2 Briefed Quality Grammar
+
+The brief's self-check examples now use `memory_quality_check(request={...})` with an explicit
+mode. This prevents a fresh curator from reconstructing the retired flat wait/run-id grammar and
+keeps sync/start/poll fields mutually exclusive.
+
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this template.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: aligned the curator brief with the canonical discriminated quality request. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-13T08:47+02:00 — Created for the L23 pre-curator source-lineage gate and brief-carried current projection. Verification metadata remains closeout-owned.

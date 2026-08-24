@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -291,7 +291,17 @@ for projected targets and falls back for unprojected ones.
 
 ## 260815-DAG-L12 Route Impact
 
-New child route [sprint-graph](sprint-graph/overview.md): the sprint execution graph wave-grid view (≤3 boxes per row, ellipsized leaf lines, atomic lumps, textual predecessor labels, narrow single-column fallback). `detail-panel/taskReader.tsx` mounts it via `SprintGraphSection` alongside the sprint-scoped CloseoutQueue on the sprint page (L12-R5); `detail-panel/model.ts` `MasterDocView` now carries `executionGraphView` (L12-R4).
+New child route [sprint-graph](sprint-graph/overview.md): the optional sprint execution graph wave-grid view (≤3 boxes per row, ellipsized leaf lines, atomic lumps, textual predecessor labels, narrow single-column fallback). `detail-panel/taskReader.tsx` mounts graph content when present and mounts the sprint-scoped `CloseoutQueue` independently, so graph-less atomic-sequential sprints still expose scheduling state (L12-R5); `detail-panel/model.ts` `MasterDocView` carries optional `executionGraphView` (L12-R4).
+
+## 260821-CLIVE Projection And Discard Panels
+
+`CloseoutQueue` renders the producer's disposable service/source/problem/member projection. Typed
+`invalid-empty` source problems include their repair action; the browser does not reconstruct
+readiness or mutate queue state. Graph presence is not a prerequisite for this scoped projection.
+
+The detail reader has a separate `Discarded before start` audit section with reason, timestamp, and
+proof fingerprint. `LifecycleList` appends `N discarded` beside ordinary done/total progress. Both
+surfaces preserve the same boundary: audited removal stays visible but never counts as completion.
 
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
@@ -299,6 +309,9 @@ New child route [sprint-graph](sprint-graph/overview.md): the sprint execution g
 `session-cockpit` test suites (BusPane, ChatsStageBody, ConversationSurface, stageSurface) now flush the virtualizer scroll-observer debounce in an async `afterEach` before jsdom teardown.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Recorded projection-only closeout rendering, typed invalid-empty repair
+  evidence, graph-less sprint visibility, and distinct discard-before-start audit/progress behavior.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: session-cockpit tests gained async `afterEach` virtualizer-debounce flushes. Verified at code commit e5cb139f.
 

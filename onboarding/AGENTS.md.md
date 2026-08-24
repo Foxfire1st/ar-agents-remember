@@ -5,9 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T16:10+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[agents-remember root overview](overview.md)
 
 ## Purpose
 
@@ -86,26 +91,21 @@ work, keeps installed coordinator instructions under `runtime/agents-md-files/`,
 repeats the "edit root skills" rule, and adds the matching
 runtime-asset and harness sync boundaries.
 
-### Code Quality Instructions — Rewritten By 260731-EFA-L2
+### Code Quality Instructions — Current Acceptance Boundary
 
-The code-quality section no longer says "run Ruff, Pyright, and Radon". It names the gate
-command and what it does:
+The source now routes acceptance through the pinned Dagger module and names the manual
+diagnostic invocation shape. Leaf closeout owns one targeted acceptance run and master
+integration owns one full run; other lifecycle and publication steps do not rerun it. The
+exported `clean-quality-results.json` is the single authoritative result, while host hooks
+and GitHub pull requests stay deterministic non-test rails.
 
-```text
-python -m agents_remember.code_quality.check
-```
-
-The file states that this command is the accepting wrapper and takes **no path arguments**,
-because its scope is
-`git ls-files '*.py'` and narrowing what a gate certifies is how a gate stops meaning
-anything. The pinned Dagger graph runs it exactly once at leaf closeout in targeted mode and
-exactly once at master integration in full mode. Host hooks and GitHub PR validation are
-deterministic non-test rails and cannot satisfy acceptance.
-
-**Known gap in the source file, not in this card:** the wrapper also enforces the
-changed-lines coverage floor (`diff_coverage.py`, the last and binding step), and this
-paragraph of `AGENTS.md` does not mention it. `CONTRIBUTING.md` does. An agent reading only
-`AGENTS.md` will not learn that a changed line with no test fails the gate.
+Python, Playwright, the changed-lines coverage CLI, and direct Python-wrapper execution
+require the Dagger run's matching nonce plus in-container attestation and have no host
+compatibility path. Direct targeted Vitest unit/component runs are the deliberate exception:
+they are supported as fast diagnostics, but never create acceptance, changed-lines coverage,
+or lifecycle evidence. The guarded wrapper still takes no path arguments; its Python scope is
+derived from `git ls-files '*.py'`, and CRAP plus changed-lines coverage score the Dagger run's
+branch-coverage artifact.
 
 A dedicated paragraph is the leaf's own correction of a policy it briefly held:
 `C901` plus `PLR0911`/`PLR0912`/`PLR0915` are **enforced by ruff like every other rule**,
@@ -188,11 +188,11 @@ file.
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:125-145 |
 | Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:99-124 |
 | Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:99-124 |
-| Code-quality routing names `python -m agents_remember.code_quality.check` as the gate, states that it takes no path arguments because its scope is `git ls-files '*.py'`, lists four enforcing steps plus mandatory CRAP, states that nothing in the gate is exempt and no baseline or allowlist may be added, tells agents how to clear a complexity finding by extraction, states that Radon reports and cannot fail a gate while remaining CRAP's complexity engine, and requires the Stability/Reclamation doctrine before store, loop-over-store, queue, or append-only-log changes. | `## Code Quality Instructions` | AGENTS.md:146-198 |
+| Code-quality routing reserves acceptance for the pinned Dagger module, names the one targeted/full cadence, guards Python/Playwright/changed-lines/direct-wrapper execution, and permits direct targeted Vitest only as non-certifying diagnostic feedback. | `## Code Quality Instructions` | AGENTS.md:146-166 |
+| The same section derives Python scope from the index, names enforcing/reporting rails, forbids baselines and exemptions, and routes exact commands plus stability doctrine through the resolved memory layer. | `## Code Quality Instructions` | AGENTS.md:167-209 |
 | Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:99-124 |
 | The gate command this file names, with the enforcing/report split it describes. | `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:420-469 |
-| The `diff-coverage` step this file omits. | `run_diff_coverage` | mcp/src/agents_remember/code_quality/post_coverage.py:121-170 |
-| The binding coverage floor `AGENTS.md` does not mention; `CONTRIBUTING.md` is the document that does. | `DiffCoverage`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:56-77; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
+| The changed-lines step named by the current acceptance boundary. | `run_diff_coverage` | mcp/src/agents_remember/code_quality/post_coverage.py:121-170 |
 | The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
 
 ## Cross-Repo References
@@ -206,20 +206,25 @@ delegates sibling-repository work to the installed runtime instructions.
 
 ## L23 Final Candidate Disposition
 
-The source instructions now make the pinned Dagger graph the sole acceptance authority. Python,
-Vitest, and Playwright startup requires the graph's matching nonce and in-container attestation;
-direct host execution is diagnostic and cannot satisfy leaf closeout or master integration.
+The source instructions make the pinned Dagger graph the sole acceptance authority. Python,
+Playwright, changed-lines coverage, and direct-wrapper execution require its matching nonce and
+in-container attestation. Direct targeted Vitest is supported diagnostic feedback only and cannot
+satisfy leaf closeout, master integration, changed-lines coverage, or lifecycle evidence.
 
 ## R39 Acceptance Cadence
 
 The source instructions now make lifecycle altitude the sole acceptance owner: targeted Dagger
 runs once at leaf closeout and full Dagger runs once at master integration. Leaf integration,
 push, pull request, tag, and publish do not rerun acceptance; pull requests retain deterministic
-non-test checks only. Python, Vitest, Playwright, and the direct wrapper refuse outside the matching
-nonce-attested Dagger graph.
+non-test checks only. Python, Playwright, changed-lines coverage, and the direct wrapper refuse
+outside the matching nonce-attested Dagger graph; targeted direct Vitest remains diagnostic-only.
 
 ## Update History
 
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the deliberate
+  direct-targeted Vitest diagnostic route with the guarded Python, Playwright, changed-lines,
+  wrapper, and acceptance rails; added the governing root-overview link and removed the resolved
+  changed-lines documentation-gap claim. Dagger acceptance remains pending and closeout-owned.
 - 2026-08-14T11:25+02:00 — R39 curator: reconciled the root instructions with the exact-once
   leaf/master cadence and PR-only non-test validation. Verification remains closeout-owned.
 - 2026-08-14T09:37+02:00 — Reopened L23 cadence: recorded exact targeted-at-leaf-closeout and

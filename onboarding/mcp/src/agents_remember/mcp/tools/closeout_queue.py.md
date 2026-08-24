@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/mcp/tools/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,6 +53,15 @@ No configured Domain Documentation source applies.
 
 No meaningful cross-repository reference applies.
 
+## 260821-CLIVE Projection-Only Payload
+
+This module is the thin payload builder for the disposable closeout projection, not a durable
+pre-closeout scheduler. It delegates status/rebuild to the application owner and validates the
+strict response envelope; canonical door publication and claimed operation evidence remain on
+their separate surfaces.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: corrected the payload owner's description from durable scheduler to disposable projection. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — Created for the L3 public closeout-queue payload adapter; verification remains closeout-owned.

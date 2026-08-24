@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,9 @@ candidate revalidates the whole graph, exact cross-document membership, and node
 refuses unknown or unplaced leaf partitions (`_require_complete_partitions`), and reports
 `leafPlacementFacts` plus `numberingHints` as facts. `dry_run` returns the rendered diff +
 `wouldLose` preview without writing; apply publishes sprint plus nature-changed masters atomically
-through the sprint queue's publication lane.
+through the task-first publication transaction. Both preview and apply invoke the shared
+`build_publication_batch_graph_titles` owner before their transaction boundary, so unsupported
+multi-graph input refuses and the exact in-memory batch supplies the sole title context.
 
 Since 260815-DAG-L15 every topology-schema write is preflighted against the serving runtime
 (`require_serving_topology_schema` from `tasks/serving_preflight.py`): `author_execution_graph`
@@ -87,6 +89,8 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
   lock file (L15-R4/F2).
 - Preview is read-only. Apply prepares and publishes every affected document as one rollback-safe
   batch across task roots.
+- Graph-title preparation has one application owner. This module neither selects a first graph nor
+  retains its former private batch-title helper.
 - Errors use the shared `AgentsRememberError` family and are translated to `TaskDocError` at the
   MCP application boundary.
 
@@ -105,6 +109,8 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 | The edit preflight fires only for edits that emit topology schema bytes (L15-R4). | `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:864-878 |
 | The forcing suite proves authoring, bootstrap, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:217-944 |
 | The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
+| Preview and apply both route graph cardinality/title preparation through the central application owner. | L262-L280; L350-L368 | [task_execution_topology.py](mcp/src/agents_remember/application/task_docs/task_execution_topology.py) |
+| The central owner provides the zero/one assertion and exact in-memory join. | L17-L51 | [task_doc_graph_titles.py](mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py) |
 
 ## 260815-DAG-L9 Inventory Boundary
 
@@ -115,10 +121,11 @@ graph state plus declared completion blockers. Proposed edges are always paralle
 a strategist/orchestrator ruling; branch-backed detection runs through `run_git branch` and
 refuses on enumeration failure.
 
-## 260815-DAG-L3 Sprint Publication Boundary
+## Current Sprint Publication Boundary
 
-Execution-topology authoring publishes through the sprint queue's completion/reopen WAL rather
-than writing the task batch independently. `require_commanded_masters_completed` validates the
+Execution-topology authoring publishes through `TaskDocPublicationTransaction` and the task-first
+mutation owner. The complete changed scope is invalidated with task truth under one CAS, and
+waiting projections rebuild afterward. `require_commanded_masters_completed` still validates the
 exact canonical graph and refuses a sprint terminal status when any commanded master is not
 `Completed` or still has completion blockers.
 
@@ -129,7 +136,11 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260815-DAG-L12 Title Threading
 
-Graph authoring publication now labels the sprint's mermaid render from the authoring batch's own in-memory masters (L12-R1/R4): `_authoring_batch_titles` joins titles via `build_graph_titles` for the sprint document in the batch, and `_publish_authoring` passes `graph_titles=` to `write_task_doc_batch`; `_document_preview` renders with the disk-backed `read_graph_titles`. A batch without a graph produces no titles (fallback labels).
+Graph authoring publication labels the sprint's Mermaid render from the exact in-memory authoring
+batch. DAGQC L1 removes the private `_authoring_batch_titles` first-graph selector:
+`build_publication_batch_graph_titles` now asserts zero/one graph-bearing document and produces the
+single title context used by `_publish_authoring`; the dry-run invokes the same owner before
+transaction validation. A batch without a graph produces no title context.
 
 
 ## 260815-DAG-L15 Authoring Dialect and Served-Build Preflight
@@ -145,9 +156,13 @@ locking on the dry-run paths (F2). Refusals stay typed and fail-closed; nothing 
 apply-path authority (apply re-locks).
 
 
-## 260821-CLIVE-L2 Current Contract
+## Current Contract After CLIVE
 
-The current source seams include `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest`. L2 adds accepted-source transactional publication inside the existing queue-governed topology publisher; it does not remove that queue wrapper. L3 owns full affected-candidate invalidation and waiting-projection rebuild.
+The current source seams include `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`,
+and `ExecutionTopologyEditRequest`. Accepted-source transactional publication no longer makes task
+authoring subordinate to queue state: task truth publishes first, the affected queue projection is
+invalidated, and current waiting-door facts rebuild it. DAGQC L1 adds the central graph-cardinality
+and title-context precondition without changing that ownership.
 
 ### Reconciled Source Evidence
 
@@ -156,6 +171,10 @@ The current source seams include `ExecutionTopologyError`, `ExecutionTopologyAut
 | The current module exposes `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest` at this ownership boundary. | L65-L66; L70-L78; L82-L89 | `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` |
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — DAGQC L1: topology preview/apply now share the central
+  zero/one graph-publication title owner; the private first-graph helper is removed. Verification
+  metadata remains pinned until closeout.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

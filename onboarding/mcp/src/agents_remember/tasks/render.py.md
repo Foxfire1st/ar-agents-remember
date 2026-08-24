@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated            | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -62,11 +62,21 @@ reasoned dependency edge, and the deterministic waves derived from that graph. S
 260815-DAG-L11 the node/edge/wave labels go through `_graph_node_label` over
 `SprintExecutionNode`: a segment node renders as `` `master.key` (leafs: `L1`, `L2`) `` with its
 leaf list as the qualifier, and edge endpoints resolve through `graph.resolve_endpoint` before
-labeling. No positional or priority field is introduced by the renderer.
+labeling. DAGQC L1 separates private diagram identity from user-authored labels: `_mermaid_leaf_ids`
+allocates `n<node ordinal>_l<leaf ordinal>` once from the canonical graph declaration order, and
+both leaf declarations and edge endpoints consume that same allocation. Leaf titles are resolved
+only through `(segment.ref, leaf id)`. No positional or priority field is introduced by the
+renderer, and no lossy punctuation sanitizer remains.
 
 Output is **deterministic** by construction: section bodies carry no leading/trailing
 blank lines and join their blocks with single blanks, so there is no global
 blank-line normalization that would corrupt blank lines inside code fences.
+
+### Conventions
+
+Private Mermaid ids are deterministic implementation details for one unchanged canonical graph.
+Human task ids and titles stay escaped labels; no caller should treat an ordinal diagram id as
+durable task identity.
 
 ### Invariants And Boundaries
 
@@ -74,22 +84,47 @@ blank-line normalization that would corrupt blank lines inside code fences.
 - Determinism is a contract (golden + round-trip tests depend on byte-stability);
   preserve the no-global-normalization approach so code-fence content survives.
 - Follows the `w-02` `template.md` section order; that template is the render spec.
+- A single ordinal allocation table serves declarations and edge endpoints. Do not reintroduce a
+  sanitizer, a collision suffix branch, or a second endpoint-id authority.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation sources are configured for this repository-internal renderer.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
+| Finding | Citations | Source Path |
 | --- | --- | --- |
-| The model it renders. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:602-716 |
-| The render-back precedent (model → markdown section helpers). | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
+| The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | L204-L245; L283-L292 | [render.py](mcp/src/agents_remember/tasks/render.py) |
+| Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | L310-L384 | [render.py](mcp/src/agents_remember/tasks/render.py) |
+| The graph node model provides structural keys for the allocation. | L218-L275 | [document.py](mcp/src/agents_remember/tasks/document.py) |
+| Focused proof forces sanitizer-equivalent labels, independent edge roles, repeat render, and title-only changes. | L164-L225 | [test_execution_graph_render.py](mcp/tests/test_execution_graph_render.py) |
 
 
 ## 260815-DAG-L12 Mermaid Document Diagram
 
-The `## Execution Graph` section now leads with a deterministic fenced mermaid `flowchart TD` diagram (L12-R1): one subgraph per master box (title-labeled via the joined `graph_titles`), one node per leaf (truncated title, `leaf <id> — <title>`), atomic masters as single lump nodes, and labeled edges (`-->|reason|`) — emitted ordered by derived wave then node order so re-renders are byte-stable. The compact machine-readable Nodes / Dependencies / Derived Waves lists stay alongside the diagram. `render_markdown` and `_render_master` gained the optional `graph_titles` keyword; labels are whitespace-collapsed, truncated with an ellipsis, and pipe/quote-escaped (`&#124;`/`&#34;`) so a title or reason cannot break the diagram syntax. `_mermaid_master_order` emits a multi-wave master once at its first segment's wave so its subgraph reads as one box.
+The `## Execution Graph` section leads with a deterministic fenced mermaid `flowchart TD` diagram
+(L12-R1): one subgraph per master box, one node per leaf, atomic masters as single lump nodes, and
+labeled edges. DAGQC L1 makes the private leaf ids injective by deriving them from node/leaf
+ordinals; declarations and endpoints share one precomputed map, while the visible label retains the
+original leaf id and the master-qualified title. Labels remain whitespace-collapsed, truncated, and
+pipe/quote-escaped. The compact machine-readable Nodes / Dependencies / Derived Waves lists stay
+alongside the diagram.
 
 
 ## Update History
 
+- 2026-08-24T13:43+02:00 — DAGQC L1: replaced lossy user-id sanitization with one canonical
+  node/leaf-ordinal Mermaid-id allocation shared by declarations and endpoints; leaf labels now
+  consume master-qualified titles. Verification metadata remains pinned until closeout.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `render_markdown(doc, *, graph_titles=...)` and `_render_master` now accept the joined `SprintGraphTitles`; `_execution_graph_lines` emits the mermaid flowchart-TD block before the machine lists (L12-R1). Verified at code commit b7f2c8e2.
 

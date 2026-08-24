@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -116,9 +116,13 @@ rule one home and one refusal dialect (playthrough F6). The helper uses `nature_
 an unresolvable draft ref (typo'd `add_node` ref, or a master deleted after graph authoring)
 defers to membership validation instead of raising a raw `KeyError` (L15-FIX-1).
 
-## 260821-CLIVE-L2 Current Contract
+## 260821-CLIVE Final Reference/Topology Contract
 
-The current source seams include `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument`. These reference/topology helpers support L2's exact source validation; they do not themselves authorize queue invalidation or implement the L3 waiting-projection rebuild.
+The current source seams include `TaskDocumentRefError`,
+`refuse_segment_nodes_on_atomic_masters`, and `ResolvedTaskDocument`. These helpers own canonical
+reference/topology resolution, including the projection-consumer query described below. They do not
+publish tasks, invalidate/rebuild projections, or grant lifecycle authority; effect owners consume
+their exact resolved refs.
 
 ### Reconciled Source Evidence
 
@@ -126,7 +130,18 @@ The current source seams include `TaskDocumentRefError`, `refuse_segment_nodes_o
 | --- | --- | --- |
 | The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. | L34-L39; L42-L59; L63-L66 | `mcp/src/agents_remember/tasks/document_refs.py` |
 
+## 260821-CLIVE Projection-Consumer Resolution
+
+`projection_sprints_affected_by_master` resolves readable old/new consumers for post-publication
+refresh without allowing an unrelated malformed task to veto the authoritative write. Override-only
+new masters participate in the repository census. Exact commanded membership remains fail-closed
+when the unreadable document is addressed by its directory alias, while unrelated unreadable
+documents are skipped. This is one scoped resolver policy for disposable refresh, not a fallback
+reader or relaxation of strict execution topology.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged override-aware, unrelated-failure-tolerant projection consumer resolution. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-11T10:20+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -56,7 +56,17 @@ No Domain Documentation source is configured.
 
 No cross-repository implementation dependency governs this file.
 
+## 260821-CLIVE Serving Composition
+
+App construction now threads the two task-execution registrars into their owning flows. Terminal
+liveness receives `TerminalLivenessActions` containing turn-state observation plus the terminal
+registrar; the notifier runtime receives the inbox registrar. Registration is deliberately outside
+catalog/inbox deletion decisions and uses task-owned proof, while ordinary injected test seams that
+omit registrars remain fail-closed.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded production composition of terminal and inbox execution registration. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_app_common.py`, `_app_lifespan.py`, `_app_routes.py`, `_app_terminal_routes.py`; full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -84,13 +84,34 @@ The generated schema now exposes the root-journal lifecycle operation as an obse
 `generation` is optional, `direct-landing` is a first-class operation kind, `legalControls` is a
 required list of opaque command payloads, and the status vocabulary includes termination-required
 and unreadable outcomes. The schema remains projection-only; it does not transfer lifecycle
-authority to the dashboard or to the pre-L3 queue.
+authority to the dashboard or to the disposable closeout projection.
 
 | Finding | Source |
 | --- | --- |
 | Lifecycle operation generation, kind, legal controls, and terminal/unreadable statuses are generated together. | dashboard/src/types/projection.schema.json:1717-1845 |
 
+## 260821-CLIVE Disposable Queue And Discard Audit Contract
+
+The generated schema replaces mutable queue blocker/candidate state with exact-current projection
+types: `CloseoutQueueNode` carries service condition, optional current-source identity, bounded source
+problems, and bounded generation-keyed members; a member carries classification, priority, order, and
+reasons. These rows are observation-only views over waiting door generations, not lifecycle, claim,
+commit, certification, recovery, or terminal evidence.
+
+`DiscardUnstartedProofNode` records the exact absence/state proof and fingerprint used to remove an
+unstarted task, while `DiscardedSubTaskNode` retains its identity, reason, timestamp, and proof.
+`SeriesNode` requires discard count/history; `TaskDocNode` carries the optional equivalent. Discarded
+work remains separate from live completion.
+
+Runtime refinements including item limits, numeric minima, fingerprints, and string bounds remain
+exact in this canonical JSON Schema. The TypeScript mirror documents the same supported constraints;
+generation refuses unknown constraints instead of erasing them.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Regenerated and documented the disposable closeout projection,
+  discard-before-start audit shapes, and exact JSON Schema refinement boundary while preserving the
+  newer lifecycle-operation projection contract.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: documented the generated lifecycle-operation schema contract and its projection-only authority boundary. Verified at code commit `1d446724`.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00                           |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -178,7 +178,18 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | — | — |
 
+## 260821-CLIVE Projection Fixture Alignment
+
+No production behavior or assertion changed in this file. The local projected `SeriesNode` fixture
+now supplies the required `discardedCount: 0` and `discardedSubTasks: []` cells so cockpit tests remain
+type-aligned with the canonical projection contract. Discard rendering is owned by the task-reader and
+lifecycle-list routes, not by this cockpit composition suite.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — No content impact: 260821-CLIVE only completed the local
+  `SeriesNode` fixture with the two required discard-history fields. Existing cockpit behavior and
+  assertions are unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 

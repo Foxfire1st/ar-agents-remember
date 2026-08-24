@@ -5,9 +5,14 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| governingOverview      | `../../../../../../../overview.md` |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../../overview.md)
 
 ## Purpose
 
@@ -18,9 +23,12 @@ owns its shape; the sync process publishes this exact artifact.
 
 ### Logic
 
-After master-exit review, the manager records the master task document, manager role, integration
-branch/base, verdict or delegated-decision evidence, landed change set, carry-over state, and
-follow-ups. Terminal/finalizer truth wakes the current orchestrator. The packet carries neither an
+After independent master-exit review, the manager records the master task document, manager role,
+integration branch/base, verdict or delegated-decision evidence, landed change set, carry-over
+state, and follow-ups. Candidate tree, code ancestry, memory ancestry, and every leaf's exact
+ledger/commit row are cited through canonical stable refs; their maps are not copied into the
+packet. The receiving orchestrator resolves each ref and revalidates that it names the proposed
+candidate. Terminal/finalizer truth wakes the current orchestrator. The packet carries neither an
 orchestrator occupant address nor a gate id; `message_parent` is only for clarification or a
 blocking issue.
 
@@ -33,6 +41,8 @@ and memory carry-over without re-derivation. Edit the canonical template, then s
 
 - `(master task document, manager)` remains reachable across occupant replacement.
 - Structural gate resolution is plane-owned and does not use packet-carried transport identity.
+- A summary never substitutes for canonical candidate/ancestry/ledger evidence, and the packet
+  never becomes a second mutable lineage or commit map.
 - This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
@@ -45,12 +55,10 @@ This bundle copy is the shape the manager job posts at master exit; it reference
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | `# Master-Handover-Packet Template` | skills/l-01-agent-lifecycles/templates/master-handover-packet.md:1-49 |
-| The manager posts this packet to the orchestrator at master exit. | `# Lifecycle — Manager` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-242 |
-| The required verdict slot references the master-exit adversarial verdict artifact. | `# Verdict Template (adversarial reviewer)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:1-142 |
-| The frame lists the master-handover packet among the per-role artifact obligations. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:6-416 |
-
-As of cycle 5: the shape gains the handover gateId row — the packet is the decider's address for the gate.
+| Sync-propagated bundle copy of the canonical templates source. | `# Master-Handover-Packet Template` | skills/l-01-agent-lifecycles/templates/master-handover-packet.md:1-77 |
+| The manager posts this packet to the orchestrator at master exit. | `# Lifecycle — Manager` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:1-319 |
+| The required verdict slot references the independent master-exit adversarial verdict artifact bound to the proposed candidate. | `# Verdict Template (adversarial reviewer)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:1-188 |
+| The frame lists the master-handover packet among the per-role artifact obligations. | `# l-01-agent-lifecycles — The Agent Lifecycles` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:1-456 |
 
 ## Cross-Repo References
 
@@ -65,9 +73,24 @@ No sibling repository evidence is needed for this report template.
 The handover names `executionNature`, prior landed organizational leaf refs plus the proposed final
 leaf, and the exact proposed candidate tree/ref; an atomic handover names its isolated branch and
 tree. The one full gate boundary is before the final organizational ref movement or during atomic
-block landing. Carry-over remains a documented recovery fact, never the normal landing strategy.
+block landing. Candidate/code/memory ancestry and per-leaf ledger/commit evidence use canonical
+stable refs with row ids or JSON pointers, never branch names, bare assertions, or copied maps.
+Carry-over remains a documented recovery fact, never the normal landing strategy.
+
+## 260821-DAGQC-L4 Canonical Evidence References
+
+The packet's table indexes the authoritative ledger/commit rows without repeating their commit
+values. The receiving orchestrator must resolve every candidate-tree, code-ancestry,
+memory-ancestry, verdict, and per-leaf ledger ref and confirm that it belongs to the same proposed
+candidate. Missing, stale, unresolvable, or candidate-mismatched evidence blocks handover; packet
+summary prose cannot override it.
 
 ## Update History
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: replaced copied lineage/ledger-map implications
+  with canonical candidate, code-ancestry, memory-ancestry, verdict, and per-leaf ledger/commit
+  refs plus receiver-side candidate revalidation. Canonical/generated sync is complete; Dagger
+  acceptance remains closeout-owned and pending.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: added nature-aware scope, exact proposed candidate, and
   one-full-gate boundary fields. Verification remains closeout-owned.

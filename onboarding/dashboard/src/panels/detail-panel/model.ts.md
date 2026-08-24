@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/model.ts`                |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -78,7 +78,17 @@ No cross-repository implementation source governs this file.
 `MasterDocView` (the master-document view assembly) now includes the optional `executionGraphView` field (L12-R4/R5), so the sprint page can render the render-ready wave-grid graph directly from the projected master document.
 
 
+## 260821-CLIVE Discarded-Subtask Model
+
+`MasterDocView` now carries `discardedCount` and `discardedSubTasks`, and `seriesAsMasterDoc()`
+passes both producer-owned values through without folding them into live subtasks or completion.
+The existing execution-graph view, repository-qualified `masterRef` resolution, ordering, and token
+rollup behavior are unchanged.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Extended the derived master view with the distinct discard-before-start
+  audit fields; no discarded item becomes a live or completed subtask.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `MasterDocView` includes the optional `executionGraphView` (L12-R4/R5). Verified at code commit b7f2c8e2.

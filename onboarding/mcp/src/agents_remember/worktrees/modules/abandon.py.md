@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -102,11 +102,13 @@ No external Domain Documentation source is configured for this memory repo.
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
 
-## 260815-DAG-L4 Integration-Authority Impact
+## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
-
-For an atomic series, `abandon_result` performs the read-only queue-release/child census before terminal preflight. The mutating publication then holds queue followed by repository authority, rechecks the child census, and hands `_terminal_mutation_authority` an operation- and contract-bound permit that expires when the publication returns. A direct series capability mint therefore cannot delete refs outside that publication.
+Task-derived integration refs remain mechanically non-ordinary, but final terminal admission is not
+a queue-release transaction. For an atomic series, `abandon_result` proves the current child/operation
+census and exact archived terminal predecessor, then receives an ephemeral operation-, contract-,
+thread-, and context-bound terminal permit. That permit is consumed inside the publication and cannot
+be stored or reused. No mutable queue blocker is acquired, released, or consulted as terminal evidence.
 
 ## 260821-CLIVE-L1 Lease API Migration
 
@@ -122,7 +124,18 @@ The current source seams include `abandon_result`. The public module consumes cl
 | --- | --- | --- |
 | The current module exposes `abandon_result` at this ownership boundary. | L84-L130 | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 
+## 260821-CLIVE Archive-Before-Abandon
+
+Abandon now proves terminal/no-ambiguous-operation authority, publishes and reads back the external
+archive/receipt, and only then removes providers, worktrees, branches, reports, and the enclosure
+root. The archive binds the accepted `force` argument; retry with different input refuses, while an
+exact terminal retry/status works after the live root is gone. Atomic series require the ephemeral
+terminal release capability, never a persistent queue blocker. Already-abandoned results retain and
+surface terminal archive proof.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact terminal archive, typed force replay, and atomic terminal authority into abandon. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

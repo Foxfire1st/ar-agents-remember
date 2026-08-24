@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -62,9 +62,12 @@ slice adds durable asynchronous closeout/integration operations whose public add
 contract plus operation kind. Private operation keys, worker PIDs, approval fingerprints, and
 candidate-tree identities remain plane-owned recovery state.
 
-The current graph also supplies a matching per-run nonce and in-container attestation to every
-Python, Vitest, and Playwright harness. Those suites refuse startup outside that environment, so
-the old host-managed wrapper/test path cannot accidentally become a second acceptance result.
+The current graph supplies a matching per-run nonce and in-container attestation to Python,
+Playwright, the changed-lines CLI, and the direct quality wrapper. Those guarded rails refuse
+startup outside that environment, so the old host-managed wrapper/test path cannot accidentally
+become a second acceptance result. Direct targeted Vitest unit/component runs are deliberately
+supported as fast non-certifying diagnostics; they provide no acceptance, changed-lines coverage,
+or lifecycle evidence.
 
 Durable lifecycle subprocess bootstrap is an installed-runtime boundary: the launcher preserves
 the installed MCP environment instead of prepending task-checkout source, and the packaged worker
@@ -848,11 +851,28 @@ and exact staged gate scope out of oversized suites without changing the product
 
 The packaged `l-01-agent-lifecycles` assets now mirror the canonical nature-aware planning
 contract. Architect owns the initial strategist and plan-review loop; orchestrator adopts the
-ruled graph, records queue judgment, and recomputes the ready frontier; managers distinguish
-organizational direct-super leaves from atomic branch-backed blockers. The package also carries the
-exact proposed-candidate master-exit handoff and leaf-owned remediation boundary. This leaf changes
-packaged doctrine and templates only—worktree/source-lineage mechanization remains owned by later
-leaves in the dependency-aware sprint master.
+ruled topology choice and a graph only when one exists, records queue judgment, and recomputes the
+ready frontier; managers distinguish organizational direct-super leaves from atomic branch-backed
+blockers. Graph-less atomic-sequential execution is a valid reviewed topology. A sanctioned
+strategist skip transfers the complete dependency, route, seam, classification, priority, and
+topology-reasoning duty to the orchestrator rather than requiring a graph. The package also carries
+the exact proposed-candidate master-exit handoff and leaf-owned remediation boundary.
+
+## 260821-DAGQC-L4 Doctrine And Review Closure
+
+Packaged review inventories treat untracked input as hostile filesystem evidence: NUL-safe
+enumeration precedes no-follow type/mode/content inspection, and reports record disposition plus
+race limits instead of silently omitting or following entries. Candidate priority has one effective
+value — candidate override, otherwise master default — while the orchestrator retains portfolio
+comparison authority. Graph-less atomic-sequential is valid; choosing a graph from that state first
+attaches every master, then publishes one complete nodes-plus-evidence-edges batch.
+
+Master handover packets cite canonical candidate, code ancestry, memory ancestry, and per-leaf
+ledger references so receivers revalidate authority without copied maps. Existing `add_edge`
+examples already carried `judgmentId`; no fabricated code fix or lifecycle evidence was added.
+Delegated-authority redesign, disabled-memory behavior, mandatory-graph runtime, and declared-caller
+trust redesign remain outside this leaf. Canonical and generated skill copies were synchronized,
+but that sync check and direct targeted Vitest diagnostics are not Dagger acceptance evidence.
 
 ## 260815-DAG-L3 Closeout Queue Control Plane
 
@@ -905,8 +925,22 @@ The package surface now exposes retry, recover, cancel, revise, integrate, retir
 | Public worktree payload surface. | L43-L53; L98-L105; L151-L169; L172-L205 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | Admission forcing across every consumer. | L197-L322; L496-L640 | `mcp/tests/test_configured_contract_admission_l2.py` |
 
+## 260821-DAGQC-L2 Packaged Doctrine Synchronization
+
+No root-route responsibility changed. Packaged c-02 and curator doctrine mirrors now use the same
+strict memory-quality request grammar as canonical sources; the package remains a synchronized
+distribution target rather than a compatibility owner.
+
 ## Update History
 
+- 2026-08-24T14:19+02:00 — No route impact: 260821-DAGQC-L2 synchronized packaged memory-quality and curator examples to the canonical discriminated request while preserving concurrent L4 route material. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled packaged planning,
+  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
+  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
+  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
+  Dagger acceptance remains pending and closeout-owned.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.

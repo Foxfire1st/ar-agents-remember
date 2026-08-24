@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_terminal_and_series_gap_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -41,7 +41,21 @@ atomic task completion, dirty integration checkouts, and external-memory ledger 
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces terminal child-census and atomic-series authority refusal branches, including unreadable or conflicting evidence.
+
+### Current Invariants
+
+- Terminal cleanup and successor admission require exact archive/receipt proof.
+- Atomic-series authority remains contract/ref-owned and fail-closed.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only patches the extracted `initial_queue_state` name instead of its former private alias; the forced assertion is unchanged. Verified at code commit `1d446724`.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,19 +16,18 @@
 
 ## Purpose
 
-Transfers the exact transitional certified candidate into journal-owned integration authority and
-pins final-versus-nonfinal organizational scope before sprint-super publication.
+Transfers the exact claimed door and completed source journal into integration authority and pins
+final-versus-nonfinal organizational scope before sprint-super publication.
 
 ## Code Commentary
 
 ### Logic
 
 `preview_integration_boundary` captures exact task-source bytes and final/non-final scope before
-claim. `prepare_integration_publication_intent` chooses the complete post-claim publication identity
-and snapshots the transitional certified candidate into journal input. `transfer_integration_claim`
-then consumes or proves that exact candidate under queue serialization and records claim proof in
-the journal. Quality certification is reread from the integration operation; later protected-ref
-publication and recovery no longer depend on a surviving queue row.
+claim. Publication intent binds sprint/candidate, exact claimed door, source kind/generation/
+fingerprint/key, source-journal digest, and commits. `source_operation_matches` proves the completed
+active retained source plus its exact door; closeout also proves the finalized contract digest.
+Protected-ref publication and recovery never consume or depend on a projection row.
 
 ### Invariants And Boundaries
 
@@ -61,7 +60,17 @@ The current source seams include `IntegrationBoundaryFacts`, `preview_integratio
 | --- | --- | --- |
 | The current module exposes `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion` at this ownership boundary. | L45-L49; L52-L101; L104-L109 | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
 
+## 260821-CLIVE Source-Journal Transfer
+
+Integration intent transfers the exact claimed door and source journal, re-proves current task
+topology, and binds the source journal digest plus exact source identity. `source_operation_matches`
+requires a completed active retained source whose proven door equals the contract; closeout also
+requires the finalized contract digest. Projection rows are never consumed, and admitted commits
+must remain exact.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented exact door/source-journal transfer and removal of queue consumption. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

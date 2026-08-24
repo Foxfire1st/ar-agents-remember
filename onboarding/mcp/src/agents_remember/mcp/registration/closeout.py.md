@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -153,7 +153,19 @@ The current source seams include `register_closeout_tools`. The public schema/co
 | --- | --- | --- |
 | The current module exposes `register_closeout_tools` at this ownership boundary. | L37-L42 | `mcp/src/agents_remember/mcp/registration/closeout.py` |
 
+## 260821-CLIVE Final Closeout Tool Descriptions
+
+The public descriptions now state the durable ownership boundary directly: direct landing and
+closeout recovery use the retained operation journal, never a transient landing lock or queue row;
+queue invalidation does not affect an accepted generation. Cleanup and abandon first archive and
+read back bounded canonical enclosure evidence, publish the external receipt, and only then remove
+worktrees, branches, reports, providers, and the enclosure root. Active, ambiguous, unreadable, or
+mismatched evidence refuses deletion. Shared grade/admission request types come from the canonical
+closeout-source model.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged final journal recovery and terminal archive/destruction semantics into the registered public tools. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/scripts/check-diff-coverage.test.mjs`            |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`                  |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00                                  |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -24,10 +24,11 @@ counts as covered, the exclusion set, and `dashboard/` key normalization.
 
 ### Logic
 
-Five tests drive the pure helpers with synthetic v8 entries: statement-range
-spanning, executed-only spanning, denominator semantics (a changed line with no
-statement contributes nothing), no-entry files, and the test/dev/types exclusions
-with `dashboard/`-prefixed key normalization.
+One subprocess test removes the Dagger attestation and proves the direct changed-lines
+CLI refuses before it reads Git or coverage. Five further tests drive the pure helpers
+with synthetic v8 entries: statement-range spanning, executed-only spanning,
+denominator semantics (a changed line with no statement contributes nothing), no-entry
+files, and the test/dev/types exclusions with `dashboard/`-prefixed key normalization.
 
 ### Conventions
 
@@ -37,7 +38,9 @@ is logic-only (no DOM).
 ### Invariants And Boundaries
 
 The suite must stay aligned with the Python gate's accounting intent: a changed
-comment/blank/continuation line is never in the denominator.
+comment/blank/continuation line is never in the denominator. Running these pure
+Vitest assertions directly is diagnostic only; it does not turn the refused CLI into
+a host acceptance or changed-lines evidence path.
 
 ### Todos
 
@@ -56,9 +59,9 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executable-statement semantics suite. | "describe(\"check-diff-coverage executable-statement semantics\", () => {" | dashboard/scripts/check-diff-coverage.test.mjs:12-12 |
-| The helpers under test. | `executableStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:14-14; dashboard/scripts/check-diff-coverage.mjs:43-43 |
-| The Vitest setup list that runs this file's harness. | "setupFiles: [" | dashboard/vitest.config.ts:35-35 |
+| The direct CLI refusal occurs before base-resolution output. | "the direct changed-lines CLI refuses before reading Git or coverage" | dashboard/scripts/check-diff-coverage.test.mjs:15-27 |
+| The pure executable-statement helpers remain directly importable and tested. | `executableStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.test.mjs:29-110; dashboard/scripts/check-diff-coverage.mjs:14-76 |
+| The Vitest setup and include list collect this logic-only suite. | `setupFiles`; `scripts/**/*.test.mjs` | dashboard/vitest.config.ts:27-33; dashboard/vitest.config.ts:57-59 |
 
 ## Cross-Repo References
 
@@ -70,6 +73,9 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded the split contract:
+  direct targeted Vitest may run the pure diagnostic suite, while direct changed-lines CLI
+  execution refuses before Git/coverage work. Dagger acceptance remains pending.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator (round 8 delta): created this sidecar
   for the new contract test. Verification pinned to the leaf base until closeout
   stamps the code commit (the file has no commit yet).

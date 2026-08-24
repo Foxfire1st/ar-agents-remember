@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## Purpose
@@ -349,10 +349,6 @@ task-document addressing, and transport-thin forwarding remain the route contrac
 service and then uses the common `_tool_payload` envelope. Registration and response conformance
 cover the public schema; scheduling, persistence, and lifecycle logic do not live on this route.
 
-## 260815-DAG-L15 Route Impact
-
-The memory payload builders gained `memory_quality_check_start_payload` / `memory_quality_check_poll_payload` (L15-R7), re-exported by the tools facade in the import block and `__all__`.
-
 ## 260815-DAG Master Full-Gate Repair Route Impact
 
 `tools/{core,task_doc,worktree}.py` import paths updated to the moved `application/task_docs/*`.
@@ -367,7 +363,16 @@ Tool payload composition preserves the closed application result vocabulary. The
 | --- | --- | --- |
 | Lifecycle/adoption/legacy payloads. | L98-L105; L151-L169; L172-L205 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 
+## 260821-DAGQC-L2 Typed Memory-Quality Adapters
+
+The memory tool route now has three thin DTO-specific adapters over the single controller API.
+They validate public responses but do not interpret wait flags, rebuild scope, or reproduce
+capacity/poll failure translations.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat quality branching with strict sync/start/poll adapters over the canonical controller. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

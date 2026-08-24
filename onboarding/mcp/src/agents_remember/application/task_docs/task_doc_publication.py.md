@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,34 +16,44 @@
 
 ## Purpose
 
-Exact task-document source-CAS and publication under short integration authority, still wrapped by
-the pre-L3 governed queue publisher when a sprint queue scope exists.
+Own exact task-document source-CAS and task-first publication. One mutation publishes canonical
+task bytes and invalidates the complete affected sprint-projection union under the task-publication
+lock, then rebuilds each disposable projection independently.
 
 ## Code Commentary
 
 ### Logic
 
-`publish_task_doc_set` resolves the governing queue scope and retains the existing
-`publish_task_facts_update`/`publish_sprint_update` wrapper. Inside that transitional wrapper,
-`TaskDocPublicationTransaction` holds every accepted JSON/Markdown source snapshot, the exact
-topology authority check, and one publisher. `publish_task_doc_transaction` takes the short
-integration-authority lock, rechecks all accepted bytes, and publishes atomically; dry-run performs
-the same checks with `create=False` and no write. A mismatch raises `TaskDocPublicationConflict`
-with bounded expected/observed evidence. L3, not this module, removes the queue wrapper and adds
-post-write projection invalidation/rebuild.
+`TaskDocPublication` carries the original/candidate documents, complete accepted JSON/Markdown
+source snapshots, and optional publisher. `task_doc_publication_transaction` first invokes the
+central zero/one graph-document assertion, derives exact before/after projection scope changes, and
+builds a `TaskDocPublicationTransaction`. `publish_task_doc_transaction_and_refresh` delegates that
+transaction to `publish_task_fact_mutation`: accepted bytes are rechecked, task truth is written,
+and every affected projection scope is invalidated under one task-publication lock; each invalidated
+projection then rebuilds independently. Dry-run validates the same source pair and previews the
+same projection effects without writing. A mismatch raises `TaskDocPublicationConflict` with
+bounded expected/observed evidence.
+
+Ordinary disk-backed graph-title reads deliberately remain inside the publisher callback, after
+the task lock is held, so the title snapshot used for rendering is read under the same
+serialization boundary as the document write.
+Only pure submitted-batch graph cardinality is checked earlier.
 
 ### Conventions
 
 Callers prepare all selected/affected source snapshots before entering the transaction and must not
-re-read a weaker subset inside their own publisher.
+re-read a weaker subset inside their own publisher. Pure validation may precede locking; disk state
+that participates in a read-modify-write invariant is read only inside the publisher callback.
 
 ### Invariants And Boundaries
 
 - Exact JSON and Markdown bytes for every selected/affected document are one CAS precondition.
-- The short integration lock closes task-write versus protected-ref publication races; it is not a
-  lifecycle journal or a replacement for the transitional queue lock.
-- Queue-governed refusal is still current source behavior until L3 and must not be documented as
-  already removed.
+- Task truth is authoritative. Queue/projection state is disposable: task publication invalidates
+  the full affected scope and projection rebuild happens after the lock, per scope.
+- A publication batch has at most one graph-bearing document. Unsupported cardinality refuses
+  before transaction construction; there is no first-document selection or split retry.
+- Existing on-disk title reads stay inside the protected publisher callback to avoid rendering
+  from a stale pre-lock title snapshot.
 
 ### Todos
 
@@ -59,12 +69,21 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The module defines `TaskDocPublicationConflict`; `TaskDocPublication`; `TaskDocPublicationTransaction` as its public seam. | L36-L51; L55-L63; L67-L74 | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
+| The module defines the exact task publication request, transaction, and result models. | L35-L80 | [task_doc_publication.py](mcp/src/agents_remember/application/task_docs/task_doc_publication.py) |
+| Publication delegates exact validation, task write, affected-scope invalidation, and independent rebuild to the task-first owner. | L82-L133 | [task_doc_publication.py](mcp/src/agents_remember/application/task_docs/task_doc_publication.py) |
+| Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback. | L136-L166 | [task_doc_publication.py](mcp/src/agents_remember/application/task_docs/task_doc_publication.py) |
+| Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes. | L112-L160 | [test_task_doc_graph_publication.py](mcp/tests/test_task_doc_graph_publication.py) |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — DAGQC L1: ordinary publication now delegates graph-batch
+  cardinality to the central zero/one owner before transaction construction while retaining
+  on-disk title reads inside the protected publisher callback. The card was reconciled with the
+  already-landed task-first invalidation/rebuild transaction. Verification metadata remains pinned
+  until closeout.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

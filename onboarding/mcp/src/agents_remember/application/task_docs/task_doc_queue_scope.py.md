@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,36 +16,35 @@
 
 ## Purpose
 
-Prepares the one governing sprint queue identity from the exact task-source generation accepted
-for a publication attempt, while explicitly leaving genuinely standalone/light documents outside
-queue governance. Current L2 still retains the queue-governed publication seam; L3 owns task-first
-publication, affected-candidate invalidation, and waiting-only queue rebuild.
+Computes the complete old/new union of sprint projections affected by an already-accepted task
+document batch. This is post-publication refresh scope only: task truth publishes independently,
+then each affected disposable projection is invalidated/rebuilt.
 
 ## Code Commentary
 
 ### Logic
 
-Preparation builds topology from the captured `TaskDocSourceSnapshot` set, including accepted
-absence, then distinguishes existing versus new task documents, master versus leaf identity, and
-orchestration-sprint versus commanded-master scope. Existing leaves resolve their structural parent
-master through that generation; new and edited masters compute every affected execution sprint and
-refuse ambiguous multi-sprint scope. The result pairs the optional queue scope with the unchanged
-source snapshots that publication must use.
+`resolve_projection_scope_union()` accepts exact before/candidate pairs keyed by canonical
+`TaskDocumentRef`. It rejects cross-repository or conflicting entries, constructs one candidate
+override map for the whole batch, and unions every affected sprint from both versions: a sprint
+includes itself, a commanded master resolves every canonical sprint consumer, and a leaf resolves
+through its parent master. Sorting by canonical key makes the refresh plan deterministic.
 
 ### Conventions
 
-Queue scope is derived from canonical task-document topology and normalized references; callers do
-not supply a sprint or master override.
+Projection scope is derived from canonical task topology plus the accepted batch overrides; callers
+cannot inject an unrelated sprint identity.
 
 ### Invariants And Boundaries
 
-- Light documents and masters not commanded by an execution sprint are explicitly ungoverned.
-- A graph-commanded leaf must resolve to its exact owning master.
-- One publication cannot affect multiple sprint queues.
-- Queue projection reads are not task-document CAS inputs; only the captured task-source generation
-  returns with the prepared scope.
-- The module prepares scope only; the current-L2 caller still owns the queue-governed publication
-  transaction, whose task-first replacement is deliberately deferred to L3.
+- A task batch may affect zero, one, or multiple sprint projections; every canonical old/new
+  consumer is included.
+- The accepted candidate override set is evaluated as one generation, so a multi-document edit is
+  not split into contradictory intermediate topology.
+- An unrelated unreadable document cannot veto the task mutation; a directly addressed invalid
+  relationship still fails closed at the authoritative task boundary.
+- Projection reads are never task-document CAS inputs. This module neither publishes task files nor
+  grants queue/lifecycle authority.
 
 ### Todos
 
@@ -59,28 +58,34 @@ No configured Domain Documentation source applies; this is repository-internal t
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Existing task scope distinguishes orchestration sprints, commanded masters, and exact leaf parents. | `_existing_scope` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:68-86 |
-| New task scope derives its master identity before checking commanded sprint membership. | `_new_scope` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:89-104 |
-| The public resolver leaves light tasks ungoverned and translates malformed or ambiguous topology into one typed scope error. | `governing_queue_scope` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:107-127 |
+| The public resolver validates one repository-local change set and returns a deterministic old/new sprint union. | `resolve_projection_scope_union` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:26-72 |
+| Leaf scope is derived through the canonical parent master with the full batch override set. | `_leaf_projection_scopes` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:79-109 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-## 260821-CLIVE-L2 Accepted-Generation Queue Scope
+## Historical 260821-CLIVE-L2 Boundary (Superseded)
 
-Queue-scope preparation now consumes the exact `TaskDocSourceSnapshot` set captured for the task
-publication attempt. Presence and absence are resolved through that accepted topology generation,
-and the prepared result returns the same snapshots to the publication owner. This prevents queue
-projection reads from becoming task-document CAS inputs. The current L2 queue-governed publication
-seam remains transitional; task-first invalidation and waiting-only rebuild are L3 obligations.
+The intermediate L2 design prepared one governing queue scope before task publication. CLIVE final
+removed that ownership inversion. The surviving invariant is only that projection computation uses
+an accepted canonical task generation and never feeds projection state back into task CAS. The live
+owner is the post-publication union described above.
 
-| Finding | Source |
-| --- | --- |
-| Preparation binds queue identity to one accepted task-source generation. | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:25-45 |
-| Existing-source resolution includes accepted absence rather than consulting the live filesystem again. | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:137-179 |
+## 260821-CLIVE Final Projection Blast Radius
+
+This module no longer resolves one governing queue before task publication. It receives accepted
+before/candidate document pairs and computes the complete old/new union of affected sprint
+projections after the authoritative task batch publishes. Sprint changes include themselves;
+master and leaf changes resolve every canonical projection consumer with the full override set.
+Unrelated unreadable documents cannot veto the task write, while a directly addressed invalid
+relationship still fails closed. The result is refresh scope only, never task mutation authority.
+
+This section supersedes the earlier accepted-generation queue-lock preparation description.
 
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: replaced pre-publication queue scope with the final post-publication before/after projection union. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled accepted-source-generation queue-scope preparation and the current-L2 versus L3 boundary. Verified at code commit `1d446724`.
 

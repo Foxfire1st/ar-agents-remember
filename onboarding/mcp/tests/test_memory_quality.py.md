@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00                     |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T14:19+02:00                     |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -50,15 +50,21 @@ fingerprint rows, and the line-locator fallback used for malformed catalog place
 | The tested style fixer lives in `history_order_fix.py`. | `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py:28-50 |
 | The tested catalog checker owns inventory/fingerprint structural alignment. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
 
-## 260815-DAG-L15 Background-Run Payload Wrappers
+## Current Payload Wrapper Coverage
 
-Added `test_start_and_poll_payload_builders_wrap_the_async_envelopes` (with `unittest.mock` and the
-`agents_remember.mcp.tools` module alias): `memory_quality_check_start_payload` wraps the
-`start_memory_quality_check_run` envelope (`status: "started"` plus `runId`), and
-`memory_quality_check_poll_payload` wraps the poll envelope, surfacing `status: "run-not-found"`
-(and `runId`) for an unknown run — the rerun-guidance case.
+`test_start_and_poll_payload_builders_wrap_the_async_envelopes` passes strict
+`MemoryQualityStartRequest` and `MemoryQualityPollRequest` instances into the payload adapters and
+proves the controller envelopes survive `_tool_payload` validation. The adapters are mocked at the
+controller seam, not through the removed application-memory wrapper functions.
+
+## 260821-DAGQC-L2 Typed Sync Calls
+
+Quality behavior assertions now enter through `MemoryQualitySyncRequest(mode="sync", ...)`, keeping
+the quality engine coverage while proving the controller's explicit public execution contract.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: updated quality tool calls to the explicit typed sync request while preserving the underlying quality assertions. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: added test_start_and_poll_payload_builders_wrap_the_async_envelopes, proving the memory_quality_check payload builders wrap the async start/poll envelopes (started + runId; run-not-found → rerun guidance). Verified at code commit de3a0fd9.
 

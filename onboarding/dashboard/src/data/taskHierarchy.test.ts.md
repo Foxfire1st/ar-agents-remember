@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/taskHierarchy.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T04:48+02:00 |
-| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
-| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,16 @@ No meaningful cross-repository references found.
 | --- | --- | --- |
 | The hierarchy helper is repository-local projection logic. | "describe(\"findParentTaskMatch\", () => {" | dashboard/src/data/taskHierarchy.test.ts:31-31 |
 
+## 260821-CLIVE Projection Fixture Alignment
+
+No hierarchy behavior changed. The local `series()` fixture now defaults `discardedCount` to zero
+and `discardedSubTasks` to an empty list because those cells are required on projected series. Parent
+matching, creation-order tie breaking, and the per-list cache boundary remain unchanged.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — No content impact: added the required empty discard-history cells to
+  the local `SeriesNode` test builder; hierarchy assertions and lookup semantics are unchanged.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 

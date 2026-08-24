@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -355,16 +355,19 @@ intent, or Git. After that existing admission, the coordinator narrows the optio
 typed field with `cast(str, args.candidate_tree)` instead of carrying a redundant second runtime
 refusal. Revalidation and commit ordering are unchanged.
 
-## 260815-DAG-L3 Candidate Claim And Certification
+## 260815-DAG-L3 Claim/Certification History, Replaced By Journal Evidence
 
-Leaf closeout now claims the orchestrator-selected queue candidate after the final reviewed-tree
-revalidation and before commit, then certifies the exact code/memory/ledger commits after the
-contract is published. Recovery of an already-finalized contract performs the same idempotent
-certification, so a crash cannot leave a valid closeout permanently unintegratable.
+The commit worker no longer claims or certifies a queue candidate. The lifecycle owner atomically
+transfers the exact first-ready waiting door into the enclosure-external journal before launching
+the worker. Code, memory, ledger, and contract results are journaled against that immutable operation
+generation; recovery re-proves retained journal and Git evidence rather than patching a queue row.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
+and active atomic-series refs are censused across code and external memory. Closeout admission is the
+exact door plus journaled operation generation; protected-ref landing and terminal capabilities stay
+with their own owners. Stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## 260815-DAG Master Full-Gate Repair
 
@@ -372,7 +375,7 @@ Imports updated to the moved queue/integration packages (`worktrees/queue/*`, `w
 
 ## 260821-CLIVE-L1 Closeout Coordinator
 
-Closeout execution now requires journaled mutation authority and one validated `EffectiveCloseoutInput`. Entry validates the accepted plan before recovery or mutation and returns the typed value to the coordinator; preview renders that plan, code commit and external consumers receive that value explicitly, and external memory/ledger work has moved—not duplicated—to `closeout_external.py`. Immediately before publication, the locked callback reloads the contract and rechecks contract identity, authority, workbench state, and the accepted candidate so validation cannot be separated from mutation by a stale object. The old generated ledger subject, raw message fallbacks, optional private guards, and shadow intent are removed. Contract finalization publishes the exact canonical hash, allowing verified-existing/no-op completion without fabricated Git evidence. Queue certification remains a downstream scheduling transition, not lifecycle evidence ownership.
+Closeout execution now requires journaled mutation authority and one validated `EffectiveCloseoutInput`. Entry validates the accepted plan before recovery or mutation and returns the typed value to the coordinator; preview renders that plan, code commit and external consumers receive that value explicitly, and external memory/ledger work has moved—not duplicated—to `closeout_external.py`. Immediately before publication, the locked callback reloads the contract and rechecks contract identity, authority, workbench state, and the accepted candidate so validation cannot be separated from mutation by a stale object. The old generated ledger subject, raw message fallbacks, optional private guards, and shadow intent are removed. Contract finalization publishes the exact canonical hash, allowing verified-existing/no-op completion without fabricated Git evidence. The operation journal records lifecycle evidence; any later queue refresh is a disposable scheduling effect, never certification.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -384,7 +387,18 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 | --- | --- | --- |
 | The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. | L113-L131; L363-L425; L1002-L1091 | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 
+## 260821-CLIVE Journal-Owned Claim Boundary
+
+This commit worker no longer claims or certifies a mutable queue candidate before/after its Git and
+contract work. The lifecycle-operation owner transfers the exact first-ready waiting door into the
+root journal and launches this worker with immutable accepted input. The worker continues to
+revalidate contract, review, tree, quality, and repository authority and publishes exact commits
+and contract finalization; recovery/certification is inferred from the retained journal and Git
+evidence, never repaired through a stale row.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: removed queue claim/certify ownership from the documented closeout worker and located it under the durable operation journal. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

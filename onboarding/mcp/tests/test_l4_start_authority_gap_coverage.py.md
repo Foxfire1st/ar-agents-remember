@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_start_authority_gap_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,21 @@ organizational/atomic parent shapes, explicit source mismatch, and planned-paren
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces fail-closed worktree-start authority from canonical parent row, child task sources, locator state, and successor eligibility.
+
+### Current Invariants
+
+- Start cannot reserve an enclosure from stale, missing, symlinked, or contradictory task identity.
+- A discard/start race admits one winner under the shared task-publication lock.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints `start_contract` to its moved startup package. Verified at code commit `1d446724`.
 

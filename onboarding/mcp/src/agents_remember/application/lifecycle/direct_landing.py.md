@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,8 @@ The application layer owns error translation; all validation and mutation live i
 
 - Refusals always carry a typed `status` and human `detail`; no silent fallback to a success shape.
 - This module never commits, never moves refs, and never reads the ledger itself.
+- Recovery projection may add nested door/lifecycle evidence but cannot overwrite `ok`, top-level
+  `state`, `status`, or the refusal detail selected by the application boundary.
 
 ### Todos
 
@@ -54,9 +56,9 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application boundary translates operation errors into typed refused responses. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:51-94 |
-| The operation it wraps. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:111-123 |
-| The request model it accepts. | `DirectLandingRequest` | mcp/src/agents_remember/worktrees/direct_landing.py:84-98 |
+| The application boundary translates operation errors into typed refused responses. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:54-103 |
+| The operation it wraps. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
+| The request model it accepts. | `DirectLandingRequest` | mcp/src/agents_remember/worktrees/direct_landing.py:105-120 |
 
 ## Cross-Repo References
 
@@ -79,9 +81,18 @@ The current source seams include `direct_landing_tool`. The application wrapper 
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `direct_landing_tool` at this ownership boundary. | L51-L94 | `mcp/src/agents_remember/application/lifecycle/direct_landing.py` |
+| The current module exposes `direct_landing_tool` at this ownership boundary. | L54-L103 | `mcp/src/agents_remember/application/lifecycle/direct_landing.py` |
+
+## 260821-DAGQC-L2 Outcome Normalization
+
+The wrapper normalizes any non-final lower-level projection into the exact refused outcome before
+adding recovery guidance. Merge order is explicit: nested journal state remains observable, while
+the application-owned outcome/status cannot be overwritten by generic recovery dictionaries or an
+unreadable-journal projection.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made refused outcome/status authoritative over nested recovery projection and kept journal state below the top-level direct-landing vocabulary. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/application/lifecycle/direct_landing.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

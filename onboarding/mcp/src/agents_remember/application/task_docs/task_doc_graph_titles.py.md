@@ -1,0 +1,83 @@
+# mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[task-doc application overview](overview.md)
+
+## Purpose
+
+Own the current graph-bearing publication-batch cardinality and the one in-memory title-context
+builder shared by execution-topology authoring and sprint linkage. This is the fail-fast boundary
+that prevents an unsupported multi-graph batch from acquiring accidental first-document semantics.
+
+## Code Commentary
+
+### Logic
+
+- `require_single_graph_document(documents)` inspects the complete submitted batch, returns its
+  sole graph-bearing document or `None`, and raises typed `TaskDocError` when the count exceeds one.
+- `build_publication_batch_graph_titles(documents)` delegates to that same assertion, builds the
+  master map from the exact in-memory batch, and calls the tasks-layer `build_graph_titles` only
+  after zero/one cardinality is established.
+- `GraphPublicationDocument` keeps the application tuple shape explicit:
+  `(TaskDocumentRef, task root, TaskDocument)`.
+
+### Conventions
+
+Cardinality is checked from pure submitted data before any publisher, projection refresh, queue
+invalidation, or disk write. Callers do not catch the refusal and retry documents separately.
+
+### Invariants And Boundaries
+
+- One publication batch currently contains at most one graph-bearing document.
+- The module owns no disk read and no mutation. Ordinary disk-backed title reads stay inside the
+  task publisher's protected callback; this owner handles only pure batch shape and in-memory joins.
+- There is no first-graph fallback, per-document compatibility reader, or speculative multi-graph
+  map. A future demonstrated multi-graph transaction must replace this single-context contract.
+
+### Todos
+
+Re-evaluate the zero/one invariant only if a real atomic task-publication transaction demonstrates
+more than one graph-bearing document.
+
+## Docs References
+
+No Domain Documentation sources are configured for this repository-internal application seam.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+
+## Repo-Internal References
+
+The source, its ordinary-publication consumer, and focused forcing suite define the contract.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| The central owner refuses more than one graph document and builds the one in-memory title context. | L17-L51 | [task_doc_graph_titles.py](mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py) |
+| Ordinary publication checks the same cardinality before it constructs the task transaction. | L136-L166 | [task_doc_publication.py](mcp/src/agents_remember/application/task_docs/task_doc_publication.py) |
+| Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors. | L93-L160 | [test_task_doc_graph_publication.py](mcp/tests/test_task_doc_graph_publication.py) |
+
+## Cross-Repo References
+
+No cross-repository boundary is owned by this file.
+
+| Finding | Citations | Source Path |
+| --- | --- | --- |
+| No meaningful cross-repository references were found. | _None._ | _No cross-repository source._ |
+
+## Update History
+
+- 2026-08-24T13:43+02:00 — Created for DAGQC L1: one typed zero/one graph-publication
+  cardinality owner and one exact in-memory title-context builder. Verification remains
+  closeout-owned because the source is uncommitted.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T10:45+02:00 |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62` |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00 |
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
@@ -52,7 +52,17 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 Both snapshot readers now project `TaskDocNode.executionGraphView` (L12-R4): `_task_doc_node` was split into the include-body-gated `_reader_fields` and the sprint-only `_execution_graph_fields` behind a bundled `_TaskDocProjectionOptions` (`include_body` + `master_docs`), and `_master_docs_by_ref` builds the title/status/nature join table from the bounded payload window (root `task.json` documents are never evicted, so a sprint's commanded masters are always present). `_execution_graph_view` does the tasks-domain walk — derived waves, resolved edge endpoints, joined titles, per-master facts — and feeds the primitives-only `build_execution_graph_view` builder (the observer package must not import tasks). Docs without a graph project `None`; `_task_doc_body_revision` is unchanged.
 
 
+## 260821-CLIVE Discarded-Unstarted Projection
+
+Master task and series nodes now project `discardedCount` plus typed `discardedSubTasks`, including
+the audited reason, timestamp, disposition, and exact unstarted proof. The discarded history also
+participates in task-body revision identity so an open reader refetches after a valid discard.
+Discarded entries are historical task truth and never disappear merely because they are absent from
+the active subtask list.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented projection of audited discarded-unstarted task history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   both readers project the render-ready `executionGraphView`; `_task_doc_node` split into `_reader_fields` + `_execution_graph_fields` with `_TaskDocProjectionOptions`, `_master_docs_by_ref` join table, and the `_execution_graph_view` serving seam (L12-R4). Verified at code commit b7f2c8e2.

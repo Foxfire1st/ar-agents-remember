@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T00:21+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated            | 2026-08-24T15:28+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -24,7 +24,10 @@ L23 registers the lifecycle operation result's open value map as an index-signat
 the operation kind, status, and phase sets to the exhaustive closed-vocabulary registry. L2 also
 registers `lifecycleOperation.legalControls[]`: the array is structurally required, while each
 advertised control remains an opaque tool-invocation payload. The sample must exercise every member
-of the closed unions and reach both open lifecycle-operation sites explicitly.
+of the closed unions and reach both open lifecycle-operation sites explicitly. CLIVE-final extends
+that contract with four opaque discarded-child proof maps and the exact lifecycle
+`projectionEffects` invalidation/rebuild vocabularies, including successful, diagnostic, and
+source-unreadable outcomes.
 
 **This file is also the file that failed.** It was supposed to prevent this leaf's defect and could
 not: it consumed the fixture as `snapshot as unknown as WorkspaceProjection`, a double cast that turns
@@ -90,15 +93,16 @@ cit:([`AbsorbingPaths`, `INDEX_SIGNATURE_SITES`], dashboard/src/test/contract.te
 `INDEX_SIGNATURE_SITES` is a
 `Record<AbsorbingPaths<…>, string>`, which is exhaustive AND closed. The comment records why this
 replaced prose: the old comment listed four such nodes and had already missed three. The current
-derived registry contains ten sites: the original lifecycle/gate/metrics/analytics open maps plus
-lineage-recovery `args`, lifecycle-operation `result`, and
-`lifecycleOperation.legalControls[]`, whose element is opaque by design.
+derived registry contains fourteen sites: the original lifecycle/gate/metrics/analytics open maps,
+lineage-recovery `args`, lifecycle-operation `result`,
+`lifecycleOperation.legalControls[]`, and the series/task-document `childJson` / `childMarkdown`
+discard-proof records whose contents are opaque by design.
 
 This test owns a different boundary: whether the hand-maintained sample actually exercises those
 generated closed unions. `ClosedUnionPaths` finds every literal-union path in the mirror and
-`VOCABULARIES` is a `Record` over it: **15 paths bound to 10 array identities and 8 distinct value sets**, exhaustive and closed, so a
+`VOCABULARIES` is a `Record` over it: **33 exact closed-union paths**, exhaustive and closed, so a
 new closed union fails `tsc -b` until it is bound to the sample check, and a vocabulary bound to a path
-that has opened to `string` fails too cit:([`ClosedUnionPaths`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293). Runtime membership,
+that has opened to `string` fails too cit:([`ClosedUnionPaths`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:255-283; dashboard/src/test/contract.test.ts:285-424). Runtime membership,
 per-path non-vacuity, and pooled full coverage catch an incomplete or impossible sample; they are not
 the producer-to-TypeScript authority.
 
@@ -202,15 +206,15 @@ the Finding, where a pointer belongs.
 | The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | "it does so at three seams"; "snapshot as unknown as WorkspaceProjection"; "WHAT SCHEMA CODEGEN CLOSES" | dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:34-34; dashboard/src/test/contract.test.ts:60-60 |
 | `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | `ServedOnlyPaths`; `mirrorMustDeclare` | dashboard/src/test/contract.test.ts:92-102; dashboard/src/test/contract.test.ts:126-128 |
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
-| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — ten derived, closed absorbing nodes, including the opaque lifecycle-operation result and legal-control element payloads. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:209-238 |
-| `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
+| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — fourteen derived, closed absorbing nodes, including opaque lifecycle-operation payloads and the four discarded-child proof maps. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:209-242 |
+| `ClosedUnionPaths` + `VOCABULARIES` — 33 exact closed-union paths, including lifecycle-operation and projection-effect outcomes, classifications, problem kinds, and problem states. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:255-283; dashboard/src/test/contract.test.ts:285-424 |
 | Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:442-442; dashboard/src/test/contract.test.ts:444-444; dashboard/src/test/contract.test.ts:446-447 |
 | Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:470-475; dashboard/src/test/contract.test.ts:477-500; dashboard/src/test/contract.test.ts:502-510; dashboard/src/test/contract.test.ts:512-530 |
 | The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:575-578; dashboard/src/test/contract.test.ts:596-597 |
 | The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:356-360 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:254-264; dashboard/src/types/projection.ts:311-329 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The lifecycle-operation fixture contract requires `legalControls`, samples optional `generation`, and supplies one non-empty opaque `recover` control. | `lifecycleOperation`; `legalControls`; `generation` | dashboard/src/fixtures/snapshot.json:1160-1182; dashboard/src/fixtures/snapshot.json:1201-1629 |
+| The lifecycle-operation fixture contract requires `legalControls` and `projectionEffects`, samples optional `generation`, and supplies non-empty control and effect witnesses. | `lifecycleOperation`; `legalControls`; `projectionEffects`; `generation` | dashboard/src/fixtures/snapshot.json:1246-1788 |
 | The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1618-1618; dashboard/src/fixtures/snapshot.json:1761-1761 |
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
@@ -245,8 +249,25 @@ The L4 delta keeps the generated dashboard contract aligned with the backend's o
 
 The closed-vocabulary registry gains the two new `executionGraphView` node unions (L12-R4): `projection.analytics.taskDocuments[].executionGraphView.nodes[].kind` (`lump` | `segment`) and `...nodes[].frontierState` (`landed` | `ready` | `waiting` | `in-flight`) — so the fixture must exercise every member of both.
 
+## 260821-CLIVE Final Projection Contract Coverage
+
+The derived open-map registry now contains fourteen exact paths. Its four new paths are the opaque
+`childJson` and `childMarkdown` proof records under discarded series and task-document rows; the
+fixture must reach them, but this test does not interpret their arbitrary proof payloads.
+
+The closed-vocabulary registry now contains 33 exact paths. It covers the full lifecycle operation
+kind/status/phase vocabulary and the projection-effect invalidation/rebuild outcomes, diagnostics,
+source classifications, problem kinds, and problem states. The existing non-vacuity and pooled
+full-coverage assertions therefore make every registered union observable in the manual sample.
+This is contract and fixture coverage only: neither the test nor the dashboard acquires task, queue,
+door, journal, or lifecycle authority.
+
 
 ## Update History
+
+- 2026-08-24T15:28+02:00 — Registered four opaque discarded-child proof paths and the exact
+  CLIVE-final lifecycle projection-effect vocabularies, bringing the derived registries to fourteen
+  open-map paths and 33 closed-union paths. Verification metadata remains closeout-owned.
 
 - 2026-08-24T00:21+02:00 — 260821-CLIVE-L2: registered
   `projection.enclosures[].lifecycleOperation.legalControls[]` as the opaque advertised-control

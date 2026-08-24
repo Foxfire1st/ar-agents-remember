@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -111,20 +111,21 @@ Series/master integration owns the single full Dagger acceptance before merge, p
 self-repository required-wrapper policy, and revalidates lineage/source tips after the long run.
 A missing Agents Remember wrapper or failed full result blocks before merge.
 
-## 260815-DAG-L3 Certified Integration Seam
+## 260815-DAG-L3 Integration Seam, Replaced By Journal Transfer
 
-Integration now claims the certified candidate, recomputes the full graph/readiness/evidence and
-exact commit identity immediately before `_merge_integrated_commits`, and consumes the queue row
-after the source move. Recovery of an already-completed integration consumes the same exact record
-idempotently; no generic integration request may select or substitute a different leaf. Since
-260815-DAG-L13 the consume call returns the stale-by-evidence siblings (candidates whose recorded
-base pair no longer matches the new source tips), and both the fresh-apply and the
-completed-recovery result payloads carry them as `staleByEvidence` with `worktree_sync` named as
-each sibling's recovery (L13-R2).
+The final integration path does not claim, certify, or consume a mutable queue row. Admission binds
+the exact claimed closeout door and completed retained source journal into integration intent, then
+re-proves task topology, source-journal digest, commit identity, and protected refs immediately before
+publication. Recovery resumes the same journaled operation generation only from mechanically proven
+evidence; a generic request cannot select or substitute another leaf. Projection refresh after the
+canonical transition is downstream and disposable.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers,
+and active atomic-series refs are censused across code and external memory. CLIVE narrows the live
+integration boundary to exact journal/door authority, protected-ref CAS, and (for an atomic series)
+the short landing lock; mutable queue serialization is not publication authority.
 
 The final reversible preparation checks the accepted code/external-memory source-tip snapshot before
 the broader lineage diagnostic. A concurrent protected-ref move therefore returns the structured
@@ -134,12 +135,16 @@ the lineage check still follows when the exact snapshot remains current.
 Fresh journaled integrations now enter the normal claim-and-publication path. Recovery publication
 is attempted only when the durable operation carries recovery commits that exactly match the worker
 input. A completed contract without that durable tuple may still be previewed read-only, but apply
-refuses before queue completion; immutable integration authority or self-asserted completed fields
-alone are not recovery evidence.
+refuses before protected publication; immutable integration authority or self-asserted completed
+fields alone are not recovery evidence.
 
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload`. Integration transfers authority from the waiting-door projection into the journal, revalidates configured contract and protected refs at the mutation boundary, and records publication evidence. Source-ref movement must reconcile or complete the same generation.
+The current source seams include `handover_gate_guard`, `unmatched_handover_gate_warning`,
+`blocked_integration_payload`. A waiting projection is admission evidence only; the exact claimed door
+and source journal transfer authority into the integration journal. The mutation boundary revalidates
+configured contract and protected refs and records publication evidence. Source-ref movement must
+reconcile or complete the same generation.
 
 ### Reconciled Source Evidence
 
@@ -147,7 +152,18 @@ The current source seams include `handover_gate_guard`, `unmatched_handover_gate
 | --- | --- | --- |
 | The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | L115-L141; L144-L180; L183-L206 | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 
+## 260821-CLIVE Live Atomic Landing Authority
+
+Before an atomic protected-ref publication, integration now calls
+`require_atomic_landing_authority` against current repository/series truth. Conflicting nonterminal
+series targets return the typed atomic-landing blocked result; no durable queue blocker is acquired
+or released. The integration authority lock is held only around the protected publication edge and
+the current contract is re-proved inside it. Completed integrations remain idempotent; organizational
+completion continues through its journaled publication transaction.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: replaced persistent blocker assumptions with live atomic protected-ref authority at the landing edge. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

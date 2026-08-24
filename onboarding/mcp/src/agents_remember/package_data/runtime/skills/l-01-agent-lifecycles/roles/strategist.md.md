@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T05:10+02:00 |
-| lastVerifiedCommitHash | `2f494982971091a18023a0ecdb2a532a4201a7c5` |
-| lastVerifiedCommitDate | 2026-08-20T00:11:16+02:00|
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -24,8 +24,11 @@ exact runtime artifact.
 
 ### Logic
 
-After developer approval, the architect may dispatch `(sprint document, strategist)`. The
-strategist is read-only: it analyzes portfolio dependencies and drafts the orchestration task,
+After developer approval, the architect may dispatch `(sprint document, strategist)` when the
+reasoned topology choice or portfolio classification is absent/stale—not merely because a valid
+graph-less sprint has no persisted graph. The strategist is read-only: it analyzes portfolio
+dependencies, derives one effective priority per candidate, chooses either an evidence-backed
+explicit graph or the graph-less atomic-sequential default, and drafts the orchestration task.
 `message_parent` carries clarification or quo-vadis escalation to the architect, the architect rules
 the plan, and the orchestrator adopts it. The role never edits task docs, raises gates, mutates Git,
 or addresses an orchestrator occupant.
@@ -39,6 +42,8 @@ edit only the canonical role before synchronization.
 
 - The strategist remains a sprint-bound reader, not a mutator or orchestrator child.
 - Durable artifacts, not runtime identity, carry the result across occupant replacement.
+- Planning, classification, priority, dependency, and coherence judgments are mandatory; a
+  persisted `executionGraph` is optional.
 - This packaged artifact must remain byte-identical to the canonical role.
 
 ### Todos
@@ -51,11 +56,11 @@ When approved, the strategist is spawned by the orchestrator and hands its plan 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-204 |
+| Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
 | The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:190-248 |
-| The orchestrator that dispatches an approved strategist, adopts its plan, or authors the orchestration task after a sanctioned skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-463 |
-| The deliverable's template — the orchestration task with the shown-work requirements. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-91 |
-| The plan-review criteria catalog the loop's reviewer runs against the orchestration task. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-84 |
+| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:202-264 |
+| The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
+| The plan-review criteria re-derive effective priority and validate either topology choice. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
 
 ## Cross-Repo References
 
@@ -78,11 +83,31 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 Initial facts are architect-compiled; runtime-reshape facts arrive from the orchestrator through
 the architect. The strategist classifies organizational versus atomic execution, builds the exact
-activity-on-node graph, and records dependency meaning, blast radius, priority, blockers,
-reprioritization, and leaf moves in one canonical Judgment Register. Every selected graph relation
-cites evidence and its owning judgment id; large size alone never makes a master atomic.
+topology choice, and records dependency meaning, blast radius, priority, blockers,
+reprioritization, and leaf moves in one canonical Judgment Register. When an explicit
+activity-on-node graph is justified, every selected relation cites evidence and its owning judgment
+id; otherwise the artifact records the reasoned graph-less atomic-sequential default. Large size
+alone never makes a master atomic.
+
+## 260821-DAGQC-L4 Optional Graph And Adoption Sequence
+
+Each schedulable candidate has one effective priority: use its candidate override when present,
+otherwise inherit the owning-master default; never combine them or retain duplicate current rows.
+The strategist records this judgment input, while the orchestrator compares effective grades
+across the portfolio.
+
+A graph-less plan remains fully planned. It classifies every master and records dependency,
+priority, coherence, and topology reasoning, then adoption stops after all `attach_master` calls.
+If an explicit graph is later chosen, complete every master attachment first and send one
+`author_execution_graph` batch with the full node set plus evidence-backed edges. The existing
+`add_edge` examples already carried `judgmentId`; no example repair was invented.
 
 ## Update History
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: removed graph absence as a strategist trigger,
+  recorded effective-priority override/default semantics, preserved graph-less planning, and made
+  first graph adoption one complete nodes-plus-edges batch. Canonical/generated sync is complete;
+  Dagger acceptance remains closeout-owned and pending.
 
 - 2026-08-20T05:10+02:00 — 260815-DAG-L14: adoption payload updated to the atomic
   `attach_master` flow and seats structure. Verified at code commit 2f494982.

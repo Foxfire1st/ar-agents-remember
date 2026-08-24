@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/dev/sprintGraphFixture.ts`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T10:45+02:00                           |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62`       |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00                        |
+| lastUpdated            | 2026-08-24T15:04+02:00                           |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -31,8 +31,9 @@ A's `seg1` (wave 1, `in-flight`, two leaves), the atomic lump F (wave 2, `waitin
 predecessor = Master A with reason "the shared framework must land first"), and Master A's
 `seg2` (wave 3, `ready`, predecessor = atomic F with reason "the atomic block gates the
 late segment"). `SPRINT_GRAPH_QUEUE` is a `CloseoutQueueNode` for the same sprint with a
-revision/graphRevision and the atomic blocker + declared candidate — so the mounted sprint
-page shows the graph and its queue together.
+`valid-built` service condition, exact source classification/fingerprint, no source problems,
+and one generation-keyed projection member carrying classification, priority, order, and reasons.
+It seeds a disposable scheduling view; it does not model a mutable blocker or candidate lifecycle.
 
 ### Invariants And Boundaries
 
@@ -52,7 +53,17 @@ page shows the graph and its queue together.
 
 No cross-repository implementation source governs this file.
 
+## 260821-CLIVE Disposable Projection Fixture
+
+The queue fixture was migrated from the retired `graphRevision`/`activeBlocker`/`candidates`
+shape to the exact-current projection shape. Its deterministic graph remains independent source
+data: the graph explains topology, while the queue member explains current scheduling. Neither is
+durable claim, certification, commit, or recovery authority.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Rebased the mounted sprint fixture onto the disposable closeout
+  projection contract (`serviceCondition`, source identity/problems, and generation-keyed members).
 
 - 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R7): the deterministic sprint-graph
 

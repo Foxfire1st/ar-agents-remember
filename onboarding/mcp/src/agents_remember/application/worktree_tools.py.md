@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -195,10 +195,11 @@ into closeout/integration/finalization remain unchanged by that ownership move.
 
 ## 260815-DAG-L3 Generic Integration Boundary
 
-`worktree_integrate_tool` remains a task-addressed operation launcher, not a scheduler. Queue
-projection assigns the action to the owning manager after orchestrator selection; this generic
-boundary cannot select or substitute a candidate, and the detached worker revalidates the exact
-durable selected record immediately before moving source history.
+`worktree_integrate_tool` remains a task-addressed operation launcher, not a scheduler. The
+orchestrator may rank a disposable projection member, but the lifecycle plane binds the exact claimed
+door/source journal before launch. This generic boundary cannot select or substitute a candidate,
+and the detached worker revalidates the exact durable operation immediately before moving source
+history.
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -206,7 +207,7 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260821-CLIVE-L1 Admission Boundary
 
-Public closeout messages remain raw optionals only until the shared normalizer resolves the stable candidate and enabled/not-applicable plan. Preview and apply both return typed refusals; apply hands `start_or_observe_closeout_operation` only validated admission, while preview carries the same `effectiveInput`. Validation occurs before integration-authority observation, journal creation, worker launch, or Git. Queue selection remains independent and has no message-input authority.
+Public closeout messages remain raw optionals only until the shared normalizer resolves the stable candidate and enabled/not-applicable plan. Preview and apply both return typed refusals; apply hands `start_or_observe_closeout_operation` only validated admission, while preview carries the same `effectiveInput`. Validation occurs before integration-authority observation, journal creation, worker launch, or Git. Projection selection remains independent and has no message-input authority.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -218,7 +219,19 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 | --- | --- | --- |
 | The current module exposes `TaskIdentity`, `TaskBases`, `StartExecution` at this ownership boundary. | L100-L113; L117-L131; L135-L142 | `mcp/src/agents_remember/application/worktree_tools.py` |
 
+## 260821-CLIVE Final Public Worktree Boundary
+
+`worktree_status` now has two strict routes: live locator→manifest→journal authority, or an exact
+terminal locator→external archive/receipt plus surviving contract truth. Terminal status reports
+archive-ready versus cleanup-completed and returns the original typed cleanup/abandon arguments as
+the executable retry; a different retry input refuses. Cleanup and abandon use this same admission
+instead of scanning a deleted enclosure. Closeout requests carry the shared grade/admission models,
+but the task-addressed worker never makes the scheduling decision or claims a door: its enclosing
+operation revalidates the journal, contract, and protected-ref authority.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged terminal archive status/retry and journal-owned closeout authority into the existing worktree-tool contract. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

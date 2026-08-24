@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -83,13 +83,31 @@ The generated mirror gains the render-ready sprint graph wire shapes (L12-R4): `
 The generated TypeScript mirror now carries optional lifecycle-operation `generation`, the
 `direct-landing` kind, required opaque `legalControls`, and the termination-required/unreadable
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
-they do not make the dashboard or the transitional pre-L3 queue an operation authority.
+they do not make the dashboard or disposable closeout projection an operation authority.
 
 | Finding | Source |
 | --- | --- |
 | The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | dashboard/src/types/projection.ts:301-310 |
 
+## 260821-CLIVE Disposable Queue And Discard Audit Mirror
+
+The generated mirror removes `AtomicBlockerNode` and the old mutable queue candidate fields.
+`CloseoutQueueNode` now exposes exact-current service/source condition, bounded problems, and
+generation-keyed `CloseoutProjectionMemberNode` rows; member classification is the closed
+`ready | waiting | blocked` display vocabulary. These interfaces describe a disposable producer view
+only and transfer no scheduling or operation authority to the browser.
+
+`DiscardUnstartedProofNode` and `DiscardedSubTaskNode` expose audited discard-before-start evidence.
+Required series and optional task-document discard count/history fields remain distinct from live
+subtasks and completed progress. Supported runtime-only schema constraints are emitted immediately
+above their TypeScript properties as stable `JSON Schema refinements` comments, including nested item
+constraints; TypeScript shape alone is not runtime validation.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Regenerated and documented the disposable closeout projection,
+  discard audit types, and deterministic runtime-refinement comments while preserving the newer
+  lifecycle-operation/root-journal mirror.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: documented the generated lifecycle-operation TypeScript contract and its projection-only authority boundary. Verified at code commit `1d446724`.
 

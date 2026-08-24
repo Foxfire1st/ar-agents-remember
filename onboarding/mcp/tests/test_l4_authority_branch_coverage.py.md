@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l4_authority_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,21 @@ The current forcing seams include `test_canonical_local_branch_refuses_every_inv
 | --- | --- | --- |
 | The current test source exercises `test_canonical_local_branch_refuses_every_invalid_alias_shape`, `test_default_branch_authority_refuses_missing_and_malformed_facts`, `test_memory_default_branch_refuses_invalid_local_authority`, `test_branch_owner_enumeration_refuses_git_failure_and_skips_detached_rows`. | L66-L98; L100-L136; L138-L174; L176-L199 | `mcp/tests/test_l4_authority_branch_coverage.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Covers negative repository, operation, protected-ref, validation, lineage, and atomic-series authority branches.
+
+### Current Invariants
+
+- Every expected authority failure returns bounded evidence instead of leaking lower-layer exceptions.
+- Tests preserve the separation between operation journal, contract, and protected-ref owners.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

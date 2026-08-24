@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,15 +17,19 @@
 ## Purpose
 
 Owns the integration-journal repair transition after a final organizational quality-gate failure:
-it validates the exact failed generation and repair evidence, retires the scheduling candidate,
-and reopens only that leaf's closeout. Queue projection records the scheduling consequence but does
-not own the repair lifecycle.
+it validates the exact failed generation and repair evidence and publishes one deterministic
+waiting successor from the claimed predecessor. Projection refresh records the scheduling effect
+but never owns the repair lifecycle.
 
 ## Code Commentary
 
 ### Logic
 
-`record_organizational_completion_repair` persists the exact reset generation at the gate-failure seam together with the terminal failure. `organizational_completion_repair_evidence` binds operation identity, contract/task identity, sprint/candidate/master documents, exact code/memory/ledger commits, and the SHA-256 of the only permitted reset contract. `prepare_organizational_completion_repair` reloads the canonical cancelled `integrate` WAL and requires `cancelled`, `cancelRequested`, and `finishedAt` before validating the failure result, repair evidence, operation identity, integration authority, queue binding, and commit tuple; then it retires the candidate and publishes the reset contract.
+`record_organizational_completion_repair` persists exact repair evidence at the gate-failure seam.
+The evidence binds operation identity, contract/task refs, claimed door, sprint/candidate/master,
+exact commits, and deterministic successor bytes. Preparation re-reads canonical journal and task
+authority under the short task-publication lock, proves the failure and worker/commit state, then
+publishes the exact waiting successor and projection effects.
 
 ### Invariants And Boundaries
 
@@ -62,7 +66,17 @@ The current source seams include `OrganizationalRepairPublicationError`, `Organi
 | --- | --- | --- |
 | The current module exposes `OrganizationalRepairPublicationError`, `OrganizationalRepairState`, `classify_organizational_completion_repair` at this ownership boundary. | L47-L73; L77-L95; L98-L107 | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 
+## 260821-CLIVE Repair Successor Publication
+
+Repair uses the short task-publication lock and the claimed door's task refs rather than a queue
+binding or long integration lock. Failed organizational quality creates a fresh deterministic
+waiting successor from the exact claimed predecessor and repair-journal timestamp. Operation state,
+commits, refs, and repair evidence must still match; a claimed generation is never mutated into a
+pseudo-cancelled door.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded exact repair-backed waiting-successor publication under task CAS. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

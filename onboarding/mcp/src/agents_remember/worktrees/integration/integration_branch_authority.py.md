@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,8 @@ retirement guidance (`worktree_cleanup`/`worktree_abandon`).
 - Repository default code refs are PR/landing-plane targets and never generic local integration targets.
 - Organizational leaves source directly from the sprint super; atomic leaves source from the exact series ref; the effective nature (not the declared cell) picks the lane.
 - Missing, stale, ambiguous, foreign, or colliding authority fails closed before mutation.
-- Series terminal writers require both the structural guard here and the live queue-owned terminal permit issued under queue-to-repository publication authority.
+- Series terminal writers require both the structural guard here and the ephemeral
+  transaction-bound permit issued by `atomic_series_terminal.py`; no queue owns terminal authority.
 
 ## Repo-Internal References
 
@@ -73,7 +74,16 @@ the exact accepted task generation remains the input to one resolver boundary.
 | --- | --- |
 | Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:788-801 |
 
+## 260821-CLIVE Queue-Binding Removal
+
+Topology publication continues to validate current task, source, repository, and protected-branch
+authority, but legacy queue candidate/sprint binding cells are no longer ownership proof. Branch
+authority derives from canonical task and integration sources; disposable projection membership
+cannot authorize publication.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: removed queue binding from the documented branch-authority predicate. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled unified topology resolution for accepted leaf overrides. Verified at code commit `1d446724`.
 

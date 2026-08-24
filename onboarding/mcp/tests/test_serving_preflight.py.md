@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_serving_preflight.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,17 @@ No cross-repo boundary applies to this forcing suite.
 pinning that `_is_editable_install` invokes the injected `read_text` callable with the exact
 metadata filename (`direct_url.json`). No other editable-detection branches changed.
 
+## 260821-DAGQC-L2 Observable-Failure Matrix
+
+The suite now forces distribution discovery, metadata iteration, path stat, direct-url read, and
+version-read failures through the typed chained refusal boundary. It also proves one version
+snapshot per check, the real editable-install adapter path, and that programmer errors outside the
+declared environment failure families still escape.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: expanded serving-preflight coverage to the explicit read/stat/iteration/version boundary and single-snapshot semantics. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: added the callable read_text
   filename-invocation regression to the editable-install detection branch matrix. Verified at

@@ -21,7 +21,7 @@
     "skills/l-01-agent-lifecycles/templates/curator-brief.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 27,
+    "sourceFilesInScope": 0,
     "fileSidecars": 3,
     "childRoutes": 1
   },
@@ -59,7 +59,7 @@
       "roles",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
-      "e5cb139f66abbd6502d4dcc4be883eb5f49770fe",
+      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
       "roles/",
       "l-01-agent-lifecycles",
       "attach_master",
@@ -88,16 +88,16 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T00",
+      "T14",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T15",
       "L23",
       "R39",
       "DAG",
       "L14",
       "L15",
-      "e5cb139f",
-      "T21"
+      "DAGQC"
     ]
   },
   "fallback": {

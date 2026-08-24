@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T21:30+02:00                                            |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df`                                        |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated            | 2026-08-24T14:19+02:00                                            |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                        |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -52,15 +52,15 @@ No cross-repository implementation source governs this test module.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
-## 260815-DAG-L15 memory_quality_check Background-Run Registration
+## 260821-DAGQC-L2 Public Request Grammar Proof
 
-Two registration tests drive the live FastMCP schema for the keyword-only `wait`/`run_id`:
-`test_memory_quality_check_wait_false_starts_a_background_run` proves `wait: false` routes to the
-start payload (returns `{status, runId}`) with the same default forwarding; `test_memory_quality_check_run_id_polls_the_run`
-proves `run_id` routes to the poll payload (a poll returns the identical full result; a
-run-not-found envelope → rerun guidance).
+The memory-quality cases drive the registered FastMCP tool with each strict request mode, prove
+poll refuses explicit execution fields before dispatch, and inspect the published schema for one
+discriminated request object. They do not preserve or exercise the retired flat grammar.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added live FastMCP proofs for exact sync/start/poll dispatch, poll-field conflict refusal, and the one discriminated request schema. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: added the wait=false start-run and run_id poll registration tests for memory_quality_check (start returns {status, runId}; a poll returns the identical full result; run-not-found → rerun guidance). Verified at code commit de3a0fd9.
 

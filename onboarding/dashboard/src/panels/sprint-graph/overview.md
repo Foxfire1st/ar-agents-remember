@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/sprint-graph/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T10:45+02:00                           |
-| lastVerifiedCommitHash | `b7f2c8e2c7020642780e2c9b997ffb035a782e62`       |
-| lastVerifiedCommitDate | 2026-08-20T10:42:29+02:00                        |
+| lastUpdated            | 2026-08-24T12:59+02:00                           |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -44,9 +44,10 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
   `leafLineStyles` (ch-based ellipsis caps stepped up at sm/lg), pinned by tests.
 - `SprintGraphView.test.tsx` — component tests: zero-edge, segmented-master, frontier
   badges, narrow declarations, ellipsis contract (L12-R7 scenario evidence).
-- `SprintGraphPage.test.tsx` — shell-level reachability (L12-R5): the real DetailPanel
-  mounts the graph view AND the sprint-scoped CloseoutQueue; fails if a panel is exported
-  but unmounted.
+- `SprintGraphPage.test.tsx` — shell-level reachability (L12-R5) plus scenario-reset proof: the real
+  `DetailPanel` mounts the graph view and sprint-scoped `CloseoutQueue`, keeps the queue reachable
+  for graphless sprints, and proves the canonical dev/test reset clears both a seeded authoritative
+  queue and its mounted derived UI without introducing a second reset owner.
 
 ## Invariants And Boundaries
 
@@ -57,6 +58,10 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
   decision).
 - The narrow layout preserves box grouping and predecessor info; only the column count
   changes.
+- Mounted reset proof must begin with a visible matching queue, invoke the canonical store reset
+  while `DetailPanel` remains mounted, and assert both unfiltered store emptiness and derived UI
+  absence. This is dev/test scenario infrastructure; production queue ingestion, filtering,
+  scheduling, and lifecycle authority remain unchanged.
 
 ## Repo-Internal References
 
@@ -64,12 +69,19 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
 | --- | --- | --- |
 | The wave-grid component groups projected nodes into wave rows. | `SprintGraphView` | dashboard/src/panels/sprint-graph/SprintGraphView.tsx:81-107 |
 | The exported responsive layout contracts. | `waveGridStyles`; `leafLineStyles` | dashboard/src/panels/sprint-graph/styles.ts:7-12; dashboard/src/panels/sprint-graph/styles.ts:77-87 |
-| The sprint page mounts the view plus the scoped queue. | `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:220-233 |
+| The master reader mounts the scoped queue independently of its optional graph section. | `CloseoutQueue`; `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:191-193; dashboard/src/panels/detail-panel/taskReader.tsx:224-233 |
+| The shell suite proves graph/queue reachability, graphless queue access, and mounted canonical-reset clearance. | "sprint page shell (L12-R5)" | dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx:53-174 |
 | The render-ready wire model this route consumes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:561-565 |
 | The deterministic mermaid document-diagram sibling of this view. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:173-213 |
 | The one-shot mounted-UI evidence surface. | `SprintGraphPage` | dashboard/src/dev/sprintGraphPage.tsx:16-20 |
 
 ## Update History
+
+- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: added the mounted forcing boundary for the
+  canonical dev/test reset: a visible seeded queue clears from both authoritative store state and
+  the real `DetailPanel`-derived surface while the component remains mounted. Production queue
+  behavior is unchanged, and no second reset authority was introduced. Verification metadata
+  remains pinned until governed closeout stamps the code commit.
 
 - 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R2/R3/R5/R6): the sprint graph
 

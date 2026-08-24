@@ -21,7 +21,7 @@
     "skills/l-01-agent-lifecycles/roles/worker.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
+    "sourceFilesInScope": 0,
     "fileSidecars": 9,
     "childRoutes": 0
   },
@@ -76,7 +76,7 @@
       "worker",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "de3a0fd9204f2e64755032274fb4e741bfddf6df",
+      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
       "SKILL.md",
       "worktree_status",
       "sourceLineage",
@@ -97,13 +97,13 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T21",
+      "T14",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T15",
       "SKILL",
       "L23",
-      "R39",
-      "DAG"
+      "R39"
     ]
   },
   "fallback": {

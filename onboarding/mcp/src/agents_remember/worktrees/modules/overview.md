@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -690,15 +690,14 @@ The closeout coordinator now narrows candidate-tree typing only after mandatory 
 quality adapter consistently says `self-owned wrapper` while refusing non-Dagger executors in both
 command and memory-policy builders. Self-repository enforcement and consumer opt-in remain distinct.
 
-## 260815-DAG-L3 Queue-Owned Irreversible Boundaries (Superseded In Part By CLIVE L2)
+## 260815-DAG-L3 Queue-Owned Irreversible Boundaries (Superseded By CLIVE)
 
 This section records the earlier DAG queue design: leaf closeout claimed and certified queue rows,
 integration claimed/consumed them, and task-fact writers published through queue governance. CLIVE
-L2 moves operation recovery, generation controls, worker termination, direct landing, and durable
-mutation evidence to the root journal, and its touched task-document publisher no longer uses the
-former queue-store wrapper. Some selected/in-flight/certified queue schema and closeout
-claim/certification transitions still exist in the L2 source. Their removal, along with task-change
-invalidation and waiting-only rebuild, belongs to L3.
+moved operation recovery, generation controls, worker termination, direct landing, and durable
+mutation evidence to the root journal. L3 then removed the remaining lifecycle-shaped rows and
+task-authoring veto: task truth publishes first, affected projections become invalid-empty, and
+waiting-only rebuild derives solely from exact-current task and door sources.
 
 ## 260815-DAG-L4 L4 Exact Worktree Lifecycle
 
@@ -738,8 +737,33 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 | Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | L18-L25; L28-L45 | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
 | Start helpers now live below the dedicated startup package marker. | L1 | `mcp/src/agents_remember/worktrees/modules/startup/__init__.py` |
 
+## 260821-DAGQC-L4 No Route Impact
+
+`code_quality_gate.py` only narrows its host-refusal docstring to the acceptance claim it owns:
+the pinned Dagger graph certifies acceptance. The module inventory and executable topology are
+unchanged. Direct targeted Vitest remains a dashboard-owned diagnostic-only loop; this worktree
+adapter still exposes no host quality executor, bypass, compatibility reader, or fallback.
+
+## 260821-DAGQC-L2 Immutable Quality Publication
+
+`published_quality_manifest.py` is the sole strict schema-1.0 reader for the atomic quality pointer.
+The clean executor writes that contract, and gate recovery consumes one immutable snapshot for
+attestation, artifact integrity, and path resolution. Public recovery retains stable `reportPath`
+and adds optional `publishedResultPath`; no legacy reader or host fallback was introduced. The
+concurrent L4 Vitest diagnostic boundary remains unchanged.
+
 ## Update History
 
+- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: completed the
+  supersession record for queue-owned irreversible state; current modules publish task truth first
+  and rebuild only a disposable waiting-door projection.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict one-snapshot quality publication/recovery and distinct stable/published result paths while preserving L4 diagnostic curation. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-24T13:51:26+02:00 — No route impact: 260821-DAGQC-L4 narrowed the
+  Python quality refusal wording without changing module ownership or execution topology.
+  Dagger acceptance remains pending and closeout-owned.
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `startup/` package move and new integration-recovery owner, repaired current route references, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.

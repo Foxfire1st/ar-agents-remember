@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -141,7 +141,18 @@ The current source seams include `now_iso`, `operation_fingerprint`, `operation_
 | --- | --- | --- |
 | The current module exposes `now_iso`, `operation_fingerprint`, `operation_key` at this ownership boundary. | L132-L133; L136-L137; L140-L142 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 
+## 260821-CLIVE Atomic Claim Transfer
+
+Closeout start transfers the exact first-ready waiting door into the root operation journal while
+holding the short task CAS. Claimed-door intent is durable before worker launch, and the disposable
+projection refreshes afterward. Replay must match the retained claimed record. Terminal replacement
+requires advanced terminal state and, for cancelled closeout, proven worker exit plus the exact
+waiting successor. Missing create-time intent is developer-decision. The queue supplies current
+admission order only; it never owns the claim or later lifecycle.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented atomic waiting-door transfer into the durable operation journal. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

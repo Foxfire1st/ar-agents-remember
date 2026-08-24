@@ -8,9 +8,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -799,7 +799,24 @@ The task-documents projection readers now wire the render-ready sprint graph vie
 
 Serving projection/snapshot modules updated their imports to the moved `worktrees/queue/*` and `models/queue/*` locations.
 
+## 260821-CLIVE Serving Route Impact
+
+Serving now preserves leaf execution evidence before bounded retention can reclaim its source row.
+The app composes explicit terminal-catalog and operator-inbox registrars. Terminal liveness releases
+its catalog batch before registering terminated worker/reviewer/curator rows in task truth, then
+compacts only ids the registrar confirms. The notifier likewise registers its inbox snapshot before
+reconcile-and-compact. Missing registrars authorize no task-bound deletion; they do not activate a
+secondary evidence reader or compatibility route.
+
+The serving projection is also aligned with final scheduling ownership. `_closeout_queue.py` reads
+the source-fingerprinted disposable projection and exposes invalid-empty/valid-built condition,
+bounded source problems, and waiting-generation members—never claims, blockers, commits, or
+certification. `_task_documents.py` projects audited discarded-unstarted subtasks as persistent task
+history and includes them in body revision identity.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `serving/ambient_seat.py` now owns BOTH dispatch caller resolutions (plane seat + ambient launcher resolved from the process environment); spawn provenance gains caller kind (`spawned_by_kind` write-once via `_preserved`, wire `spawnedByKind`). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

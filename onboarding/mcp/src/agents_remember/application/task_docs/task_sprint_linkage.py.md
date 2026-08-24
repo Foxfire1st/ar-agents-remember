@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,12 @@ document: the typed row (number/name/status/masterRef), the `orchestrates` membe
 only when the sprint has an `executionGraph` — one unique lump `SprintExecutionNode`; a graph-less
 sprint reports `graphNode: "deferred-no-graph-default"` and keeps the L13 atomic-sequential
 default. `_validate_candidate` then runs full topology validation on a graphed sprint or the
-typed-linkage cross-check (`validate_sprint_linkage`) on a graph-less one, and `_publish` writes
-the sprint (± nature-asserted master) through the sprint queue's `publish_sprint_update`
-publication lane under `integration_authority_lock`, exactly like graph authoring.
+typed-linkage cross-check (`validate_sprint_linkage`) on a graph-less one. Preview and apply both
+call `build_publication_batch_graph_titles`, the central zero-or-one graph-document cardinality
+owner. `_publish` then submits the sprint (plus an optional nature-asserted master) to the exact
+task-document publication transaction: accepted source bytes are rechecked, task truth is written,
+the affected waiting projection is invalidated, and that disposable projection is rebuilt from
+current door facts. Linkage authoring is not subordinate to pre-existing queue state.
 
 Since 260815-DAG-L15 `attach_master`/`detach_master` begin with the served-build preflight
 (`_require_serving_topology_schema` — `require_serving_topology_schema` wrapped in
@@ -98,6 +101,8 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
   detach refuses on touching edges and on emptying the graph.
 - Linkage-schema writes are served-build-preflighted (L15-R4); dry-run never writes the
   integration-authority lock file (F2).
+- Preview and apply share `build_publication_batch_graph_titles`; this module has no private
+  first-graph selector, catch-and-split retry, or alternative title-joining path.
 - This module never deletes files and never hard-fails on legacy shapes — those are facts, not
   errors (L14-R7 backward tolerance). The F8 fact kinds keep facts-not-errors semantics:
   `seat-doc-row-unresolved` and the sprint exclusion are facts, never judgment.
@@ -115,6 +120,9 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 | The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:93-99 |
 | The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:357-380; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:820-865 |
 | The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:540-562; mcp/tests/test_task_sprint_linkage.py:1010-1043 |
+| Attach and detach validate their full candidate before preview/apply; both routes call the shared graph-title cardinality owner before publication. | `attach_master`; `detach_master` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:209-274; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:277-347 |
+| Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731 |
+| The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-51 |
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -127,7 +135,11 @@ new-shape drift; legacy shapes surface as facts (L14-R5/R7).
 
 ## 260815-DAG-L12 Title Threading
 
-Sprint linkage publication now labels the sprint's mermaid render from the linkage batch's in-memory masters (L12-R1/R4): `_batch_graph_titles` joins titles via `build_graph_titles` for the sprint in the batch, `_publish` passes `graph_titles=` to `write_task_doc_batch`, and `_document_preview` renders with the disk-backed `read_graph_titles`. A batch without a graph produces no titles.
+Sprint linkage publication labels the sprint's Mermaid render from the linkage batch's in-memory
+masters. DAGQC L1 replaces the former private `_batch_graph_titles` helper with
+`build_publication_batch_graph_titles`, the application-wide zero-or-one graph-document owner.
+The title map is qualified by `TaskDocumentRef`; a batch without a graph produces no title context,
+and a batch with more than one graph-bearing document refuses before publication.
 
 
 ## 260815-DAG-L15 Preflight and Linkage-Fact Hygiene
@@ -140,9 +152,14 @@ missing rows. Both F8 behaviors are test-pinned (the sprint-exclusion test and t
 seat-row edge-shapes test).
 
 
-## 260821-CLIVE-L2 Current Contract
+## Current Contract After CLIVE
 
-The current source seams include `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall`. L2 adds exact accepted-source transaction validation beneath the existing queue-governed linkage publisher. The queue refusal remains current transitional behavior; the task-change-to-queue invalidation/rebuild transaction is L3 scope.
+The current source seams include `SprintLinkageError`, `SprintLinkageRequest`, and
+`SprintLinkageCall`. Accepted-source validation and task publication form one task-first
+transaction. A valid linkage mutation is not refused merely because a closeout queue exists:
+publication writes task truth, invalidates the affected waiting projection, and rebuilds it from
+current closeout-door facts. Queue state remains disposable scheduling output, not an authoring
+lock or lifecycle evidence owner.
 
 ### Reconciled Source Evidence
 
@@ -151,6 +168,11 @@ The current source seams include `SprintLinkageError`, `SprintLinkageRequest`, `
 | The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | L106-L107; L111-L119; L173-L181 | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 
 ## Update History
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled linkage preview/apply with the shared
+  zero-or-one graph-title owner and the landed task-first publication transaction; removed the
+  stale queue-governed/current-transitional narrative. Verification metadata remains pinned until
+  architect-owned closeout stamps the real code commit.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

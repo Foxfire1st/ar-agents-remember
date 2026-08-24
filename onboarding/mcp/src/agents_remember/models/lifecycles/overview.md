@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,23 @@ The journal record is the durable authority after scheduling claim transfer. Ret
 | Enclosure address models. | L21-L40; L43-L109 | `mcp/src/agents_remember/models/lifecycles/enclosure.py` |
 | Worker termination evidence. | L12-L53 | `mcp/src/agents_remember/models/lifecycles/termination.py` |
 
+## 260821-CLIVE Final Door, Journal, And Enclosure Models
+
+`door.py` is canonical scheduling intent with exactly waiting/deferred/withdrawn/claimed
+dispositions and immutable task/repository/provenance identity. `door_response.py` is the public
+join result and keeps disposable projection effects outside canonical door state. `operation.py`
+owns the durable lifecycle after claim: running state, source-journal identity, commits,
+certification, integration, cancellation, retirement, and supersession survive queue invalidation.
+
+`enclosure.py` owns the terminal archive, external receipt, locator progression, and exact terminal
+predecessor required for successor-enclosure publication. The former `successor.py` standalone
+intent model is deleted: missing enclosure state and standalone successor WALs are not authority.
+Cleanup may remove the enclosure root only after canonical entries have been externally archived,
+receipted, and read back; a successor must cite that exact terminal predecessor.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled final door/journal/terminal-enclosure ownership and removed the obsolete successor model. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 

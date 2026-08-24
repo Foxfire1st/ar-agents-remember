@@ -16,6 +16,7 @@
     "mcp/src/agents_remember/observer/events.py",
     "mcp/src/agents_remember/observer/lifecycle_state.py",
     "mcp/src/agents_remember/observer/projection.py",
+    "mcp/src/agents_remember/observer/projection_closeout.py",
     "mcp/src/agents_remember/observer/projection_graph.py",
     "mcp/src/agents_remember/observer/provider_nodes.py",
     "mcp/src/agents_remember/observer/reducer.py",
@@ -34,8 +35,8 @@
     "mcp/src/agents_remember/observer/worktree_provider_admission.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 22,
-    "fileSidecars": 22,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -45,6 +46,7 @@
     "ambient",
     "attention",
     "cache",
+    "closeout",
     "document",
     "event",
     "event_retention",
@@ -62,6 +64,7 @@
     "observer",
     "processes",
     "projection",
+    "projection_closeout",
     "projection_graph",
     "provider",
     "provider_nodes",
@@ -97,6 +100,7 @@
       "mcp/src/agents_remember/observer/events.py",
       "mcp/src/agents_remember/observer/lifecycle_state.py",
       "mcp/src/agents_remember/observer/projection.py",
+      "mcp/src/agents_remember/observer/projection_closeout.py",
       "mcp/src/agents_remember/observer/projection_graph.py",
       "mcp/src/agents_remember/observer/provider_nodes.py",
       "mcp/src/agents_remember/observer/reducer.py",
@@ -112,8 +116,7 @@
       "mcp/src/agents_remember/observer/store.py",
       "mcp/src/agents_remember/observer/task_document_cache.py",
       "mcp/src/agents_remember/observer/timeutil.py",
-      "mcp/src/agents_remember/observer/ulid.py",
-      "mcp/src/agents_remember/observer/worktree_provider_admission.py"
+      "mcp/src/agents_remember/observer/ulid.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -128,6 +131,8 @@
       "lifecycle_state",
       "projection.py",
       "projection",
+      "projection_closeout.py",
+      "projection_closeout",
       "projection_graph.py",
       "projection_graph",
       "provider_nodes.py",
@@ -161,9 +166,7 @@
       "contract_snapshot.py",
       "ONE",
       "contract_snapshot",
-      "mcp/src/agents_remember/observer/",
-      "route-local-overview",
-      "b7f2c8e2c7020642780e2c9b997ffb035a782e62"
+      "mcp/src/agents_remember/observer/"
     ]
   },
   "fallback": {

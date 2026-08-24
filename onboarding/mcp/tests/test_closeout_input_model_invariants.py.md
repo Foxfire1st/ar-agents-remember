@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_input_model_invariants.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,21 @@ The current forcing seams include `test_enabled_message_model_refuses_blank_or_u
 | --- | --- | --- |
 | The current test source exercises `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_not_applicable_leg_has_no_message_authority`, `test_normalizer_and_consumer_share_exact_plan_identity`, `test_mutation_evidence_refuses_incomplete_state_facts`. | L66-L68; L71-L81; L84-L104; L121-L123 | `mcp/tests/test_closeout_input_model_invariants.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces strict normalized closeout input, mutation-evidence, and operation-model invariants at the public boundary.
+
+### Current Invariants
+
+- Blank enabled messages, impossible evidence, cross-kind state, and mismatched input are rejected.
+- Reconciled-unchanged evidence cannot claim a commit; not-applicable legs own no message.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

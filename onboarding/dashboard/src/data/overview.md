@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastUpdated | 2026-08-24T12:59+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -148,6 +148,12 @@ The `/dev/bench` cockpit scenarios replace transport only. Scenario switches rev
 catalog, capability, snapshot, submission-poll, withdrawal, and connection ownership by generation
 before seeding the successor fixture. These reset exports are dev-only authority seams; production
 code must not use them as ordinary recovery APIs.
+
+The shared `dashboardStore.reset()` is the one full dashboard-projection reset used by
+`ScenarioPlayer`. Its single Zustand transaction increments `gen` once and restores every
+scenario-owned projection to its clean initial value, including `closeoutQueues`. This is dev/test
+scenario infrastructure: production does not call `reset()`, and production snapshot/delta queue
+ingestion, ordering/filtering, scheduling, and lifecycle authority remain unchanged.
 
 ### 2026-07-24 Resilient Boot And Steady-State Work
 
@@ -314,6 +320,7 @@ own server contracts, so no external code path is cited as authority.
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
 | Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:361-387; dashboard/src/data/railModel.ts:414-436 |
 | The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/data/taskHierarchy.ts:43-43 |
+| The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:329-400; dashboard/src/dev/ScenarioPlayer.tsx:21-39 |
 | The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:37-37;  |
 | The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
 
@@ -333,6 +340,12 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the route-level dev/test invariant
+  that the one canonical dashboard reset is total over scenario-owned projections, including
+  `closeoutQueues`, in one Zustand transaction. Production snapshot/delta queue ingestion,
+  ordering/filtering, scheduling, and lifecycle authority remain unchanged. Verification metadata
+  remains pinned until governed closeout stamps the code commit.
 
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 

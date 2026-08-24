@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/serving/ports.py`                    |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-08T14:38+02:00                                       |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-24T14:43+02:00                                       |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                   |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -67,7 +67,15 @@ No cross-repository implementation participates.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## 260821-CLIVE Retention Port Contract
+
+`TerminalCatalogPort.compact` accepts the exact set of task-registered execution ids. The port keeps
+registration proof explicit at the deletion boundary; it does not grant the catalog a task reader
+or permit unregistered worker/reviewer/curator rows to be reclaimed.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: extended the catalog port with explicit registered execution ids. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `ports.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the canonical port surface added

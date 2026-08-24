@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,24 +16,17 @@
 
 ## Purpose
 
-Builds the bounded immutable sprint-graph projection consumed by every queue decision, and — since
-260815-DAG-L11 — owns the leaf-aware lookups: the leaf-to-node index, candidate-node resolution,
-leaf-aware predecessor/waiting-reason/sort-key helpers. Since 260815-DAG-L13 it also owns the
-blocker `acquisition_facts` report and the strict/tolerant register-read split.
+Builds the bounded immutable sprint-graph/index/order view used by closeout-projection construction,
+including leaf-to-node resolution, predecessor reasons, and deterministic member ordering.
 
 ## Code Commentary
 
 ### Logic
 
-`graph_context` resolves and validates the canonical sprint graph, caps masters/edges/leaves,
-computes a revision over the graph plus execution natures, indexes node order (keyed on
-`SprintExecutionNode`), computes incomplete predecessors once, and parses the canonical planning
-authorities. A graph-less sprint refusal now names the atomic-sequential default and the
-`task_doc.author_execution_graph` bootstrap. `strict_registers` (default `True`) guards mutations:
-a malformed canonical planning register refuses with the `task_doc.set_section` repair named;
-the read path (L13-R4) passes `False` so a malformed register degrades the projection instead of
-failing it. `acquisition_facts` (L13-R3) reports the in-flight organizational leafs observed at
-blocker acquisition — facts only, so the start-anyway decision stays judgment.
+`graph_context` resolves and validates bounded sprint topology, accepts task-document overrides for
+preview, computes node/leaf indexes and incomplete predecessors once, and carries canonical
+planning authorities. A reviewed graph-less sprint is the valid atomic-sequential default rather
+than an error; graph-backed membership and order remain strict when a graph exists.
 `incomplete_predecessor_map` uses one adjacency construction and one traversal over
 graph nodes and edges; completion stays master-granular — a node counts complete when its master
 document is `Completed`, so an edge into a segment blocks exactly that segment's leafs until the
@@ -47,17 +40,16 @@ falling back conservatively to the master's node union.
 
 ### Conventions
 
-The queue's repeated scheduling work consumes this precomputed projection; the inherited task
+Projection construction consumes this precomputed view; the inherited task
 topology validator remains the canonical reference-integrity authority.
 
 ### Invariants And Boundaries
 
-- Missing or over-capacity graphs refuse before queue admission; the refusal names the
-  atomic-sequential default and the graph-authoring bootstrap.
+- An absent graph is valid atomic-sequential topology; malformed or over-capacity authored graphs
+  refuse.
 - Graph revision changes when execution structure or a master's execution nature changes.
 - Predecessor completion is a mechanistic fact, not a priority judgment.
-- Register malformation is strict for mutations and tolerant for reads; the tolerant read carries
-  the malformed detail as register facts.
+- No acquisition or in-flight lane facts are owned here.
 
 ### Todos
 
@@ -72,7 +64,6 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Graph construction validates/caps topology and derives the exact queue revision and indexes, with the strict/tolerant register split. | `graph_context` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:79-161 |
-| Blocker acquisition reports in-flight organizational leafs as facts only. | `acquisition_facts` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:36-58 |
 | Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:279-305 |
 | Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:204-211; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:214-227 |
 | The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:237-244; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:247-263 |
@@ -92,7 +83,16 @@ remains transitional until L3's waiting-only projection rewrite.
 | --- | --- |
 | Graph construction bounds failures at sprint, topology, and planning-register stages. | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:89-171 |
 
+## 260821-CLIVE Projection Ordering Only
+
+The graph module still owns bounded sprint DAG/index/order and accepts task-document overrides for
+preview. It now orders `CloseoutProjectionMember` values and has no mutable-state acquisition facts.
+Ready order remains effective priority rank, graph declaration order, then leaf identity. A reviewed
+graph-less atomic-sequential sprint is valid; the graph never owns in-flight lane state.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reduced graph responsibility to bounded projection ordering and preview. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled bounded graph and planning-register failures. Verified at code commit `1d446724`.
 

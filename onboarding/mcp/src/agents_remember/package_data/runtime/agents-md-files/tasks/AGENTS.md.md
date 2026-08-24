@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T11:18+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00                     |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 ## Purpose
 
@@ -74,7 +74,20 @@ No sibling repository evidence is needed for this task doctrine template.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260821-CLIVE Task Authoring Doctrine
+
+The installed doctrine now states that every intrinsically valid task mutation publishes during
+every door, projection, and operation phase. Its validity comes from typed task arguments,
+caller/task authority, exact source CAS, task invariants, and structural integrity—not scheduling
+convenience. The response's `projectionEffects` reports the before/after affected sprint union:
+canonical task truth is already accepted, projections become invalid-empty, and independent
+rebuild failures carry exact next actions. No queue row is patched or retained as fallback.
+`discard-unstarted` is separately defined as a reasoned, centralized no-execution proof plus typed
+parent audit; present or ambiguous evidence routes to real abandon/archive/recovery/completion.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged authoritative task authoring, projection effects, and audited planning discard into the installed task doctrine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 source-template citations for design philosophy, evidence-first reasoning, and visible planning.
 - 2026-06-01T11:18+02:00: Documented the new title preamble (the task collaboration doctrine applies up front, before a task format is chosen or task file exists) and the `c-04-retrieval-strategy-router` route added to Evidence-First Reasoning. Verification metadata stays pinned; Repo-Internal Reference line ranges and the `Runtime AGENTS Template Package` entity fingerprint will be re-verified/recomputed at closeout.

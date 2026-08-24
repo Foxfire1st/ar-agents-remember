@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -96,7 +96,17 @@ The current source seams include `register_worktree_tools`. The public schema/co
 | --- | --- | --- |
 | The current module exposes `register_worktree_tools` at this ownership boundary. | L26-L29 | `mcp/src/agents_remember/mcp/registration/worktrees.py` |
 
+## 260821-CLIVE Stable-Address Registration Contract
+
+Registered help now makes the address chain explicit: start reserves the configured contract
+address and enclosure manifest before exposing work; attach resumes only through that exact locator
+and never scans task/worktree/report paths; status resolves the independent locator and then either
+the live root journal or exact terminal archive/receipt. Conflicting reservations and invalid
+terminal proof fail closed, with no inferred enclosure-root fallback.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged stable locator, strict attach, and terminal-aware status semantics. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

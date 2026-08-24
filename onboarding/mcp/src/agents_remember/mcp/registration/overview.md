@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## Purpose
@@ -18,11 +18,10 @@ declaration in this repository lives here, one module per tool family. It was ca
 ambient lifecycle, the `FastMCP` instance) and now loops over `TOOL_REGISTRARS` from this
 package's `__init__.py`.
 
-L23 keeps the same flat-schema rule while adding task-addressed lifecycle operation start/status/
-cancel declarations and the guarded public `citation_fix` maintenance tool. Operation declarations
-accept task contract plus semantic inputs only; private operation identity never enters the
-published schema. Citation repair is a sanctioned memory write with preview/apply semantics, not
-an invitation to bypass the MCP boundary.
+Most tools retain the flat-schema rule established by EFA. DAGQC L2 introduces one deliberate
+model-typed exception: `memory_quality_check(request=...)` publishes a strict discriminated
+sync/start/poll object because mutual exclusion between execution and poll fields is the public
+contract. Task-addressed lifecycle operations still keep private operation identity off the wire.
 
 Each module exposes exactly one `register_<family>_tools(server, config) -> None`, declares its
 tools as nested functions decorated with `@server.tool()`, and forwards each call to one payload
@@ -52,11 +51,12 @@ into 163 parameter objects rather than listing them). The exemption is a single 
 "mcp/src/agents_remember/mcp/registration/*.py" = ["PLR0913"]
 ```
 
-The remaining 19 long signatures in the repository are exactly the `@server.tool()` declarations
-under this path. There is no ratchet, baseline, grandfather list or burn-down behind it — the
+The remaining long signatures in the repository are `@server.tool()` declarations under this path.
+There is no ratchet, baseline, grandfather list or burn-down behind it — the
 developer ruled all four forbidden — and no `noqa` anywhere holds an argument-count finding down.
 
-**Do not flatten this carve-out into a habit.** It is held shut mechanically by
+**Do not turn either shape into a habit.** Flatness remains the default; a model parameter requires
+an explicitly approved public nested contract, as memory quality now has. The carve-out is held shut by
 `mcp/tests/test_code_quality_check.py::ToolSignatureExemptionTests`, which:
 
 - asserts `PLR0913` is selected and neither globally ignored nor softened by a `max-args` override;
@@ -74,7 +74,7 @@ developer ruled all four forbidden — and no `noqa` anywhere holds an argument-
 | `__init__.py`       | `TOOL_REGISTRARS` (the ordered tuple `create_server` loops over) and the `ToolRegistrar` alias. |
 | `core.py`           | `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`, `runtime_install`, `skills_install`. |
 | `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; `dispatch_agent` accepts both plane-hosted and ambient (no plane identity) callers, with the caller-kind matrix documented in its published description; runtime allocation stays plane-owned. |
-| `memory.py`         | `drift_check`, `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
+| `memory.py`         | `drift_check`, strict discriminated-request `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
 | `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
@@ -93,8 +93,9 @@ live server's `list_tools()`.
 
 Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private.
 
-A tool body does exactly two things: pack the flat MCP arguments into the parameter objects the
-payload builder and its application entry point take, and return the builder's result unchanged. The packing is
+A tool body usually packs flat MCP arguments into the parameter objects the payload builder and its
+application entry point take, then returns the builder's result unchanged. Memory quality instead
+dispatches its already validated request DTO by mode and returns the matching builder result. Packing is
 the whole content — `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`,
 `CloseoutCommitMessages`, `TaskIdentity`/`TaskBases`/`StartExecution`, `BenchmarkSelection`/
 `BenchmarkPreparation`/`CodexBenchmarkRun`, `TaskDocTarget`/`TaskDocEdit`, `InboxAddress`/
@@ -218,10 +219,6 @@ Registered worktree and memory tools expose journaled closeout/integration and r
 `mcp/registration/tasks.py` documents the sprint linkage operations (`attach_master`,
 `detach_master`, `linkage_report`) on the `task_doc` tool.
 
-## 260815-DAG-L15 Route Impact
-
-`memory_quality_check` registration gained keyword-only `wait` (default True) / `run_id`, dispatching to the start/poll payloads (L15-R7); the synchronous path and its payload are unchanged.
-
 ## 260815-DAG Master Full-Gate Repair Route Impact
 
 Registration modules import the moved `application/task_docs/*`; `registration/tasks.py` extracts the `task_doc` description constant; `registration/closeout.py` renames the direct-landing helper.
@@ -241,7 +238,16 @@ This route composes public signatures only. It exposes the one closed applicatio
 | Worktree registration composition. | L26-L29 | `mcp/src/agents_remember/mcp/registration/worktrees.py` |
 | Public payload builders. | L98-L105; L151-L169 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 
+## 260821-DAGQC-L2 Published Quality Schema
+
+`memory_quality_check` deliberately publishes one nested request discriminated by mode. Sync/start
+execution fields and poll identity are mutually exclusive and extra-forbid; registration dispatches
+the validated DTO and owns no compatibility reader or lower-level failure vocabulary.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: published the one canonical discriminated memory-quality request and removed flat wait/run-id dispatch. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 

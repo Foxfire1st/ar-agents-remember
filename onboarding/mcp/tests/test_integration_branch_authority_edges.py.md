@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,21 @@ The current forcing seams include `test_carryover_authority_refuses_each_configu
 | --- | --- | --- |
 | The current test source exercises `test_carryover_authority_refuses_each_configured_repository_mismatch`, `test_series_attach_is_not_an_integration_branch_workbench`, `test_lowest_worktree_creator_refuses_series_code_and_memory`, `test_terminal_series_cleanup_refuses_symbolic_branch_aliases`. | L80-L140; L142-L149; L151-L168; L170-L212 | `mcp/tests/test_integration_branch_authority_edges.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces production-bound edge cases for protected code, memory, and ledger refs across admission, irreversible-edge revalidation, crash recovery, and conflicting movement.
+
+### Current Invariants
+
+- Current recorded base pairs are checked at admission and the mutation edge.
+- Movement returns exact sync/recovery evidence rather than being silently overwritten.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

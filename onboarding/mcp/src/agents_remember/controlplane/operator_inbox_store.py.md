@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash |                                                                   `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                                                   2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash |                                                                   `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
+| lastVerifiedCommitDate |                                                                   2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -258,7 +258,17 @@ No meaningful cross-repo references found.
 The store records accepted, queued, rejected, unsupported, ambiguous, and terminal-completion
 adapter evidence against an existing durable row. None of these transitions call `consume`.
 
+## 260821-CLIVE Task-Execution Registration Boundary
+
+The store identifies unregistered worker, reviewer, and curator turn reports bound to canonical
+task refs. Compaction and reconcile-and-compact accept the exact registered-id set and retain every
+unregistered execution report until task truth owns first-evidence proof. A missing registrar does
+not authorize deletion; it fails closed. This is one retention seam, not a second task reader or a
+compatibility path.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented durable task registration before inbox execution-report reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

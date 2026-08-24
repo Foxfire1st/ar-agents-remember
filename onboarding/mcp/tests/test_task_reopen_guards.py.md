@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_reopen_guards.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,21 @@ the last case also proves the contract and leaf task document remain byte-identi
 | Incomplete, non-leaf, and surviving-worktree contracts refuse reopen. | `ReopenGuardTests` | mcp/tests/test_task_reopen_guards.py:15-44 |
 | Moved super ancestry refuses before contract or task-document mutation. | `test_moved_super_refuses_before_reopen_mutates_task_state` | mcp/tests/test_task_reopen_guards.py:46-67 |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces reopen refusal for stale lineage, nonterminal or inconsistent contract state, and protected authority conflicts.
+
+### Current Invariants
+
+- Unsafe reopen leaves task and contract bytes unchanged.
+- Refusals name the exact transition needed instead of inventing compatibility behavior.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-16T02:51+02:00 — No content impact: the stale-lineage fixture explicitly checks out the
   task-derived `super` ref before advancing it, so the existing refusal and byte-preservation

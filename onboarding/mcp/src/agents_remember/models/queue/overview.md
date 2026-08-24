@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,32 +16,34 @@
 
 ## Purpose
 
-The closeout-queue wire model package (260815-DAG master full-gate repair): `closeout_queue.py`
-(the typed `CloseoutQueueRequest`/response models) moved here from `models/` (flat) so the queue
-contracts own one package.
+Owns the public status/rebuild request and response models for the disposable sprint scheduling
+projection.
 
 ## Hot Path Summary
 
-This route still models the transitional pre-L3 queue: waiting/scheduling facts plus selected,
-closeout-in-flight, certified, and integration-in-flight candidate states and commit-shaped evidence.
-L2 makes the root journal authoritative for the new operation controls; L3 owns removing these
-lifecycle-shaped queue fields and reducing this route to a disposable waiting-door projection.
+This route models only invalid-empty/valid-built service state, exact source identity/problems,
+waiting-generation members, first-ready identity, and the next legal scheduling action. Claims,
+workers, commits, certification, integration, cancellation, recovery, and terminal evidence belong
+to their door/journal owners and are absent here.
 
 The closeout queue application/tool surfaces read and write these typed models; the registered
 response models are consumed by the dashboard's CloseoutQueue panel projection.
 
 ## Conventions
 
-- Queue models are JSON-primary and round-trip; changes must stay backward-readable.
+- Queue models are JSON-primary, strict, and generated into the public projection contract.
+- Retired lifecycle fields are removed, not accepted through compatibility readers.
 
 ## Invariants And Boundaries
 
-- This package holds wire models only — queue behavior lives in `worktrees/queue/` and
-  `application/closeout_queue.py`.
+- This package holds wire models only — source census, member computation, publication, and rebuild
+  behavior live in `worktrees/queue/`; application/tool adapters do not own lifecycle evidence.
 
-## 260821-CLIVE-L2 Current Architecture
+## 260821-CLIVE-L2 Historical Intermediate Architecture
 
-The current model still permits candidate lifecycle states, owner fingerprints, and exact closeout commit fields inherited from the pre-L3 queue. L2 does not use those rows as authority for retry, recover, cancel, revise, worker termination, direct landing, or legacy migration; those operations use the root journal. Removing the remaining lifecycle-shaped fields and rebuilding only from current task/door facts are explicit L3 work.
+L2 still permitted lifecycle-shaped queue rows while moving operational authority to the root
+journal. L3 completed their removal; this paragraph records that migration boundary and is not the
+current model contract.
 
 ### Reconciled Source Evidence
 
@@ -49,7 +51,25 @@ The current model still permits candidate lifecycle states, owner fingerprints, 
 | --- | --- | --- |
 | Queue projection vocabulary. | L71-L130; L259-L336; L355-L405 | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
 
+## 260821-CLIVE Final Projection-Only Model
+
+This route no longer models a mutable closeout queue. `closeout_queue.py` defines only status and
+idempotent rebuild requests plus the effective response: invalid-empty/valid-built service
+condition, source classification and fingerprints, bounded source problems, waiting-generation
+members, first-ready identity, and next action. Candidate claim/certification, grades, blockers,
+receipts, commits, integration, and lifecycle transitions are intentionally absent.
+
+The projection answers one question: which waiting candidates are currently schedulable from the
+exact current canonical source? It may be discarded and rebuilt at any time without losing
+operation evidence.
+
 ## Update History
+
+- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: corrected the route's
+  top-level purpose, hot path, conventions, and invariants so the final projection-only contract is
+  the live description and L2 remains history only.
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the transitional mutable queue model with the final disposable projection response. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
 

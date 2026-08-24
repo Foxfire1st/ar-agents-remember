@@ -31,11 +31,12 @@
     "mcp/src/agents_remember/controlplane/seats.py",
     "mcp/src/agents_remember/controlplane/signal_routing.py",
     "mcp/src/agents_remember/controlplane/stamps.py",
-    "mcp/src/agents_remember/controlplane/store.py"
+    "mcp/src/agents_remember/controlplane/store.py",
+    "mcp/src/agents_remember/controlplane/task_publication_lock.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 22,
-    "fileSidecars": 22,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -80,6 +81,7 @@
     "orchestration_artifacts",
     "orchestration_nudges",
     "policy",
+    "publication",
     "queue",
     "records",
     "remember",
@@ -93,6 +95,8 @@
     "src",
     "stamps",
     "store",
+    "task",
+    "task_publication_lock",
     "transitions"
   ],
   "hotPath": {
@@ -120,7 +124,8 @@
       "mcp/src/agents_remember/controlplane/seats.py",
       "mcp/src/agents_remember/controlplane/signal_routing.py",
       "mcp/src/agents_remember/controlplane/stamps.py",
-      "mcp/src/agents_remember/controlplane/store.py"
+      "mcp/src/agents_remember/controlplane/store.py",
+      "mcp/src/agents_remember/controlplane/task_publication_lock.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -167,10 +172,10 @@
       "stamps",
       "store.py",
       "store",
+      "task_publication_lock.py",
+      "task_publication_lock",
       "L23",
-      "EFA",
-      "L21",
-      "mcp/src/agents_remember/controlplane"
+      "EFA"
     ]
   },
   "fallback": {

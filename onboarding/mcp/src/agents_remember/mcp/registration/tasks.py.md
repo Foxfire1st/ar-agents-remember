@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -98,26 +98,31 @@ recreates everything.
 | `FinalizeTaskDocs`. | `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tools.py:561-568 |
 | Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:203-238; mcp/tests/test_mcp_registration_wiring_tests_2.py:240-251 |
 
-## 260815-DAG-L3 `closeout_queue` Registration
+## Historical 260815-DAG-L3 Queue Registration (Superseded)
 
-This registration surface now exposes `closeout_queue` with the strict request model and describes
-the manager/orchestrator authority split, revision/idempotency protocol, exact curator and planning
-evidence, deterministic ordering, atomic blocker semantics, bounded durable artifact, and
-task-addressed lifecycle ownership. Since 260815-DAG-L13 the docstring also states the degraded
-read contract: `status` never fails on a missing executionGraph or malformed registers (it reports
-mode, registers, laneOwner, and legalNextOperations), stale-base closeout/integration refusals name
-`worktree_sync` as the recovery, a completed landing reports stale-by-evidence siblings, an
-in-flight atomic block owns the landing lane for its lifetime, acquisition reports in-flight
-organizational leafs as facts, and a certified candidate no longer occupies the lane. Since
-260815-DAG-L16 the docstring states the caller rule exactly: the caller is the plane-injected
-hosted seat when one exists; an ambient caller with no plane seat declares `caller` (role +
-task_document_ref) instead, and the same queue authorization validates it identically.
+L3 originally registered a mutable durable queue with blocker, claim, certification, and lane-owner
+state. CLIVE final retired that command model. The surviving `closeout_queue` registration is strict
+status/rebuild over a disposable projection; canonical intent lives in `closeout_door`, and claimed
+operation state lives in the lifecycle journal. Caller authorization remains explicit but cannot
+turn a projection row into lifecycle authority.
 
 ## 260815-DAG Master Full-Gate Repair
 
 The `task_doc` tool's long docstring moved to the module-level `_TASK_DOC_TOOL_DESCRIPTION` constant, passed through `@server.tool(description=...)` (wire-contract conformance); the import of `task_doc_tools` follows the move to `application/task_docs/`. The registered tool surface is unchanged.
 
+## 260821-CLIVE Door, Projection, And Discard Registration
+
+This registrar exposes `closeout_door` as the canonical declare/status/defer/resume/withdraw/
+update-provenance surface and describes `closeout_queue` as status/rebuild for a disposable
+waiting-door projection only. Successful door publication refreshes projections after the short
+task CAS is released; waiting-to-claimed transfer remains owned by closeout apply. `task_doc`
+documents `discard-unstarted` as a reasoned, evidence-gated planning discard that atomically removes
+child JSON/Markdown and retains a typed parent audit; started or ambiguous evidence routes to the
+real lifecycle action rather than pretending completion.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented the canonical door tool, disposable queue, and audited unstarted discard surface. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `task_doc` description extracted to a module constant; imports updated to `application/task_docs/task_doc_tools`. Verified at code commit e5cb139f.
 

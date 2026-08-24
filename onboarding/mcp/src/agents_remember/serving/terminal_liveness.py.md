@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                             |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                             |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -309,7 +309,18 @@ event-loop offload).
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260821-CLIVE Register-Then-Compact Boundary
+
+`TerminalLivenessActions` bundles turn-state notification with the task-execution registrar.
+`refresh` completes and releases the catalog liveness batch, snapshots terminated rows, registers
+eligible task-bound leaf execution evidence, and only then compacts with the returned ids. This
+ordering avoids nesting the task CAS beneath the catalog lock. When no registrar is injected, the
+empty registered set authorizes no task-bound reclamation; there is no second evidence reader or
+fallback scan.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented post-batch task registration before terminal-catalog reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-10T18:31+02:00 — No content impact: 260731-EFA-L21's targeted reverse-import gate exposed
   L9's stale type-only `serving.conversation.models` import. `HarnessId` now comes directly from

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,21 @@ The current forcing seams include `test_explicit_grades_order_ready_candidates_b
 | --- | --- | --- |
 | The current test source exercises `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie`, `test_ungraded_candidates_are_visible_but_cannot_be_selected`, `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness`, `test_request_shape_and_persisted_text_are_bounded`. | L618-L639; L641-L646; L648-L661; L663-L698 | `mcp/tests/test_closeout_queue.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Provides the shared L3 task/door/projection fixture plus projection-only smoke tests for current closeout scheduling.
+
+### Current Invariants
+
+- Projection membership derives from current task truth and waiting door generations.
+- The fixture does not preserve claimed lifecycle, blocker, or commit evidence in queue rows.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

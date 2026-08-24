@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_generation_boundary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,21 @@ The current forcing seams include `test_invalid_closeout_precedes_active_integra
 | --- | --- | --- |
 | The current test source exercises `test_invalid_closeout_precedes_active_integrate_decision_without_authority`, `test_valid_closeout_conflicts_with_active_integrate_only_after_validation`, `test_noop_finalization_retry_observes_the_same_generation`, `test_invalid_duplicate_cannot_observe_noop_finalized_external_generation`. | L55-L116; L119-L145; L153-L191; L195-L221 | `mcp/tests/test_closeout_generation_boundary.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces validation ordering and retained same-generation recovery across no-op finalization, partial output, worker relaunch failure, candidate movement, and completed-unintegrated disposition.
+
+### Current Invariants
+
+- Invalid effective input refuses before operation authority or side effects.
+- A durable incomplete or completed-unintegrated generation remains journal-addressable and cannot be replaced by a newer candidate.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

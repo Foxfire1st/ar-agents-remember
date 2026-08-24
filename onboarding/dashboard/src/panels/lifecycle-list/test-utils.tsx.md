@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/lifecycle-list/test-utils.tsx`        |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-20T04:44+02:00 |
-| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
-| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -66,7 +66,16 @@ No cross-repository implementation source governs this file.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | — | — |
 
+## 260821-CLIVE Projection Fixture Alignment
+
+No helper behavior changed. `seriesNode()` now defaults the required `discardedCount: 0` and
+`discardedSubTasks: []` cells. Existing seat/execution-wave defaults and shared store/localStorage
+cleanup remain unchanged.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — No content impact: aligned the shared series fixture with the required
+  discard-history projection fields.
 
 - 2026-08-20T04:44+02:00 — 260815-DAG-L14: `taskDoc` fixture defaults `seats: []`. Verified at
   code commit 9c3180c1.

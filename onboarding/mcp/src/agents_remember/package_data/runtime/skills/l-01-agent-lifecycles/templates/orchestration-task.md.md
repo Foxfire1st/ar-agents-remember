@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -23,10 +23,12 @@ plan shape; the sync process publishes this exact artifact.
 
 ### Logic
 
-After developer approval, the sprint-bound strategist drafts the plan for the architect. The
+After developer approval, the sprint-bound strategist drafts the plan for the architect; after a
+developer-sanctioned strategist skip, the orchestrator authors the same complete artifact. The
 architect rules it and the orchestrator adopts the accepted plan into durable execution form. The
-strategist seat is identified by sprint task document plus role, and the artifact carries cited
-scope, dependency, blast-radius, ordering, risk, and reevaluation evidence rather than an agent id.
+artifact carries cited scope, dependency, blast-radius, effective-priority, risk, topology, and
+reevaluation evidence rather than an agent id. Planning is mandatory, while persisted
+`executionGraph` structure is optional.
 
 ### Conventions
 
@@ -37,6 +39,10 @@ adoption. Edit the canonical template, then synchronize.
 
 - The strategist is a reader and does not mutate task documents.
 - Durable plan evidence survives seat-occupant replacement.
+- Each candidate has one effective priority: candidate override when present, otherwise the
+  owning-master default; the two grades are never combined.
+- A graph-less atomic-sequential topology is valid. First graph adoption occurs only after every
+  master attachment and uses one complete nodes-plus-evidence-edges batch.
 - This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
@@ -47,9 +53,9 @@ None recorded.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-145 |
-| The strategist role that fills this template as method phase 8. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-204 |
-| The plan-review criteria catalog the reviewer runs against a filled orchestration task. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-84 |
+| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
+| The strategist role that fills this template as method phase 8 and chooses either topology. | `# Lifecycle — Strategist` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
+| The plan-review criteria re-derive effective priority and validate either explicit-graph or graph-less topology. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
 
 ## Cross-Repo References
 
@@ -71,24 +77,45 @@ Dagger altitude. Durable operation observation remains task-addressed and exclud
 
 ## 260815-DAG-L2 Executable Plan Shape
 
-The artifact now separates a Mechanical Fact Inventory from one canonical Judgment Register. The
+The artifact separates a Mechanical Fact Inventory from one canonical Judgment Register. The
 nature, relation, blast-radius, priority, blocker, and leaf-move sections are projections that cite
-their owning judgment rows. `executionGraph` carries exact `TaskDocumentRef` nodes and evidence-
-backed predecessor edges; deterministic waves and blocker positions are derived rather than
-persisted. Runtime reprioritization records rationale, evidence, author, confidence, and
-supersession before queue selection changes.
+their owning judgment rows. When present, `executionGraph` carries exact `TaskDocumentRef` nodes
+and evidence-backed predecessor edges; deterministic waves and blocker positions are derived
+rather than persisted. Without it, the reasoned atomic-sequential default uses canonical
+commanded-master order. Runtime reprioritization records rationale, evidence, author, confidence,
+and supersession before queue selection changes.
 
 ## 260815-DAG-L13 Scheduling Default Doctrine
 
-The template's adoption rule now treats a sprint adopted without an `executionGraph` as running the
-atomic-sequential default; `task_doc.author_execution_graph` bootstraps or edits the graph and is
-never a runtime fallback. The `migrate_execution_topology` legacy-cutover reference is gone.
+The template's adoption rule treats a sprint adopted without an `executionGraph` as running the
+atomic-sequential default. All master attachments complete before the first explicit graph is
+published in one full `task_doc.author_execution_graph` nodes-plus-evidence-edges batch; later calls
+edit the established graph. Graph authoring is never a runtime fallback or ceremonial empty
+topology. The `migrate_execution_topology` legacy-cutover reference is gone.
 
 ## 260815-DAG Master Full-Gate Repair
 
 Restored the template heading to `## Canonical executionGraph Adoption Payload` (the `executionGraph` qualifier phrase restored); all 9 generated copy trees are byte-identical via `scripts/sync-skills.py`.
 
+## 260821-DAGQC-L4 Effective Priority And Topology Choice
+
+The Priority Register distinguishes candidate-specific rows from owning-master defaults. Resolution
+is deterministic: use the candidate row when it exists, otherwise inherit the master row; never
+combine both, and reject duplicate current rows for one subject. The orchestrator retains
+portfolio-wide comparison of the resulting effective grades.
+
+The topology section now makes `explicit executionGraph` and `graph-less atomic-sequential default`
+peer ruled choices. A strategist skip changes the author, not the artifact's full reasoning duty.
+For graph-less adoption, attach every master and stop. To choose a graph from that state, complete
+all attachments and publish every node plus all evidence-backed edges in one batch. The shown
+`add_edge` example already had `judgmentId`; no code or documentation fix was fabricated.
+
 ## Update History
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded one effective candidate priority,
+  optional explicit graph structure, complete strategist-skip reasoning, and the all-attachments
+  then one-full-graph-bootstrap sequence. Canonical/generated sync is complete; Dagger acceptance
+  remains closeout-owned and pending.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: restored the `executionGraph` qualifier in the canonical adoption-payload heading; copies re-synced. Verified at code commit e5cb139f.
 

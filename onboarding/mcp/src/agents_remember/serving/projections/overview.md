@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 ## What This Area Is
 
@@ -157,7 +157,21 @@ The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now pro
 
 `snapshots_impl/_closeout_queue.py` and `_runtime.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*`.
 
+## 260821-CLIVE Closeout And Task-History Projection
+
+`snapshots_impl/_closeout_queue.py` captures the exact current projection source for every
+orchestrating sprint, including valid graph-less atomic-sequential sprints, then reads the effective
+disposable projection. It surfaces service condition, source classification/fingerprint/problems,
+and waiting-generation member order/reasons. Invalid, unreadable, missing, or stale bytes become
+invalid-empty rather than disappearing or serving stale candidates.
+
+`snapshots_impl/_task_documents.py` adds typed discarded-unstarted rows and counts to master task
+and series projections. The audited proof/reason/timestamp remain task history and participate in
+body revision identity. Neither projection mutates its source authority.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the effective closeout projection and discarded-unstarted task history surfaces. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: snapshots_impl import paths updated to the moved queue packages. Verified at code commit e5cb139f.
 

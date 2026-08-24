@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,8 @@ commit evidence. Bounds follow the strict-response model convention (summary/det
   operation, never a nested response envelope.
 - This model only shapes the response; the operation logic lives in
   `worktrees/direct_landing.py`.
+- Top-level `state` is only the closed operation outcome (`landed`, `would-land`, or `refused`).
+  Journal lifecycle state and recovery facts remain nested and cannot overwrite it.
 
 ### Todos
 
@@ -52,9 +54,9 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:19-49 |
+| The response model shape for the direct landing operation. | `DirectLandingResponse` | mcp/src/agents_remember/models/direct_landing.py:20-55 |
 | Registered as the `direct_landing` tool response model. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
-| Produced by the admitted direct-landing coordinator. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:111-123 |
+| Produced by the admitted direct-landing coordinator. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
 | Memory/ledger execution and same-generation recovery are journaled below the coordinator. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
 
 ## Cross-Repo References
@@ -76,9 +78,18 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `DirectLandingResponse` at this ownership boundary. | L19-L49 | `mcp/src/agents_remember/models/direct_landing.py` |
+| The current module exposes `DirectLandingResponse` at this ownership boundary. | L20-L55 | `mcp/src/agents_remember/models/direct_landing.py` |
+
+## 260821-DAGQC-L2 Closed Outcome Vocabulary
+
+The response model closes the top-level outcome plane to exactly `landed`, `would-land`, or
+`refused` and declares the door/projection recovery fields separately. Intermediate journal states
+belong inside the lifecycle projection; they are evidence about how the operation is proceeding,
+not a fourth direct-landing outcome.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: closed direct-landing outcome state and separated nested journal lifecycle evidence from the top-level result. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

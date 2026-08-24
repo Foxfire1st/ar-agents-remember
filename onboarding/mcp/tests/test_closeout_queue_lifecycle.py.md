@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,30 +16,32 @@
 
 ## Purpose
 
-Owns queue binding, closeout claim/certification, integration claim, reversible release, and exact
-lifecycle-operation identity.
+Forces closeout-door source transitions and retry convergence independently from the disposable
+scheduling projection and enclosure-external operation journal.
 
 ## Code Commentary
 
 ### Logic
 
-The suite distinguishes narrow never-governed legacy absence from damaged bound topology, then
-drives idempotent claims and certification over reachable internal/external candidate records. It
-also checks commit mismatch blockers and bounded operation/event identity.
+The suite checks the exact same-generation and successor-generation transition maps, immutable
+operation ownership after claim, claimed-door successor construction, idempotent declaration, and
+idempotent defer/resume/withdraw behavior. Its series-status case proves that status reads do not
+invent a candidate assertion.
 
 ### Invariants And Boundaries
 
-- A durable queue binding fails closed if graph, parent, leaf, or contract identity later drifts.
-- Certified external candidates carry exact code, memory-content, and ledger commits.
-- Lifecycle transitions compare one-way owner fingerprints rather than exposing raw operation keys.
+- Same-generation transitions are narrow and a claimed generation cannot change operation owner.
+- A successor of a claimed generation is a new waiting generation with cleared operation cells.
+- Repeating the same declaration intent converges on one generation.
+- Door control is contract-owned; post-claim lifecycle evidence does not return to the queue.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Binding damage cannot become legacy absence. | `test_live_parent_resolution_distinguishes_legacy_absence_from_bound_damage` | mcp/tests/test_closeout_queue_lifecycle.py:204-225 |
-| Closeout certification binds all exact commits. | `test_certify_closeout_is_idempotent_and_binds_exact_commits` | mcp/tests/test_closeout_queue_lifecycle.py:254-299 |
-| Exact integration commit blockers remain bounded scheduling facts. | `test_integration_commit_blockers_name_every_exact_mismatch` | mcp/tests/test_closeout_queue_lifecycle.py:317-346 |
+| Same-generation transition and claimed-owner immutability are explicit. | `test_same_generation_transition_map_is_narrow`; `test_claimed_same_generation_cannot_rewrite_operation_owner` | mcp/tests/test_closeout_queue_lifecycle.py:22-60 |
+| Successor generation rules clear operation ownership. | `test_cross_generation_map_is_exact`; `test_claimed_successor_has_new_generation_and_no_operation_cells` | mcp/tests/test_closeout_queue_lifecycle.py:62-113 |
+| Repeated declaration and door controls converge. | `test_same_intent_declare_retry_converges_on_one_generation`; `test_defer_resume_withdraw_are_idempotent_for_exact_generation` | mcp/tests/test_closeout_queue_lifecycle.py:125-143 |
 
 ## 260815-DAG Master Full-Gate Repair
 
@@ -49,9 +51,11 @@ gained three boundary proofs: a graph-less sprint with no stored binding resolve
 plain publication, and a blocked in-flight candidate refuses with
 `closeout-candidate-integration-blocked`. The trailing `unittest.main()` block was removed.
 
-## 260821-CLIVE-L2 Current Regression Contract
+## 260821-CLIVE-L2 Historical Regression Contract
 
-The current forcing seams include `test_binding_parser_refuses_partial_malformed_and_non_leaf_contracts`, `test_unbound_legacy_absence_is_narrow`, `test_contract_binding_refuses_missing_graph_leaf_parent_and_binding_drift`, `test_queue_bound_task_publication_refuses_a_disappeared_master_parent`. This file now focuses on the residual binding/terminal guard surface after L2 removed much of the old lifecycle transition suite. Remaining queue lifecycle schema is transitional until L3.
+Before the final L3 cutover this file covered residual queue binding and terminal guards. Those tests
+and their lifecycle-shaped queue owner were removed; the names below are retained only as migration
+history and are not the current test contract.
 
 ### Reconciled Source Evidence
 
@@ -59,7 +63,25 @@ The current forcing seams include `test_binding_parser_refuses_partial_malformed
 | --- | --- | --- |
 | The current test source exercises `test_binding_parser_refuses_partial_malformed_and_non_leaf_contracts`, `test_unbound_legacy_absence_is_narrow`, `test_contract_binding_refuses_missing_graph_leaf_parent_and_binding_drift`, `test_queue_bound_task_publication_refuses_a_disappeared_master_parent`. | L65-L94; L96-L103; L105-L184; L186-L202 | `mcp/tests/test_closeout_queue_lifecycle.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces closeout-door declaration, defer, resume, withdraw, claim, and retry semantics as contract-owned source transitions.
+
+### Current Invariants
+
+- Door retries converge on the same immutable generation.
+- Post-claim lifecycle outcomes remain journal facts and do not mutate a queue lifecycle row.
+
 ## Update History
+
+- 2026-08-24T16:00+02:00 — Final closeout audit: removed obsolete queue
+  claim/certification ownership from the live card and reconciled it to the exact current door-source
+  retry and transition suite. Timestamp records the bounded architect correction wave.
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,16 @@ The current source seams include `CloseoutOperationAdmission`, `CloseoutAdmissio
 | --- | --- | --- |
 | The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. | L44-L52; L56-L58; L62-L67 | `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py` |
 
+## 260821-CLIVE Door-Bound Admission Identity
+
+Closeout admission now requires a door and binds the exact door generation id through
+`LifecycleOperationCandidateBinding`. The generation fingerprint therefore changes when the door
+changes even if code tree and other inputs do not. Existing-generation replay compares the
+journal-retained door publication id; a projection member cannot substitute for it.
+
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: added the exact door-generation component of operation admission identity. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

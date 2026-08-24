@@ -17,7 +17,7 @@
     "docs/reference/skills.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 11,
+    "sourceFilesInScope": 0,
     "fileSidecars": 5,
     "childRoutes": 0
   },
@@ -57,7 +57,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "de3a0fd9204f2e64755032274fb4e741bfddf6df",
+      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",

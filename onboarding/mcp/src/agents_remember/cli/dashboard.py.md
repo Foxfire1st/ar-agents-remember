@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-08-04T03:03+02:00                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-24T15:04+02:00                       |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`   |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -187,7 +187,17 @@ Dashboard shutdown now uses a bounded three-second Uvicorn graceful window. This
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260821-CLIVE Task-Execution Registration Wiring
+
+The production dashboard supplies the task-plane registrars for both terminal-catalog rows and
+operator-inbox reports when it constructs serving collaborators. Those registrars durably record
+worker/reviewer/curator first evidence before the serving retention loops may reclaim their source
+rows. This is the production dependency-injection boundary; omitted test seams remain fail-closed
+for task-bound deletion rather than using a compatibility reader.
+
 ## Update History
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented production registration of terminal and inbox execution evidence. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

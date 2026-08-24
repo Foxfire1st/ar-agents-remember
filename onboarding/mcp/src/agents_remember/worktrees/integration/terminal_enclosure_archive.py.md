@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,16 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 No meaningful cross-repository boundary is owned by this file.
 
+## 260821-CLIVE Crash-Safe External Terminal Archive
+
+This module now publishes and observes the bounded canonical archive before enclosure-root deletion.
+Every operation must be terminal with no live worker, ambiguous mutation, or incomplete publication.
+The transaction writes exact archive bytes, then an external receipt, then the terminal locator;
+retries must prove the identical request and bytes. `terminal_contract_authority_if_present`
+returns strict archive authority only and never guesses a live fallback.
+
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the former refusal stub with the final archive/receipt/locator transaction. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

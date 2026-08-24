@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/enclosure.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,16 @@ The source file itself is the current evidence for this file-specific contract.
 
 No meaningful cross-repository boundary is owned by this file.
 
+## 260821-CLIVE Terminal And Successor Contract
+
+Enclosure models now carry successor-enclosure publication, an exact predecessor terminal link,
+external terminal receipt, and bounded archived canonical entries with path/digest/byte validation.
+Cleanup and abandon have distinct exact argument models. A terminal locator is authoritative only
+with matching archive and receipt proof; a successor manifest, locator, and contract must all carry
+the same exact predecessor. Missing worktree state never manufactures succession authority.
+
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the archive/receipt/terminal-predecessor enclosure state machine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

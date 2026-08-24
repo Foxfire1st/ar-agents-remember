@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:43+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,66 +16,32 @@
 
 ## Purpose
 
-Owns the mechanistic sprint closeout queue: structural authorization, declaration, logistics,
-deterministic selection, current-readiness recomputation, and actor-specific public
-projection. It makes facts visible and enforces the ruled order; it does not invent scheduling
-judgment.
+Owns the sprint-scoped status/rebuild facade and the exact first-ready waiting-generation admission
+check for the disposable closeout projection.
 
 ## Code Commentary
 
 ### Logic
 
-The service derives a bounded current graph, resolves the ambient `QueueActor`, applies one
-revision-checked/idempotent transition under the store lock, then recomputes projection. Managers
-declare and maintain admission facts; the orchestrator records canonical grades, selects the first
-ready candidate, and owns blockers. Candidate blockers revalidate task completion, graph revision,
-source lineage, candidate trees, route review, curator evidence, grade rows, and ledger facts. Exact
-route and curator comparisons are delegated to their evidence owners; this service composes the
-returned blocker facts. Since 260815-DAG-L11 the queue is leaf-aware: segment-targeted edges block
-exactly that segment's leafs, the response carries `leafPlacementFacts` (unplaced/unknown leafs
-with their derived segment placement, reported as facts — never silently auto-written), and the
-leaf-aware predecessor/waiting-reason/sort-key lookups are delegated to `closeout_queue_graph.py`,
-which owns the leaf-to-node index.
-
-Since 260815-DAG-L13 the `status` read never raises on an absent executionGraph or a
-missing/malformed canonical register (L13-R4): `_status_readout` projects a graph-less sprint as
-the atomic-sequential default through `_degraded_projection` (mode, register facts, the series
-lane owner, and legal next operations), and a graph sprint with malformed registers projects with
-`state: degraded` plus repair guidance while mutations stay guarded. The atomic-blocker
-transitions moved to `closeout_queue_blocker.py`; the projection now carries `mode`, `registers`,
-`laneOwner`, and (for acquire-blocker) `acquisitionFacts`. The lane owner is the one candidate in
-a lane-occupying state (`LANE_OCCUPYING_STATES` — selected, closeout-in-flight,
-integration-in-flight; a certified candidate no longer occupies the lane), a blocker-held waiting
-reason names the owner candidate, and stale-base blockers name `worktree_sync` as the recovery.
-
-Since 260815-DAG-L16 the declare path's contract-bound refusals name the missing binding and the
-recovery (L16-R9): `closeout-candidate-contract-required` says to bind the leaf worktree contract
-(`enclosures/<leaf>/series-contract.md`) or use the direct landing operation for sanctioned
-branch-addressed execution, `closeout-candidate-leaf-required` names the leaf contract requirement
-plus the same two recoveries, and a `ContractError` on load wraps as
-`closeout-candidate-contract-invalid` instead of leaking an opaque message.
+`closeout_queue_tool` structurally authorizes the sprint caller and serves effective status or an
+idempotent rebuild. `require_first_ready_generation` is called only while its caller holds the
+short task/door publication mutex; it rechecks the exact current projection and admits only the
+named first-ready waiting generation. All candidate construction, source census, member readiness,
+and publication effects delegate to the projection modules.
 
 ### Conventions
 
-Judgment is consumed only from canonical sprint Judgment/Priority Registers. Equal categorical
-priority uses graph node order and then the leaf key. Ordinary and atomic masters share leaf
-candidate mechanics; atomic blockers add exclusivity and exact block-landing proof.
+Judgment and priority are read from canonical sources during projection construction. Equal
+effective priority uses graph declaration order and then leaf identity. A graph-less
+atomic-sequential sprint remains valid.
 
 ### Invariants And Boundaries
 
-- Actor role and task identity are plane-proven when a hosted seat exists; a caller with no plane
-  seat declares them as request data (L16-R2) and the declaration is validated by the same queue
-  authorization — it grants no authority beyond the same role/document pair (L16 F5 trust model).
-- Only the deterministic first ready candidate may be selected.
-- In-flight records are lifecycle-owned and immutable through public actions.
-- The `status` read degrades to a facts projection instead of failing on an absent graph or
-  malformed registers; only mutations stay guarded.
-- Atomic-blocker acquisition requires atomic nature, drained predecessors and landing lane
-  (lane-occupying states only), a non-blank rationale, and the atomic series base to still match
-  the current code+memory super tips; refusals carry structured owner/in-flight facts.
-- A normal atomic-blocker release requires the completed atomic master to prove one exact landed
-  series; abort requires a canonical strategist/orchestrator judgment.
-- Projection reports only operations legal for the current structural caller.
+- Only status and rebuild are public queue actions.
+- Only the deterministic first-ready waiting generation passes the claim-admission fence.
+- Task edits and door controls remain canonical even when rebuild fails.
+- In-flight records, commits, certification, integration, and lifecycle controls are journal-owned.
+- There is no persistent blocker, release, abort, declared-candidate, or queue-owned grade action.
 
 ### Todos
 
@@ -89,12 +55,8 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural authorization separates manager logistics from orchestrator grade/selection authority. | `QueueActor` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:117-123 |
-| Mutations re-read the graph under lock before returning a projection. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:185-251 |
-| The status readout degrades graph-less or register-degraded sprints to a facts projection. | `_status_readout`; `_degraded_projection` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:254-306; mcp/src/agents_remember/worktrees/queue/closeout_queue.py:323-367 |
-| Selection takes only the deterministic first ready candidate. | `_apply_candidate_action` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:400-452 |
-| Declaration binds exact code, memory, ledger, review, curator, and source-lineage facts before history moves. | `_declare_candidate` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:466-473 |
-| Candidate projection separates ready, waiting, blocked, and in-flight facts and reports `leafPlacementFacts`. | `_projection` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:621-658 |
+| The facade serves status and idempotent rebuild. | `closeout_queue_tool` | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
+| Claim admission requires the exact first-ready waiting generation. | `require_first_ready_generation` | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
 
 ## Cross-Repo References
 
@@ -104,17 +66,17 @@ No external repository owns this queue.
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
-## 260821-CLIVE-L2 Current Contract
+## 260821-CLIVE Status/Rebuild Facade
 
-The current source seams include `QueueActor`, `now_iso`, `closeout_queue_tool`. This L2 source still projects selected/in-flight/certified rows and commit-shaped candidate evidence inherited from the DAG queue. Root-journal controls, not these rows, own retry/recover/cancel/revise and worker recovery. L3 owns removing the remaining lifecycle-shaped rows and rebuilding this service as a waiting-only projection.
-
-### Reconciled Source Evidence
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The current module exposes `QueueActor`, `now_iso`, `closeout_queue_tool` at this ownership boundary. | L117-L123; L181-L182; L185-L251 | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
+The command processor is reduced to sprint-scoped `status` and idempotent `rebuild`, plus
+`require_first_ready_generation` for the short claim admission fence. That fence runs while the
+caller holds the task/door CAS and requires the exact first ready waiting generation. Declare,
+grade, claim, certify, block, release, abort, and integration-completion mutations are removed. Task
+authoring is never gated by this facade.
 
 ## Update History
+
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced mutable queue commands with status/rebuild and exact first-ready admission. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

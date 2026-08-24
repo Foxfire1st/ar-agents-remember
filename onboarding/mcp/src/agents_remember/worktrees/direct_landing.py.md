@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -66,6 +66,9 @@ scratch recovery exists.
   (`direct-landing-memory-required`).
 - A memory commit followed by a crash or ledger conflict remains attached to the same journal
   generation and must reconcile/recover before any successor attempt.
+- Observing an existing action-required journal is a public refusal (`ok: false`, `state: refused`)
+  with the lifecycle operation nested; intermediate journal states never escape as top-level
+  direct-landing outcomes.
 
 ### Todos
 
@@ -79,10 +82,10 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The policy-gated coordinator consumes the admitted contract and one journal generation. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:111-123 |
+| The policy-gated coordinator consumes the admitted contract and one journal generation. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
 | Journaled memory/ledger execution and recovery own all partial-output cuts. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
 | The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
-| The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:51-94 |
+| The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:54-103 |
 
 ## Cross-Repo References
 
@@ -104,9 +107,18 @@ The current source seams include `DirectLandingRequest`, `direct_landing`, `requ
 
 | Finding | Citations | Source Path |
 | --- | --- | --- |
-| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | L84-L98; L111-L123; L126-L134 | `mcp/src/agents_remember/worktrees/direct_landing.py` |
+| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | L105-L120; L132-L144; L147-L155 | `mcp/src/agents_remember/worktrees/direct_landing.py` |
+
+## 260821-DAGQC-L2 Action-Required Outcome
+
+When the root journal already requires recovery or operator action, the coordinator preserves that
+durable operation evidence but returns a closed refused direct-landing outcome. This prevents a
+running/action-required journal state from masquerading as success while retaining the exact nested
+generation a caller must recover.
 
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: normalized existing action-required journal observation to the closed public refused outcome while retaining nested lifecycle evidence. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

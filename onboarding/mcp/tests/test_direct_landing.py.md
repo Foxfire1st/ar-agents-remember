@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,16 @@ The current forcing seams include `test_direct_landing_is_policy_gated`, `test_d
 | --- | --- | --- |
 | The current test source exercises `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. | L154-L171; L173-L193; L195-L265; L267-L291 | `mcp/tests/test_direct_landing.py` |
 
+## 260821-DAGQC-L2 Closed Result Model Proof
+
+Direct-landing preview and landed cases now pass through the strict response model and prove their
+top-level states remain `would-land` and `landed`; journal progress is not accepted as a substitute
+outcome.
+
 ## Update History
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: forced preview/landed results through the closed public outcome model. Verification metadata remains pinned until architect-owned closeout.
+
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

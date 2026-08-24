@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_mutation_evidence_boundary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,21 @@ The current forcing seams include `test_direct_closeout_apply_without_journal_au
 | --- | --- | --- |
 | The current test source exercises `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_generic_lifecycle_start_cannot_bypass_raw_closeout_admission`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_stale_unchanged_intent_observes_attempt_one_without_relaunch`. | L64-L82; L85-L99; L102-L115; L118-L149 | `mcp/tests/test_closeout_mutation_evidence_boundary.py` |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces journal-owned Git mutation authority and reconciliation across ordinary closeout, external memory, ledger crash cuts, ambiguous output, restored pre-state, moved refs, and repository confinement.
+
+### Current Invariants
+
+- Direct or legacy entry points cannot bypass journal admission.
+- Recovery continues the same accepted generation and preserves exact conflict evidence without raw-Git fallback.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

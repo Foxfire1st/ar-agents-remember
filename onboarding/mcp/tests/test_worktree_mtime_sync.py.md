@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_mtime_sync.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-01T00:00+02:00                     |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b`                |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -76,7 +76,21 @@ No sibling repository evidence is needed for these tests.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Forces worktree-memory mtime synchronization used for safe provider index reuse.
+
+### Current Invariants
+
+- Only byte-identical files inherit source mtimes.
+- Missing, divergent, or differently typed paths keep their own evidence and are not masked.
+
 ## Update History
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented mtime-sync behavior is unchanged.
 

@@ -5,20 +5,22 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-24T13:51:26+02:00 |
+| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
+| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
 
 > **Status:** active baseline
 
 ## Python Quality Execution Boundary
 
-Root pytest `addopts` owns the repository-wide pytest-xdist `-n=auto` default, so host diagnostics
-and the wrapper inside Dagger share one parallel execution policy; `-n=0` is the explicit serial
-diagnostic override. The checkout requirements pin pytest-xdist 3.8.0 and the MCP package's
-development extra admits major version 3. Retry-proof compatibility includes the pytest-xdist
-version, so a changed parallel executor cannot reuse an earlier coverage proof. Only the pinned
-Dagger graph produces Agents Remember acceptance evidence.
+Root pytest `addopts` owns the repository-wide pytest-xdist `-n=auto` default used by the wrapper
+inside Dagger; `-n=0` is the explicit serial override within that attested execution boundary. The
+checkout requirements pin pytest-xdist 3.8.0 and the MCP package's development extra admits major
+version 3. Retry-proof compatibility includes the pytest-xdist version, so a changed parallel
+executor cannot reuse an earlier coverage proof. Only the pinned Dagger graph produces Agents
+Remember acceptance evidence. Direct targeted Vitest unit/component runs are supported as fast
+diagnostics only; pytest, Playwright, changed-lines CLI execution, the direct Python wrapper, and
+all acceptance remain Dagger-attested.
 
 ## 260731-EFA-L8 Frontend Rail
 
@@ -97,7 +99,7 @@ onboarding pass.
 | File and entity onboarding maintenance | File-level sidecars, inline onboarding adapter rules, repo entity catalogs, deterministic entity fingerprints, reference health checks, and generated route indexes driven by one Git/path-rule census. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py`, `kernel/route_index_census.py` |
 | Findings capture | Confirmed current-state findings are routed to durable task-local artifacts and can be propagated into onboarding after verification and approval. | `c-01-findings-capture` skill |
 | Workflow modes | The `l-01-agent-lifecycles` architect lifecycle's build decision at `decide`: a research-only exit for no-code answers, otherwise a `w-02-light-task-workflow` skill task — chat is never a build route, so one-session edits take the minimal artifact — escalating to a master + light sub-task series for larger phased work (the retired heavy workflow and the retired chat build are no longer modes). | `l-01-agent-lifecycles` skill, `w-02-light-task-workflow` skill |
-| Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise free chat launches a settings-profile architect. Architect owns the initial plan loop and, when the graph is missing or materially stale, the developer-approved strategist plus plan reviewer. Orchestrator adopts the ruled graph, records queue judgments, and recomputes the ready frontier after material events. Organizational masters are logical groupings whose ordinary leaves branch directly from super and may land independently; atomic masters retain a branch-backed exclusive blocker and expose no partial result. Exact proposed completion candidates are reviewed before refs move, and failed review routes to a leaf rather than an integration workbench. L2 establishes doctrine and templates; later leaves in the same master own worktree/source-lineage mechanization. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
+| Agent lifecycles (one per role) | Developer-requested multi-agent series run through the unified `l-01-agent-lifecycles` skill. Spawn-role env and fresh briefs select role seats; otherwise free chat launches a settings-profile architect. Architect owns the initial plan loop and recommends the developer-approved strategist when the evidence-backed topology/classification reasoning is missing or stale — graph absence alone is not a trigger. A reviewed graph-less atomic-sequential choice is valid; a sanctioned strategist skip transfers the complete dependency, route, seam, classification, priority, and topology-reasoning duty to the orchestrator, which adopts a graph only when present. One effective priority governs a candidate (candidate override, otherwise master default), while the orchestrator retains portfolio comparison. Graph adoption from a graph-less sprint first attaches every master, then publishes one complete nodes-plus-evidence-edges batch. Exact proposed completion candidates are reviewed before refs move; handover cites canonical candidate/code ancestry/memory ancestry/per-leaf ledger refs rather than copying maps, and failed review routes to a leaf rather than an integration workbench. | `l-01-agent-lifecycles` skill, `skills/l-01-agent-lifecycles/roles/architect.md`, `skills/l-01-agent-lifecycles/roles/orchestrator.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, `system/git-workflow.md` |
 | Approval-gated closeout | Applicable authority gates for implementation, worktree-backed closeout, memory refresh, memory quality, and ledger alignment: standalone/final work uses explicit developer approval, while subordinate accepted-series work can proceed under recorded delegated series authority. Closeout is worktree-only — the direct current-checkout path was removed (issue #62). Since 260731-EFA-L4, where the quality gate runs it first resets the index and stages the whole task worktree, so the gate is shown the commit's content rather than only the paths already tracked; two refusals guard that step (not a task worktree, or unresolved merge conflicts). Body/history gates reject header-only or unmarked history-only onboarding refreshes for changed sources and their nearest-governing route overviews; explicit `No content impact:` / `No route impact:` Update History markers attest reviewed-no-impact and are surfaced in closeout payloads. | `c-09-git-worktree-manager` skill, `c-12-closeout` skill, `worktree_closeout_*` |
 | Worktree lifecycle | Worktree start, attach, status, closeout preview/apply, integration, lifecycle finalization, cleanup, task contracts, replay/fast-forward integration, and external-memory compatibility checks. | `c-09-git-worktree-manager` skill, `lifecycle_finalize_task`, `worktree_*`, `worktrees/` |
 | Observable session lifecycle | The 3.0 browser-dashboard substrate: an append-only `ar-observer-event/v1` event log with trust provenance, an ambient process-singleton lifecycle (six `lifecycle_*` signals, heartbeat, TTL sweep, tool-call attribution), and a pure projection reducer that folds events + file snapshots into resolved state (lifecycle tree, metrics, staleness, per-lifecycle token fuel gauge, drift/sidecar/setup/route/ledger analytical surfaces, precomputed action availability, and a server-computed attention queue). Task 27 adds a **lifecycle next-step hint engine** — every MCP tool response now carries a `nextStep` computed from the projected lifecycle state at the `_tool_payload` choke point (a one-time front-half prose rundown from `lifecycle_start`, then a linear per-tool chain that delegates to the worktree `guidance.lifecycle_guidance` state machine and points at the existing `lifecycle_gate` at gate junctions; built on the existing gate, with auto-firing a later step). Task 28 makes **NOTIFY-AND-CONTINUE** the active turn-end model: a new public `lifecycle_turn_end_notification` tool + a non-terminal `awaiting-developer` lifecycle state (notify the developer and stop — no gate, no wait — and the next AR tool call auto-resumes at the `_tool_payload` choke point), the next-step hints repoint off `lifecycle_gate` onto it, a one-line reducer dedup collapses the duplicate gate-open/blocked-gate attention item, and the old `lifecycle_gate`/inbox stack is parked (kept, un-hinted). Task 29 makes throwaway event/runtime surfaces lifecycle-aware: raw Event River lifetime is backend-retained by lifecycle state rather than frontend count caps, worktree provider/runtime facts require active enclosures, and actionable-drift attention carries repo/branch/source/memory provenance with targetless dismissal. | `agents_remember.observer`, `lifecycle_*` tools, `next_step.py`, `observer/` route overview, `docs/design/observable-lifecycle.md` |
@@ -125,7 +127,7 @@ onboarding pass.
 | Branch memory carryover | Carry richer onboarding from a source branch into official memory only after the corresponding code has landed. Candidates cover file sidecars and route overviews (route-keyed, `kind`-tagged): overviews whose route covers a landed path auto-carry only when branch and official content are identical (metadata re-verification), otherwise they are always review-required; official-side `overview.index.json` files are regenerated after carry — never copied — guarded on a clean official-ref checkout. | `c-11-memory-carryover-from-branch` skill, `memory_carryover_*`, `memory/carryover.py` |
 | Branch-gated cross-repo context | Optional cross-repo context inclusion guarded by configured branch and memory-ledger checks. | `c-08-ar-coordination-context-resolver` skill, `crossRepo.allow` |
 | Benchmark harness | Package-owned Codex benchmark fixtures, workspace preparation, paired source-only versus memory-enabled runs, JSONL/result capture, and metric summaries. | `codex_benchmark_prepare`, `codex_benchmark_run`, `benchmarks/` |
-| Source quality tooling | Acceptance is owned by one pinned Dagger graph over an exact candidate bundle and task-derived diff base. Leaf closeout runs targeted mode exactly once over the staged candidate; leaf integration lands that exact commit without a rerun. Master integration runs full mode exactly once at master altitude. Series closeout, push, pull-request validation, tag, and publish do not run acceptance. GitHub keeps one pull-request-only deterministic non-test workflow; ordinary pushes do not duplicate it. The exported `clean-quality-results.json` is the single authoritative result, and Python, Vitest, and Playwright refuse startup without the graph's matching nonce and in-container attestation. | `dagger call quality`, `.github/workflows/quality-checks.yml`, `code_quality/`, `worktrees/modules/closeout.py`, `worktrees/modules/integrate.py` |
+| Source quality tooling | Acceptance is owned by one pinned Dagger graph over an exact candidate bundle and task-derived diff base. Leaf closeout runs targeted mode exactly once over the staged candidate; leaf integration lands that exact commit without a rerun. Master integration runs full mode exactly once at master altitude. Series closeout, push, pull-request validation, tag, and publish do not run acceptance. GitHub keeps one pull-request-only deterministic non-test workflow; ordinary pushes do not duplicate it. The exported `clean-quality-results.json` is the single authoritative result. Python, Playwright, changed-lines CLI execution, and the direct quality wrapper refuse without the graph's matching nonce and in-container attestation. Direct targeted Vitest unit/component runs are supported diagnostic-only feedback and create no acceptance, changed-lines coverage, or lifecycle evidence. | `dagger call quality`, `dashboard/vitest.config.ts`, `dashboard/scripts/require-dagger-test-environment.mjs`, `.github/workflows/quality-checks.yml`, `code_quality/`, `worktrees/modules/closeout.py`, `worktrees/modules/integrate.py` |
 | Self-hosted harness configuration | The nine dogfooded harness configuration trees (`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/` + `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`, `.agents/`) are **generated from one source and checked**, not eight independent copies. `scripts/harness/` holds the fragment libraries and shared bodies; `scripts/sync-harness.py` fans out 45 files three ways (verbatim, composed body + per-harness framing, and programs assembled from named fragments with derived imports). `--check` runs in both hook tiers and in the test suite. `scripts/harness/README.md` is the ruled classification of genuine per-harness requirements versus drift. | `scripts/sync-harness.py`, `scripts/harness/`, `mcp/tests/test_sync_harness.py` |
 | Public docs and harness guides | User-facing setup, concepts, architecture, workflows, references, guides, and install notes for Codex, Claude Code, Cursor, Antigravity, VS Code Copilot, Hermes, Pi, and OpenClaw. | `docs/`, `README.md` |
 | Canonical runtime and skills asset sync | Root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) are canonical editable assets synced into MCP package data by `scripts/sync-runtime.py`; root `skills/` is the canonical skill tree synced into package data plus every harness starter skill folder by `scripts/sync-skills.py`. Both carry `--check` and both local hook tiers run those deterministic checks. The pull-request-only GitHub workflow invokes `_gate.sh targeted`, so generated-copy drift is checked without running tests or Dagger. The accepting Dagger wrapper also retains the real-tree regression suite at its lifecycle-owned leaf/master boundaries. | `scripts/sync-runtime.py`, `scripts/sync-skills.py`, `mcp/tests/test_sync_scripts.py`, `.githooks/_gate.sh`, `.github/workflows/quality-checks.yml` |
@@ -187,7 +189,12 @@ once for the successful bind. That context package is not addressing authority. 
 
 ## Hot Path Summary
 
-CLIVE L2 separates current-contract admission and durable lifecycle recovery from the older queue mechanism. Public mutation consumers use one closed admission result, and normal operations are addressed by locator -> immutable enclosure manifest -> canonical root journal. The pre-L3 queue schema and its lifecycle-shaped rows are still present as transitional source state; L3 owns reducing that queue to a disposable waiting-door projection and completing task-change invalidation/rebuild. Destructive cleanup remains closed pending external terminal archive proof.
+CLIVE separates current-contract admission and durable lifecycle recovery from scheduling. Public
+mutation consumers use one closed admission result, and normal operations are addressed by locator
+-> immutable enclosure manifest -> canonical root journal. The queue is now only a disposable
+invalid-empty/valid-built projection of current task truth and waiting door generations: task
+mutation publishes first, invalidates affected projections, and rebuilds without consulting stale
+rows. Destructive cleanup remains closed pending external terminal archive proof.
 
 **Gate honesty (260731-EFA-L2 — the seven durable contracts).** The wrapper used to list six steps of
 which three could not fail, enforce two complexity limits it had switched off, feed CRAP the wrong
@@ -654,10 +661,13 @@ GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generate
 
 The source checkout tells agents to run acceptance only through the pinned Dagger module. Its
 candidate bundle, mode, exact diff base, and exported reports bind one authoritative result;
-host-side Python, Vitest, and Playwright runs refuse unless the same graph supplies the per-run
-nonce and in-container attestation. The Python wrapper still accepts no caller-selected source
-paths because its scope derives from `git ls-files '*.py'`, but invoking that wrapper directly is
-diagnostic rather than acceptance. The resolved memory layer's `system/tools.md` still holds exact command details and
+host-side Python, Playwright, changed-lines CLI, and direct-wrapper runs refuse unless the same
+graph supplies the per-run nonce and in-container attestation. Direct targeted Vitest
+unit/component runs are supported as fast diagnostics only; they provide no acceptance,
+changed-lines coverage, or lifecycle evidence. The Python wrapper still accepts no
+caller-selected source paths because its scope derives from `git ls-files '*.py'`, and direct
+invocation refuses rather than becoming a second acceptance route. The resolved memory layer's
+`system/tools.md` still holds exact command details and
 `system/coding-guidelines.md` the repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. The packaged and live code-quality report templates no longer offer `passed` as a Radon result: a tool that cannot fail must not be given a verdict vocabulary that says it did not.
 
 The current `pyproject.toml` makes **Ruff responsible for complexity as well as hygiene**. `C901` is
@@ -1071,8 +1081,10 @@ Full mode (ruff, ruff-format, pyright, pytest+coverage, CRAP, diff-coverage) run
 master at integration altitude. Both modes require the exact task-derived diff base and candidate
 bundle, and generated Dagger help is the public function contract. The exported
 `clean-quality-results.json` is the one acceptance result. Host pytest and direct wrapper execution
-are refused with no fallback; the Python, Vitest, and Playwright harnesses
-fail closed without the graph's matching nonce and in-container attestation. `memory_quality_check`
+are refused with no fallback; Python, Playwright, and changed-lines CLI execution fail closed
+without the graph's matching nonce and in-container attestation. Direct targeted Vitest
+unit/component execution is supported diagnostic-only feedback and cannot satisfy this ladder.
+`memory_quality_check`
 is explicitly carved out and stays a per-leaf closeout gate.
 
 ## 260731-EFA-L9 Change — First Structural Leaf
@@ -1166,9 +1178,14 @@ L15 (hygiene sweep and review-doctrine repair) landed across the mcp application
 
 Thirty-two modules moved into four new packages (`application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/`); the `task_doc` special ops gained declared `TaskDocResponse` wire fields with the `_sprint_doc_identity` merge (the strict-envelope rejection bug class); `worktrees/modules/closeout.py` and `worktrees/reopen.py` refactored (`_closeout_quality_facts`, `_reopened_contract`); the orchestration-task template heading restored; the dashboard snapshot gained execution-graph/super-to-leaf fixture coverage.
 
-## 260821-CLIVE-L2 Current Architecture
+## 260821-CLIVE-L2 Historical Intermediate Architecture
 
-At repository level, L2 establishes one total configured-contract admission API and one root-local journal that owns generations, mutation/termination/legacy/direct-landing evidence. Retry/recover/cancel/revise are task-addressed and evidence-derived. Bounded schema-1 migration and pre-locator enclosure adoption are explicit, removable tools, never fallback readers. The older queue still carries transitional selected/in-flight/certified states and evidence fields in this candidate; L3, not L2, removes those rows and completes the waiting-only projection rewrite.
+At repository level, L2 established one total configured-contract admission API and one root-local
+journal that owns generations, mutation/termination/legacy/direct-landing evidence.
+Retry/recover/cancel/revise are task-addressed and evidence-derived. Bounded schema-1 migration and
+pre-locator enclosure adoption are explicit, removable tools, never fallback readers. The
+selected/in-flight/certified queue rows described by the L2 handoff were removed by L3; current
+scheduling is the disposable waiting-door projection described in the Hot Path Summary.
 
 The committed package layout mirrors those owners: public adapters are under `application/lifecycle/`; durable operation authority is under `worktrees/integration/lifecycle/`; direct landing and bounded legacy repair have isolated sibling packages; tool response models live under `models/tools/`; and start collaborators live under `worktrees/modules/startup/`. No former flattened path is retained as a compatibility surface.
 
@@ -1183,6 +1200,15 @@ The committed package layout mirrors those owners: public adapters are under `ap
 
 ## Update History
 
+- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: replaced the last live
+  pre-L3 queue wording with the implemented disposable scheduling projection and preserved the L2
+  state only as explicit migration history.
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the root inventory and
+  governing doctrine for NUL-safe untracked review evidence, effective priority, graph-optional
+  planning, atomic graph adoption, canonical handover references, and direct targeted Vitest as
+  diagnostic-only. Canonical/generated sync is reported green; Dagger acceptance remains pending
+  and closeout-owned.
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the final package ownership map, repaired root evidence paths, and verified the L2 repository overview at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
@@ -2280,22 +2306,43 @@ The committed package layout mirrors those owners: public adapters are under `ap
 - 2026-06-09T14:52+02:00: Refreshed the root overview against MCP 2.4.1 `main` after runtime asset canonical sync landed; recorded the hard installed-runtime onboarding trust gate and the canonical root-to-package runtime asset sync path.
 - 2026-06-08T09:57+02:00: Re-verified the repository overview against the PR-39 branch head after the branch merged current `main` and the skipped-provider context-packet contract was corrected.
 
+## 260821-DAGQC-L4 Doctrine And Review Closure
+
+Review inventory is NUL-safe and treats every untracked entry as hostile filesystem evidence:
+inspect no-follow type, mode, bounded content eligibility, explicit disposition, and race limits
+instead of silently following or omitting it. Planning has one effective candidate priority
+(candidate override, otherwise master default), while the orchestrator still compares the
+portfolio. Graph-less atomic-sequential is a valid ruled topology; strategist skip transfers the
+full reasoning duty, and graph adoption from graph-less attaches every master before one complete
+nodes-plus-evidence-edges publication batch.
+
+Handover points receivers at the canonical candidate, code ancestry, memory ancestry, and per-leaf
+ledger references so they revalidate instead of trusting copied maps. Existing `add_edge` examples
+already carried `judgmentId`; no fabricated fix, lifecycle evidence, fake nonce, bypass, shadow
+configuration, fallback, or compatibility route was added. Delegated-authority redesign,
+disabled-memory behavior, mandatory-graph runtime, and declared-caller trust redesign remain out
+of scope.
+
 ## Build & Dev
 
 L23 makes the pinned clean-Ubuntu Dagger graph the repository's only acceptance environment. Leaf
 closeout selects targeted mode exactly once before creating the leaf commit; leaf integration and
 series closeout do not rerun it. Master integration selects full mode exactly once. Both require
 an explicit diff base, and generated help documents source, bundle, base, mode, and cap. Host
-pytest, Vitest, Playwright, and direct-wrapper acceptance refuse outside Dagger. Both Dagger paths
+pytest, Playwright, changed-lines CLI, and direct-wrapper execution refuse outside Dagger. Direct
+targeted Vitest unit/component runs are supported as non-certifying diagnostics. Both Dagger paths
 publish self-overwriting progress and result artifacts under the worktree enclosure; the clean
 environment mounts neither a Docker socket nor WSL's Windows command paths. GitHub runs a separate
 pull-request-only deterministic non-test check; ordinary pushes launch no duplicate.
 
-- Source-checkout implementation uses the deterministic local hooks for fast diagnostics. Test
-  suites refuse host execution; exact Dagger commands and required diff-base selection belong in
-  the resolved memory layer's `system/tools.md`.
+- Source-checkout implementation uses deterministic local hooks and targeted direct Vitest for
+  fast diagnostics. Those results are not acceptance evidence; exact Dagger commands and required
+  diff-base selection belong in the resolved memory layer's `system/tools.md`.
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
-- `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when `docs/design/` was brought into onboarding scope, slice 05k); `system/tools.md` is unchanged.
+- `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when
+  `docs/design/` was brought into onboarding scope, slice 05k). `system/tools.md` records the same
+  targeted-Vitest diagnostic-only boundary and keeps pytest, Playwright, changed-lines, the direct
+  wrapper, and acceptance Dagger-only.
 
 ## Key Invariants
 
