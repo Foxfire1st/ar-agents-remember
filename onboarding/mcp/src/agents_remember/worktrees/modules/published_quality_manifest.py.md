@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/published_quality_manifest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,6 +59,17 @@ No configured Domain Documentation source applies; this is an internal publicati
 
 No meaningful cross-repository implementation reference applies.
 
+## 260824-PDLS — Strict Schema-2 Evidence Pointer
+
+The manifest reader is the one strict parser for the current immutable Dagger generation. It
+requires schema `2.0`, candidate tree, generation digest, exact file digests/sizes, and typed
+attestation. Schema `1.0` remains deliberately rejected by both public readers; optional crash
+recovery may report no recoverable generation, but there is no permanent compatibility reader or
+silent fallback.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS centralized strict manifest parsing and retained explicit
+  schema-1 rejection after advisory review.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the strict schema-1.0 published-quality manifest boundary. Verification remains blank until architect-owned closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_global_state_isolation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T18:31+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,17 @@ This module defines the top-level symbols cited below; each row points at the ex
 | --- | --- | --- |
 | Defines the class `GlobalStateLeakDetectionTests` (lines 14-38). | `GlobalStateLeakDetectionTests` | mcp/tests/test_global_state_isolation.py:14-38 |
 
+## 260824-PDLS Route Impact
+
+The production owner moved from `mcp/tests/_global_state.py` to
+`agents_remember.testing.global_state`. This suite still expects root certifying bootstrap to have
+declared the normal `test` mode, deliberately leaks dashboard mode, and proves restoration happens
+before failure. It is therefore a Dagger-suite contract, not a valid standalone raw-host test.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Updated imports and route expectations after shared state ownership
+  moved into production testing.
 
 - 2026-08-10T18:31+02:00 — 260731-EFA-L21: updated leak diagnostics and ownership enumeration for
   the kernel-owned checkout execution mode and explicit pytest baseline. Verification metadata

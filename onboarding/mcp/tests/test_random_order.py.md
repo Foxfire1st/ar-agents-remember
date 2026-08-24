@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_random_order.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | --- | --- | --- |
 | Defines the class `RandomOrderTests` (lines 10-26). | `RandomOrderTests` | mcp/tests/test_random_order.py:10-26 |
 
+## 260824-PDLS Route Impact
+
+The deterministic shuffle owner moved from `mcp/tests/_random_order.py` to
+`agents_remember.testing.random_order` so shared pytest bootstrap can use it without importing the
+test tree. Existing seed/order behavior remains unchanged.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Updated the production-owner reference after the shared-route move.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

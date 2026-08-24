@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ and the dashboard. `models/worktree.py` embeds that projection without publishin
 builders. It turns the public tool surface and internal builders
 from loose dictionaries into named, inspectable models that can be validated at
 runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
-(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:88-91)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
+(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:191-194)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
@@ -193,8 +193,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:74-76 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:225-229 |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
@@ -202,9 +202,9 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-135 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
-| Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:648-658; mcp/tests/test_wire_vocabulary_exhaustiveness.py:704-719; mcp/tests/test_wire_vocabulary_exhaustiveness.py:754-764 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:19-20; mcp/src/agents_remember/models/worktree.py:22-22; mcp/src/agents_remember/models/worktree.py:24-24 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/models/worktree.py:35-35; mcp/src/agents_remember/models/worktree.py:44-44 |
+| Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:649-659; mcp/tests/test_wire_vocabulary_exhaustiveness.py:705-720; mcp/tests/test_wire_vocabulary_exhaustiveness.py:755-765 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:20-21; mcp/src/agents_remember/models/worktree.py:23-23; mcp/src/agents_remember/models/worktree.py:25-25 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:36-36; mcp/src/agents_remember/models/worktree.py:45-45 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
@@ -424,10 +424,10 @@ Registered tool request/response contracts now live under `models/tools/`; the m
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Strict lifecycle operation record/projection. | L295-L315; L324-L389; L652-L669 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
-| Queue candidate projection. | L259-L336; L355-L405 | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
+| Strict lifecycle operation record/projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:664-682 |
+| Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38; mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
 
 ## 260821-DAGQC-L2 Closed Quality And Landing Models
 
@@ -436,7 +436,17 @@ The route adds strict discriminated memory-quality request DTOs and the shared
 mappings, and stable versus immutable result paths remain distinct. Direct landing keeps exactly
 three top-level outcomes; journal lifecycle evidence is nested.
 
+## 260824-PDLS — Python Test Evidence Model
+
+`test_evidence.py` adds a closed diagnostic/certifying altitude and consumer vocabulary.
+Diagnostic evidence carries exact nodes, exit code, and a structural candidate binding;
+certifying evidence has no public constructor and is minted only from a verified immutable Dagger
+generation. Coverage, quality, retry, route review, lifecycle, closeout, and integration require
+the certifying type, keeping acceptance impossible to express as a generic payload flag.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added the typed Python evidence firewall.
 
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: marked the L2
   lifecycle-shaped queue model as historical and named the final projection-only model owners.

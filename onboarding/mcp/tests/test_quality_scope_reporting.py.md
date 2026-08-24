@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-24T13:51:26+02:00            |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -104,7 +104,14 @@ Dagger-only. This is wording ownership, not a new test route or a ban on all hos
 direct targeted Vitest unit/component loops remain non-certifying, while pytest, Playwright,
 changed-lines CLI execution, the direct Python wrapper, and acceptance remain Dagger-attested.
 
+## 260824-PDLS Admission Boundary
+
+The shared quality configuration fixture now receives `QUALITY_TEST_ADMISSION`. Scope-reporting
+behavior remains unchanged, while pytest-capable configuration stays unreachable to diagnostics.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added typed admission to quality configuration.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded the hook assertion's
   precise acceptance-only wording and the separate diagnostic-only Vitest boundary. No route

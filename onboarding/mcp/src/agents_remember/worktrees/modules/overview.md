@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -323,11 +323,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:806-881 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:819-894 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:34-554 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-500; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/models/worktree.py:124-124 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:125-125 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:566-674 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -730,12 +730,12 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | L363-L425; L1002-L1091 | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
-| Fail-closed cleanup result. | L624-L678 | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
-| Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | L18-L25; L28-L45 | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
-| Start helpers now live below the dedicated startup package marker. | L1 | `mcp/src/agents_remember/worktrees/modules/startup/__init__.py` |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:359-421; mcp/src/agents_remember/worktrees/modules/closeout.py:998-1085 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-699 |
+| Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
+| Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
 ## 260821-DAGQC-L4 No Route Impact
 
@@ -752,7 +752,17 @@ attestation, artifact integrity, and path resolution. Public recovery retains st
 and adds optional `publishedResultPath`; no legacy reader or host fallback was introduced. The
 concurrent L4 Vitest diagnostic boundary remains unchanged.
 
+## 260824-PDLS — Dagger Publication Is The Evidence Altitude Boundary
+
+The clean quality executor publishes route-neutral phase timing but mints certifying evidence only
+after verifying one immutable schema-2 report generation and exact candidate tree. Code-quality
+gate fresh/recovery paths consume that typed evidence for lifecycle acceptance. Schema-1 manifests
+remain rejected; diagnostic evidence and timing files cannot substitute for publication.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS documented the immutable Dagger publication/evidence
+  firewall.
 
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: completed the
   supersession record for queue-owned irreversible state; current modules publish task truth first

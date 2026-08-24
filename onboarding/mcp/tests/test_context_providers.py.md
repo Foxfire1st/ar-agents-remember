@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -101,13 +101,13 @@ No external documentation is needed for these unit tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/requirements/codegraphcontext.txt`, patch root, and per-repo FalkorDB process env without host venv executable fields. | `test_cgc_layout_uses_managed_runtime_root` | mcp/tests/test_context_providers.py:91-133 |
-| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | `test_ensure_cgc_runtime_layout_writes_pinned_defaults` | mcp/tests/test_context_providers.py:211-260 |
-| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | `test_cleanup_cgc_runtime_artifacts_removes_stale_runtime_only` | mcp/tests/test_context_providers.py:262-302 |
-| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | `test_cgc_layout_expands_provider_settings_roots`; `test_cgc_layout_rejects_missing_provider_settings_root`; `test_cgc_layout_rejects_removed_venv_root_settings` | mcp/tests/test_context_providers.py:304-345; mcp/tests/test_context_providers.py:383-399; mcp/tests/test_context_providers.py:401-414 |
-| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | `test_grepai_requirements_pin_is_created_and_readable`; `test_grepai_layout_uses_workspace_runtime_and_postgres_data_root`; `test_grepai_layout_expands_provider_settings_roots`; `test_grepai_workspace_config_is_provider_owned_and_names_projects`; `test_grepai_root_gitignore_ignores_working_dir`; `test_grepai_root_gitignore_is_idempotent` | mcp/tests/test_context_providers.py:416-420; mcp/tests/test_context_providers.py:422-452; mcp/tests/test_context_providers.py:454-500; mcp/tests/test_context_providers.py:502-525; mcp/tests/test_context_providers.py:527-538; mcp/tests/test_context_providers.py:540-576 |
-| Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | `test_detects_forbidden_source_provider_artifacts`; `test_cgc_cgcignore_patch_is_idempotent`; `test_cgc_timer_pop_patch_is_idempotent`; `test_cgc_delete_patch_is_idempotent`; `test_cgc_graph_builder_extensions_patch_is_idempotent`; `test_cgc_discovery_extensions_patch_is_idempotent`; `test_cgc_viz_repo_query_patch_is_idempotent`; `test_cgc_viz_server_route_patch_is_idempotent`; `test_cgc_viz_cli_route_patch_is_idempotent`; `test_patch_rejects_unexpected_source`; `test_stable_provider_id_never_returns_empty`; `test_patch_id_is_stable` | mcp/tests/test_context_providers.py:578-590; mcp/tests/test_context_providers.py:592-603; mcp/tests/test_context_providers.py:605-618; mcp/tests/test_context_providers.py:627-650; mcp/tests/test_context_providers.py:652-680; mcp/tests/test_context_providers.py:682-692; mcp/tests/test_context_providers.py:694-707; mcp/tests/test_context_providers.py:709-731; mcp/tests/test_context_providers.py:733-751; mcp/tests/test_context_providers.py:753-759; mcp/tests/test_context_providers.py:761-763; mcp/tests/test_context_providers.py:765-780 |
-| The Windows-host container-path tests (`to_container_path`, driveless container roots, `env(for_container=True)`) sit between the first layout test and the pinned-defaults test. | `test_to_container_path_strips_windows_drive`; `test_cgc_container_paths_are_driveless_posix`; `test_cgc_container_env_is_posix_and_omits_windows_vars` | mcp/tests/test_context_providers.py:135-142; mcp/tests/test_context_providers.py:144-162; mcp/tests/test_context_providers.py:164-188 |
+| The layout tests assert that CGC uses `providers/runners/codegraphcontext/<repo-id>`, a shared `providers/data/codegraphcontext/falkordb` backend root, `providers/requirements/codegraphcontext.txt`, patch root, and per-repo FalkorDB process env without host venv executable fields. | `test_cgc_layout_uses_managed_runtime_root` | mcp/tests/test_context_providers.py:90-132 |
+| The default-layout test asserts the pinned requirement, config, managed `.cgcignore`, persisted `.env` exclusions, logs, run, HOME, APPDATA, and LOCALAPPDATA directories. | `test_ensure_cgc_runtime_layout_writes_pinned_defaults` | mcp/tests/test_context_providers.py:210-259 |
+| The cleanup test removes a synthetic stale `my-app` instance and legacy `db`, `global`, and `kuzu` artifacts while preserving the shared FalkorDB backend data root. | `test_cleanup_cgc_runtime_artifacts_removes_stale_runtime_only` | mcp/tests/test_context_providers.py:261-301 |
+| Provider-settings tests cover root expansion, per-root `cgcignorePatterns`, rejection of configured code repository paths that do not exist, and rejection of removed `venvRoot` settings. | `test_cgc_layout_expands_provider_settings_roots`; `test_cgc_layout_rejects_missing_provider_settings_root`; `test_cgc_layout_rejects_removed_venv_root_settings` | mcp/tests/test_context_providers.py:303-344; mcp/tests/test_context_providers.py:382-398; mcp/tests/test_context_providers.py:400-413 |
+| GrepAI tests cover pin handling, workspace runtime and PostgreSQL data roots, central log roots, settings expansion across external and internal memory roots indexed live in place, provider-owned workspace config, PostgreSQL store config, explicit Ollama endpoint/dimension defaults, and `ensure_grepai_root_gitignore` (append/create/idempotent `.grepai/` ignore). | `test_grepai_requirements_pin_is_created_and_readable`; `test_grepai_layout_uses_workspace_runtime_and_postgres_data_root`; `test_grepai_layout_expands_provider_settings_roots`; `test_grepai_workspace_config_is_provider_owned_and_names_projects`; `test_grepai_root_gitignore_ignores_working_dir`; `test_grepai_root_gitignore_is_idempotent` | mcp/tests/test_context_providers.py:415-419; mcp/tests/test_context_providers.py:421-451; mcp/tests/test_context_providers.py:453-499; mcp/tests/test_context_providers.py:501-524; mcp/tests/test_context_providers.py:526-537; mcp/tests/test_context_providers.py:539-575 |
+| Source artifact, patch idempotence, patch rejection, repo id, and patch id tests cover the remaining provider containment and patch helper edge cases, including the visualizer repo-query and route patches. | `test_detects_forbidden_source_provider_artifacts`; `test_cgc_cgcignore_patch_is_idempotent`; `test_cgc_timer_pop_patch_is_idempotent`; `test_cgc_delete_patch_is_idempotent`; `test_cgc_graph_builder_extensions_patch_is_idempotent`; `test_cgc_discovery_extensions_patch_is_idempotent`; `test_cgc_viz_repo_query_patch_is_idempotent`; `test_cgc_viz_server_route_patch_is_idempotent`; `test_cgc_viz_cli_route_patch_is_idempotent`; `test_patch_rejects_unexpected_source`; `test_stable_provider_id_never_returns_empty`; `test_patch_id_is_stable` | mcp/tests/test_context_providers.py:577-589; mcp/tests/test_context_providers.py:591-602; mcp/tests/test_context_providers.py:604-617; mcp/tests/test_context_providers.py:626-649; mcp/tests/test_context_providers.py:651-679; mcp/tests/test_context_providers.py:681-691; mcp/tests/test_context_providers.py:693-706; mcp/tests/test_context_providers.py:708-730; mcp/tests/test_context_providers.py:732-750; mcp/tests/test_context_providers.py:752-758; mcp/tests/test_context_providers.py:760-775; mcp/tests/test_python_direct_cohort.py:24-27 |
+| The Windows-host container-path tests (`to_container_path`, driveless container roots, `env(for_container=True)`) sit between the first layout test and the pinned-defaults test. | `test_to_container_path_strips_windows_drive`; `test_cgc_container_paths_are_driveless_posix`; `test_cgc_container_env_is_posix_and_omits_windows_vars` | mcp/tests/test_context_providers.py:134-141; mcp/tests/test_context_providers.py:143-161; mcp/tests/test_context_providers.py:163-187 |
 
 ## Cross-Repo References
 
@@ -117,7 +117,15 @@ No sibling repository evidence is needed for these tests.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## 260824-PDLS Cohort Extraction
+
+The two stable-provider-ID assertions moved unchanged to the seven-node direct cohort so they can
+produce fast structural diagnostic feedback without importing this integration-heavy provider
+module. Provider layout and runtime coverage here are otherwise unchanged.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Moved provider-ID normalization assertions to the bounded direct cohort.
 
 - 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: anchored 7 Repo-Internal reference rows; scoped result 0 findings.
 

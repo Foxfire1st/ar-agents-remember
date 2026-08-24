@@ -1,20 +1,23 @@
-# L4 Onboarding Maintenance Handoff
+# PDLS Onboarding Maintenance Handoff
 
 ## Completed Scope
 
-The L4 integration-branch-authority candidate now has complete file-level onboarding coverage:
-19 new cards, 78 refreshed cards, 13 refreshed overview pillars, reconciled entity entries, six
-current route indexes, and current citations. The curator review accepted onboarding wave 001.
+The committed PDLS source candidate now has a new testing route, 26 new/relocated cards, 40
+refreshed existing cards, three removed stale cards, six reconciled route overviews, and aligned
+system guidance. The curator accepted wave 001 against source commit `77bc6145`.
 
-## Validation State
+## Design Preserved
 
-The contract-scoped curator report is `ready-for-closeout` with zero repairable findings, zero
-missing onboarding, zero stale indexes, and zero real-commit provenance findings. The frozen code
-tree reviewed by both L4 reviewers is `2fb961e063ac07636d20bcd22d8967360b01b177`.
+- Task authoring/queue work is outside this master; no task or queue fallback was introduced.
+- Structural eligibility owns direct admission and executes no candidate code.
+- Shared bootstrap does not imply shared authority.
+- Dagger admission guards certifying startup; immutable Dagger publication owns acceptance.
+- Diagnostic evidence cannot enter any accepting consumer.
+- Vitest policy remains unchanged.
 
-## Closeout Boundary
+## Remaining Boundary
 
-The guarded closeout operation must run the one targeted L4 Dagger gate, create the real code
-commit, refresh file-card verification metadata and entity fingerprints, rerun memory quality,
-commit official memory, update the external-memory ledger, and finalize the worktree contract.
-The 100 current source-change reconciliation rows are deliberately left for that transaction.
+Commit this route-index-current memory branch without push, then run the sole full Dagger master
+gate against the exact clean source candidate. Record population, direct timing, Dagger
+timing/parity, safety sentinels, and all master requirements in the task-local final acceptance
+report.

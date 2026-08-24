@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `DecisionRoleTests` | mcp/tests/test_platform_long_tail.py:71-81 |
+| Current suite declaration anchoring this card after the pure decision-role tests moved to the direct cohort. | `ReadFilesRangeTests` | mcp/tests/test_platform_long_tail.py:68-90 |
 
 ## Cross-Repo References
 
@@ -56,7 +56,15 @@ builder left `terminal_tools.py`.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
+## 260824-PDLS Cohort Extraction
+
+The known and misspelled decision-role coercion assertions moved unchanged to the bounded direct
+cohort. This long-tail integration module no longer needs to import that pure vocabulary helper;
+its remaining platform contracts are unchanged.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Moved two decision-role assertions to the bounded direct cohort.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled the extracted terminal refusal boundary in long-tail coverage; verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_gate_public_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,13 +48,21 @@ No configured Domain Documentation source applies to these repository-internal f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pointer rotation after the loader snapshot cannot redirect recovered evidence. | `test_recovery_uses_one_manifest_generation_when_the_pointer_rotates` | mcp/tests/test_quality_gate_public_contract.py:19-74 |
-| Strict worktree response models retain both quality paths and reject an unmodeled path. | `test_public_worktree_response_models_and_retains_both_quality_paths` | mcp/tests/test_quality_gate_public_contract.py:76-123 |
+| Pointer rotation after the loader snapshot cannot redirect recovered evidence. | `test_recovery_uses_one_manifest_generation_when_the_pointer_rotates` | mcp/tests/test_quality_gate_public_contract.py:18-83 |
+| Strict worktree response models retain both quality paths and reject an unmodeled path. | `test_public_worktree_response_models_and_retains_both_quality_paths` | mcp/tests/test_quality_gate_public_contract.py:85-129 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary applies.
 
+## 260824-PDLS Snapshot Evidence Proof
+
+The public recovery contract now pins a candidate tree while proving one caller-held manifest
+snapshot survives concurrent publication rotation. Evidence is minted from that verified snapshot,
+not from a second mutable read or a diagnostic payload.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added candidate-tree and one-snapshot certifying evidence proof.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for one-snapshot recovery and strict public quality-result regressions. Verification remains blank until architect-owned closeout stamps the code commit.

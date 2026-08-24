@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -123,12 +123,12 @@ The README routes readers into the split documentation tree and gives the curren
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | `## Quickstart` | README.md:101-137 |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
-| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-272 |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:294-299 |
-| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:300-303 |
-| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:304-308 |
+| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-298 |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:299-304 |
+| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:305-308 |
+| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:309-313 |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | `# Agents Remember Documentation` | docs/README.md:1-65 |
-| `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | `# Memory your coding agent can trust` | docs/features.md:1-478 |
+| `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | `# Memory your coding agent can trust` | docs/features.md:1-479 |
 
 ## Cross-Repo References
 
@@ -208,7 +208,16 @@ full Dagger once. Direct pytest, Playwright, changed-lines CLI, and Python-wrapp
 refuse. Direct targeted Vitest is supported diagnostic feedback only. Retry proof is an internal,
 attested-Dagger optimization rather than a host acceptance path.
 
+## 260824-PDLS — Contributor-Facing Test Command
+
+The README now names `./scripts/test-python` as the bounded fast Python diagnostic route and keeps
+Dagger as the sole acceptance route. It states exact-selector, structural-admission, serial,
+non-certifying, and zero-node-on-refusal behavior so a fast green result cannot be mistaken for
+closeout or integration evidence.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — 260824-PDLS added the contributor-facing Python diagnostic boundary.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded direct targeted Vitest
   as supported diagnostic-only feedback while preserving Dagger-only pytest, Playwright,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,15 @@ The focused publication cases pin the exact schema-1.0 object root, immutable ge
 attestation handling, and one stable error family for malformed, legacy, or alternate shapes. They
 also prove artifact lookup consumes the parsed manifest instead of rereading the pointer.
 
+## 260824-PDLS Immutable Evidence Proof
+
+Publication fixtures now bind every generation to an explicit candidate tree and schema `2.0`.
+Passing executor outcomes carry certifying evidence; failed outcomes carry none. A source export
+without one valid authoritative result refuses instead of publishing an incomplete generation.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Added candidate-bound schema-2 publication and evidence assertions.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict manifest schema/error and parsed-snapshot artifact lookup coverage. Verification metadata remains pinned until architect-owned closeout.
 

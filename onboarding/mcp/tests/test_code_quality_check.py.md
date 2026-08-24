@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00            |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T20:55+02:00 |
+| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
+| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -205,16 +205,16 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/scope.py:111-111 |
+| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:335-381; mcp/src/agents_remember/code_quality/scope.py:111-111 |
 | The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
 | CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:548-561; pyproject.toml:34-38 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:556-569; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
-| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:152-173; mcp/tests/test_gate_scope.py:175-194 |
+| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:157-178; mcp/tests/test_gate_scope.py:180-202 |
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:7-7 |
-| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:76-129 |
+| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:81-137 |
 
 ### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
 
@@ -248,7 +248,16 @@ pytest, or frontend-test execution in hooks and GitHub workflows. This does not 
 ownership into direct targeted Vitest diagnostics: those are supported unit/component feedback
 only and never acceptance, changed-lines coverage, or lifecycle evidence.
 
+## 260824-PDLS Admission Boundary
+
+Quality configurations in this suite now receive `QUALITY_TEST_ADMISSION`, the capability already
+validated by root certifying bootstrap. The tests do not construct or bypass admission. This file
+also proves stale phase output is cleared and the route-neutral phase-report destination is wired
+into the pytest step.
+
 ## Update History
+
+- 2026-08-24T20:55+02:00 — Adopted typed Dagger admission and pytest phase-report proof.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled hook assertions to the
   precise Dagger-only acceptance statement while preserving direct targeted Vitest as a separate
