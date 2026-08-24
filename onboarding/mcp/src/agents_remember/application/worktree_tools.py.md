@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-24T21:43+02:00 |
+| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
+| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -26,8 +26,8 @@ a lifecycle whose owner is gone is terminalized by the reducer from the contract
 
 ### Parameter Objects (260731-EFA-L2)
 
-The module now defines the concept objects its callers pack, each with a documented meaning rather
-than a keyword list:
+The module consumes the concept objects its callers pack from the dedicated
+`worktree_tool_requests.py` owner. Each retains a documented meaning rather than a keyword list:
 
 | Type | Meaning | Shared default |
 | --- | --- | --- |
@@ -45,7 +45,9 @@ helper; the closeout pair take `(config, contract_path, messages[, approval])`; 
 `lifecycle_finalize_task_tool(config, contract_path, *, docs, dry_run, teardown_providers)`.
 `TaskRef` itself lives in `application/task_ref.py` and is shared with `resolve_context_tool`.
 
-The behaviour below is unchanged — this is the same plumbing with its arguments named.
+The hard-limit repair moved definitions only. `worktree_tools.py` imports the exact classes and
+defaults and keeps the same function annotations/default objects, so the behavior below remains the
+same plumbing with its arguments named. No parallel model, legacy reader, or fallback path exists.
 
 The module resolves allowed repositories and coordination-contained paths from
 `McpRuntimeConfig`, builds typed `git_worktree_manager.WorktreeArgs`, and
@@ -169,7 +171,7 @@ the documented setup cap now actually governs the worktree flow.
 | Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:101-150; mcp/src/agents_remember/models/worktree.py:153-178 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:108-108; mcp/src/agents_remember/kernel/primitives/runtime_config.py:188-188 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:114-114; mcp/src/agents_remember/kernel/primitives/runtime_config.py:188-188 |
 | Containment tests pin the worktree-start veto and the armed-path live-map launch. | "test_stale_armed_snapshot_is_vetoed_by_disk", "test_disk_armed_snapshot_launches_with_live_map" | mcp/tests/test_provider_containment.py:125-177 |
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
 | Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:34-65 |
@@ -215,9 +217,9 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `TaskIdentity`, `TaskBases`, `StartExecution` at this ownership boundary. | L100-L113; L117-L131; L135-L142 | `mcp/src/agents_remember/application/worktree_tools.py` |
+| The facade imports and re-exports the extracted task-start request types at this ownership boundary. | `TaskIdentity`; `TaskBases`; `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:99-110 |
 
 ## 260821-CLIVE Final Public Worktree Boundary
 
@@ -230,6 +232,10 @@ but the task-addressed worker never makes the scheduling decision or claims a do
 operation revalidates the journal, contract, and protected-ref authority.
 
 ## Update History
+
+- 2026-08-24T21:43+02:00 — File-size repair: moved the seven request/default concepts to the single
+  `application/worktree_tool_requests.py` owner. This facade still consumes the exact types and
+  retains all worktree operation behavior; verified at source commit `23d35f77`.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged terminal archive status/retry and journal-owned closeout authority into the existing worktree-tool contract. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

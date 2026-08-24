@@ -59,11 +59,12 @@
     "mcp/src/agents_remember/application/tool_response.py",
     "mcp/src/agents_remember/application/worktree_services.py",
     "mcp/src/agents_remember/application/worktree_status.py",
+    "mcp/src/agents_remember/application/worktree_tool_requests.py",
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 56,
-    "fileSidecars": 34,
+    "sourceFilesInScope": 57,
+    "fileSidecars": 35,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -135,6 +136,7 @@
     "read_files",
     "readiness",
     "remember",
+    "requests",
     "response",
     "results",
     "runs",
@@ -145,8 +147,7 @@
     "src",
     "status",
     "step",
-    "structural",
-    "task"
+    "structural"
   ],
   "hotPath": {
     "summary": "This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, legacy repair, direct landing, and degraded status. For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The curr...",

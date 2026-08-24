@@ -51,6 +51,7 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_generation_resume.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py",
@@ -79,8 +80,8 @@
     "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 67,
-    "fileSidecars": 67,
+    "sourceFilesInScope": 68,
+    "fileSidecars": 68,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -93,6 +94,7 @@
     "atomic_series_landing",
     "atomic_series_terminal",
     "authority",
+    "binding",
     "branch",
     "bridge",
     "candidate",
@@ -162,11 +164,10 @@
     "lifecycle_closeout_claim_evidence",
     "lifecycle_completed_disposition",
     "lifecycle_enclosure_adoption",
-    "lifecycle_enclosure_terminal",
-    "lifecycle_generation_resume"
+    "lifecycle_enclosure_terminal"
   ],
   "hotPath": {
-    "summary": "Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. This route owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, bounded legacy repair, and integration reconciliation. Master integration, series closeout, closeout/reopen, and the memory carryover paths consume this package: branch-backed authority checks (`require_*`), durable lifecycle operation leases, the Dagger quality gate checkout, and organizational-completion integration/repair.",
+    "summary": "Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, bounded legacy repair, and integration reconciliation. Master integration, series closeout, closeout/reopen, and the memory carryover paths consume...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/integration",
       "mcp/src/agents_remember/worktrees/integration/__init__.py",
