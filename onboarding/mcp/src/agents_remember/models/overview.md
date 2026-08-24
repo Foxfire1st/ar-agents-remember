@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -446,7 +446,7 @@ the certifying type, keeping acceptance impossible to express as a generic paylo
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — 260824-PDLS added the typed Python evidence firewall.
+- 2026-08-24T21:23+02:00 — 260824-PDLS added the typed Python evidence firewall.
 
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: marked the L2
   lifecycle-shaped queue model as historical and named the final projection-only model owners.

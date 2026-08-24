@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_gate_scope.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -110,7 +110,7 @@ expectations are unchanged; pytest-capable planning remains certifying-only.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Added typed admission to the wrapper-step fixture.
+- 2026-08-24T21:23+02:00 — Added typed admission to the wrapper-step fixture.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: this test module was split in place into a family under 1,200 lines (L7-R5); the card remains the family entry point and the name set was reconciled item for item. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.

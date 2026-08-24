@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -942,7 +942,7 @@ global/random helper owners were removed; no compatibility facade remains.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — 260824-PDLS introduced the testing route and explicit evidence
+- 2026-08-24T21:23+02:00 — 260824-PDLS introduced the testing route and explicit evidence
   altitude boundary.
 
 - 2026-08-24T14:19+02:00 — No route impact: 260821-DAGQC-L2 synchronized packaged memory-quality and curator examples to the canonical discriminated request while preserving concurrent L4 route material. Verification metadata remains pinned until architect-owned closeout.

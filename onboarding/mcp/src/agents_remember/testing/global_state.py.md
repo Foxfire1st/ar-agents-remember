@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/global_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ process role.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Moved from `mcp/tests/_global_state.py`; preserved the explicit
+- 2026-08-24T21:23+02:00 — Moved from `mcp/tests/_global_state.py`; preserved the explicit
   checkout-mode ownership and added shared-route lifecycle plus typed session state.
 - 2026-08-10T18:31+02:00 — The predecessor card recorded kernel checkout execution as the owned
   state and explicit pytest mode as the normal baseline.

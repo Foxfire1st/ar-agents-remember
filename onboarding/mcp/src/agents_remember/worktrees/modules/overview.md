@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -761,7 +761,7 @@ remain rejected; diagnostic evidence and timing files cannot substitute for publ
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — 260824-PDLS documented the immutable Dagger publication/evidence
+- 2026-08-24T21:23+02:00 — 260824-PDLS documented the immutable Dagger publication/evidence
   firewall.
 
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: completed the

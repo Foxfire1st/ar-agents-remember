@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_test_eligibility.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,4 +42,4 @@ same-named class methods prove scan-cache identity does not conflate source defi
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Created for 260824-PDLS and records the post-review forcing repairs.
+- 2026-08-24T21:23+02:00 — Created for 260824-PDLS and records the post-review forcing repairs.

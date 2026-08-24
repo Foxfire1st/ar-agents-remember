@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -331,7 +331,7 @@ nesting/reinitializing a fixture repository while preserving existing closeout g
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Made the shared checkout fixture safe for candidate-bound evidence tests.
+- 2026-08-24T21:23+02:00 — Made the shared checkout fixture safe for candidate-bound evidence tests.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

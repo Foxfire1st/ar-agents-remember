@@ -5,8 +5,8 @@
 | repository | agents-remember |
 | mode | existing-memory-slice-maintenance |
 | task | 260824-PDLS Python diagnostic lane separation |
-| capturedAt | 2026-08-24T20:55+02:00 |
-| source candidate | `77bc614506b8b50937aed6846523547d36045947` |
+| capturedAt | 2026-08-24T21:23+02:00 |
+| source candidate | `b99501852bcfa5f499a25e7183063751f6133a28` |
 | source registry | `system/sources.md` |
 | domain documentation | none configured for this boundary |
 | cross-repository sources | none allowed |

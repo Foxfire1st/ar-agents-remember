@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_code_quality_targeted.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,7 @@ the targeted planner cannot be invoked as a diagnostic fallback.
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Added typed Dagger admission to targeted quality fixtures.
+- 2026-08-24T21:23+02:00 — Added typed Dagger admission to targeted quality fixtures.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

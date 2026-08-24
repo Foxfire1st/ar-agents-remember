@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ generation bound to the candidate tree. Only a digest-verified passed generation
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — 260824-PDLS added phase export and the sole certifying evidence factory
+- 2026-08-24T21:23+02:00 — 260824-PDLS added phase export and the sole certifying evidence factory
   at verified publication altitude.
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: unified report publication and recovery on the strict schema-1.0 manifest and one-snapshot artifact lookup. Verification metadata remains pinned until architect-owned closeout.
 

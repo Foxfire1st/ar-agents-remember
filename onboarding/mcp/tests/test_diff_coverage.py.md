@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T20:55+02:00 |
-| lastVerifiedCommitHash | `77bc614506b8b50937aed6846523547d36045947` |
-| lastVerifiedCommitDate | 2026-08-24T20:41:34+02:00 |
+| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
+| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -123,7 +123,7 @@ coverage scoring is unchanged; diagnostic evidence cannot reach its measurement 
 
 ## Update History
 
-- 2026-08-24T20:55+02:00 — Added the typed admission precondition to wrapper fixtures.
+- 2026-08-24T21:23+02:00 — Added the typed admission precondition to wrapper fixtures.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 111; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
