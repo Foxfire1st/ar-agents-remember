@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -935,13 +935,21 @@ distribution target rather than a compatibility owner.
 
 `agents_remember.testing` is now the sole package route for structural direct-test eligibility,
 shared hermetic pytest bootstrap, Dagger admission composition, the canonical direct runner, and
-route-neutral phase reporting. `models/test_evidence.py` separates diagnostic and certifying
-altitudes. The code-quality and worktree planes consume typed Dagger admission/evidence instead of
-reimplementing test-route failure families. The old `code_quality.dagger_environment` and test-tree
-global/random helper owners were removed; no compatibility facade remains.
+route-neutral phase/causal reporting. Its lifecycle catalog and lane registry govern durable
+evidence, cadence, fidelity, expiry, and fixture authority. The direct route is an explicit
+content-sealed seven-node cohort, not a generic repository analyzer.
+
+`models/test_evidence.py` separates diagnostic and certifying altitudes. The code-quality plane
+keeps all Python lint/type/size/execution coverage while scoring product modules only, and one
+dependency-ownership graph serves targeted selection, retry invalidation, and owner-level causal
+localization. The worktree plane consumes typed Dagger admission/evidence instead of reimplementing
+test-route failure families. Removed analyzers, task/date baselines, and former global/random helper
+owners have no compatibility facade.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS reconciled the explicit cohort, lifecycle/cadence registry,
+  product-only scoring, shared ownership graph, and causal localization.
 - 2026-08-24T21:23+02:00 — 260824-PDLS introduced the testing route and explicit evidence
   altitude boundary.
 
@@ -1413,7 +1421,10 @@ global/random helper owners were removed; no compatibility facade remains.
 - 2026-06-16T01:55+02:00 — No route impact: slice 5f S0 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S0 frontend changes live in the in-scope root `dashboard/src/` with their own route overviews + file sidecars.
 - 2026-06-15T19:35+02:00 — No route impact: slice 5e's mcp-side changes (the observer `engineProcesses` surface + `worktrees/start_progress.py` §5.4) are captured in the `observer/` and `worktrees/modules/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged.
 - 2026-06-15T17:00+02:00 — No route impact: slice 5d only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The 5d frontend re-architecture (Panda + React Aria) lives in the now-in-scope root `dashboard/src/` with its own route overviews + file sidecars.
-- 2026-06-14T23:30+02:00 — Slice 05 (5c): the `agents_remember.observer` read side now synthesizes paused persistent lifecycles from worktree contracts, reads per-worktree provider stacks (surface 4), and carries the full task content on `TaskDocNode`; `agents_remember.serving` `sim.py` materializes fixture structural surfaces and `events.py` single-encodes the raw SSE channel. Under `mcp/tests`, `test_observer_projection.py`/`test_serving.py` gained the matching cases plus a new `mcp/tests/fixtures/build_rich_sim.py` rich-sim generator (its own sidecar). Refreshed the observer Route Model bullet; the cockpit UI is frontend (out-of-scope root `dashboard/`). Verification metadata pinned until closeout stamps the 5c code commit.
+- 2026-06-14T23:30+02:00 — Slice 05 (5c): the `agents_remember.observer` read side added persistent
+  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
+  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
+  after it had no maintained consumer.
 - 2026-06-14T17:30+02:00 — Slice 05 (5b): the `agents_remember.observer` projection gained the server-computed **attention queue** (`AttentionItem` + the derived `Analytics.attentionQueue`, the pure `build_attention_queue` wired through `project_workspace`); refreshed the observer Route Model bullet. The expanded `mcp/tests/test_observer_projection.py` under this route carries no mcp-package route-model impact (detail in the file/route cards). The 5b cockpit panels are frontend, living in the out-of-scope root `dashboard/`. Verification metadata pinned until closeout stamps the 5b code commit.
 - 2026-06-14T15:52+02:00 — Slice 05a: the package now ships the **real** dashboard cockpit bundle under `package_data/dashboard/` (the slice-04 placeholder is replaced by the Vite/React build, synced by `scripts/sync-dashboard.py`); added `mcp/tests/test_sync_dashboard.py` and wired `sync-dashboard.py --check` into both githooks + the CI workflow. The mcp package route model is otherwise unchanged (the cockpit React/TS sources live in the out-of-scope root `dashboard/`). Verification metadata pinned until closeout stamps the 5a code commit.
 - 2026-06-14T11:30+02:00 — Slice 04 commit 4b: extended `agents_remember.serving` with the raw `event` SSE channel (`events.py` — byte-offset `Last-Event-ID` resume), sim-mode replay (`sim.py` — a replay clock + fixture feeder over the projector's `now`/`before_tick` seams), and the no-mutation `POST /api/actions/{action}` skeleton (`actions.py`); `app.py` gained `/api/events` + `/api/actions`, `cli/dashboard.py` the `--sim`/`--sim-speed` flags. Refreshed the serving Route Model bullet; per-file detail lives in the new + updated `serving/` sidecars. Verification metadata pinned until closeout stamps the 4b code commit.

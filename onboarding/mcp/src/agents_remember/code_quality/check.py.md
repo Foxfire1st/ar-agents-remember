@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/code_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -27,9 +27,27 @@ dagger call quality --source=. --repository-bundle=<candidate.bundle> --mode=<ta
 
 ## Code Commentary
 
-#
+### 260824-PDLS Current Contract
 
-- 260731-EFA-L7 (trace delta): the quality steps gained the enforcing `file-size` rail (armed via `pyproject.toml`'s `file_size_armed`), and the CRAP/coverage input scope now includes the configured test roots.
+The wrapper distinguishes executable scope from scored product scope. Every tracked Python file is
+still linted, formatted, typed, and file-size checked, and affected tests still execute, but
+Coverage.py, CRAP, Radon, and changed-line scoring cover importable product modules only. This
+removes the recursive obligation to write tests whose purpose is certifying test helpers.
+
+Before behavior, the fixed rail validates the durable evidence lifecycle catalog and runs the
+owner-level causal preflight. A valid failed preflight remains a quality failure, but pytest may
+continue while skipping only graph-proven consumers of that owner; independent nodes still run and
+are recorded in the causal report. The pytest command also loads the evidence-lane and
+route-neutral phase plugins behind Dagger admission. These observations do not create a second
+acceptance result.
+
+Targeted selection, retry invalidation, and causal blocking consume the same
+`DependencyOwnershipGraph`, so a fixture/support change has one consumer meaning at every layer.
+Incomplete ownership selects fresh/full behavior or prevents suppression; no caller supplies its
+own completeness claim.
+
+- 260731-EFA-L7 historical trace: the quality steps gained the enforcing `file-size` rail. Its
+  earlier test-tree CRAP/coverage expansion is superseded by the product-only PDLS contract above.
 ## Enforcing Steps Versus Report Steps
 
 Every step is one of two kinds, and the distinction lives in the type rather than in
@@ -262,7 +280,7 @@ the report to a temporary directory unless `--coverage-json` is given.
 | --- | --- | --- |
 | The changed-lines coverage floor this wrapper runs last, and the derivation of the 100% floor. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:1-5; mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 | CRAP-Calculator owns function-level CRAP scoring, and is where Radon stays load-bearing. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:232-239 |
-| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:345-403 |
+| Unit tests prove Radon is declared a report, that every enforcing step can fail, that the tool-signature exemption cannot widen, and that scope is derived rather than written down. | `RadonIsAReportNotAGateTests` | mcp/tests/test_code_quality_check.py:418-484 |
 | An independent recomputation asserts the wrapper's real argument vectors reach every tracked Python file. | `test_every_tracked_python_file_is_linted_and_type_checked` | mcp/tests/test_gate_scope.py:157-178 |
 | `run_git` — the one runner `git_ls_files` calls — strips `GIT_REPOSITORY_SELECTOR_ENV` and bounds every call with the local/remote/metadata timeout classes. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:34-43; mcp/src/agents_remember/kernel/git_command.py:70-73; mcp/src/agents_remember/kernel/git_command.py:85-92 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `git_ls_files` still lists the repository it was handed, and that a non-repository and an unrunnable git both surface as `ScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:439-507 |
@@ -271,13 +289,13 @@ the report to a temporary directory unless `--coverage-json` is given.
 | Repo instructions make the pinned Dagger graph the only acceptance environment, identify its exported result as authoritative, and explicitly refuse a second host acceptance projection. | "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate." | AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161 |
 | The closeout caller that satisfies this module's index obligation: `gate_staged_code` resets the index and stages the whole task worktree before invoking the wrapper with the leaf's targeted plan — and runs both worktree refusals before the reset, because `git reset` drops unmerged entries and `MERGE_HEAD`. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-141 |
 | The optional settings-owned memory cap an explicitly constrained full run may use (`--memory-cap-bytes`); host-managed full runs do not call this planner. | `plan_capped_command` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130 |
-| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:143-358; mcp/tests/test_code_quality_targeted.py:361-646 |
-| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:279-279; pyproject.toml:124-124 |
+| The targeted contract proofs: rail scoping, real radon input, and no-change short-circuit. | `TargetedScopeDerivationTests`, `TargetedWrapperRunTests` | mcp/tests/test_code_quality_targeted.py:159-408; mcp/tests/test_code_quality_targeted.py:411-696 |
+| The command builder supplies derived test and coverage arguments; root pytest configuration owns automatic xdist workers. | "pytest_args = [sys.executable, \"-m\", \"pytest\", *test_args]"; "-n=auto" | mcp/src/agents_remember/code_quality/check.py:312-312; pyproject.toml:124-124 |
 
 ## 260731-EFA-L9 Change — Armed Layering Step
 
 The wrapper's `quality_steps` now registers the `layering` step unconditionally
-(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:335-381)):
+(cit:([`quality_steps`], mcp/src/agents_remember/code_quality/check.py:378-428)):
 `code_quality/layering.py` reads `layers.toml [contract].order` and fails on rank violations,
 package-pair cycles, undeclared top-level directories, and `from agents_remember import X` forms
 resolving to no declared package. There is no baseline/allowlist; a green full wrapper now
@@ -309,6 +327,9 @@ cannot enter the wrapper, coverage, CRAP, or changed-lines decisions.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS made product-only Coverage/CRAP explicit, added lifecycle
+  admission and causal continuation, and routed selection/retry/blocking through one ownership
+  graph. Verification remains closeout-owned.
 - 2026-08-24T21:23+02:00 — 260824-PDLS moved admission/bootstrap ownership to the testing route,
   added route-neutral phase export, and made certifying evidence explicit.
 

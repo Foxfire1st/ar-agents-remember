@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/models/conversations/__init__.py`    |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-08T14:38+02:00                                       |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                   |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -35,9 +35,9 @@ owning modules keep the behavior; this file is exports only.
 The module import layering is acyclic and declaration-order-validated: `primitives` → `identity`
 → `cursors` → `content`, `capabilities`, `status`, `submissions`, `withdrawals`, `opening`,
 `interrupts`, `attachments`, `telemetry` → `stream_events`, `history`. Pydantic forward
-references are closed by `model_rebuild()` in that order and pinned by
-`test_model_split_baseline.py::test_model_rebuild_ordering_is_complete`
-(cit:([`test_model_rebuild_ordering_is_complete`], mcp/tests/test_model_split_baseline.py:226-226)).
+references are closed by `model_rebuild()` in that order. The stable post-migration requirement is
+checked by `test_conversation_models_have_resolved_forward_references`; the former task/date
+shape snapshot is deleted.
 
 Key domain modules (each with its own sidecar in this route): `primitives.py` defines `WireModel`
 and the opaque purpose-branded token root; `identity.py` the conversation/authorization identity
@@ -54,8 +54,8 @@ contracts (R2).
 - Exports only: contract behavior lives in the concrete modules, never in this initializer.
 - Curated `__all__` with no `import *` (R6); production imports target the owning submodules, not
   this package initializer (R7 — the census found zero production package-`__init__` imports).
-- Declaration bodies moved verbatim from the monolith (R4); the serialization/schema baseline
-  fixture `mcp/tests/fixtures/model_split_baseline_260731_efa_l9.json` pins zero drift.
+- Declaration bodies moved from the monolith (R4); current serialization/schema behavior is owned
+  by focused contract suites rather than a permanent migration snapshot.
 
 ### Invariants And Boundaries
 
@@ -68,7 +68,8 @@ contracts (R2).
   `exclude_none=True` must be nullable AND defaulted (the L4 six-field rule).
 - No forwarding shim may reappear at `serving/conversation/models.py` or `_models_*`; no module
   may import these names from `serving.harness_control_models`/`harness_control_client`/
-  `terminal_catalog` (R8 — enforced by the armed layering rail and `test_removed_paths_receive_no_forwarding_shim`).
+  `terminal_catalog` (R8 — enforced by the armed layering rail and
+  `test_removed_conversation_model_modules_have_no_compatibility_shims`).
 
 ### Todos
 
@@ -76,8 +77,8 @@ If the export surface grows, keep it curated; behavior still belongs in the owni
 
 ## Docs References
 
-No Domain Documentation source is configured. The repository-owned hostile contract matrix and the
-baseline fixture are the authoritative behavioral evidence for this internal grammar.
+No Domain Documentation source is configured. Repository-owned hostile contract and stable
+architecture tests are the authoritative evidence for this internal grammar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -88,8 +89,8 @@ baseline fixture are the authoritative behavioral evidence for this internal gra
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The curated export surface lists every public conversation-wire name. | `__all__` | mcp/src/agents_remember/models/conversations/__init__.py:212-386 |
-| The zero-drift baseline proves schema/serialization equality and rebuild ordering for every moved model. | `test_conversation_schemas_and_dataclass_fields_match_baseline` | mcp/tests/test_model_split_baseline.py:144-144 |
-| Removed monolith paths receive no forwarding shim. | `test_removed_paths_receive_no_forwarding_shim` | mcp/tests/test_model_split_baseline.py:239-239 |
+| Every current conversation model rebuilds with resolved forward references. | `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:47-56 |
+| Removed monolith paths receive no forwarding shim. | `test_removed_conversation_model_modules_have_no_compatibility_shims` | mcp/tests/test_conversation_model_architecture.py:26-29 |
 | Hostile contract tests still pin cursor/provenance/status/capability products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
 | The canonical conversation read/control ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
 | The response-contract declarations that make these models the routes' stated contract. | `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:89-101 |
@@ -104,6 +105,8 @@ No cross-repository implementation governs these contracts.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS removed stale migration-snapshot authority and repointed
+  stable export/layering proof to the architecture test; verification remains closeout-owned.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: replaced the `serving/conversation/models.py`
   sidecar (and the `_models_*` split cards) with this package-initializer card after the monolith
   moved into the responsibility-owned modules under `models/conversations/`. Preserved the

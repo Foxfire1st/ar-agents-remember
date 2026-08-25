@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 
 > **Status:** active baseline
 
@@ -19,8 +19,9 @@ checkout requirements pin pytest-xdist 3.8.0 and the MCP package's development e
 version 3. Retry-proof compatibility includes the pytest-xdist version, so a changed parallel
 executor cannot reuse an earlier coverage proof. Only the pinned Dagger graph produces Agents
 Remember acceptance evidence. Direct targeted Vitest unit/component runs are supported as fast
-diagnostics only; pytest, Playwright, changed-lines CLI execution, the direct Python wrapper, and
-all acceptance remain Dagger-attested.
+diagnostics only. The exact-node `./scripts/test-python` wrapper is likewise a supported host
+diagnostic; raw host pytest, Playwright, coverage/changed-lines execution, and every acceptance
+decision remain Dagger-attested.
 
 ## 260731-EFA-L8 Frontend Rail
 
@@ -834,8 +835,10 @@ memory scope** (now onboarded, governed by the `dashboard/src/` route overview):
 global `tokens.css` monolith was retired into the layered blueprint — **Panda CSS** (typed tokens +
 build-time/zero-runtime recipes) for styling and **React Aria** (`react-aria-components`) for headless
 behavior/a11y (the mode bar + pivot `ToggleButtonGroup`s, the lifecycle `ListBox`), with the CRT
-effects isolated in `index.css`. A dev `/dev/bench` gallery + `/dev/reference` mc2 mount + the
-`build_rich_sim.py` 35-lifecycle stress fixture drive the screenshot-annotate review loop.
+effects isolated in `index.css`. A dev `/dev/bench` gallery plus `/dev/reference` mc2 mount drive
+the screenshot-annotate review loop. The former `build_rich_sim.py` 35-lifecycle generator was
+later retired because no maintained product or acceptance consumer used it; do not restore a
+self-validating generator/test pair as evidence.
 **Slice 6d** begins **Mode B2** — the dashboard-hosted terminal: 6d-1 lands the `serving.terminal`
 host (a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions that launch the real harness
 render-not-scrape — raw VT bytes for xterm.js, fixed-argv with no shell-injection surface, OS-user
@@ -868,7 +871,7 @@ This repository is selected into an external coordination workspace by configure
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
-| The source checkout defines Dagger-only acceptance, the single exported result, refusal of a second host acceptance projection, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate."; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161; AGENTS.md:185-186 |
+| The source checkout defines Dagger-only acceptance, the single exported result, refusal of a second host acceptance projection, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate."; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161; AGENTS.md:189-190 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
@@ -1194,7 +1197,7 @@ The committed package layout mirrors those owners: public adapters are under `ap
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:97-170; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:327-365 |
-| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:66-101; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:488-532 |
+| Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-113; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:473-517 |
 | Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:178-248 |
 | Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-132 |
 
@@ -1203,12 +1206,19 @@ The committed package layout mirrors those owners: public adapters are under `ap
 The repository now exposes one bounded direct Python diagnostic command,
 `./scripts/test-python <exact-node>...`, alongside the unchanged lifecycle-owned Dagger acceptance
 graph. The direct route is structural, fail-closed, serial, limited to eight exact nodes, and
-permanently non-certifying. Its new package route is documented at
+permanently non-certifying. Its seven-node population and complete reviewed closure are sealed by
+content hashes; expanding it is an explicit review, not analyzer output. The same master also
+establishes a durable evidence lifecycle/cadence catalog, product-only Coverage/CRAP, one
+dependency-ownership graph for selection and retry, and owner-level causal failure localization.
+Its package route is documented at
 `onboarding/mcp/src/agents_remember/testing/overview.md`; durable workflow guidance is in
 `system/tools.md`. Raw host pytest, direct coverage, and the quality wrapper remain prohibited.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS reconciled the explicit cohort, durable evidence lifecycle,
+  product-only scoring, dependency-owned selection/retry, and causal localization; retired the
+  unused rich-sim generator and task/date model-split snapshot.
 - 2026-08-24T21:23+02:00 — 260824-PDLS added the bounded Python diagnostic route and preserved
   Dagger as sole acceptance authority.
 

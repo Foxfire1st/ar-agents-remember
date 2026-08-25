@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/selection_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,29 +16,51 @@
 
 ## Purpose
 
-Owns the closed typed vocabulary passed between exact-selector resolution, static closure,
-eligibility, bootstrap, and the direct runner.
+Owns the closed typed vocabulary between explicit cohort verification, diagnostic bootstrap, and
+the direct runner.
 
 ## Code Commentary
 
-`UnsafeEffectFamily` and `DirectRefusalCode` make every policy outcome explicit.
-`EligibleDirectSelection` contains candidate root, exact nodes, complete closure, and immutable
-binding. `RefusedDirectSelection` carries one stable reason and the whole refused selection.
+### Logic
 
-## Invariants And Boundaries
+`UnsafeEffectFamily` and `DirectRefusalCode` enumerate all policy outcomes.
+`ResolvedDependencyClosure` records the audited paths and observations supplied by the manifest
+verifier. An `EligibleDirectSelection` carries exact nodes, candidate root, closure, and binding;
+`RefusedDirectSelection` carries the whole request, one stable reason, and optional source-backed
+observation.
 
-- A decision is eligible or refused; there is no unknown/fallback result.
-- Unsafe families and refusal codes are closed enums. Adding a member is a policy change.
-- `DependencyObservation` is source-backed and may name one unsafe family; prose alone is not a
-  classifier result.
+### Conventions
+
+Decisions are values rather than exceptions at the public classifier boundary. Exceptions remain
+private parsing/verification mechanics translated by the classifier.
+
+### Invariants And Boundaries
+
+- A decision is eligible or refused; there is no unknown or fallback decision.
+- Closed enums make new effects/refusals explicit policy changes.
+- Closure observations record reviewed facts; they are not claims from a generic analyzer.
+
+### Todos
+
+None.
+
+## Docs References
+
+No external documentation owns these internal types.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed unsafe and refusal vocabularies. | `UnsafeEffectFamily`; `DirectRefusalCode` | mcp/src/agents_remember/testing/selection_contract.py:13-44 |
-| Atomic eligible/refused result shapes. | `EligibleDirectSelection`; `RefusedDirectSelection` | mcp/src/agents_remember/testing/selection_contract.py:66-85 |
+| Unsafe families and refusal codes are closed. | `UnsafeEffectFamily` | mcp/src/agents_remember/testing/selection_contract.py:13-47 |
+| Atomic eligible/refused decisions carry exact closure and binding. | `EligibleDirectSelection` | mcp/src/agents_remember/testing/selection_contract.py:49-86 |
+
+## Cross-Repo References
+
+No cross-repository boundary is owned here.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — Clarified that closure observations are sealed audit facts after the
+  generic analyzer was removed.
 - 2026-08-24T21:23+02:00 — Created for 260824-PDLS.

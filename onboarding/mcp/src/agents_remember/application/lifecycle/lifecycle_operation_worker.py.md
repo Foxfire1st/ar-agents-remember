@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ The source records the lifecycle transition and recovery boundary directly.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `OperationRuntime` publishes claimed, heartbeat, progress, and terminal durable state. | `OperationRuntime` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:86-347 |
-| Execution reconstructs captured policy and dispatches the exact closeout or integration input. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:350-395 |
+| `OperationRuntime` publishes claimed, heartbeat, progress, and terminal durable state. | `OperationRuntime` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:88-297 |
+| Execution reconstructs captured policy and dispatches the exact closeout or integration input. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:300-345 |
 
 ## Cross-Repo References
 
@@ -77,7 +77,7 @@ No meaningful cross-repository boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:350-395 |
+| The process operates only on the contract-resolved repository and memory worktrees. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:300-345 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -112,12 +112,23 @@ The current source seams include `OperationCancelled`, `OperationRuntime`, `exec
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `OperationCancelled`, `OperationRuntime`, `execute_operation` at this ownership boundary. | L66-L67; L86-L347; L350-L395 | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` |
+| The current module exposes `OperationCancelled`, `OperationRuntime`, `execute_operation` at this ownership boundary. | `OperationCancelled`; `OperationRuntime`; `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:68-69; mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:88-298; mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:300-345 |
+
+## 260824-PDLS Owner-Level Terminalization Contract
+
+`terminal_operation_record` is now the pure canonical terminal transition used by both the detached
+runtime and the quality owner preflight. If an accepted organizational-repair generation already
+published its developer-decision payload, a later lower-level failure retains that durable result
+instead of replacing it with a schema-incompatible symptom. The transition still derives recovery,
+input-required, finish, guidance, and process-binding state from operation evidence; the preflight
+only validates this owner and never duplicates the transition.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS extracted the pure terminal transition as the single owner,
+  preserving canonical organizational-repair evidence and enabling one owner-level preflight.
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.

@@ -1,4 +1,4 @@
-# Python Testing Boundary Overview
+# Python Testing and Evidence Boundary Overview
 
 | Field | Value |
 | --- | --- |
@@ -7,175 +7,153 @@
 | sourceRoute | `mcp/src/agents_remember/testing/` |
 | onboardingRoute | `onboarding/mcp/src/agents_remember/testing/overview.md` |
 | parentOverview | [`mcp overview`](../../../overview.md) |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 
 ## What This Area Is
 
-This route owns Python-test execution policy below the quality/lifecycle plane. It separates three
-questions that previously leaked into one root conftest boundary:
+This route owns Python test-evidence policy below the quality/lifecycle plane:
 
-1. whether an exact bounded selector is structurally safe for a direct diagnostic;
-2. how either route prepares a deterministic candidate-bound pytest process; and
-3. whether the current process has Dagger admission and may participate in certifying execution.
+1. durable evidence category, authority, fidelity, cadence, lifetime, and replacement;
+2. the bounded exact-node diagnostic cohort and its fail-closed admission;
+3. shared hermetic pytest preparation versus Dagger-only certifying admission;
+4. non-accepting scheduled/provider/migration cadence;
+5. route-neutral phase and causal-failure observations.
 
-The two execution routes share hermetic bootstrap, random order, owned-global restoration, and
-route-neutral phase reporting. They do not share evidence authority. Direct output is permanently
-diagnostic; quality, coverage, retry, lifecycle, closeout, and integration consume only
-candidate-bound evidence published by the Dagger executor.
-
-```mermaid
-flowchart TD
-    N[Exact node IDs] --> E[eligibility classifier]
-    E -->|eligible| DB[diagnostic bootstrap]
-    E -->|refused| Z[zero executed nodes]
-    DB --> DR[canonical direct runner]
-    DA[Dagger nonce/file route guard] --> CB[certifying bootstrap]
-    HB[hermetic bootstrap] --> DB
-    HB --> CB
-    DR --> DE[diagnostic evidence]
-    CB --> DP[Dagger publication]
-    DP --> CE[certifying evidence]
-    DE -. rejected .-> A[accepting consumers]
-    CE --> A
-```
+The route does not own acceptance publication. Direct diagnostics and cadence results remain
+non-accepting; only the Dagger quality executor's immutable candidate-bound publication can mint
+certifying evidence.
 
 ## Hot Path Summary
 
-Start with `eligibility.py`, `dependency_closure.py`, and `unsafe_effects.py` for admission policy;
-`direct_runner.py` for the only direct command; `dagger_admission.py` and
-`certifying_bootstrap.py` for the certifying route; and `selection_contract.py` plus
-`models/test_evidence.py` for the typed boundary between classification, execution, and consumers.
+Start with `evidence_lifecycle.py` and `evidence_lanes.py` for evidence authority/cadence;
+`cohort_manifest.py` and `eligibility.py` for direct admission; `direct_runner.py` for exact local
+feedback; `dagger_admission.py` plus the certifying bootstrap for acceptance startup; and
+`causal_failures.py` for downstream failure localization.
 
 ## What Belongs Here
 
 | Path | Role |
 | --- | --- |
-| `selection_contract.py` | Closed classifier result, refusal, observation, and unsafe-family types. |
-| `python_source.py`, `collection_closure.py`, `dependency_closure.py` | Parse-only source/dependency closure; candidate code is never imported to classify it. |
-| `unsafe_effects.py`, `eligibility.py` | Sole structural policy and whole-request decision owner. |
-| `hermetic_bootstrap.py`, `global_state.py`, `random_order.py` | Shared deterministic process state. |
-| `dagger_admission.py`, `certifying_bootstrap.py` | Dagger-only route guard and certifying composition. |
-| `diagnostic_bootstrap.py`, `direct_runner.py` | Still-current selection validation and exact serial diagnostic execution. |
-| `pytest_bootstrap.py`, `pytest_certifying_bootstrap.py` | Shared versus certifying-only pytest plugins. |
-| `pytest_phase_reporter.py` | Route-neutral timestamps and node outcomes; no authority. |
+| `evidence_lifecycle.py` | Durable artifact metadata, census, expiry, graduation, and replacement. |
+| `evidence_lanes.py` | Closed evidence categories, pytest markers, and cadence expressions. |
+| `cadence_runner.py` | Non-accepting scheduled/provider/migration Dagger execution. |
+| `cohort_manifest.py` | Strict explicit direct-cohort schema and reachability. |
+| `eligibility.py` | Sole whole-request classifier and candidate-binding verifier. |
+| `selection_contract.py` / `unsafe_effects.py` | Closed decision, refusal, and effect vocabulary. |
+| `diagnostic_bootstrap.py` / `direct_runner.py` | Current-selection validation and one serial diagnostic command. |
+| `hermetic_bootstrap.py` / `global_state.py` / `random_order.py` | Shared deterministic process state. |
+| `dagger_admission.py` / `certifying_bootstrap.py` | Dagger-only admission and certifying composition. |
+| `pytest_bootstrap.py` / `pytest_certifying_bootstrap.py` | Shared versus certifying-only pytest plugins. |
+| `pytest_phase_reporter.py` | Route-neutral phases and node outcomes. |
+| `causal_failures.py` | Graph-proven blocking and independent/process-sensitive failure records. |
 | `consumer_inventory.py` | Closed accepting-consumer inventory used by firewall proof. |
 
 ## What Does Not Belong Here
 
-| Nearby Thing | Belongs Instead In |
+| Concern | Owner |
 | --- | --- |
-| Quality-step planning, coverage, CRAP, diff floor | `mcp/src/agents_remember/code_quality/` |
-| Immutable Dagger generation publication and verification | `mcp/src/agents_remember/worktrees/modules/` |
-| Diagnostic/certifying serialized evidence model | `mcp/src/agents_remember/models/test_evidence.py` |
-| Dagger container graph and secret-free nonce creation | `.dagger/src/agents_remember_quality/main.py` |
-| Cohort and boundary explanations | `docs/design/python-*.md` |
+| Test consumer graph, quality scope, retry, and owner preflight | `mcp/src/agents_remember/code_quality/` |
+| Diagnostic/certifying serialized capability model | `mcp/src/agents_remember/models/test_evidence.py` |
+| Immutable Dagger generation publication | `mcp/src/agents_remember/worktrees/modules/` |
+| Dagger container graph | `.dagger/src/agents_remember_quality/main.py` |
+| Fixture/event support worlds | `mcp/tests/` with lifecycle-catalog ownership |
 
 ## Operating Model
 
-### Direct diagnostic flow
+### Durable evidence
 
-1. `scripts/test-python` supplies only normalized exact pytest node IDs to `direct_runner`.
-2. The total classifier resolves the whole request, with an eight-node maximum and no flags.
-3. Collection-time code, imports, fixtures, helpers, constructors, and calls are followed
-   statically. Any unknown dependency or closed unsafe family refuses the entire request.
-4. The runner rechecks the candidate binding, scrubs Git selectors and Dagger admission, forces
-   serial pytest with the canonical config, and executes exactly once.
-5. A candidate change, missing/contradictory phase record, or closure drift is infrastructure
-   failure. There is no smaller-subset or Dagger fallback.
-6. The result is `DiagnosticTestEvidence`; accepting consumers reject it by type and altitude.
+The lifecycle catalog is validated before behavior runs. New governed artifacts cannot enter
+without complete authority, fidelity, cadence, provenance, lifetime, replacement, and consumer
+metadata. Temporary migration proof expires; external versioned proof stays independent of product
+generators.
 
-### Certifying flow
+### Direct diagnostic
 
-1. The Dagger graph creates the process nonce/file handshake.
-2. `dagger_admission` validates it before candidate planning, plugin loading, or collection and
-   returns the module-minted capability.
-3. `certifying_bootstrap` combines admission with the same hermetic candidate process used by
-   diagnostics; `pytest_certifying_bootstrap` alone binds worktree/provider services.
-4. The quality wrapper requires the admission capability before pytest, coverage, or retry proof.
-5. The clean executor publishes one immutable, digest-verified schema-2 report generation bound to
-   the candidate tree. That publication, not the in-process nonce by itself, mints certifying
-   evidence.
+The v2 manifest seals seven exact nodes, eight audited Python files, configuration bytes, symbols,
+local imports, effects, fixtures, and per-node closure. The classifier verifies the whole request;
+one refusal executes zero nodes. The runner uses canonical pytest configuration, shared hermetic
+setup, `-n=0`, and no conftest discovery. It rechecks the binding after execution and emits only
+diagnostic JSON.
+
+### Certifying quality
+
+Root conftest obtains Dagger admission before certifying plugin load or collection. Certifying
+pytest adds evidence lanes, causal reporting, and real worktree service composition. The quality
+executor outside this route publishes the only accepted candidate-bound result.
+
+### Cadence and causal reporting
+
+Affected quality excludes sustained stress; full release runs every category. Separate Dagger
+cadence commands run stress, provider-bump, or migration evidence without acceptance. An owner
+preflight may mark only complete import/catalog consumers as causally blocked; independent failures
+continue and retain reproduction metadata.
 
 ## Local Invariants And Traps
 
-- Eligibility is structural and fail-closed. Names, markers, directories, past results, or a human
-  assertion of purity never grant admission.
-- Classification parses candidate source but never imports or executes it.
-- The whole selection is atomic: one refusal means zero nodes run.
-- `DependencyClosureAnalyzer` cache identity includes file, function name, and source line; methods
-  with the same name in different classes must be scanned independently.
-- Direct execution accepts no arbitrary pytest flags, forces `-n=0`, and has no compatibility or
-  fallback route.
-- The nonce/file handshake guards ordinary wrong-route invocation. It cannot authenticate against
-  a repository owner who controls code, interpreter, environment, and filesystem; durable Dagger
-  publication is the acceptance boundary.
-- Missing phase timestamps serialize as `null` so reporting never masks pytest's original exit.
-- Phase timing and node outcome records are observations, not acceptance evidence.
-- Vitest policy is unchanged by this route.
+- The removed `dependency_closure.py`, `python_source.py`, and `collection_closure.py` have no
+  compatibility readers or sidecars. Seven nodes do not justify a generic repository analyzer.
+- Hash drift is a refusal requiring deliberate re-audit, not an auto-refresh opportunity.
+- Diagnostic/cadence use of shared bootstrap or Dagger containers does not grant authority.
+- Direct requests are atomic, exact, serial, and bounded to eight nodes.
+- Evidence categories are exhaustive and mutually exclusive; unmarked means unit regression.
+- Affected execution may omit sustained stress, but full release and scheduled cadence preserve it.
+- Incomplete causal ownership never becomes blanket suppression.
+- Phase reporters wait for every xdist worker's collection callback before closing collection.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The total classifier owns the exact request and maximum node count. | L23-L59 | `mcp/src/agents_remember/testing/eligibility.py` |
-| The static analyzer identifies functions by path, name, and line. | L39-L47; L170-L185 | `mcp/src/agents_remember/testing/dependency_closure.py` |
-| Direct execution emits diagnostic-only payloads and no certifying field. | L35-L39; L101-L124; L165-L228 | `mcp/src/agents_remember/testing/direct_runner.py` |
-| Dagger admission validates before certifying composition. | L55-L100 | `mcp/src/agents_remember/testing/dagger_admission.py` |
-| Evidence consumers reject diagnostic altitude. | L14-L105; L143-L174 | `mcp/src/agents_remember/models/test_evidence.py` |
-| The bounded real cohort contains exactly seven production assertions. | L1-L54 | `mcp/tests/test_python_direct_cohort.py` |
+| The lifecycle catalog validates every durable artifact and replacement. | `_validate_artifacts` | mcp/src/agents_remember/testing/evidence_lifecycle.py:254-265 |
+| The lane registry routes affected, release, provider, stress, migration, and diagnostic evidence. | `EVIDENCE_LANES` | mcp/src/agents_remember/testing/evidence_lanes.py:42-111 |
+| The explicit manifest and classifier replace generic static analysis. | `load_direct_cohort_manifest`; `classify_direct_selection` | mcp/src/agents_remember/testing/cohort_manifest.py:89-127; mcp/src/agents_remember/testing/eligibility.py:50-75 |
+| The certifying plugin loads lanes and causal reporting only after admission. | `pytest_plugins` | mcp/src/agents_remember/testing/pytest_certifying_bootstrap.py:15-19 |
 
 ## Cross-Repo References
 
-No external repository supplies or overrides this route's eligibility, bootstrap, or evidence
-authority.
+No adjacent repository supplies or overrides this route's evidence authority.
 
 ## Docs References
 
-The implementation rationale and command contract are in `docs/design/python-direct-diagnostics.md`,
-`docs/design/python-pytest-bootstrap.md`, `docs/design/python-test-evidence.md`, and
-`docs/design/python-direct-cohort.md`. No external domain-documentation source is configured.
+Repository design authority is in `docs/design/python-evidence-system.md` and the four focused
+`docs/design/python-*.md` documents. No external domain-documentation source is configured.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The complete evidence-system contract is repository-owned. | `# Python Test Evidence System` | docs/design/python-evidence-system.md:1-227 |
 
 ## File-Level Onboarding Map
 
-| Source File | Onboarding File | Status | Reason |
-| --- | --- | --- | --- |
-| `testing/__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Narrow public testing API. |
-| `testing/certifying_bootstrap.py` | [`certifying_bootstrap.py.md`](certifying_bootstrap.py.md) | covered | Certifying composition. |
-| `testing/collection_closure.py` | [`collection_closure.py.md`](collection_closure.py.md) | covered | Import-time closure. |
-| `testing/consumer_inventory.py` | [`consumer_inventory.py.md`](consumer_inventory.py.md) | covered | Acceptance-edge inventory. |
-| `testing/dagger_admission.py` | [`dagger_admission.py.md`](dagger_admission.py.md) | covered | Dagger route guard. |
-| `testing/dependency_closure.py` | [`dependency_closure.py.md`](dependency_closure.py.md) | covered | Recursive static closure. |
-| `testing/diagnostic_bootstrap.py` | [`diagnostic_bootstrap.py.md`](diagnostic_bootstrap.py.md) | covered | Diagnostic composition. |
-| `testing/direct_runner.py` | [`direct_runner.py.md`](direct_runner.py.md) | covered | Canonical direct command. |
-| `testing/eligibility.py` | [`eligibility.py.md`](eligibility.py.md) | covered | Sole admission policy. |
-| `testing/global_state.py` | [`global_state.py.md`](global_state.py.md) | covered | Shared state restoration. |
-| `testing/hermetic_bootstrap.py` | [`hermetic_bootstrap.py.md`](hermetic_bootstrap.py.md) | covered | Candidate process isolation. |
-| `testing/pytest_bootstrap.py` | [`pytest_bootstrap.py.md`](pytest_bootstrap.py.md) | covered | Shared pytest hooks. |
-| `testing/pytest_certifying_bootstrap.py` | [`pytest_certifying_bootstrap.py.md`](pytest_certifying_bootstrap.py.md) | covered | Certifying services. |
-| `testing/pytest_phase_reporter.py` | [`pytest_phase_reporter.py.md`](pytest_phase_reporter.py.md) | covered | Route-neutral evidence. |
-| `testing/python_source.py` | [`python_source.py.md`](python_source.py.md) | covered | AST/source graph. |
-| `testing/random_order.py` | [`random_order.py.md`](random_order.py.md) | covered | Deterministic order. |
-| `testing/selection_contract.py` | [`selection_contract.py.md`](selection_contract.py.md) | covered | Typed classifier vocabulary. |
-| `testing/unsafe_effects.py` | [`unsafe_effects.py.md`](unsafe_effects.py.md) | covered | Closed safety policy. |
+| Source File | Onboarding | Status |
+| --- | --- | --- |
+| `cadence_runner.py` | [`cadence_runner.py.md`](cadence_runner.py.md) | covered |
+| `causal_failures.py` | [`causal_failures.py.md`](causal_failures.py.md) | covered |
+| `cohort_manifest.py` | [`cohort_manifest.py.md`](cohort_manifest.py.md) | covered |
+| `evidence_lanes.py` | [`evidence_lanes.py.md`](evidence_lanes.py.md) | covered |
+| `evidence_lifecycle.py` | [`evidence_lifecycle.py.md`](evidence_lifecycle.py.md) | covered |
+| `eligibility.py` | [`eligibility.py.md`](eligibility.py.md) | covered |
+| `selection_contract.py` | [`selection_contract.py.md`](selection_contract.py.md) | covered |
+| `unsafe_effects.py` | [`unsafe_effects.py.md`](unsafe_effects.py.md) | covered |
+| `direct_runner.py` | [`direct_runner.py.md`](direct_runner.py.md) | covered |
+| `pytest_phase_reporter.py` | [`pytest_phase_reporter.py.md`](pytest_phase_reporter.py.md) | covered |
+| Other existing route sources | adjacent one-to-one sidecars | covered |
 
 ## Child Overviews
 
-None. This route is intentionally one cohesive testing boundary.
+None. The route is one cohesive execution/evidence boundary.
 
 ## How To Use This Area
 
-Read this overview, then the cards for the classifier/runner or admission/bootstrap side you are
-changing. Any proposal that admits a new construct or effect family changes policy and requires an
-explicit decision; it is not an incidental test-fixture fix.
-
-## Needs Verification
-
-None for the candidate bound above. The master-level Dagger result remains acceptance evidence and
-is recorded outside onboarding.
+Read the route overview, then the exact owner sidecar. Changes to a category, effect family,
+lifecycle field, cohort member, cadence trigger, or causal blocking rule are policy changes and need
+explicit requirement authority plus forcing proof.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — Replaced the generic-analyzer onboarding with the final explicit cohort,
+  lifecycle/lanes/cadence, dependency ownership, and causal-localization architecture; removed three
+  stale deleted-source cards.
 - 2026-08-24T21:23+02:00 — 260824-PDLS created the testing route after separating structural
   diagnostics, reusable bootstrap, Dagger admission, and evidence altitude end to end.

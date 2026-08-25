@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -30,20 +30,21 @@ The key binds the resolved diff base, measurement scope and thresholds, Python/p
 coverage, pytest, pytest-cov, and pytest-xdist tool versions, plus a digest of the invocation
 environment. The manifest and both
 coverage artifacts carry SHA-256 integrity checks. An exact match restores coverage JSON and skips
-pytest. When only concrete selected `test_*.py`/`*_test.py` modules changed, the plan reruns those
-modules with coverage append.
+pytest. Otherwise the canonical `DependencyOwnershipGraph` resolves every changed product, test,
+support, plugin, and governed fixture path to affected consumers. Only a complete, non-global
+impact wholly inside the prior selected population may run as a delta.
 
 Tracked symlinks are fingerprinted as Git stores them: the link-target text, tagged as a symlink,
 not bytes reached by following the link. This matters for the repository's tracked
 `dashboard/node_modules` directory link; following it made the first production retry fail with
 `IsADirectoryError` and silently fall back to another full suite.
 
-`_filtered_coverage_data` first removes the changed tests' runtime contexts and the empty
-collection/import context from the old branch data. The retained aggregate is therefore a
-conservative subset: it may be insufficient and trigger the wrapper's full fallback, but it cannot
-pass from stale evidence attributable to an edited test. Support modules, `conftest.py`, deleted
-tests, source/config drift, relevant untracked files, missing contexts, changed selection, changed
-environment, corrupt artifacts, and CI all select a fresh run.
+`_filtered_coverage_data` removes every affected test's runtime contexts and the empty
+collection/import context from the old branch data before those consumers append fresh data. The
+retained aggregate is therefore a conservative subset: it may be insufficient and trigger a
+conclusive full rerun, but it cannot pass from stale evidence attributable to a changed dependency.
+Global input, incomplete ownership, affected consumers outside the prior population, missing
+contexts, changed environment, corrupt artifacts, and CI all select a fresh run.
 
 Only a fresh full pytest pass followed by a later rail failure publishes a new manifest. A passing
 wrapper removes the proof; a delta failure retains the original full proof rather than chaining an
@@ -56,8 +57,9 @@ already-filtered aggregate.
 - The manifest stores only the environment digest, never environment values or secrets.
 - The repository snapshot hashes tracked symlink identity without reading an external target tree.
 - Context filtering requires branch arcs and at least one pytest runtime context.
-- Delta eligibility is finite and structural: selected concrete test modules only; support or
-production changes always run fresh inside the same Dagger graph.
+- Delta eligibility is dependency-owned: all affected consumers must be known, non-global, and
+  inside the prior selected population. Support and governed fixture changes may qualify only when
+  their complete consumer set is proven; ambiguous/unowned input runs fresh.
 - `AR_QUALITY_NO_RETRY` disables reuse. `prepare` requires a typed capability minted only by
   `testing.dagger_admission`; this module cannot turn host or diagnostic execution into an accepted
   retry.
@@ -79,11 +81,11 @@ quality-proof policy.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:488-533; mcp/src/agents_remember/code_quality/check.py:778-812 |
-| Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:268-297; mcp/src/agents_remember/code_quality/check.py:335-381 |
-| Focused tests prove filtering, invalidation, exact reuse, changed-test selection, conclusive full fallback, cached-report deletion after a cheap-rail failure, and tracked directory-symlink snapshotting. | `test_changed_test_contexts_and_collection_context_are_removed`; `test_wrapper_retry_runs_only_changed_test_module`; `test_repository_snapshot_hashes_symlink_identity_without_following_it` | mcp/tests/test_quality_retry_proof.py:31-54; mcp/tests/test_quality_retry_proof.py:145-233; mcp/tests/test_quality_retry_proof.py:303-327 |
-| The compatibility key includes pytest-xdist alongside the other coverage/pytest tool versions, so executor changes invalidate reuse. | `_compatibility_key` | mcp/src/agents_remember/code_quality/retry_proof.py:303-324 |
-| Retry planning validates the certifying capability before reading or publishing any cached proof. | `prepare`; `require_dagger_admission_capability` | mcp/src/agents_remember/code_quality/retry_proof.py:142-166; mcp/src/agents_remember/testing/dagger_admission.py:93-101 |
+| The wrapper prepares, consumes, and finalizes retry plans around its fixed and coverage-derived rails. | `execute_quality_rails`; `prepare_retry_plan` | mcp/src/agents_remember/code_quality/check.py:535-584; mcp/src/agents_remember/code_quality/check.py:879-912 |
+| Retry pytest commands record per-test contexts and append only in delta mode. | `_pytest_step`; `quality_steps` | mcp/src/agents_remember/code_quality/check.py:301-340; mcp/src/agents_remember/code_quality/check.py:378-428 |
+| Focused tests prove dependency-owned filtering, global/incomplete invalidation, exact reuse, conclusive full fallback, and tracked directory-symlink snapshotting. | `test_changed_test_contexts_and_collection_context_are_removed`; `test_repository_snapshot_hashes_symlink_identity_without_following_it` | mcp/tests/test_quality_retry_proof.py:32-55; mcp/tests/test_quality_retry_proof.py:359-383 |
+| The compatibility key includes pytest-xdist alongside the other coverage/pytest tool versions, so executor changes invalidate reuse. | `_compatibility_key` | mcp/src/agents_remember/code_quality/retry_proof.py:360-381 |
+| Retry planning validates the certifying capability before reading or publishing any cached proof. | `prepare`; `require_dagger_admission_capability` | mcp/src/agents_remember/code_quality/retry_proof.py:157-181; mcp/src/agents_remember/testing/dagger_admission.py:93-101 |
 
 ## Cross-Repo References
 
@@ -102,6 +104,9 @@ quality route.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — Replaced changed-test-only retry eligibility with the shared
+  dependency-owned impact graph; support and fixture deltas are allowed only with complete consumer
+  proof, and stale affected contexts are removed before append.
 - 2026-08-24T21:23+02:00 — 260824-PDLS added the typed admission boundary and closed diagnostic
   reachability.
 

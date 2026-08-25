@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_control_plane.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,12 +26,12 @@ support code, not a test module: the four service/route L3 suites import `Contro
 
 ### Logic
 
-cit:([`LiveHost`], mcp/tests/_control_plane.py:93-96) is the minimal terminal-host stand-in; cit:([`FakeControlAdapter`], mcp/tests/_control_plane.py:89-425) is the structural
+cit:([`LiveHost`], mcp/tests/_control_plane.py:91-94) is the minimal terminal-host stand-in; cit:([`FakeControlAdapter`], mcp/tests/_control_plane.py:101-307) is the structural
 interrupt/asset-capable adapter at the far edge (no PTY, no runner log, no fixture authority) that
 plays codex/pi/claude native shapes — including `pi_emit_message_end`/`pi_release` and the composed
 `pi_settle_with_content` helper that mirror `pi_rpc_events` message_end emission exactly (event kind
 `transcript`, monotonic `TranscriptEntry`, the full frame under `AR_EVIDENCE_KEY`, completion
-release). cit:([`ControlledEntry`], mcp/tests/_control_plane.py:442-447) is the catalog row wrapper. cit:([`ControlHarness`], mcp/tests/_control_plane.py:436-518) builds the
+release). cit:([`ControlledEntry`], mcp/tests/_control_plane.py:310-315) is the catalog row wrapper. cit:([`ControlHarness`], mcp/tests/_control_plane.py:318-401) builds the
 whole seam per test: bridge + IPC server on a real socket, the real submission authority (which owns
 dispatch, provenance, withdrawal, the timeline, and the L2E recovery payload), `register_conversation_
 routes`, and — the manager-authorized residual repair — a single `NOW`-anchored
@@ -77,9 +77,9 @@ and its clock seam are the production control service.
 | --- | --- | --- |
 | The L0 `register_conversation_routes` composition the harness builds. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
 | The per-app control service and its public `clock` seam plus `_SERVICES` memo the harness seeds. | `ConversationControlService`; `_SERVICES` | mcp/src/agents_remember/serving/conversation/control/service.py:224-362; mcp/src/agents_remember/serving/conversation/control/service.py:365-367 |
-| The pi mapper message_end emission shapes the fake adapter mirrors. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
-| The real bridge on a user-private socket. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
-| The IPC server on a user-private socket. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
+| The pi mapper message_end emission shapes the fake adapter mirrors. | `PiRpcEventMapper` | mcp/src/agents_remember/serving/pi_rpc_events.py:59-362 |
+| The real bridge on a user-private socket. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:81-547 |
+| The IPC server on a user-private socket. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:103-416 |
 
 ## Cross-Repo References
 
@@ -95,8 +95,19 @@ The shared control-plane test topology now supports structured interaction repli
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260824-PDLS Fixture-Authority Split
+
+The harness still owns topology, mutable adapter state, and the real bridge/IPC/control seam. The
+provider-frame replay scripts moved once to `_adapter_event_scripts.py`, where independent Codex,
+Pi, and Claude terminal worlds are expressed through the narrow `AdapterReplayPort`. This removes
+provider evidence construction from the structural harness without introducing a second adapter or
+copying production mappers. Tests call those scripts through the existing fake adapter.
+
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS moved provider-frame scripts to their single independent
+  evidence owner while retaining topology/state in this harness; verification remains
+  closeout-owned.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: removed duplicate service-source segments and generated final citation ranges with the scoped fixer.

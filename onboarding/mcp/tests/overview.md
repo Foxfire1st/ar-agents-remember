@@ -8,14 +8,33 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## 260824-PDLS Current Evidence Topology
+
+`evidence-lifecycle.toml` is the complete durable-artifact and shared-support census: authority,
+fidelity, category, cadence, lifetime, expiry/replacement, and consumers are executable metadata.
+Provider recordings remain external-versioned proof; synthetic helper worlds are explicitly
+internal and cannot masquerade as recordings. The former task/date model-split snapshot and its
+meta-test are deleted, with lasting architecture assertions moved to ordinary behavior tests.
+
+`python-direct-cohort.toml` seals the tiny seven-node direct diagnostic cohort and its audited
+closure. `_direct_cohort_candidate.py` supplies deliberately inert functions for those nodes;
+`_evidence_catalog_fixture.py` is the one lifecycle-catalog test builder. Provider replay scripts
+live in `_adapter_event_scripts.py`, independent from `_control_plane.py`'s structural harness.
+These helpers are cataloged support, not pytest test modules and not acceptance evidence.
+
+Ordinary tests, shared support, plugins, and governed fixtures all participate in the same
+dependency-ownership graph. The graph's reasons feed targeted selection and retry invalidation;
+causal suppression uses only proven import/catalog edges. Coverage/CRAP measure product code only,
+while every test/support Python file remains linted, typed, size-checked, and executable.
 
 ## L3 Final Targeted-Gate Repair
 
@@ -940,7 +959,7 @@ fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_ha
 | Tool-response conformance captures `nextStep` and `supervisorBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `supervisorBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_agent_notifier_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-331 |
 | The lifecycle state vocabulary is partitioned live and terminal with both halves total and disjoint, every live state counted, and terminality held to the reducer that produces it. | `MetricsBucketVocabularyTests`; `StatePartitionTests`; `TerminalityIsStructuralTests` | mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420 |
-| The rich-sim fixture records the raw token in `unknown_cells`, and writing the document as Markdown text bypasses `validate_contract`. | "records the raw token on"; "unknown_cells"; "validate_contract"; "writing the document as markdown text bypasses entirely" | mcp/tests/fixtures/build_rich_sim.py:524-526 |
+| The live boundary suite proves unknown contract cells degrade with the raw token retained and disappear after a canonical rewrite. | `test_unknown_cleanup_degrades_and_is_quarantined`; `test_unknown_memory_mode_is_quarantined_and_healed` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py |
 | A decoy repository named by all eight selectors receives none of the real repository writes or reads, an AST sweep asserts `kernel/git_command.py` is the only git-spawning module, and the benchmark runner argv including `reset --hard` is asserted directly. | `DecoyRepositoryTests`; `SingleRunnerTests`; `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:155-211; mcp/tests/test_git_command.py:393-465; mcp/tests/test_git_command.py:663-791 |
 | The sweep reach is planted and asserted for subprocess aliases, a path-qualified git argv head, a `kwargs` splat that is not proof of `env`, and per-command timeout bands. | `SingleRunnerGuardReachTests`; `TimeoutClassTests` | mcp/tests/test_git_command.py:468-547; mcp/tests/test_git_command.py:550-660 |
 | The runner scrubs repository selectors on every call, uses `input_text` for git patch-id and DEVNULL otherwise, and carries the local, remote, and metadata timeout constants. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
@@ -1045,9 +1064,9 @@ race-dependent diff-coverage class).
 
 ## 260731-EFA-L9 Route Impact
 
-The test tree gained the zero-drift baseline suite (`test_model_split_baseline.py` + the
-`fixtures/model_split_baseline_260731_efa_l9.json` S1.3 fixture), the layering fitness-function
-suite (`test_layering.py`), and the structural-seam coverage suite
+The test tree historically gained a migration-only zero-drift snapshot, later retired by PDLS in
+favor of `test_conversation_model_architecture.py` plus owning behavior suites. The layering
+fitness-function suite (`test_layering.py`) and the structural-seam coverage suite
 (`test_leaf_structural_coverage.py`), plus the rewritten imports across ~184 test files. The L9
 closeout-order repair extends existing suites with entity-alignment preflight cases and a real-hook
 proof of memory preflight → hook → wrapper → exact-index commit, including a post-wrapper working
@@ -1275,6 +1294,8 @@ were removed.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS documented the lifecycle catalog, explicit direct cohort,
+  fixture-authority splits, single ownership graph, and product-only measurement boundary.
 - 2026-08-24T21:23+02:00 — 260824-PDLS added the classifier/runner/bootstrap/firewall/cohort proof
   and moved shared helpers out of the test tree.
 
@@ -1322,7 +1343,8 @@ were removed.
   scheduling-semantics correction; existing queue/topology/integration suites were adapted to the
   narrowed lane-occupying union, the removed `migrate_execution_topology`, and the
   effective-nature contract. Route purpose unchanged. Verification remains closeout-owned.
-- 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated series worktree-group expectations in `test_worktree_edge_paths.py`, `test_atomic_series_seal.py`, `test_l4_terminal_and_series_gap_coverage.py`, and `fixtures/build_rich_sim.py`; route purpose unchanged.
+- 2026-08-19T04:20+02:00 — Historical DAG-L10 fixture expectations were updated; the unused rich
+  simulation generator involved in that pass was later retired by PDLS.
 - 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` forcing cases to `test_task_execution_topology.py`; route purpose unchanged.
 - 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 

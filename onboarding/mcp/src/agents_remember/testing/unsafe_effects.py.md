@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/unsafe_effects.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,29 +16,48 @@
 
 ## Purpose
 
-Defines the closed effect taxonomy and exact safe/unsafe call and import vocabulary used by the
-static direct-test classifier.
+Maps every closed unsafe effect family to its stable direct-lane refusal explanation.
 
 ## Code Commentary
 
-`UNSAFE_EFFECT_RULES` maps import prefixes to eight effect families. Allowed external imports,
-safe builtins/value methods, unsafe qualified calls, and dynamic calls are explicit tables queried
-by the closure analyzer. Unknown candidate dependencies refuse elsewhere; this file does not infer
-purity from names.
+### Logic
 
-## Invariants And Boundaries
+`UNSAFE_EFFECT_RULES` contains exactly one human-actionable reason for each
+`UnsafeEffectFamily`. `unsafe_family_reason` renders the canonical message and refuses an invalid
+registry rather than inventing a generic answer.
 
-- Rules are fail-closed policy data, not a best-effort linter list.
-- No marker, directory, or historical pass result bypasses a rule.
-- Expansion requires forcing proof for the new construct and all affected transitive closure.
+### Conventions
+
+Concrete audited effects live in the cohort manifest. This module owns vocabulary and guidance, not
+repository-wide import/call inference.
+
+### Invariants And Boundaries
+
+- Every enum member has exactly one rule and no duplicate family exists.
+- Unknown effects refuse in eligibility; they are never treated as safe because absent here.
+- Adding a family requires manifest, classifier, and forcing-proof updates.
+
+### Todos
+
+None.
+
+## Docs References
+
+No external documentation owns the unsafe-family taxonomy.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Eight closed unsafe families are mapped to import prefixes. | `UNSAFE_EFFECT_RULES` | mcp/src/agents_remember/testing/unsafe_effects.py:19-89 |
-| Dynamic and qualified calls have explicit policies. | `UNSAFE_QUALIFIED_CALLS`; `DYNAMIC_CALLS` | mcp/src/agents_remember/testing/unsafe_effects.py:251-276 |
+| One reason exists for each of the eight protected effect families. | `UNSAFE_EFFECT_RULES` | mcp/src/agents_remember/testing/unsafe_effects.py:11-57 |
+| Manifest files declare their reviewed effect families. | "effects = []" | mcp/tests/python-direct-cohort.toml:24-29 |
+
+## Cross-Repo References
+
+No cross-repository policy is imported.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — Narrowed this owner to the closed family/reason registry after removing
+  speculative whole-repository analysis.
 - 2026-08-24T21:23+02:00 — Created for 260824-PDLS.

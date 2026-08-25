@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                |
 | path                   | `mcp/src/agents_remember/models/conversations/primitives.py`    |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-08-08T14:38+02:00                                         |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                     |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -36,8 +36,9 @@ SHA-256 operation-identity specialization.
 
 ### Invariants And Boundaries
 
-- This module must not import any sibling conversation module (it is the layer bottom); the
-  acyclic layering and `model_rebuild()` ordering are pinned by the baseline test.
+- This module must not import any sibling conversation module (it is the layer bottom); the armed
+  layering rail and resolved-forward-reference architecture test preserve that boundary without a
+  task/date snapshot.
 
 ### Todos
 
@@ -55,7 +56,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rebuild-order proof covers the primitives-first import order. | `test_model_rebuild_ordering_is_complete` | mcp/tests/test_model_split_baseline.py:226-226 |
+| Stable model completion is proved without snapshotting the old split shape. | `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:47-56 |
 
 ## Cross-Repo References
 
@@ -67,6 +68,8 @@ No cross-repository implementation participates.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS replaced the retired split baseline reference with the
+  stable architecture owner; verification remains closeout-owned.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the primitives layer moved from
   `serving/conversation/_models_wire.py`. Verification metadata pinned until closeout stamps the
   L9 code commit.

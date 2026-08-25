@@ -3,21 +3,23 @@
 | Field | Value |
 | --- | --- |
 | workflow | c-03 existing-memory-slice-maintenance |
-| state | ready for memory commit and master Dagger rerun |
-| wave | onboarding-wave-002 |
-| source commit | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
-| source tree | `a2d8c53ce5633ef0b62fb15ff33a45d2af51bc72` |
-| new or relocated file cards | 28 |
-| refreshed existing source cards | 43 |
-| deleted stale predecessor cards | 3 |
-| new route overviews | 1 |
-| refreshed route overviews | 7 |
-| system guidance | reconciled |
-| route indexes | current: 66 routes, 4 regenerated in wave 002, 62 unchanged |
-| curator review | pass |
+| state | emergency recovery checkpoint; final onboarding reconciliation and Dagger repair pending |
+| wave | onboarding-wave-003 |
+| source commit | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| source tree | `65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d` |
+| candidate delta | 250 files; 11,943 insertions; 22,434 deletions; net -10,491 |
+| new high-risk file cards | 10 |
+| refreshed current source/route cards | 20 |
+| deleted stale predecessor cards | 7 |
+| route indexes | 66 current; 5 regenerated during wave; final dry run 66 unchanged |
+| citation scope | 36 changed documents; zero findings |
+| curator review | wave-scoped pass against the pre-checkpoint candidate; final delta review pending |
+| memory commit | emergency recovery landing authorized by developer; not lifecycle closeout |
 
 ## Current Boundary
 
-The existing memory slice is reconciled to the committed PDLS source candidate, including the two
-file-size ownership splits. Generated route indexes are refreshed after wave 002. The full Dagger
-rerun remains source acceptance evidence, not an onboarding-content gate.
+The memory slice describes the explicit-cohort, evidence-lifecycle/cadence, product-only
+measurement, dependency-owned selection/retry, and causal-localization design through wave 003.
+The generic analyzer sidecars and deleted legacy evidence sidecars are gone. This recovery snapshot
+does not certify the final source delta: onboarding for the final ownership splits and the red
+Dagger repairs remains to be reconciled before lifecycle closeout.
