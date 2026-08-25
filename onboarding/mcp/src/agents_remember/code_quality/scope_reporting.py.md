@@ -5,14 +5,22 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
 [overview](../../../overview.md)
+
+## 260824-PDLS Current Contract
+
+Targeted reports now print the complete `TestImpact` disposition from the canonical ownership
+graph: selected paths, whether ownership is complete, whether a global input invalidated the
+population, any safe-full fallback, and every stable selection reason. The output may truthfully be
+broad; it must explain why rather than optimizing the count. Coverage provenance separately names
+product measurement units, so executed tests/support are not misreported as CRAP inputs.
 
 ## 260731-EFA-L8 Change
 
@@ -93,35 +101,35 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `ScopeReportingError` — a provenance line could not truthfully describe its input. | `ScopeReportingError` | mcp/src/agents_remember/code_quality/scope_reporting.py:36-40 |
-| Defines the class `PushUpdate`. | `PushUpdate` | mcp/src/agents_remember/code_quality/scope_reporting.py:41-52 |
-| Defines the function `scope_line` — the stable one-line output contract shared by wrapper, hooks, and CI. | `scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:53-57 |
-| Defines the function `parse_push_updates`. | `parse_push_updates` | mcp/src/agents_remember/code_quality/scope_reporting.py:58-72 |
-| Defines the function `validate_invocation_environment`. | `validate_invocation_environment` | mcp/src/agents_remember/code_quality/scope_reporting.py:73-87 |
-| Defines the function `invocation_description`, including the L17 `master-integration` / `leaf-integration` labels. | `invocation_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:88-115 |
-| Defines the function `pyright_config_description`. | `pyright_config_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:116-135 |
-| Defines the function `wrapper_scope_line`, with the L17 targeted units branch. | `wrapper_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:136-163 |
-| Defines the function `fixed_step_scope_line`, with the L17 targeted per-rail lines. | `fixed_step_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:164-234 |
-| Defines the function `targeted_scope_lines` — the printed derivation for targeted runs. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:235-263 |
-| Defines the function `coverage_result_scope_line`. | `coverage_result_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:264-273 |
-| Defines the function `randomized_pytest_scope_line`. | `randomized_pytest_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:274-290 |
-| Defines the function `crap_scope_line`. | `crap_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:291-304 |
-| Defines the function `diff_input_description`, including the integration-tree labels. | `diff_input_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:305-328 |
-| Defines the function `diff_scope_line`. | `diff_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:329-345 |
-| Defines the function `untracked_scope_lines`. | `untracked_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:346-376 |
-| Defines the function `generated_scope_line`. | `generated_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:377-408 |
-| Defines the function `frontend_files`. | `frontend_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:409-419 |
-| Defines the function `read_json_object`. | `read_json_object` | mcp/src/agents_remember/code_quality/scope_reporting.py:420-429 |
-| Defines the function `tsconfig_project_inputs`. | `tsconfig_project_inputs` | mcp/src/agents_remember/code_quality/scope_reporting.py:430-458 |
-| Defines the function `tsconfig_inputs`. | `tsconfig_inputs` | mcp/src/agents_remember/code_quality/scope_reporting.py:459-482 |
-| Defines the function `config_input_files`. | `config_input_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:483-505 |
-| Defines the function `dashboard_lint_scope_line`. | `dashboard_lint_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:506-524 |
-| Defines the function `dashboard_test_scope_line`. | `dashboard_test_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:525-546 |
-| Defines the function `dashboard_typecheck_scope_line`. | `dashboard_typecheck_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:547-555 |
-| Defines the function `dashboard_build_scope_line`. | `dashboard_build_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:556-583 |
-| Defines the function `dashboard_scope_line`. | `dashboard_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:584-626 |
-| Defines the function `build_parser`, including the `targeted` hook tier choice. | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:627-653 |
-| Defines the function `main`. | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:690-704 |
+| Defines the class `ScopeReportingError` — a provenance line could not truthfully describe its input. | `ScopeReportingError` | mcp/src/agents_remember/code_quality/scope_reporting.py:36-37 |
+| Defines the class `PushUpdate`. | `PushUpdate` | mcp/src/agents_remember/code_quality/scope_reporting.py:40-50 |
+| Defines the function `scope_line` — the stable one-line output contract shared by wrapper, hooks, and CI. | `scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:53-55 |
+| Defines the function `parse_push_updates`. | `parse_push_updates` | mcp/src/agents_remember/code_quality/scope_reporting.py:58-69 |
+| Defines the function `validate_invocation_environment`. | `validate_invocation_environment` | mcp/src/agents_remember/code_quality/scope_reporting.py:73-85 |
+| Defines the function `invocation_description`, including the L17 `master-integration` / `leaf-integration` labels. | `invocation_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:88-113 |
+| Defines the function `pyright_config_description`. | `pyright_config_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:116-133 |
+| Defines the function `wrapper_scope_line`, with the L17 targeted units branch. | `wrapper_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:136-161 |
+| Defines the function `fixed_step_scope_line`, with the L17 targeted per-rail lines. | `fixed_step_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:164-233 |
+| Defines the function `targeted_scope_lines` — the printed derivation for targeted runs. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:254-290 |
+| Defines the function `coverage_result_scope_line`. | `coverage_result_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:293-300 |
+| Defines the function `randomized_pytest_scope_line`. | `randomized_pytest_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:303-317 |
+| Defines the function `crap_scope_line`. | `crap_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:320-331 |
+| Defines the function `diff_input_description`, including the integration-tree labels. | `diff_input_description` | mcp/src/agents_remember/code_quality/scope_reporting.py:334-355 |
+| Defines the function `diff_scope_line`. | `diff_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:358-372 |
+| Defines the function `untracked_scope_lines`. | `untracked_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:375-403 |
+| Defines the function `generated_scope_line`. | `generated_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:406-432 |
+| Defines the function `frontend_files`. | `frontend_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:438-446 |
+| Defines the function `read_json_object`. | `read_json_object` | mcp/src/agents_remember/code_quality/scope_reporting.py:449-456 |
+| Defines the function `tsconfig_project_inputs`. | `tsconfig_project_inputs` | mcp/src/agents_remember/code_quality/scope_reporting.py:459-485 |
+| Defines the function `tsconfig_inputs`. | `tsconfig_inputs` | mcp/src/agents_remember/code_quality/scope_reporting.py:488-509 |
+| Defines the function `config_input_files`. | `config_input_files` | mcp/src/agents_remember/code_quality/scope_reporting.py:512-532 |
+| Defines the function `dashboard_lint_scope_line`. | `dashboard_lint_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:535-551 |
+| Defines the function `dashboard_test_scope_line`. | `dashboard_test_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:554-573 |
+| Defines the function `dashboard_typecheck_scope_line`. | `dashboard_typecheck_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:576-582 |
+| Defines the function `dashboard_build_scope_line`. | `dashboard_build_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:585-610 |
+| Defines the function `dashboard_scope_line`. | `dashboard_scope_line` | mcp/src/agents_remember/code_quality/scope_reporting.py:613-653 |
+| Defines the function `build_parser`, including the `targeted` hook tier choice. | `build_parser` | mcp/src/agents_remember/code_quality/scope_reporting.py:656-680 |
+| Defines the function `main`. | `main` | mcp/src/agents_remember/code_quality/scope_reporting.py:719-729 |
 
 ## 260731-EFA-L9 Change
 
@@ -131,6 +139,9 @@ carry the layering result.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS added canonical ownership completeness, global/fallback
+  disposition, and all selection reasons to targeted scope reporting; verification remains
+  closeout-owned.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the layering tier in the scope
   report; the L9 change section above documents it. Verification metadata pinned until closeout
   stamps the L9 code commit.

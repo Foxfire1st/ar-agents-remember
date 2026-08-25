@@ -65,7 +65,7 @@
     "withdrawals"
   ],
   "hotPath": {
-    "summary": "Start with `__init__.py` (the curated `__all__` export surface) and `primitives.py` (`WireModel`, opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts; `status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py` owns `ConversationItem` and the sub-agent grammar. The zero-drift proof is `mcp/tests/test_model_split_baseline.py` against `mcp/tests/fixtures/model_split_baseline_260731_efa_l9.json`.",
+    "summary": "Start with `__init__.py` (the curated `__all__` export surface) and `primitives.py` (`WireModel`, opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts; `status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py` owns `ConversationItem` and the sub-agent grammar. The migration-only zero-drift snapshot is retired: stable architecture requirements live in `mcp/tests/test_conversation_model_architecture.py`, while serialization and contract behavior stay with their owning focused suites. Do not recreate a task/date sna...",
     "candidateHints": [
       "mcp/src/agents_remember/models/conversations",
       "mcp/src/agents_remember/models/conversations/__init__.py",
@@ -124,17 +124,17 @@
       "__all__",
       "WireModel",
       "ConversationItem",
-      "mcp/tests/test_model_split_baseline.py",
-      "mcp/tests/fixtures/model_split_baseline_260731_efa_l9.json",
+      "mcp/tests/test_conversation_model_architecture.py",
       "init__",
       "all__",
-      "test_model_split_baseline",
-      "model_split_baseline_260731_efa_l9",
+      "test_conversation_model_architecture",
       "route-local-overview",
       "mcp/src/agents_remember/models/conversations/",
       "mcp/src/agents_remember/models/conversations/overview.md",
       "models/overview.md",
-      "7bf564a663bb61f12844dee39538dd09a1633cdb"
+      "serving/conversation/models.py",
+      "_models_*",
+      "operation_fingerprint"
     ]
   },
   "fallback": {

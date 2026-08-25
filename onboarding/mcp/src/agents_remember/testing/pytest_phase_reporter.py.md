@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/pytest_phase_reporter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,32 +16,55 @@
 
 ## Purpose
 
-Produces the common `python-pytest-phase-report/v1` node/outcome and phase-timing record for direct
-and Dagger routes without granting evidence authority.
+Produces the common route-neutral node/outcome and phase-timing record used for diagnostic and
+Dagger comparisons without granting evidence authority.
 
 ## Code Commentary
 
-One typed `_PhaseState` records session, collection, first-node, and outcome observations. At
-session finish the controller writes a compact JSON report twice so the final payload also measures
-its own reporting duration. Missing phases become `null`, preserving pytest's original exit instead
-of masking a collection/usage error with a reporter exception.
+### Logic
 
-## Invariants And Boundaries
+One mutable `_PhaseState` records session, collection, first-node, outcomes, and xdist worker
+collection identities. The controller learns the actual worker count from `pytest_xdist_setupnodes`
+and closes collection only after every worker's `pytest_xdist_node_collection_finished` callback.
+Serial collection uses the same completion helper. Session finish writes a total JSON report and
+measures its own reporting duration.
 
-- Workers do not race to publish the controller report.
-- The recorded pytest exit code is the original exit code.
-- Timing and outcome records are observations; authority comes from the route that publishes them.
-- Missing timestamps are explicit `null`, never fabricated zero durations except execution after a
-  completed empty collection.
+### Conventions
+
+xdist hooks are optional so the same plugin runs serially. Missing phases serialize as `null` and
+never mask pytest's original exit.
+
+### Invariants And Boundaries
+
+- Worker node identities are counted once; the controller alone publishes.
+- Collection cannot close on the first xdist worker.
+- The recorded exit code remains pytest's original status.
+- Phase/node observations carry no acceptance authority by themselves.
+
+### Todos
+
+None.
+
+## Docs References
+
+Pytest-xdist hook semantics were checked against its official plugin API during implementation;
+the durable behavior is encoded in focused tests.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One state object owns all per-session observations. | `_PhaseState` | mcp/src/agents_remember/testing/pytest_phase_reporter.py:28-39 |
-| Session finish writes a total report without changing exit status. | `pytest_sessionfinish`; `_duration` | mcp/src/agents_remember/testing/pytest_phase_reporter.py:82-114; mcp/src/agents_remember/testing/pytest_phase_reporter.py:159-163 |
+| State includes expected and collected xdist worker identities. | `_PhaseState` | mcp/src/agents_remember/testing/pytest_phase_reporter.py:15-43 |
+| Serial and xdist collection close through one helper. | `pytest_xdist_setupnodes` | mcp/src/agents_remember/testing/pytest_phase_reporter.py:45-105 |
+| Final payload keeps nullable phases and exact outcomes. | `_payload` | mcp/src/agents_remember/testing/pytest_phase_reporter.py:107-198 |
+
+## Cross-Repo References
+
+No adjacent repository supplies the report.
 
 ## Update History
 
-- 2026-08-24T21:23+02:00 — Created for 260824-PDLS; curator records the post-review total-report
-  and single-state-object repair.
+- 2026-08-25T01:56+02:00 — Added all-worker xdist collection ownership after the initial full gate
+  exposed a missing collection phase.
+- 2026-08-24T21:23+02:00 — Created for 260824-PDLS; curator recorded the total-report and
+  single-state-object repair.

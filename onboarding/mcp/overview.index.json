@@ -134,10 +134,12 @@
     "mcp/src/agents_remember/cli/memory_citations.py",
     "mcp/src/agents_remember/code_quality/__init__.py",
     "mcp/src/agents_remember/code_quality/application_boundary.py",
+    "mcp/src/agents_remember/code_quality/causal_preflight.py",
     "mcp/src/agents_remember/code_quality/check.py",
     "mcp/src/agents_remember/code_quality/citations.py",
     "mcp/src/agents_remember/code_quality/clean_room.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
+    "mcp/src/agents_remember/code_quality/dependency_ownership.py",
     "mcp/src/agents_remember/code_quality/diff_coverage.py",
     "mcp/src/agents_remember/code_quality/file_size.py",
     "mcp/src/agents_remember/code_quality/layering.py",
@@ -301,8 +303,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1317,
-    "fileSidecars": 178,
+    "sourceFilesInScope": 1327,
+    "fileSidecars": 180,
     "childRoutes": 22
   },
   "routingTerms": [
@@ -340,6 +342,8 @@
     "carryover",
     "carryover_authority",
     "catalog",
+    "causal",
+    "causal_preflight",
     "census",
     "cgc",
     "cgcignore",
@@ -383,9 +387,7 @@
     "curator",
     "current",
     "current_state",
-    "dashboard",
-    "data",
-    "deep"
+    "dashboard"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",
@@ -440,6 +442,8 @@
       "memory_citations",
       "application_boundary.py",
       "application_boundary",
+      "causal_preflight.py",
+      "causal_preflight",
       "check.py",
       "check",
       "citations.py",
@@ -448,6 +452,8 @@
       "clean_room",
       "crap_calculator.py",
       "crap_calculator",
+      "dependency_ownership.py",
+      "dependency_ownership",
       "diff_coverage.py",
       "diff_coverage",
       "file_size.py",
@@ -459,11 +465,7 @@
       "projection_types.py",
       "projection_types",
       "retry_proof.py",
-      "retry_proof",
-      "scope.py",
-      "scope",
-      "scope_reporting.py",
-      "scope_reporting"
+      "retry_proof"
     ]
   },
   "fallback": {

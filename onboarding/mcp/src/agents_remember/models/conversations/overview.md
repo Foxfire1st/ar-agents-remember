@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/models/conversations/` |
 | onboardingRoute | `mcp/src/agents_remember/models/conversations/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 
 ## What This Area Is
 
@@ -25,9 +25,10 @@ the old paths receive no forwarding shim.
 Start with `__init__.py` (the curated `__all__` export surface) and `primitives.py` (`WireModel`,
 opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts;
 `status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py`
-owns `ConversationItem` and the sub-agent grammar. The zero-drift proof is
-`mcp/tests/test_model_split_baseline.py` against
-`mcp/tests/fixtures/model_split_baseline_260731_efa_l9.json`.
+owns `ConversationItem` and the sub-agent grammar. The migration-only zero-drift snapshot is
+retired: stable architecture requirements live in
+`mcp/tests/test_conversation_model_architecture.py`, while serialization and contract behavior stay
+with their owning focused suites. Do not recreate a task/date snapshot of implementation shape.
 
 ## What Belongs Here
 
@@ -70,7 +71,8 @@ owns `ConversationItem` and the sub-agent grammar. The zero-drift proof is
    import from the owning submodule, not the package initializer.
 3. Shared evidence/control contracts are consumed by the control plane from `models` (legal:
    `serving` is above `models`), removing the backwards `conversation → harness_control` edges.
-4. Schema/serialization equality against the S1.3 baseline is proven before any change lands.
+4. Stable architecture assertions prove resolved models and the absence of compatibility shims;
+   focused behavior/contract suites own schema and serialization semantics.
 
 ## Load-Bearing Files
 
@@ -99,7 +101,7 @@ owns `ConversationItem` and the sub-agent grammar. The zero-drift proof is
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The zero-drift baseline pins schemas, signatures, samples, and rebuild order. | `test_conversation_schemas_and_dataclass_fields_match_baseline` | mcp/tests/test_model_split_baseline.py:144-144 |
+| Stable post-migration architecture is checked without snapshotting implementation shape. | `test_removed_conversation_model_modules_have_no_compatibility_shims`; `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:26-29; mcp/tests/test_conversation_model_architecture.py:47-56 |
 | Hostile contract tests pin the grammar products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
 | The canonical ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
 
@@ -113,8 +115,8 @@ No cross-repository implementation participates.
 
 ## Docs References
 
-No Domain Documentation source is configured; the repository-owned contract matrix and baseline
-fixture are the evidence.
+No Domain Documentation source is configured; repository-owned behavior and architecture tests are
+the evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -152,10 +154,13 @@ When changing a wire contract under this route:
 
 1. Read this overview, then the owning module's sidecar.
 2. Keep the acyclic import order; never import upward or from the package `__init__`.
-3. Prove zero drift: update the baseline only when the wire contract intentionally changes.
+3. Prove the intended behavior in the owning contract suite and keep stable architecture assertions
+   in `test_conversation_model_architecture.py`; do not regenerate an implementation snapshot.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS retired the task/date zero-drift snapshot and routed stable
+  architecture assertions plus schema/serialization behavior to their actual owners.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created the route overview for the new
   `models/conversations/` package; supersedes the `serving/conversation` contract-model
   governance for the moved grammar. Verification metadata pinned until closeout stamps the L9

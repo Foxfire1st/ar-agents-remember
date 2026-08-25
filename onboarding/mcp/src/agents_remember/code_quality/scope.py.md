@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,11 +16,17 @@
 
 ## Purpose
 
-Derive and validate the source-quality wrapper's repository scope.
+Derive and validate the source-quality wrapper's repository scope while keeping executable Python
+scope separate from product measurement scope.
 
 ## Code Commentary
 
 ### Logic
+
+`derive_scope` lint/type/size-checks every tracked Python file, reads executable tests from pytest's
+own `testpaths`, and gives Coverage.py/CRAP only top-level importable product packages. Test and
+support code therefore remain checked and executed without becoming recursive product-quality
+targets. Untracked exposure remains report-only and cannot silently enter the certified index.
 
 Module-level surface:
 
@@ -50,7 +56,12 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- Tests and shared support never enter `coverage_paths`; moving them there would recreate the
+  self-certifying test-system loop removed by PDLS.
+- `lint_paths`, `type_paths`, and `size_paths` still cover tracked Python source regardless of
+  whether it is product or test code.
+- Missing/inert configuration or empty package/test populations refuse instead of producing a
+  vacuous scope.
 
 ### Todos
 
@@ -84,7 +95,11 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: `GateScope.size_paths` = index-known Python plus `dashboard/src` TypeScript/TSX; `file_size_armed` reads the arming key (fail-closed on a non-boolean); `derive_scope` coverage roots now include the configured test roots so Coverage.py and CRAP measure the test tree. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
+- 2026-08-25T01:56+02:00 — 260824-PDLS separated product-only Coverage/CRAP from the still-global
+  lint/type/size and executable-test populations; this supersedes the L7 test-tree measurement
+  expansion.
+- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: added the file-size scope and historically
+  expanded Coverage.py/CRAP to test roots; the latter is superseded by the PDLS entry above.
 
 - 2026-08-05T03:52+02:00 — 260731-EFA-L6 batch B curator: normalized decorator-inclusive citation ranges via scoped --fix against the frozen snapshot.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                 |
 | path                   | `mcp/src/agents_remember/models/conversations/control_wire.py`   |
 | doc_type               | `file-level-onboarding`                                         |
-| lastUpdated            | 2026-08-08T14:38+02:00                                          |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                      |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `overview.md`                                                   |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The baseline test pins the shared harness-control symbols against the pre-split fixture. | `test_shared_harness_control_symbols_match_baseline` | mcp/tests/test_model_split_baseline.py:180-180 |
+| The conversation package remains the shared wire owner and control-facade imports are prohibited. | `test_conversation_wire_types_are_not_imported_through_the_control_facade` | mcp/tests/test_conversation_model_architecture.py:31-44 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,8 @@ No cross-repository implementation participates.
 
 ## Update History
 
+- 2026-08-25T01:56+02:00 — 260824-PDLS removed the expired split-baseline reference and retained
+  the stable single-owner assertion in the architecture test; verification remains closeout-owned.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the shared control-wire module
   moved from `serving/harness_control_models.py`/`harness_control_client.py`; ledger corrections
   (F-2) reflected. Verification metadata pinned until closeout stamps the L9 code commit.

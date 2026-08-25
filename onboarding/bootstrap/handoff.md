@@ -1,26 +1,28 @@
 # PDLS Onboarding Maintenance Handoff
 
-## Completed Scope
+## Current Scope
 
-The committed PDLS source candidate now has a new testing route, 28 new/relocated cards, 43
-refreshed existing cards, three removed stale cards, eight reconciled route overviews, and aligned
-system guidance. Wave 002 preserves the two file-size ownership splits and was accepted against
-source commit `23d35f77`.
+Wave 003 reconciles the memory slice through the pre-checkpoint source candidate: ten new high-risk source/support cards, current
+route and owner refreshes, and seven deleted stale predecessor cards. Generated route indexes and
+the scoped reference/curator pass are complete: all 66 routes are current and all 36 changed
+documents have zero citation findings.
 
 ## Design Preserved
 
-- Task authoring/queue work is outside this master; no task or queue fallback was introduced.
-- Structural eligibility owns direct admission and executes no candidate code.
-- Shared bootstrap does not imply shared authority.
-- Dagger admission guards certifying startup; immutable Dagger publication owns acceptance.
-- Diagnostic evidence cannot enter any accepting consumer.
-- Vitest policy remains unchanged.
-- Worktree request concepts have one application owner; the worktree facade keeps operation behavior.
-- Enclosure binding/digest logic is pure; locator/manifest I/O remains the sole state-machine authority.
+- The direct Python route is a reviewed content-sealed cohort, not a generic analyzer.
+- Diagnostic, cadence, phase, and causal artifacts do not acquire acceptance authority.
+- Durable evidence declares authority, fidelity, cadence, lifetime, replacement, and consumers.
+- Coverage/CRAP score product code only; all Python still participates in lint/type/size/execution.
+- One dependency graph owns targeted selection, retry invalidation, and causal edge meaning.
+- Owner preflights never hide independent failures or duplicate product transitions.
+- Deleted snapshots/generators/analyzers have no compatibility reader or live sidecar.
 
 ## Remaining Boundary
 
-Commit this route-index-current memory branch without push, then rerun the full Dagger master gate
-against the exact clean source candidate. Replace the prior inherited-file-size blocker disposition
-with the new certifying outcome and update all 42 requirements without treating the earlier failed
-generation as acceptance.
+The developer authorized an emergency red recovery landing at code commit
+`cb6623775a04cbdeb0509dc26f08a8268189c3f6` before WSL compaction. This memory checkpoint is not
+lifecycle closeout or certification. Reconcile the final source ownership splits (including the
+CLI parser, lifecycle cancellation/projection, and task-reopen support moves), repair the recorded
+Dagger failures, refresh onboarding against source tree
+`65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d`, and rerun final memory quality before declaring the
+master complete.
