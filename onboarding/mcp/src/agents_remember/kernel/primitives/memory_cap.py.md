@@ -81,7 +81,7 @@ No external Domain Documentation source is configured for this memory repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `code_quality_gate_preview`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:107-169; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:184-265 |
+| The gate runs uncapped full commands directly, plans explicitly capped commands here, and reports both resource modes. | `code_quality_gate_preview`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:107-169; mcp/src/agents_remember/worktrees/modules/quality/gate.py:184-265 |
 | The settings model for `orchestration.qualityGate`, including the host-managed `None` default. | "class QualityGateSettings:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:248-257 |
 | The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:382-400 |
 | Proofs for availability branches, scope wrapping, the rlimit flag, and cap-kill naming. | `MemoryCapPlanningTests`, `WrapperMemoryCapTests` | mcp/tests/test_code_quality_memory_cap.py:70-150; mcp/tests/test_code_quality_memory_cap.py:151-275 |

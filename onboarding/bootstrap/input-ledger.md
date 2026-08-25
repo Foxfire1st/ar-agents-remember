@@ -29,6 +29,7 @@ No external specification defines this repository-owned evidence authority.
 
 The emergency-landed source candidate changes 250 paths with 11,943 insertions and 22,434 deletions
 (net -10,491). The dominant deletion is obsolete non-Python/model-split evidence; the Candidate-A
-design deliberately removes the generic dependency analyzer. Wave 003 predates several final
-ownership splits, which remain explicitly pending rather than silently treated as onboarded.
+design deliberately removes the generic dependency analyzer. Wave 003 predated several final
+ownership splits. Wave 004 now reconciles those exact source paths without inventing compatibility
+sidecars or a second authority.
 Standard generated, vendor, build, and cache exclusions remain in force.

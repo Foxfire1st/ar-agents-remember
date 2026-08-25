@@ -27,11 +27,34 @@
 | `tests/_evidence_catalog_fixture.py` | yes | yes | covered |
 | `tests/_direct_cohort_candidate.py` | yes | yes | covered |
 
+## Wave 004 Final Ownership-Split Coverage
+
+Wave 004 reconciles the source tree that was actually emergency-landed. Behavior-preserving
+package moves retain their existing sidecar prose and history at the new one-to-one source paths;
+the five new load-bearing owners receive new sidecars and file cards.
+
+| Source family | Outcome | Disposition |
+| --- | --- | --- |
+| `application/memory_quality/{controller,runs}.py` | existing sidecars moved | covered |
+| `models/closeout/{input,projection,source}.py` | existing sidecars moved | covered |
+| `worktrees/integration/closeout/*.py` | eight existing sidecars moved | covered |
+| `worktrees/integration/lifecycle/worker/*.py` | three existing sidecars moved | covered |
+| `worktrees/modules/quality/*.py` | four existing sidecars moved | covered |
+| `code_quality/check_cli.py` | new sidecar and file card | covered |
+| `worktrees/integration/lifecycle/control/cancellation.py` | new sidecar and file card | covered |
+| `worktrees/integration/lifecycle/observation/projection.py` | new sidecar and file card | covered |
+| `tests/task_reopen_test_support.py` | new sidecar and file card | covered |
+| `tests/_quality_evidence_fixture.py` | new sidecar and file card | covered |
+
+The new package `__init__.py` markers remain governed by their nearest route overview. They carry
+no independent behavior or public authority and therefore do not receive standalone file cards.
+
 ## Deliberate Deferrals
 
 New ordinary forcing modules remain routed by `mcp/tests/overview.md` rather than receiving
 separate durable cards in this wave: `test_cadence_runner.py`,
-`test_causal_failure_localization.py`, `test_conversation_model_architecture.py`,
+`test_causal_failure_localization.py`, `test_causal_quality_preflight.py`,
+`test_conversation_model_architecture.py`,
 `test_evidence_lanes.py`, and `test_evidence_lifecycle.py`. They assert the documented owners
 and carry no independent runtime authority. Changed pre-existing tests retain their existing route
 coverage. TOML manifests are documented by their consuming owner cards and the testing overview.
@@ -48,6 +71,6 @@ architecture and contract knowledge is preserved at current behavior owners.
 1. Added high-risk source/support files have exact sidecars and file cards.
 2. Deleted source has no live sidecar, citation, compatibility reader, or generated route.
 3. Governing overviews and `system/tools.md` agree on diagnostic versus acceptance authority.
-4. Reference targets exist, update history names supersession, and blank verification metadata is
-   retained until the source commit exists.
+4. Reference targets exist, update history names supersession or preservation, and verification
+   metadata names the emergency-landed source commit without implying Dagger certification.
 5. Route indexes are regenerated only after the content tree is final, then a dry run is current.

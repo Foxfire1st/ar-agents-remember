@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/models/closeout_projection.py
+# mcp/src/agents_remember/models/closeout/projection.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/models/closeout_projection.py` |
+| path | `mcp/src/agents_remember/models/closeout/projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[governing route overview](../overview.md)
 
 ## Purpose
 
@@ -41,15 +41,17 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Projection problems, members, and queue state use strict bounded models. | L23-L90 | [source](mcp/src/agents_remember/models/closeout_projection.py) |
-| Invalidation, rebuild, and task-document effects are explicit typed results. | L91-L142 | [source](mcp/src/agents_remember/models/closeout_projection.py) |
+| Projection problems, members, and queue state use strict bounded models. | `ProjectionSourceProblem`; `CloseoutProjectionMember`; `CloseoutQueueState` | mcp/src/agents_remember/models/closeout/projection.py:23-90 |
+| Invalidation, rebuild, and task-document effects are explicit typed results. | `ProjectionInvalidationResult`; `ProjectionRebuildResult`; `TaskDocProjectionEffect` | mcp/src/agents_remember/models/closeout/projection.py:91-142 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.

@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py
+# mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py` |
+| path | `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](overview.md)
+[worktree integration overview](../overview.md)
 
 ## Purpose
 
@@ -46,9 +46,9 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery commits are projected from proven mutations. | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py:28-49 |
-| Reported cells must match the projection. | `require_closeout_recovery_projection` | mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py:83-91 |
-| Retention requires mutation or exact finalization evidence. | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py:94-105 |
+| Recovery commits are projected from proven mutations. | `derive_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:28-49 |
+| Reported cells must match the projection. | `require_closeout_recovery_projection` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:83-91 |
+| Retention requires mutation or exact finalization evidence. | `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:94-105 |
 
 ## Cross-Repo References
 
@@ -60,11 +60,13 @@ The current source seams include `derive_closeout_recovery_commits`, `require_cl
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | L28-L49; L83-L91; L94-L105 | `mcp/src/agents_remember/worktrees/integration/closeout_recovery_projection.py` |
+| The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | `derive_closeout_recovery_commits`; `require_closeout_recovery_projection`; `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:28-49; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:83-91; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:94-105 |
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

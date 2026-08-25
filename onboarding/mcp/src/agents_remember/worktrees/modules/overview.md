@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:27+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -25,6 +25,12 @@ under `startup/`; `start.py` remains the coordinating mutation entrypoint.
 ## Hot Path Summary
 
 Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists.
+
+Quality execution, lifecycle gating, closeout memory checks, and immutable published-manifest reads
+now live under `modules/quality/`. The package is a behavior-preserving ownership/size split: the
+clean executor remains the sole Dagger report publisher, the gate remains the lifecycle consumer,
+closeout memory remains phase composition, and the strict manifest reader admits no fallback or
+permissive compatibility path.
 
 L23 makes Dagger the sole acceptance executor. `clean_quality_executor.py` materializes the exact
 reviewed candidate and required ancestry into the pinned graph, starts a fresh attempt, bounds live
@@ -760,6 +766,8 @@ gate fresh/recovery paths consume that typed evidence for lifecycle acceptance. 
 remain rejected; diagnostic evidence and timing files cannot substitute for publication.
 
 ## Update History
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `modules/quality/` package split and moved all four preserved sidecars without duplicating the quality authority. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS documented the immutable Dagger publication/evidence
   firewall.

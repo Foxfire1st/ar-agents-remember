@@ -44,8 +44,8 @@
     "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py",
     "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py",
     "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py",
-    "mcp/src/agents_remember/application/memory_quality_controller.py",
-    "mcp/src/agents_remember/application/memory_quality_runs.py",
+    "mcp/src/agents_remember/application/memory_quality/controller.py",
+    "mcp/src/agents_remember/application/memory_quality/runs.py",
     "mcp/src/agents_remember/application/memory_scope.py",
     "mcp/src/agents_remember/application/memory_tools.py",
     "mcp/src/agents_remember/application/next_step.py",
@@ -63,7 +63,7 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 57,
+    "sourceFilesInScope": 58,
     "fileSidecars": 35,
     "childRoutes": 3
   },
@@ -115,8 +115,7 @@
     "location",
     "mcp",
     "memory",
-    "memory_quality_controller",
-    "memory_quality_runs",
+    "memory_quality",
     "memory_scope",
     "memory_tools",
     "next",
@@ -147,7 +146,8 @@
     "src",
     "status",
     "step",
-    "structural"
+    "structural",
+    "task"
   ],
   "hotPath": {
     "summary": "This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, legacy repair, direct landing, and degraded status. For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The curr...",
@@ -175,7 +175,7 @@
       "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py",
       "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py",
       "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py",
-      "mcp/src/agents_remember/application/memory_quality_controller.py"
+      "mcp/src/agents_remember/application/memory_quality"
     ],
     "anchorHints": [
       "__init__.py",
@@ -212,10 +212,10 @@
       "lifecycle_operation_worker",
       "lifecycle_tools.py",
       "lifecycle_tools",
-      "memory_quality_controller.py",
-      "memory_quality_controller",
-      "memory_quality_runs.py",
-      "memory_quality_runs",
+      "controller.py",
+      "controller",
+      "runs.py",
+      "runs",
       "memory_scope.py",
       "memory_scope",
       "memory_tools.py",

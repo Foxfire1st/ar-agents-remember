@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
-| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
+| lastUpdated | 2026-08-25T08:27+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../../../../overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,13 @@ not compatibility copies of the former flattened modules.
 ## Hot Path Summary
 
 Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, bounded legacy repair, and integration reconciliation.
+
+The final size/ownership split places door publication and recovery below `closeout/`, detached
+worker launch/state/termination below `lifecycle/worker/`, cancellation mutation below
+`lifecycle/control/`, and total journal observation below `lifecycle/observation/`. These packages
+separate responsibilities without adding facades or alternate authority: mutation still requires
+exact contract/journal/Git/process evidence, while observation remains read-only and task status or
+queue state cannot hide retained operations.
 
 Master integration, series closeout, closeout/reopen, and the memory carryover paths consume this
 package: branch-backed authority checks (`require_*`), durable lifecycle operation leases, the
@@ -59,7 +66,7 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | --- | --- | --- |
 | Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-125; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:180-265 |
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:24-165 |
-| Task-addressed controls. | `LifecycleControlAction`; `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:130-248 |
+| Task-addressed controls. | `LifecycleControlAction`; `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:24-248 |
 | Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:70-167 |
 | Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:79-191 |
 | Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-227 |
@@ -91,6 +98,8 @@ standalone successor-intent WAL, or permanent compatibility reader. The deleted
 journal-door control, atomic terminal replacement, and the terminal enclosure/location transaction.
 
 ## Update History
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final closeout, control, observation, and worker package splits; moved preserved sidecars and added the cancellation/projection owners. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 
 - 2026-08-24T21:43+02:00 — File-size route refresh: separated pure enclosure binding and digest
   construction from the locator/manifest I/O state machine. No location authority, fallback, or

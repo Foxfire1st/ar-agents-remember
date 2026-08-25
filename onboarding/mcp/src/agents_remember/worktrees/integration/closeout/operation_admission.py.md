@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py
+# mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py` |
+| path | `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](overview.md)
+[worktree integration overview](../overview.md)
 
 ## Purpose
 
@@ -45,9 +45,9 @@ See task `260821-CLIVE-L1` L1-R2, L1-R3, L1-R5, and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py:70-100 |
-| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py:103-116 |
-| Recovery identity admits only original or exact finalized publication. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py:219-236 |
+| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:70-100 |
+| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:103-116 |
+| Recovery identity admits only original or exact finalized publication. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:219-236 |
 
 ## Cross-Repo References
 
@@ -59,9 +59,9 @@ The current source seams include `CloseoutOperationAdmission`, `CloseoutAdmissio
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. | L44-L52; L56-L58; L62-L67 | `mcp/src/agents_remember/worktrees/integration/closeout_operation_admission.py` |
+| The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. | `CloseoutOperationAdmission`; `CloseoutAdmissionSnapshot`; `ValidatedCloseoutAdmission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:45-68 |
 
 ## 260821-CLIVE Door-Bound Admission Identity
 
@@ -71,6 +71,8 @@ changes even if code tree and other inputs do not. Existing-generation replay co
 journal-retained door publication id; a projection member cannot substitute for it.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: added the exact door-generation component of operation admission identity. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

@@ -18,6 +18,7 @@
     "mcp/tests/_evidence_catalog_fixture.py",
     "mcp/tests/_pi_rpc_capabilities.py",
     "mcp/tests/_quality_admission.py",
+    "mcp/tests/_quality_evidence_fixture.py",
     "mcp/tests/_scaling.py",
     "mcp/tests/_store_durability.py",
     "mcp/tests/_store_durability_source.py",
@@ -43,6 +44,7 @@
     "mcp/tests/lifecycle_control_test_support.py",
     "mcp/tests/lifecycle_enclosure_test_support.py",
     "mcp/tests/organizational_completion_test_support.py",
+    "mcp/tests/task_reopen_test_support.py",
     "mcp/tests/test_active_projector_singleflight.py",
     "mcp/tests/test_agent_doctrine_plane_identity.py",
     "mcp/tests/test_agent_notifier.py",
@@ -485,8 +487,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 470,
-    "fileSidecars": 473,
+    "sourceFilesInScope": 473,
+    "fileSidecars": 475,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -583,6 +585,7 @@
       "mcp/tests/_evidence_catalog_fixture.py",
       "mcp/tests/_pi_rpc_capabilities.py",
       "mcp/tests/_quality_admission.py",
+      "mcp/tests/_quality_evidence_fixture.py",
       "mcp/tests/_scaling.py",
       "mcp/tests/_store_durability.py",
       "mcp/tests/_store_durability_source.py",
@@ -596,8 +599,7 @@
       "mcp/tests/fixtures/claude_stream_json/2.1.210",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions-multi.jsonl",
-      "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl",
-      "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl"
+      "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl"
     ],
     "anchorHints": [
       "_adapter_event_scripts.py",
@@ -616,6 +618,8 @@
       "_pi_rpc_capabilities",
       "_quality_admission.py",
       "_quality_admission",
+      "_quality_evidence_fixture.py",
+      "_quality_evidence_fixture",
       "_scaling.py",
       "_scaling",
       "_store_durability.py",
@@ -645,9 +649,7 @@
       "codex-0.144.5.json",
       "codex-0.144.5",
       "pi-0.80.7.json",
-      "pi-0.80.7",
-      "0.80.7-capabilities.json",
-      "0.80.7-capabilities"
+      "pi-0.80.7"
     ]
   },
   "fallback": {

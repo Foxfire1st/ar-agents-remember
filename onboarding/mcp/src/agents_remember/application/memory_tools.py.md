@@ -26,11 +26,11 @@ scope, execution, and async control now belong to the dedicated typed controller
 
 The module defines three parameter objects for separate application contracts:
 `MemoryBranches` carries optional source/work branch overrides for baseline adoption
-cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:604-610);
+cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:308-314);
 `CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
-carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:617-634);
+carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:321-338);
 and `CarryoverCommitMessages` carries the two commit subjects for apply
-cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:637-642).
+cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:341-346).
 `intent_note` remains a separate apply approval argument.
 
 Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
@@ -40,7 +40,7 @@ their existing configured-authority and typed parameter-object boundaries.
 
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
 identity, and storage authority into `build_route_indexes`
-cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:550-586).
+cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:254-290).
 Ordinary drift artifacts stay under the coordination temp root. The curator checklist is the
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.
@@ -80,8 +80,8 @@ package application entry point and resolver contracts.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:51-143 |
-| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality_controller.py:67-144 |
-| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:550-586 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:67-144 |
+| The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The route-index builder receives storage authority explicitly in its typed signature. | "def build_route_indexes(" | mcp/src/agents_remember/kernel/route_index.py:184-197 |
 

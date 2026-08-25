@@ -164,10 +164,10 @@
       "mcp/src/agents_remember/testing/",
       "onboarding/mcp/src/agents_remember/testing/overview.md",
       "mcp overview",
+      "cb6623775a04cbdeb0509dc26f08a8268189c3f6",
+      "2026-08-25T08:12:56+02:00",
       "mcp/src/agents_remember/code_quality/",
-      "mcp/src/agents_remember/models/test_evidence.py",
-      "mcp/src/agents_remember/worktrees/modules/",
-      "dagger/src/agents_remember_quality/main.py"
+      "mcp/src/agents_remember/models/test_evidence.py"
     ]
   },
   "fallback": {

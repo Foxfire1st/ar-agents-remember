@@ -43,10 +43,10 @@ work.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Direct registry forcing set. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:42-192 |
+| Direct registry forcing set. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:41-190 |
 | Canonical controller/identity forcing set. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:195-405 |
-| Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality_runs.py:27-161 |
-| Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality_controller.py:48-144 |
+| Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:27-161 |
+| Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:48-144 |
 
 ## Cross-Repo References
 

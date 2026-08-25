@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T08:27+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -46,6 +46,11 @@ the task_reopen payload carries the enclosure contract state.
 ## Hot Path Summary
 
 The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate.
+
+The closeout input, source, and projection vocabulary now lives under `models/closeout/`. This is a
+one-to-one package move of the existing typed contracts, not a compatibility namespace: input owns
+accepted plan shape, source owns exact candidate provenance, and projection owns disposable
+scheduling facts while journal models retain lifecycle evidence.
 
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
@@ -445,6 +450,8 @@ generation. Coverage, quality, retry, route review, lifecycle, closeout, and int
 the certifying type, keeping acceptance impossible to express as a generic payload flag.
 
 ## Update History
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `models/closeout/` package move and preserved its typed input/source/projection ownership at the new paths. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS added the typed Python evidence firewall.
 

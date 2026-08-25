@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py
+# mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py` |
+| path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktrees/modules overview](overview.md)
+[worktrees/modules overview](../overview.md)
 
 ## Purpose
 
@@ -56,14 +56,14 @@ The repository source pins the toolchain; no external Domain Documentation sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:40-45 |
+| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:40-45 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:112-193 |
-| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:276-351; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:595-596 |
+| The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:112-193 |
+| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:276-351; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:597-598 |
 
 ## Cross-Repo References
 
@@ -71,7 +71,7 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:491-548; mcp/src/agents_remember/worktrees/modules/clean_quality_executor.py:595-596 |
+| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:491-548; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:597-598 |
 
 ## 260821-DAGQC-L2 Canonical Publication Manifest
 
@@ -87,6 +87,8 @@ generation bound to the candidate tree. Only a digest-verified passed generation
 `CertifyingTestEvidence`. Diagnostic payloads and phase reports cannot be supplied as substitutes.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS added phase export and the sole certifying evidence factory
   at verified publication altitude.
