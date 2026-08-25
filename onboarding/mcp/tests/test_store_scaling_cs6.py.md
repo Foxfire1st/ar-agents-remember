@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_store_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                   |
 | lastUpdated            | 2026-07-10T01:14+02:00                    |
-| lastVerifiedCommitHash |                                           `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |                                           2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash |                                           `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |                                           2026-08-25T17:21:45+02:00|
 | governingOverview      | `../overview.md`                          |
 
 ## Governing Overview
@@ -46,7 +46,17 @@ No Domain Documentation source is configured for this repository-local regressio
 
 No cross-repository implementation source governs this test module.
 
+## PDLS Reconciliation
+
+Store-scaling forcing now accounts for enclosure-local journal and projection-store ownership without changing scaling bounds.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_store_scaling_cs6.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -117,7 +117,17 @@ No meaningful cross-repo references found.
 The TTL/cap-eviction harness drops `OrchestrationNudgeStore` from the sweep context (the
 sweep no longer owns a nudge store); the arrival-guarantee matrix itself is unchanged.
 
+## PDLS Reconciliation
+
+Inbox arrival forcing was aligned with the current durable lifecycle/control payload without weakening delivery guarantees.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T14:29+02:00 — Re-read post-time owner rebinding and regenerated the

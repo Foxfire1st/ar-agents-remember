@@ -1,76 +1,38 @@
 # PDLS Onboarding Coverage Plan
 
-## Required Coverage
+## Strategy
 
-| Route | Required outcome |
-| --- | --- |
-| repository guidance | Exact-node Python diagnostics are supported and non-certifying; raw host acceptance remains prohibited. |
-| `mcp/src/agents_remember/testing` | Route overview and owner cards explain explicit cohort, lifecycle, lanes, cadence, bootstrap, phase, and causal evidence. |
-| `mcp/src/agents_remember/code_quality` | Product-only scoring and one dependency graph govern targeted selection, retry, and causal preflight. |
-| `mcp/src/agents_remember/models` | Diagnostic/certifying evidence altitude and stable conversation architecture are explicit without the retired snapshot. |
-| `mcp/src/agents_remember/application/lifecycle` | Terminalization preserves accepted organizational-repair evidence at one pure owner. |
-| `mcp/tests` | Fixture authority, lifecycle catalog, direct cohort, and deleted evidence dispositions are explicit. |
-| `.dagger` / hooks / config / docs | Governing repository and testing overviews describe their policy; no duplicate file-level authority is created. |
+Reconcile the exact atomic-master diff at its owning routes. Create sidecars for every changed
+source unit that lacked one, refresh the body and append history for every existing sidecar, and
+add route pillars only where several changed owners share an operating model.
 
-## Wave 003 High-Risk Coverage
+## Route Coverage
 
-| Source | Sidecar | File card | Disposition |
-| --- | --- | --- | --- |
-| `testing/cohort_manifest.py` | yes | yes | covered |
-| `testing/evidence_lifecycle.py` | yes | yes | covered |
-| `testing/evidence_lanes.py` | yes | yes | covered |
-| `testing/cadence_runner.py` | yes | yes | covered |
-| `testing/causal_failures.py` | yes | yes | covered |
-| `code_quality/dependency_ownership.py` | yes | yes | covered |
-| `code_quality/causal_preflight.py` | yes | yes | covered |
-| `tests/_adapter_event_scripts.py` | yes | yes | covered |
-| `tests/_evidence_catalog_fixture.py` | yes | yes | covered |
-| `tests/_direct_cohort_candidate.py` | yes | yes | covered |
-
-## Wave 004 Final Ownership-Split Coverage
-
-Wave 004 reconciles the source tree that was actually emergency-landed. Behavior-preserving
-package moves retain their existing sidecar prose and history at the new one-to-one source paths;
-the five new load-bearing owners receive new sidecars and file cards.
-
-| Source family | Outcome | Disposition |
+| Route | Classification | Outcome |
 | --- | --- | --- |
-| `application/memory_quality/{controller,runs}.py` | existing sidecars moved | covered |
-| `models/closeout/{input,projection,source}.py` | existing sidecars moved | covered |
-| `worktrees/integration/closeout/*.py` | eight existing sidecars moved | covered |
-| `worktrees/integration/lifecycle/worker/*.py` | three existing sidecars moved | covered |
-| `worktrees/modules/quality/*.py` | four existing sidecars moved | covered |
-| `code_quality/check_cli.py` | new sidecar and file card | covered |
-| `worktrees/integration/lifecycle/control/cancellation.py` | new sidecar and file card | covered |
-| `worktrees/integration/lifecycle/observation/projection.py` | new sidecar and file card | covered |
-| `tests/task_reopen_test_support.py` | new sidecar and file card | covered |
-| `tests/_quality_evidence_fixture.py` | new sidecar and file card | covered |
+| application/lifecycle | public workflow boundary | overview + 2 file sidecars |
+| code_quality | certifying quality workflow | overview + changed owner sidecars |
+| models/closeout | disposable projection contract | overview + projection sidecar |
+| testing | evidence/bootstrap infrastructure | overview + changed owner sidecars; no facade |
+| worktrees/integration/closeout | door/ledger recovery workflow | overview + changed sidecars |
+| worktrees/integration/legacy | bounded migration/archive workflow | overview + changed sidecars |
+| worktrees/integration/lifecycle | enclosure-root journal workflow | overview + changed sidecars |
+| worktrees/queue | disposable scheduling projection | existing overview + changed sidecars |
+| mcp/tests | production-bound forcing | existing overview + all 60 changed sidecars refreshed/created |
+| dashboard/src/test | independent representative-payload contract guard | existing overview + changed guard sidecar refreshed; dependent snapshot sidecar corrected |
 
-The new package `__init__.py` markers remain governed by their nearest route overview. They carry
-no independent behavior or public authority and therefore do not receive standalone file cards.
+## Evidence Packs
 
-## Deliberate Deferrals
+No docs or boundary pack is needed: the configured Domain Documentation registry is empty and
+cross-repository reads are disabled. Source, tests, approved requirements, and Dagger reports are
+the direct evidence.
 
-New ordinary forcing modules remain routed by `mcp/tests/overview.md` rather than receiving
-separate durable cards in this wave: `test_cadence_runner.py`,
-`test_causal_failure_localization.py`, `test_causal_quality_preflight.py`,
-`test_conversation_model_architecture.py`,
-`test_evidence_lanes.py`, and `test_evidence_lifecycle.py`. They assert the documented owners
-and carry no independent runtime authority. Changed pre-existing tests retain their existing route
-coverage. TOML manifests are documented by their consuming owner cards and the testing overview.
+## Deferred Routes And Files
 
-## Deleted-Slice Cleanup
-
-The sidecars for `dependency_closure.py`, `python_source.py`, and
-`collection_closure.py` are deleted with the rejected generic analyzer. The sidecars for the
-retired model-split test/snapshot and rich-sim generator/self-test are also deleted. Useful stable
-architecture and contract knowledge is preserved at current behavior owners.
+None. This atomic master has no onboarding deferrals.
 
 ## Validation
 
-1. Added high-risk source/support files have exact sidecars and file cards.
-2. Deleted source has no live sidecar, citation, compatibility reader, or generated route.
-3. Governing overviews and `system/tools.md` agree on diagnostic versus acceptance authority.
-4. Reference targets exist, update history names supersession or preservation, and verification
-   metadata names the emergency-landed source commit without implying Dagger certification.
-5. Route indexes are regenerated only after the content tree is final, then a dry run is current.
+Require zero missing sidecars for the exact changed source population, valid governing backlinks,
+append-only history, no absolute paths, current generated indexes, and no curator-actionable
+memory-quality finding before restoring L12-S4.

@@ -5,31 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/closeout/projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing route overview](../overview.md)
+[Closeout projection models overview](overview.md)
 
 ## Purpose
 
-Define the strict public models for disposable closeout projections and task-publication effects.
+Defines strict persisted models for disposable closeout scheduling projections and task-document projection effects.
 
 ## Code Commentary
 
 ### Logic
 
-The models represent bounded source problems, schedulable members, exactly two projection service conditions, invalidation/rebuild results, and per-scope task-document projection effects.
+The models bound candidate/problem/reason populations, validate valid-built versus invalid-empty state, and serialize invalidation/rebuild effects without lifecycle fields.
+
+### Conventions
+
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Projection service condition is only valid-built or invalid-empty.
-- A valid-built empty membership is terminal-empty; no third durable state is invented.
-- Claimed lifecycle, commit, certification, and integration evidence are not projection fields.
-- All collections and text are bounded and unknown fields are refused.
+- Invalid projection state is empty; projection records never own claims, commits, certification, integration, or terminal lifecycle evidence.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
@@ -37,21 +41,30 @@ None recorded.
 
 ## Docs References
 
-No configured domain-documentation source applies to this repository-internal route.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Projection problems, members, and queue state use strict bounded models. | `ProjectionSourceProblem`; `CloseoutProjectionMember`; `CloseoutQueueState` | mcp/src/agents_remember/models/closeout/projection.py:23-90 |
-| Invalidation, rebuild, and task-document effects are explicit typed results. | `ProjectionInvalidationResult`; `ProjectionRebuildResult`; `TaskDocProjectionEffect` | mcp/src/agents_remember/models/closeout/projection.py:91-142 |
+| No external domain source is required to establish this repository-owned implementation. | `MAX_CLOSEOUT_CANDIDATES` | mcp/src/agents_remember/models/closeout/projection.py:1-141 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `MAX_CLOSEOUT_CANDIDATES` | mcp/src/agents_remember/models/closeout/projection.py:1-141 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `MAX_CLOSEOUT_CANDIDATES` | mcp/src/agents_remember/models/closeout/projection.py:1-141 |
 
 ## Update History
 
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

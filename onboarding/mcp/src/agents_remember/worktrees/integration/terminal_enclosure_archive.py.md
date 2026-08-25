@@ -5,65 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](overview.md)
+[Integration overview](overview.md)
 
 ## Purpose
 
-L2 fail-closed boundary before L5 owns terminal enclosure archival.
+Publishes a crash-safe terminal enclosure archive before destructive worktree-root cleanup.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `terminal_archive_required_result`. This is intentionally a fail-closed L2 hook. Retirement preserves the enclosure, journal, branches, commits, reports, approval, and history; cleanup may not delete canonical evidence until L5 supplies external terminal archive proof and deletion ordering.
+It proves terminal operations, resolved workers/mutations/publications, exact cleanup arguments, canonical manifest entries, receipt readback, and convergent retry after interrupted archive/unlink.
 
 ### Conventions
 
-Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
-- Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
-- Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
+- Cleanup cannot remove the enclosure root until durable archive and receipt prove everything needed for later status/recovery; mismatched existing evidence refuses.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
+None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-883 |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this file-specific ownership boundary.
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `terminal_archive_required_result` as its public seam. | L15-L103 | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py` |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-883 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
 
-## 260821-CLIVE Crash-Safe External Terminal Archive
-
-This module now publishes and observes the bounded canonical archive before enclosure-root deletion.
-Every operation must be terminal with no live worker, ambiguous mutation, or incomplete publication.
-The transaction writes exact archive bytes, then an external receipt, then the terminal locator;
-retries must prove the identical request and bytes. `terminal_contract_authority_if_present`
-returns strict archive authority only and never guesses a live fallback.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-883 |
 
 ## Update History
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the former refusal stub with the final archive/receipt/locator transaction. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

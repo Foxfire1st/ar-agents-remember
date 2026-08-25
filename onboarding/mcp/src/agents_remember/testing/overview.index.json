@@ -25,15 +25,14 @@
     "mcp/src/agents_remember/testing/global_state.py",
     "mcp/src/agents_remember/testing/hermetic_bootstrap.py",
     "mcp/src/agents_remember/testing/pytest_bootstrap.py",
-    "mcp/src/agents_remember/testing/pytest_certifying_bootstrap.py",
     "mcp/src/agents_remember/testing/pytest_phase_reporter.py",
     "mcp/src/agents_remember/testing/random_order.py",
     "mcp/src/agents_remember/testing/selection_contract.py",
     "mcp/src/agents_remember/testing/unsafe_effects.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 20,
-    "fileSidecars": 20,
+    "sourceFilesInScope": 19,
+    "fileSidecars": 19,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -79,7 +78,6 @@
     "phase",
     "pytest",
     "pytest_bootstrap",
-    "pytest_certifying_bootstrap",
     "pytest_phase_reporter",
     "random",
     "random_order",
@@ -95,7 +93,7 @@
     "unsafe_effects"
   ],
   "hotPath": {
-    "summary": "Start with `evidence_lifecycle.py` and `evidence_lanes.py` for evidence authority/cadence; `cohort_manifest.py` and `eligibility.py` for direct admission; `direct_runner.py` for exact local feedback; `dagger_admission.py` plus the certifying bootstrap for acceptance startup; and `causal_failures.py` for downstream failure localization.",
+    "summary": "Use `dagger_admission.py` for certifying authority, `certifying_bootstrap.py` and `hermetic_bootstrap.py` for setup, `cohort_manifest.py`/`eligibility.py` for the sealed direct cohort, `evidence_lifecycle.py` for durable proof metadata, and `causal_failures.py` for pytest-side classification.",
     "candidateHints": [
       "mcp/src/agents_remember/testing",
       "mcp/src/agents_remember/testing/__init__.py",
@@ -113,7 +111,6 @@
       "mcp/src/agents_remember/testing/global_state.py",
       "mcp/src/agents_remember/testing/hermetic_bootstrap.py",
       "mcp/src/agents_remember/testing/pytest_bootstrap.py",
-      "mcp/src/agents_remember/testing/pytest_certifying_bootstrap.py",
       "mcp/src/agents_remember/testing/pytest_phase_reporter.py",
       "mcp/src/agents_remember/testing/random_order.py",
       "mcp/src/agents_remember/testing/selection_contract.py",
@@ -150,8 +147,6 @@
       "hermetic_bootstrap",
       "pytest_bootstrap.py",
       "pytest_bootstrap",
-      "pytest_certifying_bootstrap.py",
-      "pytest_certifying_bootstrap",
       "pytest_phase_reporter.py",
       "pytest_phase_reporter",
       "random_order.py",
@@ -160,14 +155,16 @@
       "selection_contract",
       "unsafe_effects.py",
       "unsafe_effects",
+      "mcp/src/agents_remember/testing",
       "route-local-overview",
-      "mcp/src/agents_remember/testing/",
-      "onboarding/mcp/src/agents_remember/testing/overview.md",
-      "mcp overview",
-      "cb6623775a04cbdeb0509dc26f08a8268189c3f6",
-      "2026-08-25T08:12:56+02:00",
-      "mcp/src/agents_remember/code_quality/",
-      "mcp/src/agents_remember/models/test_evidence.py"
+      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "/../overview.md",
+      "sourceRoute",
+      "agents_remember",
+      "doc_type",
+      "lastUpdated",
+      "T15",
+      "lastVerifiedCommitHash"
     ]
   },
   "fallback": {

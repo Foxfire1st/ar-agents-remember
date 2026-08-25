@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_agent_doctrine_plane_identity.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash |  `e5cb139f66abbd6502d4dcc4be883eb5f49770fe`|
-| lastVerifiedCommitDate |  2026-08-21T00:28:23+02:00|
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,17 @@ into per-doctrine-file assertion helpers (`_assert_architect_doctrine`,
 `_assert_manager_brief_doctrine`) that the test composes; the asserted term sets and the
 lifecycle/worker/handover/verdict/criteria checks are unchanged. Import paths are untouched.
 
+## PDLS Reconciliation
+
+Doctrine-plane assertions now reflect the current lifecycle skill and role ownership without preserving superseded task/orchestration aliases.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: refactored the topology doctrine
   test into per-file assertion helpers with identical asserted terms. Verified at code commit

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `../../../../overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,17 @@ evidence owners; claim/cancel/supersede moved to the root operation journal; pro
 moved to atomic landing authority; and mutable blocker, `QueueBinding`, certification, consumption,
 and action-driven initial-state contracts were retired rather than preserved as compatibility code.
 
+## 260824-PDLS Final Projection Boundary
+
+Queue construction, membership, evidence parsing, and publication now operate only on current task
+truth and waiting door generations. Invalidation publishes invalid-empty state, rebuild derives a
+fresh valid-built projection, and no queue row owns retry, claim, commit, certification, terminal,
+or compatibility evidence.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled queue parsing and publication with disposable projection
+  ownership. Verification remains closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the transitional mutable queue route with invalidation/rebuild-only disposable projection ownership and removed obsolete queue cards. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

@@ -1,28 +1,45 @@
 # PDLS Onboarding Maintenance Handoff
 
-## Current Scope
+## Completed Scope
 
-Wave 003 reconciled the evidence-system design through the pre-checkpoint candidate. Wave 004 binds
-the memory slice to the emergency-landed source tree: twenty behavior-preserving sidecar moves,
-five new high-risk owners/cards, repaired parent-route documentation, refreshed entity evidence,
-and nine regenerated indexes. All 66 route indexes are now current.
+The exact PDLS candidate has one-to-one onboarding for all 107 changed source units: 69 new
+sidecars and 38 body-refreshed sidecars. The unchanged dashboard snapshot sidecar was also refreshed
+because its documented consumer contract changed. Seven new route-local overviews explain the application
+lifecycle, Python quality, closeout projection models, test infrastructure, closeout recovery,
+legacy bridge, and enclosure-root lifecycle journal. The integration parent overview now routes to
+its three new child pillars.
 
-## Design Preserved
+## Import-Fanout Result
 
-- The direct Python route is a reviewed content-sealed cohort, not a generic analyzer.
-- Diagnostic, cadence, phase, and causal artifacts do not acquire acceptance authority.
-- Durable evidence declares authority, fidelity, cadence, lifetime, replacement, and consumers.
-- Coverage/CRAP score product code only; all Python still participates in lint/type/size/execution.
-- One dependency graph owns targeted selection, retry invalidation, and causal edge meaning.
-- Owner preflights never hide independent failures or duplicate product transitions.
-- Deleted snapshots/generators/analyzers have no compatibility reader or live sidecar.
+The certifying plugin is documented at its new package-root owner. The testing package initializer
+is explicitly documentation-only, and the testing overview records the rule against convenience
+re-exports. This preserves the measured distinction between no literal layering cycle and the
+repaired eager bootstrap fan-out.
 
-## Remaining Boundary
+## Validation State
 
-The developer authorized an emergency red recovery landing at code commit
-`cb6623775a04cbdeb0509dc26f08a8268189c3f6` before WSL compaction. Wave 004 reconciles onboarding
-against exact source tree `65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d`; it is not lifecycle
-closeout or certification. The scoped wave-004 curator check passed with 54 final changed documents and
-zero remaining citation or document-shape findings; all 66 route indexes are current. Land the
-recovery memory and ledger mapping, then repair the recorded Dagger failures before the master can
-be declared complete through the normal lifecycle.
+Content reconciliation and zero-missing-sidecar census are complete. Exact-candidate structural
+validation reports zero findings and zero absolute-path leaks, and its 72 route indexes are all
+current with no stale index. Memory-quality validation remains the final curator check; the review
+file records the official-branch-only findings against the uncommitted candidate boundary.
+
+The first scan exposed 235 genuinely malformed evidence-table rows; those were repaired to the
+canonical anchored citation schema. The latest repeat scan reports 78 drift findings, 284
+claim-reopen findings, and 212 range/provenance findings. The increase reflects the refreshed
+dashboard cards and their intentionally blank pre-commit verification metadata; the official code
+checkout still cannot see candidate-only sources. These are one boundary expressed three ways: the sanctioned direct master is uncommitted,
+its new or changed source exists only in the candidate checkout, and onboarding therefore correctly
+has no `lastVerifiedCommitHash`. Closeout must replace that boundary with real commit provenance;
+candidate curation must not stamp the unchanged base commit over changed bytes.
+
+The final dashboard-gate repair removed a redundant exhaustive enum-sampling assertion instead of
+adding six ceremonial full enclosure rows to the shared fixture. The refreshed contract-test and
+snapshot onboarding now state the resulting authority split: generated schema/codegen owns complete
+producer vocabularies; the representative payload owns path reachability and legality of sampled
+values.
+
+## Closeout Boundary
+
+Automated bootstrap ends at this handoff. Code/memory commits, verification stamps, entity
+fingerprints, ledger alignment, closeout, push, and integration remain separate and require their
+normal authority. The final full Dagger master gate belongs to L12 after curation is green.

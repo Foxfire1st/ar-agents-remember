@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -329,7 +329,18 @@ The current forcing seams include `test_agents_remember_closeout_refuses_a_missi
 caller has not already supplied one. This keeps candidate-tree evidence tests from accidentally
 nesting/reinitializing a fixture repository while preserving existing closeout gate semantics.
 
+
+## PDLS Reconciliation
+
+Closeout quality-gate forcing remains Dagger-only and now validates the repaired evidence identity and targeted/full authority split.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T21:23+02:00 — Made the shared checkout fixture safe for candidate-bound evidence tests.
 

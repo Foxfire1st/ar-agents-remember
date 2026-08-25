@@ -5,34 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_configured_contract_admission_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Forces configured contract admission l2 behavior at the public and durable-state boundaries.
+Proves all configured-contract consumers share one closed semantic admission API.
 
 ## Code Commentary
 
 ### Logic
 
-The principal forcing seams are `test_every_public_consumer_exhaustively_refuses_each_semantic_category`, `test_real_admission_classifies_expected_failures_and_leaves_unexpected_faults_loud`, `test_mutation_time_configured_authority_change_uses_the_same_public_projector`, `test_real_post_admission_lower_failures_share_the_public_projector`. The suite exhaustively proves the one closed admission result and projector across every public current-contract consumer, exact admitted-object reuse, mutation-time authoritative reread, and loud unexpected faults.
+The cases check the total accepted/refused result family and consistent translation across public tools.
 
 ### Conventions
 
-Tests address operations by task/contract plus kind and generation, assert durable evidence and public legal controls, and compare state across failure cuts. Helpers remain test-only and invoke the same public/domain seams as production.
+Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
+differences remain in the test so fixtures do not become a parallel implementation.
 
 ### Invariants And Boundaries
 
-- A passing assertion must prove the advertised action executes or terminates safely; payload shape alone is insufficient.
-- Queue projection is never accepted as lifecycle evidence, and private operation identifiers do not cross the public test boundary.
-- Failure-path assertions check non-mutation or exact same-generation recovery, not merely an exception string.
+- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
+  green through a fallback, allowlist, or weakened production threshold.
+- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
 
 ### Todos
 
@@ -40,21 +41,29 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to these repository-internal forcing tests.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required for this repository-owned test contract. | `_byte_tree` | mcp/tests/test_configured_contract_admission_l2.py:1-671 |
 
 ## Repo-Internal References
 
-The test source is the direct evidence for the regression contract.
+The test file is direct evidence for the production boundary named above.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_every_public_consumer_exhaustively_refuses_each_semantic_category`, `test_real_admission_classifies_expected_failures_and_leaves_unexpected_faults_loud`, `test_mutation_time_configured_authority_change_uses_the_same_public_projector`, `test_real_post_admission_lower_failures_share_the_public_projector` as its principal forcing seams. | L197-L272; L275-L322; L334-L387; L400-L476 | `mcp/tests/test_configured_contract_admission_l2.py` |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `_byte_tree` | mcp/tests/test_configured_contract_admission_l2.py:1-671 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this test file.
+No cross-repository source is allowed by the resolved settings.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `_byte_tree` | mcp/tests/test_configured_contract_admission_l2.py:1-671 |
 
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

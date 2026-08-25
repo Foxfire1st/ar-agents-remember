@@ -2,27 +2,34 @@
 
 | Field | Value |
 | --- | --- |
-| workflow | c-03 existing-memory-slice-maintenance |
-| state | emergency recovery onboarding reconciled; Dagger repair pending |
-| wave | onboarding-wave-004 |
-| source commit | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| source tree | `65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d` |
-| candidate delta | 250 files; 11,943 insertions; 22,434 deletions; net -10,491 |
-| new high-risk file cards | 15 total; 5 in final reconciliation |
-| behavior-preserving sidecar moves | 20 |
-| refreshed current source/route cards | 20 |
-| deleted stale predecessor cards | 7 |
-| route indexes | 66 current; 9 regenerated during wave 004; final dry run 66 unchanged |
-| citation scope | wave 004: 54 final changed documents, 68 tables, 215 rows, 353 resolved citations, zero findings after one authoritative 19-to-0 delta repair |
-| curator review | wave 003 passed; wave 004 emergency-recovery scope passed |
-| memory commit | emergency recovery landing authorized by developer; not lifecycle closeout |
+| workflow | c-03 existing-memory-slice-maintenance + c-05 file-level onboarding |
+| state | candidate-curation-complete |
+| task | 260824-PDLS |
+| source inventory | accepted from approved master scope |
+| production units | 46 covered: 35 created, 11 refreshed |
+| test/support units | 60 covered: 34 created, 26 refreshed |
+| dashboard units | 1 changed source sidecar refreshed; 1 unchanged dependent fixture sidecar refreshed |
+| route overviews | 7 created; integration parent refreshed |
+| route indexes | current: 72/72 exact-candidate dry-run unchanged; zero stale indexes |
+| memory quality | shape checks clean; 78 drift, 284 claim-reopen, and 212 range/provenance findings remain at the pre-commit official-checkout boundary |
+| curator review | pass with explicit pre-commit provenance boundary |
+| handoff | complete |
 
-## Current Boundary
+## Decisions
 
-The memory slice describes the explicit-cohort, evidence-lifecycle/cadence, product-only
-measurement, dependency-owned selection/retry, and causal-localization design through the exact
-emergency-landed source tree. Wave 004 moved twenty preserved sidecars with their source packages,
-added five new high-risk owner cards, repaired entity evidence paths/fingerprints, and regenerated
-route indexes. Whole-tree deterministic shape checks report zero findings across 1,911 Markdown
-documents; all 66 route indexes are current. This recovery snapshot does not certify the red
-Dagger result; repair and a later lifecycle closeout remain separate work.
+- The handoff criticism is recorded as eager import fan-out, not an unproven static cycle.
+- The certifying plugin moved to the package root; service imports are fixture-local.
+- The unused testing-package re-export facade was removed without compatibility behavior.
+- Every changed Python unit and the changed dashboard contract guard are covered; no routine-test
+  deferral is used for this atomic master.
+
+## Blockers
+
+None. Final verification metadata and entity fingerprints remain closeout-owned because the code
+candidate has not been committed.
+
+## Next Recommended Action
+
+Run the one final full Dagger master gate. After the developer approves a code commit, closeout must
+stamp the resulting real code provenance and rerun memory quality; do not invent verification
+metadata for an uncommitted tree. Do not run closeout without a separate developer instruction.

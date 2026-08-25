@@ -5,29 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_atomic_series_landing_l3.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Force contract/ref-owned atomic-series landing exclusion and terminal capability.
+Forces contract/ref-owned atomic landing exclusion.
 
 ## Code Commentary
 
 ### Logic
 
-The tests prove that a live nonterminal same-target series contract blocks landing, terminal contract states release the blocker, and terminal controls preserve the exact operation/ref authority boundary.
+The cases prove exact owner acceptance and foreign, missing, conflicting, or terminal authority refusal.
+
+### Conventions
+
+Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
+differences remain in the test so fixtures do not become a parallel implementation.
 
 ### Invariants And Boundaries
 
-- Landing exclusion is owned by the live series contract and protected-ref authority, never queue rows.
-- Task authoring remains outside this serialization boundary.
+- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
+  green through a fallback, allowlist, or weakened production threshold.
+- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
 
 ### Todos
 
@@ -35,19 +41,29 @@ None recorded.
 
 ## Docs References
 
-No configured domain-documentation source applies to this repository-internal route.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required for this repository-owned test contract. | `AtomicSeriesLandingTests` | mcp/tests/test_atomic_series_landing_l3.py:1-136 |
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+The test file is direct evidence for the production boundary named above.
+
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Landing tests exercise live nonterminal and released contract states. | L17-L75 | [source](mcp/tests/test_atomic_series_landing_l3.py) |
-| Terminal capability tests force the supported release controls. | L76-L118 | [source](mcp/tests/test_atomic_series_landing_l3.py) |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `AtomicSeriesLandingTests` | mcp/tests/test_atomic_series_landing_l3.py:1-136 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `AtomicSeriesLandingTests` | mcp/tests/test_atomic_series_landing_l3.py:1-136 |
 
 ## Update History
 
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

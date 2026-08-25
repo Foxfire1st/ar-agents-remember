@@ -5,64 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/cohort_manifest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Python testing boundary](overview.md)
+[Python test infrastructure overview](overview.md)
 
 ## Purpose
 
-Owns the strict checked-in schema for the bounded direct Python cohort. It converts the TOML into
-typed files, configurations, and nodes before eligibility verifies candidate bytes.
+Loads and validates the exact content-sealed direct-diagnostic cohort manifest.
 
 ## Code Commentary
 
 ### Logic
 
-`load_direct_cohort_manifest` accepts exactly schema/policy v2, a maximum selection of eight, no
-more than sixteen audited Python files, and the required pytest/lifecycle configuration bindings.
-It normalizes confined paths, exact SHA-256 values, symbols, local imports, effect families, and
-per-node closure. Every audited file must be reachable from a selected node through node closure or
-declared local imports.
+It validates schema, file/config hashes, node selectors, import closure, population limits, unique ownership, and reachability without auto-refreshing the approved cohort.
 
 ### Conventions
 
-Manifest parsing is total and accumulates structural findings into one `CohortManifestError`. Exact
-key checks make schema extension an explicit policy migration.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- This module parses declarations; `eligibility.py` verifies files, AST nodes, fixtures, symbols,
-  hashes, and candidate currency.
-- No path escape, duplicate member, missing configuration, unreachable audit file, unknown effect,
-  or parameterized manifest node is accepted.
-- There is no auto-refresh, compatibility reader, or inferred repository-wide population.
+- Paths, nodes, imports, effects, and content hashes must match exactly; any unknown, changed, oversized, or unreachable member refuses direct execution.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-None.
+None recorded.
 
 ## Docs References
 
-No external domain documentation governs this repository-owned manifest.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed schema, bounds, and manifest errors are closed. | `DirectCohortManifest` | mcp/src/agents_remember/testing/cohort_manifest.py:17-84 |
-| Loading validates exact tables, population shape, and reachability. | `load_direct_cohort_manifest` | mcp/src/agents_remember/testing/cohort_manifest.py:89-248 |
-| The checked-in manifest is the only admitted population. | "python-direct-cohort/v2" | mcp/tests/python-direct-cohort.toml:1-3 |
+| No external domain source is required to establish this repository-owned implementation. | `COHORT_MANIFEST_PATH` | mcp/src/agents_remember/testing/cohort_manifest.py:1-379 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `COHORT_MANIFEST_PATH` | mcp/src/agents_remember/testing/cohort_manifest.py:1-379 |
 
 ## Cross-Repo References
 
-No cross-repository authority is owned here.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `COHORT_MANIFEST_PATH` | mcp/src/agents_remember/testing/cohort_manifest.py:1-379 |
 
 ## Update History
 
-- 2026-08-25T01:56+02:00 — Created after Candidate-A consolidation replaced the generic analyzer
-  with one explicit content-sealed cohort.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

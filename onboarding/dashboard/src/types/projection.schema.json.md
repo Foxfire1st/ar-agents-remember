@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -107,7 +107,16 @@ Runtime refinements including item limits, numeric minima, fingerprints, and str
 exact in this canonical JSON Schema. The TypeScript mirror documents the same supported constraints;
 generation refuses unknown constraints instead of erasing them.
 
+## 260824-PDLS Invalidation Outcome Contract
+
+The generated schema no longer advertises `not-created` as a projection-invalidation outcome.
+Invalidation always establishes an explicit invalid-empty projection, including when no prior
+projection file existed, so an absent queue cannot be mistaken for retained scheduling authority.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Regenerated the closed invalidation outcome vocabulary after removing
+  the impossible `not-created` branch. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Regenerated and documented the disposable closeout projection,
   discard-before-start audit shapes, and exact JSON Schema refinement boundary while preserving the

@@ -5,38 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/__init__.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Python testing boundary](overview.md)
+[Python test infrastructure overview](overview.md)
 
 ## Purpose
 
-Defines the deliberately small package facade for classification, direct diagnostics, and the two
-typed selection outcomes. Internal AST, admission, bootstrap, and evidence helpers stay behind
-their owning modules.
+Marks the test-infrastructure package without re-exporting leaf-module contracts.
 
 ## Code Commentary
 
-`__all__` publishes `classify_direct_selection`, `run_direct_diagnostic`, result/error types, and
-eligible/refused decision types. Adding an internal helper here turns it into supported package
-surface and must be justified.
+### Logic
 
-## Invariants And Boundaries
+The initializer is intentionally documentation-only. Callers import admission, bootstrap, eligibility, evidence, and lifecycle APIs from their owning modules.
 
-- The facade exposes diagnostics, not Dagger admission or certifying evidence constructors.
-- One canonical classifier and one canonical runner are exported; no compatibility aliases.
+### Conventions
 
-## Repo-Internal References
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
+
+### Invariants And Boundaries
+
+- Do not add convenience re-exports: package-level imports recreate pytest bootstrap fan-out and ambiguous contract ownership.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public testing facade is explicitly enumerated. | `__all__` | mcp/src/agents_remember/testing/__init__.py:17-32 |
+| No external domain source is required to establish this repository-owned implementation. | "Test infrastructure package; public contracts live in their owning leaf modules." | mcp/src/agents_remember/testing/__init__.py:1-1 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | "Test infrastructure package; public contracts live in their owning leaf modules." | mcp/src/agents_remember/testing/__init__.py:1-1 |
+
+## Cross-Repo References
+
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | "Test infrastructure package; public contracts live in their owning leaf modules." | mcp/src/agents_remember/testing/__init__.py:1-1 |
 
 ## Update History
 
-- 2026-08-24T21:23+02:00 — Created for 260824-PDLS.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

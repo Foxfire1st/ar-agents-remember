@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -951,7 +951,17 @@ localization. The worktree plane consumes typed Dagger admission/evidence instea
 test-route failure families. Removed analyzers, task/date baselines, and former global/random helper
 owners have no compatibility facade.
 
+## 260824-PDLS Final Package Reconciliation
+
+The final tree moves the certifying pytest bootstrap to the package root, keeps diagnostics
+non-certifying, consolidates dependency ownership and causal failure evidence, and splits lifecycle
+and queue helpers by authority. The package retains one Dagger acceptance path and introduces no
+fallback runner, compatibility facade, or queue-owned commit evidence.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled the final PDLS package ownership and evidence boundaries.
+  Verification remains closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: documented the extracted quality CLI parser and its non-authority boundary at emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; the recorded Dagger gate remains red.
 

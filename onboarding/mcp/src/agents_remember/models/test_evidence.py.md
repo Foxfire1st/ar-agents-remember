@@ -5,48 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/test_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[response contract models](overview.md)
+[Models overview](overview.md)
 
 ## Purpose
 
-Defines the typed evidence-altitude firewall between local Python diagnostic feedback and
-candidate-bound Dagger acceptance.
+Separates non-certifying diagnostic feedback from candidate-bound Dagger test certification.
 
 ## Code Commentary
 
-`CandidateBinding` identifies direct evidence by classifier policy, exact closure/configuration
-digest, and configuration paths. `DiagnosticTestEvidence` carries exact nodes and exit code.
-`CertifyingTestEvidence` has no public constructor and can be minted only by the verified Dagger
-publication adapter's private authority. `require_certifying_evidence` refuses diagnostics for
-coverage, quality, retry, route review, lifecycle, closeout, and integration. Strict serialization
-and loading preserve altitude across a file boundary and reject unknown fields.
+### Logic
 
-## Invariants And Boundaries
+Typed bindings describe candidate tree and policy identity; a private Dagger authority constructs certifying evidence; loaders validate diagnostic payloads and consumers demand the required altitude.
 
-- A passing diagnostic exit code never becomes acceptance.
-- Payload names, paths, booleans, or caller-supplied dictionaries cannot elevate altitude.
-- Only verified immutable Dagger publication mints certifying evidence.
-- Local feedback is the only consumer allowed to receive diagnostics.
+### Conventions
 
-## Repo-Internal References
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
+
+### Invariants And Boundaries
+
+- Diagnostic evidence cannot be elevated, copied, or inferred into certifying evidence; accepting consumers require the private verified-Dagger construction path.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Altitudes and consumers are closed enums. | `EvidenceAltitude`; `EvidenceConsumer` | mcp/src/agents_remember/models/test_evidence.py:14-31 |
-| Certifying evidence has a private factory authority. | `CertifyingTestEvidence`; `_certifying_evidence_from_verified_dagger` | mcp/src/agents_remember/models/test_evidence.py:60-91 |
-| Accepting consumers reject diagnostic altitude. | `require_certifying_evidence` | mcp/src/agents_remember/models/test_evidence.py:143-174 |
+| No external domain source is required to establish this repository-owned implementation. | `EVIDENCE_SCHEMA_VERSION` | mcp/src/agents_remember/models/test_evidence.py:1-220 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `EVIDENCE_SCHEMA_VERSION` | mcp/src/agents_remember/models/test_evidence.py:1-220 |
 
 ## Cross-Repo References
 
-No external repository may mint or reinterpret this evidence vocabulary.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `EVIDENCE_SCHEMA_VERSION` | mcp/src/agents_remember/models/test_evidence.py:1-220 |
 
 ## Update History
 
-- 2026-08-24T21:23+02:00 — Created for 260824-PDLS.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

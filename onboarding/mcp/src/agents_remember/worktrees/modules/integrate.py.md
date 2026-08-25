@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -161,7 +161,18 @@ or released. The integration authority lock is held only around the protected pu
 the current contract is re-proved inside it. Completed integrations remain idempotent; organizational
 completion continues through its journaled publication transaction.
 
+
+## PDLS Reconciliation
+
+Integration recovery now rejects external-memory commit evidence on internal-memory contracts and preserves exact candidate/ref state before invoking the canonical recovery route.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: replaced persistent blocker assumptions with live atomic protected-ref authority at the landing edge. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

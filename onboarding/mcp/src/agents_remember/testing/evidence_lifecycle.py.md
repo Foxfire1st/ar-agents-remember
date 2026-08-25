@@ -5,64 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/evidence_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Python testing boundary](overview.md)
+[Python test infrastructure overview](overview.md)
 
 ## Purpose
 
-Owns the machine-enforced authority, provenance, cadence, lifetime, expiry/graduation, replacement,
-and consumer contract for durable test evidence and shared support.
+Owns typed lifecycle metadata and validation for durable test recordings, fixtures, and shared support.
 
 ## Code Commentary
 
 ### Logic
 
-`load_evidence_inventory` parses `mcp/tests/evidence-lifecycle.toml` into closed enums and typed
-`EvidenceMetadata` rows, then validates every declared artifact, consumer, authority/lifetime
-combination, expiry, replacement, and governed-path census. `node:` replacements are parsed from
-real Python and must identify exactly one current top-level function or class method.
+It loads the catalog, validates authority/category/fidelity/cadence/lifetime/replacement/consumer fields, checks inventory completeness, and exposes replacement and authoring checks.
 
 ### Conventions
 
-The catalog is the consumer/provenance authority used by collection, targeted selection, retry, and
-reporting. Errors are accumulated and raised together so authors receive the full current delta.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Temporary evidence needs a future expiry and executable replacement; migration evidence cannot
-  be permanent.
-- Retained evidence needs a permanence rationale; versioned evidence requires external authority.
-- New snapshots, recordings, task/date baselines, large fixtures, and shared support cannot enter
-  without a catalog row.
-- The validator never preserves stale proof through compatibility prose.
+- Every governed artifact has one explicit authority and lifetime; expired or replaced evidence cannot remain silently active; internal and external truth sources stay distinct.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-None.
+None recorded.
 
 ## Docs References
 
-No external documentation owns this repository lifecycle policy.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed metadata types include authority, fidelity, cadence, and lifetime. | `EvidenceMetadata` | mcp/src/agents_remember/testing/evidence_lifecycle.py:24-137 |
-| Inventory loading fails on all current parse and schema findings. | `load_evidence_inventory` | mcp/src/agents_remember/testing/evidence_lifecycle.py:140-236 |
-| Artifact, authority, replacement, and census validation is centralized. | `_validate_artifacts` | mcp/src/agents_remember/testing/evidence_lifecycle.py:254-421 |
-| The current catalog uses the one lifecycle schema. | "ar-test-evidence-lifecycle/v1" | mcp/tests/evidence-lifecycle.toml:1-2 |
+| No external domain source is required to establish this repository-owned implementation. | `CATALOG_PATH` | mcp/src/agents_remember/testing/evidence_lifecycle.py:1-473 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `CATALOG_PATH` | mcp/src/agents_remember/testing/evidence_lifecycle.py:1-473 |
 
 ## Cross-Repo References
 
-No cross-repository lifecycle authority is owned here.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `CATALOG_PATH` | mcp/src/agents_remember/testing/evidence_lifecycle.py:1-473 |
 
 ## Update History
 
-- 2026-08-25T01:56+02:00 — Created for enforced durable evidence lifecycle and expiry.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

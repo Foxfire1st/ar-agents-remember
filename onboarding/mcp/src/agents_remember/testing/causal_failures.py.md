@@ -5,61 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/testing/causal_failures.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Python testing boundary](overview.md)
+[Python test infrastructure overview](overview.md)
 
 ## Purpose
 
-Owns the pytest-side causal-failure artifact, graph-proven blocked-node handling, and exact
-reproduction metadata for independent/process-sensitive failures.
+Implements pytest-side causal failure classification, dependency suppression, and durable causal reports.
 
 ## Code Commentary
 
 ### Logic
 
-Collection loads the owner-preflight artifact and skips only tests whose file has a declared/import
-edge to the failed owner. Every item receives a failure class and retry semantics. Session finish
-adds blocked nodes and independent failures to the same JSON and Markdown payload.
+Hooks load preflight output, annotate execution profiles, skip only proven blocked nodes, retain runtime failure families, and render bounded JSON/Markdown evidence.
 
 ### Conventions
 
-Process sensitivity is derived from owned imports (async, socket, process, threading), not guessed
-from exception text. Workers report observations; the controller alone publishes the artifact.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Incomplete ownership causes no blanket suppression.
-- Independent failures execute and remain separately visible.
-- Seed, worker, duration, start/finish time, and process families survive reporting.
-- The artifact is always non-accepting; a causal skip cannot mint evidence.
+- Blocked status requires an explicit owner edge; independent or process-sensitive failures remain observable; report publication follows the certifying evidence boundary.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-None.
+None recorded.
 
 ## Docs References
 
-No external domain documentation defines this repository diagnostic format.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Collection blocks only exact file edges and records retry metadata. | `pytest_collection_modifyitems` | mcp/src/agents_remember/testing/causal_failures.py:71-112 |
-| Runtime failures and final artifacts preserve independent evidence. | `runtime_failure_record` | mcp/src/agents_remember/testing/causal_failures.py:114-226 |
-| Focused proof covers incomplete ownership and process-sensitive reproduction. | `test_incomplete_ownership_never_becomes_blanket_suppression` | mcp/tests/test_causal_failure_localization.py:127-196 |
+| No external domain source is required to establish this repository-owned implementation. | `CAUSAL_REPORT_OPTION` | mcp/src/agents_remember/testing/causal_failures.py:1-293 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `CAUSAL_REPORT_OPTION` | mcp/src/agents_remember/testing/causal_failures.py:1-293 |
 
 ## Cross-Repo References
 
-No adjacent repository owns this failure record.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `CAUSAL_REPORT_OPTION` | mcp/src/agents_remember/testing/causal_failures.py:1-293 |
 
 ## Update History
 
-- 2026-08-25T01:56+02:00 — Created for causal failure localization without hiding independent
-  evidence.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,18 @@ caller holds the task/door CAS and requires the exact first ready waiting genera
 grade, claim, certify, block, release, abort, and integration-completion mutations are removed. Task
 authoring is never gated by this facade.
 
+
+## PDLS Reconciliation
+
+Projection access now recognizes the exact sprint planning actor and commanded manager set; queue authorization no longer subordinates task authoring or infers managers from unrelated topology.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced mutable queue commands with status/rebuild and exact first-ready admission. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

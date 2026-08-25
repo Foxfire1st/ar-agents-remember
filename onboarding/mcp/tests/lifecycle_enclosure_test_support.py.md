@@ -5,34 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/tests/lifecycle_enclosure_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Provides shared test builders for the public lifecycle-control and enclosure-addressability forcing suites.
+Provides small explicit builders for lifecycle-enclosure addressability forcing.
 
 ## Code Commentary
 
 ### Logic
 
-The principal forcing seams are `enclosure_contract`, `publish_test_enclosure`, `byte_tree`. The suite forces locator and immutable root-manifest publication, confinement and digest contradictions, idempotent pre-adoption enclosure adoption, and exact root-journal recovery after task-contract loss.
+Builders produce exact locator, manifest, predecessor, and archive shapes while leaving scenario differences local.
 
 ### Conventions
 
-Tests address operations by task/contract plus kind and generation, assert durable evidence and public legal controls, and compare state across failure cuts. Helpers remain test-only and invoke the same public/domain seams as production.
+Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
+differences remain in the test so fixtures do not become a parallel implementation.
 
 ### Invariants And Boundaries
 
-- A passing assertion must prove the advertised action executes or terminates safely; payload shape alone is insufficient.
-- Queue projection is never accepted as lifecycle evidence, and private operation identifiers do not cross the public test boundary.
-- Failure-path assertions check non-mutation or exact same-generation recovery, not merely an exception string.
+- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
+  green through a fallback, allowlist, or weakened production threshold.
+- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
 
 ### Todos
 
@@ -40,34 +41,29 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to these repository-internal forcing tests.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required for this repository-owned test contract. | `enclosure_contract` | mcp/tests/lifecycle_enclosure_test_support.py:1-100 |
 
 ## Repo-Internal References
 
-The test source is the direct evidence for the regression contract.
+The test file is direct evidence for the production boundary named above.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `enclosure_contract`, `publish_test_enclosure`, `byte_tree` as its principal forcing seams. | L23-L52; L55-L56; L59-L64 | `mcp/tests/lifecycle_enclosure_test_support.py` |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `enclosure_contract` | mcp/tests/lifecycle_enclosure_test_support.py:1-100 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this test file.
+No cross-repository source is allowed by the resolved settings.
 
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Provides small explicit builders for immutable enclosure manifest, locator, journal, contract, and byte-tree forcing.
-
-### Current Invariants
-
-- Published test enclosures use the canonical address chain.
-- Byte-tree snapshots make crash and refusal purity assertions exact.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `enclosure_contract` | mcp/tests/lifecycle_enclosure_test_support.py:1-100 |
 
 ## Update History
 
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

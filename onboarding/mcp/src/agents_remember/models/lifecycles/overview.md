@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,17 @@ intent model is deleted: missing enclosure state and standalone successor WALs a
 Cleanup may remove the enclosure root only after canonical entries have been externally archived,
 receipted, and read back; a successor must cite that exact terminal predecessor.
 
+## 260824-PDLS Final Lifecycle-Model Reconciliation
+
+Operation and enclosure validation is split into named single-purpose checks for commit legs,
+irreversible boundaries, recovery, legacy proof, mutation history, and worker authority. The split
+preserves one strict journal-owned model surface; it does not add permissive readers, fallback
+state, or queue-derived lifecycle evidence.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled the final lifecycle validator and enclosure ownership split.
+  Verification remains closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled final door/journal/terminal-enclosure ownership and removed the obsolete successor model. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

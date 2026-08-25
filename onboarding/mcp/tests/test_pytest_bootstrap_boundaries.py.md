@@ -5,41 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pytest_bootstrap_boundaries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP test overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Provides the compact pure four-state proof for valid certification, valid diagnostics,
-invalid/missing certifying admission, and attempted diagnostic elevation.
+Proves Dagger admission and hermetic bootstrap remain separate.
 
 ## Code Commentary
 
-The matrix proves a valid nonce/file handshake mints the private capability, diagnostic bootstrap
-never consults admission, invalid certifying facts refuse before candidate resolution, and
-diagnostic evidence cannot enter quality. Additional cases cover handshake failures, caller-shaped
-capabilities, Git/temp/cache isolation, reversible environment application, shared-versus-
-certifying plugin imports, and global-state restoration.
+### Logic
 
-## Invariants And Boundaries
+The cases force the four-state authority matrix, candidate/Git/global isolation, diagnostic non-elevation, service deferral, and the no-eager-import boundary.
 
-- These pure model tests do not claim Dagger acceptance.
-- The final full graph remains responsible for exercising the real composition.
-- Diagnostic validity and certifying invalidity are separate states, not fallback branches.
+### Conventions
 
-## Repo-Internal References
+Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
+differences remain in the test so fixtures do not become a parallel implementation.
+
+### Invariants And Boundaries
+
+- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
+  green through a fallback, allowlist, or weakened production threshold.
+- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One test covers all four authority states. | `test_four_state_authority_matrix` | mcp/tests/test_pytest_bootstrap_boundaries.py:71-107 |
-| Handshake and caller-shaped failures are total. | `test_admission_matrix_is_total_and_does_not_expose_the_nonce` | mcp/tests/test_pytest_bootstrap_boundaries.py:109-127 |
+| No external domain source is required for this repository-owned test contract. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:1-237 |
+
+## Repo-Internal References
+
+The test file is direct evidence for the production boundary named above.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:1-237 |
+
+## Cross-Repo References
+
+No cross-repository source is allowed by the resolved settings.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:1-237 |
 
 ## Update History
 
-- 2026-08-24T21:23+02:00 — Created for 260824-PDLS.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

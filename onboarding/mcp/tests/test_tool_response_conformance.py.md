@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -196,7 +196,18 @@ The current forcing seams include `test_every_modeled_tool_has_a_representative_
 The conformance inventory now invokes memory quality with the strict sync request object, keeping
 the whole public-tool response check aligned with the sole published grammar.
 
+
+## PDLS Reconciliation
+
+Tool-response conformance now includes projection effects and shared total-refusal payloads at the public boundary.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: updated the representative memory-quality call to the canonical discriminated request. Verification metadata remains pinned until architect-owned closeout.
 

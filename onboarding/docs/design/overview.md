@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated            | 2026-07-18T07:43+02:00                      |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`  |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated            | 2026-08-25T17:21+02:00                      |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`  |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -111,7 +111,17 @@ The cockpit performance/evidence design document now labels its test-capable mea
 an internal nonce-attested Dagger invocation and explicitly refuses host execution. This is an
 evidence-location clarification; the dashboard architecture is unchanged.
 
+## 260824-PDLS Evidence-Authority Design
+
+The Python test-evidence design now separates diagnostic execution from certifying evidence,
+defines the package-root bootstrap boundary, and records Dagger as the sole acceptance authority.
+The document also captures fixture ownership, proof lifetime, dependency-derived selection, and
+the rule that diagnostic success cannot satisfy a lifecycle gate.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled the full PDLS evidence-authority and diagnostic-lane design.
+  Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: recorded the Dagger-only measurement boundary in the
   design route. Verification remains closeout-owned.

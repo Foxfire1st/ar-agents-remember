@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_worktree_support_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -51,7 +51,18 @@ This task extends this suite's production-bound fixtures or assertions for task-
 
 Affected worktree-support cases now consume the shared normalized closeout arguments. Their lifecycle behavior remains unchanged; the migration removes test-only blank message defaults below validation.
 
+
+## PDLS Reconciliation
+
+The first worktree support suite was updated for the current enclosure, journal, projection, and recovery shapes while retaining its public scenarios.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints `start_contract` to its moved startup package. Verified at code commit `1d446724`.
 
