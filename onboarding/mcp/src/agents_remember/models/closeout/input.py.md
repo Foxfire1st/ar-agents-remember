@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/models/closeout_input.py
+# mcp/src/agents_remember/models/closeout/input.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/models/closeout_input.py` |
+| path | `mcp/src/agents_remember/models/closeout/input.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[models overview](overview.md)
+[models overview](../overview.md)
 
 ## Purpose
 
@@ -47,14 +47,16 @@ See task `260821-CLIVE-L1`, especially L1-R1 through L1-R3 and L1-R5.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw observations and typed refusal vocabulary are public data. | `CloseoutMessageInput`, `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout_input.py:25-33; mcp/src/agents_remember/models/closeout_input.py:57-66 |
-| Effective legs are a discriminated union. | `EnabledCloseoutLeg`, `NotApplicableCloseoutLeg` | mcp/src/agents_remember/models/closeout_input.py:77-101 |
-| Only enabled legs can return a commit message. | `message_for` | mcp/src/agents_remember/models/closeout_input.py:108-127 |
+| Raw observations and typed refusal vocabulary are public data. | `CloseoutMessageInput`, `CloseoutInvalidField` | mcp/src/agents_remember/models/closeout/input.py:25-33; mcp/src/agents_remember/models/closeout/input.py:57-66 |
+| Effective legs are a discriminated union. | `EnabledCloseoutLeg`, `NotApplicableCloseoutLeg` | mcp/src/agents_remember/models/closeout/input.py:77-101 |
+| Only enabled legs can return a commit message. | `message_for` | mcp/src/agents_remember/models/closeout/input.py:108-127 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; verification metadata remains blank until governed closeout stamps the landed code commit.

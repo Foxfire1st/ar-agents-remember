@@ -35,9 +35,9 @@
     "mcp/src/agents_remember/models/application_requests.py",
     "mcp/src/agents_remember/models/base.py",
     "mcp/src/agents_remember/models/benchmarks.py",
-    "mcp/src/agents_remember/models/closeout_input.py",
-    "mcp/src/agents_remember/models/closeout_projection.py",
-    "mcp/src/agents_remember/models/closeout_source.py",
+    "mcp/src/agents_remember/models/closeout/input.py",
+    "mcp/src/agents_remember/models/closeout/projection.py",
+    "mcp/src/agents_remember/models/closeout/source.py",
     "mcp/src/agents_remember/models/context_packet.py",
     "mcp/src/agents_remember/models/core.py",
     "mcp/src/agents_remember/models/declared_caller.py",
@@ -64,7 +64,7 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 66,
+    "sourceFilesInScope": 67,
     "fileSidecars": 31,
     "childRoutes": 4
   },
@@ -78,9 +78,6 @@
     "caller",
     "catalog",
     "closeout",
-    "closeout_input",
-    "closeout_projection",
-    "closeout_source",
     "context",
     "context_packet",
     "conversations",
@@ -139,7 +136,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate. ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to carry settings provenance, while `sessionCommands` is now explicitly user-authored launch configuration rather than a normalized model/effort vehicle. Dynamic catalog and process failures remain hos...",
+    "summary": "The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate. The closeout input, source, and projection vocabulary now lives under `models/closeout/`. This is a one-to-one package move of the existing typed contracts, not a compatibility namespace: input owns accepted plan shape, source owns exact candidate provenance, and projection owns disposable scheduling facts while journal models retain lifecycle evidence. ACPUI-L2 adds `launch-selection-in...",
     "candidateHints": [
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/models/conversations",
@@ -150,9 +147,10 @@
       "mcp/src/agents_remember/models/application_requests.py",
       "mcp/src/agents_remember/models/base.py",
       "mcp/src/agents_remember/models/benchmarks.py",
-      "mcp/src/agents_remember/models/closeout_input.py",
-      "mcp/src/agents_remember/models/closeout_projection.py",
-      "mcp/src/agents_remember/models/closeout_source.py",
+      "mcp/src/agents_remember/models/closeout",
+      "mcp/src/agents_remember/models/closeout/input.py",
+      "mcp/src/agents_remember/models/closeout/projection.py",
+      "mcp/src/agents_remember/models/closeout/source.py",
       "mcp/src/agents_remember/models/context_packet.py",
       "mcp/src/agents_remember/models/core.py",
       "mcp/src/agents_remember/models/declared_caller.py",
@@ -163,8 +161,7 @@
       "mcp/src/agents_remember/models/orchestration.py",
       "mcp/src/agents_remember/models/providers.py",
       "mcp/src/agents_remember/models/quality.py",
-      "mcp/src/agents_remember/models/read_files.py",
-      "mcp/src/agents_remember/models/runtime.py"
+      "mcp/src/agents_remember/models/read_files.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -175,12 +172,12 @@
       "base",
       "benchmarks.py",
       "benchmarks",
-      "closeout_input.py",
-      "closeout_input",
-      "closeout_projection.py",
-      "closeout_projection",
-      "closeout_source.py",
-      "closeout_source",
+      "input.py",
+      "input",
+      "projection.py",
+      "projection",
+      "source.py",
+      "source",
       "context_packet.py",
       "context_packet",
       "core.py",

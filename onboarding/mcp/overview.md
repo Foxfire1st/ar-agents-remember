@@ -8,7 +8,7 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastUpdated | 2026-08-25T08:27+02:00 |
 | lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
 | lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `../overview.md`                           |
@@ -43,6 +43,11 @@ internally exact-pinned initial brief and replacement-aware ordinary messages. S
 one-way before strict current readers; there is no public exact-id compatibility surface.
 
 ## Current Quality Execution Boundary
+
+`code_quality/check_cli.py` now owns only command-line construction. `code_quality/check.py`
+retains scope derivation, rail execution, product-only scoring, causal preflight, and terminal
+result ownership. The split introduces no second runner: parser reuse cannot mint lifecycle
+evidence or make host execution certifying.
 
 The package's development extra supplies pytest-xdist 3.x, while root pytest `addopts` owns
 `-n=auto` for raw and wrapped runs alike. The quality wrapper adds only derived selection,
@@ -947,6 +952,8 @@ test-route failure families. Removed analyzers, task/date baselines, and former 
 owners have no compatibility facade.
 
 ## Update History
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: documented the extracted quality CLI parser and its non-authority boundary at emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; the recorded Dagger gate remains red.
 
 - 2026-08-25T01:56+02:00 — 260824-PDLS reconciled the explicit cohort, lifecycle/cadence registry,
   product-only scoring, shared ownership graph, and causal localization.

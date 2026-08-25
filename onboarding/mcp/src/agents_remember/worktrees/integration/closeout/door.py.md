@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/integration/closeout_door.py
+# mcp/src/agents_remember/worktrees/integration/closeout/door.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout_door.py` |
+| path | `mcp/src/agents_remember/worktrees/integration/closeout/door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](overview.md)
+[worktree integration overview](../overview.md)
 
 ## Purpose
 
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | L30-L34; L38-L56; L59-L74 | `mcp/src/agents_remember/worktrees/integration/closeout_door.py` |
+| The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:30-74 |
 
 ## Cross-Repo References
 
@@ -63,6 +63,8 @@ evidence. Legal door dispositions remain waiting/deferred/withdrawn/claimed; jou
 as cancel, retire, and supersede never masquerade as door states.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded sole door publication, exact claim, and successor identity rules. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

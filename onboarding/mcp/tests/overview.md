@@ -8,7 +8,7 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastUpdated | 2026-08-25T08:27+02:00 |
 | lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
 | lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview | `../overview.md` |
@@ -30,6 +30,12 @@ closure. `_direct_cohort_candidate.py` supplies deliberately inert functions for
 `_evidence_catalog_fixture.py` is the one lifecycle-catalog test builder. Provider replay scripts
 live in `_adapter_event_scripts.py`, independent from `_control_plane.py`'s structural harness.
 These helpers are cataloged support, not pytest test modules and not acceptance evidence.
+
+`_quality_evidence_fixture.py` is the one acceptance-consumer fixture that publishes the immutable
+result generation a passing mocked gate promises; a green dictionary alone is intentionally
+insufficient. `task_reopen_test_support.py` centralizes the real branch, enclosure, runtime, and
+task-document predecessor world for the reopen family. Both are test support only and acquire no
+production mutation or acceptance authority.
 
 Ordinary tests, shared support, plugins, and governed fixtures all participate in the same
 dependency-ownership graph. The graph's reasons feed targeted selection and retry invalidation;
@@ -1263,7 +1269,7 @@ The test route now proves advertised controls execute or safely terminate, not m
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Admission exhaustive forcing. | `test_every_public_consumer_exhaustively_refuses_each_semantic_category` | mcp/tests/test_configured_contract_admission_l2.py:184-274 |
-| Operation-control forcing. | `test_retry_preserves_generation_input_candidate_and_approval` | mcp/tests/test_lifecycle_operation_controls_l2.py:149-180 |
+| Operation-control forcing. | `test_retry_preserves_generation_input_candidate_and_approval` | mcp/tests/test_lifecycle_operation_controls_l2.py:130-161 |
 | Terminal archive boundary. | `test_public_terminal_operation_retries_same_disposition_after_destructive_cut` | mcp/tests/test_terminal_enclosure_archive_boundary_l2.py:147-244 |
 
 ## 260821-DAGQC-L4 No Route Impact
@@ -1293,6 +1299,8 @@ capability to certifying tests; `test_direct_test_eligibility.py` proves the clo
 were removed.
 
 ## Update History
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: added the canonical published-quality and task-reopen support owners, preserving real evidence/lineage fixtures without promoting test support to product authority. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 
 - 2026-08-25T01:56+02:00 — 260824-PDLS documented the lifecycle catalog, explicit direct cohort,
   fixture-authority splits, single ownership graph, and product-only measurement boundary.

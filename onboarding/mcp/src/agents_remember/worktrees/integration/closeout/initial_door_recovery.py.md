@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/integration/initial_closeout_door_recovery.py
+# mcp/src/agents_remember/worktrees/integration/closeout/initial_door_recovery.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/initial_closeout_door_recovery.py` |
+| path | `mcp/src/agents_remember/worktrees/integration/closeout/initial_door_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](overview.md)
+[worktree integration overview](../overview.md)
 
 ## Purpose
 
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `InitialCloseoutDoorRecoveryClassification`; `classify_initial_closeout_door_recovery` as its public seam. | L32-L52; L55-L85 | `mcp/src/agents_remember/worktrees/integration/initial_closeout_door_recovery.py` |
+| The module defines `InitialCloseoutDoorRecoveryClassification`; `classify_initial_closeout_door_recovery` as its public seam. | `InitialCloseoutDoorRecoveryClassification`; `classify_initial_closeout_door_recovery` | mcp/src/agents_remember/worktrees/integration/closeout/initial_door_recovery.py:21-74 |
 
 ## Cross-Repo References
 
@@ -62,6 +62,8 @@ forbidden. Durable authority must have been journaled before the crash; later fi
 queue membership cannot backfill it.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: removed synthetic initial-door recovery from the documented contract. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

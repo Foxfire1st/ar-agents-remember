@@ -136,6 +136,7 @@
     "mcp/src/agents_remember/code_quality/application_boundary.py",
     "mcp/src/agents_remember/code_quality/causal_preflight.py",
     "mcp/src/agents_remember/code_quality/check.py",
+    "mcp/src/agents_remember/code_quality/check_cli.py",
     "mcp/src/agents_remember/code_quality/citations.py",
     "mcp/src/agents_remember/code_quality/clean_room.py",
     "mcp/src/agents_remember/code_quality/crap_calculator.py",
@@ -303,8 +304,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1327,
-    "fileSidecars": 180,
+    "sourceFilesInScope": 1340,
+    "fileSidecars": 181,
     "childRoutes": 22
   },
   "routingTerms": [
@@ -348,6 +349,7 @@
     "cgc",
     "cgcignore",
     "check",
+    "check_cli",
     "citations",
     "clean",
     "clean_room",
@@ -386,8 +388,7 @@
     "cross",
     "curator",
     "current",
-    "current_state",
-    "dashboard"
+    "current_state"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",
@@ -446,6 +447,8 @@
       "causal_preflight",
       "check.py",
       "check",
+      "check_cli.py",
+      "check_cli",
       "citations.py",
       "citations",
       "clean_room.py",
@@ -463,9 +466,7 @@
       "post_coverage.py",
       "post_coverage",
       "projection_types.py",
-      "projection_types",
-      "retry_proof.py",
-      "retry_proof"
+      "projection_types"
     ]
   },
   "fallback": {

@@ -2,10 +2,10 @@
 
 ## Current Scope
 
-Wave 003 reconciles the memory slice through the pre-checkpoint source candidate: ten new high-risk source/support cards, current
-route and owner refreshes, and seven deleted stale predecessor cards. Generated route indexes and
-the scoped reference/curator pass are complete: all 66 routes are current and all 36 changed
-documents have zero citation findings.
+Wave 003 reconciled the evidence-system design through the pre-checkpoint candidate. Wave 004 binds
+the memory slice to the emergency-landed source tree: twenty behavior-preserving sidecar moves,
+five new high-risk owners/cards, repaired parent-route documentation, refreshed entity evidence,
+and nine regenerated indexes. All 66 route indexes are now current.
 
 ## Design Preserved
 
@@ -20,9 +20,9 @@ documents have zero citation findings.
 ## Remaining Boundary
 
 The developer authorized an emergency red recovery landing at code commit
-`cb6623775a04cbdeb0509dc26f08a8268189c3f6` before WSL compaction. This memory checkpoint is not
-lifecycle closeout or certification. Reconcile the final source ownership splits (including the
-CLI parser, lifecycle cancellation/projection, and task-reopen support moves), repair the recorded
-Dagger failures, refresh onboarding against source tree
-`65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d`, and rerun final memory quality before declaring the
-master complete.
+`cb6623775a04cbdeb0509dc26f08a8268189c3f6` before WSL compaction. Wave 004 reconciles onboarding
+against exact source tree `65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d`; it is not lifecycle
+closeout or certification. The scoped wave-004 curator check passed with 54 final changed documents and
+zero remaining citation or document-shape findings; all 66 route indexes are current. Land the
+recovery memory and ledger mapping, then repair the recorded Dagger failures before the master can
+be declared complete through the normal lifecycle.

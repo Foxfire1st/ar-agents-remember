@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
-| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
+| lastUpdated | 2026-08-25T08:27+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -59,8 +59,9 @@ entry paths make the corresponding dashboard declaration in their CLI route. Und
 worktree entry paths therefore cannot inherit the deployed coordination root.
 
 The current operation surfaces include `context_packet.py` and `coordination_tools.py` for context
-assembly and resolver calls; `memory_scope.py` plus `memory_quality_controller.py` for canonical
-quality authority/execution; `memory_tools.py` for drift, citations, route-index, init, baseline, and
+assembly and resolver calls; `memory_scope.py` plus `memory_quality/controller.py` and
+`memory_quality/runs.py` for canonical quality authority, execution, and bounded run retention;
+`memory_tools.py` for drift, citations, route-index, init, baseline, and
 carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operations;
 `lifecycle/lifecycle_tools.py`, `operator_inbox_tools.py`, and `orchestration_tools.py` for lifecycle, inbox,
 and orchestration operations; `runtime/startup.py` and `terminal_tools.py` for startup and terminal
@@ -75,9 +76,12 @@ authoring writes `seriesContractPath` plus `enclosures[]` instead of the retired
 
 Contract-scoped memory quality is the curator's pre-closeout worklist over the leaf's dirty code and
 memory worktrees. `memory_scope.py` resolves and freezes the exact leaf authority, code/onboarding
-roots, and temporary code-base provenance; `memory_quality_controller.py` uses that identity for
+roots, and temporary code-base provenance; `memory_quality/controller.py` uses that identity for
 both sync and bounded async execution. A bare repository-scoped call still targets official memory
 and supplies no invented provenance; commit-derived verification stamps remain closeout-owned.
+The `memory_quality/` package is a behavior-preserving ownership split of the former flat
+controller and run-registry modules; it creates no facade, compatibility reader, or second quality
+API.
 **260707-HFX2-L11**: `worktree_tools.py`'s `worktree_integrate_tool`/
 `lifecycle_finalize_task_tool` now compose completion-edge landing — after a successful non-dry-run
 edge, when `config.retirement.auto_land_on_integration`/`auto_land_on_finalize` is on (both default
@@ -167,7 +171,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. | `MemoryScopeIdentity`; `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:27-143 |
-| The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality_controller.py:67-247 |
+| The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:67-247 |
 | `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
 | `build_route_indexes` is the deterministic route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
@@ -333,6 +337,8 @@ boundary separately keeps the closed result outcome authoritative while nesting 
 state.
 
 ## Update History
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `memory_quality/` package split, moved the preserved sidecars, and verified the route against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 
 - 2026-08-24T21:43+02:00 — File-size route refresh: extracted the worktree request/default concept
   owner from the operation facade. One model definition remains; operation behavior and public tool

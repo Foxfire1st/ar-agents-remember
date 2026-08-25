@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/modules/published_quality_manifest.py
+# mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/published_quality_manifest.py` |
+| path | `mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
-| governingOverview | `overview.md` |
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktrees/modules overview](overview.md)
+[worktrees/modules overview](../overview.md)
 
 ## Purpose
 
@@ -51,9 +51,9 @@ No configured Domain Documentation source applies; this is an internal publicati
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader reads the sole manifest pointer and returns one strict snapshot. | `load_published_quality_manifest` | mcp/src/agents_remember/worktrees/modules/published_quality_manifest.py:45-55 |
-| Schema version, root vocabulary, generation, files, and attestation are validated without compatibility readers. | `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/published_quality_manifest.py:57-95 |
-| Each file record has an exact digest/size shape. | `_parse_file` | mcp/src/agents_remember/worktrees/modules/published_quality_manifest.py:98-107 |
+| The loader reads the sole manifest pointer and returns one strict snapshot. | `load_published_quality_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:45-55 |
+| Schema version, root vocabulary, generation, files, and attestation are validated without compatibility readers. | `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:57-95 |
+| Each file record has an exact digest/size shape. | `_parse_file` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:98-107 |
 
 ## Cross-Repo References
 
@@ -68,6 +68,8 @@ recovery may report no recoverable generation, but there is no permanent compati
 silent fallback.
 
 ## Update History
+
+- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS centralized strict manifest parsing and retained explicit
   schema-1 rejection after advisory review.
