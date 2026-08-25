@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -765,7 +765,17 @@ after verifying one immutable schema-2 report generation and exact candidate tre
 gate fresh/recovery paths consume that typed evidence for lifecycle acceptance. Schema-1 manifests
 remain rejected; diagnostic evidence and timing files cannot substitute for publication.
 
+## 260824-PDLS Final Integration-Evidence Boundary
+
+The integration module consumes the exact Dagger certification and typed publication evidence
+without re-running acceptance or accepting diagnostic output. Ref-state, topology collision, and
+claim-transfer helpers now expose named facts to the integration owner rather than duplicating Git
+and lifecycle policy across call sites.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled final integration evidence consumption and helper ownership.
+  Verification remains closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `modules/quality/` package split and moved all four preserved sidecars without duplicating the quality authority. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 

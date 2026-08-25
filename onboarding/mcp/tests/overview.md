@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1298,7 +1298,19 @@ capability to certifying tests; `test_direct_test_eligibility.py` proves the clo
 `_global_state.py` and `_random_order.py` helpers moved to production testing and their stale cards
 were removed.
 
+## 260824-PDLS Final Evidence-System Reconciliation
+
+The final route covers all changed test/support units, including the package-root certifying
+bootstrap, dependency-ownership and causal-evidence helpers, focused lifecycle/enclosure units, and
+the retired facade boundary. Import-forcing proves that bootstrap does not eagerly load the testing
+facade or service graph. These tests support the accepted Dagger proof; no direct diagnostic result
+is promoted to certifying evidence.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — PDLS reconciled the final test/support inventory and bootstrap import
+  boundary while retaining Dagger as the sole certifying authority. Verification remains
+  closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: added the canonical published-quality and task-reopen support owners, preserving real evidence/lineage fixtures without promoting test support to product authority. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 

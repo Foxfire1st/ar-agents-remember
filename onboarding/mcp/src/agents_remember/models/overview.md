@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -449,7 +449,17 @@ certifying evidence has no public constructor and is minted only from a verified
 generation. Coverage, quality, retry, route review, lifecycle, closeout, and integration require
 the certifying type, keeping acceptance impossible to express as a generic payload flag.
 
+## 260824-PDLS Final Model Reconciliation
+
+The evidence models close authority, lifetime, cadence, and result vocabularies for diagnostic and
+certifying lanes, while lifecycle models retain strict journal-owned mutation proof. Projection
+invalidation removes the impossible `not-created` outcome, and validator decomposition preserves
+one typed public contract instead of distributing failure-family knowledge across callers.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled the final evidence, lifecycle, and projection model changes.
+  Verification remains closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `models/closeout/` package move and preserved its typed input/source/projection ownership at the new paths. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 

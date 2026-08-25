@@ -5,39 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Worktree-queue overview](overview.md)
+[Closeout queue overview](overview.md)
 
 ## Purpose
 
-Owns closeout-projection invalidation, rebuild, preview, and bounded publication effects.
+Owns projection invalidation, rebuild, preview, and task-document mutation effects.
 
 ## Code Commentary
 
-Canonical task or door mutations invalidate affected projections to durable invalid-empty first.
-Rebuild then computes a complete off-side candidate, rechecks that its source identity is still
-current under the short publication mutex, and publishes valid-built only on an exact match.
-Failures return bounded projection effects and leave canonical mutation truth untouched.
+### Logic
 
-## Invariants And Boundaries
+It invalidates to empty, rebuilds from current sources, previews mutation blast radius, reports source problems, and emits a rebuild hint when task authoring invalidates an existing projection.
 
-- The transaction is canonical mutation, invalidation, off-side rebuild, exact-current publish.
-- A refresh failure cannot roll back task, door, journal, commit, or integration truth.
-- Stale members are never retained as a fallback.
-- Preview performs no publication.
+### Conventions
 
-## Repo-Internal References
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
+
+### Invariants And Boundaries
+
+- Task authoring is never blocked by queue state; an affected mutation clears the disposable projection and re-evaluates waiting candidates; no stale-row transition or silent fallback exists.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Invalidation and exact-current publication are the only projection mutations. | `refresh_closeout_projections` | `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py` |
+| No external domain source is required to establish this repository-owned implementation. | `ProjectionInvalidationReceipt` | mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py:1-237 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `ProjectionInvalidationReceipt` | mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py:1-237 |
+
+## Cross-Repo References
+
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `ProjectionInvalidationReceipt` | mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py:1-237 |
 
 ## Update History
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: created from the final publication-effect owner. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

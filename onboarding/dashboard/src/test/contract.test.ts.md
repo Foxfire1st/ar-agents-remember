@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T15:28+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-25T16:21:43+02:00 |
+| lastVerifiedCommitHash |                                                  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |                                                  2026-08-25T17:21:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -21,13 +21,9 @@ and stale-checked from the Pydantic projection schema; this file instead measure
 `dashboard/src/fixtures/snapshot.json` sample against that generated contract in three directions.
 
 L23 registers the lifecycle operation result's open value map as an index-signature site and adds
-the operation kind, status, and phase sets to the exhaustive closed-vocabulary registry. L2 also
-registers `lifecycleOperation.legalControls[]`: the array is structurally required, while each
-advertised control remains an opaque tool-invocation payload. The sample must exercise every member
-of the closed unions and reach both open lifecycle-operation sites explicitly. CLIVE-final extends
-that contract with four opaque discarded-child proof maps and the exact lifecycle
-`projectionEffects` invalidation/rebuild vocabularies, including successful, diagnostic, and
-source-unreadable outcomes.
+the operation kind, status, and phase paths to the closed-vocabulary registry. The registry is
+exhaustive over paths; the representative sample must reach each path and carry only legal values.
+The generated schema and stale-output check, not fixture row count, own exhaustive enum membership.
 
 **This file is also the file that failed.** It was supposed to prevent this leaf's defect and could
 not: it consumed the fixture as `snapshot as unknown as WorkspaceProjection`, a double cast that turns
@@ -88,23 +84,24 @@ cit:([`allowlistMustStayEarned`], dashboard/src/test/contract.test.ts:197-199) c
 other direction, so an entry that becomes sampled — or that names a path the mirror dropped — fails too.
 
 **The walls of the walk, derived rather than described.**
-cit:([`AbsorbingPaths`, `INDEX_SIGNATURE_SITES`], dashboard/src/test/contract.test.ts:209-238)
+cit:([`AbsorbingPaths`, `INDEX_SIGNATURE_SITES`], dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234)
 `AbsorbingPaths<Mirror, Path>` finds every path the mirror types with a string index signature;
 `INDEX_SIGNATURE_SITES` is a
 `Record<AbsorbingPaths<…>, string>`, which is exhaustive AND closed. The comment records why this
-replaced prose: the old comment listed four such nodes and had already missed three. The current
-derived registry contains fourteen sites: the original lifecycle/gate/metrics/analytics open maps,
-lineage-recovery `args`, lifecycle-operation `result`,
-`lifecycleOperation.legalControls[]`, and the series/task-document `childJson` / `childMarkdown`
-discard-proof records whose contents are opaque by design.
+replaced prose: the old comment listed four such nodes and there were actually **seven** — and one of
+the three it missed (`GateNode.evidenceRefs[]`, a `Record<string, unknown>[]`, so every key of every
+evidence ref) was added by the same change that wrote the comment. The seven, each with its written
+reason: `lifecycles[].ask`, `lifecycles[].gate.packet`, `lifecycles[].gate.evidenceRefs[]`,
+`metrics.stalenessHistogram`, `analytics.driftSnapshots[].counts`,
+`analytics.setupSummaries[].resultCounts`, `analytics.engineProcesses[].retryArgs`.
 
 This test owns a different boundary: whether the hand-maintained sample actually exercises those
 generated closed unions. `ClosedUnionPaths` finds every literal-union path in the mirror and
-`VOCABULARIES` is a `Record` over it: **33 exact closed-union paths**, exhaustive and closed, so a
+`VOCABULARIES` is a `Record` over it: the path registry is exhaustive and closed, so a
 new closed union fails `tsc -b` until it is bound to the sample check, and a vocabulary bound to a path
-that has opened to `string` fails too cit:([`ClosedUnionPaths`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:255-283; dashboard/src/test/contract.test.ts:285-424). Runtime membership,
-per-path non-vacuity, and pooled full coverage catch an incomplete or impossible sample; they are not
-the producer-to-TypeScript authority.
+that has opened to `string` fails too cit:([`ClosedUnionPaths`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:270-285; dashboard/src/test/contract.test.ts:287-425). Runtime membership and
+per-path non-vacuity catch illegal or structurally absent sample data. They deliberately do not force
+the fixture to exhaust enum membership, which belongs to producer schema generation.
 
 **`valuesAt(root, path)`** cit:([`valuesAt`], dashboard/src/test/contract.test.ts:350-365) reads every
 value at a dotted path, fanning out over `[]`, so `…engineProcesses[].health` returns every process's
@@ -124,13 +121,9 @@ health rather than the first.
   `INDEX_SIGNATURE_SITES` demanding a served value and a non-empty reason at each — the
   one thing types cannot say, because `MirrorOnlyPaths` deliberately stops at an index signature.
 - `every closed vocabulary in the mirror is checked against the payload`
-  cit:(["every closed vocabulary in the mirror is checked against the payload"], dashboard/src/test/contract.test.ts:388-419):
-  membership at every registered path
-  (with an explicit non-vacuity check per path), then **full coverage** — members pooled
-  per VOCABULARY, not per path, asserting set-equality between the vocabulary and what the fixture
-  samples. The comment records the half that was missing: `toContain` over whatever the fixture happened
-  to hold covered 2 of 6 states, 2 of 6 phases and 1 of 3 severities, so deleting `"close"` from `PHASES`
-  produced zero failures from this file.
+  cit:(["every closed vocabulary in the mirror is checked against the payload"], dashboard/src/test/contract.test.ts:485-495):
+  membership at every registered path with an explicit non-vacuity check per path. It rejects illegal
+  sampled values without manufacturing full fixture objects solely to exercise unused enum members.
 - `projection contract fixture`
   cit:(["projection contract fixture"], dashboard/src/test/contract.test.ts:452-475): top-level shape
   and the per-row lifecycle fields a JSON import cannot state.
@@ -153,7 +146,7 @@ health rather than the first.
 
 - All three structural directions are TYPE-level: free at runtime, enforced by `npm run typecheck`
   (`tsc -b`). The runtime vocabulary assertions cover the sample facts JSON-module widening hides:
-  membership, non-vacuity, and full sampled coverage. Schema generation and its stale-output check own
+  membership and non-vacuity. Schema generation and its stale-output check own exhaustive
   producer-to-TypeScript vocabulary agreement.
 - Every assertion reads a vocabulary or a derived registry rather than a hand-written list. `ACTIVE_STATES`,
   `stateCountField` and `metricsFor` are imported from the mirror precisely so this file does not become
@@ -166,8 +159,9 @@ health rather than the first.
 
 - The fixture enters through `asServedProjection` and nowhere else. Restoring `as unknown as
   WorkspaceProjection` reinstates the exact defect this file exists to have caught.
-- `INDEX_SIGNATURE_SITES` and `VOCABULARIES` are `Record`s over DERIVED key unions. Never convert either
-  to a hand-written list — being exhaustive and closed in both directions is the whole mechanism.
+- `INDEX_SIGNATURE_SITES` and `VOCABULARIES` are `Record`s over derived path unions. Never convert
+  their keys to an untyped list: exhaustive path registration is the mechanism. Vocabulary arrays
+  validate sampled values; they do not require the sample to instantiate every member.
 - `KnownUnsampled` is meant to stay two entries long. An entry added there is a field no assertion in
   this file can see; it is a hole being accepted, not a formality.
 - A vacuous check must read as a failure. Both the per-path vocabulary loop and the absorbing-node loop
@@ -177,8 +171,8 @@ health rather than the first.
 
 **What schema codegen closes — and what this sample guard still cannot prove.**
 
-1. **Omitted nullable fields and producer-only vocabulary members are now covered by schema
-   generation.** They no longer depend on a sampled payload being non-null or exhaustive. cit:(["WHAT SCHEMA CODEGEN CLOSES", "sample cannot, even a sample this file polices", "currently null is *omitted*", "only the schema can", "a vocabulary member the server declares", "below forces the fixture to exercise every member", "cannot make up a member the mirror never heard of"], dashboard/src/test/contract.test.ts:60-66)
+1. **Omitted nullable fields and complete producer vocabularies are covered by schema generation.**
+   They do not depend on a sampled payload being non-null or exhaustive. cit:(["WHAT SCHEMA CODEGEN CLOSES", "sample cannot, even a sample this file polices", "currently null is *omitted*", "only the schema can", "schema and stale-output check own that exhaustive proof"], dashboard/src/test/contract.test.ts:62-68)
 2. **Two field-identical models remain structurally interchangeable in TypeScript.** The generator
    emits distinct `SeriesSectionNode` and `TaskSectionNode` declarations from distinct schemas, but
    structural assignment cannot distinguish declarations with identical fields. cit:(["two field-identical models", "matching the server's two", "declare the same three fields", "structural typing keeps them interchangeable", "collapse this file pins at the", "generation still emits both named model declarations"], dashboard/src/test/contract.test.ts:67-72)
@@ -206,15 +200,14 @@ the Finding, where a pointer belongs.
 | The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | "it does so at three seams"; "snapshot as unknown as WorkspaceProjection"; "WHAT SCHEMA CODEGEN CLOSES" | dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:34-34; dashboard/src/test/contract.test.ts:60-60 |
 | `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | `ServedOnlyPaths`; `mirrorMustDeclare` | dashboard/src/test/contract.test.ts:92-102; dashboard/src/test/contract.test.ts:126-128 |
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
-| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — fourteen derived, closed absorbing nodes, including opaque lifecycle-operation payloads and the four discarded-child proof maps. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:209-242 |
-| `ClosedUnionPaths` + `VOCABULARIES` — 33 exact closed-union paths, including lifecycle-operation and projection-effect outcomes, classifications, problem kinds, and problem states. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:255-283; dashboard/src/test/contract.test.ts:285-424 |
-| Full-coverage assertion: each vocabulary identity is bound to its declared paths and compared with the fixture's sampled values. | "sampledByVocabulary.get(vocabulary)"; "sampledByVocabulary.set(vocabulary, seen)"; "for (const [vocabulary, seen] of sampledByVocabulary)"; "toEqual([...seen].sort())" | dashboard/src/test/contract.test.ts:442-442; dashboard/src/test/contract.test.ts:444-444; dashboard/src/test/contract.test.ts:446-447 |
+| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed, replacing a prose list of four that missed three. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234 |
+| `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
+| Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:485-495 |
 | Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:470-475; dashboard/src/test/contract.test.ts:477-500; dashboard/src/test/contract.test.ts:502-510; dashboard/src/test/contract.test.ts:512-530 |
 | The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:575-578; dashboard/src/test/contract.test.ts:596-597 |
 | The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:356-360 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:254-264; dashboard/src/types/projection.ts:311-329 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The lifecycle-operation fixture contract requires `legalControls` and `projectionEffects`, samples optional `generation`, and supplies non-empty control and effect witnesses. | `lifecycleOperation`; `legalControls`; `projectionEffects`; `generation` | dashboard/src/fixtures/snapshot.json:1246-1788 |
 | The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1618-1618; dashboard/src/fixtures/snapshot.json:1761-1761 |
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
@@ -247,32 +240,17 @@ The L4 delta keeps the generated dashboard contract aligned with the backend's o
 
 ## 260815-DAG-L12 Vocabulary Additions
 
-The closed-vocabulary registry gains the two new `executionGraphView` node unions (L12-R4): `projection.analytics.taskDocuments[].executionGraphView.nodes[].kind` (`lump` | `segment`) and `...nodes[].frontierState` (`landed` | `ready` | `waiting` | `in-flight`) — so the fixture must exercise every member of both.
-
-## 260821-CLIVE Final Projection Contract Coverage
-
-The derived open-map registry now contains fourteen exact paths. Its four new paths are the opaque
-`childJson` and `childMarkdown` proof records under discarded series and task-document rows; the
-fixture must reach them, but this test does not interpret their arbitrary proof payloads.
-
-The closed-vocabulary registry now contains 33 exact paths. It covers the full lifecycle operation
-kind/status/phase vocabulary and the projection-effect invalidation/rebuild outcomes, diagnostics,
-source classifications, problem kinds, and problem states. The existing non-vacuity and pooled
-full-coverage assertions therefore make every registered union observable in the manual sample.
-This is contract and fixture coverage only: neither the test nor the dashboard acquires task, queue,
-door, journal, or lifecycle authority.
+The closed-vocabulary registry includes the two `executionGraphView` node-union paths (L12-R4): `projection.analytics.taskDocuments[].executionGraphView.nodes[].kind` and `...nodes[].frontierState`. The fixture must reach both paths and carry only declared values; schema generation owns their complete member sets.
 
 
 ## Update History
 
-- 2026-08-24T15:28+02:00 — Registered four opaque discarded-child proof paths and the exact
-  CLIVE-final lifecycle projection-effect vocabularies, bringing the derived registries to fourteen
-  open-map paths and 33 closed-union paths. Verification metadata remains closeout-owned.
+- 2026-08-25T16:21:43+02:00 — 260824-PDLS-L12 curator: removed the redundant pooled
+  full-vocabulary fixture assertion and its stale rationale. The guard still proves exhaustive path
+  registration, non-vacuity, and legality of sampled values; generated schema/codegen owns exhaustive
+  producer enum membership. Also removed obsolete `not-created` from the invalidation vocabulary.
+  Verification awaits the candidate code commit.
 
-- 2026-08-24T00:21+02:00 — 260821-CLIVE-L2: registered
-  `projection.enclosures[].lifecycleOperation.legalControls[]` as the opaque advertised-control
-  payload site and reconciled the fixture evidence for required control lists plus optional
-  `generation`. Verification metadata remains closeout-owned.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12:   closed-vocabulary registry adds the `executionGraphView` node kind and frontier state unions (L12-R4). Verified at code commit b7f2c8e2.
 

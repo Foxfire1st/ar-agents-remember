@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,17 @@ The resurrection test explicitly treats parent lineage as non-applicable while
 testing landing freeze/reopen behavior. Source-lineage policy is covered by the
 dedicated reopen suite, so this mock preserves the test's existing ownership.
 
+## PDLS Reconciliation
+
+Landing-state assertions now distinguish journal-owned operation state from disposable scheduling projection state.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 - 2026-08-16T02:51+02:00 — No content impact: the frozen-facts reopen fixture now patches the new
   parent-series leaf-admission preflight alongside its existing lineage isolation; landing-state
   behavior and assertions are unchanged.

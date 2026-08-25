@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,18 @@ Organizational integration quality requires the Dagger result's typed certifying
 integration consumer. Diagnostic evidence has no path into reusable organizational certification
 or protected-ref integration.
 
+
+## PDLS Reconciliation
+
+Certification matching now reports the exact observed-versus-expected identity mismatch while preserving Dagger as the sole integration-quality authority.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS applied the evidence-altitude firewall at integration.
 

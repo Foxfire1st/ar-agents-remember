@@ -5,31 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[Task-doc application overview](overview.md)
 
 ## Purpose
 
-Prove whether a planning leaf has acquired any execution authority.
+Proves whether a planning leaf is genuinely unstarted before destructive task-document discard.
 
 ## Code Commentary
 
 ### Logic
 
-The census combines intrinsic task progress with exact contract, locator, enclosure journal, typed operation, terminal-seat, operator-inbox, and task-owned registration evidence. It returns a versioned proof only when all authoritative surfaces establish an unstarted leaf; otherwise it supplies a task-addressed recovery or lifecycle route.
+It censuses task steps, enclosure contracts, durable operation projections, seats, review artifacts, and commit evidence, then emits one stable recovery route when any execution authority exists.
+
+### Conventions
+
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Queue absence is irrelevant to the unstarted decision.
-- Present-unreadable authority is a blocker, never absence.
-- Arbitrary report-directory scans and naming inference are not evidence sources.
-- Every started or ambiguous finding yields an executable bounded route rather than permission to discard.
+- Absence must be proven across every canonical evidence plane; unreadable or ambiguous evidence counts as started/blocked and supplies an exact recovery route.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
@@ -37,20 +41,30 @@ None recorded.
 
 ## Docs References
 
-No configured domain-documentation source applies to this repository-internal route.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `_LEAF_SEAT_ROLES` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:1-664 |
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The evidence and census models preserve typed facts and bounded recovery routes. | L50-L109 | [source](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
-| The central proof collects intrinsic and external authority without queue ownership. | L110-L448 | [source](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
-| Recovery routing and proof fingerprinting are deterministic and task-addressed. | L449-L625 | [source](mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py) |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `_LEAF_SEAT_ROLES` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:1-664 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `_LEAF_SEAT_ROLES` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:1-664 |
 
 ## Update History
 
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

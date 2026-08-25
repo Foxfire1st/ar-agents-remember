@@ -5,30 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/closeout_door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[Application overview](overview.md)
 
 ## Purpose
 
-Expose the application boundary for task-addressed closeout-door controls.
+Adapts the public closeout-door tool to ambient or explicitly declared actor authority, configured-contract admission, and the integration-owned door operation.
 
 ## Code Commentary
 
 ### Logic
 
-The boundary admits the configured contract through the shared typed admission API, resolves hosted or explicitly declared actor authority, delegates the requested door transition to the integration owner, and converts configured-contract or queue failures into bounded public results.
+It resolves hosted versus unhosted actor identity, rejects conflicting declarations, executes one admitted contract operation, and translates shared configured-contract failures into a total public response.
+
+### Conventions
+
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Door mutation is contract-owned and task-addressed; queue projection state is never mutation authority.
-- Hosted-seat and explicitly declared actor identity may not conflict.
-- Configured-contract failures use the one shared refusal projector; no fallback reader is introduced.
+- Actor identity is resolved before mutation; hosted and declared identities may not conflict; lower-level admission failures are projected once at this application boundary.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
@@ -36,19 +41,30 @@ None recorded.
 
 ## Docs References
 
-No configured domain-documentation source applies to this repository-internal route.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `closeout_door_tool` | mcp/src/agents_remember/application/closeout_door.py:1-159 |
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The public boundary admits the configured contract before door control dispatch. | L25-L77 | [source](mcp/src/agents_remember/application/closeout_door.py) |
-| Actor resolution and configured-contract refusals remain explicit and bounded. | L79-L146 | [source](mcp/src/agents_remember/application/closeout_door.py) |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `closeout_door_tool` | mcp/src/agents_remember/application/closeout_door.py:1-159 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `closeout_door_tool` | mcp/src/agents_remember/application/closeout_door.py:1-159 |
 
 ## Update History
 
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

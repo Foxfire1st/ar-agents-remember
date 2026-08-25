@@ -5,56 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](overview.md)
+[Integration overview](overview.md)
 
 ## Purpose
 
-One total live classifier for journal-owned protected integration refs.
+Reads and classifies repository and external-memory ref state for integration decisions.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `IntegrationRefObservation`, `IntegrationRefState`, `IntegrationRefDecisionError`, `IntegrationRefPublicationInterrupted`, `require_unchanged_integration_refs`, `classify_integration_refs`. Protected-ref and door state are classified from exact live and journal evidence. A moved, missing, unreadable, or contradictory ref is never discarded: the same landing generation must reconcile or complete, with an executable task-addressed handoff for any later repair or revert planning.
+It distinguishes exact, absent, advanced, divergent, and unreadable refs and preserves command/error evidence for higher-level recovery.
 
 ### Conventions
 
-Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
-- Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
-- Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
+- Ref observations are facts, not mutation authority; unreadable or divergent state must remain explicit and cannot fall back to cached expectations.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
+None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:1-205 |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this file-specific ownership boundary.
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `IntegrationRefObservation`; `IntegrationRefState`; `IntegrationRefDecisionError` as its public seam. | L18-L32; L36-L89; L92-L97 | `mcp/src/agents_remember/worktrees/integration/integration_ref_state.py` |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:1-205 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `IntegrationRefObservation` | mcp/src/agents_remember/worktrees/integration/integration_ref_state.py:1-205 |
 
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

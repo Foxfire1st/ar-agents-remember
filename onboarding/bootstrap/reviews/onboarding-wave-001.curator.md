@@ -1,38 +1,46 @@
-# PDLS Onboarding Wave 001 Curator Review
+# Onboarding Wave 001 Curator Review — PDLS
 
 | Field | Value |
 | --- | --- |
-| task | 260824-PDLS |
-| reviewed at | 2026-08-24T21:23+02:00 |
-| verdict | PASS |
-| frozen source commit | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| frozen source tree | `68488e91a53eec9f16c0d287eb50b412ab4cadf1` |
+| repo | agents-remember |
+| reviewed | 2026-08-25T16:21:43+02:00 |
+| waveManifest | `bootstrap/waves/onboarding-wave-001.md` |
+| status | pass with pre-commit provenance boundary |
 
-## Evidence
+## Summary
 
-- The new testing overview explains the full classifier, bootstrap, admission, runner, reporter,
-  and evidence flow instead of scattering it across file cards.
-- All 18 testing source files, the evidence model, six new test owners, and the canonical wrapper
-  have exact file cards.
-- Forty modified source cards have body/history reconciliation; import-only moves use explicit
-  reviewed-no-impact attestations.
-- The deleted validator and two moved test helpers have no stale sidecars; their useful history is
-  preserved at the new owners.
-- Repository, MCP, model, test, and worktree-module overviews recover the new route from multiple
-  entry points.
-- `system/tools.md` distinguishes raw pytest prohibition, bounded direct diagnosis, and Dagger
-  acceptance without introducing a fallback.
-- Advisory review decisions are reflected: same-name closure cache identity and total phase
-  reporting are documented; hostile-host authentication and schema-1 compatibility are not
-  invented.
-- Route-index regeneration covered 66 routes and changed exactly the root, MCP, test, model, and new
-  testing indexes; 61 unrelated indexes remained byte-identical.
+The exact changed source population has zero missing sidecars: 46 production Python, 60 test/support
+Python, and one dashboard contract guard. The unchanged snapshot sidecar was refreshed because its
+consumer contract changed. Seven route pillars were added where the change introduced a shared operating model, and
+existing sidecars preserve append-only history. The exact-candidate route-index dry-run is current
+for all 72 index artifacts. The unscoped memory-quality scan found no diff-marker, table-shape,
+entity-catalog, or history-order defects after the evidence-table repair. Its remaining findings
+all require the real code commit that closeout owns and may not be forged during candidate curation.
 
-## Curator Boundary
+## Compliance Checklist
 
-The curator checks durable explanation and source alignment, not Dagger acceptance. Route indexes
-are current; the master full gate remains the architect's last source-validation step.
+| Check | Result | Notes |
+| --- | --- | --- |
+| Route-local mirrored placement | pass | seven justified pillars |
+| Strict file-level 1-to-1 mapping | pass | 107/107 changed units; one dependent unchanged sidecar also refreshed |
+| Governing overview backlinks | pass | exact-candidate structural findings: 0 |
+| No task-local planning in durable sidecars | pass | only current behavior/invariants promoted |
+| Docs references use direct evidence | pass | no external docs configured; source cited |
+| Cross-repo references prove boundaries | pass | none claimed; reads disabled |
+| No registry or embedding hit cited as proof | pass | registry used for discovery only |
+| No absolute paths in sidecars | pass | exact-candidate absolute-path hits: 0 |
+| Update history append-only | pass | existing history retained |
+| LOW-confidence claims excluded | pass | none promoted |
+| Route indexes current | pass | 72/72 unchanged; stale indexes: 0 |
+| Memory quality | pass with boundary | shape checks are zero; 78 drift, 284 claim-reopen, and 212 range/provenance findings remain because the official code checkout cannot see the sanctioned direct master's uncommitted source and refreshed sidecars correctly have no invented verification hash |
 
-## Verdict
+## Required Fixes
 
-PASS. The onboarding has no known content delta against the frozen source candidate.
+None curator-actionable. Closeout must stamp real code provenance and rerun the gate after the
+developer authorizes the code commit; writing the current base hash would falsely certify changed
+source bytes.
+
+## Next-Wave Recommendation
+
+No next onboarding wave. Proceed to the final Dagger master gate, then developer review. Provenance
+stamping remains a closeout operation after commit approval.

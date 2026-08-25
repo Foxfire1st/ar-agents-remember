@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_rebinding_mechanics.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -116,7 +116,17 @@ No meaningful cross-repo references found.
 All four sweep-context builders drop `OrchestrationNudgeStore`; no harness needs it because
 the sweep no longer nudges. Rebind/grace/expiry mechanics are unchanged.
 
+## PDLS Reconciliation
+
+Inbox rebinding forcing was aligned with the current lifecycle generation identity and retains exact replacement mechanics.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T00:08+02:00 — Replaced the obsolete spawn-provenance/role-mailbox description with

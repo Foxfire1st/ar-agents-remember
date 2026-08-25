@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,16 @@ contract per concern.
 | Zero-or-one graph-bearing publication batch and in-memory title context. | L17-L51 | `mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py` |
 | Atomic raw-section shape validation and missing-register scaffolding. | L17-L55 | `mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py` |
 
+## 260824-PDLS Final Task-Recovery Boundary
+
+Unstarted-task evidence and recovery routes now expose typed task facts without deriving authority
+from queue state. Task mutations remain legal; affected closeout projections are invalidated and
+rebuilt from current task truth instead of freezing authoring or carrying stale rows forward.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled typed unstarted-task recovery with projection invalidation.
+  Verification remains closeout-owned.
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: made the task-first publication ownership current,
   added the shared graph-cardinality/title and raw-section-scaffolding route owners, and removed the

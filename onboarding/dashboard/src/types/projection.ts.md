@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -103,7 +103,16 @@ subtasks and completed progress. Supported runtime-only schema constraints are e
 above their TypeScript properties as stable `JSON Schema refinements` comments, including nested item
 constraints; TypeScript shape alone is not runtime validation.
 
+## 260824-PDLS Invalidation Outcome Mirror
+
+`ProjectionInvalidationResult.outcome` no longer includes `not-created`. The producer always
+materializes invalid-empty state when invalidating a projection, so dashboard consumers receive an
+explicit non-admitting result rather than interpreting file absence as lifecycle or queue evidence.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Regenerated the TypeScript invalidation outcome union without the
+  impossible `not-created` member. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Regenerated and documented the disposable closeout projection,
   discard audit types, and deterministic runtime-refinement comments while preserving the newer

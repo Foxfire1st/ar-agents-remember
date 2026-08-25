@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/models/closeout",
+  "overview": "mcp/src/agents_remember/models/closeout/overview.md",
+  "index": "mcp/src/agents_remember/models/closeout/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/models/closeout/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/models/closeout/input.py",
+    "mcp/src/agents_remember/models/closeout/projection.py",
+    "mcp/src/agents_remember/models/closeout/source.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 3,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "closeout",
+    "input",
+    "mcp",
+    "models",
+    "projection",
+    "remember",
+    "source",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "`projection.py` defines the `valid-built` / `invalid-empty` state machine and bounded member, source-problem, invalidation, rebuild, and task-doc effect payloads.",
+    "candidateHints": [
+      "mcp/src/agents_remember/models/closeout",
+      "mcp/src/agents_remember/models/closeout/input.py",
+      "mcp/src/agents_remember/models/closeout/projection.py",
+      "mcp/src/agents_remember/models/closeout/source.py"
+    ],
+    "anchorHints": [
+      "input.py",
+      "input",
+      "projection.py",
+      "projection",
+      "source.py",
+      "source",
+      "valid-built",
+      "invalid-empty",
+      "mcp/src/agents_remember/models/closeout",
+      "route-local-overview",
+      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "/overview.md",
+      "sourceRoute",
+      "agents_remember",
+      "doc_type",
+      "lastUpdated",
+      "T15",
+      "lastVerifiedCommitHash",
+      "abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "lastVerifiedCommitDate",
+      "T17",
+      "governingOverview"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/models/closeout/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

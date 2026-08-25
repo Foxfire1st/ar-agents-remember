@@ -5,78 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_store_invariants.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Provides the focused forcing matrix for strict schema-3.0 lifecycle persistence, single-writer recovery, immutable identity, monotonic mutation evidence, phase-bound finalization, and exact integration retention.
+Proves lifecycle journal storage and retained-integration invariants.
 
 ## Code Commentary
 
 ### Logic
 
-The suite drives real `LifecycleOperationStore` updates rather than validating models in isolation. It checks strict read/revalidation, claim exclusivity, valid terminal replacement, post-proof recovery refusal, immutable identity/status, pre-boundary cancellation, every legal/illegal evidence transition, fill-only recovery, finalization-hash phase rules, complete external tuples, and exact completed-integration parameters. Closeout commit proof makes clearing the derived irreversible flag model-impossible and public cancellation refuses. A valid integrate operation started through the typed generic route enters its real irreversible boundary; both direct store clearing and public cancellation then refuse. Finalization tests construct typed `LifecycleOperationRecoveryCommits` tuples, so test-only raw dictionaries cannot bypass the public/model boundary. After valid closeout finalization, an illegal public runtime attempt to move back to `quality` is refused by the finalization lifecycle evidence; the full typed record and its journal bytes remain exactly unchanged. Cases removed from the store are proven preempted at model or fill-only public boundaries instead of being silently untested.
+The suite exercises atomic updates, every evidence transition, corruption/read errors, lease ownership, and retained terminal state.
+
+### Conventions
+
+Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
+differences remain in the test so fixtures do not become a parallel implementation.
 
 ### Invariants And Boundaries
 
-- Only schema `3.0` records are readable; extra/legacy shapes fail closed.
-- Accepted input, identity, repository leg, and proven facts cannot be replaced.
-- Recovery is single-writer and fill-only.
-- Cancellation stops at mutation/finalization evidence, not arbitrary phase labels.
-- File-record publication is atomic; external Git sequences are not.
-- Closeout irreversibility is derived from commit-proven evidence; integrate irreversibility is a typed runtime fact, and neither may be cleared through generic store writes.
-- Published closeout-finalization evidence prevents later phase regression without partially rewriting either the model or journal file.
+- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
+  green through a fallback, allowlist, or weakened production threshold.
+- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
+
+### Todos
+
+None recorded.
 
 ## Docs References
 
-See task `260821-CLIVE-L1` L1-R4 through L1-R6.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Strict schema, recovery ownership, replacement, and claim/cancellation boundaries are forced. | `test_store_reads_one_schema_and_revalidates_every_update`, `test_store_refuses_claim_boundary_and_ambiguous_cancellation` | mcp/tests/test_lifecycle_operation_store_invariants.py:126-139; mcp/tests/test_lifecycle_operation_store_invariants.py:175-189 |
-| Model-derived closeout clearing and valid integrate clearing/cancellation both refuse at their respective irreversible boundaries. | `test_store_refuses_clearing_or_cancelling_commit_boundary`, `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:192-215; mcp/tests/test_lifecycle_operation_store_invariants.py:218-244 |
-| Evidence monotonicity and fill-only preemption are forced. | `test_store_checks_mutation_evidence_monotonicity`, `test_commit_change_is_preempted_by_model_and_recovery_fill_only` | mcp/tests/test_lifecycle_operation_store_invariants.py:257-309; mcp/tests/test_lifecycle_operation_store_invariants.py:391-398 |
-| Typed recovery tuples keep finalization phase rules and completed integration parameters exact; illegal public progress after finalization preserves the entire record and journal bytes. | `test_finalization_hash_transition_is_phase_bound_and_immutable`, `test_external_finalization_requires_complete_recovery_tuple`, `test_completed_integration_retains_its_exact_parameters` | mcp/tests/test_lifecycle_operation_store_invariants.py:421-484; mcp/tests/test_lifecycle_operation_store_invariants.py:487-502; mcp/tests/test_lifecycle_operation_store_invariants.py:505-523 |
+| No external domain source is required for this repository-owned test contract. | `_closeout_store` | mcp/tests/test_lifecycle_operation_store_invariants.py:1-596 |
+
+## Repo-Internal References
+
+The test file is direct evidence for the production boundary named above.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `_closeout_store` | mcp/tests/test_lifecycle_operation_store_invariants.py:1-596 |
 
 ## Cross-Repo References
 
-No sibling repository owns this store; external paths appear only as repository identities inside the record.
+No cross-repository source is allowed by the resolved settings.
 
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_proven_integration_claim_timestamp_is_nonempty_and_strictly_read`, `test_store_reads_one_schema_and_revalidates_every_update`, `test_store_replacement_and_recovery_require_valid_terminal_identity`, `test_store_refuses_immutable_identity_and_status_transitions`. The L2 additions force locator-rooted journal access, legal task-addressed controls, write-ahead successors, exact worker termination, total expected-failure projection, and same-generation convergence.
-
-### Reconciled Source Evidence
-
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_proven_integration_claim_timestamp_is_nonempty_and_strictly_read`, `test_store_reads_one_schema_and_revalidates_every_update`, `test_store_replacement_and_recovery_require_valid_terminal_identity`, `test_store_refuses_immutable_identity_and_status_transitions`. | L95-L123; L126-L139; L142-L156; L167-L172 | `mcp/tests/test_lifecycle_operation_store_invariants.py` |
-
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Forces lifecycle-journal schema, immutable identity, monotonic mutation evidence, phase transitions, recovery fill rules, finalization proof, and retained integration parameters.
-
-### Current Invariants
-
-- Journal updates and resume share one invariant owner.
-- Proven commits, irreversible boundaries, approvals, and accepted inputs cannot be cleared or overwritten.
+| No meaningful cross-repository reference applies. | `_closeout_store` | mcp/tests/test_lifecycle_operation_store_invariants.py:1-596 |
 
 ## Update History
 
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: retained prior store-boundary forcing and added full-record plus journal-byte invariance when public runtime progress attempts an illegal phase after valid finalization, against accepted tree `4241908c`; first verification stamp remains governed-closeout-owned.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

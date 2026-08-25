@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l6_diff_coverage_abandon.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,18 @@ address path and avoids a test-only contract-path reader.
 | --- | --- |
 | The fixture publishes lifecycle location immediately after contract publication. | mcp/tests/test_l6_diff_coverage_abandon.py:84-94 |
 
+
+## PDLS Reconciliation
+
+Abandon diff-coverage forcing now follows the current terminal archive and cleanup proof boundary.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

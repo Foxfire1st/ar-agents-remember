@@ -1,31 +1,43 @@
-# PDLS Onboarding Wave 001
+# Onboarding Wave 001 — PDLS Exact Candidate
 
 | Field | Value |
 | --- | --- |
+| repo | agents-remember |
 | task | 260824-PDLS |
-| status | accepted by curator |
-| source commit | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| new or relocated cards | 26 |
-| refreshed existing cards | 40 |
-| stale cards removed | 3 |
-| overview pillars | 6 total: one new, five refreshed |
+| generated | 2026-08-25T16:21:43+02:00 |
+| waveType | route-overview + file-onboarding |
+| mode | existing-memory-slice-maintenance |
+| status | curator-review |
 
-## Assignment
+## Goal
 
-One architect-owned maintenance wave covers the atomic four-leaf source boundary. It creates the
-testing route and exact cards, adds the evidence model and six focused test cards, moves preserved
-global/random/admission knowledge, refreshes all changed in-scope source cards, and aligns durable
-system guidance.
+Reconcile every changed source unit and the shared routes introduced or materially changed by the
+PDLS evidence-system and lifecycle/closeout quality repair.
 
-## Acceptance
+## Included Population
 
-- Every in-scope addition/move has exactly one card.
-- All 40 changed existing cards carry reviewed impact or an explicit no-impact attestation.
-- The three predecessor cards are removed only after their behavior is preserved at successors.
-- No card advertises direct diagnostics as acceptance or a failed admission as route selection.
-- No fallback or schema-1 compatibility reader is documented.
+| Population | Created | Refreshed | Total |
+| --- | ---: | ---: | ---: |
+| Production sidecars | 35 | 11 | 46 |
+| Test/support sidecars | 34 | 26 | 60 |
+| Dashboard contract-guard sidecars | 0 | 1 | 1 |
+| Dependent unchanged fixture sidecars | 0 | 1 | 1 |
+| Route overviews | 7 | 1 parent | 8 |
 
-## Result
+## Instructions Applied
 
-Content review passed. Route-index regeneration covered 66 routes: five changed and 61 were already
-current.
+- Strict one-to-one source mapping and nearest governing overview.
+- Body update plus newest append-only history on every refreshed sidecar.
+- Empty Domain Documentation and disabled cross-repo sources stated explicitly.
+- No task-local design prose promoted as source truth.
+- No fallback, compatibility facade, threshold waiver, or direct-evidence elevation.
+
+## Deferred
+
+None.
+
+## Done When
+
+All 107 changed-source sidecars exist, the dependent fixture sidecar is current, route indexes
+match the resulting tree, structural/reference checks pass,
+and the curator review records zero actionable finding.

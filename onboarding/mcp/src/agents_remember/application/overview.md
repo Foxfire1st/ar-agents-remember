@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -336,7 +336,17 @@ complete run identity, checklist publication, capacity guidance, and nondisclosi
 boundary separately keeps the closed result outcome authoritative while nesting journal recovery
 state.
 
+## 260824-PDLS Final Application Boundary
+
+Public closeout and direct-landing adapters consume the shared configured-contract admission API,
+while lifecycle worker service imports are deferred to execution. This keeps failure translation
+total at one application boundary and prevents bootstrap import fan-out from pulling the service
+graph into test collection.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled the final admission, failure-projection, and deferred-import
+  boundaries. Verification remains closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `memory_quality/` package split, moved the preserved sidecars, and verified the route against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 

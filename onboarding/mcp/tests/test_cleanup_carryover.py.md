@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -164,7 +164,18 @@ separate from a future master requirement.
 | The helper patches both terminal owners to an explicit successful test result and registers cleanup. | mcp/tests/test_cleanup_carryover.py:100-116 |
 | Downstream cleanup/cache suites opt in deliberately rather than weakening production defaults. | mcp/tests/test_cleanup_carryover.py:323-943 |
 
+
+## PDLS Reconciliation
+
+Cleanup carryover assertions now preserve the enclosure-root journal/archive boundary and exact external-memory disposition.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

@@ -5,38 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Worktree-queue overview](overview.md)
+[Closeout queue overview](overview.md)
 
 ## Purpose
 
-Builds an exact current-source census for the disposable sprint closeout projection.
+Builds the exact canonical source census for disposable closeout scheduling projections.
 
 ## Code Commentary
 
-A rebuild reads current task topology, canonical waiting closeout doors, and active series contracts
-at their exact addresses. Prior projection rows are never input. Unreadable, malformed, or
-bounded-overflow sources become explicit bounded problems; only a waiting door whose candidate,
-master, sprint, and contract identities agree becomes a member.
+### Logic
 
-## Invariants And Boundaries
+It captures task, sprint, series, dependency, priority, readiness, and door source facts; unreadable sources become bounded problems and invalid-empty output rather than stale rows.
 
-- The projection cannot create, claim, certify, or complete lifecycle authority.
-- Each build is derived from current canonical sources and carries their fingerprint.
-- Source failure is explicit and yields invalid-empty service, never stale-row reuse.
+### Conventions
 
-## Repo-Internal References
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
+
+### Invariants And Boundaries
+
+- Projection input is rebuilt from current canonical sources; missing/invalid sources empty the projection; no lifecycle or commit history is retained here.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical source capture and member census are rebuilt from scratch. | `capture_projection_source` | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
+| No external domain source is required to establish this repository-owned implementation. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-853 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-853 |
+
+## Cross-Repo References
+
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-853 |
 
 ## Update History
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: created from the final projection census. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`       |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -109,7 +109,35 @@ Liveness regressions now pin the one-second starting-row path and multi-read dis
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## Docs References
+
+The configured Domain Documentation registry is empty. No relevant documentation was found after
+checking the configured source inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external documentation claim applies to this repository-owned forcing proof. | N/A | N/A |
+
+## Cross-Repo References
+
+Cross-repository reads are disabled by the resolved settings, and this unit makes no external
+boundary claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | N/A | N/A |
+
+## PDLS Reconciliation
+
+Terminal liveness assertions now use durable worker/generation evidence and retain process-sensitive retry semantics.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

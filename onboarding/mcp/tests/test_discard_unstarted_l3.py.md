@@ -5,31 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_discard_unstarted_l3.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Force the complete discard-unstarted task-plane contract.
+Forces safe discard of planning work that never acquired execution authority.
 
 ## Code Commentary
 
 ### Logic
 
-The suite exercises preview/apply parity, nonblank reason validation, exact unstarted evidence, parent audit plus child removal, lost-response replay, started and unreadable refusal routes, registration-before-reclamation, and start-versus-discard serialization.
+The suite proves exact absence across task steps, enclosure, operation, seat, review, and commit evidence and refuses ambiguous/start evidence.
+
+### Conventions
+
+Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
+differences remain in the test so fixtures do not become a parallel implementation.
 
 ### Invariants And Boundaries
 
-- Only provably unstarted leaves may be discarded.
-- Discard never fabricates completion.
-- Changed bytes, ambiguous evidence, or a winning start preserve the task and return exact routing.
-- Successful discard produces ordinary projection invalidation/rebuild effects.
+- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
+  green through a fallback, allowlist, or weakened production threshold.
+- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
 
 ### Todos
 
@@ -37,19 +41,29 @@ None recorded.
 
 ## Docs References
 
-No configured domain-documentation source applies to this repository-internal route.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required for this repository-owned test contract. | `DiscardUnstartedL3Tests` | mcp/tests/test_discard_unstarted_l3.py:1-707 |
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+The test file is direct evidence for the production boundary named above.
+
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite binds public task-doc, evidence, registration, and lifecycle seams. | L1-L89 | [source](mcp/tests/test_discard_unstarted_l3.py) |
-| The test class forces success, refusal, crash replay, and concurrency cases. | L90-L706 | [source](mcp/tests/test_discard_unstarted_l3.py) |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `DiscardUnstartedL3Tests` | mcp/tests/test_discard_unstarted_l3.py:1-707 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `DiscardUnstartedL3Tests` | mcp/tests/test_discard_unstarted_l3.py:1-707 |
 
 ## Update History
 
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

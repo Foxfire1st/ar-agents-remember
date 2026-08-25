@@ -5,62 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/causal_preflight.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../overview.md)
+[Python quality overview](overview.md)
 
 ## Purpose
 
-Validates high-fanout prerequisites once at their owning boundary and emits the causal input used
-to avoid hundreds of misleading downstream symptoms.
+Runs owner-level compatibility preflights for high-fanout prerequisites before pytest.
 
 ## Code Commentary
 
 ### Logic
 
-`evaluate_preflights` executes typed `PreflightSpec` validators, records the first stable cause, and
-derives blocked test files only from complete import/declared ownership edges. The current owner
-preflight constructs and revalidates a canonical lifecycle organizational-repair record, ensuring
-terminalization cannot replace its durable handoff. The CLI binds the candidate index tree,
-environment digest, and attempt nonce before writing JSON/Markdown.
+It binds candidate, environment, and attempt identity, evaluates registered owners, resolves explicit dependent consumers through the ownership graph, and emits machine/human causal reports.
 
 ### Conventions
 
-Cause IDs are versioned strings and corrective owners are repository paths. The preflight report
-starts with empty runtime evidence; pytest enriches the same artifact.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Dagger admission is required before preflight execution.
-- Heuristic/safe-full reasons never authorize causal suppression.
-- A failed preflight still fails quality and grants no acceptance evidence.
-- A valid failed report is distinguished from a broken preflight tool.
+- Only graph-proven dependents may be classified as blocked; independent failures remain visible; a failed preflight cannot publish acceptance evidence.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-Add another owner only after a reproduced high-fanout cascade proves the need.
+None recorded.
 
 ## Docs References
 
-No external documentation owns the internal lifecycle schema preflight.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Preflight results and blocking use only proven graph edges. | `evaluate_preflights` | mcp/src/agents_remember/code_quality/causal_preflight.py:42-143 |
-| The lifecycle terminalization owner is validated once. | `_validate_lifecycle_terminalization` | mcp/src/agents_remember/code_quality/causal_preflight.py:146-244 |
-| Candidate and attempt identity bind the artifact. | `candidate_identity` | mcp/src/agents_remember/code_quality/causal_preflight.py:247-286 |
+| No external domain source is required to establish this repository-owned implementation. | `QUALITY_ATTEMPT_NONCE_ENV` | mcp/src/agents_remember/code_quality/causal_preflight.py:1-342 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `QUALITY_ATTEMPT_NONCE_ENV` | mcp/src/agents_remember/code_quality/causal_preflight.py:1-342 |
 
 ## Cross-Repo References
 
-No adjacent repository supplies the prerequisite contract.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `QUALITY_ATTEMPT_NONCE_ENV` | mcp/src/agents_remember/code_quality/causal_preflight.py:1-342 |
 
 ## Update History
 
-- 2026-08-25T01:56+02:00 — Created for owner-level lifecycle failure localization.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

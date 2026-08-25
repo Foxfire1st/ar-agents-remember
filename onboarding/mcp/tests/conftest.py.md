@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/conftest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,7 +92,18 @@ documentation defines this boundary.
 
 No sibling repository supplies or overrides pytest admission/bootstrap.
 
+
+## PDLS Reconciliation
+
+The certifying plugin path now targets the root `agents_remember.pytest_certifying_bootstrap`, avoiding execution of the testing package initializer before admission/bootstrap composition.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS replaced the monolithic root guard/fixture implementation
   with explicit admission, hermetic bootstrap, shared hooks, and certifying-only service composition.

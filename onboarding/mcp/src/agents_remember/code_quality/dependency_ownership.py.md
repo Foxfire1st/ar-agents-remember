@@ -5,62 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
-| governingOverview | `../../../overview.md` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../overview.md)
+[Python quality overview](overview.md)
 
 ## Purpose
 
-Builds the single immutable test-consumer graph used by targeted selection, retry proof, and
-causal preflight.
+Provides the canonical test-consumer graph used by targeted selection, retry proof, and causal localization.
 
 ## Code Commentary
 
 ### Logic
 
-The graph indexes tracked Python module identities/importers and lifecycle-catalog consumers.
-`resolve` assigns every changed path a complete set of selected tests and typed reasons: changed
-test, import consumer, declared consumer, name/text heuristic, global pytest input, or explicit
-safe-full refusal. Reverse import and coverage-root helpers are shared with targeted static scope.
+It parses Python imports and pytest plugin declarations, combines lifecycle-catalog consumers with explicit ownership, retains reason provenance, and returns safe-full impact when ownership is incomplete.
 
 ### Conventions
 
-Every selected test retains all reasons; a heuristic can explain an already-owned test without
-being mistaken for the cause of the whole population.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- `conftest.py` and root pytest configuration are global.
-- Governed fixtures/support use catalog consumers; support also uses real imports.
-- Unowned executable/support input, parse/catalog error, ambiguous module identity, and deleted
-  tests fail closed to the safe population with a stable reason.
-- Broad real import fan-out is preserved; the graph is not optimized to produce a small number.
+- Selection and retry share one owner; necessary import fan-out is preserved and attributed; unknown or ambiguous dependency truth fails closed to fresh proof.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
-None.
+None recorded.
 
 ## Docs References
 
-No external documentation owns the repository selection graph.
-
-## Repo-Internal References
+The configured Domain Documentation registry is empty. No external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed reason and impact shapes preserve completeness and fallback cause. | `TestImpact` | mcp/src/agents_remember/code_quality/dependency_ownership.py:59-70 |
-| One graph resolves tests, support, fixtures, global input, and safe-full refusal. | `DependencyOwnershipGraph` | mcp/src/agents_remember/code_quality/dependency_ownership.py:190-411 |
-| Targeted scope consumes the same graph. | `derive_targeted_scope` | mcp/src/agents_remember/code_quality/targeted.py:86-125 |
+| No external domain source is required to establish this repository-owned implementation. | `GLOBAL_TEST_INPUTS` | mcp/src/agents_remember/code_quality/dependency_ownership.py:1-540 |
+
+## Repo-Internal References
+
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `GLOBAL_TEST_INPUTS` | mcp/src/agents_remember/code_quality/dependency_ownership.py:1-540 |
 
 ## Cross-Repo References
 
-No cross-repository ownership graph participates.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `GLOBAL_TEST_INPUTS` | mcp/src/agents_remember/code_quality/dependency_ownership.py:1-540 |
 
 ## Update History
 
-- 2026-08-25T01:56+02:00 — Created as the sole selection/retry/causal consumer authority.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

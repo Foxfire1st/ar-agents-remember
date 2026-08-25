@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,18 @@ candidate off-side, then takes the short task-publication mutex only to recheck 
 source and publish valid-built; otherwise it remains invalid-empty. There is no candidate lifecycle,
 receipt, blocker, task-freeze, or stale-row fallback in this store.
 
+
+## PDLS Reconciliation
+
+Projection persistence now enforces disposable `valid-built` / `invalid-empty` state without retaining stale candidate rows or lifecycle evidence.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: rewrote the authority boundary from mutable queue state to invalid-empty/valid-built disposable projection storage. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

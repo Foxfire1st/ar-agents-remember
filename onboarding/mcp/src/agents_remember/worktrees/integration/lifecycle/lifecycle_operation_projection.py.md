@@ -5,34 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[integration overview](../overview.md)
+[Lifecycle operation integration overview](overview.md)
 
 ## Purpose
 
-Builds the pure public projection of one retained lifecycle-operation generation from journal evidence plus explicitly observed authority context.
+Purely projects one retained lifecycle operation generation for public status consumers.
 
 ## Code Commentary
 
 ### Logic
 
-`operation_projection` combines the record with optional contract, caller, time, and door evidence; derives integration, door, legal-control, recovery, migration, and worker-termination views; and emits elapsed time, current generation, cancellability, and an opaque `legalControls` list. Operation-specific recovery surfaces direct landing and initial-door or ledger contradictions without rewriting the record.
+It combines the durable record with door, integration, direct, and organizational evidence, parses timestamps, and emits stable result/control-neutral fields.
 
 ### Conventions
 
-Projection is read-only. The local import of control projection avoids a module cycle, and legacy-migrated records deliberately suppress the current report path.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Projection never becomes lifecycle evidence authority.
-- Public result payloads must remain mappings.
-- Legal controls derive from current journal and admitted authority, not queue lifecycle rows.
+- Projection is read-only and cannot repair or advance state; ambiguous or stale inputs remain visible rather than being normalized away.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
@@ -40,20 +41,30 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this internal projection.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-236 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Projection context carries time, completed-disposition permission, caller, and door evidence. | L44-L51 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
-| The public projection derives legal controls and generation without mutating journal state. | L54-L132 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
-| Worker, legacy, door, integration, closeout-ledger, and direct-landing recovery surfaces are derived from exact evidence. | L135-L227 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-236 |
 
 ## Cross-Repo References
 
-No cross-repository boundary is owned here.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-236 |
 
 ## Update History
 
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: created the missing strict sidecar and verified it at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

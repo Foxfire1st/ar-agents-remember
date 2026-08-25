@@ -100,7 +100,7 @@
       "closeout_staged_quality",
       "mcp/src/agents_remember/worktrees/queue",
       "route-local-overview",
-      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
+      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
       "/../../../overview.md",
       "QueueBinding",
       "closeout_queue_state.py",
@@ -113,17 +113,17 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T17",
       "lastVerifiedCommitHash",
+      "abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
       "lastVerifiedCommitDate",
-      "T15",
       "governingOverview",
       "CLIVE",
       "CAS",
       "DAG",
-      "T00",
-      "closeout_queue_state",
-      "d446724d099517f6f52d596b47827ae2391a2a4"
+      "PDLS",
+      "T14",
+      "T00"
     ]
   },
   "fallback": {

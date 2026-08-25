@@ -5,34 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/enclosure.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing route overview](overview.md)
+[Lifecycle models overview](overview.md)
 
 ## Purpose
 
-Strict immutable records for lifecycle enclosure addressability.
+Defines immutable enclosure locator, manifest, terminal archive, receipt, and cleanup argument contracts.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `LifecycleEnclosureManifest`, `LifecycleEnclosureLocator`. This module is strict evidence vocabulary, not an I/O or scheduling owner. Its models keep generation, publication, enclosure, termination, legacy, and direct-landing facts explicit so partial or contradictory state fails validation instead of being inferred from queue rows or task prose.
+Strict models bind repository/task identity, generation, contract digest, predecessor, archive entries, and cleanup request evidence; validators require exact manifest and path proofs.
 
 ### Conventions
 
-The file exposes typed values or one narrow operation boundary. Callers consume those values directly rather than reconstructing lower-level state from strings, mutable task documents, or queue projection.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- Preserve the module's single ownership seam; do not add a fallback reader or duplicate authority.
-- Expected refusal states remain typed and bounded, while unexpected programming faults remain loud.
-- Durable lifecycle facts live in the canonical root journal; scheduling projections may only consume them.
+- The locator-manifest-journal address chain is exact; terminal cleanup requires replayable archive proof; duplicate or mismatched paths/digests refuse.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
@@ -40,30 +41,30 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:1-327 |
 
 ## Repo-Internal References
 
-The source file itself is the current evidence for this file-specific contract.
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleEnclosureManifest`; `LifecycleEnclosureLocator` as its public seam. | L21-L40; L43-L109 | `mcp/src/agents_remember/models/lifecycles/enclosure.py` |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:1-327 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this file.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
 
-## 260821-CLIVE Terminal And Successor Contract
-
-Enclosure models now carry successor-enclosure publication, an exact predecessor terminal link,
-external terminal receipt, and bounded archived canonical entries with path/digest/byte validation.
-Cleanup and abandon have distinct exact argument models. A terminal locator is authoritative only
-with matching archive and receipt proof; a successor manifest, locator, and contract must all carry
-the same exact predecessor. Missing worktree state never manufactures succession authority.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:1-327 |
 
 ## Update History
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the archive/receipt/terminal-predecessor enclosure state machine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.

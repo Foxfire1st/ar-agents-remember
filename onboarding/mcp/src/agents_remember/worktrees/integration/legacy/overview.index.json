@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/worktrees/integration/legacy",
+  "overview": "mcp/src/agents_remember/worktrees/integration/legacy/overview.md",
+  "index": "mcp/src/agents_remember/worktrees/integration/legacy/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/worktrees/integration/legacy/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/worktrees/integration/legacy/__init__.py",
+    "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_archive.py",
+    "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py",
+    "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py",
+    "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_failures.py",
+    "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_public.py",
+    "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 7,
+    "fileSidecars": 7,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "archive",
+    "authority",
+    "bridge",
+    "failures",
+    "init",
+    "init__",
+    "integration",
+    "legacy",
+    "legacy_operation_archive",
+    "legacy_operation_authority",
+    "legacy_operation_bridge",
+    "legacy_operation_failures",
+    "legacy_operation_public",
+    "legacy_operation_schema",
+    "mcp",
+    "operation",
+    "public",
+    "remember",
+    "schema",
+    "src",
+    "worktrees"
+  ],
+  "hotPath": {
+    "summary": "`legacy_operation_bridge.py` inspects and migrates; `legacy_operation_archive.py` validates and publishes crash-safe terminal archives and receipts.",
+    "candidateHints": [
+      "mcp/src/agents_remember/worktrees/integration/legacy",
+      "mcp/src/agents_remember/worktrees/integration/legacy/__init__.py",
+      "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_archive.py",
+      "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py",
+      "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py",
+      "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_failures.py",
+      "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_public.py",
+      "mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "legacy_operation_archive.py",
+      "legacy_operation_archive",
+      "legacy_operation_authority.py",
+      "legacy_operation_authority",
+      "legacy_operation_bridge.py",
+      "legacy_operation_bridge",
+      "legacy_operation_failures.py",
+      "legacy_operation_failures",
+      "legacy_operation_public.py",
+      "legacy_operation_public",
+      "legacy_operation_schema.py",
+      "legacy_operation_schema",
+      "mcp/src/agents_remember/worktrees/integration/legacy",
+      "route-local-overview",
+      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "/overview.md",
+      "sourceRoute",
+      "agents_remember",
+      "doc_type",
+      "lastUpdated",
+      "T15",
+      "lastVerifiedCommitHash",
+      "abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "lastVerifiedCommitDate",
+      "T17",
+      "governingOverview"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/worktrees/integration/legacy/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

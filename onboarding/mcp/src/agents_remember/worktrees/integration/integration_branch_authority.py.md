@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,18 @@ authority, but legacy queue candidate/sprint binding cells are no longer ownersh
 authority derives from canonical task and integration sources; disposable projection membership
 cannot authorize publication.
 
+
+## PDLS Reconciliation
+
+Topology collision and deleted-owner repair logic moved into dedicated owners; this module retains the public branch-authority policy and delegates exact collision/repair mechanisms without compatibility duplication.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: removed queue binding from the documented branch-authority predicate. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

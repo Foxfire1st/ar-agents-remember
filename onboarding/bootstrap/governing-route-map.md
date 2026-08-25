@@ -1,24 +1,27 @@
 # PDLS Governing Route Map
 
-| Source route | Governing onboarding |
-| --- | --- |
-| repository-wide guidance | `onboarding/overview.md`, `system/tools.md` |
-| `AGENTS.md`, `README.md`, `CONTRIBUTING.md`, design docs | `onboarding/overview.md` |
-| `mcp` | `onboarding/mcp/overview.md` |
-| `mcp/src/agents_remember/testing` | `onboarding/mcp/src/agents_remember/testing/overview.md` |
-| `mcp/src/agents_remember/code_quality` | `onboarding/mcp/overview.md` plus exact sidecars |
-| `mcp/src/agents_remember/models/conversations` | `onboarding/mcp/src/agents_remember/models/conversations/overview.md` |
-| `mcp/src/agents_remember/application` | `onboarding/mcp/src/agents_remember/application/overview.md` |
-| `mcp/src/agents_remember/application/memory_quality` | application overview; focused packaging does not create a second authority |
-| `mcp/src/agents_remember/models/closeout` | `onboarding/mcp/src/agents_remember/models/overview.md` |
-| `mcp/src/agents_remember/worktrees/integration` | `onboarding/mcp/src/agents_remember/worktrees/integration/overview.md` |
-| `mcp/src/agents_remember/worktrees/integration/closeout` | integration overview plus exact moved sidecars |
-| `mcp/src/agents_remember/worktrees/integration/lifecycle/{control,observation,worker}` | integration overview plus exact owner sidecars |
-| `mcp/src/agents_remember/worktrees/modules` | `onboarding/mcp/src/agents_remember/worktrees/modules/overview.md` |
-| `mcp/src/agents_remember/worktrees/modules/quality` | modules overview plus exact moved sidecars |
-| `mcp/tests` | `onboarding/mcp/tests/overview.md` |
+| Source route | Governing onboarding | Action |
+| --- | --- | --- |
+| `mcp/src/agents_remember/application/lifecycle` | `onboarding/mcp/src/agents_remember/application/lifecycle/overview.md` | created |
+| `mcp/src/agents_remember/code_quality` | `onboarding/mcp/src/agents_remember/code_quality/overview.md` | created |
+| `mcp/src/agents_remember/models/closeout` | `onboarding/mcp/src/agents_remember/models/closeout/overview.md` | created |
+| `mcp/src/agents_remember/testing` | `onboarding/mcp/src/agents_remember/testing/overview.md` | created |
+| `mcp/src/agents_remember/worktrees/integration/closeout` | `onboarding/mcp/src/agents_remember/worktrees/integration/closeout/overview.md` | created |
+| `mcp/src/agents_remember/worktrees/integration/legacy` | `onboarding/mcp/src/agents_remember/worktrees/integration/legacy/overview.md` | created |
+| `mcp/src/agents_remember/worktrees/integration/lifecycle` | `onboarding/mcp/src/agents_remember/worktrees/integration/lifecycle/overview.md` | created |
+| `mcp/src/agents_remember/worktrees/integration` | existing parent overview | refreshed with child routing |
+| `mcp/tests` | existing `onboarding/mcp/tests/overview.md` | refresh for bootstrap/fan-out proof |
+| `dashboard/src/test` | existing `onboarding/dashboard/src/overview.md` | refresh contract guard sidecar and its dependent snapshot sidecar |
 
-The testing route remains the sole new governing pillar. The final package splits preserve
-existing parent-route governance because they separate file ownership and size without creating a
-new API or lifecycle authority. Exact one-to-one sidecars carry the moved behavior; file cards are
-reserved for the newly extracted high-risk owners.
+## Placement Decision
+
+The seven new pillars each govern a shared workflow or contract with multiple load-bearing files.
+No overview was created for single-file helper folders. File sidecars link to the nearest pillar,
+falling back to the existing parent overview where a child route does not earn its own owner.
+
+## Moved Or Deleted Routes
+
+The certifying pytest plugin moved from `agents_remember.testing` to the `agents_remember` package
+root. There was no prior file sidecar to move. The new root sidecar records the certifying service
+composition; the testing overview records the leaf-import/no-facade rule. The deleted old source
+gets no retained compatibility document.

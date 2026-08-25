@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -537,7 +537,17 @@ Task-execution retention follows the same ownership rule. `operator_inbox_store.
 evidence is registered in task truth. Missing registration fails closed for deletion; no heuristic
 reader or compatibility path may erase the only proof that execution started.
 
+## 260824-PDLS Final Queue-Store Reconciliation
+
+The closeout queue store persists only disposable valid-built or invalid-empty projection state.
+It does not retain lifecycle, claim, commit, certification, or stale-row transition evidence; an
+absent prior file is normalized by publishing invalid-empty state rather than reporting a separate
+`not-created` authority condition.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — Reconciled queue-store outcomes with disposable projection ownership.
+  Verification remains closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the historical queue-WAL/freeze model with short task CAS, disposable projection publication, and task-first execution retention. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

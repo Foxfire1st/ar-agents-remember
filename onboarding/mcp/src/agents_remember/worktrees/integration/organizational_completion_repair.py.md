@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,18 @@ waiting successor from the exact claimed predecessor and repair-journal timestam
 commits, refs, and repair evidence must still match; a claimed generation is never mutated into a
 pseudo-cancelled door.
 
+
+## PDLS Reconciliation
+
+Organizational repair now validates typed failure payloads, exact candidate/commit binding, complete reset state, and idempotent publication through bounded helpers instead of one recursive repair function.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded exact repair-backed waiting-successor publication under task CAS. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

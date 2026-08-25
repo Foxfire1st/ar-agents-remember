@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_leaf_structural_refusal_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,17 @@ Structural refusal coverage now exercises the extracted
 result object. This keeps bad-kind/binding/seat behavior distinct from the new
 lineage refusal evidence while covering the shared application boundary.
 
+## PDLS Reconciliation
+
+Structural refusal forcing now covers current shared configured-contract and lifecycle read failures without per-tool exception duplication.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled extracted refusal translation and typed opener results; verification remains closeout-owned.
 
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 curator: created one-to-one onboarding for the focused

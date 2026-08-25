@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,18 @@ The current forcing seams include `test_integration_authority_refuses_incomplete
 | --- | --- | --- |
 | The current test source exercises `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. | L234-L255; L258-L276; L279-L289; L292-L303 | `mcp/tests/test_lifecycle_operations.py` |
 
+
+## PDLS Reconciliation
+
+Lifecycle operation tests now cover explicit retry/replacement after failed or terminal generations and convergent initial-door publication.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

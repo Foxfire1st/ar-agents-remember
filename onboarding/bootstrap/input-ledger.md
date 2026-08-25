@@ -3,33 +3,43 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| mode | existing-memory-slice-maintenance |
-| task | 260824-PDLS Python diagnostic lane separation |
-| capturedAt | 2026-08-25T08:16+02:00 |
-| source commit | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| source tree | `65a8c5fcae3551dd596421d6cb0c56a4ca64bc0d` |
-| source registry | `system/sources.md` |
-| domain documentation | none configured for this boundary |
+| mode | automated existing-memory-slice-maintenance |
+| task | 260824-PDLS test evidence-system reform |
+| capturedAt | 2026-08-25T15:44+02:00 |
+| source registry | empty; discovery only |
+| domain documentation | none configured |
 | cross-repository sources | none allowed |
+| operator decision | proceed; end-to-end master completion was explicitly authorized |
 
 ## Authoritative Inputs
 
-- The emergency-landed source delta `fbfd37ca..cb662377` and exact source tree `65a8c5fc`.
-- The approved 104-row 260824-PDLS requirement matrix and full decision-rationale pages.
-- The whole-system reconciliation, immutable Candidate-A artifacts, and the final failed Dagger
-  report retained as repair evidence rather than acceptance.
-- Current source plus existing onboarding history for testing, code quality, models, application
-  lifecycle, worktree publication, and test support.
-- Official pytest-xdist hook documentation used only for the all-worker phase-reporter repair.
+The exact IAS working candidate, the approved 104-item PDLS requirement/rationale surface, the
+PDLS reconciliation and Dagger reports, and existing onboarding are authoritative. Existing prose
+supplies historical context but cannot override current source behavior.
 
-Existing onboarding supplies history and route structure but cannot override current source.
-No external specification defines this repository-owned evidence authority.
+## Source Inventory Delta
 
-## Source Inventory
+| Surface | Change | Existing coverage | Treatment |
+| --- | ---: | ---: | --- |
+| Production Python | 46 changed units | 11 sidecars | create 35; refresh 11 |
+| Test/support Python | 60 changed units | 26 sidecars | create 34; refresh 26 |
+| Dashboard contract guard | 1 changed unit | 1 sidecar | refresh 1; also refresh the unchanged snapshot sidecar whose documented consumer contract changed |
+| Governing routes | application lifecycle, quality, closeout models, testing, integration closeout/legacy/lifecycle | partial | create seven route pillars; refresh parents |
 
-The emergency-landed source candidate changes 250 paths with 11,943 insertions and 22,434 deletions
-(net -10,491). The dominant deletion is obsolete non-Python/model-split evidence; the Candidate-A
-design deliberately removes the generic dependency analyzer. Wave 003 predated several final
-ownership splits. Wave 004 now reconciles those exact source paths without inventing compatibility
-sidecars or a second authority.
-Standard generated, vendor, build, and cache exclusions remain in force.
+The moved certifying plugin is preserved as a one-to-one onboarding move in meaning: the old
+testing-package route had no sidecar to preserve, so the current root module receives the first
+canonical sidecar and the testing overview records why no compatibility facade remains.
+
+## Coverage Boundary
+
+Resolved path rules include `mcp/**`. The standard vendor/build/cache/generated exclusions are
+present. Documentation is excluded from file-level onboarding, and no cross-repository fact is
+inferred. All 107 changed source units are in scope; none is deferred. The unchanged snapshot
+fixture is not counted as changed source, but its sidecar is refreshed because the contract test no
+longer requires the representative payload to instantiate every enum member.
+
+## Operator Decision
+
+Automated slice maintenance is authorized by the developer's approved master completion. This
+ambient session performs the curation locally and does not start orchestration agents. Automated
+bootstrap stops at the handoff; commit, closeout, push, and integration remain separate decisions.

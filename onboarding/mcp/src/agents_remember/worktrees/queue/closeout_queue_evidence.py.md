@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,18 @@ shared closeout-source types and text bounds. Grade and admission facts feed doo
 projection readiness; they are not queue mutations. `canonical_blocker_abort` is removed because
 the final architecture has no mutable persistent blocker to abort.
 
+
+## PDLS Reconciliation
+
+Curator evidence parsing now validates structured attestation, report digest, onboarding root, status, section shape, separator grammar, and exact disposition identity through separate total helpers.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: retained canonical register parsing while removing blocker-abort and queue-mutation semantics. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

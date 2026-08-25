@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -56,7 +56,18 @@ No external Domain Documentation source is configured for this memory repo.
 The suite imports `LifecycleFinalizeTaskResponse` from `models.lifecycles.finalize`, its new package
 owner. Finalization payload, registry, task-document, and blocker assertions are unchanged.
 
+
+## PDLS Reconciliation
+
+Finalize tests now assert bounded projection invalidation/rebuild effects alongside the existing lifecycle response.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

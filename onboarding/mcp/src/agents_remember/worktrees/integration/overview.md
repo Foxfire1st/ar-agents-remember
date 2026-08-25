@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-25T17:21+02:00 |
+| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
+| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
 | governingOverview | `../../../../overview.md` |
 
 ## Governing Overview
@@ -97,7 +97,17 @@ standalone successor-intent WAL, or permanent compatibility reader. The deleted
 `lifecycle_successor_control.py` responsibilities now live in task-addressed controls,
 journal-door control, atomic terminal replacement, and the terminal enclosure/location transaction.
 
+## 260824-PDLS Final Reconciliation
+
+The accepted PDLS tree keeps lifecycle evidence in the root journal while splitting collision
+classification, topology repair, legacy archive proof, queue-evidence parsing, and direct-landing
+execution into their named owners. The split reduces repeated validation and fixture coupling; it
+does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
+
 ## Update History
+
+- 2026-08-25T17:21+02:00 — PDLS final reconciliation recorded the accepted ownership splits and
+  preserved the journal/door/queue authority boundary. Verification remains closeout-owned.
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final closeout, control, observation, and worker package splits; moved preserved sidecars and added the cancellation/projection owners. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
 

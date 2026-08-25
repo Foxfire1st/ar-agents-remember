@@ -5,33 +5,35 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
+| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[integration overview](../overview.md)
+[Lifecycle operation integration overview](overview.md)
 
 ## Purpose
 
-Owns fail-closed authorization for retiring or superseding a completed, still-unintegrated closeout generation.
+Determines whether a completed closeout or direct operation has a legal terminal disposition.
 
 ## Code Commentary
 
 ### Logic
 
-`require_completed_disposition` first refuses while an accepted integration journal claim remains active. It then requires the exact active closeout generation, retained evidence, the finalized contract hash, completed closeout status, unintegrated contract state, and a cleared worker PID.
+It checks integration-claim idleness, exact retained owner, candidate/contract identity, and whether cleanup, retry, or successor operation remains required.
 
 ### Conventions
 
-Refusals use typed `LifecycleControlError` codes and advertise recovery or cancellation rather than mutating evidence optimistically.
+Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
+the public function or model instead of re-deriving its lower-level state machine.
 
 ### Invariants And Boundaries
 
-- A completed generation is not disposable while integration owns a live claim.
-- Retire/supersede requires exact generation ownership and proven worker exit.
+- Completed status alone does not authorize cleanup; exact owner and publication disposition must be resolved first.
+- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
+  fallback or compatibility shadow.
 
 ### Todos
 
@@ -39,28 +41,30 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this lifecycle authority rule.
+The configured Domain Documentation registry is empty. No external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain source is required to establish this repository-owned implementation. | `require_completed_disposition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py:1-152 |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Active integration publication blocks disposition and returns exact recovery arguments. | L29-L57 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py` |
-| Completed disposition requires retained exact ownership, unintegrated state, and no authoritative worker PID. | L58-L84 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py` |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `require_completed_disposition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py:1-152 |
 
 ## Cross-Repo References
 
-No cross-repository boundary is owned here.
+No cross-repository source is allowed by the resolved settings, and this unit owns no external
+protocol claim.
 
-## 260821-CLIVE Exact Completed-Door Ownership
-
-Retire and supersede are permitted only for the exact completed, unintegrated door owner. Direct
-landing is included when its proven claimed door exactly equals the contract. Completion by itself
-is insufficient: the active generation, retained output, integration state, and door ownership must
-all agree.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No meaningful cross-repository reference applies. | `require_completed_disposition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py:1-152 |
 
 ## Update History
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented exact claimed-door ownership for completed disposition. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: created the missing strict sidecar and verified it at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
+  requirement review. Verification remains closeout-owned.
