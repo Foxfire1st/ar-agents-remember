@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_structural_agent_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T06:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ None.
 | --- | --- | --- |
 | Fixtures create real task containment and structural seats. | `_write_topology` | mcp/tests/test_structural_agent_tools.py:86-137 |
 | The suite exercises the structural operation boundary. | `StructuralAgentToolTests` | mcp/tests/test_structural_agent_tools.py:164-1090 |
-| The restructured caller resolution refuses broken plane identity and unauthorized child roles without downgrading. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_structural_agent_tools.py:1114-1131; mcp/tests/test_structural_agent_tools.py:1133-1154 |
+| The restructured caller resolution refuses broken plane identity and unauthorized child roles without downgrading. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_structural_agent_tools.py:1140-1157; mcp/tests/test_structural_agent_tools.py:1159-1180 |
 
 ## Cross-Repo References
 
@@ -99,7 +99,19 @@ The current forcing seams include `test_child_to_replacement_parent_is_resolved_
 | --- | --- | --- |
 | The current test source exercises `test_child_to_replacement_parent_is_resolved_by_task_containment`, `test_parent_to_replacement_child_is_resolved_by_document_and_role`, `test_duplicate_current_occupants_fail_closed`, `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract`. | `test_child_to_replacement_parent_is_resolved_by_task_containment`; `test_parent_to_replacement_child_is_resolved_by_document_and_role`; `test_duplicate_current_occupants_fail_closed`; `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract` | mcp/tests/test_structural_agent_tools.py:186-211; mcp/tests/test_structural_agent_tools.py:213-237; mcp/tests/test_structural_agent_tools.py:239-245; mcp/tests/test_structural_agent_tools.py:247-265 |
 
+## 260821-ARSPAWN-L2 Transaction Boundary Coverage
+
+Replacement-aware message tests prove that durable envelopes contain only the canonical document
+and role, then reach the replacement through delivery-time resolution. Failed-briefing tests
+prove that rollback requires faithful plane provenance and positive no-brief evidence for the
+matching private generation; unknown evidence refuses without cleanup. The rollback directly
+uses transaction authority and does not invoke public retire policy.
+
 ## Update History
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 address-only replacement messaging and private,
+  evidence-gated rollback forcing onto the IAS test card. No certifying test execution is
+  claimed.
 
 - 2026-08-26T06:45+02:00 — Corrected the partial-bootstrap forcing world to seed the fresh code
   tip into the canonical memory ledger before retrying paired-source admission. This records source

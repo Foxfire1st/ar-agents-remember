@@ -44,6 +44,7 @@
     "mcp/tests/lifecycle_control_test_support.py",
     "mcp/tests/lifecycle_enclosure_test_support.py",
     "mcp/tests/organizational_completion_test_support.py",
+    "mcp/tests/structural_seat_test_support.py",
     "mcp/tests/task_reopen_test_support.py",
     "mcp/tests/test_active_projector_singleflight.py",
     "mcp/tests/test_agent_doctrine_plane_identity.py",
@@ -441,7 +442,12 @@
     "mcp/tests/test_static.py",
     "mcp/tests/test_store_scaling_cs6.py",
     "mcp/tests/test_structural_agent_tools.py",
+    "mcp/tests/test_structural_dispatch_lock.py",
+    "mcp/tests/test_structural_dispatch_recovery.py",
     "mcp/tests/test_structural_limits.py",
+    "mcp/tests/test_structural_notifier_ambiguity.py",
+    "mcp/tests/test_structural_seat_replacement.py",
+    "mcp/tests/test_structural_seat_succession.py",
     "mcp/tests/test_subprocess_hygiene.py",
     "mcp/tests/test_sync_dashboard.py",
     "mcp/tests/test_sync_harness.py",
@@ -472,6 +478,7 @@
     "mcp/tests/test_task_unstarted_recovery_routes.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
+    "mcp/tests/test_terminal_catalog_dashboard_contract.py",
     "mcp/tests/test_terminal_enclosure_archive_boundary_l2.py",
     "mcp/tests/test_terminal_enclosure_cleanup_l5.py",
     "mcp/tests/test_terminal_evidence_projection.py",
@@ -514,8 +521,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 500,
-    "fileSidecars": 502,
+    "sourceFilesInScope": 507,
+    "fileSidecars": 509,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -535,6 +542,7 @@
     "agentic",
     "agents",
     "ambient",
+    "ambiguity",
     "analysis",
     "and",
     "api",
@@ -597,8 +605,7 @@
     "cleanup",
     "cli",
     "client",
-    "closeout",
-    "closeout_fixture_test_support"
+    "closeout"
   ],
   "hotPath": {
     "summary": "L2 forcing covers every configured-contract semantic refusal across public consumers, exact admitted-object reuse, task-addressed controls, crash cuts, locator/manifest/journal contradictions, worker termination, direct landing, bounded legacy repair, task publication races, and fail-closed cleanup. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrad...",

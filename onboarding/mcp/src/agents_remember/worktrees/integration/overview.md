@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-26T19:27+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -65,6 +65,21 @@ Dagger quality gate checkout, and organizational-completion integration/repair.
   exact rows remain audit history. Memory-only landing appends one current row; integration and
   organizational completion preserve and prove the required exact historical edges.
 
+## Recovery Uses Current Ordered Authority
+
+Direct-landing recovery recognizes an already-created external-memory ledger commit from the live
+canonical ledger, not by reconstructing a unique mapping. The newest row must exactly map this
+operation code commit to its memory-content commit; every accepted pre-operation row must remain an
+immutable suffix; ledger metadata and canonical rendering must match; and the ledger commit must
+prove the exact memory parent, before/after ledger blobs, and ledger-only changed path. Older exact
+same-code rows remain valid audit history.
+
+Cancelled closeout replacement likewise admits only the current waiting door together with the
+cancelled journal disposition and proven worker exit. Door-publication history remains audit
+evidence, not a uniqueness oracle for a predecessor that the current contract already identifies.
+Neither rule adds a fallback reader: both narrow recovery to the current canonical authority plus
+exact retained evidence.
+
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
 Closeout integration separates four owners: the contract lifecycle lease serializes filesystem writers; closeout admission stabilizes and normalizes candidate/plan before lifecycle compatibility; candidate identity binds accepted effective input and Git provenance; mutation evidence and recovery projection own crash classification. The typed integrate caller owns integrate retention, authority, and candidate derivation, while lease-bound closeout admission is the sole closeout candidate owner. The shared controller requires the supplied candidate and explicit authority, then separates generation creation/conflict/terminal replacement from recovery/launch/projection; it cannot recapture closeout provenance or infer kind-specific authority from ambient state. For closeout, reconciliation precedes durable journal publication. Worker authority survives every non-terminal phase and may be cleared only after exact termination proof; a failed or denied termination retains the PID and blocks replacement. The store is strict schema 3.0 and relies on model/public fill-only boundaries for impossible leg-set or proven-commit rewrites while retaining transition-specific identity/state/pre-state checks. Duplicates validate against the immutable accepted plan, and generation retention requires commit-proven mutation or exact canonical contract-finalization publication. The disposable queue projection owns no retry, recover, cancel, revise, claim, or commit evidence.
@@ -120,6 +135,11 @@ execution into their named owners. The split reduces repeated validation and fix
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
 ## Update History
+
+- 2026-08-26T19:27+02:00 — Reconciled the IAS closeout recovery repair: direct landing now proves
+  newest-first ledger output while retaining accepted history as an immutable suffix, and cancelled
+  closeout replacement uses the current waiting door plus cancellation and worker-exit proof rather
+  than requiring a unique historical predecessor row.
 
 - 2026-08-26T14:32+02:00 — Reconciled direct landing, integration proof, and organizational
   completion to valid newest-first same-code memory history.

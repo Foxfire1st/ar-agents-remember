@@ -113,6 +113,7 @@
     "mcp/src/agents_remember/serving/sim.py",
     "mcp/src/agents_remember/serving/state_signals.py",
     "mcp/src/agents_remember/serving/static.py",
+    "mcp/src/agents_remember/serving/structural_dispatch.py",
     "mcp/src/agents_remember/serving/structural_seats.py",
     "mcp/src/agents_remember/serving/terminal.py",
     "mcp/src/agents_remember/serving/terminal_catalog.py",
@@ -128,8 +129,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 179,
-    "fileSidecars": 105,
+    "sourceFilesInScope": 180,
+    "fileSidecars": 106,
     "childRoutes": 2
   },
   "routingTerms": [

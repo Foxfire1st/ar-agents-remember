@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/relay_death_watch.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ by source and tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The heartbeat row and age helper the watcher reads. | `AgentNotifierHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-125; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:128-138 |
-| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:129-138 |
+| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:111-120 |
 | The durable push path for the alert row. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:165-223 |
 | The loop task is spawned by the serving lifespan beside the notifier loop. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:168-213 |
 | The forcing tests: never-ticked silence, one-post-per-tick re-arm, corrupt marker, default cutoff, best-effort delivery, loop behavior. | `RelayDeathWatchTests`; `RelayDeathLoopTests` | mcp/tests/test_inbox_arrival_guarantee.py:558-624; mcp/tests/test_inbox_arrival_guarantee.py:627-651 |

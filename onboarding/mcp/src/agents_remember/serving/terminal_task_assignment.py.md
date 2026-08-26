@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_task_assignment.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,9 +25,12 @@ level-neutral operation.
 ### Logic
 
 Conflict helpers identify the current or replacement occupant of a document+role seat.
-`assign_terminal_session_to_task` validates task altitude and uniqueness, then persists the binding
-and emits the updated catalog result. Relationship authorization belongs at the structural
-application boundary, before this assignment primitive is called.
+`task_binding_conflict_owner` re-evaluates after publishing a dead preferred generation as exited,
+so a live staged heir becomes the conflict instead of the seat being misreported vacant.
+`assign_terminal_session_to_task` holds one catalog batch across lookup, role/topology/lineage
+validation, incumbent and staged-replacement conflict checks, and binding publication. Relationship
+authorization belongs at the structural application boundary, before this assignment primitive is
+called.
 
 ### Conventions
 
@@ -38,6 +41,8 @@ Assignment accepts a real `TaskDocumentRef`; caller-specific parsing belongs at 
 - One live occupant per singular structural seat.
 - Assignment never invents sprint/master anchor leaves.
 - A conflict reports structural ownership and does not silently evict another seat.
+- Dead-incumbent cleanup is followed by fresh canonical-seat selection before vacancy is returned.
+- Conflict re-evaluation and binding publication share one catalog transaction.
 
 ### Todos
 
@@ -50,8 +55,8 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Conflict checks use document+role occupancy. | `task_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_task_assignment.py:49-94 |
-| Assignment validates and persists the structural binding. | `assign_terminal_session_to_task` | mcp/src/agents_remember/serving/terminal_task_assignment.py:96-170 |
+| Conflict checks reselect after marking a dead preferred generation exited. | `task_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_task_assignment.py:55-78 |
+| Assignment holds one catalog batch across validation, conflict checks, and publication. | `assign_terminal_session_to_task`; `_assign_terminal_session_to_task` | mcp/src/agents_remember/serving/terminal_task_assignment.py:107-132 |
 
 ## Cross-Repo References
 
@@ -64,6 +69,12 @@ projection returns the prior binding, requested role, detail, and evidence so
 replacement-safe routing does not depend on agent-held ids.
 
 ## Update History
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2: added dead-incumbent re-selection and one-batch
+  assignment publication so a live staged heir is never mistaken for vacancy. Verification remains
+  closeout-owned.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented pre-mutation lineage refusal for terminal assignment; verification remains closeout-owned.
 
 - 2026-08-11T06:47+02:00 — 260731-EFA-L19: created; absorbs the behavior of removed `terminal_leaf_assignment.py` and `sprint_role_binding.py` under one generalized assignment contract.

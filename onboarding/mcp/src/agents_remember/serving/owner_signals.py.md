@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/owner_signals.py`       |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T01:21+02:00                                    |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                    |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`                                    |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ helper; the action layer and the sweep import it.
 | The inbox row record/creation and renewal/readdress transitions it composes. | "def create_operator_inbox_entry("; "def renew(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:244-244; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:434-434 |
 | The delivery attempt it drives and the admission policy it carries. | "def deliver_inbox_entry("; "class DeliveryAdmission:" | mcp/src/agents_remember/serving/inbox_delivery.py:165-217; mcp/src/agents_remember/serving/inbox_delivery.py:87-105 |
 | The sweep facade re-exporting the primitive for existing callers. | "def _post_owner_signal("; "def _find_coalescible(" | mcp/src/agents_remember/serving/owner_signals.py:93-158; mcp/src/agents_remember/serving/owner_signals.py:64-91 |
-| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:235-235 |
+| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:240-240 |
 
 ## Cross-Repo References
 

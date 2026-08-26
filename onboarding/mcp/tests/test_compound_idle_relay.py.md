@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compound_idle_relay.py`                  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00                                    |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`               |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`               |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -115,7 +115,7 @@ landed-terminality predicate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:84-107; mcp/src/agents_remember/serving/state_signals.py:110-117; mcp/src/agents_remember/serving/state_signals.py:185-205 |
+| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:119-133; mcp/src/agents_remember/serving/state_signals.py:136-144; mcp/src/agents_remember/serving/state_signals.py:222-242 |
 | The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
 | The marker write seam with its no-op guard. | `record_compound_idle_emitted` | mcp/src/agents_remember/serving/seat_turn_truth.py:155-166 |
 | Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |
@@ -135,6 +135,10 @@ The compound-idle relay harness drops `OrchestrationNudgeStore` from
 are unchanged.
 
 ## Update History
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 semantic re-read: retained the compound-idle set/signature/
+  finding claim after verifying the current selector still requires a manager plus task-owned
+  running subordinates all at a turn boundary; regenerated its source ranges.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_compound_idle_relay.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: recorded the current compound-idle relay assertions

@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated            | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
 
-[mcp overview](../overview.md)
+[MCP tests overview](overview.md)
 
 ## Purpose
 
@@ -22,7 +22,11 @@ Durability, concurrency, lifecycle-state, and structural-seat suite for the term
 
 ### Logic
 
-The suite pins `TaskDocumentRef` round-trip/omission/legacy absence, required role validation, dispatch binding fields, `active_for_task` role scoping, replacement copying, landing/termination behavior, atomic writes, and cross-instance conflict composition.
+The suite pins `TaskDocumentRef` round-trip/omission/legacy absence, required role validation,
+dispatch binding fields and receipt round-trip, idempotent single-receipt binding through
+`DispatchBriefReceiptStore`,
+`active_for_task` role scoping, staged-replacement promotion, landing/termination behavior, atomic
+writes, and cross-instance conflict composition.
 
 ### Conventions
 
@@ -30,7 +34,11 @@ Test-only evidence uses deterministic fakes/fixtures and exercises the owning se
 
 ### Invariants And Boundaries
 
-A live seat is unique by canonical task document plus role; terminal and chat roles may share a document; exited/terminated/landed rows do not remain active owners; legacy rows without task identity stay unbound.
+A live seat is unique by canonical task document plus role; terminal and chat roles may share a
+document; exited/terminated/landed rows do not remain active owners; one generation binds one
+dispatch receipt and refuses a different second receipt; a promoted staged row clears its
+replacement ref; legacy rows without task identity stay unbound. Cross-address receipt clearing is
+owned by the seat-succession forcing suite, not inferred from this unit.
 
 ## Docs References
 
@@ -40,13 +48,28 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `_entry` | mcp/tests/test_terminal_catalog.py:28-28 |
+| Current suite declaration anchoring this card. | `_entry` | mcp/tests/test_terminal_catalog.py:29-49 |
+| Dispatch receipts return missing-row absence, round-trip idempotently, and reject a different second binding. | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:236-251 |
+| Canonical promotion clears the staged-replacement marker. | `test_task_binding_promotes_a_staged_replacement_to_the_canonical_seat` | mcp/tests/test_terminal_catalog.py:251-262 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: rebound receipt assertions to the dedicated
+  `DispatchBriefReceiptStore`, including the missing-row result and second-receipt refusal. No
+  certifying test execution is claimed.
+
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: corrected the governing tests
+  overview and kept this unit's receipt claim limited to idempotent same-generation binding plus
+  second-receipt refusal; cross-address movement is forced in the succession suite. No test
+  execution is claimed.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: added private receipt round-trip/idempotency and
+  staged-heir promotion coverage. Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

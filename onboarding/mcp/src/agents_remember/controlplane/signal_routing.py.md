@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -24,9 +24,11 @@ catalog occupant after the structural owner is known.
 ### Logic
 
 `derive_signal_owner` walks exactly one role-appropriate parent edge; decision items route to the
-sprint architect. `_current_occupant` prefers the current document binding, accepts a singular
-staged replacement only when no incumbent remains, and refuses ambiguity. Progress checks follow the
-task chain rather than spawn ancestry.
+sprint architect. `_current_occupant` delegates current document/staged-replacement precedence to
+the shared `current_seat_occupant` selector and translates typed occupancy ambiguity into a routing
+error. Progress checks follow the task chain rather than spawn ancestry.
+`StructuralRoutingError` belongs to the shared `AgentsRememberError` family; this adapter uses it
+only to translate the selector's occupancy ambiguity into the routing boundary's own typed meaning.
 
 ### Conventions
 
@@ -38,6 +40,7 @@ agent/lifecycle correlations.
 - Task containment, never spawn ancestry, defines parent routing.
 - Missing or ambiguous occupants are not replaced by a global same-role guess.
 - Runtime correlations are delivery evidence, not the route key.
+- Signal routing does not carry a second implementation of incumbent/heir precedence.
 
 ### Todos
 
@@ -51,15 +54,24 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current occupant selection is document-and-role scoped and ambiguity-strict. | `_current_occupant` | mcp/src/agents_remember/controlplane/signal_routing.py:44-81 |
-| Owner routing follows structural role and task containment. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:165-196 |
-| Progress evaluation follows the same task chain. | `task_chain_has_progress` | mcp/src/agents_remember/controlplane/signal_routing.py:228-265 |
+| Current occupant selection is document-and-role scoped and ambiguity-strict. | `_current_occupant` | mcp/src/agents_remember/controlplane/signal_routing.py:45-62 |
+| Owner routing follows structural role and task containment. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:147-177 |
+| Progress evaluation follows the same task chain. | `task_chain_has_progress` | mcp/src/agents_remember/controlplane/signal_routing.py:210-230 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: recorded shared error-family
+  ownership for `StructuralRoutingError`; route semantics remain unchanged. Verification remains
+  closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: routed current-generation selection through the
+  shared seat selector and retained typed fail-closed ambiguity. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `signal_routing.py` with plane-owned seat identity, routing, and enforcement boundaries.
 - 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

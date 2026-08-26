@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/application/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 
 ## IAS Frozen Structural Admission Boundary
 
@@ -54,6 +54,19 @@ tools — and spawns in ambient mode with the pinned dispatch brief and the same
 seat (so seat-authority and child-scope checks do not apply), role altitude still validated, and
 `spawnedByKind="ambient"` recorded in spawn provenance. Stale/invalid/mismatched/unbound plane
 identity refuses; it never silently downgrades to ambient.
+
+Since 260821-ARSPAWN-L2, the one-call contract is also idempotent at the canonical seat. A
+cross-process lock covers the complete spawn-plus-brief transaction for exactly
+`(task_document_ref, role)`. `dispatch_transaction.py` reconciles a pre-existing generation from
+the durable catalog receipt and exact-pinned inbox row, repairs a missing receipt through the
+serving-owned `DispatchBriefReceiptStore`, tolerates inbox
+compaction when the receipt survives, and replaces one generation proven to have failed before
+briefing. Missing, terminal, mismatched, or otherwise unreadable generation evidence is unknown,
+refuses reconciliation, and never licenses cleanup. It refuses contradictions and never retires an
+unattributed or manual occupant. Ordinary relationship messages persist the canonical address even
+while the seat is vacant, so the next occupant receives them without a dead-session-id rewrite.
+Serializer setup or acquisition has one dedicated typed refusal; it does not swallow or relabel
+failures raised by the protected transaction.
 
 ## What Belongs Here
 
@@ -115,7 +128,7 @@ identity refuses; it never silently downgrades to ambient.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The public structural operations are registered through one adapter module. | `dispatch_agent_payload` | mcp/src/agents_remember/mcp/tools/structural_agent.py:31-114 |
-| Structural resolution qualifies document+role seats and refuses ambiguity. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:14-160 |
+| Structural resolution qualifies document+role seats and refuses ambiguity. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:24-157 |
 
 ## Cross-Repo References
 
@@ -157,7 +170,50 @@ Structural dispatch distinguishes organizational masters, whose leaves start dir
 
 `agent_tools.py` imports updated to the moved `application/task_docs/task_ref` location.
 
+## 260821-ARSPAWN-L2 Canonical Dispatch Architecture
+
+Structural dispatch is a transaction over one canonical `(taskDocumentRef, role)` seat. Runtime
+session ids identify private catalog generations and exact initial-brief correlation only; they
+never become caller-facing addresses or stable result identity.
+
+```mermaid
+flowchart LR
+    A[Canonical task document plus role] --> L[Seat-scoped serializer]
+    L --> S[Spawn or read current generation]
+    S --> E[Reconcile durable brief evidence]
+    E -->|Viable brief or retained receipt| R[Stable structural success]
+    E -->|Proven unbriefed generation| X[Retire private generation once]
+    X --> B[One bounded respawn attempt]
+    E -->|Unknown or contradictory evidence| F[Typed refusal without cleanup]
+```
+
+`exclusive_structural_dispatch_lock` combines a reclaimed in-process slot with a POSIX lock in
+one of 4,096 deterministic hash stripes. It serializes only the selected seat; hash collisions
+may conservatively serialize unrelated seats. Lock creation or acquisition failure becomes
+`StructuralDispatchLockError`; there is no process-local fallback and lock files are not unlinked.
+
+`execute_dispatch_transaction` owns the bounded spawn/reconcile loop. Durable pinned-brief
+evidence is the commit point: a viable brief converges, a missing catalog receipt is repaired,
+and a retained receipt survives inbox compaction as queued. A non-dispatch occupant remains
+`seat-taken`. Only a positively proven unbriefed dispatch generation may be retired; disappeared,
+unreadable, or contradictory evidence refuses. Public payloads are built by `StructuralOutcome`
+and exclude occupant ids.
+
+`current_seat_occupant` is the shared generation selector. It fails closed on duplicate primaries
+or duplicate staged heirs, prefers one live incumbent, and promotes the one heir only after the
+incumbent leaves. Message envelopes remain address-only and delivery re-resolves this selector,
+so planning and messaging remain valid while a seat is vacant or replaced.
+
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: recorded the receipt-store collaborator and
+  rechecked the bounded two-generation transaction without changing public seat identity.
+  Verification remains closeout-owned.
+
+
+- 2026-08-26T12:30+02:00 — Reconciled the complete ARSPAWN-L2 canonical-seat transaction, bounded recovery,
+  serializer, replacement, and public-outcome architecture onto the audited IAS overview.
+  Verification remains closeout-owned.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS structural-admission boundary label against the
   frozen pass-13 candidate.

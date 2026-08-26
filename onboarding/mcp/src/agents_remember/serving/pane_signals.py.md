@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:42+02:00                             |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`         |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`         |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -114,7 +114,7 @@ leaf task doc's R2a is the source of truth), same posture as `turn_state.py`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:48-48 |
+| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49 |
 | The pane classifier used by that path is `classify_pane_signal`. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | `classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
 | The failing-first suite covers five generic pane-signal cases; it does not establish per-harness override coverage. | `PaneSignalClassifierTests` | mcp/tests/test_pane_signals.py:16-43 |

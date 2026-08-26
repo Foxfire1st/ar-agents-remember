@@ -134,7 +134,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "`activation/atomic_series_activation.py` is the single disposable selection authority for one normalized source pair; its release and terminal siblings own exact vacancy. The selecting transaction publishes `reconciling`, runs exact source sync, and publishes `active` only after both required bases are current. Root-level `sync_transaction.py` drives the journaled state machine; focused state, authority, Git, recovery, result, and source-refresh modules own their respective proof and response boundaries.",
+    "summary": "`activation/atomic_series_activation.py` is the single disposable selection authority for one normalized source pair; its release and terminal siblings own exact vacancy. The selecting transaction publishes `reconciling`, runs exact source sync, and publishes `active` only after both required bases are current. Root-level `sync_transaction.py` drives the journaled state machine; focused state, authority, Git, recovery, result, and source-refresh modules own their respective proof and response boundaries. Master-series bootstrap observes its transient root journal and durable series contract...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees",
       "mcp/src/agents_remember/worktrees/activation",

@@ -12,11 +12,13 @@
   "coveredFiles": [
     "mcp/src/agents_remember/application/structural/__init__.py",
     "mcp/src/agents_remember/application/structural/agent_tools.py",
-    "mcp/src/agents_remember/application/structural/gate_tools.py"
+    "mcp/src/agents_remember/application/structural/dispatch_transaction.py",
+    "mcp/src/agents_remember/application/structural/gate_tools.py",
+    "mcp/src/agents_remember/application/structural/outcomes.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 3,
-    "fileSidecars": 3,
+    "sourceFilesInScope": 5,
+    "fileSidecars": 5,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -25,15 +27,19 @@
     "agents",
     "agents_remember",
     "application",
+    "dispatch",
+    "dispatch_transaction",
     "gate",
     "gate_tools",
     "init",
     "init__",
     "mcp",
+    "outcomes",
     "remember",
     "src",
     "structural",
-    "tools"
+    "tools",
+    "transaction"
   ],
   "hotPath": {
     "summary": "`agent_tools.py` resolves the caller and target structural seats before invoking the existing plane-owned spawn, inbox, retire, and rename machinery. `gate_tools.py` applies the same boundary to delegated gates; since 260815-DAG-L16 it also accepts an optional request-carried `caller` (role + task_document_ref) when no plane seat exists, refusing a declared caller that contradicts the seat (`structural-caller-conflict`). Public response models expose task-document and role outcomes only. For L23, dispatch additionally validates transitive task-derived code and external-memory lineage before...",
@@ -41,15 +47,21 @@
       "mcp/src/agents_remember/application/structural",
       "mcp/src/agents_remember/application/structural/__init__.py",
       "mcp/src/agents_remember/application/structural/agent_tools.py",
-      "mcp/src/agents_remember/application/structural/gate_tools.py"
+      "mcp/src/agents_remember/application/structural/dispatch_transaction.py",
+      "mcp/src/agents_remember/application/structural/gate_tools.py",
+      "mcp/src/agents_remember/application/structural/outcomes.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
       "agent_tools.py",
       "agent_tools",
+      "dispatch_transaction.py",
+      "dispatch_transaction",
       "gate_tools.py",
       "gate_tools",
+      "outcomes.py",
+      "outcomes",
       "caller",
       "structural-caller-conflict",
       "DAG",
@@ -60,12 +72,14 @@
       "mcp/src/agents_remember/application/structural/",
       "mcp/src/agents_remember/application/structural/overview.md",
       "application/overview.md",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "c51373425be3e3f488590ad2f444810df89b4ffb",
       "dispatch_agent",
       "authorize_child",
       "AR_HOSTED_SESSION_ID",
       "serving/ambient_seat.py",
       "spawnedByKind=\"ambient",
+      "task_document_ref, role",
+      "DispatchBriefReceiptStore",
       "serving/structural_seats.py",
       "models/structural/",
       "ambient-seat-unavailable",
@@ -79,19 +93,13 @@
       "gate_tools.py.md",
       "serving/structural_seats.py.md",
       "application/task_docs/task_ref",
-      "lifecycle_gate",
-      "gate_decide",
-      "gate_list",
+      "taskDocumentRef, role",
+      "exclusive_structural_dispatch_lock",
+      "StructuralDispatchLockError",
+      "execute_dispatch_transaction",
+      "seat-taken",
       "StructuralOutcome",
-      "/overview.md",
-      "mcp/src/agents_remember/mcp/tools/structural_agent.py",
-      "mcp/src/agents_remember/serving/structural_seats.py",
-      "doc_type",
-      "sourceRoute",
-      "agents_remember",
-      "onboardingRoute",
-      "parentOverview",
-      "lastUpdated"
+      "current_seat_occupant"
     ]
   },
   "fallback": {

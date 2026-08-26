@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_leaf_structural_refusal_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:15+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,9 @@ without a plane-supplied structural role.
 Dispatch cases whose subject is seat-taken, initial-brief rollback, or adapter delivery explicitly
 stub `_implementation_series_admission_refusal` as successful. That keeps each focused case on its
 named later seam while separate activation/admission suites own the source-pair gate itself; the
-fixture does not create a bypass in production.
+fixture does not create a bypass in production. The child-mutation cohort now calls the current
+`parent_address` API and forces the typed retire-serialization refusal without reintroducing exact-id
+addressing. Dead-owner reaping also proves a repeated live conflict remains owned after cleanup.
 
 ### Conventions
 
@@ -75,8 +77,8 @@ No external Domain Documentation source is configured; these are repository-owne
 | --- | --- | --- |
 | Durable migration and seat resolution reject invalid, ambiguous, and unowned state. | `test_durable_record_migration_is_atomic_and_idempotent`; `test_structural_seat_current_and_parent_resolution_fail_closed`; `test_structural_seat_child_authorization_fail_closed` | mcp/tests/test_leaf_structural_refusal_coverage.py:20-52; mcp/tests/test_leaf_structural_refusal_coverage.py:55-121; mcp/tests/test_leaf_structural_refusal_coverage.py:124-170 |
 | Ambient identity, task-document values, and terminal-catalog disk shapes fail closed. | `test_ambient_seat_resolution_rejects_every_unproven_identity`; `test_task_document_ref_rejects_ambiguous_path_identity`; `test_terminal_catalog_disk_reader_refuses_undeclared_shapes` | mcp/tests/test_leaf_structural_refusal_coverage.py:173-216; mcp/tests/test_leaf_structural_refusal_coverage.py:219-226; mcp/tests/test_leaf_structural_refusal_coverage.py:229-258 |
-| Structural dispatch and mutation tests preserve persistence-first and explicit refusal outcomes. | `test_dispatch_agent_refuses_invalid_spawn_and_unpersisted_brief`; `test_structural_agent_message_and_child_mutations_report_refusals`; `test_terminal_tool_task_document_and_open_refusals` | mcp/tests/test_leaf_structural_refusal_coverage.py:296-340; mcp/tests/test_leaf_structural_refusal_coverage.py:379-429; mcp/tests/test_leaf_structural_refusal_coverage.py:430-465 |
-| Routing, authority, migration, topology, and launch edge cases preserve unique structural ownership. | `test_signal_routing_refuses_ambiguous_or_broken_task_containment`; `test_retire_policy_and_manager_lookup_refuse_broken_topology`; `test_task_topology_resolve_enumeration_and_id_ambiguity`; `test_dispatch_target_and_library_launch_without_structural_role` | mcp/tests/test_leaf_structural_refusal_coverage.py:466-517; mcp/tests/test_leaf_structural_refusal_coverage.py:613-654; mcp/tests/test_leaf_structural_refusal_coverage.py:791-822; mcp/tests/test_leaf_structural_refusal_coverage.py:868-907 |
+| Structural dispatch and mutation tests preserve persistence-first and explicit refusal outcomes. | `test_dispatch_agent_refuses_invalid_spawn_and_unpersisted_brief`; `test_structural_agent_message_and_child_mutations_report_refusals`; `test_terminal_tool_task_document_and_open_refusals` | mcp/tests/test_leaf_structural_refusal_coverage.py:296-340; mcp/tests/test_leaf_structural_refusal_coverage.py:382-446; mcp/tests/test_leaf_structural_refusal_coverage.py:430-465 |
+| Routing, authority, migration, topology, and launch edge cases preserve unique structural ownership. | `test_signal_routing_refuses_ambiguous_or_broken_task_containment`; `test_retire_policy_and_manager_lookup_refuse_broken_topology`; `test_task_topology_resolve_enumeration_and_id_ambiguity`; `test_dispatch_target_and_library_launch_without_structural_role` | mcp/tests/test_leaf_structural_refusal_coverage.py:483-534; mcp/tests/test_leaf_structural_refusal_coverage.py:630-671; mcp/tests/test_leaf_structural_refusal_coverage.py:824-859; mcp/tests/test_leaf_structural_refusal_coverage.py:909-948 |
 
 ## Cross-Repo References
 
@@ -100,7 +102,26 @@ Structural refusal forcing now covers current shared configured-contract and lif
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 
+## 260821-ARSPAWN-L2 Commit-Aware Refusal Coverage
+
+The structural refusal suite distinguishes an invalid or non-successful spawn result, whose
+private generation and durable brief state are unknown, from a faithfully identified dispatch
+generation that is positively proven unbriefed. Unknown, missing, contradictory, or unreadable
+evidence must return a reconciliation refusal without retirement. Only the positive case may
+enter the private recovery boundary and retire the exact server-derived generation.
+
+Manager ambiguity expectations use the shared `current_seat_occupant` vocabulary for duplicate
+primaries and duplicate staged replacements rather than maintaining another selector.
+
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: aligned the structural mutation fixture with
+  `parent_address`, added typed retire-lock refusal coverage, and forced repeated conflict-owner
+  cleanup. No certifying test execution is claimed.
+
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 unknown-state refusal and positive unbriefed-generation
+  recovery forcing onto the IAS test card. No certifying test execution is claimed.
 
 - 2026-08-26T08:15+02:00 — Reconciled three focused dispatch fixtures with the new source-pair
   admission predecessor by stubbing it successful before forcing their existing spawn/delivery

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                                             |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`                                             |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -233,7 +233,7 @@ record.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:61-66 |
-| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:155-155; mcp/src/agents_remember/serving/terminal_catalog.py:159-159 |
+| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:145-145; mcp/src/agents_remember/serving/terminal_catalog.py:149-149 |
 | The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:176-718 |
 | The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |

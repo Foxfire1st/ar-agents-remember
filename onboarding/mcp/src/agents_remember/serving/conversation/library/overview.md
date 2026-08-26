@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 
 ## What This Area Is
 
@@ -219,7 +219,7 @@ the live gates and both real open E2Es.
 | The foundation pin asserts exactly the five owned library routes and the helper source set. | `test_exactly_two_conversation_ports_exist`; `test_root_composes_three_owned_child_routers`; `test_helper_package_and_lock_select_only_the_exact_repository_dependencies` | mcp/tests/test_conversation_foundation.py:22-29; mcp/tests/test_conversation_foundation.py:32-107; mcp/tests/test_conversation_foundation.py:125-136 |
 | The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
 | `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
-| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:4-1333 |
+| The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-2095 |
 | The installed Codex 0.144.5 runtime fixture records disabled capabilities and the native-history/list-read-resume production-gate evidence. | "codex-0.144.5-installed-20260718"; "enablesCapabilities"; "native-history/list-read-resume"; "L2 production gate" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:3-3; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:9-9; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:23-23; mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:31-31 |
 
 ## Cross-Repo References

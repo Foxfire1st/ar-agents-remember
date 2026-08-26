@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-11T10:20+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                    |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-26T17:57+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -25,8 +25,12 @@ task-document containment for manager ownership.
 
 `compound_idle_sets` groups a manager with running leaf-role occupants whose documents are direct
 children of that manager's master. State-signal and non-reaction evaluation resolve the current
-manager structurally, including singular replacement handling. Inbox delivery/landing remains owned
-by the shared durable message path.
+manager structurally through the shared incumbent/staged-heir selector. Compound-idle groups include only the current manager generation. Their candidate documents are
+projected from the same running-manager snapshot consumed by the canonical selector, so each
+non-ambiguous document necessarily has a primary or staged-replacement claimant; no synthetic
+missing-occupant fallback is part of that path. Observer sweeps suppress a finding for an ambiguous
+seat rather than choosing a generation or aborting unrelated seats. Inbox delivery/landing remains owned by the
+shared durable message path.
 
 ### Conventions
 
@@ -35,9 +39,14 @@ Task hierarchy determines ownership; runtime ids only correlate observed episode
 ### Invariants And Boundaries
 
 - Spawn ancestry does not establish manager/subordinate membership.
-- Missing or ambiguous current managers fail closed.
+- A subordinate lookup with no current manager fails closed; an ambiguous canonical manager seat is
+  locally suppressed.
+- Compound-idle manager documents come from the same immutable running snapshot used for selection,
+  which guarantees a claimant after ambiguity is excluded.
 - Findings arise from terminal/turn evidence, not model artifact judgment.
 - State-signal delivery still obeys the target turn boundary.
+- Ambiguity is local to the affected canonical seat; observers neither guess nor fail the whole
+  sweep.
 
 ### Todos
 
@@ -51,15 +60,30 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Compound-idle membership follows direct task containment. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:93-117 |
-| Terminal outcome findings resolve manager ownership structurally. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:135-186 |
-| Non-reaction evaluation uses topology and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:211-273 |
+| Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:118-132 |
+| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous seats. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:153-188 |
+| Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:240-343 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-26T17:57+02:00 — Removed the unreachable compound-idle missing-occupant fallback. Manager
+  documents and occupants are selected from one running snapshot, so the only non-current case is
+  ambiguity, which remains locally suppressed. This records the invariant instead of forcing an
+  impossible mocked state solely for branch coverage.
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — No content impact: final ARSPAWN-L2 review confirmed ambiguous seats
+  are contained locally across state-signal, non-reaction, compound-idle, and boundary-drain
+  evaluation. Verification remains closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: state-signal and non-reaction evaluation consume the
+  shared canonical seat selector, exclude stale manager generations, and skip only the ambiguous
+  seat during observer sweeps. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `state_signals.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

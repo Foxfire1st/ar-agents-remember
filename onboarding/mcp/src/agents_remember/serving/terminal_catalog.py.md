@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`        |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                  |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -26,6 +26,11 @@ catalog migration before strict current parsing.
 `TerminalCatalog` reads/writes current task-document-and-role rows, looks up the singular running
 occupant of a structural seat, and retains replacement/provenance/evidence fields. Reads migrate
 legacy rows first and then validate the current model; writers do not emit both schemas.
+`active_for_task` consumes the shared incumbent/staged-heir selector.
+`DispatchBriefReceiptStore` composes with the catalog atomic storage unit to idempotently bind one
+durable inbox receipt to the exact generation and refuse a different second receipt.
+Address-bound receipt lifetime is owned by the row transformation: same-seat promotion retains it,
+while cross-seat or role movement clears it before this store writes the new row.
 
 ### Conventions
 
@@ -38,6 +43,9 @@ task/structural resolver rather than this persistence class.
 - Migration is one-way and precedes strict parsing.
 - Spawn ancestry remains audit provenance.
 - Current writers never restore leaf-key fields.
+- A staged heir is current only after the incumbent leaves.
+- One generation may bind exactly one pinned dispatch-brief receipt.
+- Receipt evidence cannot migrate to another canonical address.
 
 ### Todos
 
@@ -51,9 +59,10 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog queries current occupancy by task document and role. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:51-104 |
-| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:406-406 |
-| The current catalog model owns strict row serialization. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:67-180 |
+| The catalog queries current occupancy by task document and role through the shared selector. | `active_for_task` | mcp/src/agents_remember/serving/terminal_catalog.py:86-95 |
+| One exact generation idempotently binds one durable pinned-brief receipt. | `DispatchBriefReceiptStore` | mcp/src/agents_remember/serving/terminal_catalog.py:419-448 |
+| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:396-396 |
+| The current catalog model owns strict row serialization. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:67-550 |
 
 ## Cross-Repo References
 
@@ -67,6 +76,21 @@ present in the explicit task-registered set. Running, exited, landed, recent, an
 execution rows remain. Thus ordinary retention cannot turn observed execution into “never started.”
 
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: extracted dispatch-receipt mutation into
+  `DispatchBriefReceiptStore`, preserving the same atomic catalog storage boundary while returning
+  `TerminalCatalog` to the 15-operation surface cap. Verification remains closeout-owned.
+
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: clarified one-receipt idempotency
+  and the prohibition on carrying address-bound proof across a document or role move. Verification
+  remains closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: current-seat lookup now recognizes the staged heir
+  after incumbent exit, and the catalog owns idempotent pinned-brief receipt binding. Verification
+  remains closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded task-registration gating for terminated leaf-seat reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

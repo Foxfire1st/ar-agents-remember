@@ -6,8 +6,8 @@
 | path | `dashboard/src/dev/cockpitScenarios.test.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate |  2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -113,7 +113,7 @@ This table keeps exact findings, anchors, and source ranges in three columns.
 | L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking. | `authorityTransport` | dashboard/src/dev/cockpitScenarios.test.ts:53-77 |
 | L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
 | L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
-| L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | "class WireResponse(BaseModel):"; `DetectedHarness`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:366-372; mcp/src/agents_remember/serving/response_contract.py:374-377 |
+| L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | "class WireResponse(BaseModel):"; `DetectedHarness`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:89-89; mcp/src/agents_remember/serving/response_contract.py:370-375; mcp/src/agents_remember/serving/response_contract.py:378-381 |
 | The `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. | "satisfies HarnessInfo[]" | dashboard/src/dev/cockpitScenarios.ts:433-443 |
 | L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures. | "UNMARKED MIRROR"; `control`; `bridgeEpoch` | dashboard/src/test/wireFixtureGuard.ts:55-55; dashboard/src/test/wireFixtureGuard.ts:62-63 |
 

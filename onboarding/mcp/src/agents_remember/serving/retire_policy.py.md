@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/retire_policy.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -98,7 +98,7 @@ encodes.
 | --- | --- | --- |
 | `session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83 |
 | `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | "def _retire_response("; "def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:572-572; mcp/src/agents_remember/serving/_app_terminal_routes.py:632-632 |
-| `TerminalCatalogEntry.binding_role` and `binding_task_document_ref` are the current structural identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | "def binding_role(self) -> str:"; "def binding_task_document_ref"; "def with_retirement(" | mcp/src/agents_remember/models/terminal_catalog.py:526-539; mcp/src/agents_remember/models/terminal_catalog.py:388-410 |
+| `TerminalCatalogEntry.binding_role` and `binding_task_document_ref` are the current structural identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | "def binding_role(self) -> str:"; "def binding_task_document_ref"; "def with_retirement(" | mcp/src/agents_remember/models/terminal_catalog.py:403-403; mcp/src/agents_remember/models/terminal_catalog.py:541-541; mcp/src/agents_remember/models/terminal_catalog.py:551-551 |
 | `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32; mcp/src/agents_remember/serving/retire.py:37-71 |
 | Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:192-256 |
 

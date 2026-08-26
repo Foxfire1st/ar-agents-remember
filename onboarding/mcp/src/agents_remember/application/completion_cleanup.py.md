@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/application/completion_cleanup.py`  |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-10T06:28+02:00                                       |
-| lastVerifiedCommitHash |                                                              `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                              2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -34,7 +34,8 @@ Missing proof is returned in
 `autoCloseDeferredSeats`; per-seat exceptions are returned in `autoCloseFailedSeats`; successful
 retirements are returned in `autoClosedSeats` and logged best-effort after catalog provenance is
 durable. With auto-close disabled, the same finite role set uses `land_seats_for_task` and returns
-`autoLandedSeats`.
+`autoLandedSeats`. Candidate selection uses `binding_task_document_ref`, so a staged replacement is
+closed with the same canonical leaf seat instead of escaping cleanup through its replacement field.
 
 ### Conventions
 
@@ -54,6 +55,7 @@ names declared by the integration and finalization response models.
   Transcripts and durable reports are not deleted.
 - The inbox is folded once per edge and the candidate list is read once, avoiding per-seat store
   rescans.
+- Primary and staged-replacement rows are compared through their canonical binding document.
 
 ### Todos
 
@@ -62,11 +64,7 @@ None.
 ## Docs References
 
 No Domain Documentation entries are configured for this repository, and this module implements a
-repository-local orchestration policy. No relevant external documentation was available.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain contract governs this repository-local cleanup policy. | — | — |
+repository-local orchestration policy.
 
 ## Repo-Internal References
 
@@ -75,21 +73,25 @@ tests pin edge wiring separately from cleanup failure containment.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:595-676; mcp/src/agents_remember/application/worktree_tools.py:992-1023 |
-| Normal retirement terminates the host and persists catalog retirement provenance without touching transcripts. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
-| Durable inbox folding supplies the exact report rows used as the close blocker. | "def current(self) -> dict[str, OperatorInboxEntry]:" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:157-157 |
-| Integration tests prove all eligible roles, owner exclusions, report matching, provenance, transcript retention, and opt-out landing. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:645-869 |
+| The completion owner resolves task truth, folds report evidence, and applies the configured close/land policy. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-72 |
+| Candidate selection includes every non-terminated role occupant bound to the canonical task document. | `_completion_candidates` | mcp/src/agents_remember/application/completion_cleanup.py:115-124 |
 | Focused tests prove contract, retirement-race, per-seat failure, and opt-out landing containment. | `CompletionCleanupContainmentTests` | mcp/tests/test_completion_cleanup.py:47-169 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Cleanup reads only repositories and runtime paths already resolved by Agents Remember configuration. | — | — |
-
 ## Update History
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — No content impact: final ARSPAWN-L2 review confirmed the existing
+  canonical-binding cleanup description already matches the unchanged one-line candidate delta.
+  Verification remains closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: candidate selection now uses the canonical binding
+  document so a staged replacement participates in completion cleanup. Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

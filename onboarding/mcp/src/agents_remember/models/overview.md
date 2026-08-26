@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -473,7 +473,22 @@ certifying lanes, while lifecycle models retain strict journal-owned mutation pr
 invalidation removes the impossible `not-created` outcome, and validator decomposition preserves
 one typed public contract instead of distributing failure-family knowledge across callers.
 
+## 260821-ARSPAWN-L2 Stable Structural Evidence
+
+`TerminalCatalogEntry.dispatch_brief_entry_id` is private durable reconciliation evidence, not a
+structural address. It may be serialized for control-plane recovery and dashboard diagnostics.
+The receipt survives promotion of a staged heir into the same document-and-role seat, but clears
+when document or role changes. Promotion also clears the replacement reference so one row cannot
+remain in both seat generations.
+
+`StructuralOutcome` projects operation, status, canonical task document, role, detail, and
+delivery state while deliberately excluding runtime occupant identity.
+
 ## Update History
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 private brief evidence, same-seat promotion, and
+  runtime-id-free structural outcome rules onto the IAS models overview. Verification remains
+  closeout-owned.
 
 - 2026-08-26T08:55+02:00 — Finalized the activation/sync vocabulary label against the frozen
   pass-13 candidate.

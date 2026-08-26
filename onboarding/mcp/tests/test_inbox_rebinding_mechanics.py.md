@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_rebinding_mechanics.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ rebinding/terminal mechanics are same-repository runtime behavior proven by sour
 | --- | --- | --- |
 | The lock-held latest-fold transition primitive under test. | `transition` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:73-100 |
 | The terminal/rebind transitions under test. | `mark_landed`; `mark_superseded`; `mark_unresolved`; `mark_expired`; `rebind_entry` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:240-262; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:265-293; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:296-322; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:325-352; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:355-393 |
-| The row-owner derivation under test. | `derive_row_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:280-298 |
+| The row-owner derivation under test. | `derive_row_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:262-280 |
 | The rebind/expiry predicates under test. | `evaluate_rebind_findings`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:127-172; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-198 |
 | The legacy-landed migration fold under test. | `_fold_legacy_landed` | mcp/src/agents_remember/serving/agent_notifier.py:198-226 |
 | The retention branches under test. | `_keep_inbox_entry`; `inbox_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:140-163; mcp/src/agents_remember/controlplane/interaction_retention.py:199-221 |

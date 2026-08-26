@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-25T22:27+02:00 |
+| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -25,8 +25,12 @@ of runtime session identity.
 ### Logic
 
 `TerminalCatalogRow` carries runtime transport/status, structural binding, replacement declaration,
-spawn provenance, control evidence, and terminal outcome. `TaskDocumentRef` is imported from the
-generated projection vocabulary so task and catalog surfaces share one shape.
+spawn provenance, control evidence, and terminal outcome. `dispatchBriefEntryId` is an optional
+private control-plane receipt proving which durable pinned brief completed the current generation's
+spawn transaction. `TaskDocumentRef` is declared locally as the canonical `{repository, path}`
+shape used by this catalog wire; it is not imported from the generated projection module. The full
+catalog interface now has 66 fields and is checked bidirectionally against the server response
+model.
 
 ### Conventions
 
@@ -38,6 +42,8 @@ during creation/migration; current server writers use the structural fields.
 - `leafKey` and `replacementForLeaf` are not current wire fields.
 - Task document plus role is the stable seat; `id` is the occupant.
 - Replacement provenance does not create a second seat identity.
+- `dispatchBriefEntryId` is reconciliation/diagnostic evidence, never a destination or public seat
+  identity.
 
 ### Todos
 
@@ -51,14 +57,22 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wire row separates runtime identity, structural binding, and replacement. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-95 |
-| The task-document reference is shared with the projection contract. | `TaskDocumentRef` | dashboard/src/types/projection.ts:631-634 |
+| The wire row separates runtime identity, structural binding, replacement, and dispatch receipt evidence. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:31-115 |
+| The canonical task-document pair is declared locally for this catalog wire. | `TaskDocumentRef` | dashboard/src/types/terminalCatalog.ts:19-22 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: corrected the false generated-import
+  claim, refreshed the current interface ranges, and recorded the bidirectional 66-field parity
+  boundary. Verification remains closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: added the optional private
+  `dispatchBriefEntryId` projection without changing structural seat identity. Verification remains
+  closeout-owned.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `terminalCatalog.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.

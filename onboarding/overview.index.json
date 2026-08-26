@@ -86,7 +86,7 @@
     "scripts/test-python"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1822,
+    "sourceFilesInScope": 1832,
     "fileSidecars": 23,
     "childRoutes": 10
   },

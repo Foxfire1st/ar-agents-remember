@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -544,7 +544,22 @@ It does not retain lifecycle, claim, commit, certification, or stale-row transit
 absent prior file is normalized by publishing invalid-empty state rather than reporting a separate
 `not-created` authority condition.
 
+## 260821-ARSPAWN-L2 Canonical Occupancy
+
+`seats.current_seat_occupant` is the single pure selector for a canonical document-and-role seat.
+It checks incumbent and staged-heir cardinality independently, so duplicate heirs still fail
+closed even while one valid incumbent is present. One incumbent wins until it leaves; only then
+does the one staged heir become current. Routing, delivery, catalog, and observer consumers use
+this selector instead of re-deriving generation choice.
+
+`signal_routing.py` translates malformed or ambiguous occupancy into
+`StructuralRoutingError`. Notifier evaluation contains that error per finding so one corrupt
+address cannot abort unrelated rows.
+
 ## Update History
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 shared incumbent/heir selection and per-finding routing
+  containment onto the IAS control-plane overview. Verification remains closeout-owned.
 
 - 2026-08-25T17:21+02:00 — Reconciled queue-store outcomes with disposable projection ownership.
   Verification remains closeout-owned.

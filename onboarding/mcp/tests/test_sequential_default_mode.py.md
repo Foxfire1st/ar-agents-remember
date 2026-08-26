@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_sequential_default_mode.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No Domain Documentation source is configured for this memory root.
 | Selection switch, pause, failure timing, retry, standalone, leaf, and dispatch forcing. | `AtomicSeriesSelectionTests` | mcp/tests/test_sequential_default_mode.py:184-348 |
 | Scheduling mode deliberately owns no series-contract lane reader. | `resolve_scheduling_mode`; `effective_execution_nature` | mcp/src/agents_remember/worktrees/scheduling_mode.py:45-72; mcp/src/agents_remember/worktrees/scheduling_mode.py:93-116 |
 | Series bootstrap selects and reconciles through the activation transaction. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:216-286 |
-| Structural implementation admission selects before spawn. | `_implementation_series_admission_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:521-603 |
+| Structural implementation admission selects before spawn. | `_implementation_series_admission_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:628-678 |
 
 ## Cross-Repo References
 

@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 43126)
-Total output lines: 1813
-
 # mcp/tests
 
 | Field | Value |
@@ -8,9 +5,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1341,11 +1338,34 @@ the retired facade boundary. Import-forcing proves that bootstrap does not eager
 facade or service graph. These tests support the accepted Dagger proof; no direct diagnostic result
 is promoted to certifying evidence.
 
+## 260821-ARSPAWN-L2 Forcing Matrix
+
+The L2 matrix covers same-seat concurrent dispatch, bounded lock-map reclamation, real lock setup and acquisition refusal, duplicate pinned-brief ambiguity, viable retry convergence, missing-receipt repair, inbox-compaction
+survival, contradictory or unknown evidence refusal, one proven-failed-generation retry, and
+observer-log failure after durable retirement. Direct notifier evaluators fence ambiguous seats without
+first-row selection. Replacement tests force incumbent preference,
+staged-heir promotion, duplicate-primary and duplicate-heir ambiguity, vacancy-safe enqueueing,
+and delivery-time rebinding.
+
+Response and dashboard contract tests prove that public structural outcomes omit occupant ids
+while the private `dispatchBriefEntryId` diagnostic remains schema-aligned. The matrix also
+exercises both ambient and plane dispatch paths against the same transaction. These focused tests
+are implementation evidence only; this entry does not claim that the closeout Dagger acceptance
+lane has run.
+
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: completed deterministic lock setup, duplicate-brief, bounded recovery,
+  rollback-seam, and read-only ambiguity forcing; also removed a pre-existing tool-output truncation
+  banner. No certifying test execution is claimed.
+
 
 - 2026-08-26T14:32+02:00 — Added the focused ledger-history regression route and moved the kernel
   round-trip case out of the oversized worktree-support omnibus. No certifying execution claim is
   made.
+- 2026-08-26T12:30+02:00 — Reconciled the complete 260821-ARSPAWN-L2 lock, retry, replacement, output,
+  and mixed-caller forcing matrix onto the IAS tests overview. Certifying Dagger execution
+  remains pending.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS coordination-evidence label against the frozen
   pass-13 suite inventory.
