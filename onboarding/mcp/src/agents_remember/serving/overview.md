@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 52839)
-Total output lines: 2259
-
 # mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview
 
 | Field                  | Value                                            |
@@ -8,9 +5,9 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -822,7 +819,32 @@ refresh pending, and forces a later heartbeat to retry even when no new task-dom
 arrives. This keeps transient read failures from poisoning the live dashboard projection or
 requiring an unrelated filesystem event to recover.
 
+## 260821-ARSPAWN-L2 Replacement-Safe Dispatch
+
+`structural_dispatch.py` owns the bounded 4,096-stripe seat serializer and the durable
+pinned-brief queries. Setup or `flock` failure is typed and fail-closed; there is no local-only
+fallback, repository-global lock, or unlink race. Brief viability distinguishes a live or
+retryable generation from superseded, unresolved, or expired evidence.
+
+`DispatchBriefReceiptStore` owns dispatch-specific receipt mutation over the existing catalog
+lock/read/write unit. This keeps commit-point evidence out of the general `TerminalCatalog` lifecycle
+surface without adding a second persistence path or compatibility reader.
+
+`structural_seats.py` resolves a canonical address independently of current occupancy and delegates
+generation selection to `current_seat_occupant`. Inbox delivery resolves the occupant at delivery
+time, while exact dispatch briefs remain pinned to the private spawned generation. This lets
+ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
+
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Recorded dispatch receipt ownership in its dedicated collaborator and removed a pre-existing
+  tool-output truncation banner. The atomic catalog persistence boundary remains singular;
+  verification remains closeout-owned.
+
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 bounded seat serialization, durable brief evidence, and
+  delivery-time replacement semantics onto the IAS serving overview. Verification remains
+  closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Documented atomic task-projection refresh and heartbeat retry after transient failure; runtime lifecycle-projection import relocation has no additional route impact.
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

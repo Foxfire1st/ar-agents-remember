@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/sidecar_pairing.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ the rel with the trailing `.md` stripped.
 | The `meaningful_body` extractor applied to a sidecar body. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:94-108 |
 | The mirror sidecar-path helper (`onboarding_root/<rel>.md`) used for the body read and the no-index probe. | `mirror_onboarding_path` | mcp/src/agents_remember/kernel/coordination_context/paths.py:42-52 |
 | The `path_is_relative_to` confinement predicate used by `confine_rel`. | `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:694-699 |
-| The `AuthorityError` raised on an out-of-root / absolute path. | `AuthorityError` | mcp/src/agents_remember/errors.py:17-23 |
+| The `AuthorityError` raised on an out-of-root / absolute path. | `AuthorityError` | mcp/src/agents_remember/errors.py:36-42 |
 
 ## Update History
 

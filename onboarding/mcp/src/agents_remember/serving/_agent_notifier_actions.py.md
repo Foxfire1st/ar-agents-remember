@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_actions.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T10:33+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
 
-[None](None)
+[Serving overview](overview.md)
 
 ## Purpose
 
@@ -29,6 +29,9 @@ L23 batches independent inbox expiry transitions through one durable `transition
 before delivery. Expiry and unresolved paths write explicit terminal snapshots. State-signal,
 compound-idle, and non-reaction actions use the same structural routing and shared whole-message
 delivery; boundary drain records adapter acknowledgement.
+`act_on_finding` contains typed occupancy/routing failure to the one finding as a skipped result.
+`act_on_findings` applies the same containment before expiry batching, so an ambiguous expiry
+mailbox cannot abort preparation or prevent unrelated expiry transitions and the sweep heartbeat.
 
 ### Conventions
 
@@ -41,6 +44,8 @@ terminal outcome.
 - Rebinding and owner stamps change together.
 - Persistence precedes delivery.
 - No action treats model consume or completion as acknowledgement.
+- Structural ambiguity or malformed routing skips only the affected finding; no alternate owner is
+  selected and valid work in the same sweep continues.
 
 ### Todos
 
@@ -56,13 +61,20 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Due rebinding updates and redelivers the current structural owner. | `_rebind_due` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:177-221 |
 | State-signal action uses the durable structural message path. | `_emit_state_signal` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:452-515 |
-| Dispatch maps each current finding to one action. | `act_on_finding` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:689-702 |
+| Ordinary action-time structural failures become a skipped result for that finding only. | `act_on_finding` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:692-710 |
+| Expiry preparation contains an ambiguous or malformed route before batching other valid transitions. | `act_on_findings` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:722-755 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2: contained typed structural failures at both the
+  ordinary action and pre-batch expiry boundaries so unrelated findings continue. Verification
+  remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

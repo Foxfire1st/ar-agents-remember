@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -33,11 +33,19 @@ activation state for permission.
 `application/structural/` translates ambient caller intent and document+role targets into authorized
 plane-owned dispatch, messaging, seat management, and gate mutations. Runtime correlations remain
 inside the transaction. Ordinary messages are replacement-aware; the initial dispatch brief is the
-sole exact-pinned exception and failed briefing retires the unbriefed child. Since 260821-ARSPAWN-L1
+sole exact-pinned exception. Failed briefing retires a child only when the matching generation is
+positively proven unbriefed; unreadable, missing, or contradictory evidence refuses reconciliation
+without cleanup. Since 260821-ARSPAWN-L1
 `dispatch_agent` resolves the caller by kind (plane seat vs ambient launcher resolved from the
 process environment), keeps the plane structural path unchanged, and records caller-kind provenance
 (`caller_kind` `plane`/`ambient`) through the `application/terminal_tools.py` spawn primitive onto
 the catalog row and the `spawnedByKind` wire field.
+
+ARSPAWN-L2 keeps that public surface but makes its seat transaction idempotent. The structural
+child route now composes `dispatch_transaction.py` with the serving-owned per-seat lock and durable
+brief evidence. Ordinary messages derive parent/child addresses without requiring a live occupant;
+private occupant ids remain an execution detail and are never persisted into a complete structural
+destination.
 
 ## Durable Lifecycle Application Boundary
 
@@ -358,6 +366,14 @@ total at one application boundary and prevents bootstrap import fan-out from pul
 graph into test collection.
 
 ## Update History
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 final curation: narrowed failed-dispatch cleanup to
+  positively proven pre-brief generations and recorded unknown-state reconciliation refusal. No
+  test execution is claimed.
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 route impact: structural dispatch now composes one
+  canonical-seat transaction with bounded evidence-based retry, and structural messages remain
+  addressable through vacancies. Verification remains closeout-owned.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS source-pair application boundary label against the
   frozen pass-13 candidate.

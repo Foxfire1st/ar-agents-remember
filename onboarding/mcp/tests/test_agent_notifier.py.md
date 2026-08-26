@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -203,7 +203,7 @@ spec.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:691-691; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:350-350; mcp/src/agents_remember/serving/agent_notifier.py:96-183 |
+| The module under test: the fact predicates, the action dispatcher, and the sweep entry point. | "def evaluate_predicates(  # pragma: no cover"; "def act_on_finding("; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:692-692; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:381-381; mcp/src/agents_remember/serving/agent_notifier.py:96-190 |
 | The heartbeat store the zero-drift and second-sweep tests exercise directly. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The terminal catalog declares the typed `Literal` aliases. | "TerminalSessionKind = Literal"; "TerminalSessionStatus = Literal" | mcp/src/agents_remember/models/terminal_catalog.py:22-22; mcp/src/agents_remember/models/terminal_catalog.py:24-24 |
 | The supervisor test's `_entry` builder consumes typed catalog fields. | `_entry` | mcp/tests/test_agent_notifier.py:49-73 |
@@ -211,7 +211,7 @@ spec.
 | The operator-inbox terminal state and compaction semantics used by the sweep tests (the ladder transitions are deleted; legacy `ladder-resolved` rows stay parse-compat). | `list_redeliverable`; `reconcile_and_compact` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:189-209; mcp/src/agents_remember/controlplane/operator_inbox_store.py:270-311 |
 | The persisted signal cooldown store used by the HFX2-L9 repeated-sweep regressions. | `AgentNotifierSignalCooldownStore` | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:71-220 |
 | The quiescence pin proves an absent-developer backlog reaches a fixed point through the grace path (no escalation rungs, 260713-TES-L5). | `test_unacked_backlog_reaches_a_fixed_point_with_absent_developer` | mcp/tests/test_agent_notifier_ladder.py:691-750 |
-| The production predicates and the fact-only finding kinds are the behavior the demolition suite mutation-pins. | `evaluate_predicates`; `FindingKind` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380; mcp/src/agents_remember/serving/agent_notifier_models.py:26-50 |
+| The production predicates and the fact-only finding kinds are the behavior the demolition suite mutation-pins. | `evaluate_predicates`; `FindingKind` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:381-433; mcp/src/agents_remember/serving/agent_notifier_models.py:28-40 |
 | HFX2-L9 tests cover signal cooldown and diagnostic-pane non-actionability. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row`; `test_diagnostic_pane_signal_is_not_actionable` | mcp/tests/test_agent_notifier_seat.py:367-404; mcp/tests/test_agent_notifier_seat.py:538-560 |
 
 ## Cross-Repo References
@@ -242,6 +242,10 @@ gone). No suite in this file imports `write_expectation_row` or
 surface and the sweep never evaluates them.
 
 ## Update History
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 semantic re-read: retained the fact-predicate, action-dispatch,
+  and sweep-owner claim after verifying current `evaluate_predicates` composes the same fact-only
+  routes with per-row structural containment; regenerated its source ranges.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_agent_notifier.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.

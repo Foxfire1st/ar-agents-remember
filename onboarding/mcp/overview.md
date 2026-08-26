@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 65938)
-Total output lines: 2603
-
 # mcp/ — MCP Package Overview
 
 | Field                  | Value                                      |
@@ -8,9 +5,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -69,6 +66,14 @@ internal primitive only. Runtime session/lifecycle/gate/inbox identities stay
 plane-only. The application resolves authorized parent/child seats and current occupants, with one
 internally exact-pinned initial brief and replacement-aware ordinary messages. Startup migration is
 one-way before strict current readers; there is no public exact-id compatibility surface.
+
+## 260821-ARSPAWN-L2 Idempotent Structural Dispatch
+
+The one public `dispatch_agent` operation now converges on the canonical task-document-and-role
+seat for both ambient and plane callers. A bounded per-seat serializer covers spawn, durable
+pinned-brief publication, receipt repair, and one proven-failed-generation replacement. Unknown
+or contradictory post-commit state refuses without cleanup. Ordinary messages remain address-only
+and re-resolve the incumbent or staged heir at delivery; public outcomes omit runtime occupant ids.
 
 ## Current Quality Execution Boundary
 
@@ -988,9 +993,16 @@ fallback runner, compatibility facade, or queue-owned commit evidence.
 
 ## Update History
 
+- 2026-08-26T16:03+02:00 — Memory hygiene: removed a pre-existing tool-output truncation banner
+  accidentally committed above the package overview title; route content is unchanged.
+
+
 - 2026-08-26T14:32+02:00 — Corrected the package-wide ledger contract after IAS activation exposed
   an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
   all lifecycle consumers now distinguish current lookup from exact historical containment.
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 package impact: recorded canonical-seat idempotency, bounded
+  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
+  Verification remains closeout-owned.
 
 - 2026-08-26T02:55+02:00 — Reconciled the MCP route with source-pair atomic activation,
   pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,

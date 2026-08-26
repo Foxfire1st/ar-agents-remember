@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-25T23:04+02:00 |
+| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -128,12 +128,12 @@ model"; its first clause is a claim about the walker, so each registration form 
 
 `GET /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`, so unlike the other 59
 FastAPI validates them for real — and a drifted payload is answered as **HTTP 500**, not passed
-through. On `/api/terminal/sessions` that is a 52-key body assembled by hand from a
-36-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
+through. On `/api/terminal/sessions` that is a 66-key body assembled by hand from a
+56-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
 scans** `TerminalCatalogEntry.to_json` (an instance cannot prove the set, because every optional key
 goes through `_present_fields` and is absent when `None`) and
 `test_the_catalog_wire_model_covers_every_key_to_json_emits` asserts set **equality in
-both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 52` so a scan
+both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 66` so a scan
 reading zero keys cannot satisfy the equality. This fires when the field is added — earlier than
 the runtime 500, and earlier than a conformance run, which only sees the fields its fixture
 happens to populate.
@@ -222,7 +222,7 @@ modules, and everything that proves them lives here.
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
 | The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:116-116; mcp/src/agents_remember/serving/app.py:243-243|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
-| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:600-600 |
+| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:612-612 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:87-90; mcp/src/agents_remember/serving/conversation/control/api.py:136-153 |
@@ -256,10 +256,16 @@ being mistaken for response-contract failure.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Series and leaf fixtures publish the normal lifecycle address chain from their enclosure roots. | `_seed_changeset` | mcp/tests/test_serving_response_conformance.py:416-481 |
-| The shared client waits only through the bounded 503 readiness window and then requires 200. | `_await_projector_ready`; `_client` | mcp/tests/test_serving_response_conformance.py:829-838; mcp/tests/test_serving_response_conformance.py:897-909 |
+| Series and leaf fixtures publish the normal lifecycle address chain from their enclosure roots. | `_seed_changeset` | mcp/tests/test_serving_response_conformance.py:416-482 |
+| The shared client waits only through the bounded 503 readiness window and then requires 200. | `_await_projector_ready` | mcp/tests/test_serving_response_conformance.py:829-838 |
 
 ## Update History
+
+- 2026-08-25T23:04+02:00 — L2 memory-quality repair: migrated the remaining two-column evidence table to anchored current-source citations after re-reading each claim; preserved all prior rationale and history.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2: refreshed the catalog hazard contract to the
+  current 66-key wire and 56 optional model fields after adding the private dispatch receipt.
+  Verification remains closeout-owned; no executable test result is claimed.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

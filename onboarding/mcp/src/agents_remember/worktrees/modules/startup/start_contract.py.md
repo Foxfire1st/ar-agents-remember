@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T18:32+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -91,7 +91,10 @@ the shared resolver, which indexes non-master `task.json` docs as leaf candidate
 
 **Source-pair activation replaces the old global sequential lane.** Series bootstrap still gates on
 the *effective* execution nature and commanding sprint, but contract existence is durable work truth,
-not scheduling ownership. Multiple non-terminal series contracts may coexist. After recovering or
+not scheduling ownership. Multiple non-terminal series contracts may coexist. Apply-time preflight
+reads the journal-to-contract handoff under the same per-master bootstrap mutex as publication, so a
+concurrent loser cannot combine a pre-publication "no contract" read with a post-retirement "no
+journal" read and misclassify the winner's branch as orphaned. After recovering or
 creating the requested contract, `ensure_master_series_contract` validates activation inputs and
 refreshes remote evidence before taking repository integration authority. Under that authority it
 finishes the per-master bootstrap journal transaction without nesting store locks, then delegates to
@@ -129,6 +132,8 @@ not evidence that another master owns a global lane.
   protected source pair, and selecting a different master pauses rather than deletes the prior work.
 - A leaf under an atomic master is not admitted until its parent selection has reconciled and become
   active; neither task prose nor closeout queue state supplies that authority.
+- Apply-time bootstrap preflight and bootstrap publication use the same per-master store lock; the
+  unlocked planning-only dry run never writes lock or lifecycle state.
 - Integration authority and the per-master bootstrap store lock do not nest with another store lock.
 
 ## Docs References
@@ -177,6 +182,10 @@ The current source seams include `memory_base_for_source`, `memory_mode_for_repo
 | The current module exposes `memory_base_for_source`, `memory_mode_for_repository`, `MasterSeriesContractSpec` at this ownership boundary. | `memory_base_for_source`; `memory_mode_for_repository`; `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:127-136; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:196-203; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:206-218 |
 
 ## Update History
+
+- 2026-08-26T18:32+02:00 — Bound apply-time bootstrap preflight to the existing per-master journal
+  mutex, closing the contract/journal handoff race that could reject a concurrent winner's protected
+  branch as orphaned. Dry-run remains read-only and verification remains closeout-owned.
 
 - 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for this changed
   startup-contract card.

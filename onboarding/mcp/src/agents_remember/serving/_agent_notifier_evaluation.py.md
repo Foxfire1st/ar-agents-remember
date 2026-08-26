@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_evaluation.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T20:28+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
 
-[None](None)
+[Serving overview](overview.md)
 
 ## Purpose
 
@@ -27,6 +27,10 @@ Rebind evaluation detects pending rows whose private occupant correlation is dea
 current owner from task-document containment. Pending expiry, liveness, dead-upstream, inbox, and
 pane predicates remain evidence-only. The combined evaluator passes one topology authority through
 the structural finding families.
+ARSPAWN-L2 makes structural failure containment explicit at every predicate seam that can resolve
+an owner: rebind, stale-turn, dead-upstream, and redelivery filtering each suppress only the
+unprovable row or finding. The evaluator therefore remains total for the rest of the sweep without
+inventing a fallback recipient.
 
 ### Conventions
 
@@ -41,6 +45,8 @@ requiring the concrete filesystem topology type.
 - Ambiguous structural owners fail instead of first-match routing.
 - Model output/artifact judgment is not a notifier predicate.
 - Evaluation itself performs no durable write.
+- A malformed or ambiguous structural route is non-actionable for that row, not an exception that
+  aborts unrelated predicate families or the heartbeat.
 
 ### Todos
 
@@ -54,14 +60,21 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Rebind findings use structural owner derivation and dead correlations. | `evaluate_rebind_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:130-177 |
-| The combined evaluator threads task hierarchy through all relevant predicates. | `evaluate_predicates` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:349-403 |
+| Rebind evaluation contains a malformed or ambiguous replacement chain to the affected row. | `evaluate_rebind_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:132-182 |
+| Stale-turn and dead-upstream evaluation suppress only the structurally unprovable seat. | `_safe_stale_turn_state_due`; `evaluate_dead_upstream_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:278-297; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:346-377 |
+| Redelivery budget excludes only a row whose route predicates cannot be proven. | `_redelivery_route_is_actionable` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:436-450 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2: contained typed structural failures across
+  rebind, stale-turn, dead-upstream, and redelivery predicates so one corrupt route cannot poison
+  the sweep. Verification remains closeout-owned.
 
 - 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the protocol-typed
   hierarchy seam accepted by notifier predicates; production behavior remains the same concrete

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -20,6 +20,12 @@ Operations and Chats project the same real sprint/master/leaf task hierarchy. Ho
 task-document reference plus role; runtime session ids identify only the current occupant. The rail
 keeps one stable row across replacement, while spawn ancestry is available only as a separate
 diagnostic projection. Long live labels remain single-line CSS ellipsis.
+
+ARSPAWN-L2 adds optional `dispatchBriefEntryId` to the terminal-catalog row as private diagnostic
+evidence that the current generation completed its durable one-call dispatch transaction. The
+frontend does not use it as identity or addressing authority. `TaskDocumentRef` is declared locally
+in the dashboard contract (it is neither imported nor generated), and the producer/consumer
+conformance suite pins the final 66-field catalog projection in both directions.
 
 ## L23 Lifecycle Operation Projection
 
@@ -518,6 +524,14 @@ This keeps the browser on the projection plane: file absence never becomes queue
 authority.
 
 ## Update History
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 final curation: recorded the dashboard-local
+  `TaskDocumentRef` declaration and final 66-field producer/consumer parity while keeping the brief
+  receipt diagnostic-only. No test execution is claimed.
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 route impact: the terminal-catalog projection accepts
+  the private pinned-brief receipt without changing the task-document-plus-role chat identity.
+  Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — No route impact: refreshed exact projection-schema and generated-mirror citation anchors after source movement; the dashboard source-layer architecture is unchanged.
 

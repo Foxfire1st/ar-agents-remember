@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -28,6 +28,15 @@ terminal publication and outside lifecycle/store locks, they may vacate only the
 terminal contract before destructive contract cleanup. A paused series cannot clear a newer
 selection. Missing or malformed activation/journal authority is not replaced by a legacy or
 queue-derived fallback reader.
+
+Master-series bootstrap also treats the transient-journal to durable-contract handoff as one
+observation boundary. On apply, `startup/start_contract.py` evaluates
+`_bootstrap_preflight_contract` while holding the same per-master `exclusive_access` mutex that
+serializes bootstrap publication. A concurrent loser therefore observes either the live winner
+journal or its published contract; it cannot read before contract publication, wait behind the
+winner, then misclassify the now-retired journal as an orphaned branch. Dry-run remains unlocked
+and write-free. This is synchronization around the canonical journal/contract authorities, not a
+retry, fallback reader, compatibility path, or second lock namespace.
 
 ## Purpose
 
@@ -796,6 +805,12 @@ claim-transfer helpers now expose named facts to the integration owner rather th
 and lifecycle policy across call sites.
 
 ## Update History
+
+- 2026-08-26T18:55+02:00 — 260821-ARSPAWN-L2 closeout repair: documented the apply-time
+  master-series bootstrap observation boundary. `_bootstrap_preflight_contract` now runs under the
+  existing per-master bootstrap mutex, so concurrent starters cannot fall between the transient
+  journal and durable contract publication. Dry-run remains unlocked and write-free; no retry,
+  fallback reader, compatibility path, or new lock namespace was added.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS public lifecycle composition label against the
   frozen pass-13 candidate.

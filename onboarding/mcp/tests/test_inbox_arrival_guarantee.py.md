@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,7 @@ deliver-until-LANDED semantics are same-repository runtime behavior proven by so
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The scoped custody resolver under test. | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:129-138 |
+| The scoped custody resolver under test. | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:111-120 |
 | The post-time re-resolution under test. | `_post_address`; `_is_owner_addressed` | mcp/src/agents_remember/serving/operator_inbox_posts.py:110-144; mcp/src/agents_remember/serving/operator_inbox_posts.py:176-193 |
 | The supersede tool under test. | `operator_inbox_supersede_tool` | mcp/src/agents_remember/application/operator_inbox_tools.py:153-180 |
 | The supersede transition under test. | `mark_superseded` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:265-293 |

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_judgment_demolition.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-13T12:53+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The post-demolition actions surface (fact-relay `_FINDING_ACTIONS` only). | `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:675-686 |
-| The post-demolition predicate composition, including the `escalationBudget` load-shed slice. | `evaluate_predicates` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:330-380 |
+| The post-demolition predicate composition, including the `escalationBudget` load-shed slice. | `evaluate_predicates` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:381-433 |
 | The fact-only finding/action vocabulary. | `FindingKind`; `ActionKind` | mcp/src/agents_remember/serving/agent_notifier_models.py:26-50 |
 | The retired-kind settings surface (fail-loud unknown keys). | `KNOWN_EXPECTATION_KINDS` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:125-125 |
 
@@ -98,6 +98,10 @@ No meaningful cross-repo references found.
 | Same-repository unit-test suite only. | — | — |
 
 ## Update History
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 semantic re-read: retained the fact-only predicate-composition
+  and escalation-budget claim after verifying the current `evaluate_predicates` body; regenerated
+  its source range.
 
 - 2026-08-13T12:53+02:00 — No content impact: the stabilized package-source scan reads
   `sys.modules["agents_remember"].__file__` after existing submodule imports have loaded the

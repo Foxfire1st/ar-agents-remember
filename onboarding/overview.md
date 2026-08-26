@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-08-26T15:20+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 
 > **Status:** active baseline
 
@@ -2502,7 +2502,19 @@ Updated 2026-06-27T22:00+02:00 — task 28 (NOTIFY-AND-CONTINUE turn end): refre
 
 Updated 2026-06-17T22:45+02:00 after the Engine Room visual-parity pass enriched the dashboard-frontend Feature Inventory row (the 5g G6 atmospheric backdrop + Effects/Calm toggle, the restored HUD decal layer, and the fixed-height `Panel fill` layout); verification metadata stays pinned until closeout commits the source. (Prior: 2026-06-06T12:28+02:00 after adding the public `docs/features.md` tour, replacing README `## Core Model` with `## Core Features`, and documenting the Claude Code root `.mcp.json` detection caveat. Prior: 2026-06-04T10:29+02:00 — documented hidden harness starter packages as source-owned surfaces in the main overview and noted their `l-01` deep-research retrieval-strategy tally requirement. Prior: 2026-05-29T17:30+02:00 — re-spined the public docs and this overview's "What This Repo Is" framing around the three retrieval substrates (by path / by meaning / by relationship) and retired the sidecar-only anti-retrieval positioning. Prior: 2026-05-28T19:52+02:00 — added the Pydantic public response-contract model surface, compact `ContextPacketV2` boundary, and dedicated provider diagnostics feature inventory entries.)
 
+## 260821-ARSPAWN-L2 Repository Feature Impact
+
+Agent-facing session dispatch keeps `dispatch_agent` as its one public spawn tool, but its durable
+identity is now explicitly the canonical `(taskDocumentRef, role)` seat rather than a runtime
+session. Same-seat retries converge through pinned-brief evidence, vacancy-safe messages wait on
+the address, and staged replacement is resolved only at delivery. Runtime ids remain private
+generation/correlation data and are absent from public structural results.
+
 ## Update History
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 root impact: reconciled idempotent canonical seats, durable
+  brief evidence, vacancy/replacement delivery, and runtime-id-free public outcomes into the
+  repository feature inventory. Verification remains closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2 route impact: recorded the ruled fact/judgment split,
   architect-owned initial plan loop, organizational versus atomic lifecycle topology,

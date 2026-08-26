@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-26T19:34+02:00 |
+| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,12 @@ transaction publishes `reconciling`, runs exact source sync, and publishes `acti
 required bases are current. Root-level `sync_transaction.py` drives the journaled state machine;
 focused state, authority, Git, recovery, result, and source-refresh modules own their respective
 proof and response boundaries.
+
+Master-series bootstrap observes its transient root journal and durable series contract under the
+same existing per-master bootstrap mutex on apply. A concurrent starter therefore sees either the
+live journal or the published contract across that handoff; it cannot read before publication,
+wait behind the winner, then treat the retired journal as an orphan. Dry-run remains unlocked and
+write-free, and no retry, fallback reader, compatibility route, or second lock namespace is added.
 
 ## What Belongs Here
 
@@ -194,6 +200,11 @@ When changing worktree coordination:
   this final pass; they are never hand-edited.
 
 ## Update History
+
+- 2026-08-26T19:34+02:00 — Reconciled the master-series bootstrap handoff at the parent route:
+  apply-time journal/contract observation shares the existing per-master mutex, while dry-run
+  remains unlocked and write-free. This closes the concurrent split read without a retry, fallback
+  reader, compatibility route, or new lock namespace.
 
 - 2026-08-26T14:32+02:00 — Corrected source-pair sync's ledger boundary from global code-key
   uniqueness to newest-first current authority plus exact parent-history preservation.

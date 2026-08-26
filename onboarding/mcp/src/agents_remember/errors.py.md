@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -23,7 +23,10 @@ conversation-composition family: `ConversationCompositionError` marks a violated
 conversation runtime composition contract, kept distinct from `AuthorityError`, which remains the
 type for identity/authorization refusals such as the conversation resolver's loopback ruling.
 260731-EFA-L3 adds `TokenizerVocabularyError`: a build-integrity family for a packaged asset the
-server needs before it can finish starting.
+server needs before it can finish starting. ARSPAWN-L2 adds one coherent structural family:
+`SeatOccupancyError` for duplicate canonical-seat claimants, `StructuralDispatchError` for
+contradictory durable brief evidence, `StructuralDispatchLockError` for serializer
+setup/acquisition failure, and `StructuralRoutingError` for absent or ambiguous structural routes.
 
 ## Code Commentary
 
@@ -39,12 +42,15 @@ without conflating it with `AuthorityError`, which remains the type for a root m
 write authority. `ConversationCompositionError` identifies a conversation runtime composition bug —
 retrieval before installation, a second install, a foreign object on the reserved state key, or
 construction missing a required authority — that must fail at startup or request entry, never
-silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:92-100) marks the one packaging failure the
+silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:108-116) marks the one packaging failure the
 token counter cannot paper over: the tiktoken vocabulary it needs is not the one vendored into
 `package_data/tiktoken`. It is raised in place of letting tiktoken download the file it cannot
 find, because the counter is constructed while the MCP tool surface is still importing — a
 download there is a network round trip on the server's startup path, which is what made a cold
 container, an offline machine, and a hermetic CI job unable to start at all.
+The four structural errors remain direct `AgentsRememberError` members. Lower owners raise their
+own type; public adapters translate only when their status vocabulary differs, and notifier
+boundaries may contain the typed routing/occupancy failure to the affected row.
 
 ### Conventions
 
@@ -59,6 +65,8 @@ an explicit constructor argument, not inferred later from exception text.
 - Every domain error in the package should subclass `AgentsRememberError` (or a
   member of the family) rather than raising bare `ValueError` / `RuntimeError`,
   so the public surface stays one coherent contract.
+- Structural occupancy, evidence, serializer, and route failures remain distinct types; callers
+  must not reconstruct those categories by parsing exception text.
 - This module holds only error-type declarations and small evidence constructors. It imports no
   package internals and stays safe at the bottom of the dependency graph.
 - `CodexAppServerError` identifies malformed, incompatible, or boundedness failures at the pinned
@@ -96,6 +104,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Structural occupancy, dispatch evidence, dispatch locking, and routing are distinct members of the shared domain family. | `SeatOccupancyError`; `StructuralDispatchError`; `StructuralDispatchLockError`; `StructuralRoutingError` | mcp/src/agents_remember/errors.py:20-33 |
 | The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:544-580 |
 | The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity blocker instead. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so `HarnessSubmissionAuthority` is the sole owner rather than the thing behind a facade. | `_preflight_declined`; `_send_and_settle` | mcp/src/agents_remember/serving/harness_submission_authority.py:639-659; mcp/src/agents_remember/serving/harness_submission_authority.py:702-729 |
 | The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes: `_untracked_source_candidates` re-raises `lstat` failures, `_require_repository_root` raises `AuthorityError`, and `_run_git` converts `TimeoutExpired`/`OSError` with `from error`. | `_untracked_source_candidates`; `_require_repository_root`; `_run_git` | mcp/src/agents_remember/kernel/route_index_census.py:126-156; mcp/src/agents_remember/kernel/route_index_census.py:159-179; mcp/src/agents_remember/kernel/route_index_census.py:189-205 |
@@ -127,7 +136,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `NativeHistoryUnavailable` identifies one child/history read that can fail without invalidating
 the shared adapter; its stable `code` carries the exact local reason. The
 `NativeHistoryLimitExceeded` subtype adds `actual_bytes` and `limit_bytes` and fixes its code to
-cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`], mcp/src/agents_remember/errors.py:198-203; mcp/src/agents_remember/errors.py:206-218). These types distinguish child-local acquisition/resource
+cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:214-234). These types distinguish child-local acquisition/resource
 outcomes from malformed shared protocol and bridge-fatal transport failure.
 
 ## 260821-CLIVE-L2 Current Contract
@@ -138,9 +147,15 @@ The current source seams include `AgentsRememberError`, `AuthorityError`, `Confi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `AgentsRememberError`, `AuthorityError`, `ConfiguredContractAuthorityError` at this ownership boundary. | `AgentsRememberError`; `AuthorityError`; `ConfiguredContractAuthorityError` | mcp/src/agents_remember/errors.py:16-17; mcp/src/agents_remember/errors.py:20-26; mcp/src/agents_remember/errors.py:29-39 |
+| The module exposes the common base, authority, and configured-contract authority types at this ownership boundary. | `AgentsRememberError`; `AuthorityError`; `ConfiguredContractAuthorityError` | mcp/src/agents_remember/errors.py:16-17; mcp/src/agents_remember/errors.py:36-55 |
 
 ## Update History
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2: added and documented the typed structural
+  occupancy, dispatch-evidence, dispatch-lock, and routing failure family; corrected the legacy
+  evidence table shape. Verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
@@ -159,7 +174,7 @@ The current source seams include `AgentsRememberError`, `AuthorityError`, `Confi
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 3 table citations and 6 prose citations; left the stale tokenizer-cache ownership claim unresolved as Tier 3.
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: body updated for the typed error this leaf added.
-  Documented cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:92-100) in Purpose and Logic as a build-integrity family
+  Documented cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:108-116) in Purpose and Logic as a build-integrity family
   — the vendored tiktoken vocabulary is absent or not the one shipped — raised instead of letting
   tiktoken download it on the server's import-time startup path, and added the invariant that it
   must stay a raise rather than become a download or a silent degrade. Repaired 2 citations into
@@ -171,7 +186,7 @@ The current source seams include `AgentsRememberError`, `AuthorityError`, `Confi
   converting `TimeoutExpired`/`OSError` `from error`
   cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205); the file is now 229 lines, so the
   old range was both stale and unanchored. (2) The native-history delta's own-file
-  cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`], mcp/src/agents_remember/errors.py:198-203; mcp/src/agents_remember/errors.py:206-218):
+  cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:214-234):
   inserting `TokenizerVocabularyError` above pushed `NativeHistoryUnavailable` to the current
   class range and `NativeHistoryLimitExceeded`, with its `code="materialization-limit"`,
   `actual_bytes` and `limit_bytes`, to the same exact source range. Added a `models/tokens.py` row for

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T19:27+02:00 |
+| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
+| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,9 @@ evidence and legal controls are calculated without mutating the journal.
   worker state.
 - Public tools translate the shared read/refusal API; callers do not enumerate lower-level failure
   families independently.
+- A cancelled closeout successor is admitted from the current contract-owned waiting door, the
+  cancelled journal disposition, and proven worker exit. Publication history is retained for audit
+  but is not searched for a unique predecessor that could reject an otherwise exact successor.
 
 ## File-Level Onboarding Map
 
@@ -59,6 +62,10 @@ No configured Domain Documentation or cross-repository source applies. The model
 integration overviews are same-repository context.
 
 ## Update History
+
+- 2026-08-26T19:27+02:00 — Reconciled the IAS cancelled-closeout successor rule: replacement
+  validates the current waiting door plus cancelled disposition and worker-exit proof; historical
+  door rows remain audit evidence rather than a uniqueness authority.
 
 - 2026-08-25T15:44+02:00 — Created for the enclosure-root journal, retry, cancellation, and legal
   control architecture. Verification remains closeout-owned.

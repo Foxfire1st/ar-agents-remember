@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T03:37+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T16:03+02:00 |
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,9 +94,9 @@ No Domain Documentation source is configured; repository tests and the approved 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient). | `dispatch_agent_tool`; `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:338-487 |
-| Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. | `_implementation_series_admission_refusal`; `_dispatch_owning_master` | mcp/src/agents_remember/application/structural/agent_tools.py:535-585; mcp/src/agents_remember/application/structural/agent_tools.py:588-604 |
+| Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. | `_implementation_series_admission_refusal`; `_dispatch_owning_master` | mcp/src/agents_remember/application/structural/agent_tools.py:624-674; mcp/src/agents_remember/application/structural/agent_tools.py:677-693 |
 | The shared series bootstrap owner binds durable contract identity to source-pair reconciliation-before-exposure. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:221-288 |
-| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:736-741 |
+| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:825-830 |
 | Focused tests exercise ambient routing, replacement, ambiguity, and exact-pin behavior. | `test_child_to_replacement_parent_is_resolved_by_task_containment` | mcp/tests/test_structural_agent_tools.py:169-194 |
 | Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient). | `_retire_unbriefed_child` | mcp/src/agents_remember/application/structural/agent_tools.py:217-265 |
 
@@ -107,7 +107,34 @@ No Domain Documentation source is configured; repository tests and the approved 
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
+## 260821-ARSPAWN-L2 Idempotent Seat Transaction
+
+`dispatch_agent_tool` derives the canonical `(taskDocumentRef, role)` address before it
+consults any occupant. It holds the serving-owned seat serializer across spawn, pinned-brief
+publication, durable receipt binding, and reconciliation, then delegates the state machine to
+`execute_dispatch_transaction`. A retry returns the existing viable result, repairs a missing
+catalog receipt from durable inbox evidence, or treats a retained receipt as queued after inbox
+compaction. It retires and retries at most once only when positive evidence proves that the
+private server-derived generation has no viable brief.
+
+Unknown, contradictory, or post-append evidence returns `dispatch-reconciliation-refused`
+without destructive cleanup. Transaction rollback directly closes only the generation returned
+by the private spawn path; it never re-enters public retire authorization. Ordinary structural
+messages persist document-and-role addresses and resolve the current occupant only at delivery,
+so vacancy and replacement do not turn runtime session ids into public authority. Receipt mutation is
+composed through `DispatchBriefReceiptStore`, keeping dispatch commit evidence separate from the
+general terminal lifecycle surface while reusing the same atomic catalog storage boundary.
+
 ## Update History
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: recorded the dispatch-specific receipt collaborator,
+  exact persistence seam used by ambient rollback forcing, and unchanged canonical-address boundary.
+  Verification remains closeout-owned.
+
+
+- 2026-08-26T12:30+02:00 — Reconciled 260821-ARSPAWN-L2 onto IAS: preserved the complete idempotent
+  dispatch, evidence-aware retry, private rollback, and vacancy-safe addressing contract while
+  retaining IAS-owned metadata and citation repairs. Verification remains closeout-owned.
 
 - 2026-08-26T03:37+02:00 — Replaced the manager-only global-lane account with current manager and
   worker atomic-series admission: canonical master resolution, disposable source-pair selection,
