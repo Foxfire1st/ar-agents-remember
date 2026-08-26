@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -125,6 +125,8 @@ proof and response boundaries.
 - Normal readers never infer selection or sync state from legacy files, task text, queue rows, or
   ambient Git. Missing/corrupt authority fails closed and is repaired only by explicit bounded
   selection/cancellation paths.
+- External-memory ledgers are newest-first state history. Sync preserves every exact parent row and
+  accepts repeated code commits; the newest matching row remains current authority.
 - Cleanup may release only an exact selected terminal contract and must do so before deleting the
   canonical contract pointer needed to prove identity.
 
@@ -192,6 +194,9 @@ When changing worktree coordination:
   this final pass; they are never hand-edited.
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Corrected source-pair sync's ledger boundary from global code-key
+  uniqueness to newest-first current authority plus exact parent-history preservation.
 
 - 2026-08-26T08:55+02:00 — Promoted the activation and sync units from provisional to frozen
   covered status after pass 13.

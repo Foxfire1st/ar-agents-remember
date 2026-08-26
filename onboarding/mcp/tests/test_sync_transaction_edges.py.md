@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_sync_transaction_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:10+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,8 @@ the real-Git happy-path integration suite.
 ### Logic
 
 Authority tests reject missing source branches, unsupported contract kinds, malformed official
-ledger pairs, pinned-ref mismatch, partial recovery authority, contract identity drift, and moved
+ledger pairs or missing current mappings, pinned-ref mismatch, partial recovery authority, contract
+identity drift, and moved
 bases. Result tests cover complete and incomplete resolution previews, terminal/quarantine replay,
 input refusal, internal exception containment, and typed absence of an active resolution.
 
@@ -32,6 +33,9 @@ The driver matrix then forces admission preflight, already-current memory valida
 preview routing, every live phase transition, automatic and continued proof failures, reconciliation
 of already-created operation heads, missing-journal recovery, and the immutable admitted memory
 choice. Each case asserts the typed public result produced by the owning boundary.
+The official-pair preflight explicitly accepts repeated same-code history when the newest row maps
+the admitted code tip, while still refusing an admitted code tip with no mapping.
+
 
 ### Invariants And Boundaries
 
@@ -65,6 +69,9 @@ No cross-repository implementation source governs this focused suite.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Corrected source-pair preflight forcing to accept valid same-code
+  history and retain the missing-current-mapping refusal. Verification remains closeout-owned.
 
 - 2026-08-26T08:10+02:00 — Created strict onboarding for the frozen sync transaction edge suite.
   Verification metadata remains empty until closeout can stamp a real code commit.

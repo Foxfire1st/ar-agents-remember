@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,8 @@ published.
 
 The suite exercises the extracted recovery journal and finalization proof directly, plus the production closeout helpers
 through temporary external-memory repositories. It covers exact code-HEAD and candidate-tree
-proof, clean post-claim adoption without recommit, conflicting or unreachable memory mappings,
+proof, clean post-claim adoption without recommit, historical same-code mapping supersession,
+invalid ledger heads or unreachable memory content,
 internal/external contract mismatches, exact completed recovery, and the stale-contract-memory
 window where clean current memory HEAD must win. Candidate 11 also forces missing ledger/worktree
 authority and threads a real normalized message authority through external refresh and resume.
@@ -55,7 +56,7 @@ No configured Domain Documentation source applies to this repository-internal te
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Direct journal tests cover accepted code and external memory/ledger reconciliation. | `CloseoutRecoveryTests`; `test_code_commit_recovery_proves_head_and_candidate_tree`; `test_external_resume_rejects_conflict_missing_head_and_unreachable_content` | mcp/tests/test_worktree_closeout_recovery.py:94-561 |
+| Direct journal tests cover accepted code plus same-code memory-history reconciliation. | `CloseoutRecoveryTests`; `test_code_commit_recovery_proves_head_and_candidate_tree`; `test_external_resume_appends_history_and_rejects_invalid_head_or_ancestry` | mcp/tests/test_worktree_closeout_recovery.py:94-577 |
 | Direct proof tests cover code/contract mismatch, memory-head mismatch, ledger identity, and reachability. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:309-342; mcp/tests/test_worktree_closeout_recovery.py:344-383 |
 | Production-shaped tests retain exact completion, unreachable-mapping, and missing external-authority refusals. | `test_completed_recovery_must_match_exactly`; `test_external_closeout_refuses_an_unreachable_existing_mapping`; `test_external_closeout_requires_ledger_and_memory_worktree` | mcp/tests/test_worktree_closeout_recovery.py:439-466; mcp/tests/test_worktree_closeout_recovery.py:468-494; mcp/tests/test_worktree_closeout_recovery.py:496-517 |
 | The stale contract memory cell is rejected in favor of the clean current post-claim memory HEAD. | `test_external_closeout_uses_clean_memory_head_when_no_mapping_exists` | mcp/tests/test_worktree_closeout_recovery.py:519-561 |
@@ -100,6 +101,9 @@ evidence.
 
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Added closeout retry proof that a new memory state for unchanged code
+  appends a ledger row and commit while preserving prior history; invalid heads and ancestry still
+  refuse. Verification remains closeout-owned.
 - 2026-08-26T10:44:52+02:00 — Reconciled closeout recovery tests with queue-independent journal authority and narrower, production-shaped ledger seams.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `skills/c-09-git-worktree-manager/overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,9 @@ retained in its exact `.sync` worktree and returned as resolution-required. The 
 stages derivable conflicts, then calls `resolution_action=continue`; the journal supports resuming
 across tool calls and process restarts. `resolution_action=cancel` restores pinned heads, removes
 temporary worktrees, terminalizes the journal, and releases an exact reconciling selection.
+Memory resolution preserves every exact parent ledger row. Repeated code commits remain valid
+newest-first memory history; neither the skill nor the sync transaction collapses them into a
+globally unique code key.
 
 Cleanup releases an exact selected terminal contract before removing the authority needed to name
 it and never clears a newer selection. Integration conflicts use the same evidence boundary:
@@ -64,6 +67,8 @@ architect.
 - The enclosure-root journal survives a missing or unreadable task contract.
 - The queue never owns operation lifecycle or commit evidence.
 - No compatibility reader or contract-presence election exists.
+- Ledger order selects current memory authority, while retained exact rows preserve audit history.
+  Merge validation requires parent-row preservation, not one row per code commit.
 
 ### Todos
 
@@ -81,8 +86,8 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source-pair admission and task/queue separation. | "Atomic-series implementation admission is a separate, source-pair-scoped authority." | skills/c-09-git-worktree-manager/SKILL.md:236-236 |
-| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:254-289 |
-| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:376-455 |
+| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:254-290 |
+| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:377-456 |
 | Public implementation facade preserves the same contract-addressed API. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:29-68 |
 
 ## Cross-Repo References
@@ -93,6 +98,9 @@ No meaningful cross-repository reference applies to this repository-owned lifecy
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-26T14:32+02:00 — Corrected sync doctrine to preserve every exact parent ledger row while
+  accepting repeated code commits as newest-first memory history. Verification remains
+  closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Completed governed provenance review for the canonical c-09 selector, resumable sync, cancellation, and terminal-release doctrine.
 

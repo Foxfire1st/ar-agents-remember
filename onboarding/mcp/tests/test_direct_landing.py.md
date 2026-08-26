@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T15:20+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,7 @@ No configured Domain Documentation source applies.
 | Code-commit verification then ledger/memory commit. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:195-265 |
 | Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:315-339 |
 | Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:482-504; mcp/tests/test_direct_landing.py:573-593 |
-| Idempotent re-land and conflicting ledger-mapping refusal/recovery are both forced. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_conflicting_mapping_has_zero_controls_and_stale_recover_is_nonmutating` | mcp/tests/test_direct_landing.py:648-683; mcp/tests/test_direct_landing_operation_recovery.py:697-733 |
+| Exact-current re-land is idempotent, while a historical same-code mapping is superseded by a recovered memory-only change without losing history. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_historical_mapping_is_superseded_by_recovered_memory_only_change` | mcp/tests/test_direct_landing.py:648-683; mcp/tests/test_direct_landing_operation_recovery.py:702-727 |
 | Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:786-824 |
 | The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
 
@@ -110,6 +110,10 @@ Direct-landing public tests now assert the attached durable lifecycle projection
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-26T15:20+02:00 — Replaced the obsolete conflicting-mapping refusal claim with the
+  current ledger-history contract: exact-current re-land is idempotent, while a historical
+  same-code row is superseded by a recovered memory-only change without losing audit history.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_landing_operation_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,10 @@ Exercises production-shaped crash and drift cuts for durable direct landing.
 ### Logic
 
 The suite proves retry convergence across journal, Git, quality, publication, and external-memory boundaries.
+
+The same-generation recovery matrix includes a newest exact mapping with older history and a
+settings-only memory change that supersedes a historical same-code row while preserving it in the
+new ledger commit.
 
 ### Conventions
 
@@ -45,7 +49,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:1-877 |
+| No external domain source is required for this repository-owned test contract. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:59-59 |
 
 ## Repo-Internal References
 
@@ -53,7 +57,7 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:1-877 |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:59-59 |
 
 ## Cross-Repo References
 
@@ -61,9 +65,12 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:1-877 |
+| No meaningful cross-repository reference applies. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:59-59 |
 
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Added direct-landing recovery proof for current-versus-historical
+  same-code mappings and memory-only supersession without history loss. Verification remains
+  closeout-owned.
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

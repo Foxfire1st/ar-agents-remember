@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_organizational_completion_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,9 @@ Proves organizational sibling and completion-marker invariants.
 
 ### Logic
 
-The cases cover code/memory ancestry, mappings, confined contract paths, symlinks, exact identity, and decision fingerprints.
+The cases cover code/memory ancestry, newest current mappings, exact historical-edge containment,
+confined contract paths, symlinks, exact identity, and decision fingerprints. Malformed ledger
+bytes still translate to the public organizational-completion refusal.
 
 ### Conventions
 
@@ -65,5 +67,8 @@ No cross-repository source is allowed by the resolved settings.
 
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Reworked sibling ledger forcing around newest current authority plus
+  exact historical-edge preservation, without weakening invalid-ledger refusal. Verification
+  remains closeout-owned.
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

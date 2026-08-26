@@ -8,9 +8,9 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,14 @@ does not claim to have executed Dagger.
 
 Exact suite membership and line-level claims are reconciled to the frozen candidate. Acceptance
 execution remains architect-owned evidence rather than a curator-authored claim.
+
+## IAS Ledger-History Regression Boundary
+
+Focused coverage now proves the missing memory-only case end to end: unchanged code can receive a
+newer settings memory commit and ledger row while the older same-code row remains history.
+Source-pair admission accepts the newest mapping; memory merge preserves every exact parent row;
+closeout/direct recovery appends the new state; integration requires one new prefix; and
+organizational completion separates current lookup from exact historical containment.
 
 ## 260824-PDLS Current Evidence Topology
 
@@ -1334,6 +1342,10 @@ facade or service graph. These tests support the accepted Dagger proof; no direc
 is promoted to certifying evidence.
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Added the focused ledger-history regression route and moved the kernel
+  round-trip case out of the oversized worktree-support omnibus. No certifying execution claim is
+  made.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS coordination-evidence label against the frozen
   pass-13 suite inventory.

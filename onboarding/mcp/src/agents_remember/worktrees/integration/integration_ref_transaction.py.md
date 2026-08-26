@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,11 @@ Moves exact code and external-memory integration refs with journal-bound compare
 
 `IntegrationSources` is now a frozen dataclass with a `replay_required` property; `require_integrated_ledger_mapping` accepts the memory source commit plus an expected series ledger prefix.
 
+Ledger proof reads the newest mapping as current authority. A true no-change integration reuses an
+already-current code/memory pair; a memory-only change for unchanged code must prepend exactly one
+new current row while retaining the complete source history. Repeated code SHAs in that preserved
+history are valid.
+
 `prepare_integration_ref_move` snapshots exact canonical refs only after plane authority. `merge_integrated_commits` consumes that prepared capability, advances the named refs with expected-old CAS, verifies the external-memory ledger/content ancestry, and records enough state for recovery. Checkout refresh accepts clean old or already-new state, refuses untracked/concurrent changes, and never uses ambient HEAD as the target authority.
 
 ## Invariants And Boundaries
@@ -30,6 +35,8 @@ Moves exact code and external-memory integration refs with journal-bound compare
 - Every ref update names `refs/heads/<canonical>` and includes the expected old object id.
 - External code and memory movement is one recoverable pair; rollback never clobbers a concurrently advanced ref.
 - The mapped memory-content commit must descend from the prior memory tip and be reachable from the ledger commit.
+- Atomic-series ledger publication either preserves an already-current exact pair or prepends one
+  exact row over the entire prior history; global code-key uniqueness is not an invariant.
 
 ## Repo-Internal References
 
@@ -56,8 +63,12 @@ The current source seams include `IntegrationSources`, `IntegrationRefRace`, `In
 
 ## Update History
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+- 2026-08-26T14:32+02:00 — Corrected irreversible ledger proof for settings-only memory changes:
+  current authority is the newest mapping, and a changed memory state for unchanged code requires
+  exactly one new prefix row while retaining all source history. Verification remains
+  closeout-owned.
 
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
 
 

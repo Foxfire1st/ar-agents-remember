@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T08:50+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 
 ## Purpose
 
@@ -30,6 +30,10 @@ retains code or memory conflicts in operation-owned `.sync` worktrees, and adver
 `resolution_action=continue|cancel` on the same contract. Continue validates staged resolution and
 resumes; cancel restores pinned heads, removes retained temporary worktrees, terminalizes the
 journal, and releases an exact reconciling selection to durable `vacant`. No direct-Git recovery,
+For external memory, continuation proves that every exact parent ledger row survives. Repeated code
+commits are valid newest-first state history; the newest row supplies current authority and older
+same-code rows remain audit evidence.
+
 tolerant reader, or contract-presence fallback is part of the doctrine.
 
 Terminal cleanup releases the exact selected contract before its authority can disappear. A newer
@@ -51,6 +55,8 @@ returns through the architect.
 - Conflicts are retained, resumable, and cancellable; they are not silently aborted.
 - Cleanup releases only the exact selected terminal pointer and preserves newer selections.
 - No fallback reader or duplicated lifecycle evidence is allowed.
+- Memory-merge validation preserves exact parent rows and never imposes global code-key uniqueness.
+
 
 ### Todos
 
@@ -61,15 +67,18 @@ metadata awaits the real code commit.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical skill owns source-pair admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:254-289; skills/c-09-git-worktree-manager/SKILL.md:376-455 |
+| The canonical skill owns source-pair admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:254-290; skills/c-09-git-worktree-manager/SKILL.md:377-456 |
 | Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:29-68 |
 | Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295 |
 
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Corrected the route contract from per-code uniqueness to exact
+  parent-row preservation with valid newest-first same-code history. Verification remains
+  closeout-owned.
+
 - 2026-08-26T08:50+02:00 — Corrected the frozen journal-store owner name to
   `SyncOperationStore`.
-
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation of the canonical worktree-manager route;
   verification metadata awaits the real code commit.
 

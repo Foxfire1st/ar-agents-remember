@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,8 +69,8 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295; mcp/src/agents_remember/worktrees/sync_transaction_state.py:339-359 |
-| Ref reconstruction and contract/base constraints come from the sync authority module. | `side_record`; `require_record_contract` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:39-74; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:249-263 |
-| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:283-291; mcp/src/agents_remember/worktrees/sync_transaction_git.py:252-280 |
+| Ref reconstruction and contract/base constraints come from the sync authority module. | `side_record`; `require_record_contract` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:39-74; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:241-255 |
+| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:251-279; mcp/src/agents_remember/worktrees/sync_transaction_git.py:282-290 |
 
 ## Cross-Repo References
 

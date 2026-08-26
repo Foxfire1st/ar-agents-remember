@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-26T08:18+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T15:20+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 
 > **Status:** active baseline
 
@@ -1228,6 +1228,9 @@ Its package route is documented at
 `system/tools.md`. Raw host pytest, direct coverage, and the quality wrapper remain prohibited.
 
 ## Update History
+
+- 2026-08-26T15:20+02:00 — No route impact: the IAS ledger-history repair changes MCP worktree
+  lifecycle semantics only; root repository ownership and routing remain unchanged.
 
 - 2026-08-26T08:18+02:00 — Reconciled the root authority map with source-pair atomic activation,
   pause/reconcile switching, retained sync-conflict continuation/cancellation, unlocked task

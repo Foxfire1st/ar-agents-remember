@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,12 +28,16 @@ contract for every sibling and requires each sibling's exact claimed door plus l
 code/memory/ledger pair to be reachable from the current sprint super. The completion fingerprint
 binds the master semantic digest, sibling facts, and exact commits. Publication writes the master
 completion decision only after protected-ref movement and fingerprint proof agree.
+Each sibling's own ledger uses its newest mapping as current authority; the proposed final ledger
+must retain the sibling's exact landed code/memory edge anywhere in history, even when a later
+memory-only row for the same code is newer.
 
 ### Invariants And Boundaries
 
 - Task parentage (logical master) and Git parentage (sprint super) stay deliberately separate.
 - A sibling contract reached through any symlink or path escape is refused.
-- Ledger rows stay one-to-one with the landed code+memory pair; retries cannot publish a stale mapping.
+- The sibling's newest row selects current memory; exact-edge containment proves final-ledger
+  preservation. Repeated code rows are valid history and retries cannot substitute a stale edge.
 - An already-Completed master that lacks its exact certified marker raises.
 
 ## Repo-Internal References
@@ -43,7 +47,7 @@ completion decision only after protected-ref movement and fingerprint proof agre
 | Exact final-leaf plan requires sibling code/memory/ledger proof and sprint integrationBranch. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:134-191 |
 | Scope validation pins executionNature, owning master, and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:194-230 |
 | Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:480-502 |
-| Sibling memory ancestry and unique ledger mapping are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:555-564; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:592-622 |
+| Sibling memory ancestry, newest current mapping, and exact historical-edge preservation are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:555-564; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:605-634 |
 | Master completion is published only with the exact certified fingerprint. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:330-364 |
 
 ## Documentation References
@@ -75,6 +79,10 @@ Sibling completion proof now separates code ancestry, memory identity/ancestry, 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Replaced global ledger-key uniqueness with the two required proofs:
+  newest mapping for sibling current authority and exact-edge containment for final-history
+  preservation. Verification remains closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T02:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,13 @@ only deterministic readiness and order.
 - Graph-less atomic-sequential topology is valid; a graph, when present, contributes bounded order.
 - Activation is read-only input: the selected master can be active or reconciling, and every other
   live series projects as paused. The queue cannot select, release, or repair that authority.
+
+## IAS Closeout-Recovery Ledger Boundary
+
+`closeout_recovery.py` remains in this transitional package location but owns journal recovery,
+not queue authority. It reuses an exact current code/memory edge idempotently and prepends a new
+ledger row when unchanged code acquires a later memory state. Older same-code rows remain audit
+history; malformed bytes, wrong heads, and unreachable content still fail closed.
 
 ## IAS Source-Pair Activation Projection
 
@@ -92,6 +99,10 @@ fresh valid-built projection, and no queue row owns retry, claim, commit, certif
 or compatibility evidence.
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Documented the closeout-recovery ledger distinction without expanding
+  queue authority: exact current reuse is idempotent and later same-code memory state appends
+  history.
 
 - 2026-08-26T02:55+02:00 — Direct IAS architecture refresh: linked the new worktrees parent
   overview and recorded activation as read-only scheduling input. Multiple live series are normal;

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_results.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The sync driver selects these result builders from exact journal phases. | `_route_sync_record`; `_resume_active` | mcp/src/agents_remember/worktrees/sync_transaction.py:144-164; mcp/src/agents_remember/worktrees/sync_transaction.py:307-327 |
-| Read-only staged-resolution proof and unmerged-path enumeration are Git-owned. | `validate_staged_resolution`; `unmerged_paths` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:228-249; mcp/src/agents_remember/worktrees/sync_transaction_git.py:118-122 |
+| Read-only staged-resolution proof and unmerged-path enumeration are Git-owned. | `validate_staged_resolution`; `unmerged_paths` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:117-121; mcp/src/agents_remember/worktrees/sync_transaction_git.py:227-248 |
 | Completed result reconstruction and manual repair remain recovery-owned. | `completed_sync_result`; `manual_repair_result` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:92-153; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:290-303 |
 
 ## Cross-Repo References
