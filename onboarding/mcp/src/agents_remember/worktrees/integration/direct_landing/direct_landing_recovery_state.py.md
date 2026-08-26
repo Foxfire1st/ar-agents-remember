@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-26T17:49+02:00 |
+| lastVerifiedCommitHash | `fd7cfec8ca77cdf77387f14afbceb46f870d9c9b` |
+| lastVerifiedCommitDate | 2026-08-26T17:49:08+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -37,8 +37,11 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 - The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
 - Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
 - Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
-- A `historical` same-code mapping is recoverable pending work. Malformed bytes, broken lineage, or
-  a mismatch against already-published mutation intent remain conflicts.
+- A `historical` same-code mapping is recoverable pending work. An externally completed ledger
+  leg may also carry additional canonical newest-first history, but it is accepted only when the
+  operation mapping is newest and every accepted pre-operation row remains an exact suffix.
+  Malformed bytes, reordered or dropped accepted history, broken lineage, or a mismatch against
+  already-published mutation intent remain conflicts.
 
 ### Todos
 
@@ -63,11 +66,21 @@ No meaningful cross-repository boundary is owned by this file.
 ## 260821-CLIVE Exact Output Reconstruction
 
 The pure classifier may reconstruct a missing memory commit only from the accepted parent/tree
-lineage. A ledger commit must be clean, parent the accepted memory commit, change only the ledger
-path, and contain the exact deterministic `prepend_mapping` bytes. HEAD shape or a ledger mapping
-alone is never sufficient; conflicts and ambiguous lineage remain developer decisions.
+lineage. A completed ledger leg must be clean, directly parent the accepted memory commit, change
+only the ledger path, and preserve the memory-commit ledger blob as the exact accepted pre-operation
+bytes. Its live ledger must parse and render canonically, preserve repository, base, and sort
+metadata, place the operation code-to-memory mapping first, and retain every accepted row as an
+immutable suffix. Additional canonical newest-first rows between that current mapping and the
+accepted suffix are valid history; uniqueness across historical rows is not required. HEAD shape
+or a matching row alone is never sufficient, and dropped or reordered accepted history remains a
+developer-decision conflict.
 
 ## Update History
+
+- 2026-08-26T17:49+02:00 — Replaced single-prepend byte equality with the complete newest-first
+  recovery proof: the current operation mapping must be first, accepted history must remain an exact
+  suffix, canonical metadata and rendering must hold, and commit lineage/path evidence remains
+  exact. This admits legitimate intervening history without weakening corruption detection.
 
 - 2026-08-26T14:32+02:00 — Added the explicit `historical` ledger state so valid same-code memory
   history remains recoverable while unreadable or intent-conflicting evidence still fails closed.
