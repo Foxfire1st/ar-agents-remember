@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T22:29+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -144,10 +144,10 @@ operation-less responses such as `ping`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared response envelopes define the token metadata fields on the `ResponseModel` base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:41-60 |
-| `_tool_payload` finalizes token metadata on every public tool response via this module. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| Shared response envelopes define the token metadata fields on the `ResponseModel` base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
+| `_tool_payload` finalizes token metadata on every public tool response via this module. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | `FinalizePayloadTokensTests` | mcp/tests/test_tokens.py:80-104 |
-| `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:40-48 |
+| `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:92-100 |
 | The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`). | `VENDORED_VOCABULARY_SHA256` | mcp/src/agents_remember/package_data/tiktoken/README.md:46-46 |
 | The cold-start guard: `ColdStartTests` starts the server in a child with every socket blocked and cold tiktoken caches; `VendoredVocabularyTests` re-derives both hashes from the installed tiktoken (asserting `VENDORED_VOCABULARY_SHA256` equals the one it asks for), proves the cache-dir override does not outlive the load, pins the `.gitattributes` entry to the shipped file name, and joins a re-entrant load on a timeout to catch an `RLock` downgrade; `CorruptVendoredVocabularyTests` corrupts *copies* of the blob in a temp directory — CRLF-mangled, truncated, one flipped byte — and requires the refusal each time. | `ColdStartTests`; `VendoredVocabularyTests`; `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331; mcp/tests/test_cold_start.py:334-417 |
 | The `-text` attribute that stops a line-ending filter from changing the bytes this module hashes. | "-text" | .gitattributes:13-13 |

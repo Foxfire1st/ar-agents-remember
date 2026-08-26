@@ -5,10 +5,29 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
-| governingOverview      | `../../../../overview.md`                  |
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| governingOverview      | `../overview.md`                           |
+
+## Governing Overview
+
+[worktrees overview](../overview.md)
+
+## IAS Frozen Public Lifecycle Composition
+
+Start, attach, dispatch, and explicit sync share one atomic-series selecting transaction. A new
+selection auto-pauses the prior live series, publishes `reconciling`, reconciles the exact protected
+code/memory source pair, and publishes `active` only after current-base proof. `worktree_sync`
+becomes a resumable contract-addressed operation: genuine conflicts remain available for agent
+resolution, `continue` validates the staged result, and `cancel` restores only pinned
+operation-owned heads.
+
+Cleanup and abandon remain terminal lifecycle operations, not scheduling mutations. After their
+terminal publication and outside lifecycle/store locks, they may vacate only the exact selected
+terminal contract before destructive contract cleanup. A paused series cannot clear a newer
+selection. Missing or malformed activation/journal authority is not replaced by a legacy or
+queue-derived fallback reader.
 
 ## Purpose
 
@@ -230,13 +249,12 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   proof is one parent-child branch edge at a time. PR-gated flows are identical
   after the PR merge has been pulled locally, while squash-merge equivalence is
   not inferred by default.
-- `sync.py` (GitHub #54 sub-task D) owns `worktree_sync`: the mid-task base
-  sync that fetches upstreams, requires the new code tip to be ledger-mapped at
-  the official memory tip, merges the source branch into the code work branch
-  (abort on conflicts), fast-forwards parked memory (or blocks with
-  `memory_sync_choice` recoveries when local memory commits diverge), and
-  advances the contract's recorded base pair with a `sync_log` entry.
-  `guidance.py`'s fetch-free `freshness` block in `worktree_status` is the
+- `sync.py` is the narrow public `worktree_sync` facade. It validates typed input, keeps preview
+  mutation-free, refreshes source evidence before locking, rereads the full contract under
+  authority, and delegates to the ordinary or atomic-series transaction owner. The transaction
+  pins exact refs in the enclosure-root journal, retains code/memory conflicts in `.sync`
+  worktrees, and resumes or cancels through `resolution_action=continue|cancel`; it never silently
+  aborts a conflict. `guidance.py`'s fetch-free `freshness` block in `worktree_status` is the
   detection surface that recommends it.
 - `provider_async.py` owns the background setup launch (daemon thread), the
   durable `setup-progress.json` under the worktree group's provider-runtime
@@ -333,7 +351,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:34-554 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-500; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:125-125 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:171-171 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:566-674 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -709,7 +727,7 @@ waiting-only rebuild derives solely from exact-current task and door sources.
 
 Start, closeout, integrate, sync, cleanup, abandon, and reopen now share task-derived branch authority. Integration uses exact named-ref CAS and crash recovery; atomic series closeout records a complete leaf landing chain; lowest Git/worktree/terminal writers require capabilities instead of trusting caller-supplied branch names.
 
-## 260815-DAG-L13 Atomic-Sequential Lane
+## 260815-DAG-L13 Atomic-Sequential Lane (Historical, Superseded)
 
 `startup/start_contract.py` gates master series bootstrap on the effective execution nature (a nature-less
 legacy master resolves atomic; organizational semantics exist only under an authored graph) and,
@@ -719,6 +737,11 @@ second in-flight master; the block fails closed when the commanding sprint canno
 Terminal series artifacts are ignored and reported through `startup/start_result.py`'s
 `staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
 on the result payload (`staleByEvidence`, each naming `worktree_sync`).
+
+IAS supersedes that lane owner. Current start/attach/dispatch selects one master per exact source
+pair, pauses the former without retirement, reconciles before exposure, and leaves task authoring
+upstream. Current queue projection observes the selector and never recreates the old owner from
+contract census.
 
 ## 260815-DAG Master Full-Gate Repair Route Impact
 
@@ -773,6 +796,9 @@ claim-transfer helpers now expose named facts to the integration owner rather th
 and lifecycle policy across call sites.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS public lifecycle composition label against the
+  frozen pass-13 candidate.
 
 - 2026-08-25T17:21+02:00 — Reconciled final integration evidence consumption and helper ownership.
   Verification remains closeout-owned.

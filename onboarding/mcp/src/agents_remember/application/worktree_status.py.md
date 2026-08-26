@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-`worktree_status.py` projects an optional `c-09-git-worktree-manager` skill worktree contract into the read-only
-worktree summary used by context packets.
+`worktree_status.py` projects an optional `c-09-git-worktree-manager` worktree contract and its
+stable enclosure-root sync journal into the read-only worktree summary used by context packets.
 
 ## Code Commentary
 
@@ -27,6 +27,14 @@ states without mutating Git. For valid contracts it delegates to
 context-facing worktree shape. The projection no longer preserves the full
 manager payload as `rawStatus`; `WorktreeSummary` owns the explicit context
 fields.
+
+After the canonical lifecycle locator resolves, the packet observes
+`.lifecycle/sync-operation.json` from the locator's stable `worktree_group` **before** reading the
+contract. The resulting typed `SyncOperationProjection` is preserved in valid-contract packets,
+locator decisions, unreadable-contract decisions, and missing/invalid-contract packets. A broken or
+deleted task contract therefore cannot erase retained conflict, continuation/cancellation, terminal,
+or quarantine evidence. Observation is read-only and contract-addressed; this route does not inspect
+task prose or closeout queue rows to reconstruct sync state.
 
 ### 260731-EFA-L4: the projection *returns* the model instead of a dict to validate
 
@@ -74,6 +82,8 @@ able to touch.
   worktrees.
 - Contract parsing failures should become structured packet state rather than
   escaping context packet construction.
+- Stable sync-operation evidence must survive contract read failure and remain present on every
+  summary path once the lifecycle locator establishes the enclosure root.
 - Context packets expose typed lifecycle and next-operation hints, not shell
   command strings or raw manager payloads.
 - **Build the model here; do not hand the caller a dict to validate.** The whole point of the
@@ -83,17 +93,34 @@ able to touch.
   `nextTool` / `nextArgs` / `nextRequiredArgs` — a value this projection invents is by definition
   one no producer declares.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Status observes the stable sync journal before contract parsing and threads it through all result branches. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:46-128 |
+| The journal observer returns a typed projection without reading task or queue state. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
+| `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. | `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:113-126 |
 | Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
-| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:101-101 |
+| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:148-148 |
 | Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. | "worktree=worktree_status_packet" | mcp/src/agents_remember/application/context_packet.py:96-96 |
-| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:35-35; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
-| `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell(", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:106-106; mcp/src/agents_remember/worktrees/worktree_contract.py:289-289 |
-| `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:64-64; mcp/src/agents_remember/application/worktree_status.py:115-115 |
-| `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153 |
+| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:36-36; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
+| `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell(", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:107-107; mcp/src/agents_remember/worktrees/worktree_contract.py:288-288 |
+| `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:193-193; mcp/src/agents_remember/application/worktree_status.py:245-245 |
+| `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:159-159 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned status projection.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Series-Contract Notes
 
@@ -117,11 +144,19 @@ The current source seams include `worktree_status_packet`. Status locates normal
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `worktree_status_packet` at this ownership boundary. | L42-L117 | `mcp/src/agents_remember/application/worktree_status.py` |
+| The current module exposes `worktree_status_packet` at this ownership boundary. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:46-128 |
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
+  status projection card.
+
+- 2026-08-26T03:37+02:00 — Added stable enclosure-root sync-operation projection to every
+  locator-established status path, including missing/unreadable contracts. Recorded that journal
+  observation is independent of task and queue state. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                      |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                                      |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -25,7 +25,7 @@ Holds `drift_check_payload`, the three typed memory-quality payload builders,
 `memory_baseline_status_payload`, `memory_baseline_adopt_payload`,
 `memory_carryover_plan_payload`, and `memory_carryover_apply_payload`. Each returns through
 `base._tool_payload`. The quality trio accepts the exact sync, start, or poll request model and
-forwards it to `application.memory_quality_controller`; it does not unpack, reinterpret, or
+forwards it to `application.memory_quality.controller`; it does not unpack, reinterpret, or
 reproduce controller failures.
 
 Three of them take parameter objects (260731-EFA-L2): `memory_baseline_adopt_payload(config,
@@ -48,7 +48,7 @@ a 28-file apply response cost 7.7k tokens (GitHub #52).
 
 ### Invariants And Boundaries
 
-- Transport-thin: quality behavior lives in `application.memory_quality_controller`; other
+- Transport-thin: quality behavior lives in `application.memory_quality.controller`; other
   memory/drift behavior lives in `application.memory_tools` and the memory/onboarding-drift
   packages. Wire-shape compaction is the one
   exception that belongs here (mirroring `tools/providers.py` and
@@ -70,8 +70,16 @@ a 28-file apply response cost 7.7k tokens (GitHub #52).
 signatures make it impossible to call a poll adapter with execution fields or start work with a poll
 request, while `_tool_payload` remains the shared public response validator.
 
+## 2026-08-26 Application-Owner Relocation
+
+The transport continues to delegate memory-quality execution without reinterpretation, but the
+canonical application owner now lives at `application.memory_quality.controller`. This is a
+package extraction only: sync/start/poll semantics and response finalization remain owned by that
+controller.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Updated the canonical memory-quality application-owner path after the package extraction; transport behavior is unchanged.
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rewired the quality payload trio to strict sync/start/poll DTOs and the single controller API; removed flat wait/run-id interpretation from this layer. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: added `memory_quality_check_start_payload` /

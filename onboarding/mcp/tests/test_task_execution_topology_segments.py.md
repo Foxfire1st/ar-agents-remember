@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_execution_topology_segments.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,11 @@ never refuse. `ExecutionTopologySegmentValidationTests` proves cross-document va
 segmented graphs: membership against `master_refs()`, node-derived waves, the segment-on-atomic
 typed refusal, and live-plan leaf-placement reporting.
 
+`leafs_a=None` selects the fixture's default leaf set, while an explicit empty list remains empty;
+fixture truthiness cannot silently replace a deliberately empty topology. After rewriting task
+documents, tests construct a new `TaskDocumentTopology` before querying placement so assertions
+observe the published generation rather than a previously resolved in-memory view.
+
 ### Invariants And Boundaries
 
 - Tests construct only disposable coordination roots; unpublished candidate code never writes the
@@ -55,13 +60,15 @@ typed refusal, and live-plan leaf-placement reporting.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Segment schema, endpoint grammar, explicit-ref lifting, and structural equality/hash forcing. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-281 |
-| Served projection lifting forcing. | `ExecutionGraphProjectionLiftTests` | mcp/tests/test_task_execution_topology_segments.py:256-278 |
+| Served projection lifting forcing. | `ExecutionGraphProjectionLiftTests` | mcp/tests/test_task_execution_topology_segments.py:284-305 |
 | Derived placement and numbering-hint forcing. | `DerivedLeafPlacementTests` | mcp/tests/test_task_execution_topology_segments.py:280-413 |
 | Cross-document segmented topology validation forcing. | `ExecutionTopologySegmentValidationTests` | mcp/tests/test_task_execution_topology_segments.py:415-503 |
 | The production schema under test. | `SprintExecutionNode`; `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:191-402 |
 | The focused equality regression covers both operand directions plus mixed set/dict behavior. | `test_nodes_compare_structurally_without_cross_type_aliases` | mcp/tests/test_task_execution_topology_segments.py:237-265 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Preserved explicit empty leaf fixtures and rebuilt topology after task mutation so placement assertions cannot reuse stale resolved documents.
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: replaced the stale lump/ref-equality narrative with
   structural node-only equality/hash, explicit `.ref` ownership, and the bidirectional set/dict

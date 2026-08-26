@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_legacy_operation_entry_totality_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_legacy_public_entry_refuses_unconfined_contract_before_any_read`, `test_preadoption_unreadable_initial_contract_never_inferrs_report_target`, `test_addressable_unreadable_initial_contract_uses_locator_publication_authority`, `test_legacy_reload_failure_refuses_before_raw_record_access` as its principal forcing seams. | L45-L65; L68-L97; L100-L124; L128-L166 | `mcp/tests/test_legacy_operation_entry_totality_l2.py` |
+| The file defines `test_legacy_public_entry_refuses_unconfined_contract_before_any_read`, `test_preadoption_unreadable_initial_contract_never_inferrs_report_target`, `test_addressable_unreadable_initial_contract_uses_locator_publication_authority`, `test_legacy_reload_failure_refuses_before_raw_record_access` as its principal forcing seams. | `test_legacy_public_entry_refuses_unconfined_contract_before_any_read`; `test_preadoption_unreadable_initial_contract_never_inferrs_report_target`; `test_addressable_unreadable_initial_contract_uses_locator_publication_authority`; `test_legacy_reload_failure_refuses_before_raw_record_access` | mcp/tests/test_legacy_operation_entry_totality_l2.py:43-63; mcp/tests/test_legacy_operation_entry_totality_l2.py:66-95; mcp/tests/test_legacy_operation_entry_totality_l2.py:98-122; mcp/tests/test_legacy_operation_entry_totality_l2.py:125-164 |
 
 ## Cross-Repo References
 

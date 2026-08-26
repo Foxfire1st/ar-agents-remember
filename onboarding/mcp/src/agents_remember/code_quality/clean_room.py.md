@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/clean_room.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `c9ae4dbd8adb650f116b9d4f86343b496c3e5f32`|
-| lastVerifiedCommitDate |  2026-08-12T17:53:40+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -62,4 +62,5 @@ No cross-repository contract is owned here.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the `clean_quality_executor` to `quality.clean_executor` import relocation; the documented thin Dagger CLI boundary and behavior are unchanged.
 - 2026-08-12T15:19+02:00 — Created for L23's clean-Linux Dagger quality entry point; verification provenance remains closeout-owned.

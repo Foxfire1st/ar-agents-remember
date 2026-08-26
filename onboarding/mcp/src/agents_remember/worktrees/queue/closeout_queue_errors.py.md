@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared queue error stores the exact public status and detail. | `CloseoutQueueError` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:13-18 |
-| Request-carried task references validate fail-closed in one place. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:21-34 |
+| Request-carried task references validate fail-closed in one place. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:46-67 |
 
 ## Cross-Repo References
 
@@ -64,10 +64,10 @@ stable public evidence. It delegates redaction to `public_failure_evidence`, ser
 record deterministically, and prevents backend text or offending input from leaking through each
 queue consumer's local exception formatting.
 
-| Finding | Source |
-| --- | --- |
-| Queue consumers share one bounded, stable failure-detail constructor. | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:25-45 |
-| Task-reference validation also uses that constructor instead of echoing the supplied value. | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:48-67 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Queue consumers share one bounded, stable failure-detail constructor. | `bounded_queue_failure_detail` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:25-43 |
+| Task-reference validation also uses that constructor instead of echoing the supplied value. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:46-67 |
 
 ## Update History
 

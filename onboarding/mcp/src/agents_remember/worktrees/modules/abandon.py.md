@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -17,6 +17,12 @@ worktree-backed tasks. Unlike `cleanup.py` (which requires a completed
 integration), abandon runs at any lifecycle stage and reclaims the isolated
 provider stack, removes code and memory worktrees, deletes task branches, and
 removes the worktree group directory.
+
+Successful series abandonment and exact already-abandoned terminal replay pass through
+`with_terminal_atomic_series_release` after lifecycle locks are gone. Release is conditional on the
+selector still naming this exact contract: a paused old series cannot clear a newer master, and
+missing/unreadable/different evidence is preserved and reported rather than reconstructed from task
+or queue state. Leaves, dry-runs, and blocked abandon results do not mutate the selector.
 
 ## Code Commentary
 
@@ -88,6 +94,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Successful abandon and exact terminal replay are wrapped with exact source-pair release. | `abandon_result` | mcp/src/agents_remember/worktrees/modules/abandon.py:88-147 |
+| The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
 | No relevant external documentation found. | n/a | n/a |
 
 ## Repo-Internal References
@@ -97,10 +105,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198; mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223; mcp/src/agents_remember/worktrees/modules/cleanup.py:265-291; mcp/src/agents_remember/worktrees/modules/cleanup.py:443-458 |
 | `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
-| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:204-204 |
+| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:276-276 |
 | Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:201-212; mcp/tests/test_worktree_abandon.py:214-222; mcp/tests/test_worktree_abandon.py:226-236; mcp/tests/test_worktree_abandon.py:137-157 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
-| `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
+| `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/worktrees/worktree_contract.py:183-183; mcp/src/agents_remember/worktrees/worktree_contract.py:200-200 |
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
@@ -120,9 +128,9 @@ The current source seams include `abandon_result`. The public module consumes cl
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `abandon_result` at this ownership boundary. | L84-L130 | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
+| The current module exposes `abandon_result` at this ownership boundary. | `abandon_result` | mcp/src/agents_remember/worktrees/modules/abandon.py:88-147 |
 
 ## 260821-CLIVE Archive-Before-Abandon
 
@@ -134,6 +142,10 @@ terminal release capability, never a persistent queue blocker. Already-abandoned
 surface terminal archive proof.
 
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Added exact post-terminal atomic-series selection release to abandon
+  and terminal replay documentation. Selection remains disposable and separate from abandon
+  authority. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact terminal archive, typed force replay, and atomic terminal authority into abandon. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

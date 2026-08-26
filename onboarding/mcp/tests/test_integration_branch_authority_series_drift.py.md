@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_branch_authority_series_drift.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -47,9 +47,9 @@ The current forcing seams include `test_atomic_series_source_drift_cannot_open_a
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_atomic_series_source_drift_cannot_open_an_ambient_leaf_replay`. | L23-L52 | `mcp/tests/test_integration_branch_authority_series_drift.py` |
+| The current test source exercises `test_atomic_series_source_drift_cannot_open_an_ambient_leaf_replay`. | `test_atomic_series_source_drift_cannot_open_an_ambient_leaf_replay` | mcp/tests/test_integration_branch_authority_series_drift.py:25-54 |
 
 ## Current Contract — 260821 CLIVE Final
 

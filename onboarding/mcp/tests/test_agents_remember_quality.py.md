@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,8 +78,18 @@ of the deleted code-quality validator. Dagger command construction must export
 `/reports/pytest-phases.json`, and result timestamps must be ordered. Invalid admission still
 refuses before collection; phase output remains observation rather than authority.
 
+## 2026-08-26 Evidence-Graph Reconciliation
+
+The Dagger module contract now exposes exactly two public functions: `quality` for certifying
+acceptance and `cadence_evidence` for non-accepting scheduled evidence. The quality graph fetches
+the candidate bundle, stages the complete candidate, requests the causal-failure report, and
+publishes that report reference in its authoritative result. The cadence graph invokes only the
+cadence runner, stamps both `acceptanceEligible` and `certifying` false, and refuses unknown
+triggers; it never calls the quality wrapper.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Documented the separate non-accepting cadence graph, causal-failure artifact, candidate staging, and exact two-function Dagger public surface.
 - 2026-08-24T21:23+02:00 — Updated admission ownership and added Dagger phase/timestamp wiring proof.
 
 - 2026-08-14T11:27+02:00 — R39 curator: recorded one shared environment-authorization owner.

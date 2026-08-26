@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_resume_invariant_owner_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_resume_preserves_approval_commits_worker_door_and_irreversible_boundary`, `test_resume_preserves_quality_and_integration_publication`, `test_resume_preserves_closeout_finalization_proof`, `test_resume_preserves_organizational_repair_and_cancellation_evidence` as its principal forcing seams. | L92-L126; L129-L164; L167-L191; L194-L276 | `mcp/tests/test_lifecycle_resume_invariant_owner_l2.py` |
+| The file defines `test_resume_preserves_approval_commits_worker_door_and_irreversible_boundary`, `test_resume_preserves_quality_and_integration_publication`, `test_resume_preserves_closeout_finalization_proof`, `test_resume_preserves_organizational_repair_and_cancellation_evidence` as its principal forcing seams. | `test_resume_preserves_approval_commits_worker_door_and_irreversible_boundary`; `test_resume_preserves_quality_and_integration_publication`; `test_resume_preserves_closeout_finalization_proof`; `test_resume_preserves_organizational_repair_and_cancellation_evidence` | mcp/tests/test_lifecycle_resume_invariant_owner_l2.py:90-125; mcp/tests/test_lifecycle_resume_invariant_owner_l2.py:128-171; mcp/tests/test_lifecycle_resume_invariant_owner_l2.py:174-202; mcp/tests/test_lifecycle_resume_invariant_owner_l2.py:205-285 |
 
 ## Cross-Repo References
 

@@ -5,14 +5,31 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
+
+## IAS Frozen Activation And Sync Vocabulary
+
+The frozen IAS candidate introduces closed models for one source-pair activation snapshot and one
+stable sync generation. The activation vocabulary now lives under
+`models/structural/atomic_series_activation.py`: it separates selectable state
+(`reconciling|active`) from observed
+state (`vacant|unreadable|reconciling|active`) and binds the selected master plus canonical contract
+path to normalized code/memory source identities and a fingerprint. This is disposable selection,
+not task truth, queue membership, or lifecycle evidence.
+
+Sync models project the stable enclosure-root journal without requiring task-document parsing.
+Public status distinguishes a retained resolution, automatic resume, cancellation, terminal
+completion, malformed/identity-invalid evidence, and bounded quarantine. Exact Git refs, admitted
+heads, and per-side progress remain strict durable state; the response exposes only what an agent
+needs to continue, cancel, or repair. Exact field membership is reconciled to the frozen candidate;
+verification metadata remains closeout-owned until the new code commit exists.
 
 ## Current Structural Wire Vocabulary
 
@@ -431,7 +448,7 @@ Registered tool request/response contracts now live under `models/tools/`; the m
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Strict lifecycle operation record/projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:664-682 |
+| Strict lifecycle operation record/projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
 | Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38; mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
 
 ## 260821-DAGQC-L2 Closed Quality And Landing Models
@@ -457,6 +474,16 @@ invalidation removes the impossible `not-created` outcome, and validator decompo
 one typed public contract instead of distributing failure-family knowledge across callers.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the activation/sync vocabulary label against the frozen
+  pass-13 candidate.
+
+- 2026-08-26T08:20+02:00 — Reconciled activation and sync field ownership to the frozen candidate;
+  only commit-derived verification remains open.
+
+- 2026-08-26T06:25+02:00 — Reconciled the structural-limit move: the activation snapshot and
+  archive vocabulary now live under `models/structural/`; the former flat model path has no
+  compatibility owner. Final verification remains post-Dagger owned.
 
 - 2026-08-25T17:21+02:00 — Reconciled the final evidence, lifecycle, and projection model changes.
   Verification remains closeout-owned.

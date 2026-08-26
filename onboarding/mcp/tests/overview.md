@@ -8,14 +8,40 @@ Total output lines: 1813
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## IAS Frozen Source-Pair Coordination Evidence
+
+The focused forcing boundary must prove architecture, not just successful Git commands: multiple
+live series coexist; selection replacement pauses old work; `reconciling` blocks implementation
+exposure; task mutation remains unlocked and causes projection recomputation; the queue owns no
+lifecycle or commit evidence; retained code and memory conflicts can be agent-resolved and
+continued or exactly cancelled; stable-journal status survives task/contract damage; terminal
+cleanup cannot clear another selected master; and malformed authority fails closed without a
+fallback reader.
+
+The frozen forcing surface includes 22 changed/new files. Six focused edge suites partition the
+stable journal, exact Git proof, sync driver, recovery, activation owner, and cross-boundary public
+composition so coverage pressure does not collapse those contracts back into one oversized test.
+Three shared/refusal files were also refreshed: structural refusal cases explicitly neutralize
+source-pair admission when testing a later dispatch branch; shared worktree fixtures seed canonical
+external-memory ledger mappings; and existing-series adoption now supplies the ref that production
+must prove rather than expecting adoption to invent it.
+
+The current delta also updates the existing registration-wiring suite to prove that
+the public `worktree_sync` registration forwards optional `resolution_action` alongside
+`memory_sync_choice` and the canonical contract path. This is source-shape evidence only; curation
+does not claim to have executed Dagger.
+
+Exact suite membership and line-level claims are reconciled to the frozen candidate. Acceptance
+execution remains architect-owned evidence rather than a curator-authored claim.
 
 ## 260824-PDLS Current Evidence Topology
 
@@ -625,8 +651,9 @@ appender wrote nothing was scored off its predecessor's receipts. The fix is
 child because `root` does not name one place: the six control-plane adapters resolve their log
 under `root/workspace`, the two provider adapters under `root/logs/observer/providers`, and
 `GateStore` additionally globs `root/lifecycles/*/gates.jsonl`, while the accounting reads that
-whole tree as raw bytes. The guard is `MIN_RECLAIM_TICKS = 10`, raising `VacuousRunError` at the
-end of `run_stress`, and it lives **in the instrument rather than in either suite**, so the
+whole tree as raw bytes. The guard is `MIN_SUCCESSFUL_RECLAIMS = 10`, enforced by
+`require_stress_measurement` on every stress result and raising `VacuousRunError`; it lives **in
+the instrument rather than in either store suite**, so the
 control-plane suite, the provider suite and bare `main()` script runs are covered by one floor. The
 floor is evidence-based: real runs give 22-39 ticks idle and 34-49 under 24-way CPU load — load
 *raises* the count, because appender pacing stretches in wall clock while the reclaimer keeps
@@ -687,11 +714,11 @@ per-store torn-line policy (R8, derived from named call sites rather than from d
 sensitivity proven against the base-commit archive (R14, asserting both that the five unlocked
 stores each lose a record *and* that operator-inbox loses none, which is what proves the harness
 is measuring the defect). Loss and raising are asserted separately on purpose: a store that starts
-raising instead of losing has moved the failure, not fixed it. R14 has a second half:
-`HarnessVacuityGuardTests` drives the shipped `run_case` path to a one-tick run and requires
-`VacuousRunError`, then asserts the floor from both sides — above the vacuous run, and below the
-lowest tick count ever measured on this profile. That is the test that proves the refusal above is
-real and reachable rather than a constant nobody consults.
+raising instead of losing has moved the failure, not fixed it. R14 has a second half in
+`test_durability_measurement.py::DurabilityMeasurementTests`: it refuses zero writes, reports all
+write/compaction/process shortfalls together, distinguishes failed attempts from successful
+compactions, and returns a complete result unchanged. That focused suite proves the shared
+instrument refusal is real and reachable rather than a constant nobody consults.
 
 `test_provider_store_durability.py` is the same three assertions over the two `providers/` stores,
 and is a **fifth** new file in this gate that the "nine files / four new suites" count above
@@ -965,7 +992,7 @@ fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_ha
 | Tool-response conformance captures `nextStep` and `supervisorBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:538-616 |
 | Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `supervisorBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_agent_notifier_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-331 |
 | The lifecycle state vocabulary is partitioned live and terminal with both halves total and disjoint, every live state counted, and terminality held to the reducer that produces it. | `MetricsBucketVocabularyTests`; `StatePartitionTests`; `TerminalityIsStructuralTests` | mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420 |
-| The live boundary suite proves unknown contract cells degrade with the raw token retained and disappear after a canonical rewrite. | `test_unknown_cleanup_degrades_and_is_quarantined`; `test_unknown_memory_mode_is_quarantined_and_healed` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py |
+| The live boundary suite proves unknown contract cells degrade with the raw token retained and disappear after a canonical rewrite. | `test_an_unknown_cleanup_cell_degrades_and_names_itself`; `test_an_unreadable_memory_mode_degrades_to_the_topology_on_disk`; `test_a_rewrite_heals_the_file_and_that_is_the_recovery_path` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:249-314 |
 | A decoy repository named by all eight selectors receives none of the real repository writes or reads, an AST sweep asserts `kernel/git_command.py` is the only git-spawning module, and the benchmark runner argv including `reset --hard` is asserted directly. | `DecoyRepositoryTests`; `SingleRunnerTests`; `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:155-211; mcp/tests/test_git_command.py:393-465; mcp/tests/test_git_command.py:663-791 |
 | The sweep reach is planted and asserted for subprocess aliases, a path-qualified git argv head, a `kwargs` splat that is not proof of `env`, and per-command timeout bands. | `SingleRunnerGuardReachTests`; `TimeoutClassTests` | mcp/tests/test_git_command.py:468-547; mcp/tests/test_git_command.py:550-660 |
 | The runner scrubs repository selectors on every call, uses `input_text` for git patch-id and DEVNULL otherwise, and carries the local, remote, and metadata timeout constants. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
@@ -974,7 +1001,7 @@ fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_ha
 | The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:120-177; mcp/tests/_store_durability.py:571-573; mcp/tests/_store_durability.py:588-613; mcp/tests/_store_durability.py:1069-1073; mcp/tests/_store_durability.py:1088-1092; mcp/tests/_store_durability.py:1101-1108 |
 | `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:876-903 |
 | The shared non-vacuity gate refuses incomplete durability results or runs below `MIN_SUCCESSFUL_RECLAIMS` by raising `VacuousRunError`. | `MIN_SUCCESSFUL_RECLAIMS`; `VacuousRunError`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:14-15; mcp/tests/_durability_measurement.py:18-55 |
-| No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
+| No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:125-211; mcp/tests/test_controlplane_store_durability.py:214-343; mcp/tests/test_controlplane_store_durability.py:346-401 |
 | The provider durability suite is the second consumer covered by the instrument tick floor; its `case_root` docstring records the shared-stop-flag defect and source fix. | `ProviderStoreDurabilityTests`; `case_root` | mcp/tests/test_provider_store_durability.py:262-277; mcp/tests/test_provider_store_durability.py:280-351 |
 | One human approval is consumable exactly once, and the counterfactual proves the defence is one appended record. | `GateReplayWindowTests`; `test_the_applied_record_is_the_only_thing_closing_the_window` | mcp/tests/test_gate_replay_window.py:176-324 |
 | The in-process axis covers the mutex, re-entrancy across both locks, unsafe-filesystem refusal, schema major/minor policy, and failed-rewrite temp cleanup. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `SchemaVersionMajorTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:167-365; mcp/tests/test_durable_store_contract.py:368-431; mcp/tests/test_durable_store_contract.py:434-520; mcp/tests/test_durable_store_contract.py:650-728 |
@@ -1307,6 +1334,19 @@ facade or service graph. These tests support the accepted Dagger proof; no direc
 is promoted to certifying evidence.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS coordination-evidence label against the frozen
+  pass-13 suite inventory.
+
+- 2026-08-26T08:50+02:00 — Rebound the vocabulary-boundary row to the frozen degradation and
+  rewrite-healing test names/range.
+
+- 2026-08-26T08:25+02:00 — Repaired the surviving durability-suite reference after the vacuity
+  class removal and rebound all three cited classes to the frozen source.
+
+- 2026-08-26T08:15+02:00 — Reconciled the frozen 22-file forcing surface, including six focused
+  edge suites and the three paired-source/admission fixture repairs. Acceptance execution remains
+  architect-owned; verification metadata awaits the real code commit.
 
 - 2026-08-25T17:21+02:00 — PDLS reconciled the final test/support inventory and bootstrap import
   boundary while retaining Dagger as the sole certifying authority. Verification remains

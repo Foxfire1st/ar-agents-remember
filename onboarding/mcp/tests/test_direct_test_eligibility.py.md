@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_direct_test_eligibility.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,30 +16,39 @@
 
 ## Purpose
 
-Provides pure forcing proof for evidence altitude and every structural direct-test eligibility,
+Provides pure forcing proof for evidence altitude and every sealed direct-cohort admission,
 refusal, closure, and candidate-binding boundary.
 
 ## Code Commentary
 
-Temporary candidate fixtures cover allowed computation/fixture/helper chains, every unsafe family,
-transitive helpers and submodules, autouse fixtures, dynamic dependencies, request-shape and
-parameterization refusals, collection-time effects, candidate drift, and whole-request atomicity.
-An import-time raising expression proves classification does not execute candidate code. Two
-same-named class methods prove scan-cache identity does not conflate source definitions.
+Synthetic cohort manifests declare exact admitted node IDs, audited paths and symbols, local-import
+closure, effect dispositions, fixture/closure facts, and the configuration digest. The tests prove
+only explicit manifest members can enter; mixed or duplicate selections refuse as one unit. A safe
+body is insufficient when its import was omitted from the manifest, an audited path is unreachable,
+an external or autouse dependency is unknown, or source/configuration bytes drift after review.
+
+Every closed unsafe-effect family produces a stable refusal, including unsafe transitive helpers.
+Dynamic calls, parameterized or ambiguous nodes, unsupported fixtures, oversized requests, and
+candidate drift are fail-closed. The suite also proves diagnostic evidence remains at diagnostic
+altitude and certifying evidence can only be minted by the verified Dagger factory.
 
 ## Invariants And Boundaries
 
 - Refusal tests assert stable codes and unsafe families, not incidental prose only.
 - Any refused selection executes zero nodes.
+- Admission is manifest membership plus a current content seal; structural inference never adds a
+  node or silently rebaselines changed inputs.
 - The synthetic candidates test the classifier; they are not admitted production cohort members.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Same-named methods are scanned independently. | `test_same_named_methods_do_not_share_dependency_cache` | mcp/tests/test_direct_test_eligibility.py:224-251 |
-| Import-free classification has a real failing-if-imported sentinel. | `test_transitive_unsafe_helper_refuses_before_execution` | mcp/tests/test_direct_test_eligibility.py:195-222 |
+| Fixture and helper closure is content-sealed before direct execution. | `test_fixture_and_helper_closure_is_content_sealed` | mcp/tests/test_direct_test_eligibility.py:108-135 |
+| Import-free classification has a real failing-if-imported sentinel. | `test_transitive_unsafe_helper_refuses` | mcp/tests/test_direct_test_eligibility.py:182-204 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled the suite with sealed manifest admission, audited dependency closure, explicit membership, and fail-closed candidate/configuration drift.
 
 - 2026-08-24T21:23+02:00 — Created for 260824-PDLS and records the post-review forcing repairs.

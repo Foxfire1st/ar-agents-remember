@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_integrity_edges.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`   |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`   |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ by a hand-built dict.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The onboarding drift / missing-onboarding checkers under test. | `classify_external_onboarding`; `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:33-112 |
-| The clean-path suites these edge verdicts complete. | `InlineOnboardingTests`; `MissingOnboardingTests`; `MeaningfulBodyTests` | mcp/tests/test_missing_onboarding.py:22-154; mcp/tests/test_onboarding_doc.py:42-72; mcp/tests/test_onboarding_drift.py:62-121 |
+| The clean-path suites these edge verdicts complete. | `InlineOnboardingTests`; `MissingOnboardingTests`; `MeaningfulBodyTests` | mcp/tests/test_missing_onboarding.py:22-154; mcp/tests/test_onboarding_doc.py:41-71; mcp/tests/test_onboarding_drift.py:62-121 |
 
 ## Update History
 

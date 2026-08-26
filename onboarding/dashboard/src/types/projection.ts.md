@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -52,10 +52,10 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:537-540 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:506-536 |
-| The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:549-563 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:651-664 |
+| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:631-634 |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:580-614 |
+| The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:643-646; dashboard/src/types/projection.ts:657-661 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:743-756 |
 
 ## Cross-Repo References
 
@@ -85,9 +85,9 @@ The generated TypeScript mirror now carries optional lifecycle-operation `genera
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
 they do not make the dashboard or disposable closeout projection an operation authority.
 
-| Finding | Source |
-| --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | dashboard/src/types/projection.ts:301-310 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | `LifecycleOperationProjection` | dashboard/src/types/projection.ts:331-349 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Mirror
 

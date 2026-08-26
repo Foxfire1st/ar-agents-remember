@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ dashboard writes, so the seam under test is the real fold, not a re-implementati
 family skips the rewrite when nothing is prunable, so a compaction pass over a log holding only
 the live gate would never open the window this test forces.
 
-**The forked processes are joined with a bound and the liveness is asserted** cit:([`_tick_agent_notifier`], mcp/tests/test_served_state_conformance.py:288-291):
+**The forked processes are joined with a bound and the liveness is asserted** cit:([`_tick_agent_notifier`], mcp/tests/test_served_state_conformance.py:295-298):
 `process.join(30.0)` then `assertFalse(process.is_alive())`, so a wedged scenario is reported as
 a failure rather than hanging the suite.
 
@@ -140,7 +140,7 @@ record. The rows below are each of them, plus the sibling suites that hold the o
 | The log that has to keep it: the strict authority read, the last-wins fold the enforcement asks, and the compaction the regression races. | `read`; `current`; `compact` | mcp/src/agents_remember/controlplane/store.py:129-139; mcp/src/agents_remember/controlplane/store.py:176-181; mcp/src/agents_remember/controlplane/store.py:259-289 |
 | The interposition primitive imported to park the compactor between its read and its commit. | `parked_rewrite` | mcp/tests/_store_durability.py:705-754 |
 | Why the append now survives: the lock is unconditional across append and rewrite, and the rewrite never unlinks. | `exclusive_access`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:396-451; mcp/src/agents_remember/controlplane/durable_store.py:512-519 |
-| The suite that proves the same loss across all six record types and against the base commit; this file is the authority-level consequence of it. | `MultiProcessDurabilityTests` | mcp/tests/test_controlplane_store_durability.py:126-208 |
+| The suite that proves the same loss across all six record types and against the base commit; this file is the authority-level consequence of it. | `MultiProcessDurabilityTests` | mcp/tests/test_controlplane_store_durability.py:125-211 |
 | The precise version of the torn-line claim this file's fourth test states loosely. | `test_gate_enforcement_fold_refuses_a_torn_line` | mcp/tests/test_controlplane_store_durability.py:238-257 |
 | The policy tests around the same enforcement fold: `apply_gate` purity, every `evaluate_closeout_gate` branch, and the closeout helpers over a temp `GateStore`. | `ApplyGateTests`; `EvaluateCloseoutGateTests`; `CloseoutEnforcementHelperTests` | mcp/tests/test_controlplane_gates_closeout.py:36-50; mcp/tests/test_controlplane_gates_closeout.py:88-188; mcp/tests/test_controlplane_gates_closeout.py:191-262 |
 
@@ -163,8 +163,16 @@ reopen approval.
 
 Closeout gate replay fixtures now construct normalized closeout args and record journal evidence at the mutation seam. The suite still proves claim ordering and replay refusal, while L1 tightens “irreversible” from a caller boolean to durable mutation/finalization evidence.
 
+## 2026-08-26 Evidence-Lane Classification
+
+The real-process compaction race and two-closeout approval-spend race are explicitly marked
+`evidence_integration`. Their authority-level replay assertions are unchanged, but they now run
+only through the evidence lane that owns cross-process integration behavior rather than ordinary
+deterministic acceptance.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Recorded `evidence_integration` ownership for the two real-process gate replay and approval-claim races.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
@@ -198,7 +206,7 @@ Closeout gate replay fixtures now construct normalized closeout args and record 
   fold by `evaluate_gate`'s `applied` branch cit:([`evaluate_gate`], mcp/src/agents_remember/controlplane/enforcement.py:59-107); no flag, no marker file,
   no timestamp comparison — and recorded that the counterfactual test
   cit:([`test_the_applied_record_is_the_only_thing_closing_the_window`], mcp/tests/test_gate_replay_window.py:237-263) is what makes that falsifiable: it deletes **only** the line containing
-  `APPLIED_MARKER` cit:([`APPLIED_MARKER`], mcp/tests/test_gate_replay_window.py:75-75), asserts exactly the two remaining snapshots survive so the deletion
+  `APPLIED_MARKER` cit:([`APPLIED_MARKER`], mcp/tests/test_gate_replay_window.py:76-76), asserts exactly the two remaining snapshots survive so the deletion
   cannot have been indiscriminate, and then requires the guard to permit again. Recorded the
   concurrency regression cit:([`test_the_applied_record_survives_a_concurrent_gate_log_compaction`], mcp/tests/test_gate_replay_window.py:265-294) as two forked processes over `parked_rewrite`, with
   `_prunable_gate` cit:([`_prunable_gate`], mcp/tests/test_gate_replay_window.py:120-134) present so a compaction has something to drop and therefore actually

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover_terminal.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -34,17 +34,9 @@ Part of the 260731-EFA-L7 in-place split family for `test_cleanup_carryover_term
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
-## 260821-CLIVE-L2 Pre-L5 Terminal Test Setup
-
-Terminal-preflight failure tests explicitly pass the test-only archive gate before driving the
-lower cleanup owner. This preserves the tested failure ordering without weakening production's
-fail-closed requirement for future L5 external archive proof.
-
-| Finding | Source |
-| --- | --- |
-| Terminal-preflight setup installs the bounded downstream-unit archive permit. | mcp/tests/test_cleanup_carryover_terminal.py:15-25 |
-
 ## Update History
+
+- 2026-08-26T09:09:12+02:00 — Removed the obsolete pre-L5 archive-permit note after the production terminal-archive boundary landed.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

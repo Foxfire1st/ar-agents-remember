@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T15:28+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ operations never expose controls or projection refresh effects.
 | The component under test (filters rows through `hasLiveWorktree`). | `Hangar` | dashboard/src/panels/Hangar.tsx:72-138 |
 | The shared existence-truth visibility selector. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
 | The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
-| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:168-186 |
+| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:204-222 |
 | The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. | `legalControls`; `projectionEffects`; "shows the durable live command" | dashboard/src/panels/Hangar.test.tsx:140-166 |
 
 ## Update History

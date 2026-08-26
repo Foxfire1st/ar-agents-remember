@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_mutation_evidence_boundary.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,11 +51,11 @@ See task `260821-CLIVE-L1` L1-R4 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ungoverned entrances fail closed while the public lease-bound closeout route persists its admitted candidate. | `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_legacy_cli_apply_cannot_bypass_the_journaled_operation` | mcp/tests/test_closeout_mutation_evidence_boundary.py:64-82; mcp/tests/test_closeout_mutation_evidence_boundary.py:102-115; mcp/tests/test_closeout_mutation_evidence_boundary.py:215-232 |
+| Ungoverned entrances fail closed while the public lease-bound route proves the exact claimed door. | `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`; `test_lease_bound_closeout_start_proves_the_exact_claimed_door`; `test_legacy_cli_apply_cannot_bypass_the_journaled_operation` | mcp/tests/test_closeout_mutation_evidence_boundary.py:75-93; mcp/tests/test_closeout_mutation_evidence_boundary.py:113-133; mcp/tests/test_closeout_mutation_evidence_boundary.py:242-259 |
 | A stale unchanged-intent retry remains attempt one, does not launch, and stays cancellable. | `test_stale_unchanged_intent_observes_attempt_one_without_relaunch` | mcp/tests/test_closeout_mutation_evidence_boundary.py:118-149 |
 | Real Git status and removed-reflog failures leave journal bytes and pre-mutation evidence unchanged. | `test_git_mutation_status_failure_has_no_durable_progress`, `test_git_mutation_ref_log_failure_has_no_durable_progress` | mcp/tests/test_closeout_mutation_evidence_boundary.py:152-177; mcp/tests/test_closeout_mutation_evidence_boundary.py:180-212 |
-| Authority, binding, and proof reject changed or incomplete intent before mutation evidence can advance. | `test_git_mutation_helper_cannot_silently_run_without_evidence_authority`, `test_bind_and_proof_refuse_changed_or_incomplete_intent` | mcp/tests/test_closeout_mutation_evidence_boundary.py:235-244; mcp/tests/test_closeout_mutation_evidence_boundary.py:289-329 |
-| Snapshot reconciliation distinguishes exact, ambiguous, escaped, unreadable, and multi-leg outcomes. | `test_reconciliation_distinguishes_unchanged_ambiguous_and_proven_output`, `test_one_unchanged_leg_cannot_hide_another_legs_proven_commit` | mcp/tests/test_closeout_mutation_evidence_boundary.py:333-363; mcp/tests/test_closeout_mutation_evidence_boundary.py:881-924 |
+| Authority, binding, and proof reject changed or incomplete intent before mutation evidence can advance. | `test_git_mutation_helper_cannot_silently_run_without_evidence_authority`, `test_bind_and_proof_refuse_changed_or_incomplete_intent` | mcp/tests/test_closeout_mutation_evidence_boundary.py:262-271; mcp/tests/test_closeout_mutation_evidence_boundary.py:316-356 |
+| Snapshot reconciliation distinguishes exact, ambiguous, escaped, unreadable, and multi-leg outcomes. | `test_reconciliation_distinguishes_unchanged_ambiguous_and_proven_output`, `test_one_unchanged_leg_cannot_hide_another_legs_proven_commit` | mcp/tests/test_closeout_mutation_evidence_boundary.py:359-390; mcp/tests/test_closeout_mutation_evidence_boundary.py:1028-1072 |
 | Exact restore preserves the differing bound output tree while producing cancellable reconciled-unchanged evidence. | `test_reconciliation_preserves_bound_output_after_exact_restore` | mcp/tests/test_closeout_mutation_evidence_boundary.py:366-417 |
 
 ## Cross-Repo References
@@ -68,9 +68,9 @@ The current forcing seams include `test_direct_closeout_apply_without_journal_au
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_generic_lifecycle_start_cannot_bypass_raw_closeout_admission`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_stale_unchanged_intent_observes_attempt_one_without_relaunch`. | L64-L82; L85-L99; L102-L115; L118-L149 | `mcp/tests/test_closeout_mutation_evidence_boundary.py` |
+| The current test source exercises `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git`, `test_generic_lifecycle_start_cannot_bypass_raw_closeout_admission`, `test_lease_bound_closeout_start_supplies_its_resolved_candidate`, `test_stale_unchanged_intent_observes_attempt_one_without_relaunch`. | `test_direct_closeout_apply_without_journal_authority_refuses_before_route_or_git` | mcp/tests/test_closeout_mutation_evidence_boundary.py:75-93 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -85,6 +85,8 @@ Forces journal-owned Git mutation authority and reconciliation across ordinary c
 - Recovery continues the same accepted generation and preserves exact conflict evidence without raw-Git fallback.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed closeout ledger/initial-door recovery package relocations; mutation-evidence boundary assertions are unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

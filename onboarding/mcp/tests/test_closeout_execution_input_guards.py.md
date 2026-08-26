@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_execution_input_guards.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,9 +53,9 @@ The current forcing seams include `test_closeout_apply_refuses_missing_normalize
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_closeout_apply_refuses_missing_normalized_input_before_candidate_work`, `test_preview_refuses_missing_normalized_input`, `test_closeout_apply_requires_journaled_explicit_approval`, `test_preview_only_cli_requires_task_addressing`. | L20-L33; L36-L45; L48-L64; L67-L69 | `mcp/tests/test_closeout_execution_input_guards.py` |
+| The current test source exercises `test_closeout_apply_refuses_missing_normalized_input_before_candidate_work`, `test_preview_refuses_missing_normalized_input`, `test_closeout_apply_requires_journaled_explicit_approval`, `test_preview_only_cli_requires_task_addressing`. | `test_closeout_apply_refuses_missing_normalized_input_before_candidate_work`; `test_preview_refuses_missing_normalized_input`; `test_closeout_apply_requires_journaled_explicit_approval`; `test_preview_only_cli_requires_task_addressing` | mcp/tests/test_closeout_execution_input_guards.py:20-33; mcp/tests/test_closeout_execution_input_guards.py:36-45; mcp/tests/test_closeout_execution_input_guards.py:48-64; mcp/tests/test_closeout_execution_input_guards.py:67-69 |
 
 ## Update History
 

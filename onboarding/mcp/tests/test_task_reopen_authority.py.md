@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_reopen_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T07:05+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,16 @@ preflight and the production callback; the locked re-plan refuses and preserves 
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## 2026-08-26 Canonical Task-Fact Publication Boundary
+
+The race tests now patch `publish_task_fact_mutation` and invoke its `validate` callback after
+advancing code/memory or racing task/contract bytes. They therefore exercise the canonical
+task-fact publication mutex and revalidation shape directly. Reopen must preserve the competing
+task or contract write and refuse stale source/contract evidence; it cannot rely on the retired
+queue-bound publication helper.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled reopen race coverage with the canonical task-fact mutation publication and validation callback.
 - 2026-08-16T07:15+02:00 — Added leaf/master task-document races proving locked re-planning prevents stale overwrite and preserves the competing publication.
 - 2026-08-16T07:05+02:00 — 260815-DAG-L4: created for the queue-to-repository reopen authority recheck, stale-contract race, and exact external-ledger proof.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_ledger_evidence_order.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ See task `260821-CLIVE-L1` L1-R3, L1-R4, and L1-R6.
 | --- | --- | --- |
 | The fixture supplies canonical settings and a real journaled external-memory operation. | `_journaled_ledger_fixture` | mcp/tests/test_closeout_ledger_evidence_order.py:30-70 |
 | Created ledger output publishes both intent states, exact tree binding, Git commit, and observed proof in order. | `test_created_ledger_output_publishes_intent_bind_commit_and_proof` | mcp/tests/test_closeout_ledger_evidence_order.py:73-130 |
-| Resume consumes the exact recovery tuple through one verified-existing event without refresh or rewrite. | `test_resumed_external_output_uses_exact_recovery_tuple_without_refresh` | mcp/tests/test_closeout_ledger_evidence_order.py:243-292 |
+| Resume consumes the exact recovery tuple through one verified-existing event without refresh or rewrite. | `test_resumed_external_output_uses_exact_recovery_tuple_without_refresh` | mcp/tests/test_closeout_ledger_evidence_order.py:308-359 |
 
 ## Cross-Repo References
 
@@ -54,12 +54,13 @@ The current forcing seams include `test_created_ledger_output_publishes_intent_b
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_created_ledger_output_publishes_intent_bind_commit_and_proof`, `test_ledger_intent_is_exact_before_real_write_or_stage`, `test_resumed_external_output_uses_exact_recovery_tuple_without_refresh`. | L73-L130; L141-L230; L243-L292 | `mcp/tests/test_closeout_ledger_evidence_order.py` |
+| The current test source exercises `test_created_ledger_output_publishes_intent_bind_commit_and_proof`, `test_ledger_intent_is_exact_before_real_write_or_stage`, `test_resumed_external_output_uses_exact_recovery_tuple_without_refresh`. | `test_created_ledger_output_publishes_intent_bind_commit_and_proof`; `test_ledger_intent_is_exact_before_real_write_or_stage`; `test_resumed_external_output_uses_exact_recovery_tuple_without_refresh` | mcp/tests/test_closeout_ledger_evidence_order.py:82-112; mcp/tests/test_closeout_ledger_evidence_order.py:186-254; mcp/tests/test_closeout_ledger_evidence_order.py:308-359 |
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the ledger-recovery package relocation and corrected porcelain-status expectation; intent, tree, commit, and proof ordering are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: rebound the canonical settings fixture, real created/existing/resumed ledger routes, and exact intent/tree/commit ordering against accepted tree `4241908c`; first verification stamp remains governed-closeout-owned.

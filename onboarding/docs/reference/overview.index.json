@@ -57,7 +57,7 @@
       "skills",
       "roles.<role>",
       "rolesPerLevel",
-      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",
@@ -74,6 +74,7 @@
       "list_models",
       "worktrees-c09.md",
       "agents-remember",
+      "reconciling",
       "worktree_closeout_apply",
       "mcp/server.py",
       "@server.tool",
@@ -91,8 +92,7 @@
       "worktree_*",
       "onboardingRoot",
       "--contract",
-      "worktree_cleanup",
-      "lifecycle_finalize_task"
+      "worktree_cleanup"
     ]
   },
   "fallback": {

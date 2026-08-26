@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/task_fact_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -41,16 +41,18 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Publication and validation return the committed value plus per-scope effects. | L37-L85 | [source](mcp/src/agents_remember/worktrees/task_fact_publication.py) |
-| Contract scope and task-fact adapters share the task-first owner. | L86-L157 | [source](mcp/src/agents_remember/worktrees/task_fact_publication.py) |
-| Invalidation and rebuild failures become bounded per-scope effects. | L158-L243 | [source](mcp/src/agents_remember/worktrees/task_fact_publication.py) |
+| Publication and validation return the committed value plus per-scope effects. | `TaskFactPublicationResult`; `publish_task_fact_mutation`; `validate_task_fact_mutation` | mcp/src/agents_remember/worktrees/task_fact_publication.py:36-39; mcp/src/agents_remember/worktrees/task_fact_publication.py:42-74; mcp/src/agents_remember/worktrees/task_fact_publication.py:77-83 |
+| Contract scope and task-fact adapters share the task-first owner. | `contract_projection_scopes`; `publish_contract_task_facts`; `preview_contract_task_facts` | mcp/src/agents_remember/worktrees/task_fact_publication.py:86-107; mcp/src/agents_remember/worktrees/task_fact_publication.py:110-123; mcp/src/agents_remember/worktrees/task_fact_publication.py:126-141 |
+| Invalidation and rebuild failures become bounded per-scope effects. | `_invalidate_scope`; `_invalidation_failure_effect`; `_rebuild_failure_effect` | mcp/src/agents_remember/worktrees/task_fact_publication.py:158-188; mcp/src/agents_remember/worktrees/task_fact_publication.py:205-218; mcp/src/agents_remember/worktrees/task_fact_publication.py:221-243 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; task-first mutation publication and projection effects are unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.

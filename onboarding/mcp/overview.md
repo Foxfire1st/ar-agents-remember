@@ -8,14 +8,33 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
+| lastUpdated | 2026-08-26T02:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## IAS Source-Pair Coordination Boundary
+
+Task documents remain upstream canonical planning truth and are always authorable. A task mutation
+never waits on queue or atomic-series activation state: it publishes first, invalidates the affected
+disposable scheduling projection, and lets current waiting candidates be recomputed.
+
+Atomic implementation admission uses one source-pair-scoped replace-in-place selector. Multiple
+live series are normal; selecting one pauses the previous series without retiring it. The selected
+master remains `reconciling` until a contract-addressed sync brings the exact code/external-memory
+base pair current, and only then becomes `active`. Genuine Git conflicts are retained in an
+operation-owned worktree and stable enclosure-root journal for agent resolution, continuation, or
+explicit cancellation.
+
+The selector is not a lifecycle ledger, and the queue owns no claim, commit, certification,
+integration, recovery, or terminal evidence. Terminal cleanup vacates only an exact selected owner
+before its canonical contract pointer is deleted. Normal readers never fall back to task prose,
+queue rows, old files, or ambient Git when activation/journal authority is absent or unreadable.
+The focused route owner is [worktrees/overview.md](src/agents_remember/worktrees/overview.md).
 
 ## L3 Canonical Scheduling-Register Boundary
 
@@ -25,8 +44,9 @@ outer Markdown pipes are part of the authority grammar; width-shaped prose or ma
 rows fail closed before they can grade or order a candidate. Since 260815-DAG-L13 the fail-closed
 side is the write/mutation path: sprint creation scaffolds the empty canonical registers,
 `task_doc` writes validate register shape, and the queue's `status` read instead degrades to a
-facts projection (absent/ok/malformed per register) — graph-less sprints project the
-atomic-sequential default with the series lane owner and legal next operations.
+facts projection (absent/ok/malformed per register). Graph-less sprints project the
+atomic-sequential default with waiting reasons derived from the source-pair selector; the retired
+series-lane owner is not reconstructed.
 
 ## Current Structural Agent Boundary
 
@@ -959,6 +979,10 @@ and queue helpers by authority. The package retains one Dagger acceptance path a
 fallback runner, compatibility facade, or queue-owned commit evidence.
 
 ## Update History
+
+- 2026-08-26T02:55+02:00 — Reconciled the MCP route with source-pair atomic activation,
+  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
+  disposable queue ownership, and exact terminal selector release.
 
 - 2026-08-25T17:21+02:00 — Reconciled the final PDLS package ownership and evidence boundaries.
   Verification remains closeout-owned.

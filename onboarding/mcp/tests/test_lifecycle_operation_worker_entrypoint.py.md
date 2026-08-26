@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operation_worker_entrypoint.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R5.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Parser, main, and installed script use task addressing and declare the worker before services. | `test_worker_parser_main_and_script_entry_use_task_addressing` | `mcp/tests/test_lifecycle_operation_worker_entrypoint.py:21-77` |
-| Production entrypoint dispatches task-addressed durable execution. | `main` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:485-488 |
+| Production entrypoint dispatches task-addressed durable execution. | `main` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:499-507 |
 
 ## Cross-Repo References
 

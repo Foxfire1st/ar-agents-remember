@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -47,22 +47,32 @@ role, then synchronize.
 - The orchestrator is backend-only and does not become manager, worker, reviewer, curator, or
   developer-facing architect.
 - A persisted `executionGraph` is optional; the explicit graph-less choice runs the
-  atomic-sequential default and retains all planning judgments.
+  source-pair-selected atomic-sequential default and retains all planning judgments.
+- Task-document mutation is upstream of runtime selection; affected queue projections are
+  invalidated and rebuilt after planning changes.
+- The queue observes activation and owns no lifecycle, commit, or selection evidence.
 - This packaged artifact must remain byte-identical to the canonical role.
 
 ### Todos
 
 None recorded.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `The strategist pass`; `Output: the planner master task`; `Execution loop` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:202-252; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:277-296 |
+| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `## Job P — Portfolio (streamline + plan)`; `## Job O — Orchestrate (execute the plan)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:183-259; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:260-486 |
 | The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; `## Topology Choice And Canonical executionGraph Adoption Payload` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:104-151 |
 | Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
 
-## Cross-Repo Evidence
+## Cross-Repo References
 
 No sibling repository evidence is needed for this doctrine file.
 
@@ -115,14 +125,15 @@ master integration remain the only acceptance owners.
 The orchestrator recomputes the ready frontier after every material event and records rationale,
 evidence, author, confidence, and supersession before a priority/queue judgment changes selection.
 Organizational leaves land directly as released; the last one forms the exact proposed final
-candidate and receives the full master check before super moves. Atomic masters hold an exclusive
-blocker and land only as a completed block. Integration refs are never repair workbenches; fixes
-return to an owning/reopened or new scoped leaf.
+candidate and receives the full master check before super moves. Atomic masters expose no partial
+leaf state to super; source-pair activation may pause one live master and select another, while the
+separate landing authority serializes protected-ref movement. Integration refs are never repair
+workbenches; fixes return to an owning/reopened or new scoped leaf.
 
 ## 260815-DAG-L13 Scheduling Default Doctrine
 
 Adoption doctrine states that a sprint adopted without an `executionGraph` runs the
-atomic-sequential default (one master fully integrates before the next starts). If the ruled plan
+atomic-sequential default. If the ruled plan
 later selects an explicit graph, attach every commanded master first, then bootstrap the graph in
 one complete `task_doc.author_execution_graph` batch containing every node and evidence-backed
 edge; only an established graph is edited incrementally. The `migrate_execution_topology`
@@ -151,7 +162,27 @@ graph adoption from that state attaches all masters first and then publishes one
 nodes-plus-evidence-edges batch. No fake graph, partial bootstrap, runtime fallback, or mandatory-
 graph compatibility path exists.
 
+## IAS Activation, Queue, And Conflict Boundary
+
+Before atomic implementation exposure, manager/worker dispatch selects the exact source pair as
+`reconciling`, auto-pauses the former selection, source-syncs the selected master, and publishes
+`active` only when both bases are current. Reviewer/curator inspection does not switch selection,
+and pausing preserves chats, processes, worktrees, contracts, and claimed journals.
+
+Task authoring never waits for activation or queue permission. The queue is a disposable observer
+of active/reconciling/paused/vacant waiting facts. Malformed selector state fails closed only for
+affected runtime admission/projection and is archived/replaced by a selecting operation; no
+contract-presence fallback exists. Technically derivable retained conflicts are resolved through
+the advertised continue/cancel operation; only genuine semantic ambiguity returns to the architect.
+
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference headings for this changed
+  synchronized orchestrator-role card.
+
+- 2026-08-26T05:20+02:00 — Reconciled the generated orchestrator role with exact source-pair
+  selection, pause preservation, separate landing authority, task-authoring primacy, disposable
+  queue observation, and agent-owned resumable conflicts. Verification remains closeout-owned.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: made strategist-skip reasoning complete, graph
   persistence and attachment-node creation conditional, priority override/default resolution

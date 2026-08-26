@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integration_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ The current source seams include `IntegratePreview`, `IntegrationPublication`, `
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IntegratePreview`, `IntegrationPublication`, `protected_integration_decision` at this ownership boundary. | L30-L35; L39-L49; L52-L60 | `mcp/src/agents_remember/worktrees/modules/integration_publication.py` |
+| The current module exposes `IntegratePreview`, `IntegrationPublication`, `protected_integration_decision` at this ownership boundary. | `IntegratePreview`; `IntegrationPublication`; `protected_integration_decision` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:29-35; mcp/src/agents_remember/worktrees/modules/integration_publication.py:38-49; mcp/src/agents_remember/worktrees/modules/integration_publication.py:52-60 |
 
 ## Update History
 

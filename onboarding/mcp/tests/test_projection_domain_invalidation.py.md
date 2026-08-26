@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_projection_domain_invalidation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,8 +55,17 @@ No Domain Documentation source is configured.
 
 No meaningful cross-repository references found.
 
+## 2026-08-26 Atomic Retry Regression
+
+A new regression forces task refresh to fail after the contract snapshot is built. It proves the
+previous contracts, enclosures, task documents, and series remain published, the pending flag
+stays set, and the next heartbeat retries all task inputs and publishes them together. Success
+clears the pending flag. This test closes the dashboard recovery gap where a transient read failure
+could otherwise leave task projection stale indefinitely.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Added the atomic last-good task snapshot and heartbeat retry regression for transient projection-read failures.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:05:00+02:00 — Curator W3-B02 repaired 1 Repo-Internal citation row, resolving 2 manifest findings with exact retained-state and invalidation anchors; verification metadata was preserved.

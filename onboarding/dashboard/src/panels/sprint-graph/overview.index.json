@@ -61,7 +61,7 @@
       "SprintGraphPage",
       "dashboard/src/panels/sprint-graph/",
       "route-local-overview",
-      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "/overview.md",
       "executionGraphView",
       "SprintGraphViewImpl",
@@ -69,6 +69,7 @@
       "leafLineStyles",
       "DetailPanel",
       "@xyflow/react",
+      "MasterOverview",
       "TaskExecutionGraphView",
       "_execution_graph_lines",
       "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
@@ -83,13 +84,12 @@
       "T12",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T15",
+      "T08",
       "governingOverview",
       "DAG",
       "L12",
       "CSS",
-      "NOT",
-      "execution_graph_lines"
+      "NOT"
     ]
   },
   "fallback": {

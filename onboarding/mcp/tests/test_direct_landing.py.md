@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,13 +65,13 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The direct landing policy gate and leaf refusal. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts` | mcp/tests/test_direct_landing.py:154-171; mcp/tests/test_direct_landing.py:173-193 |
+| The direct landing policy gate and leaf refusal. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts` | mcp/tests/test_direct_landing.py:189-210; mcp/tests/test_direct_landing.py:212-232 |
 | Code-commit verification then ledger/memory commit. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:195-265 |
-| Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:267-291 |
-| Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:434-456; mcp/tests/test_direct_landing.py:525-545 |
-| Idempotent re-land and conflicting-mapping refusal. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_reland_with_conflicting_ledger_mapping_is_refused` | mcp/tests/test_direct_landing.py:593-625; mcp/tests/test_direct_landing.py:627-664 |
-| Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:725-763 |
-| The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:111-123 |
+| Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:315-339 |
+| Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:482-504; mcp/tests/test_direct_landing.py:573-593 |
+| Idempotent re-land and conflicting ledger-mapping refusal/recovery are both forced. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_conflicting_mapping_has_zero_controls_and_stale_recover_is_nonmutating` | mcp/tests/test_direct_landing.py:648-683; mcp/tests/test_direct_landing_operation_recovery.py:697-733 |
+| Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:786-824 |
+| The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
 
 ## Cross-Repo References
 
@@ -92,9 +92,9 @@ The current forcing seams include `test_direct_landing_is_policy_gated`, `test_d
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. | L154-L171; L173-L193; L195-L265; L267-L291 | `mcp/tests/test_direct_landing.py` |
+| The current test source exercises `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts`; `test_direct_landing_verifies_code_commit_then_ledger`; `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:189-210; mcp/tests/test_direct_landing.py:212-232; mcp/tests/test_direct_landing.py:234-313; mcp/tests/test_direct_landing.py:315-339 |
 
 ## 260821-DAGQC-L2 Closed Result Model Proof
 

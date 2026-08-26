@@ -7,9 +7,21 @@
 | sourceRoute | `mcp/src/agents_remember/application/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+
+## IAS Frozen Structural Admission Boundary
+
+Structural dispatch may trigger atomic-master selection, but it does not acquire task-authoring or
+queue authority. A selecting manager/attach path must reconcile the selected series before exposing
+implementation work; another live master is paused by the selector rather than deleted, completed,
+or rewritten. Any returned sync conflict stays owned by the worktree transaction and is resumed or
+cancelled through its contract-addressed public operation.
+
+Task documents remain canonical structural truth throughout this flow. Their otherwise-valid
+mutation is never refused because a queue projection or selector exists; downstream scheduling is
+invalidated and recomputed from the changed truth.
 
 ## What This Area Is
 
@@ -146,6 +158,9 @@ Structural dispatch distinguishes organizational masters, whose leaves start dir
 `agent_tools.py` imports updated to the moved `application/task_docs/task_ref` location.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS structural-admission boundary label against the
+  frozen pass-13 candidate.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` is the one public spawn tool for both caller kinds — plane seats keep the structural path; ambient launchers (no `AR_HOSTED_SESSION_ID`) are resolved from the process environment (distinct from the L16 gate-tools declared caller) and spawn with the pinned brief + same rollback, no parent seat, role altitude still validated, provenance `spawnedByKind="ambient"`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

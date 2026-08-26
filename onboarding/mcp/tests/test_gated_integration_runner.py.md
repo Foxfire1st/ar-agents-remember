@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_gated_integration_runner.py` |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`   |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`   |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -96,8 +96,16 @@ The runner tests rename CI-safe/local-only categories to credential-free/vendor-
 prove the two credential-free selectors exactly. They also forbid GitHub workflows from invoking
 the gated pytest runner, preserving Dagger as the only test-capable environment.
 
+## 2026-08-26 Fitness Ownership Reconciliation
+
+The suite now proves that `fitness` is owned by the canonical evidence-lane catalog, carries
+authority there, and is absent from both ordinary pytest marker declarations and the gated
+integration runner's environment-dependent path table. This prevents the same category from
+having two selection authorities.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled fitness ownership to the evidence-lane catalog and removed the obsolete ordinary-marker assumption.
 - 2026-08-14T11:27+02:00 — R39 curator: reconciled category semantics and GitHub no-pytest
   ownership. Verification remains closeout-owned.
 

@@ -5,14 +5,26 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
-| governingOverview | `../../../../overview.md` |
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../../overview.md)
+[worktrees overview](../overview.md)
+
+## IAS Frozen Source-Pair Serialization Boundary
+
+The source-pair selector and sync transaction run under the same repository integration authority
+that serializes protected-source movement. Remote refresh is evidence gathered before the lock;
+the admitted local source tips, pinned authority refs, contract re-read, selection transition, and
+base-pair finalization are proven under authority. No ambient checkout or prior queue row becomes a
+second source of truth.
+
+Terminal lifecycle cleanup releases only an exact selected terminal pointer and does so before the
+canonical contract identity can be destroyed. Lifecycle/commit evidence remains in the stable
+operation journal and Git proof owners; the disposable closeout projection observes readiness only.
 
 ## Purpose
 
@@ -105,6 +117,9 @@ execution into their named owners. The split reduces repeated validation and fix
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS source-pair serialization boundary label against
+  the frozen pass-13 candidate.
 
 - 2026-08-25T17:21+02:00 — PDLS final reconciliation recorded the accepted ownership splits and
   preserved the journal/door/queue authority boundary. Verification remains closeout-owned.

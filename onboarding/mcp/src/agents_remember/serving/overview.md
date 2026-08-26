@@ -9,8 +9,8 @@ Total output lines: 2259
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -814,8 +814,17 @@ bounded source problems, and waiting-generation members—never claims, blockers
 certification. `_task_documents.py` projects audited discarded-unstarted subtasks as persistent task
 history and includes them in body revision identity.
 
+## 2026-08-26 Projection Retry Reconciliation
+
+The serving projection input state now publishes task-domain snapshots atomically. A failed task
+refresh retains the last good contracts, enclosures, task documents, and series, marks the task
+refresh pending, and forces a later heartbeat to retry even when no new task-domain change signal
+arrives. This keeps transient read failures from poisoning the live dashboard projection or
+requiring an unrelated filesystem event to recover.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Documented atomic task-projection refresh and heartbeat retry after transient failure; runtime lifecycle-projection import relocation has no additional route impact.
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `serving/ambient_seat.py` now owns BOTH dispatch caller resolutions (plane seat + ambient launcher resolved from the process environment); spawn provenance gains caller kind (`spawned_by_kind` write-once via `_preserved`, wire `spawnedByKind`). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.

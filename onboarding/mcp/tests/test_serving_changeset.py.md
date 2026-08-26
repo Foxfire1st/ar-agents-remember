@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_changeset.py`      |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-12T12:55+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ this checkout, `unittest.TestCase` with a `tempfile.TemporaryDirectory` per case
 | The git primitive under test (`changed_files_with_counts`). | `changed_files_with_counts` | mcp/src/agents_remember/worktrees/modules/git.py:271-310 |
 | The shared scope layer the extraction test checks (`resolve_scope`, `run_scoped`, `FileScope`). | `resolve_scope`; `run_scoped`; `FileScope` | mcp/src/agents_remember/serving/scope.py:96-107; mcp/src/agents_remember/serving/scope.py:147-193; mcp/src/agents_remember/serving/scope.py:207-227 |
 | The files module re-exporting "Scope resolution (``FileScope`` / ``resolve_scope`` / ``run_scoped``) + the language"/"reuses them" (asserted here). | "def list_dir(scope: FileScope"; "reuses them" | mcp/src/agents_remember/serving/files.py:20-20; mcp/src/agents_remember/serving/files.py:163-163 |
-| `WorktreeContract` / `write_contract` used to drive the change-set scope. | `WorktreeContract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-289; mcp/src/agents_remember/worktrees/worktree_contract.py:484-485 |
+| `WorktreeContract` / `write_contract` used to drive the change-set scope. | `WorktreeContract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:231-288; mcp/src/agents_remember/worktrees/worktree_contract.py:490-491 |
 | `McpRuntimeConfig` / `RepositoryScope` constructed by the master test. | `McpRuntimeConfig`; "class RepositoryScope:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137; mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-81 |
 | The L1 files test whose harness/style this mirrors. | `PathGuardTests` | mcp/tests/test_serving_files.py:80-111 |
 

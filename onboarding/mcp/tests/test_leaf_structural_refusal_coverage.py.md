@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_leaf_structural_refusal_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T22:28+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T08:15+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,11 @@ rendering failures, identity and terminal migrations, retire/manager authority, 
 reaping, topology enumeration/census, exact dispatch targeting, and conversation launch with or
 without a plane-supplied structural role.
 
+Dispatch cases whose subject is seat-taken, initial-brief rollback, or adapter delivery explicitly
+stub `_implementation_series_admission_refusal` as successful. That keeps each focused case on its
+named later seam while separate activation/admission suites own the source-pair gate itself; the
+fixture does not create a bypass in production.
+
 ### Conventions
 
 Each test names the refusal it forces and imports the narrow production module inside the test.
@@ -49,6 +54,8 @@ or the exact production exception rather than on invented alternative implementa
 - Legacy migration is bounded to declared old durable shapes and does not create a public
   compatibility route.
 - This module is coverage evidence, not proof that the complete targeted/full quality gate passed.
+- A test focused after source-pair admission must neutralize that earlier seam explicitly instead
+  of depending on unrelated repository fixtures or weakening production admission.
 
 ### Todos
 
@@ -94,6 +101,10 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 
 ## Update History
+
+- 2026-08-26T08:15+02:00 — Reconciled three focused dispatch fixtures with the new source-pair
+  admission predecessor by stubbing it successful before forcing their existing spawn/delivery
+  branches. Production admission remains covered separately; verification is closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

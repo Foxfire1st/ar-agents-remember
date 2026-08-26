@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/sprintGraphFixture.ts`        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T15:04+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ It seeds a disposable scheduling view; it does not model a mutable blocker or ca
 | The seeded sprint document. | `SPRINT_GRAPH_TASK_DOC` | dashboard/src/dev/sprintGraphFixture.ts:11-69 |
 | The seeded sprint queue. | `SPRINT_GRAPH_QUEUE` | dashboard/src/dev/sprintGraphFixture.ts:71-88 |
 | The page that consumes the fixture. | `SprintGraphPage` | dashboard/src/dev/sprintGraphPage.tsx:16-20 |
-| The wire model the fixture shapes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:561-565 |
+| The wire model the fixture shapes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:653-655 |
 
 ## Cross-Repo References
 

@@ -81,7 +81,7 @@
     "unstarted"
   ],
   "hotPath": {
-    "summary": "Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is never subordinate to queue state. The exact transaction rechecks accepted source bytes, writes task truth and invalidates every affected waiting projection under the task-publication lock, then rebuilds each disposable projection independently from current closeout-door facts. A planning change therefore yields a clear invalidation/rebuild signal without freezing unrelated task-doc authoring or claiming lifecycle evidence for an operation already underway. `task_doc` MCP calls dispatch through `...",
+    "summary": "Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is never subordinate to queue or atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task truth and invalidates every affected waiting projection under the task-publication lock, then rebuilds each disposable projection independently from current closeout-door facts. A planning change therefore yields a clear invalidation/rebuild signal without freezing unrelated task-doc authoring, changing selector state, or claiming lifecycle evidence for an operation alr...",
     "candidateHints": [
       "mcp/src/agents_remember/application/task_docs",
       "mcp/src/agents_remember/application/task_docs/__init__.py",
@@ -131,24 +131,24 @@
       "task_sprint_linkage",
       "task_unstarted_evidence.py",
       "task_unstarted_evidence",
-      "task_doc",
-      "MCP",
       "mcp/src/agents_remember/application/task_docs",
       "route-local-overview",
-      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "/overview.md",
       "task_doc_tool",
       "application/",
+      "task_doc",
       "_sprint_doc_identity",
       "TaskDocResponse",
       "models/task_doc.py",
       "sections",
       "from . import task_sprint_linkage",
       "code_quality/single_owner.py",
-      "mcp/src/agents_remember/application/task_docs/task_doc_publication.py",
-      "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py",
-      "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py",
-      "application/task_docs"
+      "publish_task_doc_set",
+      "publish_prepared_task_documents",
+      "publish_task_doc_transaction_and_refresh",
+      "preview_task_doc_projection_effects",
+      "preview_task_doc_transaction_projection_effects"
     ]
   },
   "fallback": {

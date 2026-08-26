@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/drift_snapshot.py` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-08T14:38+02:00                                        |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                    |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                    |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The projection-side pruning policy consumes these primitives. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-23 |
-| Removal edge coverage rides the structural-coverage suite. | `test_drift_snapshot_removal_edges` | mcp/tests/test_leaf_structural_coverage.py:221-221 |
+| Removal edge coverage rides the structural-coverage suite. | `test_drift_snapshot_removal_edges` | mcp/tests/test_leaf_structural_coverage.py:219-242 |
 
 ## Cross-Repo References
 

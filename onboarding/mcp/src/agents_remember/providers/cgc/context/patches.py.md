@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/context/patches.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                     |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ managed patch application path belongs to the Docker runner image build.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Docker runner patch assets and patch-helper tests use these marker-based text transformations without requiring host CGC installation. | "def apply_cgc_timer_pop_patch("; "def test_patch_script_carries_the_timer_pop_operation(self) -> None:" | mcp/src/agents_remember/providers/cgc/context/patches.py:44-44; mcp/tests/test_context_providers.py:620-620 |
+| Docker runner patch assets and patch-helper tests use these marker-based text transformations without requiring host CGC installation. | "def apply_cgc_timer_pop_patch("; "def test_patch_script_carries_the_timer_pop_operation(self) -> None:" | mcp/src/agents_remember/providers/cgc/context/patches.py:44-44; mcp/tests/test_context_providers.py:619-619 |
 
 ## Update History
 

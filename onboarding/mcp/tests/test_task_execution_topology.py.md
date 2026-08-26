@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,10 +57,10 @@ are unchanged.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:119-214 |
+| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:116-217 |
 | Bootstrap and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:217-944 |
 | Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:229-253 |
-| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_bootstrap_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:793-842 |
+| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_bootstrap_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:882-931 |
 | The production policy under test lives in the application topology module. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:194-266 |
 | The L11 segment-graph schema/projection/placement cases split out under the file-size rail. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-253 |
 | The L11 incremental authoring forcing suite (which also owns the graph-less bootstrap forcing). | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
@@ -84,9 +84,9 @@ The current forcing seams include `test_graph_derives_stable_waves_without_persi
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_graph_derives_stable_waves_without_persisting_positions`, `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`, `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`, `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master`. | L120-L124; L126-L148; L150-L196; L198-L214 | `mcp/tests/test_task_execution_topology.py` |
+| The current test source exercises `test_graph_derives_stable_waves_without_persisting_positions`, `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`, `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`, `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master`. | `test_graph_derives_stable_waves_without_persisting_positions`; `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`; `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`; `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master` | mcp/tests/test_task_execution_topology.py:117-124; mcp/tests/test_task_execution_topology.py:126-151; mcp/tests/test_task_execution_topology.py:153-199; mcp/tests/test_task_execution_topology.py:201-217 |
 
 ## Update History
 

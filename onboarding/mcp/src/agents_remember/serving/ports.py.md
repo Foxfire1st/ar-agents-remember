@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/ports.py`                    |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-24T14:43+02:00                                       |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                   |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                   |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ re-exports these names for the conversation package.
 `ActiveConversationPort` (cit:(["class ActiveConversationPort"], mcp/src/agents_remember/serving/ports.py:62-62)) and `ConversationLibraryPort`
 (cit:(["class ConversationLibraryPort"], mcp/src/agents_remember/serving/ports.py:94-94)) are the two read protocols; `ControlSessionLike`
 (cit:(["class ControlSessionLike"], mcp/src/agents_remember/serving/ports.py:122-122)), `TerminalCatalogPort` (cit:(["class TerminalCatalogPort"], mcp/src/agents_remember/serving/ports.py:135-135)), and
-`ControlPlanePort` (cit:(["class ControlPlanePort"], mcp/src/agents_remember/serving/ports.py:189-189)) expose the control/terminal seams. The canonical
+`ControlPlanePort` (cit:(["class ControlPlanePort"], mcp/src/agents_remember/serving/ports.py:195-195)) expose the control/terminal seams. The canonical
 definitions live here so serving modules can import them without triggering the conversation
 package's route composition; `__all__` (cit:([`__all__`], mcp/src/agents_remember/serving/ports.py:272-278)) curates the surface.
 

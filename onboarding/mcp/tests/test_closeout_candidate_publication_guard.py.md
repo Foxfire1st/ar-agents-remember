@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_candidate_publication_guard.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,8 +38,8 @@ See task `260821-CLIVE-L1` L1-R5 and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A contract changed at publication is refused before candidate commit. | `test_closeout_candidate_publication_rechecks_the_contract` | mcp/tests/test_closeout_candidate_publication_guard.py:16-65 |
-| The production callback reloads and revalidates under authority. | `publication` in `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:722-752; mcp/src/agents_remember/worktrees/modules/closeout.py:1002-1091 |
+| A contract changed at publication is refused before candidate commit. | `test_closeout_candidate_publication_rechecks_the_contract` | mcp/tests/test_closeout_candidate_publication_guard.py:16-64 |
+| The production callback reloads and revalidates under authority. | "def publication() -> tuple[_CloseoutCommitPhase, Any]:"; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:998-1085 |
 
 ## Cross-Repo References
 
@@ -51,12 +51,20 @@ The current forcing seams include `test_closeout_candidate_publication_rechecks_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_closeout_candidate_publication_rechecks_the_contract`. | L16-L65 | `mcp/tests/test_closeout_candidate_publication_guard.py` |
+| The current test source exercises `test_closeout_candidate_publication_rechecks_the_contract`. | `test_closeout_candidate_publication_rechecks_the_contract` | mcp/tests/test_closeout_candidate_publication_guard.py:16-64 |
+
+## 2026-08-26 Queue-Independent Publication Guard
+
+The contract-change regression no longer mocks a queue-candidate claim because queue state is not
+closeout lifecycle authority. It now isolates the authority-held contract reread and publication
+callback directly: a changed contract must still refuse before candidate commit, independently of
+any disposable projection membership.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled the publication guard with queue-independent closeout authority and removed the obsolete queue-claim test seam.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T11:29+02:00 — No content impact: candidate12 changes only the

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -610,7 +610,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 | Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
 | `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
-| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:361-361 |
+| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:372-372 |
 | The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
 | `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:38-38 |
 | `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
@@ -622,7 +622,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:223-223 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:227-227 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -802,13 +802,15 @@ title-key compatibility reader.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The primitives-only title protocol and projection lookup preserve owning-master identity. | L35-L55; L188-L209 | `mcp/src/agents_remember/observer/projection_graph.py` |
-| Public-reader regression proves duplicate local leaf numbers retain their owner's title. | L195-L246 | `mcp/tests/test_task_documents_graph_projection.py` |
+| The primitives-only title protocol and projection lookup preserve owning-master identity. | `GraphNodeLike`; `GraphTitlesLike` | mcp/src/agents_remember/observer/projection_graph.py:35-44; mcp/src/agents_remember/observer/projection_graph.py:47-54 |
+| Public-reader regression proves duplicate local leaf numbers retain their owner's title. | `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:195-246 |
 
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed projection-input, mirror-state, and graph-title citation anchors after source movement; observer read/write ownership is unchanged.
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled the graph-view projection with
   `(TaskDocumentRef, leaf id)` title identity and the no-flat-reader boundary. Verification

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -34,19 +34,19 @@ projection node — the asymmetry that stops the tail from being a projection fi
 
 #### cit:([`ServedStateTailTests`], mcp/tests/test_served_state_conformance.py:213-257) — the tail is exactly the model's extension
 
-- cit:([`test_tail_keys_are_the_declared_extension_over_the_projection`], mcp/tests/test_served_state_conformance.py:216-222): the set difference
+- cit:([`test_tail_keys_are_the_declared_extension_over_the_projection`], mcp/tests/test_served_state_conformance.py:226-232): the set difference
   `ServedWorkspaceProjection.model_fields - WorkspaceProjection.model_fields` must equal
   `SERVED_TAIL_FIELDS`, **and** the assembled `served_state_tail(...)` must produce exactly those
   keys. The declaration and the assembly cannot drift apart silently.
-- cit:([`test_absent_halves_contribute_no_keys`], mcp/tests/test_served_state_conformance.py:224-231): `stream_events` may be driven with neither
+- cit:([`test_absent_halves_contribute_no_keys`], mcp/tests/test_served_state_conformance.py:234-242): `stream_events` may be driven with neither
   collaborator or with only one; **a missing half is a missing key, never a null placeholder**.
-- cit:([`test_the_two_halves_serialize_under_opposite_null_rules`], mcp/tests/test_served_state_conformance.py:233-243): the build stamp **omits**
+- cit:([`test_the_two_halves_serialize_under_opposite_null_rules`], mcp/tests/test_served_state_conformance.py:244-256): the build stamp **omits**
   what it could not prove (`commit`, `dirty`); the heartbeat **reports** a never-ticked supervisor
   as an explicit `null` (`lastTickAt`, `ageSeconds`). One shared `exclude_none` dump cannot do
   both, which is why `served_state_tail` is two dumps.
-- cit:([`test_the_tail_is_json_native`], mcp/tests/test_served_state_conformance.py:249-252): it is merged into a dict handed to
+- cit:([`test_the_tail_is_json_native`], mcp/tests/test_served_state_conformance.py:258-261): it is merged into a dict handed to
   `JSONResponse`/`ServerSentEvent`, so a pydantic model in there would only fail at encode time.
-- cit:([`test_serving_only_fields_stay_out_of_the_persisted_projection`], mcp/tests/test_served_state_conformance.py:250-257): the second consumer.
+- cit:([`test_serving_only_fields_stay_out_of_the_persisted_projection`], mcp/tests/test_served_state_conformance.py:263-270): the second consumer.
   `latest-state.json` is a `WorkspaceProjection` artifact, so declaring the tail on the projection
   would have put serve-time facts into it.
 
@@ -65,7 +65,7 @@ this test's to write while the route still reads and serves it exactly as in pro
 - cit:([`test_a_never_ticked_agent_notifier_still_serves_a_valid_body`], mcp/tests/test_served_state_conformance.py:340-349): no heartbeat row at all —
   the nulls are reported rather than dropped, `stale` still reads true, and the body still
   validates.
-- cit:([`test_the_304_branch_serves_the_etag_and_no_body`], mcp/tests/test_served_state_conformance.py:340-352): the change gate must survive the
+- cit:([`test_the_304_branch_serves_the_etag_and_no_body`], mcp/tests/test_served_state_conformance.py:358-370): the change gate must survive the
   tail being declared. The heartbeat is volatile and deliberately outside the content revision, so
   the test moves it (6h → 9h) between requests and requires **304, the same ETag, and
   `content == b""`**.
@@ -80,7 +80,7 @@ broadcast and the second frame is asserted to be **one bare projection node** �
 `LifecycleProjection.model_validate(delta.data)`. A delta is not a state body, so the
 whole-workspace tail has nothing there to be a field of.
 
-cit:([`test_a_snapshot_without_a_tail_is_still_a_valid_served_body`], mcp/tests/test_served_state_conformance.py:396-410) covers the path both tail
+cit:([`test_a_snapshot_without_a_tail_is_still_a_valid_served_body`], mcp/tests/test_served_state_conformance.py:414-428) covers the path both tail
 fields are optional *for*: `stream_events(projector)` with neither collaborator.
 
 #### The fixture is populated on purpose (L16-L24, `_populate` L134-L173)
@@ -108,9 +108,9 @@ with a stack trace in the log for a collaborator this file is not testing.
 ### Conventions
 
 `sys.path.insert(0, str(MCP_SRC))` after the third-party `fastapi.testclient` import cit:(["fastapi.testclient"], mcp/tests/test_served_state_conformance.py:38-41) —
-the suite idiom. Fixed `_TS` / `_REPO` / `_LEAVES` module constants cit:(["_REPO ="], mcp/tests/test_served_state_conformance.py:83-83) keep the fixture
+the suite idiom. Fixed `_TS` / `_REPO` / `_LEAVES` module constants cit:(["_REPO ="], mcp/tests/test_served_state_conformance.py:86-86) keep the fixture
 deterministic. The async class is `unittest.IsolatedAsyncioTestCase`; the generator legs always
-`await gen.aclose()` in a `finally`. `_tick_agent_notifier(age=timedelta(...))` cit:([`_tick_agent_notifier`], mcp/tests/test_served_state_conformance.py:288-291) writes the
+`await gen.aclose()` in a `finally`. `_tick_agent_notifier(age=timedelta(...))` cit:([`_tick_agent_notifier`], mcp/tests/test_served_state_conformance.py:295-298) writes the
 heartbeat row directly through `AgentNotifierHeartbeatStore(...).tick(now=...)`.
 
 ### Invariants And Boundaries
@@ -152,13 +152,13 @@ served-state module plus the two producers of the tail.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The contract under test: `ServedWorkspaceProjection`, `SERVED_TAIL_FIELDS`, `served_state_tail`, and the five reasons the tail lives here rather than on `WorkspaceProjection` (layer, the dump memo, the ETag, `latest-state.json`, and the snapshot/delta shape asymmetry). | "class ServedWorkspaceProjection", "def served_state_tail" | mcp/src/agents_remember/serving/served_state.py:48-48; mcp/src/agents_remember/serving/served_state.py:71-71 |
-| The route and the SSE generator driven for real; the tail rides the `snapshot` only. |"def create_app("; "async def stream_events("|mcp/src/agents_remember/serving/_app_common.py:115-115; mcp/src/agents_remember/serving/app.py:230-230|
+| The route and the SSE generator driven for real; the tail rides the `snapshot` only. |"def create_app("; "async def stream_events("|mcp/src/agents_remember/serving/_app_common.py:116-116; mcp/src/agents_remember/serving/app.py:243-243|
 | The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
 | The heartbeat half, which reports a never-ticked agent-notifier as explicit nulls, plus the store the fixture ticks. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
-| The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227; mcp/src/agents_remember/worktrees/worktree_contract.py:347-397; mcp/src/agents_remember/worktrees/worktree_contract.py:484-485 |
-| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:486-486 |
+| The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:200-228; mcp/src/agents_remember/worktrees/worktree_contract.py:346-396; mcp/src/agents_remember/worktrees/worktree_contract.py:490-491 |
+| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:488-488 |
 | The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`; `BuildInfoTests` | mcp/tests/test_serving.py:557-641; mcp/tests/test_serving_cli.py:36-181 |
 
 ## Cross-Repo References
@@ -168,7 +168,7 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:651-651 |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:743-743 |
 
 ## 260821-CLIVE-L2 Addressable Served-State Fixture
 
@@ -176,9 +176,9 @@ Served-state enclosure fixtures now publish lifecycle locators and immutable man
 contracts. Model conformance is therefore checked against operations discoverable through the
 normal root-journal address chain.
 
-| Finding | Source |
-| --- | --- |
-| Each populated enclosure becomes lifecycle-addressable before served-state projection. | mcp/tests/test_served_state_conformance.py:125-143 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Each populated enclosure becomes lifecycle-addressable before served-state projection. | `_write_enclosure` | mcp/tests/test_served_state_conformance.py:109-141 |
 
 ## Update History
 

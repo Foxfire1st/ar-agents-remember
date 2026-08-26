@@ -1,35 +1,53 @@
-# PDLS Onboarding Maintenance State
+# IAS Source-Pair Coordination Memory State
 
 | Field | Value |
 | --- | --- |
 | workflow | c-03 existing-memory-slice-maintenance + c-05 file-level onboarding |
-| state | candidate-curation-complete |
-| task | 260824-PDLS |
-| source inventory | accepted from approved master scope |
-| production units | 46 covered: 35 created, 11 refreshed |
-| test/support units | 60 covered: 34 created, 26 refreshed |
-| dashboard units | 1 changed source sidecar refreshed; 1 unchanged dependent fixture sidecar refreshed |
-| route overviews | 7 created; integration parent refreshed |
-| route indexes | current: 72/72 exact-candidate dry-run unchanged; zero stale indexes |
-| memory quality | shape checks clean; 78 drift, 284 claim-reopen, and 212 range/provenance findings remain at the pre-commit official-checkout boundary |
-| curator review | pass with explicit pre-commit provenance boundary |
-| handoff | complete |
+| state | ready-for-handoff |
+| change kind | direct IAS architecture repair; no task or master artifact |
+| source inventory | architect-supplied approved architecture plus current IAS production diff |
+| production units | frozen inventory: 32 changed/new MCP Python source files, 6 changed canonical skill files, 6 synchronized package-data skill copies, and 1 changed reference document |
+| test/support units | frozen inventory: 22 changed/new focused test files, including 6 final edge suites |
+| route overviews | new worktrees, activation, c-09, and affected child/public/docs/lifecycle routes reconciled to the frozen candidate |
+| route indexes | 75 routes generated from the frozen code/onboarding roots; final preview reports 0 writes and 0 stale indexes |
+| entity catalog | affected queue, ledger, lineage, contract, and integration ownership reconciled; real-commit fingerprints remain closeout-owned |
+| verification | exact 67/67 changed-source mapping and deterministic memory integrity checks pass; architect-supplied Dagger pass 13 is recorded without a curator execution claim |
+| handoff | ready |
 
-## Decisions
+## Approved Architecture Being Preserved
 
-- The handoff criticism is recorded as eager import fan-out, not an unproven static cycle.
-- The certifying plugin moved to the package root; service imports are fixture-local.
-- The unused testing-package re-export facade was removed without compatibility behavior.
-- Every changed Python unit and the changed dashboard contract guard are covered; no routine-test
-  deferral is used for this atomic master.
+- Task authoring is wholly upstream and never waits on activation or queue state.
+- One disposable source-pair activation snapshot selects the currently exposed atomic master;
+  multiple live series contracts are normal, and changing selection pauses rather than retires the
+  previous series.
+- A selecting operation publishes `reconciling`, completes the exact source-pair sync, and only
+  then publishes `active` for implementation admission.
+- Mid-task sync is a contract-addressed journaled transaction. Genuine conflicts stay in an
+  operation-owned worktree for agent resolution and can be continued or explicitly cancelled.
+- The sync journal is stable below the worktree-enclosure root and remains readable independently
+  of task-document health.
+- The closeout queue is a disposable scheduling projection. It owns no commit, claim,
+  certification, lifecycle, integration, or recovery evidence.
+- Terminal cleanup releases only the exact selected terminal contract; a paused series cannot
+  clear a newer selection.
+- Readers fail closed. No compatibility or fallback reader is introduced for activation or sync
+  authority.
 
-## Blockers
+## Current Boundaries
 
-None. Final verification metadata and entity fingerprints remain closeout-owned because the code
-candidate has not been committed.
+The architecture statements above are approved current intent and are reconciled to the frozen
+candidate. Verification hashes and entity fingerprints for uncommitted sources remain closeout
+work and must not be invented. The final curator pass refreshed generated route indexes from the
+explicit code/onboarding roots and completed deterministic exact-set, governing-link, citation,
+table-shape, and patch-integrity checks.
+
+## Remaining Closeout-Owned Facts
+
+- Stamp refreshed cards with the actual landed code commit/date only after that commit exists.
+- Recompute entity fingerprints whose evidence sets gain the new activation/sync owners from the
+  actual committed Git blobs.
 
 ## Next Recommended Action
 
-Run the one final full Dagger master gate. After the developer approves a code commit, closeout must
-stamp the resulting real code provenance and rerun memory quality; do not invent verification
-metadata for an uncommitted tree. Do not run closeout without a separate developer instruction.
+Architect reviews this curated memory candidate, commits code, performs the real-commit stamp and
+entity-fingerprint refresh, then commits memory. No curator-actionable onboarding repair remains.

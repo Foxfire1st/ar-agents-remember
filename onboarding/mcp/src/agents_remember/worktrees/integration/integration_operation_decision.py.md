@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` as its public seam. | L34-L42; L45-L96; L99-L105 | `mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py` |
+| The module defines `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` as its public seam. | `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` | mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:33-42; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:45-91; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:94-100 |
 
 ## Cross-Repo References
 

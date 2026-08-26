@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_structural_agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T06:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,12 @@ refuses (`ambient-seat-stale`) WITHOUT downgrading to ambient, and dispatching a
 `system-specialist` child from an architect seat refuses (`structural-child-refused`) — both assert
 the spawn primitive is never called.
 
+The atomic-series bootstrap repository fixture seeds external `memory.md` with the current
+`ar/super` code-tip mapping. Its partial-bootstrap restart case advances both protected source
+tips, then seeds the newly advanced code tip into the memory ledger before retrying. The case
+therefore exercises fresh paired-source recovery rather than constructing a mid-cycle pair that
+correct admission must refuse.
+
 ### Conventions
 
 All task references point at isolated temporary task trees; no test writes candidate schema rows to
@@ -48,6 +54,12 @@ the deployed coordination root.
 - Both replacement directions remain reachable through the same structural address.
 - Ambiguity is a typed failure, never first-match success.
 - A child whose initial exact-pinned brief fails is retired before the error escapes.
+- Atomic manager and worker seats are spawned only after the owning master is observed active; a
+  released parent is reselected before worker spawn.
+- Missing sprint integrationBranch, invalid manager altitude, and missing repository surface as
+  `series-admission-refused` and never reach process spawn.
+- A successful paired-source bootstrap fixture must map the exact admitted code tip at the
+  admitted external-memory tip; advancing two repositories independently is not sufficient.
 
 ### Todos
 
@@ -62,7 +74,7 @@ None.
 | --- | --- | --- |
 | Fixtures create real task containment and structural seats. | `_write_topology` | mcp/tests/test_structural_agent_tools.py:86-137 |
 | The suite exercises the structural operation boundary. | `StructuralAgentToolTests` | mcp/tests/test_structural_agent_tools.py:164-1090 |
-| The restructured caller resolution refuses broken plane identity and unauthorized child roles without downgrading. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_structural_agent_tools.py:1050-1067; mcp/tests/test_structural_agent_tools.py:1069-1090 |
+| The restructured caller resolution refuses broken plane identity and unauthorized child roles without downgrading. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_structural_agent_tools.py:1114-1131; mcp/tests/test_structural_agent_tools.py:1133-1154 |
 
 ## Cross-Repo References
 
@@ -83,11 +95,19 @@ The current forcing seams include `test_child_to_replacement_parent_is_resolved_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_child_to_replacement_parent_is_resolved_by_task_containment`, `test_parent_to_replacement_child_is_resolved_by_document_and_role`, `test_duplicate_current_occupants_fail_closed`, `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract`. | L173-L198; L200-L224; L226-L232; L234-L252 | `mcp/tests/test_structural_agent_tools.py` |
+| The current test source exercises `test_child_to_replacement_parent_is_resolved_by_task_containment`, `test_parent_to_replacement_child_is_resolved_by_document_and_role`, `test_duplicate_current_occupants_fail_closed`, `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract`. | `test_child_to_replacement_parent_is_resolved_by_task_containment`; `test_parent_to_replacement_child_is_resolved_by_document_and_role`; `test_duplicate_current_occupants_fail_closed`; `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract` | mcp/tests/test_structural_agent_tools.py:186-211; mcp/tests/test_structural_agent_tools.py:213-237; mcp/tests/test_structural_agent_tools.py:239-245; mcp/tests/test_structural_agent_tools.py:247-265 |
 
 ## Update History
+
+- 2026-08-26T06:45+02:00 — Corrected the partial-bootstrap forcing world to seed the fresh code
+  tip into the canonical memory ledger before retrying paired-source admission. This records source
+  shape only and makes no Dagger/test-execution claim.
+
+- 2026-08-26T03:37+02:00 — Extended structural forcing from manager bootstrap to manager and
+  worker source-pair admission. Tests observe active selection inside the spawn seam and retain
+  fail-before-spawn refusal checks. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -64,9 +64,9 @@ The context-packet fixture now publishes the lifecycle-operation locator and imm
 after writing the contract. Status lookup is therefore tested through the normal enclosure-root
 address chain rather than by treating the task-side contract path as durable lifecycle state.
 
-| Finding | Source |
-| --- | --- |
-| The configured contract is made addressable before the context packet reads status. | mcp/tests/test_context_packet.py:168-179 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The configured contract is made addressable before the context packet reads status. | `test_reports_active_worktree_contract` | mcp/tests/test_context_packet.py:145-193 |
 
 ## Update History
 

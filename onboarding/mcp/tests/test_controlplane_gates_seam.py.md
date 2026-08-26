@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_gates_seam.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ The current forcing seams include `test_master_handover_is_delegable_to_orchestr
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_master_handover_is_delegable_to_orchestrator`, `test_named_policy_routes_handover_to_orchestrator`, `test_human_pinned_kinds_stay_pinned`, `test_seam_requirement_binds_delegated_seam_rules_only`. | L175-L179; L181-L184; L186-L190; L192-L197 | `mcp/tests/test_controlplane_gates_seam.py` |
+| The current test source exercises `test_master_handover_is_delegable_to_orchestrator`, `test_named_policy_routes_handover_to_orchestrator`, `test_human_pinned_kinds_stay_pinned`, `test_seam_requirement_binds_delegated_seam_rules_only`. | `test_master_handover_is_delegable_to_orchestrator`; `test_named_policy_routes_handover_to_orchestrator`; `test_human_pinned_kinds_stay_pinned`; `test_seam_requirement_binds_delegated_seam_rules_only` | mcp/tests/test_controlplane_gates_seam.py:183-187; mcp/tests/test_controlplane_gates_seam.py:189-192; mcp/tests/test_controlplane_gates_seam.py:194-198; mcp/tests/test_controlplane_gates_seam.py:200-205 |
 
 ## Current Contract — 260821 CLIVE Final
 

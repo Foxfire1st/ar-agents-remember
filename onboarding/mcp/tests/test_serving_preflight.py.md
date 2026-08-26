@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_serving_preflight.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ executed (RAIL 2/RAIL 3 coverage).
 | --- | --- | --- |
 | The floor and pass/refuse semantics under test. | `ServingFloorTests` | mcp/tests/test_serving_preflight.py:26-105 |
 | The branch matrix over the real editable-detection and refusal legs. | `EditableInstallDetectionTests` | mcp/tests/test_serving_preflight.py:106-238 |
-| The module under test. | `require_serving_topology_schema`; `_is_editable_install`; `_below_floor` | mcp/src/agents_remember/tasks/serving_preflight.py:55-89; mcp/src/agents_remember/tasks/serving_preflight.py:98-132; mcp/src/agents_remember/tasks/serving_preflight.py:143-154 |
+| The module under test. | `require_serving_topology_schema`; `_is_editable_install`; `_below_floor` | mcp/src/agents_remember/tasks/serving_preflight.py:58-103; mcp/src/agents_remember/tasks/serving_preflight.py:113-149; mcp/src/agents_remember/tasks/serving_preflight.py:207-218 |
 
 ## Cross-Repo References
 
@@ -82,6 +82,8 @@ snapshot per check, the real editable-install adapter path, and that programmer 
 declared environment failure families still escape.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: the distribution-version case now uses the shared fake-distribution adapter; serving-preflight failure translation and one-snapshot behavior are unchanged.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: expanded serving-preflight coverage to the explicit read/stat/iteration/version boundary and single-snapshot semantics. Verification metadata remains pinned until architect-owned closeout.
 

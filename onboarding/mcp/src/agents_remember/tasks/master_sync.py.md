@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/master_sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ scope; this file implements an internal coordination contract.
 | Deterministic leaf-to-row mapping with manual scope preservation. | `subtask_ref_from_leaf` | mcp/src/agents_remember/tasks/master_sync.py:92-102 |
 | Strict master-row status derivation and unresolved-master demotion. | `derived_master_status`; `demote_completed_master_if_unresolved` | mcp/src/agents_remember/tasks/master_sync.py:105-116; mcp/src/agents_remember/tasks/master_sync.py:119-125 |
 | Existing-row path validation. | `_validate_existing_row_path` | mcp/src/agents_remember/tasks/master_sync.py:128-141 |
-| Parent document loading uses the exact accepted JSON snapshot. | `TaskDocument.model_validate_json` | mcp/src/agents_remember/tasks/master_sync.py:46-46 |
+| Parent document loading uses the exact accepted JSON snapshot. | "master = TaskDocument.model_validate_json(source_snapshot.json_bytes)" | mcp/src/agents_remember/tasks/master_sync.py:46-46 |
 
 ## Cross-Repo References
 
@@ -91,9 +91,9 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. | L18-L19; L23-L32; L35-L89 | `mcp/src/agents_remember/tasks/master_sync.py` |
+| The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. | `MasterSyncError`; `MasterSyncPlan`; `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:18-19; mcp/src/agents_remember/tasks/master_sync.py:22-32; mcp/src/agents_remember/tasks/master_sync.py:35-89 |
 
 ## Update History
 

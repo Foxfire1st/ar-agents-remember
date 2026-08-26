@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,9 +82,9 @@ Non-availability still permits the existing declared ambient caller path, but ev
 seat-resolution failure now preserves only its typed status and returns a bounded public detail.
 Backend exception text and caller-sensitive internals no longer cross this application boundary.
 
-| Finding | Source |
-| --- | --- |
-| Non-availability and other ambient-seat failures have separate public handling. | mcp/src/agents_remember/application/closeout_queue.py:43-51 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Non-availability and other ambient-seat failures have separate public handling. | `closeout_queue_tool` | mcp/src/agents_remember/application/closeout_queue.py:19-61 |
 
 ## Update History
 

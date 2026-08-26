@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/benchmarks.py`       |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-08-02T01:05+02:00                                         |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`                     |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                     |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ unless the MCP settings set `benchmarksEnabled`.
 | The payload builders these forward to. | `codex_benchmark_prepare_payload`; `codex_benchmark_run_payload` | mcp/src/agents_remember/mcp/tools/benchmark.py:22-31; mcp/src/agents_remember/mcp/tools/benchmark.py:34-44 |
 | `BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun`, and the `benchmarksEnabled` refusal. | `BenchmarkSelection`; `BenchmarkPreparation`; `CodexBenchmarkRun`; `_benchmarks_disabled` | mcp/src/agents_remember/application/benchmark_tools.py:17-25; mcp/src/agents_remember/application/benchmark_tools.py:28-37; mcp/src/agents_remember/application/benchmark_tools.py:40-51; mcp/src/agents_remember/application/benchmark_tools.py:162-170 |
 | `CODEX_BENCHMARK_SANDBOX` and the sandbox allowlist. | `CODEX_BENCHMARK_SANDBOX` | mcp/src/agents_remember/models/benchmarks.py:13-13 |
-| The preview default and sandbox value proved through a live server. | `test_codex_benchmark_run_defaults_to_a_preview_in_codex_own_sandbox` | mcp/tests/test_mcp_registration_wiring_tests_2.py:307-316 |
+| The preview default and sandbox value proved through a live server. | `test_codex_benchmark_run_defaults_to_a_preview_in_codex_own_sandbox` | mcp/tests/test_mcp_registration_wiring_tests_2.py:365-374 |
 
 ## Update History
 

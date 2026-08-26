@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -110,8 +110,8 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:223-227 |
+| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |

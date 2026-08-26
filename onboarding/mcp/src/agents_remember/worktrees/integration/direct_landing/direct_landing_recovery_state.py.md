@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` as its public seam. | L39-L60; L63-L159 | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
+| The module defines `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` as its public seam. | `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:46-70; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:101-150 |
 
 ## Cross-Repo References
 

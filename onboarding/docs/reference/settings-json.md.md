@@ -6,8 +6,8 @@
 | path                   | `docs/reference/settings-json.md`       |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -78,7 +78,7 @@ spawn-surface manual.
 | --- | --- | --- |
 | Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:213-213 |
 | Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:166-166|
+| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:174-174|
 | Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
 | Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:69-69 |
 

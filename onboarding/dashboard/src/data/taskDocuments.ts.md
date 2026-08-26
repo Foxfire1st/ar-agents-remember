@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/taskDocuments.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `28a66feae742bf02fe4b647388b220f921cc7007`|
-| lastVerifiedCommitDate |                                                  2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash |                                                  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |                                                  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ link state is recorded rather than silently treated as already landed.
 | The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node. | `fetchTaskDocument` | dashboard/src/data/taskDocuments.ts:3-9 |
 | `useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision. | `useTaskDocumentBody` | dashboard/src/data/useTaskDocumentBody.ts:29-74 |
 | The serving route maps projection readiness and the confined snapshot read to HTTP responses. | "def _task_document_response(runtime: _ServingRuntime" | mcp/src/agents_remember/serving/_app_routes.py:102-102 |
-| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:104-104 |
+| The snapshot reader resolves under `tasks`, validates the schema, and builds the full node. | "def read_task_document_body(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:106-106 |
 
 ## Cross-Repo References
 

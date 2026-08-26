@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:679-679; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:41-41 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:756-756; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:111-111 |
 
 ## Series-Contract Notes
 
@@ -63,9 +63,9 @@ write/remove primitive described below.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations. | module facade | `mcp/src/agents_remember/tasks/__init__.py` |
+| The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations. | "from .document import ("; "from .store import ("; "__all__ = [" | mcp/src/agents_remember/tasks/__init__.py:11-11; mcp/src/agents_remember/tasks/__init__.py:58-58; mcp/src/agents_remember/tasks/__init__.py:75-75 |
 
 ## 260821-CLIVE Task Audit And Registration Exports
 
@@ -104,7 +104,7 @@ deletion authority.
   controller can persist coupled leaf/master task-document updates through the package surface. Verification
   metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the task package now exports `TaskEnclosureRef`, the JSON task-doc reference that binds leaf documents to enclosure `series-contract.md` paths. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T06:03 — Slice 3c reopened (R4): facade now also re-exports `HeaderNote` (the extra-header-line model). Verification metadata pinned until closeout stamps the R4 code commit.
-- 2026-06-19T03:17 — Slice 3c reopened (R1): facade now also re-exports `series_total`/`series_done` (the master series-progress helpers). Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: facade now also re-exports `SubTaskRef` and `Section` (the master series-index + section models). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1 as the task-document package facade. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-19T06:03+02:00 — Slice 3c reopened (R4): facade now also re-exports `HeaderNote` (the extra-header-line model). Verification metadata pinned until closeout stamps the R4 code commit.
+- 2026-06-19T03:17+02:00 — Slice 3c reopened (R1): facade now also re-exports `series_total`/`series_done` (the master series-progress helpers). Verification metadata pinned until closeout stamps the R1 code commit.
+- 2026-06-14T00:16+02:00 — Slice 3c commit 3: facade now also re-exports `SubTaskRef` and `Section` (the master series-index + section models). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
+- 2026-06-13T22:34+02:00 — Created for slice 3c commit 1 as the task-document package facade. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

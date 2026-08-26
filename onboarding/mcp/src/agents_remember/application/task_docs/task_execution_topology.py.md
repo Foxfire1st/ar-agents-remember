@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,18 +99,18 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:194-266 |
-| Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). | `_verify_authoring_judgments`; `verify_sprint_judgment_ids` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:405-431; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:434-475 |
-| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:714-742 |
+| Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). | `_verify_authoring_judgments`; `verify_sprint_judgment_ids` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:404-430; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:433-474 |
+| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:713-741 |
 | The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:953-1015 |
-| Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:798-849 |
+| Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:781-803 |
 | The served-build preflight refuses a topology write whose serving runtime cannot parse the schema (model self-probe + non-editable wheel floor). | `require_serving_topology_schema` | mcp/src/agents_remember/tasks/serving_preflight.py:55-88 |
-| A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). | `_require_move_does_not_retarget_edge` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:639-660 |
-| The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). | `_require_draft_node_kinds` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:684-711 |
+| A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). | `_require_move_does_not_retarget_edge` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:638-659 |
+| The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). | `_require_draft_node_kinds` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:683-710 |
 | The edit preflight fires only for edits that emit topology schema bytes (L15-R4). | `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:864-878 |
 | The forcing suite proves authoring, bootstrap, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:217-944 |
 | The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
-| Preview and apply both route graph cardinality/title preparation through the central application owner. | L262-L280; L350-L368 | [task_execution_topology.py](mcp/src/agents_remember/application/task_docs/task_execution_topology.py) |
-| The central owner provides the zero/one assertion and exact in-memory join. | L17-L51 | [task_doc_graph_titles.py](mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py) |
+| Preview and apply both route graph cardinality/title preparation through the central application owner. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:201-284 |
+| The central owner provides the zero/one assertion and exact in-memory join. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
 
 ## 260815-DAG-L9 Inventory Boundary
 
@@ -166,11 +166,13 @@ and title-context precondition without changing that ownership.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest` at this ownership boundary. | L65-L66; L70-L78; L82-L89 | `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` |
+| The current module exposes `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest` at this ownership boundary. | `ExecutionTopologyError`; `ExecutionTopologyAuthoringRequest`; `ExecutionTopologyEditRequest` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:61-62; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:65-74; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:77-85 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Routed repository-global master discovery through the module-level `repository_master_documents` query; graph authoring retains no topology-object census variant.
 
 - 2026-08-24T13:43+02:00 — DAGQC L1: topology preview/apply now share the central
   zero/one graph-publication title owner; the private first-graph helper is removed. Verification

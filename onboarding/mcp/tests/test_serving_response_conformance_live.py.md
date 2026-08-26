@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance_live.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -43,9 +43,9 @@ The live stream contract reuses the same bounded projector-readiness helper befo
 ETag for its conditional request. This is an explicit startup boundary, not a silent fallback or a
 relaxation of response conformance.
 
-| Finding | Source |
-| --- | --- |
-| The live ETag test requires a ready 200 response before asserting the cached 304. | mcp/tests/test_serving_response_conformance_live.py:380-390 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The live ETag test requires a ready 200 response before asserting the cached 304. | `test_the_304_branch_declares_a_body_less_response` | mcp/tests/test_serving_response_conformance_live.py:379-390 |
 
 ## Update History
 

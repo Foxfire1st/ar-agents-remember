@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` as its public seam. | L39-L155; L158-L159; L162-L198 | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py` |
+| The module defines `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` as its public seam. | `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:45-161; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:164-165; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:168-206 |
 
 ## Cross-Repo References
 
@@ -62,6 +62,8 @@ recovery classifier proves them from accepted mutation lineage and deterministic
 operation generation is resumed; ambiguous output remains a developer decision.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout recovery-projection package relocation; door-bound direct landing and crash convergence are unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded door-bound direct landing and classifier-authorized crash convergence. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

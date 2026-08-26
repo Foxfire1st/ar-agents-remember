@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T09:45+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire row separates runtime identity, structural binding, and replacement. | `TerminalCatalogRow` | dashboard/src/types/terminalCatalog.ts:24-95 |
-| The task-document reference is shared with the projection contract. | `TaskDocumentRef` | dashboard/src/types/projection.ts:537-540 |
+| The task-document reference is shared with the projection contract. | `TaskDocumentRef` | dashboard/src/types/projection.ts:631-634 |
 
 ## Cross-Repo References
 

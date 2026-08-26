@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[Worktree operation modules overview](overview.md)
 
 ## Purpose
 
@@ -38,6 +42,13 @@ delegates to `cleanup_result` with `approved=not dry_run` and
 `teardown_providers` carried through. Cleanup failures return
 `cleanup-blocked` and leave task documents unchanged.
 
+After cleanup and task-truth reconciliation converge, `_finalized_result` performs an idempotent
+exact terminal activation release before archiving a root series task. A release failure returns
+`activation-release-blocked` with the completed cleanup/task updates so the caller can retry the
+same canonical contract. A missing, vacant, unreadable, or different selection is preserved and
+reported; a paused old master cannot clear the currently selected one. Successful results carry the
+activation observation/release evidence and only then archive a root series task.
+
 Task document reconciliation is optional and edge-scoped. `task_doc_path` is
 set to `Completed` unless it points at a master document. `master_doc_path` plus
 `subtask_number` sets only that immediate parent row to `Completed`. The parent
@@ -53,11 +64,20 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:621-621 |
+| Final result releases exact terminal selection before root task archival and reports retryable release failure. | `_finalized_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:144-220 |
+| Exact terminal release is independent of queue/task scheduling state. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
+| Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-635 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:117-117 |
-| Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:37-37 |
+| Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:107-107 |
 | Focused tests pin readiness, dry-run, cleanup-blocked, and task-doc update behavior. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned terminal operation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Series-Contract Notes
 
@@ -80,6 +100,16 @@ before bytes move. Projection refresh failure is reported separately and never r
 accepted finalization write.
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical Cross-Repo reference section for this changed
+  finalization card.
+
+- 2026-08-26T08:30+02:00 — Restored the required governing-overview link while reconciling exact
+  terminal selection release behavior.
+
+- 2026-08-26T03:37+02:00 — Added finalization's exact terminal activation-release/readback seam
+  before root archival, including explicit release-blocked retry evidence and preservation of a
+  different current selection. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact source CAS and independent projection effects into finalization task publication. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

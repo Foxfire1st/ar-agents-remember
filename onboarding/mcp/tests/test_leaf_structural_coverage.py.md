@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_leaf_structural_coverage.py`                  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -75,8 +75,16 @@ No cross-repository implementation participates.
 The unknown gate-kind assertion moved unchanged to the bounded direct cohort. The remaining
 structural-coverage vocabulary tests retain their existing ownership.
 
+## 2026-08-26 Theater-Test Removal
+
+The suite no longer imports two serialization-baseline constants merely to assert that they are
+truthy. That assertion proved no product behavior and duplicated ownership held by the model and
+serialization suites. Removing it narrows this file back to executable cross-package branch seams
+without reducing a real contract.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Removed the serialization-baseline truthiness theater test; the suite's structural branch-coverage ownership is unchanged.
 - 2026-08-24T21:23+02:00 — Moved one gate-kind assertion to the bounded direct cohort.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the split suite's native-Windows quality-environment test after dead-code removal; the assertion contract is unchanged.

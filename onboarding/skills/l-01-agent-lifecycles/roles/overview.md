@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 
 ## Purpose
 
@@ -16,6 +16,19 @@ which task-document altitude it occupies, the loop and artifacts it owns, its co
 and the work it must refuse or escalate.
 
 ## Hot Path Summary
+
+### IAS Frozen Role Boundary
+
+Architect, strategist, and orchestrator responsibilities operate on canonical task documents, not
+on a queue-owned copy of the plan. They may change approved planning whenever their role authority
+allows; downstream closeout projections are invalidated and rebuilt. For atomic work, selecting a
+different live master pauses the old one and reconciles the new source pair before implementation
+is exposed. No role should discard or terminalize a valid master merely to free scheduling state.
+
+When source reconciliation retains a conflict, the assigned agent resolves and stages it in the
+reported worktree, then continues the same contract-addressed operation or explicitly cancels it.
+Private journal/ref identity stays in the plane; role briefs carry the public contract address and
+recovery guidance.
 
 Architect owns sprint-level direction, the initial plan loop, and strategist/reviewer lineage.
 Strategist authors the evidence-cited dependency graph when dispatched. Orchestrator adopts the
@@ -114,6 +127,9 @@ No role authority changed. Curator doctrine now uses explicit sync/start/poll re
 treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS role boundary label against the frozen pass-13
+  candidate.
 
 - 2026-08-24T14:19+02:00 — No route impact: aligned curator quality invocation and capacity guidance with the canonical controller. Verification metadata remains pinned until architect-owned closeout.
 

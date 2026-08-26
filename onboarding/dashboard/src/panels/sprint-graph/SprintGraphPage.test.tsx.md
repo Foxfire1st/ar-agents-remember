@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T12:59+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ is needed to explain this repository-local mounted regression.
 | --- | --- | --- |
 | The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance. | "sprint page shell (L12-R5)" | dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx:53-174 |
 | The real sprint page surface rendered. | `DetailPanel` | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
-| The master reader mounts the queue independently of the optional graph section. | `SprintGraphSection`; `CloseoutQueue` | dashboard/src/panels/detail-panel/taskReader.tsx:191-193; dashboard/src/panels/detail-panel/taskReader.tsx:224-233 |
+| The master reader mounts the queue independently of the optional graph section. | `MasterOverview`; `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:246-253 |
 | The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains. | `CloseoutQueueImpl` | dashboard/src/panels/CloseoutQueue.tsx:69-83 |
 | The canonical store reset clears all scenario projections, including `closeoutQueues`, in one transaction. | `reset` | dashboard/src/data/store.ts:382-400 |
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -208,9 +208,9 @@ it builds an `EngineProcessFacts` bundle per contract carrying the status-guidan
 `contract_payload(contract)` (code/memory branches, base commits, worktree paths) and
 `dict(lifecycle_guidance(contract))` — both pure — plus `status` from `_safe_status_payload`.
 Since 260731-EFA-L4 the guidance payload is **widened at the boundary** with an explicit `dict(...)`
-cit:(["def read_engine_process_facts("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238): `read_engine_process_facts`
+cit:(["def read_engine_process_facts("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240): `read_engine_process_facts`
 constructs `EngineProcessFacts` with a plain dictionary guidance payload. The same
-widening is applied to the cached local status in cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:382-382), where the
+widening is applied to the cached local status in cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:384-384), where the
 annotation `value: dict[str, Any] | None` is now declared before the `try` so the `except` branch's
 `None` and the success branch's `dict(projected_status_payload(...))` share one type. Neither change
 alters a served value. `status_payload`
@@ -411,17 +411,17 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:147-147; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:492-492 |
-| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:206-206 |
-| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:252-252; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:272-272 |
-| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:492-492 |
+| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:149-149; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:512-512 |
+| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:208-208 |
+| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:256-256; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:292-292 |
+| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:512-512 |
 | The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:739-812; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:825-851 |
 | The provider current-state path + snapshot shape (surface 1). | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
 | The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
 | Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | `_worktree_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:199-259 |
 | `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
-| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | "def read_engine_process_facts("; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:266-266; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:269-269 |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | "def read_enclosures("; "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:59-59; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238 |
+| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | "def read_engine_process_facts("; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:268-268; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:271-271 |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | "def read_enclosures("; "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:61-61; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240 |
 | The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | `ContractSnapshot`; `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:37-49; mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged`; `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:690-728; mcp/tests/test_projection_scaling_cs6.py:730-761 |
 | `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | "def read_setup_progress_nodes(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:188-188 |
@@ -583,7 +583,7 @@ facts on heartbeat ticks.
   the guidance producer's own return through — the carrier is the projection's untyped
   input carrier and the reducer folds it by key name, so the carrier takes a plain
   `dict[str, Any]` and does not propagate a narrower typed shape into a structure that never
-  re-emits its vocabulary. cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:382-382) declares
+  re-emits its vocabulary. cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:384-384) declares
   `value: dict[str, Any] | None` before the `try` and stores
   `dict(projected_status_payload(...))`, so the `except` branch's `None` and the success value
   share one type. No served value changes. **Citation repairs** — the two edits added three lines

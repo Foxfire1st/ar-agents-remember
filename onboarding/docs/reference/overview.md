@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T05:20+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 
 ## Purpose
 
@@ -82,6 +82,20 @@ pre-commit and pre-push. The hook tiers are not equivalent: pre-commit runs a fa
 tier without the wrapper, pre-push runs the change-set-scoped targeted Dagger tier, and the full
 Dagger graph runs once per master at the master integration gate. The closeout gate applies to any
 repository whose checkout carries the wrapper, not only `agents-remember`.
+
+## IAS Execution-Topology Reference Impact
+
+`execution-topology-migration.md` now describes graph-less scheduling as exact source-pair
+activation, not a requirement that every master integrate fully before another begins. Canonical
+commanded-master order is only the stable equal-priority tie-break. Selecting another atomic master
+logically pauses and preserves the former while the new selection stays `reconciling` until its
+exact code/memory bases are current.
+
+The reference also makes the ownership boundary explicit: task authoring never reads selector or
+queue state; queue projection observes active/reconciling/paused/vacant facts but owns no lifecycle
+transition; and malformed selector state fails closed only for affected runtime projection or
+admission before an exact selecting operation archives and replaces it. No contract-presence or
+tolerant-reader fallback is documented.
 
 ## 260718-CHATS-L5I Commit-Gate Reference Impact
 
@@ -216,6 +230,11 @@ cannot smuggle start-only fields. These newer DAGQC facts are additive to the CL
 `execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
 
 ## Update History
+
+- 2026-08-26T05:20+02:00 — Reconciled the reference route with the source-pair selector, paused
+  live-master preservation, reconciling-before-active admission, retained conflict
+  continuation/cancellation, unlocked task authoring, disposable queue ownership, and
+  no-fallback boundaries documented in `execution-topology-migration.md`.
 
 - 2026-08-24T15:04+02:00 — Reframed the reference hot path around canonical task/door/journal/
   locator ownership, disposable queue rebuilds, exact retry/terminal/discard contracts, and preserved

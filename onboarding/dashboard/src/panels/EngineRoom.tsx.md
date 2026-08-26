@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/EngineRoom.tsx`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ must be kept for the legacy projection tests.
 | Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists. | "7 CGC · nominal" | dashboard/src/panels/EngineRoom.test.tsx:207-207 |
 | The bounded-height panel variant the room uses. | `fill` | dashboard/src/grammar/Panel.tsx:59-59 |
 | `groupEngines` (fallback) + `engineState` + `selectQueue`. | `groupEngines` | dashboard/src/data/selectors.ts:37-46; dashboard/src/data/selectors.ts:123-127; dashboard/src/data/selectors.ts:147-165 |
-| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238 |
+| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240 |
 | The shared chat-routed gate responder rendered by diagnostics. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 
 ## Current L5I Maintenance

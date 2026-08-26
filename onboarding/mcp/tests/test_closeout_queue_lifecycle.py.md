@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,9 +59,9 @@ history and are not the current test contract.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_binding_parser_refuses_partial_malformed_and_non_leaf_contracts`, `test_unbound_legacy_absence_is_narrow`, `test_contract_binding_refuses_missing_graph_leaf_parent_and_binding_drift`, `test_queue_bound_task_publication_refuses_a_disappeared_master_parent`. | L65-L94; L96-L103; L105-L184; L186-L202 | `mcp/tests/test_closeout_queue_lifecycle.py` |
+| The current test source exercises `test_binding_parser_refuses_partial_malformed_and_non_leaf_contracts`, `test_unbound_legacy_absence_is_narrow`, `test_contract_binding_refuses_missing_graph_leaf_parent_and_binding_drift`, `test_queue_bound_task_publication_refuses_a_disappeared_master_parent`. | `test_cross_generation_map_is_exact` | mcp/tests/test_closeout_queue_lifecycle.py:62-99 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -76,6 +76,8 @@ Forces closeout-door declaration, defer, resume, withdraw, claim, and retry sema
 - Post-claim lifecycle outcomes remain journal facts and do not mutate a queue lifecycle row.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Fixture authority clarified: the queue fixture explicitly enables direct execution before exercising public door transitions; the documented door-source and retry contract is unchanged.
 
 - 2026-08-24T16:00+02:00 — Final closeout audit: removed obsolete queue
   claim/certification ownership from the live card and reconciled it to the exact current door-source

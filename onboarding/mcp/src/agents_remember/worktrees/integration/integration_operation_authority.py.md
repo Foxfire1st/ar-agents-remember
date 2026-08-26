@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ The current source seams include `require_plane_integration_operation`, `require
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `require_plane_integration_operation`, `require_current_integration_sources`, `require_authorized_integration_commits` at this ownership boundary. | L19-L47; L50-L68; L71-L95 | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
+| The current module exposes `require_plane_integration_operation`, `require_current_integration_sources`, `require_authorized_integration_commits` at this ownership boundary. | `require_plane_integration_operation`; `require_current_integration_sources`; `require_authorized_integration_commits` | mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:19-47; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:50-68; mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py:71-95 |
 
 ## Update History
 

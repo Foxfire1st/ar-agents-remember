@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/projection_types.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -81,36 +81,36 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `ProjectionTypeGenerationError` (lines 55-56) — A Python schema shape cannot be represented by this generator.. | `ProjectionTypeGenerationError` | mcp/src/agents_remember/code_quality/projection_types.py:55-56 |
-| Defines the function `workspace_projection_schema` (lines 59-61) — The canonical projection schema, copied so callers may safely mutate fixtures.. | `workspace_projection_schema` | mcp/src/agents_remember/code_quality/projection_types.py:59-61 |
-| Defines the function `served_projection_schema` (lines 64-66) — The declared HTTP/SSE snapshot schema, including its serve-time tail.. | `served_projection_schema` | mcp/src/agents_remember/code_quality/projection_types.py:64-66 |
-| Defines the function `schema_json` (lines 69-72) — Stable bytes for the committed JSON Schema artifact.. | `schema_json` | mcp/src/agents_remember/code_quality/projection_types.py:69-72 |
-| Defines the function `_object` (lines 75-78). | `_object` | mcp/src/agents_remember/code_quality/projection_types.py:75-78 |
-| Defines the function `_objects` (lines 81-84). | `_objects` | mcp/src/agents_remember/code_quality/projection_types.py:81-84 |
-| Defines the function `_strings` (lines 87-90). | `_strings` | mcp/src/agents_remember/code_quality/projection_types.py:87-90 |
-| Defines the function `_definitions` (lines 93-94). | `_definitions` | mcp/src/agents_remember/code_quality/projection_types.py:93-94 |
-| Defines the function `_properties` (lines 97-98). | `_properties` | mcp/src/agents_remember/code_quality/projection_types.py:97-98 |
-| Defines the function `_ref_name` (lines 101-105). | `_ref_name` | mcp/src/agents_remember/code_quality/projection_types.py:101-105 |
-| Defines the function `_nullable_variants` (lines 108-110). | `_nullable_variants` | mcp/src/agents_remember/code_quality/projection_types.py:108-110 |
-| Defines the function `_is_null` (lines 113-114). | `_is_null` | mcp/src/agents_remember/code_quality/projection_types.py:113-114 |
-| Defines the function `_is_nullable` (lines 117-119). | `_is_nullable` | mcp/src/agents_remember/code_quality/projection_types.py:117-119 |
+| Defines the class `ProjectionTypeGenerationError` (lines 55-56) — A Python schema shape cannot be represented by this generator.. | `ProjectionTypeGenerationError` | mcp/src/agents_remember/code_quality/projection_types.py:62-63 |
+| Defines the function `workspace_projection_schema` (lines 59-61) — The canonical projection schema, copied so callers may safely mutate fixtures.. | `workspace_projection_schema` | mcp/src/agents_remember/code_quality/projection_types.py:66-68 |
+| Defines the function `served_projection_schema` (lines 64-66) — The declared HTTP/SSE snapshot schema, including its serve-time tail.. | `served_projection_schema` | mcp/src/agents_remember/code_quality/projection_types.py:71-73 |
+| Defines the function `schema_json` (lines 69-72) — Stable bytes for the committed JSON Schema artifact.. | `schema_json` | mcp/src/agents_remember/code_quality/projection_types.py:76-79 |
+| Defines the function `_object` (lines 75-78). | `_object` | mcp/src/agents_remember/code_quality/projection_types.py:82-85 |
+| Defines the function `_objects` (lines 81-84). | `_objects` | mcp/src/agents_remember/code_quality/projection_types.py:88-91 |
+| Defines the function `_strings` (lines 87-90). | `_strings` | mcp/src/agents_remember/code_quality/projection_types.py:94-97 |
+| Defines the function `_definitions` (lines 93-94). | `_definitions` | mcp/src/agents_remember/code_quality/projection_types.py:100-101 |
+| Defines the function `_properties` (lines 97-98). | `_properties` | mcp/src/agents_remember/code_quality/projection_types.py:104-105 |
+| Defines the function `_ref_name` (lines 101-105). | `_ref_name` | mcp/src/agents_remember/code_quality/projection_types.py:108-112 |
+| Defines the function `_nullable_variants` (lines 108-110). | `_nullable_variants` | mcp/src/agents_remember/code_quality/projection_types.py:115-117 |
+| Defines the function `_is_null` (lines 113-114). | `_is_null` | mcp/src/agents_remember/code_quality/projection_types.py:120-121 |
+| Defines the function `_is_nullable` (lines 117-119). | `_is_nullable` | mcp/src/agents_remember/code_quality/projection_types.py:124-126 |
 | Defines the function `_json_literal` (lines 122-130). | `_json_literal` | mcp/src/agents_remember/code_quality/projection_types.py:122-130 |
-| Defines the function `_enum_values` (lines 133-135). | `_enum_values` | mcp/src/agents_remember/code_quality/projection_types.py:133-135 |
+| Defines the function `_enum_values` (lines 133-135). | `_enum_values` | mcp/src/agents_remember/code_quality/projection_types.py:140-142 |
 | Defines the function `_schema_allowed_keywords` (lines 138-166). | `_schema_allowed_keywords` | mcp/src/agents_remember/code_quality/projection_types.py:138-166 |
-| Defines the function `_schema_children` (lines 169-200). | `_schema_children` | mcp/src/agents_remember/code_quality/projection_types.py:169-200 |
-| Defines the function `_validate_schema_node` (lines 203-221). | `_validate_schema_node` | mcp/src/agents_remember/code_quality/projection_types.py:203-221 |
-| Defines the function `_validate_schema` (lines 224-235). | `_validate_schema` | mcp/src/agents_remember/code_quality/projection_types.py:224-235 |
-| Defines the function `_array_type` (lines 238-243). | `_array_type` | mcp/src/agents_remember/code_quality/projection_types.py:238-243 |
-| Defines the function `_object_type` (lines 246-255). | `_object_type` | mcp/src/agents_remember/code_quality/projection_types.py:246-255 |
+| Defines the function `_schema_children` (lines 169-200). | `_schema_children` | mcp/src/agents_remember/code_quality/projection_types.py:216-247 |
+| Defines the function `_validate_schema_node` (lines 203-221). | `_validate_schema_node` | mcp/src/agents_remember/code_quality/projection_types.py:250-268 |
+| Defines the function `_validate_schema` (lines 224-235). | `_validate_schema` | mcp/src/agents_remember/code_quality/projection_types.py:271-282 |
+| Defines the function `_array_type` (lines 238-243). | `_array_type` | mcp/src/agents_remember/code_quality/projection_types.py:285-290 |
+| Defines the function `_object_type` (lines 246-255). | `_object_type` | mcp/src/agents_remember/code_quality/projection_types.py:293-302 |
 | Defines the function `_schema_type` (lines 258-289). | `_schema_type` | mcp/src/agents_remember/code_quality/projection_types.py:258-289 |
-| Defines the function `_without_null` (lines 292-301). | `_without_null` | mcp/src/agents_remember/code_quality/projection_types.py:292-301 |
-| Defines the function `_property_line` (lines 304-313). | `_property_line` | mcp/src/agents_remember/code_quality/projection_types.py:304-313 |
-| Defines the function `_model_interface` (lines 316-332). | `_model_interface` | mcp/src/agents_remember/code_quality/projection_types.py:316-332 |
-| Defines the function `_state_count_field` (lines 335-337). | `_state_count_field` | mcp/src/agents_remember/code_quality/projection_types.py:335-337 |
-| Defines the function `_state_partition` (lines 340-356). | `_state_partition` | mcp/src/agents_remember/code_quality/projection_types.py:340-356 |
-| Defines the function `_metric_bucket_fields` (lines 359-361). | `_metric_bucket_fields` | mcp/src/agents_remember/code_quality/projection_types.py:359-361 |
-| Defines the function `_vocabulary` (lines 364-374). | `_vocabulary` | mcp/src/agents_remember/code_quality/projection_types.py:364-374 |
-| Defines the function `_tuple_constant` (lines 377-379). | `_tuple_constant` | mcp/src/agents_remember/code_quality/projection_types.py:377-379 |
+| Defines the function `_without_null` (lines 292-301). | `_without_null` | mcp/src/agents_remember/code_quality/projection_types.py:339-351 |
+| Defines the function `_property_line` (lines 304-313). | `_property_line` | mcp/src/agents_remember/code_quality/projection_types.py:354-366 |
+| Defines the function `_model_interface` (lines 316-332). | `_model_interface` | mcp/src/agents_remember/code_quality/projection_types.py:369-385 |
+| Defines the function `_state_count_field` (lines 335-337). | `_state_count_field` | mcp/src/agents_remember/code_quality/projection_types.py:388-390 |
+| Defines the function `_state_partition` (lines 340-356). | `_state_partition` | mcp/src/agents_remember/code_quality/projection_types.py:393-409 |
+| Defines the function `_metric_bucket_fields` (lines 359-361). | `_metric_bucket_fields` | mcp/src/agents_remember/code_quality/projection_types.py:412-414 |
+| Defines the function `_vocabulary` (lines 364-374). | `_vocabulary` | mcp/src/agents_remember/code_quality/projection_types.py:417-427 |
+| Defines the function `_tuple_constant` (lines 377-379). | `_tuple_constant` | mcp/src/agents_remember/code_quality/projection_types.py:430-432 |
 
 ## 260821-CLIVE-L2 Nullable Union Preservation
 
@@ -120,9 +120,9 @@ its annotations and remaining `anyOf` alternatives. An all-null field still refu
 This lets the lifecycle-operation status schema remain a closed multi-variant union instead of
 being flattened or rejected.
 
-| Finding | Source |
-| --- | --- |
-| `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. | mcp/src/agents_remember/code_quality/projection_types.py:293-304 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. | `_without_null` | mcp/src/agents_remember/code_quality/projection_types.py:339-351 |
 
 ## 260821-CLIVE Exact Runtime Refinements
 

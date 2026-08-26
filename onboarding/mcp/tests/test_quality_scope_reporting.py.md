@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -109,8 +109,16 @@ changed-lines CLI execution, the direct Python wrapper, and acceptance remain Da
 The shared quality configuration fixture now receives `QUALITY_TEST_ADMISSION`. Scope-reporting
 behavior remains unchanged, while pytest-capable configuration stays unreachable to diagnostics.
 
+## 2026-08-26 Canonical Rail And Product-Scope Reporting
+
+Scope-order assertions now derive the fixed rail names from `quality_steps` instead of maintaining
+a parallel list, and the report contract explicitly includes the `evidence-lifecycle` rail.
+Radon and Coverage.py unit text now counts product Python files only; tests remain execution inputs,
+not measurement targets. CRAP mocks patch the canonical calculator module directly.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled scope reporting with canonical rail derivation, the evidence-lifecycle rail, and product-only measurement units.
 - 2026-08-24T21:23+02:00 — Added typed admission to quality configuration.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded the hook assertion's

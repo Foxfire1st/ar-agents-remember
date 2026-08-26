@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ Shared fixture construction uses production task documents, queue state, contrac
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:115-267; mcp/tests/integration_branch_authority_test_support.py:49-67; mcp/tests/integration_branch_authority_test_support.py:280-307; mcp/tests/integration_branch_authority_test_support.py:527-581 |
+| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:61-90; mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:346-373; mcp/tests/integration_branch_authority_test_support.py:643-697 |
 
 ## Documentation References
 
@@ -44,9 +44,9 @@ The current forcing seams include the module forcing surface. The L2 additions f
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises the module forcing surface. | L1-L581 | `mcp/tests/integration_branch_authority_test_support.py` |
+| The current test source exercises the module forcing surface. | `_authority_fixture`; `_complete_atomic_master`; `_record_atomic_leaf_landing`; `_land_two_external_atomic_leaves`; `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:376-389; mcp/tests/integration_branch_authority_test_support.py:392-420; mcp/tests/integration_branch_authority_test_support.py:575-627; mcp/tests/integration_branch_authority_test_support.py:643-697 |
 
 ## Current Contract — 260821 CLIVE Final
 

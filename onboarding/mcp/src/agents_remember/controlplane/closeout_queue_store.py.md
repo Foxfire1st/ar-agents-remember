@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,8 +53,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Effective reads fail closed to invalid-empty on bad or stale projection bytes. | `read_effective` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
-| Rebuild publishes only after an exact-current source recheck. | `rebuild` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py` |
+| Effective reads fail closed to invalid-empty on bad or stale projection bytes. | `read_effective` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:105-139 |
+| Rebuild publishes only after an exact-current source recheck. | `rebuild` | mcp/src/agents_remember/controlplane/closeout_queue_store.py:345-345 |
 
 ## Cross-Repo References
 

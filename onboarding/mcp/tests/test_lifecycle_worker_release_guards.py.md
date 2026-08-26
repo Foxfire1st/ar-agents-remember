@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_worker_release_guards.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ The current forcing seams include `test_failed_closeout_with_commit_proof_keeps_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_failed_closeout_with_commit_proof_keeps_queue_ownership`, `test_failed_irreversible_integration_keeps_queue_ownership`. | L27-L47; L50-L74 | `mcp/tests/test_lifecycle_worker_release_guards.py` |
+| The current test source exercises `test_failed_closeout_with_commit_proof_keeps_queue_ownership`, `test_failed_irreversible_integration_keeps_queue_ownership`. | `test_failed_closeout_with_commit_proof_keeps_queue_ownership`; `test_failed_irreversible_integration_keeps_queue_ownership` | mcp/tests/test_lifecycle_worker_release_guards.py:27-47; mcp/tests/test_lifecycle_worker_release_guards.py:50-74 |
 
 ## Current Contract — 260821 CLIVE Final
 

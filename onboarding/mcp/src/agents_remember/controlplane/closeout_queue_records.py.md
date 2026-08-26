@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/controlplane/closeout_queue_records.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The build record is complete off-side projection input. | `CloseoutProjectionBuild` | `mcp/src/agents_remember/controlplane/closeout_queue_records.py` |
+| The build record is complete off-side projection input. | `CloseoutProjectionBuild` | mcp/src/agents_remember/controlplane/closeout_queue_records.py:17-31 |
 
 ## Cross-Repo References
 
@@ -65,6 +65,8 @@ empty member set. These records never own claims, commits, lifecycle transitions
 blockers, or task locks; they are disposable publication input only.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; disposable projection-build record behavior is unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the obsolete queue-WAL authority with the final off-side projection-build contract. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

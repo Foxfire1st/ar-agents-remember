@@ -42,7 +42,7 @@
     "worker"
   ],
   "hotPath": {
-    "summary": "Architect owns sprint-level direction, the initial plan loop, and strategist/reviewer lineage. Strategist authors the evidence-cited dependency graph when dispatched. Orchestrator adopts the ruled artifact, maintains the runtime frontier, and records bounded reprioritization judgments; substantial reshapes return through the architect-owned strategist loop. Manager owns readiness inside one organizational or atomic master. Worker owns one leaf, reviewer owns independent route or completion verdict evidence, and curator reconciles ruled intent with implementation. Organizational masters have...",
+    "summary": "### IAS Frozen Role Boundary Architect, strategist, and orchestrator responsibilities operate on canonical task documents, not on a queue-owned copy of the plan. They may change approved planning whenever their role authority allows; downstream closeout projections are invalidated and rebuilt. For atomic work, selecting a different live master pauses the old one and reconciles the new source pair before implementation is exposed. No role should discard or terminalize a valid master merely to free scheduling state. When source reconciliation retains a conflict, the assigned agent resolves an...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/roles/architect.md",
@@ -74,9 +74,10 @@
       "system-specialist",
       "worker.md",
       "worker",
+      "IAS",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "SKILL.md",
       "worktree_status",
       "sourceLineage",
@@ -97,10 +98,9 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T08",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T15",
       "SKILL",
       "L23",
       "R39"

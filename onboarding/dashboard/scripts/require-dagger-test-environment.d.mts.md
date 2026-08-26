@@ -6,8 +6,8 @@
 | path | `dashboard/scripts/require-dagger-test-environment.d.mts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,24 +46,24 @@ None.
 
 No external Domain Documentation governs this repository-owned declaration.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was required. | _None._ | _No external source._ |
+| No relevant external documentation was required. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The declaration exposes the constants, pure validator, and throwing facade. | L1-L9 | [require-dagger-test-environment.d.mts](dashboard/scripts/require-dagger-test-environment.d.mts) |
-| Runtime validation and refusal behavior live in the paired ESM file. | L3-L34 | [require-dagger-test-environment.mjs](dashboard/scripts/require-dagger-test-environment.mjs) |
+| The declaration exposes the constants, pure validator, and throwing facade. | `DAGGER_TEST_ATTESTATION_ENV`; `DAGGER_TEST_ATTESTATION_PATH`; `daggerTestEnvironmentError`; `requireDaggerTestEnvironment` | dashboard/scripts/require-dagger-test-environment.d.mts:1-2; dashboard/scripts/require-dagger-test-environment.d.mts:4-7; dashboard/scripts/require-dagger-test-environment.d.mts:9-9 |
+| Runtime validation and refusal behavior live in the paired ESM file. | `DAGGER_TEST_ATTESTATION_ENV`; `DAGGER_TEST_ATTESTATION_PATH`; `daggerTestEnvironmentError`; `requireDaggerTestEnvironment` | dashboard/scripts/require-dagger-test-environment.mjs:3-4; dashboard/scripts/require-dagger-test-environment.mjs:6-24; dashboard/scripts/require-dagger-test-environment.mjs:26-34 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references were found. | _None._ | _No cross-repository source._ |
+| No meaningful cross-repository references were found. | n/a | n/a |
 
 ## Update History
 

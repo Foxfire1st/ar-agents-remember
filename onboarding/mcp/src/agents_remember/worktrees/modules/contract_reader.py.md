@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/contract_reader.py` |
 | doc_type               | `file-level-onboarding`                                       |
 | lastUpdated            | 2026-08-08T14:38+02:00                                        |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`                    |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                    |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver declares the port this adapter implements. | "class ContractReaderPort" | mcp/src/agents_remember/kernel/coordination_context/models.py:108-108 |
-| Reader-failure degradation is pinned by the structural-coverage suite. | `test_resolver_missing_reader_and_contract_edges` | mcp/tests/test_leaf_structural_coverage.py:247-277 |
+| Reader-failure degradation is pinned by the structural-coverage suite. | `test_resolver_missing_reader_and_contract_edges` | mcp/tests/test_leaf_structural_coverage.py:245-275 |
 
 ## Cross-Repo References
 

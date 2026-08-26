@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -201,7 +201,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
 | Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615 |
 | Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `QueryFunnelGateTests`; `RuntimeRebindDerivationTests`; `BenchmarkProviderFilterTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:180-196; mcp/tests/test_provider_containment.py:199-206; mcp/tests/test_provider_containment.py:209-273 |
-| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `auto_complete_seats`. | "class RetirementSettings:"; "def worktree_integrate_tool("; "def lifecycle_finalize_task_tool("; "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:29-29; mcp/src/agents_remember/application/worktree_tools.py:405-405; mcp/src/agents_remember/application/worktree_tools.py:575-575; mcp/src/agents_remember/kernel/primitives/runtime_config.py:110-110 |
+| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `auto_complete_seats`. | "class RetirementSettings:"; "def worktree_integrate_tool("; "def lifecycle_finalize_task_tool("; "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:29-29; mcp/src/agents_remember/application/worktree_tools.py:595-595; mcp/src/agents_remember/application/worktree_tools.py:992-992; mcp/src/agents_remember/kernel/primitives/runtime_config.py:110-110 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 

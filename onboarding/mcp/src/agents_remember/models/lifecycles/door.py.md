@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/door.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | L22-L54; L57-L79 | `mcp/src/agents_remember/models/lifecycles/door.py` |
+| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration`; `DoorPublicationEvidence` | mcp/src/agents_remember/models/lifecycles/door.py:78-124; mcp/src/agents_remember/models/lifecycles/door.py:127-144 |
 
 ## Cross-Repo References
 
@@ -65,6 +65,8 @@ door vocabulary. Public actions are limited to status, declare, defer, resume, w
 provenance update with an exact action-specific payload matrix.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-source model package relocation; immutable door generation and request vocabulary are unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the full door-generation and request vocabulary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

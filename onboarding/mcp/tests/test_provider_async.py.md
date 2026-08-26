@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_async.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -87,8 +87,8 @@ No external documentation is needed for these standard-library unit tests.
 | --- | --- | --- |
 | Launcher and projections under test. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | `projected_status_payload` and the `NotRequired` `providers` key on `WorktreeStatusFacts` the new payload test pins. | `WorktreeStatusFacts`, `projected_status_payload`, `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:85-123; mcp/src/agents_remember/worktrees/modules/guidance.py:399-451; mcp/src/agents_remember/worktrees/modules/guidance.py:454-458 |
-| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:414-425; mcp/src/agents_remember/worktrees/modules/start.py:622-659; mcp/src/agents_remember/worktrees/modules/start.py:662-695 |
-| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:108-205; mcp/src/agents_remember/application/worktree_tools.py:208-213 |
+| Start ordering and retry path under test. | `start_result`, `run_or_launch_provider_setup`, `_retry_provider_setup_result` | mcp/src/agents_remember/worktrees/modules/start.py:482-493; mcp/src/agents_remember/worktrees/modules/start.py:925-962; mcp/src/agents_remember/worktrees/modules/start.py:965-998 |
+| Application-layer ownership helper under test. | `worktree_start_tool`, `_settings_owned_by_background` | mcp/src/agents_remember/application/worktree_tools.py:119-216; mcp/src/agents_remember/application/worktree_tools.py:219-224 |
 
 ## L23 Start-Ordering Isolation
 
@@ -102,9 +102,9 @@ Cleanup and abandon provider-running tests explicitly permit the future L5 archi
 assertions still isolate the provider teardown guard beneath it. The production terminal owners
 remain fail-closed when archive proof is unavailable.
 
-| Finding | Source |
-| --- | --- |
-| Cleanup and abandon each patch only their terminal archive gate while testing the provider-running refusal. | mcp/tests/test_provider_async.py:437-470 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Cleanup and abandon each patch only their terminal archive gate while testing the provider-running refusal. | `test_cleanup_blocks_while_setup_running`; `test_abandon_blocks_without_force_while_setup_running` | mcp/tests/test_provider_async.py:438-453; mcp/tests/test_provider_async.py:455-470 |
 
 ## Update History
 

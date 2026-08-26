@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/context.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -40,7 +40,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver facade and the coordination-context builder own topology, storage, path rules, and cross-repo resolution. | "def build_coordination_context(" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-312 |
-| Closeout planning uses this module before the sole external-phase owner refreshes onboarding metadata. | `_memory_refresh_preview`; "onboarding_refresh_plan(contract"; `_closeout_contract_context`; `external_closeout_commits`; "refreshed_onboarding = refresh_onboarding_metadata(" | mcp/src/agents_remember/worktrees/modules/closeout.py:279-360; mcp/src/agents_remember/worktrees/modules/closeout.py:948-950; mcp/src/agents_remember/worktrees/modules/closeout_external.py:49-94; mcp/src/agents_remember/worktrees/modules/closeout_external.py:118-135 |
+| Closeout planning uses this module before the sole external-phase owner refreshes onboarding metadata. | "def _memory_refresh_preview("; "def _closeout_contract_context("; "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout.py:275-356; mcp/src/agents_remember/worktrees/modules/closeout.py:957-959; mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96 |
 
 ## Series-Contract Notes
 

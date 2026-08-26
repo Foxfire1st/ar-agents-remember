@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,8 +45,8 @@ publishes the exact waiting successor and projection effects.
 | Reset generation is persisted at the exact gate-failure seam. | `record_organizational_completion_repair` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:136-157 |
 | Durable exact reset identity is built before first publication. | `organizational_completion_repair_evidence` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:160-189 |
 | Failed candidate is retired and only its leaf closeout reopened. | `prepare_organizational_completion_repair` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:192-261 |
-| Operation identity and code/memory integration authority are re-validated. | `_require_operation_identity` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:340-413 |
-| Reset contract clears the closed leaf back to not-started. | `_quality_repair_contract` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:477-530 |
+| Operation identity and code/memory integration authority are re-validated. | `_require_operation_identity` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:441-453 |
+| Reset contract clears the closed leaf back to not-started. | `_quality_repair_contract` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:620-648 |
 
 ## Documentation References
 
@@ -62,9 +62,9 @@ The current source seams include `OrganizationalRepairPublicationError`, `Organi
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `OrganizationalRepairPublicationError`, `OrganizationalRepairState`, `classify_organizational_completion_repair` at this ownership boundary. | L47-L73; L77-L95; L98-L107 | `mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py` |
+| The current module exposes `OrganizationalRepairPublicationError`, `OrganizationalRepairState`, `classify_organizational_completion_repair` at this ownership boundary. | `OrganizationalRepairPublicationError`; `OrganizationalRepairState`; `classify_organizational_completion_repair` | mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:47-73; mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:90-109; mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py:112-121 |
 
 ## 260821-CLIVE Repair Successor Publication
 

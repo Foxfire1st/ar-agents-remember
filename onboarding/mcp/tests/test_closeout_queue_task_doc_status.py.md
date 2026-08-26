@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_task_doc_status.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,7 +32,7 @@ The production task-doc publisher is exercised so an in-flight queue candidate p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `CloseoutQueueTaskDocStatusTests` | mcp/tests/test_closeout_queue_task_doc_status.py:22-74 |
+| The focused suite owns task-first publication and per-scope projection-effect containment. | `TaskFactPublicationTests` | mcp/tests/test_closeout_queue_task_doc_status.py:91-245 |
 
 ## Documentation References
 
@@ -51,6 +51,8 @@ Forces task-first publication across zero, one, and multiple sprint scopes with 
 - Every affected scope reports its exact prior state, invalidation, rebuild result, and next action.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection package relocation; task-doc status projection forcing is unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

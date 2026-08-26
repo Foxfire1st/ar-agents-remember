@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/queue` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -47,9 +47,9 @@ current model contract.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Queue projection vocabulary. | L71-L130; L259-L336; L355-L405 | `mcp/src/agents_remember/models/queue/closeout_queue.py` |
+| Queue projection vocabulary. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38; mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
 
 ## 260821-CLIVE Final Projection-Only Model
 
@@ -64,6 +64,8 @@ exact current canonical source? It may be discarded and rebuilt at any time with
 operation evidence.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No route content impact: reviewed the closeout-projection package relocation; this route remains a disposable scheduling projection only.
 
 - 2026-08-24T16:00+02:00 — Final cumulative closeout audit: corrected the route's
   top-level purpose, hot path, conventions, and invariants so the final projection-only contract is

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "skills/c-09-git-worktree-manager",
+  "overview": "skills/c-09-git-worktree-manager/overview.md",
+  "index": "skills/c-09-git-worktree-manager/overview.index.json",
+  "sourceScope": [
+    "skills/c-09-git-worktree-manager/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "skills/c-09-git-worktree-manager/SKILL.md"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 0,
+    "fileSidecars": 1,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "git",
+    "manager",
+    "skill",
+    "skills",
+    "worktree"
+  ],
+  "hotPath": {
+    "summary": "Atomic-series admission is scoped to an exact code/external-memory source pair. Manager/worker dispatch plus atomic start/attach are selecting operations. Selection publishes `reconciling`, logically pauses the former selection without destroying its task/worktree/journal, reconciles both recorded source tips, and publishes `active` only when the exact pair is current. Multiple live but paused series are valid. Task authoring never consults the selector, and the queue only projects its waiting facts. `worktree_sync` is one durable enclosure-root transaction. It pins pre-sync heads and sourc...",
+    "candidateHints": [
+      "skills/c-09-git-worktree-manager",
+      "skills/c-09-git-worktree-manager/SKILL.md"
+    ],
+    "anchorHints": [
+      "SKILL.md",
+      "SKILL",
+      "reconciling",
+      "active",
+      "worktree_sync",
+      "skills/c-09-git-worktree-manager",
+      "route-local-overview",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "sync",
+      "resolution_action=continue|cancel",
+      "vacant",
+      "c-12-closeout",
+      "## Mid-Task Sync",
+      "## Lifecycle Finalization And Cleanup",
+      "sync_result",
+      "SyncOperationStore",
+      "skills/c-09-git-worktree-manager/SKILL.md",
+      "mcp/src/agents_remember/worktrees/modules/sync.py",
+      "mcp/src/agents_remember/worktrees/sync_transaction_state.py",
+      "sourceRoute",
+      "doc_type",
+      "lastUpdated",
+      "T08",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "resolution_action",
+      "agents_remember",
+      "sync_transaction_state",
+      "T05"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "skills/c-09-git-worktree-manager/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

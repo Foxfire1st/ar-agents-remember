@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,12 +59,13 @@ The current source seams include `external_closeout_commits`. Closeout uses clos
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `external_closeout_commits` at this ownership boundary. | L50-L96 | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
+| The current module exposes `external_closeout_commits` at this ownership boundary. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96 |
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input and closeout-memory-quality package relocations; external memory, memory-content, and ledger commit order is unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; first verification stamp remains governed-closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/completion_cleanup.py`  |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-10T06:28+02:00                                       |
-| lastVerifiedCommitHash |                                                              `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate |                                                              2026-08-18T11:30:22+02:00|
+| lastVerifiedCommitHash |                                                              `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |                                                              2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -75,9 +75,9 @@ tests pin edge wiring separately from cleanup failure containment.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:382-434; mcp/src/agents_remember/application/worktree_tools.py:552-583 |
+| Integration and finalization call `auto_complete_seats` only after their underlying edge succeeds. | `worktree_integrate_tool`; `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:595-676; mcp/src/agents_remember/application/worktree_tools.py:992-1023 |
 | Normal retirement terminates the host and persists catalog retirement provenance without touching transcripts. | `retire_entry` | mcp/src/agents_remember/serving/retire.py:37-71 |
-| Durable inbox folding supplies the exact report rows used as the close blocker. | "def current(self) -> dict[str, OperatorInboxEntry]:" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:141-141 |
+| Durable inbox folding supplies the exact report rows used as the close blocker. | "def current(self) -> dict[str, OperatorInboxEntry]:" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:157-157 |
 | Integration tests prove all eligible roles, owner exclusions, report matching, provenance, transcript retention, and opt-out landing. | `AutoLandHookIntegrationTests` | mcp/tests/test_seat_lifecycle.py:645-869 |
 | Focused tests prove contract, retirement-race, per-seat failure, and opt-out landing containment. | `CompletionCleanupContainmentTests` | mcp/tests/test_completion_cleanup.py:47-169 |
 

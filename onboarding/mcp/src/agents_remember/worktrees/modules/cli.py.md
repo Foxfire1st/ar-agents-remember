@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -42,7 +42,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The CLI module exposes the public main entry point for `python -m` execution. | "def main" | mcp/src/agents_remember/worktrees/modules/cli.py:192-199 |
-| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:166-263; mcp/src/agents_remember/application/worktree_tools.py:328-337; mcp/src/agents_remember/application/worktree_tools.py:340-416; mcp/src/agents_remember/application/worktree_tools.py:569-651; mcp/src/agents_remember/application/worktree_tools.py:858-874 |
+| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:119-216; mcp/src/agents_remember/application/worktree_tools.py:281-290; mcp/src/agents_remember/application/worktree_tools.py:293-316; mcp/src/agents_remember/application/worktree_tools.py:595-676; mcp/src/agents_remember/application/worktree_tools.py:935-951 |
 | The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
 | The CLI seam regression drives `main(["heal-leaf-ids", ...])` end to end. | `test_heal_cli_command_is_the_on_demand_seam` | mcp/tests/test_leaf_ref_resolution.py:419-433 |
 
@@ -64,12 +64,13 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | L30-L37; L40-L43; L46-L49 | `mcp/src/agents_remember/worktrees/modules/cli.py` |
+| The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | `parse_json_stdout`; `command_status`; `command_attach` | mcp/src/agents_remember/worktrees/modules/cli.py:30-37; mcp/src/agents_remember/worktrees/modules/cli.py:40-43; mcp/src/agents_remember/worktrees/modules/cli.py:46-49 |
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout corrected-call model package relocation; CLI normalization and command routing are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.

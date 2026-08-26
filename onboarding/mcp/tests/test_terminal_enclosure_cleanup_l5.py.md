@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_enclosure_cleanup_l5.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,10 +41,10 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Archive/readback/deletion and crash-retry behavior are forced. | L30-L116 | [source](mcp/tests/test_terminal_enclosure_cleanup_l5.py) |
-| Live-operation refusal and exact terminal argument identity are forced. | L117-L173 | [source](mcp/tests/test_terminal_enclosure_cleanup_l5.py) |
+| Archive/readback/deletion and crash-retry behavior are forced. | `test_terminal_archive_reads_back_before_root_deletion_and_survives_retry`; `test_terminal_archive_reuses_bytes_after_crash_before_locator_publication` | mcp/tests/test_terminal_enclosure_cleanup_l5.py:30-65; mcp/tests/test_terminal_enclosure_cleanup_l5.py:68-118 |
+| Live-operation refusal and exact terminal argument identity are forced. | `test_terminal_archive_refuses_live_operation_and_preserves_enclosure`; `test_terminal_archive_binds_one_cleanup_disposition` | mcp/tests/test_terminal_enclosure_cleanup_l5.py:121-152; mcp/tests/test_terminal_enclosure_cleanup_l5.py:155-180 |
 
 ## Cross-Repo References
 

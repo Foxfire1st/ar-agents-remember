@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No external Domain Documentation source is configured for these internal wire mo
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:324-389 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:652-669 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
 
 ## Cross-Repo References
 
@@ -65,7 +65,7 @@ No cross-repository vocabulary is defined here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:652-669 |
+| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:300-308; mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
 
 ## L23 Final Candidate Disposition
 
@@ -87,9 +87,9 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent` at this ownership boundary. | L67-L74; L77-L107; L110-L144 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
+| The current module exposes `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent` at this ownership boundary. | `LifecycleOperationRecoveryCommits`; `OrganizationalTaskPublicationIntent`; `IntegrationPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:68-75; mcp/src/agents_remember/models/lifecycles/operation.py:78-108; mcp/src/agents_remember/models/lifecycles/operation.py:111-149 |
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 

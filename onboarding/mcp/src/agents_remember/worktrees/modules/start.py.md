@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 Owns worktree start, attach, status result construction, and startup preparation
-for external memory and providers. Since L11 the existing-contract branch recreates
+for external memory and providers. Attach now reselects and reconciles an atomic leaf's parent
+series before it exposes the existing workbench. Since L11 the existing-contract branch recreates
 fresh for `cleanup in {abandoned, reopened}` (a reopened leaf keeps its exact leaf
 id), and after writing a leaf contract start restamps the leaf doc's `lifecycleId`
 via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
@@ -27,6 +28,14 @@ via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
 Every entry point and helper takes the typed `WorktreeArgs` dataclass (imported
 from `agents_remember.worktrees.modules.args`), replacing the former
 `argparse.Namespace`; `import argparse` is gone.
+
+`attach_result` rejects a series contract as a workbench, admits the ordinary leaf contract and its
+exact lifecycle location, then resolves any parent series. When a parent exists it calls
+`activate_atomic_series_contract` before source-lineage projection: a different live series is
+logically paused, the requested parent is reconciled for its protected source pair, and attach
+returns the selecting transaction's conflict/refusal rather than exposing stale implementation.
+Only an active/current parent reaches the existing lineage check and `attached` result. Dry-run
+activation remains observation-only.
 
 **`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
 three stages, each of which owns one decision and can return early:
@@ -221,10 +230,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:163-200 |
+| The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201 |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:58-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Worktree tests cover memory compatibility, disabled-memory choices, and dirty external-memory blocking. | `test_memory_base_for_source_uses_source_branch_tip_not_head`, `test_start_reports_compatible_external_memory`, `test_start_reports_internal_memory_mode`, `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:157-174; mcp/tests/test_worktree_support_tests_1.py:765-803; mcp/tests/test_worktree_support_tests_1.py:805-827; mcp/tests/test_worktree_support_tests_1.py:724-763 |
-| Launcher, ordering, retry, and guard coverage for the async path. | `test_successful_setup_writes_state_file_and_finishes_ok`, `test_contract_is_written_before_provider_launch`, `test_retry_refused_while_setup_is_running`, `test_retry_relaunches_after_failure`, `test_cleanup_blocks_while_setup_running`, `test_abandon_blocks_without_force_while_setup_running` | mcp/tests/test_provider_async.py:163-186; mcp/tests/test_provider_async.py:284-328; mcp/tests/test_provider_async.py:387-395; mcp/tests/test_provider_async.py:397-422; mcp/tests/test_provider_async.py:435-443; mcp/tests/test_provider_async.py:445-453 |
+| Launcher, ordering, retry, and guard coverage for the async path. | `test_successful_setup_writes_state_file_and_finishes_ok`, `test_contract_is_written_before_provider_launch`, `test_retry_refused_while_setup_is_running`, `test_retry_relaunches_after_failure`, `test_cleanup_blocks_while_setup_running`, `test_abandon_blocks_without_force_while_setup_running` | mcp/tests/test_provider_async.py:166-189; mcp/tests/test_provider_async.py:287-331; mcp/tests/test_provider_async.py:390-398; mcp/tests/test_provider_async.py:400-425; mcp/tests/test_provider_async.py:438-453; mcp/tests/test_provider_async.py:455-470 |
 | Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:60-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | mtime-sync unit tests cover matching-file sync, target-only file preservation, `.git` skip, and dry-run no-op. | `test_syncs_matching_files_to_source_mtime`, `test_target_only_file_is_left_untouched`, `test_git_dir_is_skipped`, `test_dry_run_changes_nothing` | mcp/tests/test_worktree_mtime_sync.py:51-57; mcp/tests/test_worktree_mtime_sync.py:59-61; mcp/tests/test_worktree_mtime_sync.py:63-66; mcp/tests/test_worktree_mtime_sync.py:68-71 |
 | Index-lifecycle tests pin the divergence exclusion (real git worktree fixtures: divergent files stay fresh, equal heads sync everything). | `test_divergent_files_keep_fresh_mtimes`, `test_equal_heads_sync_everything` | mcp/tests/test_provider_index_lifecycle.py:365-399; mcp/tests/test_provider_index_lifecycle.py:401-417 |
@@ -233,9 +244,23 @@ No external Domain Documentation source is configured for this memory repo.
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:465-467 |
 | `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:183-197; mcp/src/agents_remember/worktrees/worktree_contract.py:200-228 |
 
+## Cross-Repo References
+
+No meaningful cross-repository reference applies beyond the explicitly configured code/memory
+pair already documented by the repository-owned contract.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Series-Contract Notes
 
-For master task starts, `start_contract.py` creates or loads the root series contract, creates the integration branch from the protected/source branch, and then builds the leaf contract from that integration branch with the canonical doc-id `leaf_id` recorded. Both the root and leaf `memory_base_commit` come from `memory_base_for_source` — the tip of the **memory source branch** the worktree is created off (mirroring the code base), **not** the memory repo's current HEAD, which may sit on an unrelated in-flight branch and would record a divergent base that breaks closeout's "memory source branch moved" preflight; it falls back to the repo HEAD only when external memory is off or the source branch is not present yet.
+For master task starts, `start_contract.py` creates or loads the root series contract, creates the
+integration branch from the protected/source branch, selects and reconciles that exact series, and
+only then builds the leaf contract from the integration branch with canonical doc-id `leaf_id`
+recorded. Multiple root series contracts may remain live; selection is disposable source-pair
+authority, not a global contract census. Both root and leaf `memory_base_commit` values come from
+`memory_base_for_source` — the tip of the **memory source branch** the worktree is created from, not
+the memory repo's ambient HEAD.
 
 ## L23 Pre-Mutation Lineage Gate
 
@@ -253,10 +278,10 @@ after accepted task truth publishes, affected projections are refreshed independ
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
-and active atomic-series refs are censused across code and external memory. For start, the exact
-configured locator reservation and task CAS are the mutation boundary; the protected-ref landing
-lock and mutable queue lane are intentionally absent.
+Task-derived integration refs remain mechanically non-ordinary. The exact configured locator and
+task CAS remain the leaf publication boundary; the parent atomic series is separately selected and
+reconciled under source-pair integration authority before start/attach exposes the leaf. A mutable
+queue lane is absent from both decisions.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -264,21 +289,29 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | L83-L91; L94-L95; L98-L123 | `mcp/src/agents_remember/worktrees/modules/start.py` |
+| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:92-101; mcp/src/agents_remember/worktrees/modules/start.py:104-105; mcp/src/agents_remember/worktrees/modules/start.py:108-133 |
 
 ## 260821-CLIVE Start Reservation And Task-CAS Boundary
 
-Start now competes with discard-unstarted under the short task-publication CAS. It proves the exact
+Leaf publication still competes with discard-unstarted under the short task-publication CAS. It proves the exact
 current parent/leaf binding and reserves the configured contract locator before code, memory,
-provider, or lifecycle task mutation; the repository landing lock is intentionally absent.
+provider, or lifecycle task mutation. Parent-series selection is a preceding source-pair operation,
+not part of this task-authoring CAS.
 Memory preparation must reproduce the reserved contract bytes or refuse. Lifecycle task restamping
 uses the shared task-fact publisher and returns independent projection effects. Retry converges on
 the same reservation; conflicts name task-authority or recovery actions. A successor start requires
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical Cross-Repo reference section for this changed
+  start-operation card.
+
+- 2026-08-26T03:37+02:00 — Documented attach-time parent-series selection and
+  reconciliation-before-exposure, and separated that source-pair authority from leaf task CAS and
+  disposable queue state. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged start-versus-discard CAS, exact locator reservation, memory convergence, and task projection effects. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

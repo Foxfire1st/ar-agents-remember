@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ No external Domain Documentation source is configured for this project-owned ope
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, cancellation, launch, worker, and integration edges are forced on the public controller/runtime. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_run_worker_refuses_missing_or_non_startable_durable_state` | mcp/tests/test_lifecycle_operations.py:258-276; mcp/tests/test_lifecycle_operations.py:884-911 |
-| Failed integration dispatch preserves the exact queue-release failure and a truthful false replacement signal. | `test_execute_operation_dispatches_closeout_and_integration_payloads` | mcp/tests/test_lifecycle_operations.py:771-823 |
-| Irreversible integrate cancellation is forced through the public controller in the focused store suite. | `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:218-244 |
+| Start, observe, retry, cancellation, launch, worker, and integration edges are forced on the public controller/runtime. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_run_worker_refuses_missing_or_non_startable_durable_state` | mcp/tests/test_lifecycle_operations.py:316-334; mcp/tests/test_lifecycle_operations.py:999-1026 |
+| Failed integration dispatch preserves the exact queue-release failure and a truthful false replacement signal. | `test_execute_operation_dispatches_closeout_and_integration_payloads` | mcp/tests/test_lifecycle_operations.py:886-938 |
+| Irreversible integrate cancellation is forced through the public controller in the focused store suite. | `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:291-317 |
 
 ## Cross-Repo References
 
@@ -67,7 +67,7 @@ No sibling-repository protocol is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:88-172; mcp/tests/test_lifecycle_operations.py:175-176 |
+| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:98-182; mcp/tests/test_lifecycle_operations.py:185-186 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -96,9 +96,9 @@ The current forcing seams include `test_integration_authority_refuses_incomplete
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. | L234-L255; L258-L276; L279-L289; L292-L303 | `mcp/tests/test_lifecycle_operations.py` |
+| The current test source exercises `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. | `test_integration_authority_refuses_incomplete_closeout_edges`; `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_conflicting_commit_message_refuses_while_task_operation_exists`; `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation` | mcp/tests/test_lifecycle_operations.py:292-313; mcp/tests/test_lifecycle_operations.py:316-334; mcp/tests/test_lifecycle_operations.py:337-347; mcp/tests/test_lifecycle_operations.py:350-361 |
 
 
 ## PDLS Reconciliation

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/static.py`  |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T04:28+02:00                       |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`   |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`   |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -96,7 +96,7 @@ no entries); static-serving behavior is proven by repository source and tests.
 | `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. | "def dashboard_static_dir" | mcp/src/agents_remember/serving/static.py:104-104 |
 | The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | "def mount_static" | mcp/src/agents_remember/serving/static.py:112-112 |
 | The release build step places the tree this module resolves; it refuses to place a stale one. | "def sync" | scripts/sync-dashboard.py:138-138 |
-| The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:289-289 |
+| The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:302-302 |
 | Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | `test_missing_bundle_does_not_turn_a_method_error_into_an_outage` | mcp/tests/test_static.py:120-136 |
 | The end-to-end app test covers the served bundle through `create_app`. | `test_root_serves_dashboard_bundle` | mcp/tests/test_serving.py:546-563 |
 | The end-to-end app test covers the missing-bundle diagnosis through `create_app`. | `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:565-578 |

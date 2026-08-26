@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.ts` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-02T01:42+02:00                                 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`             |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`             |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -39,8 +39,8 @@ Inputs are flat arrays (mirroring `buildTopology`) so the seam stays React-free 
 | The model assigns the joined lifecycle gate into the process view. | "lifecycle?.gate" | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:50-50 |
 | `EngineProcessView` exposes the gate field. | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
 | `groupEngines` + `EngineStack.scope` workspace/worktree split | `groupEngines` | dashboard/src/data/selectors.ts:147-165 |
-| `EngineProcessNode.worktreeGroup` and `lifecycleId` | `EngineProcessNode` | dashboard/src/types/projection.ts:162-202 |
-| `ProviderNode.scope` | `ProviderNode` | dashboard/src/types/projection.ts:378-389 |
+| `EngineProcessNode.worktreeGroup` and `lifecycleId` | `EngineProcessNode` | dashboard/src/types/projection.ts:234-275 |
+| `ProviderNode.scope` | `ProviderNode` | dashboard/src/types/projection.ts:449-460 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

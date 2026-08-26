@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-10T18:31+02:00                     |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2` |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -103,7 +103,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 | --- | --- | --- |
 | `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
 | The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
-| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:94-94; mcp/src/agents_remember/mcp/tools/__init__.py:111-111 |
+| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:95-95; mcp/src/agents_remember/mcp/tools/__init__.py:114-114 |
 
 ## Cross-Repo References
 

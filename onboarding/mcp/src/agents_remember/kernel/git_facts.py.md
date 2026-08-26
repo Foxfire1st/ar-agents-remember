@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_facts.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                         |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -124,7 +124,7 @@ The shared git runner and the context-packet consumer are the direct evidence.
 | The per-command bounds are asserted, not left to whichever module holds the call — including the cross-module comparison that fails on re-divergence. | `TimeoutClassTests`; `test_read_git_facts_bounds_its_three_ref_reads_at_the_metadata_band`; `test_one_command_means_one_bound_across_the_kernel` | mcp/tests/test_git_command.py:667-777 |
 | `git_facts_to_packet` output feeds the context packet's repo summary. | "git_facts = read_git_facts(" | mcp/src/agents_remember/application/context_packet.py:85-85 |
 | The wire face that imports `RepoState` instead of retyping it — the untyped-dict boundary this alias exists to close. | "state: RepoState" | mcp/src/agents_remember/models/context_packet.py:26-26 |
-| `test_every_repo_state_the_git_facts_reader_writes_validates` asserts produced == `VALID_REPO_STATES`; `test_an_absent_repo_crosses_the_wire_as_unavailable` walks a real degrade through `RepoSummary`. | `ProducedLiteralTests`; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:447-474 |
+| `test_every_repo_state_the_git_facts_reader_writes_validates` asserts produced == `VALID_REPO_STATES`; `test_an_absent_repo_crosses_the_wire_as_unavailable` walks a real degrade through `RepoSummary`. | `ProducedLiteralTests`; `ProducerWireCrossingTests` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:646-835; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:516-543 |
 
 ## Cross-Repo References
 

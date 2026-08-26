@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_execution_graph_render.py`       |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -56,9 +56,9 @@ existing empty-map fallback without raising.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The Mermaid render forcing suite includes ordinal private ids, sanitizer-collision resistance, edge endpoint reuse, and label-independence. | `ExecutionGraphMermaidRenderTests` | mcp/tests/test_execution_graph_render.py:51-298 |
-| The title-join suite proves master-qualified same-numbered leaf titles and the no-borrow fallback. | `ExecutionGraphTitlesReadTests` | mcp/tests/test_execution_graph_render.py:300-401 |
-| The renderer allocates declaration-order private ids and reads qualified leaf titles. | `_mermaid_identity_map`; `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245; mcp/src/agents_remember/tasks/render.py:283-384 |
-| The shared title join keys leaf titles by owning ref and local id. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:15-79 |
+| The title-join suite proves master-qualified same-numbered leaf titles and the no-borrow fallback. | `ExecutionGraphTitlesReadTests` | mcp/tests/test_execution_graph_render.py:294-395 |
+| The renderer allocates declaration-order private ids and reads qualified leaf titles. | `_mermaid_leaf_ids`; `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:283-292; mcp/src/agents_remember/tasks/render.py:204-245 |
+| The shared title join keys leaf titles by owning ref and local id. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59; mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
 
 ## Cross-Repo References
 

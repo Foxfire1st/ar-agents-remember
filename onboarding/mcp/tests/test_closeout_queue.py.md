@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T08:30+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,11 @@ ties, internal/disabled memory, request bounds, authority refusal, predecessor/b
 candidate/evidence drift, lifecycle ownership, WAL retry receipts, state bounds, linear fleet work,
 cross-sprint refusal, and completion/reopen locking.
 
+The fixture now independently configures master A and master B as atomic, always uses canonical
+leaf-B identity, and derives each contract's source branch from that master's own atomic flag. This
+lets projection tests represent two simultaneous live series contracts without encoding an
+exclusive lane in shared setup.
+
 ### Conventions
 
 The suite manipulates the public service and durable store with production-shaped artifacts; exact
@@ -41,6 +46,7 @@ failure states are asserted rather than inferred from source strings.
 - Judgment and logistics tests remain separate.
 - Negative cases mutate one candidate fact at a time.
 - Scaling tests compare two fleet sizes and enforce explicit caps.
+- Live-series multiplicity is fixture input, not a queue conflict or ownership shortcut.
 
 ### Todos
 
@@ -54,13 +60,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Core queue tests cover categorical ordering and graph/leaf ties. | `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie` | mcp/tests/test_closeout_queue.py:618-639 |
-| Internal and disabled memory modes use explicit not-applicable readiness. | `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness` | mcp/tests/test_closeout_queue.py:648-661 |
-| Blocker and predecessor logistics remain separate from scheduling judgment. | `test_predecessors_and_atomic_blocker_control_logistics_not_judgment` | mcp/tests/test_closeout_queue.py:717-759 |
-| Candidate/evidence drift fails closed. | `test_candidate_and_evidence_drift_fail_closed` | mcp/tests/test_closeout_queue.py:797-806 |
-| WAL publication retry and request receipts are exercised behaviorally. | `test_mutations_require_stable_request_id_and_retry_after_wal_publish` | mcp/tests/test_closeout_queue.py:925-967 |
-| Sprint completion publication is serialized with queue quiescence. | `test_sprint_completion_publication_is_serialized_with_queue_quiescence` | mcp/tests/test_closeout_queue.py:1113-1142 |
-| Segment-graph queue scheduling and leaf-placement fact reporting split out under the file-size rail. | `SegmentGraphQueueTests` | mcp/tests/test_closeout_queue_segments.py:17-106 |
+| The public request vocabulary exposes projection-only status and invalidation actions, not a selector. | `test_queue_request_has_projection_only_actions` | mcp/tests/test_closeout_queue.py:572-580 |
+| Waiting membership appears only after closeout-door publication; an empty queue does not invent candidates. | `test_door_publication_is_the_only_fixture_membership_source` | mcp/tests/test_closeout_queue.py:582-588 |
 
 ## Cross-Repo References
 
@@ -70,15 +71,18 @@ No meaningful cross-repository reference applies.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
-## 260821-CLIVE-L2 Current Regression Contract
+## Frozen Current Regression Contract
 
-The current forcing seams include `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie`, `test_ungraded_candidates_are_visible_but_cannot_be_selected`, `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness`, `test_request_shape_and_persisted_text_are_bounded`. This suite still exercises the transitional pre-L3 queue schema. L2's root journal owns the new recovery controls, but the tests do not prove a waiting-only queue; L3 owns that schema reduction.
+The current forcing seams are `test_queue_request_has_projection_only_actions` and
+`test_door_publication_is_the_only_fixture_membership_source`. They prove the projection-only
+request vocabulary and door-derived waiting membership; no selector, lifecycle, commit-evidence,
+compatibility-reader, or task-authoring lock behavior is assigned to the queue.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_explicit_grades_order_ready_candidates_by_graph_then_leaf_tie`, `test_ungraded_candidates_are_visible_but_cannot_be_selected`, `test_internal_and_disabled_memory_modes_use_explicit_not_applicable_readiness`, `test_request_shape_and_persisted_text_are_bounded`. | L618-L639; L641-L646; L648-L661; L663-L698 | `mcp/tests/test_closeout_queue.py` |
+| The current test source exercises the projection-only request and door-membership cases. | `CloseoutProjectionSurfaceTests` | mcp/tests/test_closeout_queue.py:571-588 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -93,6 +97,16 @@ Provides the shared L3 task/door/projection fixture plus projection-only smoke t
 - The fixture does not preserve claimed lifecycle, blocker, or commit evidence in queue rows.
 
 ## Update History
+
+- 2026-08-26T08:30+02:00 — Replaced the remaining obsolete transitional-queue regression section
+  with the frozen projection-only and door-membership contract.
+
+- 2026-08-26T08:25+02:00 — Removed stale citations to deleted pre-PDLS queue cases and rebound the
+  card to its frozen two-case projection-only surface. No retired selector/lifecycle claim remains.
+
+- 2026-08-26T03:37+02:00 — Generalized the shared queue fixture to independent atomic masters so
+  multiple live series and activation projection are exercised without an exclusive-lane fixture
+  assumption. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

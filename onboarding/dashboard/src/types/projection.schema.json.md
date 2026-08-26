@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -86,9 +86,9 @@ required list of opaque command payloads, and the status vocabulary includes ter
 and unreadable outcomes. The schema remains projection-only; it does not transfer lifecycle
 authority to the dashboard or to the disposable closeout projection.
 
-| Finding | Source |
-| --- | --- |
-| Lifecycle operation generation, kind, legal controls, and terminal/unreadable statuses are generated together. | dashboard/src/types/projection.schema.json:1717-1845 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Lifecycle operation generation, kind, legal controls, and terminal/unreadable statuses are generated together. | "LifecycleOperationProjection" | dashboard/src/types/projection.schema.json:1837-2029 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
 

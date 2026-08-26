@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:15+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -98,6 +98,12 @@ or returns `None`. The post-landing cleanup (task 260628_post-landing-cleanup)
 adds `test_find_worktree_contract_skips_archived_contract`, proving a
 group-matching contract moved under `0_archive/` is not resurrected.
 
+`seed_memory_ledger` is the shared external-memory source initializer for the atomic-series test
+world. It maps one exact code commit to the memory repository's current content commit, writes the
+canonical initial ledger, commits it, and returns that new memory tip. Callers use it when a
+successful paired-source path is under test; refusal fixtures remain free to construct invalid
+pairs deliberately.
+
 HFX-L4R2 adds end-to-end default light-task start coverage: a standalone `kind: light` task doc can
 start with default `workflow_kind` and no explicit `leaf_id`, persisting the task doc id into the leaf
 contract, while a wrong default ref refuses with `leaf-ref-not-found` and reports the doc-id candidate.
@@ -148,6 +154,10 @@ These tests are focused smoke coverage, not exhaustive `c-09-git-worktree-manage
 Initialized-memory success fixtures must carry explicit write authority; a settings omission must be
 tested as a refusal, never silently repaired by the fixture or production code.
 
+Shared external-memory success fixtures must also carry a canonical ledger mapping for the exact
+admitted code tip; the helper centralizes that invariant without granting test-only production
+authority.
+
 ### Todos
 
 Add fuller Git fixture tests for compatible external-memory start. Refresh verification metadata after the benchmark checkout cache tests are committed.
@@ -164,15 +174,16 @@ No external documentation is needed for this standard-library test.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:178-199 |
-| The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | `closed_external_contract_fixture` | mcp/tests/test_worktree_support.py:644-721 |
+| The shared external-memory initializer commits one canonical ledger mapping for the admitted code tip. | `seed_memory_ledger` | mcp/tests/test_worktree_support.py:112-122 |
+| The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:195-216 |
+| The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | `closed_external_contract_fixture` | mcp/tests/test_worktree_support.py:669-746 |
 | The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied. | `test_resolver_returns_repo_task_root_without_task_name` | mcp/tests/test_worktree_support_tests_1.py:415-435 |
 | External-memory start blocks dirty source memory repos before worktree creation. | `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:724-763 |
 | Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support_tests_1.py:925-995 |
 | Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / `request_commit_approval` (closeout owns the commit gate). | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/guidance.py:39-39 |
 | `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | `test_status_reports_integration_pending_for_dirty_closed_contract` | mcp/tests/test_worktree_support_tests_2.py:620-632 |
-| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1097-1127; mcp/tests/test_worktree_support_tests_1.py:1129-1142; mcp/tests/test_worktree_support_tests_1.py:1161-1179 |
-| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:332-360 |
+| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1119-1148; mcp/tests/test_worktree_support_tests_1.py:1150-1163; mcp/tests/test_worktree_support_tests_1.py:1182-1199 |
+| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:349-377 |
 | Direct legacy integration callers cannot fast-forward or classify source movement, and cleanup blocks before completed integration. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_cleanup_blocks_before_integration_completed`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes` | mcp/tests/test_worktree_support_tests_2.py:634-669; mcp/tests/test_worktree_support_tests_2.py:671-677; mcp/tests/test_worktree_support_tests_2.py:679-722; mcp/tests/test_worktree_support_tests_2.py:724-759 |
 | The remaining non-fast-forward case proves refs stay unchanged. | `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_3.py:955-1007 |
 | Resolver and drift-report path tests check `code_repository_name`, `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp. | `test_drift_report_paths_use_temp_root` | mcp/tests/test_worktree_support_tests_3.py:199-242 |
@@ -224,11 +235,15 @@ The current forcing seams include `git`, `init_repo`, `write_current_task_lineag
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `git`, `init_repo`, `write_current_task_lineage`, `write_file_onboarding`. | L71-L81; L85-L105; L108-L175; L178-L199 | `mcp/tests/test_worktree_support.py` |
+| The current test source exercises `git`, `init_repo`, `seed_memory_ledger`, `write_current_task_lineage`, and `write_file_onboarding`. | `git`; `init_repo`; `seed_memory_ledger`; `write_current_task_lineage`; `write_file_onboarding` | mcp/tests/test_worktree_support.py:75-85; mcp/tests/test_worktree_support.py:89-109; mcp/tests/test_worktree_support.py:112-122; mcp/tests/test_worktree_support.py:125-192; mcp/tests/test_worktree_support.py:195-216 |
 
 ## Update History
+
+- 2026-08-26T08:15+02:00 — Added the shared canonical `seed_memory_ledger` fixture used by
+  paired-source activation/bootstrap tests and refreshed this card's shifted exact source ranges.
+  Verification metadata remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
@@ -263,7 +278,7 @@ The current forcing seams include `git`, `init_repo`, `write_current_task_lineag
   replacements, none of which this card describes. Four are fixture values moving to the narrowed
   `WorkflowKind` — `workflow_kind="chat"` becoming `"chat-task"` in the external-contract fixtures
   and atomic-integrate contract — forced by the two-value workflow contract. The fixture definitions
-  and contract vocabulary were re-read directly: cit:([`open_external_contract_fixture`, `committed_range_external_contract_fixture`, `closed_external_contract_fixture`], mcp/tests/test_worktree_support.py:354-428; mcp/tests/test_worktree_support.py:550-618; mcp/tests/test_worktree_support.py:635-712); cit:([`DEFAULT_WORKFLOW_KIND`], mcp/src/agents_remember/worktrees/worktree_contract.py:82-82).
+  and contract vocabulary were re-read directly: cit:([`open_external_contract_fixture`, `committed_range_external_contract_fixture`, `closed_external_contract_fixture`], mcp/tests/test_worktree_support.py:354-428; mcp/tests/test_worktree_support.py:550-618; mcp/tests/test_worktree_support.py:635-712); cit:([`DEFAULT_WORKFLOW_KIND`], mcp/src/agents_remember/worktrees/worktree_contract.py:83-83).
   The fifth is inside `test_status_reports_integration_pending_for_dirty_closed_contract`, where
   `payload["nextTool"]` became `payload.get("nextTool")`: `status_payload` now returns a
   `WorktreeStatusPayload` whose `nextTool` is `NotRequired` (omitted rather than `""`), so the

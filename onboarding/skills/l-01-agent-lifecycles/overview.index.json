@@ -18,11 +18,13 @@
   "coveredFiles": [
     "skills/l-01-agent-lifecycles/SKILL.md",
     "skills/l-01-agent-lifecycles/criteria/code-seam.md",
-    "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    "skills/l-01-agent-lifecycles/criteria/plan-review.md",
+    "skills/l-01-agent-lifecycles/templates/curator-brief.md",
+    "skills/l-01-agent-lifecycles/templates/orchestration-task.md"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 0,
-    "fileSidecars": 3,
+    "fileSidecars": 5,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -32,34 +34,45 @@
     "criteria",
     "curator",
     "lifecycles",
+    "orchestration",
+    "plan",
+    "review",
     "roles",
     "seam",
     "skill",
     "skills",
+    "task",
     "templates"
   ],
   "hotPath": {
-    "summary": "Free chat launches work; the architect owns sprint composition and the initial ruled topology. When the graph is missing or materially stale, an approved strategist authors the evidence-cited plan before the orchestrator exists. The orchestrator adopts that plan, recomputes its ready frontier after material events, and records every queue or reprioritization judgment with rationale, evidence, author, confidence, and supersession. Structural task document plus role remains the durable address at every altitude. An organizational master is a logical grouping whose ordinary leaves branch direc...",
+    "summary": "### IAS Planning-To-Runtime Boundary Planning truth is upstream of runtime scheduling. Architect, strategist, and orchestrator seats may author otherwise-valid task changes without asking a closeout queue or atomic-series selector for permission. A material task change invalidates the affected disposable projection and causes the waiting frontier to be recomputed from current truth; it does not freeze task authoring. Multiple live atomic masters on one protected source pair are normal. Runtime selection exposes one master, auto-pauses the previous selection without retiring its task or bran...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles",
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/SKILL.md",
       "skills/l-01-agent-lifecycles/criteria",
       "skills/l-01-agent-lifecycles/criteria/code-seam.md",
+      "skills/l-01-agent-lifecycles/criteria/plan-review.md",
       "skills/l-01-agent-lifecycles/templates",
-      "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+      "skills/l-01-agent-lifecycles/templates/curator-brief.md",
+      "skills/l-01-agent-lifecycles/templates/orchestration-task.md"
     ],
     "anchorHints": [
       "SKILL.md",
       "SKILL",
       "code-seam.md",
       "code-seam",
+      "plan-review.md",
+      "plan-review",
       "curator-brief.md",
       "curator-brief",
+      "orchestration-task.md",
+      "orchestration-task",
       "roles",
+      "IAS",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
-      "f95487ec993b58d34911bba0206a7fa6ef9684eb",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "roles/",
       "l-01-agent-lifecycles",
       "attach_master",
@@ -88,16 +101,11 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T08",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T15",
       "L23",
-      "R39",
-      "DAG",
-      "L14",
-      "L15",
-      "DAGQC"
+      "R39"
     ]
   },
   "fallback": {

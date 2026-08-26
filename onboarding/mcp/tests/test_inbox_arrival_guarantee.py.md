@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,7 +100,7 @@ deliver-until-LANDED semantics are same-repository runtime behavior proven by so
 | The supersede transition under test. | `mark_superseded` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:265-293 |
 | Terminal inspectability under test. | `list_for_mailbox` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:160-187 |
 | Retention/cap eviction under test. | `inbox_keep_ids`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/controlplane/interaction_retention.py:140-163; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-198 |
-| Last-good settings loop under test. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:108-140 |
+| Last-good settings loop under test. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:143-175 |
 | Relay-death watcher under test. | `post_relay_death_signal`; `relay_death_watch_loop` | mcp/src/agents_remember/serving/relay_death_watch.py:100-152; mcp/src/agents_remember/serving/relay_death_watch.py:167-174 |
 | Retire surfacing under test. | `_surface_stranded_rows` | mcp/src/agents_remember/application/terminal_tools.py:1025-1095 |
 

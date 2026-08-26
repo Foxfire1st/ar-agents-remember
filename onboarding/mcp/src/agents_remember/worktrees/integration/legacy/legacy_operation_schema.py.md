@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LegacyGateRule`; `LegacyRecoveryCommits`; `LegacyCloseoutInput` as its public seam. | L12-L17; L20-L25; L28-L38 | `mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py` |
+| The module defines `LegacyGateRule`; `LegacyRecoveryCommits`; `LegacyCloseoutInput` as its public seam. | `LegacyGateRule`; `LegacyRecoveryCommits`; `LegacyCloseoutInput` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py:12-17; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py:20-25; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_schema.py:28-38 |
 
 ## Cross-Repo References
 

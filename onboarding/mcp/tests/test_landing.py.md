@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_landing.py`                      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                           |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`       |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -108,7 +108,7 @@ Landing tests continue to pin landing-state projection, with fixture contract pa
 - 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff is one
   fixture value, `_contract`'s `"workflow_kind": "chat"` becoming `"chat-task"`, forced by
   `WorkflowKind` narrowing to `Literal["chat-task", "light-task"]`
-  cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:19-19). No test, class, mock, probe branch or assertion changed,
+  cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:20-20). No test, class, mock, probe branch or assertion changed,
   and the card names no workflow kind anywhere — it claims the landing-window gate, the
   observed/planned/missing honesty axis, the origin-main semantics, the `gh` process boundary and
   the shared-`subprocess`-module patching argument, none of which the fixture value reaches.

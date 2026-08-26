@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T14:19+02:00                                            |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                        |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                                        |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `RegistrationWiringTests1` | mcp/tests/test_mcp_registration_wiring_tests_1.py:6-6 |
+| Current suite declaration anchoring this card. | `RegistrationWiringTests1` | mcp/tests/test_mcp_registration_wiring_tests_1.py:16-771 |
 
 ## Cross-Repo References
 

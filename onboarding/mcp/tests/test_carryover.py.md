@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_carryover.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ typed parser are the authority evidence.
 | Carryover's internal apply owner requires configured repository, exact leaf-contract, protected-checkout, and target-settings authority before content/ledger/index/commit mutation. | `_apply_carryover_for_request`; `_require_carryover_authority` | mcp/src/agents_remember/memory/carryover.py:759-893 |
 | Raw JSON/Markdown preflight mirrors typed parser semantics while rejecting default-only write authority. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 | Authority matrix spans missing/invalid/empty/reset/unsupported refusals and retention/repopulation/fallback positive controls. | `test_missing_official_settings_refuses_before_any_mutation`; `test_supported_nonempty_path_rules_remain_authoritative`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation` | mcp/tests/test_carryover_apply_1.py:113-126; mcp/tests/test_carryover_apply_2.py:455-494; mcp/tests/test_carryover_apply_2.py:569-603 |
-| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support_tests_1.py:360-371; mcp/tests/test_worktree_support_tests_3.py:701-761 |
+| Earlier evidence-tier and ledger-mapping coverage remains in worktree tests. | `test_memory_ledger_roundtrip_and_prepend`; `test_memory_carryover_applies_landed_branch_onboarding` | mcp/tests/test_worktree_support_tests_1.py:375-386; mcp/tests/test_worktree_support_tests_3.py:701-761 |
 
 ## Cross-Repo References
 

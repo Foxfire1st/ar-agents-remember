@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,32 +16,34 @@
 
 ## Purpose
 
-Owns the closeout-queue request/action matrix, bounded metadata, candidate-state/memory invariants,
-queue-state consistency, pending-transaction exactness, and direct imports that bind both split
-evidence modules to targeted scope.
+Owns the strict wire contract for closeout-door generations, disposable closeout projections, and
+the public queue response. It keeps scheduling input, source-door truth, projection membership,
+and operation-journal identity separate while bounding every persisted collection.
 
 ## Code Commentary
 
 ### Logic
 
-The model tests validate required and forbidden fields for each action, bound and normalize grade,
-evidence, admission, and blocker metadata, exhaust reachable candidate lifecycle shapes across
-memory modes, reject inconsistent queue lanes and closed state, and bind pending revisions,
-fingerprints, sprint status, and receipts. The ownership test keeps both evidence modules attached
-to the targeted selection.
+The door tests accept only waiting, deferred, withdrawn, or claimed dispositions; require exact
+operation identity only for a claimed generation; and refuse projection-only actions on the
+source-publication request. The projection tests prove that invalid-empty contains no membership
+or source identity, terminal empty is still valid-built, member reasons are bounded, and lifecycle
+or commit evidence cannot leak into the disposable projection response.
 
 ### Invariants And Boundaries
 
-- Durable semantic invariants reject impossible states before projection or lifecycle code reads them.
-- Direct imports are deliberate gate-scope ownership, not replacement behavior coverage.
+- Door generations are source truth; projections are rebuildable scheduling views.
+- A claimed door may reference journal-owned operation identity, but the queue never owns that
+  lifecycle evidence.
+- Every reason, source problem, member list, and response collection remains bounded.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Split candidate and judgment evidence modules have direct targeted-test ownership. | `test_split_evidence_modules_have_direct_test_ownership` | mcp/tests/test_closeout_queue_models.py:85-90 |
-| Candidate state and memory modes are fail closed. | `test_candidate_state_and_memory_matrix_is_fail_closed` | mcp/tests/test_closeout_queue_models.py:193-274 |
-| Pending transactions bind exact revisions, status, and receipts. | `test_pending_transactions_bind_revision_status_and_receipt` | mcp/tests/test_closeout_queue_models.py:310-414 |
+| Door dispositions, claimed-operation identity, and source/projection request separation are fail closed. | `CloseoutDoorModelTests` | mcp/tests/test_closeout_queue_models.py:85-124 |
+| Invalid-empty and terminal valid-built projection states carry no illicit membership or lifecycle state. | `CloseoutProjectionModelTests` | mcp/tests/test_closeout_queue_models.py:127-195 |
+| Projection member reasons and every persisted wire list are bounded. | `test_member_reasons_and_all_wire_lists_are_bounded` | mcp/tests/test_closeout_queue_models.py:163-195 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -56,6 +58,8 @@ Forces strict wire invariants for door generations, projection members, projecti
 - Unknown, unbounded, or cross-plane lifecycle fields are rejected.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed closeout source/projection package relocations; queue projection model forcing is unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

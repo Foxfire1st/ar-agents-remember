@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -19,6 +19,8 @@
 Behavioural cover for worktree and observer helpers **that only had happy-path use**. Every
 test asserts the value returned, the file that moved, or the error raised — never merely
 that a line ran.
+
+## Code Commentary
 
 ## Method
 
@@ -50,6 +52,11 @@ still mints the `kind="series"` contract, the `ar/<task>` integration branch and
 series-ness comes from the task artifact, and the workflow kind travels beside it without
 deciding anything.
 
+The external-memory parent-series fixture now commits a canonical `memory.md` row mapping the
+exact code super tip before admission. Existing-series adoption also creates the recorded
+integration ref first and asserts that adoption retains it; adoption proves an existing contract
+and branch pair and never invents the missing ref as a fallback.
+
 ## Invariants And Boundaries
 
 - "Already gone" and "failed" are distinct outcomes for every removal helper; collapsing
@@ -71,6 +78,15 @@ deciding anything.
   final reference-cell `path:line[-line]` coordinate may pass without invented
   history; the fixture keeps claim, anchor, path, and table shape unchanged.
 - No container runtime and no network; git and the filesystem are real.
+- External-memory success fixtures carry an exact code-to-memory ledger mapping, and existing
+  series adoption supplies the branch whose authority production validates.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
@@ -79,16 +95,30 @@ deciding anything.
 | The application provider-runtime teardown helpers under test are `_docker_rm_f` / `_docker_network_rm` (moved from worktrees by L9). | "def _docker_rm_f"; "def _docker_network_rm" | mcp/src/agents_remember/application/provider_runtime.py:254-254; mcp/src/agents_remember/application/provider_runtime.py:269-269 |
 | The cleanup helper under test is capability-bound `delete_branch_if_merged`. | "def delete_branch_if_merged(" | mcp/src/agents_remember/worktrees/modules/cleanup.py:188-210 |
 | The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:125-125 |
-| The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:850-850 |
+| The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:858-858 |
 | The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
 | The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/serving/projections/snapshots.py:353-375; mcp/src/agents_remember/serving/projections/snapshots.py:378-401 |
 | The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:123-192; mcp/tests/test_worktree_support.py:767-842 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned helper suite.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical commentary and Docs/Cross-Repo reference section
+  shape for this changed helper suite card.
+
+- 2026-08-26T08:15+02:00 — Reconciled parent-series fixtures with paired-source admission: seed
+  the canonical external-memory ledger and pre-create the exact integration ref before adoption.
+  Verification metadata remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
@@ -110,7 +140,7 @@ This task extends this suite's production-bound fixtures or assertions for task-
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: `ParentSeriesContractTests` moved both its
   fixtures from `workflow_kind="master-task"` to `"light-task"`, because `WorkflowKind` is now
-  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:19-19)). The Classes-table
+  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:20-20)). The Classes-table
   claim "mint one for a master task" survives, and the note added under the table says why it is
   now a demonstration rather than a coincidence: `_parent_series_contract` reads `**Type:** Master`
   off the `task.md` the fixture writes, so with the workflow kind no longer able to say "master",

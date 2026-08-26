@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -123,9 +123,9 @@ validation failures, and invalid resolvable parent master docs.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:92-108 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:482-494 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:539-551 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:404-447 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:269-269 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:315-315 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
 | The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
@@ -135,7 +135,7 @@ validation failures, and invalid resolvable parent master docs.
 | The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:303-358 |
 | Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:554-584 |
 | The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-55 |
-| Focused tests pin missing-section scaffolding, preservation, malformed container/member refusals, and no partial mutation. | `TaskDocSectionScaffoldingTests` | mcp/tests/test_task_doc_section_scaffolding.py:38-128 |
+| Focused tests pin missing-section scaffolding, preservation, malformed container/member refusals, and no partial mutation. | `TaskDocSectionScaffoldingTests` | mcp/tests/test_task_doc_section_scaffolding.py:38-127 |
 
 ## Current Task-First Publication Boundary
 
@@ -172,9 +172,9 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | L135-L146; L150-L162; L198-L301 | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
+| The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | `TaskDocTarget`; `TaskDocEdit`; `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:134-146; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:149-162; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269 |
 
 ## Update History
 

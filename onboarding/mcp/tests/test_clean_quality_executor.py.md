@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -78,8 +78,17 @@ Publication fixtures now bind every generation to an explicit candidate tree and
 Passing executor outcomes carry certifying evidence; failed outcomes carry none. A source export
 without one valid authoritative result refuses instead of publishing an incomplete generation.
 
+## 2026-08-26 Causal-Report Publication Reconciliation
+
+The atomic report-generation tests now include `causal-failures.json` and
+`causal-failures.md`. Interrupted publication must leave the prior generation intact, while a
+successful pointer rotation makes the causal JSON discoverable through
+`published_report_path` alongside the authoritative clean-quality result. Causal reporting is
+therefore part of one immutable published generation rather than an adjacent best-effort file.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled atomic causal-failure report publication and lookup with the candidate-bound quality generation.
 - 2026-08-24T21:23+02:00 — Added candidate-bound schema-2 publication and evidence assertions.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict manifest schema/error and parsed-snapshot artifact lookup coverage. Verification metadata remains pinned until architect-owned closeout.

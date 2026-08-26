@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/strategist.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-26T08:35+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
+[l-01 role overview](overview.md)
 
 ## Purpose
 
@@ -53,7 +53,25 @@ Atomic classification follows invalid/unsafe partial exposure, never size alone.
 an atomic foundation first, between waves, or last, while a disposable experiment may remain outside
 the sprint graph.
 
+## IAS Graph-Less Activation Choice
+
+When no explicit graph is justified, the strategist records the graph-less atomic-sequential
+choice without inventing dependency edges. Canonical commanded-master order is the stable
+equal-priority tie-break, and exact source-pair activation exposes one atomic master at a time.
+Selecting another may logically pause the former while preserving its task, branch, worktree, and
+journal; it does not prove that the former integrated or terminated.
+
+The strategist keeps planning truth upstream of runtime selection. Queue or selector state may
+inform current feasibility, but cannot veto task authoring or rewrite dependency judgment.
+
 ## Update History
+
+- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
+  reconciling strategist activation doctrine.
+
+- 2026-08-26T05:20+02:00 — Reconciled graph-less planning with source-pair activation and made
+  pause-without-retirement distinct from dependency/full-integration order. Final source ranges and
+  verification remain post-Dagger/closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_projection_types.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,9 +41,9 @@ annotations, accepts multiple surviving non-null variants, renders the lifecycle
 union exactly, and rejects the all-null case. These assertions close the generated projection
 fallout without weakening the schema vocabulary.
 
-| Finding | Source |
-| --- | --- |
-| Primitive coverage exercises intact, optional multi-variant, annotated, and invalid all-null unions. | mcp/tests/test_l6_diff_coverage_projection_types.py:54-90 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Primitive coverage exercises intact, optional multi-variant, annotated, and invalid all-null unions. | `test_ref_name_and_nullable` | mcp/tests/test_l6_diff_coverage_projection_types.py:54-88 |
 
 ## Update History
 

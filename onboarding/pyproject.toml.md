@@ -6,8 +6,8 @@
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-12T00:20+02:00                     |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -208,7 +208,7 @@ off by default and there was nowhere to declare a marker.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:75-76 |
+| The quality gate delegates `testpaths` lookup to `quality_scope.pytest_testpaths`. | `pytest_testpaths` | mcp/src/agents_remember/code_quality/check.py:79-80 |
 | Pytest configuration owns automatic xdist workers for raw and wrapped runs alike. | "-n=auto" | pyproject.toml:110-130 |
 | The repository enables branch measurement. | "branch = true" | pyproject.toml:70-70 |
 | The changed-lines coverage floor reuses the CRAP reader, which refuses reports without branch data. | "by_key = crap_calculator.load_coverage_by_path"; "require_branch_measurement(data"; "def require_branch_measurement("; "if branch is not True: raise RuntimeError("; "meta.branch_coverage is"; "CRAP is defined over branch coverage" | mcp/src/agents_remember/code_quality/crap_calculator.py:115-115; mcp/src/agents_remember/code_quality/crap_calculator.py:135-135; mcp/src/agents_remember/code_quality/crap_calculator.py:139-142; mcp/src/agents_remember/code_quality/diff_coverage.py:238-238 |
@@ -216,11 +216,11 @@ off by default and there was nowhere to declare a marker.
 | The runner declares the `GatedPath` inventory type. | "class GatedPath" | scripts/run-gated-integration.py:66-66 |
 | The runner defines its environment-gated paths in `PATHS`. | "PATHS: tuple[GatedPath" | scripts/run-gated-integration.py:77-77 |
 | The runner declares the `pytest_command` helper. | "def pytest_command(" | scripts/run-gated-integration.py:234-234 |
-| The inventory test enumerates the registered gated markers. | "def test_the_runner_covers_every_registered_gated_marker_and_invents_none("; "set(registered_gated_markers())" | mcp/tests/test_gated_integration_runner.py:102-102; mcp/tests/test_gated_integration_runner.py:105-105 |
+| The inventory test enumerates the registered gated markers. | "def test_the_runner_covers_every_registered_gated_marker_and_invents_none("; "set(registered_gated_markers())" | mcp/tests/test_gated_integration_runner.py:104-104; mcp/tests/test_gated_integration_runner.py:107-107 |
 | The inventory equality is asserted by `test_the_runner_covers_every_registered_gated_marker_and_invents_none`. | `test_the_runner_covers_every_registered_gated_marker_and_invents_none` | mcp/tests/test_gated_integration_runner.py:102-106 |
 | The inventory comes from `registered_gated_markers`. | `registered_gated_markers` | mcp/tests/test_gated_integration_runner.py:53-56 |
-| `fitness` is registered but ordinary in `pyproject.toml`. | "fitness" | pyproject.toml:205-205 |
-| The ordinary-marker rule is asserted by `test_fitness_is_registered_as_an_ordinary_non_gated_marker`. | `test_fitness_is_registered_as_an_ordinary_non_gated_marker` | mcp/tests/test_gated_integration_runner.py:108-113 |
+| `fitness` is an ordinary architecture evidence lane, not a pyproject or gated-runner marker. | "fitness"; "repository architecture contract" | mcp/src/agents_remember/testing/evidence_lanes.py:69-69; mcp/src/agents_remember/testing/evidence_lanes.py:70-70 |
+| Evidence-lane ownership and exclusion from the gated marker table are asserted directly. | `test_fitness_is_owned_by_the_evidence_lane_not_the_gated_marker_table` | mcp/tests/test_gated_integration_runner.py:110-116 |
 | The supported Python floor and supported platforms are declared as package classifiers. | "requires-python = "; "Programming Language :: Python :: 3.11"; "Operating System :: POSIX :: Linux"; "Operating System :: MacOS" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-17; mcp/pyproject.toml:20-21 |
 | Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 

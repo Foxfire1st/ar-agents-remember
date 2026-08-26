@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_retry_proof.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,15 @@ one module with `--cov-append --cov-context=test`; a deliberately inconclusive d
 second, fresh full pytest selection and reaches the final verdict. A separate exact-proof case
 forces Ruff to fail and proves cached JSON is discarded, pytest stays skipped, and neither
 coverage-derived rail is called.
+
+Retry delta ownership now comes from the same canonical dependency/evidence catalog as targeted
+selection. A changed shared support module reruns its static import consumer, a changed catalogued
+fixture reruns its declared consumer, and a changed production module reruns its import consumer
+without rerunning unaffected tests. A global test input such as `conftest.py` invalidates reuse and
+forces a fresh population. The suite uses synthetic catalogs through the public fixture helper and
+no longer tests the removed private `_eligible_test_delta` heuristic. Mismatch/refusal output names
+stable causal reasons such as `global-test-input`, `selected-population-changed`, and
+`unusable-context-proof`.
 
 The production-shaped cases additionally prove tracked directory symlinks are hashed by link
 identity without traversing their targets, malformed inventories and proof artifacts fail closed,
@@ -67,7 +76,7 @@ No external Domain Documentation source is configured for this test contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Retry proof owns manifest compatibility, context filtering, and publication. | `RetryPlan`; `prepare`; `_filtered_coverage_data` | mcp/src/agents_remember/code_quality/retry_proof.py:63-134; mcp/src/agents_remember/code_quality/retry_proof.py:136-206; mcp/src/agents_remember/code_quality/retry_proof.py:393-444 |
-| The wrapper owns delta command selection, automatic full fallback, and stale-artifact deletion when a cheap rail prevents pytest. | `_pytest_step`; `complete_coverage_rails`; `run_fixed_checks` | mcp/src/agents_remember/code_quality/check.py:261-282; mcp/src/agents_remember/code_quality/check.py:517-559; mcp/src/agents_remember/code_quality/check.py:659-713 |
+| The wrapper owns delta command selection, automatic full fallback, and stale-artifact deletion when a cheap rail prevents pytest. | `_pytest_step`; `complete_coverage_rails`; `run_fixed_checks` | mcp/src/agents_remember/code_quality/check.py:301-340; mcp/src/agents_remember/code_quality/check.py:587-629; mcp/src/agents_remember/code_quality/check.py:729-811 |
 
 ## Cross-Repo References
 
@@ -84,6 +93,8 @@ delta reuse, disablement, and fail-closed invalidation only inside the certifyin
 diagnostic results cannot seed or consume retry proof.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled retry proof with canonical dependency-owned delta selection, declared fixture consumers, global-input invalidation, and removal of the private eligibility heuristic.
 
 - 2026-08-24T21:23+02:00 — Applied the typed Dagger admission boundary to all retry-proof paths.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
-| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -165,6 +165,7 @@ closeout-source model.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout model/control import relocations; registered tools, request behavior, and quality/closeout boundaries are unchanged.
 - 2026-08-24T21:43+02:00 — No content impact: the file-size repair repointed
   `LifecycleControlAction` to its canonical integration owner; registered tools, schemas, and
   behavior are unchanged. The closeout request-concept reference now targets their extracted

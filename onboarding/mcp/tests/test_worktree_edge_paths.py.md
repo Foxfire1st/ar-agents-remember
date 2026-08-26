@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_worktree_edge_paths.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -24,6 +24,8 @@ Each of these is the case where getting it wrong is expensive — worktrees crea
 base, a half-integrated pair, a branch deleted while checked out — so each is tested for the
 **verdict it produces**, not merely for running.
 
+## Code Commentary
+
 ## Classes
 
 | Class | Guard |
@@ -36,9 +38,7 @@ base, a half-integrated pair, a branch deleted while checked out — so each is 
 | `MemoryDisabledStartTests` | `_contract_after_memory_start` — the recovery from a start that asked for external memory and could not get it: the whole memory topology goes, or none of it does. |
 | `ExistingContractStartTests` | What `worktree_start` does when a contract already exists at the path. |
 | `PreflightedContractTests` | `_preflighted_contract` returns the contract the rest of start must use — a blocked preflight is handed straight back instead of creating worktrees. |
-| `MemorySyncBlockTests` | The two memory-side sync refusals, and what each tells the caller to do next. |
-| `MoveMemoryBranchTests` | A merge that cannot be resolved automatically **leaves the worktree usable**. |
-| `FetchSourceUpstreamsTests` | The best-effort pre-sync fetch reports per side rather than failing the sync. |
+| `FetchSourceUpstreamsTests` | Shared pre-lock source refresh reports `no-upstream`, `fetched`, or bounded per-side failure without pretending remote state is mutation authority. |
 | `OverviewRevisionTests` | Which route overviews the closeout classifier can speak for at all, including its three-value revision result and typed evidence boundary. |
 | `IntegrationRefusalTests` | Integration refuses **before it moves any branch**; a master source tip that advanced after leaf closeout is `source-lineage-stale` and routes to `sync_source_lineage` before any replay/merge reasoning. |
 
@@ -82,7 +82,8 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
   `WorktreeCommandResult` with exit 2 and `state: invalid-request`, because no layer between
   `build_start_contract` and the tool handler catches `ContractError`.
 - Hand-editable inputs (task documents) produce skips, not exceptions.
-- A conflicting memory merge aborts and leaves the worktree in a usable state.
+- Retained merge conflicts, continuation, and cancellation belong to the focused real-Git sync
+  suite; this edge suite no longer pins obsolete private abort helpers.
 - Disabling memory mid-start clears the memory topology *whole* — mode, repo path, both branches,
   base commit, worktree and ledger — and touches nothing on the code side.
 - The fast-forward recovery rebuilds the contract when branch tips moved under it.
@@ -91,18 +92,33 @@ leaves `memory_mode` external, and a plain `{"state": "ready"}` returns the *ide
   the typed `source` evidence value, while absent/outside-baseline overviews still
   drop out rather than becoming false gates.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The construction refusal rejects unknown workflow and memory values through `_task_vocabulary`. | `_task_vocabulary` | mcp/src/agents_remember/worktrees/worktree_contract.py:162-179 |
-| `WorkflowKind` limits workflow selection to `chat-task` and `light-task` (declared in models/worktree.py since L9). | "WorkflowKind = Literal[" | mcp/src/agents_remember/models/worktree.py:19-19 |
+| `WorkflowKind` limits workflow selection to `chat-task` and `light-task` (declared in models/worktree.py since L9). | "WorkflowKind = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20 |
 | `build_start_contract` catches `ContractError` and `LeafRefResolutionError` so neither leaves the tool handler. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:939-958 |
 | `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:206-228 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
 | Contract lifecycle anchors cover schema/lifecycle round trips. | `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81 |
 | Worktree and sync suites cover the adjacent happy paths. | `WorktreeSupportTests`; `WorktreeSyncTests` | mcp/tests/test_worktree_support.py:807-882; mcp/tests/test_worktree_sync.py:111-244 |
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:102-189; mcp/tests/test_worktree_and_observer_helpers.py:192-240; mcp/tests/test_worktree_and_observer_helpers.py:243-357; mcp/tests/test_worktree_and_observer_helpers.py:454-732 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies beyond the explicit paired repositories exercised
+by this worktree edge suite.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## L23 Status And Attach Edges
 
@@ -122,11 +138,18 @@ The current forcing seams include `test_leaf_contract_refuses_an_unknown_memory_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_leaf_contract_refuses_an_unknown_memory_mode`, `test_series_contract_refuses_an_unknown_memory_mode`, `test_a_known_memory_mode_is_accepted_by_both`, `test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`. | L152-L160; L162-L166; L168-L177; L179-L200 | `mcp/tests/test_worktree_edge_paths.py` |
+| The current test source exercises `test_leaf_contract_refuses_an_unknown_memory_mode`, `test_series_contract_refuses_an_unknown_memory_mode`, `test_a_known_memory_mode_is_accepted_by_both`, `test_a_refused_request_leaves_the_start_as_a_result_not_an_exception`. | `test_leaf_contract_refuses_an_unknown_memory_mode`; `test_series_contract_refuses_an_unknown_memory_mode`; `test_a_known_memory_mode_is_accepted_by_both`; `test_a_refused_request_leaves_the_start_as_a_result_not_an_exception` | mcp/tests/test_worktree_edge_paths.py:155-163; mcp/tests/test_worktree_edge_paths.py:165-169; mcp/tests/test_worktree_edge_paths.py:171-180; mcp/tests/test_worktree_edge_paths.py:182-203 |
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical commentary and Docs/Cross-Repo reference section
+  shape for this changed edge-path suite card.
+
+- 2026-08-26T03:37+02:00 — Removed tests/cards for the deleted abort-on-conflict private sync
+  helpers, kept bounded shared source-refresh edges, and isolated attach lineage with the new parent
+  activation dependency. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

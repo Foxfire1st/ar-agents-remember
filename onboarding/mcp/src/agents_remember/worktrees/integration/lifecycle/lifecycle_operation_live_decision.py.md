@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,15 +46,17 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | L32-L77; L80-L121 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py` |
+| The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. | `raise_live_evidence_decision`; `immutable_recovery_refusal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:35-84; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py:87-128 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed initial-door, ledger-recovery, and worker-termination package relocations; live lifecycle decisions are unchanged.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

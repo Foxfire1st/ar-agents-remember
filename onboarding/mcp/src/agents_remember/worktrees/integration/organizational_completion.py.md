@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,9 +42,9 @@ completion decision only after protected-ref movement and fingerprint proof agre
 | --- | --- | --- |
 | Exact final-leaf plan requires sibling code/memory/ledger proof and sprint integrationBranch. | `organizational_completion_plan` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:134-191 |
 | Scope validation pins executionNature, owning master, and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:194-230 |
-| Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:486-522 |
+| Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:480-502 |
 | Sibling memory ancestry and unique ledger mapping are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:555-564; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:592-622 |
-| Master completion is published only with the exact certified fingerprint. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:336-370 |
+| Master completion is published only with the exact certified fingerprint. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:330-364 |
 
 ## Documentation References
 
@@ -56,9 +56,9 @@ The current source seams include `OrganizationalCompletionError`, `Organizationa
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `OrganizationalCompletionError`, `OrganizationalCompletionPublicationError`, `OrganizationalCompletionPublicationState` at this ownership boundary. | L38-L39; L42-L55; L59-L81 | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
+| The current module exposes `OrganizationalCompletionError`, `OrganizationalCompletionPublicationError`, `OrganizationalCompletionPublicationState` at this ownership boundary. | `OrganizationalCompletionError`; `OrganizationalCompletionPublicationError`; `OrganizationalCompletionPublicationState` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:39-40; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:43-56; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:59-82 |
 
 ## 260821-CLIVE Door-Based Completion Proof
 

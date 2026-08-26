@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_abandon.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ This module defines the test classes cited below; each row points at the exact s
 | Defines the class `TestAbandonReserved`. | `TestAbandonReserved` | mcp/tests/test_l6_diff_coverage_abandon.py:88-114 |
 | Defines the class `TestAbandonWithGuard`. | `TestAbandonWithGuard` | mcp/tests/test_l6_diff_coverage_abandon.py:117-177 |
 | Defines the class `TestAbandonBranch`. | `TestAbandonBranch` | mcp/tests/test_l6_diff_coverage_abandon.py:180-304 |
-| Defines the class `TestAbandonBranches`. | `TestAbandonBranches` | mcp/tests/test_l6_diff_coverage_abandon.py:329-336 |
+| Defines the class `TestAbandonBranches`. | `TestAbandonBranches` | mcp/tests/test_l6_diff_coverage_abandon.py:338-345 |
 
 ## 260821-CLIVE-L2 Addressable Abandon Fixture
 
@@ -49,9 +49,9 @@ The abandon authority fixture now publishes the lifecycle-operation locator and 
 before constructing terminal mutation authority. This keeps coverage on the normal root-journal
 address path and avoids a test-only contract-path reader.
 
-| Finding | Source |
-| --- | --- |
-| The fixture publishes lifecycle location immediately after contract publication. | mcp/tests/test_l6_diff_coverage_abandon.py:84-94 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The fixture publishes lifecycle location immediately after contract publication. | `_abandon_authority` | mcp/tests/test_l6_diff_coverage_abandon.py:62-98 |
 
 
 ## PDLS Reconciliation

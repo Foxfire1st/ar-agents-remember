@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l5_quality_and_recovery_edges.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -50,8 +50,16 @@ certifying evidence in fresh success payloads. Invalid/unreadable result exports
 and recovered evidence must match the current Git tree. Schema `1.0` remains a deliberate public
 reader refusal, not a compatibility route.
 
+## 2026-08-26 Quality Callback Fidelity
+
+The organizational quality-gate test now supplies the fixture through the mocked gate's
+`side_effect`, exercising the same request-dependent callback shape as the production boundary
+instead of returning a precomputed value. The asserted certification and recovery contracts are
+unchanged, but the test double can no longer bypass argument-sensitive evidence construction.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Updated the organizational gate test double to invoke the candidate-aware quality fixture through the production callback shape.
 - 2026-08-24T21:23+02:00 — Updated quality recovery for candidate-bound certifying evidence.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: extended focused recovery edges for strict manifest authority and distinct stable/published result paths. Verification metadata remains pinned until architect-owned closeout.

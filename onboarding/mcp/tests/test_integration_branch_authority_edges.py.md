@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_branch_authority_edges.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ Tests bind real journal/queue/config facts and explicitly exercise no-ambient-ch
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityEdgeTests` | mcp/tests/test_integration_branch_authority_edges.py:79-1087 |
+| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityEdgeTests` | mcp/tests/test_integration_branch_authority_edges.py:81-1036 |
 
 ## Documentation References
 
@@ -53,9 +53,9 @@ The current forcing seams include `test_carryover_authority_refuses_each_configu
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_carryover_authority_refuses_each_configured_repository_mismatch`, `test_series_attach_is_not_an_integration_branch_workbench`, `test_lowest_worktree_creator_refuses_series_code_and_memory`, `test_terminal_series_cleanup_refuses_symbolic_branch_aliases`. | L80-L140; L142-L149; L151-L168; L170-L212 | `mcp/tests/test_integration_branch_authority_edges.py` |
+| The current test source exercises `test_carryover_authority_refuses_each_configured_repository_mismatch`, `test_series_attach_is_not_an_integration_branch_workbench`, `test_lowest_worktree_creator_refuses_series_code_and_memory`, `test_terminal_series_cleanup_refuses_symbolic_branch_aliases`. | `test_carryover_authority_refuses_each_configured_repository_mismatch`; `test_series_attach_is_not_an_integration_branch_workbench`; `test_lowest_worktree_creator_refuses_series_code_and_memory`; `test_terminal_series_cleanup_refuses_symbolic_branch_aliases` | mcp/tests/test_integration_branch_authority_edges.py:82-142; mcp/tests/test_integration_branch_authority_edges.py:144-151; mcp/tests/test_integration_branch_authority_edges.py:153-170; mcp/tests/test_integration_branch_authority_edges.py:172-214 |
 
 ## Current Contract — 260821 CLIVE Final
 

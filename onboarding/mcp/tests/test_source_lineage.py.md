@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ The fixture builds canonical sprint, master, and leaf documents plus matching
 series/leaf contracts and repositories, so the tests exercise ancestry from the
 same durable identities used by structural dispatch rather than caller-supplied
 ids.
+
+## Code Commentary
 
 ## Test Coverage
 
@@ -65,6 +67,13 @@ current transitive chain and raises operation-specific sync guidance after the s
   removing that pytest-inert footer changes no test semantics and prevents dead launcher lines
   from appearing as uncovered acceptance delta.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -77,6 +86,14 @@ current transitive chain and raises operation-specific sync guidance after the s
 | Sibling linked worktree paths resolve as the same repository and keep the leaf chain current. | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:406-426 |
 | Diverged master ancestry reports both ahead and behind counts. | `test_diverged_master_reports_divergence` | mcp/tests/test_source_lineage.py:428-439 |
 | The shared fixtures write canonical atomic and organizational task topology, contracts, real code/external-memory branches, and exact pre-start base snapshots. | `_fixture`, `_organizational_fixture`, `_write_task_tree`, `_repo` | mcp/tests/test_source_lineage.py:472-536; mcp/tests/test_source_lineage.py:539-562; mcp/tests/test_source_lineage.py:565-608; mcp/tests/test_source_lineage.py:611-624 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies beyond the configured code/memory repositories
+that the lineage fixture models explicitly.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## L23 Final Candidate Disposition
 
@@ -95,10 +112,10 @@ The organizational fixture deliberately delays publication until task structure 
 publishes only the final accepted leaf identity. This prevents stale pre-rewrite lifecycle
 addresses from becoming test authority.
 
-| Finding | Source |
-| --- | --- |
-| Standard fixtures publish addressable master and leaf contracts from canonical publication text. | mcp/tests/test_source_lineage.py:472-551 |
-| Organizational setup delays publication and emits the final leaf location after its task rewrite. | mcp/tests/test_source_lineage.py:555-586 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Standard fixtures publish addressable master and leaf contracts from canonical publication text. | `_fixture` | mcp/tests/test_source_lineage.py:473-553 |
+| Organizational setup delays publication and emits the final leaf location after its task rewrite. | `_organizational_fixture` | mcp/tests/test_source_lineage.py:556-587 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -120,6 +137,14 @@ Source-lineage forcing now recognizes the current integration package owners whi
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical commentary and Docs/Cross-Repo reference section
+  shape for this changed lineage suite card.
+
+- 2026-08-26T03:37+02:00 — Strengthened stale attach forcing: the exact parent series is selected
+  and active before the later lineage refusal, proving implementation admission does not get
+  skipped merely because exposure ultimately blocks on ancestry. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

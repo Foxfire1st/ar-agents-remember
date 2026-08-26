@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/taskReader.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-24T15:04+02:00                                        |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                  |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -61,8 +61,8 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reader entry and master overview mount optional graph content and the independently scoped queue. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx |
-| The sub-task index and section primitives. | `SubTaskIndex`; `SliceList`; `StepList` | dashboard/src/panels/detail-panel/taskReader.tsx:395-433; dashboard/src/panels/detail-panel/taskReader.tsx:436-472; dashboard/src/panels/detail-panel/taskReader.tsx:642-666 |
+| The reader entry and master overview mount optional graph content and the independently scoped queue. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:85-132; dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
+| The sub-task index and section primitives. | `SubTaskIndex`; `SliceList`; `StepList` | dashboard/src/panels/detail-panel/taskReader.tsx:440-478; dashboard/src/panels/detail-panel/taskReader.tsx:481-517; dashboard/src/panels/detail-panel/taskReader.tsx:700-724 |
 
 ## Cross-Repo References
 

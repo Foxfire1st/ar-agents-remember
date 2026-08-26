@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -214,7 +214,7 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:263-263; mcp/tests/test_projection_types_codegen.py:255-255).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/code_quality/projection_types.py:393-393; mcp/src/agents_remember/code_quality/projection_types.py:435-435; mcp/src/agents_remember/code_quality/projection_types.py:562-562; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/tests/test_projection_types_codegen.py:271-271).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -438,9 +438,9 @@ references informed product framing only; current code truth stays in agents-rem
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:60-60; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:59-59; mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:263-263; mcp/tests/test_projection_types_codegen.py:255-255; scripts/sync-projection-types.py:43-51 |
+| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:62-62; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:66-66; mcp/src/agents_remember/code_quality/projection_types.py:393-393; mcp/src/agents_remember/code_quality/projection_types.py:435-435; mcp/src/agents_remember/code_quality/projection_types.py:562-562; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/tests/test_projection_types_codegen.py:271-271; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:356-360 |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:396-400 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
 | JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
 
@@ -518,6 +518,8 @@ This keeps the browser on the projection plane: file absence never becomes queue
 authority.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed exact projection-schema and generated-mirror citation anchors after source movement; the dashboard source-layer architecture is unchanged.
 
 - 2026-08-25T17:21+02:00 — Reconciled the final invalidation outcome and contract-forcing change.
   Verification remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,10 +57,10 @@ task doc id when the task tree proves the mapping.
 | The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:169-265 |
 | The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
 | The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh + restamp start path under test publishes the restamp through queue governance. | "publish=lambda task_root, document: publish_queue_bound_task_facts(" | mcp/src/agents_remember/worktrees/modules/start.py:594-594 |
+| The recreate-fresh start path publishes its restamp through task-first mutation and projection invalidation. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
 | Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
-| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:551-558 |
+| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:982-989 |
 
 ## L23 Reopen Lineage Regression
 
@@ -86,9 +86,9 @@ not the lower contract writer. The assertion boundary therefore follows the cano
 sequence: task/contract preparation may occur, but lifecycle state becomes discoverable only when
 the enclosure-root locator and immutable manifest are published.
 
-| Finding | Source |
-| --- | --- |
-| Start-after-reopen forcing intercepts the lifecycle-location publication owner. | mcp/tests/test_task_reopen.py:870-892 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Start-after-reopen forcing intercepts the lifecycle-location publication owner. | `test_false_terminal_leaf_blocks_absent_and_reopened_starts_before_any_effect` | mcp/tests/test_task_reopen.py:698-821 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -103,6 +103,8 @@ Forces completed-leaf reopen, exact task reset, predecessor transition, ambient 
 - Projection effects follow task publication; queue state never freezes the reopen write.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No behavior change: common reopen contract/memory fixtures moved to `task_reopen_test_support`; reopen publication and authority assertions are unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

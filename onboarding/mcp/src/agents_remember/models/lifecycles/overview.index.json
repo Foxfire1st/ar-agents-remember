@@ -105,7 +105,7 @@
       "termination",
       "mcp/src/agents_remember/models/lifecycles/",
       "route-local-overview",
-      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "/overview.md",
       "__init__.py.md",
       "responses.py.md",
@@ -116,15 +116,15 @@
       "LifecycleFinalizeTaskResponse",
       "LifecycleOperationRecord",
       "LifecycleOperationProjection",
-      "mcp/src/agents_remember/models/lifecycles/operation.py",
-      "mcp/src/agents_remember/models/lifecycles/enclosure.py",
-      "mcp/src/agents_remember/models/lifecycles/termination.py",
+      "_require_quality_certification_memory",
+      "CloseoutOperationInput",
+      "IntegrateOperationInput",
+      "EnclosurePublicationState",
+      "TerminalEnclosurePredecessor",
+      "WorkerTerminationEvidence",
+      "LifecycleCancellationEvidence",
       "successor.py",
-      "4241908c",
-      "mcp/src/agents_remember/models/lifecycles/responses.py",
-      "mcp/src/agents_remember/models/lifecycles/finalize.py",
-      "3.0",
-      "agents_remember"
+      "LifecycleOperationKind"
     ]
   },
   "fallback": {

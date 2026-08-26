@@ -5,9 +5,14 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-24T15:04+02:00                     |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:20+02:00                     |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| governingOverview      | `../../../../../../overview.md`             |
+
+## Governing Overview
+
+[MCP package overview](../../../../../../overview.md)
 
 ## Purpose
 
@@ -20,11 +25,16 @@ still stops for developer approval, while subordinate accepted-series work can r
 series authority and continue through worktree start, integration, and finalize/cleanup after clean
 previews. Closeout
 sequencing belongs to `c-12-closeout` skill; `c-09-git-worktree-manager` skill only supplies the worktree-specific
-`contract.md` path and the integration/finalization follow-up rules. Slice 2c adds a
+configured leaf `series-contract.md` path and the integration/finalization follow-up rules. Slice 2c adds a
 Lifecycle Resume And Promotion section: `worktree_start` promotes the current
 fleeting lifecycle to persistent (the contract `lifecycle:` anchor),
 `worktree_attach` resumes it, and attaching over an unsaved fleeting lifecycle
 hits the save gate (`on_unsaved=save`|`discard`).
+
+The current skill also owns public doctrine for exact source-pair atomic-series selection and
+resumable synchronization. Selection is runtime admission, not planning authority; conflicts are
+retained for explicit continue/cancel; stable journal evidence remains below the enclosure root;
+and terminal cleanup releases only the exact selected contract.
 
 ## Code Commentary
 
@@ -37,11 +47,12 @@ a source branch is behind/diverged from its upstream, with
 `stale_base_choice="fast-forward"`/`"proceed-stale"` recoveries), the
 auto-created external-memory source branch (official-tip base, code branch
 name as template, reported as `memorySourceBranch`), the fetch-free
-`worktree_status` freshness block with its `syncHint`, and the new **Mid-Task
-Sync** section: `worktree_sync` pulls a moved official line into the live
-worktree atomically (new code tip must be ledger-mapped at the official memory
-tip; sync early — before memories are written — for the pure fast-forward
-path; `memory_sync_choice` recoveries when local memory commits diverge). It states that `c-09-git-worktree-manager` skill
+`worktree_status` freshness block with its `syncHint`, and the **Mid-Task Sync**
+section: `worktree_sync` reconciles an exact moved code/memory source pair as a journaled,
+resumable transaction. The new code tip must be ledger-mapped at the admitted memory tip; sync
+early before memory work; retained code or memory conflicts resume through
+`resolution_action=continue`, while explicit `cancel` restores pinned heads and releases an exact
+reconciling selection. It states that `c-09-git-worktree-manager` skill
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
 the source memory repo has uncommitted content or ledger changes, and reports
@@ -137,8 +148,8 @@ lookup history.
 ### Conventions
 
 `c-09-git-worktree-manager` skill is a wrapper, not a replacement workflow. Task identity should be settled
-before worktree creation: `w-02-light-task-workflow` skill creates `<task-root>/<task-slug>/task.md`, then
-`c-09-git-worktree-manager` skill places `contract.md` beside it. External memory incompatibility is
+before worktree creation: a master owns root `series-contract.md` plus its integration branch, and
+each build leaf owns `enclosures/<leaf-id>/series-contract.md`. External memory incompatibility is
 interactive and offers reconciliation, disabled memory, or custom handling; its
 common trigger is starting off a freshly-merged gated branch whose PR merge
 commit the ledger has not mapped, which `c-11-memory-carryover-from-branch` skill carryover (run after the merge) now
@@ -146,8 +157,7 @@ maps automatically so `reconciliation` is not needed. Dirty source memory blocks
 start until memory content and ledger updates are committed or the developer
 chooses another path.
 
-Integration remains human-gated, with the 260703-L12 round-2 orchestrated-run
-carve-out stated in the section itself: dependency-ordered leaf→master and
+Integration follows applicable authority: dependency-ordered leaf→master and
 master→super integrations ride the series' standing approval (the developer's
 portfolio-gate approval recorded in the planner master), concentrating the
 developer hand-off at the super PR/carry-over gate; a raised durable
@@ -162,29 +172,37 @@ intent packet must make clear that the protected target is not the recorded
 pushed for PR. Integration preview also expects the recorded code and memory
 source branches to be the active checkouts in the source repositories, so agents
 should switch clean source checkouts before calling `worktree_integrate` with
-`dry_run=true`. Lifecycle finalization remains human-gated and removes
+`dry_run=true`. Lifecycle finalization follows the same applicable-authority boundary and removes
 worktrees plus merged local task branches only after integration, carryover, and
 landed-commit proof.
 
 ### Invariants And Boundaries
 
 `c-09-git-worktree-manager` skill must not use divergent memory as trusted context, must not bypass `c-12-closeout` skill's
-explicit closeout approval gate, and must not create closeout commits outside
+applicable closeout authority gate, and must not create closeout commits outside
 `c-12-closeout` skill's code-memory-ledger sequence. Worktree status reports lifecycle phase,
 dirty flags, summary, and typed next hints instead of shell commands.
 Integration must not move source branches until code and memory commits are
 fast-forwardable or replay has produced mediated commits. The skill must not
-call `worktree_start` until the developer has approved the Worktree Intent Gate.
+call `worktree_start` until either the developer has approved a new-plan Worktree Intent Gate or
+accepted-series authority has been recorded for subordinate work.
 For protected, PR-gated, or otherwise not-directly-landable target branches, the
 selected `source_branch` must be a developer-approved pushable integration
 branch created from that target, not the protected target itself. Lifecycle
 finalization requires completed closeout, completed integration, completed
 memory carryover, landed-commit ancestry on the recorded source branch, and
-explicit cleanup/finalization approval.
+applicable cleanup/finalization authority.
+
+Atomic-series selection is scoped to the exact code/memory source pair and never reads task prose
+or queue ownership. Task-document authoring is always upstream. The queue owns no activation,
+operation, commit, certification, or integration evidence. There is no tolerant selector reader or
+contract-presence election. Terminal cleanup may release only the exact still-selected contract and
+must preserve a newer selection.
 
 ### Todos
 
-No current implementation todo is recorded for the skill contract.
+Source claims are reconciled to the frozen synchronized copy. Verification remains closeout-owned
+until the real code commit exists.
 
 ### Docs References
 
@@ -200,13 +218,13 @@ No external documentation is needed for this repository-local skill.
 | --- | --- | --- |
 | `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-315 |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-372 |
-| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:169-169 |
-| The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:87-100 |
-| The Worktree Intent Gate runs the applicable dry-run/preflight first, reports in chat, then uses one `lifecycle_gate(kind="worktree-intent", ask=..., packet=...)` call; `worktree_start` runs only after a developer-resolved decision is cleared with `lifecycle_resume`. | "worktree-intent" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:122-122 |
-| Integration and cleanup/finalization run their dry-runs first, report previews in chat, then use `lifecycle_gate(kind="integration-approval", ...)` / `lifecycle_gate(kind="cleanup-approval", ...)` before `worktree_integrate` / `lifecycle_finalize_task`, with `lifecycle_resume` after the developer response is handled. | "lifecycle_gate(kind=\"integration-approval\", ask=…, packet={ ...the integration plan... })"; "lifecycle_gate(kind=\"cleanup-approval\", ask=…, packet={ ...what cleanup removes... })" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:243-243; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:279-279 |
-| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:247-247 |
-| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:206-243 |
-| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:244-282 |
+| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:203-203 |
+| The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:129-129 |
+| Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:103-162 |
+| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:329-375; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:376-455 |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:355-355 |
+| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:329-375 |
+| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:376-455 |
 
 ## Cross-Repo References
 
@@ -240,7 +258,32 @@ status/rebuild, and `worktree_operation_control` owns advertised journal recover
 archive before deletion and replay only their exact accepted typed arguments. Queue invalidation,
 task edits, or enclosure deletion cannot erase a claimed journal or authorize guessed recovery.
 
+## IAS Source-Pair Activation And Resumable Sync
+
+The packaged skill now matches the canonical runtime doctrine. Manager/worker dispatch and atomic
+start/attach select one master for an exact source pair; reviewer/curator inspection does not.
+Selection publishes `reconciling`, preserves the former live series as logically paused, syncs the
+exact bases, and publishes `active` only when current. Multiple paused/nonterminal contracts are
+valid, and task authoring never consults selector or queue state.
+
+Sync pins source and pre-sync refs in the enclosure-root journal. Conflicts remain in operation-owned
+`.sync` worktrees for agent resolution and contract-addressed continuation, or explicit cancellation
+restores exact pinned heads and publishes `vacant`. Cleanup releases the exact selected terminal
+contract before deleting its naming authority. No compatibility reader, direct-Git recovery, or
+contract-presence fallback is admitted.
+
 ## Update History
+
+- 2026-08-26T08:30+02:00 — Restored the required governing-overview metadata and link for the
+  synchronized runtime copy; behavioral wording remains synchronized with the canonical skill.
+
+- 2026-08-26T08:20+02:00 — Reconciled the installed c-09 copy to the frozen synchronized source;
+  commit verification remains closeout-owned.
+
+- 2026-08-26T05:20+02:00 — Reconciled the packaged c-09 sidecar with source-pair selection,
+  reconciliation-before-exposure, retained conflicts, continue/cancel, enclosure-root recovery,
+  exact cleanup release, task-authoring primacy, and no-fallback doctrine. Final ranges remain
+  post-Dagger-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged stable locator/journal authority, disposable scheduling, and exact terminal archive retry into the installed worktree skill card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled the packaged no-standalone-build topology and fail-closed lineage workflow; verification remains closeout-owned.
@@ -319,16 +362,16 @@ task edits, or enclosure deletion cannot erase a claimed journal or authorize gu
 - 2026-05-24T03:24+02:00: Updated after `c-09-git-worktree-manager` skill closeout adopted the pre-code-commit `check_missing_onboarding` pass for newly added files.
 - 2026-05-24T02:47+02:00: Updated closeout guidance to run drift after the code commit, refresh memory, run `memory_quality_check`, then commit memory and ledger.
 - 2026-05-16T18:17+02:00: Documented that external-memory closeout refreshes affected repo entity catalog fingerprints after the code commit and before the memory-content commit.
-- 2026-05-12T10:59: Updated the direct-closeout contract after ledger branch metadata stopped being a compatibility condition.
-- 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected `c-09-git-worktree-manager` skill source citation ranges after confirming the coordination rename behavior remains current.
-- 2026-05-11T18:34: Updated after `c-09-git-worktree-manager` skill command examples adopted `--code-repository-name` and `--code-repository-root`.
-- 2026-05-10T03:01: Updated after the `c-09-git-worktree-manager` skill contract added direct checkout closeout for approved micro edits.
-- 2026-05-10T01:55: Updated after the closeout contract documented code-commit-first onboarding metadata refresh before memory commit.
-- 2026-05-10T01:19: Updated after `c-09-git-worktree-manager` skill split implementation approval from explicit commit approval and added closeout preview guidance.
-- 2026-05-10T00:56: Updated to capture the clean external-memory baseline gate before `c-09-git-worktree-manager` skill worktree start.
-- 2026-05-10T00:47: Updated for pre-worktree intake, wrapper task placement, lifecycle status, and cleanup command behavior.
-- 2026-05-10T00:36: Refreshed verification metadata after approval-gated integration landed on main.
-- 2026-05-09T23:55: Updated after documenting the `c-09-git-worktree-manager` skill integration phase and replay/conflict rules.
-- 2026-05-09T22:57: Refreshed verification metadata and replaced task-artifact citations with current skill/spec evidence.
-- 2026-05-09T22:10: Updated closeout boundary to include source-branch movement checks.
-- 2026-05-09T21:59: Created onboarding for the new `c-09-git-worktree-manager` skill.
+- 2026-05-12T10:59+02:00: Updated the direct-closeout contract after ledger branch metadata stopped being a compatibility condition.
+- 2026-05-11T19:42+02:00: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` and corrected `c-09-git-worktree-manager` skill source citation ranges after confirming the coordination rename behavior remains current.
+- 2026-05-11T18:34+02:00: Updated after `c-09-git-worktree-manager` skill command examples adopted `--code-repository-name` and `--code-repository-root`.
+- 2026-05-10T03:01+02:00: Updated after the `c-09-git-worktree-manager` skill contract added direct checkout closeout for approved micro edits.
+- 2026-05-10T01:55+02:00: Updated after the closeout contract documented code-commit-first onboarding metadata refresh before memory commit.
+- 2026-05-10T01:19+02:00: Updated after `c-09-git-worktree-manager` skill split implementation approval from explicit commit approval and added closeout preview guidance.
+- 2026-05-10T00:56+02:00: Updated to capture the clean external-memory baseline gate before `c-09-git-worktree-manager` skill worktree start.
+- 2026-05-10T00:47+02:00: Updated for pre-worktree intake, wrapper task placement, lifecycle status, and cleanup command behavior.
+- 2026-05-10T00:36+02:00: Refreshed verification metadata after approval-gated integration landed on main.
+- 2026-05-09T23:55+02:00: Updated after documenting the `c-09-git-worktree-manager` skill integration phase and replay/conflict rules.
+- 2026-05-09T22:57+02:00: Refreshed verification metadata and replaced task-artifact citations with current skill/spec evidence.
+- 2026-05-09T22:10+02:00: Updated closeout boundary to include source-branch movement checks.
+- 2026-05-09T21:59+02:00: Created onboarding for the new `c-09-git-worktree-manager` skill.

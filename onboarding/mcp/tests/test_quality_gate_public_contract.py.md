@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_quality_gate_public_contract.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,6 +63,7 @@ not from a second mutable read or a diagnostic payload.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the clean-executor and quality-gate package relocations; public recovery and response-model contracts are unchanged.
 - 2026-08-24T21:23+02:00 — Added candidate-tree and one-snapshot certifying evidence proof.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for one-snapshot recovery and strict public quality-result regressions. Verification remains blank until architect-owned closeout stamps the code commit.

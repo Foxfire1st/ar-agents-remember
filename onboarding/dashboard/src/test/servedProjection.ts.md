@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/servedProjection.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-11T15:20+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ language reference is [TSConfig Reference — resolveJsonModule](https://www.typ
 | `asServedProjection` — the parameter type is the check; the body cast only re-narrows vocabularies. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The mirror whose literal unions the import erases (`State`, `Phase`, `AttentionSeverity`, `AttentionLane`, `ProcessFactState`, `ProcessHealth`). | `State`; `Phase`; `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | dashboard/src/types/projection.ts:15-15; dashboard/src/types/projection.ts:29-29; dashboard/src/types/projection.ts:33-33; dashboard/src/types/projection.ts:37-37; dashboard/src/types/projection.ts:41-41; dashboard/src/types/projection.ts:45-45 |
 | Caller 1: the contract test imports `asServedProjection` for the sampled snapshot. | "./servedProjection" | dashboard/src/test/contract.test.ts:21-21 |
-| Caller 1: the contract test calls `asServedProjection` for the sampled snapshot. | "asServedProjection(snapshot)" | dashboard/src/test/contract.test.ts:74-74 |
+| Caller 1: the contract test calls `asServedProjection` for the sampled snapshot. | "asServedProjection(snapshot)" | dashboard/src/test/contract.test.ts:76-76 |
 | The contract file documents the three type-level directions `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror`. | "mirror ⊇ served — the server grows a field"; "served ⊇ mirror — the mirror declares something"; "fixture ⊇ mirror — THE ORACLE ITSELF" | dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45 |
 | Caller 2: the fixture module exports `SERVED` from `asServedProjection(snapshot)`. | "export const SERVED" | dashboard/src/test/fixtures/wire.ts:66-66 |
 | Caller 2: the fixture module reads the served projection's fields when constructing the `BASE_*` builders. | `BASE_LIFECYCLE` | dashboard/src/test/fixtures/wire.ts:95-107 |

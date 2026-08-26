@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/TaskNotes.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No meaningful cross-repo references found.
 | The data client + the pure reference resolver. | `listNotes`, `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:52-65 |
 | The L17 reader this surface opens (and the `NotesReaderTarget` type it passes). | `NotesReaderTarget` | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:22-26 |
 | The shared markdown renderer (inline reference rendering). | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
-| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:126-194; dashboard/src/panels/detail-panel/taskReader.tsx:569-603 |
+| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
 | The serving endpoints behind the client. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:168-177 |
 | The component test suite. | "TaskNotes entry surface" | dashboard/src/panels/TaskNotes.test.tsx:38-76 |
 

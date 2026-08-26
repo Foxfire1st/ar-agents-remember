@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ register MCP tools or runtime behavior.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | CRAP-Calculator lives in this package. | `crap_score` | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92 |
-| The source quality suite wrapper lives in this package. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:320-366 |
+| The source quality suite wrapper lives in this package. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:378-428 |
 | The changed-lines coverage floor lives in this package. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30 |
 
 ## Update History

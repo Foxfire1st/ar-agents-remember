@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/__init__.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,9 +42,9 @@ No configured Domain Documentation source applies to this package marker.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The package docstring names registered tool request and response models as its scope. | L1 | `mcp/src/agents_remember/models/tools/__init__.py` |
+| The package docstring names registered tool request and response models as its scope. | "Registered tool request and response models." | mcp/src/agents_remember/models/tools/__init__.py:1-1 |
 
 ## Cross-Repo References
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` is newly added (GitHub #54 sub-task D), forwarding `contract_path`/`memory_sync_choice`/`dry_run` to `worktree_sync_tool`. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` forwards the canonical `contract_path`, typed `MemorySyncChoice`, typed `SyncResolutionAction`, and `dry_run` unchanged to `worktree_sync_tool`; it owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -80,6 +80,30 @@ parameter would republish the tool as a nested object.
 - `worktree_start_payload`/`worktree_integrate_payload`/`worktree_cleanup_payload`/`worktree_abandon_payload`
   default `dry_run=False` (act-by-default); the `*_closeout_apply` builders keep
   `dry_run=False` paired with their `*_preview` builders. `dry_run=true` previews.
+- Sync payload transport preserves the shared literal types and canonical contract address; it
+  cannot select by operation id or supply a compatibility fallback.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Repo-Internal References
+
+The source itself and its governing route are sufficient for this thin payload adapter.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Start, sync, attach, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86; mcp/src/agents_remember/mcp/tools/worktree.py:89-98 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned transport adapter.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Series-Contract Notes
 
@@ -96,11 +120,18 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | L43-L53; L56-L71; L74-L83 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86 |
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Repo/Cross-Repo reference sections for the
+  changed worktree payload adapter.
+
+- 2026-08-26T03:37+02:00 — Added typed `resolution_action` forwarding beside
+  `memory_sync_choice`; payload transport remains contract-addressed and journal-free. Verification
+  remains post-Dagger/closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

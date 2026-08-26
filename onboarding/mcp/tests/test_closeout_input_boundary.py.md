@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_input_boundary.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,12 +52,20 @@ The current forcing seams include `test_enabled_message_observations_refuse_with
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_enabled_message_observations_refuse_with_exact_correction`, `test_plan_uses_lifecycle_possible_writes_and_typed_not_applicable`, `test_preview_apply_and_duplicate_fingerprints_share_one_normalized_input`, `test_invalid_apply_after_selection_changes_no_authority_or_git_fact`. | L54-L94; L97-L163; L166-L245; L248-L277 | `mcp/tests/test_closeout_input_boundary.py` |
+| The current test source exercises `test_enabled_message_observations_refuse_with_exact_correction`, `test_plan_uses_lifecycle_possible_writes_and_typed_not_applicable`, `test_preview_apply_and_duplicate_fingerprints_share_one_normalized_input`, `test_invalid_apply_after_selection_changes_no_authority_or_git_fact`. | `test_enabled_message_observations_refuse_with_exact_correction`; `test_plan_uses_lifecycle_possible_writes_and_typed_not_applicable`; `test_preview_apply_and_duplicate_fingerprints_share_one_normalized_input`; `test_invalid_apply_after_selection_changes_no_authority_or_git_fact` | mcp/tests/test_closeout_input_boundary.py:50-95; mcp/tests/test_closeout_input_boundary.py:98-164; mcp/tests/test_closeout_input_boundary.py:167-247; mcp/tests/test_closeout_input_boundary.py:250-281 |
+
+## 2026-08-26 Boundary Fidelity Corrections
+
+The test now accepts the authority layer's admitted contract wrapper by comparing its canonical
+contract path, rather than requiring object identity with the pre-admission fixture. A launcher
+crash is exposed as the typed `lifecycle-worker-launch-failed` refusal and must not leak the
+private exception text. Import paths also follow the extracted closeout model/admission packages.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled admitted-contract identity and sanitized worker-launch failure behavior at the public closeout-input boundary.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata awaits the landed commit.

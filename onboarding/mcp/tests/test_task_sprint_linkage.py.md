@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,9 @@ detach removes them, refusing while any edge touches the node and never deleting
 uncommanded masters as facts. The helpers `_attach`/`_detach`/`_linkage` build the
 `TaskDocTarget`/`TaskDocEdit` objects and dispatch through the `task_doc_tool` application entry
 point, passing the `TaskDocCall` call object since the L16 signature-compat change.
+After a helper publishes changed task bytes, the suite rebuilds `TaskDocumentTopology` before the
+next linkage query. This makes each assertion read the new task generation and prevents a fixture's
+previously resolved topology view from hiding publication or invalidation defects.
 
 ### Conventions
 
@@ -58,8 +61,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:102-749; mcp/tests/test_task_sprint_linkage.py:752-1113 |
-| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:111-119; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:138-162; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:173-181 |
+| The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:101-794; mcp/tests/test_task_sprint_linkage.py:797-1163 |
+| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:106-115; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:143-167; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:177-186 |
 | The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:37-45 |
 
 ## Cross-Repo References
@@ -82,9 +85,9 @@ The current forcing seams include `test_attach_writes_all_four_artifacts_atomica
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. | L197-L225; L227-L248; L250-L255; L257-L289 | `mcp/tests/test_task_sprint_linkage.py` |
+| The current test source exercises `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. | `test_attach_writes_all_four_artifacts_atomically`; `test_attach_judgment_refusals_write_nothing`; `test_attach_existing_nature_needs_no_nature_payload`; `test_attach_target_and_uniqueness_refusals` | mcp/tests/test_task_sprint_linkage.py:196-224; mcp/tests/test_task_sprint_linkage.py:226-247; mcp/tests/test_task_sprint_linkage.py:249-254; mcp/tests/test_task_sprint_linkage.py:295-327 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -99,6 +102,8 @@ Forces typed sprint-to-master attach, detach, reparent, judgment, route review, 
 - The before/after sprint-scope union drives projection invalidation and rebuild after task truth.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Rebuilt topology fixtures after each task publication so linkage assertions always consume the current generation.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

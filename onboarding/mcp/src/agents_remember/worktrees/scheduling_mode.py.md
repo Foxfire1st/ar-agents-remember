@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/scheduling_mode.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash | `b523f53b193e9783e7c7e6410c772e7d64d8df17` |
-| lastVerifiedCommitDate | 2026-08-19T21:54:50+02:00|
+| lastUpdated | 2026-08-26T08:25+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,12 +16,11 @@
 
 ## Purpose
 
-Resolves one sprint's scheduling authority: an authored `executionGraph` selects `dag` mode, and
-its absence selects the `atomic-sequential` default (260815-DAG-L13-R1) — every commanded master
-runs one at a time and fully integrates before the next master's series begins, regardless of any
-declared execution nature. The module also owns the effective-nature resolution the rest of the
-plane consumes, the sequential landing-lane ownership read, and the ignorable terminal
-series-artifact fact.
+Resolves one sprint's planning mode: an authored `executionGraph` selects `dag`, while its absence
+selects the graph-less `atomic-sequential` default used for effective execution nature. Source-pair
+activation separately decides which durable atomic master may expose implementation work. This
+module no longer treats series-contract presence as scheduling ownership; it retains only mode,
+commanded-membership, effective-nature, and ignorable terminal-artifact facts.
 
 ## Code Commentary
 
@@ -31,27 +30,27 @@ series-artifact fact.
 commanded masters; a graph-less sprint reports the atomic-sequential default with an explanatory
 fact. `commanded_sprint_masters` derives membership under either mode — graph sprints validate
 through `validate_execution_topology`, while the default derives membership from the canonical
-`orchestrates` aliases (`commanded_masters`) and the series lane, not a graph, serializes them.
+`orchestrates` aliases (`commanded_masters`).
 `effective_execution_nature` is the single resolution point: under a graph-less sprint every
 commanded master executes atomically; under an authored graph the declared nature rules and a
 nature-less commanded master stays a typed refusal naming `task_doc.author_execution_graph`
 (`set_nature`); a nature-less standalone master is atomic by default (L13-R5e), so legacy masters
-need no migration. `sequential_lane_owner` treats lane ownership as a stored fact: the master whose
-series contract exists with a non-terminal cleanup cell owns the lane (terminal cleanup values —
-completed, abandoned, reopened — release it; legacy multi-holder state resolves deterministically
-to the first holder in canonical key order). `stale_series_artifact_fact` reports a terminal series
-contract under an organizational master as an ignorable `staleSeriesArtifact` fact instead of
-refusing the start (L13-R5b).
+need no migration. `stale_series_artifact_fact` reports a terminal series contract under an
+organizational master as an ignorable `staleSeriesArtifact` fact instead of refusing the start
+(L13-R5b). The removed `sequential_lane_owner`/`series_lane_holders` readers have no replacement in
+this module: selection is owned by the strict source-pair activation authority.
 
 ### Conventions
 
-This module only reads canonical task documents and stored series contracts; it never mutates
-them. Lane ownership is derived from the contract's cleanup cell, never from request data.
+This module only reads canonical task documents and terminal series artifacts; it never mutates
+them. Consumers needing implementation admission must call the source-pair activation owner rather
+than infer it from contract cleanup or task order.
 
 ### Invariants And Boundaries
 
 - A sprint carries at most one scheduling authority: authored graph or the atomic-sequential
   default.
+- Multiple non-terminal series contracts are valid and none owns selection merely by existing.
 - The effective nature, not the declared cell, gates every atomic/organizational decision.
 - A nature-less commanded master under an authored graph remains a hard refusal; the default only
   applies when no graph exists.
@@ -71,18 +70,25 @@ repository-internal.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Mode resolution: graph selects dag, absence selects the atomic-sequential default. | `resolve_scheduling_mode` | mcp/src/agents_remember/worktrees/scheduling_mode.py:46-73 |
-| Membership derivation under either mode. | `commanded_sprint_masters` | mcp/src/agents_remember/worktrees/scheduling_mode.py:76-91 |
-| The single effective-nature resolution every consumer shares. | `effective_execution_nature` | mcp/src/agents_remember/worktrees/scheduling_mode.py:94-117 |
-| Lane ownership is a stored, non-terminal series-contract fact. | `sequential_lane_owner`; `series_lane_holders` | mcp/src/agents_remember/worktrees/scheduling_mode.py:120-156 |
-| Terminal series artifacts under organizational masters degrade to a reported fact. | `stale_series_artifact_fact` | mcp/src/agents_remember/worktrees/scheduling_mode.py:159-193 |
-| The degraded queue readout consumes the mode and lane owner. | `_degraded_projection` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:323-367 |
+| Mode resolution: graph selects dag, absence selects the atomic-sequential default. | `resolve_scheduling_mode` | mcp/src/agents_remember/worktrees/scheduling_mode.py:45-72 |
+| Membership derivation under either mode. | `commanded_sprint_masters` | mcp/src/agents_remember/worktrees/scheduling_mode.py:75-90 |
+| The single effective-nature resolution every consumer shares. | `effective_execution_nature` | mcp/src/agents_remember/worktrees/scheduling_mode.py:93-116 |
+| Terminal series artifacts under organizational masters degrade to a reported fact. | `stale_series_artifact_fact` | mcp/src/agents_remember/worktrees/scheduling_mode.py:119-153 |
+| Source-pair selection is a separate strict authority with vacant/reconciling/active states. | `AtomicSeriesActivationObservation`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:68-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:170-187 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+
+- 2026-08-26T08:25+02:00 — Rebound `stale_series_artifact_fact` to its frozen source range; the
+  scheduling/activation ownership split is unchanged.
+
+- 2026-08-26T03:37+02:00 — Removed series-contract-census lane ownership. Scheduling mode retains
+  planning/effective-nature facts while disposable source-pair activation exclusively owns
+  implementation selection; multiple live series contracts are valid. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: created for the scheduling-semantics correction — the
   atomic-sequential default for graph-less sprints, effective-nature resolution, sequential

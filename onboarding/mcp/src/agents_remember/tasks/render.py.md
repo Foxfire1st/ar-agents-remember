@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -95,18 +95,18 @@ None.
 
 No Domain Documentation sources are configured for this repository-internal renderer.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | L204-L245; L283-L292 | [render.py](mcp/src/agents_remember/tasks/render.py) |
-| Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | L310-L384 | [render.py](mcp/src/agents_remember/tasks/render.py) |
-| The graph node model provides structural keys for the allocation. | L218-L275 | [document.py](mcp/src/agents_remember/tasks/document.py) |
-| Focused proof forces sanitizer-equivalent labels, independent edge roles, repeat render, and title-only changes. | L164-L225 | [test_execution_graph_render.py](mcp/tests/test_execution_graph_render.py) |
+| The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
+| Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:310-328; mcp/src/agents_remember/tasks/render.py:331-345; mcp/src/agents_remember/tasks/render.py:348-363; mcp/src/agents_remember/tasks/render.py:366-382 |
+| The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
+| Focused proof forces sanitizer-equivalent labels, independent edge roles, repeat render, and title-only changes. | `ExecutionGraphMermaidRenderTests` | mcp/tests/test_execution_graph_render.py:57-291 |
 
 
 ## 260815-DAG-L12 Mermaid Document Diagram

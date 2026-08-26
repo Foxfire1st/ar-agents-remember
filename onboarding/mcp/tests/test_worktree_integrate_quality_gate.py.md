@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,9 +85,9 @@ The current forcing seams include `test_git_fixture_helper_surfaces_command_fail
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_git_fixture_helper_surfaces_command_failures`, `test_external_recovery_proves_the_exact_task_memory_head`, `test_completed_integration_recovery_must_match_exactly`, `test_integrate_result_refuses_completed_contract_without_durable_recovery`. | L220-L222; L224-L241; L243-L291; L293-L312 | `mcp/tests/test_worktree_integrate_quality_gate.py` |
+| The current test source exercises `test_git_fixture_helper_surfaces_command_failures`, `test_external_recovery_proves_the_exact_task_memory_head`, `test_completed_integration_recovery_must_match_exactly`, `test_integrate_result_refuses_completed_contract_without_durable_recovery`. | `test_git_fixture_helper_surfaces_command_failures`; `test_external_recovery_proves_the_exact_task_memory_head`; `test_completed_integration_recovery_must_match_exactly`; `test_integrate_result_refuses_completed_contract_without_durable_recovery` | mcp/tests/test_worktree_integrate_quality_gate.py:239-241; mcp/tests/test_worktree_integrate_quality_gate.py:243-264; mcp/tests/test_worktree_integrate_quality_gate.py:266-314; mcp/tests/test_worktree_integrate_quality_gate.py:316-336 |
 
 ## Current Contract — 260821 CLIVE Final
 

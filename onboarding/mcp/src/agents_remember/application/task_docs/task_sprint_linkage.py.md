@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -114,15 +114,15 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 | The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:614-627; mcp/src/agents_remember/tasks/document.py:633-663; mcp/src/agents_remember/tasks/document.py:679-804 |
 | The typed-linkage cross-check and altitude role sets this module relies on. | `validate_sprint_linkage` | mcp/src/agents_remember/tasks/document_refs.py:311-361 |
 | The public tool-layer operation routing. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
-| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:434-475; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:775-795 |
-| The rollback-safe batch writer and exact task publication transaction. | `write_task_doc_batch`; `publish_task_doc_set` | mcp/src/agents_remember/tasks/store.py:126-167; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:77-116 |
+| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:433-474; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:758-778 |
+| The rollback-safe batch writer and exact task publication transaction. | `write_task_doc_batch`; `publish_task_doc_set` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/tasks/store.py:175-216 |
 | The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/src/agents_remember/code_quality/single_owner.py:40-53 |
-| The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:93-99 |
-| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:357-380; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:820-865 |
-| The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:540-562; mcp/tests/test_task_sprint_linkage.py:1010-1043 |
+| The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:89-95 |
+| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:378-401; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:808-853 |
+| The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:585-607; mcp/tests/test_task_sprint_linkage.py:1056-1089 |
 | Attach and detach validate their full candidate before preview/apply; both routes call the shared graph-title cardinality owner before publication. | `attach_master`; `detach_master` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:209-274; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:277-347 |
 | Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731 |
-| The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-51 |
+| The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -163,11 +163,13 @@ lock or lifecycle evidence owner.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | L106-L107; L111-L119; L173-L181 | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
+| The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | `SprintLinkageError`; `SprintLinkageRequest`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:102-103; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:106-115; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:177-186 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Routed the uncommanded-master census through the shared module-level `repository_master_documents` query, preserving one repository-global authority API.
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled linkage preview/apply with the shared
   zero-or-one graph-title owner and the landed task-first publication transaction; removed the
