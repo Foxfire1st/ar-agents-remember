@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_worktree_support_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -25,6 +25,8 @@ Part of the 260731-EFA-L7 in-place split family for `test_worktree_support_tests
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_worktree_support_tests_1.py`.
+- Canonical ledger round-trip/history forcing now lives in the dedicated
+  `mcp/tests/test_memory_ledger.py` unit; this legacy support split no longer duplicates it.
 
 ## Repo-Internal References
 
@@ -60,6 +62,9 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Moved the ledger round-trip scenario into the focused kernel test
+  module, reducing this legacy omnibus below its structural limit without losing coverage.
+  Verification remains closeout-owned.
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
 

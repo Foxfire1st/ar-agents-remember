@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-26T08:20+02:00                     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
 
 ## Governing Overview
@@ -53,6 +53,9 @@ resumable transaction. The new code tip must be ledger-mapped at the admitted me
 early before memory work; retained code or memory conflicts resume through
 `resolution_action=continue`, while explicit `cancel` restores pinned heads and releases an exact
 reconciling selection. It states that `c-09-git-worktree-manager` skill
+Memory continuation preserves every exact parent ledger row and accepts repeated code commits as
+newest-first state history; it does not impose a globally unique code key.
+
 begins after the normal intake and onboarding gate, uses context resolved by the `c-08-ar-coordination-context-resolver` skill
 through the MCP worktree tools, refuses external-memory worktree start while
 the source memory repo has uncommitted content or ledger changes, and reports
@@ -198,6 +201,8 @@ or queue ownership. Task-document authoring is always upstream. The queue owns n
 operation, commit, certification, or integration evidence. There is no tolerant selector reader or
 contract-presence election. Terminal cleanup may release only the exact still-selected contract and
 must preserve a newer selection.
+Memory-merge validation preserves exact parent rows; older same-code rows remain audit history.
+
 
 ### Todos
 
@@ -216,15 +221,15 @@ No external documentation is needed for this repository-local skill.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-315 |
+| `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-316 |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-372 |
 | The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:203-203 |
 | The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:129-129 |
 | Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:103-162 |
-| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:329-375; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:376-455 |
-| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:355-355 |
-| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:329-375 |
-| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:376-455 |
+| Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:356-356 |
+| Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376 |
+| Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
 
 ## Cross-Repo References
 
@@ -272,8 +277,14 @@ restores exact pinned heads and publishes `vacant`. Cleanup releases the exact s
 contract before deleting its naming authority. No compatibility reader, direct-Git recovery, or
 contract-presence fallback is admitted.
 
+Memory resolution keeps every exact parent row and accepts repeated code commits as ordered history;
+the newest row is current authority. No global ledger-key uniqueness rule is admitted.
+
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Synchronized the corrected ledger-history doctrine: exact parent-row
+  preservation remains strict, while repeated code commits remain valid. Verification remains
+  closeout-owned.
 - 2026-08-26T08:30+02:00 — Restored the required governing-overview metadata and link for the
   synchronized runtime copy; behavioral wording remains synchronized with the canonical skill.
 

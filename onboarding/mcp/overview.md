@@ -8,9 +8,9 @@ Total output lines: 2603
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-26T02:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -35,6 +35,14 @@ integration, recovery, or terminal evidence. Terminal cleanup vacates only an ex
 before its canonical contract pointer is deleted. Normal readers never fall back to task prose,
 queue rows, old files, or ambient Git when activation/journal authority is absent or unreadable.
 The focused route owner is [worktrees/overview.md](src/agents_remember/worktrees/overview.md).
+
+## IAS Newest-First Ledger History
+
+The external-memory ledger is ordered state history, not a globally unique code-to-memory map.
+Settings-only memory changes may therefore create a new memory content commit and a newer ledger
+row for unchanged code. `find_mapping` resolves the newest current row; exact-edge containment
+preserves older audit history. Closeout/direct recovery, source-pair sync, integration, and
+organizational completion all use that same distinction.
 
 ## L3 Canonical Scheduling-Register Boundary
 
@@ -979,6 +987,10 @@ and queue helpers by authority. The package retains one Dagger acceptance path a
 fallback runner, compatibility facade, or queue-owned commit evidence.
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Corrected the package-wide ledger contract after IAS activation exposed
+  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
+  all lifecycle consumers now distinguish current lookup from exact historical containment.
 
 - 2026-08-26T02:55+02:00 — Reconciled the MCP route with source-pair atomic activation,
   pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,9 @@
 
 Own the restart-safe proof and journaling around closeout's irreversible code, memory, and ledger
 Git boundaries. This module lets the durable lifecycle worker resume an accepted candidate without
-recommitting code, selecting a stale pre-attempt memory commit, or duplicating a ledger edge.
+recommitting code, selecting a stale pre-attempt memory commit, or duplicating an already-current
+exact ledger edge. A later memory state for the same code commit is a new valid edge, not a
+duplicate.
 It also owns the typed memory-closeout outcome and the exact proof used when contract finalization
 resumes after code, memory, and ledger commits already exist.
 
@@ -37,8 +39,9 @@ non-strict commit primitive. A series/master contract always requires a clean ch
 its already-landed HEAD; this recovery layer cannot create master code. It then proves the commit
 tree equals the immutable accepted candidate and journals the code cell before returning.
 `resume_external_commits` receives that same typed input rather than rereading optional args, requires a clean memory
-worktree, reconciles the exact code-to-memory row, creates only a missing matching row, proves an
-existing memory commit is reachable, and journals the complete tuple.
+worktree, reconciles the newest code-to-memory row, prepends a new row when the admitted memory
+content differs, proves an existing memory commit is reachable, preserves older same-code rows, and
+journals the complete tuple.
 
 ### Conventions
 
@@ -49,7 +52,8 @@ Recovery state is passed through typed `WorktreeArgs` and published through
 
 - A non-empty journaled commit cell is evidence to prove, never a hint to overwrite.
 - The accepted candidate tree must equal the committed code tree.
-- A conflicting ledger mapping, wrong memory HEAD, or unreachable memory commit fails closed.
+- Malformed ledger bytes, wrong memory HEAD, or unreachable memory content fail closed; a valid
+  historical same-code mapping causes a new current row instead of a terminal conflict.
 - Contract-finalization recovery proves already-created commits here; `modules/closeout.py` only
   coordinates the proof and contract amendment.
 - Each irreversible Git boundary is journaled before the next one begins.
@@ -105,6 +109,9 @@ The current source seams include `MemoryCloseoutOutcome`, `prove_closeout_recove
 
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Corrected closeout retry semantics for settings-only memory changes:
+  exact current edges are reused, while a different historical same-code mapping causes a new
+  memory-state row and ledger commit. Verification remains closeout-owned.
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input and ledger-recovery package relocations; journal-owned recovery proof and exact tuple reconciliation are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

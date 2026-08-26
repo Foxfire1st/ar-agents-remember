@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,10 @@ refreshed.
 The suite verifies exact named refs remain authoritative while checkout repair accepts only clean
 old or already-new state. Recovery tests cover both code and memory sides plus invalid-side,
 wrong-tip, untracked, unrelated-change, wrong-HEAD, and durable pre-crash evidence branches.
+
+Ledger cases prove that unchanged code may acquire a newer memory state: the transaction accepts
+exactly one new prefix mapping, retains the older same-code row, and still refuses missing mappings,
+dropped source history, unreachable memory content, or more than one new prefix row.
 
 ## Invariants And Boundaries
 
@@ -52,13 +56,13 @@ content refuses as unreachable.
 
 ## 260821-CLIVE-L2 Current Regression Contract
 
-The current forcing seams include `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, `test_integrated_ledger_refuses_duplicate_rows_for_the_landed_code`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+The current forcing seams include `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, and `test_integrated_ledger_accepts_newest_settings_only_mapping_history`. They force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, organizational disposition/repair, and valid newest-first ledger history without queue-owned lifecycle evidence.
 
 ### Reconciled Source Evidence
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, `test_integrated_ledger_refuses_duplicate_rows_for_the_landed_code`. | `test_prepare_ref_move_refuses_code_and_memory_tip_races`; `test_code_cas_race_and_unreadable_ledger_refuse`; `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`; `test_integrated_ledger_refuses_duplicate_rows_for_the_landed_code` | mcp/tests/test_integration_ref_transaction.py:110-158; mcp/tests/test_integration_ref_transaction.py:160-215; mcp/tests/test_integration_ref_transaction.py:217-289; mcp/tests/test_integration_ref_transaction.py:291-319 |
+| The current test source exercises `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, and `test_integrated_ledger_accepts_newest_settings_only_mapping_history`. | `test_prepare_ref_move_refuses_code_and_memory_tip_races`; `test_code_cas_race_and_unreadable_ledger_refuse`; `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`; `test_integrated_ledger_accepts_newest_settings_only_mapping_history` | mcp/tests/test_integration_ref_transaction.py:110-158; mcp/tests/test_integration_ref_transaction.py:160-215; mcp/tests/test_integration_ref_transaction.py:217-289; mcp/tests/test_integration_ref_transaction.py:291-331 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -80,6 +84,10 @@ Ref-transaction assertions now retain exact candidate and commit evidence across
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+- 2026-08-26T14:32+02:00 — Replaced the duplicate-code refusal regression with the required
+  settings-only memory-history proof while retaining missing/unreachable/dropped-history and
+  multi-prefix refusals. Verification remains closeout-owned.
+
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

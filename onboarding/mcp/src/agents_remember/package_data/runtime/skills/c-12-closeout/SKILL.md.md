@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -275,7 +275,7 @@ preconditions — a checkout carrying no wrapper runs no gate and neither refusa
 | `c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-130 |
 | Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate. | `## Approval Authority`; `## Explicit Durable Closeout Gates` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:57-160; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:161-173 |
 | `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:174-234 |
-| `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-328 |
+| `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-329 |
 | Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:310-310 |
 | The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122 |
 | The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:384-384 |
@@ -315,6 +315,9 @@ same journal-first recovery discipline. Raw Git, repeat-from-scratch, reports, s
 permanent compatibility readers are prohibited; legacy repair is an explicit bounded tool.
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — No closeout behavior impact: refreshed the c-09 relationship citation
+  after its ledger-history doctrine correction. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged input-total admission, journal controls, gate scope, direct landing, and explicit legacy-repair doctrine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

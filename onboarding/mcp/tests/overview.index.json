@@ -335,6 +335,7 @@
     "mcp/tests/test_memory_citation_source_index_publication_2.py",
     "mcp/tests/test_memory_citation_source_index_snapshot.py",
     "mcp/tests/test_memory_document_shape.py",
+    "mcp/tests/test_memory_ledger.py",
     "mcp/tests/test_memory_quality.py",
     "mcp/tests/test_memory_quality_runs.py",
     "mcp/tests/test_memory_tool_enclosure_scope.py",
@@ -513,8 +514,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 499,
-    "fileSidecars": 501,
+    "sourceFilesInScope": 500,
+    "fileSidecars": 502,
     "childRoutes": 0
   },
   "routingTerms": [

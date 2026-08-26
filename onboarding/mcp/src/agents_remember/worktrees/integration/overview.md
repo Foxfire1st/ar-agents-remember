@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,9 @@ Dagger quality gate checkout, and organizational-completion integration/repair.
 
 - Lifecycle operation identity/lease/store are runtime-authority surfaces (bounded, evictable).
 - Integration never falls back to a host quality run; the Dagger graph owns acceptance.
+- External-memory ledger order is authoritative: the newest same-code row is current, while older
+  exact rows remain audit history. Memory-only landing appends one current row; integration and
+  organizational completion preserve and prove the required exact historical edges.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
@@ -117,6 +120,9 @@ execution into their named owners. The split reduces repeated validation and fix
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
 ## Update History
+
+- 2026-08-26T14:32+02:00 — Reconciled direct landing, integration proof, and organizational
+  completion to valid newest-first same-code memory history.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS source-pair serialization boundary label against
   the frozen pass-13 candidate.

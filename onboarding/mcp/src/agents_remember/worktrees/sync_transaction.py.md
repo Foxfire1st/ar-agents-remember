@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
+| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | Strict journal records and read-only status projection live at the enclosure root. | `SyncSideRecord`; `SyncOperationRecord`; `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:37-57; mcp/src/agents_remember/worktrees/sync_transaction_state.py:60-77; mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295; mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
 | Admission and pinned identity validate contract/source/ledger authority. | `preflight_official_pair`; `pin_authority`; `require_pinned_authority` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:121-161; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:164-169; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:172-186 |
-| Git operations retain conflicts and prove exact staged, completed, or rolled-back heads. | `start_side_merge`; `continue_side_merge`; `validate_staged_resolution`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:136-174; mcp/src/agents_remember/worktrees/sync_transaction_git.py:201-225; mcp/src/agents_remember/worktrees/sync_transaction_git.py:228-249; mcp/src/agents_remember/worktrees/sync_transaction_git.py:252-280 |
+| Git operations retain conflicts and prove exact staged, completed, or rolled-back heads. | `start_side_merge`; `continue_side_merge`; `validate_staged_resolution`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:135-173; mcp/src/agents_remember/worktrees/sync_transaction_git.py:200-224; mcp/src/agents_remember/worktrees/sync_transaction_git.py:227-248; mcp/src/agents_remember/worktrees/sync_transaction_git.py:251-279 |
 | Finalization, cancellation, quarantine, and damaged-journal escape are separate recovery ownership. | `finalize_sync`; `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:54-89; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:156-181; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:184-254; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:257-274 |
 | Public result constructors keep recovery guidance consistent across phases. | `memory_choice_required`; `resolution_required`; `active_preview`; `cancel_preview`; `terminal_resolution_replay`; `quarantine_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50; mcp/src/agents_remember/worktrees/sync_transaction_results.py:71-104; mcp/src/agents_remember/worktrees/sync_transaction_results.py:134-148; mcp/src/agents_remember/worktrees/sync_transaction_results.py:151-168; mcp/src/agents_remember/worktrees/sync_transaction_results.py:171-206; mcp/src/agents_remember/worktrees/sync_transaction_results.py:209-222 |
 

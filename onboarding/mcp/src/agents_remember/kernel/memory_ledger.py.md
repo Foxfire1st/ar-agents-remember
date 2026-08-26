@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-26T14:32+02:00 |
+| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
+| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -28,7 +28,9 @@ Memory commit` table, validates that the newest table row matches the metadata,
 serializes the canonical ledger format, prepends new mappings, finds existing
 mappings, and creates an initial ledger.
 
-Added `find_unique_mapping`, which returns one code mapping or refuses duplicate authority rows.
+`find_mapping` returns the first—and therefore current—row for a code commit. `contains_mapping`
+answers the different historical question: whether one exact code/memory edge exists anywhere in
+the immutable row history.
 
 ### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
 
@@ -82,6 +84,11 @@ grammar rather than pulling in a general markdown or YAML dependency.
   `lastMemoryContentCommit`.
 - `prepend_mapping()` requires both commits and updates metadata and rows
   together.
+- Repeated code commits are valid. They record later external-memory states—such as settings-only
+  changes—for unchanged code while preserving the older mapping as audit history.
+- Row order carries authority: the newest matching row is current. Global code-key uniqueness must
+  not be inferred by readers.
+- Exact-edge checks use `contains_mapping`; current-state checks use `find_mapping`.
 - **A `write_ledger` call must be followed by `git add memory.md` + commit in the same function.**
   That is not a style rule; it is the whole reason this file is allowed to do an unguarded
   whole-file write while the control-plane stores may not. A caller that writes and defers the
@@ -109,6 +116,7 @@ format.
 | The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of "class LedgerError(AgentsRememberError):"). | "class LedgerError(AgentsRememberError):" | mcp/src/agents_remember/kernel/memory_ledger.py:17-41 |
 | `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | `parse_ledger_text` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104 |
 | `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:147-156; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:218-229 |
+| `find_mapping()` resolves current newest-first authority, while `contains_mapping()` proves one exact historical edge without imposing global code-key uniqueness. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:232-242 |
 | `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | "def write_ledger(path: Path" | mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 | The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "contract for control-plane JSONL stores" | mcp/src/agents_remember/controlplane/durable_store.py:1-1 |
 
@@ -125,6 +133,10 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 ## Update History
 
+- 2026-08-26T14:32+02:00 — Corrected the ledger contract after the IAS activation regression:
+  repeated code commits are valid newest-first memory-state history; `find_mapping` owns current
+  authority and `contains_mapping` owns exact historical-edge proof. Removed the unrequested
+  global uniqueness rule. Verification remains closeout-owned.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 - 2026-08-17T12:30+02:00 — 260815-DAG-L5: added `find_unique_mapping` for one-to-one code mapping with duplicate-authority refusal. Verification remains closeout-owned.
 
