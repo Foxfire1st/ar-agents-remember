@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,9 +35,9 @@ decide same-kind or cross-kind conflict before journal or terminal mutation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Lease location is derived from the canonical contract. | `_lease_path` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:21-25 |
-| The context manager owns only contract-scoped filesystem serialization. | `contract_lifecycle_lease` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:57-69 |
-| Record-aware same/cross-kind conflict is explicit and separate. | `require_lifecycle_operation_compatible` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:72-96 |
+| Lease location is derived from the canonical contract. | `_lease_path` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:39-53 |
+| The context manager owns only contract-scoped filesystem serialization. | `contract_lifecycle_lease` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:84-99 |
+| Record-aware same/cross-kind conflict is explicit and separate. | `require_lifecycle_operation_compatible` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:102-126 |
 
 ## Documentation References
 
@@ -53,9 +53,9 @@ The current source seams include `contract_lifecycle_lease`, `require_lifecycle_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `contract_lifecycle_lease`, `require_lifecycle_operation_compatible`, `require_legacy_operation_compatible` at this ownership boundary. | L57-L69; L72-L96; L99-L115 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py` |
+| The current module exposes `contract_lifecycle_lease`, `require_lifecycle_operation_compatible`, `require_legacy_operation_compatible` at this ownership boundary. | `contract_lifecycle_lease`; `require_lifecycle_operation_compatible`; `require_legacy_operation_compatible` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:84-99; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:102-126; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py:129-145 |
 
 ## 260821-CLIVE Stable External Lease
 
@@ -65,6 +65,8 @@ operation inspection uses strict record reads plus projected exits. Terminal cle
 cannot delete the lock that serializes its own final transaction.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the worker-state package relocation; external lease identity and strict location matching are unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the stable external lease and strict location match. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

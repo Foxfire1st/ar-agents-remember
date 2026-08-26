@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/observer/projection_closeout.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,10 +40,10 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Projection problem nodes expose bounded repair evidence. | L10-L21 | [source](mcp/src/agents_remember/observer/projection_closeout.py) |
-| Discard proof and audit nodes retain the historical task truth. | L22-L61 | [source](mcp/src/agents_remember/observer/projection_closeout.py) |
+| Projection problem nodes expose bounded repair evidence. | `CloseoutProjectionProblemNode` | mcp/src/agents_remember/observer/projection_closeout.py:10-19 |
+| Discard proof and audit nodes retain the historical task truth. | `DiscardUnstartedProofNode`; `DiscardedSubTaskNode` | mcp/src/agents_remember/observer/projection_closeout.py:22-39; mcp/src/agents_remember/observer/projection_closeout.py:42-54 |
 
 ## Cross-Repo References
 

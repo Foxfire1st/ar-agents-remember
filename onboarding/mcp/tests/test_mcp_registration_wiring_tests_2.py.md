@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:20+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -28,6 +28,8 @@ The suite pins closeout message grouping, task-document edit/read shapes, ambien
 structural lifecycle-gate raise, and `gate_decide` by canonical document plus kind without a gate
 id. Its closeout-queue case invokes the live registration, verifies the configuration identity,
 and proves the wire request is validated into the strict status action and canonical sprint ref.
+The `worktree_sync` case now pins all three public controls: contract path, optional
+`memory_sync_choice`, and optional `resolution_action`, with live `dry_run=False` defaulting.
 
 ### Conventions
 
@@ -36,6 +38,11 @@ Test-only evidence uses deterministic fakes/fixtures and exercises the registere
 ### Invariants And Boundaries
 
 Registration must not reintroduce exact gate, lifecycle, or occupant addressing; application composition owns authority and refusal.
+
+### Todos
+
+Exact registration claims are reconciled to the frozen inventory; verification remains
+closeout-owned until the real code commit exists.
 
 ## Docs References
 
@@ -62,11 +69,17 @@ The current forcing seams include `test_worktree_enclosure_adopt_forwards_exact_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_worktree_enclosure_adopt_forwards_exact_preview_binding`, `test_closeout_queue_registration_validates_and_forwards_the_request`, `test_worktree_operation_control_forwards_exact_generation_request`, `test_worktree_start_defaults_to_a_real_light_task_start`. | L7-L28; L30-L49; L51-L82; L84-L101 | `mcp/tests/test_mcp_registration_wiring_tests_2.py` |
+| The current test source exercises `test_worktree_enclosure_adopt_forwards_exact_preview_binding`, `test_closeout_queue_registration_validates_and_forwards_the_request`, `test_worktree_operation_control_forwards_exact_generation_request`, `test_worktree_start_defaults_to_a_real_light_task_start`. | `test_worktree_enclosure_adopt_forwards_exact_preview_binding`; `test_closeout_queue_registration_validates_and_forwards_the_request`; `test_worktree_operation_control_forwards_exact_generation_request`; `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_2.py:7-28; mcp/tests/test_mcp_registration_wiring_tests_2.py:30-49; mcp/tests/test_mcp_registration_wiring_tests_2.py:51-82; mcp/tests/test_mcp_registration_wiring_tests_2.py:84-101 |
 
 ## Update History
+
+- 2026-08-26T08:20+02:00 — Final frozen reconciliation of the public `resolution_action` wiring;
+  verification remains closeout-owned.
+
+- 2026-08-26T05:45+02:00 — Reconciled the Dagger-found registration fixture with the public
+  contract-addressed sync continuation/cancellation parameter. No test-execution claim is made.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

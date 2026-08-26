@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 | lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 
 ## What This Area Is
 
@@ -169,8 +169,18 @@ invalid-empty rather than disappearing or serving stale candidates.
 and series projections. The audited proof/reason/timestamp remain task history and participate in
 body revision identity. Neither projection mutates its source authority.
 
+## 2026-08-26 Atomic Task Refresh And Retry
+
+`ProjectionInputState._refresh_tasks` builds contracts, enclosures, task documents, and series into
+locals before publishing the new task-domain snapshot. It sets `_task_refresh_pending` before the
+read begins, preserves the previous snapshot if a reader raises, and clears the flag only after all
+four values publish together. A heartbeat therefore retries an interrupted task refresh without
+waiting for a second task mutation. This is part of the route's bounded-retention and atomic
+publication contract, not a cache optimization.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled the projections route with atomic task refresh, retained last-good state, and heartbeat retry semantics.
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the effective closeout projection and discarded-unstarted task history surfaces. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: snapshots_impl import paths updated to the moved queue packages. Verified at code commit e5cb139f.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,12 +27,16 @@ The principal forcing seams are `test_completed_unintegrated_disposition_preserv
 `test_sprint_orchestrator_status_payload_executes_public_disposition`,
 `test_completed_disposition_is_not_advertised_or_executable_by_leaf`,
 `test_status_keeps_completed_closeout_actionable_beside_newer_cancelled_integrate`, and
-`test_public_disposition_recovers_before_and_after_contract_publication`. The suite directly calls
-`completed_disposition_authorized` to prove that both a standalone task owner and its sprint
-orchestrator may disposition a completed closeout, while a leaf worker may not. It then forces the
-same authority boundary through advertised public controls, executable refusal, immutable artifact
-preservation, coexistence with a newer cancelled integration, and recovery across contract-
-publication crash cuts.
+`test_public_supersede_recovers_before_and_after_contract_publication`. Retirement uses the
+standalone task owner and preserves the existing door publication/history exactly. Supersession
+uses the sprint-orchestrator owner, publishes a distinct waiting successor, and moves the prior
+door proof into history. A leaf worker remains neither advertised nor accepted.
+
+The suite forces the same authority distinction through public status/control calls, immutable
+artifact preservation, coexistence with a newer cancelled integration, exact supersede replay and
+competing-declaration refusal. Crash-cut recovery is intentionally supersede-specific because it is
+the disposition that publishes a successor door; a pre-write cut returns executable recovery
+arguments, while a post-write cut is observed as already successful.
 
 ### Conventions
 
@@ -58,11 +62,11 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines five public completed-closeout disposition forcing seams covering artifact preservation, sprint-orchestrator execution, leaf refusal, multi-operation status projection, and interrupted publication recovery. | L75-L188; L191-L225; L228-L265; L268-L314; L317-L403 | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
-| `completed_disposition_authorized` is imported directly and asserts standalone-owner and sprint-orchestrator authorization plus leaf-worker denial before the corresponding public control paths are exercised. | L10-L12; L84-L85; L198-L199; L235-L265 | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
-| A disposition interrupted before contract publication remains recoverable through the returned public control arguments; a cut after the write is observed as successful, and both paths end with proven durable publication. | L317-L403 | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
+| The file defines five public completed-closeout disposition forcing seams covering artifact preservation, sprint-orchestrator execution, leaf refusal, multi-operation status projection, and interrupted publication recovery. | `_sprint_owner`; `_disposition_preserved_artifacts`; `test_completed_unintegrated_disposition_preserves_artifacts`; `test_sprint_orchestrator_status_payload_executes_public_disposition` | mcp/tests/test_lifecycle_operation_dispositions_l2.py:54-58; mcp/tests/test_lifecycle_operation_dispositions_l2.py:61-108; mcp/tests/test_lifecycle_operation_dispositions_l2.py:111-155; mcp/tests/test_lifecycle_operation_dispositions_l2.py:158-192 |
+| `completed_disposition_authorized` is imported directly and asserts standalone-owner and sprint-orchestrator authorization plus leaf-worker denial before the corresponding public control paths are exercised. | "from agents_remember.application.lifecycle.lifecycle_control_authority import (" | mcp/tests/test_lifecycle_operation_dispositions_l2.py:10-12 |
+| A disposition interrupted before contract publication remains recoverable through the returned public control arguments; a cut after the write is observed as successful, and both paths end with proven durable publication. | `test_public_supersede_recovers_before_and_after_contract_publication`; `test_supersede_exact_replay_converges_and_competing_declaration_refuses` | mcp/tests/test_lifecycle_operation_dispositions_l2.py:283-361; mcp/tests/test_lifecycle_operation_dispositions_l2.py:364-407 |
 
 ## Cross-Repo References
 
@@ -78,9 +82,11 @@ Forces completed-closeout integrate, retire, and supersede dispositions while pr
 ### Current Invariants
 
 - A completed-unintegrated operation remains journal-addressable outside the queue.
-- Supersession creates a distinct later door generation and never rewrites the claimed predecessor.
+- Retirement preserves door publication/history; supersession creates a distinct waiting generation and retains the claimed predecessor in history.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Corrected the disposition contract: retire preserves the current door under standalone authority, while sprint-owned supersede alone publishes/retries a waiting successor and retains predecessor proof in history.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

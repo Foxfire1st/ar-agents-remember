@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
-| governingOverview | `../../../../overview.md` |
+| lastUpdated | 2026-08-26T02:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../../overview.md)
+[worktrees overview](../overview.md)
 
 ## Purpose
 
@@ -23,7 +23,7 @@ claimed lifecycle after admission.
 ## Hot Path Summary
 
 Canonical changes invalidate affected sprint projections to invalid-empty. A complete rebuild is
-computed off-side from current task topology, canonical waiting doors, and active series authority;
+computed off-side from current task topology, canonical waiting doors, and source-pair activation;
 publication occurs only after an exact-current source recheck. `closeout_queue.py` exposes status,
 rebuild, and the short first-ready claim-admission fence. Projection member and graph helpers own
 only deterministic readiness and order.
@@ -40,6 +40,21 @@ only deterministic readiness and order.
 - Task authoring never waits on or seeks permission from projection state.
 - Claim, certification, commit, blocker, integration, and lifecycle evidence never live here.
 - Graph-less atomic-sequential topology is valid; a graph, when present, contributes bounded order.
+- Activation is read-only input: the selected master can be active or reconciling, and every other
+  live series projects as paused. The queue cannot select, release, or repair that authority.
+
+## IAS Source-Pair Activation Projection
+
+Multiple live atomic-series contracts for one protected source pair are normal. The queue observes
+the single disposable activation snapshot and derives only a waiting reason: unselected,
+reconciling, or paused by another selected master. A malformed snapshot becomes a typed projection
+source problem with an explicit selecting repair; rebuild does not infer a winner from prior queue
+rows, task ordering, a contract census, or ambient Git.
+
+This does not subordinate task authoring to selection. Task mutation publishes canonical truth,
+invalidates the affected projection to empty, and causes a rebuild from that new truth. Selection
+and sync lifecycle remain separate worktree authorities, so invalidation cannot destroy retained
+conflicts, commit evidence, or an in-flight operation.
 
 ## 260821-CLIVE Final Disposable Projection Route
 
@@ -77,6 +92,10 @@ fresh valid-built projection, and no queue row owns retry, claim, commit, certif
 or compatibility evidence.
 
 ## Update History
+
+- 2026-08-26T02:55+02:00 — Direct IAS architecture refresh: linked the new worktrees parent
+  overview and recorded activation as read-only scheduling input. Multiple live series are normal;
+  task authoring stays upstream, and the queue gains no selection or lifecycle authority.
 
 - 2026-08-25T17:21+02:00 — Reconciled queue parsing and publication with disposable projection
   ownership. Verification remains closeout-owned.

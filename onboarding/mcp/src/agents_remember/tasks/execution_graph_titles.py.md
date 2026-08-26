@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T13:43+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -60,19 +60,19 @@ None.
 
 No Domain Documentation sources are configured for this repository-internal join.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-memory join keys leaf titles by owning ref plus local row number; missing documents are skipped. | L22-L59 | [execution_graph_titles.py](mcp/src/agents_remember/tasks/execution_graph_titles.py) |
-| The disk-backed join tolerates missing or invalid master documents and delegates to the same owner. | L62-L77 | [execution_graph_titles.py](mcp/src/agents_remember/tasks/execution_graph_titles.py) |
-| Mermaid and observer consumers use the qualified key. | L333-L347 | [render.py](mcp/src/agents_remember/tasks/render.py) |
-| Projection maps every leaf title through `(node.ref, leaf_id)`. | L188-L209 | [projection_graph.py](mcp/src/agents_remember/observer/projection_graph.py) |
-| Focused proof uses legal same-numbered rows and verifies the missing-owner raw-label boundary. | L300-L389 | [test_execution_graph_render.py](mcp/tests/test_execution_graph_render.py) |
+| The in-memory join keys leaf titles by owning ref plus local row number; missing documents are skipped. | `SprintGraphTitles`; `build_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59 |
+| The disk-backed join tolerates missing or invalid master documents and delegates to the same owner. | `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
+| Mermaid and observer consumers use the qualified key. | `_mermaid_segment_lines` | mcp/src/agents_remember/tasks/render.py:331-345 |
+| Projection maps every leaf title through `(node.ref, leaf_id)`. | `_node_view` | mcp/src/agents_remember/observer/projection_graph.py:188-225 |
+| Focused proof uses legal same-numbered rows and verifies the missing-owner raw-label boundary. | `ExecutionGraphTitlesReadTests` | mcp/tests/test_execution_graph_render.py:294-395 |
 
 ## Cross-Repo References
 

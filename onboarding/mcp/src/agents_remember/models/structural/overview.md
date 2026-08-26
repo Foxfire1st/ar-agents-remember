@@ -7,27 +7,31 @@
 | sourceRoute | `mcp/src/agents_remember/models/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/models/structural/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 
 ## What This Area Is
 
-This package is the strict public structural wire vocabulary. Agent requests express a child task
-document, role, label, message, reason, or decision; public responses return structural task and
-role outcomes. Internal exact-id gate responses remain separate so control-plane correlation does
-not leak into model cognition.
+This package is the strict structural vocabulary. Agent requests express a child task document,
+role, label, message, reason, or decision; public responses return structural task and role
+outcomes. It also owns the internal durable source-pair activation record because that record binds
+canonical `TaskDocumentRef` identity to a selected contract and source pair without becoming a
+public runtime address. Internal exact-id gate responses remain separate so control-plane
+correlation does not leak into model cognition.
 
 ## Hot Path Summary
 
-Read `agent.py` for dispatch/message/retire/rename schemas and `gates.py` for structural delegated
-gate schemas plus the deliberately separate internal response family.
+Read `agent.py` for dispatch/message/retire/rename schemas, `gates.py` for structural delegated
+gate schemas plus the deliberately separate internal response family, and
+`atomic_series_activation.py` for the closed selector/archive vocabulary.
 
 ## What Belongs Here
 
 | Path | Role |
 |---|---|
 | `agent.py` | Agent-facing structural operation DTOs |
+| `atomic_series_activation.py` | Internal source-pair selector and corrupt-entry archive records |
 | `gates.py` | Agent-facing structural gate DTOs and isolated internal gate DTOs |
 
 ## What Does Not Belong Here
@@ -57,6 +61,7 @@ into plane-internal exact operations.
 | File | Role | Why It Matters | Onboarding |
 |---|---|---|---|
 | `agent.py` | public schema | Pins the runtime-id ban for agent operations | covered |
+| `atomic_series_activation.py` | internal structural record | Separates selected master/source identity from queue and lifecycle evidence | covered |
 | `gates.py` | public/internal split | Prevents gate/lifecycle ids leaking to agents | covered |
 
 ## Local Invariants And Traps
@@ -86,6 +91,7 @@ The resolved source registry contains no Domain Documentation entry.
 |---|---|---|---|
 | `models/structural/__init__.py` | [`__init__.py.md`](__init__.py.md) | covered | Package marker |
 | `models/structural/agent.py` | [`agent.py.md`](agent.py.md) | covered | Agent structural schemas |
+| `models/structural/atomic_series_activation.py` | [`atomic_series_activation.py.md`](atomic_series_activation.py.md) | covered | Source-pair selector/archive vocabulary |
 | `models/structural/gates.py` | [`gates.py.md`](gates.py.md) | covered | Structural gate schemas and relocated gate model knowledge |
 
 ## Child Overviews
@@ -94,13 +100,24 @@ No child overview is needed.
 
 ## How To Use This Area
 
-Read this overview and both file cards before modifying public structural wire vocabulary.
+Read this overview and the exact file card before modifying public structural or activation
+identity vocabulary.
 
 ## Needs Verification
 
-None.
+- Commit-derived verification metadata awaits governed closeout; the activation-model path,
+  vocabulary, and citations are reconciled to the frozen candidate.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Promoted the activation model from provisional to frozen covered
+  status after pass 13.
+
+- 2026-08-26T08:20+02:00 — Final frozen reconciliation of the structural activation model route;
+  verification metadata remains closeout-owned.
+
+- 2026-08-26T06:05+02:00 — Added the moved atomic-series activation model as the route's internal
+  structural selector vocabulary; no compatibility model remains at the old flat path.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: structural gate requests gain an optional
   `caller` (`DeclaredCaller`) used only when no plane seat exists; public response models are

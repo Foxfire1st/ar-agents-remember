@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_discard.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,11 +41,11 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The request and candidate models bind discard input to exact source evidence. | L43-L73 | [source](mcp/src/agents_remember/application/task_docs/task_doc_discard.py) |
-| The apply and resume paths publish the parent audit and exact child removals. | L74-L328 | [source](mcp/src/agents_remember/application/task_docs/task_doc_discard.py) |
-| Replay removal is guarded by recorded digest, size, and regular-file mode. | L360-L409 | [source](mcp/src/agents_remember/application/task_docs/task_doc_discard.py) |
+| The request and candidate models bind discard input to exact source evidence. | `DiscardUnstartedRequest`; `_DiscardCandidate` | mcp/src/agents_remember/application/task_docs/task_doc_discard.py:53-61; mcp/src/agents_remember/application/task_docs/task_doc_discard.py:42-50 |
+| The apply and resume paths publish the parent audit and exact child removals. | `_discard_publication`; `_resume_discard_unstarted` | mcp/src/agents_remember/application/task_docs/task_doc_discard.py:210-242; mcp/src/agents_remember/application/task_docs/task_doc_discard.py:245-326 |
+| Replay removal is guarded by recorded digest, size, and regular-file mode. | `_discard_replay_removals`; `_discard_source_still_removable` | mcp/src/agents_remember/application/task_docs/task_doc_discard.py:368-379; mcp/src/agents_remember/application/task_docs/task_doc_discard.py:382-409 |
 
 ## Cross-Repo References
 

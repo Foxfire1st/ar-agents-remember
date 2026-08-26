@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cleanup_carryover.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                    |
 
 ## Governing Overview
@@ -128,17 +128,17 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | `carryover_done` reads the official ledger mapping used as the carryover-complete signal. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:174-197 |
 | `_post_integration_phase` routes completed integrations through `carryover-pending` or `cleanup-pending` and selects the corresponding carryover or cleanup tool. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:230-276 |
-| `GuidanceCarryoverRoutingTests` proves both carryover-pending and cleanup-pending routes. | `GuidanceCarryoverRoutingTests` | mcp/tests/test_cleanup_carryover.py:273-300 |
+| `GuidanceCarryoverRoutingTests` proves both carryover-pending and cleanup-pending routes. | `GuidanceCarryoverRoutingTests` | mcp/tests/test_cleanup_carryover.py:301-328 |
 | The cleanup carryover guard and result contract under test. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:611-656 |
 | Source-branch work-branch deletion is proved by the cleanup helper. | `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:213-249 |
 | Child-edge source preservation is tracked by the cleanup deletion set. | `_deleted_branches` | mcp/src/agents_remember/worktrees/modules/cleanup.py:478-514 |
-| Dry-run directory planning and empty-directory removal are owned by the cleanup state helpers. | `remove_empty_dir`; `_scheduled_removal_paths`; `_cleanup_state` | mcp/src/agents_remember/worktrees/modules/cleanup.py:430-445; mcp/src/agents_remember/worktrees/modules/cleanup.py:517-529; mcp/src/agents_remember/worktrees/modules/cleanup.py:562-581 |
+| Dry-run directory planning and empty-directory removal are owned by the cleanup state helpers. | `remove_empty_dir`; `_scheduled_removal_paths`; `_cleanup_state` | mcp/src/agents_remember/worktrees/modules/cleanup.py:446-461; mcp/src/agents_remember/worktrees/modules/cleanup.py:533-545; mcp/src/agents_remember/worktrees/modules/cleanup.py:586-605 |
 | Remote branch deletion is handled by the cleanup helper. | `delete_remote_branch_if_present` | mcp/src/agents_remember/worktrees/modules/cleanup.py:312-335 |
 | Shared drift snapshot path/removal helper used by cleanup and the drift snapshot cleanup tests. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | The official ledger reader and mapping lookup the carryover-done signal is built on. | `load_ledger`; `find_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:232-234 |
-| The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:54-64; mcp/tests/test_worktree_support.py:68-85 |
-| This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:193-206 |
-| The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:30-30; mcp/src/agents_remember/worktrees/modules/cleanup.py:621-621 |
+| The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:75-85; mcp/tests/test_worktree_support.py:89-109 |
+| This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:221-234 |
+| The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:32-32; mcp/src/agents_remember/worktrees/modules/cleanup.py:635-635 |
 
 ## Cross-Repo References
 
@@ -152,19 +152,6 @@ Cleanup/carryover tests keep the carryover-before-cleanup invariant while updati
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
-## 260821-CLIVE-L2 Pre-L5 Terminal-Gate Isolation
-
-The suite defines one test-only helper that permits cleanup and abandon past the fail-closed
-terminal archive gate. Only downstream owner tests install it; production remains blocked until L5
-provides external archive/readback proof. This keeps the candidate's recovery and cache assertions
-separate from a future master requirement.
-
-| Finding | Source |
-| --- | --- |
-| The helper patches both terminal owners to an explicit successful test result and registers cleanup. | mcp/tests/test_cleanup_carryover.py:100-116 |
-| Downstream cleanup/cache suites opt in deliberately rather than weakening production defaults. | mcp/tests/test_cleanup_carryover.py:323-943 |
-
-
 ## PDLS Reconciliation
 
 Cleanup carryover assertions now preserve the enclosure-root journal/archive boundary and exact external-memory disposition.
@@ -172,6 +159,8 @@ Cleanup carryover assertions now preserve the enclosure-root journal/archive bou
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-26T09:09:12+02:00 — Removed the obsolete pre-L5 terminal-gate isolation note after the production terminal-archive boundary replaced its temporary test permit.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

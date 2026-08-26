@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ inside their own functions and return raw operation payloads; without the declar
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:189-189 |
-| The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
+| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:194-194 |
+| The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
 | The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
 | The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 | The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:392-414 |
@@ -92,6 +92,8 @@ Planning discard is therefore observable without treating queue state as task hi
 turning a started leaf into completion.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; task-doc response and discard evidence shapes are unchanged.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged typed discard-unstarted evidence/audit and projection effects into the response model card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

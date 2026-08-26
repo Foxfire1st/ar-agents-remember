@@ -50,6 +50,11 @@
       "index": "examples/mcp/overview.index.json"
     },
     {
+      "route": "skills/c-09-git-worktree-manager",
+      "overview": "skills/c-09-git-worktree-manager/overview.md",
+      "index": "skills/c-09-git-worktree-manager/overview.index.json"
+    },
+    {
       "route": "skills/l-01-agent-lifecycles",
       "overview": "skills/l-01-agent-lifecycles/overview.md",
       "index": "skills/l-01-agent-lifecycles/overview.index.json"
@@ -81,9 +86,9 @@
     "scripts/test-python"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1799,
+    "sourceFilesInScope": 1821,
     "fileSidecars": 23,
-    "childRoutes": 9
+    "childRoutes": 10
   },
   "routingTerms": [
     "agent",
@@ -107,6 +112,7 @@
     "integration",
     "json",
     "lifecycles",
+    "manager",
     "mcp",
     "production",
     "projection",
@@ -138,10 +144,11 @@
     "txt",
     "types",
     "vitest",
-    "workspace"
+    "workspace",
+    "worktree"
   ],
   "hotPath": {
-    "summary": "CLIVE separates current-contract admission and durable lifecycle recovery from scheduling. Public mutation consumers use one closed admission result, and normal operations are addressed by locator -> immutable enclosure manifest -> canonical root journal. The queue is now only a disposable invalid-empty/valid-built projection of current task truth and waiting door generations: task mutation publishes first, invalidates affected projections, and rebuilds without consulting stale rows. Destructive cleanup remains closed pending external terminal archive proof. **Gate honesty (260731-EFA-L2 \u2014...",
+    "summary": "CLIVE separates current-contract admission and durable lifecycle recovery from scheduling. Public mutation consumers use one closed admission result, and normal operations are addressed by locator -> immutable enclosure manifest -> canonical root journal. The queue is now only a disposable invalid-empty/valid-built projection of current task truth and waiting door generations: task mutation publishes first, invalidates affected projections, and rebuilds without consulting stale rows. Atomic implementation admission is a separate source-pair selector: switching masters pauses the previous li...",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -151,6 +158,7 @@
       "docs/design",
       "docs/reference",
       "examples/mcp",
+      "skills/c-09-git-worktree-manager",
       "skills/l-01-agent-lifecycles",
       "git-blame-ignore-revs",
       "AGENTS.md",
@@ -165,8 +173,7 @@
       "requirements.txt",
       "scripts/harness",
       "scripts/harness/README.md",
-      "scripts/harness/render_starter.py",
-      "scripts/harness/session_start_hook.py"
+      "scripts/harness/render_starter.py"
     ],
     "anchorHints": [
       "git-blame-ignore-revs",

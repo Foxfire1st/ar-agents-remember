@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l4_authority_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ The current forcing seams include `test_canonical_local_branch_refuses_every_inv
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_canonical_local_branch_refuses_every_invalid_alias_shape`, `test_default_branch_authority_refuses_missing_and_malformed_facts`, `test_memory_default_branch_refuses_invalid_local_authority`, `test_branch_owner_enumeration_refuses_git_failure_and_skips_detached_rows`. | L66-L98; L100-L136; L138-L174; L176-L199 | `mcp/tests/test_l4_authority_branch_coverage.py` |
+| The current test source exercises `test_canonical_local_branch_refuses_every_invalid_alias_shape`, `test_default_branch_authority_refuses_missing_and_malformed_facts`, `test_memory_default_branch_refuses_invalid_local_authority`, `test_branch_owner_enumeration_refuses_git_failure_and_skips_detached_rows`. | `test_canonical_local_branch_refuses_every_invalid_alias_shape`; `test_default_branch_authority_refuses_missing_and_malformed_facts`; `test_memory_default_branch_refuses_invalid_local_authority`; `test_branch_owner_enumeration_refuses_git_failure_and_skips_detached_rows` | mcp/tests/test_l4_authority_branch_coverage.py:69-101; mcp/tests/test_l4_authority_branch_coverage.py:103-139; mcp/tests/test_l4_authority_branch_coverage.py:141-177; mcp/tests/test_l4_authority_branch_coverage.py:179-202 |
 
 ## Current Contract — 260821 CLIVE Final
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:20+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 
 ## Purpose
 
@@ -17,6 +17,21 @@ Generated package/harness trees mirror this route and never define independent b
 
 ## Hot Path Summary
 
+### IAS Planning-To-Runtime Boundary
+
+Planning truth is upstream of runtime scheduling. Architect, strategist, and orchestrator seats may
+author otherwise-valid task changes without asking a closeout queue or atomic-series selector for
+permission. A material task change invalidates the affected disposable projection and causes the
+waiting frontier to be recomputed from current truth; it does not freeze task authoring.
+
+Multiple live atomic masters on one protected source pair are normal. Runtime selection exposes one
+master, auto-pauses the previous selection without retiring its task or branch, and requires the new
+selection to reconcile current code/memory sources before implementation admission. Role doctrine
+must treat retained sync conflicts as agent-resolvable, resumable, or cancellable worktree state,
+never as a reason to rewrite planning around a stuck queue. Exact changed doctrine files and
+synchronized copies are reconciled to the frozen candidate; commit verification remains
+closeout-owned.
+
 Free chat launches work; the architect owns sprint composition and the initial ruled topology.
 When the graph is missing or materially stale, an approved strategist authors the evidence-cited
 plan before the orchestrator exists. The orchestrator adopts that plan, recomputes its ready
@@ -25,10 +40,11 @@ evidence, author, confidence, and supersession. Structural task document plus ro
 durable address at every altitude.
 
 An organizational master is a logical grouping whose ordinary leaves branch directly from the
-current super line and may land independently. An atomic master keeps its own integration branch,
-forms an exclusive blocker, and exposes no partial result. Mechanisms publish facts and candidate
-sets; architect, strategist, orchestrator, and manager seats retain their explicit judgment
-boundaries. Integration lines are not repair workbenches.
+current super line and may land independently. An atomic master keeps its own integration branch
+and exposes no partial result; exact source-pair selection controls current implementation
+exposure, while a separate landing authority serializes conflicting protected-ref movement.
+Mechanisms publish facts and candidate sets; architect, strategist, orchestrator, and manager seats
+retain their explicit judgment boundaries. Integration lines are not repair workbenches.
 
 Role continuity is task-document and artifact based. Workers build and report, reviewers provide
 independent verdict evidence, curators reconcile system intent and memory, managers decide
@@ -111,6 +127,9 @@ No lifecycle topology or authority changed. The curator brief now demonstrates t
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
 ## Update History
+
+- 2026-08-26T08:20+02:00 — Reconciled the planning/runtime source-pair boundary and synchronized
+  doctrine set to the frozen candidate; verification remains closeout-owned.
 
 - 2026-08-24T14:19+02:00 — No route impact: aligned the curator brief's quality examples with the canonical sync/start/poll request. Verification metadata remains pinned until architect-owned closeout.
 

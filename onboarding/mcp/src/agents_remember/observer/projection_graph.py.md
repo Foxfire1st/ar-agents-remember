@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/projection_graph.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T13:43+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -78,18 +78,18 @@ None.
 
 No Domain Documentation sources are configured for this repository-internal projection seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The structural title protocol requires master-qualified leaf keys. | L35-L55 | [projection_graph.py](mcp/src/agents_remember/observer/projection_graph.py) |
-| `_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback. | L188-L209 | [projection_graph.py](mcp/src/agents_remember/observer/projection_graph.py) |
-| Public projection forcing proves duplicate local numbers retain the owning master's title. | L194-L246 | [test_task_documents_graph_projection.py](mcp/tests/test_task_documents_graph_projection.py) |
-| Builder tests consume the qualified title mapping through the same serving-style walk. | L187-L230 | [test_execution_graph_view.py](mcp/tests/test_execution_graph_view.py) |
+| The structural title protocol requires master-qualified leaf keys. | `GraphNodeLike`; `GraphTitlesLike` | mcp/src/agents_remember/observer/projection_graph.py:35-44; mcp/src/agents_remember/observer/projection_graph.py:47-54 |
+| `_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback. | `_node_view` | mcp/src/agents_remember/observer/projection_graph.py:188-225 |
+| Public projection forcing proves duplicate local numbers retain the owning master's title. | `TaskDocumentsGraphViewProjectionTests` | mcp/tests/test_task_documents_graph_projection.py:34-272 |
+| Builder tests consume the qualified title mapping through the same serving-style walk. | `ExecutionGraphViewBuilderTests` | mcp/tests/test_execution_graph_view.py:129-269 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integration_preflight_results.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,10 +39,10 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Atomic landing blockers are projected with exact contract and blocker evidence. | L16-L36 | [source](mcp/src/agents_remember/worktrees/modules/integration_preflight_results.py) |
-| Prepared integration recovery reuses journaled boundary facts. | L37-L56 | [source](mcp/src/agents_remember/worktrees/modules/integration_preflight_results.py) |
+| Atomic landing blockers are projected with exact contract and blocker evidence. | `atomic_landing_blocked_result` | mcp/src/agents_remember/worktrees/modules/integration_preflight_results.py:16-34 |
+| Prepared integration recovery reuses journaled boundary facts. | `prepared_integration_recovery` | mcp/src/agents_remember/worktrees/modules/integration_preflight_results.py:37-53 |
 
 ## Cross-Repo References
 

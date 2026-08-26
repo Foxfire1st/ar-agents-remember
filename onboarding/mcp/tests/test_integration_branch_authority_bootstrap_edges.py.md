@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_branch_authority_bootstrap_edges.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -53,9 +53,9 @@ The current forcing seams include `test_bootstrap_record_revalidates_repository_
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_bootstrap_record_revalidates_repository_path_and_memory_edge`, `test_bootstrap_journal_refuses_changed_sprint_branch_without_mutation`, `test_bootstrap_revalidates_source_tip_before_first_ref_creation`, `test_bootstrap_revalidates_atomic_topology_before_first_ref_creation`. | L24-L48; L50-L90; L92-L116; L118-L146 | `mcp/tests/test_integration_branch_authority_bootstrap_edges.py` |
+| The current test source exercises `test_bootstrap_record_revalidates_repository_path_and_memory_edge`, `test_bootstrap_journal_refuses_changed_sprint_branch_without_mutation`, `test_bootstrap_revalidates_source_tip_before_first_ref_creation`, `test_bootstrap_revalidates_atomic_topology_before_first_ref_creation`. | `test_bootstrap_record_revalidates_repository_path_and_memory_edge`; `test_bootstrap_journal_refuses_changed_sprint_branch_without_mutation`; `test_bootstrap_revalidates_source_tip_before_first_ref_creation`; `test_bootstrap_revalidates_atomic_topology_before_first_ref_creation` | mcp/tests/test_integration_branch_authority_bootstrap_edges.py:24-48; mcp/tests/test_integration_branch_authority_bootstrap_edges.py:50-90; mcp/tests/test_integration_branch_authority_bootstrap_edges.py:92-116; mcp/tests/test_integration_branch_authority_bootstrap_edges.py:118-146 |
 
 ## Update History
 

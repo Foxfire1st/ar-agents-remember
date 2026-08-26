@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cli_discovery.py`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-03T09:55+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ Covered behaviors, one test each:
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test. | `discover_config` | mcp/src/agents_remember/cli/discovery.py:36-50 |
-| The CLI wiring that consumes discovery. | `_resolve_settings` | mcp/src/agents_remember/cli/dashboard.py:199-208 |
+| The CLI wiring that consumes discovery. | `_resolve_settings` | mcp/src/agents_remember/cli/dashboard.py:212-221 |
 
 ## Update History
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).

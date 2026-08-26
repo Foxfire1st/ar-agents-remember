@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -52,10 +52,12 @@ bundle `resolve_context` uses. Attach is read-only (it mutates no git) and takes
 (`save` promotes an unsaved fleeting lifecycle, `discard` abandons it) to clear the save gate.
 Status reports phase, dirty flags, next-step hints, and the live provider-setup block.
 
-`worktree_sync(contract_path, memory_sync_choice, dry_run)` forwards flat. Its docstring states the
-atomic base-pair advance, the mid-cycle block (the new code tip must be ledger-mapped at the
-official memory tip, otherwise run carryover first), the `merge-memory` / `skip-memory` recovery,
-and the sync-early doctrine.
+`worktree_sync(contract_path, memory_sync_choice, resolution_action, dry_run)` forwards flat with
+shared `Literal` types. Its help now describes retained code/chosen-memory conflicts: the agent
+resolves and stages in the reported worktree, then calls the same contract with
+`resolution_action='continue'`, or restores pinned pre-sync heads with `cancel`. It does not expose
+an operation id or promise abort-on-conflict behavior. `skip-memory` is an admission/preflight
+choice, not a way to change an already-running generation.
 
 ### Invariants And Boundaries
 
@@ -65,16 +67,33 @@ and the sync-early doctrine.
   and `worktree_status` are read-only and take no dry-run flag.
 - Contract creation, git mechanics, provider setup, and lifecycle promotion live in
   `application/worktree_tools.py` and the `worktrees/` package.
+- Registration publishes the shared closed memory-choice/continue/cancel vocabulary; no free-string
+  compatibility parameter or alternate sync tool is registered.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| The public sync declaration exposes typed memory choice and contract-addressed continue/cancel with retained-conflict help. | `worktree_sync` | mcp/src/agents_remember/mcp/registration/worktrees.py:198-224 |
 | The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-53; mcp/src/agents_remember/mcp/tools/worktree.py:74-83; mcp/src/agents_remember/mcp/tools/worktree.py:86-95; mcp/src/agents_remember/mcp/tools/worktree.py:56-71 |
 | `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:100-113; mcp/src/agents_remember/application/worktree_tools.py:117-131; mcp/src/agents_remember/application/worktree_tools.py:135-142 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
-| The three-way split is proved through live registration. | `test_worktree_start_splits_identity_bases_and_execution` | mcp/tests/test_mcp_registration_wiring_tests_1.py:632-675 |
+| The three-way split is proved through live registration. | `test_worktree_start_splits_identity_bases_and_execution` | mcp/tests/test_mcp_registration_wiring_tests_1.py:728-771 |
 | The light-task default is proved through live registration. | `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_2.py:84-101 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned registration surface.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## L23 Final Candidate Disposition
 
@@ -92,9 +111,9 @@ The current source seams include `register_worktree_tools`. The public schema/co
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `register_worktree_tools` at this ownership boundary. | L26-L29 | `mcp/src/agents_remember/mcp/registration/worktrees.py` |
+| The current module exposes `register_worktree_tools` at this ownership boundary. | `register_worktree_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:27-31 |
 
 ## 260821-CLIVE Stable-Address Registration Contract
 
@@ -105,6 +124,16 @@ the live root journal or exact terminal archive/receipt. Conflicting reservation
 terminal proof fail closed, with no inferred enclosure-root fallback.
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
+  public worktree registration card.
+
+- 2026-08-26T08:30+02:00 — Rebounded the public worktree-registration citation to the frozen
+  helper extent after final consolidation.
+
+- 2026-08-26T03:37+02:00 — Updated the registered sync signature/help for typed retained-conflict
+  continuation and exact cancellation. No operation-id or fallback surface was added. Verification
+  remains post-Dagger/closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged stable locator, strict attach, and terminal-aware status semantics. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

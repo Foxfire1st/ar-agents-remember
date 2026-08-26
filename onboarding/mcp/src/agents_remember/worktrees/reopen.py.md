@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -31,7 +31,7 @@ worktree lifecycle. Recreating worktrees stays `worktree_start`'s job.
 ### Logic
 
 `reopen_task(contract_path, dry_run=False)` loads the enclosure contract and first runs
-cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:376-390): the contract must be `kind == "leaf"` with closeout, integration,
+cit:([`_reopen_blockers`], mcp/src/agents_remember/worktrees/reopen.py:410-424): the contract must be `kind == "leaf"` with closeout, integration,
 and cleanup all `completed`, and neither the code nor memory worktree may still exist
 on disk — anything else returns a `blocked` payload (returncode 2) listing every
 blocker.
@@ -56,11 +56,11 @@ packet that reports it disagreed about the contract this tool had just written.
 front of the checker, leaving any cell they were
 not handed alone. `cleanup: "reopened"` remains the tombstone marker `worktree_start`'s
 existing-contract branch treats like `abandoned` (recreate fresh, never attach) — and it is now a
-declared member of `CleanupStatus`, so the packet accepts it. cit:([`ContractCells`; `amend_contract`; "CleanupStatus = Literal["], mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227)
+declared member of `CleanupStatus`, so the packet accepts it. cit:([`ContractCells`; `amend_contract`; "CleanupStatus = Literal["], mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/worktrees/worktree_contract.py:182-197; mcp/src/agents_remember/worktrees/worktree_contract.py:200-228)
 
 `_plan_leaf_doc_reset` prepares the leaf task-document reset and publishes it only with the
 contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:393-436)
-The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:508-508; mcp/src/agents_remember/worktrees/reopen.py:544-544; mcp/src/agents_remember/worktrees/reopen.py:546-546) plan applies the master's
+The paired cit:(["def _plan_master_index_reset("; "_validate_reopen_row_path(master_path"; "updated = demote_completed_master_if_unresolved(TaskDocument.model_validate(data))"], mcp/src/agents_remember/worktrees/reopen.py:580-580; mcp/src/agents_remember/worktrees/reopen.py:616-616; mcp/src/agents_remember/worktrees/reopen.py:618-618) plan applies the master's
 `subTasks` row for the doc back to `planning`.
 
 The reopen ledger-mapping proof now supplies the exact memory source commit.
@@ -80,7 +80,7 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
   `replace` call that survives here is legitimate: it carries only free-form
   string/bool provenance fields, none of them a vocabulary cell.
 - The tool mutates only coordination state: the enclosure contract, task docs, and the frozen
-  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:357-373)
+  landing-final observation it clears before reopening. cit:([`_clear_frozen_landing`], mcp/src/agents_remember/worktrees/reopen.py:391-407)
 - `nextOperation` is always `worktree_start`: edit steps via `task_doc`, then start
   the same leaf id.
 
@@ -89,11 +89,11 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The doc lookup and lifecycle restamp helpers this module shares with worktree start. | `find_leaf_doc`; `plan_leaf_doc_lifecycle_restamp`; `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70; mcp/src/agents_remember/tasks/leaf_doc.py:161-175; mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:441-441 |
+| The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:508-508 |
 | Reopen publishes the frozen-landing clear, task resets, and contract rewrite under one task-fact CAS and reports projection refresh separately. | `publish_task_fact_mutation`; `_publish_reopen_transition` | mcp/src/agents_remember/worktrees/reopen.py:471-493 |
 | The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
-| The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
-| The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:96-136 |
+| The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/worktrees/worktree_contract.py:183-183; mcp/src/agents_remember/worktrees/worktree_contract.py:200-200 |
+| The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:148-198 |
 | `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:302-306; mcp/tests/test_wire_vocabulary_exhaustiveness.py:669-677 |
 
 ## 260718-CHATS-L5I Current Delta

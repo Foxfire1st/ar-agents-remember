@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
-| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -51,8 +51,8 @@ tests govern this internal durability boundary.
 | --- | --- | --- |
 | Binding identity and payload fields are closed and predecessor-aware. | `EnclosureBindingIdentity`; `enclosure_binding_payload` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:24-115 |
 | Canonical digests, serialization, and bounded conflicts are pure helpers. | `locator_id`; `sha256_payload`; `model_text`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:118-165 |
-| Enclosure publication consumes the binding and digest API before any publication. | `prepare_enclosure_publication`; `enclosure_binding_payload`; `sha256_payload` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:180-265 |
-| Readback verification re-derives the same binding and request identity. | `_validate_manifest`; `EnclosureBindingIdentity`; `enclosure_binding_payload` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:992-1016 |
+| Enclosure publication consumes the binding and digest API before any publication. | "def prepare_enclosure_publication("; "binding = enclosure_binding_payload("; "binding_fingerprint = sha256_payload(binding)" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:180-265 |
+| Readback verification re-derives the same binding and request identity. | "def _validate_manifest("; "class EnclosureBindingIdentity:"; "def enclosure_binding_payload(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:1031-1107; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-25; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115 |
 
 ## Cross-Repo References
 

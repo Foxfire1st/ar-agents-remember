@@ -6,8 +6,8 @@
 | path | `scripts/test-python` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,8 +35,8 @@ environment isolation, and evidence labeling remain in the typed Python owner.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper pins uv configuration, project, Python, and one module. | full script | scripts/test-python:1-7 |
-| Direct-runner tests enforce the wrapper shape and executable bit. | `test_repository_wrapper_is_executable_and_pins_the_direct_route` | mcp/tests/test_direct_test_runner.py:202-213 |
+| The wrapper pins uv configuration, project, Python, and one module. | "set -euo pipefail"; "exec uv --no-config run --project"; "--python 3.12 --extra dev"; "python -m agents_remember.testing.direct_runner" | scripts/test-python:2-2; scripts/test-python:6-6; scripts/test-python:7-7 |
+| Direct-runner tests enforce the wrapper shape and executable bit. | `test_repository_wrapper_is_executable_and_pins_the_direct_route` | mcp/tests/test_direct_test_runner.py:253-262 |
 
 ## Update History
 

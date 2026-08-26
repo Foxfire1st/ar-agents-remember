@@ -65,6 +65,11 @@
       "index": "mcp/src/agents_remember/testing/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/worktrees",
+      "overview": "mcp/src/agents_remember/worktrees/overview.md",
+      "index": "mcp/src/agents_remember/worktrees/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/benchmarks/runner_modules",
       "overview": "mcp/src/agents_remember/benchmarks/runner_modules/overview.md",
       "index": "mcp/src/agents_remember/benchmarks/runner_modules/overview.index.json"
@@ -108,21 +113,6 @@
       "route": "mcp/src/agents_remember/providers/lifecycle",
       "overview": "mcp/src/agents_remember/providers/lifecycle/overview.md",
       "index": "mcp/src/agents_remember/providers/lifecycle/overview.index.json"
-    },
-    {
-      "route": "mcp/src/agents_remember/worktrees/integration",
-      "overview": "mcp/src/agents_remember/worktrees/integration/overview.md",
-      "index": "mcp/src/agents_remember/worktrees/integration/overview.index.json"
-    },
-    {
-      "route": "mcp/src/agents_remember/worktrees/modules",
-      "overview": "mcp/src/agents_remember/worktrees/modules/overview.md",
-      "index": "mcp/src/agents_remember/worktrees/modules/overview.index.json"
-    },
-    {
-      "route": "mcp/src/agents_remember/worktrees/queue",
-      "overview": "mcp/src/agents_remember/worktrees/queue/overview.md",
-      "index": "mcp/src/agents_remember/worktrees/queue/overview.index.json"
     }
   ],
   "coveredFiles": [
@@ -269,29 +259,12 @@
     "mcp/src/agents_remember/providers/setup_reporting.py",
     "mcp/src/agents_remember/providers/status.py",
     "mcp/src/agents_remember/providers/watcher_service.py",
-    "mcp/src/agents_remember/pytest_certifying_bootstrap.py",
-    "mcp/src/agents_remember/worktrees/atomic_series_seal.py",
-    "mcp/src/agents_remember/worktrees/closeout_input.py",
-    "mcp/src/agents_remember/worktrees/direct_landing.py",
-    "mcp/src/agents_remember/worktrees/git_worktree_manager.py",
-    "mcp/src/agents_remember/worktrees/leaf_refs.py",
-    "mcp/src/agents_remember/worktrees/named_ref_memory.py",
-    "mcp/src/agents_remember/worktrees/reopen.py",
-    "mcp/src/agents_remember/worktrees/route_review.py",
-    "mcp/src/agents_remember/worktrees/scheduling_mode.py",
-    "mcp/src/agents_remember/worktrees/series_closeout.py",
-    "mcp/src/agents_remember/worktrees/services.py",
-    "mcp/src/agents_remember/worktrees/source_lineage.py",
-    "mcp/src/agents_remember/worktrees/start_progress.py",
-    "mcp/src/agents_remember/worktrees/task_fact_publication.py",
-    "mcp/src/agents_remember/worktrees/task_leaf_binding.py",
-    "mcp/src/agents_remember/worktrees/task_resolver.py",
-    "mcp/src/agents_remember/worktrees/worktree_contract.py"
+    "mcp/src/agents_remember/pytest_certifying_bootstrap.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1361,
-    "fileSidecars": 161,
-    "childRoutes": 23
+    "sourceFilesInScope": 1383,
+    "fileSidecars": 144,
+    "childRoutes": 21
   },
   "routingTerms": [
     "adopt",
@@ -310,12 +283,10 @@
     "architect",
     "assets",
     "atomic",
-    "atomic_series_seal",
     "atomic_write",
     "authority",
     "baseline",
     "benchmarks",
-    "binding",
     "block",
     "bootstrap",
     "boundary",
@@ -333,7 +304,6 @@
     "citations",
     "cli",
     "closeout",
-    "closeout_input",
     "code",
     "code_quality",
     "codegraphcontext",
@@ -347,7 +317,6 @@
     "context",
     "context_common",
     "context_packet",
-    "contract",
     "control",
     "controlplane",
     "conversation",
@@ -371,9 +340,13 @@
     "defaults",
     "degradation",
     "designer",
-    "direct",
-    "direct_landing",
-    "discovery"
+    "discovery",
+    "doc",
+    "docker",
+    "docs",
+    "doctrine",
+    "entity",
+    "errors"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",
@@ -390,6 +363,7 @@
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/tasks",
       "mcp/src/agents_remember/testing",
+      "mcp/src/agents_remember/worktrees",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
       "mcp/src/agents_remember/kernel/primitives",
@@ -399,9 +373,8 @@
       "mcp/src/agents_remember/providers/context",
       "mcp/src/agents_remember/providers/grepai",
       "mcp/src/agents_remember/providers/lifecycle",
-      "mcp/src/agents_remember/worktrees/integration",
-      "mcp/src/agents_remember/worktrees/modules",
-      "mcp/src/agents_remember/worktrees/queue"
+      "mcp/README.md",
+      "mcp/pyproject.toml"
     ],
     "anchorHints": [
       "README.md",

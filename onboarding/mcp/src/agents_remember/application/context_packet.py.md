@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/context_packet.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ returns the JSON-compatible model dump of `ContextPacketV2` cit:(["ContextPacket
 **Two of the five nested blocks stopped being adapter boundaries in 260731-EFA-L4**, because
 the producer now hands over the typed thing rather than a dict:
 
-- `worktree=worktree_status_packet(context.contract_path)` cit:(["worktree_status_packet(context.contract_path)"], mcp/src/agents_remember/application/context_packet.py:96-96) — **no
+- `worktree=worktree_status_packet(context.contract_path)` cit:([`build_context_packet`], mcp/src/agents_remember/application/context_packet.py:64-110) — **no
   `WorktreeSummary.model_validate(...)`**. `application.worktree_status.worktree_status_packet` returns the
   model. The old `dict[str, Any]` return is what let a value the worktree state machine can emit
   and this packet cannot accept survive every type check up to the moment the packet was built,
@@ -108,7 +108,7 @@ l-01 trust checkpoint is the intended opt-in caller.
 | `ContextPacketV2` and nested summary models define the response shape. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:114-124 |
 | Provider summary projection keeps context compact and points details at diagnostics. | `provider_summary` | mcp/src/agents_remember/providers/status.py:130-154 |
 | Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` (L14-L49) returns `WorktreeSummary`, so there is no dict boundary here to validate. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:42-117 |
-| `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`). | `DriftSummaryPacket`; "DriftStatus = Literal[" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
+| `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`). | "class DriftSummaryPacket(TypedDict):"; "DriftStatus = Literal[" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-11; mcp/src/agents_remember/models/drift.py:11-11 |
 | Public payload builder validates this application entry point output through the model registry. | `context_packet_payload` | mcp/src/agents_remember/mcp/tools/core.py:54-73 |
 | Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
 | `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. | `ledgerMapsCodeHead` | mcp/src/agents_remember/models/context_packet.py:106-106 |
@@ -119,9 +119,9 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. | L49-L50; L54-L61; L64-L110 | `mcp/src/agents_remember/application/context_packet.py` |
+| The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. | `ContextPacketError`; `ContextPacketRequest`; `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:49-50; mcp/src/agents_remember/application/context_packet.py:53-61; mcp/src/agents_remember/application/context_packet.py:64-110 |
 
 ## Update History
 
@@ -134,7 +134,7 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 - 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T10:07+02:00 — 260731-EFA-L4 curator: body updated. Two of the five nested blocks
   stopped being `model_validate` adapter boundaries, and the card described all five the same
-  way. `worktree=` no longer calls `WorktreeSummary.model_validate(...)` — cit:(["worktree_status_packet(context.contract_path)"], mcp/src/agents_remember/application/context_packet.py:96-96)
+  way. `worktree=` no longer calls `WorktreeSummary.model_validate(...)` — cit:([`build_context_packet`], mcp/src/agents_remember/application/context_packet.py:64-110)
   `worktrees.status.worktree_status_packet` (L14-L49 there) returns the model, which moves "a
   value the state machine emits and this packet rejects" from a runtime `ValidationError` inside
   a handler with no `except` to a type error at the projection; the `WorktreeSummary` import was

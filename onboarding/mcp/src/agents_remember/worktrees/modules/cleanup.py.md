@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -23,6 +23,14 @@ worktree-owned observer drift snapshots, and empty worktree folders.
 `args.teardown_providers`, and `args.contract_path`, asserting the latter is
 non-`None` before loading the contract. Cleanup requires completed integration
 and explicit approval for real mutation.
+
+Successful series cleanup, including an exact already-completed retry reconstructed from the
+terminal archive, is wrapped by `with_terminal_atomic_series_release` after terminal lifecycle
+locks are gone. The bridge releases the source-pair selector only when it still names this exact
+series contract. Vacant/missing or a newer different selection is preserved; malformed selector
+evidence is reported rather than replaced by queue/task inference. A durable release failure turns
+the result into a retryable nonzero response so the canonical terminal contract/receipt remains the
+address for another exact attempt. Leaves and dry-runs do not mutate activation.
 
 When `args.teardown_providers` is true (the default), `cleanup_result` calls
 `teardown_worktree_providers` first to reclaim the worktree's isolated provider
@@ -174,13 +182,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:30-30 |
+| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-710 |
+| The bridge releases only an exact selected series and reports durable release failure. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
+| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:32-32 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:77-115 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:398-398 |
-| The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:303-318 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:490-490 |
+| The carryover guard, work-branch cleanup, source-branch preservation, remote work-branch deletion, and dry-run directory-plan reporting are pinned here. | `CleanupCarryoverGuardTests` | mcp/tests/test_cleanup_carryover.py:331-346 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:72-72 |
 | `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:200-228 |
@@ -206,9 +216,9 @@ The current source seams include `remove_registered_worktree`, `delete_branch_if
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | L177-L198; L201-L223; L226-L262 | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
+| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:180-201; mcp/src/agents_remember/worktrees/modules/cleanup.py:204-226; mcp/src/agents_remember/worktrees/modules/cleanup.py:229-265 |
 
 ## 260821-CLIVE Archive-Before-Cleanup
 
@@ -220,6 +230,10 @@ the ephemeral terminal permit/release seam. Already-completed status returns the
 proof and never reconstructs deleted live state.
 
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Documented exact post-terminal atomic-series selection release for
+  cleanup and idempotent archive replay. A paused series cannot clear a newer selection; queue/task
+  state supplies no fallback. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged terminal archival, exact teardown replay, carryover ordering, and atomic terminal authority into cleanup. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

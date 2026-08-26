@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/discovery.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-07-31T00:00+02:00                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`   |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ over three named helpers that carry that totality explicitly:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()", "except (ConfigDiscoveryError" | mcp/src/agents_remember/cli/dashboard.py:207-207; mcp/src/agents_remember/cli/dashboard.py:209-209 |
+| The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting. | "config_path = args.config or discover_config()", "except (ConfigDiscoveryError" | mcp/src/agents_remember/cli/dashboard.py:217-217; mcp/src/agents_remember/cli/dashboard.py:219-219 |
 | The settings loader the discovered path feeds (`load_config`). | `load_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:149-157 |
 | Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error. | `DiscoverConfigTests`, "test_miss_raises_with_both_patterns_and_the_origin" | mcp/tests/test_cli_discovery.py:42-142 |
 

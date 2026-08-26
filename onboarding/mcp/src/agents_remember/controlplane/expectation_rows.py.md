@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -92,7 +92,7 @@ No cross-repository implementation dependency governs this file.
   cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:350-350), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
-  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:195-195). The **10.20 percent** figure
+  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197). The **10.20 percent** figure
   is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
   31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
   produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader

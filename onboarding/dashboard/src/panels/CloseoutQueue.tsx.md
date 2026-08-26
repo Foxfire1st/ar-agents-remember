@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/CloseoutQueue.tsx`        |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -41,8 +41,8 @@ classification and priority plus joined reasons.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Member row renders classification, priority, and reasons. | `MemberRow` | dashboard/src/panels/CloseoutQueue.tsx |
-| Queue section renders service/source condition, source problems, and member list. | `Queue` | dashboard/src/panels/CloseoutQueue.tsx |
+| Candidate row renders state, grade, and reasons. | `CandidateRow` | dashboard/src/panels/CloseoutQueue.tsx:29-42 |
+| Queue section renders service/source condition, source problems, and member list. | `Queue` | dashboard/src/panels/CloseoutQueue.tsx:44-67 |
 | Panel selects and renders the projected queues. | `CloseoutQueue` | dashboard/src/panels/CloseoutQueue.tsx:86-86 |
 
 

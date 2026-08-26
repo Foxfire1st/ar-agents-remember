@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/layering.py`           |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-08T14:38+02:00                                      |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                  |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                  |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../overview.md`                                    |
 
 ## Governing Overview
@@ -68,8 +68,8 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper registers the layering step unconditionally. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:320-366 |
-| The unit suite pins rank violations, cycles, undeclared dirs/imports, and present-false rules. | `test_rank_violation_fails` | mcp/tests/test_layering.py:47-47 |
+| The wrapper registers the layering step unconditionally. | `quality_steps` | mcp/src/agents_remember/code_quality/check.py:378-428 |
+| The unit suite pins rank violations, cycles, undeclared dirs/imports, and present-false rules. | `test_rank_violation_fails` | mcp/tests/test_layering.py:48-67 |
 | The structural-coverage suite pins CLI/edges/render/stale behavior. | `test_layering_cli_and_edges` | mcp/tests/test_leaf_structural_coverage.py:83-83 |
 
 ## Cross-Repo References

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
 | lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash |                                                                   `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |                                                                   2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |                                                                   `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |                                                                   2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                     |
 
 ## Governing Overview
@@ -237,12 +237,12 @@ agents that cannot receive dashboard session injection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | "def log_path" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:64-64 |
-| Pending filters match supplied lifecycle and/or agent keys. | "def list_pending" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:145-145 |
-| Consume is idempotent and appends a consumed snapshot only once. | "def consume" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:211-211 |
-| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" and delegates the due/limit decision. | "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:207-207 |
+| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | "def log_path" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:80-80 |
+| Pending filters match supplied lifecycle and/or agent keys. | "def list_pending" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:161-161 |
+| Consume is idempotent and appends a consumed snapshot only once. | "def consume" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:227-227 |
+| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" and delegates the due/limit decision. | "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:223-223 |
 | `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. | `require_redelivery_floor_seconds`; `next_attempt_at`; `redeliverable` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:66-76; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:79-96; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:133-146 |
-| The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. | `_read_unlocked`; `_replace_unlocked`; `_exclusive_access`; `fcntl` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:322-330; mcp/src/agents_remember/controlplane/operator_inbox_store.py:332-338; mcp/src/agents_remember/controlplane/operator_inbox_store.py:340-344; mcp/src/agents_remember/providers/provider_setup.py:22-22 |
+| The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. | `_read_unlocked`; `_replace_unlocked`; `_exclusive_access`; `fcntl` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:361-369; mcp/src/agents_remember/controlplane/operator_inbox_store.py:371-377; mcp/src/agents_remember/controlplane/operator_inbox_store.py:379-383; mcp/src/agents_remember/providers/provider_setup.py:22-22 |
 | `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:182-198 |
 
 ## Cross-Repo References
@@ -287,8 +287,8 @@ compatibility path.
   **L297-L313**; the constant is at **L368** — the file grew 598 → 699 lines mid-pass, so every
   range written earlier is off. Replaced with a symbol-name citation and no range. Re-read the five
   citations into this module's own source and left them: the log-path/append/read row L109-L126
-  (`log_path` L109, `append` L113, `read` L119, `current` L124), pending filters cit:(["def list_pending"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:145-145), `consume`
-  cit:(["def consume"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:211-211), the delivery-snapshot pair L151-L204; L234-L254, and the
+  (`log_path` L109, `append` L113, `read` L119, `current` L124), pending filters cit:(["def list_pending"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:161-161), `consume`
+  cit:(["def consume"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:227-227), the delivery-snapshot pair L151-L204; L234-L254, and the
   `_read_unlocked` / `_replace_unlocked` / `_exclusive_access` row L468-L492 (L471, L481, L489). The
   **0.00 percent** claim is now attributed rather than asserted as a measurement a reader can check:
   it appears only in the `durable_store.py` docstring, as does the 9.20 percent that the old

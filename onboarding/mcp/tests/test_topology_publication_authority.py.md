@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_topology_publication_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T08:50+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -34,11 +34,21 @@ escape, and foreign-repository candidate overrides.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `TopologyPublicationAuthorityTests` | mcp/tests/test_topology_publication_authority.py:36-234 |
+| The focused suite owns this task-publication independence boundary. | `TopologyPublicationIndependenceTests` | mcp/tests/test_topology_publication_authority.py:42-335 |
 
-## Documentation References
+## Docs References
 
-No configured domain-documentation or cross-repository source applies to this file.
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned topology-authority suite.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -51,8 +61,20 @@ Forces task publication independence from landing serialization, live enclosure 
 
 - Every intrinsically valid topology mutation publishes task truth.
 - Landing/ref authority may protect its own mutation edge but cannot veto task authoring.
+- Active or malformed source-pair activation cannot veto an otherwise valid task edit and is not
+  healed/replaced by the task-doc tool.
 
 ## Update History
+
+- 2026-08-26T08:50+02:00 — Rebound the suite-class reference to the frozen
+  `TopologyPublicationIndependenceTests` owner.
+
+- 2026-08-26T08:45+02:00 — Normalized the Docs heading and restored the canonical Cross-Repo
+  reference section for this changed topology-publication suite card.
+
+- 2026-08-26T03:37+02:00 — Added direct proof that active then deliberately malformed activation
+  evidence neither blocks task authoring nor gets rewritten by it. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

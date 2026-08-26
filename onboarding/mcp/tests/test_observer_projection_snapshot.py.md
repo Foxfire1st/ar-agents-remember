@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection_snapshot.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -39,12 +39,14 @@ Snapshot tests now share `_write_addressable_contract`, which writes the contrac
 the enclosure-root locator/manifest. Reopened contracts retain their lifecycle identity; a cleanup
 field change no longer erases the address required to rediscover the same operation.
 
-| Finding | Source |
-| --- | --- |
-| The fixture helper makes every relevant contract addressable through the lifecycle location chain. | mcp/tests/test_observer_projection_snapshot.py:68-78 |
-| Enclosure reads use the helper and preserve lifecycle identity across reopen. | mcp/tests/test_observer_projection_snapshot.py:432-506 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The fixture helper makes every relevant contract addressable through the lifecycle location chain. | `_write_addressable_contract` | mcp/tests/test_observer_projection_snapshot.py:72-78 |
+| Enclosure reads use the helper and preserve lifecycle identity across reopen. | `test_read_enclosures_from_contract`; `test_read_enclosures_without_locator_preserves_structural_row` | mcp/tests/test_observer_projection_snapshot.py:417-440; mcp/tests/test_observer_projection_snapshot.py:442-468 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Added explicit forcing that a pre-locator enclosure remains a structural observer row without inventing lifecycle-operation state.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

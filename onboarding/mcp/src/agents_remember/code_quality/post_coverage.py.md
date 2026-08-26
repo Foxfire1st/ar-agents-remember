@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/post_coverage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ No external Domain Documentation source is configured for this repository-local 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper calls both rails after pytest and repeats them only after a conservative delta requires a full fallback. | `run_coverage_rails`; `complete_coverage_rails` | mcp/src/agents_remember/code_quality/check.py:517-559; mcp/src/agents_remember/code_quality/check.py:632-656 |
+| The wrapper calls both rails after pytest and repeats them only after a conservative delta requires a full fallback. | `run_coverage_rails`; `complete_coverage_rails` | mcp/src/agents_remember/code_quality/check.py:587-629; mcp/src/agents_remember/code_quality/check.py:702-726 |
 | CRAP calculation uses Coverage.py branch units and Radon complexity. | `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
 | Diff measurement intersects coverage units with the resolved Git diff. | `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
 | Existing suites continue to exercise the aliases exposed by `check.py`. | `TestCheckRails`; `WrapperIntegrationTests` | mcp/tests/test_diff_coverage.py:554-675; mcp/tests/test_l6_diff_coverage_code_quality.py:174-339 |

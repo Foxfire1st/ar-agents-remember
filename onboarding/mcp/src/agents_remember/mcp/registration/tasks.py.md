@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:111-111; mcp/src/agents_remember/mcp/registration/tasks.py:123-125).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:108-108; mcp/src/agents_remember/mcp/registration/tasks.py:120-122).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -95,8 +95,8 @@ recreates everything.
 | --- | --- | --- |
 | The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30; mcp/src/agents_remember/mcp/tools/task_doc.py:33-46 |
 | The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| `FinalizeTaskDocs`. | `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tools.py:561-568 |
-| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:203-238; mcp/tests/test_mcp_registration_wiring_tests_2.py:240-251 |
+| `FinalizeTaskDocs`. | "class FinalizeTaskDocs:" | mcp/src/agents_remember/application/worktree_tool_requests.py:120-120 |
+| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:257-294; mcp/tests/test_mcp_registration_wiring_tests_2.py:296-307 |
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
 

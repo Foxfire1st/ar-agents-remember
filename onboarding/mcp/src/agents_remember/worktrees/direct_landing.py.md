@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -105,9 +105,9 @@ The current source seams include `DirectLandingRequest`, `direct_landing`, `requ
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | L105-L120; L132-L144; L147-L155 | `mcp/src/agents_remember/worktrees/direct_landing.py` |
+| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | `DirectLandingRequest`; `direct_landing`; `require_direct_landing_enabled` | mcp/src/agents_remember/worktrees/direct_landing.py:104-119; mcp/src/agents_remember/worktrees/direct_landing.py:132-144; mcp/src/agents_remember/worktrees/direct_landing.py:147-155 |
 
 ## 260821-DAGQC-L2 Action-Required Outcome
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -244,7 +244,7 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
 | The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:446-446 |
 | `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:925-969 |
 | "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638; mcp/src/agents_remember/observer/reducer.py:73-73 |
-| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:188-196 |
+| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:224-232 |
 
 ## Current L5I Route State
 

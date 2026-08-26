@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,6 +95,7 @@ consumer boundary as production instead of treating any zero-exit subprocess as 
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the quality gate and clean executor package relocations; runner outcome and evidence assertions are unchanged.
 - 2026-08-24T21:23+02:00 — Replaced zero-exit-only fakes with candidate-bound certifying outcomes.
 
 - 2026-08-14T12:13:26+02:00 — R43 curator: recorded builder-level non-Dagger refusal and aligned

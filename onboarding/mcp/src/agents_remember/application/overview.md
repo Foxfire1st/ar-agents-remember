@@ -5,14 +5,28 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00 |
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## IAS Frozen Source-Pair Application Boundary
+
+The application layer composes selecting operations around one source-pair activation authority.
+An atomic master is not exposed merely because its series contract exists: selection becomes
+`reconciling`, the exact code/external-memory pair is synchronized, and only an exact-current result
+becomes `active`. A retained conflict returns agent-owned continue/cancel guidance and leaves the
+integration lock free between calls.
+
+Status observes the stable enclosure-root sync journal independently from task-document health.
+Application adapters translate failures into bounded tool results; they do not recreate the journal
+from task prose, queue rows, or ambient Git. Task-document mutation remains an upstream application
+flow: it publishes canonical truth, invalidates affected projections, and never asks queue or
+activation state for permission.
 
 ## Current Structural Application Boundary
 
@@ -344,6 +358,9 @@ total at one application boundary and prevents bootstrap import fan-out from pul
 graph into test collection.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS source-pair application boundary label against the
+  frozen pass-13 candidate.
 
 - 2026-08-25T17:21+02:00 — Reconciled the final admission, failure-projection, and deferred-import
   boundaries. Verification remains closeout-owned.

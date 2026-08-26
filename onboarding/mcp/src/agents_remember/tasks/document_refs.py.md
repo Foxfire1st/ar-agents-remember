@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -126,9 +126,9 @@ their exact resolved refs.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. | L34-L39; L42-L59; L63-L66 | `mcp/src/agents_remember/tasks/document_refs.py` |
+| The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. | `TaskDocumentRefError`; `refuse_segment_nodes_on_atomic_masters`; `ResolvedTaskDocument` | mcp/src/agents_remember/tasks/document_refs.py:37-42; mcp/src/agents_remember/tasks/document_refs.py:45-62; mcp/src/agents_remember/tasks/document_refs.py:65-69 |
 
 ## 260821-CLIVE Projection-Consumer Resolution
 
@@ -139,7 +139,18 @@ when the unreadable document is addressed by its directory alias, while unrelate
 documents are skipped. This is one scoped resolver policy for disposable refresh, not a fallback
 reader or relaxation of strict execution topology.
 
+## Repository-Wide Master Census API
+
+`repository_master_documents(topology, repository)` is the public query for the complete canonical
+master set used by repository-global branch-authority and linkage checks. The query is module-level
+because it composes topology primitives without making repository census another mutable
+responsibility of `TaskDocumentTopology`; topology methods and application callers use the same
+function. The former public `repository_masters` method and private `_master_documents` duplicate
+route are removed rather than retained as compatibility readers.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled repository-wide master discovery with the single module-level `repository_master_documents` query and removal of the former public/private duplicate methods.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged override-aware, unrelated-failure-tolerant projection consumer resolution. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

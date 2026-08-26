@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../../../overview.md)
+[integration overview](overview.md)
 
 ## Purpose
 
@@ -43,6 +43,12 @@ and a terminal series artifact (cleanup completed/abandoned/reopened) no longer 
 series when surfaces are derived; a genuinely live organizational series still refuses with
 retirement guidance (`worktree_cleanup`/`worktree_abandon`).
 
+`require_sync_worktree` now admits two exact shapes rather than assuming sync is leaf-only. A leaf
+must remain an ordinary workbench. A series must prove its canonical task-owned atomic integration
+refs through `require_series_contract_authority`; any other contract kind refuses. This structural
+guard enables the source-pair selecting transaction without making a protected series branch an
+ordinary workbench or weakening its task-derived ownership.
+
 ## Invariants And Boundaries
 
 - Protected surfaces are repo-global for a Git common directory, not local to the current sprint.
@@ -51,6 +57,8 @@ retirement guidance (`worktree_cleanup`/`worktree_abandon`).
 - Missing, stale, ambiguous, foreign, or colliding authority fails closed before mutation.
 - Series terminal writers require both the structural guard here and the ephemeral
   transaction-bound permit issued by `atomic_series_terminal.py`; no queue owns terminal authority.
+- Sync may operate on a series only through exact series-contract authority; ordinary leaf and
+  protected series admission remain distinct branches.
 
 ## Repo-Internal References
 
@@ -59,10 +67,21 @@ retirement guidance (`worktree_cleanup`/`worktree_abandon`).
 | Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:56-57; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:60-123 |
 | Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:377-422; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:425-442 |
 | New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:496-510 |
+| Sync admits either an ordinary leaf workbench or exact task-owned series authority. | `require_sync_worktree` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:293-302 |
 
-## Documentation References
+## Docs References
 
-No configured domain-documentation or cross-repository source applies to this file.
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned branch authority.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## 260821-CLIVE-L2 Unified Topology Resolution
 
@@ -70,9 +89,9 @@ Live leaf identity validation now calls the topology's single `resolve` API with
 override set. Integration authority no longer depends on a second candidate-resolution vocabulary;
 the exact accepted task generation remains the input to one resolver boundary.
 
-| Finding | Source |
-| --- | --- |
-| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:788-801 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | `require_topology_publication_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:386-419 |
 
 ## 260821-CLIVE Queue-Binding Removal
 
@@ -89,6 +108,16 @@ Topology collision and deleted-owner repair logic moved into dedicated owners; t
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Normalized the Docs heading and restored the canonical Cross-Repo
+  reference section for this changed authority card.
+
+- 2026-08-26T06:25+02:00 — Rebound the card to its nearest integration-route governor after the
+  source-pair authority refresh; verification metadata remains closeout-owned.
+
+- 2026-08-26T03:37+02:00 — Extended sync admission to exact task-owned atomic series refs while
+  preserving the separate ordinary-leaf branch and fail-closed unsupported-kind refusal.
+  Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

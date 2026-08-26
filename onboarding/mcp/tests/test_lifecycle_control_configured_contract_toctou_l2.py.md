@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_control_configured_contract_toctou_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_unchanged_configured_contract_executes_public_control_preview`, `test_public_control_refuses_contract_drift_before_journal_mutation`, `test_public_control_refuses_fresh_manifest_mismatch_before_journal_mutation`, `test_integrate_control_revalidates_after_integration_authority_reload` as its principal forcing seams. | L107-L117; L121-L151; L154-L172; L175-L228 | `mcp/tests/test_lifecycle_control_configured_contract_toctou_l2.py` |
+| The file defines `test_unchanged_configured_contract_executes_public_control_preview`, `test_public_control_refuses_contract_drift_before_journal_mutation`, `test_public_control_refuses_fresh_manifest_mismatch_before_journal_mutation`, `test_integrate_control_revalidates_after_integration_authority_reload` as its principal forcing seams. | `test_unchanged_configured_contract_executes_public_control_preview`; `test_public_control_refuses_contract_drift_before_journal_mutation`; `test_public_control_refuses_fresh_manifest_mismatch_before_journal_mutation`; `test_integrate_control_revalidates_after_integration_authority_reload` | mcp/tests/test_lifecycle_control_configured_contract_toctou_l2.py:112-122; mcp/tests/test_lifecycle_control_configured_contract_toctou_l2.py:125-156; mcp/tests/test_lifecycle_control_configured_contract_toctou_l2.py:159-177; mcp/tests/test_lifecycle_control_configured_contract_toctou_l2.py:180-231 |
 
 ## Cross-Repo References
 

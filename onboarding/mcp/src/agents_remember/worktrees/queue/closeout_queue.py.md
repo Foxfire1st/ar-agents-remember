@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T08:20+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,8 @@ and publication effects delegate to the projection modules.
 
 Judgment and priority are read from canonical sources during projection construction. Equal
 effective priority uses graph declaration order and then leaf identity. A graph-less
-atomic-sequential sprint remains valid.
+atomic-sequential sprint remains valid; its waiting reasons observe the strict source-pair
+activation snapshot rather than electing a series from contract presence.
 
 ### Invariants And Boundaries
 
@@ -42,10 +43,13 @@ atomic-sequential sprint remains valid.
 - Task edits and door controls remain canonical even when rebuild fails.
 - In-flight records, commits, certification, integration, and lifecycle controls are journal-owned.
 - There is no persistent blocker, release, abort, declared-candidate, or queue-owned grade action.
+- Activation is read-only input to projection; this facade cannot select, pause, activate, or vacate
+  a master.
 
 ### Todos
 
-None recorded.
+Activation-related claims are reconciled to the frozen projection behavior. Verification metadata
+remains closeout-owned.
 
 ## Docs References
 
@@ -55,8 +59,8 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The facade serves status and idempotent rebuild. | `closeout_queue_tool` | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
-| Claim admission requires the exact first-ready waiting generation. | `require_first_ready_generation` | `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
+| The facade serves status and idempotent rebuild. | `closeout_queue_tool` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:33-83 |
+| Claim admission requires the exact first-ready waiting generation. | `require_first_ready_generation` | mcp/src/agents_remember/worktrees/queue/closeout_queue.py:86-112 |
 
 ## Cross-Repo References
 
@@ -74,6 +78,13 @@ caller holds the task/door CAS and requires the exact first ready waiting genera
 grade, claim, certify, block, release, abort, and integration-completion mutations are removed. Task
 authoring is never gated by this facade.
 
+## IAS Activation Projection Boundary
+
+The facade remains status/rebuild plus first-ready admission. For graph-less atomic work,
+projection helpers derive active/reconciling/paused/vacant waiting reasons from the exact selector
+snapshot. Contract presence is not a lane owner, selector corruption makes only the affected
+projection invalid-empty, and no queue action mutates activation or operation lifecycle.
+
 
 ## PDLS Reconciliation
 
@@ -82,6 +93,12 @@ Projection access now recognizes the exact sprint planning actor and commanded m
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-26T08:20+02:00 — Final frozen reconciliation: the queue observes activation only as
+  disposable projection input and retains no transition or lifecycle authority.
+
+- 2026-08-26T05:20+02:00 — Removed the obsolete lane-owner reading from current onboarding and
+  recorded activation as read-only projection input. Verification remains post-Dagger-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

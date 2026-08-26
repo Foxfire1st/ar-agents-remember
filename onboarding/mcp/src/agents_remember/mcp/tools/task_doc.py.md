@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -51,8 +51,8 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The application entry point this builder forwards to. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
-| The shared validation/emission choke point. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| The response model the payload validates against. | `TaskDocResponse` | mcp/src/agents_remember/models/task_doc.py:33-59 |
+| The shared validation/emission choke point. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The response model the payload validates against. | `TaskDocResponse` | mcp/src/agents_remember/models/task_doc.py:115-188 |
 
 ## Update History
 

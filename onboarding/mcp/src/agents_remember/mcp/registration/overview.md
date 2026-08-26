@@ -5,10 +5,22 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T08:20+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
+
+## IAS Worktree Advertisement
+
+The worktree surface advertises contract-addressed source reconciliation as an operation an agent can
+start, observe, continue after resolving a retained conflict, or cancel. The public shape carries
+the chosen memory-sync policy and explicit resolution action, never a private journal key or Git-ref
+capability. Start/attach selecting paths can return the same reconciliation guidance instead of
+exposing an uncurrent atomic master.
+
+Task-document authoring remains independently advertised and wholly upstream. No queue/activation
+lock field or whitelist is added to its schema. Exact parameter descriptions and response-state
+vocabulary are reconciled to the frozen implementation; commit verification remains closeout-owned.
 
 ## Purpose
 
@@ -149,10 +161,10 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
-| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:73-75 |
+| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:548-561 |
+| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_check.py:565-578 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
@@ -233,10 +245,10 @@ This route composes public signatures only. It exposes the one closed applicatio
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree registration composition. | L26-L29 | `mcp/src/agents_remember/mcp/registration/worktrees.py` |
-| Public payload builders. | L98-L105; L151-L169 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+| Worktree registration composition. | `register_worktree_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:27-31 |
+| Public payload builders. | `worktree_enclosure_adopt_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:101-108 |
 
 ## 260821-DAGQC-L2 Published Quality Schema
 
@@ -245,6 +257,10 @@ execution fields and poll identity are mutually exclusive and extra-forbid; regi
 the validated DTO and owns no compatibility reader or lower-level failure vocabulary.
 
 ## Update History
+
+- 2026-08-26T08:20+02:00 — Final frozen reconciliation of the contract-addressed sync
+  advertisement and independently unlocked task-authoring surface; verification remains
+  closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: published the one canonical discriminated memory-quality request and removed flat wait/run-id dispatch. Verification metadata remains pinned until architect-owned closeout.
 

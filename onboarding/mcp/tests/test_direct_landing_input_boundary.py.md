@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_direct_landing_input_boundary.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,9 +52,9 @@ The current forcing seams include `test_enabled_message_matrix_refuses_before_la
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_enabled_message_matrix_refuses_before_lane_authority_or_git`, `test_preview_and_apply_receive_the_same_stripped_effective_input`, `test_domain_uses_admitted_contract_not_the_raw_request_address`, `test_public_boundary_returns_the_structured_input_refusal`. | L30-L73; L75-L112; L114-L155; L157-L184 | `mcp/tests/test_direct_landing_input_boundary.py` |
+| The current test source exercises `test_enabled_message_matrix_refuses_before_lane_authority_or_git`, `test_preview_and_apply_receive_the_same_stripped_effective_input`, `test_domain_uses_admitted_contract_not_the_raw_request_address`, `test_public_boundary_returns_the_structured_input_refusal`. | `test_enabled_message_matrix_refuses_before_lane_authority_or_git`; `test_preview_and_apply_receive_the_same_stripped_effective_input`; `test_domain_uses_admitted_contract_not_the_raw_request_address`; `test_public_boundary_returns_the_structured_input_refusal` | mcp/tests/test_direct_landing_input_boundary.py:54-97; mcp/tests/test_direct_landing_input_boundary.py:99-136; mcp/tests/test_direct_landing_input_boundary.py:138-179; mcp/tests/test_direct_landing_input_boundary.py:181-209 |
 
 ## 260821-DAGQC-L2 Outcome/Recovery Separation
 

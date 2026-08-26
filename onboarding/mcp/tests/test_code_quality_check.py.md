@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -211,7 +211,7 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 | The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:556-569; pyproject.toml:34-38 |
 | The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
 | The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
-| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`, `test_python_coverage_and_test_rails_reach_their_trees` | mcp/tests/test_gate_scope.py:157-178; mcp/tests/test_gate_scope.py:180-202 |
+| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`; `test_python_product_coverage_and_test_execution_reach_their_owners` | mcp/tests/test_gate_scope.py:157-178; mcp/tests/test_gate_scope.py:180-202 |
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:7-7 |
 | The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:81-137 |
@@ -255,7 +255,16 @@ validated by root certifying bootstrap. The tests do not construct or bypass adm
 also proves stale phase output is cleared and the route-neutral phase-report destination is wired
 into the pytest step.
 
+## Evidence-Lifecycle Rail
+
+The fixed quality command now runs `agents_remember.testing.evidence_lifecycle` as an enforcing
+step before pytest. The suite pins both command order and rail classification: lifecycle-evidence
+validation is neither an optional Radon-style report nor an out-of-band check. Adding the step
+shifts the pytest command index, which the wrapper assertion tracks explicitly.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Added forcing for the enforcing evidence-lifecycle rail and its position in the fixed quality command sequence.
 
 - 2026-08-24T21:23+02:00 — Adopted typed Dagger admission and pytest phase-report proof.
 

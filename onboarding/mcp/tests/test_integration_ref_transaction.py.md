@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,9 +56,9 @@ The current forcing seams include `test_prepare_ref_move_refuses_code_and_memory
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, `test_integrated_ledger_refuses_duplicate_rows_for_the_landed_code`. | L109-L157; L159-L214; L216-L287; L289-L316 | `mcp/tests/test_integration_ref_transaction.py` |
+| The current test source exercises `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, `test_integrated_ledger_refuses_duplicate_rows_for_the_landed_code`. | `test_prepare_ref_move_refuses_code_and_memory_tip_races`; `test_code_cas_race_and_unreadable_ledger_refuse`; `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`; `test_integrated_ledger_refuses_duplicate_rows_for_the_landed_code` | mcp/tests/test_integration_ref_transaction.py:110-158; mcp/tests/test_integration_ref_transaction.py:160-215; mcp/tests/test_integration_ref_transaction.py:217-289; mcp/tests/test_integration_ref_transaction.py:291-319 |
 
 ## Current Contract — 260821 CLIVE Final
 

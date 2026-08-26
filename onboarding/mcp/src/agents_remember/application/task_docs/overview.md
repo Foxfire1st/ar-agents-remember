@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T08:30+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,11 +29,13 @@ the task-document authoring seam owns one package.
 ## Hot Path Summary
 
 Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is
-never subordinate to queue state. The exact transaction rechecks accepted source bytes, writes task
+never subordinate to queue or atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task
 truth and invalidates every affected waiting projection under the task-publication lock, then
 rebuilds each disposable projection independently from current closeout-door facts. A planning
 change therefore yields a clear invalidation/rebuild signal without freezing unrelated task-doc
-authoring or claiming lifecycle evidence for an operation already underway.
+authoring, changing selector state, or claiming lifecycle evidence for an operation already
+underway. Selection and retained sync state are downstream worktree authorities that re-evaluate
+the changed plan at their next admission boundary.
 
 `task_doc` MCP calls dispatch through `task_doc_tool` to one operation (create/replace/edits/special
 ops); the special ops (sprint linkage + execution graph authoring) publish inside their own
@@ -78,11 +80,11 @@ contract per concern.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Task-first transactional publication and independent projection refresh. | L82-L166 | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
-| Zero-or-one graph-bearing publication batch and in-memory title context. | L17-L51 | `mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py` |
-| Atomic raw-section shape validation and missing-register scaffolding. | L17-L55 | `mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py` |
+| Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:89-128; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:131-147; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:150-157; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:160-175 |
+| Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
+| Atomic raw-section shape validation and missing-register scaffolding. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
 
 ## 260824-PDLS Final Task-Recovery Boundary
 
@@ -91,6 +93,14 @@ from queue state. Task mutations remain legal; affected closeout projections are
 rebuilt from current task truth instead of freezing authoring or carrying stale rows forward.
 
 ## Update History
+
+- 2026-08-26T08:30+02:00 — Rebounded the graph-title source range after the frozen structural
+  split; the task-first, always-unlocked authoring contract is unchanged.
+
+- 2026-08-26T02:55+02:00 — Direct IAS architecture refresh: made explicit that task authoring is
+  upstream of both queue projection and source-pair activation. Planning changes invalidate/rebuild
+  scheduling and are re-evaluated by later worktree admission; they never mutate in-flight journal
+  evidence. Verification remains frozen-candidate owned.
 
 - 2026-08-25T17:21+02:00 — Reconciled typed unstarted-task recovery with projection invalidation.
   Verification remains closeout-owned.

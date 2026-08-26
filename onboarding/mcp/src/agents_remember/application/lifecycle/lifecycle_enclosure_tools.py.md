@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/lifecycle_enclosure_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `EnclosureAdoptionRequest`; `worktree_enclosure_adopt_tool` as its public seam. | L23-L31; L34-L102 | `mcp/src/agents_remember/application/lifecycle/lifecycle_enclosure_tools.py` |
+| The module defines `EnclosureAdoptionRequest`; `worktree_enclosure_adopt_tool` as its public seam. | `EnclosureAdoptionRequest`; `worktree_enclosure_adopt_tool` | mcp/src/agents_remember/application/lifecycle/lifecycle_enclosure_tools.py:22-31; mcp/src/agents_remember/application/lifecycle/lifecycle_enclosure_tools.py:34-102 |
 
 ## Cross-Repo References
 

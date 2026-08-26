@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash |  `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate |  2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-26T08:35+02:00 |
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
+[l-01 role overview](overview.md)
 
 ## Purpose
 
@@ -76,11 +76,38 @@ the architect-owned strategist loop.
 
 Organizational leaves land directly on super as released; the final leaf is combined with prior
 contributions into the exact proposed final candidate and receives the one full master gate before
-super moves. Atomic masters are exclusive blockers whose intermediate leaf state never reaches
-super. Integration refs are not feature/fix workbenches, and super-exit repairs return to an owning,
-reopened, or newly scoped leaf.
+super moves. Atomic masters expose no intermediate leaf state to super, but source-pair selection
+may pause one live master and select another without retiring either durable branch. The separate
+landing authority serializes only conflicting protected-ref movement. Integration refs are not
+feature/fix workbenches, and super-exit repairs return to an owning, reopened, or newly scoped leaf.
+
+## IAS Activation, Queue, And Reconciliation Boundary
+
+Before a manager or worker receives implementation exposure for an atomic master, the control
+plane selects its exact code/memory source pair as `reconciling`, auto-pauses the former selection,
+reconciles both recorded bases, and publishes `active`. Reviewer and curator inspection does not
+switch selection. Chats, processes, worktrees, contracts, and claimed lifecycle journals remain
+intact across a logical pause.
+
+Task authoring is not subordinate to selection or queue state. Valid task mutations publish first,
+then invalidate/rebuild affected disposable projections. Queue rows merely observe
+active/reconciling/paused/vacant facts and own no lifecycle or commit evidence. A malformed selector
+fails closed only for affected projection/admission and is replaced with archived evidence by an
+exact selecting operation; there is no contract-presence fallback.
+
+Retained sync or integration conflicts are agent-owned when current requirements, code, tests, and
+decisions determine a resolution. Continue or cancel the contract-addressed operation through its
+advertised API; escalate only genuine semantic ambiguity through the architect.
 
 ## Update History
+
+- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
+  reconciling orchestrator activation doctrine.
+
+- 2026-08-26T05:20+02:00 — Replaced the global exclusive-blocker reading with exact source-pair
+  selection plus separate landing authority; documented pause preservation, task-authoring
+  primacy, disposable queue projection, and agent-owned resumable conflict resolution.
+  Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_tool_enclosure_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,8 +69,8 @@ application source plus this regression suite.
 | The fixture constructs distinct official and leaf repositories joined by one enclosure contract. | `_Enclosure`; `_enclosure` | mcp/tests/test_memory_tool_enclosure_scope.py:69-159 |
 | Route-index tests prove scoped writes/dry-runs leave the non-target tree untouched. | `RouteIndexRefreshWritesTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:176-215 |
 | Quality tests prove leaf selection, paired Markdown/JSON curator publication, temporary base forwarding, and strict bare-call provenance. | `MemoryQualityCheckReadsTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:219-289; mcp/tests/test_memory_tool_enclosure_scope.py:291-329 |
-| Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:324-342 |
-| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:348-438; mcp/tests/test_memory_tool_enclosure_scope.py:441-443; mcp/tests/test_memory_tool_enclosure_scope.py:446-449 |
+| Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:355-373 |
+| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:376-473; mcp/tests/test_memory_tool_enclosure_scope.py:476-478; mcp/tests/test_memory_tool_enclosure_scope.py:481-484 |
 
 ## Cross-Repo References
 
@@ -91,6 +91,8 @@ same-repository leaf authority, frozen code/onboarding/base identity, loud refus
 usable memory tree, and the deliberate absence of an official-memory fallback.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the memory-quality controller package relocation; canonical enclosure scope and loud no-fallback behavior are unchanged.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rebound enclosure tests to the extracted scope/controller APIs and forced canonical leaf identity plus loud no-memory/no-official-fallback behavior. Verification metadata remains pinned until architect-owned closeout.
 

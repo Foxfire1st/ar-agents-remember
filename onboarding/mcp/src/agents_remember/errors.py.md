@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ without conflating it with `AuthorityError`, which remains the type for a root m
 write authority. `ConversationCompositionError` identifies a conversation runtime composition bug —
 retrieval before installation, a second install, a foreign object on the reserved state key, or
 construction missing a required authority — that must fail at startup or request entry, never
-silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:44-52) marks the one packaging failure the
+silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:92-100) marks the one packaging failure the
 token counter cannot paper over: the tiktoken vocabulary it needs is not the one vendored into
 `package_data/tiktoken`. It is raised in place of letting tiktoken download the file it cannot
 find, because the counter is constructed while the MCP tool surface is still importing — a
@@ -127,7 +127,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `NativeHistoryUnavailable` identifies one child/history read that can fail without invalidating
 the shared adapter; its stable `code` carries the exact local reason. The
 `NativeHistoryLimitExceeded` subtype adds `actual_bytes` and `limit_bytes` and fixes its code to
-cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"; `actual_bytes`; `limit_bytes`], mcp/src/agents_remember/errors.py:150-170). These types distinguish child-local acquisition/resource
+cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`], mcp/src/agents_remember/errors.py:198-203; mcp/src/agents_remember/errors.py:206-218). These types distinguish child-local acquisition/resource
 outcomes from malformed shared protocol and bridge-fatal transport failure.
 
 ## 260821-CLIVE-L2 Current Contract
@@ -136,9 +136,9 @@ The current source seams include `AgentsRememberError`, `AuthorityError`, `Confi
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `AgentsRememberError`, `AuthorityError`, `ConfiguredContractAuthorityError` at this ownership boundary. | L16-L17; L20-L26; L29-L39 | `mcp/src/agents_remember/errors.py` |
+| The current module exposes `AgentsRememberError`, `AuthorityError`, `ConfiguredContractAuthorityError` at this ownership boundary. | `AgentsRememberError`; `AuthorityError`; `ConfiguredContractAuthorityError` | mcp/src/agents_remember/errors.py:16-17; mcp/src/agents_remember/errors.py:20-26; mcp/src/agents_remember/errors.py:29-39 |
 
 ## Update History
 
@@ -159,7 +159,7 @@ The current source seams include `AgentsRememberError`, `AuthorityError`, `Confi
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 3 table citations and 6 prose citations; left the stale tokenizer-cache ownership claim unresolved as Tier 3.
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: body updated for the typed error this leaf added.
-  Documented cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:44-52) in Purpose and Logic as a build-integrity family
+  Documented cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:92-100) in Purpose and Logic as a build-integrity family
   — the vendored tiktoken vocabulary is absent or not the one shipped — raised instead of letting
   tiktoken download it on the server's import-time startup path, and added the invariant that it
   must stay a raise rather than become a download or a silent degrade. Repaired 2 citations into
@@ -171,7 +171,7 @@ The current source seams include `AgentsRememberError`, `AuthorityError`, `Confi
   converting `TimeoutExpired`/`OSError` `from error`
   cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205); the file is now 229 lines, so the
   old range was both stale and unanchored. (2) The native-history delta's own-file
-  cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"; `actual_bytes`; `limit_bytes`], mcp/src/agents_remember/errors.py:150-170):
+  cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`], mcp/src/agents_remember/errors.py:198-203; mcp/src/agents_remember/errors.py:206-218):
   inserting `TokenizerVocabularyError` above pushed `NativeHistoryUnavailable` to the current
   class range and `NativeHistoryLimitExceeded`, with its `code="materialization-limit"`,
   `actual_bytes` and `limit_bytes`, to the same exact source range. Added a `models/tokens.py` row for

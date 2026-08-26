@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,11 +35,11 @@ Runs altitude-aware acceptance for integration: ordinary leaves reuse their targ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Mode is full for branch-owning integration; leaves reuse closeout. | `quality_gate_mode` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:89-94 |
+| Mode is full for branch-owning integration; leaves reuse closeout. | `quality_gate_mode` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:96-101 |
 | Dry-run preview carries the organizational completion scope and fingerprint. | `quality_gate_preview` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:97-119 |
 | One exact full gate runs or reuses a matching certification. | `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:122-222 |
 | Failed final-leaf gate returns the cancel-repair handoff. | `organizational_quality_failure_payload` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:246-301 |
-| Certification binds completion fingerprint, commit, tree, and attestation. | `_certification`, `_require_matching_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:304-318; mcp/src/agents_remember/worktrees/integration/integration_quality.py:338-363 |
+| Certification binds completion fingerprint, commit, tree, and attestation. | `_certification`, `_require_matching_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:331-345; mcp/src/agents_remember/worktrees/integration/integration_quality.py:365-397 |
 
 ## Documentation References
 

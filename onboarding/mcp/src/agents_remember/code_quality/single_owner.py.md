@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/code_quality/single_owner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -113,9 +113,9 @@ The static single-owner census now recognizes `task_doc_publication.py` as the p
 removes the superseded organizational-completion writer entry. This is an authority-list correction,
 not a compatibility alias: current writes must route through the owners named by the census.
 
-| Finding | Source |
-| --- | --- |
-| The task-document writer allowlist names the extracted publication owner and no longer names organizational completion. | mcp/src/agents_remember/code_quality/single_owner.py:40-53 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The task-document writer allowlist names the extracted publication owner and no longer names organizational completion. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/src/agents_remember/code_quality/single_owner.py:40-53 |
 
 ## Update History
 

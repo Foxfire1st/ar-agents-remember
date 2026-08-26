@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_projection_scaling_cs6.py`     |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ No external documentation governs these repo-local projection scaling regression
 | The shared per-tick contract snapshot + stat-identity parse cache under test. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | The single per-tick build in `project_and_write` the full-tick regression instruments: one shared `ContractSnapshotCache`, then exactly one `state.read(...)` pass per tick. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | Projection store implements lifecycle-log caching and over-budget task-document payload warnings. | `project_and_write`; `_warn_if_task_documents_payload_over_budget` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275; mcp/src/agents_remember/serving/projections/projection_store.py:278-304 |
-| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | "_task_doc_cache = TaskDocumentPayloadCache()"; "def read_gates(coordination_root: Path"; "STATUS_PAYLOAD_TTL_SECONDS = 8.0"; "def _cached_local_status(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:26-26; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:32-32; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:105-105; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:382-382 |
+| Snapshot readers implement the shared task-document cache (`_task_doc_cache` + `_iter_task_document_payloads`), the single-read gate fold (`read_gates`), and the git-status TTL cache (`STATUS_PAYLOAD_TTL_SECONDS` / `_cached_local_status`). | "_task_doc_cache = TaskDocumentPayloadCache()"; "def read_gates(coordination_root: Path"; "STATUS_PAYLOAD_TTL_SECONDS = 8.0"; "def _cached_local_status(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:26-26; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:32-32; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:384-384 |
 
 ## Cross-Repo References
 
@@ -98,9 +98,9 @@ The scaling fixture publishes a locator and immutable manifest for every generat
 the shared projection pass. Scaling assertions therefore measure normal root-journal discovery
 rather than direct task-side contract scanning.
 
-| Finding | Source |
-| --- | --- |
-| Every scaling contract is made lifecycle-addressable during fixture construction. | mcp/tests/test_projection_scaling_cs6.py:630-644 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Every scaling contract is made lifecycle-addressable during fixture construction. | `_seed_contracts` | mcp/tests/test_projection_scaling_cs6.py:615-641 |
 
 ## Update History
 

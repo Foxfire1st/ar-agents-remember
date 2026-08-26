@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/task_leaf_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -41,11 +41,11 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Binding models and resolution establish the canonical leaf identity. | L14-L73 | [source](mcp/src/agents_remember/worktrees/task_leaf_binding.py) |
-| Parent row and child-source readers enforce exact regular-file authority. | L74-L157 | [source](mcp/src/agents_remember/worktrees/task_leaf_binding.py) |
-| Start admission rechecks the binding before reserving lifecycle authority. | L158-L202 | [source](mcp/src/agents_remember/worktrees/task_leaf_binding.py) |
+| Binding models and resolution establish the canonical leaf identity. | `LeafTaskBinding`; `resolve_leaf_task_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:24-40; mcp/src/agents_remember/worktrees/task_leaf_binding.py:43-71 |
+| Parent row and child-source readers enforce exact regular-file authority. | `_load_leaf_parent`; `_read_leaf_source` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:74-84; mcp/src/agents_remember/worktrees/task_leaf_binding.py:112-141 |
+| Start admission rechecks the binding before reserving lifecycle authority. | `require_current_start_task_binding` | mcp/src/agents_remember/worktrees/task_leaf_binding.py:158-191 |
 
 ## Cross-Repo References
 

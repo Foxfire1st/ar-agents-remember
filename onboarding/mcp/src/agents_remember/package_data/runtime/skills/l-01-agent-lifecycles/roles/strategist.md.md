@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,8 @@ After developer approval, the architect may dispatch `(sprint document, strategi
 reasoned topology choice or portfolio classification is absent/stale—not merely because a valid
 graph-less sprint has no persisted graph. The strategist is read-only: it analyzes portfolio
 dependencies, derives one effective priority per candidate, chooses either an evidence-backed
-explicit graph or the graph-less atomic-sequential default, and drafts the orchestration task.
+explicit graph or the graph-less source-pair-selected atomic-sequential default, and drafts the
+orchestration task.
 `message_parent` carries clarification or quo-vadis escalation to the architect, the architect rules
 the plan, and the orchestrator adopts it. The role never edits task docs, raises gates, mutates Git,
 or addresses an orchestrator occupant.
@@ -50,6 +51,13 @@ edit only the canonical role before synchronization.
 
 None recorded.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 When approved, the strategist is spawned by the orchestrator and hands its plan back for adoption.
@@ -58,7 +66,7 @@ When approved, the strategist is spawned by the orchestrator and hands its plan 
 | --- | --- | --- |
 | Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
 | The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:190-248 |
-| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:202-264 |
+| The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-589 |
 | The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
 | The plan-review criteria re-derive effective priority and validate either topology choice. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
 
@@ -86,8 +94,17 @@ the architect. The strategist classifies organizational versus atomic execution,
 topology choice, and records dependency meaning, blast radius, priority, blockers,
 reprioritization, and leaf moves in one canonical Judgment Register. When an explicit
 activity-on-node graph is justified, every selected relation cites evidence and its owning judgment
-id; otherwise the artifact records the reasoned graph-less atomic-sequential default. Large size
-alone never makes a master atomic.
+id; otherwise the artifact records the reasoned graph-less atomic-sequential default. In that
+default canonical order is an equal-priority tie-break and selecting another master may logically
+pause the former without integration, retirement, or a fabricated dependency. Large size alone
+never makes a master atomic.
+
+## IAS Graph-Less Activation Choice
+
+The synchronized strategist role keeps dependency planning separate from runtime selection.
+Source-pair activation exposes one atomic master at a time but preserves the paused master's task,
+branch, worktree, and journal. Queue or selector state cannot veto task authoring or substitute for
+an evidence-backed relation judgment.
 
 ## 260821-DAGQC-L4 Optional Graph And Adoption Sequence
 
@@ -103,6 +120,12 @@ If an explicit graph is later chosen, complete every master attachment first and
 `add_edge` examples already carried `judgmentId`; no example repair was invented.
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
+  synchronized strategist-role card.
+
+- 2026-08-26T05:20+02:00 — Reconciled the generated strategist role with graph-less source-pair
+  activation and pause-without-retirement semantics. Verification remains post-Dagger-owned.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: removed graph absence as a strategist trigger,
   recorded effective-priority override/default semantics, preserved graph-less planning, and made

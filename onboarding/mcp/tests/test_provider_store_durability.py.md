@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ it, having previously argued the second in prose:
    row no reader can read is *retained* by the reclaim rather than deleted by it, and the
    permanent-drop cost the rule is about never arises.
    cit:([`test_neither_reclaim_deletes_a_row_it_could_not_parse`], mcp/tests/test_provider_store_durability.py:480-508) is the assertion that holds
-   this: it appends `TORN_LINE` cit:([`TORN_LINE`], mcp/tests/test_provider_store_durability.py:117-117) to each log, runs each reclaim, and requires the torn line to
+   this: it appends `TORN_LINE` cit:([`TORN_LINE`], mcp/tests/test_provider_store_durability.py:118-118) to each log, runs each reclaim, and requires the torn line to
    still be present afterwards, on both logs, as subtests.
 2. **Nothing is decided on the presence of a row**, in two halves with a test each.
    cit:([`test_the_metrics_consumer_writes_nothing_back_to_the_log_it_reads`], mcp/tests/test_provider_store_durability.py:510-548) runs the real
@@ -129,7 +129,7 @@ and report the property held. It resolves the receiver first (`_provider_store_l
 via `PROVIDER_RECLAIMS`, L105-L108) so that a bare `.compact` on one of the six other stores in the
 tree that have one is not miscounted, and cit:([`_own_scope`], mcp/tests/test_provider_store_durability.py:126-135) refuses to descend into nested
 functions so a reference is never attributed to two enclosing scopes.
-cit:([`test_the_metrics_log_accepts_a_write_from_either_daemon`], mcp/tests/test_provider_store_durability.py:691-703) is the one that encodes the
+cit:([`test_the_metrics_log_accepts_a_write_from_either_daemon`], mcp/tests/test_provider_store_durability.py:704-716) is the one that encodes the
 two-process pairing: `record` (the dashboard's sampling loop) and `record_index_state` (the MCP's
 provider-setup thread) must both pass the writer check, because both really happen.
 cit:([`test_the_degradation_log_refuses_a_write_from_the_mcp_process`], mcp/tests/test_provider_store_durability.py:705-723) is the check that can
@@ -138,9 +138,9 @@ the append and the state document.
 
 **cit:([`ProviderReclaimShapeTests`], mcp/tests/test_provider_store_durability.py:726-801).** The reclaim's edges, including the failure mode this
 pair never had:
-cit:([`test_a_reclaim_with_no_log_yet_is_a_no_op`], mcp/tests/test_provider_store_durability.py:737-739) over both stores,
+cit:([`test_a_reclaim_with_no_log_yet_is_a_no_op`], mcp/tests/test_provider_store_durability.py:742-744) over both stores,
 cit:([`test_no_reclaim_on_either_log_ever_unlinks_it`], mcp/tests/test_provider_store_durability.py:733-789), and
-cit:([`test_the_reclaim_keeps_the_newest_rows_and_returns_how_many`], mcp/tests/test_provider_store_durability.py:791-801), which pins that
+cit:([`test_the_reclaim_keeps_the_newest_rows_and_returns_how_many`], mcp/tests/test_provider_store_durability.py:804-814), which pins that
 retention goes by age (`seq` 15-19 kept of 20) and is unchanged by this leaf.
 The unlink test drives **both stores through both paths**, which is what makes it worth its name:
 an empty log first, where `compact` returns at `if not kept` and `compact_events` at its row cap —
@@ -150,7 +150,7 @@ cannot catch: an `unlink` placed immediately before `rewrite_lines`' `os.replace
 `exists()` and indistinguishable from the inode swap the rewrite performs by design. Safety against
 that is a property of `append_line` re-opening under the lock per record, not of this test.
 
-**cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:804-813).** One test, and it is a boundary rather than a
+**cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:817-826).** One test, and it is a boundary rather than a
 behaviour: `PROVIDER_CASES == ("provider_metrics", "provider_degradation")`, it is **disjoint from
 `CASES`**, and both adapters declare `torn_line_policy == "tolerant"`. It imports `CASES` inside
 the test body rather than at module import.
@@ -296,8 +296,8 @@ below are the code each claim is about.
 | The two-process pairing asserted by `ProviderOwnershipTests`, as it actually runs: the dashboard loop that samples, records, evaluates degradation and then compacts. It is also the metrics reclaim's one call site, and it reaches it as `await asyncio.to_thread(metrics_store.compact)` — a reference rather than a call, which is why `provider_reclaim_call_sites` counts references. | "async def _metrics_loop(config: McpRuntimeConfig" | mcp/src/agents_remember/serving/_app_lifespan.py:76-76 |
 | The other half of that pairing: the MCP process's provider-setup thread appending index-lifecycle rows into the same log. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | The consumer that makes the metrics log's tolerant read structurally safe: the whole state machine is re-derived from a rolling window of live samples and nothing is consumed. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| The control-plane suite over the same instrument, whose `CASES` this file's `PROVIDER_CASES` is asserted to be disjoint from, and whose base-commit class this file's mirrors. | `MultiProcessDurabilityTests`; `HarnessVacuityGuardTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:339-386; mcp/tests/test_controlplane_store_durability.py:389-444 |
-| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the shared autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | `preserve_owned_mutable_state`; `ProviderOwnershipTests.setUp`; `reject_owned_global_state_leaks` | mcp/tests/test_provider_store_durability.py:104-104; mcp/tests/test_provider_store_durability.py:647-651; mcp/src/agents_remember/testing/pytest_bootstrap.py:60-69 |
+| The control-plane suite owns multi-process and base-sensitivity coverage; the focused measurement suite owns vacuity refusal. | `MultiProcessDurabilityTests`; `DurabilityMeasurementTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:125-211; mcp/tests/test_durability_measurement.py:34-99; mcp/tests/test_controlplane_store_durability.py:345-401 |
+| The `setUp` method on `ProviderOwnershipTests` explicitly contains its direct process-role declarations with `preserve_owned_mutable_state`; the shared autouse `reject_owned_global_state_leaks` guard is the suite-wide backstop. | `ProviderOwnershipTests`; `reject_owned_global_state_leaks` | mcp/tests/test_provider_store_durability.py:643-736; mcp/src/agents_remember/testing/pytest_bootstrap.py:60-70 |
 
 ## Cross-Repo References
 
@@ -308,7 +308,18 @@ are inside `agents-remember`.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## Evidence-Lane Ownership
+
+The deterministic forced append-versus-compaction proof is marked `evidence_integration`. The
+unforced sustained multi-process run, concurrent-exception run, and base-commit sensitivity
+control are marked `evidence_stress`. These markers classify when expensive proof runs without
+weakening any assertion: integration owns the bounded deterministic process interaction, while
+stress owns schedule-sensitive load and the historical control that deliberately exercises the
+known-bad tree.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Classified provider durability proofs into explicit integration and stress evidence lanes; the underlying loss, exception, and sensitivity assertions are unchanged.
 
 - 2026-08-24T21:23+02:00 — No content impact: the owned-state context manager moved from the test
   tree to `agents_remember.testing.global_state`; provider durability behavior is unchanged.
@@ -398,7 +409,7 @@ are inside `agents-remember`.
   shared instrument, but `CASES` stays the six control-plane stores and `PROVIDER_CASES` is its own
   disjoint set cit:([`PROVIDER_CASES`], mcp/tests/_store_durability.py:595-595), so widening the instrument cannot silently widen
   what `test_controlplane_store_durability.py` asserts — and `ProviderCaseRegistryTests`
-  cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:804-813)
+  cit:([`ProviderCaseRegistryTests`], mcp/tests/test_provider_store_durability.py:817-826)
   is the assertion that fails if that stops holding. **Recorded the tolerance argument
   structurally**, in the two halves the leaf's rule turns on: neither rewrite parses (both drop rows
   by age from raw lines, so a row no reader can read is retained rather than deleted — pinned by

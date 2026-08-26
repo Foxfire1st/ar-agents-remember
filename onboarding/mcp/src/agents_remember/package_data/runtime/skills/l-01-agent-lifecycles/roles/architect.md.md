@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,9 @@ the architect may wear backend/build hats only when no spawned role owns that wo
 owner-never-self-approves still holds.
 
 The strategist question is driven by missing or stale evidence-backed topology/classification
-reasoning, not by graph absence. A reviewed graph-less atomic-sequential choice is valid. When the
+reasoning, not by graph absence. A reviewed graph-less atomic-sequential activation choice is
+valid: canonical commanded-master order is an equal-priority tie-break and exact source-pair
+selection may pause a former master without integration or retirement. When the
 developer sanctions a strategist skip, the orchestrator inherits the complete reasoning duty and
 must author the reasoned plan plus explicit topology choice before manager dispatch; that choice
 may remain graph-less. Adding a master remains one atomic `attach_master` operation, with graph-node
@@ -94,7 +96,9 @@ membership equality required only when a graph exists.
 - Strategist dispatch and the tiny-work short root are explicit developer decisions proposed by
   the architect, never silent defaults.
 - Graph absence alone is neither a strategist trigger nor a defect. The accepted topology choice
-  may be the reviewed graph-less atomic-sequential default.
+  may be the reviewed graph-less source-pair-selected atomic-sequential default.
+- Task authoring is upstream of selector and queue state; valid planning changes invalidate and
+  rebuild affected disposable projections rather than waiting for runtime scheduling permission.
 - A sanctioned strategist skip transfers the full reasoned-plan and topology-choice duty to the
   orchestrator; it never permits an unreasoned implicit choice.
 - Escalation terminal custody belongs to the architect; the developer is an authority, not a row
@@ -105,14 +109,21 @@ membership equality required only when a graph exists.
 - Solo/flat hat-collapse is allowed only for the architect owner seat.
 - Spawned roles receive durable refs, not transcript state, and never become the architect.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-306 |
-| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | `Strategist pass — propose, never auto-run` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:30-44 |
-| Master attachment keeps graph-node equality conditional on graph presence. | `Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:51-71 |
-| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | `Sprint attach` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:107-116 |
+| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:33-33 |
+| Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:51-88 |
+| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:115-115 |
 | The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:99-99 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
@@ -159,11 +170,17 @@ topology choice may be a reviewed graph or reviewed graph-less atomic-sequential
 
 ## 260815-DAG-L13 Scheduling Default Doctrine
 
-The role now treats a graph-less sprint as the atomic-sequential default (one master fully
-integrates before the next starts), not as an error awaiting migration:
+The role treats a graph-less sprint as the atomic-sequential default, not as an error awaiting migration:
 `task_doc.author_execution_graph` owns graph edits, including the first bootstrap onto a
 graph-less sprint; the removed `migrate_execution_topology` is no longer named as the legacy
 cutover path.
+
+## IAS Source-Pair Activation Planning Boundary
+
+The synchronized role now defines that graph-less default through source-pair selection rather
+than full-integration serialization. Selecting another atomic master logically pauses the former
+without deleting its task, branch, worktree, or journal. Dependency truth remains an architect
+judgment, and otherwise-valid task authoring never consults selector or closeout-queue state.
 
 ## 260821-DAGQC-L4 Topology-Choice Closure
 
@@ -175,6 +192,13 @@ conditional on an existing graph; the Event Routing shorthand repeats that condi
 nature-ruling requirement. No mandatory-graph runtime or compatibility route is introduced.
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
+  synchronized architect-role card.
+
+- 2026-08-26T05:20+02:00 — Reconciled the generated architect role with source-pair activation,
+  pause preservation, and task-authoring primacy. Final citation ranges and verification remain
+  post-Dagger/closeout-owned.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the synchronized
   architect role to graph-optional planning, complete strategist-skip transfer, and conditional

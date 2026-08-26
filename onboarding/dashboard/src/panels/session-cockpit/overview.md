@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -416,6 +416,8 @@ The session-cockpit forcing suites hardened teardown: async `afterEach` clears f
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed the `VOCABULARIES` forcing range after test growth; Chats cockpit ownership and behavior are unchanged.
+
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: test `afterEach` hooks now flush virtualizer debounces (fake-timer clear + real-timer 200 ms settle). Verified at code commit e5cb139f.
 
 
@@ -465,7 +467,7 @@ The session-cockpit forcing suites hardened teardown: async `afterEach` clears f
   measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
   `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
   (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`; cit:(["mirror ⊇ served — the server grows", "served ⊇ mirror — the mirror declares", "fixture ⊇ mirror — THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)) plus runtime `VOCABULARIES`
-  assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:268-283) for the string unions `resolveJsonModule` widens to `string`. The
+  assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:287-423) for the string unions `resolveJsonModule` widens to `string`. The
   paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
   `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
   "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the

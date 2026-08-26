@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/closeout_input.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash |  `eb7ea60ab9919f009fef58f81afe5861aa1709da`|
-| lastVerifiedCommitDate |  2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -57,4 +57,5 @@ No meaningful cross-repository reference applies.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout input-model package relocation to `models.closeout.input`; normalization, leg planning, and retry validation behavior are unchanged.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata remains blank until closeout.

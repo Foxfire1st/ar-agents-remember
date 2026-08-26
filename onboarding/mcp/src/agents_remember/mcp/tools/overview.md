@@ -5,10 +5,22 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T08:55+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
+
+## IAS Frozen Worktree Payload Boundary
+
+Worktree payload builders forward one typed contract-addressed sync intent through the application
+layer and preserve its structured recovery guidance. They do not interpret a queue row as operation
+state, synthesize legacy journal input, or hide a retained conflict behind a generic failure.
+Selecting start/attach flows preserve the same `reconciling` evidence until exact source-pair
+admission completes.
+
+Task-document payloads remain independent of queue and activation state. A successful mutation may
+cause downstream projection invalidation/rebuild, but no payload builder turns scheduling state into
+authoring permission.
 
 ## Purpose
 
@@ -239,12 +251,12 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 | What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:113-134 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
-| Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:751-846 |
+| Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:958-1093 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
 | The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
-| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:10-10 |
+| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:13-13 |
 | The trusted terminal assignment response carries document-and-role binding plus private session correlation. | "class AttachTerminalSessionToTaskResponse" | mcp/src/agents_remember/models/terminal.py:32-44 |
 
 ## 260712-TRH-L4 Route Impact
@@ -359,9 +371,9 @@ Tool payload composition preserves the closed application result vocabulary. The
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle/adoption/legacy payloads. | L98-L105; L151-L169; L172-L205 | `mcp/src/agents_remember/mcp/tools/worktree.py` |
+| Lifecycle/adoption/legacy payloads. | `worktree_enclosure_adopt_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:101-108 |
 
 ## 260821-DAGQC-L2 Typed Memory-Quality Adapters
 
@@ -370,6 +382,9 @@ They validate public responses but do not interpret wait flags, rebuild scope, o
 capacity/poll failure translations.
 
 ## Update History
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS worktree-payload boundary label against the frozen
+  pass-13 candidate.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat quality branching with strict sync/start/poll adapters over the canonical controller. Verification metadata remains pinned until architect-owned closeout.
 

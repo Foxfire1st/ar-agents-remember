@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-26T08:30+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,105 +16,61 @@
 
 ## Purpose
 
-`sync.py` implements `worktree_sync` (issue #54): pull the moved official line
-into a live worktree mid-task, advancing the contract's recorded code/memory
-base pair atomically so a long-running task never bases on a stale pair and
-end-of-series integration stays `ff-only`.
+`sync.py` is the narrow public composition root for resumable, contract-addressed
+`worktree_sync`. It establishes the canonical worktree contract, refreshes remote evidence,
+serializes live mutation, and delegates either ordinary leaf/direct synchronization or
+atomic-series selection plus synchronization to their focused transaction owners.
 
 ## Code Commentary
 
 ### Logic
 
-`sync_result(args)` loads the contract, best-effort fetches each source
-branch's upstream (`_fetch_source_upstreams` — offline degrades to reported
-state and sync proceeds on local facts), and resolves the new official pair:
-the code source branch tip must be ledger-mapped in `memory.md` **at the
-official memory source branch tip** (`_consistent_pair_block`, read via
-`git show <branch>:memory.md`); a mid-cycle official line blocks with guidance
-to run carryover first. `_sync_code` merges the source branch into the code
-work branch inside the worktree (ff when unchanged, never rebase — work
-branches may be pushed); a conflicted merge is `merge --abort`ed and blocks
-with the conflict file list. `_sync_memory` fast-forwards the memory work
-branch when its HEAD is an ancestor of the official tip (the dominant
-pre-closeout parked-memory case — the parallel cycle's sidecars and ledger
-rows end up beneath the task's future work); local memory commits + a moved
-official line return `needs-review` with `memory_sync_choice` recoveries:
-`merge-memory` (merge attempted, conflicts — e.g. the append-ordered ledger —
-abort cleanly and block) or `skip-memory` (memory deferred to end-of-task
-carryover; only the code base advances). On success the contract's
-`code_base_commit`/`memory_base_commit` move to the new pair and a `sync_log`
-entry is appended, then the contract is rewritten. `dry_run` previews
-(`would-sync` / `would-fast-forward` / `would-merge`) without mutating.
+`sync_result(args)` loads the configured contract and applies the sync-worktree admission rule.
+Only leaf contracts require their ordinary code worktree to exist; a series transaction may create
+operation-owned temporary `.sync` worktrees instead. It rejects invalid resolution/memory-choice
+combinations before any fetch, selector, ref, or journal mutation.
 
-**The five helpers extracted in 260731-EFA-L2** (behaviour unchanged; every payload, summary
-string and exit code is the same):
+A dry run does not fetch, acquire integration/store locks, publish series selection, or create
+journal residue. It reports `skipped-preview` fetch evidence and asks the transaction driver for an
+exact read-only projection. A live call refreshes code and external-memory upstreams outside the
+integration-authority lock, then `_sync_live` re-reads and compares the complete contract under the
+lock. If it changed during refresh, the result is `sync-contract-changed-retry` with the current
+canonical contract path; the function never mutates against the stale object.
 
-- `_stop_before_sync(contract, *, code_tip, memory_tip, external, fetch)` — the result when no
-  branch should move: an inconsistent official pair, or `already-current`. Returns `None` to
-  proceed.
-- `_memory_sync_block(contract, code_sync, memory_sync, fetch)` — the blocked result when the
-  memory side could not be advanced on its own (`needs-review` or `conflicts`). Returns `None`
-  otherwise.
-- `_memory_branch_move(contract, args, *, worktree_head, tip)` — the **decision**, as a string:
-  `fast-forward` when the worktree head is an ancestor of the tip, `merge` when the caller chose
-  `memory_sync_choice="merge-memory"`, else `needs-review`. Deciding once is what lets the dry-run
-  path report `would-<move>` from the same rule the real path executes, instead of duplicating the
-  ancestry test.
-- `_move_memory_branch(worktree, source_branch, *, move, tip)` — performs the decided move. A
-  failed fast-forward leaves nothing to abort; a failed merge does.
-- `_aborted_merge_state(worktree, result)` — collect the conflicted paths and `merge --abort`, so
-  the worktree is never left half-merged. **Shared by the code and memory paths**, which is why
-  the two now report conflicts identically by construction.
+Under authority, series contracts delegate to
+`sync_selected_atomic_series_under_authority`: the source-pair selector becomes `reconciling`, the
+exact pair is reconciled, and only a proven-current candidate becomes `active`. Leaf/direct
+contracts delegate to `sync_contract_under_authority`. Durable operation phase, retained conflicts,
+continue/cancel, exact rollback, ledger-pair admission, and contract base updates belong to the
+focused sync transaction modules rather than this facade.
 
 ### Conventions
 
-States are data, never exceptions: `synced`, `would-sync`, `already-current`,
-and blocked payloads with `recovery_guidance` recovery args mirror the start
-module's blocked-state pattern.
+This file deliberately contains no merge algorithm, journal parser, selector fallback, or queue
+reader. Public expected failures (`ContractError`, `OSError`, `RuntimeError`, `UnicodeError`, and
+`ValueError`) are translated at one boundary into `sync-operation-refused` with the observed fetch
+evidence. Transaction-specific blocked/recovery states remain typed data returned by their owner.
 
-**The next-move builder is `recovery_guidance`, not `next_guidance` (260731-EFA-L4).**
-`_memory_sync_block`'s `needs-review` branch is this module's only next-move block, and it
-calls `guidance.recovery_guidance("choose_memory_sync_recovery", tool="worktree_sync",
-args=contract_next_args(contract), required_args=["memory_sync_choice"])`. The emitted keys
-and their order are byte-identical to what `next_guidance` produced — `nextOperation`,
-`nextTool`, `nextArgs`, `nextRequiredArgs` — so nothing on the wire moved. The split is in
-the *type*: `next_guidance` is now narrowed to the phase machine's `NextOperation` /
-`NextTool` `Literal`s, which `models.worktree.WorktreeSummary` imports, and
-`choose_memory_sync_recovery` is deliberately not a member of them. It lives in
-`RecoveryOperation` — the vocabulary for payloads that are a *block*, not a lifecycle
-phase. This result is rendered as a `FlexibleToolResponse` and never reaches
-`WorktreeSummary`, so widening the phase vocabulary to hold it would have put "blocked on a
-moved official memory line" into the set the context packet's `nextOperation` claims to be.
-
-**One bounded exception since 260731-EFA-L3.** `run_git` is now
-`agents_remember.kernel.git_command.run_git` (the module-local copy in `modules.git` is
-gone), and it always applies a timeout — the default local class
-`GIT_LOCAL_TIMEOUT_SECONDS = 300`, which every `run_git` call in this file takes because
-none passes `timeout=`. The only `except` in the module is `except LedgerError` around
-`parse_ledger_text` in `_consistent_pair_block`, so a git command that outruns 300s raises
-`subprocess.TimeoutExpired` out of `sync_result` rather than returning a blocked state.
-That is a change of failure *shape*, not of reachability: the old local runner passed no
-`timeout=` at all, so the same wedged `merge`/`show` hung the MCP tool call forever
-instead. The bound names the slowest legitimate `merge`/`status` over a large tree, so
-tripping it means git is stalled — typically on an index lock another process holds — not
-that a real sync was cut short. Every state and payload the sync itself produces is
-unchanged.
+Fetch is evidence refresh, not mutation authority: failure is reported per side and local protected
+refs are re-read under the integration lock. Resolution uses `resolution_action` (`continue` or
+`cancel`) on the same contract-addressed tool; no public operation id is accepted.
 
 ### Invariants And Boundaries
 
-- The base pair moves together or not at all (modulo the explicit
-  `skip-memory` choice, which advances code only and defers memory to
-  carryover).
-- The ledger is never auto-merged; conflicted merges always abort.
-- A conflicted code merge must leave the worktree at its pre-merge HEAD.
-- The sync mutates only the task's own worktrees and contract — official
-  branches are never moved here (that is carryover's and integration's job).
+- Input validation precedes fetch, selector publication, journal writes, and Git mutation.
+- Preview is observation-only and cannot claim selection or operation lifecycle authority.
+- The contract is re-read under the source-pair integration lock after remote refresh.
+- A genuine merge conflict is retained in the reported worktree for agent resolution; it is not
+  aborted or converted into queue state.
+- Atomic-series exposure follows successful exact reconciliation; selection never comes from task
+  prose, queue order, or a compatibility reader.
+- Expected contract/source failures return a controlled result rather than escaping the public MCP
+  boundary.
 
 ### Todos
 
-The freshness payload produced by `guidance.base_freshness` is the designed
-message for a future change-notification ping (transport deferred until the
-GitHub #53 notification plumbing settles; follow-up issue filed in sub-task E).
+Reconcile exact source line ranges and any Dagger-driven state-vocabulary changes before final
+verification metadata is stamped.
 
 ## Docs References
 
@@ -128,13 +84,12 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Detection surface: `worktree_status`'s fetch-free freshness block in `base_freshness` recommends this tool. | `base_freshness` | mcp/src/agents_remember/worktrees/modules/guidance.py:319-369 |
-| The contract declares `sync_log` as one entry per `worktree_sync` that advanced the recorded base pair. | `sync_log`; "one entry per worktree_sync"; "recorded base pair" | mcp/src/agents_remember/worktrees/worktree_contract.py:279-280; mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
-| The sync module persists the result of each base-pair advance. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:36-119 |
-| Upstream fetch + ref helpers come from the freshness kernel through `upstream_ref` and `fetch_remote`. | `upstream_ref`; `fetch_remote` | mcp/src/agents_remember/kernel/git_freshness.py:55-64; mcp/src/agents_remember/kernel/git_freshness.py:67-77 |
-| The `run_git` every merge/ff/show in this module calls, and the `GIT_LOCAL_TIMEOUT_SECONDS` default that bounds them. | `run_git`; `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| `recovery_guidance` and the `RecoveryOperation` / `RecoveryTool` vocabularies this module's block belongs to, kept separate from the phase machine's `next_guidance`. | `recovery_guidance`; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:37-54; mcp/src/agents_remember/worktrees/modules/guidance.py:146-160 |
-| Sync behavior coverage: ff pair, mid-cycle block, conflicts, choices, dry-run, in `WorktreeSyncTests`. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:111-244 |
+| The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind. | `sync_result`; `_sync_live` | mcp/src/agents_remember/worktrees/modules/sync.py:29-68; mcp/src/agents_remember/worktrees/modules/sync.py:71-100 |
+| Shared upstream refresh reports per-side evidence without treating the remote as local mutation authority. | `fetch_source_upstreams` | mcp/src/agents_remember/worktrees/sync_source_refresh.py:9-29 |
+| Atomic-series sync binds source-pair selection to reconciliation-before-exposure. | `sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:113-136 |
+| Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100 |
+| Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295; mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
+| Focused integration tests exercise public preview, retained conflicts, continuation, cancellation, and recovery. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:176-548 |
 
 ## Cross-Repo References
 
@@ -148,6 +103,15 @@ No meaningful cross-repo references found.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+
+- 2026-08-26T08:30+02:00 — Rebounded source-refresh and public sync-suite citations to the frozen
+  file extents; behavior claims are unchanged.
+
+- 2026-08-26T03:37+02:00 — Replaced the obsolete abort-on-conflict/local-merge description with
+  the current public facade: mutation-free preview, pre-lock source refresh, post-refresh contract
+  reread, series selection plus sync, ordinary resumable sync, retained conflicts, explicit
+  continue/cancel, and one controlled expected-failure boundary. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

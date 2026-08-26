@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_leaf_ref_resolution.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ contract persisted with a legacy stem-shaped id — the pre-heal on-disk state) 
 | Resolver under test. | `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Walk-free `load_contract` and the `heal_contract_leaf_ids` sweep under test. | `load_contract`; `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:438-471; mcp/src/agents_remember/worktrees/worktree_contract.py:480-555 |
 | The `heal-leaf-ids` CLI seam driven end to end via `main`. | `main` | mcp/src/agents_remember/worktrees/modules/cli.py:192-199 |
-| Task document writer used to create representative task trees. | `write_task_doc` | mcp/src/agents_remember/tasks/store.py:36-37 |
+| Task document writer used to create representative task trees. | `write_task_doc` | mcp/src/agents_remember/tasks/store.py:107-108 |
 
 ## Update History
 

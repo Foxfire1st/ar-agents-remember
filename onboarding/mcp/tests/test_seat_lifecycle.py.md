@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -143,9 +143,9 @@ The current forcing seams include `test_manager_retires_own_worker`, `test_manag
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_manager_retires_own_worker`, `test_manager_retires_own_reviewer`, `test_manager_refused_against_other_masters_worker`, `test_manager_refused_against_a_manager_seat`. | L210-L213; L215-L218; L220-L224; L226-L230 | `mcp/tests/test_seat_lifecycle.py` |
+| The current test source exercises `test_manager_retires_own_worker`, `test_manager_retires_own_reviewer`, `test_manager_refused_against_other_masters_worker`, `test_manager_refused_against_a_manager_seat`. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:202-266 |
 
 ## Update History
 

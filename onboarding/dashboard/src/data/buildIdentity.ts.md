@@ -6,8 +6,8 @@
 | path | `dashboard/src/data/buildIdentity.ts` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`|
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ proven by repository source and direct consumers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Declares the optional server fingerprint consumed by the comparator. | `ServingBuild` | dashboard/src/types/projection.ts:431-437 |
+| Declares the optional server fingerprint consumed by the comparator. | `ServingBuild` | dashboard/src/types/projection.ts:505-511 |
 | Renders the comparison and owns the explicit reload action. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:923-953 |
 | Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 

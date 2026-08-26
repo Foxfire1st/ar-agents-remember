@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-24T13:43+02:00                        |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -156,18 +156,18 @@ None.
 
 No Domain Documentation sources are configured for this repository-internal persisted model.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | L218-L275 | [document.py](mcp/src/agents_remember/tasks/document.py) |
-| Graph validation relies on structural node uniqueness and resolves ownership/endpoints explicitly. | L311-L370 | [document.py](mcp/src/agents_remember/tasks/document.py) |
-| Focused proof covers both comparison directions, set/dict insertion directions, and equal/unequal node identities. | L237-L265 | [test_task_execution_topology_segments.py](mcp/tests/test_task_execution_topology_segments.py) |
-| Topology callers now project `node.ref` explicitly when they mean master ownership. | L116-L151; L748-L759 | [test_task_execution_topology.py](mcp/tests/test_task_execution_topology.py) |
+| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
+| Graph validation relies on structural node uniqueness and resolves ownership/endpoints explicitly. | `resolve_graph_endpoint`; `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:309-330; mcp/src/agents_remember/tasks/document.py:333-427 |
+| Focused proof covers both comparison directions, set/dict insertion directions, and equal/unequal node identities. | `test_nodes_compare_structurally_without_cross_type_aliases` | mcp/tests/test_task_execution_topology_segments.py:237-265 |
+| Topology callers now project `node.ref` explicitly when they mean master ownership. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:116-217 |
 
 ## L23 Final Candidate Disposition
 

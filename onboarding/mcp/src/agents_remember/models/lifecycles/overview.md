@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ None.
 | --- | --- | --- |
 | Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-35 |
 | Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
-| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:246-291; mcp/src/agents_remember/models/lifecycles/operation.py:394-409 |
+| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
 
 ## Docs References
 
@@ -91,11 +91,11 @@ The journal record is the durable authority after scheduling claim transfer. Ret
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Current journal record and projection. | L295-L315; L324-L389; L652-L669 | `mcp/src/agents_remember/models/lifecycles/operation.py` |
-| Enclosure address models. | L21-L40; L43-L109 | `mcp/src/agents_remember/models/lifecycles/enclosure.py` |
-| Worker termination evidence. | L12-L53 | `mcp/src/agents_remember/models/lifecycles/termination.py` |
+| Current journal record and projection. | `_require_quality_certification_memory`; `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:281-297; mcp/src/agents_remember/models/lifecycles/operation.py:300-308; mcp/src/agents_remember/models/lifecycles/operation.py:311-320 |
+| Enclosure address models. | `EnclosurePublicationState`; `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:20-25; mcp/src/agents_remember/models/lifecycles/enclosure.py:28-42 |
+| Worker termination evidence. | `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` | mcp/src/agents_remember/models/lifecycles/termination.py:12-33; mcp/src/agents_remember/models/lifecycles/termination.py:36-53 |
 
 ## 260821-CLIVE Final Door, Journal, And Enclosure Models
 
@@ -118,7 +118,13 @@ irreversible boundaries, recovery, legacy proof, mutation history, and worker au
 preserves one strict journal-owned model surface; it does not add permissive readers, fallback
 state, or queue-derived lifecycle evidence.
 
+## 2026-08-26 Shared Operation And Control Vocabulary
+
+`operation_kinds.py` is the single model owner for both `LifecycleOperationKind` and the closed `LifecycleControlAction` set. Worktree request DTOs, lifecycle controls, and public projections consume those types rather than declaring action literals at an effect layer. This keeps exhaustive request/response typing beside the lifecycle model vocabulary.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Added the centralized operation/control-action vocabulary boundary and refreshed exact lifecycle model evidence anchors.
 
 - 2026-08-25T17:21+02:00 — Reconciled the final lifecycle validator and enclosure ownership split.
   Verification remains closeout-owned.

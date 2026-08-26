@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -48,9 +48,9 @@ The current forcing seams include `test_source_write_and_operation_authority_cov
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_source_write_and_operation_authority_cover_exact_refusal_edges`, `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`, `test_resolves_default_super_and_every_active_series_on_both_repositories`, `test_active_atomic_task_stays_protected_without_or_after_its_series_contract`. | L87-L144; L146-L203; L205-L223; L225-L238 | `mcp/tests/test_integration_branch_authority.py` |
+| The current test source exercises `test_source_write_and_operation_authority_cover_exact_refusal_edges`, `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`, `test_resolves_default_super_and_every_active_series_on_both_repositories`, `test_active_atomic_task_stays_protected_without_or_after_its_series_contract`. | `test_source_write_and_operation_authority_cover_exact_refusal_edges`; `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`; `test_resolves_default_super_and_every_active_series_on_both_repositories`; `test_active_atomic_task_stays_protected_without_or_after_its_series_contract` | mcp/tests/test_integration_branch_authority.py:89-146; mcp/tests/test_integration_branch_authority.py:148-217; mcp/tests/test_integration_branch_authority.py:219-237; mcp/tests/test_integration_branch_authority.py:239-252 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -63,6 +63,8 @@ Forces the canonical protected integration-ref owner, repository confinement, ba
 
 - Only the integration authority may move protected refs.
 - Queue state and caller-supplied repository paths do not grant ref authority.
+- `require_sync_worktree` admits canonical series authority for the journaled selecting sync path,
+  while direct unjournaled integration remains refused.
 
 
 ## PDLS Reconciliation
@@ -72,6 +74,10 @@ Integration authority tests now exercise delegated topology-collision and delete
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Updated the exact authority edge: canonical series sync is admitted,
+  but direct unjournaled protected-ref integration remains refused. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

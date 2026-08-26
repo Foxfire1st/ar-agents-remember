@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -178,7 +178,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | "def build_route_indexes("; "def route_index_source_snapshot(" | mcp/src/agents_remember/kernel/route_index.py:184-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1161-1161; mcp/tests/test_worktree_support_tests_2.py:86-86; mcp/tests/test_worktree_support_tests_2.py:130-130; mcp/tests/test_worktree_support_tests_2.py:564-564|
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1182-1182; mcp/tests/test_worktree_support_tests_2.py:86-86; mcp/tests/test_worktree_support_tests_2.py:130-130; mcp/tests/test_worktree_support_tests_2.py:565-565|
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_reopen_guards.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ the last case also proves the contract and leaf task document remain byte-identi
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Incomplete, non-leaf, and surviving-worktree contracts refuse reopen. | `ReopenGuardTests` | mcp/tests/test_task_reopen_guards.py:15-44 |
-| Moved super ancestry refuses before contract or task-document mutation. | `test_moved_super_refuses_before_reopen_mutates_task_state` | mcp/tests/test_task_reopen_guards.py:46-67 |
+| Moved super ancestry refuses before contract or task-document mutation. | `test_moved_super_refuses_before_reopen_mutates_task_state` | mcp/tests/test_task_reopen_guards.py:73-92 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -52,6 +52,8 @@ Forces reopen refusal for stale lineage, nonterminal or inconsistent contract st
 - Refusals name the exact transition needed instead of inventing compatibility behavior.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No behavior change: reopen guard fixtures now import from `task_reopen_test_support`; guard and refusal semantics are unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

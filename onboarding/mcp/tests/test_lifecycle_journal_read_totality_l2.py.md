@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_journal_read_totality_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_registered_public_reader_refuses_empty_proven_claim_timestamp`, `test_strict_journal_failure_status_stale_control_and_context_are_total`, `test_unreadable_contract_public_start_status_and_real_context_use_locator_journal`, `test_deleted_contract_real_context_retains_exact_root_journal_operation` as its principal forcing seams. | L186-L241; L246-L301; L306-L373; L377-L419 | `mcp/tests/test_lifecycle_journal_read_totality_l2.py` |
+| The file defines `test_registered_public_reader_refuses_empty_proven_claim_timestamp`, `test_strict_journal_failure_status_stale_control_and_context_are_total`, `test_unreadable_contract_public_start_status_and_real_context_use_locator_journal`, `test_deleted_contract_real_context_retains_exact_root_journal_operation` as its principal forcing seams. | `test_registered_public_reader_refuses_empty_proven_claim_timestamp`; `test_strict_journal_failure_status_stale_control_and_context_are_total`; `test_unreadable_contract_public_start_status_and_real_context_use_locator_journal`; `test_deleted_contract_real_context_retains_exact_root_journal_operation` | mcp/tests/test_lifecycle_journal_read_totality_l2.py:190-243; mcp/tests/test_lifecycle_journal_read_totality_l2.py:246-301; mcp/tests/test_lifecycle_journal_read_totality_l2.py:304-370; mcp/tests/test_lifecycle_journal_read_totality_l2.py:373-416 |
 
 ## Cross-Repo References
 

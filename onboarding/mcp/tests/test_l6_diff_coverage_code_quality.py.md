@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_l6_diff_coverage_code_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,7 @@ Diff-coverage and wrapper failure semantics remain unchanged.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the CRAP-calculator import relocation used by mocks; the rail and threshold assertions are unchanged.
 - 2026-08-24T21:23+02:00 — Added the typed admission precondition.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.

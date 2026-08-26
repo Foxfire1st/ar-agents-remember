@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/detail-panel/model.ts`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ configured for this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The reader-doc resolution entry points. | `displayedReaderDoc`; `displayedLeafDoc` | dashboard/src/panels/detail-panel/model.ts:89-154 |
-| The master/series view assembly. | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `subTaskKey` | dashboard/src/panels/detail-panel/model.ts:193-208; dashboard/src/panels/detail-panel/model.ts:211-214; dashboard/src/panels/detail-panel/model.ts:221-223 |
+| The master/series view assembly. | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `subTaskKey` | dashboard/src/panels/detail-panel/model.ts:196-213; dashboard/src/panels/detail-panel/model.ts:216-219; dashboard/src/panels/detail-panel/model.ts:226-228 |
 
 ## Cross-Repo References
 

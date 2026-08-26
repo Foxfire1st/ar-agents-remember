@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,30 +16,32 @@
 
 ## Purpose
 
-Owns closeout-queue store confinement, state/WAL validation, sprint-status crash recovery, request
-idempotence, and closed-sprint task-fact refusal.
+Owns confinement and atomic persistence for the two-state disposable closeout projection store:
+`invalid-empty` after invalidation and `valid-built` only after a current-source rebuild.
 
 ## Code Commentary
 
 ### Logic
 
-The suite injects read/write failures and pre/post-publication crash cuts around the canonical
-state and one-record pending file. It proves exact revision/fingerprint matching, survival-record
-requirements, no-op receipt persistence, and deterministic Completed/reopened recovery.
+The suite forces absent, malformed, nonregular, stale-source, terminal-empty, and oversized inputs.
+It proves that invalidation is durable and idempotent, malformed artifacts are recoverably replaced
+without a compatibility reader, stale builders cannot publish, and an exact current-source build is
+atomically exposed with bounded members and diagnostics.
 
 ### Invariants And Boundaries
 
 - Queue paths remain task-root confined.
-- A pending record cannot reconstruct a missing noninitial survival state.
-- Successful no-ops consume their request id, preventing a later retry from becoming a mutation.
+- The only persisted service conditions are `invalid-empty` and `valid-built`.
+- Invalidation never retains candidates; publication requires exact source identity and cannot
+  expose an off-side or stale build.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pending state must follow exact revision and bytes. | `test_pending_must_follow_current_revision_and_exact_state` | mcp/tests/test_closeout_queue_store.py:149-174 |
-| Sprint status recovers on both sides of state publication. | `test_pending_status_recovers_before_and_after_state_publication` | mcp/tests/test_closeout_queue_store.py:183-194 |
-| No-op receipts retain exact replay semantics. | `test_retry_receipt_is_persisted_for_noop_and_reuse_is_exact` | mcp/tests/test_closeout_queue_store.py:217-244 |
+| Store paths are confined and persisted conditions are exactly valid-built or invalid-empty. | `test_paths_are_confined_and_persisted_conditions_are_exactly_two` | mcp/tests/test_closeout_queue_store.py:80-92 |
+| Invalidation is idempotent and malformed artifacts are overwritten without legacy parsing. | `test_absent_invalidation_publishes_and_reports_persisted_empty`; `test_existing_invalid_empty_is_idempotent`; `test_malformed_artifact_is_recoverably_overwritten_without_legacy_parse` | mcp/tests/test_closeout_queue_store.py:94-99; mcp/tests/test_closeout_queue_store.py:101-105; mcp/tests/test_closeout_queue_store.py:107-120 |
+| Stale builders never publish; terminal empty remains valid-built and persisted collections stay bounded. | `test_stale_off_side_builder_never_publishes`; `test_terminal_empty_is_valid_built_not_a_third_condition`; `test_every_persisted_and_wire_collection_is_capped` | mcp/tests/test_closeout_queue_store.py:163-171; mcp/tests/test_closeout_queue_store.py:190-211; mcp/tests/test_closeout_queue_store.py:213-241 |
 
 ## Current Contract — 260821 CLIVE Final
 

@@ -12,32 +12,38 @@
   "coveredFiles": [
     "mcp/src/agents_remember/models/structural/__init__.py",
     "mcp/src/agents_remember/models/structural/agent.py",
+    "mcp/src/agents_remember/models/structural/atomic_series_activation.py",
     "mcp/src/agents_remember/models/structural/gates.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 3,
-    "fileSidecars": 3,
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
     "childRoutes": 0
   },
   "routingTerms": [
+    "activation",
     "agent",
     "agents",
     "agents_remember",
+    "atomic",
+    "atomic_series_activation",
     "gates",
     "init",
     "init__",
     "mcp",
     "models",
     "remember",
+    "series",
     "src",
     "structural"
   ],
   "hotPath": {
-    "summary": "Read `agent.py` for dispatch/message/retire/rename schemas and `gates.py` for structural delegated gate schemas plus the deliberately separate internal response family.",
+    "summary": "Read `agent.py` for dispatch/message/retire/rename schemas, `gates.py` for structural delegated gate schemas plus the deliberately separate internal response family, and `atomic_series_activation.py` for the closed selector/archive vocabulary.",
     "candidateHints": [
       "mcp/src/agents_remember/models/structural",
       "mcp/src/agents_remember/models/structural/__init__.py",
       "mcp/src/agents_remember/models/structural/agent.py",
+      "mcp/src/agents_remember/models/structural/atomic_series_activation.py",
       "mcp/src/agents_remember/models/structural/gates.py"
     ],
     "anchorHints": [
@@ -45,13 +51,16 @@
       "__init__",
       "agent.py",
       "agent",
+      "atomic_series_activation.py",
+      "atomic_series_activation",
       "gates.py",
       "gates",
       "route-local-overview",
       "mcp/src/agents_remember/models/structural/",
       "mcp/src/agents_remember/models/structural/overview.md",
       "models/overview.md",
-      "a9d50e08b830c4a34c14e495706c19fe697f47ab",
+      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "TaskDocumentRef",
       "serving/structural_seats.py",
       "application/structural/",
       "test_agent_doctrine_contains_no_control_plane_address_instructions",
@@ -60,6 +69,8 @@
       "__init__.py.md",
       "models/structural/agent.py",
       "agent.py.md",
+      "models/structural/atomic_series_activation.py",
+      "atomic_series_activation.py.md",
       "models/structural/gates.py",
       "gates.py.md",
       "caller",
@@ -74,7 +85,7 @@
       "onboardingRoute",
       "parentOverview",
       "lastUpdated",
-      "T09",
+      "T08",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "DTOs",
@@ -83,12 +94,7 @@
       "test_agent_doctrine_plane_identity",
       "test_structural_agent_tools",
       "init__",
-      "DAG",
-      "L16",
-      "a9d50e08",
-      "T14",
-      "T06",
-      "EFA"
+      "T06"
     ]
   },
   "fallback": {

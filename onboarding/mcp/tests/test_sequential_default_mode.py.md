@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_sequential_default_mode.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,39 +16,66 @@
 
 ## Purpose
 
-Force the 260815-DAG-L13-R1 scheduling semantics: a sprint without an `executionGraph` runs the
-atomic-sequential default — every commanded master executes atomically regardless of declared
-nature, and at most one master is in flight through the series landing lane.
+Force graph-less atomic execution nature while keeping durable master work independent from
+source-pair activation. Multiple non-terminal series contracts may coexist; one strict selector
+decides which master may expose implementation for a protected code/external-memory pair.
 
 ## Code Commentary
 
 ### Logic
 
 `SchedulingModeTests` proves mode resolution (graph ⇒ dag, no graph ⇒ atomic-sequential, non-sprint
-refused), the effective-nature matrix, and lane ownership as the stored fact of a live
-(non-terminal) series contract. `SequentialLaneTests` forces the series-bootstrap lane block: a
-second commanded master's bootstrap returns the blocked `sequential-lane-owned` result naming the
-owner and legal next operations, the block is rechecked under the bootstrap lock, lane-resolution
-failure fails closed, a terminal stale series artifact is replaced rather than honored, a
-standalone master has no lane contention, and manager dispatch surfaces the block as a structural
-outcome.
+refused), the effective-nature matrix, and that activation remains a separate authority even under
+an authored DAG. `AtomicSeriesSelectionTests` proves a second bootstrap selects the new master and
+logically pauses the first without retiring its branches/contract; a pre-publication bootstrap
+failure preserves the former selection; a post-publication sync refusal keeps the requested master
+`reconciling`; retry resumes it to `active`; terminal stale artifacts remain replaceable; standalone
+selection binds the repository-default pair; leaf construction selects its parent first; and
+manager dispatch selects the requested master before spawning.
 
 ### Invariants And Boundaries
 
 - Tests construct only disposable coordination roots; the deployed coordinator is never written.
-- Lane ownership is asserted through stored series contracts, not request data.
+- Contract presence never proves selection. Assertions read the strict source-pair activation
+  snapshot and preserve both masters' durable work.
+- Failure timing is explicit: before contract publication leaves selection unchanged; after
+  selection publication leaves durable `reconciling` evidence for exact retry/cancel.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Mode resolution and the effective-nature matrix forcing. | `SchedulingModeTests` | mcp/tests/test_sequential_default_mode.py:118-189 |
-| The lane block, stale-artifact replacement, and dispatch surfacing forcing. | `SequentialLaneTests` | mcp/tests/test_sequential_default_mode.py:191-350 |
-| The scheduling-mode resolver under test. | `resolve_scheduling_mode`; `effective_execution_nature`; `sequential_lane_owner` | mcp/src/agents_remember/worktrees/scheduling_mode.py:46-156 |
-| The lane-blocked bootstrap under test. | `_sequential_lane_block` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:269-312 |
-| The dispatch structural-outcome surfacing under test. | `_manager_series_bootstrap_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:512-576 |
+| Mode/effective-nature and activation-independence forcing. | `SchedulingModeTests` | mcp/tests/test_sequential_default_mode.py:122-190 |
+| Selection switch, pause, failure timing, retry, standalone, leaf, and dispatch forcing. | `AtomicSeriesSelectionTests` | mcp/tests/test_sequential_default_mode.py:184-348 |
+| Scheduling mode deliberately owns no series-contract lane reader. | `resolve_scheduling_mode`; `effective_execution_nature` | mcp/src/agents_remember/worktrees/scheduling_mode.py:45-72; mcp/src/agents_remember/worktrees/scheduling_mode.py:93-116 |
+| Series bootstrap selects and reconciles through the activation transaction. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:216-286 |
+| Structural implementation admission selects before spawn. | `_implementation_series_admission_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:521-603 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned scheduling suite.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for this changed
+  graph-less scheduling suite card.
+
+- 2026-08-26T08:25+02:00 — Rebound the atomic-series selection class to its frozen source range;
+  pause/reselection semantics are unchanged.
+
+- 2026-08-26T03:37+02:00 — Replaced global sequential-lane forcing with independent source-pair
+  selection, logical pause, reconciling retry, multiple-live-series preservation, and
+  reconciliation-before-leaf/dispatch exposure. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

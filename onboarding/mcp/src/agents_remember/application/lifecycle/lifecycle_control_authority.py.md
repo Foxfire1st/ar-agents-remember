@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleCallerError`; `resolve_lifecycle_caller`; `completed_disposition_owner` as its public seam. | L14-L20; L23-L51; L54-L65 | `mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py` |
+| The module defines `LifecycleCallerError`; `resolve_lifecycle_caller`; `completed_disposition_owner` as its public seam. | `LifecycleCallerError`; `resolve_lifecycle_caller`; `completed_disposition_owner` | mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py:14-20; mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py:23-51; mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py:54-65 |
 
 ## Cross-Repo References
 

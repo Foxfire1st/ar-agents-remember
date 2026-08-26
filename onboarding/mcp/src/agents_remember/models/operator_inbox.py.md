@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/operator_inbox.py`      |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ listed as Domain Documentation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The response models cover post, poll, and consume payloads and reuse the inbox state literal. | "class OperatorInboxPostResponse(ToolResponse):"; "class OperatorInboxPollResponse(ToolResponse):"; "class OperatorInboxConsumeResponse(ToolResponse):"; "OperatorInboxState = Literal[" | mcp/src/agents_remember/models/operator_inbox.py:10-10; mcp/src/agents_remember/models/operator_inbox.py:54-54; mcp/src/agents_remember/models/operator_inbox.py:82-82; mcp/src/agents_remember/models/operator_inbox.py:92-92 |
-| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:53-53; mcp/src/agents_remember/models/tools/tool_registry.py:216-216 |
+| The registry maps the three `operator_inbox_*` tools to these response models. | "from agents_remember.models.operator_inbox import ("; "\"operator_inbox_post\": OperatorInboxPostResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:54-54; mcp/src/agents_remember/models/tools/tool_registry.py:222-222 |
 
 ## Cross-Repo References
 

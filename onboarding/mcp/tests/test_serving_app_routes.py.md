@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_app_routes.py`     |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ shape, optionally protocol-backed). `_write_task_documents` writes a real master
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The routes and handlers under test. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:115-115|
+| The routes and handlers under test. |"async def stream_events"|mcp/src/agents_remember/serving/_app_common.py:116-116|
 | The happy paths these arms sit beside. | `AppTests`, `TerminalWebSocketTests` | mcp/tests/test_serving.py:480-554; mcp/tests/test_terminal_ws.py:422-449 |
 | The same app's background loops and lifespan wiring. | `AgentNotifierLoopTests` | mcp/tests/test_serving_app_background_loops.py:220-272 |
 | Helper-level arms of the same module. | `ImageSniffTests` | mcp/tests/test_serving_helper_behaviour.py:100-139 |

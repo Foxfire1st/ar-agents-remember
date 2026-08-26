@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_stale_base.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                         |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                         |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -57,7 +57,7 @@ with a `SimpleNamespace` context because it only reads
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The preflight and template under test. | `_stale_base_preflight`, `prepare_memory_for_start` | mcp/src/agents_remember/worktrees/modules/start.py:313-354; mcp/src/agents_remember/worktrees/modules/start.py:888-911 |
+| The preflight and template under test. | "def _stale_base_preflight("; "def prepare_memory_for_start(" | mcp/src/agents_remember/worktrees/modules/start.py:381-422; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:39-64 |
 | Freshness states come from the shared kernel (unit-tested separately). | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |
 
 ## 260815-DAG-L4 Integration-Authority Forcing

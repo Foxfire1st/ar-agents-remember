@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
 | doc_type               | `file-level-onboarding`                               |
 | lastUpdated            | 2026-08-01T18:30+02:00                                |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`            |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`            |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                         |
 
 ## Purpose
@@ -69,7 +69,7 @@ directs anyone changing how these stores touch disk to read `durable_store.py` f
 | The gate delegation policy this package exports (moved to kernel primitives by L9). | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
 | The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:105-105 |
 | The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
-| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:54-54 |
+| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:70-70 |
 | The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L71-L106. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:71-106 |
 | The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
 

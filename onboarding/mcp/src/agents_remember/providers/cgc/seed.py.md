@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -139,7 +139,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Worktree setup constructs CGC seed options through the provider setup request. | "cgc_seed=CgcSeedOptions(" | mcp/src/agents_remember/providers/provider_setup.py:137-137 |
 | The post-watcher catch-up stage consuming the stashed divergence. | "def _seed_catchup_results(" | mcp/src/agents_remember/providers/provider_setup.py:250-250 |
 | Index-lifecycle tests pin relatable/unrelatable divergence and the proceed/stash/refuse mismatch paths. | "def test_relatable_heads_report_the_changed_files(self) -> None:"; "def test_unrelatable_heads_return_none(self) -> None:"; "def test_relatable_divergence_proceeds_and_stashes_the_delta(self) -> None:"; "def test_unrelatable_heads_still_refuse(self) -> None:" | mcp/tests/test_provider_index_lifecycle.py:62-62; mcp/tests/test_provider_index_lifecycle.py:75-75; mcp/tests/test_provider_index_lifecycle.py:92-92; mcp/tests/test_provider_index_lifecycle.py:121-121 |
-| `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | "GIT_REPOSITORY_SELECTOR_ENV = ("; "GIT_LOCAL_TIMEOUT_SECONDS = 300"; "def git_environment() -> dict[str" | mcp/src/agents_remember/kernel/git_command.py:34-34; mcp/src/agents_remember/kernel/git_command.py:71-71; mcp/src/agents_remember/kernel/git_command.py:85-85 |
+| `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | "GIT_REPOSITORY_SELECTOR_ENV = ("; "GIT_LOCAL_TIMEOUT_SECONDS = 300"; "def git_environment() -> dict[str" | mcp/src/agents_remember/kernel/git_command.py:34-34; mcp/src/agents_remember/kernel/git_command.py:71-71; mcp/src/agents_remember/kernel/git_command.py:94-94 |
 | `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | "class DecoyRepositoryTests(unittest.TestCase):"; "class SingleRunnerTests(unittest.TestCase):"; "def test_only_the_kernel_module_defines_a_git_runner(self) -> None:" | mcp/tests/test_git_command.py:168-168; mcp/tests/test_git_command.py:510-510; mcp/tests/test_git_command.py:565-565 |
 
 ## Update History

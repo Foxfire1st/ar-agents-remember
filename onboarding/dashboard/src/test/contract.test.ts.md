@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-25T16:21:43+02:00 |
-| lastVerifiedCommitHash |                                                  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |                                                  2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash |                                                  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |                                                  2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -72,11 +72,11 @@ cit:(["the server grows a field", "the mirror declares something the server neve
    lifecycle carrying `staleSeconds` samples it for every lifecycle: the fixture need not be uniform, it
    must be COMPLETE between its rows. The scalar test comes first and the empty-array test second on
    purpose
-   cit:(["The scalar test comes FIRST and the empty-array test second"], dashboard/src/test/contract.test.ts:142-142)
+   cit:(["The scalar test comes FIRST and the empty-array test second"], dashboard/src/test/contract.test.ts:144-144)
    — an empty array of strings hides nothing, an empty array of OBJECTS hides a whole model.
 
 **The residue, named.** `KnownUnsampled`
-cit:([`KnownUnsampled`], dashboard/src/test/contract.test.ts:186-186) is exactly two entries:
+cit:([`KnownUnsampled`], dashboard/src/test/contract.test.ts:188-191) is exactly two entries:
 `projection.servingBuild` and `projection.agentNotifierHeartbeat`, both injected by the serving app at
 RESPONSE time and both absent from the persisted payload this fixture is shaped like.
 `allowlistMustStayEarned`
@@ -103,20 +103,20 @@ that has opened to `string` fails too cit:([`ClosedUnionPaths`, `VOCABULARIES`],
 per-path non-vacuity catch illegal or structurally absent sample data. They deliberately do not force
 the fixture to exhaust enum membership, which belongs to producer schema generation.
 
-**`valuesAt(root, path)`** cit:([`valuesAt`], dashboard/src/test/contract.test.ts:350-365) reads every
+**`valuesAt(root, path)`** cit:([`valuesAt`], dashboard/src/test/contract.test.ts:428-443) reads every
 value at a dotted path, fanning out over `[]`, so `…engineProcesses[].health` returns every process's
 health rather than the first.
 
 **The runtime suites.**
 
 - `the mirror declares everything the server sends`
-  cit:(["the mirror declares everything the server sends"], dashboard/src/test/contract.test.ts:367-381):
+  cit:(["the mirror declares everything the server sends"], dashboard/src/test/contract.test.ts:445-459):
   the type-level walk, plus a set-equality between
   `Object.keys(served.metrics)` and `Object.keys(metricsFor([]))` — "the served rollup and the
   modelled rollup have the same fields", with no third copy to drift. A bucket only the server has fails;
   so does a bucket only the mirror has.
 - `the fixture samples everything the mirror declares`
-  cit:(["the fixture samples everything the mirror declares"], dashboard/src/test/contract.test.ts:395-417):
+  cit:(["the fixture samples everything the mirror declares"], dashboard/src/test/contract.test.ts:461-483):
   the two type-level assertions, plus a runtime pass over
   `INDEX_SIGNATURE_SITES` demanding a served value and a non-empty reason at each — the
   one thing types cannot say, because `MirrorOnlyPaths` deliberately stops at an index signature.
@@ -125,7 +125,7 @@ health rather than the first.
   membership at every registered path with an explicit non-vacuity check per path. It rejects illegal
   sampled values without manufacturing full fixture objects solely to exercise unused enum members.
 - `projection contract fixture`
-  cit:(["projection contract fixture"], dashboard/src/test/contract.test.ts:452-475): top-level shape
+  cit:(["projection contract fixture"], dashboard/src/test/contract.test.ts:499-522): top-level shape
   and the per-row lifecycle fields a JSON import cannot state.
 - `metrics bucket every live lifecycle state`
   cit:(["metrics bucket every live lifecycle state"], dashboard/src/test/contract.test.ts:481-543): a
@@ -136,7 +136,7 @@ health rather than the first.
   runtime, so it fails here); and **spelling parity** with the server's rule, pinned by
   `camel("awaiting-DEVELOPER") === "awaitingDEVELOPERCount"`, `camel("a-b-c") === "aBCCount"`.
 - `mirror does not invent fields the server cannot send`
-  cit:(["mirror does not invent fields the server cannot send"], dashboard/src/test/contract.test.ts:538-588):
+  cit:(["mirror does not invent fields the server cannot send"], dashboard/src/test/contract.test.ts:597-647):
   the three inverted pins, all TYPE-level and free at runtime.
   `masterRow.createdAt` and `seriesRow.linkedLifecycleId` each carry a
   `@ts-expect-error`, and so does `edge.refusedPolarity`. **An unused `@ts-expect-error` is itself a
@@ -175,7 +175,7 @@ health rather than the first.
    They do not depend on a sampled payload being non-null or exhaustive. cit:(["WHAT SCHEMA CODEGEN CLOSES", "sample cannot, even a sample this file polices", "currently null is *omitted*", "only the schema can", "schema and stale-output check own that exhaustive proof"], dashboard/src/test/contract.test.ts:62-68)
 2. **Two field-identical models remain structurally interchangeable in TypeScript.** The generator
    emits distinct `SeriesSectionNode` and `TaskSectionNode` declarations from distinct schemas, but
-   structural assignment cannot distinguish declarations with identical fields. cit:(["two field-identical models", "matching the server's two", "declare the same three fields", "structural typing keeps them interchangeable", "collapse this file pins at the", "generation still emits both named model declarations"], dashboard/src/test/contract.test.ts:67-72)
+   structural assignment cannot distinguish declarations with identical fields. cit:(["two field-identical models", "matching the server's two", "declare the same three fields", "structural typing keeps them interchangeable", "collapse this file pins at the", "generation still emits both named model declarations"], dashboard/src/test/contract.test.ts:69-74)
 3. **The snapshot remains a manual sample.** These assertions measure how completely that sample
    exercises the generated contract; they are not its provenance and do not generate it. cit:(["The fixture-coverage guard", "scripts/sync-projection-types.py --check", "remains a hand-authored sampled payload", "generated contract against that independent sample", "runtime vocabulary", "coverage cannot disappear", "THE ORACLE ITSELF", "field the fixture does not exercise", "reviewer proved the cost: deleting", "produced zero new", "blindness in BOTH directions at once", "as assignable to anything", "ExpectationRowNode", "below closes that", "the JSON module's exact shape", "declared path the payload does not reach"], dashboard/src/test/contract.test.ts:24-28; dashboard/src/test/contract.test.ts:45-54)
 
@@ -197,22 +197,22 @@ the Finding, where a pointer belongs.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | "it does so at three seams"; "snapshot as unknown as WorkspaceProjection"; "WHAT SCHEMA CODEGEN CLOSES" | dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:34-34; dashboard/src/test/contract.test.ts:60-60 |
+| The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | "it does so at three seams"; "snapshot as unknown as WorkspaceProjection"; "WHAT SCHEMA CODEGEN CLOSES" | dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:34-34; dashboard/src/test/contract.test.ts:62-62 |
 | `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | `ServedOnlyPaths`; `mirrorMustDeclare` | dashboard/src/test/contract.test.ts:92-102; dashboard/src/test/contract.test.ts:126-128 |
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:146-160; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
 | `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed, replacing a prose list of four that missed three. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-219; dashboard/src/test/contract.test.ts:221-229; dashboard/src/test/contract.test.ts:226-234 |
 | `ClosedUnionPaths` + `VOCABULARIES` — 15 paths bound to 10 array identities and 8 distinct value sets, replacing two hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:251-266; dashboard/src/test/contract.test.ts:268-293 |
 | Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:485-495 |
-| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:470-475; dashboard/src/test/contract.test.ts:477-500; dashboard/src/test/contract.test.ts:502-510; dashboard/src/test/contract.test.ts:512-530 |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:575-578; dashboard/src/test/contract.test.ts:596-597 |
-| The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:356-360 |
-| The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:254-264; dashboard/src/types/projection.ts:311-329 |
+| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:529-534; dashboard/src/test/contract.test.ts:536-559; dashboard/src/test/contract.test.ts:561-569; dashboard/src/test/contract.test.ts:571-589 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:622-625; dashboard/src/test/contract.test.ts:643-644 |
+| The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:396-400 |
+| The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:290-300; dashboard/src/types/projection.ts:351-369 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1618-1618; dashboard/src/fixtures/snapshot.json:1761-1761 |
+| The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1800-1800; dashboard/src/fixtures/snapshot.json:1943-1943 |
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
-| The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:38-45 |
-| The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/src/agents_remember/code_quality/projection_types.py:59-61; mcp/src/agents_remember/code_quality/projection_types.py:382-421; mcp/src/agents_remember/code_quality/projection_types.py:509-515 |
+| The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:44-51 |
+| The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/src/agents_remember/code_quality/projection_types.py:66-68; mcp/src/agents_remember/code_quality/projection_types.py:435-474; mcp/src/agents_remember/code_quality/projection_types.py:562-568 |
 | The two separate `extra="forbid"` sub-task models the inverted pins keep distinct, and the two section models that cannot be pinned. | `TaskSubTaskRefNode`; `TaskSectionNode`; `SeriesSubTaskNode`; `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:585-606; mcp/src/agents_remember/observer/projection.py:626-636; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:815-822 |
 | The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | "src/test/contract.test.ts :: @ts-expect-error" | dashboard/src/test/wireFixtureGuard.test.ts:183-183 |
 | The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | "makes the MIRROR honest"; "This file makes the FIXTURES honest" | dashboard/src/test/wireFixtureGuard.test.ts:20-21 |

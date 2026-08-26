@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_response.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,10 +40,10 @@ No configured domain-documentation source applies to this repository-internal ro
 
 ## Repo-Internal References
 
-| Finding | Source Range | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Applied results and previews share one response shape. | L22-L75 | [source](mcp/src/agents_remember/application/task_docs/task_doc_response.py) |
-| Graph-title and master-sync helpers render bounded supporting evidence. | L76-L137 | [source](mcp/src/agents_remember/application/task_docs/task_doc_response.py) |
+| Applied results and previews share one response shape. | `task_doc_result`; `task_doc_preview` | mcp/src/agents_remember/application/task_docs/task_doc_response.py:22-46; mcp/src/agents_remember/application/task_docs/task_doc_response.py:49-73 |
+| Graph-title and master-sync helpers render bounded supporting evidence. | `graph_titles_for`; `_master_sync_payload` | mcp/src/agents_remember/application/task_docs/task_doc_response.py:76-81; mcp/src/agents_remember/application/task_docs/task_doc_response.py:107-137 |
 
 ## Cross-Repo References
 

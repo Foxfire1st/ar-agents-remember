@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,10 +44,10 @@ No configured Domain Documentation source applies to this Git recovery boundary.
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Convergent refs are classified by the canonical authority classifier and conflicts stay typed. | L18-L25 | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
-| External-memory proof requires the exact task-memory head to equal the journaled ledger commit. | L28-L45 | `mcp/src/agents_remember/worktrees/modules/integration_recovery.py` |
+| Convergent refs are classified by the canonical authority classifier and conflicts stay typed. | `classify_convergent_recovery_refs` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25 |
+| External-memory proof requires the exact task-memory head to equal the journaled ledger commit. | `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 
 ## Cross-Repo References
 

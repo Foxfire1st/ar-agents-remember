@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -47,10 +47,12 @@ recovery selector for worktree start — `fast-forward` (ff stale local source
 branches, then proceed) or `proceed-stale` (explicit override); `None` means
 block when a source branch is behind/diverged from its upstream.
 
-`memory_sync_choice: str | None = None` (GitHub #54 sub-task D): the
-`worktree_sync` recovery selector when the memory work branch has local
-commits and the official memory moved — `merge-memory` or `skip-memory`;
-`None` blocks with `needs-review`.
+`memory_sync_choice: MemorySyncChoice | None` narrows the admitted memory plan to
+`merge-memory` or `skip-memory`. `resolution_action: SyncResolutionAction | None` narrows recovery
+control to `continue` or `cancel`. Both aliases are owned by the public worktree model and travel
+unchanged through application/registration/CLI adapters. The transaction journals the admitted
+memory choice; a later continue/cancel addresses the same contract generation and cannot silently
+change it.
 
 `lifecycle_id: str = ""` (slice 2c): the observable-lifecycle id the application entry point
 resolves (the active lifecycle's id, or a fresh mint when none is active) and
@@ -69,6 +71,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Public sync choice and resolution-action vocabularies are owned once by the worktree model. | `MemorySyncChoice`; `SyncResolutionAction` | mcp/src/agents_remember/models/worktree.py:57-57; mcp/src/agents_remember/models/worktree.py:56-56 |
 | Provider setup config is typed through the companion worktree models module. | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:36-43 |
 | Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:136-194 |
 | Gate delegation policy model (kernel-owned since L9). | "class GatePolicy:"; "DEFAULT_GATE_POLICY = GatePolicy()" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54; mcp/src/agents_remember/kernel/primitives/gate_policy.py:66-66 |
@@ -93,11 +96,15 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `WorktreeArgs`, `report_operation_progress` at this ownership boundary. | L31-L103; L106-L109 | `mcp/src/agents_remember/worktrees/modules/args.py` |
+| The current module exposes `WorktreeArgs`, `report_operation_progress` at this ownership boundary. | `WorktreeArgs`; `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:31-105; mcp/src/agents_remember/worktrees/modules/args.py:108-111 |
 
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Narrowed sync inputs to shared `MemorySyncChoice` and
+  `SyncResolutionAction` aliases and documented contract-addressed continue/cancel. Verification
+  remains post-Dagger/closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

@@ -6,8 +6,8 @@
 | path                   | `dashboard/scripts/check-diff-coverage.mjs`                 |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-24T13:51:26+02:00                                  |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                  |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ configured for this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executable-statement scoring helpers. | `executableStatementLines`; `coveredStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:14-14; dashboard/scripts/check-diff-coverage.mjs:25-25; dashboard/scripts/check-diff-coverage.mjs:43-43 |
+| The executable-statement scoring helpers. | `executableStatementLines`; `coveredStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:15-23; dashboard/scripts/check-diff-coverage.mjs:26-37; dashboard/scripts/check-diff-coverage.mjs:44-77 |
 | The Dagger admission check is the first operation of the direct CLI runner, while pure scoring helpers stay importable. | `requireDaggerTestEnvironment`; `function main()`; direct-file guard | dashboard/scripts/check-diff-coverage.mjs:12-12; dashboard/scripts/check-diff-coverage.mjs:79-80; dashboard/scripts/check-diff-coverage.mjs:213-220 |
 | The Python-parity base resolution remains inside the guarded runner. | "const resolveBase = () => {" | dashboard/scripts/check-diff-coverage.mjs:107-132 |
 | The contract suite pins both direct-CLI refusal and pure accounting. | "the direct changed-lines CLI refuses before reading Git or coverage" | dashboard/scripts/check-diff-coverage.test.mjs:15-27 |

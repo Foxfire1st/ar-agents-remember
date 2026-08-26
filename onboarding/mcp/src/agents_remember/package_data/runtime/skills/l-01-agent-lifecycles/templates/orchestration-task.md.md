@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -41,13 +41,22 @@ adoption. Edit the canonical template, then synchronize.
 - Durable plan evidence survives seat-occupant replacement.
 - Each candidate has one effective priority: candidate override when present, otherwise the
   owning-master default; the two grades are never combined.
-- A graph-less atomic-sequential topology is valid. First graph adoption occurs only after every
-  master attachment and uses one complete nodes-plus-evidence-edges batch.
+- A graph-less atomic-sequential topology is valid: canonical order is an equal-priority tie-break,
+  while source-pair selection exposes one master and may pause/resume durable work. First graph
+  adoption occurs only after every master attachment and uses one complete nodes-plus-evidence-edges
+  batch.
 - This packaged artifact must remain byte-identical to the canonical template.
 
 ### Todos
 
 None recorded.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
@@ -82,7 +91,9 @@ nature, relation, blast-radius, priority, blocker, and leaf-move sections are pr
 their owning judgment rows. When present, `executionGraph` carries exact `TaskDocumentRef` nodes
 and evidence-backed predecessor edges; deterministic waves and blocker positions are derived
 rather than persisted. Without it, the reasoned atomic-sequential default uses canonical
-commanded-master order. Runtime reprioritization records rationale, evidence, author, confidence,
+commanded-master order only as an equal-priority tie-break and source-pair activation as the
+implementation-exposure boundary; another selection may pause durable work. Runtime
+reprioritization records rationale, evidence, author, confidence,
 and supersession before queue selection changes.
 
 ## 260815-DAG-L13 Scheduling Default Doctrine
@@ -110,7 +121,19 @@ For graph-less adoption, attach every master and stop. To choose a graph from th
 all attachments and publish every node plus all evidence-backed edges in one batch. The shown
 `add_edge` example already had `judgmentId`; no code or documentation fix was fabricated.
 
+## IAS Graph-Less Walk Correction
+
+The generated template now asks the plan to record canonical tie-break order plus one
+source-pair-selected implementation exposure at a time. It explicitly permits logical pause and
+later resume, so graph absence cannot be misread as full-integration dependency.
+
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
+  synchronized orchestration-task template card.
+
+- 2026-08-26T05:20+02:00 — Reconciled the generated graph-less walk with source-pair selection,
+  pause/resume preservation, and dependency separation. Final ranges remain post-Dagger-owned.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded one effective candidate priority,
   optional explicit graph structure, complete strategist-skip reasoning, and the all-attachments

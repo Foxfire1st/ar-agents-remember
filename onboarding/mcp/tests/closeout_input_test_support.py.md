@@ -6,8 +6,8 @@
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,8 +38,8 @@ See task `260821-CLIVE-L1` L1-R1 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:64-91; mcp/tests/closeout_input_test_support.py:98-123 |
-| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:31-61; mcp/tests/closeout_input_test_support.py:150-172; mcp/tests/closeout_input_test_support.py:175-200; mcp/tests/closeout_input_test_support.py:203-215 |
+| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:83-127; mcp/tests/closeout_input_test_support.py:233-258 |
+| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:50-80; mcp/tests/closeout_input_test_support.py:285-307; mcp/tests/closeout_input_test_support.py:310-341; mcp/tests/closeout_input_test_support.py:344-356 |
 
 ## Cross-Repo References
 
@@ -51,9 +51,9 @@ The current forcing seams include `MutationEvidenceRecorder`. The L2 additions f
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `MutationEvidenceRecorder`. | L31-L61 | `mcp/tests/closeout_input_test_support.py` |
+| The current test source exercises `MutationEvidenceRecorder`. | `MutationEvidenceRecorder` | mcp/tests/closeout_input_test_support.py:50-80 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -68,6 +68,8 @@ Builds explicit normalized closeout inputs and journal mutations for behavioral 
 - Fixture mutations preserve one operation generation and never synthesize fallback input.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No behavior change: exposed `ensure_fixture_waiting_door` as the shared fixture seam and updated package imports; closeout input construction and waiting-door authority are unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

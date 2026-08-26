@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_doc_wire_shape.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,8 +48,8 @@ It reuses the shared fixtures from `test_task_execution_topology` (`MASTER_A`/`M
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The special-op wire-shape forcing suite. | `TaskDocSpecialOpWireShapeTests` | mcp/tests/test_task_doc_wire_shape.py:38-240 |
-| The strict response envelope under test. | `TaskDocResponse` | mcp/src/agents_remember/models/task_doc.py:30-91 |
-| The special-op identity merge. | `_sprint_doc_identity`; `_special_task_doc_operation` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:398-420; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:423-479 |
+| The strict response envelope under test. | `TaskDocResponse` | mcp/src/agents_remember/models/task_doc.py:115-188 |
+| The special-op identity merge. | `_sprint_doc_identity`; `_special_task_doc_operation` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:396-418; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:421-477 |
 
 ## Cross-Repo References
 

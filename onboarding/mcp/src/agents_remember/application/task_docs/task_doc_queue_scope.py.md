@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ No configured Domain Documentation source applies; this is repository-internal t
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The public resolver validates one repository-local change set and returns a deterministic old/new sprint union. | `resolve_projection_scope_union` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:26-72 |
-| Leaf scope is derived through the canonical parent master with the full batch override set. | `_leaf_projection_scopes` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:79-109 |
+| Leaf scope is derived through the canonical parent master with the full batch override set. | `_leaf_projection_scopes` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:79-108 |
 
 ## Cross-Repo References
 

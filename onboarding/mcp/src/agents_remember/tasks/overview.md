@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -226,13 +226,13 @@ master-qualified leaf-title keys.
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Task source snapshots and publication. | L23-L52; L72-L123 | `mcp/src/agents_remember/tasks/store.py` |
-| Application publication transaction. | L67-L74; L77-L197 | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
-| Structural execution-node equality/hash and explicit reference ownership. | L218-L275 | `mcp/src/agents_remember/tasks/document.py` |
-| Qualified leaf-title join. | L15-L79 | `mcp/src/agents_remember/tasks/execution_graph_titles.py` |
-| Ordinal Mermaid identity allocation and rendering. | L204-L245; L283-L384 | `mcp/src/agents_remember/tasks/render.py` |
+| Task source snapshots and publication. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError` | mcp/src/agents_remember/tasks/store.py:22-35; mcp/src/agents_remember/tasks/store.py:38-52 |
+| Application publication transaction. | `TaskDocPublicationTransaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:65-73 |
+| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
+| Qualified leaf-title join. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59; mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
+| Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
 
 ## 260821-DAGQC-L2 Total Serving-Preflight Boundary
 
@@ -241,7 +241,17 @@ read, stat, and version failure at one explicit typed boundary, reads version on
 the existing topology floor/editable-install policy. Programmer defects are not swallowed by a
 broad fallback.
 
+## Repository Census Ownership
+
+Repository-wide master discovery is exposed once as the module-level
+`repository_master_documents(topology, repository)` query in `document_refs.py`. Execution
+topology, sprint linkage, and topology-internal consumer scans all call that seam. The topology
+object no longer carries parallel public/private master-census methods, so branch-authority checks
+cannot drift across competing APIs.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Added the single module-level repository-master census boundary used by topology and linkage consumers.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made serving-build inspection total for expected observable failures with one version snapshot. Preserved concurrent CLIVE route curation and verification ownership.
 

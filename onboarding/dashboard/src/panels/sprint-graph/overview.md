@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/sprint-graph/`             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-24T12:59+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -69,13 +69,15 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
 | --- | --- | --- |
 | The wave-grid component groups projected nodes into wave rows. | `SprintGraphView` | dashboard/src/panels/sprint-graph/SprintGraphView.tsx:81-107 |
 | The exported responsive layout contracts. | `waveGridStyles`; `leafLineStyles` | dashboard/src/panels/sprint-graph/styles.ts:7-12; dashboard/src/panels/sprint-graph/styles.ts:77-87 |
-| The master reader mounts the scoped queue independently of its optional graph section. | `CloseoutQueue`; `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:191-193; dashboard/src/panels/detail-panel/taskReader.tsx:224-233 |
+| The master reader mounts the scoped queue independently of its optional graph section. | `MasterOverview`; `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:246-253 |
 | The shell suite proves graph/queue reachability, graphless queue access, and mounted canonical-reset clearance. | "sprint page shell (L12-R5)" | dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx:53-174 |
-| The render-ready wire model this route consumes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:561-565 |
+| The render-ready wire model this route consumes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:653-655 |
 | The deterministic mermaid document-diagram sibling of this view. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:173-213 |
 | The one-shot mounted-UI evidence surface. | `SprintGraphPage` | dashboard/src/dev/sprintGraphPage.tsx:16-20 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed master-reader and projection-type anchors after component/source movement; the sprint graph and independently reachable queue contract are unchanged.
 
 - 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: added the mounted forcing boundary for the
   canonical dev/test reset: a visible seeded queue clears from both authoritative store state and

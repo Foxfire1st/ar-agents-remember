@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_landing_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-16T02:51+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ No external Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Bounded, isolated refresh and stale-fact behavior. | `test_refresh_is_bounded_and_isolated_by_exact_contract`; `test_failed_refresh_keeps_last_truth_as_explicit_stale_fact` | mcp/tests/test_landing_state.py:104-132; mcp/tests/test_landing_state.py:134-158 |
+| Bounded, isolated refresh and stale-fact behavior. | `test_refresh_is_bounded_and_isolated_by_exact_contract`; `test_failed_refresh_keeps_last_truth_as_explicit_stale_fact` | mcp/tests/test_landing_state.py:130-158; mcp/tests/test_landing_state.py:160-184 |
 | Missing, rewritten, cancelled, and recovered refresh lifecycle behavior. | `test_startup_and_rewritten_contract_are_explicitly_missing`; `test_cycle_failure_logs_then_recovers_on_normal_cadence`; `test_run_cancellation_leaves_no_refresh_task` | mcp/tests/test_landing_state.py:184-203; mcp/tests/test_landing_state.py:207-230; mcp/tests/test_landing_state.py:232-251 |
 | Fully observed frozen facts and the no-freeze cases. | `test_finished_contract_freezes_once_and_leaves_the_sweep`; `test_unobserved_facts_do_not_freeze`; `test_pending_cleanup_keeps_probing_without_freezing` | mcp/tests/test_landing_state.py:265-292; mcp/tests/test_landing_state.py:294-311; mcp/tests/test_landing_state.py:313-328 |
 | Frozen-file persistence, key filtering, corruption, age, and reopen behavior. | `test_frozen_facts_survive_a_fresh_refresher`; `test_frozen_rows_carry_only_reducer_known_keys`; `test_corrupt_final_file_keeps_contract_in_sweep_and_selfheals`; `test_frozen_file_predating_the_contract_is_never_served_or_kept_out_of_sweep`; `test_reopen_task_entry_point_deletes_the_frozen_landing_file` | mcp/tests/test_landing_state.py:330-345; mcp/tests/test_landing_state.py:359-371; mcp/tests/test_landing_state.py:456-483; mcp/tests/test_landing_state.py:501-554; mcp/tests/test_landing_state.py:556-584 |

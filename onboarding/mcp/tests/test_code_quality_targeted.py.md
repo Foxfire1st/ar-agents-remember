@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_code_quality_targeted.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,30 +23,24 @@ the reverse-import closure, the refusal shape, and real targeted wrapper runs.
 
 ### Logic
 
-`TargetedScopeDerivationTests` (lines 142-359) builds real miniature
-repositories (`targeted_repository`, lines 54-105) and pins the derivation:
+`TargetedScopeDerivationTests` builds real miniature Git repositories with a synthetic canonical
+evidence catalog. It proves selection is dependency-owned and typed: production imports select
+their consumers, shared test-support imports select only their static consumers, catalogued
+fixtures select their declared consumers, and each selected test carries a
+`SelectionReasonKind`. A `conftest.py` change globally invalidates the Python test population.
+Unknown support, deleted tests, unowned production, and unowned scripts do not pretend selection
+is complete; they fail closed to the safe full test population. Documentation remains visible in
+the changed-path report while producing no Python scope.
 
-- changed files, pyright closure, and test subset are derived from a leaf diff
-  (`test_changed_files_closure_and_test_subset_are_derived`);
-- a changed internal module is reached through its public import home
-  (`test_internal_module_is_covered_through_its_public_import_home`);
-- a changed production module with no test is refused
-  (`test_changed_production_module_without_tests_is_refused`);
-- string-based wiring tests are selected by whole-word module-path reference
-  (`test_string_referenced_module_is_covered_by_wiring_tests`);
-- tests-only, no-Python, and scripts-only change sets produce the honest
-  empty/not-applicable shapes;
-- import edge cases and fail-loud `ScopeError` paths (unknown base, git
-  transport failure, unreadable string-reference file) are pinned.
+This replaces the earlier contract that an unowned production module simply refused and that
+scripts-only changes produced an empty test selection. The safe fallback is explicit and carries
+incomplete-impact evidence; it is not a silent heuristic. Tests-only changes still leave product
+coverage empty, and unknown Git bases or Git transport failures remain typed `ScopeError`s.
 
-`TargetedWrapperRunTests` (lines 360-630) drives the real wrapper contract:
-every rail receives the derived scope and the derivation is printed
-(`test_targeted_run_prints_derivation_and_scopes_every_rail`), radon consumes
-the changed module files in a real run
-(`test_radon_analyzes_the_changed_module_in_a_real_run`), and the
-no-Python-changed and tests-only runs short-circuit to PASS with zero vacuous
-rails (`test_no_python_changes_short_circuits_to_pass` — the regression that
-removed the never-executed `unexpected_runner` closure).
+`TargetedWrapperRunTests` drives the real wrapper contract: every rail receives the derived scope,
+the typed derivation is printed, Radon sees changed production modules, no-Python changes
+short-circuit honestly, tests-only runs mark measurement rails not applicable, and scripts-only
+runs execute the fail-closed test population while leaving coverage rails out.
 
 ### Conventions
 
@@ -55,8 +49,10 @@ scope derives from `git ls-files`/`pytest_testpaths` exactly as production does.
 
 ### Invariants And Boundaries
 
-- Every changed production module must have a derived test subset or the run is
-  refused.
+- Selection authority comes from the canonical dependency/evidence model; tests do not reproduce
+  private AST selection helpers.
+- An incomplete or globally invalidated impact never shrinks to an optimistic subset; the safe
+  population is selected and the reason remains visible.
 - Diff is always measured against the passed base revision.
 - The suite never mocks the wrapper's scope derivation for the real-run class.
 
@@ -76,8 +72,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:320-366; mcp/src/agents_remember/code_quality/check.py:420-469 |
-| The printed derivation lines the suite asserts. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:235-263 |
+| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:378-428; mcp/src/agents_remember/code_quality/check.py:482-532 |
+| The printed derivation lines the suite asserts. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:278-314 |
 
 ## Cross-Repo References
 
@@ -94,6 +90,8 @@ bootstrap. Target selection and changed-line semantics are unchanged; the suite 
 the targeted planner cannot be invoked as a diagnostic fallback.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Rewrote the targeted-gate contract around canonical dependency ownership, typed selection reasons, global invalidation, and explicit fail-closed full-population fallback.
 
 - 2026-08-24T21:23+02:00 — Added typed Dagger admission to targeted quality fixtures.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

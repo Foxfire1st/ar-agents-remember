@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/agent_notifier.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-24T14:43+02:00               |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -377,7 +377,7 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration (with the resolved last-good settings since 260713-TES-L4) and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:101-101; mcp/src/agents_remember/serving/_app_lifespan.py:135-135; mcp/src/agents_remember/serving/agent_notifier.py:96-96 |
+| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration (with the resolved last-good settings since 260713-TES-L4) and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:101-101; mcp/src/agents_remember/serving/_app_lifespan.py:143-143; mcp/src/agents_remember/serving/agent_notifier.py:96-96 |
 | The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | The heartbeat store `run_agent_notifier_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The expectation-row store is read only for the compaction pass — the relay never evaluates expectation rows (owner-visible deadline surface, 260713-TES-L5). | `ExpectationRowStore`; "def compact(" | mcp/src/agents_remember/controlplane/expectation_rows.py:163-347 |
@@ -388,7 +388,7 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 | The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
 | The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:310-310 |
 | HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal("; "def _signal_emit("; "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:95-95; mcp/src/agents_remember/serving/_agent_notifier_actions.py:310-310; mcp/src/agents_remember/serving/inbox_delivery.py:170-170; mcp/src/agents_remember/serving/owner_signals.py:94-94 |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:48-48; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:273-273; mcp/src/agents_remember/serving/terminal_catalog.py:51-51 |
+| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:48-48; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:273-273; mcp/src/agents_remember/serving/terminal_catalog.py:61-61 |
 | Failing-first predicate unit tests (one per fact family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included (the expectation/ladder predicate tests are deleted, 260713-TES-L5). | `test_mid_turn_pane_fires_a_finding`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier.py:107-115; mcp/tests/test_agent_notifier.py:133-146; mcp/tests/test_agent_notifier_seat.py:38-48; mcp/tests/test_agent_notifier_seat.py:166-233 |
 
 ## Cross-Repo References

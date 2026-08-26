@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/grammar/Markdown.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-21T02:44+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ table scrolls **inside** its box; the panel layout is never widened by content.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:136-136; dashboard/src/panels/detail-panel/taskReader.tsx:241-241; dashboard/src/panels/detail-panel/taskReader.tsx:591-591; dashboard/src/panels/detail-panel/taskReader.tsx:652-652; dashboard/src/panels/detail-panel/taskReader.tsx:709-709 |
+| `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:167-167; dashboard/src/panels/detail-panel/taskReader.tsx:264-264; dashboard/src/panels/detail-panel/taskReader.tsx:614-614; dashboard/src/panels/detail-panel/taskReader.tsx:675-675; dashboard/src/panels/detail-panel/taskReader.tsx:745-745 |
 
 ## Update History
 

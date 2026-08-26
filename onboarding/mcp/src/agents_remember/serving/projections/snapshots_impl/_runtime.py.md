@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -48,6 +48,7 @@ or publishes a leaf-key ownership field.
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the lifecycle-operation projection import relocation into `integration.lifecycle.observation.projection`; runtime reader behavior is unchanged.
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the runtime projector only repoints lifecycle operation projection to its moved integration lifecycle package. Verified at code commit `1d446724`.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.

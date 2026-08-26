@@ -5,22 +5,23 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
 
-`worktree.py` defines context-packet worktree summaries and public worktree
-tool response envelopes.
+`worktree.py` defines context-packet worktree summaries, public worktree tool response envelopes,
+and the closed wire vocabulary for resumable sync control, phases, sides, and stable journal
+projection.
 
 ## Code Commentary
 
-cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:101-141) is the strict context-packet shape for the
+cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:148-198) is the strict context-packet shape for the
 `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and
 **since 260731-EFA-L4 every shared lifecycle vocabulary is imported from the
-module that produces it; only `WorktreeState` remains local** (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:93-93; mcp/src/agents_remember/models/worktree.py:98-98; mcp/src/agents_remember/models/worktree.py:101-141)). The command response models
+module that produces it; only `WorktreeState` remains local** (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:145-145; mcp/src/agents_remember/models/worktree.py:148-198)). The command response models
 remain flexible because worktree service results can carry operation-specific
 planning and closeout fields.
 
@@ -61,7 +62,7 @@ the blocked-start recovery payloads — those keep their own
 a wider `NextOperation` cannot put "requires developer approval" back into the set
 the context packet's `nextOperation` claims to be.
 
-`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:133-133)) is **omitted rather than `[]`** when there is
+`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:180-180)) is **omitted rather than `[]`** when there is
 nothing to supply. `next_guidance` writes the key only when the next call needs a
 caller-supplied argument; the projection now reports what the producer said
 instead of substituting a value for it. This is a stated wire change: measured
@@ -72,7 +73,7 @@ beyond `nextArgs` — and there is no third state to confuse it with. The same r
 now covers `nextTool` and `nextArgs`, where the old substitution had put an
 un-declarable `""` on the wire.
 
-`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:138-138)) is new. It is present only
+`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:185-185)) is new. It is present only
 when the contract file carried a cell outside its declared vocabulary, formatted
 `"<field>=<raw token> read as <fallback>"`. The `state` is still `active` and
 every other field was computed from the substituted values — this field is the
@@ -89,9 +90,17 @@ the `worktree_status` projection. The strict `WorktreeSummary` (context
 packets) deliberately does not project it — provider truth in packets comes
 from the providers section.
 
-`WorktreeSyncResponse` (GitHub #54 sub-task D) is the flexible envelope for the
-new `worktree_sync` tool, following the same `WorktreeCommandResponse` shape as
-its siblings. The `DirectCloseoutPreviewResponse` / `DirectCloseoutApplyResponse`
+`SyncResolutionAction`, `MemorySyncChoice`, `SyncSide`, `SyncPhase`, and `SyncOperationState` are
+the single public vocabularies used by application, registration, journal models, and result
+construction. `SyncOperationProjection` is the strict read-only enclosure-root journal view;
+`WorktreeSummary` and `WorktreeStatusResponse` expose it even when the live contract cannot be
+read. `SyncResolutionProjection` says which agent-owned side/worktree/conflict files need action.
+
+`WorktreeSyncResponse` remains a flexible command envelope but now declares its stable recovery
+surface: phase, structured resolution, agent ownership, contract-addressed next/cancel args,
+evidence path, invalid input field, and manual-repair facts. It deliberately exposes no public
+operation id; the canonical contract plus journal identity addresses the generation. The
+`DirectCloseoutPreviewResponse` / `DirectCloseoutApplyResponse`
 envelopes were removed with the direct-closeout tool surface (issue #62).
 
 `WorktreeCommandResponse.lifecycleId` (slice 2c) declares the observable-lifecycle
@@ -116,6 +125,10 @@ all-snake payload shape.
   `state="active"` and with fully populated sibling fields.
 - Worktree command payloads may remain flexible while the service API is still
   carrying operation-specific result blocks.
+- Sync control/state literals are declared once here and consumed by journal/result/public seams;
+  do not retype or widen them into arbitrary strings downstream.
+- Stable sync projection is descriptive only. Models do not locate the journal, select a series,
+  authorize Git mutation, or infer state from task/queue data.
 - Closeout and integration quality result blocks are a deliberate strict exception: both read the
   shared `QualityGateResult`, preserving stable/published path meanings and rejecting extra fields.
 - Do not reintroduce raw shell command strings into context-packet next hints.
@@ -124,11 +137,14 @@ all-snake payload shape.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `MemorySyncChoice`; `SyncSide`; `SyncPhase`; `SyncOperationState`; `SyncOperationProjection`; `SyncResolutionProjection` | mcp/src/agents_remember/models/worktree.py:56-78; mcp/src/agents_remember/models/worktree.py:113-126; mcp/src/agents_remember/models/worktree.py:129-133 |
+| Context and status responses carry the optional stable sync projection. | `WorktreeSummary`; `WorktreeStatusResponse` | mcp/src/agents_remember/models/worktree.py:148-198; mcp/src/agents_remember/models/worktree.py:239-242 |
+| The sync response declares recovery guidance without exposing a public operation id. | `WorktreeSyncResponse` | mcp/src/agents_remember/models/worktree.py:256-267 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading `nextTool`/`nextArgs`/`nextRequiredArgs` with `.get` so an omitted key stays omitted. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:42-117 |
 | The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:71-71; mcp/src/agents_remember/worktrees/worktree_contract.py:72-72; mcp/src/agents_remember/worktrees/worktree_contract.py:73-73; mcp/src/agents_remember/worktrees/worktree_contract.py:74-74; mcp/src/agents_remember/worktrees/worktree_contract.py:75-75; mcp/src/agents_remember/worktrees/worktree_contract.py:76-76; mcp/src/agents_remember/worktrees/worktree_contract.py:183-197; mcp/src/agents_remember/worktrees/worktree_contract.py:200-228 |
-| The guidance state machine imports and writes `WorktreePhase`, `NextOperation` and `NextTool` (declared in this model since L9), plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:50-55 |
-| The suite pinning every value a producer can emit against the field it crosses, including the omitted-`nextRequiredArgs` shape and the degrade-and-report contract cell. | "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:43-43 |
-| Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:340-416 |
+| The guidance state machine imports and writes `WorktreePhase`, `NextOperation` and `NextTool` (declared in this model since L9), plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10; mcp/src/agents_remember/worktrees/modules/guidance.py:38-55 |
+| The suite pinning every value a producer can emit against the field it crosses, including the omitted-`nextRequiredArgs` shape and the degrade-and-report contract cell. | "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:49-49 |
+| Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:293-316 |
 
 ## Series-Contract Notes
 
@@ -162,9 +178,9 @@ The current source seams include `SourceLineageEdge`, `SourceLineageRecovery`, `
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `SourceLineageEdge`, `SourceLineageRecovery`, `SourceLineageProjection` at this ownership boundary. | L57-L69; L72-L77; L80-L86 | `mcp/src/agents_remember/models/worktree.py` |
+| The current module exposes `SourceLineageEdge`, `SourceLineageRecovery`, `SourceLineageProjection` at this ownership boundary. | `SourceLineageEdge`; `SourceLineageRecovery`; `SourceLineageProjection` | mcp/src/agents_remember/models/worktree.py:81-93; mcp/src/agents_remember/models/worktree.py:96-101; mcp/src/agents_remember/models/worktree.py:104-110 |
 
 ## 260821-DAGQC-L2 Typed Quality Result
 
@@ -174,6 +190,10 @@ the strict `QualityGateResult`. This closes the former open mapping, retains bot
 public types. The surrounding command envelopes remain flexible for unrelated operation data.
 
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Added single-owned resumable-sync vocabularies and strict stable-journal
+  projections to context/status, plus the declared conflict/continue/cancel/manual-repair surface on
+  `WorktreeSyncResponse`. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: typed both lifecycle quality result blocks with the shared strict public model while preserving prior CLIVE curation. Verification metadata remains pinned until architect-owned closeout.
 
@@ -199,15 +219,15 @@ public types. The surrounding command envelopes remain flexible for unrelated op
   `chat-task`, `reopened`, `carryover-pending`, `abandoned`, `request_carryover_decision` and
   `memory_carryover_apply`. That made this model reject 165 of the 213 `series-contract.md` files
   on disk (77.5%) with an uncaught `ValidationError` on the `context_packet` tool path. All nine
-  are now imports (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:93-93; mcp/src/agents_remember/models/worktree.py:98-98; mcp/src/agents_remember/models/worktree.py:101-141)); only cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:98-98) is still declared here, because
+  are now imports (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:145-145; mcp/src/agents_remember/models/worktree.py:148-198)); only cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:145-145) is still declared here, because
   `worktrees.status` is its sole writer. Added the declaration table, which also records three
   published-vocabulary changes the card had no way to state: `WorkflowKind` is now `chat-task |
   light-task` (the bare `chat`/`light` had zero occurrences across the 213 contracts and no
   writer), `CleanupStatus` gained `reopened`, and `request_commit_approval` /
   `worktree_closeout_preview` / `commit-approval-pending` left `NextOperation`/`NextTool`/
   `WorktreePhase` for the separate `RecoveryOperation`/`RecoveryTool` aliases that never reach
-  this model. Recorded `nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:133-133)) now being OMITTED rather than `[]` — a stated
-  wire change on 48 of the 213 responses — and the new `unknownContractCells` field (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:138-138)),
+  this model. Recorded `nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:180-180)) now being OMITTED rather than `[]` — a stated
+  wire change on 48 of the 213 responses — and the new `unknownContractCells` field (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:185-185)),
   the degrade-and-report notice that keeps a contract with an off-vocabulary cell reachable by
   every lifecycle tool. Added four invariants. Citations: `WorktreeSummary` pinned to L36-L73,
   the import block to L9-L29, `WorktreeState` to L33; the `status.py` row re-pointed to
@@ -222,15 +242,15 @@ public types. The surrounding command envelopes remain flexible for unrelated op
   `chat-task`, `reopened`, `carryover-pending`, `abandoned`, `request_carryover_decision` and
   `memory_carryover_apply`. That made this model reject 165 of the 213 `series-contract.md` files
   on disk (77.5%) with an uncaught `ValidationError` on the `context_packet` tool path. All nine
-  are now imports (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:93-93; mcp/src/agents_remember/models/worktree.py:98-98; mcp/src/agents_remember/models/worktree.py:101-141)); only cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:98-98) is still declared here, because
+  are now imports (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:145-145; mcp/src/agents_remember/models/worktree.py:148-198)); only cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:145-145) is still declared here, because
   `worktrees.status` is its sole writer. Added the declaration table, which also records three
   published-vocabulary changes the card had no way to state: `WorkflowKind` is now `chat-task |
   light-task` (the bare `chat`/`light` had zero occurrences across the 213 contracts and no
   writer), `CleanupStatus` gained `reopened`, and `request_commit_approval` /
   `worktree_closeout_preview` / `commit-approval-pending` left `NextOperation`/`NextTool`/
   `WorktreePhase` for the separate `RecoveryOperation`/`RecoveryTool` aliases that never reach
-  this model. Recorded `nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:133-133)) now being OMITTED rather than `[]` — a stated
-  wire change on 48 of the 213 responses — and the new `unknownContractCells` field (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:138-138)),
+  this model. Recorded `nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:180-180)) now being OMITTED rather than `[]` — a stated
+  wire change on 48 of the 213 responses — and the new `unknownContractCells` field (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:185-185)),
   the degrade-and-report notice that keeps a contract with an off-vocabulary cell reachable by
   every lifecycle tool. Added four invariants. Citations: `WorktreeSummary` pinned to L36-L73,
   the import block to L9-L29, `WorktreeState` to L33; the `status.py` row re-pointed to

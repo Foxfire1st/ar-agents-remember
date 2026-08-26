@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_docs/task_reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ against a `WorktreeCommandResponse` subclass in the tool-response registry.
 | The reopen application entry point and its ambient-lifecycle handoff. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
 | The enclosure-contract reset this delegates to. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:212-289 |
 | The facade re-export keeping the old import path working. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
-| The focused reopen application suites. | `ReopenResetTests`; `ReopenPublicationAuthorityTests`; `ReopenGuardTests` | mcp/tests/test_task_reopen.py:193-193; mcp/tests/test_task_reopen_authority.py:100-100; mcp/tests/test_task_reopen_guards.py:16-16 |
+| The focused reopen application suites. | `ReopenResetTests`; `ReopenPublicationAuthorityTests`; `ReopenGuardTests` | mcp/tests/test_task_reopen.py:59-378; mcp/tests/test_task_reopen_authority.py:100-282; mcp/tests/test_task_reopen_guards.py:19-92 |
 
 ## Update History
 

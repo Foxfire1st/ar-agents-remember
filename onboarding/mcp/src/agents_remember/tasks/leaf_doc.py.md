@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -53,8 +53,8 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:393-436 |
-| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:590-590 |
-| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:63-63 |
+| Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
+| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:65-65 |
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
 

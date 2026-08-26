@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 | `node`/`lifecycle`/`worktreeEngine` fixture factories | `node`; `lifecycle`; `worktreeEngine` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:10-42; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:44-58; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:60-69 |
 | Lifecycle join + workspace lift + fallback cases | `buildEngineRoomModel`; `workspaceEngines`; `fallbackStacks`; `usesFallback` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:39-39; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:59-59; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:63-63 |
 | `enclosureKey` = worktreeGroup stable-across-id-swap case | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:132-134 |
-| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` fixture types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:198-239; dashboard/src/types/projection.ts:311-329; dashboard/src/types/projection.ts:378-389 |
+| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` fixture types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:234-275; dashboard/src/types/projection.ts:351-369; dashboard/src/types/projection.ts:449-460 |
 
 ## Series-Contract Notes
 

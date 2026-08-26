@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_input_model_invariants.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,10 @@ Pins impossible closeout input, mutation-evidence, and cross-kind lifecycle stat
 ### Logic
 
 The suite validates the typed enabled/not-applicable legs directly, proves the normalizer and consumer share exact plan identity, then constructs hostile lifecycle and evidence payloads. Blank or unstripped messages, N/A legs with message authority, incomplete snapshots, a commit on any non-commit-proven state, impossible pre-state/proof combinations, cross-kind authority/results, input/evidence disagreement, and non-closeout journals at closeout admission all fail at the owner that can make the state impossible.
+The public-admission regression first proves `LifecycleOperationStore.create` refuses an integrate
+record at the closeout address. It then injects those bytes to simulate damaged external state and
+proves closeout admission returns a typed `LifecycleOperationReadError` with expected
+`operationKind=closeout` and observed `operation-kind-mismatch`, rather than overwriting the file.
 
 ### Invariants And Boundaries
 
@@ -55,9 +59,9 @@ The current forcing seams include `test_enabled_message_model_refuses_blank_or_u
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_not_applicable_leg_has_no_message_authority`, `test_normalizer_and_consumer_share_exact_plan_identity`, `test_mutation_evidence_refuses_incomplete_state_facts`. | L66-L68; L71-L81; L84-L104; L121-L123 | `mcp/tests/test_closeout_input_model_invariants.py` |
+| The current test source exercises `test_enabled_message_model_refuses_blank_or_unstripped_text`, `test_not_applicable_leg_has_no_message_authority`, `test_normalizer_and_consumer_share_exact_plan_identity`, `test_mutation_evidence_refuses_incomplete_state_facts`. | `test_enabled_message_model_refuses_blank_or_unstripped_text`; `test_not_applicable_leg_has_no_message_authority`; `test_normalizer_and_consumer_share_exact_plan_identity`; `test_mutation_evidence_refuses_incomplete_state_facts` | mcp/tests/test_closeout_input_model_invariants.py:66-69; mcp/tests/test_closeout_input_model_invariants.py:72-82; mcp/tests/test_closeout_input_model_invariants.py:85-105; mcp/tests/test_closeout_input_model_invariants.py:108-124 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -72,6 +76,8 @@ Forces strict normalized closeout input, mutation-evidence, and operation-model 
 - Reconciled-unchanged evidence cannot claim a commit; not-applicable legs own no message.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Added the cross-kind journal-collision contract: store creation and public closeout admission both fail loud without overwriting unreadable/mismatched authority.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

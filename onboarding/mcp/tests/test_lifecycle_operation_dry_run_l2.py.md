@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_operation_dry_run_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_control_dry_run_projects_dead_sibling_without_publishing_exit`, `test_dry_run_compatibility_uses_pending_successor_as_current_authority`, `test_only_mutating_compatibility_publishes_proven_terminal_worker_exit`, `test_integration_resolution_emits_exact_generation_and_public_controls` as its principal forcing seams. | L53-L109; L112-L161; L164-L211; L214-L272 | `mcp/tests/test_lifecycle_operation_dry_run_l2.py` |
+| The file defines `test_control_dry_run_projects_dead_sibling_without_publishing_exit`, `test_dry_run_compatibility_uses_pending_successor_as_current_authority`, `test_only_mutating_compatibility_publishes_proven_terminal_worker_exit`, `test_integration_resolution_emits_exact_generation_and_public_controls` as its principal forcing seams. | `_byte_tree`; `test_control_dry_run_projects_dead_sibling_without_publishing_exit` | mcp/tests/test_lifecycle_operation_dry_run_l2.py:51-56; mcp/tests/test_lifecycle_operation_dry_run_l2.py:59-116 |
 
 ## Cross-Repo References
 
@@ -67,6 +67,8 @@ Forces byte-preserving lifecycle previews while sibling operation and worker-exi
 - Mutating execution may publish only evidence proven at the authoritative operation boundary.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the lifecycle worker-state package relocation used by dry-run mocks; non-mutation and live-evidence forcing are unchanged.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

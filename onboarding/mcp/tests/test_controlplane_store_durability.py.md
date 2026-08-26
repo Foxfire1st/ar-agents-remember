@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                                    `a09b906bbf2855c3479b4d3199607ff8689b7d93`|
-| lastVerifiedCommitDate |                                                    2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash |                                                    `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |                                                    2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -21,8 +21,9 @@ measured record loss of 260731-EFA-L5. It holds three separate claims: **no reco
 told was written is missing afterwards** (R10), **the per-store torn-line policy is the one its
 consumers need, and is not uniform** (R8), and — R14, in two halves — **the contract above is able
 to fail** (proven against a `git archive` of the leaf's base commit) and **the instrument refuses
-to report a run that measured nothing** (`HarnessVacuityGuardTests`; the module docstring states
-both halves in cit:([`HarnessVacuityGuardTests`], mcp/tests/test_controlplane_store_durability.py:339-386).
+to report a run that measured nothing** (owned by
+`test_durability_measurement.py::DurabilityMeasurementTests`; the focused suite states both halves
+in cit:([`DurabilityMeasurementTests`], mcp/tests/test_durability_measurement.py:34-99)).
 
 All assertion lives here; all mechanism lives in `_store_durability.py`, which is imported. That
 split is why the suite can assert a number it did not itself produce — and why the vacuity floor
@@ -55,7 +56,7 @@ taking `FileNotFoundError` out of `os.replace`. Because it runs its **own** stre
 not inherit its sibling's "the run actually happened" guard and repeats it (cit:([`test_concurrent_operation_never_raises_out_of_a_store_call`], mcp/tests/test_controlplane_store_durability.py:174-205)): without
 that, an appender that died before reaching its loop would write no error file and "zero write
 calls raised" would be reported over zero write calls — the same shape of empty green that
-`HarnessVacuityGuardTests` below generalises.
+`DurabilityMeasurementTests` in the focused measurement suite generalises.
 
 **cit:([`TornLinePolicyTests`], mcp/tests/test_controlplane_store_durability.py:208-336) — R8, and the two folds over one `GateStore.read`.** The
 central pair is cit:([`test_gate_enforcement_fold_refuses_a_torn_line`], mcp/tests/test_controlplane_store_durability.py:235-254), which drives
@@ -66,7 +67,7 @@ assertion is on the surviving *ids*, not on "did not raise": degrading to one mi
 dashboard degrading, degrading to no gates at all is the projection losing its content, and only
 the id list separates those. cit:([`test_correctness_bearing_reads_refuse_a_torn_line`], mcp/tests/test_controlplane_store_durability.py:275-282) and
 cit:([`test_display_only_reads_skip_a_torn_line`], mcp/tests/test_controlplane_store_durability.py:284-295) generalise the split across the other five
-stores through `STRICT_READ_CASES` / cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:78-78).
+stores through `STRICT_READ_CASES` / cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:77-77).
 cit:([`test_expectation_row_projection_degrades_instead_of_crashing`], mcp/tests/test_controlplane_store_durability.py:297-336) is the same argument
 one level up, and it now pins what the leaf actually shipped. It seeds two survivors, a torn line
 and a third survivor *after* it (`_tear_mid_log`), then asserts the projection returns all three
@@ -77,7 +78,7 @@ reconstructs the whole-log tolerance this leaf removed — the strict `pending()
 three deadlines an operator is shown as due become an empty dashboard with no error. That contrast
 is the test; "3 of 4 rows" and "0 of 4 rows" are both lists.
 
-**cit:([`HarnessVacuityGuardTests`], mcp/tests/test_controlplane_store_durability.py:339-386) — R14's other half, and the generalisable lesson of this
+**cit:([`DurabilityMeasurementTests`], mcp/tests/test_durability_measurement.py:34-99) — R14's other half, and the generalisable lesson of this
 leaf: a measurement must refuse to report a vacuous result.** `_store_durability.harness_work_dir`
 used to derive a run's working directory — including the reclaimer's **stop flag** — from
 `root.parent`, and every `run_case` in this file passes a sibling root under one `self.tmp`. So all
@@ -98,10 +99,10 @@ bookkeeping belongs inside the thing being weighed. A path has exactly one name,
 unique whenever `root` is — and two cases sharing a `root` would collide on the log itself, which
 is a collision no caller can overlook.
 
-cit:([`test_a_stress_run_whose_reclaimer_barely_ticked_is_refused`], mcp/tests/test_controlplane_store_durability.py:358-365) drives `run_case` with
+cit:([`test_every_shortfall_and_straggler_is_reported_together`], mcp/tests/test_durability_measurement.py:56-73) drives `run_case` with
 `max_ticks=1` and requires `VacuousRunError` out of the shipped code path rather than out of a
 hand-built result dict, checking the message names both the tick count and the floor.
-cit:([`test_the_floor_is_far_enough_below_what_a_real_run_produces`], mcp/tests/test_controlplane_store_durability.py:367-386) asserts the constant from
+cit:([`test_a_complete_run_is_returned_unchanged`], mcp/tests/test_durability_measurement.py:94-99) asserts the constant from
 both sides — greater than 2, less than 22 — because both halves are load-bearing and neither is
 readable off the number: too low re-admits the run that measured nothing, too high turns a slow
 machine red for a durability defect that is not there. The floor itself lives in the instrument
@@ -117,7 +118,7 @@ figure is the one a floor has to clear, and a loaded CI box moves the number awa
 rather than into it. 10 sits an order of magnitude above a vacuous run and under half the lowest of
 the 32 observed runs. A floor of 20 was rejected: the observed minimum is 22, which is no margin.
 
-**cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444) — R14.** It extracts the base commit, asserts the archive
+**cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:345-401) — R14.** It extracts the base commit, asserts the archive
 actually contains `controlplane/store.py`, runs the forced lost-update scenario against it
 through a separate interpreter, and then asserts two different things: that the five unlocked
 stores each lost exactly one record (`dict.fromkeys(unlocked, 1)`), and that `operator_inbox` lost
@@ -127,7 +128,7 @@ rather than measuring something.
 
 **The documented base-commit rates survived the harness fix — this is the reassuring half.**
 Re-measured through the same archive under a working `harness_work_dir`, four runs, the class
-docstring's own table (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444)): attention 18.27-30.10, gate 7.50-10.50, agent_notifier_signal
+docstring's own table (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:345-401)): attention 18.27-30.10, gate 7.50-10.50, agent_notifier_signal
 7.50-9.00, expectation 6.50-9.50, nudge 5.50-9.00, operator_inbox 0.00 in all four. The leaf's
 re-measured four-run means (23.91 / 9.38 / 8.00 / 7.63 / 7.50 / 0.00) fall inside each of those
 ranges, and both preserve the ordering and the lone survivor at exactly zero that this card
@@ -141,7 +142,7 @@ against the live tree and was passing over one tick per store.
 ### Conventions
 
 **The read-policy partition is derived from call sites, not from docstrings.** The comment block
-above cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:77-77) names, per store, the code that folds it and whether a dropped
+above cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:76-76) names, per store, the code that folds it and whether a dropped
 row changes a decision: gate → `worktrees/modules/closeout.py`, `worktrees/modules/integrate.py`,
 `serving/hosted_interactions.py`, none of them wrapping the read in a suppression;
 expectation → the L2 overdue sweep; operator inbox → a consume is the ack of record; against
@@ -156,8 +157,8 @@ historical `reclaim_ticks` name is absent from the current instrument:** `run_st
 `reclaim_attempts` and `successful_reclaims` (cit:([`reclaim_attempts`, `successful_reclaims`], mcp/tests/_store_durability.py:975-976)). The old name is preserved here for developer review rather than guessed into a replacement; the failure text still states how much racing the rate was measured over.
 
 **One seeded survivor plus one torn line, built by the adapters — and the torn line is not always
-last.** `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:103-105)) is now a one-call wrapper over cit:([`_tear_mid_log`], mcp/tests/test_controlplane_store_durability.py:104-120),
-which writes the `before` records through the store's own `write`, appends cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:64-64)
+last.** `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:102-104)) is now a one-call wrapper over cit:([`_tear_mid_log`], mcp/tests/test_controlplane_store_durability.py:104-120),
+which writes the `before` records through the store's own `write`, appends cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:63-63)
 directly — a line cut off mid-write, which is what a crash or an interleaved append actually
 leaves — and then writes the `after` records. Using the adapter for the good records means the
 fixture cannot drift from the store's real shape; a non-empty `after` puts the torn line *inside*
@@ -227,14 +228,14 @@ shared instrument; the rows below are the code each claim is about.
 | --- | --- | --- |
 | The measurement harness this file imports: adapters, case lists, the shared stress profile, and the scenario dispatch. | `ADAPTERS`; `CASES`; `APPEND_CASES`; `STRESS_PROFILE`; `run_case` | mcp/tests/_store_durability.py:588-590; mcp/tests/_store_durability.py:594-594; mcp/tests/_store_durability.py:596-596; mcp/tests/_store_durability.py:1094-1101; mcp/tests/_store_durability.py:1105-1109 |
 | The bounded sibling helper owns the base-commit archive and pinned re-execution; both functions remain re-exported by the harness. | `extract_base_commit_tree`; `run_against_source` | mcp/tests/_store_durability_source.py:79-105; mcp/tests/_store_durability_source.py:108-132 |
-| The vacuity guard `HarnessVacuityGuardTests` exercises the sibling work directory holding each run's stop flag. | `harness_work_dir` | mcp/tests/_store_durability.py:853-880 |
+| The shared harness gives each run a sibling work directory for its stop flag and receipts. | `harness_work_dir` | mcp/tests/_store_durability.py:853-880 |
 | The vacuity guard's evidence-based floor. | `MIN_SUCCESSFUL_RECLAIMS` | mcp/tests/_durability_measurement.py:11-11 |
 | The single funnel that refuses incomplete stress results. | `require_stress_measurement` | mcp/tests/_durability_measurement.py:18-55 |
 | The stress scenario that returns through the vacuity guard. | `run_stress` | mcp/tests/_store_durability.py:889-962 |
 | Tier 3 — the historical names `MIN_RECLAIM_TICKS` and `_refuse_a_vacuous_run` are absent from the current tree; the current floor and funnel are named `MIN_SUCCESSFUL_RECLAIMS` and `require_stress_measurement`. | `MIN_SUCCESSFUL_RECLAIMS`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:18-55 |
 | The two `GateStore` read policies the R8 tests hold apart: `read` is strict, `read_for_projection` skips a torn or unknown-major line. | `read`; `read_for_projection` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:132-146 |
-| The projection fold asserted to survive a torn line — and which, since this leaf, no longer rewrites anything on the tick. | "def read_gates(coordination_root: Path, *, now: datetime" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:105-105 |
-| The expectation-row projection wrapper, which this leaf moved onto the per-row tolerant read; its comment records that the surrounding `suppress(OSError, ValueError)` used to swallow one torn line by discarding every deadline, and is no longer load-bearing for a malformed row. | "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:195-195 |
+| The projection fold asserted to survive a torn line — and which, since this leaf, no longer rewrites anything on the tick. | "def read_gates(coordination_root: Path, *, now: datetime" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107 |
+| The expectation-row projection wrapper, which this leaf moved onto the per-row tolerant read; its comment records that the surrounding `suppress(OSError, ValueError)` used to swallow one torn line by discarding every deadline, and is no longer load-bearing for a malformed row. | "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197 |
 | The per-row tolerant expectation reads that wrapper now folds, and the strict `read` the L2 overdue sweep keeps. | `read`; `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:177-189; mcp/src/agents_remember/controlplane/expectation_rows.py:191-209; mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
 | The unconditional lock and the never-unlinking rewrite that take the measured loss to zero, plus the schema-version validator that gives both read policies their behaviour with no version branch. | `exclusive_access`; `rewrite_lines`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:251-274; mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
 | Why the gate log is the one that matters: `apply_gate` is the appended snapshot and `evaluate_gate`'s `applied` branch is what refuses a second consume of one approval. | `apply_gate`; `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:59-101; mcp/src/agents_remember/controlplane/records.py:185-194 |
@@ -252,6 +253,8 @@ inside `agents-remember`.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled the durability suite with explicit integration/stress evidence lanes and moved vacuous-measurement assertions to the focused `test_durability_measurement.py` owner.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 added direct `GateState` resolver tests for current, historical-fixture-only, and unrelated-error paths as part of the master CRAP/diff-coverage repair.
@@ -264,7 +267,7 @@ inside `agents-remember`.
 - 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 139 repeated path:start-end Citation objects from 3 same-claim citation group(s) at card line(s) 223, 228, 232; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
 - 2026-08-02T21:27+02:00 — W2-B08 curator: anchored 25 citation findings; preserved the deleted historical names `reclaim_ticks`, `MIN_RECLAIM_TICKS`, and `_refuse_a_vacuous_run` visibly as Tier 3 with current-source evidence for the surviving instrument names. Verification metadata stays pinned until closeout.
 - 2026-08-01T16:29+02:00 — 260731-EFA-L5 curator: re-derived every self-citation against the
-  15:48 file and recorded the class the card was missing. **cit:([`HarnessVacuityGuardTests`], mcp/tests/test_controlplane_store_durability.py:339-386)
+  15:48 file and recorded the class the card was missing. **cit:([`DurabilityMeasurementTests`], mcp/tests/test_durability_measurement.py:34-99)
   added to Logic, with the principle and not only the class: a measurement must refuse to report a
   vacuous result.** `_store_durability.harness_work_dir` derived the run's working directory —
   including the reclaimer's stop flag — from `root.parent`, and every `run_case` here passes a
@@ -331,13 +334,13 @@ inside `agents-remember`.
   opposite policies (strict `read`/`current`/`all_current` raise `ValidationError`; `read_gates`
   must still surface the intact gate *by id*, which is what separates "one row missing" from "no
   gates at all"), generalised across the other five stores through `STRICT_READ_CASES` /
-  `TOLERANT_READ_CASES` (cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:78-78)) whose membership the source derives from named call sites in the
-  comment block above them (cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:77-77)), not from docstrings. **R14** —
-  `HarnessSensitivityTests` (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:389-444)) asserts both directions against the base-commit archive:
+  `TOLERANT_READ_CASES` (cit:([`TOLERANT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:77-77)) whose membership the source derives from named call sites in the
+  comment block above them (cit:([`STRICT_READ_CASES`], mcp/tests/test_controlplane_store_durability.py:76-76)), not from docstrings. **R14** —
+  `HarnessSensitivityTests` (cit:([`HarnessSensitivityTests`], mcp/tests/test_controlplane_store_durability.py:345-401)) asserts both directions against the base-commit archive:
   the five unlocked stores each lose exactly one record, and `operator_inbox` — the one store that
   already held an `fcntl` lock at `e52edaf5` — loses zero, which is the guard that the harness is
-  measuring the defect. Also recorded `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:103-105)) seeding through the store's
-  own `write` before appending `TORN_LINE` (cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:64-64)), and `_seed_gate` (cit:([`_seed_gate`], mcp/tests/test_controlplane_store_durability.py:218-228)) using state `open`
+  measuring the defect. Also recorded `_TempRootTest._tear` (cit:([`_tear`], mcp/tests/test_controlplane_store_durability.py:102-104)) seeding through the store's
+  own `write` before appending `TORN_LINE` (cit:([`TORN_LINE`], mcp/tests/test_controlplane_store_durability.py:63-63)), and `_seed_gate` (cit:([`_seed_gate`], mcp/tests/test_controlplane_store_durability.py:218-228)) using state `open`
   because the projection keep-filter prunes the terminal states. **Filed one Todo, found by
   reading the cited source rather than the test:**
   `test_expectation_row_projection_degrades_instead_of_crashing` (cit:([`test_expectation_row_projection_degrades_instead_of_crashing`], mcp/tests/test_controlplane_store_durability.py:297-336)) says in its docstring

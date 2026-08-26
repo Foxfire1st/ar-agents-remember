@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,27 +54,27 @@ more than one graph-bearing document.
 
 No Domain Documentation sources are configured for this repository-internal application seam.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
 The source, its ordinary-publication consumer, and focused forcing suite define the contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The central owner refuses more than one graph document and builds the one in-memory title context. | L17-L51 | [task_doc_graph_titles.py](mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py) |
-| Ordinary publication checks the same cardinality before it constructs the task transaction. | L136-L166 | [task_doc_publication.py](mcp/src/agents_remember/application/task_docs/task_doc_publication.py) |
-| Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors. | L93-L160 | [test_task_doc_graph_publication.py](mcp/tests/test_task_doc_graph_publication.py) |
+| The central owner refuses more than one graph document and builds the one in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
+| Ordinary publication checks the same cardinality before it constructs the task transaction. | `task_doc_publication_transaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:178-208 |
+| Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors. | `TaskDocGraphPublicationTests` | mcp/tests/test_task_doc_graph_publication.py:93-160 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references were found. | _None._ | _No cross-repository source._ |
+| No meaningful cross-repository references were found. | n/a | n/a |
 
 ## Update History
 

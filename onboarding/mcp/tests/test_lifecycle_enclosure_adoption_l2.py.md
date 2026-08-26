@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_enclosure_adoption_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_adoption_and_schema_migration_execute_in_either_order`, `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`, `test_lost_response_and_idempotent_replay_converge_to_one_receipt`, `test_adoption_conflict_refuses_before_locator_or_manifest_publication` as its principal forcing seams. | L103-L174; L177-L194; L197-L224; L227-L242 | `mcp/tests/test_lifecycle_enclosure_adoption_l2.py` |
+| The file defines `test_adoption_and_schema_migration_execute_in_either_order`, `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`, `test_lost_response_and_idempotent_replay_converge_to_one_receipt`, `test_adoption_conflict_refuses_before_locator_or_manifest_publication` as its principal forcing seams. | `test_adoption_and_schema_migration_execute_in_either_order`; `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`; `test_lost_response_and_idempotent_replay_converge_to_one_receipt`; `test_adoption_conflict_refuses_before_locator_or_manifest_publication` | mcp/tests/test_lifecycle_enclosure_adoption_l2.py:118-156; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:212-229; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:232-261; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:264-279 |
 
 ## Cross-Repo References
 

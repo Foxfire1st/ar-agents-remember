@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tool_response_budgets.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T09:00+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -48,7 +48,7 @@ enumerated, and that the report file retains all records round-trip.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The report helper under test. | `write_tool_report` | mcp/src/agents_remember/kernel/primitives/tool_reports.py:30-50 |
-| The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:195-216; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
+| The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:185-206; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 

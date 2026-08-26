@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ The module canonicalizes local branch spellings and symbolic aliases, resolves r
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical local-branch identity rejects ambiguous symbolic authority. | `canonical_local_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:10-39 |
-| Code and external-memory default resolvers keep their authority sources distinct. | `repository_default_branch`, `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:42-51; mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:54-82 |
+| Code and external-memory default resolvers keep their authority sources distinct. | `repository_default_branch`, `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:39-48; mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:51-79 |
 | Linked-worktree enumeration reports exact canonical branch owners. | `branch_worktree_owners` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:113-133 |
 
 ## Documentation References
@@ -47,10 +47,10 @@ Git failures while resolving canonical branch authority or linked-worktree owner
 stable unreadable-authority messages. Raw stderr/stdout, repository paths, and backend-specific
 detail stay behind this lowest repository boundary.
 
-| Finding | Source |
-| --- | --- |
-| Symbolic branch resolution translates Git failure to a bounded authority message. | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:22-38 |
-| Linked-worktree enumeration applies the same bounded failure posture. | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:113-124 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Symbolic branch resolution translates Git failure to a bounded authority message. | `canonical_local_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:10-36 |
+| Linked-worktree enumeration applies the same bounded failure posture. | `branch_worktree_owners` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:113-133 |
 
 ## Update History
 

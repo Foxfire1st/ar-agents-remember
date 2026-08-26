@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -138,7 +138,7 @@ the source rather than being repeated here; it is the same string
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:320-366 |
+| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:378-428 |
 | The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:56-66; pyproject.toml:110-130 |
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
 | CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |

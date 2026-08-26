@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_provider_index_lifecycle.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -128,7 +128,7 @@ No external documentation is needed for these standard-library unit tests.
 | `seed_commit_divergence` / `_seed_commit_mismatch` under test. | `seed_commit_divergence`; `_seed_commit_mismatch` | mcp/src/agents_remember/providers/cgc/seed.py:424-462; mcp/src/agents_remember/providers/cgc/seed.py:465-497 |
 | `_seed_catchup_results` and the delta bound under test. | `_seed_catchup_results` | mcp/src/agents_remember/providers/provider_setup.py:250-311 |
 | The index-state schema/row the catch-up test asserts in the store. | `record_index_state`; `read_recent_index_states` | mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:293-300 |
-| `_sync_worktree_memory_mtimes` and `_memory_divergence_paths` under test. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/start.py:925-976; mcp/src/agents_remember/worktrees/modules/start.py:979-996 |
+| `_sync_worktree_memory_mtimes` and `_memory_divergence_paths` under test. | `_sync_worktree_memory_mtimes`; `_memory_divergence_paths` | mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:79-118; mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:121-134 |
 | The fallback-default flip the sibling setup suite pins. | `test_cgc_refresh_fallback_is_off_by_default` | mcp/tests/test_provider_setup.py:324-349 |
 
 ## Cross-Repo References

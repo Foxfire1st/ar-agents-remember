@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_execution_graph_view.py`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ declaration-ordered so appended segments keep earlier identities).
 | The builder forcing suite supplies qualified leaf-title keys through the serving-style walk. | `ExecutionGraphViewBuilderTests` | mcp/tests/test_execution_graph_view.py:129-268 |
 | The primitives-only builder consumes qualified graph titles without importing the task layer. | `build_execution_graph_view` | mcp/src/agents_remember/observer/projection_graph.py:188-209; mcp/src/agents_remember/observer/projection_graph.py:228-260 |
 | The serving-layer walk the tests mirror. | `_execution_graph_view` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:327-367 |
-| The joined-titles input type qualifies a leaf id with its owning `TaskDocumentRef`. | `SprintGraphTitles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:15-21 |
+| The joined-titles input type qualifies a leaf id with its owning `TaskDocumentRef`. | `SprintGraphTitles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34 |
 
 ## Cross-Repo References
 

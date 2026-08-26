@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`     |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`     |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -146,7 +146,7 @@ regression suite below prove the ordering rather than relying on timing observat
 | --- | --- | --- |
 | The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:292-292 |
 | Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:346-346; mcp/src/agents_remember/serving/projector.py:354-354 |
-| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. |"async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail("|mcp/src/agents_remember/serving/_app_common.py:135-135; mcp/src/agents_remember/serving/_app_common.py:145-145|
+| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. |"async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail("|mcp/src/agents_remember/serving/_app_common.py:136-136; mcp/src/agents_remember/serving/_app_common.py:146-146|
 | Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:436-448; mcp/tests/test_serving.py:450-470; mcp/tests/test_serving.py:472-500; mcp/tests/test_serving.py:502-512 |
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:109-109 |
 | The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |

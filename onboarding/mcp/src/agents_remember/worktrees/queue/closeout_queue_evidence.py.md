@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,10 +70,10 @@ No configured Domain Documentation source applies; authority is the repository's
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Curator readiness binds structured zero counts, rendered bytes, and exact dispositions. | `curator_evidence` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:149-194 |
-| Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:197-209 |
-| Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:297-352 |
-| Register parsing splits strict mutation reads from tolerant read-path facts. | `planning_authorities`; `register_section_facts` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:412-434; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:437-465 |
-| The write-time register-shape gate and the sprint-creation scaffold. | `require_register_sections_valid`; `register_scaffold_sections` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:468-486; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:497-511 |
+| Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:241-253 |
+| Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:390-464 |
+| Register parsing splits strict mutation reads from tolerant read-path facts. | `planning_authorities`; `register_section_facts` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:498-520; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:523-556 |
+| The write-time register-shape gate and the sprint-creation scaffold. | `require_register_sections_valid`; `register_scaffold_sections` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:559-586; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:597-611 |
 | Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width. | `_table_rows` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:576-624 |
 
 ## Cross-Repo References
@@ -87,10 +87,10 @@ now emit bounded stage/side/name evidence. Machine-readable queue statuses remai
 validation payloads, task contents, paths, and lower-level exception strings are withheld. This is
 failure-surface hardening for the transitional queue, not durable lifecycle ownership.
 
-| Finding | Source |
-| --- | --- |
-| Curator and grade evidence failures use the shared bounded constructor. | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:156-374 |
-| Register read and shape failures publish bounded task-document evidence. | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:480-523 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Curator and grade evidence failures use the shared bounded constructor. | `curator_evidence`; `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:151-184; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:390-464 |
+| Register read and shape failures publish bounded task-document evidence. | `register_section_facts`; `require_register_sections_valid` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:523-556; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:559-586 |
 
 ## 260821-CLIVE Canonical Register Evidence
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-26T05:20+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -37,7 +37,8 @@ re-intersect the per-leaf surface lists — existing AND declared-new, including
 shared parent route — and hunt omitted pairs), **PR-3 blast-radius re-derivation** (re-derive at
 least the HIGH entries with `cgc_dependencies`/`cgc_callers`/`cgc_callees`; spot-check the rest;
 resolve one effective priority per candidate), **PR-4 topology agreement** (validate either an
-explicit graph or the reasoned graph-less atomic-sequential default), **PR-5 findings honesty**,
+explicit graph or the reasoned graph-less source-pair-selected atomic-sequential default),
+**PR-5 findings honesty**,
 **PR-6 detection-versus-judgment ownership**, and **PR-8 review independence plus evidence-class
 matching**. A **Candidate Criteria** tier carries **PR-7 scaling & reclamation at design time**:
 plans that introduce or change a store, loop over a store, queue, or append-only log must name the
@@ -119,12 +120,24 @@ equal-grade tie-break.
 
 PR-4 reviews the topology actually chosen. An explicit graph needs exact membership, cited edges,
 acyclic derived waves, and correct atomic-blocker placement. A reasoned graph-less sprint is also
-valid and runs commanded masters atomically and sequentially; graph absence does not waive
-classification, priority, dependency, or coherence work. A sanctioned strategist skip changes the
-plan author to the orchestrator, not the completeness standard. The repository-wide `add_edge`
+valid: canonical commanded-master order is the stable equal-priority tie-break and source-pair
+activation exposes one atomic master at a time. Selecting another may pause the former without full
+integration, retirement, or an invented dependency. Graph absence does not waive classification,
+priority, dependency, or coherence work. A sanctioned strategist skip changes the plan author to
+the orchestrator, not the completeness standard. The repository-wide `add_edge`
 example census already found `judgmentId` on every example, so L4 made no fabricated example edit.
 
+## IAS Graph-Less Review Correction
+
+Runtime activation serialization is not dependency evidence. PR-4 must reject a plan that turns
+the selector's one-exposed-master property into a false full-integration edge or implies that a
+paused master was terminalized.
+
 ## Update History
+
+- 2026-08-26T05:20+02:00 — Corrected generated PR-4 onboarding: graph-less selection is a
+  source-pair activation boundary, not a full-integration dependency. Final ranges remain
+  post-Dagger-owned.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled one effective candidate priority,
   portfolio-comparison ownership, reasoned graph-less planning, optional explicit graphs, and the

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -52,9 +52,9 @@ The current forcing seams include `test_the_workflow_kinds_advertised_and_declar
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_the_workflow_kinds_advertised_and_declared_are_the_same_set`, `test_agent_session_tools_are_structural_and_exact_id_tools_are_absent`, `test_every_memory_mode_the_contract_accepts_validates_on_both_fields`, `test_it_emits_the_same_keys_in_the_same_order`. | L52-L69; L71-L104; L106-L118; L130-L140 | `mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py` |
+| The current test source exercises `test_the_workflow_kinds_advertised_and_declared_are_the_same_set`, `test_agent_session_tools_are_structural_and_exact_id_tools_are_absent`, `test_every_memory_mode_the_contract_accepts_validates_on_both_fields`, `test_it_emits_the_same_keys_in_the_same_order`. | `test_the_workflow_kinds_advertised_and_declared_are_the_same_set`; `test_agent_session_tools_are_structural_and_exact_id_tools_are_absent`; `test_every_memory_mode_the_contract_accepts_validates_on_both_fields`; `test_it_emits_the_same_keys_in_the_same_order` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:52-69; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:71-104; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:106-118; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:130-140 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection_taskdocs.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -44,10 +44,10 @@ Task-document projection tests now write addressable contracts through one helpe
 the locator and immutable manifest. Planning/task truth remains task-document-owned, while optional
 lifecycle attachment is discovered through the enclosure-root address chain.
 
-| Finding | Source |
-| --- | --- |
-| The helper publishes the normal lifecycle location after contract publication. | mcp/tests/test_observer_projection_taskdocs.py:48-58 |
-| Lifecycle-attached task-document cases all use the addressable helper. | mcp/tests/test_observer_projection_taskdocs.py:294-364 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The helper publishes the normal lifecycle location after contract publication. | `_write_addressable_contract` | mcp/tests/test_observer_projection_taskdocs.py:51-57 |
+| Lifecycle-attached task-document cases all use the addressable helper. | `test_resolves_leaf_doc_lifecycle_from_matching_enclosure_leaf_id`; `test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively` | mcp/tests/test_observer_projection_taskdocs.py:304-336; mcp/tests/test_observer_projection_taskdocs.py:338-378 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -61,7 +61,14 @@ Forces task-document observer projection for hierarchy, graph, route reviews, cl
 - Observer output is a read-only projection of canonical task and projection facts.
 - Discard audit/proof remains visible after the live child files are removed.
 
+A discarded child whose live artifacts have been removed projects both `childJson` and
+`childMarkdown` with `state: missing`. The observer preserves the durable discard row and names the
+absence of each former source artifact explicitly instead of omitting those fields or treating the
+audit as a live child.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled discarded-child projection with explicit missing JSON and Markdown artifact states.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,8 +48,8 @@ See task `260821-CLIVE-L1` L1-R4 through L1-R6.
 | --- | --- | --- |
 | Journal authority is mandatory for non-preview closeout. | `require_closeout_mutation_authority` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:40-43 |
 | Intent precedes Git and is repository-bound. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:69-89 |
-| Commit proof verifies the exact transition. | `prove_git_commit` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:255-285 |
-| Restart classifies exact unchanged, exact output, and ambiguity separately. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:288-357 |
+| Commit proof verifies the exact transition. | `prove_git_commit` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:253-283 |
+| Restart classifies exact unchanged, exact output, and ambiguity separately. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:286-355 |
 
 ## Cross-Repo References
 
@@ -61,12 +61,13 @@ The current source seams include `require_closeout_mutation_authority`, `initial
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation` at this ownership boundary. | L40-L43; L46-L66; L69-L89 | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
+| The current module exposes `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation` at this ownership boundary. | `require_closeout_mutation_authority`; `initial_closeout_mutation_evidence`; `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:40-43; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:46-66; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:69-89 |
 
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input model package relocation; intent-before-Git mutation evidence and exact reconciliation are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata remains blank pending landed commit.

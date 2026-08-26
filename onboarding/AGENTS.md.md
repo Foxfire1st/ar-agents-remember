@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -226,8 +226,18 @@ diagnostic wrapper. Agents may run `./scripts/test-python` only with exact struc
 nodes; the result is explicitly non-certifying and cannot replace the lifecycle-owned Dagger gate.
 The file also points at the new testing architecture and retains direct targeted Vitest behavior.
 
+## 2026-08-26 Python Evidence-System Doctrine Reconciliation
+
+The repository instruction now requires agents changing test evidence, fixtures, support,
+selection, retry, cadence, or causal reporting to read
+`docs/design/python-evidence-system.md`. That design document is the governing contract for the
+separation between internal canonical product truth, independent external conformance, scheduled
+stress/cadence evidence, and lifecycle-eligible durable evidence. The instruction prevents a
+locally convenient test or report from silently becoming acceptance authority.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled the new Python evidence-system doctrine pointer and its acceptance-authority boundary after reviewing the `AGENTS.md` source delta; verification metadata remains closeout-owned.
 - 2026-08-24T21:23+02:00 — 260824-PDLS aligned the agent contract with the exact-node diagnostic
   and Dagger evidence firewall.
 

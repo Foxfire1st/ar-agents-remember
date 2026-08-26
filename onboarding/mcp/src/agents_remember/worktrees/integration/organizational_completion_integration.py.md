@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,10 +41,10 @@ Protected-ref publication and recovery never consume or depend on a projection r
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Boundary preview refuses final/non-final task-source drift before protected publication. | `preview_integration_boundary` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:52-101 |
-| Dry-run reads the exact final-leaf decision. | `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:104-109 |
-| Publication intent pins the exact organizational scope before claim transfer. | `prepare_integration_publication_intent` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:112-166 |
-| Durable quality certification is reread from the integration journal. | `recorded_organizational_quality_certification` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:230-247 |
-| Claim transfer records the exact candidate and integration publication intent before protected publication. | `transfer_integration_claim` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:169-227 |
+| Dry-run reads the exact final-leaf decision. | `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:81-84 |
+| Publication intent pins the exact organizational scope before claim transfer. | `prepare_integration_publication_intent` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:87-140 |
+| Durable quality certification is reread from the integration journal. | `recorded_organizational_quality_certification` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:196-211 |
+| Claim transfer records the exact candidate and integration publication intent before protected publication. | `transfer_integration_claim` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:143-193 |
 
 ## Documentation References
 
@@ -56,9 +56,9 @@ The current source seams include `IntegrationBoundaryFacts`, `preview_integratio
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion` at this ownership boundary. | L45-L49; L52-L101; L104-L109 | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
+| The current module exposes `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion` at this ownership boundary. | `IntegrationBoundaryFacts`; `preview_integration_boundary`; `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:35-41; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:44-78; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:81-84 |
 
 ## 260821-CLIVE Source-Journal Transfer
 
@@ -69,6 +69,8 @@ requires the finalized contract digest. Projection rows are never consumed, and 
 must remain exact.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout recovery-projection package relocation; door/source-journal transfer and queue-independent completion are unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented exact door/source-journal transfer and removal of queue consumption. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

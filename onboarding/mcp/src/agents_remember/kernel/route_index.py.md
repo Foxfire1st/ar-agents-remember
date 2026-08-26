@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/route_index.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-11T14:40+02:00                                   |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`               |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`               |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ package source and deterministic production-path tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. | "def route_index_source_snapshot(", "def _tracked_source_candidates(", "def _untracked_source_candidates(" | mcp/src/agents_remember/kernel/route_index_census.py:41-41; mcp/src/agents_remember/kernel/route_index_census.py:83-83; mcp/src/agents_remember/kernel/route_index_census.py:126-126 |
-| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:552-552 |
+| MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:254-254 |
 | Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-492; mcp/src/agents_remember/worktrees/modules/onboarding.py:503-503 |
 | The regression matrix proves identity, exclusions, typed failures, and repeat convergence. | `RouteIndexTests`, `test_exact_paths_and_symlinks_are_target_independent`, `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes`, `test_git_census_failure_uses_typed_domain_error`, `test_regular_checkout_and_linked_worktree_produce_identical_indexes` | mcp/tests/test_route_index.py:82-907 |
 

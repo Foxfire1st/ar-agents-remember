@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/CloseoutQueue.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T15:04+02:00                           |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -37,9 +37,9 @@ empty case.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Projection-member classification, priority, and reasons render. | "renders projected members with classification, priority, and reasons" | dashboard/src/panels/CloseoutQueue.test.tsx |
-| Invalid-empty source problem and rebuild action render. | "renders invalid projection repair evidence" | dashboard/src/panels/CloseoutQueue.test.tsx |
-| Empty projection renders nothing. | "renders nothing when no queue is projected" | dashboard/src/panels/CloseoutQueue.test.tsx |
+| Candidate state, grade, and reasons render. | "renders candidates with state, grade, and reasons" | dashboard/src/panels/CloseoutQueue.test.tsx:50-56 |
+| Typed non-admitting repair evidence renders. | "renders typed non-admitting repair evidence" | dashboard/src/panels/CloseoutQueue.test.tsx:58-79 |
+| Empty projection renders nothing. | "renders nothing when no queue is projected" | dashboard/src/panels/CloseoutQueue.test.tsx:81-85 |
 
 ## 260821-CLIVE Projection Proof Boundary
 

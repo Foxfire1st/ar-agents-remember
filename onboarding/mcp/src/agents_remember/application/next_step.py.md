@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/next_step.py`     |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-08-01T01:15+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`             |
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`             |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -194,8 +194,8 @@ and the ambient lifecycle / phase definitions.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Choke point that calls `next_step_for` and now SETS `nextStep` on the response model before the single dump, rather than stamping it onto a dumped dict. | `_attach_lifecycle_tail`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:34-50; mcp/src/agents_remember/mcp/tools/base.py:73-75 |
-| `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:22-38; mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-84 |
+| Choke point that calls `next_step_for` and now SETS `nextStep` on the response model before the single dump, rather than stamping it onto a dumped dict. | `_attach_lifecycle_tail`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:34-50; mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:47-63; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114 |
 | `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | `amb.current` — the live `LifecycleState` resolved at the edge. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |

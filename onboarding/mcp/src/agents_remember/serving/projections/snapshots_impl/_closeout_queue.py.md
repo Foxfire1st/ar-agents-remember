@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
 | doc_type               | `file-level-onboarding`                                                      |
 | lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                                             |
 
 ## Governing Overview
@@ -38,9 +38,9 @@ classification/fingerprint/problems, and waiting-generation members into observe
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Top-level reader covers every orchestrating sprint. | `read_closeout_queues` | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
-| Effective state is joined against the exact current source. | `_project_queue` | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
-| Waiting-generation members project classification, priority, order, and reasons. | `_candidate_node` | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
+| Top-level reader covers every orchestrating sprint. | `read_closeout_queues` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:22-38 |
+| Effective state is joined against the exact current source. | `_project_queue` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:41-69 |
+| Waiting-generation members project classification, priority, order, and reasons. | `_candidate_node` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:72-81 |
 
 ## 260821-CLIVE Effective Projection Reader
 

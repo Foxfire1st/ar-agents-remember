@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LifecycleControlCommand`; `control_operation` as its public seam. | L125-L136; L149-L254 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
+| The module defines `LifecycleControlCommand`; `control_operation` as its public seam. | `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:110-125; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:155-225 |
 
 ## Cross-Repo References
 
@@ -63,7 +63,16 @@ declaration fingerprint; replay must match it. Revise validates fresh input and 
 apply arguments rather than writing a successor-intent WAL. Direct recovery runs only while its
 caller owns integration/Git authority. Missing initial doors and competing declarations refuse.
 
+## Shared Control-Action Vocabulary
+
+`LifecycleControlAction` is owned by `models/lifecycles/operation_kinds.py` alongside the closed
+operation-kind vocabulary. This control module consumes that model; it no longer declares its own
+action literal/enum or imports action identity from worker-termination evidence. Request parsing,
+control classification, and public responses therefore share one exhaustive action type.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled lifecycle controls with the centralized `LifecycleControlAction` model and removal of the local action declaration.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled all task-addressed controls with canonical door/journal ownership. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

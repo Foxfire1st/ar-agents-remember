@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.tsx`  |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`|
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 | The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. | "prunes the stale base node and raises a fleeting block with BOTH recovery choices" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:352-360 |
 | The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:50-50 |
 | The honest-motion gate. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:198-239; dashboard/src/types/projection.ts:254-264; dashboard/src/types/projection.ts:378-389 |
+| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:234-275; dashboard/src/types/projection.ts:290-300; dashboard/src/types/projection.ts:449-460 |
 
 ## Current L5I Maintenance
 

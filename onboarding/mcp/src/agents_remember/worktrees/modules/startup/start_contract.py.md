@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -17,9 +17,10 @@
 ## Purpose
 
 `start_contract.py` owns worktree-start contract construction after the HFX-L4 extraction from
-`start.py`. It builds root series contracts for master tasks, derives source/work branches and memory
-bases, validates the requested leaf ref, and returns a leaf contract whose persisted `leaf_id` is the
-canonical task document id.
+`start.py`. It builds or recovers root series contracts, selects and reconciles an atomic master
+against its protected code/external-memory source pair before leaf admission, derives leaf
+source/work branches and memory bases, validates the requested leaf ref, and returns a leaf contract
+whose persisted `leaf_id` is the canonical task document id.
 
 ## Code Commentary
 
@@ -88,20 +89,23 @@ rather than the current memory checkout. Existing `task.json` master artifacts a
 Standalone/light tasks are accepted through the same start builder because `leaf_ref_start` delegates to
 the shared resolver, which indexes non-master `task.json` docs as leaf candidates.
 
-**Atomic-sequential lane (260815-DAG-L13).** Series bootstrap now gates on the *effective* execution
-nature: `_master_execution_nature` reads the declared cell without raising on a nature-less legacy
-master, and `effective_execution_nature` (from `worktrees/scheduling_mode.py`) resolves it — a
-nature-less master is atomic by default, and under a graph-less commanding sprint every commanded
-master executes atomically. When the sprint runs the atomic-sequential default and another commanded
-master's series contract still owns the landing lane (a stored, non-terminal cleanup fact),
-`ensure_master_series_contract` returns a blocked `WorktreeCommandResult` (state
-`sequential-lane-owned`) naming the lane owner and the legal next operations instead of starting; the
-block fails closed — an unresolvable commanding sprint propagates the typed refusal rather than
-guessing the lane is free. Organizational semantics exist only under an authored graph
-(`_is_graph_organizational`): an organizational-declared master on a graph-less sprint lands through
-the atomic series lane, and a terminal series artifact under it (cleanup completed/abandoned/reopened)
-is ignored and reported as a `staleSeriesArtifact` fact by the start result rather than refusing.
-A blocked bootstrap result propagates out of `_build_start_contract` unchanged.
+**Source-pair activation replaces the old global sequential lane.** Series bootstrap still gates on
+the *effective* execution nature and commanding sprint, but contract existence is durable work truth,
+not scheduling ownership. Multiple non-terminal series contracts may coexist. After recovering or
+creating the requested contract, `ensure_master_series_contract` validates activation inputs and
+refreshes remote evidence before taking repository integration authority. Under that authority it
+finishes the per-master bootstrap journal transaction without nesting store locks, then delegates to
+`reconcile_selected_series_under_authority`. The requested contract becomes the source-pair selection
+in `reconciling`, logically pausing the previous selection; it is returned as implementation authority
+only after exact source synchronization publishes it `active`. A retained conflict or damaged
+authority returns the transaction's resolvable/refused result and `_build_start_contract` does not
+construct or expose a leaf beneath it.
+
+`dry_run` remains planning-only: it returns an existing or planned contract without fetching,
+publishing the selector, writing the bootstrap journal, creating branches, or starting a sync
+generation. Organizational semantics still exist only under an authored execution graph; a
+graph-less master uses atomic semantics. Terminal series artifacts are replaceable stale artifacts,
+not evidence that another master owns a global lane.
 
 ### Invariants And Boundaries
 
@@ -121,25 +125,46 @@ A blocked bootstrap result propagates out of `_build_start_contract` unchanged.
   distinguishes the two paths.
 - Worktree-start contracts persist doc ids, not legacy file stems.
 - Malformed task documents fail loudly during parent-series detection.
-- Under the atomic-sequential default at most one commanded master is in flight; a second series
-  bootstrap returns the blocked `sequential-lane-owned` result (lane owner plus legal next
-  operations) instead of starting or hard-refusing.
+- Multiple commanded masters may have live series contracts. Exactly one is selected per normalized
+  protected source pair, and selecting a different master pauses rather than deletes the prior work.
+- A leaf under an atomic master is not admitted until its parent selection has reconciled and become
+  active; neither task prose nor closeout queue state supplies that authority.
+- Integration authority and the per-master bootstrap store lock do not nest with another store lock.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The atomic-sequential lane block names the owning master and legal next operations. | `_sequential_lane_block` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:272-315 |
+| Master bootstrap separates durable contract creation from disposable source-pair selection, refreshes before integration authority, and reconciles before returning. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:221-288 |
+| Selection and exact sync-before-exposure are owned by the focused activation transaction. | `activate_atomic_series_contract`; `sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:113-136 |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
-| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:460-471 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:417-417; mcp/src/agents_remember/worktrees/modules/start.py:420-420; mcp/src/agents_remember/worktrees/modules/start.py:423-423; mcp/src/agents_remember/worktrees/modules/start.py:426-426 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:598-645 |
-| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:162-179; mcp/src/agents_remember/worktrees/worktree_contract.py:796-851 |
+| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:482-493 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:484-484; mcp/src/agents_remember/worktrees/modules/start.py:487-487; mcp/src/agents_remember/worktrees/modules/start.py:490-490; mcp/src/agents_remember/worktrees/modules/start.py:493-493 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:493-493; mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
+| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:162-179; mcp/src/agents_remember/worktrees/worktree_contract.py:795-850 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies beyond the configured external-memory pair that
+the contract records explicitly.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
-L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
+and atomic-series refs are censused across code and external memory. Leaf publication still uses the
+exact configured locator and task CAS, while source-pair selection/reconciliation uses repository
+integration authority. No mutable queue lane participates in start admission.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -147,11 +172,19 @@ The current source seams include `memory_base_for_source`, `memory_mode_for_repo
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `memory_base_for_source`, `memory_mode_for_repository`, `MasterSeriesContractSpec` at this ownership boundary. | L124-L133; L193-L200; L204-L215 | `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py` |
+| The current module exposes `memory_base_for_source`, `memory_mode_for_repository`, `MasterSeriesContractSpec` at this ownership boundary. | `memory_base_for_source`; `memory_mode_for_repository`; `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:127-136; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:196-203; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:206-218 |
 
 ## Update History
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for this changed
+  startup-contract card.
+
+- 2026-08-26T03:37+02:00 — Replaced the obsolete single-in-flight sequential-lane contract with
+  source-pair activation: multiple live series are normal, selection pauses the previous master,
+  bootstrap and selector stores never nest, and reconciliation must reach active before leaf
+  admission. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

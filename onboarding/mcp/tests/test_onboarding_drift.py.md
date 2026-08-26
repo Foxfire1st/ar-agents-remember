@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_onboarding_drift.py`       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-11T15:20+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -39,7 +39,7 @@ exit plus a written report.
 | --- | --- | --- |
 | The inline classifier under test. | `extract_inline_onboarding_block`; `compute_inline_source_digest`; `classify_inline_source` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:61-82; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:85-88; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:91-175 |
 | The CLI facade under test. | `main` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:225-315 |
-| The CLI test and reused fixture. | "class DriftMainCliTests(unittest.TestCase):"; "def initialize_clean_memory_fixture(root: Path) -> None:" | mcp/tests/test_memory_quality.py:394-394; mcp/tests/test_onboarding_drift.py:124-124 |
+| The CLI test and reused fixture. | "class DriftMainCliTests(unittest.TestCase):"; "def initialize_clean_memory_fixture(root: Path) -> None:" | mcp/tests/test_memory_quality.py:415-415; mcp/tests/test_onboarding_drift.py:124-124 |
 
 ## Update History
 

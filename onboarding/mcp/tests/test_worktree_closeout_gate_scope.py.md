@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_worktree_closeout_gate_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,8 +73,16 @@ product repository.
 
 Quality-gate scope cases now use canonical normalized closeout args. Their staging and created-file assertions are unchanged; validation and journal authority are satisfied before the test reaches the code-quality boundary.
 
+## 2026-08-26 Candidate-Bound Passing Evidence
+
+The scoped fake gate now publishes a real passing quality generation for the current target and
+diff base before returning its result. The closeout tests therefore cannot satisfy the gate with an
+arbitrary green dictionary; created-file visibility and refusal assertions run against the same
+candidate-bound evidence shape production consumes.
+
 ## Update History
 
+- 2026-08-26T10:44:52+02:00 — Reconciled closeout scope tests with candidate-bound passing quality evidence rather than an invented success payload.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.

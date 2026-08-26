@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/delta.py`  |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-07T05:06+02:00                      |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`  |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`  |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Purpose
@@ -64,7 +64,7 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema diffed here (flat, id-keyed collections). | "class WorkspaceProjection(BaseModel):"; "lifecycles: list[LifecycleProjection]"; "enclosures: list[EnclosureNode]"; "providers: list[ProviderNode]"; "metrics: Metrics"; "analytics: Analytics" | mcp/src/agents_remember/observer/projection.py:1135-1135; mcp/src/agents_remember/observer/projection.py:1142-1144; mcp/src/agents_remember/observer/projection.py:1156-1157 |
+| The projection schema diffed here (flat, id-keyed collections). | "class WorkspaceProjection(BaseModel):"; "lifecycles: list[LifecycleProjection]"; "enclosures: list[EnclosureNode]"; "providers: list[ProviderNode]"; "metrics: Metrics"; "analytics: Analytics" | mcp/src/agents_remember/observer/projection.py:1140-1140; mcp/src/agents_remember/observer/projection.py:1147-1149; mcp/src/agents_remember/observer/projection.py:1161-1162 |
 | The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items. | "class Projector:"; "def stable_projection_state("; "def diff_projection("; "def _publish_projection("; "def _broadcast(" | mcp/src/agents_remember/serving/delta.py:83-83; mcp/src/agents_remember/serving/delta.py:109-109; mcp/src/agents_remember/serving/projector.py:131-131; mcp/src/agents_remember/serving/projector.py:292-292; mcp/src/agents_remember/serving/projector.py:334-334 |
 | The client mirror of the volatile set + local age advancement. | `VOLATILE_AGE_FIELDS`; `stampServed`; `servedAgeSeconds` | dashboard/src/data/servedAges.ts:16-22; dashboard/src/data/servedAges.ts:59-61; dashboard/src/data/servedAges.ts:68-78 |
 

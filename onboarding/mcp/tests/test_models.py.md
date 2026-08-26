@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_models.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -32,7 +32,7 @@ a response contract and catches model definitions that are not schema-safe.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public tool metadata lives in the `mcp/tools/` package. | "def _tool_payload" | mcp/src/agents_remember/mcp/tools/base.py:74-74 |
+| Public tool metadata lives in the `mcp/tools/` package. | "def _tool_payload" | mcp/src/agents_remember/mcp/tools/base.py:77-77 |
 | Response model registry lives in the models package. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:113-134 |
 
 ## Update History

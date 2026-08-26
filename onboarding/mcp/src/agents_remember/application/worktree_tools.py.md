@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `23d35f7799153e0c7f3d126291fe2da1662fb87b` |
-| lastVerifiedCommitDate | 2026-08-24T21:41:52+02:00 |
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -71,8 +71,16 @@ diverging from its boot config. `worktree_start_tool` forwards
 `WorktreeArgs` for the stale-base preflight recovery; the application entry point adds no
 behavior of its own. `worktree_sync_tool` (GitHub #54 sub-task D) is the
 contract-path-based application entry point for the mid-task base sync: it confines
-`contract_path` via `require_within_coordination` and forwards
-`memory_sync_choice`/`dry_run` to `git_worktree_manager.sync_result`.
+`contract_path` through configured-contract admission and forwards typed
+`MemorySyncChoice`, typed `SyncResolutionAction` (`continue`/`cancel`), and `dry_run` to
+`git_worktree_manager.sync_result`. The contract path, not a public operation id, addresses a
+retained generation.
+
+`worktree_status_tool` resolves the canonical locator before calling the legacy-shaped status
+facade and independently observes the stable enclosure-root sync journal. When present it adds the
+typed `syncOperation` projection even if contract reading later reports a missing or unreadable
+contract. Lifecycle archive projection remains separate; neither task text nor closeout queue state
+is used to reconstruct sync evidence.
 `lifecycle_finalize_task_tool` confines the contract and optional task-document
 paths under the coordination root, builds `git_worktree_manager.FinalizeArgs`,
 and delegates final readiness, cleanup, and task-document reconciliation to the
@@ -138,6 +146,10 @@ ambient is installed (CLI/tests).
   coordination root unless a specific tool owns a setup target.
 - Worktree operations call package services directly; CLI entrypoints remain
   print adapters.
+- Sync status and control are contract-addressed. `resolution_action` is typed and the application
+  facade must not invent a public operation-id selector or queue-derived lifecycle fallback.
+- Stable sync journal evidence remains observable across contract read failure once the canonical
+  lifecycle locator establishes the enclosure root.
 - `worktree_start_tool`/`worktree_integrate_tool`/`worktree_cleanup_tool`/`lifecycle_finalize_task_tool` default
   `dry_run=False` (act-by-default); the `*_closeout_apply` application entry points keep
   `dry_run=False` paired with their `*_preview` tools. `dry_run=true` previews.
@@ -167,11 +179,14 @@ the documented setup cap now actually governs the worktree flow.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:293-316 |
+| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:484-501 |
+| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
 | Worktree service behavior is owned by the worktree manager and modules. | "from agents_remember.worktrees.modules.finalize import FinalizeArgs" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:31-37 |
-| Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:101-150; mcp/src/agents_remember/models/worktree.py:153-178 |
+| Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:148-198; mcp/src/agents_remember/models/worktree.py:201-228 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:114-114; mcp/src/agents_remember/kernel/primitives/runtime_config.py:188-188 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:119-119; mcp/src/agents_remember/kernel/primitives/runtime_config.py:188-188 |
 | Containment tests pin the worktree-start veto and the armed-path live-map launch. | "test_stale_armed_snapshot_is_vetoed_by_disk", "test_disk_armed_snapshot_launches_with_live_map" | mcp/tests/test_provider_containment.py:125-177 |
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
 | Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:34-65 |
@@ -219,7 +234,7 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The facade imports and re-exports the extracted task-start request types at this ownership boundary. | `TaskIdentity`; `TaskBases`; `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:99-110 |
+| The facade's start entry point consumes the extracted task-start request types at this boundary. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:119-216 |
 
 ## 260821-CLIVE Final Public Worktree Boundary
 
@@ -232,6 +247,10 @@ but the task-addressed worker never makes the scheduling decision or claims a do
 operation revalidates the journal, contract, and protected-ref authority.
 
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Added typed contract-addressed sync continuation/cancellation and
+  stable sync-journal status projection across contract read failure. Recorded the separation from
+  queue and task planes. Verification remains post-Dagger/closeout-owned.
 
 - 2026-08-24T21:43+02:00 — File-size repair: moved the seven request/default concepts to the single
   `application/worktree_tool_requests.py` owner. This facade still consumes the exact types and

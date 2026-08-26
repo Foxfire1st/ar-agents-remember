@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_python_test_evidence_firewall.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,8 +36,10 @@ factories. The route-neutral phase report is checked as an exported observation,
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Every accepting consumer refuses diagnostics. | `test_diagnostic_evidence_is_rejected_by_every_accepting_consumer` | mcp/tests/test_python_test_evidence_firewall.py:41-50 |
-| Published Dagger evidence is candidate-bound. | `test_verified_dagger_generation_mints_evidence_for_lifecycle_consumers` | mcp/tests/test_python_test_evidence_firewall.py:103-147 |
+| Published Dagger evidence is candidate-bound. | `test_verified_dagger_generation_mints_evidence_for_lifecycle_consumers` | mcp/tests/test_python_test_evidence_firewall.py:102-146 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the common `evidence_payload` rename, quality-package relocation, and catalog-owned selection inputs; diagnostic evidence remains unreachable from every accepting consumer.
 
 - 2026-08-24T21:23+02:00 — Created for 260824-PDLS.

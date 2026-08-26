@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`       |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -206,10 +206,10 @@ into an inode with no remaining links.
 | Mirrors the observer event store (same append / read / JSONL shape). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the dashboard a co-writer. Cited by symbol, not by line: this file grew ~100 lines mid-leaf and every earlier range into it was invalidated. | `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:144-156; mcp/src/agents_remember/controlplane/durable_store.py:396-451; mcp/src/agents_remember/controlplane/durable_store.py:475-479; mcp/src/agents_remember/controlplane/durable_store.py:482-493; mcp/src/agents_remember/controlplane/durable_store.py:512-519 |
 | `_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116. | `_reclaim_gate_log`, `record_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
-| `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:53-55; mcp/src/agents_remember/controlplane/interaction_retention.py:184-197 |
+| `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:199-212 |
 | `evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
-| `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:519-570; mcp/src/agents_remember/worktrees/modules/closeout.py:886-886 |
-| `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:105-105 |
+| `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:515-566 |
+| `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107 |
 
 As of cycle 5 GateStore.find(gate_id) resolves one gate id across the workspace log and every lifecycle log — the seam-decide path: the deciding seat holds only the packet-carried gate id; lifecycle ids stay server-side. Cycle 6 adds `all_current()`, the cross-lifecycle enforcement fold: it merges every gate log (workspace + all lifecycles) last-wins per gate id, so identity-addressed consumers (the integrate-side master-handover guard, which matches by the gate's `enclosure`) can see a seam gate raised on a different lifecycle than the one the consuming contract anchors.
 

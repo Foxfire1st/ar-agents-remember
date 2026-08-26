@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_doc_section_scaffolding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,26 +47,26 @@ None.
 
 No Domain Documentation sources are configured for this repository-internal forcing suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | _None._ | _No external source._ |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
 The tests and extracted raw-shape owner are the direct evidence.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite proves typed hostile-input refusal, no writes, caller preservation, append-once scaffolding, and semantic delegation. | L38-L128 | [test_task_doc_section_scaffolding.py](mcp/tests/test_task_doc_section_scaffolding.py) |
-| The helper under test owns the minimal list/mapping precondition. | L17-L55 | [task_doc_section_scaffolding.py](mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py) |
+| The suite proves typed hostile-input refusal, no writes, caller preservation, append-once scaffolding, and semantic delegation. | `TaskDocSectionScaffoldingTests` | mcp/tests/test_task_doc_section_scaffolding.py:38-127 |
+| The helper under test owns the minimal list/mapping precondition. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is exercised by this suite.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references were found. | _None._ | _No cross-repository source._ |
+| No meaningful cross-repository references were found. | n/a | n/a |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam. | L36-L102; L105-L115; L118-L163 | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py` |
+| The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:42-108 |
 
 ## Cross-Repo References
 
@@ -62,6 +62,8 @@ reads, and routes ambiguous classifier states to developer decision. The retired
 bypass and synthetic recovery paths are absent.
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout recovery-projection package relocation; caller-owned same-generation recovery remains unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded caller-owned integration authority and same-generation strict recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

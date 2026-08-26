@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 
 ## Purpose
 
@@ -47,7 +47,7 @@ This bundle copy is written by fan-out sub-agents and consumed by the reviewer's
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Onboarding-Coherency Template` | skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48 |
 | The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | "../templates/onboarding-coherency.md" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:121-121 |
-| The orchestrator's memory-quality checks consume this report; the analysis is written by the orchestrator's own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop. | `## No Native Sub-Agents — role seats only (doctrine, ruled 2026-08-05)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:441-468 |
+| The orchestrator's memory-quality checks consume this report; the analysis is written by the orchestrator's own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop. | `## No Native Sub-Agents — role seats only (doctrine, ruled 2026-08-05)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:499-526 |
 | The frame defines the onboarding-vs-code lens as paired read_ar_files + memory_quality_check + drift. | `## The Three Review Lenses` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:101-122 |
 
 ## Cross-Repo References

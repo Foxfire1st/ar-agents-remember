@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_register_scaffold.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,8 +40,8 @@ authored `executionGraph` through `replace`.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Register scaffolding and write-time shape validation forcing. | `RegisterScaffoldTests` | mcp/tests/test_register_scaffold.py:42-233 |
-| The scaffold and write-time gate under test. | `register_scaffold_sections`; `require_register_sections_valid` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:468-486; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:497-511 |
-| The task-doc create/write integration under test. | `_scaffold_register_sections`; `_enforce_register_section_shapes` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:583-596; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:599-604 |
+| The scaffold and write-time gate under test. | `register_scaffold_sections`; `require_register_sections_valid` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:559-586; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:597-611 |
+| The task-doc create/write integration under test. | "def scaffold_register_sections(data: dict[str, Any]) -> None:"; "def _enforce_register_section_shapes(doc: TaskDocument) -> None:" | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:587-592 |
 
 ## Update History
 

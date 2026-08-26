@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/code_quality/diff_coverage.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -224,9 +224,9 @@ every ordinary negative into a gate crash, which is what
 | `load_coverage_by_path`, `FileCoverage`, and the refusal of a report without branch data, all reused here. | `load_coverage_by_path`; `FileCoverage` | mcp/src/agents_remember/code_quality/crap_calculator.py:41-59; mcp/src/agents_remember/code_quality/crap_calculator.py:113-132 |
 | Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | `BaseResolutionTests` | mcp/tests/test_diff_coverage.py:81-254; mcp/tests/test_diff_coverage.py:221-255 |
 | `[tool.coverage.run] branch = true`, without which this step refuses to score. | "branch = true" | pyproject.toml:68-70 |
-| The full hook tier that runs the wrapper, and the note telling leaf branches to export `AR_GATE_DIFF_BASE`. | `AR_GATE_DIFF_BASE` | mcp/src/agents_remember/code_quality/check.py:924-924 |
-| Lifecycle-owned Dagger calls receive an explicit task-derived diff base; GitHub PR validation does not run this coverage rail. | "Both modes require the exact Git comparison commit" | CONTRIBUTING.md:77-83 |
-| The contributor-facing statement of the floor and why it is 100%. | `### The coverage floor is on your diff, not on the tree` | CONTRIBUTING.md:95-131 |
+| Diff-base candidate ordering accepts explicit `AR_GATE_DIFF_BASE` before derived Git candidates. | `candidate_sources` | mcp/src/agents_remember/code_quality/diff_coverage.py:115-142 |
+| Lifecycle-owned Dagger calls receive an explicit task-derived diff base; GitHub PR validation does not run this coverage rail. | "Both modes require the exact Git comparison commit" | CONTRIBUTING.md:98-98 |
+| The contributor-facing statement of the floor and why it is 100%. | `### The coverage floor is on your diff, not on the tree` | CONTRIBUTING.md:137-167 |
 | `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | `run_git`; `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 | `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `diff_coverage.run_git` still reads the repository it was handed, and that a non-repository and an unrunnable git both surface as `DiffScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
 

@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T06:25+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP overview](../../../overview.md)
+[queue overview](overview.md)
 
 ## Purpose
 
@@ -50,6 +50,8 @@ topology validator remains the canonical reference-integrity authority.
 - Graph revision changes when execution structure or a master's execution nature changes.
 - Predecessor completion is a mechanistic fact, not a priority judgment.
 - No acquisition or in-flight lane facts are owned here.
+- For a graph-less sprint, the migration refusal describes source-pair-selected implementation
+  exposure; series-contract presence is not a lane owner.
 
 ### Todos
 
@@ -63,10 +65,10 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction validates/caps topology and derives the exact queue revision and indexes, with the strict/tolerant register split. | `graph_context` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:79-161 |
+| Graph construction validates/caps topology and derives the exact queue revision and indexes, with the strict/tolerant register split. | `graph_context` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:56-96 |
 | Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:279-305 |
-| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:204-211; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:214-227 |
-| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:237-244; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:247-263 |
+| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:224-231; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:234-247 |
+| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:257-264; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:267-282 |
 
 ## Cross-Repo References
 
@@ -79,9 +81,9 @@ through the shared bounded queue evidence API. The graph service retains stable 
 without exposing task contents or lower-level topology details. Its lifecycle-shaped queue state
 remains transitional until L3's waiting-only projection rewrite.
 
-| Finding | Source |
-| --- | --- |
-| Graph construction bounds failures at sprint, topology, and planning-register stages. | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:89-171 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Graph construction bounds failures at sprint, topology, and planning-register stages. | `graph_context`; `_validated_graph_documents` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:56-96; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:99-162 |
 
 ## 260821-CLIVE Projection Ordering Only
 
@@ -91,6 +93,13 @@ Ready order remains effective priority rank, graph declaration order, then leaf 
 graph-less atomic-sequential sprint is valid; the graph never owns in-flight lane state.
 
 ## Update History
+
+- 2026-08-26T06:25+02:00 — Rebound the card to its nearest queue-route governor while preserving
+  graph-derived ordering ownership; verification metadata remains closeout-owned.
+
+- 2026-08-26T03:37+02:00 — Corrected graph-less guidance to source-pair activation terminology;
+  graph ownership and behavior otherwise remain unchanged. Verification remains
+  post-Dagger/closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reduced graph responsibility to bounded projection ordering and preview. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam. | L49-L54; L58-L67; L74-L147 | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
+| The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam. | `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:58-64; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:77-87; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:97-170 |
 
 ## Cross-Repo References
 

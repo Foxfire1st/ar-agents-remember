@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `17987fa66a642306eb8d20fa9a4bff2b881550d2`
-| lastVerifiedCommitDate | 2026-08-15T14:36:30+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ and report-only detail into the enclosure's one atomically replaced curator work
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | "def memory_quality_check_tool("; "unstamped_code_commit=scope.unstamped_code_commit" | mcp/src/agents_remember/application/memory_tools.py:228-228; mcp/src/agents_remember/application/memory_tools.py:325-325 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:67-73; mcp/src/agents_remember/application/memory_quality/controller.py:165-190 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:32-44; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
@@ -248,7 +248,13 @@ requires this structured zero gate; when candidates exist it also requires the c
 curator report's five-column dispositions to match the set exactly. A free-text ready sentence or
 path mention is not readiness evidence.
 
+## 2026-08-26 Application Controller Boundary
+
+The asynchronous sync/start/poll controller now lives at `application.memory_quality.controller`. This route continues to own the integrity/style checks and their package runner; the application controller composes those checks and finalizes transport responses without duplicating check logic or adding a fallback path.
+
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — Reconciled the route with the extracted application controller while preserving memory-quality check ownership inside this package.
 
 - 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded the structured curator
   attestation and exact source-change disposition contract consumed before queue declaration.

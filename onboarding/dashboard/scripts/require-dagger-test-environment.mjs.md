@@ -6,8 +6,8 @@
 | path | `dashboard/scripts/require-dagger-test-environment.mjs` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,25 +52,25 @@ None.
 
 No external Domain Documentation governs this repository-owned admission contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was required. | _None._ | _No external source._ |
+| No relevant external documentation was required. | n/a | n/a |
 
 ## Repo-Internal References
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| Token format, fixed attestation path, read failure, and exact-match outcomes share one validator. | L3-L24 | [require-dagger-test-environment.mjs](dashboard/scripts/require-dagger-test-environment.mjs) |
-| The throwing facade only adds a subject label and Dagger guidance. | L26-L34 | [require-dagger-test-environment.mjs](dashboard/scripts/require-dagger-test-environment.mjs) |
-| The changed-lines CLI invokes this owner as the first operation of direct `main()`. | L12-L12; L79-L80 | [check-diff-coverage.mjs](dashboard/scripts/check-diff-coverage.mjs) |
+| Token format, fixed attestation path, read failure, and exact-match outcomes share one validator. | `DAGGER_TEST_ATTESTATION_ENV`; `DAGGER_TEST_ATTESTATION_PATH`; `daggerTestEnvironmentError` | dashboard/scripts/require-dagger-test-environment.mjs:3-4; dashboard/scripts/require-dagger-test-environment.mjs:6-24 |
+| The throwing facade only adds a subject label and Dagger guidance. | `requireDaggerTestEnvironment` | dashboard/scripts/require-dagger-test-environment.mjs:26-34 |
+| The changed-lines CLI invokes this owner as the first operation of direct `main()`. | `main` | dashboard/scripts/check-diff-coverage.mjs:79-211 |
 
 ## Cross-Repo References
 
 No cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references were found. | _None._ | _No cross-repository source._ |
+| No meaningful cross-repository references were found. | n/a | n/a |
 
 ## Update History
 

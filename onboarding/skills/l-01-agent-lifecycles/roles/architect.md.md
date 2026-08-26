@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`|
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-26T08:35+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
+[l-01 role overview](overview.md)
 
 ## Purpose
 
@@ -63,7 +63,27 @@ are architect children and finish before the orchestrator exists; runtime reshap
 through that architect-owned loop. A strategist skip authorizes the orchestrator to author the
 same explicit artifact, not an implicit default.
 
+## IAS Source-Pair Activation Planning Boundary
+
+The reviewed graph-less choice is now the source-pair-selected atomic-sequential mode. Canonical
+commanded-master order is only the stable equal-priority tie-break; selecting another atomic master
+may logically pause the former without forcing integration, contract retirement, or process and
+worktree termination. The architect therefore judges dependency truth independently of runtime
+selection and does not manufacture an edge merely to explain serialization.
+
+Task-document authoring remains wholly upstream of activation and queue state. The architect may
+approve otherwise-valid task changes; the affected disposable projection is then invalidated and
+rebuilt. A selector or queue cannot veto planning, and no valid task/master is discarded merely to
+free a runtime selection.
+
 ## Update History
+
+- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
+  reconciling architect activation doctrine.
+
+- 2026-08-26T05:20+02:00 — Reconciled architect doctrine with graph-less source-pair activation,
+  pause-without-retirement, task-authoring primacy, and queue/projection invalidation. Final source
+  ranges and verification remain post-Dagger/closeout-owned.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded architect ownership of strategist planning,
   explicit topology admission, and the complete/still-valid condition for recommending a skip.

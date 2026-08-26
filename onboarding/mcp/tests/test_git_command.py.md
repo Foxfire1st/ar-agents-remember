@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -244,14 +244,14 @@ the call sites are the ones the consolidation moved onto it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner under test: the eight-name `GIT_REPOSITORY_SELECTOR_ENV` tuple, the timeout constants, `git_environment()`, and `run_git()` with `env=`, `stdin=DEVNULL`, surrogateescape decoding and a per-call `timeout`. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The conftest strip this suite deliberately defeats: it imports the production selector tuple and pops each name from `os.environ` at import. | "from agents_remember.kernel.git_command import GIT_REPOSITORY_SELECTOR_ENV" | mcp/tests/conftest.py:101-101 |
+| Hermetic bootstrap removes every production repository-selector variable from test environments. | `hermetic_pytest_environment`; `activate_current_pytest_environment` | mcp/src/agents_remember/testing/hermetic_bootstrap.py:62-84; mcp/src/agents_remember/testing/hermetic_bootstrap.py:87-100 |
 | `commit_if_dirty` and `head_commit` — the closeout write path driven by the decoy commit test. | `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:169-174 |
 | The gate's own git wrappers route through the shared runner and convert failure into typed domain errors: `_git` (which owns the conversion for all three callers) and `run_git` raising `DiffScopeError`, and `git_ls_files` raising `ScopeError`. | `DiffScopeError` | mcp/src/agents_remember/code_quality/diff_coverage.py:39-40; mcp/src/agents_remember/code_quality/check.py:35-39; mcp/src/agents_remember/code_quality/scope.py:44-53 |
 | The per-command timeout bands `TimeoutClassTests` asserts: the three metadata-band ref reads plus the local-band `status --porcelain`. | `TimeoutClassTests` | mcp/tests/test_git_command.py:667-777 |
 | The freshness reads classed by what they do — metadata for the two ref lookups, local for the history walk. | `read_branch_freshness` | mcp/src/agents_remember/kernel/git_freshness.py:56-65; mcp/src/agents_remember/kernel/git_freshness.py:98-112 |
 | The other half of `test_one_command_means_one_bound_across_the_kernel`: `git_branch` / `git_head_or_empty` on the metadata band, the two commands it shares with `git_facts`. | `git_branch` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:21-29 |
 | The one non-git spawn the sweep deliberately does not cover (`gh pr list` with `env=git_environment()`), asserted instead by `test_landing.py`. | `_pr_for` | mcp/src/agents_remember/worktrees/modules/landing.py:93-150 |
-| The two remote-talking calls: `_remote_git` applies `GIT_REMOTE_TIMEOUT_SECONDS` and turns a stall into `None`, which `delete_remote_branch_if_present` and `_push_branch_deletion` report as `remote-unreachable`. | `_remote_git` | mcp/src/agents_remember/worktrees/modules/cleanup.py:298-309 |
+| The two remote-talking calls: `_remote_git` applies `GIT_REMOTE_TIMEOUT_SECONDS` and turns a stall into `None`, which `delete_remote_branch_if_present` and `_push_branch_deletion` report as `remote-unreachable`. | `_remote_git` | mcp/src/agents_remember/worktrees/modules/cleanup.py:314-325 |
 | The benchmark runner the AST sweep cannot see: `run_git_command` and `repo_has_commit` route every command through the shared `run_git` (with `work_dir` and per-command timeout), so no spawn is visible outside the kernel. | `run_git_command` | mcp/src/agents_remember/benchmarks/runner_modules/commands.py:21-42 |
 | `test_ambient_git_repository_selectors_cannot_redirect_the_census` covers the same eight selectors from the consumer side, so selector coverage exists at both the runner and the census boundary. | `test_ambient_git_repository_selectors_cannot_redirect_the_census` | mcp/tests/test_route_index.py:592-640 |
 | The worktree facade keeps raw surrogateescape inside the runner and sanitizes only failed-command diagnostics before they cross the MCP transport. | `_transport_safe_git_diagnostic` | mcp/src/agents_remember/worktrees/modules/git.py:18-29 |

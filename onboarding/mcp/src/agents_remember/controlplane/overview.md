@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated            | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Purpose
@@ -424,13 +424,13 @@ operator-facing inbox administration remains a separate internal surface.
 | Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
 | The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:44-44 |
 | Gate response models, including the structural public boundary and internal exact correlations. | "class GateCreateResponse"; "class StructuralGateResponse" | mcp/src/agents_remember/models/structural/gates.py:61-61; mcp/src/agents_remember/models/structural/gates.py:121-121 |
-| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:54-54 |
+| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:70-70 |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
 | The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
 | Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/runtime/startup.py:33-36; mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:92-122 |
-| The projection tick reads folded gates and pending expectation rows without rewriting them. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:105-105; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:195-195 |
+| The projection tick reads folded gates and pending expectation rows without rewriting them. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197 |
 | The serving relay composes fact predicates and dispatches fact actions over this route's stores. | `evaluate_predicates`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:349-403; mcp/src/agents_remember/serving/_agent_notifier_actions.py:675-702 |
 
 ## 260712-TRH-L4 Route Impact

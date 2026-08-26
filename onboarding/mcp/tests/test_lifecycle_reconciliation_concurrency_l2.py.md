@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_lifecycle_reconciliation_concurrency_l2.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to these repository-internal f
 
 The test source is the direct evidence for the regression contract.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_public_control_reconciliation_cannot_overwrite_concurrent_worker_progress`, `test_stale_cancel_at_commit_boundary_returns_and_executes_exact_recovery` as its principal forcing seams. | L27-L93; L96-L125 | `mcp/tests/test_lifecycle_reconciliation_concurrency_l2.py` |
+| The file defines `test_public_control_reconciliation_cannot_overwrite_concurrent_worker_progress`, `test_stale_cancel_at_commit_boundary_returns_and_executes_exact_recovery` as its principal forcing seams. | `test_public_control_reconciliation_cannot_overwrite_concurrent_worker_progress`; `test_stale_cancel_at_commit_boundary_returns_and_executes_exact_recovery` | mcp/tests/test_lifecycle_reconciliation_concurrency_l2.py:27-93; mcp/tests/test_lifecycle_reconciliation_concurrency_l2.py:96-124 |
 
 ## Cross-Repo References
 

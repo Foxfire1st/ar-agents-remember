@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -110,9 +110,9 @@ The current source seams include `IsolatedGitState`, `git_environment`, `run_git
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IsolatedGitState`, `git_environment`, `run_git` at this ownership boundary. | L86-L91; L94-L100; L103-L154 | `mcp/src/agents_remember/kernel/git_command.py` |
+| The current module exposes `IsolatedGitState`, `git_environment`, `run_git` at this ownership boundary. | `IsolatedGitState`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-91; mcp/src/agents_remember/kernel/git_command.py:94-100; mcp/src/agents_remember/kernel/git_command.py:103-154 |
 
 ## Update History
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Citations | Source Path |
+| Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `LegacyOperationTarget`; `legacy_pre_adoption`; `revalidated_legacy_target` as its public seam. | L31-L33; L36-L43; L46-L71 | `mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py` |
+| The module defines `LegacyOperationTarget`; `legacy_pre_adoption`; `revalidated_legacy_target` as its public seam. | `LegacyOperationTarget`; `legacy_pre_adoption`; `revalidated_legacy_target` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py:30-33; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py:36-43; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_authority.py:46-71 |
 
 ## Cross-Repo References
 

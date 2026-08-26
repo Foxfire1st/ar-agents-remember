@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_lifecycle_attribution.py`         |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                                     |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`                 |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                 |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -39,7 +39,7 @@ snake_case result payloads (no git/provider machinery).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:229-229 |
+| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:240-240 |
 | The ambient lifecycle they drive (`promote`/`attach`). | "def promote"; "def attach" | mcp/src/agents_remember/observer/ambient.py:348-348; mcp/src/agents_remember/observer/ambient.py:364-364 |
 | The save-gate signal they assert (`SaveGateRequired`). | `SaveGateRequired` | mcp/src/agents_remember/observer/save_gate.py:34-48 |
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_observer_projection_ledger.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -41,9 +41,9 @@ The active enclosure fixture now publishes its lifecycle locator and immutable m
 observer projects ledger analytics. The test therefore exercises normal root-journal discovery and
 keeps a deleted worktree snapshot distinct from an unaddressable contract.
 
-| Finding | Source |
-| --- | --- |
-| The active contract becomes lifecycle-addressable before analytics projection. | mcp/tests/test_observer_projection_ledger.py:442-458 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The active contract becomes lifecycle-addressable before analytics projection. | `test_project_and_write_prunes_orphaned_worktree_drift_snapshots` | mcp/tests/test_observer_projection_ledger.py:430-472 |
 
 ## Update History
 

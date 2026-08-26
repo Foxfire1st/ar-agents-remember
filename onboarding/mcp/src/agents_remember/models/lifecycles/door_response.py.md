@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/door_response.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,8 +36,10 @@ canonical result and downstream projection effects separately.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response model separates canonical publication from projection effects. | `CloseoutDoorResponse` | `mcp/src/agents_remember/models/lifecycles/door_response.py` |
+| The response model separates canonical publication from projection effects. | `CloseoutDoorResponse` | mcp/src/agents_remember/models/lifecycles/door_response.py:18-46 |
 
 ## Update History
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; finalized door response semantics are unchanged.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: created from the final typed response contract. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

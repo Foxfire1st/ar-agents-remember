@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureStackList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-06-24T08:09+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ One exported component, `EnclosureStackList`, taking `views: EngineProcessView[]
 | Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName | `worktreeGroup`; `textValue` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:58-60 |
 | Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle | `phase`; `state`; `humanReviewStatus`; `closeoutStatus`; `integrationStatus`; "not-started" | dashboard/src/panels/engine-room/EnclosureStackList.tsx:69-69; dashboard/src/panels/engine-room/EnclosureStackList.tsx:73-77 |
 | `EngineProcessView` view type ({ enclosureKey, node, lifecycle }) | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
-| `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) | `EngineProcessNode` | dashboard/src/types/projection.ts:162-202 |
+| `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) | `EngineProcessNode` | dashboard/src/types/projection.ts:234-275 |
 | `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes | `stackItem`; `healthDot`; `phaseChip` | dashboard/src/panels/engine-room/layout.styles.ts:127-155; dashboard/src/panels/engine-room/layout.styles.ts:194-215; dashboard/src/panels/engine-room/layout.styles.ts:230-256 |
 | `stackList` layout keeps the enclosure rail vertically scrollable | `stackList` | dashboard/src/panels/engine-room/layout.styles.ts:112-125 |
 | `chip` styles define the compact status-chip presentation | `chip` | dashboard/src/panels/engine-room/stage.styles.ts:252-252 |

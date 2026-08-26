@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ The enforcement for the declared HTTP response contract (`serving/response_contr
 
 It exists because **declaration-only checks do not establish runtime response behavior**. The route
 inventory, hazard, per-route conformance, and declared-surface-coverage suites below drive actual
-responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:502-634; mcp/tests/test_serving_response_conformance.py:637-706; mcp/tests/test_serving_response_conformance.py:794-901; mcp/tests/test_serving_response_conformance_live.py:486-486)
+responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:537-669; mcp/tests/test_serving_response_conformance.py:672-741; mcp/tests/test_serving_response_conformance.py:841-952; mcp/tests/test_serving_response_conformance_live.py:488-488)
 
 ## Code Commentary
 
@@ -46,7 +46,7 @@ conversation routes, which dump `by_alias=True` by hand.
 #### `DeclaredSurfaceCoverageTests` — the score, stated as a number
 
 cit:([`declared_pairs`], mcp/tests/test_serving_response_conformance.py:194-208) is the denominator: every `(method, path, status)` triple the app
-declares. cit:([`DRIVEN`], mcp/tests/test_serving_response_conformance.py:267-267) is the conformance ledger;
+declares. cit:([`DRIVEN`], mcp/tests/test_serving_response_conformance.py:272-272) is the conformance ledger;
 cit:([`_driven_pairs`], mcp/tests/test_serving_response_conformance_live.py:458-481) re-runs the driving classes when the module was
 run partially, so a coverage number is never computed from a partial run.
 
@@ -220,7 +220,7 @@ modules, and everything that proves them lives here.
 | --- | --- | --- |
 | The declared contract base and the three shared refusal tables. | `WireResponse`; `SCOPED_READ_RESPONSES`; `SESSION_CONTROL_RESPONSES`; `ACTION_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:89-101; mcp/src/agents_remember/serving/response_contract.py:1062-1068; mcp/src/agents_remember/serving/response_contract.py:1072-1079; mcp/src/agents_remember/serving/response_contract.py:1084-1092 |
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:115-115; mcp/src/agents_remember/serving/app.py:230-230|
+| The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:116-116; mcp/src/agents_remember/serving/app.py:243-243|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
 | The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:600-600 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
@@ -228,7 +228,7 @@ modules, and everything that proves them lives here.
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:87-90; mcp/src/agents_remember/serving/conversation/control/api.py:136-153 |
 | The raw event stream's `ready` marker. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
 | The served-state tail field names. | `SERVED_TAIL_FIELDS` | mcp/src/agents_remember/serving/served_state.py:62-66 |
-| The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:103-439; mcp/tests/_control_plane.py:536-547 |
+| The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:101-307; mcp/tests/_control_plane.py:404-415 |
 | The single-route sibling this suite was widened from, which owns `/api/state`'s assembled body and the SSE snapshot. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 
 ## Cross-Repo References
@@ -238,7 +238,7 @@ type is recorded separately below as an in-repo boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:651-664 |
+| The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:743-756 |
 
 ## L23 Contract-Backed Conformance Fixture
 
@@ -254,10 +254,10 @@ contract paths, then publish locators/manifests for both. The request client als
 bounded projector-readiness boundary before checking route models, preventing startup timing from
 being mistaken for response-contract failure.
 
-| Finding | Source |
-| --- | --- |
-| Series and leaf fixtures publish the normal lifecycle address chain from their enclosure roots. | mcp/tests/test_serving_response_conformance.py:427-479 |
-| The shared client waits only through the bounded 503 readiness window and then requires 200. | mcp/tests/test_serving_response_conformance.py:829-909 |
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Series and leaf fixtures publish the normal lifecycle address chain from their enclosure roots. | `_seed_changeset` | mcp/tests/test_serving_response_conformance.py:416-481 |
+| The shared client waits only through the bounded 503 readiness window and then requires 200. | `_await_projector_ready`; `_client` | mcp/tests/test_serving_response_conformance.py:829-838; mcp/tests/test_serving_response_conformance.py:897-909 |
 
 ## Update History
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Implements agent dispatch, parent/child messaging, retirement, and rename as structural operations.
 It resolves trusted ambient caller identity and document+role targets before invoking existing
-plane-owned lifecycle and inbox primitives.
+plane-owned lifecycle and inbox primitives. Manager and worker dispatch also establish the selected
+atomic-series source pair before an implementation seat can be exposed.
 
 ## Code Commentary
 
@@ -27,11 +28,17 @@ plane-owned lifecycle and inbox primitives.
 `dispatch_agent_tool` validates a contained child seat, opens and binds a hosted occupant, then posts
 the internally exact-pinned initial brief. `_message_tool` persists ordinary structural traffic for
 post-time and delivery-time rebinding. Retire and rename functions authorize only structural child
-or self relationships. `UnbriefedChild` keeps spawn/brief cleanup explicit. Since 260815-DAG-L13 the
-manager-dispatch series bootstrap gates on the *effective* execution nature (a nature-less master is
-atomic by default; organizational semantics exist only under an authored graph), and a bootstrap
-blocked by the atomic-sequential landing lane surfaces as a failed `StructuralOutcome` whose detail
-carries the blocked payload — lane owner plus legal next operations — instead of a raised refusal.
+or self relationships. `UnbriefedChild` keeps spawn/brief cleanup explicit.
+
+Before spawning a manager or worker, `_implementation_series_admission_refusal` resolves the
+canonical master (directly for a manager, through the leaf's parent for a worker), derives effective
+execution nature, and skips selection only for an organizational master. Atomic dispatch calls the
+same `ensure_master_series_contract` owner used by first-leaf start. That owner creates or recovers
+durable series identity, selects the master for its exact protected source pair, reconciles it, and
+returns implementation authority only after it becomes active. Retained conflicts or damaged
+authority become a failed `StructuralOutcome` carrying the transaction payload; a refused candidate
+is never spawned. Selecting a different live master pauses the former selection rather than treating
+its contract as an exclusive global lane.
 
 Since 260821-ARSPAWN-L1 `dispatch_agent_tool` resolves the caller by kind through
 `_resolve_dispatch_caller`, which is AMBIENT-FIRST (fix round 3): `resolve_ambient_caller` decides
@@ -64,7 +71,10 @@ stay local to the application transaction.
 - Dispatch-brief delivery is exact-pinned internally; ordinary messages are rebindable.
 - A failed initial brief retires the unbriefed child instead of leaving a live unowned seat.
 - Authorization follows architect→orchestrator→manager→leaf-role ownership.
-- The atomic-sequential lane block is surfaced as an ordering payload, not an exception.
+- Manager and worker implementation dispatch require an active, reconciled atomic parent when their
+  effective master nature is atomic; curator/reviewer messaging remains outside selection.
+- Multiple live master contracts are valid. Dispatch consumes one disposable source-pair selection
+  and does not read a closeout queue as admission authority.
 - No plane identity means an ambient caller, never a fallback: a stale, invalid, mismatched, or
   unbound plane identity refuses instead of silently downgrading.
 - Ambient rollback is a system closure bounded to the spawn result — an ambient caller cannot
@@ -84,8 +94,9 @@ No Domain Documentation source is configured; repository tests and the approved 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient). | `dispatch_agent_tool`; `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:338-487 |
-| Manager series bootstrap gates on the effective nature and surfaces a lane-blocked bootstrap as a structural outcome. | `_manager_series_bootstrap_refusal` | mcp/src/agents_remember/application/structural/agent_tools.py:512-576 |
-| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:692-697 |
+| Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. | `_implementation_series_admission_refusal`; `_dispatch_owning_master` | mcp/src/agents_remember/application/structural/agent_tools.py:535-585; mcp/src/agents_remember/application/structural/agent_tools.py:588-604 |
+| The shared series bootstrap owner binds durable contract identity to source-pair reconciliation-before-exposure. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:221-288 |
+| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:736-741 |
 | Focused tests exercise ambient routing, replacement, ambiguity, and exact-pin behavior. | `test_child_to_replacement_parent_is_resolved_by_task_containment` | mcp/tests/test_structural_agent_tools.py:169-194 |
 | Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient). | `_retire_unbriefed_child` | mcp/src/agents_remember/application/structural/agent_tools.py:217-265 |
 
@@ -97,6 +108,11 @@ No Domain Documentation source is configured; repository tests and the approved 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+
+- 2026-08-26T03:37+02:00 — Replaced the manager-only global-lane account with current manager and
+  worker atomic-series admission: canonical master resolution, disposable source-pair selection,
+  reconciliation-before-spawn, and structured retained-conflict/refusal results. Verification
+  remains post-Dagger/closeout-owned.
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints the startup import and extracts the existing post-spawn briefing statements into `_brief_spawned_child`; dispatch ordering and documented child-briefing behavior are unchanged. Verified at code commit `1d446724`.
 
