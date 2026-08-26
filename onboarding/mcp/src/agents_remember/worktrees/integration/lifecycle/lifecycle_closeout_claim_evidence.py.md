@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-26T16:57+02:00 |
+| lastVerifiedCommitHash | `8dcf0645fdbc3aa490132d5947b22227d45ff302` |
+| lastVerifiedCommitDate | 2026-08-26T16:57:26+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,21 +16,23 @@
 
 ## Purpose
 
-Defines immutable closeout preview arguments and resolves the exact claimed predecessor that may
-authorize a waiting successor.
+Builds the immutable closeout-preview argument map from the accepted operation input. Only enabled
+code, memory, and ledger legs contribute their explicit commit-message fields.
 
 ## Code Commentary
 
-The helper joins journal and door proof without reconstructing claim ownership from a mutable queue
-binding. A successor is eligible only when the retained claimed generation and operation evidence
-match exactly.
+The helper translates one accepted closeout input into the corrected public preview call. It does not
+own door ancestry, cancellation release, queue selection, or operation replacement.
 
 ## Invariants And Boundaries
 
-- Claim evidence is journal-and-door evidence, never queue inference.
 - Preview arguments are authority-free immutable inputs until the owning transaction validates them.
-- Missing or mismatched predecessor proof refuses successor construction.
+- Disabled commit legs never acquire synthesized messages.
+- Door, queue, cancellation, and replacement authority stay with their owning lifecycle transactions.
 
 ## Update History
 
+- 2026-08-26T16:57+02:00 — Removed the obsolete claimed-predecessor resolver after
+  cancelled-generation replacement was returned to current door truth plus journal-owned worker-exit
+  evidence. The module now owns only preview argument projection.
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: created from the final claim-evidence helper. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
