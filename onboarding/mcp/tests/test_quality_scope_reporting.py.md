@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-28T15:45+02:00 |
+| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
+| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,9 @@
 Contract tests for the code-quality wrapper's reported scope and provenance. The suite proves that
 each fixed rail names non-vacuous inputs and results, untracked exposure does not mutate Git state,
 caller altitude describes the actual candidate tree, and the GitHub workflow stays on the
-deterministic non-test hook instead of invoking a second Dagger/test rail.
+deterministic non-test hook instead of invoking a second Dagger/test rail. It also pins the hook's
+Python authority to a complete local or shared `mcp/.venv`, never an unrelated repository venv or
+bare system interpreter.
 
 ## Code Commentary
 
@@ -43,11 +45,23 @@ Temporary repositories are real Git repositories. Helpers construct only the min
 workflow text needed to prove scope; live tool assertions skip only when their external executable
 is unavailable.
 
+The sequencer-hook fixture deliberately installs a failing repository-root `.venv` beside its
+working `mcp/.venv`. The hook must ignore the former. A separate structural assertion requires
+both supported MCP environment paths, the real scope-reporting import probe, and absence of the
+former system-Python fallback.
+
+`write_executable` centralizes the temporary script write/chmod fixture step. This keeps the
+sequencer proof below the repository statement budget without changing which interpreter paths or
+hook effects it exercises.
+
 ### Invariants And Boundaries
 
 - A PASS result must follow a non-vacuous, explicitly described scope.
 - Reporting untracked inputs must not stage or otherwise mutate them.
 - Closeout and integration labels describe the actual staged or clean candidate they certify.
+- Host hooks use only a dependency-complete MCP development environment. A present but incomplete
+  environment refuses with a bootstrap instruction instead of leaking a deep import traceback or
+  falling through to system Python.
 - Missing Node may skip only the assertions that invoke Node; it cannot make a present runtime's
   lint or workflow result set pass vacuously.
 
@@ -67,9 +81,10 @@ No external Domain Documentation source is configured; the quality contract is r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Wrapper result ordering and populations are non-vacuous. | `WrapperScopeOutputTests` | mcp/tests/test_quality_scope_reporting.py:135-327 |
-| Configuration and untracked-input failures refuse rather than pass. | `ConfigTruthTests`; `UntrackedExposureTests` | mcp/tests/test_quality_scope_reporting.py:328-361; mcp/tests/test_quality_scope_reporting.py:362-547 |
-| Caller provenance distinguishes pre-push, staged closeout, and clean integration inputs. | `CallerProvenanceTests`; `test_closeout_labels_the_already_staged_candidate`; `test_integration_invocations_name_the_clean_checkout` | mcp/tests/test_quality_scope_reporting.py:548-760; mcp/tests/test_quality_scope_reporting.py:608-614; mcp/tests/test_quality_scope_reporting.py:615-627 |
+| Wrapper result ordering and populations are non-vacuous. | `WrapperScopeOutputTests` | mcp/tests/test_quality_scope_reporting.py:155-345 |
+| Configuration and untracked-input failures refuse rather than pass. | `ConfigTruthTests`; `UntrackedExposureTests` | mcp/tests/test_quality_scope_reporting.py:346-379; mcp/tests/test_quality_scope_reporting.py:380-566 |
+| Hook interpreter selection admits only a complete local/shared MCP development environment and rejects the unrelated root/system paths. | `test_real_sequencer_hook_reports_spaced_untracked_path_without_mutation`; `test_hook_selects_only_the_mcp_development_environment` | mcp/tests/test_quality_scope_reporting.py:470-577 |
+| Caller provenance distinguishes pre-push, staged closeout, and clean integration inputs. | `CallerProvenanceTests`; `test_closeout_labels_the_already_staged_candidate`; `test_integration_invocations_name_the_clean_checkout` | mcp/tests/test_quality_scope_reporting.py:567-799; mcp/tests/test_quality_scope_reporting.py:637-642; mcp/tests/test_quality_scope_reporting.py:643-655 |
 
 ## Cross-Repo References
 
@@ -117,6 +132,14 @@ Radon and Coverage.py unit text now counts product Python files only; tests rema
 not measurement targets. CRAP mocks patch the canonical calculator module directly.
 
 ## Update History
+
+- 2026-08-28T15:45+02:00 — Closeout reconciliation: extracted temporary executable creation into
+  `write_executable` after the repaired hook exposed the test's statement-budget violation, then
+  refreshed citations and verification metadata to the committed repair.
+
+- 2026-08-28T14:38+02:00 — Hook environment repair: pinned local/shared `mcp/.venv` authority,
+  poisoned the unrelated root-venv path in the sequencer fixture, and prohibited bare system-Python
+  fallback. Verification metadata remains on the last committed source pending closeout.
 
 - 2026-08-28T06:28+02:00 — PDLS wave 005 curator: reconciled scope reporting to the verification
   package, explicit product/verification roots, dual `PYTHONPATH`, and the extracted Dagger

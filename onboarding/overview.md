@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-28T15:52:15+02:00 |
+| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
+| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
 
 > **Status:** active baseline
 
@@ -1234,6 +1234,10 @@ guidance is in `system/tools.md`. Host pytest, direct coverage, and the quality 
 prohibited, with no compatibility fallback.
 
 ## Update History
+
+- 2026-08-28T15:52:15+02:00 — No route impact: the hook now selects only the MCP-local
+  environment and refuses missing quality dependencies; the focused regression test does not
+  change repository architecture, ownership, or routing.
 
 - 2026-08-28T10:03:40+02:00 — Reconciled the repository-wide quality summary with Candidate A's
   deletion: Python investigation remains Dagger-owned and no direct wrapper/compatibility route exists.

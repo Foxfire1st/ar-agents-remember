@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/sync-harness.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-28T15:52:15+02:00 |
+| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
+| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -112,11 +112,14 @@ two.
 | Fragment library for the four session-start hook scripts. | `hook_specific_output` | scripts/harness/session_start_hook.py:28-34 |
 | The classification of genuine per-harness requirements versus drift, and the shared-source inventory. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 | The suite check that makes drift a test failure rather than a forgotten script. | `GeneratedTreesTests` | mcp/tests/test_sync_harness.py:35-107 |
-| Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:166-166; .githooks/_gate.sh:218-218 |
+| Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:175-175; .githooks/_gate.sh:227-227 |
 | The sibling generators this one is modelled on. | `SkillTarget`; `RuntimeTarget` | scripts/sync-runtime.py:26-30; scripts/sync-skills.py:26-29 |
 | Repo instructions route harness edits through `scripts/harness/` and forbid editing generated starter files. | `## Source Layout`; `## Boundaries`; `## Repository Layout` | AGENTS.md:99-145; README.md:192-275 |
 
 ## Update History
+
+- 2026-08-28T15:52:15+02:00 — Rebased both hook-tier citations after the MCP-local interpreter
+  selection repair shifted `_gate.sh`; generator behavior and enforcement remain unchanged.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation claims; scoped recheck clean (0 findings).
 
