@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -158,7 +158,7 @@ served-state module plus the two producers of the tail.
 | The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
 | The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:200-228; mcp/src/agents_remember/worktrees/worktree_contract.py:346-396; mcp/src/agents_remember/worktrees/worktree_contract.py:490-491 |
-| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:488-488 |
+| The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:492-492 |
 | The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`; `BuildInfoTests` | mcp/tests/test_serving.py:557-641; mcp/tests/test_serving_cli.py:36-181 |
 
 ## Cross-Repo References

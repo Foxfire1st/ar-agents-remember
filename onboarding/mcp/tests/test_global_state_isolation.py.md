@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_global_state_isolation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 ## 260824-PDLS Route Impact
 
 The production owner moved from `mcp/tests/_global_state.py` to
-`agents_remember.testing.global_state`. This suite still expects root certifying bootstrap to have
+`agents_remember_test_support.testing.global_state`. This suite still expects root certifying bootstrap to have
 declared the normal `test` mode, deliberately leaks dashboard mode, and proves restoration happens
 before failure. It is therefore a Dagger-suite contract, not a valid standalone raw-host test.
 

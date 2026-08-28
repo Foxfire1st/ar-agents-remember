@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated            | 2026-08-25T17:21+02:00                      |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`  |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated            | 2026-08-28T14:15+02:00                      |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8`  |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00                   |
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -61,6 +61,12 @@ fabricate. Two top-level notes also live here: `observable-lifecycle.md` and `ha
   never delete transcripts.
 - `harness-matrix.md` — top-level design note on the harness matrix. **Present but not yet file-onboarded**
   (no sidecar created in this pass).
+- `python-evidence-system.md` — the consolidated evidence taxonomy, dependency-owned selection and
+  retry, cadence, lifetime, and accepting-consumer design.
+- `python-pytest-bootstrap.md` — the Dagger admission and reusable bootstrap boundary.
+- `python-test-evidence.md` — the candidate-bound diagnostic-versus-certifying evidence authority.
+  The former `python-direct-cohort.md` and `python-direct-diagnostics.md` notes were retired into
+  these three canonical documents rather than retained as competing design contracts.
 
 ## Invariants And Boundaries
 
@@ -118,7 +124,16 @@ defines the package-root bootstrap boundary, and records Dagger as the sole acce
 The document also captures fixture ownership, proof lifetime, dependency-derived selection, and
 the rule that diagnostic success cannot satisfy a lifecycle gate.
 
+The final consolidation removes the two narrower direct-cohort/direct-diagnostics notes. Their
+still-valid content is carried by `python-evidence-system.md`, `python-pytest-bootstrap.md`, and
+`python-test-evidence.md`; deletion prevents an obsolete diagnostic-first contract from competing
+with the accepted authority model.
+
 ## Update History
+
+- 2026-08-28T14:15+02:00 — Closed the PDLS design route on the landed candidate: recorded the
+  three canonical Python evidence documents and the deliberate retirement of the two superseded
+  direct-diagnostic notes, then stamped committed code provenance.
 
 - 2026-08-25T17:21+02:00 — Reconciled the full PDLS evidence-authority and diagnostic-lane design.
   Verification remains closeout-owned.

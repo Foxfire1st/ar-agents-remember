@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-24T12:59+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -322,7 +322,7 @@ own server contracts, so no external code path is cited as authority.
 | The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/data/taskHierarchy.ts:43-43 |
 | The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:329-400; dashboard/src/dev/ScenarioPlayer.tsx:21-39 |
 | The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:37-37;  |
-| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
+| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:46-46; scripts/sync-projection-types.py:57-57 |
 
 ## Placement Decision
 

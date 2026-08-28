@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-28T11:51+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ This file is the packaged runtime artifact synchronized exactly from canonical
 builder lifecycle and owns no independent worker doctrine.
 
 ## Logic
+
+The synchronized worker advances an attempt only at review handoff or after reviewer rejection,
+logs internal runs separately, and appends a lightweight requirement-specific record linked to
+content-addressed expanded evidence.
 
 The packaged source carries the canonical worker's brief/task-document intake, worktree and coding-
 guideline orientation, implementation loop, leaf-scoped checks, mandatory turn report, structural
@@ -67,7 +71,54 @@ edge. Each leaf receives one targeted/change-set-scoped closeout acceptance and 
 rerun. The full suite runs only at master completion, before the final organizational super
 candidate lands or during the atomic block's single landing.
 
+## M38 Worker Acceptance Projection
+
+The installed worker role carries the canonical one-block-per-stable-ID envelope: delivery and
+verification rationales, independently inspectable citations, exact result evidence, and the extra
+developer-ruling fields for blocked or approved-change status. It also makes Checks an explicit
+report section and uses deliverable paths plus stable anchors for non-code work. This copy owns no
+independent worker behavior.
+Intake refuses any packet that is not version-addressed, approved, ID/version-matched, and carrying
+its durable corpus-ruling citation.
+
+## M40/M43 Worker Attempt Projection
+
+The packaged worker appends an immutable exact-candidate attempt with predecessor findings,
+acceptance envelope, checks, and a closed failure class before handoff. Repairs append successors;
+they do not edit history or rewrite requirement semantics.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
+  authority wording; projection ownership and byte-identity rules remain unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2 worker attempt/event boundaries.
+
+- 2026-08-27T18:06+02:00 — M40/M43: synchronized immutable worker attempt and failure-routing
+  doctrine from the canonical role.
+
+- 2026-08-27T14:04+02:00 — Tightened installed worker intake around approved version-addressed
+  packets and packet-local durable corpus rulings.
+- 2026-08-27T13:32+02:00 — M39@v1: worker intake and handoff bind every block to the exact stable
+  ID + version and canonical packet, refusing missing or mismatched revisions instead of repairing
+  requirement identity locally. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded the synchronized worker envelope and explicit Checks
+  contract. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the exact
   leaf-targeted/master-full quality boundary. Verification remains closeout-owned.

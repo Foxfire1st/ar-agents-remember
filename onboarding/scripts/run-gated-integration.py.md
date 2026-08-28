@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/run-gated-integration.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T16:10+02:00                     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -114,15 +114,15 @@ command before executing, so an operator sees what they are about to spend befor
   vendor account. It does not grant a GitHub workflow permission to run pytest directly.
 - The six `VENDOR_CREDENTIALS` paths are deliberately not faked in automation. Four bill; one persists a
   thread into the operator's real `CODEX_HOME`.
-- The script is a runner, not a gate: `python -m agents_remember.code_quality.check` does
+- The script is a runner, not a gate: `python -m agents_remember_test_support.code_quality.check` does
   not invoke it.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The eight opt-in integration markers, each naming its opt-in variable and the test file it decorates. | "ar_run_pi_rpc_smoke:"; "ar_run_control_plane_installed:"; "ar_run_control_installed:"; "ar_run_evidence_installed:"; "ar_claude_stream_smoke:"; "ar_codex_app_server_live_smoke:"; "ar_codex_app_server_live_conformance:"; "agents_remember_real_mcp_config:" | pyproject.toml:205-211; pyproject.toml:213-213 |
-| GitHub workflows are forbidden from invoking this runner or host pytest; lifecycle acceptance owns these paths through Dagger. | `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` | mcp/tests/test_gated_integration_runner.py:139-146 |
+| The eight opt-in integration markers, each naming its opt-in variable and the test file it decorates. | "ar_run_pi_rpc_smoke:"; "ar_run_control_plane_installed:"; "ar_run_control_installed:"; "ar_run_evidence_installed:"; "ar_claude_stream_smoke:"; "ar_codex_app_server_live_smoke:"; "ar_codex_app_server_live_conformance:"; "agents_remember_real_mcp_config:" | pyproject.toml:218-224; pyproject.toml:226-226 |
+| GitHub workflows are forbidden from invoking this runner or host pytest; lifecycle acceptance owns these paths through Dagger. | `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` | mcp/tests/test_gated_integration_runner.py:148-155 |
 | The inventory test: every marker is applied, every marker has a runner entry, `CREDENTIAL_FREE` is exactly the two no-vendor-account paths, and the dry-run node exists. | `GatedPathInventoryTests` | mcp/tests/test_gated_integration_runner.py:86-157 |
 | The Pi RPC smoke suite this runner installs and drives offline. | `install_pinned_pi`; `PiRpcRealSmokeTests` | mcp/tests/test_pi_rpc_real_smoke.py:52-83; mcp/tests/test_pi_rpc_real_smoke.py:236-499 |
 | The real-MCP class whose planning test the generated settings file serves. | `RealMcpIntegrationTests`; `test_real_mcp_grepai_search_dry_run_uses_workspace_scope` | mcp/tests/test_tools.py:1020-1100 |

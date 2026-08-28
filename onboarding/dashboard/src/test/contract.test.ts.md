@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-25T16:21:43+02:00 |
-| lastVerifiedCommitHash |                                                  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -212,7 +212,7 @@ the Finding, where a pointer belongs.
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
 | The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:44-51 |
-| The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/src/agents_remember/code_quality/projection_types.py:66-68; mcp/src/agents_remember/code_quality/projection_types.py:435-474; mcp/src/agents_remember/code_quality/projection_types.py:562-568 |
+| The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:66-68; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:435-474; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:562-568 |
 | The two separate `extra="forbid"` sub-task models the inverted pins keep distinct, and the two section models that cannot be pinned. | `TaskSubTaskRefNode`; `TaskSectionNode`; `SeriesSubTaskNode`; `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:585-606; mcp/src/agents_remember/observer/projection.py:626-636; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:815-822 |
 | The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | "src/test/contract.test.ts :: @ts-expect-error" | dashboard/src/test/wireFixtureGuard.test.ts:183-183 |
 | The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | "makes the MIRROR honest"; "This file makes the FIXTURES honest" | dashboard/src/test/wireFixtureGuard.test.ts:20-21 |

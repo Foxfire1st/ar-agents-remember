@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/serving/static.py`  |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-31T04:28+02:00                       |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`   |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -98,8 +98,8 @@ no entries); static-serving behavior is proven by repository source and tests.
 | The release build step places the tree this module resolves; it refuses to place a stale one. | "def sync" | scripts/sync-dashboard.py:138-138 |
 | The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:302-302 |
 | Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | `test_missing_bundle_does_not_turn_a_method_error_into_an_outage` | mcp/tests/test_static.py:120-136 |
-| The end-to-end app test covers the served bundle through `create_app`. | `test_root_serves_dashboard_bundle` | mcp/tests/test_serving.py:546-563 |
-| The end-to-end app test covers the missing-bundle diagnosis through `create_app`. | `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:565-578 |
+| The end-to-end app test covers the served bundle through `create_app`. | `test_root_serves_dashboard_bundle` | mcp/tests/test_serving.py:545-562 |
+| The end-to-end app test covers the missing-bundle diagnosis through `create_app`. | `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:564-577 |
 
 ## Cross-Repo References
 

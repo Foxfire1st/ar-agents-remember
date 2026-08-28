@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_sync_scripts.py`           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T10:45+02:00                     |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd`|
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -96,7 +96,7 @@ L85 is the third script, `sync-harness.py`, already enforced by
   arming `--check`.** `[tool.pytest.ini_options] testpaths = ["mcp/tests"]`
   (root `pyproject.toml`) is what `code_quality/check.py` reads to build its
   pytest step, and the `quality` job runs
-  `python -m agents_remember.code_quality.check`. So drift now fails CI. CI still
+  `python -m agents_remember_test_support.code_quality.check`. So drift now fails CI. CI still
   does **not** invoke `sync-skills.py --check` or `sync-runtime.py --check`
   directly; do not read a green pipeline as evidence that it does.
 - **The reach of both tests is exactly `TARGETS`, and nothing asserts `TARGETS`
@@ -119,8 +119,8 @@ L85 is the third script, `sync-harness.py`, already enforced by
 | `TARGETS` (4 runtime asset targets) and the matching `repo_relative` / `diff_target`. | `TARGETS`, `repo_relative`, `diff_target` | scripts/sync-runtime.py:44-53; scripts/sync-runtime.py:73-74; scripts/sync-runtime.py:111-123 |
 | The completeness assertion the runtime side has and the skill side does not — an exact `assertEqual` over the runtime target labels. | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:72-84 |
 | The model for this class, including naming the repair command in the failure message. | `test_every_generated_harness_file_matches_its_source` | mcp/tests/test_sync_harness.py:40-51 |
-| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:79-80 |
-| Why CI reaches these tests: `testpaths` is the single declaration the quality wrapper reads to build its pytest step. | `testpaths` | pyproject.toml:119-119 |
+| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:81-82 |
+| Why CI reaches these tests: `testpaths` is the single declaration the quality wrapper reads to build its pytest step. | `testpaths` | pyproject.toml:128-128 |
 
 ## Update History
 

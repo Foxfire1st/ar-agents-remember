@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -485,6 +485,10 @@ remain in both seat generations.
 delivery state while deliberately excluding runtime occupant identity.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — PDLS closeout: re-read `test_evidence.py` against the landed candidate;
+  the existing final model reconciliation already describes the closed diagnostic/certifying,
+  authority, cadence, lifetime, and result vocabulary. Stamped committed provenance.
 
 - 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 private brief evidence, same-seat promotion, and
   runtime-id-free structural outcome rules onto the IAS models overview. Verification remains

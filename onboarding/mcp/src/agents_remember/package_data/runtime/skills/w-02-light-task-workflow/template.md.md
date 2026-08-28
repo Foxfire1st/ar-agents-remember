@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-19T06:03+02:00                     |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1` |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -16,6 +16,9 @@ This template defines the required shape of `w-02-light-task-workflow` skill `ta
 ## Code Commentary
 
 ### Logic
+
+The synchronized task template separates protocol events from review-handoff attempts and makes
+each attempt a lightweight content-addressed view rather than a duplicate master evidence body.
 
 The template includes status, repo, type, objective, requirements, a `## Design` section, implementation steps, examples, decision log, open questions, and references. The `## Design` section sits above implementation steps and holds the settled design sized to the request per the Task Collaboration Doctrine (`tasks/AGENTS.md`), or a note that no design reasoning is needed. Usage rules include resolved `c-08-ar-coordination-context-resolver` skill paths and the wrapper location `<task-root>/<task-slug>/task.md`; when worktrees are created, `c-09-git-worktree-manager` skill places `contract.md` beside that file.
 
@@ -60,7 +63,49 @@ No sibling repository evidence is needed for the current template file.
 
 The light-task template's artifact guidance points worktree-backed tasks at the leaf enclosure contract path under `enclosures/<leaf-id>/series-contract.md`.
 
+## M38 Stable-Requirement Template Projection
+
+The task scaffold now gives every requirement a stable ID and references the per-ID builder
+acceptance envelope and reviewer verdict. Usage rules require complete delivery/verification
+evidence and no overall pass with a rejected ID, while durable-evidence promotion remains separate.
+The installed file is a synchronized render/template projection and owns no independent schema.
+Each projection links the immutable version-addressed packet and its durable corpus ruling; the
+task document remains non-normative summary rather than a compatibility copy of the contract.
+
+## M40-M43 Leaf-Template Projection
+
+The installed leaf template separates semantic versions from immutable exact-candidate attempts,
+requires separate reviewer records and closed failure classes, and preserves the two authorized
+invalidation paths.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2 task-record semantics.
+
+- 2026-08-27T18:06+02:00 — M40-M43: synchronized the leaf attempt-journal task contract.
+
+- 2026-08-27T14:04+02:00 — Added immutable packet addressing and packet-local durable corpus
+  approval to the installed task projection description.
+- 2026-08-27T13:32+02:00 — M39@v1: the task scaffold now carries only stable ID + version +
+  canonical-packet projections, records corpus approval, and enforces one primary revision per leaf
+  with dependency/preservation rows unable to claim closure. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded stable requirement IDs and the per-ID acceptance artifact
+  contract. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
   template heading anchors; exact non-fixing check returns zero findings.

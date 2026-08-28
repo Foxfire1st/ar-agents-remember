@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -77,16 +77,21 @@ and re-resolve the incumbent or staged heir at delivery; public outcomes omit ru
 
 ## Current Quality Execution Boundary
 
-`code_quality/check_cli.py` now owns only command-line construction. `code_quality/check.py`
+Python quality and pytest infrastructure now lives under the explicitly classified verification
+package `mcp/test_support/agents_remember_test_support`, outside operational product code.
+`code_quality/check_cli.py` owns only command-line construction while `code_quality/check.py`
 retains scope derivation, rail execution, product-only scoring, causal preflight, and terminal
-result ownership. The split introduces no second runner: parser reuse cannot mint lifecycle
-evidence or make host execution certifying.
+result ownership. Ruff, Pyright, structural limits, and dependency rails cover both product and
+verification packages; Coverage.py, changed-line coverage, and CRAP score declared product roots
+only. Product modules are forbidden from importing the verification package.
 
 The package's development extra supplies pytest-xdist 3.x, while root pytest `addopts` owns
 `-n=auto` for raw and wrapped runs alike. The quality wrapper adds only derived selection,
-coverage, and retry-proof arguments. The retry-proof compatibility key includes the pytest-xdist
-version alongside pytest and coverage tooling; proof reuse therefore fails closed when the
-parallel executor changes.
+coverage, and retry-proof arguments. Every test file has one explicit evidence-lane declaration;
+missing, stale, unknown, duplicate, or conflicting lane identity refuses collection. Retry proof
+persists across real quality attempts in the locked `ar-quality-retry-v3` Dagger cache. Its key
+binds the exact lane population and executor/tool identity; every cache miss is named before the
+same admitted route runs fresh.
 
 L23 makes the pinned Dagger graph the only Agents Remember acceptance environment. It materializes
 the exact candidate tree and required Git ancestry into a clean Ubuntu image, streams progress,
@@ -94,7 +99,7 @@ and atomically replaces the enclosure's latest reports. Leaf/focused acceptance 
 mode exactly once at leaf closeout; leaf integration and series closeout do not rerun it. Master
 integration selects full mode once. Both require an explicit nonblank diff base, and
 the Dagger function exposes source, bundle, base, mode, and cap through generated `Annotated`/`Doc`
-help. Host pytest and direct wrapper execution are refused; deterministic non-test checks remain
+help. Host pytest is refused and Candidate A's direct wrapper is absent; deterministic non-test checks remain
 available for host feedback. A failed Dagger run never receives a host fallback. The same
 slice adds durable asynchronous closeout/integration operations whose public address is the task
 contract plus operation kind. Private operation keys, worker PIDs, approval fingerprints, and
@@ -359,6 +364,15 @@ proven hybrid (predicate-unit classify + real downstream sweep response) because
 hardcodes a real, non-injectable `tmux capture-pane` call — documented as a real product gap and the
 natural next leaf (make the pane capturer injectable through `AgentNotifierContext`), not silently
 worked around. Results are filed in `notes/reports/260707-HFX2-L5-liveness-report.md`.
+
+The packaged lifecycle/task-workflow projections now also carry M40@v2/M44@v2: semantic revisions
+require explicit developer approval; formal worker attempts advance only at review handoff or after
+reviewer rejection; internal implementation/test/evidence runs remain separate protocol events.
+Lightweight requirement-specific journal records link content-addressed frozen expanded evidence,
+and rebuildable summaries exclude protocol events and never become lifecycle, task, closeout,
+integration, or queue authority. `scripts/sync-skills.py --check` remains the projection identity
+proof.
+
 260707-HFX2-L8 closes the two liveness gaps a live dead-seat-storm incident (2026-07-08) exposed in
 the supervisor loop itself, spanning four package routes. `kernel/agentic_settings.py` gains one
 `orchestration.supervisor` field — `redeliverBudget` (default 250, defaults-safe) — the per-sweep
@@ -971,28 +985,39 @@ distribution target rather than a compatibility owner.
 
 ## 260824-PDLS — Python Testing Route
 
-`agents_remember.testing` is now the sole package route for structural direct-test eligibility,
-shared hermetic pytest bootstrap, Dagger admission composition, the canonical direct runner, and
-route-neutral phase/causal reporting. Its lifecycle catalog and lane registry govern durable
-evidence, cadence, fidelity, expiry, and fixture authority. The direct route is an explicit
+`agents_remember_test_support.testing` is the verification-only route for structural direct-test
+eligibility, shared hermetic pytest bootstrap, Dagger admission composition, the canonical direct
+runner, and route-neutral phase/causal reporting. Its lifecycle catalog governs 35 durable support,
+data, policy, and task/date proof artifacts. Its explicit lane manifest classifies the complete
+test-file population; nothing unmarked becomes unit evidence. The direct route is an explicit
 content-sealed seven-node cohort, not a generic repository analyzer.
 
 `models/test_evidence.py` separates diagnostic and certifying altitudes. The code-quality plane
 keeps all Python lint/type/size/execution coverage while scoring product modules only, and one
-dependency-ownership graph serves targeted selection, retry invalidation, and owner-level causal
-localization. The worktree plane consumes typed Dagger admission/evidence instead of reimplementing
+source-derived dependency graph serves targeted selection, retry invalidation, and exact-node
+causal localization. Lifecycle declarations are cross-checked against observed consumers and do
+not self-prove completeness. The worktree plane consumes typed Dagger admission/evidence instead of reimplementing
 test-route failure families. Removed analyzers, task/date baselines, and former global/random helper
 owners have no compatibility facade.
 
 ## 260824-PDLS Final Package Reconciliation
 
-The final tree moves the certifying pytest bootstrap to the package root, keeps diagnostics
-non-certifying, consolidates dependency ownership and causal failure evidence, and splits lifecycle
-and queue helpers by authority. The package retains one Dagger acceptance path and introduces no
-fallback runner, compatibility facade, or queue-owned commit evidence.
+The final tree moves the certifying pytest bootstrap to the verification-package root, keeps
+diagnostics and route measurements non-certifying, consolidates dependency ownership and causal
+failure evidence, and splits lifecycle and queue helpers by authority. The package retains one
+Dagger acceptance path and introduces no fallback runner, compatibility facade, or queue-owned
+commit evidence.
 
 ## Update History
 
+- 2026-08-28T10:03:40+02:00 — Reconciled the MCP quality-route summary with Candidate A's deletion;
+  deterministic host checks remain, but no host Python wrapper exists.
+
+- 2026-08-27T22:15+02:00 — Synchronized packaged lifecycle projections and structural proof for
+  the pre-handoff correction versus post-handoff rejection boundary.
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 packaged-skill impact: synchronized review-handoff-only
+  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
+  semantics across all runtime projections.
 - 2026-08-26T16:03+02:00 — Memory hygiene: removed a pre-existing tool-output truncation banner
   accidentally committed above the package overview title; route content is unchanged.
 

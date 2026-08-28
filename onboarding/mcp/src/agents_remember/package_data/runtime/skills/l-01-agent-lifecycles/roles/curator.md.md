@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,10 @@ full scoped call combines missing-onboarding, quality, stale indexes, source-cha
 noteworthy evidence; the curator reruns it until the zeroable count clears. Changes must be made
 canonically and propagated; editing this artifact independently creates drift.
 
+The synchronized intake also requires exact approved stable-ID + version packets and the
+reviewer's per-revision adjudication. Rejected or worker-blocked revisions remain blockers and
+cannot become packaged current intent.
+
 ## Conventions
 
 - Treat canonical `skills/` as the sole doctrine owner.
@@ -48,7 +52,7 @@ canonically and propagated; editing this artifact independently creates drift.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged curator contains the same current seat definition and three-way responsibility. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| The synchronized check loop requires complete curator-actionable repair before report. | "### 4 — Iterate The Checklist, Then Report" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| The synchronized check loop requires complete curator-actionable repair and exact accepted-revision mapping before report. | "### 4 — Iterate The Checklist, Then Report" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:145-201 |
 | The canonical source is the doctrine owner. | "# Lifecycle — Curator" | skills/l-01-agent-lifecycles/roles/curator.md:1-47 |
 | MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
@@ -66,6 +70,13 @@ is a retry signal over the same API, never authority for a host runner, fallback
 call. The content remains synchronized from the canonical curator role.
 
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+- 2026-08-27T16:27+02:00 — Synchronized exact requirement-packet and per-revision adjudication
+  intake from canonical curator doctrine. Verification remains closeout-owned.
+
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: synchronized curator quality calls and retry guidance from canonical doctrine. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: curator admission requires current

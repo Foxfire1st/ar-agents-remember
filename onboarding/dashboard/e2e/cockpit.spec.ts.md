@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/e2e/cockpit.spec.ts`                             |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`                  |
-| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00|
+| lastUpdated            | 2026-08-28T14:15+02:00                                      |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8`                  |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00                                   |
 | governingOverview      | `../../overview.md`                                         |
 
 ## Governing Overview
@@ -26,22 +26,23 @@ the cockpit against the dev server and `/dev/bench` fixture gallery.
 The primary Playwright end-to-end suite for the cockpit, wired into CI by
 260731-EFA-L8 (R8). It serves the leaf worktree through Playwright's own dev server
 (`reuseExistingServer` handling), drives the fixture gallery scenarios, and asserts
-the real DOM contract: rail → stage → inspector focus order, `pty-layer-*` surfaces,
-statusline/status-state/pending-set selectors, end-confirm geometry, sprint bulk
-confirm/cancel, and terminal continuity (same host/viewport/instance, retained
-pre-cleanup rows, typing pulls the viewport to the live bottom).
+the real DOM contract: rail → stage → inspector order, stage-header and inspector-handle focus
+adjacency, `pty-layer-*` surfaces, header state, queued-set chips and inspector evidence, end-confirm
+geometry, sprint bulk confirm/cancel, and terminal continuity (same host/viewport/instance,
+retained pre-cleanup rows, typing pulls the viewport to the live bottom).
 
 ## Code Commentary
 
 ### Logic
 
-The suite was repaired to green 27/27 in the L8 fix round (FL3): focus expectations
-use the real DOM order (the old Shift+Tab expectations contradicted the pre-existing
-inspector-after-stage order); the terminal-continuity test asserts the stable DOM
-contract instead of a parallel-load-sensitive scroll position. Two genuine app
-defects surfaced and were fixed (Terminal headless-focus delegation; ChatsStageBody
-keep-alive), and fixtures/scenarios gained `RAW_TERMINAL_ROW` and the
-`terminal-focus` scenario.
+The suite is the 27-test primary Playwright acceptance surface. Its current focus assertions follow
+the base rail → stage → inspector DOM order: traversal from the stage-header toggle remains in the
+stage, while the inspector handle owns adjacency to inspector content. Landed transcripts are
+asserted through their exact hidden/visible `pty-layer-*` identity. After removal of the StatusLine,
+the suite proves queued settings through the queued chip, effective state through the header, and
+the recorded set ledger through the opened inspector rather than retaining dead selectors. The
+terminal-continuity test asserts the stable DOM contract instead of a parallel-load-sensitive scroll
+position.
 
 ### Conventions
 
@@ -84,6 +85,11 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-08-28T14:15+02:00 — Reconciled the current 27-test cockpit contract after StatusLine
+  removal: stage/inspector focus adjacency, exact landed-transcript layers, header state, queued-set
+  chips, and inspector ledger evidence now replace the retired selectors. Stamped the landed PDLS
+  code candidate.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the primary

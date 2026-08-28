@@ -41,15 +41,14 @@ opensrc fetch https://github.com/anomalyco/opentui        # GitHub
 
 ## Code Quality
 
-Agents Remember acceptance runs only through the pinned Dagger Ubuntu graph. Ordinary direct host
-`pytest`, Playwright, changed-lines coverage, and
-`python -m agents_remember.code_quality.check` invocations must refuse. One bounded Python
-diagnostic exists: `./scripts/test-python <exact-node> [<exact-node> ...]` accepts at most eight
-explicit selectors only after the structural classifier proves the complete import, collection,
-fixture, helper, and effect closure safe. It runs serially and emits non-certifying evidence.
-Direct targeted Vitest unit/component loops remain supported for fast diagnostic feedback only;
-neither diagnostic route is acceptance, browser/integration, changed-lines coverage, or
-immutable-candidate evidence. Deterministic non-test host checks may also be used for fast feedback.
+Agents Remember Python investigation and acceptance run only through the pinned Dagger Ubuntu
+graph. Ordinary direct host `pytest`, Playwright, changed-lines coverage, and
+`python -m agents_remember_test_support.code_quality.check` invocations must refuse. Candidate A's
+`scripts/test-python` wrapper, cohort manifest, classifier, and host diagnostic route were deleted
+after their exact-candidate retention falsifier failed; no Python compatibility command or fallback
+exists. Direct targeted Vitest unit/component loops remain supported for fast diagnostic feedback
+only; they are not acceptance, browser/integration, changed-lines coverage, or immutable-candidate
+evidence. Deterministic non-test host checks may also be used for fast feedback.
 
 The lifecycle owns the two accepted invocations:
 
@@ -165,19 +164,11 @@ For more information on radon usage use the official documentation: [Radon Docum
 
 ### Pytest And Coverage
 
-Certifying pytest and Coverage.py execute only inside the nonce-attested Dagger graph. Ordinary
-direct host pytest refuses before collection. For eligible pure-test diagnosis only, run the
-canonical wrapper with exact nodes:
-
-```text
-./scripts/test-python mcp/tests/test_python_direct_cohort.py::test_known_gate_kind_passes_through
-```
-
-The wrapper accepts no arbitrary pytest flags, globs, files, markers, directories, or fallback
-selection. It classifies the whole request, runs at most eight admitted nodes once with `-n=0`, and
-labels the result diagnostic/non-certifying. Any refusal executes zero nodes and points back to the
-documented Dagger route. Leaf closeout derives the targeted certifying selection; master
-integration runs the full certifying selection.
+Pytest and Coverage.py execute only inside the nonce-attested Dagger graph. There is no supported
+host pytest or Python diagnostic wrapper. Use `dagger call quality --help` for the live input
+contract; leaf closeout derives the targeted selection and master integration runs the full
+selection. Non-accepting Dagger evidence routes such as retry, cadence, causal, and measurement
+proof remain explicitly non-certifying even though they execute in the same sealed environment.
 
 ---
 
@@ -197,9 +188,9 @@ refactor scouting after the run.
 - Run quality tools from the source repository root, not from the coordinator root.
 - Use deterministic non-test host checks such as Ruff, formatting, Pyright, Radon, dashboard
   codegen, lint, and typecheck for implementation feedback. Direct targeted Vitest unit/component
-  loops and structurally eligible exact Python nodes through `./scripts/test-python` are allowed as
-  non-certifying diagnostics. Do not run raw host pytest, Playwright, changed-lines coverage, broad
-  acceptance suites, or the direct quality wrapper.
+  loops are allowed as non-certifying diagnostics. Do not run raw host pytest, Playwright,
+  changed-lines coverage, broad acceptance suites, or a host quality wrapper; no Python diagnostic
+  wrapper exists.
 - Do not start an extra Dagger acceptance run during implementation. Leaf closeout owns targeted
   acceptance once; master integration owns full acceptance once. A failed boundary is repaired and
   retried through that same lifecycle operation.

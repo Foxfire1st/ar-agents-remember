@@ -108,7 +108,6 @@
       "DTO",
       "mcp/src/agents_remember/mcp/registration",
       "route-local-overview",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
       "/../../../../overview.md",
       "mcp/registration/",
       "@server.tool",
@@ -119,7 +118,8 @@
       "memory_quality_check(request=",
       "register_<family>_tools(server, config) -> None",
       "mcp/tools/",
-      "pyproject.toml"
+      "pyproject.toml",
+      "dispatch_agent(task_document_ref, role, brief"
     ]
   },
   "fallback": {

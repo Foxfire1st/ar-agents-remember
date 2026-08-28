@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -33,10 +33,36 @@ does it gather the curator coherence report before closeout. It runs leaf-scoped
 exactly once when closeout creates the leaf commit. Leaf integration lands that exact certified
 commit without a rerun. The full wrapper runs once at master integration altitude.
 
+Before dispatch, the manager independently verifies that every exact stable ID + version points to
+the approved version-addressed packet and that the packet carries its durable corpus-ruling
+citation. Missing, duplicate, unapproved, or mismatched revisions make the brief invalid rather
+than a condition the worker is expected to repair.
+
 When all leaves land, an adversarial master-exit verdict becomes evidence on the handover seam; the
 manager writes the master-handover packet and remains reachable at `(master document, manager)`.
 Ordinary follow-ups and escalations use structural child/parent messaging so replacements are
 transparent.
+
+Before worker dispatch, the manager compiles the exact stable IDs applicable to the leaf, including
+inherited master requirements. It requires one complete worker envelope per ID and gives that same
+set to the reviewer for independent accepted/rejected adjudication. Missing/duplicate IDs, missing
+evidence fields, or an overall pass with any rejection fail closed. The separate durable-evidence
+promotion hold point remains in both briefs and cannot satisfy requirement acceptance.
+
+The same loop also carries exact attempt identity. The manager compiles the next review-handoff
+attempt ID without advancing it at dispatch or during internal implementation/test/evidence runs,
+checks the lightweight immutable worker record and its content-addressed expanded-evidence anchor,
+and sends that exact candidate to review. It records bounded invalidation only after independent
+direct-regression proof and maintains a rebuildable master summary linked to leaf journals; leaf
+records remain authority and summary freshness never gates task, lifecycle, closeout, integration,
+or queue work.
+
+Internal runs stay in a separate protocol-event log. Repair to a reviewer-rejected manifestation
+creates a successor at the next handoff. An unrelated later candidate does not reopen accepted work.
+
+The curator receives that same exact approved revision set, every canonical packet, the durable
+corpus ruling, and the reviewer's per-revision adjudication. Rejected or worker-blocked revisions
+are curator blockers, not authority to write current onboarding intent.
 
 ## Conventions
 
@@ -53,16 +79,20 @@ transparent.
 - Manager may retire only its own master's worker/reviewer/curator child seats.
 - Manager does not self-approve, bypass blocked checks, or invent portfolio-wide authority.
 - Handover and completion rely on durable artifacts and terminal/finalizer truth, not model completion posts.
+- A worker/reviewer pair must cover the same exact stable requirement set.
+- A worker/reviewer pair must bind the same exact attempt and candidate; neither can rewrite the
+  requirement or prior attempt record.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
+| One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
 | Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
-| The leaf loop sequences builder, reviewer, curator, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-182 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:251-251; skills/l-01-agent-lifecycles/roles/manager.md:275-275 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:292-292 |
+| The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-272 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:307-307; skills/l-01-agent-lifecycles/roles/manager.md:335-335 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:352-352 |
+| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:102-102 |
 
 ## L23 Manager And Leaf Admission
 
@@ -94,7 +124,45 @@ At organizational master exit, review scope is the exact proposed final super ca
 prior landed contributions plus the proposed final leaf. The full suite runs once against that
 candidate before the ref moves. Atomic master exit reviews and gates the isolated branch once.
 
+## 2026-08-27 Attempt Boundary Clarification
+
+Attempt publication is phase-sensitive: validate before append, and treat append plus the exact
+review handoff as one formal boundary. A malformed row that never reached review is preserved by a
+non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
+independent reviewer rejection permits a successor.
+
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled manager-role source ranges against the committed PDLS
+  candidate after final requirement-ownership edits; behavior is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
+  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
+  the source-specific worker/reviewer/manager/curator boundary.
+
+- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
+  reviewer rejection and successor lineage.
+
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: managers no longer count dispatch or internal reruns as
+  attempts; they validate lightweight content-addressed handoff records and summaries that exclude
+  protocol events.
+- 2026-08-27T19:59+02:00 — M42 clarification: prevented unrelated later candidate movement from
+  becoming a third implicit accepted-attempt invalidation trigger.
+- 2026-08-27T18:06+02:00 — M40-M45: documented manager-owned attempt dispatch/validation,
+  independent regression proof plus bounded invalidation, and the rebuildable non-gating master
+  summary over authoritative leaf journals.
+- 2026-08-27T16:27+02:00 — Closed the curator projection gap: the manager now feeds exact approved
+  packets and per-revision adjudication through the curator brief and prohibits rejected/blocked
+  deltas from becoming current intent. Verification remains closeout-owned.
+
+- 2026-08-27T14:04+02:00 — Tightened M39 dispatch admission around approved version-addressed
+  packets and packet-local durable corpus rulings; unapproved or mismatched revisions refuse.
+- 2026-08-27T13:32+02:00 — M39@v1: manager dispatch and review comparison now bind exact stable
+  ID + version rows to matching canonical packets. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: documented manager-owned exact requirement-set compilation,
+  worker envelope validation, same-set reviewer dispatch, and separate evidence promotion.
+  Verification metadata stays pinned until governed closeout stamps the PDLS commit.
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented manager-local readiness reporting,
   nature-aware leaf lineage, and exact pre-landing organizational completion scope. Verification

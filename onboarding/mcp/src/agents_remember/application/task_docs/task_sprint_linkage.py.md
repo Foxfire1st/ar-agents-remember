@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -116,7 +116,7 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 | The public tool-layer operation routing. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
 | The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:433-474; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:758-778 |
 | The rollback-safe batch writer and exact task publication transaction. | `write_task_doc_batch`; `publish_task_doc_set` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/tasks/store.py:175-216 |
-| The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/src/agents_remember/code_quality/single_owner.py:40-53 |
+| The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/test_support/agents_remember_test_support/code_quality/single_owner.py:40-53 |
 | The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:89-95 |
 | The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:378-401; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:808-853 |
 | The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:585-607; mcp/tests/test_task_sprint_linkage.py:1056-1089 |

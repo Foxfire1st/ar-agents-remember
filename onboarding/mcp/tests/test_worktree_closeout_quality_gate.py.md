@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ before approval claim. A source move in that window raises and the approval rema
 
 ### Logic
 
-`_checkout_with_wrapper(root)` plants `mcp/src/agents_remember/code_quality/check.py` in a temp
+`_checkout_with_wrapper(root)` plants `mcp/test_support/agents_remember_test_support/code_quality/check.py` in a temp
 directory. That is the whole fixture, and it is the point: after the repository-name hard-code was
 removed, carrying the wrapper is what makes a checkout gated, so a bare temp directory now stands
 in for a consuming repository.
@@ -251,7 +251,7 @@ The suite proves the adapter and its production closeout call sites together.
 | The closeout call site passes `contract.code_worktree`, the enclosure worktree group, `diff_base=contract.code_base_commit`, the configured Dagger executor, and the accepted candidate tree through the imported `_gate_staged_code` alias. | "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:818-818 |
 | `gate_staged_code` under test: both refusals and candidate checks, then the mixed reset, `add -A`, the reviewed pre-commit hook, and the targeted Dagger gate. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-141 |
 | The two preconditions themselves: the linked-worktree check and the unmerged-index check. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:24-40; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:43-55 |
-| The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | `derive_scope`; `posix_args` | mcp/src/agents_remember/code_quality/check.py:83-84; mcp/src/agents_remember/code_quality/check.py:394-401; mcp/src/agents_remember/code_quality/check.py:431-432 |
+| The scope derivation the created-file cases exercise for real — `git ls-files` over the index is why staging changes what the gate sees. | "def derive_scope("; "def posix_args(" | mcp/test_support/agents_remember_test_support/code_quality/scope.py:417-440; mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:318-319 |
 
 ## Cross-Repo References
 
@@ -265,7 +265,7 @@ about other repositories: a bare temp checkout stands in for a consuming reposit
 ### 260731-EFA-L17/L24 — Mode, Resource Policy, And Kill-Shape Assertions
 
 `CodeQualityGateTests` (lines 49-423) now asserts the leaf contract command
-`python -m agents_remember.code_quality.check --targeted` (and
+`python -m agents_remember_test_support.code_quality.check --targeted` (and
 `--targeted --diff-base <base>`), the `mode` payload key, and the new full-mode
 arms: `_gate_command` refuses unknown modes, the full preview names
 `memoryPolicy` and names `memoryCap` only for an explicit limit, an uncapped

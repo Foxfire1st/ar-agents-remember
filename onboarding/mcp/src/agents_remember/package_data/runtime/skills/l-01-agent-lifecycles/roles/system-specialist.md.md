@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00                     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -67,7 +67,7 @@ response protocol (task doc `08_degradation-protocol-and-system-specialist.json`
 | Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — System Specialist` | skills/l-01-agent-lifecycles/roles/system-specialist.md:1-102 |
 | The detector this seat investigates: degradation events, metrics snapshot, critical failsafe. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
 | The orchestrator role file that dispatches this seat on a degradation-alert and reads its report. | `## Provider Degradation Alert` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:111-131 |
-| The role census / escalation ladder registering `system-specialist` as the ninth portable role. | "system-specialist" | skills/l-01-agent-lifecycles/templates/manager-brief.md:99-99 |
+| The role census / escalation ladder registering `system-specialist` as the ninth portable role. | "system-specialist" | skills/l-01-agent-lifecycles/templates/manager-brief.md:143-143 |
 | The inbox role/message-kind schema this seat is addressed through (`AgentRole.system-specialist`, `degradation-alert`) — vocabulary moved to models/operator_inbox.py by L9. | "AgentRole = Literal["; "degradation-alert" | mcp/src/agents_remember/models/operator_inbox.py:20-20; mcp/src/agents_remember/models/operator_inbox.py:42-42 |
 
 ## Cross-Repo References
@@ -84,6 +84,9 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled system-specialist citations against the committed PDLS
+  candidate; the provider-focused role contract remains unchanged.
 
 - 2026-08-11T19:58+02:00 — Recorded `system-specialist.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 5 repository-internal bundle, detector, dispatch, role-registry, and inbox-schema references; final scoped result 0 (checker-clean).

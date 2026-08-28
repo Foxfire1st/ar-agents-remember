@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated            | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -836,6 +836,10 @@ time, while exact dispatch briefs remain pinned to the private spawned generatio
 ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — No parent-route content impact: the landed candidate changes only the
+  Claude mapper inside the governed conversation/projectors child route, whose own overview carries
+  the interaction/mutation-diff semantics. Stamped the serving route to committed provenance.
 
 - 2026-08-26T16:03+02:00 — Recorded dispatch receipt ownership in its dedicated collaborator and removed a pre-existing
   tool-output truncation banner. The atomic catalog persistence boundary remains singular;

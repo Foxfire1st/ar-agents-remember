@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `requirements.txt` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ metadata admits the same major-version range in its `dev` extra.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The checkout pins pytest-xdist 3.8.0 with the other quality tools. | "pytest-xdist==3.8.0" | requirements.txt:10-10 |
-| The package development extra admits pytest-xdist 3.x, and root pytest configuration enables automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:56-66; pyproject.toml:110-130 |
+| The package development extra admits pytest-xdist 3.x, and root pytest configuration enables automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:64-64; pyproject.toml:133-133 |
 | The checkout requirements pin Ruff 0.16.1 exactly. | "ruff==0.16.1" | requirements.txt:1-8 |
 | The package development extra independently pins the same Ruff release. | "\"ruff==0.16.1\"," | mcp/pyproject.toml:67-67 |
 

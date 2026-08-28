@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -32,6 +32,10 @@ step), and the manager's c-12 closeout relays named findings, but the reviewer v
 adherence stops being self-attestation.
 
 ### Logic
+
+The synchronized reviewer independently validates the exact lightweight worker record and frozen
+expanded-evidence digest/anchor while treating internal protocol events as supporting history, not
+formal attempts to adjudicate.
 
 The body defines a short-lived reviewer seat at the master-exit and super-exit seams, plus the
 reusable reviewer seat for full-loop and portfolio-plan reviews. Master-exit hands the accumulated
@@ -90,20 +94,20 @@ The reviewer job file is its own source authority for the seat, lenses, seams, d
 | Review criteria are not made up on the spot. | "Criteria are never made up on the spot." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:64-64 |
 | Every review runs its type's standing catalog. | "Every review runs its type's STANDING catalog" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:64-64 |
 | The exploratory mandate defaults to two lenses. | "plus an **exploratory mandate**"; "default 2" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:65-66 |
-| The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. | "every master requirement"; "accounted for" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:137-138 |
-| Skipped or reshaped work has a decision-log trail. | "skipped or reshaped work has a decision-log trail" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:138-138 |
-| No unfinished leaf work is hidden inside the handover packet. | "no unfinished leaf work is hidden"; "inside the handover packet" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:138-139 |
-| The code-quality lens checks lint, typecheck, tests, and complexity. | "lint · typecheck · tests · complexity" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:113-113 |
-| The onboarding-vs-code lens checks same-pass sidecars. | "changed source files have same-pass sidecar updates" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:145-145 |
-| Route overviews are current for the master side of the change. | "route overviews are current" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:146-146 |
-| Onboarding evidence records drift and memory-quality checks and names any memory or carry-over gap. | "any memory/carry-over gap is named" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:147-147 |
-| A master-exit block returns to the owning manager as fix leaves. | "returns to the owning **manager**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:148-148 |
-| A super-exit block returns to the orchestrator as fix leaves. | "returns to the **orchestrator**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:171-171 |
-| Reviewer duties include writing a verdict artifact and decomposing blocking verdicts into fix leaves. | "Write the verdict artifact"; "Decompose a blocking verdict into fix leaves" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:184-184; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:194-194 |
-| Reviewer communications use `message_parent` for missing context or structural routing problems without carrying the parent's runtime identity. | "Structural parent message" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:212-212 |
-| The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. | "The verdict artifact plus terminal/finalizer truth is the completion" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:213-213 |
-| Stdin is not a driver for the reviewer. | "Stdin push" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:215-215 |
-| The role's tools are the review surface. | "review surface" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:230-230 |
+| The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. | "every master requirement"; "accounted for" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:211-212 |
+| Skipped or reshaped work has a decision-log trail. | "skipped or reshaped work has a decision-log trail" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:212-212 |
+| No unfinished leaf work is hidden inside the handover packet. | "no unfinished leaf work is hidden"; "inside the handover packet" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:212-213 |
+| The code-quality lens checks lint, typecheck, tests, and complexity. | "lint · typecheck · tests · complexity" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:180-180 |
+| The onboarding-vs-code lens checks same-pass sidecars. | "changed source files have same-pass sidecar updates" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:219-219 |
+| Route overviews are current for the master side of the change. | "route overviews are current" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:220-220 |
+| Onboarding evidence records drift and memory-quality checks and names any memory or carry-over gap. | "any memory/carry-over gap is named" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:221-221 |
+| A master-exit block returns to the owning manager as fix leaves. | "returns to the owning **manager**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:222-222 |
+| A super-exit block returns to the orchestrator as fix leaves. | "returns to the **orchestrator**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:245-245 |
+| Reviewer duties include writing a verdict artifact and decomposing blocking verdicts into fix leaves. | "Write the verdict artifact"; "Decompose a blocking verdict into fix leaves" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:262-262; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:274-274 |
+| Reviewer communications use `message_parent` for missing context or structural routing problems without carrying the parent's runtime identity. | "Structural parent message" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:295-295 |
+| The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. | "The verdict artifact plus terminal/finalizer truth is the completion" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:296-296 |
+| Stdin is not a driver for the reviewer. | "Stdin push" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:298-298 |
+| The role's tools are the review surface. | "review surface" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:313-313 |
 
 ## Cross-Repo References
 
@@ -133,7 +137,54 @@ cite evidence of the requirement's class: rendering → mounted-UI proof, schedu
 operation-level proof, data model → artifact-level proof, doctrine → a code anchor (D-1). Evidence
 of the wrong class is a finding, never a pass (L8-R3 was passed on projection-only evidence).
 
+## M38 Reviewer Adjudication Projection
+
+The installed reviewer role independently inspects every cited artifact and gives each stable ID
+its own `accepted` or `rejected` rationale. Missing rationale, missing or wrong-class evidence,
+invalid citations, or missing durable approval forces rejection, and any rejection prevents the
+overall pass. Delta rounds retain accepted rows unless the repair directly regresses them. This
+copy is synchronized doctrine, not an independent review policy.
+Canonical-packet inspection includes the version-addressed path, exact ID/version, approved state,
+and durable corpus ruling; task prose cannot substitute for that source.
+
+## M41-M43 Reviewer Attempt Projection
+
+The packaged reviewer appends a separate record against one exact worker attempt and candidate,
+classifies rejection, and may prove regression without unilaterally reopening acceptance or
+extending scope. Bounded invalidation remains an owning-seat record.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled reviewer-doctrine citations with the committed PDLS
+  candidate after the acceptance-envelope wording settled; the contract is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 reviewer evidence boundaries.
+
+- 2026-08-27T18:06+02:00 — M41-M43: synchronized exact-attempt adjudication, failure classes, and
+  regression-proof/owner-invalidation separation.
+
+- 2026-08-27T14:04+02:00 — Tightened installed reviewer adjudication around the approved
+  version-addressed packet and its packet-local durable corpus ruling.
+- 2026-08-27T13:32+02:00 — M39@v1: reviewers inspect the matching canonical packet and reject
+  missing, mismatched, or superseded requirement versions; affected leaves must be rebriefed before
+  new acceptance. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded independent per-ID adjudication and forcing rejection
+  rules. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: the seat gains the Review Independence and
   Evidence-Type Matching section — never the author seat, and requirement verdicts must cite their

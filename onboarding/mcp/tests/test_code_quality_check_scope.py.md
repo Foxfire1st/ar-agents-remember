@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_code_quality_check_scope.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -37,7 +37,7 @@ L23 lets whole-tree scope expectations include the Dagger package when present, 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
-| The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:215-223 |
+| The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:280-280 |
 
 ## 260824-PDLS Admission Boundary
 
@@ -52,7 +52,18 @@ paths populate `coverage_paths`, while test paths remain in `test_paths` and are
 being offered as Coverage.py targets. The regression assertions pin that split both for this
 repository and for synthetic package/test repositories.
 
+## 2026-08-28 Explicit Package Authority
+
+Scope derivation now starts from declared product and verification package roots. Every discovered
+importable package must belong to exactly one side; overlap, stale declarations, new undeclared
+packages, and an empty operational product set fail loudly. Verification packages remain in
+lint/type scope while only product roots feed coverage and CRAP. The Dagger implementation package
+is no longer conditionally inserted into product coverage.
+
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: documented exhaustive product-versus-verification
+  package ownership and the overlap/stale/undeclared/empty-product refusal cases.
 
 - 2026-08-26T10:44:52+02:00 — Updated the scope contract to product-only coverage measurement while preserving test execution and whole-tree lint/type ownership.
 - 2026-08-24T21:23+02:00 — Added the typed admission precondition; scope behavior is unchanged.

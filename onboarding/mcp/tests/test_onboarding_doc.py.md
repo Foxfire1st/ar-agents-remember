@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -45,14 +45,18 @@ No external documentation is needed for this standard-library test.
 | Module under test. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:94-108 |
 | Git-fixture gate coverage consuming the same helpers. | `RequireUpdatedSidecarContentTests` | mcp/tests/test_worktree_support_benchmark.py:668-823 |
 
-## 260824-PDLS Cohort Extraction
+## 260824-PDLS Retired-Cohort Preservation
 
-The route-normalization root-form and quoting assertions moved unchanged to the bounded direct
-cohort. The remaining onboarding document parsing/body/history/route-containment contracts stay in
-this module.
+The route-normalization root-form and quoting assertions no longer live in this module. After
+Candidate A and its direct cohort were retired, those product assertions remained as ordinary
+certifying tests in `mcp/tests/test_kernel_pure_regressions.py`; no direct runner or compatibility
+cohort survives. The remaining onboarding document parsing/body/history/route-containment contracts
+stay in this module.
 
 ## Update History
 
+- 2026-08-28T10:03:40+02:00 — Reconciled the historical extraction with Candidate A retirement;
+  route-normalization assertions survive in the ordinary certifying regression module.
 - 2026-08-24T21:23+02:00 — Moved two pure route-normalization assertions to the direct cohort.
 
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.

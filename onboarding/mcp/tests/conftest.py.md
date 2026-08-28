@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/conftest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e` |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,8 @@
 Defines only the certifying pytest composition: pin the candidate checkout, require Dagger
 admission, activate the reusable hermetic environment, declare the test process, then load the
 certifying-only plugin, which in turn loads the shared route-neutral plugin. Ordinary raw host
-pytest refuses while the separate direct diagnostic entrypoint avoids this file entirely.
+pytest refuses. Candidate A's former direct entrypoint was deleted, so no supported Python route
+avoids this certifying composition from the host.
 
 ## Code Commentary
 
@@ -37,8 +38,8 @@ scrubs Git repository selectors and installs the disposable Git identity plus ca
 `begin_pytest_process` declares test mode before the plugins are imported.
 
 The root `pytest_plugins` tuple loads
-`agents_remember.testing.pytest_certifying_bootstrap`. That certifying-only plugin binds worktree
-services and declares `agents_remember.testing.pytest_bootstrap` as its own plugin. The shared
+`agents_remember_test_support.testing.pytest_certifying_bootstrap`. That certifying-only plugin binds worktree
+services and declares `agents_remember_test_support.testing.pytest_bootstrap` as its own plugin. The shared
 plugin then owns:
 
 - route-neutral cache isolation;
@@ -63,7 +64,7 @@ state/randomization in their own testing modules.
 - Dagger admission precedes candidate planning, plugin loading, collection, execution, and artifact
   publication.
 - Missing/malformed/mismatched admission is a certifying refusal, never a diagnostic route selector.
-- The direct diagnostic route never imports this conftest and receives no certifying service bundle.
+- No host Python diagnostic route or compatibility import bypasses this conftest.
 - Git repository selectors and developer identity do not leak into fixture subprocesses.
 - Environment and owned globals restore on every pytest exit path.
 - No compatibility import of `code_quality.dagger_environment`, `_global_state`, or `_random_order`
@@ -83,10 +84,10 @@ documentation defines this boundary.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Candidate pinning precedes the first production import. | `REPOSITORY_ROOT`; `MCP_SRC` | mcp/tests/conftest.py:13-14 |
-| Certifying composition translates failures before plugin loading. | `prepare_certifying_pytest_bootstrap`; `CERTIFYING_BOOTSTRAP` | mcp/tests/conftest.py:32-38; mcp/tests/conftest.py:41-41 |
-| Only the certifying service plugin is loaded from root composition. | `pytest_plugins` | mcp/tests/conftest.py:51-51 |
+| Certifying composition translates failures before plugin loading. | `prepare_certifying_pytest_bootstrap`; `CERTIFYING_BOOTSTRAP` | mcp/tests/conftest.py:34-40; mcp/tests/conftest.py:43-43 |
+| Only the certifying service plugin is loaded from root composition. | `pytest_plugins` | mcp/tests/conftest.py:53-53 |
 | Current-process environment is restored at unconfigure. | `pytest_unconfigure` | mcp/tests/conftest.py:54-56 |
-| Shared hooks own order, cache, state restoration, and process cleanup. | `reject_owned_global_state_leaks`; `pytest_collection_modifyitems`; `pytest_unconfigure` | mcp/src/agents_remember/testing/pytest_bootstrap.py:22-24; mcp/src/agents_remember/testing/pytest_bootstrap.py:41-44; mcp/src/agents_remember/testing/pytest_bootstrap.py:60-70 |
+| Shared hooks own order, cache, state restoration, and process cleanup. | `reject_owned_global_state_leaks`; `pytest_collection_modifyitems`; `pytest_unconfigure` | mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:22-24; mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:41-44; mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:60-70 |
 
 ## Cross-Repo References
 
@@ -95,11 +96,17 @@ No sibling repository supplies or overrides pytest admission/bootstrap.
 
 ## PDLS Reconciliation
 
-The certifying plugin path now targets the root `agents_remember.pytest_certifying_bootstrap`, avoiding execution of the testing package initializer before admission/bootstrap composition.
+The certifying plugin path now targets the root `agents_remember_test_support.pytest_certifying_bootstrap`, avoiding execution of the testing package initializer before admission/bootstrap composition.
 
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: shortened a stale explanatory comment; collection,
+  lane classification, and Dagger admission behavior are unchanged.
+
+- 2026-08-28T10:03:40+02:00 — Reconciled the current certifying composition after Candidate A
+  retirement; no host Python entrypoint or compatibility bypass remains.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -93,18 +93,17 @@ runtime-asset and harness sync boundaries.
 
 ### Code Quality Instructions — Current Acceptance Boundary
 
-The source now routes acceptance through the pinned Dagger module and names the manual
-diagnostic invocation shape. Leaf closeout owns one targeted acceptance run and master
+The source now routes Python investigation and acceptance through the pinned Dagger module. Leaf
+closeout owns one targeted acceptance run and master
 integration owns one full run; other lifecycle and publication steps do not rerun it. The
 exported `clean-quality-results.json` is the single authoritative result, while host hooks
 and GitHub pull requests stay deterministic non-test rails.
 
-Python, Playwright, the changed-lines coverage CLI, and direct Python-wrapper execution
-require the Dagger run's matching nonce plus in-container attestation and have no host
-compatibility path. Direct targeted Vitest unit/component runs are the deliberate exception:
+Host Python, Playwright, and the changed-lines coverage CLI have no supported execution path.
+Candidate A's direct Python wrapper was deleted and has no compatibility replacement. Direct
+targeted Vitest unit/component runs are the deliberate exception:
 they are supported as fast diagnostics, but never create acceptance, changed-lines coverage,
-or lifecycle evidence. The guarded wrapper still takes no path arguments; its Python scope is
-derived from `git ls-files '*.py'`, and CRAP plus changed-lines coverage score the Dagger run's
+or lifecycle evidence. CRAP plus changed-lines coverage score only the Dagger run's
 branch-coverage artifact.
 
 A dedicated paragraph is the leaf's own correction of a policy it briefly held:
@@ -182,17 +181,17 @@ file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-219 |
+| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-215 |
 | The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | `## Start Here — Route By Role` | AGENTS.md:16-50 |
 | Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:49-98 |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:125-145 |
 | Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:99-124 |
 | Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:99-124 |
-| Code-quality routing reserves acceptance for the pinned Dagger module, names the one targeted/full cadence, guards Python/Playwright/changed-lines/direct-wrapper execution, and permits direct targeted Vitest only as non-certifying diagnostic feedback. | `## Code Quality Instructions` | AGENTS.md:146-219 |
-| The same section derives Python scope from the index, names enforcing/reporting rails, forbids baselines and exemptions, and routes exact commands plus stability doctrine through the resolved memory layer. | `## Code Quality Instructions` | AGENTS.md:146-219 |
+| Code-quality routing reserves Python investigation and acceptance for the pinned Dagger module, names the one targeted/full cadence, records Candidate A's wrapper retirement, and permits direct targeted Vitest only as non-certifying diagnostic feedback. | `## Code Quality Instructions` | AGENTS.md:146-215 |
+| The same section derives Python scope from the index, names enforcing/reporting rails, forbids baselines and exemptions, and routes exact commands plus stability doctrine through the resolved memory layer. | `## Code Quality Instructions` | AGENTS.md:146-215 |
 | Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:99-124 |
-| The gate command this file names, with the enforcing/report split it describes. | `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:435-485 |
-| The changed-lines step named by the current acceptance boundary. | `run_diff_coverage` | mcp/src/agents_remember/code_quality/post_coverage.py:121-170 |
+| The gate command this file names, with the enforcing/report split it describes. | `run_quality_check` | mcp/test_support/agents_remember_test_support/code_quality/check.py:148-198 |
+| The changed-lines step named by the current acceptance boundary. | `run_diff_coverage` | mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py:121-170 |
 | The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
 
 ## Cross-Repo References
@@ -219,12 +218,14 @@ push, pull request, tag, and publish do not rerun acceptance; pull requests reta
 non-test checks only. Python, Playwright, changed-lines coverage, and the direct wrapper refuse
 outside the matching nonce-attested Dagger graph; targeted direct Vitest remains diagnostic-only.
 
-## 260824-PDLS — Python Diagnostic Rule
+## 260824-PDLS — Python Evidence Rule
 
-The root operating contract now distinguishes raw host pytest from the one supported bounded
-diagnostic wrapper. Agents may run `./scripts/test-python` only with exact structurally eligible
-nodes; the result is explicitly non-certifying and cannot replace the lifecycle-owned Dagger gate.
-The file also points at the new testing architecture and retains direct targeted Vitest behavior.
+The root operating contract now makes the pinned Dagger graph the only supported Python execution
+environment for investigation and acceptance. Candidate A's host command, sealed manifest, static
+closure analyzer, and self-proof were removed after exact-candidate measurement showed that the
+route was slower than the equivalent warm Dagger micro-route while carrying substantial extra
+maintenance surface. Direct targeted Vitest remains supported diagnostic feedback; Python has no
+host compatibility or fallback path.
 
 ## 2026-08-26 Python Evidence-System Doctrine Reconciliation
 
@@ -237,6 +238,11 @@ locally convenient test or report from silently becoming acceptance authority.
 
 ## Update History
 
+- 2026-08-28T10:03:40+02:00 — Corrected the current code-quality section and citations so they no
+  longer advertise the retired Candidate-A Python wrapper.
+
+- 2026-08-28T05:10+02:00 — Reconciled Candidate A retirement: no Python host wrapper, classifier,
+  manifest, or compatibility route remains; Dagger owns Python investigation and acceptance.
 - 2026-08-26T10:44:52+02:00 — Reconciled the new Python evidence-system doctrine pointer and its acceptance-authority boundary after reviewing the `AGENTS.md` source delta; verification metadata remains closeout-owned.
 - 2026-08-24T21:23+02:00 — 260824-PDLS aligned the agent contract with the exact-node diagnostic
   and Dagger evidence firewall.

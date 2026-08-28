@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_code_quality_memory_cap.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `cdcdc566fc6bee44b371a9d15c2048ceb1a49b8b` |
-| lastVerifiedCommitDate | 2026-08-18T03:31:59+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The planning functions under test. | `plan_capped_command`, `systemd_scope_available`, `with_self_cap` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130; mcp/src/agents_remember/kernel/primitives/memory_cap.py:50-67; mcp/src/agents_remember/kernel/primitives/memory_cap.py:77-89 |
-| The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/src/agents_remember/code_quality/check.py:988-1036 |
+| The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/test_support/agents_remember_test_support/code_quality/check.py:801-855 |
 | The gate's cap-kill naming (returncode -9 / shell 137). | `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:506-530 |
 
 ## Cross-Repo References

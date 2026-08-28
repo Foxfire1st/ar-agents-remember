@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_code_quality_targeted.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,13 @@ the typed derivation is printed, Radon sees changed production modules, no-Pytho
 short-circuit honestly, tests-only runs mark measurement rails not applicable, and scripts-only
 runs execute the fail-closed test population while leaving coverage rails out.
 
+The miniature repository now declares both a product package and a Dagger-style verification
+package. A focused derivation case changes only the verification package and proves that it remains
+in lint and type scope while `coverage_paths` stays empty and the derived Coverage.py root list
+contains only the product package. Import-root derivation is consumed through the dedicated
+`quality_subprocess_environment` module; this suite preserves the product-versus-verification
+boundary while the child-environment owner is tested separately.
+
 ### Conventions
 
 Fixtures are real git repositories with `pyproject.toml` quality config so the
@@ -55,6 +62,7 @@ scope derives from `git ls-files`/`pytest_testpaths` exactly as production does.
   population is selected and the reason remains visible.
 - Diff is always measured against the passed base revision.
 - The suite never mocks the wrapper's scope derivation for the real-run class.
+- Importable verification infrastructure cannot silently acquire product measurement authority.
 
 ### Todos
 
@@ -72,8 +80,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper contract the real-run class drives. | `quality_steps`, `run_quality_check` | mcp/src/agents_remember/code_quality/check.py:378-428; mcp/src/agents_remember/code_quality/check.py:482-532 |
-| The printed derivation lines the suite asserts. | `targeted_scope_lines` | mcp/src/agents_remember/code_quality/scope_reporting.py:278-314 |
+| The wrapper contract the real-run class drives. | "def quality_steps("; "def run_quality_check(" | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168; mcp/test_support/agents_remember_test_support/code_quality/check.py:148-198 |
+| The printed derivation lines the suite asserts. | `targeted_scope_lines` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:278-314 |
 
 ## Cross-Repo References
 
@@ -91,6 +99,11 @@ the targeted planner cannot be invoked as a diagnostic fallback.
 
 ## Update History
 
+- 2026-08-27T18:33+02:00 — Reconciled the suite with the dedicated child-environment/import-root
+  owner; targeted product-versus-verification semantics are unchanged.
+- 2026-08-27T14:04+02:00 — Added an explicit product-versus-verification fixture and regression
+  proof that targeted scope never turns a changed Dagger/test-support package into product
+  coverage or CRAP scope.
 - 2026-08-26T10:44:52+02:00 — Rewrote the targeted-gate contract around canonical dependency ownership, typed selection reasons, global invalidation, and explicit fail-closed full-population fallback.
 
 - 2026-08-24T21:23+02:00 — Added typed Dagger admission to targeted quality fixtures.

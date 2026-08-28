@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_platform_long_tail.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card after the pure decision-role tests moved to the direct cohort. | `ReadFilesRangeTests` | mcp/tests/test_platform_long_tail.py:68-90 |
+| Current suite declaration anchoring this card after the pure decision-role tests moved to the ordinary certifying regression module. | `ReadFilesRangeTests` | mcp/tests/test_platform_long_tail.py:68-90 |
 
 ## Cross-Repo References
 
@@ -56,14 +56,17 @@ builder left `terminal_tools.py`.
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
-## 260824-PDLS Cohort Extraction
+## 260824-PDLS Retired-Cohort Preservation
 
-The known and misspelled decision-role coercion assertions moved unchanged to the bounded direct
-cohort. This long-tail integration module no longer needs to import that pure vocabulary helper;
-its remaining platform contracts are unchanged.
+The known and misspelled decision-role coercion assertions no longer live in this long-tail
+integration module. After Candidate A and its direct cohort were retired, the product assertions
+remained as ordinary certifying tests in `mcp/tests/test_kernel_pure_regressions.py`; no direct
+runner or compatibility cohort survives. This module's remaining platform contracts are unchanged.
 
 ## Update History
 
+- 2026-08-28T10:03:40+02:00 — Reconciled the historical extraction with Candidate A retirement;
+  decision-role assertions survive in the ordinary certifying regression module.
 - 2026-08-24T21:23+02:00 — Moved two decision-role assertions to the bounded direct cohort.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.

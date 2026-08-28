@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T23:56+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -138,10 +138,10 @@ the source rather than being repeated here; it is the same string
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce.", `quality_steps` | mcp/src/agents_remember/code_quality/check.py:3-3; mcp/src/agents_remember/code_quality/check.py:378-428 |
-| The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:56-66; pyproject.toml:110-130 |
+| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce."; "def quality_steps("; `run_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:3-3; mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168; mcp/test_support/agents_remember_test_support/code_quality/check.py:368-392 |
+| The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:64-64; pyproject.toml:133-133 |
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
-| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/src/agents_remember/code_quality/crap_calculator.py:89-92; mcp/src/agents_remember/code_quality/crap_calculator.py:234-234 |
+| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:89-92; mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:234-234 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
 | MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |

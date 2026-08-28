@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -318,7 +318,7 @@ The three quality-gate call sites — `code_quality_gate_preview` in `closeout_p
 `code_quality_gate_preview` plus `requires_strict_code_quality` in `closeout_result` — now pass
 `contract.code_worktree` instead of `contract.repo_name`. The gate is no longer hard-coded to this
 repository: applicability is decided by whether the target checkout carries
-`mcp/src/agents_remember/code_quality/check.py`.
+`mcp/test_support/agents_remember_test_support/code_quality/check.py`.
 
 **This call site is type-unsafe by construction.** `contract` is unannotated here, so Pyright does
 not object if a `str` repository name is passed where a checkout `Path` is expected — and the

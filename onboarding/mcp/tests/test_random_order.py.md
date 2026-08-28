@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_random_order.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 ## 260824-PDLS Route Impact
 
 The deterministic shuffle owner moved from `mcp/tests/_random_order.py` to
-`agents_remember.testing.random_order` so shared pytest bootstrap can use it without importing the
+`agents_remember_test_support.testing.random_order` so shared pytest bootstrap can use it without importing the
 test tree. Existing seed/order behavior remains unchanged.
 
 ## Update History

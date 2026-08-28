@@ -1,44 +1,50 @@
-# IAS Source-Pair Coordination Onboarding Coverage Plan
+# PDLS Verification-Ownership Onboarding Coverage Plan
 
 ## Strategy
 
-Treat the current change as existing-memory-slice maintenance, not a new planning artifact. First
-record the approved ownership model at the governing routes. Then create strict mirrored sidecars
-for the new activation and sync modules, refresh every changed existing source/test/skill sidecar,
-and reconcile public-route, model, queue, integration, and entity descriptions to the frozen diff.
+Treat the reopened remediation as existing-memory-slice maintenance. Reconcile the final source
+ownership model, remove onboarding for retired mechanisms, create cards for new high-risk owners,
+refresh every changed eligible source sidecar, then regenerate route indexes and run deterministic
+memory-quality checks before freezing the successor candidate.
 
 ## Route Coverage
 
-| Route | Classification | Planned outcome |
+| Route | Classification | Required outcome |
 | --- | --- | --- |
-| `mcp/src/agents_remember/worktrees` | resumable sync owner and parent coordination route | create parent route overview + direct-file sync sidecars |
-| `mcp/src/agents_remember/worktrees/activation` | source-pair activation owner | create focused route overview + five strict source sidecars after structural-limit move |
-| `mcp/src/agents_remember/worktrees/modules` | public lifecycle composition | refresh start/sync/cleanup/abandon/args/start-contract sidecars and overview |
-| `mcp/src/agents_remember/worktrees/queue` | disposable scheduling projection | refresh projection/member sidecars; add activation observer sidecar |
-| `mcp/src/agents_remember/worktrees/integration` | protected-source serialization | refresh integration-authority sidecar and overview |
-| `mcp/src/agents_remember/application` | public application composition/status | refresh changed sidecars and route overview |
-| `mcp/src/agents_remember/models` | strict sync/public vocabulary parent | refresh worktree model sidecar and overview |
-| `mcp/src/agents_remember/models/structural` | strict selector identity and archive vocabulary | add the moved activation-model sidecar and refresh the structural overview |
-| `mcp/src/agents_remember/mcp/registration`, `mcp/tools` | public tool advertisement and translation | refresh changed sidecars and governing overviews |
-| `mcp/tests` | forcing evidence | add both activation-suite sidecars; refresh every changed focused test sidecar and overview |
-| `docs/reference` | operator-facing topology doctrine | refresh the changed execution-topology sidecar and governing reference overview |
-| `skills/c-09-git-worktree-manager`, `skills/l-01-agent-lifecycles` | canonical operator/role doctrine | create the missing c-09 pillar/card; refresh all six changed canonical skill sidecars and lifecycle overviews |
-| `mcp/src/agents_remember/package_data/runtime/skills` | installed synchronized doctrine | refresh all six changed synchronized-copy sidecars; canonical sources remain doctrine owners |
+| `AGENTS.md`, `README.md` | repository doctrine and operator entry | preserve Dagger-only acceptance and explicit evidence boundaries |
+| `mcp/src/agents_remember` | operational product authority | retain only product behavior; prohibit imports from verification support |
+| `mcp/test_support/agents_remember_test_support` | Python verification authority | maintain one parent pillar, complete sidecars, and explicit product/verification ownership |
+| `mcp/test_support/agents_remember_test_support/code_quality` | quality producer | document static-broad/product-behavioral scoring, typed plans, ownership, retry, and causal continuation |
+| `mcp/test_support/agents_remember_test_support/testing` | test/evidence infrastructure | document explicit lanes, lifecycle governance, candidate provenance, cadence, retry selection, and measurement |
+| `mcp/tests` | forcing evidence | refresh every changed test/support sidecar and add six missing behavior cards plus file cards |
+| `scripts` | repository verification entry points | route projection synchronization through the verification package without product ownership |
+| canonical lifecycle/task skills | process authority | preserve requirement compilation, per-requirement envelopes, and immutable attempt journals |
+| packaged/installed skill projections | synchronized doctrine copies | mirror canonical sources through the established generator; create no second doctrine authority |
+| dashboard contract tests | consumer boundary | keep evidence/status projections aligned without giving the dashboard acceptance authority |
+
+## Deleted-Slice Cleanup
+
+- Remove Candidate A runner, manifest, classifier, helper, tests, and onboarding rather than keeping
+  compatibility cards.
+- Remove old `mcp/src/agents_remember/{code_quality,testing}` sidecars after their verification
+  owners move; no forwarding route remains.
+- Remove the three deleted Claude 2.1.207 fixture sidecars because the surviving source contract
+  now uses the current 2.1.210 and 2.1.217 fixtures.
 
 ## Evidence Packs
 
-No Domain Documentation or cross-repository source is configured. Approved architecture, current
-source, focused tests, and existing repository onboarding are the direct evidence. The source
-registry is discovery-only and is not a citation target.
+No Domain Documentation or cross-repository source is configured. Current source, focused tests,
+canonical task requirements, candidate-specific reports, and existing same-repository onboarding
+are the direct evidence. `system/sources.md` is discovery inventory only and is not cited as proof.
 
 ## Deferred Routes And Files
 
-None within the frozen changed set. Exact membership is reconciled to the architect-supplied
-pass-13 inventory.
+None in the final changed source set. Candidate-specific Q5-Q8 results remain task reports rather
+than timeless onboarding facts, and landed commit hashes remain closeout-owned.
 
 ## Validation
 
-Require exact one-to-one sidecar coverage for the frozen changed set, nearest governing overview
-links, truthful source claims with closeout-owned verification metadata, current generated indexes
-through a sanctioned writer, no broken repo-internal citations, and no stale claims that task
-authoring or lifecycle evidence belongs to the queue.
+Require exact one-to-one coverage for all changed eligible current sources, deleted-slice cleanup,
+50/50 verification-route parity, nearest governing links, truthful citations, synchronized skill
+projections, sanctioned route-index regeneration with a zero-write repeat preview, and c-02 memory
+quality. These checks validate memory only; they do not replace Q9 or the sole final Q11 Dagger gate.

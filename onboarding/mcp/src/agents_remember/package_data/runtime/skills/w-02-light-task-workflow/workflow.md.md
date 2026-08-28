@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-23T22:50+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -17,23 +17,27 @@ This workflow file gives the step-by-step `w-02-light-task-workflow` skill proce
 
 ### Logic
 
+The synchronized workflow advances formal attempts only at review handoff or after rejection,
+preserves internal protocol events separately, and links lightweight records to frozen expanded
+evidence.
+
 The workflow starts with context resolution, drift checks, and approval before implementation
 cit:(["Run the in-between task lifecycle"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:3-15).
 It creates or reuses a wrapper folder under the resolved task root, with `task.md` as the durable
 artifact and `enclosures/<leaf-id>/series-contract.md` as the leaf contract when a worktree-backed
-task is opened cit:(["The durable artifact shape"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:16-45).
+task is opened cit:(["The durable artifact shape"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:54-54).
 Planning runs the drift gate, gathers context, applies the collaboration doctrine, and authors the
 JSON-primary task document through `task_doc`; the rendered `task.md` is not hand-edited
-cit:([`task_doc`], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:46-94).
+cit:(["JSON-primary"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:114-114).
 After approval, each implementation section is read and performed with its relevant checks
-cit:(["For each implementation section", "read the step objective and its checkbox items", "read the relevant files or materials", "perform the approved work", "use the checks listed", "finish any remaining onboarding cleanup", "mark a substep complete only after", "mark the parent step checkbox complete only after"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:131-131; mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:133-135; mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:137-140).
+cit:(["For each implementation section", "read the step objective and its checkbox items", "read the relevant files or materials", "perform the approved work", "use the checks listed", "finish any remaining onboarding cleanup", "mark a substep complete only after", "mark the parent step checkbox complete only after"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:186-186; mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:188-190; mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:192-195).
 Worktree closeout still stops for separate commit approval
-cit:(["ask explicitly for commit/closeout approval"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:160-160).
+cit:(["ask explicitly for commit/closeout approval"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:255-255).
 Close prepares the completion handoff and cross-reference check; it does not own implementation or
-unapproved commits cit:(["Cross-reference check"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:163-185).
+unapproved commits cit:(["Cross-reference check"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:273-273).
 When the plan outgrows one page, the series uses one master integration branch plus leaf enclosure
 worktrees, integrates each leaf, and performs the final release on the master
-cit:(["one master integration branch plus leaf enclosure worktrees"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:229-252).
+cit:(["one master integration branch plus leaf enclosure worktrees"], mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:358-358).
 
 ### Conventions
 
@@ -63,14 +67,14 @@ The workflow defines the concrete process behind the `w-02-light-task-workflow` 
 | --- | --- | --- |
 | The workflow goal is to run the in-between task lifecycle. | "Run the in-between task lifecycle" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:5-5 |
 | The workflow requires drift checking, approval before implementation, onboarding updates, and separate commit approval. | "drift check before planning"; "approval before implementation"; "onboarding update through"; "separate commit approval" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:11-14 |
-| The durable artifact shape is a wrapper folder plus `task.md` under the resolved task root. | "The durable artifact shape" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:20-20 |
-| A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`. | "places its leaf contract at" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:26-26 |
-| The task document is JSON-primary with schema `ar-task-document/v1`. | "ar-task-document/v1" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:77-77 |
-| `codeExamplesNote` records deferred code examples distinctly from none-needed. | `codeExamplesNote` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:87-87 |
-| Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped. | `lifecycle_finalize_task` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:161-161 |
-| Final closure verifies that referenced workflow or skill paths still resolve. | "verify any referenced workflow or skill paths still resolve" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:182-182 |
-| A master series uses one master integration branch plus leaf enclosure worktrees. | "one master integration branch plus leaf enclosure worktrees" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:235-235 |
-| The master owns the final release step, while sub-tasks never bump the version. | "The master owns only the final release step" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:243-243 |
+| The durable artifact shape is a wrapper folder plus `task.md` under the resolved task root. | "The durable artifact shape" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:54-54 |
+| A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`. | "places its leaf contract at" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:62-62 |
+| The task document is JSON-primary with schema `ar-task-document/v1`. | "ar-task-document/v1" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:114-114 |
+| `codeExamplesNote` records deferred code examples distinctly from none-needed. | `codeExamplesNote` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:125-125 |
+| Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped. | `lifecycle_finalize_task` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:256-256 |
+| Final closure verifies that referenced workflow or skill paths still resolve. | "verify any referenced workflow or skill paths still resolve" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:277-277 |
+| A master series uses one master integration branch plus leaf enclosure worktrees. | "one master integration branch plus leaf enclosure worktrees" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:358-358 |
+| The master owns the final release step, while sub-tasks never bump the version. | "The master owns only the final release step" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:366-366 |
 
 ## Cross-Repo References
 
@@ -84,7 +88,56 @@ No sibling repository evidence is needed for the current workflow file.
 
 The workflow reference now distinguishes the master integration branch lifecycle from active leaf enclosure lifecycles and shows leaf closeout/integration before final master release.
 
+## M38 Requirement-Acceptance Workflow Projection
+
+The workflow assigns stable IDs without reuse, compiles each leaf's exact owned/inherited set, and
+requires a builder envelope plus independent reviewer adjudication for every ID before closure.
+Blocked or approved-change rows cite durable developer rulings. Requirement acceptance remains
+separate from the stable-contract-or-expiry hold point for durable evidence. This installed copy is
+synchronized from canonical workflow source.
+Every packet uses an immutable `<stable-id>-<version>-<slug>.md` address and records its durable
+corpus approval; a later semantic revision creates a new file instead of overwriting the approved
+contract.
+
+## M40-M45 Attempt-Workflow Projection
+
+The installed workflow now appends immutable worker/reviewer attempt records, preserves successor
+lineage and bounded invalidation, and maintains leaf-authoritative/rebuildable non-gating master
+summary behavior.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled workflow citations with the committed PDLS candidate after
+  the one-primary-requirement doctrine was finalized; the documented workflow is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 workflow semantics.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized the attempt-journal workflow from canonical source.
+
+- 2026-08-27T14:04+02:00 — Clarified immutable version-addressed packet files, packet-local corpus
+  approval, and new-file revision handling in the installed workflow.
+- 2026-08-27T13:32+02:00 — M39@v1: added Phase 0 requirement compilation, the canonical
+  `requirements/` corpus, clause splitting, fresh-agent cold reads, developer corpus approval before
+  task creation, filtered task projections, one-primary leaves, and versioned invalidation plus
+  rebriefing. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded stable-ID assignment, exact-set handoff, and per-ID
+  acceptance/review. Verification metadata stays pinned until governed closeout stamps the PDLS
+  commit.
+
 - 2026-08-04T09:54:46+02:00 — 260731-EFA-L6 S18-B07 second bounded correction: expanded the implementation-section claim through the ordered read, perform, cleanup, and completion steps; same-reviewer delta pending.
 
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged workflow details now define the master integration branch plus per-leaf enclosure lifecycle, including active slice worktrees and final master release. Verification metadata pinned until closeout stamps the code commit.

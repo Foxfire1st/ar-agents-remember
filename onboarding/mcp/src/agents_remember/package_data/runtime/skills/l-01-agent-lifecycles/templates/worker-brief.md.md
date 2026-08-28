@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4`                                  |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -17,6 +17,9 @@ the sync process installs this exact artifact.
 ## Code Commentary
 
 ### Logic
+
+The synchronized brief names the next review-handoff attempt without advancing it during internal
+runs and requires a lightweight content-addressed record plus a separate protocol-event log.
 
 The manager calls `dispatch_agent` with the canonical leaf document, role `worker`, and this brief.
 The control plane binds the occupant privately. The worker edits code, runs the scoped checks, and
@@ -74,7 +77,52 @@ The brief carries the leaf's execution nature and nature-appropriate source edge
 single-leaf closeout acceptance and no-integration-rerun contract explicit, while reserving the
 full suite for the exact proposed final organizational candidate or atomic block landing.
 
+## M38 Worker-Brief Projection
+
+The brief now enumerates the exact stable requirement IDs and required evidence class before work
+starts. It requires one full status/rationale/citation/verification/result envelope per ID, the
+additional developer-ruling proof for blocked or approved-change delivery, explicit Checks, and a
+separate durable-evidence hold point. Non-code requirements use deliverable paths and anchors. This
+installed copy is synchronized from canonical source.
+Each row now makes approved revision state and the packet's durable corpus-ruling citation an
+explicit intake condition, not optional context.
+
+## M40/M43 Worker-Brief Projection
+
+The installed brief now carries leaf manifestation, journal path, attempt/predecessor identity,
+candidate identity class, before-handoff immutable append, and the closed failure/revision routing
+contract from the canonical template.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2 brief fields and event separation.
+
+- 2026-08-27T18:06+02:00 — M40/M43: synchronized attempt identity and immutable worker-record
+  fields from the canonical brief.
+
+- 2026-08-27T14:04+02:00 — Added explicit approved-state and durable corpus-ruling fields for each
+  version-addressed worker requirement packet.
+- 2026-08-27T13:32+02:00 — M39@v1: applicable requirements are explicit ID + version rows with
+  complete canonical packet links; version mismatch makes the brief undispatchable. Verification
+  remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded exact requirement-set intake and the complete worker
+  evidence contract. Verification metadata stays pinned until governed closeout stamps the PDLS
+  commit.
+
 
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the
   leaf-targeted/master-full acceptance boundary. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,10 @@ This is the packaged runtime artifact synchronized exactly from canonical
 `skills/l-01-agent-lifecycles/templates/curator-brief.md`. It feeds one curator the complete leaf
 change set, existing intent, ruled intent, implemented reality, worktree paths, and required
 verification contract. It owns no independent doctrine.
+
+The synchronized template names the exact approved primary/adjacent requirement revisions,
+canonical packet paths, durable corpus ruling, and independent reviewer adjudications. Missing or
+rejected inputs fail closed instead of being written as current intent.
 
 ## Logic
 
@@ -62,10 +66,10 @@ moves between preflight and dispatch.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged brief feeds the complete three-way intent inputs and structural leaf address. | "# CURATOR COHERENCE BRIEF"; "## Three-way intent inputs" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:19-63 |
-| Routing separates current intent, integrity evidence, semantic history, and capture candidates. | "## Routing rule (mgmt-L4 design — apply this before writing anything)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:64-82 |
-| Self-check requires missing-onboarding and full quality repair before the report. | "## Self-check (before you report — your output is checked at closeout)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:94-127 |
-| The canonical template is the doctrine owner. | "# Template — Curator Brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-155 |
+| The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. | "## Task inputs"; "## Three-way intent inputs" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:44-73 |
+| Routing separates current intent, integrity evidence, semantic history, and capture candidates. | "## Routing rule (mgmt-L4 design — apply this before writing anything)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:75-93 |
+| Self-check requires missing-onboarding, full quality repair, and accepted-revision mapping before the report. | "## Self-check (before you report — your output is checked at closeout)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md:106-157 |
+| The canonical template is the doctrine owner. | "# Template — Curator Brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-179 |
 | Synchronization replaces package targets and checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## L23 Final Candidate Disposition
@@ -81,6 +85,13 @@ canonical template. A fresh curator cannot infer the retired flat wait/run-id su
 onboarding.
 
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+- 2026-08-27T16:27+02:00 — Synchronized exact approved requirement packets and per-revision
+  reviewer adjudication into curator intake/output. Verification remains closeout-owned.
+
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: synchronized the curator brief to the canonical quality request grammar. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-14T06:34+02:00 — L23 synchronized runtime template: curator briefs carry exact candidate,

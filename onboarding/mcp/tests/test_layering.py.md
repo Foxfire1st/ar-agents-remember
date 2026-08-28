@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/tests/test_layering.py`                                  |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -31,6 +31,8 @@ hardening; `test_generated_and_data_dirs_are_not_undeclared`
 (cit:([`test_generated_and_data_dirs_are_not_undeclared`], mcp/tests/test_layering.py:133-154)) proves `__pycache__`/`package_data`/dot-directories
 are excluded, including a deleted package directory whose only remaining content is cached bytecode;
 the self/star/present-false tests pin the skip rules.
+The custom-layout case passes a project root distinct from the source-root parent and proves the
+scanner preserves that exact configured authority during package traversal.
 
 ### Invariants And Boundaries
 
@@ -70,6 +72,10 @@ by its wrapper proof.
 
 ## Update History
 
+- 2026-08-28T11:32+02:00 — Added a non-default layout case proving exact project-root threading.
+
+- 2026-08-28T06:40+02:00 — No content impact: the layer checker and its executable-module probe
+  now resolve through the verification package; the enforced layering contract is unchanged.
 - 2026-08-24T21:23+02:00 — Added typed admission to quality-wrapper construction.
 
 - 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: extended the ignored-artifact regression with

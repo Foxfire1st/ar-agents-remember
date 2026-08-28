@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,11 @@ The brief feeds the read-only code worktree, writable memory worktree, enclosure
 change set, task/notes/design inputs, and existing intent anchors. It now also carries the
 manager's immediately preceding `worktree_status` source-lineage projection, which must be current
 across every applicable super→master→leaf code and external-memory edge.
+
+It also carries the durable corpus ruling, exact primary and adjacent stable-ID + version packet
+paths, and the reviewer's independent row for each revision. Every onboarding edit maps back to an
+accepted revision; a missing/unapproved/version-mismatched packet or rejected/worker-blocked row is
+a blocker rather than current intent.
 
 That projection is evidence, not a caller-selected commit authority. Structural `dispatch_agent`
 re-proves lineage before creating the hosted curator, closing the race between the manager's status
@@ -46,8 +51,9 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The worktree section requires the current pre-curator lineage projection and explains its evidence-only role. | "Pre-curator lineage:" | skills/l-01-agent-lifecycles/templates/curator-brief.md:32-32 |
-| Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:154-154 |
-| Manager doctrine owns the ordered pre-curator gate and complete brief. | "Curator coherence pass — mandatory, not skippable." | skills/l-01-agent-lifecycles/roles/manager.md:137-161 |
+| Exact requirement packets and adjudications are mandatory task inputs. | "## Task inputs" | skills/l-01-agent-lifecycles/templates/curator-brief.md:44-54 |
+| Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:165-168 |
+| Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. | "Curator coherence pass — mandatory, not skippable." | skills/l-01-agent-lifecycles/roles/manager.md:206-206 |
 
 ## 260821-DAGQC-L2 Briefed Quality Grammar
 
@@ -60,6 +66,16 @@ keeps sync/start/poll fields mutually exclusive.
 No cross-repository implementation dependency governs this template.
 
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled curator-brief citations against the committed PDLS
+  candidate; the post-review onboarding boundary remains unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
+  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
+  the source-specific worker/reviewer/manager/curator boundary.
+
+- 2026-08-27T16:27+02:00 — Added exact approved requirement packets and reviewer adjudications to
+  curator intake/output, closing the bare-ID briefing gap. Verification remains closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: aligned the curator brief with the canonical discriminated quality request. Verification metadata remains pinned until architect-owned closeout.
 

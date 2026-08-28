@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -22,10 +22,18 @@ one-real-master manager lifecycle and owns no separate intent.
 
 ## Logic
 
+The synchronized manager does not advance attempt IDs at dispatch or during internal reruns,
+validates the content-addressed handoff record, and rebuilds a non-gating summary that excludes
+protocol events.
+
 The packaged source therefore carries the canonical manager's structural leaf dispatch,
 builder/reviewer/curator closeout chain, delegated gate authority, leaf/master quality altitudes,
 subordinate cleanup, and durable master-handover contract unchanged. The sync process copies the
 complete canonical tree; package-local edits are drift, not customization.
+
+Curator dispatch carries the same exact approved revision packets and per-revision reviewer rows
+used by builder/reviewer handoff. A rejected or worker-blocked revision is a curation blocker, not
+authority for current onboarding.
 
 The synchronized quality altitude uses the pinned Dagger graph for Agents Remember acceptance:
 targeted for leaf/focused work and full exactly once at master integration. Both require the
@@ -49,8 +57,9 @@ fallback. A constrained lifecycle environment alone explicitly opts into `memory
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged manager is one master-scoped owner of the leaf closeout chain. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
+| The packaged manager is one master-scoped owner of the leaf closeout chain. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
 | Its hosted child dispatch uses structural task document and role. | "## Hosted Role Dispatch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
+| Curator dispatch carries exact approved packets and per-revision reviewer adjudication. | "Curator coherence pass — mandatory, not skippable." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:206-206 |
 | The canonical source owns this doctrine. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
@@ -98,7 +107,57 @@ relay incomplete `projectionEffects`; evidence-changing edits are re-proven thro
 never delayed or patched into a row. After claim, status and operation controls address the stable
 root journal, so queue absence or invalidation cannot strand the leaf.
 
+## M38 Exact-Set Dispatch Projection
+
+The installed manager role compiles the leaf-owned and inherited stable requirement IDs, requires
+the complete worker envelope for that set, and sends the identical set to independent review.
+Missing/duplicate IDs or an overall pass with a rejected row fail closed. The evidence-promotion
+hold point remains a separate brief and verdict concern. This projection owns no manager-local
+variant.
+Each row must point to an approved version-addressed packet carrying its durable corpus ruling;
+missing, unapproved, or mismatched revisions are undispatchable.
+
+## M40-M45 Manager Attempt Projection
+
+The packaged manager validates immutable worker/reviewer attempt identity, records bounded
+invalidation after independent regression proof, and maintains only a rebuildable non-gating
+summary over authoritative leaf journals.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled the manager-doctrine source ranges against the committed
+  PDLS candidate after final requirement-ownership edits; the documented behavior is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 manager attempt/summary boundaries.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized exact-attempt dispatch, owner invalidation, and
+  non-gating master-summary obligations.
+
+- 2026-08-27T16:27+02:00 — Synchronized exact requirement packets and reviewer adjudication into
+  manager-to-curator dispatch. Verification remains closeout-owned.
+
+- 2026-08-27T14:04+02:00 — Tightened the installed manager projection around approved
+  version-addressed packets and their durable corpus rulings.
+- 2026-08-27T13:32+02:00 — M39@v1: manager dispatch now verifies the exact stable ID + version and
+  matching canonical packet for every worker/reviewer row; missing or stale revisions are
+  undispatchable. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded exact-set manager dispatch and same-set review.
+  Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged manager-owned door publication, task-authoring primacy, and journal-only post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

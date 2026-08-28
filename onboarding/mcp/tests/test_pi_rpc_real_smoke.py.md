@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_pi_rpc_real_smoke.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -44,12 +44,12 @@ isolated `HOME` and npm cache, and never touches global Pi/npm state.
 
 ## The Capability Recording
 
-`CAPABILITY_FIXTURE = FIXTURES / f"{PI_RPC_VERSION}-capabilities.json"` — the recording is
-addressed by the pin, never by a literal. That naming is the anti-drift mechanism: bump the
-pin without re-recording and the path does not exist, so
-`test_pi_rpc_adapter.py` fails **offline** with `FileNotFoundError` rather than this
-network-gated module silently re-validating a build nobody ships. See the fixture's own
-card for the full contract, including the "exactly one `*-capabilities.json`" assertion.
+`CAPABILITY_FIXTURE` uses the literal
+`fixtures/pi_rpc/0.80.7-capabilities.json` path so lifecycle consumer discovery can observe the
+relationship directly. The anti-drift mechanism is the live capability test's explicit assertion
+that the recording's embedded `version` equals `PI_RPC_VERSION`; bumping the runtime pin without
+re-recording therefore fails loudly instead of silently reusing old evidence. See the fixture's
+own card for the complete contract.
 
 `test_committed_capability_fixture_still_describes_the_installed_runtime` asserts, against
 a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
@@ -83,7 +83,7 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 | Real adapter and launch path under test. | "class PiRpcAdapter:", "transport_factory: TransportFactory = PiRpcSubprocess" | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
 | The recording this module re-verifies. | "0.80.7" | mcp/tests/fixtures/pi_rpc/0.80.7-capabilities.json:4-4 |
 | Produces the observation compared against the recording. | `observe_capabilities` | mcp/tests/_pi_rpc_capabilities.py:431-473 |
-| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | `CAPABILITY_FIXTURE`, `PI_RPC_VERSION` | mcp/tests/test_pi_rpc_real_smoke.py:44-44; mcp/tests/test_pi_rpc_real_smoke.py:51-51 |
+| Imports `PI_RPC_VERSION` and enforces the one-recording rule offline. | `CAPABILITY_FIXTURE`, `PI_RPC_VERSION` | mcp/tests/test_pi_rpc_real_smoke.py:44-44; mcp/tests/test_pi_rpc_real_smoke.py:49-49 |
 | Proves this marker is applied and reachable from the gated runner. | "ar_run_pi_rpc_smoke" | scripts/run-gated-integration.py:80-80 |
 
 ## Cross-Repo References
@@ -92,6 +92,9 @@ a live install driven by `_pi_rpc_capabilities.observe_capabilities`:
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: documented the literal fixture-path plus embedded
+  version-equality contract and corrected the stale dynamic-filename explanation.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

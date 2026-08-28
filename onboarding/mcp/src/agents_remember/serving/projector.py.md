@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/projector.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`     |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -147,7 +147,7 @@ regression suite below prove the ordering rather than relying on timing observat
 | The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:292-292 |
 | Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:346-346; mcp/src/agents_remember/serving/projector.py:354-354 |
 | The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. |"async with contextlib.aclosing(projector.subscribe())"; "payload.update(served_state_tail("|mcp/src/agents_remember/serving/_app_common.py:136-136; mcp/src/agents_remember/serving/_app_common.py:146-146|
-| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:436-448; mcp/tests/test_serving.py:450-470; mcp/tests/test_serving.py:472-500; mcp/tests/test_serving.py:502-512 |
+| Deterministic tests force the former handoff interleaving, failed-prime recovery, identical-state suppression, later delta, and cancellation cleanup. | `test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription` | mcp/tests/test_serving.py:435-447; mcp/tests/test_serving.py:449-469; mcp/tests/test_serving.py:471-499; mcp/tests/test_serving.py:501-511 |
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:109-109 |
 | The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
 | Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | "class ChangePacer:"; "class ChangeWatch(Protocol):" | mcp/src/agents_remember/serving/change_watcher.py:275-275; mcp/src/agents_remember/serving/change_watcher.py:285-285 |
@@ -205,12 +205,12 @@ worktree cleanup while preserving cancellation as the public outcome.
 
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The
   `test_serving.py` row is anchored to the four `StreamEventsTests` cases that prove it
-  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:436-448; mcp/tests/test_serving.py:450-470; mcp/tests/test_serving.py:472-500; mcp/tests/test_serving.py:502-512), including identical-state suppression and later deltas. The pure-diff row is anchored to
+  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:435-447; mcp/tests/test_serving.py:449-469; mcp/tests/test_serving.py:471-499; mcp/tests/test_serving.py:501-511), including identical-state suppression and later deltas. The pure-diff row is anchored to
   cit:(["VOLATILE_AGE_FIELDS = frozenset("; "def _strip_volatile("; "def stable_projection_state("; "def diff_projection("; "def _collection_deltas("], mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:48-48; mcp/src/agents_remember/serving/delta.py:83-83; mcp/src/agents_remember/serving/delta.py:109-109; mcp/src/agents_remember/serving/delta.py:155-155), while the observer row is anchored to
   cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214). Read all ranges back.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The
   `test_serving.py` row is anchored to the four `StreamEventsTests` cases that prove it
-  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:387-399; mcp/tests/test_serving.py:401-421; mcp/tests/test_serving.py:423-451; mcp/tests/test_serving.py:472-512), including identical-state suppression and later deltas. The pure-diff row is anchored to
+  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:435-447; mcp/tests/test_serving.py:449-469; mcp/tests/test_serving.py:471-499; mcp/tests/test_serving.py:501-511), including identical-state suppression and later deltas. The pure-diff row is anchored to
   cit:(["VOLATILE_AGE_FIELDS = frozenset("; "def _strip_volatile("; "def stable_projection_state("; "def diff_projection("; "def _collection_deltas("], mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:48-48; mcp/src/agents_remember/serving/delta.py:83-83; mcp/src/agents_remember/serving/delta.py:109-109; mcp/src/agents_remember/serving/delta.py:155-155), while the observer row is anchored to
   cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214). Read all ranges back.
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ProjectionCadence` / `ProjectionReplay` / `ProjectionRefreshers` constructor concepts and their module defaults; pacing behaviour unchanged.

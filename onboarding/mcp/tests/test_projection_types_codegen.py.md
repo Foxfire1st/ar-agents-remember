@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_projection_types_codegen.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,8 +61,16 @@ rendering, drift detection, provenance guard, and mirror guard remain unchanged.
 the focused proof for the generator contract; it does not make TypeScript comments a runtime
 validator.
 
+## PDLS Wave 005 Current Delta
+
+The script execution environment must resolve both `mcp/src` product code and
+`mcp/test_support` verification tooling. The focused pyright assertion prevents either package
+root from disappearing while projection generation remains owned by the verification package.
+
 ## Update History
 
+- 2026-08-28T06:40+02:00 — Moved the generator import to
+  `agents_remember_test_support` and required both source roots in the scripts pyright environment.
 - 2026-08-24T15:04+02:00 — Added focused supported-refinement preservation and unknown-keyword
   fail-closed coverage. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

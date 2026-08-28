@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_control_plane.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,12 +26,12 @@ support code, not a test module: the four service/route L3 suites import `Contro
 
 ### Logic
 
-cit:([`LiveHost`], mcp/tests/_control_plane.py:91-94) is the minimal terminal-host stand-in; cit:([`FakeControlAdapter`], mcp/tests/_control_plane.py:101-307) is the structural
+cit:([`LiveHost`], mcp/tests/_control_plane.py:90-93) is the minimal terminal-host stand-in; cit:([`FakeControlAdapter`], mcp/tests/_control_plane.py:101-307) is the structural
 interrupt/asset-capable adapter at the far edge (no PTY, no runner log, no fixture authority) that
 plays codex/pi/claude native shapes — including `pi_emit_message_end`/`pi_release` and the composed
 `pi_settle_with_content` helper that mirror `pi_rpc_events` message_end emission exactly (event kind
 `transcript`, monotonic `TranscriptEntry`, the full frame under `AR_EVIDENCE_KEY`, completion
-release). cit:([`ControlledEntry`], mcp/tests/_control_plane.py:310-315) is the catalog row wrapper. cit:([`ControlHarness`], mcp/tests/_control_plane.py:318-401) builds the
+release). cit:([`ControlledEntry`], mcp/tests/_control_plane.py:292-297) is the catalog row wrapper. cit:([`ControlHarness`], mcp/tests/_control_plane.py:318-401) builds the
 whole seam per test: bridge + IPC server on a real socket, the real submission authority (which owns
 dispatch, provenance, withdrawal, the timeline, and the L2E recovery payload), `register_conversation_
 routes`, and — the manager-authorized residual repair — a single `NOW`-anchored
@@ -103,7 +103,19 @@ Pi, and Claude terminal worlds are expressed through the narrow `AdapterReplayPo
 provider evidence construction from the structural harness without introducing a second adapter or
 copying production mappers. Tests call those scripts through the existing fake adapter.
 
+## 260824-PDLS Native-Refusal Boundary
+
+The structural fake no longer reimplements Codex/Pi/Claude active-operation validation or its own
+interrupt idempotence cache. `interrupt()` accepts exactly one native correlation, records the
+call, and returns the edge acknowledgement; scenario tests inject explicit native
+`HarnessControlError` outcomes where a rejection is required. Production services therefore own
+precondition and replay semantics, while this fixture remains only the controllable adapter edge.
+
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: removed duplicated native precondition and
+  idempotence behavior from the shared fake adapter; recorded the exact-one-correlation edge and
+  explicit scenario-owned refusal injection.
 
 - 2026-08-25T01:56+02:00 — 260824-PDLS moved provider-frame scripts to their single independent
   evidence owner while retaining topology/state in this harness; verification remains

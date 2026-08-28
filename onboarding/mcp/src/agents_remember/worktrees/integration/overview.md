@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T19:27+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -135,6 +135,10 @@ execution into their named owners. The split reduces repeated validation and fix
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — PDLS closeout: verified the direct-landing recovery, lifecycle
+  translation, and exact clean-snapshot refactor against the landed candidate. The existing final
+  reconciliation remains accurate; no new authority or compatibility path was introduced.
 
 - 2026-08-26T19:27+02:00 — Reconciled the IAS closeout recovery repair: direct landing now proves
   newest-first ledger output while retaining accepted history as an immutable suffix, and cancelled

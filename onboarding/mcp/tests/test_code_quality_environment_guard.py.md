@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_code_quality_environment_guard.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ The resolved Dagger-only execution contract is recorded in `system/tools.md` and
 | --- | --- | --- |
 | Missing or mismatched attestation refuses before parser construction. | `test_direct_wrapper_refuses_before_targeted_or_retry_planning_without_attestation`; `test_direct_wrapper_refuses_a_mismatched_dagger_attestation_before_planning` | mcp/tests/test_code_quality_environment_guard.py:16-51 |
 | Accepted entry always supplies the fixed native scratch root, with or without a durable report path. | `test_main_uses_the_report_environment_to_select_its_native_temp_root`; `test_main_without_a_report_uses_the_native_default_temp_root` | mcp/tests/test_code_quality_environment_guard.py:53-86 |
-| Production authorization is shared by the wrapper and certifying pytest composition through one admission API. | `require_dagger_admission` | mcp/src/agents_remember/testing/dagger_admission.py:73-90; mcp/src/agents_remember/code_quality/check.py:1023-1030; mcp/tests/conftest.py:32-41 |
+| Production authorization is shared by the wrapper and certifying pytest composition through one admission API. | "def require_dagger_admission("; "Agents Remember quality wrapper"; "Admit first, then resolve any collection/bootstrap state." | mcp/test_support/agents_remember_test_support/testing/dagger_admission.py:73-90; mcp/test_support/agents_remember_test_support/code_quality/check.py:801-807; mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:32-39 |
 
 ## Cross-Repo References
 

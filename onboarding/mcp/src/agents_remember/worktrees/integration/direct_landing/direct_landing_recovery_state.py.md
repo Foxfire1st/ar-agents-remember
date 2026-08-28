@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T17:49+02:00 |
-| lastVerifiedCommitHash | `fd7cfec8ca77cdf77387f14afbceb46f870d9c9b` |
-| lastVerifiedCommitDate | 2026-08-26T17:49:08+02:00 |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,10 @@ Ledger classification distinguishes an exact current mapping from `historical`: 
 newest mapping for the same code commit can be valid prior memory history, so recovery continues
 the admitted memory/ledger legs instead of declaring a conflict.
 
+Every clean-repository branch consumes `integration.mutation_evidence.snapshot_is_clean`. The
+predicate was moved without changing its exact tuple comparison, eliminating a second definition
+inside this already-large classifier while preserving every recovery state transition.
+
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
@@ -37,6 +41,8 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 - The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
 - Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
 - Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
+- Clean-snapshot classification comes from the shared mutation-evidence owner; this classifier does
+  not redefine Git cleanliness.
 - A `historical` same-code mapping is recoverable pending work. An externally completed ledger
   leg may also carry additional canonical newest-first history, but it is accepted only when the
   operation mapping is newest and every accepted pre-operation row remains an exact suffix.
@@ -57,7 +63,8 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` as its public seam. | `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:46-70; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:101-150 |
+| The module defines `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` as its public seam. | `DirectLandingRecoveryClassification`; `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:53-77; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:107-156 |
+| The module consumes the shared mutation snapshot and exact-clean predicate rather than defining recovery-local copies. | `ephemeral_git_mutation_snapshot`; `snapshot_is_clean` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:29-32 |
 
 ## Cross-Repo References
 
@@ -77,6 +84,8 @@ developer-decision conflict.
 
 ## Update History
 
+- 2026-08-27T18:33+02:00 — Removed the private clean-snapshot duplicate and consumed the shared
+  mutation-evidence predicate; recovery semantics are unchanged.
 - 2026-08-26T17:49+02:00 — Replaced single-prepend byte equality with the complete newest-first
   recovery proof: the current operation mapping must be first, accepted history must remain an exact
   suffix, canonical metadata and rendering must hold, and commit lineage/path evidence remains

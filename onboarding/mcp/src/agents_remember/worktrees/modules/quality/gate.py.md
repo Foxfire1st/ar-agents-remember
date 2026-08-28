@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -40,7 +40,7 @@ the permitted consumer `wrapper-unavailable` state.
 ### Logic
 
 `quality_wrapper_path(code_worktree)` is the single place the wrapper's location is spelled:
-`<checkout>/mcp/src/agents_remember/code_quality/check.py` (`QUALITY_WRAPPER`).
+`<checkout>/mcp/test_support/agents_remember_test_support/code_quality/check.py` (`QUALITY_WRAPPER`).
 
 `requires_integrated_acceptance(repo_name)` names the self-policy repositories; currently only
 `agents-remember` returns true. `requires_strict_code_quality(code_worktree, *,
@@ -201,7 +201,7 @@ coverage, and CRAP checks.
 | Both closeout call sites pass `contract.code_worktree`, `diff_base=contract.code_base_commit`, and the leaf targeted plan — the preview path, and the apply commit phase where `requires_strict_code_quality` guards `_gate_staged_code`. | `closeout_preview_payload`, `_closeout_commit_phase` | mcp/src/agents_remember/worktrees/modules/closeout.py:359-421; mcp/src/agents_remember/worktrees/modules/closeout.py:874-929 |
 | Regressions cover all three statuses, targeted/full Dagger modes, container-managed and explicit-cap full runs, cap-kill naming, immediate host refusal, checkout-not-name arguments, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`, `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:98-691; mcp/tests/test_worktree_quality_gate_runner.py:35-498 |
 | The staging regressions added with `_gate_staged_code`: `ScopeRecordingGate` (the wrapper's own `derive_scope` + `ruff check` pair, so the scope assertion is not a mock), `CloseoutGateSeesCreatedFilesTests`, `TaskWorktreePreconditionTests`, `ConflictedIndexTests` and `RetryStagesWhatAFirstRunWouldTests`. | `ScopeRecordingGate`; `CloseoutGateSeesCreatedFilesTests`; `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_gate_scope.py:100-128; mcp/tests/test_worktree_closeout_gate_scope.py:131-209; mcp/tests/test_worktree_closeout_quality_gate.py:908-1031; mcp/tests/test_worktree_closeout_quality_gate.py:1034-1092; mcp/tests/test_worktree_closeout_quality_gate.py:1098-1161 |
-| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:263-273 |
+| The contributor documentation states the same three-state contract for consuming repositories. | `### Closeout` | CONTRIBUTING.md:259-269 |
 
 ## Cross-Repo References
 
@@ -374,7 +374,7 @@ cannot satisfy closeout or integration even when their selected nodes pass.
 - 2026-07-31T20:48+02:00 — 260731-EFA-L3 curator: rewrote the body for two facts it did not carry.
   (1) **`diff_base`.** Both deciders and both payloads take it — `code_quality_gate_preview(...,
   diff_base="")` and `run_strict_code_quality_gate(..., diff_base="")` — and the enforced command is
-  `_gate_command(diff_base)`, i.e. `python -m agents_remember.code_quality.check --diff-base <base>`,
+  `_gate_command(diff_base)`, i.e. `python -m agents_remember_test_support.code_quality.check --diff-base <base>`,
   not the bare command this card described. Added the "makes the coverage floor passable" section
   and replaced the "default wrapper command is used as-is" invariant, which was false as written.
   (2) **The one git runner.** `_git_common_dir` now calls

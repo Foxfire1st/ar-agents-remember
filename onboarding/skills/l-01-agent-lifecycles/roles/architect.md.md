@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-26T08:35+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -16,17 +16,31 @@
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+This source participates in the L4 spawn → readiness → dispatch contract and owns the
+pre-topology requirement compiler gate. It creates one immutable, version-addressed canonical
+packet per independently falsifiable revision, records corpus approval in the approved packet,
+and only then projects filtered links into task topology.
 
 ## Code Commentary
 
 ### Logic
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+The architect compiles and cold-reads the complete requirement corpus before creating task
+topology. A later semantic change retains the stable ID, creates a new version-addressed packet,
+records the new durable ruling, invalidates only affected acceptance, and rebriefs affected leaves.
+
+Delivery roles may diagnose a requirement contradiction but cannot change the packet. The
+architect verifies the contradiction and presents a proposed semantic revision to the developer.
+Implementation, evidence, and test/tool fixes leave the semantic version unchanged and remain
+protocol events until an exact candidate is handed to review. Only that review handoff, or a
+successor handoff after reviewer rejection, advances attempt lineage; only explicit developer
+approval increments the requirement version.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. Dispatch proof remains exact-session and fail-closed. An approved requirement packet is
+never rewritten in place. A worker/reviewer classification cannot become semantic authority.
 
 ## Docs References
 
@@ -77,6 +91,17 @@ rebuilt. A selector or queue cannot veto planning, and no valid task/master is d
 free a runtime selection.
 
 ## Update History
+
+- 2026-08-27T21:53+02:00 — M40@v2: separated internal repair/test protocol events from formal
+  review-handoff attempt lineage while preserving developer-only semantic revision authority.
+- 2026-08-27T18:06+02:00 — M43: recorded architect/developer authority for requirement revisions
+  and kept ordinary implementation, evidence, and test/tool repairs on attempt lineage rather than
+  semantic versioning.
+- 2026-08-27T14:04+02:00 — M39 clarification: recorded immutable version-addressed packets,
+  packet-local durable corpus approval, and new-file revision handling rather than in-place edits.
+- 2026-08-27T13:32+02:00 — M39@v1: the architect now compiles, splits, packets, cold-reads, and
+  obtains developer approval for requirement revisions before creating topology; leaf projection
+  and version-change invalidation/rebriefing are explicit. Verification remains closeout-owned.
 
 - 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
   reconciling architect activation doctrine.

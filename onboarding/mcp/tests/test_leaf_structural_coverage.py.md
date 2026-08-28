@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/tests/test_leaf_structural_coverage.py`                  |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T12:10:34+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -70,10 +70,12 @@ No cross-repository implementation participates.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
-## 260824-PDLS Cohort Extraction
+## 260824-PDLS Retired-Cohort Preservation
 
-The unknown gate-kind assertion moved unchanged to the bounded direct cohort. The remaining
-structural-coverage vocabulary tests retain their existing ownership.
+The unknown gate-kind assertion no longer lives in this mixed structural module. After Candidate A
+and its direct cohort were retired, the product assertion remained as an ordinary certifying test
+in `mcp/tests/test_kernel_pure_regressions.py`; no direct runner or compatibility cohort survives.
+The remaining structural-coverage vocabulary tests retain their existing ownership.
 
 ## 2026-08-26 Theater-Test Removal
 
@@ -84,6 +86,13 @@ without reducing a real contract.
 
 ## Update History
 
+- 2026-08-28T12:10:34+02:00 — Updated the stale-layer test seam to accept the explicit
+  repository root now passed to `_leaf_landed`; this preserves the test's behavior while proving
+  the checker does not consult an ambient checkout.
+- 2026-08-28T10:03:40+02:00 — Reconciled the historical extraction with Candidate A retirement;
+  gate-kind assertions survive in the ordinary certifying regression module.
+- 2026-08-28T06:40+02:00 — No content impact: updated the layer-checker import, executable path,
+  and mock target to its verification-package owner; the structural assertions are unchanged.
 - 2026-08-26T10:44:52+02:00 — Removed the serialization-baseline truthiness theater test; the suite's structural branch-coverage ownership is unchanged.
 - 2026-08-24T21:23+02:00 — Moved one gate-kind assertion to the bounded direct cohort.
 

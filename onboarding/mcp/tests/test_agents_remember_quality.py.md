@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,8 +25,9 @@ This suite proves the Dagger module itself is pinned, parseable, fail-closed, an
 In-process fake Dagger objects record container graph construction. The tests cover pinned
 manifest/image inputs, targeted and full argument selection, real/fake Codex probe wiring,
 export-before-verdict behavior, invalid public inputs, and green/red verification. The public
-`quality` and `verify` functions must receive a nonblank explicit diff base, always forward it to
-the wrapper, and publish `Annotated`/`Doc` help for source, bundle, base, mode, and cap.
+quality and non-accepting evidence routes must expose their generated Dagger contracts. Tests
+load the Dagger package from the explicit `.dagger/src` source root; the surrounding `.dagger`
+directory is not an import root.
 
 ### Conventions
 
@@ -38,6 +39,9 @@ The suite tests graph semantics without a daemon; live field proof remains a sep
 - Reports must export at the exact completed boundary even for a red run.
 - Invalid mode, omitted/blank diff base, or memory inputs refuse.
 - Generated Dagger help is tested as part of the public quality-function contract.
+- `load_dagger_module` must prepend exactly `DAGGER_SOURCE_ROOT`; broadening the certifying
+  container's global `PYTHONPATH` to hide a bad test loader would mix orchestration code into the
+  application import surface.
 
 ### Todos
 
@@ -49,13 +53,14 @@ No external Domain Documentation source is configured for this test contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test contract is defined by the pinned repository module. | `DAGGER_MANIFEST`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:21-22 |
+| The test contract is defined by the pinned repository module and its explicit source root. | `DAGGER_MANIFEST`; `DAGGER_SOURCE_ROOT`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:21-24 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:90-232 |
+| Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:28-34 |
+| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:101-124; mcp/tests/test_agents_remember_quality.py:200-227; mcp/tests/test_agents_remember_quality.py:242-247; mcp/tests/test_agents_remember_quality.py:310-366 |
 
 ## Cross-Repo References
 
@@ -63,7 +68,7 @@ No sibling-repository boundary is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:29-80 |
+| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:38-87; mcp/tests/test_agents_remember_quality.py:90-98 |
 
 ## R39 Guard Wiring Proof
 
@@ -80,15 +85,34 @@ refuses before collection; phase output remains observation rather than authorit
 
 ## 2026-08-26 Evidence-Graph Reconciliation
 
-The Dagger module contract now exposes exactly two public functions: `quality` for certifying
-acceptance and `cadence_evidence` for non-accepting scheduled evidence. The quality graph fetches
-the candidate bundle, stages the complete candidate, requests the causal-failure report, and
-publishes that report reference in its authoritative result. The cadence graph invokes only the
-cadence runner, stamps both `acceptanceEligible` and `certifying` false, and refuses unknown
-triggers; it never calls the quality wrapper.
+The Dagger module contract exposes `quality` for certifying acceptance plus separate non-accepting
+cadence, causal, retry, retry-matrix, and route-measurement evidence routes. The quality graph
+fetches the candidate bundle, stages the complete candidate, requests the causal-failure report,
+and publishes that report reference in its authoritative result. Evidence routes cannot become
+acceptance merely because their commands execute successfully.
+
+The retry-matrix graph distinguishes an executing scenario from a plan-only fail-closed scenario
+using the wrapper's explicit pytest result. Executing scenarios require `result: pytest PASS`;
+plan-only scenarios require `result: pytest SKIPPED ...` and reject an absent result or a real
+pytest failure. This prevents the harness from treating its own explicit non-execution marker as
+evidence failure.
+
+Candidate construction has one deterministic base boundary: pinned image and dependency caches,
+OS/tool installation, exact source and repository-bundle reconstruction, and the editable package
+install all precede attempt-specific state. Only after that base is built may the graph mount the
+retry-proof cache or bind the attestation nonce, report paths, and other per-attempt environment.
+`test_candidate_setup_precedes_every_attempt_specific_cache_input` structurally rejects a graph
+that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
 
+- 2026-08-28T02:38+02:00 — Recorded the deterministic candidate-base versus attempt-binding
+  boundary and its structural graph regression after repeated evidence runs exposed nonce-driven
+  rebuilds of otherwise identical OS, tool, source, and editable-install layers.
+- 2026-08-27T22:09+02:00 — Documented the focused regression contract that distinguishes actual
+  pytest execution from the wrapper's explicit plan-only `SKIPPED` marker.
+- 2026-08-27T14:36+02:00 — Recorded the explicit `.dagger/src` import boundary after clean Dagger
+  exposed an off-by-one source-root calculation; refreshed the six-route public contract.
 - 2026-08-26T10:44:52+02:00 — Documented the separate non-accepting cadence graph, causal-failure artifact, candidate staging, and exact two-function Dagger public surface.
 - 2026-08-24T21:23+02:00 — Updated admission ownership and added Dagger phase/timestamp wiring proof.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -48,6 +48,19 @@ exactly once; leaf integration and series closeout do not rerun it. The master g
 mode once. Every run receives the explicit task-derived diff base. Host pytest/wrapper execution
 is refused; a constrained lifecycle environment may explicitly configure a hard cap.
 
+The manager also owns exact requirement-set compilation: each worker and reviewer receives the
+same stable IDs applicable to the leaf. Workers give delivery and verification evidence per ID;
+reviewers independently inspect that evidence and adjudicate every ID `accepted` or `rejected`.
+Missing or wrong-class evidence, invalid citations, and missing developer approval reject the ID,
+and one rejected ID prevents an overall pass. This requirement-acceptance plane is separate from
+the durable-evidence stable-contract-or-expiry hold point.
+
+The same role chain preserves append-only attempt identity. The worker writes a lightweight,
+candidate-bound delivery record only at review handoff and keeps internal implementation/test/
+evidence events separate; the reviewer writes an independent exact-attempt adjudication; the
+manager records bounded invalidation and rebuilds an observational summary that excludes protocol
+events. Unrelated later candidates do not reopen accepted attempts.
+
 The curator's terminal artifact is valid only after current-additions coverage and the full
 leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
 real-commit verification fields remain separately closeout-owned; they do not excuse a repairable
@@ -73,6 +86,7 @@ read/search helpers and never become AR role seats.
   curator-actionable work.
 - No role absorbs lifecycle machinery, memory duty, or gate authority assigned to another role.
 - Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
+- No role may collapse per-requirement evidence into an aggregate completion claim.
 
 ## Repo-Internal References
 
@@ -82,6 +96,7 @@ read/search helpers and never become AR role seats.
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
+| Worker and reviewer roles define the two independent halves of per-ID acceptance. | `### 4 — Per-Requirement Acceptance Envelope And Delivery Attempt`; `## Per-Requirement Independent Attempt Adjudication` | skills/l-01-agent-lifecycles/roles/worker.md:77-145; skills/l-01-agent-lifecycles/roles/reviewer.md:101-160 |
 
 ## L23 Role Recovery Semantics
 
@@ -127,6 +142,16 @@ No role authority changed. Curator doctrine now uses explicit sync/start/poll re
 treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
 
 ## Update History
+
+- 2026-08-27T22:15+02:00 — Recorded worker, manager, and reviewer ownership of phase-sensitive
+  malformed-attempt recovery without worker self-rejection.
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 role impact: separated internal protocol events from
+  review-handoff attempts and made leaf records lightweight content-addressed views.
+- 2026-08-27T19:59+02:00 — M40-M45 role impact: recorded worker/reviewer/manager attempt ownership
+  and the accepted-attempt non-reopening boundary.
+- 2026-08-27T12:43+02:00 — M38: recorded exact stable-ID dispatch, the worker acceptance envelope,
+  independent per-ID reviewer adjudication, and separation from durable-evidence promotion.
+  Verification metadata stays pinned until governed closeout stamps the PDLS commit.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS role boundary label against the frozen pass-13
   candidate.

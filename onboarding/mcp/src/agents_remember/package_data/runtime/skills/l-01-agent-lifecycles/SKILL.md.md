@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ this artifact byte-for-byte for installed runtimes.
 ## Code Commentary
 
 ### Logic
+
+The synchronized M40@v2/M44@v2 doctrine distinguishes developer-approved semantic revisions,
+formal review-handoff attempts, and internal protocol events. Attempts are lightweight,
+requirement-specific records linked to content-addressed expanded evidence; summaries exclude
+protocol events and remain rebuildable/non-gating.
 
 The router selects exactly one role from plane-injected `AR_SPAWN_ROLE`, a fresh role brief, or the
 unbound free-chat launcher. Managed seats bind to canonical sprint, master, or leaf task documents
@@ -121,7 +126,54 @@ verdict must cite evidence of the requirement's class — rendering/visibility n
 proof, scheduling/ordering needs operation-level proof, data-model needs artifact-level proof.
 Evidence of the wrong class is verdict laundering, not a pass.
 
+## M38 Per-Requirement Acceptance Projection
+
+This installed file is the synchronized projection of the canonical exact-set acceptance contract.
+It requires one worker evidence envelope and one independent reviewer adjudication for every stable
+requirement ID, rejects aggregate completion, and keeps the durable-evidence promotion hold point
+separate. It owns no package-local variant of that doctrine.
+Approved packets are immutable version-addressed files and carry the durable corpus ruling that
+every downstream seat verifies before accepting evidence.
+
+## M40-M45 Requirement Attempt Journal Projection
+
+This packaged copy now carries immutable candidate-bound worker attempts, separate independent
+reviewer records, closed failure classes, owner-recorded bounded invalidation, and
+leaf-authoritative/rebuildable non-gating master summaries. The canonical root skill remains the
+only doctrine owner.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized review-handoff-only attempts, separate protocol events,
+  and lightweight content-addressed journal semantics from canonical lifecycle doctrine.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized the complete Requirement Attempt Journal contract
+  and explicit non-gating summary boundary from canonical sources.
+
+- 2026-08-27T14:04+02:00 — Clarified the synchronized M39 projection with immutable
+  version-addressed packets and packet-local durable corpus approval.
+- 2026-08-27T13:32+02:00 — M39@v1: requirement compilation now precedes task topology; canonical
+  packets carry stable ID + version, pass a transcript-free cold read, and receive developer corpus
+  approval before filtered task projection. Downstream evidence remains bound to that exact
+  revision. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded the synchronized per-ID acceptance contract and its
+  separation from durable-evidence promotion. Verification metadata stays pinned until governed
+  closeout stamps the PDLS commit.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: the three-party-loop paragraph now states the reviewer
   seat is never the author seat and requirement verdicts must cite their evidence class

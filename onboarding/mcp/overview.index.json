@@ -20,14 +20,14 @@
       "index": "mcp/native_helpers/conversation_library/overview.index.json"
     },
     {
+      "route": "mcp/test_support/agents_remember_test_support",
+      "overview": "mcp/test_support/agents_remember_test_support/overview.md",
+      "index": "mcp/test_support/agents_remember_test_support/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/application",
       "overview": "mcp/src/agents_remember/application/overview.md",
       "index": "mcp/src/agents_remember/application/overview.index.json"
-    },
-    {
-      "route": "mcp/src/agents_remember/code_quality",
-      "overview": "mcp/src/agents_remember/code_quality/overview.md",
-      "index": "mcp/src/agents_remember/code_quality/overview.index.json"
     },
     {
       "route": "mcp/src/agents_remember/controlplane",
@@ -58,11 +58,6 @@
       "route": "mcp/src/agents_remember/tasks",
       "overview": "mcp/src/agents_remember/tasks/overview.md",
       "index": "mcp/src/agents_remember/tasks/overview.index.json"
-    },
-    {
-      "route": "mcp/src/agents_remember/testing",
-      "overview": "mcp/src/agents_remember/testing/overview.md",
-      "index": "mcp/src/agents_remember/testing/overview.index.json"
     },
     {
       "route": "mcp/src/agents_remember/worktrees",
@@ -232,6 +227,7 @@
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/requirement-packet-template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md",
     "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md",
     "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md",
@@ -258,13 +254,12 @@
     "mcp/src/agents_remember/providers/setup_progress.py",
     "mcp/src/agents_remember/providers/setup_reporting.py",
     "mcp/src/agents_remember/providers/status.py",
-    "mcp/src/agents_remember/providers/watcher_service.py",
-    "mcp/src/agents_remember/pytest_certifying_bootstrap.py"
+    "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1394,
+    "sourceFilesInScope": 1410,
     "fileSidecars": 144,
-    "childRoutes": 21
+    "childRoutes": 20
   },
   "routingTerms": [
     "adopt",
@@ -277,6 +272,7 @@
     "agentic_settings_sections",
     "agents",
     "agents_remember",
+    "agents_remember_test_support",
     "analysis",
     "and",
     "application",
@@ -298,14 +294,12 @@
     "carryover_authority",
     "catalog",
     "census",
-    "certifying",
     "cgc",
     "cgcignore",
     "citations",
     "cli",
     "closeout",
     "code",
-    "code_quality",
     "codegraphcontext",
     "coding",
     "coherency",
@@ -346,7 +340,8 @@
     "docs",
     "doctrine",
     "entity",
-    "errors"
+    "errors",
+    "evidence"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",
@@ -354,15 +349,14 @@
       "mcp",
       "mcp/tests",
       "mcp/native_helpers/conversation_library",
+      "mcp/test_support/agents_remember_test_support",
       "mcp/src/agents_remember/application",
-      "mcp/src/agents_remember/code_quality",
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/models",
       "mcp/src/agents_remember/observer",
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/tasks",
-      "mcp/src/agents_remember/testing",
       "mcp/src/agents_remember/worktrees",
       "mcp/src/agents_remember/benchmarks/runner_modules",
       "mcp/src/agents_remember/kernel/coordination_context",
@@ -374,7 +368,8 @@
       "mcp/src/agents_remember/providers/grepai",
       "mcp/src/agents_remember/providers/lifecycle",
       "mcp/README.md",
-      "mcp/pyproject.toml"
+      "mcp/pyproject.toml",
+      "mcp/requirements.txt"
     ],
     "anchorHints": [
       "README.md",

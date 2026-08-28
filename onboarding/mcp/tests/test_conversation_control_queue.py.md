@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ topology.
 | --- | --- | --- |
 | The source-aware queue projection under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:51-51 |
 | The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by. | "def sweep_recoveries" | mcp/src/agents_remember/serving/conversation/control/withdrawals.py:658-658 |
-| The shared fake-topology harness with the `NOW`-anchored service. | `NOW` | mcp/tests/_control_plane.py:80-80 |
+| The shared fake-topology harness with the `NOW`-anchored service. | `NOW` | mcp/tests/_control_plane.py:79-79 |
 
 ## Cross-Repo References
 
