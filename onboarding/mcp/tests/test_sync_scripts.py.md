@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_sync_scripts.py`           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-28T15:52:15+02:00 |
+| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
+| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -119,10 +119,13 @@ L85 is the third script, `sync-harness.py`, already enforced by
 | `TARGETS` (4 runtime asset targets) and the matching `repo_relative` / `diff_target`. | `TARGETS`, `repo_relative`, `diff_target` | scripts/sync-runtime.py:44-53; scripts/sync-runtime.py:73-74; scripts/sync-runtime.py:111-123 |
 | The completeness assertion the runtime side has and the skill side does not — an exact `assertEqual` over the runtime target labels. | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:72-84 |
 | The model for this class, including naming the repair command in the failure message. | `test_every_generated_harness_file_matches_its_source` | mcp/tests/test_sync_harness.py:40-51 |
-| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:81-82 |
+| The only pre-L4 drift check: the locally installed hook gate calling both scripts with `--check` (installed by `setup-hooks.sh` L36, which sets `core.hooksPath`). | "scripts/sync-skills.py", "scripts/sync-runtime.py" | .githooks/_gate.sh:90-91 |
 | Why CI reaches these tests: `testpaths` is the single declaration the quality wrapper reads to build its pytest step. | `testpaths` | pyproject.toml:128-128 |
 
 ## Update History
+
+- 2026-08-28T15:52:15+02:00 — Rebased the skill/runtime sync-gate citation after the MCP-local
+  interpreter selection repair shifted `_gate.sh`; the test contracts remain unchanged.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: converted the reference rows to
   exact `path:start-end` sources with anchors, rebased `testpaths` to `pyproject.toml:112`, and

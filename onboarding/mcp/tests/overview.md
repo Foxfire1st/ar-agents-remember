@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-28T15:45+02:00 |
+| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
+| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1439,6 +1439,13 @@ are implementation evidence only; this entry does not claim that the closeout Da
 lane has run.
 
 ## Update History
+
+- 2026-08-28T15:45+02:00 — No route impact: the hook repair's fixture extraction restores the
+  existing statement budget without adding a test route or changing Dagger acceptance ownership.
+
+- 2026-08-28T14:38+02:00 — No route impact: the scope-reporting regression now pins the existing
+  host-hook environment boundary to local/shared `mcp/.venv`; no test route, evidence lane, or
+  Dagger-acceptance ownership changed. Verification remains closeout-owned.
 
 - 2026-08-28T06:40+02:00 — Added the six missing focused evidence cards, corrected the lifecycle
   census to 34 artifacts, and preserved Q5-Q8 as non-accepting protocol evidence.
