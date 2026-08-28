@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ fields.
 | --- | --- | --- |
 | The interrupt ledger under test, incl. the Finding 1 payload-type settlement match. Both entry points now take a `ControlRequest`, the per-attempt values travel as `InterruptTicket` (L205-L216), and the claude branch's settlement match was extracted into `_claude_result_settlement` (L417-L450). | `interrupt` | mcp/src/agents_remember/serving/conversation/control/operations.py:95-156; mcp/src/agents_remember/serving/conversation/control/operations.py:159-160; mcp/src/agents_remember/serving/conversation/control/operations.py:205-216; mcp/src/agents_remember/serving/conversation/control/operations.py:417-450; mcp/src/agents_remember/serving/conversation/control/operations.py:452-482 |
 | The `ControlRequest` scope object these calls build, and its `resolved()` narrowing to a verified-epoch `ControlScope`. | `ControlRequest` | mcp/src/agents_remember/serving/conversation/control/service.py:156-197 |
-| The shared fake-topology harness (real bridge/IPC/authority, `NOW`-anchored service, pi emit helpers). | `NOW` | mcp/tests/_control_plane.py:80-80 |
+| The shared fake-topology harness (real bridge/IPC/authority, `NOW`-anchored service, pi emit helpers). | `NOW` | mcp/tests/_control_plane.py:79-79 |
 | The L3E truncation-envelope identity preservation the Finding 2 regressions depend on. | `_preserved_evidence_identity` | mcp/src/agents_remember/models/conversations/evidence.py:242-269 |
 
 ## Cross-Repo References
@@ -102,7 +102,16 @@ Control-operation regressions now cover structured interaction answers and nativ
 
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
+## 260824-PDLS Native-Refusal Fixture Delta
+
+The no-active/stale-identity scenarios now inject an explicit native `HarnessControlError` at the
+adapter boundary. This preserves the same ledger refusal assertions while preventing the shared
+fake adapter from reimplementing native active-operation validation or idempotence logic.
+
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: recorded explicit scenario-owned native refusal
+  injection after simplifying the shared adapter double; interrupt-ledger behavior is unchanged.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the shared Codex, Pi, and Claude event-replay fixture extraction; interrupt-ledger settlement behavior remains unchanged.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

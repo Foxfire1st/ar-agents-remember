@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l6_diff_coverage_projection_types.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,8 @@ fallout without weakening the schema vocabulary.
 
 ## Update History
 
+- 2026-08-28T06:40+02:00 — No content impact: moved projection-type verification helpers out
+  of the product package and into `agents_remember_test_support`; the branch coverage is unchanged.
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

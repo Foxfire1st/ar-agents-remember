@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/skills.md`              |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-08T01:00+02:00                  |
-| lastVerifiedCommitHash |                                         `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate |                                         2026-08-05T12:41:24+02:00|
+| lastUpdated            | 2026-08-28T14:15+02:00                  |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00              |
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -26,16 +26,16 @@ Public skills reference: where installed and canonical skill copies live, the
 The page documents the two skill locations (installed `ar-coordination/skills/`, canonical
 `agents-remember/skills/`) and the sync command that refreshes the MCP package-data copy and every
 harness starter package (pre-push runs `scripts/sync-skills.py --check`). The Lifecycle And
-Workflow Skills table describes `l-01-agent-lifecycles` with the current **HFX-L7** role census and
-routing: three router conditions (spawn-role env → fresh role brief → otherwise architect), **nine**
+Workflow Skills table describes `l-01-agent-lifecycles` with the current role census and
+routing: three router conditions (spawn-role env → fresh role brief → otherwise free chat), **nine**
 per-role lifecycles — architect · backend orchestrator · designer · strategist · manager · worker ·
-curator · **system-specialist** · adversarial reviewer — with the architect lifecycle (request →
-trust-checkpoint → reframe-research → decide → build → close) owning the developer-facing
-research-only exit and build decision, backend orchestrators running as spawned seats, and the
-new **system-specialist** seat (260707-HFX-L7) as the investigate-first provider-degradation
+curator · **system-specialist** · adversarial reviewer. Free chat is the developer entry and
+resolves a sprint before spawning its architect; architect, orchestrator, and manager seats are
+sprint-local, and backend orchestrators run as spawned seats. The **system-specialist** seat is the
+investigate-first provider-degradation
 responder: it reports first and fixes only on explicit orchestrator order, is never developer-facing,
-and escalates directly to the orchestrator (one rung, matching `_ROLE_ESCALATION` in
-`orchestration_artifacts.py`). `w-02-light-task-workflow` is
+and reports to the current sprint orchestrator through structural parent messaging.
+`w-02-light-task-workflow` is
 the durable one-page plan that escalates to a master + light sub-task series. The Core Skills table
 lists `c-00` through `c-13` one line each. The install section routes first-run setup to the
 harness starter packages and manual maintenance installs through `skills_install()` (target
@@ -56,6 +56,11 @@ inferred from the MCP settings location; packaged skills are flat, one folder pe
 | Sync script the page instructs running after skill edits. | "class SkillTarget" | scripts/sync-skills.py:27-27 |
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — Reconciled the public skill summary to the current router: free chat is
+  the developer entry that resolves a sprint and spawns its architect; architect, orchestrator,
+  manager, designer, and system-specialist identity is sprint-bound where applicable. Stamped the
+  landed PDLS candidate after the synchronized skill pass.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

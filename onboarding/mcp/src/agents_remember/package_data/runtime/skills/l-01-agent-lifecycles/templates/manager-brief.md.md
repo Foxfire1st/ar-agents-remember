@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                  |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-28T11:51+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -18,6 +18,9 @@ this exact artifact.
 ## Code Commentary
 
 ### Logic
+
+The synchronized manager brief distinguishes the next review-handoff attempt from internal
+protocol events and requires a lightweight content-addressed record and non-gating summary.
 
 The orchestrator calls `dispatch_agent` with the canonical master document, role `manager`, and this
 complete brief. The manager dispatches worker/reviewer/curator children on canonical leaf or review
@@ -53,8 +56,9 @@ No sibling repository evidence is needed for this doctrine file.
 
 The manager brief now assigns Agents Remember acceptance to the pinned Dagger graph. Leaf and
 focused gates select targeted mode; `worktree_integrate` selects full mode once at master
-altitude. Both use the task-derived explicit diff base. Host pytest and direct wrapper commands
-are refused, never acceptance or an automatic fallback. `memory_quality_check` remains a
+altitude. Both use the task-derived explicit diff base. Host pytest is refused; Candidate A's
+direct wrapper has been deleted rather than retained as an acceptance or fallback route.
+`memory_quality_check` remains a
 per-leaf closeout gate, and omitted required proof refuses the gate.
 
 ## L23 Final Candidate Disposition
@@ -91,7 +95,55 @@ first-ready generation. It explicitly keeps task edits live, requires inspection
 Post-claim lifecycle, worker, commit, and recovery evidence is read only from the enclosure-root
 journal via status and advertised controls; projection invalidation is never a lifecycle loss.
 
+## M38 Manager-Brief Projection
+
+The manager brief now requires compilation of the exact stable requirement set, validation of one
+complete worker envelope per ID, and dispatch of the same set for independent reviewer
+adjudication. It forbids aggregate completion and keeps the durable-evidence hold point separate.
+This installed artifact is a synchronized projection only.
+The exact set includes the approved version-addressed packet and its durable corpus ruling for
+every row; an unapproved or mismatched row invalidates dispatch.
+
+## M40-M45 Manager-Brief Projection
+
+The installed manager brief carries exact attempt dispatch/adjudication, failure/revision routing,
+bounded invalidation, and rebuildable non-gating master-summary obligations from the canonical
+template.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
+  authority wording; projection ownership and byte-identity rules remain unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-28T10:03:40+02:00 — Updated the current quality-altitude explanation to record deletion,
+  rather than refusal, of Candidate A's former direct wrapper.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 dispatch and summary semantics.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized the Requirement Attempt Journal manager contract.
+
+- 2026-08-27T14:04+02:00 — Added approved version-addressed packet and durable-ruling admission to
+  the installed manager brief projection.
+- 2026-08-27T13:32+02:00 — M39@v1: the dispatch compiler and master-exit packet now carry the same
+  exact ID + version set and matching canonical packets to workers and reviewers. Verification
+  remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded the exact-set manager obligation and same-set review
+  dispatch. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: aligned the manager brief with door declaration, task-authoring primacy, and journal-owned post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

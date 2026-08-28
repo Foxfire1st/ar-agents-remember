@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_gate_scope.py`             |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -98,8 +98,8 @@ None known for this leaf.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | `derive_scope` | mcp/src/agents_remember/code_quality/check.py:83-84 |
-| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check_scope.py:23-215 |
+| The derivation under test, and the `Step`/`GateScope`/`CheckConfig` types this module builds real commands from. | "def derive_scope("; "class Step:"; "class GateScope:"; "class CheckConfig:" | mcp/test_support/agents_remember_test_support/code_quality/scope.py:21-36; mcp/test_support/agents_remember_test_support/code_quality/scope.py:417-440; mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-133 |
+| Complementary wrapper-side tests that scope is derived rather than written down, and that an out-of-package script reaches both rails. | `GateScopeDerivationTests` | mcp/tests/test_code_quality_check_scope.py:22-273 |
 | The frontend rails this module reads: eslint flat configs and tsconfig projects. | `tseslint` | dashboard/eslint.config.js:1-12; dashboard/tsconfig.json:1-8 |
 | The TypeScript rail added for the Pi harness extension so it needed no exemption. | `compilerOptions` | .pi/extensions/tsconfig.json:1-19 |
 

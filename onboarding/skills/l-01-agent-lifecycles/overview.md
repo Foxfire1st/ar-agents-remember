@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated            | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -51,6 +51,25 @@ independent verdict evidence, curators reconcile system intent and memory, manag
 delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
 fact relay replaces role-local polling and inference.
 
+Requirement completion is an exact-set protocol. Before dispatch, the manager compiles the stable
+IDs inherited from the master and owned by the leaf. The worker must write one acceptance envelope
+per ID with delivery and verification rationales, independently inspectable citations, and exact
+commands/results or durable evidence. The reviewer receives the same set, inspects the artifacts
+itself, and accepts or rejects every ID separately; an invalid citation, wrong evidence class, or
+missing developer ruling is a requirement rejection and prevents an overall pass. Non-code work
+uses deliverable paths plus stable section anchors rather than invented code fields.
+
+Requirement revisions, delivery attempts, and internal protocol events are separate. Semantic
+revisions require explicit developer approval. Workers advance immutable exact-candidate attempts
+only at review handoff or after reviewer rejection; internal implementation/test/evidence reruns
+remain separate protocol events. Lightweight requirement-specific records link content-addressed
+expanded evidence, reviewers append independent adjudications, and rejected work advances through
+linked successors with one closed failure class. Accepted attempts remain closed across unrelated
+later candidates; only direct-regression proof plus bounded owner invalidation or an approved
+requirement revision can reopen them. Leaf journals remain authority while the master summary
+excludes protocol events, is rebuildable, and never gates tasks, lifecycle, closeout, integration,
+or queues.
+
 The quality altitude ladder uses the pinned Dagger graph for Agents Remember acceptance. Leaf
 closeout selects targeted mode exactly once; leaf integration and series closeout do not rerun it.
 Master integration selects full mode exactly once. Both require the task-derived explicit diff
@@ -82,15 +101,18 @@ re-proves lineage before host creation, so a parent move between status and disp
 - Curator completion requires zero curator-actionable findings from both required onboarding checks;
   the coherence report is written only after their repair-and-rerun loop.
 - Commit-derived memory verification follows the real code commit during governed closeout.
+- Aggregate completion prose cannot replace the worker envelope or reviewer adjudication for any
+  stable requirement ID.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:277-277; skills/l-01-agent-lifecycles/SKILL.md:313-313 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:372-372; skills/l-01-agent-lifecycles/SKILL.md:408-408 |
 | Curator owns conservative three-way memory reconciliation and the complete pre-closeout onboarding worklist. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
+| The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:243-264 |
 
 ## L23 Pre-Dispatch Lineage
 
@@ -127,6 +149,24 @@ No lifecycle topology or authority changed. The curator brief now demonstrates t
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled lifecycle overview citations against the committed PDLS
+  candidate; the architect/seat routing and acceptance boundaries are unchanged.
+
+- 2026-08-27T22:15+02:00 — Clarified the route-wide attempt boundary: never-handed-off malformed
+  rows are non-attempt corrections, while handed-off malformed records require reviewer rejection.
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 route correction: formal attempts now begin at review
+  handoff, internal protocol events stay separate, and lightweight journal records link frozen
+  expanded evidence without inflating the master summary.
+- 2026-08-27T20:45+02:00 — Clarified that each leaf has one physical append-only attempt journal;
+  worker and reviewer records share that authority while reports and verdicts link exact anchors.
+- 2026-08-27T19:59+02:00 — M40-M45 route impact: recorded leaf-authoritative attempt journals,
+  non-gating summaries, and the M42 distinction between stale in-flight candidates and unrelated
+  post-acceptance movement.
+- 2026-08-27T12:43+02:00 — M38: documented the exact stable-ID acceptance set, worker evidence
+  envelope, independent reviewer adjudication, non-code citation form, and overall no-rejection
+  rule. The durable-evidence promotion hold point remains separately mandatory. Verification
+  metadata stays pinned until governed closeout stamps the PDLS commit.
 
 - 2026-08-26T08:20+02:00 — Reconciled the planning/runtime source-pair boundary and synchronized
   doctrine set to the frozen candidate; verification remains closeout-owned.

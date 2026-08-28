@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,11 +56,13 @@ Provider recordings remain external-versioned proof; synthetic helper worlds are
 internal and cannot masquerade as recordings. The former task/date model-split snapshot and its
 meta-test are deleted, with lasting architecture assertions moved to ordinary behavior tests.
 
-`python-direct-cohort.toml` seals the tiny seven-node direct diagnostic cohort and its audited
-closure. `_direct_cohort_candidate.py` supplies deliberately inert functions for those nodes;
-`_evidence_catalog_fixture.py` is the one lifecycle-catalog test builder. Provider replay scripts
-live in `_adapter_event_scripts.py`, independent from `_control_plane.py`'s structural harness.
-These helpers are cataloged support, not pytest test modules and not acceptance evidence.
+Candidate A's sealed manifest, static closure helpers, synthetic cohort builder, host runner, and
+self-tests are deleted. `test_kernel_pure_regressions.py` retains the seven unique product
+assertions as ordinary explicit unit-regression evidence and supplies the exact pure cohort for the
+non-accepting representative Dagger measurement. `_evidence_catalog_fixture.py` remains the one
+lifecycle-catalog test builder. Provider replay scripts live in `_adapter_event_scripts.py`,
+independent from `_control_plane.py`'s structural harness. These helpers are cataloged support, not
+pytest test modules and not acceptance evidence.
 
 `_quality_evidence_fixture.py` is the one acceptance-consumer fixture that publishes the immutable
 result generation a passing mocked gate promises; a green dictionary alone is intentionally
@@ -72,6 +74,74 @@ Ordinary tests, shared support, plugins, and governed fixtures all participate i
 dependency-ownership graph. The graph's reasons feed targeted selection and retry invalidation;
 causal suppression uses only proven import/catalog edges. Coverage/CRAP measure product code only,
 while every test/support Python file remains linted, typed, size-checked, and executable.
+
+Retry deltas preserve that ownership boundary without losing collection-time coverage:
+`test_quality_retry_proof.py` pins the command split, and `test_retry_selection.py` proves the
+plugin keeps only explicit affected modules, accepts an observed passing zero-body module
+collection, and separately refuses empty, escaping, or genuinely uncollected populations.
+`test_retry_coverage.py` proves retained and fresh Coverage.py databases are merged
+explicitly into one scored data/JSON pair, an all-contexts-affected delta has a distinct
+known-empty retained state, and a missing expected database removes both outputs.
+`test_quality_evidence_helper_invariants.py` extracts and executes only the actual comment helper
+to prove controlled Python evidence mutations retain Ruff-valid module spacing without importing
+the scenario catalog and falsely acquiring ownership of all its fixture paths.
+`test_quality_subprocess_environment.py` proves nested candidate tests cannot inherit the outer
+wrapper's retry cache or progress path while admission and other semantic environment facts remain.
+All three focused forcing files are explicitly classified as `unit-regression`.
+
+The retry matrix also exposed missing changed-branch coverage in the direct-landing CRAP repair.
+`test_direct_landing_execution_helpers.py` now owns exact existing-mapping bytes, clean branch
+snapshots, and prepared ledger-intent convergence. The focused `test_direct_recovery_*` cases in
+`test_lifecycle_reconciliation_concurrency_l2.py` own developer-decision refusal, typed-error fact
+preservation, current-record recovery, and untyped interruption translation. These tests repair
+candidate coverage without weakening retry's conservative full-fallback rule.
+
+## M38 Requirement-Acceptance Structural Proof
+
+`test_requirement_acceptance_envelope_doctrine.py` is a focused architecture-fitness suite over
+canonical lifecycle and task-workflow sources. It separately pins the complete worker envelope and
+explicit Checks section, independent per-ID reviewer adjudication, manager preservation of the
+exact stable-ID + version set, and separation of the durable-evidence promotion hold point. Its explicit
+`architecture-fitness` membership in `test-evidence-lanes.toml` prevents the new proof from being
+silently classified by a filename or default marker.
+
+This is structural doctrine evidence: it catches removal of mandatory template fields and aggregate
+completion regressions. It does not claim that a human or agent actually inspected cited artifacts;
+that remains the reviewer-owned per-requirement adjudication recorded in the durable verdict.
+
+## M40-M45 Requirement Attempt Journal Structural Proof
+
+`test_requirement_attempt_journal_doctrine.py` pins the separation between semantic requirement
+revision and delivery attempt, immutable candidate-bound worker append, independent exact-attempt
+reviewer append, predecessor/finding lineage after rejection, bounded regression/revision
+invalidation of accepted work, the closed five-class failure taxonomy, developer-owned requirement
+revision, authoritative leaf journals, and a rebuildable non-gating master summary. It is explicitly
+`architecture-fitness` evidence and does not make the summary a runtime, queue, or task-authoring
+gate.
+
+The structural proof also requires one physical leaf journal. Worker and independent reviewer
+records append to the same ordered authority; worker reports and verdicts link exact anchors rather
+than copying records into divergent authorities.
+
+The M42 forcing explicitly distinguishes a candidate that changes before adjudication from an
+unrelated candidate that lands after acceptance. The former needs a successor attempt; the latter
+does not reopen accepted work without direct-regression proof plus bounded owner invalidation or an
+approved requirement revision.
+
+## M39 Requirement-Compilation And Quality-Policy Split
+
+`test_requirement_compilation_gate_doctrine.py` pins the architect-owned pre-topology gate,
+complete canonical packet shape, transcript-free cold-read questions, filtered task projections,
+one-primary-requirement leaves, and version invalidation/rebriefing. It is pure
+`architecture-fitness` evidence; `scripts/sync-skills.py --check` separately proves installed and
+packaged projections equal the canonical skills tree.
+
+The prior oversized `test_code_quality_check.py` mixed general quality-wrapper behavior with the
+MCP wire-signature exemption. `test_code_quality_tool_signature_exemption.py` now owns the latter
+as explicit architecture-fitness evidence, while `_ruff_repository_evidence.py` centralizes only
+the real repository-configured Ruff invocation used by both suites. The helper and exact consumers
+are lifecycle-cataloged under `repository-ruff-policy-evidence`; there is no duplicated fallback
+configuration.
 
 ## L3 Final Targeted-Gate Repair
 
@@ -1319,16 +1389,31 @@ explicit serving-preflight failure matrix; and closed direct-landing outcome/rec
 The new `test_quality_gate_public_contract.py` is the focused pointer-rotation/public-model owner.
 No omnibus or broad gate was added by curation.
 
-## 260824-PDLS — Structural Diagnostics And Evidence Proof
+## 260824-PDLS — Structural Evidence Proof
 
-The route gains six focused owners: `_quality_admission.py` exposes the already-validated Dagger
-capability to certifying tests; `test_direct_test_eligibility.py` proves the closed static model;
-`test_direct_test_runner.py` proves exact serial non-certifying execution;
-`test_pytest_bootstrap_boundaries.py` proves the four authority states;
-`test_python_direct_cohort.py` holds the closed seven-node real cohort; and
-`test_python_test_evidence_firewall.py` proves every acceptance edge rejects diagnostics. The old
-`_global_state.py` and `_random_order.py` helpers moved to production testing and their stale cards
-were removed.
+`_quality_admission.py` exposes the already-validated Dagger capability to certifying tests;
+`test_pytest_bootstrap_boundaries.py` proves the authority states and the absence of the retired
+Candidate A source/command surface; `test_kernel_pure_regressions.py` preserves the seven real
+product assertions; `test_route_measurement.py` forces the representative comparison structure;
+and `test_python_test_evidence_firewall.py` proves every accepting edge rejects diagnostic evidence.
+The direct eligibility/runner tests and their synthetic cohort helper were removed with the
+mechanism they tested rather than retained as compatibility proof.
+
+## 260824-PDLS Wave 005 Focused Evidence Cards
+
+Six focused test modules now have complete one-to-one onboarding and high-risk file cards:
+
+- `test_cadence_runner.py` proves explicit cadence selection and non-accepting reports;
+- `test_causal_failure_localization.py` proves exact-node suppression while same-file independent
+  nodes continue;
+- `test_causal_quality_preflight.py` proves contract-chain admission and fail-closed continuation;
+- `test_evidence_lanes.py` proves exhaustive explicit categories with no unit fallback;
+- `test_evidence_lifecycle.py` proves the 34-artifact inventory and real consumer/owner contracts;
+- `test_route_measurement.py` proves repeated pure, integration, and durability measurement under
+  serial and repository-default xdist modes.
+
+These cards describe forcing ownership only. They do not promote Q5-Q8 route artifacts to
+acceptance evidence and do not replace the independent per-requirement Q9 adjudication.
 
 ## 260824-PDLS Final Evidence-System Reconciliation
 
@@ -1354,6 +1439,31 @@ are implementation evidence only; this entry does not claim that the closeout Da
 lane has run.
 
 ## Update History
+
+- 2026-08-28T06:40+02:00 — Added the six missing focused evidence cards, corrected the lifecycle
+  census to 34 artifacts, and preserved Q5-Q8 as non-accepting protocol evidence.
+- 2026-08-28T05:10+02:00 — Reconciled Candidate A deletion, seven-assertion preservation, and the
+  representative pure/integration/durability measurement owner.
+
+- 2026-08-27T21:10+02:00 — Recorded the retry selector's explicit passing zero-body collection
+  proof and preserved the separate missing/uncollected-path refusal.
+- 2026-08-27T20:16+02:00 — Recorded the dependency-neutral retry-matrix formatter regression that
+  distinguishes a test-tool defect from retry-cache, ownership, or affected-consumer defects.
+- 2026-08-27T19:13+02:00 — Added the explicit known-empty retained-context forcing boundary and
+  nested wrapper-owned cache setup exposed by the real Dagger matrix.
+- 2026-08-27T18:33+02:00 — Recorded explicit retry Coverage.py composition, outer/child quality
+  environment isolation, and the full M40-M45 Requirement Attempt Journal structural proof.
+- 2026-08-27T17:19+02:00 — Recorded the canonical-collection/affected-execution retry boundary,
+  its focused pure forcing suite, and explicit unit-regression lane membership.
+
+- 2026-08-27T13:32+02:00 — M39@v1 and structural-budget repair: added the architect compilation
+  proof, exact revision binding, and separately governed MCP tool-signature/Ruff support suite.
+  Eight pure doctrine assertions pass; Dagger acceptance remains pending.
+
+- 2026-08-27T12:43+02:00 — M38: added the focused per-requirement acceptance-envelope doctrine
+  suite and explicit architecture-fitness manifest registration. The four pure structural tests
+  passed locally under the approved diagnostic exception; governed Dagger acceptance remains
+  pending.
 
 - 2026-08-26T16:03+02:00 — Post-failure repair: completed deterministic lock setup, duplicate-brief, bounded recovery,
   rollback-seam, and read-only ambiguity forcing; also removed a pre-existing tool-output truncation

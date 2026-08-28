@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-07T21:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -18,6 +18,10 @@ convention, the master `task.md` scaffold, and the per-slice sub-task scaffold.
 ## Code Commentary
 
 ### Logic
+
+The synchronized master template projects only formal review-handoff attempts, excludes internal
+protocol events from counts, and links lightweight leaf records to content-addressed expanded
+evidence.
 
 The file states when to escalate to a series (`l-01-agent-lifecycles` architect lifecycle `decide` step, once size is apparent), the
 series convention (one wrapper folder = master `task.md` + flat numbered `NN_<name>.md` sub-task files
@@ -73,7 +77,51 @@ No sibling repository evidence is needed for this template.
 
 The master template's execution model now says a master provides the integration branch and each active sub-task gets its own leaf enclosure/worktree, replacing the previous single shared worktree guidance.
 
+## M38 Series Requirement Projection
+
+Master and leaf scaffolds now use stable series-qualified IDs, declare ownership, and require each
+leaf handoff/review pair to cover its exact leaf-owned plus inherited master set. Every row receives
+worker evidence and independent accepted/rejected adjudication; any rejection prevents completion.
+The durable-evidence promotion hold point is recorded separately. This installed file is a
+synchronized projection only.
+Filtered rows link immutable version-addressed packets carrying their durable corpus approval;
+neither master nor leaf rewrites or silently upgrades an approved revision.
+
+## M40-M45 Master-Summary Projection
+
+The installed master scaffold exposes attempts, rejection history, current state, dominant class,
+and leaf-journal refs through a rebuildable observation that is explicitly never a task,
+lifecycle, closeout, integration, or queue authority.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M44@v2 summary semantics.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized the non-gating Requirement Attempt Summary.
+
+- 2026-08-27T14:04+02:00 — Added immutable version-addressed packet and durable-ruling semantics to
+  the installed master/leaf projection description.
+- 2026-08-27T13:32+02:00 — M39@v1: masters now summarize and filter approved requirement revisions
+  without rewriting them; leaves link one primary packet, and semantic changes version/invalidate/
+  rebrief only the affected surface. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded stable series requirement IDs and exact per-leaf
+  acceptance coverage. Verification metadata stays pinned until governed closeout stamps the PDLS
+  commit.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   heading anchors; exact non-fixing check returns zero findings.

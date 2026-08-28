@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T19:27+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -62,6 +62,10 @@ No configured Domain Documentation or cross-repository source applies. The model
 integration overviews are same-repository context.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — PDLS closeout: reconciled the direct-recovery translator split. Typed
+  direct-landing failures are reclassified against current evidence; invariant runtime errors stay
+  loud instead of entering the public translation family. Stamped committed provenance.
 
 - 2026-08-26T19:27+02:00 — Reconciled the IAS cancelled-closeout successor rule: replacement
   validates the current waiting door plus cancelled disposition and worker-exit proof; historical

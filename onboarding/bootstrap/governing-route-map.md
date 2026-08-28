@@ -1,37 +1,30 @@
-# IAS Source-Pair Coordination Governing Route Map
+# PDLS Verification-Ownership Governing Route Map
 
 | Source route | Governing onboarding | Action |
 | --- | --- | --- |
-| `mcp/src/agents_remember/worktrees` | `onboarding/mcp/src/agents_remember/worktrees/overview.md` | create parent pillar for activation/sync authority |
-| `mcp/src/agents_remember/worktrees/activation` | `onboarding/mcp/src/agents_remember/worktrees/activation/overview.md` | create focused selector/admission/vacancy pillar after the structural-limit move |
-| `mcp/src/agents_remember/worktrees/modules` | existing `onboarding/mcp/src/agents_remember/worktrees/modules/overview.md` | refresh public lifecycle composition |
-| `mcp/src/agents_remember/worktrees/queue` | existing `onboarding/mcp/src/agents_remember/worktrees/queue/overview.md` | refresh disposable activation-aware projection |
-| `mcp/src/agents_remember/worktrees/integration` | existing `onboarding/mcp/src/agents_remember/worktrees/integration/overview.md` | refresh source-pair serialization |
-| `mcp/src/agents_remember/application` | existing `onboarding/mcp/src/agents_remember/application/overview.md` | refresh public application composition |
-| `mcp/src/agents_remember/application/structural` | existing `onboarding/mcp/src/agents_remember/application/structural/overview.md` | refresh task-unlocked structural route |
-| `mcp/src/agents_remember/application/task_docs` | existing `onboarding/mcp/src/agents_remember/application/task_docs/overview.md` | preserve wholly upstream task authoring |
-| `mcp/src/agents_remember/models` | existing `onboarding/mcp/src/agents_remember/models/overview.md` | refresh strict activation/sync vocabulary |
-| `mcp/src/agents_remember/models/structural` | existing `onboarding/mcp/src/agents_remember/models/structural/overview.md` | add the relocated selector identity/archive model |
-| `mcp/src/agents_remember/mcp/registration` | existing `onboarding/mcp/src/agents_remember/mcp/registration/overview.md` | refresh public schema registration |
-| `mcp/src/agents_remember/mcp/tools` | existing `onboarding/mcp/src/agents_remember/mcp/tools/overview.md` | refresh tool translation |
-| `mcp/tests` | existing `onboarding/mcp/tests/overview.md` | refresh focused activation/sync/projection evidence |
-| `docs/reference` | existing `onboarding/docs/reference/overview.md` | refresh graph-less activation operator guidance |
-| `skills/c-09-git-worktree-manager` | new `onboarding/skills/c-09-git-worktree-manager/overview.md` | create canonical skill pillar and strict SKILL sidecar |
-| `skills/l-01-agent-lifecycles` | existing route-local skill overviews | refresh changed doctrine files if retained |
-| `mcp/src/agents_remember/package_data/runtime/skills` | broad `onboarding/mcp/overview.md` fallback used by existing cards | refresh changed installed-copy sidecars without duplicating canonical ownership |
+| repository root | `onboarding/overview.md` | refresh repository-wide Dagger/evidence boundary |
+| `mcp` | `onboarding/mcp/overview.md` | refresh product-versus-verification package topology |
+| `mcp/src/agents_remember` | existing nearest route-local overviews | preserve operational product ownership and affected lifecycle contracts |
+| `mcp/test_support/agents_remember_test_support` | `onboarding/mcp/test_support/agents_remember_test_support/overview.md` | govern the dedicated Python verification root |
+| `mcp/test_support/agents_remember_test_support/code_quality` | `onboarding/mcp/test_support/agents_remember_test_support/code_quality/overview.md` | govern quality planning/execution, ownership, retry, coverage, and causal continuation |
+| `mcp/test_support/agents_remember_test_support/testing` | `onboarding/mcp/test_support/agents_remember_test_support/testing/overview.md` | govern admission, lanes, lifecycle, provenance, cadence, retry selection, and route measurement |
+| `mcp/tests` | `onboarding/mcp/tests/overview.md` | govern focused forcing and shared test support |
+| `scripts` | `onboarding/overview.md` | govern repository verification entry points |
+| canonical lifecycle/task skills | existing `onboarding/skills/.../overview.md` routes | preserve canonical requirement and attempt-journal doctrine |
+| packaged skill projections | `onboarding/mcp/overview.md` plus exact file sidecars | describe synchronized copies without duplicating canonical authority |
+| `dashboard/src` | `onboarding/dashboard/src/overview.md` | preserve consumer-only projection contracts |
 
 ## Placement Decision
 
-The direct `worktrees` route now coordinates two load-bearing workflows: focused source-pair
-activation under `worktrees/activation/` and root-level resumable synchronization. Its previous
-fallback to the broad MCP overview is no longer sufficient, so it earns one parent route pillar.
-The structural-limit consolidation gives activation its own child pillar; existing child overviews
-remain the nearest governors for `modules`, `queue`, and `integration`, while the flat sync files
-remain governed by the new parent pillar.
+Verification infrastructure has an independent import and ownership boundary, so
+`mcp/test_support/agents_remember_test_support` and its `code_quality` and `testing` children each
+earn a route-local pillar. Ordinary forcing tests stay under the existing `mcp/tests` pillar.
+Repository scripts retain the root overview because one changed synchronization entry point does
+not create a new semantic subsystem.
 
 ## Moved Or Deleted Routes
 
-The activation model moved from `models/atomic_series_activation.py` to
-`models/structural/atomic_series_activation.py`; the four activation owners moved from the flat
-`worktrees/` route into `worktrees/activation/`, which also gained a package marker. Their sidecars
-moved with their semantic histories. No old-path compatibility card or source forwarder remains.
+The verification-only `code_quality`, `testing`, and certifying-bootstrap owners moved out of the
+product package and retained their histories at the new paths. Candidate A and the deleted Claude
+2.1.207 fixture slice were removed. No old-path compatibility sidecar, route overview, facade, or
+fallback remains.

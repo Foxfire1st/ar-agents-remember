@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## Purpose
 
@@ -46,10 +46,10 @@ This bundle copy is the shape the adversarial-reviewer job writes at each seam; 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Verdict Template (adversarial reviewer)` | skills/l-01-agent-lifecycles/templates/verdict.md:1-142 |
-| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | "as judge evidence"; `### MASTER-EXIT — Manager Before Orchestrator Handover` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:125-151; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:191-191 |
-| The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. | "# Adversarial Verdict — master-exit"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:73-73 |
-| The master-exit onboarding lens names a backing onboarding-coherency report. | "# Adversarial Verdict — master-exit"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:73-73 |
-| The frame defines the two seams and the evidence-not-decision doctrine (SKILL.md) and the block-decomposes-into-fix-leaves doctrine (the reviewer role). | "verdicts are evidence"; "A master-exit block without fix leaves is invalid" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:195-195; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:149-150 |
+| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | "as judge evidence"; `### MASTER-EXIT — Manager Before Orchestrator Handover` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:199-225; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:271-271 |
+| The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. | "# Adversarial Verdict — master-exit"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:157-157 |
+| The master-exit onboarding lens names a backing onboarding-coherency report. | "# Adversarial Verdict — master-exit"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:157-157 |
+| The frame defines the two seams and the evidence-not-decision doctrine (SKILL.md) and the block-decomposes-into-fix-leaves doctrine (the reviewer role). | "verdicts are evidence"; "A master-exit block without fix leaves is invalid" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:195-195; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:223-224 |
 
 As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated master-handover-approval; serious issues escalate to the developer); super-exit = developer (human review concentrates at the super gate); the reviewer role file reference is roles/reviewer.md.
 
@@ -77,7 +77,49 @@ operation-level proof, data model → artifact-level proof; a self-review or a w
 is a verdict-laundering finding. The Leaf Route-Review Variant gains the explicit "author seat"
 row beside the reviewer-seat row.
 
+## M38 Verdict Projection
+
+Every verdict variant now repeats the mandatory stable-ID adjudication block. The reviewer records
+its own inspection rationale and independently validates implementation/deliverable and
+verification citations. Missing rationale, invalid or wrong-class evidence, or absent developer
+approval rejects the row; no variant may pass with a rejected row. Evidence promotion remains a
+separate disposition.
+The reviewer rejects a missing or unapproved version-addressed packet or absent packet-local corpus
+ruling before evaluating the rest of the acceptance envelope.
+
+## M41-M43 Verdict Projection
+
+The installed verdict appends an independent record against the exact worker attempt/candidate,
+classifies rejection, preserves worker immutability, and separates regression proof from the
+owning seat's bounded invalidation record.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T18:06+02:00 — M41-M43: synchronized exact-attempt reviewer adjudication and
+  invalidation authority.
+
+- 2026-08-27T14:04+02:00 — Added approved version-addressed packet and packet-local durable-ruling
+  rejection criteria to the installed verdict projection.
+- 2026-08-27T13:32+02:00 — M39@v1: all verdict variants adjudicate exact requirement revisions,
+  inspect the matching canonical packet, and reject packet/version mismatch. Delta review retains
+  only acceptance for unchanged revisions. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded structural per-ID adjudication across all verdict
+  variants. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 
 - 2026-08-20T21:30+02:00 — 260815-DAG-L15: rule 7 adds reviewer/author seat distinction and
   requirement-evidence-class matching; the leaf route-review variant gains the "author seat" row.

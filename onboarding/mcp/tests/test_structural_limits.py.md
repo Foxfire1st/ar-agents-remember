@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_structural_limits.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,4 +74,6 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-28T06:40+02:00 — No content impact: moved the structural-limit verification import
+  into `agents_remember_test_support`; limit and deviation assertions remain unchanged.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

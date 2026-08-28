@@ -126,7 +126,6 @@
       "mcp/src/agents_remember/kernel/primitives/",
       "mcp/src/agents_remember/kernel/primitives/overview.md",
       "mcp/overview.md",
-      "a9d50e08b830c4a34c14e495706c19fe697f47ab",
       "mcp/config.py",
       "mcp",
       "controlplane",
@@ -139,7 +138,8 @@
       "application/provider_runtime.py",
       "ConfigError",
       "rank(Q) < rank(P",
-      "lifecycle-operation"
+      "lifecycle-operation",
+      "resolve_checkout_location"
     ]
   },
   "fallback": {

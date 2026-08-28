@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## What This Area Is
 
@@ -472,6 +472,10 @@ and composition governor for the conversation route; the wire-model governance l
 `models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — Re-read the Claude mapper delta at the conversation boundary. The
+  existing projector child owns its structured interaction, interrupt-correlation, mutation-diff,
+  and malformed-input preservation semantics; no parallel conversation authority was added.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 updates the conversation boundary for native Codex executable resolution and product-agnostic initialize diagnostics: the plane resolves the native executable, while exact client identity remains the handshake authority. Verification provenance remains closeout-owned.
 

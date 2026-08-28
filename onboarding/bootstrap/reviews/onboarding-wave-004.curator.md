@@ -41,7 +41,7 @@ result or declare lifecycle closeout complete.
 | `mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py.md` | `mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py` | pass — moved |
 | `mcp/src/agents_remember/worktrees/modules/quality/gate.py.md` | `mcp/src/agents_remember/worktrees/modules/quality/gate.py` | pass — moved |
 | `mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py.md` | `mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py` | pass — moved |
-| `mcp/src/agents_remember/code_quality/check_cli.py.md` | `mcp/src/agents_remember/code_quality/check_cli.py` | pass — new owner |
+| `mcp/test_support/agents_remember_test_support/code_quality/check_cli.py.md` | `mcp/test_support/agents_remember_test_support/code_quality/check_cli.py` | pass — new owner |
 | `mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py.md` | `mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py` | pass — new owner |
 | `mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py.md` | `mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py` | pass — new owner |
 | `mcp/tests/task_reopen_test_support.py.md` | `mcp/tests/task_reopen_test_support.py` | pass — new owner |

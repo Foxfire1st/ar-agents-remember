@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-25T23:04+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ The enforcement for the declared HTTP response contract (`serving/response_contr
 
 It exists because **declaration-only checks do not establish runtime response behavior**. The route
 inventory, hazard, per-route conformance, and declared-surface-coverage suites below drive actual
-responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:537-669; mcp/tests/test_serving_response_conformance.py:672-741; mcp/tests/test_serving_response_conformance.py:841-952; mcp/tests/test_serving_response_conformance_live.py:488-488)
+responses and validate them. cit:([`ServingRouteInventoryTests`; `ValidatedRouteHazardTests`; `ServingResponseConformanceTests`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):"], mcp/tests/test_serving_response_conformance.py:537-669; mcp/tests/test_serving_response_conformance.py:672-741; mcp/tests/test_serving_response_conformance.py:841-952; mcp/tests/test_serving_response_conformance_live.py:492-492)
 
 ## Code Commentary
 
@@ -228,7 +228,7 @@ modules, and everything that proves them lives here.
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:87-90; mcp/src/agents_remember/serving/conversation/control/api.py:136-153 |
 | The raw event stream's `ready` marker. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
 | The served-state tail field names. | `SERVED_TAIL_FIELDS` | mcp/src/agents_remember/serving/served_state.py:62-66 |
-| The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:101-307; mcp/tests/_control_plane.py:404-415 |
+| The control-bridge harness fixtures used by this suite (`FakeControlAdapter`, `make_harness`, `OPERATOR`). | `FakeControlAdapter`; `make_harness` | mcp/tests/_control_plane.py:100-289; mcp/tests/_control_plane.py:386-397 |
 | The single-route sibling this suite was widened from, which owns `/api/state`'s assembled body and the SSE snapshot. | `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T19:34+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -200,6 +200,10 @@ When changing worktree coordination:
   this final pass; they are never hand-edited.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — PDLS closeout: re-read the accepted quality-gate and integration
+  changes against the landed candidate. Existing route ownership already places test authority in
+  the quality owner and recovery evidence in the root journal; stamped committed provenance.
 
 - 2026-08-26T19:34+02:00 — Reconciled the master-series bootstrap handoff at the parent route:
   apply-time journal/contract observation shares the existing per-master mutex, while dry-run

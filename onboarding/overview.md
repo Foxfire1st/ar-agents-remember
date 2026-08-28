@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-26T15:20+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 > **Status:** active baseline
 
@@ -19,9 +19,9 @@ checkout requirements pin pytest-xdist 3.8.0 and the MCP package's development e
 version 3. Retry-proof compatibility includes the pytest-xdist version, so a changed parallel
 executor cannot reuse an earlier coverage proof. Only the pinned Dagger graph produces Agents
 Remember acceptance evidence. Direct targeted Vitest unit/component runs are supported as fast
-diagnostics only. The exact-node `./scripts/test-python` wrapper is likewise a supported host
-diagnostic; raw host pytest, Playwright, coverage/changed-lines execution, and every acceptance
-decision remain Dagger-attested.
+diagnostics only. Python investigation, pytest, Playwright, coverage/changed-lines execution, and
+every acceptance decision remain Dagger-attested; the retired Candidate A host wrapper has no
+compatibility path.
 
 ## 260731-EFA-L8 Frontend Rail
 
@@ -667,12 +667,10 @@ GrepAI runs in workspace mode with explicit `{ projectId, path }` roots generate
 
 The source checkout tells agents to run acceptance only through the pinned Dagger module. Its
 candidate bundle, mode, exact diff base, and exported reports bind one authoritative result;
-host-side Python, Playwright, changed-lines CLI, and direct-wrapper runs refuse unless the same
-graph supplies the per-run nonce and in-container attestation. Direct targeted Vitest
+host-side Python, Playwright, and changed-lines CLI runs refuse. Candidate A's direct Python
+wrapper was deleted and has no compatibility route. Direct targeted Vitest
 unit/component runs are supported as fast diagnostics only; they provide no acceptance,
-changed-lines coverage, or lifecycle evidence. The Python wrapper still accepts no
-caller-selected source paths because its scope derives from `git ls-files '*.py'`, and direct
-invocation refuses rather than becoming a second acceptance route. The resolved memory layer's
+changed-lines coverage, or lifecycle evidence. The resolved memory layer's
 `system/tools.md` still holds exact command details and
 `system/coding-guidelines.md` the repository-specific style rules. Coordinator-level tools examples keep global commands separate from repo-specific code quality tools, and the memory-repo tools example reserves a `Code Quality` section for lint, format, typecheck, test, build, and smoke-check commands. The packaged and live code-quality report templates no longer offer `passed` as a Radon result: a tool that cannot fail must not be given a verdict vocabulary that says it did not.
 
@@ -705,6 +703,14 @@ The last quality sweep passed Ruff, Ruff format check, compile checks, MCP unit 
 ### Task Workflows
 
 `w-02-light-task-workflow` skill is the compact durable-task workflow used by the current worktree-support task stack. It creates a task wrapper folder and `task.md` once task class and naming are clear, stops for implementation approval, then treats the checklist, onboarding propagation, checks, and worktree-backed commit approval handoff as one implementation cycle. When refreshed external-memory onboarding is part of intake, the memory content and ledger are committed before `c-09-git-worktree-manager` skill starts worktrees.
+
+Requirement delivery history is append-only without turning every implementation/test rerun into a
+formal attempt. Semantic revisions advance only through explicit developer approval; workers mint
+delivery attempts only when handing an exact candidate to independent review or after reviewer
+rejection. Internal runs stay in a separate protocol-event log. Per-requirement journal records are
+lightweight and link a content-addressed frozen expanded-evidence artifact; rebuildable master
+summaries exclude protocol events and never gate task authoring, lifecycle, closeout, integration,
+or queue work.
 
 ### Bootstrap Memory Build
 
@@ -876,7 +882,7 @@ This repository is selected into an external coordination workspace by configure
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. | "ar-coordination/AGENTS.md"; "Implementation approval is not commit approval" | AGENTS.md:10-10; AGENTS.md:141-141 |
-| The source checkout defines Dagger-only acceptance, the single exported result, refusal of a second host acceptance projection, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate."; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161; AGENTS.md:189-190 |
+| The source checkout defines Dagger-only acceptance, the single exported result, refusal of a second host acceptance projection, and the no-baseline/no-allowlist policy. | "Code Quality Instructions"; "dagger call quality --source=."; "single authoritative result"; "No host-wrapper or second Dagger projection is an acceptance gate."; "There is no baseline"; "a finding is fixed" | AGENTS.md:146-146; AGENTS.md:154-154; AGENTS.md:157-157; AGENTS.md:161-161; AGENTS.md:181-182 |
 | The docs index owns the start-here, install, operational, and reference map. | "Start Here"; "Install Guides"; "Getting Started"; "Onboard an Existing Repo"; "MCP Tool Reference"; "Release Checklist" | docs/README.md:23-23; docs/README.md:25-25; docs/README.md:33-33; docs/README.md:46-46; docs/README.md:56-56; docs/README.md:65-65 |
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
@@ -947,7 +953,7 @@ wrong. The durable contracts:
    commit reachable from `origin/main`; the workflow then builds the dashboard and package and
    asserts the wheel and sdist each contain the bundle and fingerprint sidecar.
 5. **The closeout quality gate is no longer hard-coded to one repository name.** Applicability is
-   decided by whether the target checkout carries `mcp/src/agents_remember/code_quality/check.py`;
+   decided by whether the target checkout carries `mcp/test_support/agents_remember_test_support/code_quality/check.py`;
    a checkout without it is reported as `wrapper-unavailable` rather than silently skipped.
 
 What follows for anyone reading older material: `--no-verify` was routine here precisely because
@@ -987,7 +993,7 @@ is no longer the accurate phrasing anywhere it appears — the accurate phrasing
 
 Two refusals guard the staging step, and because they guard it they run exactly where the gate runs
 — when code would commit **and** this checkout carries
-`mcp/src/agents_remember/code_quality/check.py`. They are **not** closeout-wide preconditions: a
+`mcp/test_support/agents_remember_test_support/code_quality/check.py`. They are **not** closeout-wide preconditions: a
 consuming repository with no wrapper runs no gate, is not staged early, and reaches the ordinary
 commit step's own `git add -A` exactly as before; the preview reports that as `wrapper-unavailable`.
 Where the gate does run, closeout refuses **before staging anything** when
@@ -1088,8 +1094,8 @@ the derived test subset, coverage/CRAP/radon over changed production modules, ch
 Full mode (ruff, ruff-format, pyright, pytest+coverage, CRAP, diff-coverage) runs exactly once per
 master at integration altitude. Both modes require the exact task-derived diff base and candidate
 bundle, and generated Dagger help is the public function contract. The exported
-`clean-quality-results.json` is the one acceptance result. Host pytest and direct wrapper execution
-are refused with no fallback; Python, Playwright, and changed-lines CLI execution fail closed
+`clean-quality-results.json` is the one acceptance result. Host pytest is refused with no fallback,
+and Candidate A's direct Python wrapper is absent; Python, Playwright, and changed-lines CLI execution fail closed
 without the graph's matching nonce and in-container attestation. Direct targeted Vitest
 unit/component execution is supported diagnostic-only feedback and cannot satisfy this ladder.
 `memory_quality_check`
@@ -1214,21 +1220,31 @@ The committed package layout mirrors those owners: public adapters are under `ap
 | Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:155-225 |
 | Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-132 |
 
-## 260824-PDLS — Two Python Test Altitudes
+## 260824-PDLS — Python Evidence Altitudes
 
-The repository now exposes one bounded direct Python diagnostic command,
-`./scripts/test-python <exact-node>...`, alongside the unchanged lifecycle-owned Dagger acceptance
-graph. The direct route is structural, fail-closed, serial, limited to eight exact nodes, and
-permanently non-certifying. Its seven-node population and complete reviewed closure are sealed by
-content hashes; expanding it is an explicit review, not analyzer output. The same master also
-establishes a durable evidence lifecycle/cadence catalog, product-only Coverage/CRAP, one
-dependency-ownership graph for selection and retry, and owner-level causal failure localization.
-Its package route is documented at
-`onboarding/mcp/src/agents_remember/testing/overview.md`; durable workflow guidance is in
-`system/tools.md`. Raw host pytest, direct coverage, and the quality wrapper remain prohibited.
+The repository has one pinned Dagger environment for Python investigation and lifecycle acceptance.
+Candidate A's host command, sealed cohort, static closure analyzer, and self-proof were removed
+after representative exact-candidate measurement failed to earn their maintenance cost. Its seven
+unique product assertions remain ordinary explicit-lane pytest regressions and form the pure cohort
+inside the non-accepting representative measurement route. The same master establishes a durable
+evidence lifecycle/cadence catalog, product-only Coverage/CRAP, one dependency-ownership graph for
+selection and retry, and owner-level causal failure localization. Its package route is documented
+at `onboarding/mcp/test_support/agents_remember_test_support/testing/overview.md`; durable workflow
+guidance is in `system/tools.md`. Host pytest, direct coverage, and the quality wrapper remain
+prohibited, with no compatibility fallback.
 
 ## Update History
 
+- 2026-08-28T10:03:40+02:00 — Reconciled the repository-wide quality summary with Candidate A's
+  deletion: Python investigation remains Dagger-owned and no direct wrapper/compatibility route exists.
+
+- 2026-08-28T05:10+02:00 — Replaced the obsolete two-route description with measured Candidate A
+  retirement, ordinary preservation of its seven assertions, and one Dagger Python environment.
+- 2026-08-27T22:15+02:00 — Clarified attempt-journal recovery: malformed rows before review are
+  preserved non-attempt corrections; handed-off rows require independent rejection.
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 task-workflow impact: separated formal review-handoff
+  attempts from internal protocol events and replaced repeated evidence bodies with lightweight
+  content-addressed journal records; summaries remain non-gating.
 - 2026-08-26T15:20+02:00 — No route impact: the IAS ledger-history repair changes MCP worktree
   lifecycle semantics only; root repository ownership and routing remain unchanged.
 
@@ -1424,7 +1440,7 @@ Its package route is documented at
   `unittest` class under `mcp/tests/`, which `[tool.pytest.ini_options] testpaths` declares as the
   suite root, so it runs in the quality wrapper's pytest step — `.githooks/pre-push` (`_gate.sh full`),
   worktree closeout, and `.github/workflows/quality-checks.yml`'s
-  `python -m agents_remember.code_quality.check`. **Kept both honest limits rather than trading one
+  `python -m agents_remember_test_support.code_quality.check`. **Kept both honest limits rather than trading one
   overclaim for another:** CI still never invokes `--check` (verified — the only `sync-*` string under
   `.github/workflows/` is a comment), so the enforcement is via pytest, not a workflow step; and there
   is **no completeness assertion on `sync-skills.TARGETS`**, so a tenth mirror added without
@@ -2372,7 +2388,8 @@ L23 makes the pinned clean-Ubuntu Dagger graph the repository's only acceptance 
 closeout selects targeted mode exactly once before creating the leaf commit; leaf integration and
 series closeout do not rerun it. Master integration selects full mode exactly once. Both require
 an explicit diff base, and generated help documents source, bundle, base, mode, and cap. Host
-pytest, Playwright, changed-lines CLI, and direct-wrapper execution refuse outside Dagger. Direct
+pytest, Playwright, and changed-lines CLI execution refuse outside Dagger; no direct Python wrapper
+exists after Candidate A retirement. Direct
 targeted Vitest unit/component runs are supported as non-certifying diagnostics. Both Dagger paths
 publish self-overwriting progress and result artifacts under the worktree enclosure; the clean
 environment mounts neither a Docker socket nor WSL's Windows command paths. GitHub runs a separate
@@ -2384,8 +2401,8 @@ pull-request-only deterministic non-test check; ordinary pushes launch no duplic
 - The MCP package tests under `mcp/tests` cover `c-08-ar-coordination-context-resolver` skill, `c-02-memory-quality-control` skill, `c-09-git-worktree-manager` skill, ledger, contract, provider, benchmark, runtime install, and skills install behavior through package modules.
 - `system/sources.md` registers `docs/design/` as the Domain Documentation routing index (added when
   `docs/design/` was brought into onboarding scope, slice 05k). `system/tools.md` records the same
-  targeted-Vitest diagnostic-only boundary and keeps pytest, Playwright, changed-lines, the direct
-  wrapper, and acceptance Dagger-only.
+  targeted-Vitest diagnostic-only boundary and keeps pytest, Playwright, changed-lines, and
+  acceptance Dagger-only; it also records that Candidate A's Python wrapper is absent.
 
 ## Key Invariants
 

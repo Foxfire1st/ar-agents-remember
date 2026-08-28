@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/tests/test_gated_integration_runner.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-07-31T15:32+02:00                       |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`   |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -86,9 +86,9 @@ registers it in `sys.modules` before executing it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner under test: `PATHS`, `BY_NAME`, `write_settings`, `child_environment`, `readiness`, `verify_passed`, `pytest_command`. | `PATHS`; `write_settings`; `verify_passed`; `readiness` | scripts/run-gated-integration.py:76-173; scripts/run-gated-integration.py:203-221; scripts/run-gated-integration.py:282-307; scripts/run-gated-integration.py:310-314 |
-| Where the eight markers are registered. | "ar_run_pi_rpc_smoke: opt in with AR_RUN_PI_RPC_SMOKE=1" | pyproject.toml:197-207 |
-| The PR-workflow refusal proof scans all workflow YAML for the retired host runner and pytest spellings. | `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` | mcp/tests/test_gated_integration_runner.py:137-146 |
-| The complementary registry check: markers reconciled against the suite's real `AR_*` environment gates. | `test_registered_markers_and_the_suite_environment_gates_agree` | mcp/tests/test_code_quality_check_scope.py:253-261 |
+| Where the eight markers are registered. | "ar_run_pi_rpc_smoke: opt in with AR_RUN_PI_RPC_SMOKE=1" | pyproject.toml:218-218 |
+| The PR-workflow refusal proof scans all workflow YAML for the retired host runner and pytest spellings. | `test_github_pr_checks_do_not_bypass_dagger_for_gated_pytest_paths` | mcp/tests/test_gated_integration_runner.py:148-155 |
+| The complementary registry check: markers reconciled against the suite's real `AR_*` environment gates. | `test_registered_markers_and_the_suite_environment_gates_agree` | mcp/tests/test_code_quality_check_scope.py:315-323 |
 
 ## R39 Credential And Environment Proofs
 
@@ -96,14 +96,18 @@ The runner tests rename CI-safe/local-only categories to credential-free/vendor-
 prove the two credential-free selectors exactly. They also forbid GitHub workflows from invoking
 the gated pytest runner, preserving Dagger as the only test-capable environment.
 
-## 2026-08-26 Fitness Ownership Reconciliation
+## 2026-08-28 Fitness Ownership Reconciliation
 
-The suite now proves that `fitness` is owned by the canonical evidence-lane catalog, carries
-authority there, and is absent from both ordinary pytest marker declarations and the gated
-integration runner's environment-dependent path table. This prevents the same category from
-having two selection authorities.
+The suite now distinguishes the explicit lane marker `evidence_fitness` from the legacy ordinary
+pytest selector `fitness`. `evidence_fitness` is owned only by the lane registry and is absent from
+both ordinary marker declarations and the gated integration runner. The legacy `fitness` marker may
+remain registered for ordinary selection, but neither spelling is an environment-gated runner path.
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: corrected the fitness account to distinguish
+  canonical `evidence_fitness` lane ownership from the retained legacy `fitness` selector without
+  giving either one gated-runner authority.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled fitness ownership to the evidence-lane catalog and removed the obsolete ordinary-marker assumption.
 - 2026-08-14T11:27+02:00 — R39 curator: reconciled category semantics and GitHub no-pytest

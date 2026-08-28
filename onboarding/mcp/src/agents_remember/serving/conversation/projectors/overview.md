@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-07T23:35:00+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-28T14:15+02:00 |
+| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## What This Area Is
 
@@ -307,6 +307,10 @@ filled in**. Nothing is guessed; absent evidence stays absent.
 The per-harness mapper grammars now import the wire contracts from `models/conversations/` after the L9 monolith split; the projection readers they depend on moved to `serving/projections/`. Mapping behavior is unchanged.
 
 ## Update History
+
+- 2026-08-28T14:15+02:00 — Closeout-stamped the already documented Claude structured-interaction,
+  interrupt-correlation, and focused mutation-diff parsing changes against the landed candidate;
+  malformed vendor input remains preserved rather than guessed.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
 

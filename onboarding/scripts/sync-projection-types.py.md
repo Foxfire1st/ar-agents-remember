@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `scripts/sync-projection-types.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `check` (lines 43-51). | `check` | scripts/sync-projection-types.py:43-51 |
 | Defines the function `main` (lines 54-65). | `main` | scripts/sync-projection-types.py:54-65 |
 
+## PDLS Wave 005 Current Delta
+
+The script now adds both `mcp/src` and `mcp/test_support` to its explicit import path, then imports
+the projection generator from its verification owner. This preserves the repository script entry
+point without shipping test-evidence machinery as product runtime code.
+
 ## Update History
 
+- 2026-08-28T06:40+02:00 — Routed projection synchronization through the dedicated verification
+  package with both source roots declared explicitly.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

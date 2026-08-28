@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 
 ### Logic
 
-The tests import `agents_remember.code_quality.check` from `mcp/src` and use a
+The tests import `agents_remember_test_support.code_quality.check` from `mcp/src` and use a
 fake command runner to avoid launching Ruff, Pyright, Radon, or pytest subprocesses
 during unit tests. The fake runner records command composition and writes a
 synthetic coverage JSON report for the pytest step so the real
@@ -96,9 +96,10 @@ shrink-only baseline and then — on the developer's correction — refactored o
   baselines, grandfather lists and burn-down schedules are all forbidden. This test is what
   stops them coming back.
 
-### PLR0913's One Exemption (260731-EFA-L2)
+### PLR0913's One Exemption Moved To Its Owning Suite
 
-`ToolSignatureExemptionTests`. `PLR0913` is armed, and 163 parameter objects were
+`ToolSignatureExemptionTests` now lives in
+`test_code_quality_tool_signature_exemption.py`. `PLR0913` is armed, and 163 parameter objects were
 introduced so 274 of 293 long signatures could be fixed by extraction. The 19 that remain
 are `@server.tool()` declarations under `mcp/src/agents_remember/mcp/registration/`, where
 FastMCP derives the tool's **published JSON input schema** from the Python signature —
@@ -205,16 +206,16 @@ strictness switches, `python_classes` covering the `*Tests` house convention, an
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | `quality_steps`, `testpaths` | mcp/src/agents_remember/code_quality/check.py:335-381; mcp/src/agents_remember/code_quality/scope.py:111-111 |
-| The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/src/agents_remember/code_quality/diff_coverage.py:30-30; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317; mcp/tests/test_diff_coverage.py:570-585; mcp/tests/test_diff_coverage.py:629-659 |
-| CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/src/agents_remember/code_quality/crap_calculator.py:232-239; mcp/src/agents_remember/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`, `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_check.py:556-569; pyproject.toml:34-38 |
-| The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:67-70 |
-| The pytest configuration this suite reads. | `testpaths` | pyproject.toml:119-119 |
+| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | "def quality_steps("; "def derive_scope("; "def pytest_testpaths(" | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168; mcp/test_support/agents_remember_test_support/code_quality/scope.py:180-189; mcp/test_support/agents_remember_test_support/code_quality/scope.py:417-440 |
+| The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:31-31; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:295-295; mcp/tests/test_diff_coverage.py:588-588; mcp/tests/test_diff_coverage.py:647-647 |
+| CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:232-239; mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:294-305 |
+| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`; `test_every_function_in_the_exempted_path_is_a_published_tool_declaration`; "mcp/src/agents_remember/mcp/registration/*.py" | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_tool_signature_exemption.py:60-70; pyproject.toml:24-38 |
+| The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:71-71 |
+| The pytest configuration this suite reads. | `testpaths` | pyproject.toml:128-128 |
 | An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`; `test_python_product_coverage_and_test_execution_reach_their_owners` | mcp/tests/test_gate_scope.py:157-178; mcp/tests/test_gate_scope.py:180-202 |
 | The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
 | CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:7-7 |
-| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:81-137 |
+| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:80-136 |
 
 ### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
 
@@ -257,12 +258,15 @@ into the pytest step.
 
 ## Evidence-Lifecycle Rail
 
-The fixed quality command now runs `agents_remember.testing.evidence_lifecycle` as an enforcing
+The fixed quality command now runs `agents_remember_test_support.testing.evidence_lifecycle` as an enforcing
 step before pytest. The suite pins both command order and rail classification: lifecycle-evidence
 validation is neither an optional Radon-style report nor an out-of-band check. Adding the step
 shifts the pytest command index, which the wrapper assertion tracks explicitly.
 
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled quality-orchestration test citations against the committed
+  PDLS candidate after final test movement and naming changes.
 
 - 2026-08-26T10:44:52+02:00 — Added forcing for the enforcing evidence-lifecycle rail and its position in the fixed quality command sequence.
 

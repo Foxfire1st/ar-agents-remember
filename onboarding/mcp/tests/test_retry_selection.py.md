@@ -1,0 +1,79 @@
+# mcp/tests/test_retry_selection.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_retry_selection.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
+
+## Purpose
+
+Focused pure regression proof for the dependency-owned retry-selection pytest hook.
+
+## Code Commentary
+
+### Logic
+
+The first positive case supplies two collected items and one explicit affected module, then proves
+the hook retains only that item and reports the other through `pytest_deselected`. The second
+records a passing Pytest collection report for a zero-body shared-definition module and proves
+that this exact observed module is valid without executing an unrelated body. The refusal case
+proves empty configuration, parent-directory escape, and a genuinely uncollected module all fail
+loudly.
+
+### Conventions
+
+- Tests invoke the hook directly with typed mocks; they do not create a second pytest route.
+- The file is explicitly classified as `unit-regression` in the lane manifest.
+
+### Invariants And Boundaries
+
+- A green test proves exact partition/refusal logic, not Dagger retry persistence or acceptance.
+- The zero-body case must supply Pytest's passing collection report; touching a file alone is not
+  evidence that Pytest collected it.
+- The real retry matrix remains the forcing proof for wrapper integration and coverage reuse.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured for this repository-owned unit contract.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation was configured. | — | — |
+
+## Repo-Internal References
+
+The implementation and explicit lane declaration are the load-bearing same-repository owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The hook narrows executable items after canonical collection and distinguishes passing zero-body collection from an absent path. | `pytest_collectreport`; `pytest_collection_modifyitems`; `_refuse_uncollected_paths` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:47-119 |
+| The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes. | `test_retry_selection_keeps_only_explicit_affected_modules`; `test_retry_selection_accepts_successfully_collected_zero_body_modules`; `test_retry_selection_rejects_missing_or_escaping_population` | mcp/tests/test_retry_selection.py:12-71 |
+| The suite has explicit unit-regression membership. | "mcp/tests/test_retry_selection.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
+
+## Cross-Repo References
+
+No meaningful cross-repository boundary is involved.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Temporary paths and mocks remain local to the test process. | — | — |
+
+## Update History
+
+- 2026-08-27T21:10+02:00 — Added the zero-body module forcing case and retained the distinct
+  missing/uncollected-path refusal.
+- 2026-08-27T17:19+02:00 — Created with positive exact-selection and fail-closed path/refusal
+  coverage. Verification metadata remains empty until governed closeout stamps the code commit.

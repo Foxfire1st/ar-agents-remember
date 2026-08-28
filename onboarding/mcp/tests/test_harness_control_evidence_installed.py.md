@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_evidence_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,6 +100,10 @@ boundaries.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — No content impact: extracted the exact Claude fixture path into one
+  literal constant so lifecycle consumer discovery can observe it; installed-runtime evidence and
+  assertions are unchanged.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 removed broad process-error skipping from the installed evidence probe; only missing executables skip, while a selected but unusable runtime fails the opted-in proof.
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the unavailable-harness

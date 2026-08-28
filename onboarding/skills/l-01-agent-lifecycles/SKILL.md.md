@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T04:32+02:00 |
-| lastVerifiedCommitHash | `20cfd54cb0a3d425424afdfbb6d8c97f669cdcc4` |
-| lastVerifiedCommitDate | 2026-08-15T05:12:01+02:00|
+| lastUpdated | 2026-08-28T14:18+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,34 @@ Continuity lives in task documents and durable artifacts rather than transcripts
 occupant. The agent-notifier relays mechanical facts; owners interpret them without seat-local
 watchers or an escalation ladder. Role files own the detailed loops and authority limits.
 
+Requirement acceptance is upstream and revision-exact: approved requirements live in immutable,
+version-addressed canonical packets carrying their durable corpus ruling. Managers, workers, and
+reviewers refuse an absent, unapproved, or mismatched packet instead of reconstructing intent from
+task prose or accepting an aggregate completion claim.
+
+Requirement acceptance is an exact-set contract keyed by stable IDs. The owner gives the same
+applicable set to worker and reviewer. The worker supplies one delivery/verification evidence
+envelope per ID, while the reviewer independently inspects the cited artifacts and adjudicates
+each ID. Aggregate prose cannot close a requirement, and any rejection prevents an overall pass.
+
+Semantic requirement versions, delivery attempts, and internal protocol events are separate.
+Semantic versions change only through explicit developer approval. The worker advances an attempt
+only when handing an exact candidate to independent review, or after reviewer rejection when
+handing off a successor. Internal implementation/test/evidence reruns remain separate events with
+candidate, command, result, failure cause, repair, and expected next proof.
+
+Each worker attempt is an immutable lightweight requirement-specific record bound to the exact
+candidate and a content-addressed expanded-evidence anchor; it does not duplicate the complete
+master acceptance corpus or protocol log. The reviewer appends an independent record without
+modifying it. Rejection creates a linked successor at the next review handoff. Accepted attempts
+reopen only after independent regression proof plus owner-recorded bounded invalidation, or after a
+developer-approved semantic revision.
+
+Detailed leaf records are authority. The master summary is rebuilt from them and exposes attempts,
+rejections, current state, and dominant open failure class only for observation; it cannot gate or
+lock task authoring, lifecycle, closeout, integration, or queue operations, and it never counts the
+separate protocol events as delivery attempts.
+
 ## Conventions
 
 - `skills/l-01-agent-lifecycles/` is canonical. Package and harness trees are synchronized outputs.
@@ -50,6 +78,10 @@ watchers or an escalation ladder. Role files own the detailed loops and authorit
 - Durable artifacts, delegated authority, and human-only gates retain their owning altitudes.
 - The three-party loop separates builder work, independent review, curator coherence, and owner
   decision; verdicts are evidence rather than gate decisions.
+- The durable-evidence stable-contract-or-expiry hold point remains separate from the per-ID
+  acceptance envelope; neither can substitute for the other.
+- Worker/reviewer attempt records are append-only and bind one exact candidate; summaries never
+  substitute for them or invalidate accepted work.
 
 ## Docs References
 
@@ -67,7 +99,10 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
 | The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
 | Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:177-190 |
-| Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:313-313 |
+| Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:408-408 |
+| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:243-264 |
+| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes." | skills/l-01-agent-lifecycles/SKILL.md:266-307 |
+| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:309-313 |
 
 ## L23 Dispatch Admission
 
@@ -88,7 +123,43 @@ The quality altitude follows those two natures without duplication: each leaf re
 change-set-scoped acceptance at closeout, and each completed organizational or atomic master
 receives one full check against the exact candidate before its super ref moves.
 
+## 2026-08-27 Attempt Boundary Clarification
+
+Attempt publication is phase-sensitive: validate before append, and treat append plus the exact
+review handoff as one formal boundary. A malformed row that never reached review is preserved by a
+non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
+independent reviewer rejection permits a successor.
+
 ## Update History
+
+- 2026-08-28T14:18+02:00 — Reconciled lifecycle-router citations against the committed PDLS
+  candidate after the final role-routing wording settled; behavior is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
+  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
+  the source-specific worker/reviewer/manager/curator boundary.
+
+- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
+  reviewer rejection and successor lineage.
+
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: delivery attempts now advance only at review handoff or
+  after rejection; internal protocol events remain separate, and lightweight records link frozen
+  expanded evidence instead of duplicating the master corpus.
+- 2026-08-27T19:59+02:00 — M42 clarification: distinguished pre-adjudication candidate replacement
+  from unrelated post-acceptance candidate movement, which cannot silently reopen accepted work.
+- 2026-08-27T18:06+02:00 — M40-M45: documented immutable worker/reviewer attempt lineage, exact
+  candidate binding, the closed failure taxonomy, owner-recorded bounded regression invalidation,
+  and leaf-authoritative/rebuildable non-gating summary semantics.
+- 2026-08-27T14:04+02:00 — Clarified M39's revision authority: approved packets are immutable,
+  version-addressed, and carry the durable corpus ruling consumed by every downstream seat.
+- 2026-08-27T13:32+02:00 — M39@v1: recorded the upstream requirement-compilation gate and exact
+  ID + version propagation into acceptance. Canonical packets and developer corpus approval now
+  precede task topology. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: documented the mandatory per-requirement worker envelope,
+  independent reviewer adjudication, exact stable-ID set, and separate durable-evidence hold
+  point. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
 - 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented fact-versus-judgment ownership,
   architect-owned plan review, organizational/atomic lineage, and the pre-landing full-master gate.
   Verification remains closeout-owned.

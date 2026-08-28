@@ -1,45 +1,61 @@
-# PDLS Onboarding Maintenance Handoff
+# PDLS Verification-Ownership Onboarding Maintenance Handoff
 
-## Completed Scope
+## Status
 
-The exact PDLS candidate has one-to-one onboarding for all 107 changed source units: 69 new
-sidecars and 38 body-refreshed sidecars. The unchanged dashboard snapshot sidecar was also refreshed
-because its documented consumer contract changed. Seven new route-local overviews explain the application
-lifecycle, Python quality, closeout projection models, test infrastructure, closeout recovery,
-legacy bridge, and enclosure-root lifecycle journal. The integration parent overview now routes to
-its three new child pillars.
+This handoff supersedes the earlier pre-review claim that PDLS onboarding was structurally final.
+The independent review reopened the implementation, and the source ownership model changed during
+remediation. Verification provenance remains intentionally blank until the candidate is committed
+and closeout can stamp the real code commit.
 
-## Import-Fanout Result
+## Applied Delta
 
-The certifying plugin is documented at its new package-root owner. The testing package initializer
-is explicitly documentation-only, and the testing overview records the rule against convenience
-re-exports. This preserves the measured distinction between no literal layering cycle and the
-repaired eager bootstrap fan-out.
+Python quality and pytest infrastructure moved from operational product authority at
+`mcp/src/agents_remember/{code_quality,testing}` to the explicit verification package at
+`mcp/test_support/agents_remember_test_support`. The certifying pytest bootstrap moved with it.
+No compatibility sidecars or duplicate route overviews remain at the retired source route.
 
-## Validation State
+Three route-local overviews now govern the verification root, quality producer, and test/evidence
+infrastructure. Their file cards document:
 
-Content reconciliation and zero-missing-sidecar census are complete. Exact-candidate structural
-validation reports zero findings and zero absolute-path leaks, and its 72 route indexes are all
-current with no stale index. Memory-quality validation remains the final curator check; the review
-file records the official-branch-only findings against the uncommitted candidate boundary.
+- exhaustive product-versus-verification package authority;
+- static checks over both authorities and behavioral scoring over product only;
+- explicit exhaustive evidence lanes with no unmarked-unit default;
+- source-derived dependency/plugin/consumer facts with lifecycle declarations as a cross-check;
+- a 34-artifact lifecycle catalog with real owner/node contracts;
+- exact-node causal suppression with same-file independent execution;
+- persistent, integrity-bound retry proof in the locked Dagger cache on the actual CI route; and
+- diagnostic, cadence, retry, causal, and route-measurement evidence as non-accepting.
 
-The first scan exposed 235 genuinely malformed evidence-table rows; those were repaired to the
-canonical anchored citation schema. The latest repeat scan reports 78 drift findings, 284
-claim-reopen findings, and 212 range/provenance findings. The increase reflects the refreshed
-dashboard cards and their intentionally blank pre-commit verification metadata; the official code
-checkout still cannot see candidate-only sources. These are one boundary expressed three ways: the sanctioned direct master is uncommitted,
-its new or changed source exists only in the candidate checkout, and onboarding therefore correctly
-has no `lastVerifiedCommitHash`. Closeout must replace that boundary with real commit provenance;
-candidate curation must not stamp the unchanged base commit over changed bytes.
+The Dagger quality graph now separates reusable candidate construction from attempt state. Pinned
+image/dependency setup, exact candidate reconstruction, and the editable install form the stable
+base; retry cache, nonce, attestation, and report destinations bind only afterward. A focused graph
+test refuses any attempt-specific cache or environment input before the editable install, preventing
+identical evidence candidates from rebuilding multi-gigabyte setup layers for each nonce.
 
-The final dashboard-gate repair removed a redundant exhaustive enum-sampling assertion instead of
-adding six ceremonial full enclosure rows to the shared fixture. The refreshed contract-test and
-snapshot onboarding now state the resulting authority split: generated schema/codegen owns complete
-producer vocabularies; the representative payload owns path reachability and legality of sampled
-values.
+## Structural Census
 
-## Closeout Boundary
+The moved route contains 50 current Python source files and exactly 50 file-level onboarding
+sidecars. The retired product routes contain zero matching source files and zero onboarding
+sidecars. Wave 005 also supplies the six previously missing focused test sidecars and file cards
+for cadence, causal localization/preflight, evidence lanes/lifecycle, and route measurement. The
+deterministic route-index generator must be refreshed after that delta, and a repeat dry run must
+report zero stale indexes before closeout.
 
-Automated bootstrap ends at this handoff. Code/memory commits, verification stamps, entity
-fingerprints, ledger alignment, closeout, push, and integration remain separate and require their
-normal authority. The final full Dagger master gate belongs to L12 after curation is green.
+## Remaining Candidate Boundary
+
+This maintenance pass does not assert that the master is accepted. v21 is historical because two
+stale source comments were corrected during cold read; the successor identity is frozen only after
+this memory pass is clean. Candidate-specific measurements,
+rollback proof, the frozen-finding delta review, and the final exact-candidate Dagger gate remain in
+the PDLS task reports. Closeout must stamp the resulting code commit, run the memory-quality gate,
+align the ledger, and preserve the review's historical process violations rather than rewriting
+them as green.
+
+## Update History
+
+- 2026-08-28T06:40+02:00 — Corrected the lifecycle inventory to 34 artifacts, completed the six
+  missing focused test cards, and recorded v21 as historical pending the successor freeze.
+- 2026-08-28T02:38+02:00 — Added the verified Dagger candidate-base/attempt-binding boundary that
+  stopped nonce-specific evidence runs from invalidating identical dependency and source setup.
+- 2026-08-27T11:14+02:00 — Replaced the obsolete pre-review handoff with the explicit
+  verification-ownership, lane, retry, lifecycle, causal, and generated-index delta.

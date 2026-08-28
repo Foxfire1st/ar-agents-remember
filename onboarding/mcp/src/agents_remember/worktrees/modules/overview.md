@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -106,7 +106,7 @@ replaying completed irreversible steps.
 
   **Since 260731-EFA-L1 the gate is not scoped to one repository.** The deciders take the code
   worktree `Path` and gate on whether that checkout carries
-  `mcp/src/agents_remember/code_quality/check.py`; the old `repo_name == "agents-remember"`
+  `mcp/test_support/agents_remember_test_support/code_quality/check.py`; the old `repo_name == "agents-remember"`
   condition made the gate a no-op for every consuming repository — the product's actual audience —
   while the product documented it as mandatory. The preview now reports one of three statuses:
   `enforced`, `no-code-commit`, or `wrapper-unavailable`. The last is deliberately *reported*

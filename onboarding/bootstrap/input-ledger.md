@@ -10,12 +10,17 @@
 | domain documentation | none configured |
 | cross-repository sources | none allowed |
 | operator decision | proceed; end-to-end master completion was explicitly authorized |
+| extendedAt | 2026-08-28T06:40+02:00 |
 
 ## Authoritative Inputs
 
 The exact IAS working candidate, the approved 104-item PDLS requirement/rationale surface, the
 PDLS reconciliation and Dagger reports, and existing onboarding are authoritative. Existing prose
 supplies historical context but cannot override current source behavior.
+
+The reopened independent-review requirement corpus, approved M33-M45 process controls, Q5-Q8
+protocol-event reports, and current working source supersede any earlier claim that the original
+candidate was final. Semantic requirements still change only through durable developer approval.
 
 ## Source Inventory Delta
 
@@ -29,6 +34,18 @@ supplies historical context but cannot override current source behavior.
 The moved certifying plugin is preserved as a one-to-one onboarding move in meaning: the old
 testing-package route had no sidecar to preserve, so the current root module receives the first
 canonical sidecar and the testing overview records why no compatibility facade remains.
+
+## Reopened Remediation Inventory
+
+The current path-rule audit covers 157 logical eligible changes: 146 added, modified, or moved
+current targets plus 11 deleted logical paths. The no-rename filesystem view additionally exposes
+35 old move paths and therefore reports 46 deletions. Three deleted Claude JSONL fixtures are not
+eligible under the current extension allowlist, but their pre-existing sidecars are deliberately
+removed rather than left stale. Together these form the 160 curation outcomes for this extension.
+
+Every current changed eligible source has a changed sidecar. The dedicated verification package
+has 50 Python sources and 50 sidecars. Six previously missing focused test sidecars and their six
+file cards are added in wave 005; no source or memory unit is deferred.
 
 ## Coverage Boundary
 

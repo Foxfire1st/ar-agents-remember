@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-12T21:39+02:00               |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -311,6 +311,8 @@ cleanup-race fix without converting late worker-thread failure into the public
 cancellation result.
 
 ## Update History
+- 2026-08-28T06:40+02:00 — No content impact: removed the unused `FIXTURE_DIR` constant; serving
+  behavior and the surviving fixture owners documented above are unchanged.
 - 2026-08-12T21:39+02:00 — L23 curator follow-up: documented the complementary drain-failure forcing case: a blocked `_tick_sync` raises after cancellation, the late failure is logged, and `CancelledError` remains public. The owner reports the drain-success, drain-failure, and crashed-watcher cases green 3/3. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented drain-before-cancellation coverage for projector threads; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

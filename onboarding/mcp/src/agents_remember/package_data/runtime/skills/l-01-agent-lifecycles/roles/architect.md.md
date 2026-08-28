@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,9 @@ plan, examples before risky change, and an implementation plan derived from the 
 rather than substituted for them.
 
 ### Logic
+
+The synchronized architect contract keeps semantic revision under explicit developer approval and
+keeps internal repair/test runs as protocol events until an exact candidate is handed to review.
 
 The packaged architect lifecycle now arrives as a sprint-local command seat launched by free chat.
 Its backend spool-up is scoped to the same repository+sprint binding, so decision custody and
@@ -122,8 +125,8 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-306 |
 | Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:33-33 |
-| Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:51-88 |
-| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:115-115 |
+| Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:95-132 |
+| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:159-159 |
 | The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:99-99 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
@@ -191,7 +194,29 @@ For sprint attachment, membership and typed rows are always equal, while graph-n
 conditional on an existing graph; the Event Routing shorthand repeats that condition and the
 nature-ruling requirement. No mandatory-graph runtime or compatibility route is introduced.
 
+The synchronized requirement compiler writes immutable version-addressed packets, records the
+durable corpus ruling in every approved packet, and creates a new packet rather than overwriting an
+approved revision when semantics change.
+
+## M43 Requirement-Revision Authority Projection
+
+The packaged architect role now keeps ordinary repairs on delivery-attempt lineage and routes a
+verified requirement contradiction to developer-approved semantic revision. Worker/reviewer
+classification never rewrites the canonical packet.
+
 ## Update History
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2 revision-versus-attempt/event authority.
+
+- 2026-08-27T18:06+02:00 — M43: synchronized requirement-revision authority and attempt/version
+  separation from the canonical architect role.
+
+- 2026-08-27T14:04+02:00 — Clarified immutable packet addressing, packet-local corpus approval,
+  and new-file revision handling in the synchronized architect doctrine.
+- 2026-08-27T13:32+02:00 — M39@v1: added the architect-owned requirement-compilation gate before
+  any sprint/master/leaf topology, including clause splitting, canonical packets, fresh-agent cold
+  reads, developer corpus approval, one-primary leaf projection, and targeted version invalidation
+  plus rebriefing. Verification remains closeout-owned.
 
 - 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
   synchronized architect-role card.

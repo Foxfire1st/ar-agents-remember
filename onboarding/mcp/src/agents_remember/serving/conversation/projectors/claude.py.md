@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -151,7 +151,8 @@ None.
 ## Docs References
 
 The resolved `Domain Documentation` registry has no entries. The schema authorities named by the
-module — the stream-json fixtures, the Anthropic content-block grammar as parsed by this
+module — the surviving 2.1.210 turn/interaction fixtures and 2.1.217 interrupt fixture, the
+Anthropic content-block grammar as parsed by this
 repository's adapter, the installed 2.1.216 `command_lifecycle`/`rate_limit_event` contracts
 (the captured 3-state slash-command specimen is preserved as prior art for the later slash-command
 consumers), and the 2.1.220 sub-agent frame shapes (`parent_tool_use_id` sidechains, the
@@ -229,6 +230,12 @@ shape is still preserved, never guessed.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-28T06:27+02:00 — PDLS wave 005 curator: corrected the module-level schema provenance
+  after the unconsumed 2.1.207 fixture cohort was removed. The surviving locked authorities are
+  the 2.1.210 turn/interaction fixtures and the 2.1.217 interrupt fixture; no compatibility copy or
+  stale memory sidecar remains. Verification metadata stays pinned until closeout stamps the
+  landed code candidate.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

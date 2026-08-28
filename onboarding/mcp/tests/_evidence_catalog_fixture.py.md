@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_evidence_catalog_fixture.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ No external documentation governs this synthetic helper.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | One function writes complete current lifecycle metadata. | `write_synthetic_evidence_catalog` | mcp/tests/_evidence_catalog_fixture.py:1-50 |
-| Production validation owns the accepted schema. | `load_evidence_inventory` | mcp/src/agents_remember/testing/evidence_lifecycle.py:140-236 |
+| Production validation owns the accepted schema. | `load_evidence_inventory` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:140-236 |
 
 ## Cross-Repo References
 

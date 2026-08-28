@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -141,7 +141,7 @@ The README describes external memory in general terms, but this file-level onboa
 ## Current Gate Paragraph (260731-EFA-L1 tiering, 260731-EFA-L2 honesty, 260731-EFA-L17 ladder)
 
 The README's generated-copy section previously said "both hooks also run
-`python -m agents_remember.code_quality.check`". That was retired by L1's tiering, and L2
+`python -m agents_remember_test_support.code_quality.check`". That was retired by L1's tiering, and L2
 then corrected what each tier actually enforces. The public contract the README now
 states:
 
@@ -161,11 +161,11 @@ states:
   work use its targeted mode; the master integration gate runs its full mode exactly once. Both
   require the leaf/master's explicit Git diff base, and `dagger call quality --help` is the
   executable public argument contract.
-- Host `pytest` and direct wrapper invocations are refused. Deterministic non-test host checks are
-  feedback only, and a failed Dagger run never falls back to the host.
+- Host `pytest` is refused and Candidate A's direct wrapper no longer exists. Deterministic
+  non-test host checks are feedback only, and a failed Dagger run never falls back to the host.
 - Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
-  not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest,
-  changed-lines CLI execution, and the direct Python wrapper remain Dagger-attested.
+  not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest, and
+  changed-lines CLI execution remain Dagger-owned; there is no direct Python wrapper.
 - **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
   pushes do not duplicate it and GitHub does not run acceptance.
 - **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
@@ -208,18 +208,22 @@ full Dagger once. Direct pytest, Playwright, changed-lines CLI, and Python-wrapp
 refuse. Direct targeted Vitest is supported diagnostic feedback only. Retry proof is an internal,
 attested-Dagger optimization rather than a host acceptance path.
 
-## 260824-PDLS — Contributor-Facing Test Command
+## 260824-PDLS — Contributor-Facing Python Route
 
-The README now names `./scripts/test-python` as the bounded fast Python diagnostic route and keeps
-Dagger as the sole acceptance route. Direct Python admission is not inferred from test shape: every
-accepted node must be a member of `mcp/tests/python-direct-cohort.toml`, whose content hashes seal
-the reviewed file/symbol closure, local imports, effect disposition, and execution configuration.
-A non-member, unknown manifest fact, or changed audited path refuses the whole request before any
-node runs. Serial execution, non-certifying output, and zero-node-on-refusal behavior prevent a fast
-green result from being mistaken for closeout or integration evidence.
+The README now says that Python investigation and acceptance both execute in the pinned Dagger
+environment. Candidate A's host command, cohort manifest, static closure classifier, and self-proof
+were deleted after representative exact-candidate measurement failed to justify their cost. The
+seven unique product assertions remain ordinary explicit-lane pytest regressions. Non-accepting
+Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; direct targeted
+Vitest remains the only supported host test diagnostic.
 
 ## Update History
 
+- 2026-08-28T10:03:40+02:00 — Corrected the current contributor gate summary: host pytest refuses,
+  Candidate A's wrapper is absent, and no Python compatibility route remains.
+
+- 2026-08-28T05:10+02:00 — Reconciled the measured Candidate A retirement and preservation of its
+  unique assertions without a host compatibility route.
 - 2026-08-26T10:44:52+02:00 — Reconciled the contributor-facing diagnostic contract with the sealed direct-cohort manifest and fail-closed content-drift rules that replaced structural admission.
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS added the contributor-facing Python diagnostic boundary.

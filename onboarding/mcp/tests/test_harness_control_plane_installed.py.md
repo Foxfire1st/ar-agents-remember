@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_plane_installed.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |  `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -89,7 +89,7 @@ contract are the direct evidence.
 | The runtime fixtures recording (never enabling) the `control-plane/*` rows this suite captures. | "control-plane/interrupt-write-ack"; "control-plane/abort-write-ack"; "control-plane/interrupt-and-assets" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:94-137; mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:71-102; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:45-50 |
 | The client helpers driven against the live socket (`interrupt_control`, `read_operation_timeline`, asset-carrying submit, withdrawal). | "def withdraw_control_submission("; "def submit_control_prompt("; "def interrupt_control("; "opaque cursor coordinates are invalid in the operation timeline domain" | mcp/src/agents_remember/serving/harness_control_client.py:190-190; mcp/src/agents_remember/serving/harness_control_client.py:216-216; mcp/src/agents_remember/serving/harness_control_client.py:431-431; mcp/src/agents_remember/serving/harness_control_client.py:454-478 |
 | The contract-suite companion pinning the same seams over fake transports. | "Contract tests for the native control-plane substrate." | mcp/tests/test_harness_control_plane.py:1-45 |
-| The L0E installed-suite precedent for opt-in version-locked capture. | "LIVE_OPT_IN = \"AR_RUN_EVIDENCE_INSTALLED\""; "class CodexInstalledEvidenceTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_evidence_installed.py:64-64; mcp/tests/test_harness_control_evidence_installed.py:132-132 |
+| The L0E installed-suite precedent for opt-in version-locked capture. | "LIVE_OPT_IN = \"AR_RUN_EVIDENCE_INSTALLED\""; "class CodexInstalledEvidenceTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_evidence_installed.py:64-64; mcp/tests/test_harness_control_evidence_installed.py:133-133 |
 | The installed-version probe skips absent commands and executes selected commands strictly. | `_version_of` | mcp/tests/test_harness_control_plane_installed.py:96-105 |
 
 ## Cross-Repo References
@@ -101,6 +101,10 @@ No neighboring repository participates in this installed-runtime suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — No content impact: extracted the exact Claude fixture path into one
+  literal constant for source-observable lifecycle ownership; control-plane assertions are
+  unchanged.
 
 - 2026-08-12T08:41+02:00 — 260731-EFA-L20 narrowed the installed-runtime skip boundary: absent executables still skip, but a selected executable that cannot start or complete now fails the opted-in proof.
 - 2026-08-11T22:28+02:00 — 260731-EFA-L19 final curator pass: recorded the unavailable-harness

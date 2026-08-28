@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_single_owner_primitives.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T02:42:41+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007` |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,8 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 ## Update History
 
+- 2026-08-28T06:40+02:00 — No content impact: moved the single-owner verification import into
+  `agents_remember_test_support`; the primitive ownership census remains unchanged.
 - 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: added direct-import, module-alias,
   and relative-import forcing cases for `write_task_doc_batch`, so an unreviewed batch publisher
   cannot evade the task-document single-owner census.

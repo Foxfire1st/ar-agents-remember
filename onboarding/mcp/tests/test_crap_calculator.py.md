@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_crap_calculator.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T15:32+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Unit coverage for `agents_remember.code_quality.crap_calculator`: the CRAP formula, the
+Unit coverage for `agents_remember_test_support.code_quality.crap_calculator`: the CRAP formula, the
 join of Radon function complexity with Coverage.py data, file rollups, and table/JSON CLI
 rendering.
 
@@ -78,7 +78,7 @@ offender the branch coverage that would clear it, and returns `None` when no cov
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| CRAP-Calculator owns the formula, branch-arc attribution, Radon integration, the clearing-coverage inversion, and both renderings. | "class FunctionScore" | mcp/src/agents_remember/code_quality/crap_calculator.py:63-63 |
+| CRAP-Calculator owns the formula, branch-arc attribution, Radon integration, the clearing-coverage inversion, and both renderings. | "class FunctionScore" | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:63-63 |
 | The wrapper side: threshold enforcement, per-offender failure lines, and the no-exemption-file assertion. | `CodeQualityCheckTests` | mcp/tests/test_code_quality_check.py:38-165 |
 | `[tool.coverage.run] branch = true` — without it the reader refuses. | "[tool.ruff]" | pyproject.toml:1-1 |
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l6_diff_coverage_crap.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ L6 closeout coverage tests for CRAP offenders and the new CLI split helpers. The
 
 - `TestScopeReportingMain` covers generated, dashboard, randomized, untracked, hook-tier, and fixed-step command generation plus the error path.
 - `TestEslintResultFiles` covers missing executables, failure branches, and valid ESLint results.
-- `TestScopeReportingCoverage` covers scope-line derivation, push-update parsing, invocation descriptions, tsconfig inputs, and dashboard scope lines.
+- `TestScopeReportingCoverage` covers scope-line derivation, push-update parsing, invocation descriptions, tsconfig inputs, and dashboard scope lines. Its TypeScript cases include directory-form project references and prove that nested inputs resolve relative to the referenced project's own `tsconfig.json`.
 
 ## Repo-Internal References
 
@@ -34,6 +34,17 @@ This module defines the test classes cited below; each row points at the exact s
 | Defines the class `TestEslintResultFiles` (lines 141-177). | `TestEslintResultFiles` | mcp/tests/test_l6_diff_coverage_crap.py:141-177 |
 | Defines the class `TestScopeReportingCoverage` (lines 180-459). | `TestScopeReportingCoverage` | mcp/tests/test_l6_diff_coverage_crap.py:180-459 |
 
+## PDLS Wave 005 Current Delta
+
+The synthetic repository now declares product and verification package roots explicitly. This
+keeps CRAP and diff-coverage scope evidence bound to the same no-silent-classification contract as
+real repositories; an absent or ambiguous package role cannot be inferred as unit/product scope.
+
 ## Update History
 
+- 2026-08-28T11:32+02:00 — Added nested directory-form TypeScript project-reference forcing with
+  project-local input resolution.
+
+- 2026-08-28T06:40+02:00 — Added explicit product/verification package ownership to the CRAP
+  fixture and moved its verification helpers into `agents_remember_test_support`.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
-| lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
+| lastUpdated | 2026-08-28T12:21:21+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Behavioural suite for `agents_remember.code_quality.diff_coverage` — the **100% per-diff
+Behavioural suite for `agents_remember_test_support.code_quality.diff_coverage` — the **100% per-diff
 coverage floor** this leaf added. Every statement and branch arc on a changed line must be
 exercised, and the failure names each uncovered line rather than reporting a percentage.
 
@@ -74,6 +74,9 @@ hunk header is dropped rather than guessed at; non-Python changes are not collec
 
 ### `MeasurementTests` — the verdict
 
+The measurement cases include mixed-case coverage paths and require them to match the canonical
+repository-relative file, pinning Windows-safe case-insensitive identity without changing output paths.
+
 Statements and branches are scored **together**. An uncovered changed line is *named*, not
 only counted; an untaken branch on a changed line is named with its destination, and a
 branch that leaves the function is reported as an exit. A changed line carrying no
@@ -110,8 +113,8 @@ uncovered changed lines**.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/src/agents_remember/code_quality/diff_coverage.py:145-173; mcp/src/agents_remember/code_quality/diff_coverage.py:176-197; mcp/src/agents_remember/code_quality/diff_coverage.py:289-317 |
-| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/src/agents_remember/code_quality/check.py:59-61; mcp/src/agents_remember/code_quality/check.py:718-725; mcp/src/agents_remember/code_quality/check_cli.py:62-77 |
+| The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:145-173; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:176-197; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:289-317 |
+| The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/test_support/agents_remember_test_support/code_quality/check.py:99-99; mcp/test_support/agents_remember_test_support/code_quality/check_cli.py:64-64; mcp/test_support/agents_remember_test_support/code_quality/check_cli.py:73-73 |
 | The lifecycle-owned Dagger executor that carries the accepted candidate and diff base into the quality graph. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:112-193 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-71 |
 | The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:439-507 |
@@ -122,6 +125,13 @@ Wrapper-integration configurations now receive the real test-session admission c
 coverage scoring is unchanged; diagnostic evidence cannot reach its measurement input.
 
 ## Update History
+
+- 2026-08-28T12:21:21+02:00 — Made the mixed-case identity proof independent of filesystem
+  case behavior: the real repository mutates its existing lowercase path while the coverage
+  report deliberately supplies the uppercase spelling. This directly exercises normalization
+  instead of relying on whether `Module.py` and `module.py` are distinct files.
+- 2026-08-28T11:32+02:00 — Added mixed-case coverage-path forcing for Windows-safe measurement
+  identity.
 
 - 2026-08-24T21:23+02:00 — Added the typed admission precondition to wrapper fixtures.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

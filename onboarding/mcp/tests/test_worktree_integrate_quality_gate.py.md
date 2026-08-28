@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -110,6 +110,9 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
 
+- 2026-08-28T06:40+02:00 — No content impact: synthetic integration repositories now place the
+  quality wrapper at its verification-package path; integration altitude and gate assertions are
+  unchanged.
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
 

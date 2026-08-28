@@ -77,8 +77,11 @@
       "IAS",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "accepted",
+      "rejected",
       "SKILL.md",
+      "### 4 \u2014 Per-Requirement Acceptance Envelope And Delivery Attempt",
+      "## Per-Requirement Independent Attempt Adjudication",
       "worktree_status",
       "sourceLineage",
       "current",
@@ -95,15 +98,12 @@
       "skills/l-01-agent-lifecycles/roles/manager.md",
       "skills/l-01-agent-lifecycles/roles/worker.md",
       "skills/l-01-agent-lifecycles/SKILL.md",
+      "skills/l-01-agent-lifecycles/roles/reviewer.md",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T08",
-      "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "SKILL",
-      "L23",
-      "R39"
+      "T07",
+      "lastVerifiedCommitHash"
     ]
   },
   "fallback": {

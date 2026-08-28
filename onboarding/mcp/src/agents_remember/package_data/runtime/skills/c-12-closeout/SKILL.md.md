@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-28T10:16:27+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -61,8 +61,9 @@ authority with an intent note, runs the package-local missing-onboarding gate,
 and runs the leaf change-set-scoped Dagger quality contract before any code, memory, ledger,
 contract, or applied-gate **commit**. The full Dagger graph is NOT a leaf gate: it runs once per
 master at the master integration gate. Every Agents Remember acceptance run requires the explicit
-task-derived diff base; generated Dagger help is the public argument contract. Host pytest and
-direct wrapper runs are refused and cannot replace or receive fallback from Dagger acceptance.
+task-derived diff base; generated Dagger help is the public argument contract. Host pytest is
+refused, and Candidate A's direct wrapper is absent rather than a replacement or fallback for
+Dagger acceptance.
 `memory_quality_check` stays a per-leaf closeout gate. The wrapper's CRAP threshold is
 mandatory by default: a function scoring at or above the
 configured threshold fails closeout.
@@ -72,7 +73,7 @@ before refusing, and an interrupted retry leaves the preceding completed result 
 is operational enclosure state, not content for either Git worktree, and cleanup/abandon removes
 it with the shared reports directory.
 That threshold is **`DEFAULT_CRAP_THRESHOLD = 20.0`**
-(`mcp/src/agents_remember/code_quality/crap_calculator.py`), not 30 — the skill body
+(`mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py`), not 30 — the skill body
 itself never names a number, it says "the configured threshold" throughout, and this
 card previously asserted 30. After that gate passes, closeout commits code, refreshes affected
 onboarding metadata, entity fingerprints, route
@@ -281,7 +282,7 @@ preconditions — a checkout carrying no wrapper runs no gate and neither refusa
 | The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:384-384 |
 | Both memory-order lists restate step 4 as reset + stage + the leaf targeted contract over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:235-274 |
 | The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:275-315 |
-| `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/src/agents_remember/code_quality/crap_calculator.py:37-37 |
+| `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:37-37 |
 
 ## Cross-Repo References
 
@@ -315,6 +316,9 @@ same journal-first recovery discipline. Raw Git, repeat-from-scratch, reports, s
 permanent compatibility readers are prohibited; legacy repair is an explicit bounded tool.
 
 ## Update History
+
+- 2026-08-28T10:03:40+02:00 — Reconciled the current closeout explanation with Candidate A
+  retirement; Dagger acceptance has no host Python wrapper or compatibility substitute.
 
 - 2026-08-26T14:32+02:00 — No closeout behavior impact: refreshed the c-09 relationship citation
   after its ledger-history doctrine correction. Verification remains closeout-owned.

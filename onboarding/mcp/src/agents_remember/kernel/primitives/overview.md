@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 
 ## What This Area Is
 
@@ -98,7 +98,7 @@ committed source-checkout release identity when package metadata is unavailable.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:90-108; mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:132-155 |
-| The layering rail enforces the total order this route anchors. | `load_contract` | mcp/src/agents_remember/code_quality/layering.py:62-62 |
+| The layering rail enforces the total order this route anchors. | `load_contract` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:62-62 |
 | Structural gate models import the producer-owned gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/structural/gates.py:15-20 |
 
 ## Cross-Repo References

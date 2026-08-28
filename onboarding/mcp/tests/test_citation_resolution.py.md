@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,5 +57,8 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `OffenderReportTests` (lines 283-301) — L6-R15: the message names every offender and the fix, or the check is unusable.. | `OffenderReportTests` | mcp/tests/test_citation_resolution.py:283-301 |
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — No content impact: moved the citation helper import and synthetic
+  out-of-range path to the verification package; grammar and refusal behavior are unchanged.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

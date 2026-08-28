@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pytest_bootstrap_boundaries.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,13 +16,17 @@
 
 ## Purpose
 
-Proves Dagger admission and hermetic bootstrap remain separate.
+Proves Dagger admission and hermetic bootstrap remain separate after Candidate A retirement and
+the verification package move out of product `src`.
 
 ## Code Commentary
 
 ### Logic
 
-The cases force the four-state authority matrix, candidate/Git/global isolation, diagnostic non-elevation, service deferral, and the no-eager-import boundary.
+The cases force opaque certifying authority, candidate/Git/global isolation, Candidate A artifact
+absence, service deferral, and the no-eager-import boundary. The hermetic child path contains both
+`mcp/test_support` and `mcp/src`, while importing the shared plugin remains free of Dagger/service
+side effects.
 
 ### Conventions
 
@@ -45,7 +49,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:1-237 |
+| No external domain source is required for this repository-owned test contract. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:43-43 |
 
 ## Repo-Internal References
 
@@ -53,7 +57,7 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:1-237 |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:43-43 |
 
 ## Cross-Repo References
 
@@ -61,9 +65,13 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:1-237 |
+| No meaningful cross-repository reference applies. | `VALID_NONCE` | mcp/tests/test_pytest_bootstrap_boundaries.py:43-43 |
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: replaced the obsolete four-state/direct-runner
+  account with Candidate A retirement, opaque certification, dual product/verification import
+  roots, and shared-plugin service deferral.
 
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

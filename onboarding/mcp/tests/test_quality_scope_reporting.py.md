@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -117,6 +117,10 @@ Radon and Coverage.py unit text now counts product Python files only; tests rema
 not measurement targets. CRAP mocks patch the canonical calculator module directly.
 
 ## Update History
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: reconciled scope reporting to the verification
+  package, explicit product/verification roots, dual `PYTHONPATH`, and the extracted Dagger
+  `quality_command.py` owner while preserving the single shared provenance path.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled scope reporting with canonical rail derivation, the evidence-lifecycle rail, and product-only measurement units.
 - 2026-08-24T21:23+02:00 — Added typed admission to quality configuration.

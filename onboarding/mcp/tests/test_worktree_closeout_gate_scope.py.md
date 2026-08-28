@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_gate_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,16 @@ diff base before returning its result. The closeout tests therefore cannot satis
 arbitrary green dictionary; created-file visibility and refusal assertions run against the same
 candidate-bound evidence shape production consumes.
 
+## PDLS Wave 005 Current Delta
+
+The closeout fixture now places its wrapper at the verification-package owner and declares product
+and verification roots explicitly. The exact staged-candidate invariant is unchanged; the fixture
+now also proves that quality scope is derived from declared ownership rather than a silent default.
+
 ## Update History
 
+- 2026-08-28T06:40+02:00 — Moved the quality wrapper to `mcp/test_support` and added explicit
+  package-role configuration to the synthetic closeout repository.
 - 2026-08-26T10:44:52+02:00 — Reconciled closeout scope tests with candidate-bound passing quality evidence rather than an invented success payload.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
 

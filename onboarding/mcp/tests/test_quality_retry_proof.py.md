@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,10 +29,15 @@ modules and deleted tests as delta inputs. A real temporary Git repository then 
 transition from fresh proof publication to exact reuse, changed-test delta, and source-change
 invalidation. The wrapper-level case drives the actual command builder and cache controller: the
 first passed pytest plus post-coverage failure publishes proof; the next test-only edit runs that
-one module with `--cov-append --cov-context=test`; a deliberately inconclusive delta triggers a
-second, fresh full pytest selection and reaches the final verdict. A separate exact-proof case
-forces Ruff to fail and proves cached JSON is discarded, pytest stays skipped, and neither
-coverage-derived rail is called.
+module through `--ar-retry-execute-path` while pytest still receives the canonical collection root,
+with `--cov-context=test`. Retained prior coverage stays in a separate database; the fresh pytest
+database is explicitly merged after the delta passes rather than relying on `--cov-append`, which
+pytest-cov/xdist can overwrite. A deliberately inconclusive delta triggers a second, fresh full
+pytest selection and reaches the final verdict. A separate exact-proof case forces Ruff to fail and
+proves cached JSON is discarded, pytest stays skipped, and neither coverage-derived rail is called.
+The wrapper test declares its own disposable retry-cache root because the production child-process
+boundary intentionally strips the outer Dagger wrapper's cache owner; failures include the captured
+inner wrapper transcript rather than discarding the causal retry state.
 
 Retry delta ownership now comes from the same canonical dependency/evidence catalog as targeted
 selection. A changed shared support module reruns its static import consumer, a changed catalogued
@@ -49,10 +54,18 @@ newly selected test modules qualify only through the explicit delta rule, and th
 no-coverage fallback, artifact-preparation refusal, cached-result scope error, and exact
 cached-pytest branches report their own verdicts.
 
+`test_retry_environment_identity_ignores_only_explicit_runtime_transport` reproduces the changing
+Dagger OpenTelemetry ports, trace parent, and baggage seen across fresh containers. It proves those
+named transport values do not perturb the environment digest while a separate unclassified
+quality-context value still does.
+Tool-version identity also distinguishes an unavailable distribution with the explicit `absent`
+value, so package removal invalidates proof deterministically.
+
 ### Invariants And Boundaries
 
 - Coverage context tests use Coverage.py's public `CoverageData` interface.
 - Wrapper proof tests use real Git state and the real snapshot/cache controller.
+- Nested wrapper proofs own an explicit disposable cache and never borrow the outer Dagger cache.
 - Only external subprocess execution and post-coverage arithmetic are doubled; command selection,
   manifest publication, filtering, invalidation, and fallback orchestration are real.
 - Cached coverage cannot survive a newly failing cheap rail, even on an exact-tree retry.
@@ -75,8 +88,9 @@ No external Domain Documentation source is configured for this test contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retry proof owns manifest compatibility, context filtering, and publication. | `RetryPlan`; `prepare`; `_filtered_coverage_data` | mcp/src/agents_remember/code_quality/retry_proof.py:63-134; mcp/src/agents_remember/code_quality/retry_proof.py:136-206; mcp/src/agents_remember/code_quality/retry_proof.py:393-444 |
-| The wrapper owns delta command selection, automatic full fallback, and stale-artifact deletion when a cheap rail prevents pytest. | `_pytest_step`; `complete_coverage_rails`; `run_fixed_checks` | mcp/src/agents_remember/code_quality/check.py:301-340; mcp/src/agents_remember/code_quality/check.py:587-629; mcp/src/agents_remember/code_quality/check.py:729-811 |
+| Retry proof owns manifest compatibility, retained-context preparation, and publication lifecycle. | `RetryPlan`; `prepare` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:117-203; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:205-248 |
+| Coverage composition owns filtering, explicit retained/fresh merge, JSON regeneration, and fail-closed publication. | `retain_unchanged_contexts`; `merge_delta_artifacts` | mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:27-99 |
+| The wrapper owns canonical delta collection, exact affected execution paths, explicit merge completion, automatic full rerun, and stale-artifact deletion when a cheap rail prevents pytest. | `execute_quality_rails`; `complete_coverage_rails`; `_pytest_result_failures`; `_merge_retry_coverage` | mcp/test_support/agents_remember_test_support/code_quality/check.py:201-295; mcp/test_support/agents_remember_test_support/code_quality/check.py:526-565 |
 
 ## Cross-Repo References
 
@@ -94,6 +108,18 @@ diagnostic results cannot seed or consume retry proof.
 
 ## Update History
 
+- 2026-08-28T11:32+02:00 — Added explicit missing-distribution forcing for retry tool-version
+  identity.
+
+- 2026-08-27T19:13+02:00 — Made nested cache ownership explicit, retained the inner wrapper
+  transcript on assertion failure, and covered the all-contexts-affected delta state.
+- 2026-08-27T18:33+02:00 — Replaced the stale in-place append claim with the isolated
+  retained/fresh database and explicit post-pytest merge contract.
+- 2026-08-27T17:19+02:00 — Updated command proof for the collection/execution split: canonical
+  roots are collected while the retry plugin receives only the affected module path.
+- 2026-08-27T15:11+02:00 — Added the regression boundary for Dagger's per-exec telemetry transport:
+  explicitly named transport changes preserve retry identity, while unclassified environment
+  changes still invalidate it.
 - 2026-08-26T10:44:52+02:00 — Reconciled retry proof with canonical dependency-owned delta selection, declared fixture consumers, global-input invalidation, and removal of the private eligibility heuristic.
 
 - 2026-08-24T21:23+02:00 — Applied the typed Dagger admission boundary to all retry-proof paths.
