@@ -93,7 +93,7 @@
       "lifecycle_tools",
       "mcp/src/agents_remember/application/lifecycle",
       "route-local-overview",
-      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
       "/overview.md",
       "sourceRoute",
       "agents_remember",
@@ -101,9 +101,9 @@
       "lastUpdated",
       "T15",
       "lastVerifiedCommitHash",
-      "abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
       "lastVerifiedCommitDate",
-      "T17",
+      "T20",
       "governingOverview",
       "PDLS"
     ]

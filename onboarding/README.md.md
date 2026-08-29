@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -85,6 +85,10 @@ the rc).
 
 A short `## Live Demo` section sits between Core Features and Requirements. It states that Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable example of the by-path onboarding layer. It surfaces the dogfooding message higher on the page than the existing Contributing-section mention, which still owns the operational instruction to clone that memory and use it while contributing.
 
+The Requirements section now states the bounded Python 3.13 package line and points repository
+developers to the exact source-built 3.13.15 contract in the MCP README. The root README remains a
+public orientation layer; the executable bootstrap and provenance contract stay under `scripts/`.
+
 ### Conventions
 
 - Keep the README short enough to scan.
@@ -96,6 +100,9 @@ A short `## Live Demo` section sits between Core Features and Requirements. It s
 ### Invariants And Boundaries
 
 The README is explanatory, not the implementation source of truth. Runtime behavior belongs to MCP tools, package services, and skills. If README guidance disagrees with helper behavior, verify helper behavior before changing operational assumptions.
+
+The public prerequisite must remain aligned with `mcp/pyproject.toml` (`>=3.13,<3.14`) and must not
+imply that uv may silently select an arbitrary managed Python for repository development.
 
 `docs/**` is currently excluded from file-level onboarding by this repository's path rules, so this README onboarding is the durable file-level companion for the public documentation front door. Repo-level overview onboarding should carry broad documentation-structure context when the docs tree changes.
 
@@ -120,6 +127,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. | `## Core Features` | README.md:45-62 |
 | The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. | `## What It Looks Like In Practice` | README.md:63-80 |
 | The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. | `## Live Demo` | README.md:81-87 |
+| The Requirements section names Python 3.13, the bounded package range, and the canonical repository-development runtime documentation. | `## Requirements` | README.md:88-100 |
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | `## Quickstart` | README.md:101-137 |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
@@ -218,6 +226,9 @@ Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; di
 Vitest remains the only supported host test diagnostic.
 
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Reconciled the public prerequisite with the project-wide Python 3.13
+  support line and routed exact source-build details to the MCP README.
 
 - 2026-08-28T10:03:40+02:00 — Corrected the current contributor gate summary: host pytest refuses,
   Candidate A's wrapper is absent, and no Python compatibility route remains.

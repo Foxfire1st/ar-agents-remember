@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-29T18:42+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,8 @@ No external Domain Documentation source is configured for this repository-local 
 | --- | --- | --- |
 | One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:17-53 |
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| Closeout calls the extracted adapter before the expensive code gate; the sole external-phase owner runs the post-refresh pass and returns the combined gate result. | `_memory_quality_before_refresh`; `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout.py:665-674; mcp/src/agents_remember/worktrees/modules/closeout_external.py:49-94 |
+| Closeout runs the extracted pre-refresh adapter before the expensive code gate. | `_memory_quality_before_refresh` | mcp/src/agents_remember/worktrees/modules/closeout.py:706-722 |
+| The sole external-phase owner runs memory refresh and returns its combined gate result. | "def external_closeout_commits("; "memory_quality = combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-112; mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-160 |
 | The injected service bundle owns the `MemoryQualityPort` implementation and check-group vocabulary. | `MemoryQualityPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:68-95; mcp/src/agents_remember/worktrees/services.py:140-152 |
 
 ## Cross-Repo References
@@ -76,6 +77,9 @@ No cross-repository interface is owned by this internal closeout helper.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-08-29T18:42+02:00 — Split the pre-code and post-refresh citation claims so each lifecycle
+  boundary has unique, verifiable source provenance; the two-phase quality contract is unchanged.
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

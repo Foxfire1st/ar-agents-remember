@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,17 @@ The packaged brief now carries the explicit discriminated memory-quality example
 canonical template. A fresh curator cannot infer the retired flat wait/run-id surface from packaged
 onboarding.
 
+## MCAR-L02 Structured Publication Brief
+
+The curator brief now carries the worker delivery attempt as a separate identity, grants the
+bounded coherence publication tool, and spells out prepare/judge/publish/validate. It prohibits
+`-v2` or other hand-versioned reports, requires explicit evidence roots and digests, and asks for
+the stable authority, generation, projection, snapshot, candidate, and validation results.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added the exact structured coherence publication contract to curator
+  dispatch. Verification remains closeout-owned.
 
 - 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
   canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain

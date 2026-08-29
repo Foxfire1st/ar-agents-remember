@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/base.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,7 +29,7 @@ cit:([`ResponseModel`], mcp/src/agents_remember/models/base.py:66-88) and cit:([
 cit:([`FlexibleToolResponse`], mcp/src/agents_remember/models/base.py:117-120) carry the same envelope fields on the flexible
 (`extra="allow"`) base.
 
-cit:([`ResponseEnvelope`], mcp/src/agents_remember/models/base.py:123-123) is the `TypeAlias` naming the union
+cit:([`ResponseEnvelope`], mcp/src/agents_remember/models/base.py:123-123) is the PEP 695 type alias naming the union
 `ResponseModel | FlexibleResponseEnvelope` — the two families every registered
 tool response belongs to. The strict/flexible split is about `extra`, not about
 the envelope: both carry the same `ok`/`tokens`/`nextStep`/`agentNotifierBanner`
@@ -119,6 +119,8 @@ The current source seams include `StrictResponseModel`, `FlexibleResponseModel`,
 
 ## Update History
 
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for `ResponseEnvelope` and confirmed that the strict/flexible response families remain as documented. Verification remains closeout-owned.
+
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
@@ -143,7 +145,7 @@ The current source seams include `StrictResponseModel`, `FlexibleResponseModel`,
   sets it and `nextStep` on the validated response before the single model dump — which also puts
   `nextStep` inside the token count for the first time (cit:([`next_step_for`], mcp/src/agents_remember/application/next_step.py:260-281) now returns the model,
   not a dump). Recorded the new `ResponseEnvelope: TypeAlias = ResponseModel |
-  FlexibleResponseEnvelope` cit:(["ResponseEnvelope: TypeAlias = ResponseModel | FlexibleResponseEnvelope"], mcp/src/agents_remember/models/base.py:123-123) and why it exists: it is the annotation
+  FlexibleResponseEnvelope` cit:(["type ResponseEnvelope = ResponseModel | FlexibleResponseEnvelope"], mcp/src/agents_remember/models/base.py:123-123) and why it exists: it is the annotation
   `models.tool_registry` needs so the two choke-point fields are reachable by type. Added the
   "what this package writes" invariant and the `ResponseEnvelope`
   invariant. Citations: every class in this file gained a line range

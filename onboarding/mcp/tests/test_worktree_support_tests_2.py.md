@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_worktree_support_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`                                        |
-| lastVerifiedCommitDate | 2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-29T16:54+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                                        |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -25,6 +25,10 @@ Part of the 260731-EFA-L7 in-place split family for `test_worktree_support_tests
   conflicting master source change lands after leaf closeout, integration returns
   `source-lineage-stale` with `sync_source_lineage`; it does not attempt obsolete integration-time
   replay. Conflict classification belongs after the leaf has synchronized onto current master.
+- The existing-head closeout-apply fixture publishes a passing route-review record before invoking
+  the real closeout mechanics. This keeps the case focused on stamping an already-committed code
+  range while still satisfying the production admission contract that route review is bound to
+  the exact candidate.
 
 ## Invariants And Boundaries
 
@@ -58,6 +62,8 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
 
+- 2026-08-29T16:54+02:00 — Added the exact passing route-review fixture required by current
+  closeout admission to the existing-head stamping proof and documented that boundary.
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
 

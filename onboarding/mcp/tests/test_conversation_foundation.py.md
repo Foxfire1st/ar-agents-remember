@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_conversation_foundation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,7 @@ contract are direct evidence.
 | The foundation suite's exact-set assertion pins all seventeen control-child L3 routes by method and path. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The helper manifest declares the repository-owned helper package identity. | "@agents-remember/conversation-library-helper" | mcp/native_helpers/conversation_library/package.json:2-2 |
 | The foundation test checks the helper's exact direct dependencies against the lockfile. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies` | mcp/tests/test_conversation_foundation.py:125-136 |
-| Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | `allowlist-v1`; `enables_capabilities` | mcp/src/agents_remember/models/conversations/telemetry.py:98-98 |
+| Runtime fixture DTOs force allowlist-v1 and `enablesCapabilities=false`. | `allowlist-v1`; `enables_capabilities` | mcp/src/agents_remember/models/conversations/telemetry.py:96-96 |
 
 ## Cross-Repo References
 

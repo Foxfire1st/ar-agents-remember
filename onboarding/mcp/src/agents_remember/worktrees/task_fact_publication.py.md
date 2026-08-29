@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/task_fact_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -43,15 +43,17 @@ No configured domain-documentation source applies to this repository-internal ro
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Publication and validation return the committed value plus per-scope effects. | `TaskFactPublicationResult`; `publish_task_fact_mutation`; `validate_task_fact_mutation` | mcp/src/agents_remember/worktrees/task_fact_publication.py:36-39; mcp/src/agents_remember/worktrees/task_fact_publication.py:42-74; mcp/src/agents_remember/worktrees/task_fact_publication.py:77-83 |
-| Contract scope and task-fact adapters share the task-first owner. | `contract_projection_scopes`; `publish_contract_task_facts`; `preview_contract_task_facts` | mcp/src/agents_remember/worktrees/task_fact_publication.py:86-107; mcp/src/agents_remember/worktrees/task_fact_publication.py:110-123; mcp/src/agents_remember/worktrees/task_fact_publication.py:126-141 |
-| Invalidation and rebuild failures become bounded per-scope effects. | `_invalidate_scope`; `_invalidation_failure_effect`; `_rebuild_failure_effect` | mcp/src/agents_remember/worktrees/task_fact_publication.py:158-188; mcp/src/agents_remember/worktrees/task_fact_publication.py:205-218; mcp/src/agents_remember/worktrees/task_fact_publication.py:221-243 |
+| Publication and validation return the committed value plus per-scope effects. | `TaskFactPublicationResult`; `publish_task_fact_mutation`; `validate_task_fact_mutation` | mcp/src/agents_remember/worktrees/task_fact_publication.py:33-36; mcp/src/agents_remember/worktrees/task_fact_publication.py:39-71; mcp/src/agents_remember/worktrees/task_fact_publication.py:74-80 |
+| Contract scope and task-fact adapters share the task-first owner. | `contract_projection_scopes`; `publish_contract_task_facts`; `preview_contract_task_facts` | mcp/src/agents_remember/worktrees/task_fact_publication.py:83-104; mcp/src/agents_remember/worktrees/task_fact_publication.py:107-120; mcp/src/agents_remember/worktrees/task_fact_publication.py:123-138 |
+| Invalidation and rebuild failures become bounded per-scope effects. | `_invalidate_scope`; `_invalidation_failure_effect`; `_rebuild_failure_effect` | mcp/src/agents_remember/worktrees/task_fact_publication.py:155-185; mcp/src/agents_remember/worktrees/task_fact_publication.py:202-215; mcp/src/agents_remember/worktrees/task_fact_publication.py:218-240 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 generic-class and local type-parameter migration and confirmed that authoritative task publication plus disposable projection effects remain as documented. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; task-first mutation publication and projection effects are unchanged.
 

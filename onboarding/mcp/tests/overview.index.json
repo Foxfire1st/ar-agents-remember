@@ -25,6 +25,7 @@
     "mcp/tests/closeout_fixture_test_support.py",
     "mcp/tests/closeout_input_test_support.py",
     "mcp/tests/conftest.py",
+    "mcp/tests/curator_coherence_test_support.py",
     "mcp/tests/evidence-lifecycle.toml",
     "mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl",
     "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions-multi.jsonl",
@@ -173,6 +174,8 @@
     "mcp/tests/test_conversation_runtime_composition.py",
     "mcp/tests/test_crap_calculator.py",
     "mcp/tests/test_cross_store_lock_order.py",
+    "mcp/tests/test_curator_coherence.py",
+    "mcp/tests/test_curator_coherence_edges.py",
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_dependency_ownership_ast_helpers.py",
     "mcp/tests/test_diff_coverage.py",
@@ -196,6 +199,7 @@
     "mcp/tests/test_facade_surface.py",
     "mcp/tests/test_file_size_detector.py",
     "mcp/tests/test_fitness_marker.py",
+    "mcp/tests/test_future_code_candidate.py",
     "mcp/tests/test_gate_replay_window.py",
     "mcp/tests/test_gate_scope.py",
     "mcp/tests/test_gated_integration_runner.py",
@@ -398,6 +402,7 @@
     "mcp/tests/test_provider_workflow_integration.py",
     "mcp/tests/test_provider_worktree_routing.py",
     "mcp/tests/test_pytest_bootstrap_boundaries.py",
+    "mcp/tests/test_python_runtime_contract.py",
     "mcp/tests/test_python_test_evidence_firewall.py",
     "mcp/tests/test_quality_evidence_helper_invariants.py",
     "mcp/tests/test_quality_gate_public_contract.py",
@@ -509,6 +514,7 @@
     "mcp/tests/test_wire_contract.py",
     "mcp/tests/test_wire_vocabulary_exhaustiveness.py",
     "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py",
+    "mcp/tests/test_worker_child_processes.py",
     "mcp/tests/test_worktree_abandon.py",
     "mcp/tests/test_worktree_and_observer_helpers.py",
     "mcp/tests/test_worktree_closeout_gate_scope.py",
@@ -531,8 +537,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 513,
-    "fileSidecars": 519,
+    "sourceFilesInScope": 519,
+    "fileSidecars": 525,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -610,12 +616,12 @@
     "chats",
     "check",
     "checkout",
+    "child",
     "citation",
     "claim",
     "classification",
     "claude",
-    "claude_stream_json",
-    "clean"
+    "claude_stream_json"
   ],
   "hotPath": {
     "summary": "L2 forcing covers every configured-contract semantic refusal across public consumers, exact admitted-object reuse, task-addressed controls, crash cuts, locator/manifest/journal contradictions, worker termination, direct landing, bounded legacy repair, task publication races, and fail-closed cleanup. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrad...",
@@ -636,14 +642,14 @@
       "mcp/tests/closeout_fixture_test_support.py",
       "mcp/tests/closeout_input_test_support.py",
       "mcp/tests/conftest.py",
+      "mcp/tests/curator_coherence_test_support.py",
       "mcp/tests/evidence-lifecycle.toml",
       "mcp/tests/fixtures/claude_stream_json/2.1.210",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions-multi.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl",
-      "mcp/tests/fixtures/claude_stream_json/2.1.217",
-      "mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl"
+      "mcp/tests/fixtures/claude_stream_json/2.1.217"
     ],
     "anchorHints": [
       "_adapter_event_scripts.py",
@@ -676,6 +682,8 @@
       "closeout_input_test_support",
       "conftest.py",
       "conftest",
+      "curator_coherence_test_support.py",
+      "curator_coherence_test_support",
       "evidence-lifecycle.toml",
       "evidence-lifecycle",
       "initialization.jsonl",
@@ -691,9 +699,7 @@
       "codex_app_server_0_144_3.json",
       "codex_app_server_0_144_3",
       "claude-2.1.211.json",
-      "claude-2.1.211",
-      "codex-0.144.5.json",
-      "codex-0.144.5"
+      "claude-2.1.211"
     ]
   },
   "fallback": {

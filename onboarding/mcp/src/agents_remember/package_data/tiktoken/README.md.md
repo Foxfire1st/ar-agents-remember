@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/tiktoken/README.md`      |
 | doc_type               | `file-level-onboarding`                                        |
 | lastUpdated            | 2026-07-31T20:52+02:00                                         |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                     |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                     |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../overview.md`                                      |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ until the entry is renamed. That entry is what stops a `core.autocrlf=true` chec
 the line endings of a file whose bytes are its identity — which now leaves that clone, and only that
 clone, unable to start the server at all.
 
-**Why this one is committed** (cit:(["/mcp/src/agents_remember/package_data/dashboard/"], .gitignore:23-23), cit:(["this file is committed"], mcp/src/agents_remember/package_data/tiktoken/README.md:64-67)). Unlike the cockpit bundle in `package_data/dashboard/`,
+**Why this one is committed** (cit:(["/mcp/src/agents_remember/package_data/dashboard/"], .gitignore:26-26), cit:(["this file is committed"], mcp/src/agents_remember/package_data/tiktoken/README.md:64-67)). Unlike the cockpit bundle in `package_data/dashboard/`,
 which is git-ignored and rebuilt on every release, this is third-party data addressed by its own
 hash: written once, changed only when tiktoken changes what it asks for. It carries none of the
 churn that kept the generated bundle out of version control.
@@ -115,11 +115,11 @@ test that re-derives its two hashes.
 | `TiktokenTokenCounter` is the production counter that reads the verified vocabulary. | `TiktokenTokenCounter` | mcp/src/agents_remember/models/tokens.py:183-202 |
 | `DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope. | `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:205-205 |
 | The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed. | "-text" | .gitattributes:12-13 |
-| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:26-26; mcp/pyproject.toml:86-86 |
+| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:23-23; mcp/pyproject.toml:84-84 |
 | The test that re-derives both hashes from the installed tiktoken and additionally asserts `VENDORED_VOCABULARY_SHA256` equals the one tiktoken asks for, so a moved URL cannot silently fall back to the network and the loader's copy of the digest cannot become a second source of truth. | "test_the_shipped_file_is_the_one_tiktoken_asks_for" | mcp/tests/test_cold_start.py:222-244 |
 | The test that pins the `.gitattributes` `-text` entry to the file actually shipped — the enforcement behind this README's refresh instruction. | "test_the_gitattributes_entry_names_the_shipped_file" | mcp/tests/test_cold_start.py:246-259 |
 | The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
-| The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. | "this file is committed"; "/mcp/src/agents_remember/package_data/dashboard/" | mcp/src/agents_remember/package_data/tiktoken/README.md:64-67; .gitignore:19-24 |
+| The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. | "this file is committed"; "/mcp/src/agents_remember/package_data/dashboard/" | .gitignore:26-26; mcp/src/agents_remember/package_data/tiktoken/README.md:64-64 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

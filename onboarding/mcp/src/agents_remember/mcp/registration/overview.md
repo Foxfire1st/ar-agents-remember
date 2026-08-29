@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -256,7 +256,19 @@ This route composes public signatures only. It exposes the one closed applicatio
 execution fields and poll identity are mutually exclusive and extra-forbid; registration dispatches
 the validated DTO and owns no compatibility reader or lower-level failure vocabulary.
 
+## MCAR-L02 Published Coherence Surface
+
+The task registrar advertises one `curator_coherence(request=...)` tool with four concise actions.
+Its typed request publishes one nested schema rather than overlapping flat tools. The description
+states that structured authority is canonical, evidence roots are explicit, identity classes stay
+separate, historical Markdown is never searched, and `validate` is the shared admission check.
+The memory registrar exposes raw `qualityChecklistStatus` separately from combined readiness and
+documents deterministic same-input attestation behavior.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: advertised the one structured curator-coherence API and
+  combined memory-readiness contract. Verification remains closeout-owned.
 
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation of the contract-addressed sync
   advertisement and independently unlocked task-authoring surface; verification remains

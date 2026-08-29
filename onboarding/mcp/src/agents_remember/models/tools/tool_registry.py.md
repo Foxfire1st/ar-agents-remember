@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -88,7 +88,15 @@ canonical generation, refusal shape, operation result, and downstream projection
 same single response-model boundary as other AR-owned tools. It remains distinct from the
 `closeout_queue` projection response.
 
+## MCAR-L02 Response Registry
+
+The strict response registry maps `curator_coherence` to `CuratorCoherenceResponse`, so every
+success and typed refusal from all four actions passes the same no-extra-fields public boundary.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Registered strict response conformance for the one curator-coherence
+  tool. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: registered the strict closeout-door response model. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

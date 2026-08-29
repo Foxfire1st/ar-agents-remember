@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-01T09:28+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -127,7 +127,7 @@ foundation suite pins the exact seventeen routes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | `__all__` | mcp/src/agents_remember/serving/conversation/control/operations.py:571-571 |
-| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). |"class ConversationTelemetry"|mcp/src/agents_remember/models/conversations/telemetry.py:72-72|
+| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). |"class ConversationTelemetry"|mcp/src/agents_remember/models/conversations/telemetry.py:70-70|
 | The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | `conversation_policy` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101 |
 | The two L0 request dependencies every handler consumes. | `__all__` | mcp/src/agents_remember/serving/conversation/dependencies.py:41-41 |
 | The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | `control_paths` | mcp/tests/test_conversation_foundation.py:65-69 |

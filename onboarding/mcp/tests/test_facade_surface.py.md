@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_facade_surface.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                                        |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -31,6 +31,9 @@ Test-only evidence uses deterministic fakes/fixtures and exercises the public or
 ### Invariants And Boundaries
 
 Every exposed name is intentional; retired exact-id or leaf-address surfaces remain absent rather than aliased.
+Module-local `TypeVar`, `ParamSpec`, and `TypeVarTuple` declarations are implementation scaffolding,
+not facade members. The independent consumer-import scan still fails if repository code actually
+imports any such name, so the exclusion cannot hide a used surface.
 
 ## Docs References
 
@@ -40,7 +43,7 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `FacadeSurfaceTests` | mcp/tests/test_facade_surface.py:185-185 |
+| Current suite declaration anchoring this card. | `FacadeSurfaceTests` | mcp/tests/test_facade_surface.py:196-240 |
 
 ## Cross-Repo References
 
@@ -48,6 +51,8 @@ No cross-repository implementation source governs this test module.
 
 ## Update History
 
+- 2026-08-29T20:12+02:00 — Recorded the generation-13 repair that excludes module-local type
+  parameters from the historic facade inventory while retaining consumer-import exhaustiveness.
 - 2026-08-11T19:58+02:00 — Reconciled `test_facade_surface.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

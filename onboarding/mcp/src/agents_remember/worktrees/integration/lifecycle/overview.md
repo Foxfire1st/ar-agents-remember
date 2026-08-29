@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T10:16+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,10 @@ evidence and legal controls are calculated without mutating the journal.
   converge rather than wedging a lane.
 - Cancellation and cleanup require typed terminal evidence and cannot silently destroy commit or
   worker state.
+- A failed quality gate may leave its accepted candidate staged, and a later repair may create a
+  distinct working-tree candidate. Output-free cancellation preserves both states while proving
+  the protected branch ref, HEAD/tree, and reflog identity unchanged; an unattributed protected-ref
+  move is a developer decision, not a same-generation retry or recovery.
 - Public tools translate the shared read/refusal API; callers do not enumerate lower-level failure
   families independently.
 - A cancelled closeout successor is admitted from the current contract-owned waiting door, the
@@ -53,6 +57,7 @@ evidence and legal controls are calculated without mutating the journal.
 | `lifecycle_operation_store.py` | [lifecycle_operation_store.py.md](lifecycle_operation_store.py.md) | covered |
 | `lifecycle_operation_projection.py` | [lifecycle_operation_projection.py.md](lifecycle_operation_projection.py.md) | covered |
 | `lifecycle_operation_control_projection.py` | [lifecycle_operation_control_projection.py.md](lifecycle_operation_control_projection.py.md) | covered |
+| `lifecycle_operation_control_evidence.py` | [lifecycle_operation_control_evidence.py.md](lifecycle_operation_control_evidence.py.md) | covered |
 | `lifecycle_completed_disposition.py` | [lifecycle_completed_disposition.py.md](lifecycle_completed_disposition.py.md) | covered |
 | `control/cancellation.py` | [control/cancellation.py.md](control/cancellation.py.md) | covered |
 
@@ -63,6 +68,8 @@ integration overviews are same-repository context.
 
 ## Update History
 
+- 2026-08-29T10:16+02:00 — Separated failed-gate staging and successor repair bytes from protected
+  Git output identity so an output-free generation can be cancelled without discarding later work.
 - 2026-08-28T14:15+02:00 — PDLS closeout: reconciled the direct-recovery translator split. Typed
   direct-landing failures are reclassified against current evidence; invariant runtime errors stay
   loud instead of entering the public translation family. Stamped committed provenance.

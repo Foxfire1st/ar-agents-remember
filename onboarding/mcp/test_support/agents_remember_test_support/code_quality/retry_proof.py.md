@@ -6,8 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -103,8 +103,8 @@ No external domain contract governs this repository-local verification cache.
 | Planning requires Dagger admission, an absolute cache root, and the exact lane population. | `prepare`; `_disabled_reason`; `_cache_dir` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:205-248; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:346-368 |
 | Retained and fresh delta coverage are isolated, merged explicitly, and published as an atomic data/JSON pair. | `prepare_artifacts`; "delta coverage can merge only after a passing delta pytest run"; "report.json_report(outfile=str(json_temp))"; "atomic_replace(merged_temp, destination_path)" | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:148-175; mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:58-101 |
 | Compatibility binds tooling, candidate/selection settings, and evidence-lane identity. | `_compatibility_key` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:414-439 |
-| The production container mounts the locked cache and supplies the retry root to the quality route. | `_bind_candidate_attempt`; `RETRY_CACHE_ROOT` | .dagger/src/agents_remember_quality/main.py:108-133 |
-| Dagger forcing exercises exact reuse, dependency families, lane/environment drift, corrupt proof, and explicit disablement. | `retry_evidence`; `retry_matrix_evidence` | .dagger/src/agents_remember_quality/main.py:301-369 |
+| The production container mounts the locked cache and supplies the retry root to the quality route. | `_bind_candidate_attempt`; `RETRY_CACHE_ROOT` | .dagger/src/agents_remember_quality/main.py:29-29; .dagger/src/agents_remember_quality/main.py:189-226 |
+| Dagger forcing exercises exact reuse, dependency families, lane/environment drift, corrupt proof, and explicit disablement. | `retry_evidence`; `retry_matrix_evidence` | .dagger/src/agents_remember_quality/main.py:408-448; .dagger/src/agents_remember_quality/main.py:450-481 |
 | Delta retries rebuild canonical collection evidence and execute only explicit dependency-owned paths. | `_pytest_step`; `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287; mcp/test_support/agents_remember_test_support/testing/retry_selection.py:62-79 |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash |  `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate |  2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,6 +63,16 @@ No configured Domain Documentation source applies; the authority contract is rep
 
 No meaningful cross-repository implementation reference applies.
 
+## MCAR-L02 Exact Contract Carry
+
+`MemoryScope` now retains the exact resolved `WorktreeContract` for a leaf scope. That object is
+not a second resolver: it lets the post-check readiness join call the same coherence validator
+against the already admitted enclosure without guessing from report paths or falling back to
+official memory.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added the resolved leaf contract to memory scope for shared coherence
+  validation. Verification remains closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the canonical frozen memory-scope authority boundary. Verification remains blank until architect-owned closeout stamps the code commit.

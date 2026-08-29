@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -122,7 +122,18 @@ state, or queue-derived lifecycle evidence.
 
 `operation_kinds.py` is the single model owner for both `LifecycleOperationKind` and the closed `LifecycleControlAction` set. Worktree request DTOs, lifecycle controls, and public projections consume those types rather than declaring action literals at an effect layer. This keeps exhaustive request/response typing beside the lifecycle model vocabulary.
 
+## MCAR-L02 Curator-Coherence Records
+
+`curator_coherence.py` defines frozen strict source-candidate, judgment, recorded-evidence,
+generation, stable-authority, snapshot, action-request, and response models. Requirement revision,
+delivery attempt, candidate trees, attestation digest, record digest, and predecessor-authority
+digest are different cells. Exact set validation prevents a report from silently covering eight
+candidates while the current attestation contains ten.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added the strict curator-coherence authority family and exact candidate
+  judgment coverage. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Added the centralized operation/control-action vocabulary boundary and refreshed exact lifecycle model evidence anchors.
 

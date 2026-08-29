@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,9 @@ explicitly `unit-regression`; adding each file and its lane in one change preven
 entering through a default classification. Candidate A's two deleted runner/eligibility suites were
 removed from the manifest in the same change that removed their files; the renamed
 `test_kernel_pure_regressions.py` remains explicitly unit-regression evidence.
+The future-code candidate mutation matrix is explicitly `integration` evidence because it creates
+real temporary Git repositories and exercises add-all candidate identity across process-backed Git
+operations; this row was added in the same correction that closed the Dagger lane-census failure.
 
 ### Conventions
 
@@ -59,10 +62,11 @@ No external documentation governs this repository-owned evidence catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Architecture-fitness membership explicitly includes the M38, M39, and M40-M45 structural proofs. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py"; "mcp/tests/test_requirement_attempt_journal_doctrine.py"; "mcp/tests/test_requirement_compilation_gate_doctrine.py" | mcp/tests/test-evidence-lanes.toml:457-459 |
+| Architecture-fitness membership explicitly includes the M38, M39, and M40-M45 structural proofs. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py"; "mcp/tests/test_requirement_attempt_journal_doctrine.py"; "mcp/tests/test_requirement_compilation_gate_doctrine.py" | mcp/tests/test-evidence-lanes.toml:462-464 |
 | The structural test checks the complete M38 template surface. | `test_worker_role_brief_and_report_require_one_complete_primary_block`; `test_reviewer_role_and_verdict_require_independent_adjudication_per_id`; `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:22-113 |
-| Retry selection, child-environment forcing, and coverage composition have explicit unit-regression, integration, and architecture-fitness membership respectively. | "mcp/tests/test_retry_selection.py"; "mcp/tests/test_quality_subprocess_environment.py"; "mcp/tests/test_retry_coverage.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:363-363; mcp/tests/test-evidence-lanes.toml:460-460 |
+| Retry selection, child-environment forcing, and coverage composition have explicit unit-regression, integration, and architecture-fitness membership respectively. | "mcp/tests/test_retry_selection.py"; "mcp/tests/test_quality_subprocess_environment.py"; "mcp/tests/test_retry_coverage.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:366-366; mcp/tests/test-evidence-lanes.toml:465-465 |
 | The seven retained kernel regressions remain explicitly classified while deleted Candidate A tests are absent. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
+| The future-code candidate real-Git matrix is explicitly classified as integration evidence. | "mcp/tests/test_future_code_candidate.py" | mcp/tests/test-evidence-lanes.toml:251-251 |
 
 ## Cross-Repo References
 
@@ -72,7 +76,19 @@ No cross-repository evidence is required.
 | --- | --- | --- |
 | Classification applies only to this repository's verification tree. | — | — |
 
+## MCAR-L02 Coherence Evidence Lane
+
+The manifest classifies `test_curator_coherence.py` explicitly as integration evidence alongside
+the existing future-code real-Git suite. This prevents the Dagger selector from silently treating
+the new filesystem/Git/task publication fixture as unit evidence.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added explicit integration classification for the structured
+  curator-coherence forcing suite. Verification remains closeout-owned.
+
+- 2026-08-29T07:35+02:00 — Added explicit integration-lane ownership for the future-code
+  candidate real-Git matrix and repaired exact manifest citations shifted by that row.
 
 - 2026-08-28T14:18+02:00 — Reconciled manifest citations against the committed PDLS candidate;
   the explicit-lane contract is unchanged.

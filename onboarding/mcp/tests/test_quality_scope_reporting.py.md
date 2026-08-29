@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T15:45+02:00 |
-| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
-| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,9 @@ is unavailable.
 The sequencer-hook fixture deliberately installs a failing repository-root `.venv` beside its
 working `mcp/.venv`. The hook must ignore the former. A separate structural assertion requires
 both supported MCP environment paths, the real scope-reporting import probe, and absence of the
-former system-Python fallback.
+former system-Python fallback. The isolated hook checkout now also carries the canonical runtime
+contract consumed by the hook, so the proof exercises the supported project-scoped configuration
+rather than succeeding through missing-fixture behavior.
 
 `write_executable` centralizes the temporary script write/chmod fixture step. This keeps the
 sequencer proof below the repository statement budget without changing which interpreter paths or
@@ -132,6 +134,9 @@ Radon and Coverage.py unit text now counts product Python files only; tests rema
 not measurement targets. CRAP mocks patch the canonical calculator module directly.
 
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Reconciled the isolated sequencer-hook fixture with the canonical
+  Python runtime contract it now consumes.
 
 - 2026-08-28T15:45+02:00 — Closeout reconciliation: extracted temporary executable creation into
   `write_executable` after the repaired hook exposed the test's statement-budget violation, then

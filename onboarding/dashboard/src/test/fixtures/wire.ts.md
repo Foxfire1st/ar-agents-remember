@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-20T04:42+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ The fixture contract documents that `snapshot.json` is the independent hand-auth
 schema generation closes producer fields and vocabulary a sample can miss
 cit:(["has no served field the mirror is missing"; "reaches every declared path except the named residue"; "carries only values the mirror's vocabulary declares, at every registered path"; "keeps the master and series sub-task row models distinct"], dashboard/src/test/contract.test.ts:446-448; dashboard/src/test/contract.test.ts:462-466; dashboard/src/test/contract.test.ts:486-495; dashboard/src/test/contract.test.ts:598-628).
 The Python drift suite executes the same generator in `--check` mode and rejects stale generated
-files cit:([`test_documented_check_command_runs_with_its_exact_checkout_environment`, `test_committed_generated_files_are_current`], mcp/tests/test_projection_types_codegen.py:229-264; mcp/tests/test_projection_types_codegen.py:266-271).
+files cit:([`test_documented_check_command_runs_with_its_exact_checkout_environment`, `test_committed_generated_files_are_current`], mcp/tests/test_projection_types_codegen.py:247-271; mcp/tests/test_projection_types_codegen.py:273-278).
 
 The chain, as drawn in the source:
 

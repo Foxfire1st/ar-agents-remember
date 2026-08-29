@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam. | `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:58-64; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:77-87; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:97-170 |
+| The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam. | `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:58-64; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:77-87; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169 |
 
 ## Cross-Repo References
 
@@ -64,6 +64,8 @@ Present-invalid archive or authority evidence becomes a bounded refusal. Termina
 only for status and exact cleanup retry; it is never a generic fallback for live mutations.
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for the configured-operation result and confirmed that the documented admission, refusal, and reread boundary is unchanged. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged the final live-versus-terminal admission contract into the current DAGQC card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T16:12+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,8 @@ dependencies, console script, and setuptools package discovery root.
 ### Logic
 
 The package builds with `setuptools`, publishes as `agents-remember-mcp`, uses
-`mcp/README.md` as its package README, and requires Python 3.11 or newer.
+`mcp/README.md` as its package README, and supports exactly the Python 3.13 minor line
+(`>=3.13,<3.14`).
 Runtime dependencies stay intentionally narrow but now include `mcp`,
 `pydantic`, `tiktoken`, and — for the slice-04 dashboard serving layer —
 `fastapi` (built-in `fastapi.sse`), `uvicorn`, and — for the slice 6d-2 Mode B2
@@ -66,16 +67,17 @@ own explicit entry; `**/*` does not match them.
 ### Classifiers Declare The Supported Floor And Platforms (260731-EFA-L2)
 
 `classifiers` is not decoration here — it is the one place a consumer can read the supported
-interpreter floor and the supported platforms without cloning. It lists Python 3.11, 3.12, and 3.13
-(matching `requires-python = ">=3.11"`) and the two operating-system classifiers
+interpreter line and the supported platforms without cloning. It lists Python 3.13 only
+(matching `requires-python = ">=3.13,<3.14"`) and the two operating-system classifiers
 `POSIX :: Linux` and `MacOS`. Windows is supported **through WSL**, which presents as Linux to the
 interpreter and therefore deliberately carries no separate classifier — the absence is a decision,
 not an omission, and the inline comment in the file records it.
 
-The language floor is an agreement between `requires-python` here and `[tool.ruff] target-version`
-in the repository-root `pyproject.toml` (pinned to `py311`, so `UP` rules cannot push syntax the
-floor rejects). CI now certifies the exact staged candidate through the pinned Dagger Ubuntu graph;
-it is not a per-minor interpreter matrix and must not be described as one.
+The language line is an agreement between `requires-python` here and `[tool.ruff] target-version`
+in the repository-root `pyproject.toml` (pinned to `py313`). The managed development runtime,
+Dagger graph, GitHub packaging workflow, and GitHub deterministic quality workflow all select exact
+3.13.15. Dagger alone owns acceptance; the GitHub jobs prove deterministic lint/package behavior
+under the same runtime and are not a per-minor interpreter matrix.
 
 ### The Dashboard Bundle Is Packaged But Not Committed (260731-EFA-L1)
 
@@ -127,10 +129,10 @@ the source rather than being repeated here; it is the same string
   state whose documented remedy is `npm --prefix dashboard run build`.
 - The wheel and the sdist must both carry the bundle. The release workflow, not this file, is where
   that is enforced.
-- The supported floor is stated by `requires-python` and the Python classifiers here plus
+- The supported minor line is stated by `requires-python` and the Python classifier here plus
   `[tool.ruff] target-version` in the repository-root `pyproject.toml`. Raising or lowering only
   one of those declarations is a defect; the Dagger acceptance image is separate execution
-  provenance, not a promise to test every classifier minor.
+  provenance, not a substitute for the exact runtime contract.
 - The absence of a Windows classifier is deliberate (Windows is supported through WSL). Do not add
   one to "fix" the list.
 
@@ -139,21 +141,25 @@ the source rather than being repeated here; it is the same string
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce."; "def quality_steps("; `run_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:3-3; mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168; mcp/test_support/agents_remember_test_support/code_quality/check.py:368-392 |
-| The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:64-64; pyproject.toml:133-133 |
-| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:25-26 |
+| The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:62-62; pyproject.toml:133-133 |
+| Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:22-23 |
 | CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:89-92; mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:234-234 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
 | MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:593-593 |
-| The release job builds the frontend, places the bundle, packages, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build", "python scripts/sync-dashboard.py", "run: python -m build", "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:61-61; .github/workflows/publish-mcp-to-pypi.yml:70-70; .github/workflows/publish-mcp-to-pypi.yml:77-77; .github/workflows/publish-mcp-to-pypi.yml:93-93 |
+| The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build"; "mcp/.venv/bin/python scripts/sync-dashboard.py"; ".venv/bin/python -m build"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:78-93; .github/workflows/publish-mcp-to-pypi.yml:98-135 |
 | The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT", "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:138-138 |
-| Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:23-24 |
+| Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:26-27 |
 | An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | "no built cockpit bundle in this installation", "No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s" | mcp/src/agents_remember/serving/static.py:73-73; mcp/src/agents_remember/serving/static.py:123-123 |
-| The Ruff `target-version` that must track the floor declared here lives in the repository-root project file. | "py311" | pyproject.toml:4-4 |
-| Package metadata directly declares the interpreter floor and supported Python classifiers. | "requires-python = \">=3.11\""; "Programming Language :: Python :: 3.11" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-19 |
+| The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file. | "py313" | pyproject.toml:4-4 |
+| Package metadata directly bounds the interpreter line and declares its Python classifier. | "requires-python = \">=3.13,<3.14\""; "Programming Language :: Python :: 3.13" | mcp/pyproject.toml:10-18 |
 
 ## Update History
+- 2026-08-29T16:12+02:00 — Migrated package authority from the former 3.11 floor and three-minor
+  classifier set to the single supported Python 3.13 line, bounded at `<3.14`, and aligned Ruff,
+  Dagger, CI, release, and the managed exact 3.13.15 source build. Verification remains
+  closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: removed the stale CI-minor-matrix claim. Package metadata
   still declares Python 3.11-3.13 and a 3.11 floor, while acceptance now runs once in the pinned
   Dagger Ubuntu graph. Verification remains closeout-owned.

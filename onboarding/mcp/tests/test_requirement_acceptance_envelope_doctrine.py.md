@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_requirement_acceptance_envelope_doctrine.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T07:35+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No external documentation governs this repository-owned lifecycle contract.
 | Manager and task sources preserve primary ownership while keeping adjacent requirements contextual. | `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:82-112 |
 | Packet supersession and leaf/master gate boundaries remain explicit. | `test_packet_supersession_and_leaf_gate_boundaries_are_explicit` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:115-126 |
 | Durable-evidence promotion is structurally separate. | `test_durable_evidence_hold_point_is_explicitly_separate` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:132-146 |
-| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:457-457 |
+| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:462-462 |
 
 ## Cross-Repo References
 
@@ -83,6 +83,10 @@ No cross-repository evidence is required.
 | The test reads only this repository's canonical doctrine. | — | — |
 
 ## Update History
+
+- 2026-08-29T07:35+02:00 — Repaired the exact evidence-manifest citation after the future-code
+  integration-lane row shifted the architecture-fitness block; the acceptance-envelope contract
+  and its source test are unchanged.
 
 - 2026-08-28T14:18+02:00 — Reconciled requirement-ownership test names and ranges against the
   committed PDLS candidate; each leaf still owns one complete primary requirement block.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -129,7 +129,17 @@ This packaged projection preserves the canonical phase boundary: validate before
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
+## MCAR-L02 Manager Coherence Handoff
+
+The manager now requires the curator's validated structured authority, generated projection, and
+exact record/snapshot identities rather than an ambiguous report filename. It keeps semantic
+revision, delivery attempt, and content digest separate and states that memory readiness and
+closeout admission consume the same validator. Historical Markdown cannot satisfy the handoff.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Recast manager closeout intake around the sole validated structured
+  coherence authority. Verification remains closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled the manager-doctrine source ranges against the committed
   PDLS candidate after final requirement-ownership edits; the documented behavior is unchanged.

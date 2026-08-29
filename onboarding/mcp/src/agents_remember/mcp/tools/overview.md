@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## IAS Frozen Worktree Payload Boundary
@@ -381,7 +381,16 @@ The memory tool route now has three thin DTO-specific adapters over the single c
 They validate public responses but do not interpret wait flags, rebuild scope, or reproduce
 capacity/poll failure translations.
 
+## MCAR-L02 Curator-Coherence Adapter
+
+`curator_coherence.py` is the sole thin adapter for the lifecycle-owned coherence API. It adds no
+filename aliases or policy: configured admission and publication remain upstream, while the shared
+tool-response boundary validates every success/refusal body.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added the single curator-coherence payload adapter; no compatibility
+  route or overlapping tool was introduced. Verification remains closeout-owned.
 
 - 2026-08-26T08:55+02:00 — Finalized the IAS worktree-payload boundary label against the frozen
   pass-13 candidate.

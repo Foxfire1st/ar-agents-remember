@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,10 @@ This suite forces the host-side Dagger executor through exact candidate capture,
 
 Tests build temporary Git repositories and intercept only the Dagger process boundary. They prove the staged candidate and ancestry are passed once, invalid modes and Windows roots refuse, export failures cannot proceed, invalid results cannot be guessed green, and partial output is observable before completion.
 
+The publication fixture now exports both canonical Python proof files and requires each to resolve
+through the immutable published-generation reader. This catches an executor allowlist that would
+silently discard runtime provenance even when Dagger produced it.
+
 ### Conventions
 
 Real Git state is used where candidate identity matters; process transport is doubled narrowly.
@@ -33,6 +37,8 @@ Real Git state is used where candidate identity matters; process transport is do
 - The executor must publish no invented result after export failure.
 - Candidate and report Git guards fail closed.
 - Dagger resolution passes through the native-command policy.
+- Both base-interpreter and venv-interpreter proof artifacts survive immutable publication and
+  content lookup.
 
 ### Todos
 
@@ -87,6 +93,9 @@ successful pointer rotation makes the causal JSON discoverable through
 therefore part of one immutable published generation rather than an adjacent best-effort file.
 
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Added immutable publication and lookup proof for both canonical Python
+  runtime artifacts.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled atomic causal-failure report publication and lookup with the candidate-bound quality generation.
 - 2026-08-24T21:23+02:00 — Added candidate-bound schema-2 publication and evidence assertions.

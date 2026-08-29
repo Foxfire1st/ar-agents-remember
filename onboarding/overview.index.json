@@ -69,6 +69,8 @@
     "dashboard/vitest.config.ts",
     "pyproject.toml",
     "requirements.txt",
+    "scripts/bootstrap-mcp-venv.sh",
+    "scripts/check-python-runtime.py",
     "scripts/harness/README.md",
     "scripts/harness/render_starter.py",
     "scripts/harness/session_start_hook.py",
@@ -77,6 +79,7 @@
     "scripts/harness/shared/render-starter.sh",
     "scripts/harness/shared/session-start-directive.md",
     "scripts/harness/shared/workspace-directive.md",
+    "scripts/install-python-runtime.sh",
     "scripts/run-gated-integration.py",
     "scripts/sync-dashboard.py",
     "scripts/sync-harness.py",
@@ -89,15 +92,17 @@
     "skills/w-02-light-task-workflow/workflow.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1848,
-    "fileSidecars": 26,
+    "sourceFilesInScope": 1867,
+    "fileSidecars": 29,
     "childRoutes": 10
   },
   "routingTerms": [
     "agent",
     "agents",
     "blame",
+    "bootstrap",
     "chats",
+    "check",
     "cockpit",
     "config",
     "dashboard",
@@ -112,6 +117,7 @@
     "harness",
     "hook",
     "ignore",
+    "install",
     "integration",
     "json",
     "lifecycles",
@@ -124,6 +130,7 @@
     "projection",
     "ps1",
     "pyproject",
+    "python",
     "readme",
     "reference",
     "remember",
@@ -150,6 +157,7 @@
     "toml",
     "txt",
     "types",
+    "venv",
     "vitest",
     "workflow",
     "workspace",
@@ -179,9 +187,9 @@
       "dashboard/vitest.config.ts",
       "pyproject.toml",
       "requirements.txt",
-      "scripts/harness",
-      "scripts/harness/README.md",
-      "scripts/harness/render_starter.py"
+      "scripts",
+      "scripts/bootstrap-mcp-venv.sh",
+      "scripts/check-python-runtime.py"
     ],
     "anchorHints": [
       "git-blame-ignore-revs",
@@ -199,6 +207,10 @@
       "pyproject",
       "requirements.txt",
       "requirements",
+      "bootstrap-mcp-venv.sh",
+      "bootstrap-mcp-venv",
+      "check-python-runtime.py",
+      "check-python-runtime",
       "render_starter.py",
       "render_starter",
       "session_start_hook.py",
@@ -212,6 +224,8 @@
       "session-start-directive",
       "workspace-directive.md",
       "workspace-directive",
+      "install-python-runtime.sh",
+      "install-python-runtime",
       "run-gated-integration.py",
       "run-gated-integration",
       "sync-dashboard.py",
@@ -225,13 +239,7 @@
       "sync-skills.py",
       "sync-skills",
       "master-template.md",
-      "master-template",
-      "requirement-packet-template.md",
-      "requirement-packet-template",
-      "template.md",
-      "template",
-      "workflow.md",
-      "workflow"
+      "master-template"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ The source, its ordinary-publication consumer, and focused forcing suite define 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The central owner refuses more than one graph document and builds the one in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
+| The central owner refuses more than one graph document and builds the one in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 | Ordinary publication checks the same cardinality before it constructs the task transaction. | `task_doc_publication_transaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:178-208 |
 | Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors. | `TaskDocGraphPublicationTests` | mcp/tests/test_task_doc_graph_publication.py:93-160 |
 
@@ -77,6 +77,8 @@ No cross-repository boundary is owned by this file.
 | No meaningful cross-repository references were found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration and confirmed that graph-publication document ownership and behavior remain as documented. Verification remains closeout-owned.
 
 - 2026-08-24T13:43+02:00 — Created for DAGQC L1: one typed zero/one graph-publication
   cardinality owner and one exact in-memory title-context builder. Verification remains

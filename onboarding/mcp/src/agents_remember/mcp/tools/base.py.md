@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ The current source seams include the module-level vocabulary. The public schema/
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | `TRANSPORT`; `PUBLIC_TOOLS`; `RESERVED_TOOLS`; `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:9-74; mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The current module exposes the module-level vocabulary at this ownership boundary. | `TRANSPORT`; `PUBLIC_TOOLS`; `RESERVED_TOOLS`; `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:9-75; mcp/src/agents_remember/mcp/tools/base.py:78-80 |
 
 ## 260821-CLIVE Public Tool Census
 
@@ -83,7 +83,15 @@ The current source seams include the module-level vocabulary. The public schema/
 This is an additive public surface with its own strict response model; it is not an internal
 compatibility name and does not change token/envelope finalization for existing tools.
 
+## MCAR-L02 Public Tool Inventory
+
+`PUBLIC_TOOLS` includes exactly one `curator_coherence` name. Status, preparation, publication, and
+validation remain actions of that tool rather than four overlapping public tools.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added the one curator-coherence tool name to the public inventory.
+  Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: added the canonical closeout-door name to the documented public census. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

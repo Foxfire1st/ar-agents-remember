@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:30+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T11:41+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,8 +60,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public request vocabulary exposes projection-only status and invalidation actions, not a selector. | `test_queue_request_has_projection_only_actions` | mcp/tests/test_closeout_queue.py:572-580 |
-| Waiting membership appears only after closeout-door publication; an empty queue does not invent candidates. | `test_door_publication_is_the_only_fixture_membership_source` | mcp/tests/test_closeout_queue.py:582-588 |
+| The public request vocabulary exposes projection-only status and invalidation actions, not a selector. | `test_queue_request_has_projection_only_actions` | mcp/tests/test_closeout_queue.py:545-553 |
+| Waiting membership appears only after closeout-door publication; an empty queue does not invent candidates. | `test_door_publication_is_the_only_fixture_membership_source` | mcp/tests/test_closeout_queue.py:555-561 |
 
 ## Cross-Repo References
 
@@ -82,7 +82,7 @@ compatibility-reader, or task-authoring lock behavior is assigned to the queue.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises the projection-only request and door-membership cases. | `CloseoutProjectionSurfaceTests` | mcp/tests/test_closeout_queue.py:571-588 |
+| The current test source exercises the projection-only request and door-membership cases. | `CloseoutProjectionSurfaceTests` | mcp/tests/test_closeout_queue.py:534-551 |
 
 ## Current Contract — 260821 CLIVE Final
 
@@ -96,7 +96,25 @@ Provides the shared L3 task/door/projection fixture plus projection-only smoke t
 - Projection membership derives from current task truth and waiting door generations.
 - The fixture does not preserve claimed lifecycle, blocker, or commit evidence in queue rows.
 
+## MCAR-L02 Structured Fixture Authority
+
+The shared `write_curator_evidence` helper publishes a real structured coherence authority after
+writing the exact quality attestation. Candidate fixtures create agent judgments with explicit
+task evidence and invoke prepare/publish through production owners, so queue tests no longer obtain
+readiness from a hand-authored curator Markdown file alone. Door declaration now republishes once
+after priority/task input changes and again after the door mutation. The production validator thus
+sees the exact current topology on both sides of the mutation instead of a fixture-created stale
+authority.
+
 ## Update History
+
+- 2026-08-29T11:41+02:00 — Moved structured coherence setup into the shared test-support owner and
+  made door fixtures explicitly republish around their two task-topology mutations. This preserves
+  the production fail-closed validator while repairing fixture ordering. Verification remains
+  closeout-owned.
+
+- 2026-08-29T08:52+02:00 — Upgraded queue fixtures to publish the structured curator-coherence
+  authority through production code. Verification remains closeout-owned.
 
 - 2026-08-26T08:30+02:00 — Replaced the remaining obsolete transitional-queue regression section
   with the frozen projection-only and door-membership contract.

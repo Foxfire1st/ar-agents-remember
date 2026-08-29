@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -41,7 +41,7 @@ adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subta
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
 `subtask.keep_file`; `set_step` is leaf-only. `skip_step` takes an exact existing step and a nonblank
 reason, marks only that unit done, records intentional-skip provenance, and does not cascade; an
-        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:108-108; mcp/src/agents_remember/mcp/registration/tasks.py:120-122).
+        explicit status clears an earlier skip disposition cit:(["operation: 'create'", "exact existing step", "sets only that unit done", "records intentional-skip provenance without cascading", "A nonblank reason is required.", "explicit status clears an earlier skip disposition"], mcp/src/agents_remember/mcp/registration/tasks.py:129-129; mcp/src/agents_remember/mcp/registration/tasks.py:141-143).
 
 Since 260815-DAG-L11 the docstring also spells out the graph operation:
 `author_execution_graph` applies one
@@ -120,7 +120,18 @@ documents `discard-unstarted` as a reasoned, evidence-gated planning discard tha
 child JSON/Markdown and retains a typed parent audit; started or ambiguous evidence routes to the
 real lifecycle action rather than pretending completion.
 
+## MCAR-L02 Curator-Coherence Registration
+
+`register_task_tools` now advertises one nested-request `curator_coherence` tool with
+`status`/`prepare`/`publish`/`validate` actions. Its contract makes the structured stable manifest
+canonical, keeps semantic revision/attempt/digest identities separate, requires explicit
+`code:`/`memory:`/`task:` evidence references for exact candidate judgments, and names the shared
+validator used by memory and closeout. It explicitly forbids historical-filename fallback.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Registered the single lifecycle-owned curator-coherence API and its
+  structured authority contract. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented the canonical door tool, disposable queue, and audited unstarted discard surface. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

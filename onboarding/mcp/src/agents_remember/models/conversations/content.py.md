@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/models/conversations/content.py`     |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-08T14:38+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-29T17:23+02:00                                       |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                   |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -63,6 +63,8 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for `ConversationContentBlock` and confirmed that the discriminated content grammar remains as documented. Verification remains closeout-owned.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: preserved the L7 split card and rewrote it for
   the `models/conversations/content.py` home; symbol surface and grammar knowledge retained.

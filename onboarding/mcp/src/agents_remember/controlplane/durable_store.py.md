@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |                                                           `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                           2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash |                                                           `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |                                                           2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -381,8 +381,8 @@ only for other files, and every one below was re-verified against the working tr
 | `thread_mutex_for` states that `flock` already excludes two threads of one process, so the mutex closes a plausible regression rather than a reproducible loss, and explains why it is re-entrant. Its account of how the six shape their reclaims is the one recorded under Todos. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:344-358 |
 | `_verify_lock_capability` takes the lock twice from two file descriptions and raises `UnsafeLockFilesystemError` when the second acquisition succeeds. | `_verify_lock_capability` | mcp/src/agents_remember/controlplane/durable_store.py:361-388 |
 | `exclusive_access` takes the per-log mutex before the flock, and the thread-local `_LockDepth` counter makes a nested acquisition return before either lock is touched. `lock_path_for` names the lockfile after the whole log and states why renaming it makes a rolling restart unsafe, with no compatibility path. | `exclusive_access`; `_LockDepth`; `lock_path_for` | mcp/src/agents_remember/controlplane/durable_store.py:274-282; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:291-298 |
-| `_require_rewrite_access` first enforces checkout-target confinement and then calls `require_lock_held`, so a rewrite can neither escape a linked leaf's dummy coordinator nor proceed without the store lock. | `_require_rewrite_access`; `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:454-472; mcp/src/agents_remember/controlplane/durable_store.py:512-519; mcp/src/agents_remember/controlplane/durable_store.py:532-534 |
-| The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:475-479; mcp/src/agents_remember/controlplane/durable_store.py:482-493; mcp/src/agents_remember/controlplane/durable_store.py:512-519 |
+| `_require_rewrite_access` first enforces checkout-target confinement and then calls `require_lock_held`, so a rewrite can neither escape a linked leaf's dummy coordinator nor proceed without the store lock. | `_require_rewrite_access`; `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:451-469; mcp/src/agents_remember/controlplane/durable_store.py:509-516; mcp/src/agents_remember/controlplane/durable_store.py:529-531 |
+| The one read both policies share; the only append in the package, which fsyncs before the handle closes; and the only rewrite, which never unlinks the log, uses a pid-scoped hidden temp, and fsyncs both the temp and the parent directory. | `read_log_text`; `append_line`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:472-476; mcp/src/agents_remember/controlplane/durable_store.py:479-490; mcp/src/agents_remember/controlplane/durable_store.py:509-516 |
 | The MCP process declares its role at the true entry point, not in the `create_server` factory a test would call in-process. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
 | The dashboard declares its role in `run`, for the same reason. | `run` | mcp/src/agents_remember/cli/dashboard.py:161-196 |
 | The third call site and the only factory that declares: `--reload` serves from a uvicorn `multiprocessing` spawn child that re-imports the module with an empty declaration dict and never reaches `run`, so it answered owner for every log. The docstring records this as an ownership gap and not a durability defect — the unconditional lock covered the rewrite — and why `create_app` still must not declare. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
@@ -409,6 +409,8 @@ whose ownership record includes them; the gate and lifecycle-operation/queue pat
 longer rely on the earlier undeclared-process bypass.
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `migrate_jsonl_records` and confirmed that durable-record migration semantics remain as documented. Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

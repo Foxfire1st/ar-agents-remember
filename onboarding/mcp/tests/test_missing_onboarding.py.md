@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_missing_onboarding.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:51+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-29T11:00+02:00                     |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -21,7 +21,8 @@ check for current worktree additions.
 
 The tests build temporary Git repositories and memory onboarding roots, then
 exercise the checker against untracked additions, staged additions with existing
-sidecars, path-rule-excluded additions, renamed targets, and a linked worktree
+sidecars, staged additions removed before the final candidate, path-rule-excluded additions,
+renamed targets, and a linked worktree
 whose directory name differs from the real repository name. The checks prove
 that the script reports only local new worktree responsibility rather than
 historical repository gaps.
@@ -30,6 +31,7 @@ historical repository gaps.
 
 - Untracked and staged added files are considered new worktree sources.
 - A staged added file with a sidecar is clean.
+- A staged add deleted before the effective candidate is built does not require a stale-path sidecar.
 - Excluded files are ignored by path rules.
 - Rename targets require onboarding at the target path.
 - CLI resolution must use Git repository identity, not a task-specific linked
@@ -43,6 +45,9 @@ historical repository gaps.
 | Storage settings and path rules are resolved by the kernel resolver helpers. | `detect_coordination_selection`, `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:37-71; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164 |
 
 ## Update History
+
+- 2026-08-29T11:00+02:00 — Added the cancelled-closeout residue case: a staged add removed before
+  the final add-all candidate cannot survive as a false missing-onboarding row.
 
 - 2026-08-03T03:59:59+02:00 — Curated 4 citation findings (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

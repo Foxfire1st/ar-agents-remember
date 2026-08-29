@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/contract.test.ts`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -211,8 +211,11 @@ the Finding, where a pointer belongs.
 | The hand-maintained oracle, composed to satisfy the coverage and vocabulary assertions above. | `lifecycles`; `metrics` | dashboard/src/fixtures/snapshot.json:1800-1800; dashboard/src/fixtures/snapshot.json:1943-1943 |
 | The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | `state_count_field`; `state_count_fields` | mcp/src/agents_remember/observer/projection.py:239-254; mcp/src/agents_remember/observer/projection.py:257-279 |
 | The producer's typed lifecycle vocabularies. | "State = Literal[LiveState, TerminalState]"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-27 |
-| The producer's typed attention and process vocabularies. | `AttentionSeverity`; `AttentionLane`; `ProcessFactState`; `ProcessHealth` | mcp/src/agents_remember/observer/projection.py:44-51 |
-| The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:66-68; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:435-474; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:562-568 |
+| The producer's typed attention-severity vocabulary. | "type AttentionSeverity = Literal[" | mcp/src/agents_remember/observer/projection.py:44-44 |
+| The producer's typed attention-lane vocabulary. | "type AttentionLane = Literal[" | mcp/src/agents_remember/observer/projection.py:45-45 |
+| The producer's typed process-fact vocabulary. | "type ProcessFactState = Literal[" | mcp/src/agents_remember/observer/projection.py:46-48 |
+| The producer's typed process-health vocabulary. | "type ProcessHealth = Literal[" | mcp/src/agents_remember/observer/projection.py:49-51 |
+| The schema generator derives mirror tuples and rejects stale generated output. | `workspace_projection_schema`; `_vocabulary_block`; `stale_generated_files` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:74-76; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-511; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-608 |
 | The two separate `extra="forbid"` sub-task models the inverted pins keep distinct, and the two section models that cannot be pinned. | `TaskSubTaskRefNode`; `TaskSectionNode`; `SeriesSubTaskNode`; `SeriesSectionNode` | mcp/src/agents_remember/observer/projection.py:585-606; mcp/src/agents_remember/observer/projection.py:626-636; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:815-822 |
 | The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | "src/test/contract.test.ts :: @ts-expect-error" | dashboard/src/test/wireFixtureGuard.test.ts:183-183 |
 | The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | "makes the MIRROR honest"; "This file makes the FIXTURES honest" | dashboard/src/test/wireFixtureGuard.test.ts:20-21 |

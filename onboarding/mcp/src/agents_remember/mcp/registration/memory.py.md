@@ -5,9 +5,9 @@
 | repository             | agents-remember                                            |
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                 |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                 |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -104,7 +104,18 @@ mixed or extra mode fields before authority or execution. Registration then forw
 typed sync, start, or poll object to the matching thin payload adapter; compatibility readers and
 local failure-family translations are intentionally absent.
 
+## MCAR-L02 Memory Readiness Contract
+
+The public quality description now distinguishes the raw deterministic checklist status from
+combined coherence readiness. Same-input full runs preserve attestation bytes; changed input
+invalidates the prior coherence generation. `closeoutReady=true` requires the same structured
+validator used by closeout, and a `coherence-required` response directs the caller to the one
+`curator_coherence` API.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Documented deterministic quality attestations and combined structured
+  coherence readiness. Verification remains closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat wait/run-id branching with one strict discriminated request and typed adapter dispatch. Verification metadata remains pinned until architect-owned closeout.
 

@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/models/lifecycles/__init__.py",
+    "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
     "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
     "mcp/src/agents_remember/models/lifecycles/door.py",
     "mcp/src/agents_remember/models/lifecycles/door_response.py",
@@ -25,13 +26,16 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 13,
-    "fileSidecars": 13,
+    "sourceFilesInScope": 14,
+    "fileSidecars": 14,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
+    "coherence",
+    "curator",
+    "curator_coherence",
     "direct",
     "direct_landing",
     "door",
@@ -63,6 +67,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/models/lifecycles",
       "mcp/src/agents_remember/models/lifecycles/__init__.py",
+      "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
       "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
       "mcp/src/agents_remember/models/lifecycles/door.py",
       "mcp/src/agents_remember/models/lifecycles/door_response.py",
@@ -79,6 +84,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "curator_coherence.py",
+      "curator_coherence",
       "direct_landing.py",
       "direct_landing",
       "door.py",
@@ -105,7 +112,7 @@
       "termination",
       "mcp/src/agents_remember/models/lifecycles/",
       "route-local-overview",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
       "/overview.md",
       "__init__.py.md",
       "responses.py.md",
@@ -122,9 +129,7 @@
       "EnclosurePublicationState",
       "TerminalEnclosurePredecessor",
       "WorkerTerminationEvidence",
-      "LifecycleCancellationEvidence",
-      "successor.py",
-      "LifecycleOperationKind"
+      "LifecycleCancellationEvidence"
     ]
   },
   "fallback": {

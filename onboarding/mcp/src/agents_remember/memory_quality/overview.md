@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -252,7 +252,19 @@ path mention is not readiness evidence.
 
 The asynchronous sync/start/poll controller now lives at `application.memory_quality.controller`. This route continues to own the integrity/style checks and their package runner; the application controller composes those checks and finalizes transport responses without duplicating check logic or adding a fallback path.
 
+## MCAR-L02 Deterministic Checklist And Coherence Join
+
+The enclosure-local curator checklist and its `ar-curator-memory-quality/v1` attestation are now
+byte-deterministic for identical inputs; the prior generated timestamp could invalidate a current
+coherence record without a semantic change. The structured attestation remains the exact candidate
+census. Public memory readiness retains raw `qualityChecklistStatus` but reports combined
+`checklistStatus=coherence-required` and `closeoutReady=false` until the same structured authority
+validator used by closeout succeeds.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: removed timestamp entropy from the curator checklist and
+  joined raw quality with the sole coherence validator. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled the route with the extracted application controller while preserving memory-quality check ownership inside this package.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T12:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -199,7 +199,41 @@ When changing worktree coordination:
 - [CURATOR] Generated route indexes are refreshed from explicit frozen code/onboarding roots in
   this final pass; they are never hand-edited.
 
+## MCAR-L02 Curator-Coherence Authority
+
+The integration/closeout child route now owns one stable structured coherence manifest and
+content-addressed generation per leaf. It captures the same isolated add-all future code tree used
+by closeout, the paired memory tree, candidate-relevant task topology, and the exact structured
+memory-quality attestation. Publication validates one agent judgment per candidate and writes the
+stable selector last; all readiness consumers share its currentness validator.
+
+## MCAR-L02 Candidate Observation Concurrency
+
+Candidate-tree reads across status, dashboard, queue, memory, route review, and closeout now share
+one low-level isolation contract: a caller supplies a scratch namespace, while
+`worktree_candidate_tree` allocates a unique temporary index for each invocation. Concurrent
+observers may therefore inspect one dirty candidate without mutating the real Git index or deleting
+another observer's scratch state. Candidate identity remains the resulting Git tree; temporary
+filesystem names carry no lifecycle or semantic authority.
+
 ## Update History
+
+- 2026-08-29T12:52+02:00 — MCAR-L02 C009 recovery: recorded the invocation-owned
+  candidate-index boundary after queue and dashboard observers exposed a shared-scratch deletion
+  race. Verification remains closeout-owned.
+
+- 2026-08-29T10:40+02:00 — Moved the exact future-code candidate identity into
+  `integration/closeout/`, its consuming lifecycle boundary, to restore the root package cap.
+
+- 2026-08-29T08:52+02:00 — Added the structured curator-coherence child route and shared
+  admission boundary. Verification remains closeout-owned.
+
+- 2026-08-29T05:17+02:00 — A003 self-review repair: recorded immutable identity and
+  collision-free concurrent candidate observations.
+
+- 2026-08-29T04:55+02:00 — Added the strict future-code candidate owner and documented the
+  separation between tree-bound semantic acceptance and journal-bound Git-operation recovery.
+  Verification metadata remains pinned until closeout.
 
 - 2026-08-28T14:15+02:00 — PDLS closeout: re-read the accepted quality-gate and integration
   changes against the landed candidate. Existing route ownership already places test authority in

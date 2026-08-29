@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/orchestration.py`      |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ rate-limited nudge does not enqueue an inbox entry.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `orchestration_nudge_manager_payload` builder returns this response through `_tool_payload`. | "def orchestration_nudge_manager_payload(" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tools/tool_registry.py:226-226 |
+| The response registry maps the administrative orchestration nudge operation to this model. | "\"orchestration_nudge_manager\": OrchestrationNudgeManagerResponse" | mcp/src/agents_remember/models/tools/tool_registry.py:228-228 |
 
 ## Update History
 

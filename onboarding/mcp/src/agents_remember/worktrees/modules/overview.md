@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -59,6 +59,11 @@ now live under `modules/quality/`. The package is a behavior-preserving ownershi
 clean executor remains the sole Dagger report publisher, the gate remains the lifecycle consumer,
 closeout memory remains phase composition, and the strict manifest reader admits no fallback or
 permissive compatibility path.
+
+`onboarding_acceptance.py` is the single pure application boundary for candidate-bound
+no-content/no-route decisions. It can reclassify only matching unchanged `stale` bodies as
+accepted; `untraced` authored content remains closed. Closeout preview, reversible admission, and
+post-commit external-memory refresh therefore consume the same validated coherence decision set.
 
 L23 makes Dagger the sole acceptance executor. `clean_quality_executor.py` materializes the exact
 reviewed candidate and required ancestry into the pinned graph, starts a fresh attempt, bounds live
@@ -358,7 +363,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:819-894 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:34-554 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-500; mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:171-171 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:566-674 |
@@ -804,7 +809,21 @@ without re-running acceptance or accepting diagnostic output. Ref-state, topolog
 claim-transfer helpers now expose named facts to the integration owner rather than duplicating Git
 and lifecycle policy across call sites.
 
+## MCAR-L02 Closeout Admission Coherence
+
+External-memory leaf closeout now calls the same structured
+`require_current_curator_coherence` validator as public memory readiness and closeout-door
+evidence before citation preflight or the expensive code gate. The result records the exact
+coherence record digest and delivery attempt in preflight facts. No hardcoded Markdown filename or
+task-evidence pointer can select a competing authority.
+
 ## Update History
+
+- 2026-08-29T18:29+02:00 — Added the shared candidate-bound onboarding-acceptance boundary across
+  preview, closeout admission, and external-memory refresh.
+
+- 2026-08-29T08:52+02:00 — Added shared structured curator-coherence admission before closeout's
+  expensive mutation path. Verification remains closeout-owned.
 
 - 2026-08-26T18:55+02:00 — 260821-ARSPAWN-L2 closeout repair: documented the apply-time
   master-series bootstrap observation boundary. `_bootstrap_preflight_contract` now runs under the

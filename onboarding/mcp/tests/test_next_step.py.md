@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -189,7 +189,7 @@ the `lifecycle_start` payload it asserts the rundown on.
 | The ambient lifecycle installed/started/promoted by the edge tests. | `AmbientLifecycle`; `install_ambient` | mcp/src/agents_remember/observer/ambient.py:112-635; mcp/src/agents_remember/observer/ambient.py:669-671 |
 | The projected `LifecycleState` the pure tests construct. | `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
 | The `EventStore` backing the ambient under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:231-288; mcp/src/agents_remember/worktrees/worktree_contract.py:439-469; mcp/src/agents_remember/worktrees/worktree_contract.py:490-491 |
+| `WorktreeContract` + `write_contract`/`load_contract` used by the gate + edge cases. | `WorktreeContract`; `write_contract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:229-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467; mcp/src/agents_remember/worktrees/worktree_contract.py:488-489 |
 | The `NextStep` shape the assertions read, and the `nextStep` / `supervisorBanner` fields now declared on both response envelopes. | `NextStep`; `ResponseModel`; `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:47-63; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114 |
 | The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | `count_response_tokens`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:208-215; mcp/src/agents_remember/models/tokens.py:232-249 |

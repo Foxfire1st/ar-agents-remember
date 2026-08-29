@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/models/conversations/__init__.py`    |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -28,9 +28,10 @@ control plane also consumes (R2/R8).
 
 ### Logic
 
-The initializer re-exports every public name from the fifteen owning modules into one explicit
-`__all__` (cit:([`__all__`], mcp/src/agents_remember/models/conversations/__init__.py:212-386)). The
-owning modules keep the behavior; this file is exports only.
+The initializer re-exports every public domain name from the fifteen owning modules into one
+explicit `__all__` (cit:([`__all__`], mcp/src/agents_remember/models/conversations/__init__.py:211-384)).
+The owning modules keep the behavior; this file is exports only. Generic type parameters are
+lexically owned by their declarations and are not package-level domain exports.
 
 The module import layering is acyclic and declaration-order-validated: `primitives` → `identity`
 → `cursors` → `content`, `capabilities`, `status`, `submissions`, `withdrawals`, `opening`,
@@ -88,7 +89,7 @@ architecture tests are the authoritative evidence for this internal grammar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The curated export surface lists every public conversation-wire name. | `__all__` | mcp/src/agents_remember/models/conversations/__init__.py:212-386 |
+| The curated export surface lists every public conversation-wire name. | `__all__` | mcp/src/agents_remember/models/conversations/__init__.py:211-384 |
 | Every current conversation model rebuilds with resolved forward references. | `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:47-56 |
 | Removed monolith paths receive no forwarding shim. | `test_removed_conversation_model_modules_have_no_compatibility_shims` | mcp/tests/test_conversation_model_architecture.py:26-29 |
 | Hostile contract tests still pin cursor/provenance/status/capability products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
@@ -104,6 +105,8 @@ No cross-repository implementation governs these contracts.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — Removed the implementation-only telemetry type parameter `T` from the curated package exports after `MetricEvidence` adopted Python 3.13 lexical type parameters. No conversation-domain contract was removed; verification remains closeout-owned.
 
 - 2026-08-25T01:56+02:00 — 260824-PDLS removed stale migration-snapshot authority and repointed
   stable export/layering proof to the architecture test; verification remains closeout-owned.

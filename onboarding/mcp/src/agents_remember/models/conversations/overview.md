@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/models/conversations/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
 
 ## What This Area Is
 

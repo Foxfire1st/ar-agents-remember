@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,8 +26,10 @@ Tests create real task contracts and durable operation records, then exercise du
 
 The detached-launch regression separately proves the native environment keeps its installed
 `PYTHONPATH` byte-for-byte and does not inject the task worktree's `mcp/src`, while retaining the
-private process group and task-addressed module invocation. Together the two regressions cover both
-sides of worker bootstrap: select installed code at launch, then bind its real services in `main`.
+private process group and task-addressed module invocation. It now also proves that the exact
+`Popen` object transfers to the lifecycle-owned child registry before PID/fingerprint publication.
+Together the regressions cover both sides of worker bootstrap: select installed code at launch,
+retain and reap the real child, then bind its real services in `main`.
 
 ### Conventions
 
@@ -40,6 +42,8 @@ Filesystem and model transitions are real; subprocess and lifecycle mutation end
 - Cancellation cannot reclaim a consumed approval.
 - A post-boundary failure remains recoverable as the same operation.
 - An integration result is safe to replace only when its literal returned payload proves that boundary; queue-release failure remains visible.
+- Detached launch retains the real process object for reaping; lifecycle journal identity remains
+  PID/fingerprint-based and separate.
 
 ### Todos
 
@@ -108,6 +112,9 @@ Lifecycle operation tests now cover explicit retry/replacement after failed or t
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Extended detached-launch forcing to require ownership transfer of the
+  exact `Popen` object to the lifecycle reaper.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

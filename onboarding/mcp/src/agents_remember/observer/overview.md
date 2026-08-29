@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -610,7 +610,7 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 | Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
 | `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
-| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:372-372 |
+| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:371-371 |
 | The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
 | `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:38-38 |
 | `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
@@ -809,6 +809,9 @@ title-key compatibility reader.
 
 
 ## Update History
+
+- 2026-08-29T18:29+02:00 — Reconciled the orphan-pruning call citation after the coherence/runtime
+  changes shifted its source coordinate; observer behavior is unchanged.
 
 - 2026-08-26T10:44:52+02:00 — No route impact: refreshed projection-input, mirror-state, and graph-title citation anchors after source movement; observer read/write ownership is unchanged.
 

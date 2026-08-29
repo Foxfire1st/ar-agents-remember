@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,11 @@ quality and non-accepting evidence routes must expose their generated Dagger con
 load the Dagger package from the explicit `.dagger/src` source root; the surrounding `.dagger`
 directory is not an import root.
 
+The candidate-construction proof now requires the checksum-bound source-build step to precede
+workspace materialization, requires the canonical runtime to create the venv, and requires frozen
+uv synchronization before any attempt-specific cache input. A broad container image or version
+label cannot stand in for the runtime provenance contract.
+
 ### Conventions
 
 The suite tests graph semantics without a daemon; live field proof remains a separate Dagger run.
@@ -42,6 +47,9 @@ The suite tests graph semantics without a daemon; live field proof remains a sep
 - `load_dagger_module` must prepend exactly `DAGGER_SOURCE_ROOT`; broadening the certifying
   container's global `PYTHONPATH` to hide a bad test loader would mix orchestration code into the
   application import surface.
+- Runtime build, source materialization, dependency synchronization, and attempt-specific cache
+  inputs remain strictly ordered; candidate-specific state cannot contaminate the shared runtime
+  or dependency layers.
 
 ### Todos
 
@@ -60,7 +68,7 @@ No external Domain Documentation source is configured for this test contract.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:28-34 |
-| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:101-124; mcp/tests/test_agents_remember_quality.py:200-227; mcp/tests/test_agents_remember_quality.py:242-247; mcp/tests/test_agents_remember_quality.py:310-366 |
+| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:106-129; mcp/tests/test_agents_remember_quality.py:210-237; mcp/tests/test_agents_remember_quality.py:252-257; mcp/tests/test_agents_remember_quality.py:320-376 |
 
 ## Cross-Repo References
 
@@ -105,6 +113,9 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Added structural graph proof that Dagger builds the canonical source
+  runtime before materializing the candidate and synchronizes its venv before attempt caches.
 
 - 2026-08-28T02:38+02:00 — Recorded the deterministic candidate-base versus attempt-binding
   boundary and its structural graph regression after repeated evidence runs exposed nonce-driven

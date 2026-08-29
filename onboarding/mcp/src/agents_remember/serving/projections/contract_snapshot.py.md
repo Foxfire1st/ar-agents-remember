@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/contract_snapshot.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-07-12T20:02+02:00                                   |
-| lastVerifiedCommitHash |                                                          `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                          2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |                                                          `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |                                                          2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -110,7 +110,7 @@ build; the three consumers accept the snapshot via keyword-only injection.
 | `_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot. | "def build_contract_snapshot" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:139-139 |
 | The enumeration and contract parser this module reuses (one parser per surface, owned by its producer). | "import iter_leaf_enclosure_contracts" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:29-29 |
 | `projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`. | "class ProjectionTickState" | mcp/src/agents_remember/serving/projections/projection_store.py:203-203 |
-| `ProjectionInputState` holds the injected cache, builds the snapshot once per tasks refresh, and hands that one `ContractSnapshot` to `read_enclosures`, `read_engine_process_facts`/`refresh_engine_process_landing`, and drift-snapshot pruning. | "class ProjectionInputState" | mcp/src/agents_remember/serving/projections/projection_inputs.py:198-198 |
+| `ProjectionInputState` holds the injected cache, builds the snapshot once per tasks refresh, and hands that one `ContractSnapshot` to `read_enclosures`, `read_engine_process_facts`/`refresh_engine_process_landing`, and drift-snapshot pruning. | "class ProjectionInputState" | mcp/src/agents_remember/serving/projections/projection_inputs.py:197-197 |
 | `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior. |"def read_enclosures"|mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:61-61|
 | Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk. | "def prune_orphaned_drift_snapshots" | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-23 |
 | `ContractSnapshotSharedPassTests` pins N-then-zero-then-one parse counts, one enumeration per full tick, output parity with and without the shared snapshot, live-set retention, the chmod-000 and utime-pinned-rewrite ctime hardening, and malformed-contract retry-every-build. | `ContractSnapshotSharedPassTests` | mcp/tests/test_projection_scaling_cs6.py:590-858 |

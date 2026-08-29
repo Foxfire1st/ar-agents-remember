@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-28T15:52:15+02:00 |
-| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
-| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -227,7 +227,7 @@ native-history service, control implementation, or renderer.
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:53-65):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:74-86):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -1008,7 +1008,38 @@ failure evidence, and splits lifecycle and queue helpers by authority. The packa
 Dagger acceptance path and introduces no fallback runner, compatibility facade, or queue-owned
 commit evidence.
 
+## MCAR Exact Future-Code Candidate Boundary
+
+Ordinary leaf closeout now has one frozen, plane-derived pre-commit route identity: contract base,
+stable observed HEAD, and the canonical isolated-index full add-all tree. Callers provide intent
+and evidence but never the authoritative tree. Each concurrent observation uses a distinct
+automatically cleaned enclosure-local index, so preview and admission cannot corrupt each other's
+identity calculation or stage the user's real index.
+
+This tree-bound semantic identity remains separate from lifecycle-operation reconciliation. A moved
+HEAD is not treated as an operation output without unchanged operation identity or journaled commit
+proof. Series/direct-existing landing stays on its committed-tree route. The focused source owner
+and boundaries are documented in [worktrees/overview.md](src/agents_remember/worktrees/overview.md).
+
+## MCAR Structured Curator-Coherence Authority
+
+The MCP package now exposes one `curator_coherence` lifecycle API with
+`status`/`prepare`/`publish`/`validate` actions. A stable task-local structured manifest selects one
+content-addressed record and deterministic human projection; exact source-candidate judgments are
+agent-owned and evidence-digest-bound. Requirement revision, delivery attempt, and immutable
+content identity stay separate. Public memory readiness, closeout-door evidence, and closeout
+admission invoke the same validator, so a ready memory result cannot later disagree with closeout
+over a different hardcoded report. No historical-filename search or Markdown authority remains.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: added the single structured curator-coherence authority,
+  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
+  closeout-owned.
+
+- 2026-08-29T05:28+02:00 — MCAR-L02: added the parent-route summary for immutable exact
+  future-code identity, collision-free concurrent observation, and the separate
+  operation-reconciliation boundary.
 
 - 2026-08-28T15:52:15+02:00 — No route impact: the hook environment repair and its focused
   regression test preserve MCP package ownership and keep the host hook a deterministic non-test

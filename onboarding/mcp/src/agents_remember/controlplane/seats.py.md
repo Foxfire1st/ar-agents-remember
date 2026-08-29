@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/controlplane/seats.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T23:19+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | --- | --- | --- |
 | Defines the class `SeatRow` (lines 36-90) — One seat's row, as the control plane reads it.. | `SeatRow` | mcp/src/agents_remember/controlplane/seats.py:36-90 |
 | Defines the read-only catalog protocol consumed by structural selectors. | `SeatDirectory` | mcp/src/agents_remember/controlplane/seats.py:95-108 |
-| Resolves one canonical current generation and fails closed on duplicate primaries or heirs. | `current_seat_occupant` | mcp/src/agents_remember/controlplane/seats.py:145-167 |
+| Resolves one canonical current generation and fails closed on duplicate primaries or heirs. | `current_seat_occupant` | mcp/src/agents_remember/controlplane/seats.py:142-164 |
 
 ## 260713-TES-L5 Completion Round — Fix-Round Docstring
 
@@ -74,6 +74,8 @@ machinery). `SeatRow`/`SeatDirectory` behavior is unchanged: pure catalog reads 
 shape declared by the control plane.
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration for seat claimant selection and confirmed that incumbent/heir precedence and ambiguity refusal remain as documented. Verification remains closeout-owned.
 
 - 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-15T09:10+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,7 +38,7 @@ complete checklist or the next complete checklist, never a partial report
 cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126).
 The renderer preserves the important distinction between a zeroable pre-closeout gate and dirty
 source/real-commit evidence that must remain visible until governed closeout supplies a real
-commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:182-240; mcp/src/agents_remember/memory_quality/curator_checklist.py:293-319).
+commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:181-237; mcp/src/agents_remember/memory_quality/curator_checklist.py:290-316).
 
 ### Conventions
 
@@ -96,7 +96,18 @@ the Markdown report. The attestation binds schema, checklist status and counts, 
 source-change candidate rows, onboarding/report paths, and the SHA-256 of the rendered report;
 the response exposes `attestationPath`.
 
+## MCAR-L02 Deterministic Attestation Source
+
+The checklist renderer no longer embeds wall-clock time. Identical quality/candidate input now
+reproduces identical Markdown and `ar-curator-memory-quality/v1` bytes, so a harmless rerun cannot
+stale an accepted coherence generation. Changed findings or candidate tuples still change the
+digest and correctly force republishing. The completion text points to the structured coherence
+authority rather than a hand-authored report.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Removed timestamp entropy and redirected candidate disposition to the
+  structured coherence authority. Verification remains closeout-owned.
 
 - 2026-08-15T09:10+02:00 — L3 content update: documented the structured curator readiness
   attestation and rendered-report digest; verification remains closeout-owned.

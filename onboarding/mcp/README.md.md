@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/README.md`                            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-29T16:12+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -90,9 +90,12 @@ the workspace and never the user's home directory.
 - Keep the run command aligned with `agents_remember.mcp.server.main()`, which
   requires `--config`; both `uvx agents-remember-mcp` and the pip console command
   invoke it.
-- Keep requirements practical and package-level: Python 3.11+, uv/pip, an
+- Keep requirements practical and package-level: Python `>=3.13,<3.14`, uv/pip, an
   MCP-capable harness, Git, and Docker (plus Ollama for the grepai embedder) only
   when provider tools are enabled.
+- Keep the Linux/WSL development-runtime section aligned with the canonical exact 3.13.15
+  source-build contract. `scripts/bootstrap-mcp-venv.sh` is the supported project-venv path;
+  system Python and uv-managed standalone interpreters are not substitutes.
 - Keep the Settings file location guidance accurate for package-first setup:
   the copied starter package owns the expected settings path, and that path
   must stay under the harness registration folder, not loose in the workspace
@@ -119,11 +122,12 @@ the workspace and never the user's home directory.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | `main`; `require_config_path` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:224-238; mcp/src/agents_remember/mcp/server.py:35-57 |
-| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | "agents-remember-mcp =" | mcp/pyproject.toml:72-72 |
+| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | "agents-remember-mcp =" | mcp/pyproject.toml:70-70 |
 | The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
 | The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | "def create_server(config: McpRuntimeConfig) -> Any:"; `# MCP Tool Reference` | docs/reference/mcp-tools.md:1-148; mcp/src/agents_remember/mcp/server.py:32-32 |
 | The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | `parse_timeout_caps` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:632-651 |
 | The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:105-119 |
+| Requirements and the development-runtime section state the bounded package line and canonical exact source build. | `## Requirements`; `### Canonical Linux/WSL development runtime` | mcp/README.md:49-85 |
 
 ## 260821-DAGQC-L2 Memory-Quality Call Grammar
 
@@ -132,6 +136,9 @@ explicit mode instead of the removed flat wait/run-id surface. This is a contrac
 a compatibility example: sync/start execution fields and poll identity are separate strict shapes.
 
 ## Update History
+- 2026-08-29T16:12+02:00 — Reconciled the package-facing requirements and Linux/WSL bootstrap with
+  the one supported Python 3.13 line and canonical source-built 3.13.15 development runtime.
+  Verification remains closeout-owned.
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: updated the package-facing quality example to the canonical discriminated request grammar. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

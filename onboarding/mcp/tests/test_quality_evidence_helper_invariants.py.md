@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_evidence_helper_invariants.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T16:54+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,9 @@ selection metadata, formatter-safe controlled retry-evidence mutations, and the 
 product-scenario owner invariant. The mutation proof
 extracts and executes only `_append_comment` from its AST, avoiding an import of the scenario CLI;
 that keeps the test from falsely acquiring ownership of every fixture path in the CLI catalog.
+The candidate-identity example pins the project runtime as CPython `3.13.15`, so the invariant
+demonstrates that runtime provenance participates in the environment identity carried by quality
+evidence instead of preserving the superseded Python 3.12 example.
 
 ### Conventions
 
@@ -73,6 +76,8 @@ No cross-repository source is allowed by the resolved settings.
 
 ## Update History
 
+- 2026-08-29T16:54+02:00 — Updated the candidate-identity forcing example to the canonical
+  project-owned CPython 3.13.15 runtime and documented its environment-evidence role.
 - 2026-08-27T20:45+02:00 — Added an AST-only invariant binding the product retry scenario to the
   designated low-fan-out seed owner without importing the scenario catalog.
 - 2026-08-27T20:16+02:00 — Added dependency-neutral execution of the real retry comment helper

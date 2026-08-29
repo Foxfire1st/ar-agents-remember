@@ -5,14 +5,28 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T15:45+02:00 |
-| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
-| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
+| lastUpdated | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## Exact Future-Code Candidate Identity
+
+`test_future_code_candidate.py` owns the real-Git mutation matrix for the plane-derived
+future-code route identity. It proves isolated add-all semantics across staged and unstaged
+content, deletions, renames, eligible untracked files, ignored files, and real-index preservation.
+It also proves closeout-snapshot consumption, collision-free concurrent captures with no temporary
+residue, and identity immutability. Its refusal cases force changed candidate/base/HEAD facts,
+mid-observation HEAD movement, non-leaf route exclusion, and strict missing/extra schema fields.
+The existing closeout-input boundary
+continues to prove that a same-tree HEAD move is not silently accepted as an in-flight operation
+output without journal evidence.
+The module is explicitly registered in the integration evidence lane because its core proof uses
+real temporary Git repositories; unknown-lane fallback remains forbidden.
 
 ## IAS Frozen Source-Pair Coordination Evidence
 
@@ -222,7 +236,7 @@ Its quality checks pin the additional provenance rule: a contract-scoped call fe
 contract's code-base commit to claim comparison, while a bare official-memory call leaves unstamped
 provenance absent. That makes dirty-worktree claim repair available before closeout without
 fabricating a future verification stamp.
-cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:321-321; mcp/tests/test_memory_tool_enclosure_scope.py:341-341)
+cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:332-332; mcp/tests/test_memory_tool_enclosure_scope.py:352-352)
 
 ## Quality Command Construction
 
@@ -1438,7 +1452,83 @@ exercises both ambient and plane dispatch paths against the same transaction. Th
 are implementation evidence only; this entry does not claim that the closeout Dagger acceptance
 lane has run.
 
+## MCAR-L02 Curator-Coherence Forcing Matrix
+
+`test_curator_coherence.py` covers exact identity separation, candidate/judgment set equality,
+explicit evidence roots and content digests, candidate staleness, atomic generation publication,
+byte-stable quality attestations, obsolete Markdown non-authority, crash replay, malformed-pointer
+CAS recovery, and shared memory/closeout validation. Queue fixtures now publish real structured
+coherence evidence, and parsing tests prove only the surviving judgment/priority Markdown remains
+parsed. `curator_coherence_test_support.py` centralizes only fixture input authoring: low-level
+external-closeout tests receive complete leaf/master/sprint topology, task mutations republish
+against current truth, and the production prepare/publish owner still creates and validates the
+canonical authority. The new suite is explicitly classified in `test-evidence-lanes.toml`, while
+the shared helper and its complete source-derived transitive consumer set are explicit in
+`evidence-lifecycle.toml`.
+
+`test_git_command.py` additionally forces the shared low-level observation boundary with 24
+concurrent candidate-tree captures through one requested scratch namespace. It requires one tree
+identity and no residual scratch paths, catching the live queue/dashboard race where one observer
+removed another observer's fixed index and made a single candidate intermittently unreadable.
+
+`test_worktree_support_benchmark.py` now forces the shared coherence/body-gate consumer boundary:
+an exact candidate decision accepts unchanged stale sidecar or governing-overview content, while
+the same decision cannot hide an untraced overview body edit.
+
+`test_l6_diff_coverage_projection_types.py` forces Python 3.13's PEP 695 schema shape separately:
+one local `$defs` enum reference resolves to the exact named vocabulary, while a local reference to
+a non-enum remains a generation refusal. The generated TypeScript vocabulary does not broaden.
+
+The ledger-order and closeout-recovery suites construct the production `ExternalCloseoutEvidence`
+type at every external-closeout call. Empty facts remain explicit only where the case exits before
+refresh or intentionally exercises recovery; a dictionary cannot silently bypass the typed
+candidate-bound no-impact boundary.
+
+Generation 13 exposed three verification-contract deltas after every deterministic rail passed.
+The projection requiredness suite now distinguishes scalar named vocabularies from object
+interfaces; the facade inventory excludes module-local type parameters while its independent
+consumer-import check remains authoritative; and the self-owned-wrapper ordering case explicitly
+isolates canonical coherence because coherence behavior has its own forcing suite. These are test
+contract repairs only: no rail, node, product behavior, or acceptance threshold was removed.
+
 ## Update History
+
+- 2026-08-29T20:12+02:00 — Generation-13 repair: reconciled scalar-vocabulary, module-local
+  type-parameter, and wrapper-fixture assumptions without weakening the Dagger test population.
+
+- 2026-08-29T19:31+02:00 — Generation-12 repair: aligned legacy external-closeout fixtures with
+  the typed reversible-evidence boundary exposed by the Python 3.13 Pyright gate. Verification
+  remains closeout-owned.
+
+- 2026-08-29T19:04+02:00 — Added the Python 3.13 named-literal projection-generator forcing case
+  discovered by closeout generation 11. Verification remains closeout-owned.
+
+- 2026-08-29T18:29+02:00 — Added forcing coverage for candidate-bound no-impact consumption and
+  the preservation of untraced-content refusal.
+
+- 2026-08-29T12:52+02:00 — MCAR-L02 C009 recovery: added the candidate-tree
+  observation concurrency forcing boundary exposed by live closeout queue recovery. Verification
+  remains closeout-owned.
+
+- 2026-08-29T12:27+02:00 — Clarified that the shared curator-coherence helper owns the complete
+  transitive test-consumer set derived through `test_worktree_support.py`, not only its three direct
+  importers. Verification remains closeout-owned.
+
+- 2026-08-29T11:41+02:00 — Added the shared structured-coherence fixture owner and documented its
+  complete-topology and task-mutation ordering boundary. Verification remains closeout-owned.
+
+- 2026-08-29T08:52+02:00 — Added the lifecycle-owned coherence publication and shared-consumer
+  forcing matrix. Verification remains closeout-owned.
+
+- 2026-08-29T07:35+02:00 — Classified the future-code candidate real-Git matrix explicitly as
+  integration evidence after targeted Dagger rejected the unmarked test file.
+
+- 2026-08-29T05:17+02:00 — A003 self-review repair: added concurrent-index cleanup,
+  closeout-consumption, and immutable-identity coverage to the route summary.
+
+- 2026-08-29T04:55+02:00 — Added the exact future-code candidate mutation/refusal matrix and
+  retained the separate lifecycle-operation HEAD-reconciliation boundary. Execution remains
+  lifecycle-owned Dagger evidence.
 
 - 2026-08-28T15:45+02:00 — No route impact: the hook repair's fixture extraction restores the
   existing statement budget without adding a test route or changing Dagger acceptance ownership.

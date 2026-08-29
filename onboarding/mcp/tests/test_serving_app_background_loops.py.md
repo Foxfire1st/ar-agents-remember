@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`         |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated | 2026-08-29T17:50+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`         |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ out anonymously.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The metrics race regression blocks the worker write, cancels the loop, proves it remains pending, then releases and observes the written sample. | `test_cancellation_drains_an_inflight_metrics_write_before_returning` | mcp/tests/test_serving_app_background_loops.py:224-255 |
-| The drained worker-thread helper and metrics loop under test. | `_to_thread_drained_on_cancel`; `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:60-98 |
+| The drained worker-thread helper and metrics loop under test. | `_to_thread_drained_on_cancel`; `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:57-95 |
 | The lifespan cancels and awaits all background tasks. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:195-243 |
 | The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:486-540 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
@@ -85,6 +85,8 @@ Forces dashboard lifespan wiring for projection, provider metrics, notifier, all
 - Background-loop failure or disablement remains isolated and observable.
 
 ## Update History
+
+- 2026-08-29T17:50+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for `_to_thread_drained_on_cancel`; cancellation still drains the in-flight thread before propagating `CancelledError`. Refreshed the exact source range; verification remains closeout-owned.
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

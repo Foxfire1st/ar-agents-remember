@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/atomic_series_terminal.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,5 +38,7 @@ terminal transaction that created it.
 | Terminal series authority is an ephemeral context-bound capability. | `AtomicSeriesTerminalPermit` | mcp/src/agents_remember/worktrees/integration/atomic_series_terminal.py:24-28 |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for terminal publication and confirmed that atomic-series authority and cleanup/abandon behavior remain as documented. Verification remains closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: created from the final terminal-capability owner. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

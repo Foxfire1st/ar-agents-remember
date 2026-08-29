@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `pyproject.toml`                           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T16:12+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -23,17 +23,14 @@ every rule it enforces is selected here.
 
 ## Code Commentary
 
-### `[tool.ruff]` — Target Version Reconciled With The Supported Floor
+### `[tool.ruff]` — Target Version Is The Only Supported Minor
 
-`target-version` is `py311`, not `py313`. `mcp/pyproject.toml` declares
-`requires-python = ">=3.11"`, so a tool told to target
-py313 offers rewrites the floor cannot execute. That was not hypothetical: seven
-`# noqa: UP040 / UP046 / UP047` directives in `serving/conversation/` and
-`observer/projection_inputs.py` carried the reason "Python 3.11 support" — PEP 695
-`type` statements and generic syntax 3.11 does not parse. Pinning the target to the floor
-makes Ruff agree with the package metadata, and those seven suppressions were deleted in
-the same change because the rules no longer fire. **Raising this line again means putting
-them back**, which is the visible cost the mismatch used to hide.
+`target-version` is `py313`, matching `mcp/pyproject.toml`'s bounded
+`requires-python = ">=3.13,<3.14"` contract. The earlier 3.11-floor reconciliation removed seven
+PEP 695 upgrade suppressions while the package supported multiple minors; that historical reason
+no longer governs the current project. The project-wide runtime migration deliberately narrows
+package, tooling, Dagger, CI, release, and managed development execution to Python 3.13, with exact
+3.13.15 selected wherever an interpreter is provisioned.
 
 ### `[tool.ruff.lint]` — Everything Is Armed, Nothing Is Deferred
 
@@ -187,10 +184,10 @@ off by default and there was nowhere to declare a marker.
 ## Invariants And Boundaries
 
 - Root quality-tool config governs source-checkout development checks; install package
-  metadata stays in `mcp/pyproject.toml` (which also carries the supported floor and
-  platforms as classifiers: Python 3.11/3.12/3.13, Linux and macOS — Windows is supported
+  metadata stays in `mcp/pyproject.toml` (which also carries the single supported minor and
+  platforms as classifiers: Python 3.13, Linux and macOS — Windows is supported
   through WSL, which presents as Linux and has no classifier).
-- `target-version` must track `requires-python`'s floor, not the newest interpreter.
+- `target-version` must track the one supported package minor.
 - **`ignore` is not a parking space.** Every complexity code that was ever parked here was
   cleared by refactoring, and the gate carries no baseline to park a new one in.
 - The single `per-file-ignores` entry for `PLR0913` covers published MCP tool signatures and
@@ -221,7 +218,7 @@ off by default and there was nowhere to declare a marker.
 | The inventory comes from `registered_gated_markers`. | `registered_gated_markers` | mcp/tests/test_gated_integration_runner.py:53-56 |
 | `fitness` is an ordinary architecture evidence lane, not a pyproject or gated-runner marker. | "fitness"; "repository architecture contract" | mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py:72-73 |
 | Evidence-lane ownership and exclusion from the gated marker table are asserted directly. | `test_evidence_fitness_is_owned_by_the_lane_without_claiming_the_legacy_selector` | mcp/tests/test_gated_integration_runner.py:110-122 |
-| The supported Python floor and supported platforms are declared as package classifiers. | "requires-python = "; "Programming Language :: Python :: 3.11"; "Operating System :: POSIX :: Linux"; "Operating System :: MacOS" | mcp/pyproject.toml:10-10; mcp/pyproject.toml:17-17; mcp/pyproject.toml:20-21 |
+| The bounded Python 3.13 line and supported platforms are declared as package metadata. | "requires-python = \">=3.13,<3.14\""; "Programming Language :: Python :: 3.13"; "Operating System :: POSIX :: Linux"; "Operating System :: MacOS" | mcp/pyproject.toml:10-18 |
 | Source-checkout instructions state the gate command and that Radon reports rather than enforces. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
 
 ## R39 Gated Marker Policy
@@ -231,6 +228,10 @@ six vendor-provisioned opt-ins. No marker is authorized for host pytest or GitHu
 test-capable selections remain behind the shared Dagger environment guard.
 
 ## Update History
+
+- 2026-08-29T16:12+02:00 — Replaced the former multi-minor 3.11-floor contract with the single
+  supported `py313` line and bounded package range. Historical 3.11 suppression cleanup remains
+  history rather than current runtime authority. Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled marker documentation with credential semantics
   and Dagger-only execution. Verification remains closeout-owned.

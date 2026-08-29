@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/testing/causal_failures.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,6 +83,8 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `CAUSAL_REPORT_OPTION` | mcp/test_support/agents_remember_test_support/testing/causal_failures.py:19-19 |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 generator annotation normalization for the pytest report hook and confirmed that causal classification and evidence behavior remain as documented. Verification remains closeout-owned.
 
 - 2026-08-28T10:03:40+02:00 — Split process, multiprocessing, subprocess, socket, async, timeout,
   and environment/OSError families and added explicit serial/xdist topology to retry evidence.

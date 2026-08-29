@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_abandon.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-21T04:10+02:00                     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-29T11:52+02:00                     |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -115,10 +115,10 @@ No external documentation is needed for these standard-library unit tests.
 | --- | --- | --- |
 | `teardown_worktree_providers` loads worktree provider settings, removes the derived resources, and reclaims the provider-runtime tree. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `_worktree_provider_docker_resources` derives the provider container/network resources used by teardown. | `_worktree_provider_docker_resources` | mcp/src/agents_remember/application/provider_runtime.py:194-208 |
-| `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:527-567; mcp/src/agents_remember/worktrees/modules/abandon.py:666-680 |
-| `_abandon_directories` removes the enclosure reports tree before attempting to reclaim the enclosing worktree group. | `_abandon_directories` | mcp/src/agents_remember/worktrees/modules/abandon.py:612-663 |
+| `_abandon_branch` and `_abandon_blockers`. | `_abandon_branch`; `_abandon_blockers` | mcp/src/agents_remember/worktrees/modules/abandon.py:526-566; mcp/src/agents_remember/worktrees/modules/abandon.py:665-679 |
+| `_abandon_directories` removes the enclosure reports tree before attempting to reclaim the enclosing worktree group. | `_abandon_directories` | mcp/src/agents_remember/worktrees/modules/abandon.py:611-662 |
 | `lifecycle_guidance` delegates terminal cleanup states to `_reclaimed_phase`, including the `cleanup == "abandoned"` branch pinned by the 05l-P1 phase test. | `lifecycle_guidance`; `_reclaimed_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:225-235; mcp/src/agents_remember/worktrees/modules/guidance.py:238-252 |
-| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:75-75; mcp/tests/test_worktree_support.py:89-89 |
+| `git`/`init_repo` test utilities from the worktree support test module. | "def git"; "def init_repo" | mcp/tests/test_worktree_support.py:79-79; mcp/tests/test_worktree_support.py:93-93 |
 
 ## Cross-Repo References
 
@@ -129,6 +129,10 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-29T11:52+02:00 — Rebound the shared `git` and `init_repo` helper citations after the
+  worktree-support fixture gained structured curator-coherence setup. The abandon test contract is
+  unchanged; verification metadata remains closeout-owned.
 
 - 2026-08-17T12:30+02:00 — No content impact: L5 coverage-pragma alignment only; the documented abandon behavior is unchanged.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -242,7 +242,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Stale-base coverage pins blocking guidance, refusal of both checked-out and non-checked-out protected-source fast-forward choices, diverged/offline behavior, and memory-side facts. | `test_behind_code_source_branch_blocks_with_recovery_guidance`; `test_fast_forward_choice_refuses_non_checked_out_protected_branch`; `test_fast_forward_choice_refuses_checked_out_protected_branch`; `test_fast_forward_cannot_recover_diverged_branch`; `test_offline_fetch_reports_unknown_and_does_not_block`; `test_behind_memory_source_branch_blocks` | mcp/tests/test_worktree_stale_base.py:42-59; mcp/tests/test_worktree_stale_base.py:75-95; mcp/tests/test_worktree_stale_base.py:97-112; mcp/tests/test_worktree_stale_base.py:114-134; mcp/tests/test_worktree_stale_base.py:136-144; mcp/tests/test_worktree_stale_base.py:146-159 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:465-467 |
-| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:183-197; mcp/src/agents_remember/worktrees/worktree_contract.py:200-228 |
+| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
 
 ## Cross-Repo References
 

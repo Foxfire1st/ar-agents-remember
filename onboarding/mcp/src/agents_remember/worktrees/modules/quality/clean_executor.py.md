@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,11 @@ This module runs one pinned Dagger quality graph in a clean Ubuntu/Playwright co
 
 `run_clean_quality` validates mode and candidate roots, prepares an isolated sandbox containing the exact staged candidate and required Git ancestry, invokes the pinned Dagger module while streaming progress, and publishes only recognized reports. It parses the exported result rather than trusting the Dagger CLI transport exit code alone.
 
+The recognized immutable report set includes both the source-built base-interpreter proof and the
+candidate-venv proof (`python-runtime.json` and `python-venv-runtime.json`). Runtime provenance is
+therefore exported with the same candidate-bound quality generation instead of living in an
+ephemeral console transcript.
+
 `_publish_reports` writes immutable generation artifacts and atomically publishes the schema-1.0
 manifest pointer. Publication and recovery share `published_quality_manifest.py`; this module no
 longer carries an alternate attestation-only reader. `published_quality_attestation` and
@@ -39,6 +44,8 @@ The Dagger, Codex, and base image versions are constants. The scratch sandbox is
 - Invalid/missing exported status fails closed; local quality is not a fallback.
 - Candidate Git identity must match before and after sandbox materialization.
 - Reports are atomically replaced, not accumulated per run.
+- Base-runtime and venv-runtime proofs are recognized quality artifacts and are published only as
+  members of the immutable result generation.
 - `quality-report-set.json` has one strict object-root schema and one shared reader. Unknown fields,
   legacy shapes, malformed digest/size records, and partial manifests fail closed.
 - Recovery callers pass one immutable manifest snapshot through every artifact lookup; a pointer
@@ -63,7 +70,8 @@ The repository source pins the toolchain; no external Domain Documentation sourc
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:112-193 |
-| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:276-351; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:597-598 |
+| The export allowlist includes the base and venv Python runtime proof artifacts. | `EXPORTED_REPORT_NAMES` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:48-70 |
+| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:280-355; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:599-600 |
 
 ## Cross-Repo References
 
@@ -71,7 +79,7 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:491-548; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:597-598 |
+| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:495-552; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:599-600 |
 
 ## 260821-DAGQC-L2 Canonical Publication Manifest
 
@@ -87,6 +95,9 @@ generation bound to the candidate tree. Only a digest-verified passed generation
 `CertifyingTestEvidence`. Diagnostic payloads and phase reports cannot be supplied as substitutes.
 
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Added both canonical Python runtime proofs to the immutable recognized
+  quality-report generation.
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

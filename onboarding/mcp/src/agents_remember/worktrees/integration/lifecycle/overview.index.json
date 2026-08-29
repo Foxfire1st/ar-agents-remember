@@ -37,13 +37,14 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 33,
-    "fileSidecars": 30,
+    "sourceFilesInScope": 34,
+    "fileSidecars": 31,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -53,6 +54,8 @@
     "binding",
     "cancellation",
     "candidate",
+    "child",
+    "child_processes",
     "claim",
     "closeout",
     "completed",
@@ -102,6 +105,7 @@
     "observation",
     "operation",
     "operations",
+    "processes",
     "projection",
     "public",
     "read",
