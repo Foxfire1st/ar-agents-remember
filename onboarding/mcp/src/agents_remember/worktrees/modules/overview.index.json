@@ -29,6 +29,7 @@
     "mcp/src/agents_remember/worktrees/modules/landing.py",
     "mcp/src/agents_remember/worktrees/modules/models.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+    "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
     "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
     "mcp/src/agents_remember/worktrees/modules/quality/gate.py",
@@ -44,12 +45,13 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 33,
-    "fileSidecars": 32,
+    "sourceFilesInScope": 34,
+    "fileSidecars": 33,
     "childRoutes": 0
   },
   "routingTerms": [
     "abandon",
+    "acceptance",
     "agents",
     "agents_remember",
     "args",
@@ -85,6 +87,7 @@
     "models",
     "modules",
     "onboarding",
+    "onboarding_acceptance",
     "preflight",
     "provider",
     "publication",
@@ -133,10 +136,10 @@
       "mcp/src/agents_remember/worktrees/modules/landing.py",
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+      "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
       "mcp/src/agents_remember/worktrees/modules/quality",
       "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
-      "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
-      "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+      "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -177,6 +180,8 @@
       "models",
       "onboarding.py",
       "onboarding",
+      "onboarding_acceptance.py",
+      "onboarding_acceptance",
       "clean_executor.py",
       "clean_executor",
       "closeout_memory.py",
@@ -184,9 +189,7 @@
       "gate.py",
       "gate",
       "published_manifest.py",
-      "published_manifest",
-      "start.py",
-      "start"
+      "published_manifest"
     ]
   },
   "fallback": {

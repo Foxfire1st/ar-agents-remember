@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated            | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -59,15 +59,16 @@ verification metadata rows and Update History, vs the last verified memory
 commit via `commit_text_or_none` — `memory_verified_commit`, falling back to
 HEAD when empty) and new Update History lines into four cases:
 body+history passes; body without history is `untraced` (traceability);
-history-only passes only with a new `No content impact:` marked entry and is
-collected as `attested_no_impact`; everything else (unchanged, metadata-only,
-unmarked history-only) is `stale`. The verified-commit baseline means sidecar
+history-only still recognizes a historical `No content impact:` marked entry and is collected as
+`attested_no_impact`; everything else (unchanged, metadata-only, unmarked history-only) is
+`stale`. The verified-commit baseline means sidecar
 work already committed in the memory worktree before closeout still classifies
 honestly, and a new sidecar committed early passes like an untracked one
-(absent at the baseline). `require_updated_sidecar_content` raises on
-`stale`/`untraced` — the error teaches both the c-05 body-update path and the
-explicit no-impact marker — and returns the attested source paths so closeout
-payloads can surface them. The check accepts an explicit `memory_tree` (the
+(absent at the baseline). `require_updated_sidecar_content` first applies the exact accepted
+no-content identities supplied by the current curator-coherence authority, then raises on any
+remaining `stale`/`untraced` content. Only a matching `stale` identity can move to
+`attested_no_impact`; `untraced` content remains closed. The check returns the attested source
+paths so closeout payloads can surface them and accepts an explicit `memory_tree` (the
 worktree wrapper passes the memory worktree) and safely skips sidecars that do
 not resolve under that tree rather than reporting false stale findings;
 `validate_onboarding_refresh_plan_for_context` wires it into the worktree
@@ -95,8 +96,8 @@ therefore still needs truthful history.
 
 `_nearest_governing_route` picks the longest matched route per changed path
 (`.` loses to any deeper route); `classify_route_overview_updates` classifies
-only those nearest-governing overviews as stale / untraced / attested (marker
-`No route impact:`), while ancestor-matched overviews — including the repo-root
+only those nearest-governing overviews as stale / untraced / attested (including still-recognized
+historical `No route impact:` markers), while ancestor-matched overviews — including the repo-root
 overview matched by happenstance — are collected as
 `stamped_without_body_review` (skipped when their body was reviewed anyway) and
 never gate closeout.
@@ -118,13 +119,17 @@ Since 260731-EFA-L2 that classification is three named steps, and
   latter; an ancestor match returns
   `stamped_without_body_review` when its body went unreviewed, and `None` otherwise.
 
-`refresh_onboarding_metadata(contract, change)`,
+`OnboardingBodyGateEvidence` groups the memory tree, verified-memory baseline, and candidate-bound
+accepted identities at the body-gate boundary. `refresh_onboarding_metadata(contract, change)`,
 `refresh_onboarding_metadata_for_context(context, change, *, memory_tree=None,
-memory_verified_commit="")` and `refresh_route_overview_metadata_for_context(context, change, *,
-memory_tree=None, memory_verified_commit="")` all take a `VerifiedChange` (from `modules.models`)
+memory_verified_commit="", accepted_no_impact=...)` and
+`refresh_route_overview_metadata_for_context(context, change, *, memory_tree=None,
+memory_verified_commit="", accepted_no_impact=...)` all take a `VerifiedChange` (from
+`modules.models`)
 in place of the separate `changed_paths` / `verified_commit` / `verified_date` / `working_paths`
-arguments, so a refresher cannot stamp one commit's hash beside another's path list. `require_updated_route_overview_content` raises on
-stale/untraced and returns attested routes;
+arguments, so a refresher cannot stamp one commit's hash beside another's path list.
+`require_updated_route_overview_content` applies only matching candidate-bound no-route-impact
+decisions, then raises on remaining stale/untraced content and returns accepted routes;
 `validate_route_overview_refresh_plan_for_context` runs it (with `memory_tree`
 and `memory_verified_commit` plumbed from the worktree wrapper) before the code
 commit. New overview files absent from the verified baseline pass without
@@ -178,7 +183,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | "def build_route_indexes("; "def route_index_source_snapshot(" | mcp/src/agents_remember/kernel/route_index.py:184-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1168-1168; mcp/tests/test_worktree_support_tests_2.py:86-86; mcp/tests/test_worktree_support_tests_2.py:130-130; mcp/tests/test_worktree_support_tests_2.py:565-565|
+| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1168-1168; mcp/tests/test_worktree_support_tests_2.py:86-86; mcp/tests/test_worktree_support_tests_2.py:130-130; mcp/tests/test_worktree_support_tests_2.py:566-566|
 
 ## Cross-Repo References
 
@@ -190,6 +195,10 @@ implementation governs this module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-29T18:29+02:00 — Routed candidate-bound no-content/no-route decisions through the body
+  validation and refresh boundaries. Only unchanged stale content is eligible; untraced edits
+  remain fail-closed.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 

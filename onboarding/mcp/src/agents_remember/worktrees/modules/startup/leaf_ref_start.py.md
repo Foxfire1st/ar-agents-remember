@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py` |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 | --- | --- | --- |
 | Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "def resolve_leaf_ref(" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39; mcp/src/agents_remember/worktrees/leaf_refs.py:88-88 |
 | Start contract builder that calls these helpers. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:934-954 |
-| `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:91-92; mcp/src/agents_remember/worktrees/worktree_contract.py:161-178; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
+| `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:90-91; mcp/src/agents_remember/worktrees/worktree_contract.py:160-177; mcp/src/agents_remember/worktrees/worktree_contract.py:180-195 |
 
 ## Update History
 

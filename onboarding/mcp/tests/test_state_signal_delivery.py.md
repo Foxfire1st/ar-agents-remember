@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_delivery.py`                  |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-09T06:48+02:00                                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                    |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                                    |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -74,7 +74,7 @@ The suite exercises `serving/inbox_delivery.py`, `controlplane/operator_inbox_re
 | --- | --- | --- |
 | The fail-closed row-kind gate under test. | `_delivery_refusal` | mcp/src/agents_remember/serving/inbox_delivery.py:107-162 |
 | The boundary vocabulary the gate consults. | `seat_at_turn_boundary` | mcp/src/agents_remember/models/terminal_catalog.py:58-64 |
-| Landed terminality and its backoff/escalation exclusions. | "def state_signal_landed("; "def is_due(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:29-29; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:99-99 |
+| Landed terminality and its backoff/escalation exclusions. | "def state_signal_landed("; "def is_due(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:29-29; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:97-97 |
 
 ## Cross-Repo References
 

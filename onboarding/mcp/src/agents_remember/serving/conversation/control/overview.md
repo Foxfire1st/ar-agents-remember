@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 
 ## What This Area Is
 
@@ -214,7 +214,7 @@ foundation and four+installed suites pin the slice.
 | `get_conversation_runtime` is the runtime dependency entry. | `get_conversation_runtime` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23 |
 | The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The conversation models define `protect_queue_source_privacy`. | `protect_queue_source_privacy` | mcp/src/agents_remember/models/conversations/submissions.py:34-41 |
-| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/models/conversations/telemetry.py:102-102 |
+| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/models/conversations/telemetry.py:100-100 |
 | `PolicyPart` is declared in the route-local `control/policy.py`. | `PolicyPart` | mcp/src/agents_remember/serving/conversation/control/policy.py:36-43 |
 | `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. | `ConversationPolicyProjection` | mcp/src/agents_remember/serving/conversation/control/policy.py:46-55 |
 | `_map_typed_error` is the control API error-mapping entry. | `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |

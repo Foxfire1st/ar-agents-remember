@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T08:30+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ contract per concern.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:89-128; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:131-147; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:150-157; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:160-175 |
-| Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
+| Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 | Atomic raw-section shape validation and missing-register scaffolding. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
 
 ## 260824-PDLS Final Task-Recovery Boundary
@@ -93,6 +93,9 @@ from queue state. Task mutations remain legal; affected closeout projections are
 rebuilt from current task truth instead of freezing authoring or carrying stale rows forward.
 
 ## Update History
+
+- 2026-08-29T18:29+02:00 — Reconciled the graph-title citation coordinate after the runtime and
+  coherence refactor moved the cited symbol; task-publication behavior is unchanged.
 
 - 2026-08-26T08:30+02:00 — Rebounded the graph-title source range after the frozen structural
   split; the task-first, always-unlocked authoring contract is unchanged.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-29T19:31+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,9 @@ invalid ledger heads or unreachable memory content,
 internal/external contract mismatches, exact completed recovery, and the stale-contract-memory
 window where clean current memory HEAD must win. Candidate 11 also forces missing ledger/worktree
 authority and threads a real normalized message authority through external refresh and resume.
+The shared `_external_closeout_evidence()` fixture now constructs the production typed evidence
+boundary, with intentionally empty pre-refresh and no-impact facts for cases that test earlier
+authority or recovery branches.
 
 ### Conventions
 
@@ -58,8 +61,9 @@ No configured Domain Documentation source applies to this repository-internal te
 | --- | --- | --- |
 | Direct journal tests cover accepted code plus same-code memory-history reconciliation. | `CloseoutRecoveryTests`; `test_code_commit_recovery_proves_head_and_candidate_tree`; `test_external_resume_appends_history_and_rejects_invalid_head_or_ancestry` | mcp/tests/test_worktree_closeout_recovery.py:94-577 |
 | Direct proof tests cover code/contract mismatch, memory-head mismatch, ledger identity, and reachability. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:309-342; mcp/tests/test_worktree_closeout_recovery.py:344-383 |
-| Production-shaped tests retain exact completion, unreachable-mapping, and missing external-authority refusals. | `test_completed_recovery_must_match_exactly`; `test_external_closeout_refuses_an_unreachable_existing_mapping`; `test_external_closeout_requires_ledger_and_memory_worktree` | mcp/tests/test_worktree_closeout_recovery.py:439-466; mcp/tests/test_worktree_closeout_recovery.py:468-494; mcp/tests/test_worktree_closeout_recovery.py:496-517 |
+| Production-shaped tests retain exact completion, unreachable-mapping, and missing external-authority refusals. | `test_completed_recovery_must_match_exactly`; `test_external_closeout_refuses_an_unreachable_existing_mapping`; `test_external_closeout_requires_ledger_and_memory_worktree` | mcp/tests/test_worktree_closeout_recovery.py:464-491; mcp/tests/test_worktree_closeout_recovery.py:493-519; mcp/tests/test_worktree_closeout_recovery.py:521-542 |
 | The stale contract memory cell is rejected in favor of the clean current post-claim memory HEAD. | `test_external_closeout_uses_clean_memory_head_when_no_mapping_exists` | mcp/tests/test_worktree_closeout_recovery.py:519-561 |
+| External closeout fixtures cross the same typed reversible-evidence boundary as production instead of relying on untyped dictionaries. | `_external_closeout_evidence` | mcp/tests/test_worktree_closeout_recovery.py:94-98 |
 | Production recovery owns the finalization proof, typed outcome, code commit, and external tuple. | `prove_closeout_recovery_commits`; `MemoryCloseoutOutcome`; `accepted_code_commit`; `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:61-76; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:49-58; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:170-226; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
 
 ## Cross-Repo References
@@ -100,6 +104,10 @@ suite therefore proves exact recovery without treating queue state or a broad mo
 evidence.
 
 ## Update History
+
+- 2026-08-29T19:31+02:00 — Generation-12 repair: centralized construction of the typed
+  `ExternalCloseoutEvidence` input for four external recovery/refusal cases. Runtime behavior and
+  test scope are unchanged; verification remains closeout-owned.
 
 - 2026-08-26T14:32+02:00 — Added closeout retry proof that a new memory state for unchanged code
   appends a ledger row and commit while preserving prior history; invalid heads and ancestry still

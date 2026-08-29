@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,11 +118,11 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 | The rollback-safe batch writer and exact task publication transaction. | `write_task_doc_batch`; `publish_task_doc_set` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/tasks/store.py:175-216 |
 | The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/test_support/agents_remember_test_support/code_quality/single_owner.py:40-53 |
 | The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:89-95 |
-| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:378-401; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:808-853 |
+| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:375-398; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:807-852 |
 | The F8 behaviors are pinned by the forcing suite (sprint exclusion; seat-row edge shapes). | `test_report_does_not_flag_a_sprint_as_uncommanded_master`; `test_report_seat_row_edge_shapes` | mcp/tests/test_task_sprint_linkage.py:585-607; mcp/tests/test_task_sprint_linkage.py:1056-1089 |
 | Attach and detach validate their full candidate before preview/apply; both routes call the shared graph-title cardinality owner before publication. | `attach_master`; `detach_master` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:209-274; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:277-347 |
 | Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731 |
-| The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:17-34; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:37-49 |
+| The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -168,6 +168,8 @@ lock or lifecycle evidence owner.
 | The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | `SprintLinkageError`; `SprintLinkageRequest`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:102-103; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:106-115; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:177-186 |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_parse_payload` and confirmed that payload validation and sprint-linkage behavior remain as documented. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Routed the uncommanded-master census through the shared module-level `repository_master_documents` query, preserving one repository-global authority API.
 

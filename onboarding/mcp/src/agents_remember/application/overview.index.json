@@ -38,6 +38,7 @@
     "mcp/src/agents_remember/application/completion_cleanup.py",
     "mcp/src/agents_remember/application/context_packet.py",
     "mcp/src/agents_remember/application/coordination_tools.py",
+    "mcp/src/agents_remember/application/curator_coherence.py",
     "mcp/src/agents_remember/application/gate_tools.py",
     "mcp/src/agents_remember/application/hosted_readiness.py",
     "mcp/src/agents_remember/application/memory_quality/controller.py",
@@ -59,8 +60,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 60,
-    "fileSidecars": 26,
+    "sourceFilesInScope": 61,
+    "fileSidecars": 27,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -73,6 +74,7 @@
     "closeout",
     "closeout_door",
     "closeout_queue",
+    "coherence",
     "completion",
     "completion_cleanup",
     "context",
@@ -80,6 +82,8 @@
     "controller",
     "coordination",
     "coordination_tools",
+    "curator",
+    "curator_coherence",
     "docs",
     "door",
     "files",
@@ -153,6 +157,7 @@
       "mcp/src/agents_remember/application/completion_cleanup.py",
       "mcp/src/agents_remember/application/context_packet.py",
       "mcp/src/agents_remember/application/coordination_tools.py",
+      "mcp/src/agents_remember/application/curator_coherence.py",
       "mcp/src/agents_remember/application/gate_tools.py",
       "mcp/src/agents_remember/application/hosted_readiness.py",
       "mcp/src/agents_remember/application/memory_quality",
@@ -163,8 +168,7 @@
       "mcp/src/agents_remember/application/next_step.py",
       "mcp/src/agents_remember/application/operator_inbox_tools.py",
       "mcp/src/agents_remember/application/orchestration_tools.py",
-      "mcp/src/agents_remember/application/provider_runtime.py",
-      "mcp/src/agents_remember/application/provider_tools.py"
+      "mcp/src/agents_remember/application/provider_runtime.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -181,6 +185,8 @@
       "context_packet",
       "coordination_tools.py",
       "coordination_tools",
+      "curator_coherence.py",
+      "curator_coherence",
       "gate_tools.py",
       "gate_tools",
       "hosted_readiness.py",
@@ -212,9 +218,7 @@
       "tool_response.py",
       "tool_response",
       "worktree_services.py",
-      "worktree_services",
-      "worktree_status.py",
-      "worktree_status"
+      "worktree_services"
     ]
   },
   "fallback": {

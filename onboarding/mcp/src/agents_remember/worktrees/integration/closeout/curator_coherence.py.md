@@ -1,0 +1,88 @@
+# mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[closeout integration overview](overview.md)
+
+## Purpose
+
+Owns the sole structured curator-coherence authority resolver, validator, and exact no-impact
+projection shared by memory readiness, closeout-door evidence, and closeout admission.
+
+## Code Commentary
+
+### Logic
+
+`observe_curator_coherence_source` captures the isolated add-all code tree, external-memory tree,
+candidate-relevant task topology, and exact ready memory-quality attestation. The stable manifest
+selects one generation under the leaf's task-local history. `load_curator_coherence_authority`
+proves manifest identity, content-addressed paths, record/report digests, deterministic projection,
+and judgment-evidence bytes. `require_current_curator_coherence` then compares that record with a
+fresh observation. `curator_coherence_no_impact` projects only the validated record's explicit
+`no-content-impact` and `no-route-impact` identities for the onboarding body gates; it does not
+derive semantic decisions. `current_curator_coherence_predecessor` digests even malformed stable bytes so a
+prepared CAS repair cannot deadlock on a damaged pointer.
+
+### Conventions
+
+Evidence references use exactly one explicit `code:`, `memory:`, or `task:` namespace. The resolver
+confines each path to its named root and requires an existing file.
+
+### Invariants And Boundaries
+
+- There is one stable live manifest per external-memory leaf and no filename search fallback.
+- Historical generations and attempt snapshots are audit evidence, not competing authority.
+- The machine never parses curator Markdown; it regenerates and byte-compares the projection.
+- Ready quality requires the exact attestation/report pair with all repair counts at zero.
+- Every consumer calls `require_current_curator_coherence` or its evidence adapter.
+- No-impact projection is candidate-bound and disposition-exact; downstream gates decide whether
+  an accepted identity is actually eligible to clear.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+No external source governs this repository-local lifecycle authority.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured Domain Documentation source applies. | — | — |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:90-126 |
+| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:145-228 |
+| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:261-301; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:304-305 |
+| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:81-106 |
+| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:413-444 |
+
+## Cross-Repo References
+
+No cross-repository source is allowed by the resolved settings.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| External memory is still the exact contract-resolved paired worktree, not an arbitrary repository. | `_require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:388-400 |
+
+## Update History
+
+- 2026-08-29T18:29+02:00 — Added the disposition-exact no-impact projection consumed by the
+  onboarding body gates; semantic decisions remain curator/developer-owned.
+- 2026-08-29T11:00+02:00 — Re-read the shared admission claim against the current source and
+  widened its citation through `curator_coherence_evidence`; the disposition remains unchanged.
+- 2026-08-29T08:52+02:00 — Created for the single structured coherence authority and shared
+  currentness validator. Verification remains closeout-owned.

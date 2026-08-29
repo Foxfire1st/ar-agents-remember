@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -98,7 +98,17 @@ truth and waiting door generations. Invalidation publishes invalid-empty state, 
 fresh valid-built projection, and no queue row owns retry, claim, commit, certification, terminal,
 or compatibility evidence.
 
+## MCAR-L02 Structured Curator Evidence
+
+The queue evidence adapter no longer parses a stable Markdown filename. It delegates curator
+evidence to the closeout integration route's sole structured currentness validator, then converts
+that exact evidence list into door/projection facts. Generated reports are evidence bytes only;
+historical files cannot compete with the stable manifest.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Replaced curator Markdown parsing with the shared structured authority
+  validator. Verification remains closeout-owned.
 
 - 2026-08-26T14:32+02:00 — Documented the closeout-recovery ledger distinction without expanding
   queue authority: exact current reuse is idempotent and later same-code memory state appends

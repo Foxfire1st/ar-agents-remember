@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-29T11:00+02:00                     |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Purpose
@@ -19,10 +19,12 @@ for eligible source files that do not yet have their required onboarding pair.
 
 ### Logic
 
-The script collects added, copied, renamed, and untracked files from Git status
-sources, resolves each path through the same storage/path-rule helpers used by
-drift detection, and reports missing sidecar or inline onboarding for eligible
-new files. For CLI runs it derives the canonical repository name from Git's
+The script derives one isolated add-all candidate tree and diffs it against
+`HEAD`, then resolves each added, copied, or renamed target through the same
+storage/path-rule helpers used by drift detection. This makes the preflight
+match the tree closeout would commit: a staged add that was later deleted does
+not remain a false onboarding obligation, while untracked files still enter the
+candidate. For CLI runs it derives the canonical repository name from Git's
 common directory, so a linked worktree can be named after the task without
 changing external-memory resolution. It intentionally does not scan the whole
 historical repository.
@@ -75,6 +77,8 @@ code and refresh the new sidecars to the real code commit hash.
 - Sidecar-managed files require `onboarding/<source-path>.md`.
 - Inline-managed files require an inline onboarding block.
 - Unsupported storage modes are reported instead of guessed.
+- Candidate discovery uses `worktree_candidate_tree` with an isolated temporary index and never
+  reads the real staged and unstaged layers as independent authorities.
 - Git subprocesses use `stdin=subprocess.DEVNULL` and a scrubbed repository-selection environment.
   Both belong to `kernel.git_command.run_git`; this module must not grow a second runner.
 - Linked-worktree basenames are not repository identifiers; the Git common
@@ -88,11 +92,15 @@ code and refresh the new sidecars to the real code commit hash.
 | --- | --- | --- |
 | Drift helpers provide sidecar path construction and inline block parsing. | "def classify_source" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:163-163 |
 | Resolver helpers provide storage/path-rule decisions. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-129 |
-| Tests cover untracked, staged, excluded, and renamed file cases. | `MissingOnboardingTests` | mcp/tests/test_missing_onboarding.py:22-154 |
+| Tests cover untracked, staged, staged-then-removed, excluded, and renamed file cases. | `MissingOnboardingTests` | mcp/tests/test_missing_onboarding.py:22-176 |
 | The kernel filesystem helper handles long-path sidecar and source probes. | "def absolute_path" | mcp/src/agents_remember/kernel/filesystem.py:10-10 |
 | `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
 
 ## Update History
+
+- 2026-08-29T11:00+02:00 — Candidate discovery now diffs one isolated add-all tree against
+  `HEAD`. This removes stale index residue from the missing-onboarding decision while preserving
+  untracked and rename-target coverage; the real worktree index remains untouched.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

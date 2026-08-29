@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/projections/projection_inputs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -101,6 +101,8 @@ snapshot and leaves the bit set; a later heartbeat retries even without another 
 Successful publication clears the bit.
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_advance_model_age` and confirmed that projection age advancement remains as documented. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled retained projection input state with atomic task refresh and heartbeat retry after transient failure.
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.

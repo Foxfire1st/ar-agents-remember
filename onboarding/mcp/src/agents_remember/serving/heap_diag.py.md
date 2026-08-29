@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/heap_diag.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-24T13:18:47Z |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ The serving lifespan owns scheduling; this module owns only flags, snapshots, fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:203-203 |
+| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:200-200 |
 | The paired test sidecar records disabled-by-default behavior, report output, worker-thread placement, and loop responsiveness while its source is still uncommitted. | `### Logic` | onboarding/mcp/tests/test_heap_diag.py.md:23-26 |
 
 ## Cross-Repo References

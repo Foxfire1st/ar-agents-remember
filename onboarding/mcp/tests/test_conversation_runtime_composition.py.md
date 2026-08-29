@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_runtime_composition.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T00:06+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-29T04:55+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ evidence.
 | The production seam accepts the already-built runtime and installs it once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
 | The live composition that constructs the runtime and mints the resolver the identity scan looks for. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | The root registration installs the runtime then mounts the unchanged root router. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
-| The typed composition error asserted by every failure-shape case. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:98-105 |
+| The typed composition error asserted by every failure-shape case. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:126-133 |
 
 ## Cross-Repo References
 
@@ -96,6 +96,10 @@ No neighboring repository participates in this composition suite.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-29T04:55+02:00 — MCAR-L02 citation maintenance: shifted the central
+  `ConversationCompositionError` range after a preceding typed error was added; suite behavior is
+  unchanged.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-03T03:05:21+02:00 — W3-B05 curator: resolved 5 Tier-2 table findings with exact anchors and source paths; fixer generated all final ranges.

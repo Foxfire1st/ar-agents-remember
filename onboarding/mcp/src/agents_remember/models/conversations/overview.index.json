@@ -132,9 +132,9 @@
       "mcp/src/agents_remember/models/conversations/",
       "mcp/src/agents_remember/models/conversations/overview.md",
       "models/overview.md",
-      "cb6623775a04cbdeb0509dc26f08a8268189c3f6",
-      "2026-08-25T08:12:56+02:00",
-      "serving/conversation/models.py"
+      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
+      "serving/conversation/models.py",
+      "_models_*"
     ]
   },
   "fallback": {

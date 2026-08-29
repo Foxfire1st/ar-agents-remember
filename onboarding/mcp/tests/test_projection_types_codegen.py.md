@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_projection_types_codegen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,8 +67,17 @@ The script execution environment must resolve both `mcp/src` product code and
 `mcp/test_support` verification tooling. The focused pyright assertion prevents either package
 root from disappearing while projection generation remains owned by the verification package.
 
+## MCAR A005-C013 Dagger Repair
+
+The required-field regression now inspects only JSON Schema definitions with object properties.
+Named scalar vocabularies such as `AttentionLane` are deliberately emitted as TypeScript aliases,
+not interfaces, so treating every `$defs` member as an interface would reject the correct Python
+3.13/Pydantic schema. Object requiredness assertions remain unchanged and exhaustive.
+
 ## Update History
 
+- 2026-08-29T20:12+02:00 — Recorded the generation-13 repair that distinguishes scalar vocabulary
+  definitions from object-interface requiredness without weakening either generator contract.
 - 2026-08-28T06:40+02:00 — Moved the generator import to
   `agents_remember_test_support` and required both source roots in the scripts pyright environment.
 - 2026-08-24T15:04+02:00 — Added focused supported-refinement preservation and unknown-keyword

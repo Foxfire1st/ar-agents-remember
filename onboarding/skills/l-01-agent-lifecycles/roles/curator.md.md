@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T09:14+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -30,7 +30,8 @@ refuse intake. Rejected or worker-blocked revisions remain report blockers and c
 into current onboarding intent. For every affected contract it
 classifies the implementation as preserving, extending, deliberately superseding, or contradicting
 existing intent. It updates only the proper file card, affected route overview, route index, or
-entity record and writes a durable coherence report for the manager.
+entity record, then supplies exact judgments to the lifecycle API that publishes the sole
+structured coherence authority for the manager.
 
 Current intent, evidence/integrity, and semantic history are kept distinct. Generic category text,
 overview dumping, and task-log repetition are rejected. Mechanical no-impact cards stay precise.
@@ -49,7 +50,7 @@ they never excuse an underlying content, citation, shape, history, entity, or in
 - Use one-to-one sidecars and governing overview links; update entities only when a real entity changes.
 - Default bodies hold present intent and boundaries; Update History records concise semantic transitions.
 - Run missing-onboarding plus full leaf-scoped quality, repair every enforced finding, then run
-  indexes, drift classification, and diff checks and report exact classes.
+  indexes, drift classification, and diff checks before structured authority publication.
 - Leave real-commit hashes and entity fingerprints pending until governed closeout creates the commit.
 
 ## Invariants And Boundaries
@@ -60,7 +61,7 @@ they never excuse an underlying content, citation, shape, history, entity, or in
 - Every changed onboarding contract maps to an exact approved requirement revision and accepted
   reviewer adjudication.
 - Missing evidence or a material three-way contradiction escalates to the owning manager.
-- Curator cannot emit a completion report while its required checks still name actionable work.
+- Curator cannot publish completion authority while its required checks still name actionable work.
 - Runtime ids are private correlations; curator communication uses structural parent messaging and
   the durable report.
 
@@ -72,7 +73,7 @@ they never excuse an underlying content, citation, shape, history, entity, or in
 | Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, and durable reports. | "### 1 — Intake" | skills/l-01-agent-lifecycles/roles/curator.md:63-87 |
 | Inspection classifies contract disposition rather than equating test-green with intent-green. | "### 2 — Inspect" | skills/l-01-agent-lifecycles/roles/curator.md:89-101 |
 | Current intent, evidence, and semantic history are separate information planes. | "### 3 — Write Onboarding Only" | skills/l-01-agent-lifecycles/roles/curator.md:103-143 |
-| Checks require complete missing-onboarding/quality repair and exact accepted-revision mapping before report, distinct from closeout-owned commit provenance. | "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:145-201 |
+| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 
 ## 260821-DAGQC-L2 Quality Invocation
 
@@ -82,6 +83,10 @@ followed by `mode: poll` carrying only repository and run id. Capacity refusal m
 retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+
+- 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored terminal report with exact
+  lifecycle API publication and validation of the sole structured coherence authority.
+  Verification remains closeout-owned.
 
 - 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
   card already describes one leaf-owned primary revision, adjacent contextual constraints, and

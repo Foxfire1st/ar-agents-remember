@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_controls_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-29T10:09+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Forces task-addressed lifecycle controls and dispositions.
 
 ### Logic
 
-The suite covers start, observe, resume, retry, cancel, cleanup, completed direct/closeout, and unreadable journal states.
+The suite covers start, observe, resume, retry, cancel, cleanup, completed direct/closeout, and unreadable journal states. Its cancellation cases distinguish preserved staged/repaired candidates from unattributed protected-ref changes.
 
 ### Conventions
 
@@ -65,5 +65,7 @@ No cross-repository source is allowed by the resolved settings.
 
 ## Update History
 
+- 2026-08-29T10:09+02:00 — Added the failed-gate successor boundary: cancellation preserves
+  uncommitted repair bytes but refuses an unattributed HEAD change as a developer decision.
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

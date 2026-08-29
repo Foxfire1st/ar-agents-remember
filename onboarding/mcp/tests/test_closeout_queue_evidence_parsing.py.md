@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_evidence_parsing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,13 +16,16 @@
 
 ## Purpose
 
-Proves canonical curator and Markdown evidence parsing.
+Proves strict structured curator evidence plus the surviving canonical planning-register Markdown
+parsers.
 
 ## Code Commentary
 
 ### Logic
 
-The cases force exact attestation, section, table-header, separator, disposition, digest, and malformed-input behavior.
+The cases force strict attestation and record candidate/judgment equality, deterministic generated
+projection, shared validator delegation and failure translation, plus exact judgment/priority
+section, table-header, separator, digest, and malformed-input behavior.
 
 ### Conventions
 
@@ -45,7 +48,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:1-220 |
+| No external domain source is required for this repository-owned test contract. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
 
 ## Repo-Internal References
 
@@ -53,7 +56,7 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:1-220 |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
 
 ## Cross-Repo References
 
@@ -61,9 +64,13 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:1-220 |
+| No meaningful cross-repository reference applies. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
 
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Replaced curator Markdown parsing tests with strict structured record,
+  generated projection, and shared-validator proofs; planning-register parsers remain. Verification
+  remains closeout-owned.
 
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

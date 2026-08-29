@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-28T15:52:15+02:00 |
-| lastVerifiedCommitHash | 60b2465674390a34b60cbae23ccf505a589018a4 |
-| lastVerifiedCommitDate | 2026-08-28T15:43:23+02:00 |
+| lastUpdated | 2026-08-29T16:13+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 
 > **Status:** active baseline
 
@@ -683,8 +683,10 @@ formatter owns wrapping) and numeric sentinels (`PLR2004`). The only `per-file-i
 published MCP input schema rather than a call burden — held shut by an AST test that fails if the
 glob widens or a second `PLR0913` exemption appears. Test
 files keep targeted ignores for unused patched-callable arguments and import-path setup.
-`target-version` is `py311` — the supported floor, matching `requires-python`, which is what let
-seven PEP 695 `# noqa: UP040/UP046/UP047` suppressions be deleted. Pyright's `include` is now the
+`target-version` is `py313` — the repository's only supported minor, matching the bounded
+`requires-python = ">=3.13,<3.14"` package contract. The seven PEP 695 suppressions removed during
+the earlier 3.11-floor cleanup remain gone; that historical migration no longer defines current
+runtime authority. Pyright's `include` is now the
 whole checkout (`["."]`) instead of a second hand-written copy of the retired scope constant.
 `[tool.coverage.run] branch = true` and a full `[tool.pytest.ini_options]` block (strict markers and
 config, `python_classes` covering the `*Tests` house convention, `xfail_strict`, an exact-count
@@ -887,7 +889,7 @@ This repository is selected into an external coordination workspace by configure
 | Runtime asset sync treats root runtime folders as canonical and exposes a check form. | `sync_targets` | scripts/sync-runtime.py:189-202 |
 | The runtime sync contract is checked against every generated copy. | `RealTreeDriftTests` | mcp/tests/test_sync_scripts.py:159-207 |
 | GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. | "pull_request:"; "Refuse a tag whose commit has not landed on main" | .github/workflows/quality-checks.yml:3-7; .github/workflows/publish-mcp-to-pypi.yml:28-34 |
-| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:87-87 |
+| Closeout imports the staged-quality boundary, which refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality. | "gate_staged_code as _gate_staged_code" | mcp/src/agents_remember/worktrees/modules/closeout.py:99-99 |
 | The extracted staged-quality owner contains both refusal helpers and the exact-candidate Dagger gate. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:24-40; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:43-55; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-81 |
 | The contributor documentation states the same tier table, stash contract, CI scope, and closeout `wrapper-unavailable` state. | "Quality gates" | CONTRIBUTING.md:64-64 |
 | Provider guidance keeps provider runtime paths under configured provider roots. | "providers/runners/grepai" | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md:95-95 |
@@ -1215,7 +1217,7 @@ The committed package layout mirrors those owners: public adapters are under `ap
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:97-170; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:327-365 |
+| Closed admission and one public projector. | `admit_configured_contract`; `project_configured_contract_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:326-364 |
 | Root manifest/journal location authority. | `LifecycleOperationLocation`; `resolve_lifecycle_operation_location` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-113; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:473-517 |
 | Task-addressed lifecycle controls. | `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:155-225 |
 | Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. | `operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-132 |
@@ -1234,6 +1236,10 @@ guidance is in `system/tools.md`. Host pytest, direct coverage, and the quality 
 prohibited, with no compatibility fallback.
 
 ## Update History
+
+- 2026-08-29T16:13+02:00 — Reconciled repository-wide execution authority to the single Python
+  3.13 line and canonical exact 3.13.15 source build; the former `py311` floor is retained only as
+  historical context. Verification remains closeout-owned.
 
 - 2026-08-28T15:52:15+02:00 — No route impact: the hook now selects only the MCP-local
   environment and refuses missing quality dependencies; the focused regression test does not
@@ -2532,6 +2538,11 @@ the address, and staged replacement is resolved only at delivery. Runtime ids re
 generation/correlation data and are absent from public structural results.
 
 ## Update History
+
+- 2026-08-29T09:45+02:00 — MCAR-L02 root reference reconciliation: repaired the exact closeout
+  import citation after the canonical curator-coherence validator shifted the import boundary.
+  Repository-level behavior and navigation remain unchanged, but the authored reference change is
+  traced here rather than mislabeled as a no-route-impact attestation.
 
 - 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 root impact: reconciled idempotent canonical seats, durable
   brief evidence, vacancy/replacement delivery, and runtime-id-free public outcomes into the

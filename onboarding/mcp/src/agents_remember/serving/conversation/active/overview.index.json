@@ -96,6 +96,7 @@
       "mcp/src/agents_remember/serving/conversation/active/",
       "mcp/src/agents_remember/serving/conversation/active/overview.md",
       "conversation/overview.md",
+      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
       "expectedBridgeEpoch",
       "projectors/",
       "ConversationStatusService",
@@ -116,8 +117,7 @@
       "resume-replay",
       "ordering-fault",
       "role==\"user",
-      "claude:echo: unrecognized submission echo shape",
-      "projector._release_dormant_state"
+      "claude:echo: unrecognized submission echo shape"
     ]
   },
   "fallback": {

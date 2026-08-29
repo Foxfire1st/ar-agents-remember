@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ cannot become packaged current intent.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged curator contains the same current seat definition and three-way responsibility. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| The synchronized check loop requires complete curator-actionable repair and exact accepted-revision mapping before report. | "### 4 — Iterate The Checklist, Then Report" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:145-201 |
+| The synchronized check loop requires complete curator-actionable repair before structured authority publication. | "### 4 — Iterate The Checklist, Then Publish" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | The canonical source is the doctrine owner. | "# Lifecycle — Curator" | skills/l-01-agent-lifecycles/roles/curator.md:1-47 |
 | MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
@@ -69,7 +69,18 @@ The packaged curator uses the canonical explicit sync/start/poll request objects
 is a retry signal over the same API, never authority for a host runner, fallback, or retired flat
 call. The content remains synchronized from the canonical curator role.
 
+## MCAR-L02 Structured Curator Authority
+
+The curator's last act is now tool-owned publication, not writing or versioning a report. After the
+quality worklist reaches zero, the role prepares the exact tuple set, supplies one non-invented
+disposition/rationale/evidence reference per tuple, publishes the separately identified semantic
+revision and delivery attempt, optionally freezes a snapshot, and validates the sole live
+structured authority. Generated Markdown is returned as projection evidence only.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Replaced hand-authored coherence reporting with exact structured
+  publication and validation. Verification remains closeout-owned.
 
 - 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
   canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain

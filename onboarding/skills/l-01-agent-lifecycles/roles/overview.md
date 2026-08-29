@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T09:14+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 
 ## Purpose
 
@@ -61,8 +61,9 @@ evidence events separate; the reviewer writes an independent exact-attempt adjud
 manager records bounded invalidation and rebuilds an observational summary that excludes protocol
 events. Unrelated later candidates do not reopen accepted attempts.
 
-The curator's terminal artifact is valid only after current-additions coverage and the full
-leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
+The curator's terminal structured authority is valid only after current-additions coverage and the
+full leaf-scoped memory-quality worklist have been repaired and rerun. The lifecycle API publishes
+that sole candidate-bound authority and renders Markdown from it. Expected dirty-source drift and
 real-commit verification fields remain separately closeout-owned; they do not excuse a repairable
 onboarding or citation finding.
 
@@ -92,7 +93,7 @@ read/search helpers and never become AR role seats.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes and a mandatory pre-closeout repair-and-rerun loop. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
@@ -142,6 +143,10 @@ No role authority changed. Curator doctrine now uses explicit sync/start/poll re
 treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
 
 ## Update History
+
+- 2026-08-29T09:14+02:00 — MCAR-L02 made lifecycle-published structured coherence authority,
+  rather than hand-authored Markdown, the curator's terminal artifact. Verification remains
+  closeout-owned.
 
 - 2026-08-27T22:15+02:00 — Recorded worker, manager, and reviewer ownership of phase-sensitive
   malformed-attempt recovery without worker self-rejection.

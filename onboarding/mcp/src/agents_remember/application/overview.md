@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -365,7 +365,19 @@ while lifecycle worker service imports are deferred to execution. This keeps fai
 total at one application boundary and prevents bootstrap import fan-out from pulling the service
 graph into test collection.
 
+## MCAR-L02 Structured Curator-Coherence Boundary
+
+`curator_coherence.py` is the configured-contract application seam for the one
+`status`/`prepare`/`publish`/`validate` coherence API. It delegates exact record/publication policy
+to the closeout integration route and translates that complete domain failure family once. The
+memory-quality controller uses the same currentness validator as closeout admission, exposing raw
+quality readiness separately from combined `closeoutReady`; it cannot claim combined readiness
+while the stable authority is absent or stale.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: added the configured curator-coherence application
+  boundary and shared memory/closeout readiness join. Verification remains closeout-owned.
 
 - 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 final curation: narrowed failed-dispatch cleanup to
   positively proven pre-brief generations and recorded unknown-state reconciliation refusal. No

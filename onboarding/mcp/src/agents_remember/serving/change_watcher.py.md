@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/change_watcher.py`  |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash |                                                      `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                      2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |                                                      `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |                                                      2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Governing Overview
@@ -188,7 +188,7 @@ the CLI/daemon own the `--heartbeat` knob's plumbing.
 | The `--interval` flag re-documented as the fast-path cadence floor (L101-L109) and the `--heartbeat` flag (L110-L118), plus the reload/daemon heartbeat plumbing (`_dev_app` L76-L80, the reload env hand-off L218-L221, `serving_daemon.ensure` L294). | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
 | The client-side volatile-age advancement that makes heartbeat-resolution time-derived fields acceptable (R4). | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
 | The R1-R7 regression suite: root derivation, event filtering including lockfile-suffix cases, domain mapping, pure pacer deadlines, projector integration (heartbeat-only quiet world, debounce-bounded change, burst coalescing, loud degrades, derivation-failure retry, legacy no-watcher pacing), and one real-inotify end-to-end pass. | `ProjectionInputRootsTests`, `InputEventFilterTests`, `ProjectionDomainMappingTests`, `ChangePacerDeadlineTests`, `AdaptiveProjectorTests`, `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:48-95; mcp/tests/test_change_watcher.py:98-139; mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221; mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
-| The new runtime dependency this module degrades without. | "watchfiles>=1.1" | mcp/pyproject.toml:31-31 |
+| The new runtime dependency this module degrades without. | "watchfiles>=1.1" | mcp/pyproject.toml:28-28 |
 
 ## Cross-Repo References
 

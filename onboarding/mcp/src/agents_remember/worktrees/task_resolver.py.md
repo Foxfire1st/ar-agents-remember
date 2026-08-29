@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/task_resolver.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-08-02T01:05+02:00                                  |
-| lastVerifiedCommitHash |                                                         `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                         2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |                                                         `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |                                                         2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../overview.md`                                  |
 
 ## Governing Overview
@@ -82,7 +82,7 @@ Same-repository source and tests define the supported task-folder and series-con
 | `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:104-104 |
 | `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | `archive_completed_root_task` | mcp/src/agents_remember/worktrees/task_resolver.py:147-184 |
 | Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | `ResolverCliTests` | mcp/tests/test_resolver_parity.py:56-251 |
-| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:767-842 |
+| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:847-922 |
 
 ## Cross-Repo References
 

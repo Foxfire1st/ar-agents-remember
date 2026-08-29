@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                 |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-24T14:19+02:00                     |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-08-29T08:52+02:00                     |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 
 ## Purpose
 
@@ -75,7 +75,7 @@ closeout.
 | The quality-control phase table distinguishes task-start drift, curator intake, pre-commit coverage, closeout validation, and targeted style repair. | "## Quality Control Phases" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:30-38 |
 | Task-start quality control preserves the gradual-adoption boundary for historical files without onboarding and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | "Run Task-Start Drift Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:71-107 |
 | Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding. | "Run Pre-Code-Commit Missing-Onboarding Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:164-180 |
-| Closeout quality control runs the full memory gate and uses focused style fixers only after reported findings. | "Run Closeout Memory Quality Control"; "Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:210-248 |
+| Closeout quality control runs the full memory gate and uses focused style fixers only after reported findings. | "Run Closeout Memory Quality Control"; "Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:234-234; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:261-261 |
 
 ## Cross-Repo References
 
@@ -92,7 +92,19 @@ start, and poll examples keep their field sets separate; capacity refusal direct
 poll/wait and retry rather than bypassing the controller. This packaged copy remains synchronized
 from canonical doctrine and introduces no compatibility path.
 
+## MCAR-L02 Structured Coherence Workflow
+
+The packaged memory-quality doctrine now treats the deterministic structured checklist as the
+candidate census, then requires `curator_coherence prepare` → agent-owned exact judgments → atomic
+`publish` → shared `validate`. It separates raw quality readiness from combined closeout readiness,
+uses explicit evidence namespaces, keeps requirement/attempt/digest identities distinct, and
+forbids hand-versioned reports or filename fallback. Same-input quality reruns preserve bytes;
+changed inputs intentionally stale the authority.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: synchronized the structured coherence publication and
+  combined-readiness workflow. Verification remains closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: synchronized the memory-quality workflow to the canonical discriminated request and capacity retry guidance. Verification metadata remains pinned until architect-owned closeout.
 

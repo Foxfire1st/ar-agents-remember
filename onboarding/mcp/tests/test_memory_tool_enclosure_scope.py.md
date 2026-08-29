@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_tool_enclosure_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ application source plus this regression suite.
 | Route-index tests prove scoped writes/dry-runs leave the non-target tree untouched. | `RouteIndexRefreshWritesTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:176-215 |
 | Quality tests prove leaf selection, paired Markdown/JSON curator publication, temporary base forwarding, and strict bare-call provenance. | `MemoryQualityCheckReadsTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:219-289; mcp/tests/test_memory_tool_enclosure_scope.py:291-329 |
 | Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:355-373 |
-| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:376-473; mcp/tests/test_memory_tool_enclosure_scope.py:476-478; mcp/tests/test_memory_tool_enclosure_scope.py:481-484 |
+| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:387-484; mcp/tests/test_memory_tool_enclosure_scope.py:487-489; mcp/tests/test_memory_tool_enclosure_scope.py:492-495 |
 
 ## Cross-Repo References
 
@@ -90,7 +90,16 @@ The enclosure cases now address `resolve_memory_scope` and the typed controller 
 same-repository leaf authority, frozen code/onboarding/base identity, loud refusal when a leaf has no
 usable memory tree, and the deliberate absence of an official-memory fallback.
 
+## MCAR-L02 Combined Readiness Assertions
+
+The leaf memory-quality cases now accept the explicit `coherence-required` transition after raw
+quality reaches zero and assert separate raw quality, coherence status, and combined
+`closeoutReady`. This prevents tests from treating quality-only readiness as closeout admission.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Added raw-versus-combined structured coherence readiness assertions.
+  Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the memory-quality controller package relocation; canonical enclosure scope and loud no-fallback behavior are unchanged.
 

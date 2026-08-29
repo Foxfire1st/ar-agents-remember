@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -131,7 +131,7 @@ validation failures, and invalid resolvable parent master docs.
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
 | The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:111-123 |
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
-| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:232-292 |
+| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:229-286 |
 | The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:303-358 |
 | Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:554-584 |
 | The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-55 |

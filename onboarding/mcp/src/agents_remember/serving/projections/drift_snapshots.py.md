@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/drift_snapshots.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated            | 2026-07-31T00:00+02:00                                 |
-| lastVerifiedCommitHash |                                                        `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                        2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash |                                                        `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |                                                        2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -93,7 +93,7 @@ drift producer, the observer projection tick, and worktree cleanup.
 | Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots. | `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`, `_read_valid_snapshot` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56; mcp/src/agents_remember/serving/projections/drift_snapshots.py:59-69; mcp/src/agents_remember/serving/projections/drift_snapshots.py:72-79 |
 | `prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses. | `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56; mcp/src/agents_remember/serving/projections/drift_snapshots.py:59-69 |
 | The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes. | `ContractSnapshot`, `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:37-49; mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
-| The projection-input module exposes the `read` and refresh entries. | "def read(", "def _refresh_tasks(", "def _refresh_drift(" | mcp/src/agents_remember/serving/projections/projection_inputs.py:225-225; mcp/src/agents_remember/serving/projections/projection_inputs.py:279-279; mcp/src/agents_remember/serving/projections/projection_inputs.py:368-368 |
+| The projection-input module exposes the `read` and refresh entries. | "def read(", "def _refresh_tasks(", "def _refresh_drift(" | mcp/src/agents_remember/serving/projections/projection_inputs.py:224-224; mcp/src/agents_remember/serving/projections/projection_inputs.py:278-278; mcp/src/agents_remember/serving/projections/projection_inputs.py:367-367 |
 | The projection-store module exposes the `project_and_write` entry. | "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
 | PTS-L2 tests pin prune-key parity with and without the shared snapshot. | `ContractSnapshotSharedPassTests`, `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:590-858 |
 | Cleanup binds the `cleanup_result`. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:611-656 |

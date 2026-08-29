@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated | 2026-08-26T18:38+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -94,11 +94,11 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | The application provider-runtime teardown helpers under test are `_docker_rm_f` / `_docker_network_rm` (moved from worktrees by L9). | "def _docker_rm_f"; "def _docker_network_rm" | mcp/src/agents_remember/application/provider_runtime.py:254-254; mcp/src/agents_remember/application/provider_runtime.py:269-269 |
 | The cleanup helper under test is capability-bound `delete_branch_if_merged`. | "def delete_branch_if_merged(" | mcp/src/agents_remember/worktrees/modules/cleanup.py:188-210 |
-| The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:125-125 |
+| The onboarding helper under test is `route_overview_metadata_refresh_plan_for_context`. | "def route_overview_metadata_refresh_plan_for_context" | mcp/src/agents_remember/worktrees/modules/onboarding.py:130-130 |
 | The start-contract helper under test is `_parent_series_contract`. | "def _parent_series_contract" | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:865-865 |
 | The task-resolver helpers under test are `archive_completed_root_task` and `series_contract_path`. | "def archive_completed_root_task"; "def series_contract_path" | mcp/src/agents_remember/worktrees/task_resolver.py:47-47; mcp/src/agents_remember/worktrees/task_resolver.py:147-147 |
 | The observer helpers under test: `_inspect_containers` and `_inspect_containers_individually`. Both modules import `run_command`/`docker_command` at module level, so the tests patch `snapshots.run_command` and `provider_teardown.run_command` separately — patching one does not cover the other. | `_inspect_containers`; `_inspect_containers_individually` | mcp/src/agents_remember/serving/projections/snapshots.py:353-375; mcp/src/agents_remember/serving/projections/snapshots.py:378-401 |
-| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:123-192; mcp/tests/test_worktree_support.py:767-842 |
+| The lifecycle suites whose happy paths these arms complete. | `WorktreeSupportTests`; `ContractMemoryModeTests` | mcp/tests/test_worktree_edge_paths.py:134-203; mcp/tests/test_worktree_support.py:847-922 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -220,7 +220,7 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:393-393; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:435-435; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:562-562; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/tests/test_projection_types_codegen.py:271-271).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:439-439; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-475; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-602; mcp/tests/test_projection_types_codegen.py:273-273).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -444,7 +444,7 @@ references informed product framing only; current code truth stays in agents-rem
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:62-62; dashboard/src/test/fixtures/wire.ts:23-23; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:66-66; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:393-393; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:435-435; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:562-562; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/tests/test_projection_types_codegen.py:271-271; scripts/sync-projection-types.py:43-51 |
+| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:62-62; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:74-74; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:439-439; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-475; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-602; mcp/tests/test_projection_types_codegen.py:273-273; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
 | State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:396-400 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
@@ -523,7 +523,16 @@ the contract suite now forces parity with the producer's always-materialized inv
 This keeps the browser on the projection plane: file absence never becomes queue or lifecycle
 authority.
 
+## Python 3.13 Generated-Schema Representation
+
+The canonical schema now represents named attention and process `Literal` vocabularies as local
+`$defs` enums referenced by their model properties. Their values and the generated TypeScript
+surface are unchanged; the dashboard remains a consumer of one server-owned generated contract.
+
 ## Update History
+
+- 2026-08-29T19:04+02:00 — Reconciled the Python 3.13 named-literal `$defs` representation without
+  changing the dashboard wire vocabulary or frontend ownership. Verification remains closeout-owned.
 
 - 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 final curation: recorded the dashboard-local
   `TaskDocumentRef` declaration and final 66-field producer/consumer parity while keeping the brief

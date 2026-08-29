@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -96,10 +96,11 @@ The preview payload exposes the body gates' classifications
 `route_overview_body_gate` from `classify_route_overview_updates`), and the
 apply path surfaces `sidecars_attested_no_impact`,
 `route_overviews_attested_no_impact`, and
-`route_overviews_stamped_without_body_review`, so explicit
-`No content impact:` / `No route impact:` attestations and happenstance
-header stamps are visible at the commit-approval gate instead of only in
-memory diffs.
+`route_overviews_stamped_without_body_review`. The current structured curator-coherence record's
+exact no-content/no-route decisions are applied to those classifications before preview and
+admission; a decision can clear only unchanged `stale` content, never an `untraced` body edit.
+Still-recognized historical in-body markers and happenstance header stamps remain visible as
+classification facts rather than becoming a second curator-report authority.
 
 The entry points (`closeout_preview_payload`, `closeout_result`) and approval helper take the typed
 `WorktreeArgs` dataclass. Closeout execution requires `args.closeout_input` to be the already
@@ -288,7 +289,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Ledger updates use the kernel memory ledger parser and renderer. | `parse_ledger_text`, `ledger_to_text`, `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
-| Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:958-966; mcp/src/agents_remember/worktrees/modules/onboarding.py:458-489; mcp/src/agents_remember/worktrees/modules/onboarding.py:492-500; mcp/src/agents_remember/worktrees/modules/onboarding.py:607-653 |
+| Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:466-499; mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/worktrees/modules/onboarding.py:617-663; mcp/src/agents_remember/worktrees/modules/onboarding.py:983-995 |
 | The dry-run preview test reports the commit plan. | `test_closeout_dry_run_without_approval_reports_commit_plan` | mcp/tests/test_worktree_support_tests_1.py:1039-1095 |
 | The approval-note test guards real commits. | `test_closeout_requires_approval_note_for_real_commits` | mcp/tests/test_worktree_support_tests_2.py:46-63 |
 | The missing-onboarding test blocks changed-source closeout. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support_tests_2.py:130-151 |
@@ -305,12 +306,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Created-file forcing pins exact staged-candidate quality input and non-mutation on refusal. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 | Task-worktree, conflict, and retry forcing pin both refusals and first-run-equivalent restaging. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:898-1021; mcp/tests/test_worktree_closeout_quality_gate.py:1024-1082; mcp/tests/test_worktree_closeout_quality_gate.py:1088-1151 |
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:24-29 |
-| Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:87-87; mcp/src/agents_remember/worktrees/modules/closeout.py:818-818 |
+| Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:99-99; mcp/src/agents_remember/worktrees/modules/closeout.py:867-867 |
 | The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
-| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:665-678; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56 |
+| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:706-706; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:465-467 |
-| `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:183-197; mcp/src/agents_remember/worktrees/worktree_contract.py:200-228 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:626-662 |
+| `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:667-703 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -396,7 +397,21 @@ revalidate contract, review, tree, quality, and repository authority and publish
 and contract finalization; recovery/certification is inferred from the retained journal and Git
 evidence, never repaired through a stale row.
 
+## MCAR-L02 Shared Coherence Preflight
+
+`_memory_quality_before_refresh` now requires the current structured curator-coherence authority
+before citation checks or expensive code validation and records its exact record digest and
+delivery attempt. This is the same validator public memory readiness and door evidence call, so a
+hardcoded legacy report cannot pass one boundary and fail another. The validated no-impact
+projection is threaded through preview, body-gate admission, and `ExternalCloseoutEvidence`, so
+the post-code-commit memory refresh consumes the same decisions instead of re-deriving them.
+
 ## Update History
+
+- 2026-08-29T18:29+02:00 — Applied the validated curator-coherence no-impact projection at
+  preview, reversible admission, and external-memory refresh; untraced body edits remain closed.
+- 2026-08-29T08:52+02:00 — Added the sole structured coherence validator to closeout admission.
+  Verification remains closeout-owned.
 
 - 2026-08-26T14:32+02:00 — Repointed the ledger-helper forcing citation to the new focused unit
   after removing the duplicate scenario from the oversized support suite. Verification remains

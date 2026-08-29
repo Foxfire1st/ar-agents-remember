@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -128,7 +128,7 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Journaled worktree closeout's sole external-phase owner imports these ledger helpers, then rewrites the code-to-memory mapping only when it actually changed. | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:70-70 |
+| Journaled worktree closeout's sole external-phase owner imports these ledger helpers, then rewrites the code-to-memory mapping only when it actually changed. | "existing_mapping = find_mapping(ledger" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:86-86 |
 | The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:229-282 |
 
 ## Update History

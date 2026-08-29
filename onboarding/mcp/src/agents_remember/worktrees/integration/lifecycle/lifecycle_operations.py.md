@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T16:57+02:00 |
-| lastVerifiedCommitHash | `8dcf0645fdbc3aa490132d5947b22227d45ff302` |
-| lastVerifiedCommitDate | 2026-08-26T16:57:26+02:00 |
+| lastUpdated | 2026-08-29T16:27+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,7 +23,10 @@ Coordinates task-addressed lifecycle start, observe, retry, resume, cancel, and 
 ### Logic
 
 It claims waiting closeout candidates, creates or replaces generations, publishes initial doors,
-starts detached workers, handles exact duplicate/retry cases, and exposes current projections. After a
+starts detached workers, handles exact duplicate/retry cases, and exposes current projections. A
+Linux launch first admits the exact runtime through the native-pidfd capability boundary; after
+`Popen` succeeds, the real process object transfers to the lifecycle-owned child registry so a
+dedicated waiter reaps it independently of later PID-based lifecycle observation. After a
 generation is safely cancelled, replacement binds the current exact waiting door and still requires
 proven worker exit; current candidate-tree and first-ready checks remain in the subsequent claim
 transaction.
@@ -38,6 +41,9 @@ the public function or model instead of re-deriving its lower-level state machin
 - A failed or terminal generation has an explicit convergent retry route; claim/door/generation publication is ordered and idempotent; queue state is scheduling input, not operation authority.
 - Cancellation releases the old operation only after worker exit proof. A fresh generation follows
   current door and task truth rather than requiring a stale direct claimed-door edge.
+- Linux launch refuses before spawning when the selected interpreter lacks native pidfd APIs.
+- Every successfully spawned detached worker transfers its `Popen` to the single child owner for
+  eventual reaping; PID/fingerprint evidence remains a separate lifecycle concern.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
 
@@ -59,7 +65,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1118 |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1123 |
+| Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:883-938 |
 
 ## Cross-Repo References
 
@@ -71,6 +78,9 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1118 |
 
 ## Update History
+
+- 2026-08-29T16:27+02:00 — Reconciled detached launch with native-pidfd runtime admission and the
+  separate lifecycle-owned `Popen` reaping boundary.
 
 - 2026-08-26T16:57+02:00 — Removed direct claimed-door ancestry as cancelled-generation
   authority. Replacement now requires the current exact waiting door plus durable cancellation and

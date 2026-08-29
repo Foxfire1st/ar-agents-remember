@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T19:04+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,9 @@ retained database still fails closed.
 - Static rails cover product and verification packages; behavioral scores cover product authority
   only.
 - Plan construction and execution remain separate owners behind the stable `check` facade.
+- Projection generation accepts the canonical Python 3.13 Pydantic shape for named literal
+  vocabularies: a local enum definition plus local `$ref`. Every other referenced vocabulary shape
+  still fails closed.
 
 ## File-Level Onboarding Map
 
@@ -69,6 +72,10 @@ The canonical overview is `docs/design/python-evidence-system.md`; retry and dir
 are in `docs/design/python-test-evidence.md` and the PDLS evidence reports.
 
 ## Update History
+
+- 2026-08-29T19:04+02:00 — Reconciled the projection generator with Python 3.13 named-literal
+  schema definitions after the lifecycle-owned fast gate exposed the former inline-only assumption.
+  Verification remains closeout-owned.
 
 - 2026-08-28T04:48+02:00 — Split typed plan construction from quality execution and added the
   causal-report safe-continuation owner; unavailable evidence now selects the full population.

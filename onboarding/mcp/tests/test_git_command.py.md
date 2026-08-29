@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_git_command.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T12:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,8 @@ site and in whatever repository `GIT_DIR` named from another. This suite proves 
 runner strips them, asserts **per command** which of the three timeout bands it gets, holds the
 package to exactly one Git spawner so a seventh copy cannot reappear — and, because that last guard
 passes by reporting an empty list, plants every known bypass form against its own sweep so a blind
-spot cannot masquerade as a clean tree. 41 tests across nine classes, all green.
+spot cannot masquerade as a clean tree. The suite also owns the worktree facade's
+invocation-isolated candidate-index contract.
 
 ## Code Commentary
 
@@ -62,6 +63,13 @@ five seconds, and `GIT_LOCAL_TIMEOUT_SECONDS` must be at least 60. L280-L290 pro
 default did not amount to removing the bound — an explicit `timeout=1` still raises
 `subprocess.TimeoutExpired`. L292-L296 pins `GIT_REMOTE_TIMEOUT_SECONDS < GIT_LOCAL_TIMEOUT_SECONDS`.
 *Which* band each command gets is not asserted here; that is `TimeoutClassTests` below.
+
+`test_candidate_tree_isolates_concurrent_observers_with_one_scratch_namespace`
+(mcp/tests/test_git_command.py:943-960) sends 24 concurrent calls through one requested scratch
+namespace. All calls must produce the same candidate tree, the requested index path must remain
+absent, and no invocation-owned temporary directory may survive. This catches the live failure in
+which one queue or dashboard observer removed another observer's fixed scratch index and made the
+same closeout candidate alternate between readable and unreadable projections.
 
 L298-L315 constructs a real pre-commit hook that writes raw byte `0x81` and fails. The first assertion
 proves the shared runner still carries that byte as the surrogate `\udc81`, preserving the path-safe
@@ -255,6 +263,8 @@ the call sites are the ones the consolidation moved onto it.
 | The benchmark runner the AST sweep cannot see: `run_git_command` and `repo_has_commit` route every command through the shared `run_git` (with `work_dir` and per-command timeout), so no spawn is visible outside the kernel. | `run_git_command` | mcp/src/agents_remember/benchmarks/runner_modules/commands.py:21-42 |
 | `test_ambient_git_repository_selectors_cannot_redirect_the_census` covers the same eight selectors from the consumer side, so selector coverage exists at both the runner and the census boundary. | `test_ambient_git_repository_selectors_cannot_redirect_the_census` | mcp/tests/test_route_index.py:592-640 |
 | The worktree facade keeps raw surrogateescape inside the runner and sanitizes only failed-command diagnostics before they cross the MCP transport. | `_transport_safe_git_diagnostic` | mcp/src/agents_remember/worktrees/modules/git.py:18-29 |
+| Candidate-tree capture allocates and cleans one unique temporary index per invocation while preserving the caller-selected scratch namespace. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:33-55 |
+| Concurrent observers sharing one requested namespace must converge on one tree without residual index paths. | `test_candidate_tree_isolates_concurrent_observers_with_one_scratch_namespace` | mcp/tests/test_git_command.py:943-960 |
 
 ## Cross-Repo References
 
@@ -282,6 +292,10 @@ the repository-identity failure rather than a generic Git-command wrapper messag
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-29T12:52+02:00 — MCAR-L02 C009 recovery: added the 24-observer
+  candidate-index isolation proof after live queue/dashboard projection exposed a shared-scratch
+  deletion race. Verification remains closeout-owned.
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 

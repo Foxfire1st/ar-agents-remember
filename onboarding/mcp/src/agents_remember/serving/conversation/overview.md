@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T16:13+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 
 ## What This Area Is
 
@@ -372,10 +372,11 @@ siblings live. Harness-specific source probing remains in the serving adapter la
 
 **Nothing in this route's contract changed.** `models.py` — the normalized wire grammar, every
 `TypeAlias`, discriminated union, envelope and status/telemetry model — emits exactly what it did.
-Its only edit was the deletion of five `# noqa: UP040` / `# noqa: UP046` directives that had been
-suppressing rules the linter no longer raises, now that Ruff's `target-version` matches the
-package's declared Python 3.11 floor rather than 3.13. The runtime composition authority, the two
-read ports and the three child-router seams are all as described above.
+Its only edit was the deletion of five `# noqa: UP040` / `# noqa: UP046` directives under the then
+current Python 3.11 floor. That sentence is historical: the later project-wide runtime migration
+made Python 3.13 the only supported minor and restored Ruff's `py313` target without changing this
+route's wire contract. The runtime composition authority, the two read ports and the three
+child-router seams are all as described above.
 
 What a reader must know is where the children's new vocabulary lives, because these are the values
 that now cross the seams this route fixes:
@@ -472,6 +473,9 @@ and composition governor for the conversation route; the wire-model governance l
 `models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
 
 ## Update History
+
+- 2026-08-29T16:13+02:00 — Marked the former Python 3.11-floor explanation as historical after the
+  repository-wide 3.13-only migration; the conversation wire contract remains unchanged.
 
 - 2026-08-28T14:15+02:00 — Re-read the Claude mapper delta at the conversation boundary. The
   existing projector child owns its structured interaction, interrupt-correlation, mutation-diff,

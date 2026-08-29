@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,19 @@ No configured Domain Documentation source applies; the controller contract is re
 
 No meaningful cross-repository implementation reference applies.
 
+## MCAR-L02 Combined Readiness
+
+After a full leaf checklist is written, `_attach_coherence_readiness` preserves its raw
+`qualityChecklistStatus` and invokes the same `require_current_curator_coherence` validator used by
+closeout. A ready quality worklist with missing/stale coherence becomes
+`checklistStatus=coherence-required`, `closeoutReady=false`; only a current record exposes its
+digest and combined readiness. This prevents the public quality result and closeout admission from
+selecting different artifacts.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: joined raw memory quality with the sole structured
+  coherence validator. Verification remains closeout-owned.
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

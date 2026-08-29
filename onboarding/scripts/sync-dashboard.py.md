@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-dashboard.py`                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T04:28+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -112,7 +112,7 @@ no entries); the placement contract is proven by repository source, the release 
 | The suite proves placement, every refusal path, and that `--check` no longer exists. | `BuildPlacementTests`; `test_places_bundle_and_records_the_identity_the_bundle_itself_carries`; `test_refuses_when_dist_is_absent`; `test_refuses_a_dist_built_from_different_source`; `test_refuses_without_a_dashboard_source_tree`; `test_refuses_after_a_source_edit_that_was_never_rebuilt`; `test_refuses_after_a_production_config_edit`; `test_test_modules_are_not_build_inputs`; `test_check_mode_no_longer_exists` | mcp/tests/test_sync_dashboard.py:63-219; mcp/tests/test_sync_dashboard.py:253-268 |
 | The serving resolver mounts what this script placed, or answers 503 when nothing was placed. | `dashboard_static_dir`; `mount_static`; `MissingDashboardBundle` | mcp/src/agents_remember/serving/static.py:53-91; mcp/src/agents_remember/serving/static.py:104-109; mcp/src/agents_remember/serving/static.py:112-129 |
 | The sidecar this script writes is what the build stamp publishes as `dashboardBuild`. | `dashboardBuild` | mcp/src/agents_remember/serving/build_info.py:61-61 |
-| Both generated paths are git-ignored with the reason recorded inline. | "mcp/src/agents_remember/package_data/dashboard/"; "mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:19-24 |
+| Both generated paths are git-ignored with the reason recorded inline. | "mcp/src/agents_remember/package_data/dashboard/"; "mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:26-27 |
 
 ## Cross-Repo References
 

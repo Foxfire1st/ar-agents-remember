@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -32,6 +32,15 @@ needs to continue, cancel, or repair. Exact field membership is reconciled to th
 verification metadata remains closeout-owned until the new code commit exists.
 
 ## Current Structural Wire Vocabulary
+
+MCAR-L02 adds the strict curator-coherence lifecycle family under
+`models/lifecycles/curator_coherence.py`. It keeps the semantic requirement revision, worker
+delivery attempt, exact source candidates, agent-owned judgments, immutable record generation,
+stable live authority, optional attempt snapshot, and public request/response as separate typed
+identities. The request exposes one closed `status|prepare|publish|validate` action vocabulary;
+publication fields are forbidden on read-only actions, while publish requires every expected
+source identity, predecessor digest, and declared caller. Record validation requires unique exact
+coverage of the structured source-candidate set rather than accepting partial or extra judgments.
 
 `TaskDocumentRef` is the shared repository-qualified work identity. `models/structural/agent.py` and
 `models/structural/gates.py` define the agent-facing request/response families without runtime
@@ -218,6 +227,7 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
+| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:106-222 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
 | Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
@@ -485,6 +495,11 @@ remain in both seat generations.
 delivery state while deliberately excluding runtime occupant identity.
 
 ## Update History
+
+- 2026-08-29T09:45+02:00 — MCAR-L02 route impact: added the strict curator-coherence identity and
+  action family, including exact judgment coverage and separate semantic-revision, delivery-attempt,
+  immutable-generation, stable-authority, and snapshot boundaries. Verification metadata remains
+  closeout-owned until the A005 code commit exists.
 
 - 2026-08-28T14:15+02:00 — PDLS closeout: re-read `test_evidence.py` against the landed candidate;
   the existing final model reconciliation already describes the closed diagnostic/certifying,

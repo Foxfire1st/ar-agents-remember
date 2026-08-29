@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-29T09:14+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 
 ## Purpose
 
@@ -79,7 +79,9 @@ setting rather than role-local judgment.
 A curator completes only after the current-additions missing-onboarding check and full leaf-scoped
 memory-quality worklist have been repaired and rerun. Dirty-source drift and future commit-derived
 verification can be classified as closeout-owned only after no repairable citation, claim, shape,
-history, entity, or index finding remains.
+history, entity, or index finding remains. The curator then publishes the sole structured,
+candidate-bound coherence authority through the lifecycle API; generated Markdown is only its
+human-readable projection.
 
 Before that curator is created, the manager requires the leaf's task-derived source-lineage
 projection to be current and includes it in the complete brief. The structural dispatch transaction
@@ -99,7 +101,7 @@ re-proves lineage before host creation, so a parent move between status and disp
 - Each role acts only at its assigned task altitude and authority boundary.
 - Initial briefs are exact-pinned; ordinary messages re-resolve current structural occupants.
 - Curator completion requires zero curator-actionable findings from both required onboarding checks;
-  the coherence report is written only after their repair-and-rerun loop.
+  the structured coherence authority is published only after their repair-and-rerun loop.
 - Commit-derived memory verification follows the real code commit during governed closeout.
 - Aggregate completion prose cannot replace the worker envelope or reviewer adjudication for any
   stable requirement ID.
@@ -109,7 +111,7 @@ re-proves lineage before host creation, so a parent move between status and disp
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:372-372; skills/l-01-agent-lifecycles/SKILL.md:408-408 |
-| Curator owns conservative three-way memory reconciliation and the complete pre-closeout onboarding worklist. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
 | The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:243-264 |
@@ -149,6 +151,10 @@ No lifecycle topology or authority changed. The curator brief now demonstrates t
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
 ## Update History
+
+- 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored coherence report with one
+  lifecycle-published structured authority and a generated Markdown projection. Verification
+  remains closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled lifecycle overview citations against the committed PDLS
   candidate; the architect/seat routing and acceptance boundaries are unchanged.

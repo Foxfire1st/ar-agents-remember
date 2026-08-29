@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_candidate_publication_guard.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ See task `260821-CLIVE-L1` L1-R5 and L1-R6.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | A contract changed at publication is refused before candidate commit. | `test_closeout_candidate_publication_rechecks_the_contract` | mcp/tests/test_closeout_candidate_publication_guard.py:16-64 |
-| The production callback reloads and revalidates under authority. | "def publication() -> tuple[_CloseoutCommitPhase, Any]:"; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:998-1085 |
+| The production callback reloads and revalidates under authority. | "def publication() -> tuple[_CloseoutCommitPhase, Any]:"; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:1057-1057; mcp/src/agents_remember/worktrees/modules/closeout.py:1092-1092 |
 
 ## Cross-Repo References
 

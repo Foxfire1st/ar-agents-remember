@@ -93,6 +93,7 @@
       "IAS",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
+      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
       "roles/",
       "l-01-agent-lifecycles",
       "attach_master",
@@ -117,8 +118,7 @@
       "skills/l-01-agent-lifecycles/SKILL.md",
       "skills/l-01-agent-lifecycles/roles/curator.md",
       "skills/l-01-agent-lifecycles/roles/manager.md",
-      "skills/l-01-agent-lifecycles/roles/worker.md",
-      "sourceRoute"
+      "skills/l-01-agent-lifecycles/roles/worker.md"
     ]
   },
   "fallback": {

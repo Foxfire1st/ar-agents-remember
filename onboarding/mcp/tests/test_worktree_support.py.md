@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-08-26T08:15+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-29T11:41+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -239,7 +239,20 @@ The current forcing seams include `git`, `init_repo`, `write_current_task_lineag
 | --- | --- | --- |
 | The current test source exercises `git`, `init_repo`, `seed_memory_ledger`, `write_current_task_lineage`, and `write_file_onboarding`. | `git`; `init_repo`; `seed_memory_ledger`; `write_current_task_lineage`; `write_file_onboarding` | mcp/tests/test_worktree_support.py:75-85; mcp/tests/test_worktree_support.py:89-109; mcp/tests/test_worktree_support.py:112-122; mcp/tests/test_worktree_support.py:125-192; mcp/tests/test_worktree_support.py:195-216 |
 
+## MCAR-L02 Complete External-Closeout Fixture Authority
+
+`write_passing_route_review` still authors the exact leaf review record, but an external-memory
+leaf now also receives the complete master/sprint task lineage and a canonical structured
+coherence generation through `curator_coherence_test_support`. Low-level closeout tests therefore
+exercise the same required topology and shared validator as production. They no longer fail before
+their intended seam merely because the older fixture created only a leaf document, and they do not
+gain a test-only bypass or a Markdown authority.
+
 ## Update History
+
+- 2026-08-29T11:41+02:00 — Extended the shared external-closeout success fixture with complete
+  task topology and production-owned structured coherence publication. Verification remains
+  closeout-owned.
 
 - 2026-08-26T08:15+02:00 — Added the shared canonical `seed_memory_ledger` fixture used by
   paired-source activation/bootstrap tests and refreshed this card's shifted exact source ranges.

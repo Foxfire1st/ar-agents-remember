@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-29T08:52+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,12 +69,12 @@ No configured Domain Documentation source applies; authority is the repository's
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator readiness binds structured zero counts, rendered bytes, and exact dispositions. | `curator_evidence` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:149-194 |
-| Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:241-253 |
-| Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:390-464 |
-| Register parsing splits strict mutation reads from tolerant read-path facts. | `planning_authorities`; `register_section_facts` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:498-520; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:523-556 |
-| The write-time register-shape gate and the sprint-creation scaffold. | `require_register_sections_valid`; `register_scaffold_sections` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:559-586; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:597-611 |
-| Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width. | `_table_rows` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:576-624 |
+| Curator readiness binds structured zero counts, rendered bytes, and exact dispositions. | `curator_evidence` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:82-92 |
+| Candidate-boundary comparison reuses the canonical curator parser and exact evidence list. | `curator_evidence_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:95-107 |
+| Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests. | `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:110-184 |
+| Register parsing splits strict mutation reads from tolerant read-path facts. | `planning_authorities`; `register_section_facts` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:218-240; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:243-276 |
+| The write-time register-shape gate and the sprint-creation scaffold. | `require_register_sections_valid`; `register_scaffold_sections` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:279-306; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:317-331 |
+| Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width. | `_table_rows` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:396-409 |
 
 ## Cross-Repo References
 
@@ -89,8 +89,8 @@ failure-surface hardening for the transitional queue, not durable lifecycle owne
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator and grade evidence failures use the shared bounded constructor. | `curator_evidence`; `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:151-184; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:390-464 |
-| Register read and shape failures publish bounded task-document evidence. | `register_section_facts`; `require_register_sections_valid` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:523-556; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:559-586 |
+| Curator and grade evidence failures use the shared bounded constructor. | `curator_evidence`; `canonical_grade` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:82-92; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:110-184 |
+| Register read and shape failures publish bounded task-document evidence. | `register_section_facts`; `require_register_sections_valid` | mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:243-276; mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py:279-306 |
 
 ## 260821-CLIVE Canonical Register Evidence
 
@@ -106,7 +106,18 @@ Curator evidence parsing now validates structured attestation, report digest, on
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+## MCAR-L02 Structured Curator Evidence
+
+`curator_evidence` no longer parses curator Markdown or chooses a stable filename. It delegates to
+the closeout integration route's shared structured validator and translates its exact evidence
+facts into the queue/door error family. Judgment and priority register Markdown parsing remains
+because those tables are still their canonical planning authority; the removed curator parser was
+not retained as compatibility code.
+
 ## Update History
+
+- 2026-08-29T08:52+02:00 — Replaced curator-report parsing with the sole structured coherence
+  validator while preserving planning-register parsing. Verification remains closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
