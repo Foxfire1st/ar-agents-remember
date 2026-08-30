@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`|
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ No cross-repository implementation dependency governs this file.
   cit:([`session_retire_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:66-83) and
   cit:([`session_rename_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:86-95) no
   longer restate the shape at each call site;
-  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:921-921) gives
+  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:918-918) gives
   `SessionRetireResponse.ok` one owner. The aliases are imported from `models/terminal.py`
   cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:51-82; mcp/src/agents_remember/models/terminal.py:161-167; mcp/src/agents_remember/models/terminal.py:194-194)
   to avoid the cycle. Recorded

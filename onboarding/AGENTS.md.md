@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,11 +29,15 @@ before implementation.
 
 ### Logic
 
-The current launcher contract is sprint-local rather than global. A developer-opened free chat
-launches an architect seat that is bound to one qualified `repo/sprint/leaf` context; that
-architect then launches the sprint's orchestrator, and the orchestrator launches managers inside
-the same repository+sprint provenance. Named command seats do not fall back to a workspace-wide
-architect or orchestrator identity. The dashboard and notifier can therefore host concurrent
+The current launcher contract is sprint-local rather than global. For ordinary role-shaped work, a
+developer-opened free chat resolves the durable sprint and first leaf, compiles the canonical
+architect brief, and calls `dispatch_agent` once on the sprint document with role `architect`.
+An explicit developer-declared task-seat takeover instead targets the named role on that role's
+canonical task document. Absence of plane identity
+selects ambient target-document/role-altitude authority; the exact brief is durable before the
+launcher hands over. The hosted architect then uses the same public tool under plane identity and
+direct-child scope. A plane refusal never falls back to ambient, and neither caller handles the
+internal session primitive or a runtime occupant id. The dashboard and notifier can host concurrent
 sprints without cross-sprint custody, routing, or wake ownership.
 
 The file starts by declaring that `agents-remember` is source package code,
@@ -45,9 +49,10 @@ sibling repository, then scopes normal resolver input for this checkout to
 A `Start Here — Route By Role` section now sits where Task Format Routing used
 to: sessions route by role through the `l-01-agent-lifecycles` skill — a spawned
 agent (the `AR_SPAWN_ROLE` env var, or a role brief as first message) follows
-its brief as its session start, and a developer-facing session is the
-**architect**, running `skills/l-01-agent-lifecycles/roles/architect.md`
-on the request → trust-checkpoint → reframe-research → decide → build → close
+its brief as its session start, while a developer-facing session is free chat.
+Research stays inline; role-shaped work is handed to a separately hosted,
+sprint-bound **architect** through the canonical one-call dispatch transaction.
+The architect runs the request → trust-checkpoint → reframe-research → decide → build → close
 phase axis. The job type is a lens during reframe-research, and the build
 decision at `decide` has two shapes — a research-only exit (no worktree, no task
 file) or a durable `w-02-light-task-workflow` skill task; chat is never a build
@@ -55,8 +60,9 @@ route, so small code work takes the minimal artifact and larger work escalates
 to a master + light sub-task series. The `tasks/AGENTS.md` collaboration
 doctrine applies in the architect lifecycle's reframe-research phase.
 The HFX-L6 role split keeps spawned roles on their briefs while making the
-owner/developer-facing seat the architect; the backend orchestrator is no
-longer the normal developer-facing lifecycle.
+sprint-bound architect the developer-facing owner after launcher handoff; the
+launcher itself is not a global role seat and the backend orchestrator is never
+the normal developer-facing lifecycle.
 The memory section also carries a `Memory Retrieval Strategies` list — Semantics
 (GrepAI), Relationship (cgc), and Intent (onboarding plus bounded source
 confirmation) — that points to the same `c-04-retrieval-strategy-router` skill router.
@@ -182,7 +188,7 @@ file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-215 |
-| The repo routes sessions by role through the `l-01-agent-lifecycles` skill: spawned agents follow their briefs, a developer session runs the architect lifecycle, and the build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task (chat is never a build route); the standalone chat workflow and the chat build are retired. | `## Start Here — Route By Role` | AGENTS.md:16-50 |
+| The repo routes sessions by role through `l-01-agent-lifecycles`: spawned agents follow their briefs, while free chat compiles one architect brief and calls `dispatch_agent` once on the sprint document before handoff. | `## Start Here — Route By Role` | AGENTS.md:16-28 |
 | Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:49-98 |
 | Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:125-145 |
 | Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:99-124 |
@@ -237,6 +243,11 @@ stress/cadence evidence, and lifecycle-eligible durable evidence. The instructio
 locally convenient test or report from silently becoming acceptance authority.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 reconciled the root routing contract to one public
+  `dispatch_agent` call, separated ordinary architect bootstrap from explicit named-role takeover,
+  retained process-derived ambient-versus-plane authority, and kept plane failures fail-closed.
+  Verification remains closeout-owned.
 
 - 2026-08-28T10:03:40+02:00 — Corrected the current code-quality section and citations so they no
   longer advertise the retired Candidate-A Python wrapper.

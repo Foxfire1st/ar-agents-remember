@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/harness/shared/session-start-directive.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-30T13:59+02:00                     |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -26,23 +26,26 @@ agents-remember.mdc`, and `.github-vscode/copilot-instructions.md`.
 
 ### Logic
 
-The shared session-start directive now treats an ordinary developer session as free chat that
-launches the configured architect seat, while `AR_SPAWN_ROLE` and fresh role briefs continue to
-enter their exact role lifecycle. This keeps command-seat identity explicit and lets the opener
-bind architect/orchestrator/manager sessions to one sprint before any brief is delivered.
+The shared session-start directive treats an ordinary developer session as free chat that answers
+research inline. For ordinary role-shaped work it creates or resolves the sprint and first leaf, compiles
+the canonical architect brief, and calls `dispatch_agent` exactly once on the sprint document with
+role `architect`. The launcher hands over only after the exact brief is durable and never calls an
+internal session primitive. An explicit developer-declared task-seat takeover instead targets the
+named role on its canonical task document. `AR_SPAWN_ROLE` and fresh role briefs still enter their exact role
+lifecycle directly.
+
+Caller kind remains process-derived: a plane-hosted seat uses structural authority, while absence
+of hosted identity selects the ambient launcher. A plane refusal never falls back to ambient.
 
 The body states the three-condition session routing that `l-01-agent-lifecycles` owns:
 
 1. If `AR_SPAWN_ROLE` is set, **or** the first user message is a role brief from an
    orchestrating agent, the session must **ignore the notice entirely** — the brief is
    the session start.
-2. Otherwise the session is the developer-facing one, i.e. the **architect**: read
-   `ar-coordination/AGENTS.md`, then run the lifecycle at
-   `skills/l-01-agent-lifecycles/roles/architect.md`.
-3. The architect's four named obligations are spelled out inline: trust checkpoint before
-   relying on memory, `read_ar_files` (paired source + onboarding) until the build
-   decision, retrieval-strategy tally as evidence, notify-and-stop at every developer
-   hand-off.
+2. Otherwise the session is developer-facing free chat: read `ar-coordination/AGENTS.md`, answer
+   research inline, and use the one-call canonical architect launcher for role-shaped work.
+3. The resulting sprint-bound architect receives its complete obligations in the pinned canonical
+   brief rather than relying on this launcher directive as a second role brief.
 
 ### Conventions
 
@@ -74,6 +77,14 @@ The body states the three-condition session routing that `l-01-agent-lifecycles`
 | The lifecycle this directive routes a session into. | `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:6-416 |
 
 ## Update History
+
+- 2026-08-30T13:59+02:00 — 260821-ARSPAWN-L3 made the process-derived caller-kind boundary and
+  no-fallback rule explicit in the shared launcher directive after the targeted Dagger forcing
+  check exposed the omission. Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call canonical architect launcher,
+  separated ordinary bootstrap from explicit named-role takeover, and retained the durable-brief
+  handoff plus direct-session prohibition. Verification remains closeout-owned.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the free-chat-to-sprint-architect launcher
   boundary shared by generated harness starters. Verification metadata remains pinned until

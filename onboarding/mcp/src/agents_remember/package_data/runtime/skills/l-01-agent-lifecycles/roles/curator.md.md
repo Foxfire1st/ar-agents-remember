@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ This file is the packaged runtime artifact synchronized exactly from canonical
 runtimes and owns no independent doctrine.
 
 ## Logic
+
+The synchronized caller matrix keeps curator target-only: only the owning manager is its ordinary
+plane-hosted caller, while an identity-free launcher may target it only for explicit
+developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
+keys.
 
 Because synchronization replaces the complete canonical skill tree, the packaged curator has the
 same leaf-scoped onboarding-only seat, three-way intent reconciliation, current/evidence/history
@@ -78,6 +83,10 @@ revision and delivery attempt, optionally freezes a snapshot, and validates the 
 structured authority. Generated Markdown is returned as projection evidence only.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only curator dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Replaced hand-authored coherence reporting with exact structured
   publication and validation. Verification remains closeout-owned.

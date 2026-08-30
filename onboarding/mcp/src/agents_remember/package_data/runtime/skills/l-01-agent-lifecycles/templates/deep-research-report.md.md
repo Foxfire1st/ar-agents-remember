@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## Purpose
 
@@ -45,7 +45,7 @@ The template is a companion to the lifecycle entry contract and the detailed spi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:504-519 |
+| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:544-559 |
 | The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | `# Deep Research Report Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md:1-123 |
 
 As of cycle 4 the decision block asks for the suggested artifact shape (minimal w-02 task vs master + series) instead of the retired 'build mode' axis.

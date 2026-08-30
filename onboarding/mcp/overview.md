@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-29T22:45+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-08-30T12:42+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -56,16 +56,19 @@ series-lane owner is not reconstructed.
 ## Current Structural Agent Boundary
 
 Agent-facing dispatch, messaging, seat management, and gates use canonical task documents and roles.
-A plane-injected hosted seat proves the caller; an ambient caller with no plane seat declares its
-role + task document as request data and the same authorization validates it exactly like a seat
-(260815-DAG-L16, L16-R2/R3/F5). `dispatch_agent` is the one public spawn tool for both caller kinds:
-since 260821-ARSPAWN-L1 an ambient launcher (no `AR_HOSTED_SESSION_ID`) is resolved from the process
-environment — not request data — spawns with the pinned brief and the same rollback, has no parent
-seat (no child-scope), and still gets role-altitude validation; `spawn_agent_session` remains an
-internal primitive only. Runtime session/lifecycle/gate/inbox identities stay
-plane-only. The application resolves authorized parent/child seats and current occupants, with one
-internally exact-pinned initial brief and replacement-aware ordinary messages. Startup migration is
-one-way before strict current readers; there is no public exact-id compatibility surface.
+A plane-injected hosted seat proves the caller. An ambient launcher has no plane identity and does
+not declare a caller role in request data; the process-derived absence of plane identity selects the
+ambient authorization branch. `dispatch_agent` is the one public spawn tool for both caller kinds:
+ordinary role-shaped work targets the sprint architect with the canonical pinned brief, while an
+explicit developer-declared task-seat takeover may target the named role at its canonical task
+altitude. Ambient dispatch has no parent seat or child-scope authority. Plane dispatch uses the
+injected seat and exact structural direct-child scope, and a plane refusal never falls back to the
+ambient branch. `spawn_agent_session` remains an internal primitive only. Runtime
+session/lifecycle/gate/inbox identities stay plane-only. Role-table `dispatch` and `tools` rows are
+structural authority/capability descriptions, not settings keys. The application resolves
+authorized parent/child seats and current occupants, with one internally exact-pinned initial brief
+and replacement-aware ordinary messages. Startup migration is one-way before strict current
+readers; there is no public exact-id compatibility surface.
 
 ## 260821-ARSPAWN-L2 Idempotent Structural Dispatch
 
@@ -1047,6 +1050,11 @@ candidate change produces a typed refusal with the exact sync/reprepare route. N
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
 ## Update History
+
+- 2026-08-30T12:42+02:00 — 260821-ARSPAWN-L3 review correction: replaced the superseded
+  caller-declaration summary with process-derived ambient authority, distinguished ordinary
+  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
+  rows' non-settings boundary. Verification remains closeout-owned.
 
 - 2026-08-29T22:45+02:00 — MCAR-L03: documented the single contract-derived code-memory pair
   identity shared by memory quality, attestation, coherence, closeout admission, and recovery,

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:57+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -24,10 +24,19 @@ three-party-loop contracts.
 ## Logic
 
 The router has three ordered conditions: a bound spawn role loads that role lifecycle; a fresh role
-brief loads the named role lifecycle; otherwise the session is the free-chat launcher. Role seats
-bind to canonical task documents at the appropriate altitude plus role. A dispatching role supplies
-the child document, role, and complete brief once; the control plane privately resolves/creates the
-occupant, establishes readiness, and exact-pins only the initial brief.
+brief loads the named role lifecycle; otherwise the session is the free-chat launcher. For
+ordinary role-shaped work, that launcher compiles `templates/architect-brief.md` and calls
+`dispatch_agent` once on the canonical sprint document. An explicit developer-declared task-seat
+takeover instead dispatches the named role on that role's canonical task document. Role seats bind to canonical task documents at the
+appropriate altitude plus role. A plane-hosted dispatching role supplies the child document, role,
+and complete brief through the same public request. Caller kind is derived only from the presence
+or absence of plane identity; ambient target-document authority never substitutes for a failed
+plane authorization. The control plane privately resolves/creates the occupant, establishes
+readiness, and exact-pins only the initial brief. A stale/unavailable source-lineage refusal routes
+through ordered contract-addressed sync; retained conflicts remain resumable through the advertised
+continuation, with escalation reserved for semantic ambiguity. Repeating the same dispatch after
+that recovery converges on the existing viable occupant or durable queued brief; a developer
+takeover never means manually replacing a live incumbent.
 
 Continuity lives in task documents and durable artifacts rather than transcripts or a particular
 occupant. The agent-notifier relays mechanical facts; owners interpret them without seat-local
@@ -75,6 +84,10 @@ separate protocol events as delivery attempts.
 - Exactly one routing condition wins for a session.
 - `(canonical task document, role)` is the stable seat address; replacement changes the occupant.
 - Agents never poll readiness, retain another seat's runtime address, or duplicate an initial brief.
+- `dispatch_agent` is the sole public spawn choice. Ambient launcher and plane-hosted authority are
+  disjoint modes of that one transaction, with no caller-mode field or fallback.
+- Role-table `dispatch` and `tools` rows describe structural authority/capability, not settings
+  keys; only the documented launch knobs participate in settings overrides.
 - Durable artifacts, delegated authority, and human-only gates retain their owning altitudes.
 - The three-party loop separates builder work, independent review, curator coherence, and owner
   decision; verdicts are evidence rather than gate decisions.
@@ -96,13 +109,14 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
-| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
+| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:116-116 |
 | The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
-| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:177-190 |
-| Hosted role dispatch is one structural transaction. | "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:408-408 |
+| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:198-198 |
+| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:437-437; skills/l-01-agent-lifecycles/SKILL.md:444-444 |
+| Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
 | Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:243-264 |
 | Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes." | skills/l-01-agent-lifecycles/SKILL.md:266-307 |
-| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:309-313 |
+| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:332-332 |
 
 ## L23 Dispatch Admission
 
@@ -131,6 +145,15 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: clarified that an explicit
+  task-seat takeover converges idempotently on the canonical seat and never authorizes manual
+  incumbent replacement or duplicate brief publication. Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call ambient launcher,
+  separated ordinary architect bootstrap from explicit named-role takeover, made lineage-conflict
+  continuation explicit, and kept structural authority outside settings overrides. Verification
+  remains closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled lifecycle-router citations against the committed PDLS
   candidate after the final role-routing wording settled; behavior is unchanged.

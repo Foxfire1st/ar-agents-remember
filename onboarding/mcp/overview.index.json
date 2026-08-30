@@ -214,6 +214,7 @@
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md",
+    "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/architect-brief.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md",
     "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md",
@@ -257,8 +258,8 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1431,
-    "fileSidecars": 144,
+    "sourceFilesInScope": 1432,
+    "fileSidecars": 145,
     "childRoutes": 20
   },
   "routingTerms": [

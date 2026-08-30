@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/models/structural/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## What This Area Is
 
@@ -74,7 +74,7 @@ into plane-internal exact operations.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Machine doctrine tests scan public instructions for forbidden control-plane address cognition. | `test_agent_doctrine_contains_no_control_plane_address_instructions` | mcp/tests/test_agent_doctrine_plane_identity.py:41-50 |
+| Machine doctrine tests scan public instructions for forbidden control-plane address cognition. | `test_agent_doctrine_contains_no_control_plane_address_instructions` | mcp/tests/test_agent_doctrine_plane_identity.py:74-81 |
 | Structural tool tests reject ambiguity and exercise relationship operations. | `StructuralAgentToolTests` | mcp/tests/test_structural_agent_tools.py:134-241 |
 
 ## Cross-Repo References

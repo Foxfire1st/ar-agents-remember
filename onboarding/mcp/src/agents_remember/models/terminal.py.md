@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/models/terminal.py` |
 | doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T13:28+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -17,8 +17,9 @@
 ## Purpose
 
 `terminal.py` defines strict Pydantic response contracts for MCP tools that expose dashboard
-terminal-session catalog operations. It models the hosted-chat/terminal leaf reassignment tool from L9 and
-— since L2 — the agent-facing `spawn_agent_session` dispatch tool.
+terminal-session catalog operations. It models the hosted-chat/terminal task-assignment tool and
+the internal `spawn_agent_session` primitive used beneath the one public `dispatch_agent` surface;
+the response model does not make that primitive a caller-facing tool.
 
 ## Code Commentary
 
@@ -87,7 +88,7 @@ cit:([`SessionRetireResponse`], mcp/src/agents_remember/models/terminal.py:160-1
 success/already-retired), plus `detail` (populated on `retire-refused`, naming the exact
 authority-policy clause `check_retire_authority` raised). `ok` is true for `retired`/
 `already-retired` (idempotent), false for every refusal status — and that rule lives in ONE place,
-cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:921-921), so a refusal status added later cannot
+cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:918-918), so a refusal status added later cannot
 arrive as `ok=True` from a call site that forgot it. cit:([`SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:194-194) `=
 Literal["renamed","unknown-session"]`; `SessionRenameResponse` models `session_rename` (issue #4):
 cit:([`SessionRenameResponse`], mcp/src/agents_remember/models/terminal.py:200-211)
@@ -190,6 +191,11 @@ not manufacture ancestry evidence.
 
 ## Update History
 
+- 2026-08-30T13:28+02:00 — 260821-ARSPAWN-L3: adopted the one-public-tool boundary in this
+  card's purpose: `SpawnAgentSessionResponse` models the internal session-creation primitive used
+  beneath `dispatch_agent`, not a second agent-facing spawn choice. Repaired the moved
+  `_RETIRE_OK_STATUSES` citation while re-reading the current source; verification metadata remains
+  closeout-owned.
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `SpawnAgentSessionResponse` gains `spawnedByKind` (`Literal["plane","ambient","unattributed"] | None`), the caller-kind provenance `dispatch_agent` sets by caller kind; two stale citation ranges repaired to current source (`_RETIRE_OK_STATUSES` 914→921, `SessionRenameStatus` 193→194). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

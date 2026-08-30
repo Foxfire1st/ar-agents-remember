@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,8 @@ canonical `skills/l-01-agent-lifecycles/roles/architect.md`.
 ### Spawn Doctrine And tools.md (260731-EFA-L16)
 
 Two developer rulings landed here. First, the immutability clause now binds role-seat creation to
-`spawn_agent_session` explicitly — a role seat is never a native sub-agent — and native sub-agent
+the public `dispatch_agent` transaction — its internal session primitive is plane-owned, and a role
+seat is never a native sub-agent — while native sub-agent
 fan-out is scoped to the one mode where this seat does hands-on work: solo build under the worker
 discipline (developer correction). Once orchestration runs, analysis goes to spawned role seats.
 Second, the Opening Move gained a standing read of the resolved `system/tools.md` — as the repo's
@@ -42,6 +43,10 @@ plan, examples before risky change, and an implementation plan derived from the 
 rather than substituted for them.
 
 ### Logic
+
+The synchronized dispatch table distinguishes ordinary identity-free architect bootstrap from an
+explicit named-role task-seat takeover. Once hosted, architect dispatch remains plane-authorized;
+the dispatch/tools rows describe fixed structural authority and capability rather than settings.
 
 The synchronized architect contract keeps semantic revision under explicit developer approval and
 keeps internal repair/test runs as protocol events until an exact candidate is handed to review.
@@ -124,10 +129,10 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-306 |
-| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:33-33 |
+| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:36-36 |
 | Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:95-132 |
-| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:159-159 |
-| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:99-99 |
+| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:162-162 |
+| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:120-120 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
 
@@ -205,6 +210,10 @@ verified requirement contradiction to developer-approved semantic revision. Work
 classification never rewrites the canonical packet.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized ordinary architect bootstrap versus
+  explicit takeover, sole public dispatch vocabulary, and fixed structural-row ownership.
+  Verification remains closeout-owned.
 
 - 2026-08-27T21:53+02:00 — Synchronized M40@v2 revision-versus-attempt/event authority.
 

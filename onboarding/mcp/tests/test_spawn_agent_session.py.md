@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_spawn_agent_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-16T04:06+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-30T13:59+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,8 +25,9 @@ runtime-id operation.
 The `call_spawn` shim constructs the typed internal seat, provenance, retired-input, and override
 objects used by `spawn_agent_session_payload`. Successful harness spawn requires a real canonical
 task-document reference and role, binds the seat, and makes no brief-readiness claim. Task content
-and submit requests are refused at this primitive because initial brief delivery is a separate,
-exact-pinned control-plane operation.
+and submit requests are refused at this primitive because the public `dispatch_agent` transaction
+owns exact-pinned brief delivery. The refusal points callers to that one public transaction and
+does not expose the old multi-step readiness, inbox-message, or adapter-delivery recipe.
 
 The suite also covers seat conflict without takeover, missing/invalid task documents before spawn,
 settings-owned harness/model/effort resolution, plain-terminal separation, log-confirmed session
@@ -59,7 +60,7 @@ No external domain source governs this repository-local test contract.
 | A successful spawn binds a seat without delivering a brief or claiming readiness. | `test_spawns_bound_seat_without_brief_or_readiness_claim` | mcp/tests/test_spawn_agent_session.py:318-339 |
 | The spawn payload and catalog row carry caller-kind provenance. | `test_spawn_records_caller_kind_provenance` | mcp/tests/test_spawn_agent_session.py:555-561 |
 | Canonical task-document identity is persisted and missing documents refuse before spawn. | `test_spawn_persists_canonical_task_document_reference`; `test_spawn_rejects_missing_task_document_before_spawning` | mcp/tests/test_spawn_agent_session.py:376-382; mcp/tests/test_spawn_agent_session.py:395-402 |
-| Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:445-463; mcp/tests/test_spawn_agent_session.py:465-469 |
+| Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:449-470; mcp/tests/test_spawn_agent_session.py:472-476 |
 | Occupied structural seats refuse without takeover. | `test_seat_taken_is_surfaced_never_overridden` | mcp/tests/test_spawn_agent_session.py:484-518 |
 
 ## L23 Pre-Host Spawn Refusal
@@ -71,6 +72,10 @@ insertion remain untouched. This is the control-plane race closure behind the ma
 status check: dispatch re-proves lineage rather than trusting a brief-carried snapshot.
 
 ## Update History
+
+- 2026-08-30T13:59+02:00 — 260821-ARSPAWN-L3 replaced the stale low-level brief-delivery recipe
+  assertion with forcing proof that the internal primitive refuses before side effects and directs
+  callers to the one public `dispatch_agent` transaction. Verification remains closeout-owned.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `_SPAWNED_BY_FIELDS` + `test_spawn_records_caller_kind_provenance` prove the real primitive writes the `spawnedByKind` payload and the catalog caller-kind row. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

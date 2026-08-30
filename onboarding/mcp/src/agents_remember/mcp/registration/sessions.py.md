@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/sessions.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb`                   |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-30T12:04+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`                   |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -43,6 +43,8 @@ The public operation family speaks task documents and roles only.
 - Models never submit a session/lifecycle/terminal id.
 - Ambient dispatch callers have no parent seat; seat-authority and child-scope checks do not apply,
   but the role is still validated against the document's altitude.
+- A present but stale, invalid, mismatched, unbound, or unauthorized plane identity is a plane
+  refusal. It never changes caller kind or retries through ambient authority.
 - The initial brief is internally exact-pinned and persisted before delivery.
 - Failed initial briefing retires the unbriefed child.
 - Replacement does not change the public child address.
@@ -68,6 +70,10 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-30T12:04+02:00 — 260821-ARSPAWN-L3 made the published tool description explicitly
+  fail closed for every invalid plane-identity class, with no plane-to-ambient fallback.
+  Verification remains closeout-owned.
 
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `dispatch_agent`'s published description documents the caller-kind matrix (plane seat → structural path with identity proof + child-scope; ambient launcher → ambient mode with pinned brief + same rollback, no parent seat, role-altitude validation still applies); `spawn_agent_session` stays internal-only. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

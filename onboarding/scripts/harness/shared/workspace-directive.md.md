@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/harness/shared/workspace-directive.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded` |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
+| lastUpdated            | 2026-08-30T12:34+02:00                     |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -24,17 +24,19 @@ files: `.hermes/HERMES.md`, `.agents/GEMINI.md`, and `.openclaw/workspace/AGENTS
 
 ### Logic
 
-The workspace directive now routes durable developer work through a separately launched,
+The workspace directive routes durable developer work through a separately launched,
 sprint-bound architect rather than assigning one global architect identity to every free chat.
-Spawned role briefs remain authoritative, and the named command-seat chain retains the sprint
-provenance established at launch.
+For ordinary role-shaped work, free chat resolves the sprint and first leaf, compiles the canonical
+architect brief, and calls `dispatch_agent` once on the sprint document with role `architect`; it
+hands over after that exact brief is durable and never calls a session primitive. An explicit
+developer-declared task-seat takeover instead targets the named role on its canonical task
+document. Spawned role briefs remain authoritative.
 
 The body is the same three-condition session routing as
 `shared/session-start-directive.md` — ignore the notice when `AR_SPAWN_ROLE` is set or
-the first message is a role brief; otherwise be the architect, read the coordinator
-`AGENTS.md`, run `skills/l-01-agent-lifecycles/roles/architect.md`, and honour the four
-named obligations (trust checkpoint, paired `read_ar_files`, retrieval-strategy tally,
-notify-and-stop).
+the first message is a role brief; otherwise remain free chat, read the coordinator `AGENTS.md`,
+answer research inline, and use the one-call architect launcher for role-shaped work. The complete
+architect obligations arrive in the pinned canonical brief.
 
 **The two differences from the sibling body are deliberate and are the entire reason two
 bodies exist:**
@@ -76,6 +78,10 @@ bodies exist:**
 | The classification recording why the two directive bodies differ. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call canonical architect launcher,
+  separated ordinary bootstrap from explicit named-role takeover, and retained exact brief
+  durability plus the no-session-primitive boundary. Verification remains closeout-owned.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the generated-workspace guidance for the
   sprint-qualified architect launcher. Verification metadata remains pinned until closeout stamps

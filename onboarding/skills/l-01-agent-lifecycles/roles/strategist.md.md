@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/strategist.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-26T08:35+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -16,17 +16,25 @@
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+This source defines the strategist as a target-only role. Its spawning architect is the ordinary
+plane-hosted `dispatch_agent` caller; an identity-free developer launcher may target the strategist
+only for an explicit task-seat takeover. The strategist has no dispatch caller authority and
+therefore cannot select ambient mode or recover a plane refusal by launching another seat. Its
+role-table dispatch/tools rows are structural documentation, not settings keys.
 
 ## Code Commentary
 
 ### Logic
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+The architect submits the strategist's canonical task document, role, and complete brief through
+the one public dispatch transaction. Creation, readiness, initial-brief pinning, and rollback are
+private control-plane steps, not a strategist-visible multi-call workflow.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. The strategist remains target-only, and dispatch proof remains exact-session and
+fail-closed.
 
 ## Docs References
 
@@ -65,6 +73,10 @@ The strategist keeps planning truth upstream of runtime selection. Queue or sele
 inform current feasibility, but cannot veto task authoring or rewrite dependency judgment.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified strategist as target-only plus explicit
+  ambient-takeover target, replaced stale public readiness sequencing, and kept structural
+  authority outside settings. Verification remains closeout-owned.
 
 - 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
   reconciling strategist activation doctrine.

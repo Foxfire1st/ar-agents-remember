@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -60,9 +60,13 @@ default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
-Since the HFX-L6 review remediation, the post-quickstart workflow sentence and the Workflows docs
-link speak the current `l-01-agent-lifecycles` vocabulary: the developer-facing session is the
-architect, and spawned backend orchestrators plus other role seats follow their role briefs. The
+The post-quickstart workflow sentence now speaks the current `l-01-agent-lifecycles` vocabulary:
+developer-facing free chat answers research inline and, for ordinary role-shaped work, compiles the
+canonical architect brief and calls `dispatch_agent` once on the sprint document. An explicit
+developer-declared task-seat takeover targets the named role on its canonical document instead. The identity-free launcher
+hands over only after the exact brief is durable. Hosted seats use the same tool under structural
+authority, and a plane refusal never falls back to ambient. Spawned backend orchestrators and
+other role seats then follow their role briefs. The
 named build modes remain the research-only exit, the `w-02-light-task-workflow` skill task, and the
 master + light sub-task series (the chat build is retired — chat is never a build route). The
 Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecycle" instead of the
@@ -226,6 +230,11 @@ Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; di
 Vitest remains the only supported host test diagnostic.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted the one-call ambient launcher and
+  plane-hosted `dispatch_agent` vocabulary in the public quickstart narrative, distinguishing
+  ordinary architect bootstrap from explicit named-role takeover. Verification remains
+  closeout-owned.
 
 - 2026-08-29T16:27+02:00 — Reconciled the public prerequisite with the project-wide Python 3.13
   support line and routed exact source-build details to the MCP README.

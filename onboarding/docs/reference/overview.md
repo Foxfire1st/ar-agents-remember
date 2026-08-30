@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-26T05:20+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T12:42+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## Purpose
 
@@ -56,10 +56,16 @@ readiness, catalog-concurrency, and serving-cutover contracts.
 
 ## Hot Path Summary
 
-The current orchestration references describe free chat as the launcher and
-architect/orchestrator/manager as sprint-bound command seats. Any unbound command-seat wording is
-limited to migration compatibility; runtime identity and custody come from persisted
-repository+sprint provenance.
+The current orchestration references describe free chat as the identity-free launcher that, for
+ordinary role-shaped work, compiles the canonical architect brief and calls `dispatch_agent` once
+on the sprint document. An explicit developer-declared task-seat takeover is the bounded exception:
+it targets the named role at that role's canonical task altitude rather than silently turning
+ordinary free chat into a non-architect seat. Plane-hosted architect/orchestrator/manager seats use
+the same public tool with injected seat identity and exact direct-child scope. Caller kind is
+process-derived, the request never supplies caller identity, and a plane refusal never falls back
+to ambient. Runtime identity and custody remain private control-plane evidence behind the canonical
+task-document-plus-role seat. Role-table `dispatch` and `tools` rows describe structural authority
+and capability; they are not settings keys and cannot override that caller matrix.
 
 For native launch and control questions, read `harnesses.md` for the dynamic catalog,
 model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the
@@ -230,6 +236,14 @@ cannot smuggle start-only fields. These newer DAGQC facts are additive to the CL
 `execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
 
 ## Update History
+
+- 2026-08-30T12:42+02:00 — 260821-ARSPAWN-L3 review correction: distinguished ordinary
+  architect bootstrap from an explicit named-role takeover and made the structural role-table
+  rows' non-settings boundary explicit. Verification remains closeout-owned.
+
+- 2026-08-30T11:47+02:00 — 260821-ARSPAWN-L3 reconciled the public reference route to one
+  `dispatch_agent` vocabulary, one-call architect bootstrap, disjoint plane/ambient authority, and
+  no fallback. Verification remains closeout-owned.
 
 - 2026-08-26T05:20+02:00 — Reconciled the reference route with the source-pair selector, paused
   live-master preservation, reconciling-before-active admission, retained conflict

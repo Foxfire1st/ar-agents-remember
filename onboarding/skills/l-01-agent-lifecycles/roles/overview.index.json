@@ -77,9 +77,10 @@
       "IAS",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
+      "f9f92ca793811b6cb738d7e302dfecdf8636e96e",
       "accepted",
       "rejected",
+      "dispatch_agent",
       "SKILL.md",
       "### 4 \u2014 Per-Requirement Acceptance Envelope And Delivery Attempt",
       "## Per-Requirement Independent Attempt Adjudication",
@@ -102,8 +103,7 @@
       "skills/l-01-agent-lifecycles/roles/reviewer.md",
       "sourceRoute",
       "doc_type",
-      "lastUpdated",
-      "T09"
+      "lastUpdated"
     ]
   },
   "fallback": {

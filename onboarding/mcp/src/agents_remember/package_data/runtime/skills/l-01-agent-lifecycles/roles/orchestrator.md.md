@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-30T12:57+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,12 @@ exact artifact.
 ## Code Commentary
 
 ### Logic
+
+The synchronized caller matrix makes the orchestrator an ordinary plane-hosted caller for direct
+manager/system-specialist children and an ambient target only for explicit developer-declared
+takeover. Dispatch/tools rows remain structural documentation, not settings keys.
+The explicit takeover path converges on the existing canonical sprint seat and does not manually
+replace a viable occupant or duplicate its pinned brief.
 
 The orchestrator owns durable portfolio execution behind the architect. It dispatches managers and
 system specialists with `dispatch_agent` on canonical master or sprint documents, adopts the
@@ -176,6 +182,14 @@ contract-presence fallback exists. Technically derivable retained conflicts are 
 the advertised continue/cancel operation; only genuine semantic ambiguity returns to the architect.
 
 ## Update History
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: synchronized idempotent
+  canonical-seat convergence for an explicit orchestrator takeover. Verification remains
+  closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the orchestrator's plane caller,
+  explicit ambient-takeover target, and fixed structural-row boundary. Verification remains
+  closeout-owned.
 
 - 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference headings for this changed
   synchronized orchestrator-role card.

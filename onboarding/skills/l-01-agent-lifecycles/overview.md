@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T09:14+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## Purpose
 
@@ -32,7 +32,14 @@ never as a reason to rewrite planning around a stuck queue. Exact changed doctri
 synchronized copies are reconciled to the frozen candidate; commit verification remains
 closeout-owned.
 
-Free chat launches work; the architect owns sprint composition and the initial ruled topology.
+Free chat launches ordinary role-shaped work by compiling `templates/architect-brief.md` from
+current sprint truth and calling `dispatch_agent` exactly once on the sprint document. An explicit
+developer-declared task-seat takeover instead targets the named role on its canonical task document. Missing plane identity
+selects ambient target-document and architect-altitude validation. After handoff, the architect and
+other spawning seats use the same public verb under plane identity and direct-child scope; a plane
+refusal never becomes an ambient retry. Source-lineage conflicts remain resumable through the
+contract-addressed sync continuation until a genuine semantic ambiguity requires escalation. The
+internal session primitive and readiness/brief correlations remain control-plane details. The architect owns sprint composition and the initial ruled topology.
 When the graph is missing or materially stale, an approved strategist authors the evidence-cited
 plan before the orchestrator exists. The orchestrator adopts that plan, recomputes its ready
 frontier after material events, and records every queue or reprioritization judgment with rationale,
@@ -93,6 +100,10 @@ re-proves lineage before host creation, so a parent move between status and disp
 - Shared rules live in `SKILL.md` and are not restated as competing role-local variants.
 - Runtime package and harness copies are synchronized artifacts of the complete canonical tree.
 - Current intent stays in default bodies; semantic history records transitions without leaf diaries.
+- `dispatch_agent` is the sole public spawn verb; caller kind is derived from process context, never
+  selected in the request.
+- Role-table `dispatch` and `tools` rows are fixed authority/capability documentation rather than
+  settings knobs.
 
 ## Invariants And Boundaries
 
@@ -100,6 +111,8 @@ re-proves lineage before host creation, so a parent move between status and disp
 - Spawn ancestry is provenance, not responsibility topology.
 - Each role acts only at its assigned task altitude and authority boundary.
 - Initial briefs are exact-pinned; ordinary messages re-resolve current structural occupants.
+- Ambient bootstrap and plane-hosted child dispatch share one exact-brief transaction, while their
+  authority checks remain disjoint and never fall back into one another.
 - Curator completion requires zero curator-actionable findings from both required onboarding checks;
   the structured coherence authority is published only after their repair-and-rerun loop.
 - Commit-derived memory verification follows the real code commit during governed closeout.
@@ -110,7 +123,8 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:372-372; skills/l-01-agent-lifecycles/SKILL.md:408-408 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:393-393; skills/l-01-agent-lifecycles/SKILL.md:437-437; skills/l-01-agent-lifecycles/SKILL.md:444-444 |
+| The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
 | Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
@@ -151,6 +165,11 @@ No lifecycle topology or authority changed. The curator brief now demonstrates t
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted one public `dispatch_agent` verb, separated
+  ordinary architect bootstrap from explicit takeover, clarified fixed role authority versus
+  launch settings, and preserved resumable lineage-conflict recovery. Verification remains
+  closeout-owned.
 
 - 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored coherence report with one
   lifecycle-published structured authority and a generated Markdown projection. Verification

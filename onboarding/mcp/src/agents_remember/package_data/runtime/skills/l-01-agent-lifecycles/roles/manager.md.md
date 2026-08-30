@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,10 @@ This file is the packaged runtime artifact synchronized exactly from canonical
 one-real-master manager lifecycle and owns no separate intent.
 
 ## Logic
+
+The synchronized caller matrix makes the manager an ordinary plane-hosted caller for its direct
+worker/reviewer/curator children and an ambient target only for explicit developer-declared
+takeover. Dispatch/tools rows remain structural documentation, not settings keys.
 
 The synchronized manager does not advance attempt IDs at dispatch or during internal reruns,
 validates the content-addressed handoff record, and rebuilds a non-gating summary that excludes
@@ -137,6 +141,10 @@ revision, delivery attempt, and content digest separate and states that memory r
 closeout admission consume the same validator. Historical Markdown cannot satisfy the handoff.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only leaf-seat dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Recast manager closeout intake around the sole validated structured
   coherence authority. Verification remains closeout-owned.

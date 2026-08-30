@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T09:14+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,11 @@ Before reporting completion, the curator runs current-additions missing-onboardi
 contract-scoped memory-quality worklist, repairs every enforced curator-actionable finding, and
 reruns both. Dirty-source drift and real-commit-derived stamps/fingerprints are reported separately;
 they never excuse an underlying content, citation, shape, history, entity, or index defect.
+
+The role table classifies curator as target-only. Only the manager ordinarily dispatches this leaf
+seat through plane authority; an identity-free developer launcher may target it only for an
+explicit task-seat takeover. The curator has no `dispatch_agent` caller authority or ambient
+fallback, and its dispatch/tools rows are structural documentation rather than settings keys.
 
 ## Conventions
 
@@ -83,6 +88,10 @@ followed by `mode: poll` carrying only repository and run id. Capacity refusal m
 retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified curator as target-only plus explicit
+  ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept
+  structural authority outside settings. Verification remains closeout-owned.
 
 - 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored terminal report with exact
   lifecycle API publication and validation of the sole structured coherence authority.

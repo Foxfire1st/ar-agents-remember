@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -16,14 +16,25 @@
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract and owns the
-pre-topology requirement compiler gate. It creates one immutable, version-addressed canonical
-packet per independently falsifiable revision, records corpus approval in the approved packet,
-and only then projects filtered links into task topology.
+This source owns the architect role and the pre-topology requirement compiler gate. For ordinary
+role-shaped work, the seat is created by one ambient-launcher `dispatch_agent` call on the canonical
+sprint document with the complete canonical architect brief; after startup, the architect is a plane-hosted caller for its
+documented sprint children. It also creates one immutable, version-addressed canonical packet per
+independently falsifiable revision, records corpus approval in the approved packet, and only then
+projects filtered links into task topology.
 
 ## Code Commentary
 
 ### Logic
+
+Free chat resolves the sprint, compiles `templates/architect-brief.md`, and submits the sprint
+document, role `architect`, and exact brief in one identity-free public request. The control plane
+selects the settings profile, proves readiness, durably pins the brief, and publishes the canonical
+seat before handoff. There is no public spawn/readiness/brief sequence, caller identity field, or
+session primitive. Once hosted, the architect's own dispatches use plane identity and direct-child
+scope; any plane refusal remains a plane refusal. An explicit developer-declared task-seat takeover
+uses the same ambient transaction for the named role at its canonical altitude instead of forcing
+an architect bootstrap first.
 
 The architect compiles and cold-reads the complete requirement corpus before creating task
 topology. A later semantic change retains the stable ID, creates a new version-addressed packet,
@@ -39,8 +50,10 @@ approval increments the requirement version.
 ### Invariants And Boundaries
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
-outputs. Dispatch proof remains exact-session and fail-closed. An approved requirement packet is
-never rewritten in place. A worker/reviewer classification cannot become semantic authority.
+outputs. `dispatch_agent` is the sole public spawn verb, exact-session proof remains fail-closed,
+and plane authorization never falls back to ambient. An approved requirement packet is never
+rewritten in place. A worker/reviewer classification cannot become semantic authority. Role-table
+`dispatch` and `tools` rows are fixed authority/capability descriptions, not settings keys.
 
 ## Docs References
 
@@ -91,6 +104,11 @@ rebuilt. A selector or queue cannot veto planning, and no valid task/master is d
 free a runtime selection.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced the stale caller-visible
+  spawn/readiness/dispatch sequence with one ordinary ambient architect launch transaction,
+  separated explicit named-role takeover, and kept plane authority outside settings. Verification
+  remains closeout-owned.
 
 - 2026-08-27T21:53+02:00 — M40@v2: separated internal repair/test protocol events from formal
   review-handoff attempt lineage while preserving developer-only semantic revision authority.
