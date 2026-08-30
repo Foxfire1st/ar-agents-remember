@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/reviewer.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -52,6 +52,11 @@ adjudication as another authority.
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
 successor is reviewed. An unrelated later candidate does not reopen an accepted attempt.
 
+The role table classifies reviewer as target-only. Only the manager is the ordinary plane-hosted
+caller that dispatches this leaf seat; an identity-free developer launcher may target it only for
+an explicit task-seat takeover. The reviewer cannot call `dispatch_agent` or use ambient authority,
+and its dispatch/tools rows are structural documentation rather than settings keys.
+
 ### Invariants And Boundaries
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
@@ -92,6 +97,10 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified reviewer as target-only plus explicit
+  ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept
+  structural authority outside settings. Verification remains closeout-owned.
 
 - 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
   card already describes one leaf-owned primary revision, adjacent contextual constraints, and

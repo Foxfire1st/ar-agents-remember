@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,12 @@ carries that projection in the curator brief; dispatch re-proves it before host 
 does it gather the curator coherence report before closeout. It runs leaf-scoped targeted quality
 exactly once when closeout creates the leaf commit. Leaf integration lands that exact certified
 commit without a rerun. The full wrapper runs once at master integration altitude.
+
+The role table advertises this seat as a plane-hosted caller and an explicit ambient-takeover
+target. The orchestrator ordinarily creates it; once hosted, it dispatches only its direct
+worker/reviewer/curator children. Its public request never selects caller kind, and a plane
+authorization refusal never retries as an ambient launch. The `dispatch` and `tools` rows describe
+structural authority/capability rather than settings keys.
 
 Before dispatch, the manager independently verifies that every exact stable ID + version points to
 the approved version-addressed packet and that the packet carries its durable corpus-ruling
@@ -132,6 +138,10 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded manager as a plane-hosted caller and
+  explicit ambient-takeover target, with only manager-owned leaf-seat dispatch and no
+  settings-owned structural authority. Verification remains closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled manager-role source ranges against the committed PDLS
   candidate after final requirement-ownership edits; behavior is unchanged.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## Purpose
 
@@ -22,6 +22,11 @@ lifecycle the l-01 registry defines (`kernel/agentic_settings.py` `KNOWN_ROLES`)
 ## Code Commentary
 
 ### Logic
+
+The synchronized caller matrix keeps system-specialist target-only: the orchestrator is its
+ordinary plane-hosted caller, while an identity-free launcher may target it only for explicit
+developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
+keys.
 
 The file defines the provider-only degradation response protocol's investigation seat. Required
 intake: degradation event id/payload, current provider metrics/state paths, provider logs, the
@@ -84,6 +89,10 @@ This sidecar describes the generated runtime copy, not canonical ownership. The 
 
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized orchestrator-owned specialist
+  dispatch, explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled system-specialist citations against the committed PDLS
   candidate; the provider-focused role contract remains unchanged.

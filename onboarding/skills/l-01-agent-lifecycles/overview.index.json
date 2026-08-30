@@ -19,6 +19,7 @@
     "skills/l-01-agent-lifecycles/SKILL.md",
     "skills/l-01-agent-lifecycles/criteria/code-seam.md",
     "skills/l-01-agent-lifecycles/criteria/plan-review.md",
+    "skills/l-01-agent-lifecycles/templates/architect-brief.md",
     "skills/l-01-agent-lifecycles/templates/curator-brief.md",
     "skills/l-01-agent-lifecycles/templates/manager-brief.md",
     "skills/l-01-agent-lifecycles/templates/orchestration-task.md",
@@ -28,11 +29,12 @@
   ],
   "coverageCounts": {
     "sourceFilesInScope": 0,
-    "fileSidecars": 9,
+    "fileSidecars": 10,
     "childRoutes": 1
   },
   "routingTerms": [
     "agent",
+    "architect",
     "brief",
     "code",
     "criteria",
@@ -63,6 +65,7 @@
       "skills/l-01-agent-lifecycles/criteria/code-seam.md",
       "skills/l-01-agent-lifecycles/criteria/plan-review.md",
       "skills/l-01-agent-lifecycles/templates",
+      "skills/l-01-agent-lifecycles/templates/architect-brief.md",
       "skills/l-01-agent-lifecycles/templates/curator-brief.md",
       "skills/l-01-agent-lifecycles/templates/manager-brief.md",
       "skills/l-01-agent-lifecycles/templates/orchestration-task.md",
@@ -77,6 +80,8 @@
       "code-seam",
       "plan-review.md",
       "plan-review",
+      "architect-brief.md",
+      "architect-brief",
       "curator-brief.md",
       "curator-brief",
       "manager-brief.md",
@@ -93,8 +98,12 @@
       "IAS",
       "skills/l-01-agent-lifecycles",
       "route-local-overview",
-      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
+      "f9f92ca793811b6cb738d7e302dfecdf8636e96e",
+      "templates/architect-brief.md",
+      "dispatch_agent",
       "roles/",
+      "dispatch",
+      "tools",
       "l-01-agent-lifecycles",
       "attach_master",
       "roles/orchestrator.md",
@@ -112,13 +121,7 @@
       "templates/verdict.md",
       "templates/manager-brief.md",
       "## Canonical executionGraph Adoption Payload",
-      "executionGraph",
-      "task_doc.author_execution_graph",
-      "migrate_execution_topology",
-      "skills/l-01-agent-lifecycles/SKILL.md",
-      "skills/l-01-agent-lifecycles/roles/curator.md",
-      "skills/l-01-agent-lifecycles/roles/manager.md",
-      "skills/l-01-agent-lifecycles/roles/worker.md"
+      "executionGraph"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                                        |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`                                        |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview

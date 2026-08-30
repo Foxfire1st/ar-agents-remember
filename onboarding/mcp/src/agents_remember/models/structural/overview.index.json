@@ -59,7 +59,7 @@
       "mcp/src/agents_remember/models/structural/",
       "mcp/src/agents_remember/models/structural/overview.md",
       "models/overview.md",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "f9f92ca793811b6cb738d7e302dfecdf8636e96e",
       "TaskDocumentRef",
       "serving/structural_seats.py",
       "application/structural/",
@@ -88,13 +88,13 @@
       "T08",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T14",
       "DTOs",
       "structural_seats",
       "API",
       "test_agent_doctrine_plane_identity",
       "test_structural_agent_tools",
-      "init__",
-      "T06"
+      "init__"
     ]
   },
   "fallback": {

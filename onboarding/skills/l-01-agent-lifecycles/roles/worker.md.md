@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,12 @@ Closeout, integration, finalization, gates, task-document status, and memory qua
 owning seat/curator chain. The worker communicates upward with structural `message_parent`; the
 control plane derives the current parent occupant. Completion follows the durable report plus
 terminal/finalizer truth, not a runtime-addressed model post.
+
+The role table classifies worker as target-only. Only its manager is the ordinary plane-hosted
+dispatch caller; an orchestrator or architect plane seat cannot dispatch a worker directly. An
+identity-free developer launcher may target the leaf worker only for an explicit task-seat
+takeover. The worker has no `dispatch_agent` caller authority or ambient recovery path, and its
+dispatch/tools rows are structural documentation rather than settings keys.
 
 ## Conventions
 
@@ -114,6 +120,10 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified worker as target-only plus explicit
+  ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept
+  structural authority outside settings. Verification remains closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled worker-role citations against the committed PDLS candidate;
   the immutable candidate-bound attempt and one-primary-requirement duties are unchanged.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agent_doctrine_plane_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash |  `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate |  2026-08-30T14:26:46+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,14 +17,22 @@
 ## Purpose
 
 Machine-enforces the ban on agent instructions that require models to retain or submit
-control-plane identifiers, and pins packaged lifecycle doctrine to the canonical source exactly.
+control-plane identifiers, rejects caller-facing advertisement of the internal spawn primitive,
+requires every role table to state its dispatch caller context, forces the launcher matrix across
+canonical surfaces, and pins packaged lifecycle doctrine to the canonical source exactly.
 
 ## Code Commentary
 
 ### Logic
 
-The test enumerates all agent instruction files, rejects forbidden id-addressing phrases, and
-compares the packaged lifecycle tree byte-for-byte with the canonical skill tree.
+The test enumerates all agent instruction files, rejects forbidden id-addressing phrases, scans
+caller-facing roots for `spawn_agent_session`, compares the packaged lifecycle tree byte-for-byte
+with the canonical skill tree, and checks all nine role tables against the adopted plane/ambient/
+target-only context matrix. A parameterized launcher check requires `dispatch_agent`, plane,
+ambient, brief, and an explicit no-fallback statement in each canonical advertisement surface.
+Additional forcing rows require ordinary architect bootstrap to remain distinct from explicit
+task-seat takeover, make source-lineage conflict continuation visible, and prevent dispatch/tools
+authority rows from being presented as settings keys.
 
 ### Conventions
 
@@ -35,6 +43,8 @@ historical provenance are outside this agent-instruction scan.
 
 - Public doctrine cannot regress to exact agent/session/lifecycle targeting.
 - Packaged runtime doctrine cannot drift from the canonical source.
+- The internal primitive cannot reappear as caller guidance, and no role may omit its caller
+  context or blur a plane refusal into ambient authority.
 
 ### Todos
 
@@ -47,7 +57,8 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests scan canonical instructions and compare packaged copies. | `test_agent_doctrine_contains_no_control_plane_address_instructions` | mcp/tests/test_agent_doctrine_plane_identity.py:37-63 |
+| The tests scan canonical instructions and compare packaged copies. | `test_agent_doctrine_contains_no_control_plane_address_instructions` | mcp/tests/test_agent_doctrine_plane_identity.py:74-81 |
+| Caller-facing instructions reject the internal primitive and every role table carries its exact caller context. | `test_caller_facing_instructions_never_advertise_internal_spawn_primitive`; `test_every_role_tool_table_states_its_dispatch_caller_context` | mcp/tests/test_agent_doctrine_plane_identity.py:99-118 |
 
 ## Cross-Repo References
 
@@ -78,6 +89,10 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 added forcing coverage for the public vocabulary
+  purge, ordinary-bootstrap-versus-takeover split, resumable lineage conflicts, fixed structural
+  rows, and the complete caller-kind matrix. Verification remains closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

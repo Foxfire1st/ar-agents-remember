@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T15:20+02:00                     |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-30T12:34+02:00                     |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -49,6 +49,15 @@ non-native mappings stay explicit. The interview points at `docs/reference/harne
 spawn-surface manual. HFX2-L10 clarifies the authority boundary: ordinary spawning seats cannot pass
 `harness`/`model`/`effort`, direct launch/session spend controls, or harness-native spend/endpoint
 env keys directly; settings are the spend surface.
+
+The installed interview now names `dispatch_agent` as the sole public spawn transaction. A
+plane-hosted seat is recognized by injected plane identity and authorized by its current seat plus
+direct-child scope; an identity-free ambient launcher is authorized by canonical target-document
+resolution plus role altitude. The public request never chooses caller kind or supplies caller
+identity. Both modes consume the same settings profile and private creation/readiness/brief/rollback
+pipeline, while a plane refusal never retries as ambient. The internal session primitive is not
+caller guidance. Ordinary ambient bootstrap targets the sprint architect; only an explicit
+developer-declared task-seat takeover targets another named role at its canonical altitude.
 
 The skill starts with a package-first contract: harness-native files are already
 the copied and rendered starter package's responsibility. Rendering can be done
@@ -121,9 +130,9 @@ Harness-native setup details now live in the install guides and starter packages
 | --- | --- | --- |
 | The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
 | Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | `## Stage 0 - Preflight` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:67-103 |
-| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold`, `runtime_install`, `skills_install` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
-| Stage 2 interviews the developer on the agentic settings families and writes the global file seeded by `runtime_install`. | `runtime_install` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-165 |
-| Stage 3/4 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | `## Stage 3 - Memory Repo: Ask Scaffold Vs Existing`, `## Stage 4 - Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:187-215 |
+| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
+| Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. | `## Stage 2 - Agentic Settings: Interview The Developer` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-189 |
+| Stage 3/4 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | `## Stage 3 - Memory Repo: Ask Scaffold Vs Existing`, `## Stage 4 - Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:200-228 |
 | The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | "def provider_watchers_tool("; "if action == \"refresh\":"; "if action not in {\"status\", \"start\", \"stop\", \"restart\", \"invalidate-indexes\", \"shutdown-all\"}:"; "if action in {\"start\", \"restart\", \"invalidate-indexes\"}:" | mcp/src/agents_remember/application/provider_tools.py:50-73 |
 | The install-side seeding the interview builds on (copy-if-missing global file). | `seed_agentic_settings` | mcp/src/agents_remember/install/runtime.py:164-180 |
 
@@ -136,6 +145,11 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the settings interview with the sole
+  public dispatch verb, separated ordinary architect bootstrap from explicit takeover, and retained
+  the two process-derived caller kinds plus no-fallback boundary. Verification remains
+  closeout-owned.
 
 - 2026-08-11T15:20+02:00 — Re-anchored provider-watcher vocabulary and the removed `refresh`
   behavior to the exact declaration and validation branches.

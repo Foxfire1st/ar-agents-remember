@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T09:14+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## Purpose
 
@@ -67,9 +67,15 @@ that sole candidate-bound authority and renders Markdown from it. Expected dirty
 real-commit verification fields remain separately closeout-owned; they do not excuse a repairable
 onboarding or citation finding.
 
-Roles are immutable within dashboard-owned seats. Horizontal role expansion uses structural
-dispatch to another document+role seat; native sub-agents, when allowed by a hands-on role, remain
-read/search helpers and never become AR role seats.
+Roles are immutable within dashboard-owned seats. For ordinary role-shaped work, free chat creates
+the sprint architect through one identity-free `dispatch_agent` call built from the canonical
+architect-brief template; an explicit developer-declared task-seat takeover instead targets the
+named role at its canonical altitude. Once hosted, architect, orchestrator, and manager are plane
+callers with only their documented direct-child scope. Strategist, designer, worker, reviewer,
+curator, and system-specialist are target-only roles. The role-table dispatch/tool rows document
+fixed structural authority and capability, not settings keys. Plane authorization
+failures never retry as ambient launches. Native sub-agents, when allowed by a hands-on role,
+remain read/search helpers and never become AR role seats.
 
 ## Conventions
 
@@ -77,11 +83,15 @@ read/search helpers and never become AR role seats.
 - The source role files are canonical; packaged copies are exact synchronization outputs.
 - Each role writes its artifact of record and communicates structurally one rung at a time.
 - Shared dispatch/authority doctrine remains in the parent `SKILL.md`.
+- Every role table names whether that role is an ambient target, a plane-hosted caller, or
+  target-only; the request never carries a caller-mode selector.
 
 ## Invariants And Boundaries
 
 - Manager owns a real master; worker/reviewer/curator own real leaves.
 - Role replacement preserves the task-document/role address.
+- `dispatch_agent` is the only public spawn verb. Ambient and plane authority are disjoint even
+  though both use the same exact-brief transaction.
 - Builder, reviewer, curator, and owner duties remain separate.
 - Curator completion requires the required missing-onboarding and full-quality reruns to name no
   curator-actionable work.
@@ -96,7 +106,7 @@ read/search helpers and never become AR role seats.
 | Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
-| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
+| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:116-116 |
 | Worker and reviewer roles define the two independent halves of per-ID acceptance. | `### 4 — Per-Requirement Acceptance Envelope And Delivery Attempt`; `## Per-Requirement Independent Attempt Adjudication` | skills/l-01-agent-lifecycles/roles/worker.md:77-145; skills/l-01-agent-lifecycles/roles/reviewer.md:101-160 |
 
 ## L23 Role Recovery Semantics
@@ -143,6 +153,11 @@ No role authority changed. Curator doctrine now uses explicit sync/start/poll re
 treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the complete role caller-context matrix,
+  separated one-call architect bootstrap from explicit ambient takeover, corrected manager-only
+  leaf-seat dispatch, and kept structural rows outside settings overrides. Verification remains
+  closeout-owned.
 
 - 2026-08-29T09:14+02:00 — MCAR-L02 made lifecycle-published structured coherence authority,
   rather than hand-authored Markdown, the curator's terminal artifact. Verification remains

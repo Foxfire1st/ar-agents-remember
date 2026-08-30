@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:51+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ This file is the packaged runtime artifact synchronized exactly from canonical
 builder lifecycle and owns no independent worker doctrine.
 
 ## Logic
+
+The synchronized caller matrix keeps worker target-only: only the owning manager is its ordinary
+plane-hosted caller, while an identity-free launcher may target it only for explicit
+developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
+keys.
 
 The synchronized worker advances an attempt only at review handoff or after reviewer rejection,
 logs internal runs separately, and appends a lightweight requirement-specific record linked to
@@ -94,6 +99,10 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only worker dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
 
 - 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
   authority wording; projection ownership and byte-identity rules remain unchanged.

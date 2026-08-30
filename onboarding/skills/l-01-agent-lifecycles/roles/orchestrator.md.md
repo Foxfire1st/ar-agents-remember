@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-26T08:35+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T12:57+02:00 |
+| lastVerifiedCommitHash |  `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate |  2026-08-30T14:26:46+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -16,7 +16,11 @@
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+This source defines the sprint-bound orchestrator. It is a plane-hosted `dispatch_agent` caller for
+direct manager and system-specialist children; it never selects ambient mode for those calls,
+exposes readiness as a caller step, or retries a plane authorization failure through the launcher
+path. The architect ordinarily creates this seat, while an identity-free developer launcher may
+target it only for an explicit task-seat takeover.
 
 ## Code Commentary
 
@@ -35,11 +39,19 @@ when the master integrates into super. GitHub PR validation is a separate non-te
 
 ### Logic
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+The orchestrator submits a canonical child task document, target role, and complete brief once.
+The control plane privately owns session creation, readiness proof, exact initial-brief pinning,
+and rollback. Its role table therefore advertises the seat as a plane-hosted caller and an ambient
+takeover target, while the public request contains no caller-kind or runtime-identity field. Its
+`dispatch` and `tools` rows are structural documentation rather than settings keys. When the
+developer explicitly selects this seat, the launcher converges on the canonical sprint-bound
+orchestrator seat; it does not manually create or replace a live occupant.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. Dispatch proof remains exact-session and fail-closed; plane refusal never becomes an
+ambient retry.
 
 ## Docs References
 
@@ -100,6 +112,14 @@ decisions determine a resolution. Continue or cancel the contract-addressed oper
 advertised API; escalate only genuine semantic ambiguity through the architect.
 
 ## Update History
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: replaced create/replace
+  takeover wording with idempotent canonical-seat convergence. Verification remains
+  closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the orchestrator as a plane-hosted caller
+  and explicit ambient-takeover target, removed caller-visible readiness sequencing, and kept its
+  structural authority outside settings. Verification remains closeout-owned.
 
 - 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
   reconciling orchestrator activation doctrine.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/terminal_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T10:10+02:00 |
-| lastVerifiedCommitHash | `3eafc555c848ac45a07a07720641f1735f8df0eb` |
-| lastVerifiedCommitDate | 2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-30T12:04+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,12 @@ rides `SpawnedBy.caller_kind` into `SpawnProvenance.spawned_by_kind`, the catalo
 caller kind (plane seats pass `plane`, ambient callers `ambient`; `None` stays unattributed,
 backward compatible).
 
+The primitive's own refusals now name that boundary instead of teaching callers to invoke the
+primitive. Unsupported spend overrides point public role callers to `dispatch_agent` and
+settings-owned spend. Any attempted context/submit brief delivery points callers to one
+`dispatch_agent` request with the canonical task document, target role, and complete brief; it no
+longer advertises a public spawn/readiness/inbox sequence.
+
 ### Conventions
 
 `SpawnSeat`, provenance, and override objects are internal composition seams. Agent-facing
@@ -46,6 +52,7 @@ requests are the strict structural DTOs in `application/structural/`.
 - Structural authorization precedes internal mutation.
 - New hosted environment identity is plane-seeded and caller identity is scrubbed.
 - Initial brief persistence/delivery belongs to structural dispatch, not the raw spawn primitive.
+- Internal primitive refusals never become documentation for a second public spawning workflow.
 
 ### Todos
 
@@ -60,7 +67,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Internal task assignment accepts canonical document and role. | `attach_terminal_session_to_task_tool` | mcp/src/agents_remember/application/terminal_tools.py:171-205 |
-| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:787-871 |
+| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:785-870 |
 | Caller-kind provenance rides the spawn into the catalog row and payload. | `CallerKind`; `SpawnedBy` | mcp/src/agents_remember/application/terminal_tools.py:522-534 |
 | Exact retire/rename operations remain behind structural resolution. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:955-1025; mcp/src/agents_remember/application/terminal_tools.py:1114-1128 |
 
@@ -76,6 +83,10 @@ detail/projection on attach and spawn, rather than duplicating the terminal
 opener's structural policy.
 
 ## Update History
+- 2026-08-30T12:04+02:00 — 260821-ARSPAWN-L3 rewrote internal primitive remediation to direct
+  callers to the one public dispatch transaction rather than a manual spawn/readiness/brief chain.
+  Verification remains closeout-owned.
+
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `CallerKind` (`plane|ambient|unattributed`) rides `SpawnedBy.caller_kind` through the spawn primitive into `SpawnProvenance.spawned_by_kind`, the catalog row, and the `spawnedByKind` payload; `None` stays unattributed (backward compatible). The primitive remains internal composition for the public `dispatch_agent`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-12T20:10+02:00 — L23 curator: reconciled centralized spawn refusal translation and lineage evidence propagation; verification remains closeout-owned.

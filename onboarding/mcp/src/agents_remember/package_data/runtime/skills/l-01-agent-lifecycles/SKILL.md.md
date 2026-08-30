@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T12:57+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -30,11 +30,17 @@ requirement-specific records linked to content-addressed expanded evidence; summ
 protocol events and remain rebuildable/non-gating.
 
 The router selects exactly one role from plane-injected `AR_SPAWN_ROLE`, a fresh role brief, or the
-unbound free-chat launcher. Managed seats bind to canonical sprint, master, or leaf task documents
-plus role. `dispatch_agent` is the one structural child transaction: the control plane authorizes
-the relationship, creates the child, proves readiness, persists the initial brief, and returns only
-structural delivery state. Models never handle occupant, lifecycle, readiness, inbox-address, or
-attachment identifiers.
+unbound free-chat launcher. For ordinary role-shaped work, free chat compiles the canonical
+architect brief and calls `dispatch_agent` once on the sprint document; an explicit
+developer-declared task-seat takeover targets the named role at its canonical altitude. A hosted spawning role uses the same public request
+under plane identity and direct-child scope. Caller kind is process-derived and absent from the
+request. The control plane creates the child, proves readiness, persists the exact initial brief,
+and returns only structural delivery state. A stale, invalid, mismatched, unbound, or unauthorized
+plane identity never falls back to ambient. Models never handle occupant, lifecycle, readiness,
+inbox-address, or attachment identifiers. Ordered source-lineage sync remains resumable through
+advertised conflict continuation, and role-table dispatch/tool rows are structural descriptions,
+not settings keys. An explicit takeover converges idempotently on the canonical seat: a viable
+occupant or durable queued brief is reused, and the launcher never manually replaces an incumbent.
 
 ### Conventions
 
@@ -48,6 +54,8 @@ and cross-role invariants.
 - Task-document-plus-role is seat identity; runtime occupant identity stays plane-private.
 - A queued structural dispatch is durable and follows the notifier retry path without duplicate
   briefs or respawn.
+- Ambient bootstrap and plane-hosted child dispatch are disjoint authority modes of the same
+  transaction; no public session primitive or compatibility fallback exists.
 - Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
 
 ### Todos
@@ -79,7 +87,12 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
-This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
+This sidecar describes the generated runtime copy, not canonical ownership. The source is
+synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process.
+Creation, exact-session readiness, and exact initial-brief delivery remain private phases inside
+one public `dispatch_agent` transaction; callers do not sequence or address those phases.
+Spawned-only or not-ready is not active work; `sessionCommands` remain launch configuration and
+`promptKeywords` apply once during the private readiness-to-brief transition.
 
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
@@ -149,6 +162,14 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: synchronized the
+  canonical-seat convergence and no-manual-replacement boundary for explicit task-seat takeover.
+  Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the one-call architect launcher,
+  separated ordinary bootstrap from explicit named-role takeover, recorded resumable lineage
+  conflicts, and kept structural role rows outside settings. Verification remains closeout-owned.
 
 - 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
   canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain

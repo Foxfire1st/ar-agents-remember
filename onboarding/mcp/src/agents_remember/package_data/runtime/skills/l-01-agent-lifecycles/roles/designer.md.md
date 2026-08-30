@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 
 ## Purpose
 
@@ -19,11 +19,13 @@ exact artifact without a separate packaged interpretation.
 
 ### Logic
 
-Operations may create or switch to `(sprint document, designer)` when design deserves a dedicated
-conversation; otherwise the architect may apply the same drawing-board method inline. A dispatched
+The architect may create or switch to `(sprint document, designer)` through one `dispatch_agent`
+call when design deserves a dedicated conversation; an identity-free launcher may target it only
+for explicit developer-declared takeover. Otherwise the architect may apply the same drawing-board
+method inline. A dispatched
 designer remains designer, creates task/design artifacts without a worktree, and returns durable
 artifacts to the architect. `message_parent` carries clarification or escalation without revealing
-an occupant id.
+an occupant id. The dispatch/tools rows are structural documentation rather than settings keys.
 
 ### Conventions
 
@@ -53,6 +55,10 @@ No sibling repository evidence is needed for this doctrine file.
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced stale Operations creation with
+  architect-owned dispatch, separated explicit ambient takeover, and fixed structural-row
+  ownership. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `designer.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.

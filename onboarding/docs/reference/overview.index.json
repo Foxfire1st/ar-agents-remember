@@ -35,7 +35,7 @@
     "topology"
   ],
   "hotPath": {
-    "summary": "The current orchestration references describe free chat as the launcher and architect/orchestrator/manager as sprint-bound command seats. Any unbound command-seat wording is limited to migration compatibility; runtime identity and custody come from persisted repository+sprint provenance. For native launch and control questions, read `harnesses.md` for the dynamic catalog, model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the Claude/Codex/Pi launch/set matrix; read `settings-json.md` for the complete `roles.<role>` / `rolesPerLevel` model-and-effor...",
+    "summary": "The current orchestration references describe free chat as the identity-free launcher that, for ordinary role-shaped work, compiles the canonical architect brief and calls `dispatch_agent` once on the sprint document. An explicit developer-declared task-seat takeover is the bounded exception: it targets the named role at that role's canonical task altitude rather than silently turning ordinary free chat into a non-architect seat. Plane-hosted architect/orchestrator/manager seats use the same public tool with injected seat identity and exact direct-child scope. Caller kind is process-derived...",
     "candidateHints": [
       "docs/reference",
       "docs/reference/execution-topology-migration.md",
@@ -55,9 +55,8 @@
       "settings-json",
       "skills.md",
       "skills",
-      "roles.<role>",
-      "rolesPerLevel",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "dispatch_agent",
+      "f9f92ca793811b6cb738d7e302dfecdf8636e96e",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",
@@ -72,6 +71,10 @@
       "ladder-resolved",
       "system/init",
       "list_models",
+      "dispatch",
+      "tools",
+      "roles.<role>",
+      "rolesPerLevel",
       "worktrees-c09.md",
       "agents-remember",
       "reconciling",
@@ -89,10 +92,7 @@
       "drift_check",
       "memory_quality_check",
       "route_index_refresh",
-      "worktree_*",
-      "onboardingRoot",
-      "--contract",
-      "worktree_cleanup"
+      "worktree_*"
     ]
   },
   "fallback": {

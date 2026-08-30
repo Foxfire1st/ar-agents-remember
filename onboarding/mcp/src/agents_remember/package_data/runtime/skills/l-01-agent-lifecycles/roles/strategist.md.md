@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ exact runtime artifact.
 ## Code Commentary
 
 ### Logic
+
+The synchronized caller matrix makes strategist target-only: the architect is its ordinary
+plane-hosted caller, while an identity-free launcher may target it only for explicit
+developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
+keys.
 
 After developer approval, the architect may dispatch `(sprint document, strategist)` when the
 reasoned topology choice or portfolio classification is absent/stale—not merely because a valid
@@ -60,12 +65,13 @@ No Domain Documentation source is configured for this memory root.
 
 ## Repo-Internal References
 
-When approved, the strategist is spawned by the orchestrator and hands its plan back for adoption.
+When approved, the strategist is spawned by the architect and hands its plan back for ruling and
+adoption.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source this bundle copy is sync-propagated from. | `# Lifecycle — Strategist` | skills/l-01-agent-lifecycles/roles/strategist.md:1-247 |
-| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:95-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:190-248 |
+| The frame that houses this seat, the role registry row, and the three-party-loop doctrine home. | `## The Role Registry`; `## The Three-Party Loop (one home — this section owns the loop doctrine)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:116-133; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:213-392 |
 | The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-589 |
 | The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-198 |
 | The plan-review criteria re-derive effective priority and validate either topology choice. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-134 |
@@ -120,6 +126,10 @@ If an explicit graph is later chosen, complete every master attachment first and
 `add_edge` examples already carried `judgmentId`; no example repair was invented.
 
 ## Update History
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized architect-owned strategist dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
 
 - 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
   synchronized strategist-role card.

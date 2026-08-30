@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `61d2c6a225b2e107bb50d446f708002d58b03a75`|
-| lastVerifiedCommitDate | 2026-08-12T07:36:24+02:00|
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -262,7 +262,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:423-423; docs/reference/settings-json.md:425-426 |
+| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:429-429; docs/reference/settings-json.md:431-432 |
 
 ## Repo-Internal References
 
