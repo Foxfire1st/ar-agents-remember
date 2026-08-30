@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/cli/dashboard.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated            | 2026-08-24T15:04+02:00                       |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`   |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`   |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../../overview.md`                     |
 
 ## Governing Overview
@@ -179,7 +179,7 @@ against the same coordination root as a live MCP server. Closing it means declar
 | The `--config` → `McpRuntimeConfig` contract it mirrors. | `McpRuntimeConfig` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-137 |
 | Tests covering the serving CLI (including the `--reload` path). | `CliRunTests` | mcp/tests/test_serving_cli.py:211-310 |
 | The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. | `declare_process_role` | mcp/src/agents_remember/controlplane/durable_store.py:76-84 |
-| The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
+| The MCP server's mirror of the same declaration, in `main` rather than `create_server`. | `main` | mcp/src/agents_remember/mcp/server.py:77-99 |
 
 ## 260718-CHATS-L5I Current Delta
 

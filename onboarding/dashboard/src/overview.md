@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -68,6 +68,10 @@ definite mismatch offers an explicit reload, and absence remains unknown. A new 
 cause exactly one chooser catalog reread and one explicit terminal-socket reattach, but neither is
 coupled to SSE loss or a background retry loop. Reattach preserves the mounted xterm and durable
 tmux session; transport close alone is not terminal exit.
+
+ARSPAWN-L4 extends that same generated serving-build wire identity with optional Python-source
+digest, exact interpreter, and package root. The frontend remains a diagnostic consumer; it gains
+no package-update or candidate-selection authority.
 
 ## FEUI-MX-FIX-2 Authoritative Session Open
 
@@ -530,6 +534,9 @@ The canonical schema now represents named attention and process `Literal` vocabu
 surface are unchanged; the dashboard remains a consumer of one server-owned generated contract.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: regenerated the diagnostic serving-build
+  mirror with exact Python candidate provenance. Verification remains closeout-owned.
 
 - 2026-08-29T19:04+02:00 — Reconciled the Python 3.13 named-literal `$defs` representation without
   changing the dashboard wire vocabulary or frontend ownership. Verification remains closeout-owned.

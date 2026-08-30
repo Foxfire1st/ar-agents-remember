@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -189,7 +189,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:144-144; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35 |
+| The two MCP payload builders are declared at these entry points. | "def skills_install_payload("; "def task_reopen_payload(" | mcp/src/agents_remember/mcp/tools/core.py:148-148; mcp/src/agents_remember/mcp/tools/task_doc.py:35-35 |
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. | `MemoryScopeIdentity`; `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:27-143 |

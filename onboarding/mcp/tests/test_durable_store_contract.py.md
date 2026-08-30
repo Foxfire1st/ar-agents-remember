@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_durable_store_contract.py`   |
 | doc_type               | `file-level-onboarding`                      |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                |
 
 ## Governing Overview
@@ -204,7 +204,7 @@ the cross-process and authority halves.
 | The shared write boundary first applies checkout-target confinement, then retains the tested rewrite invariants: refusal without the lock, never unlinking, atomic publication, and durable append. Checkout-isolation behavior itself belongs to the focused L21 suite. | "def require_lock_held(log_path: Path, store: str) -> None:"; "def append_line(log_path: Path, line: str) -> None:"; "def rewrite_lines(log_path: Path, lines: list[str], ownership: StoreOwnership) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:"; "def test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root(self) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:451-451; mcp/src/agents_remember/controlplane/durable_store.py:479-479; mcp/src/agents_remember/controlplane/durable_store.py:509-509; mcp/src/agents_remember/controlplane/durable_store.py:529-529; mcp/tests/test_checkout_coordination_isolation.py:153-153 |
 | The single version rule and the validator that gives the strict and tolerant readers their behaviour without a version branch in either. | `schema_version_supported`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
 | The advisory ownership methods exercised in both directions by the role test, and the two registers it uses. | `check_declared_writer`; `is_compaction_owner`; `GATE_OWNERSHIP`; `AGENT_NOTIFIER_SIGNAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:107-121; mcp/src/agents_remember/controlplane/durable_store.py:123-132; mcp/src/agents_remember/controlplane/durable_store.py:138-150; mcp/src/agents_remember/controlplane/durable_store.py:212-221 |
-| The one place that declares a process role, asserted to do so before the server serves. | `main` | mcp/src/agents_remember/mcp/server.py:35-57 |
+| The one place that declares a process role, asserted to do so before the server serves. | `main` | mcp/src/agents_remember/mcp/server.py:77-99 |
 | The whole-file read-modify-write pair the thread lost-update test forces, and the `rewrite_lines` reference it patches. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
 | The nudge log's two rewrite entry points under test — the safe `compact` and the `replace_records` primitive it wraps. | `compact`; `replace_records`; `_rewrite` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:91-107; mcp/src/agents_remember/controlplane/orchestration_nudges.py:145-155; mcp/src/agents_remember/controlplane/orchestration_nudges.py:158-167 |
 | The gate store's strict and tolerant reads, its `delete`, and the `_replace` that routes both through the contract. | `read`; `read_for_projection`; `delete`; `_replace` | mcp/src/agents_remember/controlplane/store.py:129-139; mcp/src/agents_remember/controlplane/store.py:141-155; mcp/src/agents_remember/controlplane/store.py:248-257; mcp/src/agents_remember/controlplane/store.py:328-337 |

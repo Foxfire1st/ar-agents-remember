@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -97,9 +97,9 @@ an explicitly approved public nested contract, as memory quality now has. The ca
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars, 59 advertised tools (260815-DAG-L16 added `direct_landing`) — the same 59
-names `mcp/tools/base.py::PUBLIC_TOOLS` lists, which `mcp/tests/test_tools.py` checks against a
-live server's `list_tools()`.
+Twelve registrars, 63 advertised tools — the same ordered names
+`mcp/tools/base.py::PUBLIC_TOOLS` lists. `mcp/public_surface.py` checks the exact live
+`list_tools()` order, response-model projection, dispatch schema, and description together.
 
 ## Hot Path Summary
 
@@ -149,24 +149,26 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 - Do not add a second `PLR0913` exemption or widen the existing pattern; both fail the same suite.
 - A new tool means editing one family module and appending to `PUBLIC_TOOLS`, the response-model
   registry, and `docs/reference/mcp-tools.md`; a new family means a new module plus one entry in
-  `TOOL_REGISTRARS`. `create_server` itself should not grow a special case.
+  `TOOL_REGISTRARS`.
 - Registration order in `TOOL_REGISTRARS` is the order the server advertises tools in; the
-  `PUBLIC_TOOLS` equality check is set-based for `list_tools()` but exact-list for `server_info`.
-- Request validation belongs in the payload builders and application entry points; response validation belongs
-  to `base._tool_payload`. This layer validates nothing.
+  `PUBLIC_TOOLS` equality check is exact-order for both `list_tools()` and `server_info`.
+- Semantic request validation belongs in payload builders and application entry points; response
+  validation belongs to `base._tool_payload`. The transport boundary additionally rejects
+  undeclared `dispatch_agent` inputs because FastMCP otherwise drops them silently. This narrow
+  closed-schema enforcement does not duplicate registration or application behavior.
 - Do not add a raw shell or arbitrary-command tool to this surface.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
 | The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_tool_signature_exemption.py:60-70 |
 | What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
-| The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:138-152 |
+| The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:162-176 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
 ## 260731-EFA-L17 Change
@@ -272,6 +274,11 @@ candidate runs. Candidate poll carries the original contract address; the public
 advertise repository id as acceptance authority.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: documented the 63-tool exact-order
+  public surface, the permanent cross-authority validator, and the narrow transport-owned refusal
+  of undeclared dispatch inputs. No fallback or duplicate registrar was introduced; verification
+  remains closeout-owned.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: advertised exact contract-bound candidate start/poll
   semantics. Verification remains closeout-owned.

@@ -150,6 +150,7 @@
     "mcp/src/agents_remember/kernel/sidecar_pairing.py",
     "mcp/src/agents_remember/mcp/__init__.py",
     "mcp/src/agents_remember/mcp/compact_content.py",
+    "mcp/src/agents_remember/mcp/public_surface.py",
     "mcp/src/agents_remember/mcp/server.py",
     "mcp/src/agents_remember/memory/baseline.py",
     "mcp/src/agents_remember/memory/carryover.py",
@@ -258,8 +259,8 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1432,
-    "fileSidecars": 145,
+    "sourceFilesInScope": 1434,
+    "fileSidecars": 146,
     "childRoutes": 20
   },
   "routingTerms": [

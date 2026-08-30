@@ -5,14 +5,28 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-30T12:42+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## ARSPAWN-L4 Public Advertisement And Starter Contract
+
+The MCP public surface is now reconciled through one permanent validator over public FastMCP APIs:
+the exact ordered `PUBLIC_TOOLS` inventory, live registration, response models, and the closed
+`dispatch_agent` schema/description must agree. MCP `server_info` and dashboard served state share
+one process-scoped, content-addressed Python candidate identity so an equal-version stale artifact
+cannot pass as the code under review.
+
+Starter policy remains self-updating by design. Claude, Codex, Cursor, VS Code, Hermes, OpenClaw,
+Pi, and Antigravity all retain `uvx --refresh-package agents-remember-mcp
+agents-remember-mcp@latest`. Only the disposable acceptance process pins exact local source, because
+launching `@latest` there would certify PyPI instead of the candidate. These are complementary
+proofs, not alternative starter strategies.
 
 ## IAS Source-Pair Coordination Boundary
 
@@ -1050,6 +1064,10 @@ candidate change produces a typed refusal with the exact sync/reprepare route. N
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: documented exact public-surface parity,
+  shared candidate identity, and the preserved eight-harness self-update contract. Verification
+  remains closeout-owned.
 
 - 2026-08-30T12:42+02:00 — 260821-ARSPAWN-L3 review correction: replaced the superseded
   caller-declaration summary with process-derived ambient authority, distinguished ordinary

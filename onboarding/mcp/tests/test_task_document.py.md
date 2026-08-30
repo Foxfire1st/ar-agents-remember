@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-29T11:00+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -97,7 +97,7 @@ and tool registration.
 | Master sync preserves manually-authored scope. | "const { webtuiPrefixOptions } = require('./webtui-scope.config.cjs');" | dashboard/postcss.config.cjs:6-6 |
 | Master row status is derived from leaf state. | "export const status = css({" | dashboard/src/panels/sessionComposerStyles.ts:116-116 |
 | Dry-run returns the parent master sync preview. | "def _create_missing_dirs(paths: list[Path]" | mcp/src/agents_remember/kernel/memory_init.py:14-14 |
-| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:796-796 |
+| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:807-807 |
 
 ## Series-Contract Notes
 

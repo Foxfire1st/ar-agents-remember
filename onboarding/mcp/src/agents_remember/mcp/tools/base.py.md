@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ L23 makes `citation_fix` and `worktree_operation_cancel` public MCP tools so gua
 
 ### Logic
 
-`PUBLIC_TOOLS` is the 59-name registered surface (260815-DAG-L16 added `direct_landing`).
+`PUBLIC_TOOLS` is the exact ordered 63-name registered surface.
 Structural agent operations are
 `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
 `message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
@@ -33,7 +33,8 @@ result through the shared finalizer.
 
 ### Conventions
 
-Registration and response-model registries must match this tuple exactly.
+Live registration and the public response-model registry must match this tuple exactly. Order is
+part of the advertisement contract; set-only parity is insufficient.
 
 ### Invariants And Boundaries
 
@@ -89,6 +90,10 @@ compatibility name and does not change token/envelope finalization for existing 
 validation remain actions of that tool rather than four overlapping public tools.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: corrected the current public census to 63 and
+  recorded exact-order parity as the permanent advertisement contract. Verification remains
+  closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Added the one curator-coherence tool name to the public inventory.
   Verification remains closeout-owned.

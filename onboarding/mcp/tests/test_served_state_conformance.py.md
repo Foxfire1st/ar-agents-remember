@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_served_state_conformance.py`     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -21,12 +21,12 @@ Conformance for the **served** state contract (`serving/served_state.py`) — th
 validated `/api/state`, the SSE `snapshot` event, or the projection *as served*: both keys of the
 serve-time tail (`servingBuild`, `agentNotifierHeartbeat`) were injected into the dumped projection
 with nothing declaring them, so the emitted body validated against no model at all —
-`WorkspaceProjection` (`extra="forbid"`) included cit:(["class ServedWorkspaceProjection"], mcp/src/agents_remember/serving/served_state.py:48-48).
+`WorkspaceProjection` (`extra="forbid"`) included cit:(["class ServedWorkspaceProjection"], mcp/src/agents_remember/serving/served_state.py:49-49).
 
 The suite drives the **real** route and the **real** SSE generator and validates what comes back
 against `ServedWorkspaceProjection`, pinning the three shapes the assembly is allowed to take:
 the 200 body carries the tail, the 304 branch carries no body at all, and a `delta` event is a bare
-projection node — the asymmetry that stops the tail from being a projection field cit:(["def served_state_tail"], mcp/src/agents_remember/serving/served_state.py:71-71).
+projection node — the asymmetry that stops the tail from being a projection field cit:(["def served_state_tail"], mcp/src/agents_remember/serving/served_state.py:72-72).
 
 ## Code Commentary
 
@@ -151,9 +151,9 @@ served-state module plus the two producers of the tail.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The contract under test: `ServedWorkspaceProjection`, `SERVED_TAIL_FIELDS`, `served_state_tail`, and the five reasons the tail lives here rather than on `WorkspaceProjection` (layer, the dump memo, the ETag, `latest-state.json`, and the snapshot/delta shape asymmetry). | "class ServedWorkspaceProjection", "def served_state_tail" | mcp/src/agents_remember/serving/served_state.py:48-48; mcp/src/agents_remember/serving/served_state.py:71-71 |
+| The contract under test: `ServedWorkspaceProjection`, `SERVED_TAIL_FIELDS`, `served_state_tail`, and the five reasons the tail lives here rather than on `WorkspaceProjection` (layer, the dump memo, the ETag, `latest-state.json`, and the snapshot/delta shape asymmetry). | "class ServedWorkspaceProjection", "def served_state_tail" | mcp/src/agents_remember/serving/served_state.py:49-49; mcp/src/agents_remember/serving/served_state.py:72-72 |
 | The route and the SSE generator driven for real; the tail rides the `snapshot` only. |"def create_app("; "async def stream_events("|mcp/src/agents_remember/serving/_app_common.py:116-116; mcp/src/agents_remember/serving/app.py:243-243|
-| The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | `ServingBuildPayload` | mcp/src/agents_remember/serving/build_info.py:43-63 |
+| The build half of the tail, whose payload omits what it could not prove (`commit`, `dirty`, `dashboardBuild`). | "class ServingBuildPayload(BaseModel):" | mcp/src/agents_remember/models/core.py:14-27 |
 | The heartbeat half, which reports a never-ticked agent-notifier as explicit nulls, plus the store the fixture ticks. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
@@ -168,7 +168,7 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:743-743 |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:746-746 |
 
 ## 260821-CLIVE-L2 Addressable Served-State Fixture
 
@@ -181,6 +181,9 @@ normal root-journal address chain.
 | Each populated enclosure becomes lifecycle-addressable before served-state projection. | `_write_enclosure` | mcp/tests/test_served_state_conformance.py:109-141 |
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: repointed the shared payload citation to
+  `models/core.py`; test behavior is unchanged. Verification remains closeout-owned.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Purpose
@@ -28,7 +28,9 @@ separate keyword arguments, since neither is part of "which task".
 `SERVER_NAME`/`SERVER_VERSION`/`TRANSPORT` and config; the rest forward typed
 arguments to their application entry points (`build_context_packet`, `run_runtime_install`,
 `resolve_context_tool`, `skills_install_tool`). `server_info_payload` reports
-`PUBLIC_TOOLS`/`RESERVED_TOOLS`. `runtime_install_payload` forwards a full
+`PUBLIC_TOOLS`/`RESERVED_TOOLS` plus the caller-supplied, boot-resolved `ServingBuildPayload`. The
+payload builder serializes that strict model directly and never reprobes or fabricates build
+identity. `runtime_install_payload` forwards a full
 `RuntimeInstallRequest` — `dry_run`, `include_benchmarks`, `install_provider_deps`
 (default `True`), and `no_cache` (default `False`) — then response-budgets the
 result (S4, 2.5.1): the full install detail goes to a temp report via
@@ -51,6 +53,8 @@ flat copy, so there is no layout argument). `context_packet_payload` forwards
 - Keep the builder signatures in lockstep with the `RuntimeInstallRequest` /
   `skills_install_tool` contracts and the server registration (e.g. `no_cache`);
   the builder stays transport-thin and does not interpret these flags.
+- `server_info_payload` requires an explicit `ServingBuildPayload`; package version alone cannot identify
+  equal-version source or installed candidates.
 
 ## Series-Contract Notes
 
@@ -65,6 +69,13 @@ installation from `application.runtime.skills`. Payload validation and transport
 remain unchanged; the move removes the former flat application-module ownership.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: the transport-thin builder now accepts the
+  application-produced strict payload and has no serving-domain dependency. Verification remains
+  closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: `server_info_payload` now requires and serializes
+  the shared boot-resolved `ServingBuild`. Verification metadata remains pinned until closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

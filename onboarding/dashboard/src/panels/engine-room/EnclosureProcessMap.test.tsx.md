@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:06+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -174,7 +174,7 @@ negative — it is the assertion that would fail if a polarity field were reintr
 | The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. | "renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:38-45 |
 | `refusedPolarityOf` — the derivation the test's amber expectation depends on. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
 | `_seed_edge_state` — why `stale` is the honest reroute state to assert. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:743-743 |
+| The `ProviderNode` shape `WORKSPACE_ENGINES` builds. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:746-746 |
 | The jsdom stubs + determinism freeze. | "window.matchMedia = ((query" | dashboard/src/test/setup.ts:66-66 |
 
 ## Current L5I Maintenance

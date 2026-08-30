@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving_cli.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -28,6 +28,11 @@ Part of the 260731-EFA-L7 in-place split family for `test_serving_cli.py`'s sour
 - `SimReplayTests`
 - `CliSimTests`
 
+ARSPAWN-L4 extends `BuildInfoTests` with the shared wire fields and a forcing content-address test:
+identical Python source in different roots has one digest, `__pycache__` is ignored, and changed
+source changes identity. Off-checkout identity omits facts it cannot prove.
+An unreadable package tree also returns honest unknown rather than leaking the probe failure.
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_serving_cli.py`.
@@ -39,6 +44,12 @@ Part of the 260731-EFA-L7 in-place split family for `test_serving_cli.py`'s sour
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added the unreadable-tree source-digest
+  forcing case. Verification remains closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 added content-addressed source and shared wire-payload
+  forcing cases. Verification remains closeout-owned.
 
 - 2026-08-24T21:23+02:00 — No content impact: the owned-state context manager moved from the test
   tree to `agents_remember_test_support.testing.global_state`; serving CLI behavior is unchanged.

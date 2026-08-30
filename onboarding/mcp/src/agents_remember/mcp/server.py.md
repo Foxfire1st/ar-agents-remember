@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-10T18:31+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated            | 2026-08-30T15:15:36+02:00                  |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-`server.py` is the stdio MCP **process wiring** for Agents Remember, and since 260731-EFA-L2 that is
-all it is: about fifty lines holding `create_server`, `run_server` and `main`.
+`server.py` is the stdio MCP **process and transport-boundary wiring** for Agents Remember. It holds
+`AgentsRememberMCP`, `create_server`, `run_server`, and `main`; tool ownership remains in the
+registration families.
 
 The tool surface it used to carry — every `@server.tool()` declaration and its model-visible
 docstring — now lives in `agents_remember.mcp.registration`, one module per family. If you are
@@ -37,11 +38,21 @@ is the [registration route overview](registration/overview.md), not this file.
    per server process, with the store root resolved through the shared `observer.observer_root`.
    The `lifecycle_*` tools and the `_tool_payload` choke point read that singleton, so it must be
    installed before any tool runs.
-3. `FastMCP("Agents Remember")`.
+3. `AgentsRememberMCP("Agents Remember")`.
 4. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
    place that decides which families a server advertises.
 
 `run_server(config)` is `create_server(config).run()`.
+
+### Closed dispatch input at the public transport boundary
+
+FastMCP 1.x generates argument models that ignore undeclared keys by default. For
+`dispatch_agent`, that would silently discard a caller-supplied `model`, `thinking`, or other spend
+override even though the public contract says settings own those choices. `AgentsRememberMCP`
+therefore uses FastMCP's public `list_tools` and `call_tool` hooks to publish
+`additionalProperties: false` and reject undeclared dispatch inputs before the registered handler
+runs. This is one closed-schema enforcement seam, not a second registrar or handler. Other tool
+registration, descriptions, and argument ownership remain in `mcp/registration/`.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
@@ -82,8 +93,10 @@ that skips this line loses no records — it just stops being distinguishable fr
 ### Invariants And Boundaries
 
 - **No tool declarations here.** A new tool means editing one family module under `registration/`;
-  a new family means a new module plus one entry in `TOOL_REGISTRARS`. `create_server` must not grow
-  per-tool special cases.
+  a new family means a new module plus one entry in `TOOL_REGISTRARS`.
+- The transport subclass may enforce a closed public boundary only when the framework-generated
+  boundary is demonstrably weaker. It must not duplicate handlers, invent fallbacks, or become a
+  second tool registry. ARSPAWN-L4's dispatch-only undeclared-input refusal is the current instance.
 - Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
   before tools can be exercised.
 - **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process(config)` stays before
@@ -101,7 +114,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
 | The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:96-96; mcp/src/agents_remember/mcp/tools/__init__.py:115-115 |
 
@@ -120,6 +133,10 @@ The transport server now imports its composition boundary as
 durable-store ownership remain application concerns; only their package location changed.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: recorded `AgentsRememberMCP` as the one strict
+  dispatch transport seam. Production registration remains family-owned; no compatibility handler
+  or private FastMCP registry was added. Verification metadata remains pinned until closeout.
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 

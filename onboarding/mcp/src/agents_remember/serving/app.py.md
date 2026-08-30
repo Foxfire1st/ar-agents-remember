@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,7 +25,8 @@ Provides the stable FastAPI composition facade and curated public imports for th
 `create_app` builds runtime collaborators, registers route families, installs the lifespan, and
 returns the app. Terminal assignment exports now use `TerminalAttachTaskRequest` and
 `_attach_task_response`; removed leaf-ref helpers are absent. Detailed routing behavior remains in
-the private route modules.
+the private route modules. Serving runtime composition receives `process_serving_build()`, the same
+cached process identity projected by MCP `server_info`.
 
 ### Conventions
 
@@ -36,6 +37,7 @@ This facade re-exports tested patch/import seams but does not reimplement their 
 - Public serving composition exposes task assignment, not leaf assignment.
 - Startup migration is delegated to the lifespan.
 - Route behavior stays in owned submodules.
+- Dashboard and MCP surfaces must not resolve separate build identities inside one process.
 
 ### Todos
 
@@ -65,6 +67,9 @@ catalog/inbox deletion decisions and uses task-owned proof, while ordinary injec
 omit registrars remain fail-closed.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: app composition now consumes the shared cached
+  process build used by MCP identity advertisement. Verification remains closeout-owned.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded production composition of terminal and inbox execution registration. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

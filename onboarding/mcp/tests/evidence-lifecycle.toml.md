@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-29T23:04+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-08-30T16:32+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,20 @@ therefore an exact source-derived consumer of both `closeout_input_test_support.
 evidence-lifecycle validator can distinguish an intentional shared dependency from an incomplete
 ownership declaration.
 
+## ARSPAWN-L4 Public-Surface Consumer Delta
+
+`test_public_surface_conformance.py` imports the shared runtime-settings builders from
+`test_config.py`. That module reaches the closeout and curator-coherence fixture roots through
+`test_worktree_support.py`, so the source-derived ownership graph classifies the public-surface
+suite as an exact transitive consumer of both `closeout_input_test_support.py` and
+`curator_coherence_test_support.py`. The two catalog rows now declare those exact edges; no helper
+was copied and no direct-import exception was added.
+
 ## Update History
+
+- 2026-08-30T16:32+02:00 — Added `test_public_surface_conformance.py` to both exact transitive
+  consumer sets after the L4 staged fast hook exposed the source-derived ownership edges; the
+  focused lifecycle validator passes with 35 governed artifacts.
 
 - 2026-08-29T23:04+02:00 — Added `test_memory_candidate_pair.py` to the exact source-derived
   consumer sets for the closeout-input and curator-coherence test composition roots after the

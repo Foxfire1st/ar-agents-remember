@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tokens.py`                 |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                                         |
-| lastVerifiedCommitDate |2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`                                         |
+| lastVerifiedCommitDate |2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -43,7 +43,7 @@ metadata fields back into the counted JSON.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Counting engine under test. | `ApproximateTokenCounter`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:169-180; mcp/src/agents_remember/models/tokens.py:232-249 |
-| `PingResponse` is the representative `ResponseModel` used for the serializer tests. | `PingResponse` | mcp/src/agents_remember/models/core.py:14-17 |
+| `PingResponse` is the representative `ResponseModel` used for the serializer tests. | `PingResponse` | mcp/src/agents_remember/models/core.py:30-33 |
 
 ## Update History
 

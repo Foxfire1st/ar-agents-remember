@@ -35,7 +35,7 @@
     "startup"
   ],
   "hotPath": {
-    "summary": "Use `startup.py` for trusted MCP process preparation and application collaborators, `install.py` for the typed runtime-install delegation, and `skills.py` for packaged skill deployment.",
+    "summary": "Use `startup.py` for trusted MCP process preparation, application collaborators, and the typed serving-build gateway used by MCP registration; use `install.py` for runtime-install delegation and `skills.py` for packaged skill deployment.",
     "candidateHints": [
       "mcp/src/agents_remember/application/runtime",
       "mcp/src/agents_remember/application/runtime/__init__.py",
@@ -55,7 +55,7 @@
       "MCP",
       "mcp/src/agents_remember/application/runtime/",
       "route-local-overview",
-      "a09b906bbf2855c3479b4d3199607ff8689b7d93",
+      "dc03c64a91947cee470622c560c516854eec86b5",
       "/overview.md",
       "__init__.py.md",
       "install.py.md",
@@ -63,6 +63,7 @@
       "startup.py.md",
       "declare_mcp_process",
       "initialize_mcp_application",
+      "mcp_serving_build_payload",
       "prepare_mcp_process",
       "run_runtime_install",
       "skills_install_tool",
@@ -73,12 +74,13 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T08",
+      "T17",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T13",
       "governingOverview",
       "init__",
+      "ARSPAWN",
+      "T08",
       "L23"
     ]
   },

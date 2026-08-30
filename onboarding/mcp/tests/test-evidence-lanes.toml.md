@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T04:54+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,6 +40,9 @@ The exact code-memory candidate-pair suite is also explicitly `integration` evid
 create real temporary repositories and linked worktrees, advance source branches, and exercise the
 contract-owned memory-quality admission boundary. The lifecycle gate rejects the candidate if this
 row is absent instead of silently assigning a cheaper lane.
+The ARSPAWN public-surface suite is explicitly `integration` evidence because it launches bounded
+stdio MCP subprocesses and performs real protocol initialization, tool listing, and calls for all
+eight controlled harness registrations. It must never silently inherit a unit lane.
 
 ### Conventions
 
@@ -66,9 +69,9 @@ No external documentation governs this repository-owned evidence catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Architecture-fitness membership explicitly includes the M38, M39, and M40-M45 structural proofs. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py"; "mcp/tests/test_requirement_attempt_journal_doctrine.py"; "mcp/tests/test_requirement_compilation_gate_doctrine.py" | mcp/tests/test-evidence-lanes.toml:463-465 |
+| Architecture-fitness membership explicitly includes the M38, M39, and M40-M45 structural proofs. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py"; "mcp/tests/test_requirement_attempt_journal_doctrine.py"; "mcp/tests/test_requirement_compilation_gate_doctrine.py" | mcp/tests/test-evidence-lanes.toml:464-466 |
 | The structural test checks the complete M38 template surface. | `test_worker_role_brief_and_report_require_one_complete_primary_block`; `test_reviewer_role_and_verdict_require_independent_adjudication_per_id`; `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:22-113 |
-| Retry selection, child-environment forcing, and coverage composition have explicit unit-regression, integration, and architecture-fitness membership respectively. | "mcp/tests/test_retry_selection.py"; "mcp/tests/test_quality_subprocess_environment.py"; "mcp/tests/test_retry_coverage.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:367-367; mcp/tests/test-evidence-lanes.toml:466-466 |
+| Retry selection, child-environment forcing, and coverage composition have explicit unit-regression, integration, and architecture-fitness membership respectively. | "mcp/tests/test_retry_selection.py"; "mcp/tests/test_quality_subprocess_environment.py"; "mcp/tests/test_retry_coverage.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:368-368; mcp/tests/test-evidence-lanes.toml:467-467 |
 | The seven retained kernel regressions remain explicitly classified while deleted Candidate A tests are absent. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
 | The future-code candidate real-Git matrix is explicitly classified as integration evidence. | "mcp/tests/test_future_code_candidate.py" | mcp/tests/test-evidence-lanes.toml:251-251 |
 | The exact code-memory pair suite is explicitly classified as integration evidence. | "mcp/tests/test_memory_candidate_pair.py" | mcp/tests/test-evidence-lanes.toml:333-333 |
@@ -88,6 +91,9 @@ the existing future-code real-Git suite. This prevents the Dagger selector from 
 the new filesystem/Git/task publication fixture as unit evidence.
 
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — Classified `test_public_surface_conformance.py` explicitly as
+  integration evidence. Verification remains closeout-owned.
 
 - 2026-08-30T04:54+02:00 — Added explicit integration-lane ownership for the exact
   code-memory candidate-pair suite after the lifecycle Dagger census rejected an unclassified
