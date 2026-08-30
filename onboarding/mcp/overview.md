@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-29T22:45+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -975,7 +975,7 @@ The package surface now exposes retry, recover, cancel, revise, integrate, retir
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public worktree payload surface. | `worktree_closeout_apply_payload`; `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:119-128; mcp/src/agents_remember/mcp/tools/worktree.py:151-158 |
-| Admission forcing across every consumer. | `test_every_public_consumer_exhaustively_refuses_each_semantic_category`; `test_public_consumers_do_not_enumerate_configured_reread_lower_families` | mcp/tests/test_configured_contract_admission_l2.py:184-274; mcp/tests/test_configured_contract_admission_l2.py:632-650 |
+| Admission forcing across every consumer. | `test_every_public_consumer_exhaustively_refuses_each_semantic_category`; `test_public_consumers_do_not_enumerate_configured_reread_lower_families` | mcp/tests/test_configured_contract_admission_l2.py:185-281; mcp/tests/test_configured_contract_admission_l2.py:697-715 |
 
 ## 260821-DAGQC-L2 Packaged Doctrine Synchronization
 
@@ -1031,7 +1031,26 @@ content identity stay separate. Public memory readiness, closeout-door evidence,
 admission invoke the same validator, so a ready memory result cannot later disagree with closeout
 over a different hardcoded report. No historical-filename search or Markdown authority remains.
 
+## MCAR-L03 Exact Code-Memory Pair Boundary
+
+Every worktree-backed memory acceptance route now resolves one strict
+`ar-memory-candidate-pair/v1` identity from the configured leaf contract. The identity binds the
+exact code and memory repositories, worktree roots, source/work branches, base commits,
+onboarding root, ledger, and contract digest; a code tree or memory tree observed outside that
+pair is not acceptance evidence. Memory-quality sync/start/poll, source-candidate attestation,
+curator coherence, closeout preview/apply, and closeout recovery all carry and revalidate the same
+pair before publishing or consuming evidence.
+
+Repository-only memory quality remains an explicitly labeled diagnostic route. It cannot be
+promoted to closeout evidence, and a moved base, wrong valid checkout, changed contract, or
+candidate change produces a typed refusal with the exact sync/reprepare route. No path guessing,
+ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
+
 ## Update History
+
+- 2026-08-29T22:45+02:00 — MCAR-L03: documented the single contract-derived code-memory pair
+  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
+  including the diagnostic-only repository route and fail-closed revalidation boundary.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: added the single structured curator-coherence authority,
   deterministic attestation bridge, and shared memory/closeout validator. Verification remains

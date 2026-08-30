@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,16 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | The task publication lock is scoped to the configured coordination repository. | `task_publication_lock` | mcp/src/agents_remember/controlplane/task_publication_lock.py:18-36 |
 
+## MCAR-L03 Pair-Bound Publication
+
+The immutable record, observation identity, publication fingerprint, race check, prepared/published
+payloads, and validation checklist all include the exact pair. A pair change therefore invalidates
+publication and idempotent replay even when candidate files are otherwise valid.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: bound publication, CAS/race identity, and validation output
+  to the exact code/memory pair. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Created for deterministic, exact-CAS, crash-safe coherence authority
   publication. Verification remains closeout-owned.

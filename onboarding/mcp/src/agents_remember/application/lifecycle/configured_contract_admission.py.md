@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T05:55+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Closed admission for every public current-contract mutation route.
 
 ### Logic
 
-The public surface is `ConfiguredContractAccepted`, `ConfiguredContractRefused`, `admit_configured_contract`, `configured_authority_refusal`, `configured_contract_reread_refusal`, `execute_configured_contract_operation`. This application boundary exposes a closed public result and delegates durable mutation to its owning domain seam. Expected configured-contract, location, or legacy failures are translated through typed decisions; callers do not enumerate lower-level exception families or invent alternate authority.
+The public surface is `ConfiguredContractAccepted`, `ConfiguredContractRefused`, `admit_configured_contract`, `configured_authority_refusal`, `configured_contract_reread_refusal`, `execute_configured_contract_operation`. This application boundary exposes a closed public result and delegates durable mutation to its owning domain seam. Expected configured-contract, location, or legacy failures are translated through typed decisions; callers do not enumerate lower-level exception families or invent alternate authority. Admission is strict by default, including current candidate-worktree identity. An exact-pair consumer may explicitly set `require_candidate_identity=False` only because the shared code-memory pair validator owns that same live-candidate check; configured repository roots, separation, task identity, and enclosure confinement remain admitted here.
 
 ### Conventions
 
@@ -31,6 +31,8 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 ### Invariants And Boundaries
 
 - Preserve the module's single ownership seam; do not add a fallback reader or duplicate authority.
+- Disabling the admission layer's candidate-identity check is valid only for an exact-pair consumer
+  that immediately delegates the same obligation to the canonical pair validator.
 - Expected refusal states remain typed and bounded, while unexpected programming faults remain loud.
 - Durable lifecycle facts live in the canonical root journal; scheduling projections may only consume them.
 
@@ -64,6 +66,11 @@ Present-invalid archive or authority evidence becomes a bounded refusal. Termina
 only for status and exact cleanup retry; it is never a generic fallback for live mutations.
 
 ## Update History
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: exposed the strict-by-default candidate-identity
+  choice to exact-pair consumers. Relaxed callers still pass the same closed configured admission
+  and retain repository, task, and enclosure authority; only the shared pair API owns candidate
+  liveness and field-specific refusal.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for the configured-operation result and confirmed that the documented admission, refusal, and reread boundary is unchanged. Verification remains closeout-owned.
 

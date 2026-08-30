@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -235,8 +235,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:649-659; mcp/tests/test_wire_vocabulary_exhaustiveness.py:705-720; mcp/tests/test_wire_vocabulary_exhaustiveness.py:755-765 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:20-21; mcp/src/agents_remember/models/worktree.py:23-23; mcp/src/agents_remember/models/worktree.py:25-25 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:36-36; mcp/src/agents_remember/models/worktree.py:45-45 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:21-22; mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/models/worktree.py:26-26 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:27-27; mcp/src/agents_remember/models/worktree.py:37-37; mcp/src/agents_remember/models/worktree.py:46-46 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
@@ -494,7 +494,17 @@ remain in both seat generations.
 `StructuralOutcome` projects operation, status, canonical task document, role, detail, and
 delivery state while deliberately excluding runtime occupant identity.
 
+## MCAR-L03 Pair Identity Models
+
+`memory_candidate.py` owns the frozen exact-pair schema. Memory-quality, curator-coherence, and
+closeout response models reference that schema rather than copying its fields. Semantic
+requirement versions, delivery attempts, candidate trees, and pair identity remain separate
+contracts.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added the canonical pair schema and shared wire bindings.
+  Verification remains closeout-owned.
 
 - 2026-08-29T09:45+02:00 — MCAR-L02 route impact: added the strict curator-coherence identity and
   action family, including exact judgment coverage and separate semantic-revision, delivery-attempt,

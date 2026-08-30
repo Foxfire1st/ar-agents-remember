@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`       |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`       |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -208,7 +208,7 @@ into an inode with no remaining links.
 | `_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116. | `_reclaim_gate_log`, `record_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
 | `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:199-212 |
 | `evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
-| `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:515-566 |
+| `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:474-525 |
 | `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107 |
 
 As of cycle 5 GateStore.find(gate_id) resolves one gate id across the workspace log and every lifecycle log — the seam-decide path: the deciding seat holds only the packet-carried gate id; lifecycle ids stay server-side. Cycle 6 adds `all_current()`, the cross-lifecycle enforcement fold: it merges every gate log (workspace + all lifecycles) last-wins per gate id, so identity-addressed consumers (the integrate-side master-handover guard, which matches by the gate's `enclosure`) can see a seam gate raised on a different lifecycle than the one the consuming contract anchors.

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_tool_enclosure_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,8 +69,8 @@ application source plus this regression suite.
 | The fixture constructs distinct official and leaf repositories joined by one enclosure contract. | `_Enclosure`; `_enclosure` | mcp/tests/test_memory_tool_enclosure_scope.py:69-159 |
 | Route-index tests prove scoped writes/dry-runs leave the non-target tree untouched. | `RouteIndexRefreshWritesTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:176-215 |
 | Quality tests prove leaf selection, paired Markdown/JSON curator publication, temporary base forwarding, and strict bare-call provenance. | `MemoryQualityCheckReadsTheNamedTreeTests` | mcp/tests/test_memory_tool_enclosure_scope.py:219-289; mcp/tests/test_memory_tool_enclosure_scope.py:291-329 |
-| Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:355-373 |
-| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:387-484; mcp/tests/test_memory_tool_enclosure_scope.py:487-489; mcp/tests/test_memory_tool_enclosure_scope.py:492-495 |
+| Drift tests measure the named leaf onboarding against the named leaf code. | `DriftCheckReadsTheNamedTreesTests` | mcp/tests/test_memory_tool_enclosure_scope.py:390-408 |
+| Invalid enclosures refuse and the helper constructors preserve typed contract/config shapes. | `RefusalTests`; `_replaced`; `_config_without_memory_root` | mcp/tests/test_memory_tool_enclosure_scope.py:411-510; mcp/tests/test_memory_tool_enclosure_scope.py:513-515; mcp/tests/test_memory_tool_enclosure_scope.py:518-521 |
 
 ## Cross-Repo References
 
@@ -96,7 +96,16 @@ The leaf memory-quality cases now accept the explicit `coherence-required` trans
 quality reaches zero and assert separate raw quality, coherence status, and combined
 `closeoutReady`. This prevents tests from treating quality-only readiness as closeout admission.
 
+## MCAR-L03 Real Enclosure Scope
+
+Real enclosure tests now prove contract-scoped checks return the exact roots/pair and bind the
+generated attestation, while bare repository checks are explicitly non-accepting official
+diagnostics with no pair identity.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: distinguished exact leaf acceptance scope from official
+  diagnostic scope in real-tree forcing. Dagger verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Added raw-versus-combined structured coherence readiness assertions.
   Verification remains closeout-owned.

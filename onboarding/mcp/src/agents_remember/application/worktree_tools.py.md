@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-26T03:37+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T05:55+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -186,7 +186,7 @@ the documented setup cap now actually governs the worktree flow.
 | Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:148-198; mcp/src/agents_remember/models/worktree.py:201-228 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:119-119; mcp/src/agents_remember/kernel/primitives/runtime_config.py:188-188 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:125-125; mcp/src/agents_remember/kernel/primitives/runtime_config.py:188-188 |
 | Containment tests pin the worktree-start veto and the armed-path live-map launch. | "test_stale_armed_snapshot_is_vetoed_by_disk", "test_disk_armed_snapshot_launches_with_live_map" | mcp/tests/test_provider_containment.py:125-177 |
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
 | Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:34-65 |
@@ -246,7 +246,22 @@ instead of scanning a deleted enclosure. Closeout requests carry the shared grad
 but the task-addressed worker never makes the scheduling decision or claims a door: its enclosing
 operation revalidates the journal, contract, and protected-ref authority.
 
+## MCAR-L03 Closeout Application Boundary
+
+Initial closeout apply now re-proves the external leaf pair before lifecycle admission and includes
+that identity in its acknowledgement. Preview converts pair/coherence failure through the typed
+domain projector, including the named field and exact repair route. The detached worker still
+revalidates independently before mutation.
+
 ## Update History
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: closeout apply now reuses the canonical admission
+  normalizer before exact-pair resolution, so omitted, empty, and whitespace-only enabled commit
+  messages refuse before pair or competing-lifecycle state can obscure the input defect. The
+  lease-owned admission repeats the same validation against current state.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: exposed and prevalidated the exact pair at closeout apply
+  admission while preserving worker revalidation. Verification remains closeout-owned.
 
 - 2026-08-26T03:37+02:00 — Added typed contract-addressed sync continuation/cancellation and
   stable sync-journal status projection across contract read failure. Recorded the separation from

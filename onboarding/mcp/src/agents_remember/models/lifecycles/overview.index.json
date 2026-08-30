@@ -18,6 +18,7 @@
     "mcp/src/agents_remember/models/lifecycles/enclosure.py",
     "mcp/src/agents_remember/models/lifecycles/finalize.py",
     "mcp/src/agents_remember/models/lifecycles/legacy.py",
+    "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
     "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
     "mcp/src/agents_remember/models/lifecycles/operation.py",
     "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
@@ -26,13 +27,14 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 14,
-    "fileSidecars": 14,
+    "sourceFilesInScope": 15,
+    "fileSidecars": 15,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
+    "candidate",
     "coherence",
     "curator",
     "curator_coherence",
@@ -50,6 +52,8 @@
     "legacy",
     "lifecycles",
     "mcp",
+    "memory",
+    "memory_candidate",
     "models",
     "mutation",
     "mutation_evidence",
@@ -74,6 +78,7 @@
       "mcp/src/agents_remember/models/lifecycles/enclosure.py",
       "mcp/src/agents_remember/models/lifecycles/finalize.py",
       "mcp/src/agents_remember/models/lifecycles/legacy.py",
+      "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
       "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
       "mcp/src/agents_remember/models/lifecycles/operation.py",
       "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
@@ -98,6 +103,8 @@
       "finalize",
       "legacy.py",
       "legacy",
+      "memory_candidate.py",
+      "memory_candidate",
       "mutation_evidence.py",
       "mutation_evidence",
       "operation.py",
@@ -112,7 +119,7 @@
       "termination",
       "mcp/src/agents_remember/models/lifecycles/",
       "route-local-overview",
-      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
+      "346507af24396ab7b491e02511c4af006ccd3dc5",
       "/overview.md",
       "__init__.py.md",
       "responses.py.md",
@@ -127,9 +134,7 @@
       "CloseoutOperationInput",
       "IntegrateOperationInput",
       "EnclosurePublicationState",
-      "TerminalEnclosurePredecessor",
-      "WorkerTerminationEvidence",
-      "LifecycleCancellationEvidence"
+      "TerminalEnclosurePredecessor"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-24T14:19+02:00                                            |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                                        |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`                                        |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -58,7 +58,15 @@ The memory-quality cases drive the registered FastMCP tool with each strict requ
 poll refuses explicit execution fields before dispatch, and inspect the published schema for one
 discriminated request object. They do not preserve or exercise the retired flat grammar.
 
+## MCAR-L03 Poll Schema Wiring
+
+Registration forcing now permits and forwards the exact candidate `contract_path` on poll while
+continuing to reject execution-only poll fields.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: covered contract-bound candidate polling in the public
+  request schema and adapter. Dagger verification remains closeout-owned.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added live FastMCP proofs for exact sync/start/poll dispatch, poll-field conflict refusal, and the one discriminated request schema. Verification metadata remains pinned until architect-owned closeout.
 

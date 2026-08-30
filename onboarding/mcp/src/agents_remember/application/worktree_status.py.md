@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -108,9 +108,9 @@ No Domain Documentation source is configured for this memory root.
 | The journal observer returns a typed projection without reading task or queue state. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
 | `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. | `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:113-126 |
 | Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
-| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:148-148 |
+| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:149-149 |
 | Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. | "worktree=worktree_status_packet" | mcp/src/agents_remember/application/context_packet.py:96-96 |
-| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:36-36; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
+| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:37-37; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
 | `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell[Cell: str](", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:105-105; mcp/src/agents_remember/worktrees/worktree_contract.py:286-286 |
 | `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:193-193; mcp/src/agents_remember/application/worktree_status.py:245-245 |
 | `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:159-159 |

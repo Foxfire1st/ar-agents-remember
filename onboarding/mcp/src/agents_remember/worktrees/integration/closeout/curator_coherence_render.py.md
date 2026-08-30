@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,16 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | The file introduces no external boundary. | — | — |
 
+## MCAR-L03 Human Pair Projection
+
+Generated Markdown now renders the contract/digest, both roots, source/work branches and bases,
+onboarding root, and ledger path from the structured record. Markdown remains a projection and is
+never reparsed as authority.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: rendered the complete structured pair for human scope
+  verification. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Created for the digest-bound human projection of structured coherence.
   Verification remains closeout-owned.

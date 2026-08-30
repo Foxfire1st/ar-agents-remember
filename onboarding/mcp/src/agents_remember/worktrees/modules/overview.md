@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-29T22:45+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -365,7 +365,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:34-554 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/models/worktree.py:171-171 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:27-27; mcp/src/agents_remember/models/worktree.py:172-172 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:566-674 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -775,7 +775,7 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:359-421; mcp/src/agents_remember/worktrees/modules/closeout.py:998-1085 |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:317-380; mcp/src/agents_remember/worktrees/modules/closeout.py:1001-1089 |
 | Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-699 |
 | Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
@@ -817,7 +817,22 @@ evidence before citation preflight or the expensive code gate. The result record
 coherence record digest and delivery attempt in preflight facts. No hardcoded Markdown filename or
 task-evidence pointer can select a competing authority.
 
+## MCAR-L03 Exact Pair Admission And Recovery
+
+Closeout preview, apply admission, working-tree memory preflight, terminal result publication, and
+recovery now consume the same `accepted_closeout_memory_pair` adapter. It resolves and revalidates
+the configured leaf's exact code/memory pair, joins it to the current structured coherence record,
+and carries the pair identity in public preview/apply/result payloads. Recovery re-reads the
+contract pair before accepting prior commit evidence; a moved base, wrong checkout, or changed
+contract refuses with typed pair facts instead of resuming against ambient Git. The worktree tool
+boundary translates the shared pair/coherence error families once, without duplicating resolver
+logic or adding a fallback route.
+
 ## Update History
+
+- 2026-08-29T22:45+02:00 — MCAR-L03: traced the exact pair adapter through closeout preview,
+  admission, memory preflight, result publication, and recovery; all consumers now expose the same
+  pair identity and typed refusal facts.
 
 - 2026-08-29T18:29+02:00 — Added the shared candidate-bound onboarding-acceptance boundary across
   preview, closeout admission, and external-memory refresh.

@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-08-29T11:41+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -182,7 +182,7 @@ No external documentation is needed for this standard-library test.
 | Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support_tests_1.py:925-995 |
 | Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / `request_commit_approval` (closeout owns the commit gate). | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/guidance.py:39-39 |
 | `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | `test_status_reports_integration_pending_for_dirty_closed_contract` | mcp/tests/test_worktree_support_tests_2.py:620-632 |
-| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1105-1134; mcp/tests/test_worktree_support_tests_1.py:1136-1149; mcp/tests/test_worktree_support_tests_1.py:1168-1185 |
+| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1119-1148; mcp/tests/test_worktree_support_tests_1.py:1150-1163; mcp/tests/test_worktree_support_tests_1.py:1182-1199 |
 | The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:349-377 |
 | Direct legacy integration callers cannot fast-forward or classify source movement, and cleanup blocks before completed integration. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_cleanup_blocks_before_integration_completed`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes` | mcp/tests/test_worktree_support_tests_2.py:634-669; mcp/tests/test_worktree_support_tests_2.py:671-677; mcp/tests/test_worktree_support_tests_2.py:679-722; mcp/tests/test_worktree_support_tests_2.py:724-759 |
 | The remaining non-fast-forward case proves refs stay unchanged. | `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_3.py:955-1007 |

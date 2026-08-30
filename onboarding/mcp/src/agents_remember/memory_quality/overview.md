@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated            | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -101,7 +101,7 @@ and report-only detail into the enclosure's one atomically replaced curator work
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:67-73; mcp/src/agents_remember/application/memory_quality/controller.py:165-190 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:86-96; mcp/src/agents_remember/application/memory_quality/controller.py:306-333 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:32-44; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
@@ -261,7 +261,17 @@ census. Public memory readiness retains raw `qualityChecklistStatus` but reports
 `checklistStatus=coherence-required` and `closeoutReady=false` until the same structured authority
 validator used by closeout succeeds.
 
+## MCAR-L03 Pair-Bound Quality Evidence
+
+Full leaf quality receives only a contract-resolved code/onboarding pair and writes that complete
+identity into the structured curator attestation. Repository-only quality remains a diagnostic and
+cannot publish candidate acceptance. Pre/post-scan revalidation makes wrong or raced scope a
+typed refusal before evidence can be accepted.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: bound leaf quality and curator attestations to the exact
+  code/memory pair. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: removed timestamp entropy from the curator checklist and
   joined raw quality with the sole coherence validator. Verification remains closeout-owned.

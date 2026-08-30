@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,16 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | These are local MCP and lifecycle records only. | — | — |
 
+## MCAR-L03 Acceptance Identity
+
+Both the source memory-quality attestation and immutable curator-coherence record require
+`pairIdentity`. Public coherence responses expose the pair and typed pair-refusal field/repair
+arguments. Missing pair data is invalid rather than being read through a compatibility path.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: made the exact pair mandatory acceptance evidence across
+  attestation, record, and response models. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Created for MCAR-L02 A005's strict coherence identity, authority,
   snapshot, action, and response contracts. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T06:08+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -137,10 +137,11 @@ Task 30 adds the re-closeout reset path for already-integrated leaves. When a
 completed integration is legitimately re-closed, source-head validation accepts
 the recorded integrated tips in addition to the original base tips. Preview
 reports `integration_reopen.would_reopen` when the closeout would create or
-transport new unlanded code or memory content. Apply compares the resulting
-code and memory-content commits against the contract and recorded source
-branches; if either new content commit is not yet on its source branch, closeout
-reopens the contract by clearing the integrated commit fields, setting
+transport new unlanded code or memory content. The exact prospective and produced-commit policy
+now lives in `integration/closeout/integration_reopen.py`; this coordinator consumes that decision
+and owns publication. The policy compares resulting code and memory-content commits against the
+contract and recorded source branches; if either new content commit is not yet on its source
+branch, closeout reopens the contract by clearing the integrated commit fields, setting
 `integration_status` back to `not-started`, and leaving cleanup pending so
 `worktree_integrate` can land the new tip normally. A clean no-op re-closeout
 does not reopen integration and avoids duplicating an existing ledger mapping,
@@ -306,12 +307,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Created-file forcing pins exact staged-candidate quality input and non-mutation on refusal. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 | Task-worktree, conflict, and retry forcing pin both refusals and first-run-equivalent restaging. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests`; `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:898-1021; mcp/tests/test_worktree_closeout_quality_gate.py:1024-1082; mcp/tests/test_worktree_closeout_quality_gate.py:1088-1151 |
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:24-29 |
-| Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:99-99; mcp/src/agents_remember/worktrees/modules/closeout.py:867-867 |
+| Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:105-105; mcp/src/agents_remember/worktrees/modules/closeout.py:813-813 |
 | The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
-| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:706-706; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56 |
+| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:641-641; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:465-467 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
-| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:667-703 |
+| Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:602-638 |
 
 ## 260731-EFA-L1 Current Commit-Gate Delta
 
@@ -386,7 +387,7 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. | `closeout_changed_paths`; `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:109-131; mcp/src/agents_remember/worktrees/modules/closeout.py:359-425; mcp/src/agents_remember/worktrees/modules/closeout.py:998-1091 |
+| The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. | `closeout_changed_paths`; `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:127-145; mcp/src/agents_remember/worktrees/modules/closeout.py:317-380; mcp/src/agents_remember/worktrees/modules/closeout.py:1001-1089 |
 
 ## 260821-CLIVE Journal-Owned Claim Boundary
 
@@ -406,7 +407,26 @@ hardcoded legacy report cannot pass one boundary and fail another. The validated
 projection is threaded through preview, body-gate admission, and `ExternalCloseoutEvidence`, so
 the post-code-commit memory refresh consumes the same decisions instead of re-deriving them.
 
+## MCAR-L03 Preview, Apply, And Recovery Pairing
+
+Preview obtains the pair from the current coherence authority and reports it. Normal completed
+apply carries that same accepted pair. Post-commit finalization recovery re-proves the exact
+contract-addressed pair directly, because pre-commit candidate-tree evidence is expected to become
+stale after commits; it never re-resolves from repository id. The pair policy lives in the focused
+closeout pairing module rather than adding another resolver to this orchestration module.
+
 ## Update History
+
+- 2026-08-30T06:08+02:00 — MCAR-L03 A005: extracted completed-integration reopen decisions into
+  the closeout integration route, reducing this coordinator below the 1,200-line hard rail and
+  removing the failed monolithic CRAP unit while preserving publication ownership.
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: split completed-integration reopen
+  classification into code and memory helpers. The behavior is unchanged, while each plane's
+  landed-versus-unlanded decision is independently testable and below the CRAP threshold.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: reported the exact pair across preview/completed apply and
+  re-proved it during recovery. Verification remains closeout-owned.
 
 - 2026-08-29T18:29+02:00 — Applied the validated curator-coherence no-impact projection at
   preview, reversible admission, and external-memory refresh; untraced body edits remain closed.

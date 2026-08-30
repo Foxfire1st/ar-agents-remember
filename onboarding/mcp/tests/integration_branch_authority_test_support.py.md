@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T05:55+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -20,11 +20,13 @@ Builds real repository, contract, task-topology, atomic blocker, closed-leaf, an
 
 ## Code Commentary
 
-Shared fixture construction uses production task documents, queue state, contracts, Git refs, and external-memory ledger commits so the main and edge suites do not counterfeit authority or depend on one another.
+Shared fixture construction uses production task documents, queue state, contracts, Git refs, and external-memory ledger commits so the main and edge suites do not counterfeit authority or depend on one another. Closed external-memory leaf fixtures materialize the contract-required `onboarding/` root before closeout, ensuring conflict and integration tests reach their intended branch-authority seam instead of failing earlier on an invalid memory-candidate shape.
 
 ## Invariants And Boundaries
 
 - The suite exercises production owners rather than copying their state-transition logic.
+- External-memory fixtures must satisfy the same minimum candidate shape as a real leaf, including
+  the onboarding root required by exact code-memory pairing.
 - Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
 - Crash/retry cases retain exact durable identity and expected-old facts.
 
@@ -68,6 +70,10 @@ Shared integration-authority builders now expose the canonical current topology 
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: external-memory closeout fixtures now create the
+  onboarding directory required by the exact pair contract, so lifecycle-conflict tests exercise
+  their intended ordering instead of failing on an incomplete memory fixture.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

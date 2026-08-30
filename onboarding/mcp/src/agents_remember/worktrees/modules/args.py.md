@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-26T03:37+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -71,7 +71,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public sync choice and resolution-action vocabularies are owned once by the worktree model. | `MemorySyncChoice`; `SyncResolutionAction` | mcp/src/agents_remember/models/worktree.py:57-57; mcp/src/agents_remember/models/worktree.py:56-56 |
+| Public sync choice and resolution-action vocabularies are owned once by the worktree model. | `MemorySyncChoice`; `SyncResolutionAction` | mcp/src/agents_remember/models/worktree.py:57-58 |
 | Provider setup config is typed through the companion worktree models module. | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:36-43 |
 | Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:136-194 |
 | Gate delegation policy model (kernel-owned since L9). | "class GatePolicy:"; "DEFAULT_GATE_POLICY = GatePolicy()" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54; mcp/src/agents_remember/kernel/primitives/gate_policy.py:66-66 |

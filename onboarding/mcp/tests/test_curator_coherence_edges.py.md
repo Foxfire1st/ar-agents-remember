@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_curator_coherence_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:10+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T05:55+02:00 |
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,9 +60,9 @@ No configured external documentation applies; this is repository-owned lifecycle
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Strict models and public translations reject malformed or incomplete authority inputs. | `test_models_refuse_blank_mismatched_and_duplicate_authority_inputs`; `test_request_and_response_shapes_are_total_and_action_specific`; `test_application_projects_domain_and_post_execution_refusals` | mcp/tests/test_curator_coherence_edges.py:156-310 |
-| Authority loading, exact candidate identity, topology, containment, and status are independently forced. | `test_authority_loader_rejects_wrong_paths_bytes_digests_and_projection`; `test_current_validator_rejects_source_and_task_identity_drift`; `test_status_distinguishes_source_absence_staleness_and_current_authority` | mcp/tests/test_curator_coherence_edges.py:396-606 |
-| Publish-time CAS and atomicity checks refuse changed authority or partial output. | `test_publish_rechecks_predecessor_contract_replay_authority_and_source`; `test_projection_and_atomic_publication_edges_refuse_without_partial_output` | mcp/tests/test_curator_coherence_edges.py:607-760 |
-| Every recorded evidence reference is reopened and revalidated. | `test_recorded_judgments_report_unreadable_evidence_and_recheck_every_item` | mcp/tests/test_curator_coherence_edges.py:761-790 |
+| Authority loading, exact candidate identity, topology, containment, and status are independently forced. | `test_authority_loader_rejects_wrong_paths_bytes_digests_and_projection`; `test_current_validator_rejects_source_and_task_identity_drift`; `test_status_distinguishes_source_absence_staleness_and_current_authority` | mcp/tests/test_curator_coherence_edges.py:433-483; mcp/tests/test_curator_coherence_edges.py:486-516; mcp/tests/test_curator_coherence_edges.py:620-659 |
+| Publish-time CAS and atomicity checks refuse changed authority or partial output. | `test_publish_rechecks_predecessor_contract_replay_authority_and_source`; `test_projection_and_atomic_publication_edges_refuse_without_partial_output` | mcp/tests/test_curator_coherence_edges.py:692-764; mcp/tests/test_curator_coherence_edges.py:767-843 |
+| Every recorded evidence reference is reopened and revalidated. | `test_recorded_judgments_report_unreadable_evidence_and_recheck_every_item` | mcp/tests/test_curator_coherence_edges.py:846-875 |
 
 ## Cross-Repo References
 
@@ -72,7 +72,19 @@ No meaningful cross-repository reference applies.
 | --- | --- | --- |
 | Tests operate on temporary local repositories and configured task roots. | — | — |
 
+## MCAR-L03 Pair Edge Cases
+
+Edge coverage requires pair data in every strict record/attestation fixture, rejects a different
+attested pair, carries pair observation through publication race checks, and proves named
+pair-field/repair-argument projection through the public coherence boundary.
+
 ## Update History
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: supplied complete pair-address fixture cells and
+  separately forced pair, future-code, and generic candidate-read translations.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added wrong-pair and typed pair-refusal coherence edge
+  coverage. Dagger verification remains closeout-owned.
 
 - 2026-08-29T16:10+02:00 — Created for MCAR-L02's adversarial coherence-authority edge matrix.
   Verification remains closeout-owned.

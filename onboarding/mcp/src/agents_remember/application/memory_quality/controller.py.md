@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,9 +57,9 @@ No configured Domain Documentation source applies; the controller contract is re
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:48-64 |
+| The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:65-83 |
 | Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:67-144 |
-| Full leaf checks compose and atomically publish the curator checklist. | `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:165-247 |
+| Full leaf checks compose and atomically publish the curator checklist. | `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396 |
 
 ## Cross-Repo References
 
@@ -74,7 +74,20 @@ closeout. A ready quality worklist with missing/stale coherence becomes
 digest and combined readiness. This prevents the public quality result and closeout admission from
 selecting different artifacts.
 
+## MCAR-L03 Exact Candidate Scope
+
+Repository-only checks are now explicitly `official-diagnostic` and cannot produce candidate
+acceptance. A candidate sync/start resolves the full pair before scanning, freezes it into async
+run identity, and revalidates it before and after the primary scan. Full checklist publication
+revalidates once more after missing-onboarding and route-index derivation, immediately before the
+report/attestation write. Candidate polls must repeat the exact contract path and re-prove the
+stored pair; a changed pair remains `scope-refused` rather than being relabelled as completed.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: bound sync/start/poll and curator publication to one exact
+  contract pair with pre-scan, post-scan, and final pre-publication refusal. Verification remains
+  closeout-owned.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: joined raw memory quality with the sole structured
   coherence validator. Verification remains closeout-owned.

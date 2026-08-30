@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_configured_contract_admission_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-08-30T07:35+02:00 |
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,15 @@ Proves all configured-contract consumers share one closed semantic admission API
 
 ### Logic
 
-The cases check the total accepted/refused result family and consistent translation across public tools.
+The cases check the total accepted/refused result family and consistent translation across public
+tools. Their legacy below-queue fixture now publishes the shared typed synthetic waiting door
+before exercising closeout apply. This supplies the scheduling input production requires without
+weakening or mocking away the production door-generation invariant.
+
+A focused candidate-identity case drives both strict external-leaf sides through the public
+authority function: a foreign code checkout is named `code/candidate`, and a foreign memory
+checkout is named `memory/candidate`. The test stubs only already-proven configured repository
+identity so it isolates the candidate comparison without duplicating repository discovery.
 
 ### Conventions
 
@@ -64,6 +72,13 @@ No cross-repository source is allowed by the resolved settings.
 | No meaningful cross-repository reference applies. | `_byte_tree` | mcp/tests/test_configured_contract_admission_l2.py:1-671 |
 
 ## Update History
+
+- 2026-08-30T07:35+02:00 — MCAR-L03 A009: forced both strict candidate-repository mismatch
+  branches after generation 9 left them as the only uncovered changed units.
+
+- 2026-08-30T07:05+02:00 — MCAR-L03 A008: made below-queue configured-admission scenarios own
+  an explicit typed fixture door so closeout tests reach the authority transition they intend to
+  exercise.
 
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

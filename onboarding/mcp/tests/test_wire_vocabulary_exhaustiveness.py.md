@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -230,7 +230,7 @@ themselves.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/worktrees/worktree_contract.py:72-72; mcp/src/agents_remember/worktrees/worktree_contract.py:181-181; mcp/src/agents_remember/worktrees/worktree_contract.py:198-198; mcp/src/agents_remember/worktrees/worktree_contract.py:437-437; mcp/src/agents_remember/worktrees/worktree_contract.py:488-488 |
+| The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:21-21; mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/worktrees/worktree_contract.py:72-72; mcp/src/agents_remember/worktrees/worktree_contract.py:181-181; mcp/src/agents_remember/worktrees/worktree_contract.py:198-198; mcp/src/agents_remember/worktrees/worktree_contract.py:437-437; mcp/src/agents_remember/worktrees/worktree_contract.py:488-488 |
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:148-198 |
 | Guidance state machines use the grouped wire-alias import and keep separate lifecycle, next-step, and recovery builders and recovery vocabulary. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool`; `lifecycle_guidance`; `next_guidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14; mcp/src/agents_remember/worktrees/modules/guidance.py:38-55; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:225-235 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:46-128 |

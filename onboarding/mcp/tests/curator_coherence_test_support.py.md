@@ -6,8 +6,8 @@
 | path | `mcp/tests/curator_coherence_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T18:40+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ reimplementing their authority logic.
 | --- | --- | --- |
 | The fixture writes a complete leaf/master/sprint lineage and returns the architect's exact sprint reference. | `write_curator_task_topology` | mcp/tests/curator_coherence_test_support.py:28-80 |
 | The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities. | `write_curator_evidence` | mcp/tests/curator_coherence_test_support.py:83-158 |
-| Production resolves the exact leaf, master, and sprint and rejects missing topology. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:355-377 |
+| Production resolves the exact leaf, master, and sprint and rejects missing topology. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:382-404 |
 | Production publication refuses a changed contract under the task lock before atomically replacing the authority. | "curator-coherence-contract-stale" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:163-203 |
 
 ## Cross-Repo References
@@ -83,7 +83,16 @@ always addressed through the fixture contract and do not own coherence authority
 | --- | --- | --- |
 | No cross-repository authority is introduced by this helper. | n/a | n/a |
 
+## MCAR-L03 Fixture Pair Authority
+
+Fixture attestations now derive their mandatory pair through the production resolver after
+creating the real onboarding root. Tests therefore cannot hand-author a pair that bypasses branch,
+base, repository, or path checks.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: routed coherence fixtures through the production exact-pair
+  resolver. Dagger verification remains closeout-owned.
 
 - 2026-08-29T18:40+02:00 — Re-read the task-topology claim against the current production
   `_task_context` resolver and regenerated its exact range; the complete-topology fixture contract

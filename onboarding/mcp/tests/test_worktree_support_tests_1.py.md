@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -60,7 +60,15 @@ The first worktree support suite was updated for the current enclosure, journal,
 
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
+## MCAR-L03 Preview Pair
+
+The real dry-run closeout preview now asserts the reported pair names the exact contract, code
+worktree, and memory worktree while preserving the non-mutating commit plan.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added exact-pair reporting assertions to closeout preview.
+  Dagger verification remains closeout-owned.
 
 - 2026-08-26T14:32+02:00 — Moved the ledger round-trip scenario into the focused kernel test
   module, reducing this legacy omnibus below its structural limit without losing coverage.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_quality/runs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,15 @@ No cross-repo boundary applies to this runtime registry.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+## MCAR-L03 Poll Identity
+
+`QualityRunSnapshot` now carries the admitted `QualityRunIdentity`, allowing poll to revalidate the
+same exact code/memory pair instead of reconstructing scope from repository id.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: retained exact admitted scope identity in poll snapshots.
+  Verification remains closeout-owned.
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

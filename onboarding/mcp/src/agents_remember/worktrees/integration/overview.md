@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T06:26+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,13 @@ Master integration, series closeout, closeout/reopen, and the memory carryover p
 package: branch-backed authority checks (`require_*`), durable lifecycle operation leases, the
 Dagger quality gate checkout, and organizational-completion integration/repair.
 
+MCAR exact-pair admission centralizes live code-worktree and memory-worktree identity in
+`closeout/memory_candidate_pair.py`. Configured repository authority remains strict and may
+delegate only those duplicate candidate checks to that pair owner. Completed-integration reopen
+policy is isolated in `closeout/integration_reopen.py`: it permits memory-only settings closeout
+only when the source head is either the recorded base or the exact recorded integrated commit;
+unrelated source movement still refuses.
+
 ## Conventions
 
 - The package keeps the `worktrees` layering altitude: it never imports the queue package's
@@ -61,6 +68,8 @@ Dagger quality gate checkout, and organizational-completion integration/repair.
 
 - Lifecycle operation identity/lease/store are runtime-authority surfaces (bounded, evictable).
 - Integration never falls back to a host quality run; the Dagger graph owns acceptance.
+- Exact-pair consumers have one candidate-identity owner; disabling the duplicate configured check
+  never disables repository-root, separation, task, or enclosure authority.
 - External-memory ledger order is authoritative: the newest same-code row is current, while older
   exact rows remain audit history. Memory-only landing appends one current row; integration and
   organizational completion preserve and prove the required exact historical edges.
@@ -135,6 +144,9 @@ execution into their named owners. The split reduces repeated validation and fix
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
 ## Update History
+
+- 2026-08-30T06:26+02:00 — MCAR-L03 A005: documented the canonical exact-pair owner, the narrow
+  configured-authority delegation, and completed-integration memory-only reopen boundary.
 
 - 2026-08-28T14:15+02:00 — PDLS closeout: verified the direct-landing recovery, lifecycle
   translation, and exact clean-snapshot refactor against the landed candidate. The existing final

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T06:08+02:00 |
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,8 @@ evidence, candidate acceptance evidence, and the durable operation journal.
 `curator_coherence_judgments.py` binds agent-owned decisions to evidence bytes; and
 `curator_coherence_render.py` produces a one-way human projection. `door_source.py` reconstructs
 the exact waiting source; `ledger_recovery.py` advances code and memory proof after partial
-closeout without making the disposable queue own commit evidence.
+closeout without making the disposable queue own commit evidence. `integration_reopen.py` decides
+whether exact newly produced code or memory output needs another plane-owned integration.
 
 ## Local Invariants And Traps
 
@@ -53,12 +54,27 @@ closeout without making the disposable queue own commit evidence.
 | `curator_coherence_judgments.py` | [curator_coherence_judgments.py.md](curator_coherence_judgments.py.md) | covered |
 | `curator_coherence_publication.py` | [curator_coherence_publication.py.md](curator_coherence_publication.py.md) | covered |
 | `curator_coherence_render.py` | [curator_coherence_render.py.md](curator_coherence_render.py.md) | covered |
+| `integration_reopen.py` | [integration_reopen.py.md](integration_reopen.py.md) | covered |
 
 ## Docs And Boundary References
 
 No configured external source applies. The lifecycle and queue overviews describe adjacent owners.
 
+## MCAR-L03 Pair-Bound Closeout
+
+The coherence authority, its source attestation, immutable record, publication fingerprint,
+generated report, closeout preview, completed apply, and post-commit recovery now share the exact
+pair model. Preview/normal closeout obtain it from current coherence; initial apply and recovery
+re-prove it from the same exact contract so stale pre-commit evidence is never treated as a repo-id
+fallback.
+
 ## Update History
+
+- 2026-08-30T06:08+02:00 — MCAR-L03 A005: added the extracted completed-integration reopen policy
+  owner and its exact code/memory leg boundary. Verification remains closeout-owned.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: bound coherence and all closeout report/recovery surfaces to
+  one exact contract pair. Verification remains closeout-owned.
 
 - 2026-08-29T18:29+02:00 — Added disposition-exact no-impact projection for the shared onboarding
   body gates without weakening untraced-content refusal.

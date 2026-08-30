@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,9 +77,9 @@ The application layer decides when the report exists, and worktree cleanup owns 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:91-143; mcp/src/agents_remember/application/memory_quality/controller.py:147-162; mcp/src/agents_remember/application/memory_quality/controller.py:165-190; mcp/src/agents_remember/application/memory_quality/controller.py:193-247 |
+| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:283-303; mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396; mcp/src/agents_remember/application/memory_scope.py:105-129 |
 | Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
-| The enclosure regression proves same-path overwrite, one-file cardinality, component-count arithmetic, and subset-call non-interference. | `test_full_contract_check_replaces_one_enclosure_local_curator_report`; `test_subset_contract_check_does_not_replace_the_curator_report` | mcp/tests/test_memory_tool_enclosure_scope.py:242-269; mcp/tests/test_memory_tool_enclosure_scope.py:271-287 |
+| The enclosure regression proves same-path overwrite, one-file cardinality, component-count arithmetic, and subset-call non-interference. | `test_full_contract_check_replaces_one_enclosure_local_curator_report`; `test_subset_contract_check_does_not_replace_the_curator_report` | mcp/tests/test_memory_tool_enclosure_scope.py:261-301; mcp/tests/test_memory_tool_enclosure_scope.py:303-319 |
 
 ## Cross-Repo References
 
@@ -104,7 +104,16 @@ stale an accepted coherence generation. Changed findings or candidate tuples sti
 digest and correctly force republishing. The completion text points to the structured coherence
 authority rather than a hand-authored report.
 
+## MCAR-L03 Pair-Bound Attestation
+
+The structured memory-quality attestation now carries the full exact pair identity, and its
+generated checklist displays the contract and pair digest. The attestation therefore cannot be
+reused for another valid checkout or branch pair.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: bound the curator worklist and structured attestation to the
+  exact code/memory pair. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Removed timestamp entropy and redirected candidate disposition to the
   structured coherence authority. Verification remains closeout-owned.

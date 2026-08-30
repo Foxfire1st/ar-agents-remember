@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -108,7 +108,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:276-276 |
 | Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:201-212; mcp/tests/test_worktree_abandon.py:214-222; mcp/tests/test_worktree_abandon.py:226-236; mcp/tests/test_worktree_abandon.py:137-157 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
-| `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:25-25; mcp/src/agents_remember/worktrees/worktree_contract.py:181-181; mcp/src/agents_remember/worktrees/worktree_contract.py:198-198 |
+| `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/worktrees/worktree_contract.py:181-181; mcp/src/agents_remember/worktrees/worktree_contract.py:198-198 |
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
