@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/runtime.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T04:55+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ bound authorities are already in hand, and installed once by the root conversati
 | --- | --- | --- |
 | The production composition constructs the one runtime from authorities already in hand and passes it to the root registration. | "class ConversationRuntime:"; "def register_conversation_routes(" | mcp/src/agents_remember/serving/conversation/runtime.py:4-4; mcp/src/agents_remember/serving/conversation/runtime.py:59-59; mcp/src/agents_remember/serving/conversation/router.py:22-22 |
 | The root registration installs the runtime on `app.state` before mounting the unchanged root router. | `register_conversation_routes`; `install_conversation_runtime`; `include_router` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
-| The typed composition error covers missing, duplicate, foreign, and missing-member failures. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:126-133 |
+| The typed composition error covers missing, duplicate, foreign, and missing-member failures. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:215-222 |
 | Contract tests prove single installation at both seams, duplicate/missing/foreign failure, missing-authority construction failure, immutability, per-app isolation, and no import-time singleton. | `test_production_composition_installs_one_typed_runtime`; `test_create_app_installs_runtime_from_live_composition`; `test_duplicate_installation_fails_closed`; `test_second_harness_control_registration_fails_closed`; `test_missing_installation_fails_closed`; `test_foreign_state_binding_fails_closed`; `test_missing_authority_fails_at_construction`; `test_runtime_and_scope_are_immutable`; `test_no_import_time_mutable_singleton`; `test_child_composition_is_isolated_per_app`; `test_production_composition_accepts_no_injected_identity`; `test_production_modules_have_no_fixture_pty_or_browser_identity_reliance` | mcp/tests/test_conversation_runtime_composition.py:119-138; mcp/tests/test_conversation_runtime_composition.py:141-145; mcp/tests/test_conversation_runtime_composition.py:148-152; mcp/tests/test_conversation_runtime_composition.py:155-160; mcp/tests/test_conversation_runtime_composition.py:163-169; mcp/tests/test_conversation_runtime_composition.py:172-176; mcp/tests/test_conversation_runtime_composition.py:179-191; mcp/tests/test_conversation_runtime_composition.py:194-201; mcp/tests/test_conversation_runtime_composition.py:204-215; mcp/tests/test_conversation_runtime_composition.py:218-231; mcp/tests/test_conversation_runtime_composition.py:234-240; mcp/tests/test_conversation_runtime_composition.py:243-259 |
 
 ## Cross-Repo References

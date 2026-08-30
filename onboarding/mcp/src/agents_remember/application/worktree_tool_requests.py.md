@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/worktree_tool_requests.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ contracts.
 | Task-start concepts and shared defaults have one definition. | `TaskIdentity`; `TaskBases`; `StartExecution`; `DEFAULT_TASK_BASES`; `DEFAULT_START_EXECUTION` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-63 |
 | Lifecycle control reconstructs only canonical typed public values. | `OperationControlRequest` | mcp/src/agents_remember/application/worktree_tool_requests.py:66-95 |
 | Closeout approval, messages, and finalization documents remain separate concepts. | `CloseoutCommitMessages`; `CloseoutApproval`; `FinalizeTaskDocs` | mcp/src/agents_remember/application/worktree_tool_requests.py:98-128 |
-| The worktree facade's start, operation-control, and closeout entry points consume the extracted request types. | `worktree_start_tool`; `worktree_operation_control_tool`; `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:119-216; mcp/src/agents_remember/application/worktree_tools.py:679-699; mcp/src/agents_remember/application/worktree_tools.py:518-532 |
+| The worktree facade's start, operation-control, and closeout entry points consume the extracted request types. | `worktree_start_tool`; `worktree_operation_control_tool`; `worktree_closeout_apply_tool` | mcp/src/agents_remember/application/worktree_tools.py:125-222; mcp/src/agents_remember/application/worktree_tools.py:524-538; mcp/src/agents_remember/application/worktree_tools.py:705-725 |
 
 ## Cross-Repo References
 

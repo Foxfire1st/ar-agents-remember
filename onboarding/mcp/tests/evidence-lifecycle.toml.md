@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-29T12:10+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-29T23:04+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -48,7 +48,20 @@ non-authority contract. The row makes the helper's local-composition fidelity, a
 permanent lifetime, and production-publication boundary explicit; exact ownership is not reduced
 to the three files that import it directly.
 
+## MCAR-L03 Exact Pair Consumer Delta
+
+`test_memory_candidate_pair.py` exercises closeout admission and canonical curator-coherence
+publication through the same shared test composition roots as the existing lifecycle suites. It is
+therefore an exact source-derived consumer of both `closeout_input_test_support.py` and
+`curator_coherence_test_support.py`. The two catalog rows name that edge explicitly so the
+evidence-lifecycle validator can distinguish an intentional shared dependency from an incomplete
+ownership declaration.
+
 ## Update History
+
+- 2026-08-29T23:04+02:00 — Added `test_memory_candidate_pair.py` to the exact source-derived
+  consumer sets for the closeout-input and curator-coherence test composition roots after the
+  A002 lifecycle fast hook exposed both missing edges.
 
 - 2026-08-29T12:27+02:00 — Reconciled the curator-coherence helper's declared consumers with the
   source-derived transitive ownership graph after generation 7 rejected the direct-import-only

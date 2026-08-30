@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_closeout_queue_evidence_parsing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,15 @@ No cross-repository source is allowed by the resolved settings.
 | --- | --- | --- |
 | No meaningful cross-repository reference applies. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
 
+## MCAR-L03 Structured Pair Shape
+
+Record and attestation fixtures now include one strict complete pair identity, proving the
+structured acceptance schemas reject missing or malformed pair evidence.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: extended structured coherence parsing fixtures with the
+  mandatory exact pair. Dagger verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Replaced curator Markdown parsing tests with strict structured record,
   generated projection, and shared-validator proofs; planning-register parsers remain. Verification

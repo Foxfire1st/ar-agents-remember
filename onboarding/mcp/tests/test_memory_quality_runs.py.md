@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T05:55+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,22 @@ capacity, terminal-only pruning, thread-launch rollback, detached snapshots, wro
 nondisclosure, explicit capacity guidance, and canonical resolved-scope/check/detail/publication
 identity. These tests replace the former string-key/advisory-bounded assertions.
 
+## MCAR-L03 Async Pair Forcing
+
+Controller cases now prove the full pair participates in run identity, start responses expose it,
+candidate poll requires the original contract path and revalidates the pair, pair races during
+derived checklist evidence block the final publication write, and asynchronous scope refusal is
+not rewritten as completion.
+
 ## Update History
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: expanded total controller proof for async
+  pair refusal, stale candidate polling, official running/failed polling, final publication
+  identity, and pair revalidation. The derived-evidence race now mocks its unrelated Git-owned
+  classifier so it reaches the intended third revalidation seam.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added exact-pair async start/poll/race/refusal coverage.
+  Dagger verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the memory-quality controller/run package extraction; concurrency, saturation, polling, and result-identity behavior are unchanged.
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rebuilt the focused registry/controller tests around typed identity, hard live capacity, terminal-only pruning, and nondisclosing poll ownership. Verification metadata remains pinned until architect-owned closeout.

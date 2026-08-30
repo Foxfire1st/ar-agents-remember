@@ -326,6 +326,7 @@
     "mcp/tests/test_mcp_registration_wiring_tests_1.py",
     "mcp/tests/test_mcp_registration_wiring_tests_2.py",
     "mcp/tests/test_mcp_stdio_transport.py",
+    "mcp/tests/test_memory_candidate_pair.py",
     "mcp/tests/test_memory_citation_change_detection.py",
     "mcp/tests/test_memory_citation_change_routing.py",
     "mcp/tests/test_memory_citation_fix.py",
@@ -537,8 +538,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 519,
-    "fileSidecars": 525,
+    "sourceFilesInScope": 520,
+    "fileSidecars": 526,
     "childRoutes": 0
   },
   "routingTerms": [

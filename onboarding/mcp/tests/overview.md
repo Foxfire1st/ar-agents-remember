@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -236,7 +236,7 @@ Its quality checks pin the additional provenance rule: a contract-scoped call fe
 contract's code-base commit to claim comparison, while a bare official-memory call leaves unstamped
 provenance absent. That makes dirty-worktree claim repair available before closeout without
 fabricating a future verification stamp.
-cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:332-332; mcp/tests/test_memory_tool_enclosure_scope.py:352-352)
+cit:(["test_a_contract_scoped_check_uses_the_leaf_base_for_unstamped_claims"; "test_the_bare_check_does_not_invent_unstamped_claim_provenance"], mcp/tests/test_memory_tool_enclosure_scope.py:356-356; mcp/tests/test_memory_tool_enclosure_scope.py:376-376)
 
 ## Quality Command Construction
 
@@ -1491,7 +1491,18 @@ consumer-import check remains authoritative; and the self-owned-wrapper ordering
 isolates canonical coherence because coherence behavior has its own forcing suite. These are test
 contract repairs only: no rail, node, product behavior, or acceptance threshold was removed.
 
+## MCAR-L03 Exact-Pair Evidence
+
+`test_memory_candidate_pair.py` is the focused real-Git two-leaf/wrong-checkout suite. Companion
+controller, enclosure, coherence, closeout-input, preview, recovery, model, fixture, and
+registration cases prove the pair survives every acceptance/report surface, stale or wrong scope
+refuses before scan/admission, official diagnostics cannot accept, and recovery rereads the exact
+contract without mutating Git.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added the exact-pair forcing surface across memory quality,
+  coherence, closeout, and recovery. Dagger verification remains closeout-owned.
 
 - 2026-08-29T20:12+02:00 — Generation-13 repair: reconciled scalar-vocabulary, module-local
   type-parameter, and wrapper-fixture assumptions without weakening the Dagger test population.

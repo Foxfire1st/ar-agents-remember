@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-29T12:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -216,7 +216,17 @@ observers may therefore inspect one dirty candidate without mutating the real Gi
 another observer's scratch state. Candidate identity remains the resulting Git tree; temporary
 filesystem names carry no lifecycle or semantic authority.
 
+## MCAR-L03 Exact Pair Resolver
+
+`memory_candidate_pair.py` is the sole read-only authority for worktree-backed memory candidates.
+It proves requested contract/repository identity, live roots, Git repository membership, checked
+out work branches, source/base equality, and base ancestry before emitting the shared pair model.
+No queue, report, repo-id lookup, branch switch, or fallback participates.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added the canonical exact code/memory pair resolver to the
+  worktree route. Verification remains closeout-owned.
 
 - 2026-08-29T12:52+02:00 — MCAR-L02 C009 recovery: recorded the invocation-owned
   candidate-index boundary after queue and dashboard observers exposed a shared-scratch deletion

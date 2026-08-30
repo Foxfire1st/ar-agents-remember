@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T18:42+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,7 @@ No external Domain Documentation source is configured for this repository-local 
 | --- | --- | --- |
 | One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:17-53 |
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| Closeout runs the extracted pre-refresh adapter before the expensive code gate. | `_memory_quality_before_refresh` | mcp/src/agents_remember/worktrees/modules/closeout.py:706-722 |
+| Closeout runs the extracted pre-refresh adapter before the expensive code gate. | `_memory_quality_before_refresh` | mcp/src/agents_remember/worktrees/modules/closeout.py:641-658 |
 | The sole external-phase owner runs memory refresh and returns its combined gate result. | "def external_closeout_commits("; "memory_quality = combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-112; mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-160 |
 | The injected service bundle owns the `MemoryQualityPort` implementation and check-group vocabulary. | `MemoryQualityPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:68-95; mcp/src/agents_remember/worktrees/services.py:140-152 |
 

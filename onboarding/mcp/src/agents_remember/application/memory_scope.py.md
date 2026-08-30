@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T07:05+02:00 |
+| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ No configured Domain Documentation source applies; the authority contract is rep
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Frozen scope identity includes authority and both resolved trees. | `MemoryScopeIdentity` | mcp/src/agents_remember/application/memory_scope.py:27-35 |
+| Frozen scope identity includes authority and both resolved trees. | `MemoryScopeIdentity` | mcp/src/agents_remember/application/memory_scope.py:37-46 |
 | Official scope resolves configured repository and onboarding authority. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:51-88 |
 | Leaf scope rejects cross-repository, non-leaf, missing-memory, and removed-worktree cases without fallback. | `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:91-143 |
 
@@ -70,7 +70,30 @@ not a second resolver: it lets the post-check readiness join call the same coher
 against the already admitted enclosure without guessing from report paths or falling back to
 official memory.
 
+## MCAR-L03 Acceptance-Eligible Scope
+
+`resolve_memory_candidate_scope` admits the configured leaf contract and delegates all pair facts
+to the canonical resolver. The resulting scope and frozen identity carry the full pair.
+`revalidate_memory_candidate_scope` rereads that exact contract and requires byte-for-byte pair
+identity equality; official scope remains a separate diagnostic plane with no pair.
+
+Configured-contract refusal translation consumes the canonical public projection as a strict
+schema. Required status, detail, evidence, and next-action fields are indexed directly; this
+caller does not reconstruct missing values or silently substitute another failure vocabulary.
+An invalid projector result is therefore an implementation defect that remains loud.
+
 ## Update History
+
+- 2026-08-30T07:05+02:00 — MCAR-L03 A008: removed caller-owned fallback reconstruction from
+  configured refusal translation. The canonical projector is now the single schema authority.
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: kept configured repository/enclosure authority
+  mandatory while delegating live code/memory candidate identity to the shared exact-pair
+  validator. Missing worktrees now retain the pair field and repair vocabulary instead of being
+  flattened into a generic configured-authority refusal.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: separated official diagnostics from strict pair-bound leaf
+  acceptance and added exact revalidation. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Added the resolved leaf contract to memory scope for shared coherence
   validation. Verification remains closeout-owned.

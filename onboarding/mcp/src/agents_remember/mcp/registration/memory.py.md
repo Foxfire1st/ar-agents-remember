@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                 |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`                 |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 | Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:498-514 |
 | Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:516-542 |
 | Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:544-566 |
-| Registration dispatch and schema are forced through the live FastMCP boundary. | `test_memory_quality_check_runs_every_check_when_none_are_named`; `test_memory_quality_check_start_mode_starts_a_background_run`; `test_memory_quality_check_run_id_polls_the_run`; `test_memory_quality_poll_rejects_explicit_start_fields_before_dispatch`; `test_memory_quality_tool_schema_exposes_the_three_request_modes` | mcp/tests/test_mcp_registration_wiring_tests_1.py:315-329; mcp/tests/test_mcp_registration_wiring_tests_1.py:331-344; mcp/tests/test_mcp_registration_wiring_tests_1.py:346-369; mcp/tests/test_mcp_registration_wiring_tests_1.py:399-414; mcp/tests/test_mcp_registration_wiring_tests_1.py:416-422 |
+| Registration dispatch and schema are forced through the live FastMCP boundary. | `test_memory_quality_check_runs_every_check_when_none_are_named`; `test_memory_quality_check_start_mode_starts_a_background_run`; `test_memory_quality_check_run_id_polls_the_run`; `test_memory_quality_poll_rejects_explicit_start_fields_before_dispatch`; `test_memory_quality_tool_schema_exposes_the_three_request_modes` | mcp/tests/test_mcp_registration_wiring_tests_1.py:315-329; mcp/tests/test_mcp_registration_wiring_tests_1.py:331-344; mcp/tests/test_mcp_registration_wiring_tests_1.py:346-371; mcp/tests/test_mcp_registration_wiring_tests_1.py:401-424; mcp/tests/test_mcp_registration_wiring_tests_1.py:426-432 |
 
 ## 260815-DAG-L3 Curator Attestation Registration
 
@@ -112,7 +112,16 @@ invalidates the prior coherence generation. `closeoutReady=true` requires the sa
 validator used by closeout, and a `coherence-required` response directs the caller to the one
 `curator_coherence` API.
 
+## MCAR-L03 Public Memory-Quality Contract
+
+The registration advertises repository-only calls as official diagnostics and requires candidate
+polls to repeat the original contract path. It does not imply that repository id can select an
+acceptance pair.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: documented exact candidate polling and diagnostic-only
+  repository scope in the public tool description. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Documented deterministic quality attestations and combined structured
   coherence readiness. Verification remains closeout-owned.

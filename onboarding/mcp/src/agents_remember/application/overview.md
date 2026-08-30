@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -193,7 +193,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. | `MemoryScopeIdentity`; `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:27-143 |
-| The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:67-247 |
+| The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:86-96; mcp/src/agents_remember/application/memory_quality/controller.py:99-131; mcp/src/agents_remember/application/memory_quality/controller.py:134-196; mcp/src/agents_remember/application/memory_quality/controller.py:336-396 |
 | `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
 | `build_route_indexes` is the deterministic route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
@@ -346,7 +346,7 @@ The committed route now groups these application owners under `application/lifec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closed application admission. | `ConfiguredContractAdmission`; `admit_configured_contract`; `admit_configured_terminal_contract` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:50-176 |
+| Closed application admission. | `ConfiguredContractAdmission`; `admit_configured_contract`; `admit_configured_terminal_contract` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:90-90; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-175; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:178-273 |
 | Configured degraded location projection. | `LifecycleOperationPublicAddress`; `configured_lifecycle_operation_location`; `observe_contract_read_failure`; `primary_operation_projection` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py:26-194 |
 
 ## 260821-DAGQC-L2 Quality Controller And Direct-Landing Projection
@@ -374,7 +374,18 @@ memory-quality controller uses the same currentness validator as closeout admiss
 quality readiness separately from combined `closeoutReady`; it cannot claim combined readiness
 while the stable authority is absent or stale.
 
+## MCAR-L03 Exact Memory-Candidate Route
+
+The application plane now separates repository-only official diagnostics from acceptance-eligible
+leaf work. Candidate memory quality admits one configured contract pair, preserves it through
+async run identity and polling, revalidates around scanning/publication, and exposes the same pair
+at closeout apply admission. Public refusal projection retains the named pair field and exact
+contract-addressed repair arguments.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: documented exact-pair admission, async revalidation, and
+  closeout application reporting. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: added the configured curator-coherence application
   boundary and shared memory/closeout readiness join. Verification remains closeout-owned.

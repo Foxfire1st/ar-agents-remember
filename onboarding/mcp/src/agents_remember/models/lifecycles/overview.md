@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-29T22:45+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -130,7 +130,19 @@ delivery attempt, candidate trees, attestation digest, record digest, and predec
 digest are different cells. Exact set validation prevents a report from silently covering eight
 candidates while the current attestation contains ten.
 
+## MCAR-L03 Pair-Bound Lifecycle Evidence
+
+`CuratorQualityAttestation` and `CuratorCoherenceRecord` now require the complete frozen
+`MemoryCandidatePairIdentity`, not merely independent code and memory tree strings. The public
+coherence response carries that same pair on prepared, published, valid, and typed-refusal paths;
+`pairField`, `expected`, `observed`, and `nextArgs` preserve exact mismatch and recovery facts
+without exposing a second authority. This makes a record from another otherwise-valid checkout,
+base, branch, onboarding root, ledger, or contract structurally ineligible for the current leaf.
+
 ## Update History
+
+- 2026-08-29T22:45+02:00 — MCAR-L03: bound quality attestations, coherence records, public
+  responses, and mismatch recovery to the complete contract-derived code-memory pair identity.
 
 - 2026-08-29T08:52+02:00 — Added the strict curator-coherence authority family and exact candidate
   judgment coverage. Verification remains closeout-owned.

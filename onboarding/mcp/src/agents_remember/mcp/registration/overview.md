@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -265,7 +265,16 @@ separate, historical Markdown is never searched, and `validate` is the shared ad
 The memory registrar exposes raw `qualityChecklistStatus` separately from combined readiness and
 documents deterministic same-input attestation behavior.
 
+## MCAR-L03 Memory Tool Advertisement
+
+The memory-quality tool schema and description distinguish official diagnostics from exact leaf
+candidate runs. Candidate poll carries the original contract address; the public contract does not
+advertise repository id as acceptance authority.
+
 ## Update History
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: advertised exact contract-bound candidate start/poll
+  semantics. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: advertised the one structured curator-coherence API and
   combined memory-readiness contract. Verification remains closeout-owned.

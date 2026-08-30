@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/authority.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`                         |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`                         |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -64,7 +64,7 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 | --- | --- | --- |
 | `RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here. | "class RepositoryScope:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:76-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:113-133; mcp/src/agents_remember/kernel/primitives/runtime_config.py:635-640 |
 | `AuthorityError` is the authority-violation error type raised by both guards. | `AuthorityError` | mcp/src/agents_remember/errors.py:36-42 |
-| Worktree application entry points consume these guards for repo resolution and path confinement. | "from agents_remember.kernel.authority import require_repo" | mcp/src/agents_remember/application/worktree_tools.py:10-10 |
+| Worktree application entry points consume these guards for repo resolution and path confinement. | "from agents_remember.kernel.authority import require_repo" | mcp/src/agents_remember/application/worktree_tools.py:11-11 |
 | Provider application entry points route repo validation through "from agents_remember.kernel.authority import require_repo". | "from agents_remember.kernel.authority import require_repo" | mcp/src/agents_remember/application/provider_tools.py:11-11; mcp/src/agents_remember/application/provider_tools.py:438-438; mcp/src/agents_remember/application/provider_tools.py:468-468 |
 | Authority guard returning the repository scope for a configured `repo_id` or raising `AuthorityError`. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | Authority guard resolving and confining a caller value to the coordination root. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
