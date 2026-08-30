@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compact_content.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-29T08:53+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -49,7 +49,7 @@ the compaction must never raise on non-JSON content.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shim under test installs the FastMCP converter patch. | `install_compact_content` | mcp/src/agents_remember/mcp/compact_content.py:47-65 |
-| `create_server()` installs the shim before registering tools. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| `create_server()` installs the shim before registering tools. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | MCP settings fixtures come from `test_config.py`. | `settings_payload` | mcp/tests/test_config.py:29-46 |
 
 ## Update History

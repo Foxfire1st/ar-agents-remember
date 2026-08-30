@@ -5,14 +5,33 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-30T16:32+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## ARSPAWN-L4 Public Advertisement Acceptance
+
+`test_public_surface_conformance.py` separates two proofs that must not be collapsed. It parses all
+eight production starters and requires the self-updating `uvx --refresh-package
+agents-remember-mcp agents-remember-mcp@latest` contract, so users never have to remember manual
+MCP updates. Separately, its disposable stdio process imports the exact local candidate and
+correlates live tools/schema with content digest, package root, interpreter, and `server_info`;
+using `@latest` for that proof would test PyPI rather than the candidate.
+
+The same module checks exact ordered live inventory, response-model ownership, closed dispatch
+schema and caller-description facts, before-handler refusal of undeclared spend input and invalid
+roles, and strict ambient outcome envelopes. It is explicitly assigned to the integration evidence
+lane because the acceptance launches real MCP subprocesses.
+
+The test reuses the runtime-settings builder through `test_config.py`; that path reaches the
+closeout and curator-coherence fixture roots through `test_worktree_support.py`. The lifecycle
+catalog therefore names this suite as an exact transitive consumer of both shared-support roots,
+and the focused catalog validator proves the declaration matches the source-derived graph.
 
 ## Exact Future-Code Candidate Identity
 
@@ -1500,6 +1519,14 @@ refuses before scan/admission, official diagnostics cannot accept, and recovery 
 contract without mutating Git.
 
 ## Update History
+
+- 2026-08-30T16:32+02:00 — ARSPAWN-L4 recorded the public-surface suite's exact transitive
+  closeout-input and curator-coherence support edges after the staged lifecycle catalog check
+  exposed them; the focused validator passes with 35 governed artifacts.
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 added exact-candidate public-surface and eight-starter
+  self-update acceptance as explicitly classified integration evidence. Verification remains
+  closeout-owned.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: added the exact-pair forcing surface across memory quality,
   coherence, closeout, and recovery. Dagger verification remains closeout-owned.

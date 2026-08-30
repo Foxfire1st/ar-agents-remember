@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/runtime/skills.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-13T08:40+02:00                     |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -43,7 +43,7 @@ is no layout option).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Split application route explains the new application layer layout. | `# mcp/src/agents_remember/application/ - MCP Application Layer Overview` | onboarding/mcp/src/agents_remember/application/overview.md:1-312 |
-| MCP payload builders import this file only for `skills_install`. | `skills_install` | mcp/src/agents_remember/mcp/tools/core.py:152-152 |
+| MCP payload builders import this file only for `skills_install`. | `skills_install` | mcp/src/agents_remember/mcp/tools/core.py:156-156 |
 | Skill install response model lives in the models package. | `SkillsInstallResponse` | mcp/src/agents_remember/models/skills.py:12-20 |
 
 ## Update History

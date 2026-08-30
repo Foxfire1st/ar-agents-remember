@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/sprint-graph/SprintGraphView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-20T10:45+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`       |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ None.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wave-grid component and box renderer. | `SprintGraphView` | dashboard/src/panels/sprint-graph/SprintGraphView.tsx:35-107 |
-| The wire model consumed. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:653-655 |
+| The wire model consumed. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:656-658 |
 | The responsive grid/leaf contracts. | `waveGridStyles`; `leafLineStyles` | dashboard/src/panels/sprint-graph/styles.ts:7-12; dashboard/src/panels/sprint-graph/styles.ts:77-87 |
 | The component forcing suite. | `SprintGraphView` (describe) | dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx:102-163 |
 | The sprint page that mounts it. | `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:246-253 |

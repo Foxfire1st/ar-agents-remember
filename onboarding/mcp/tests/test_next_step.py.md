@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_next_step.py`              |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T09:05+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -194,7 +194,7 @@ the `lifecycle_start` payload it asserts the rundown on.
 | The `lifecycle_guidance` state machine the linear half delegates to. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | `count_response_tokens` / `finalize_payload_tokens` — the counter the fixed-point assertions call and the one the choke point runs over the dump. | `count_response_tokens`; `finalize_payload_tokens` | mcp/src/agents_remember/models/tokens.py:208-215; mcp/src/agents_remember/models/tokens.py:232-249 |
 | `agent_notifier_staleness_banner` — the probe the degrade test patches, and the store that makes it fire. | `agent_notifier_staleness_banner` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:135-151 |
-| `PingResponse`, the model the banner-carrying payload is validated against. | `PingResponse` | mcp/src/agents_remember/models/core.py:14-17 |
+| `PingResponse`, the model the banner-carrying payload is validated against. | `PingResponse` | mcp/src/agents_remember/models/core.py:30-33 |
 
 ## Cross-Repo References
 

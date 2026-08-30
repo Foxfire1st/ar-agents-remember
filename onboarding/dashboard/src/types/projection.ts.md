@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T15:15:36+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -109,7 +109,17 @@ constraints; TypeScript shape alone is not runtime validation.
 materializes invalid-empty state when invalidating a projection, so dashboard consumers receive an
 explicit non-admitting result rather than interpreting file absence as lifecycle or queue evidence.
 
+## ARSPAWN-L4 Serving-Build Mirror
+
+The generated `ServingBuild` interface now includes optional `sourceDigest`, `pythonExecutable`, and
+`packageRoot` beside the existing version, boot, checkout, dashboard, and dirtiness fields. These
+are serve-time diagnostic facts, not persisted projection authority. They let dashboard and MCP
+evidence distinguish equal-version candidates and name the runtime that actually answered.
+
 ## Update History
+
+- 2026-08-30T15:15:36+02:00 — Regenerated the serving-build mirror with source digest,
+  interpreter, and package-root identity. Verification remains closeout-owned.
 
 - 2026-08-25T17:21+02:00 — Regenerated the TypeScript invalidation outcome union without the
   impossible `not-created` member. Verification remains closeout-owned.

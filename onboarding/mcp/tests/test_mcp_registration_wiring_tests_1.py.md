@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_mcp_registration_wiring_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T14:19+02:00                                            |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`                                        |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated            | 2026-08-30T17:08:05+02:00                                            |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`                                        |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ L23 proves MCP `citation_fix` forwards the required leaf contract plus document/
 
 ### Logic
 
-The suite proves `dispatch_agent` forwards only task-document identity, role, brief, and label; child rename/retire/message tools use structural document+role or ambient parent identity; exact occupant-id arguments are absent. It also pins memory-health contract scoping and provider/tool forwarding.
+The suite proves `dispatch_agent` forwards only task-document identity, role, brief, and label; child rename/retire/message tools use structural document+role or ambient parent identity; exact occupant-id arguments are absent. It also pins memory-health contract scoping and provider/tool forwarding. ARSPAWN-L4 additionally proves the registered `server_info` closure forwards both the resolved config and one concrete `ServingBuildPayload` with a source digest.
 
 ### Conventions
 
@@ -64,6 +64,12 @@ Registration forcing now permits and forwards the exact candidate `contract_path
 continuing to reject execution-only poll fields.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: updated the wiring proof to the strict
+  application-produced payload boundary. Verification remains closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 pins build-identity capture in the registered
+  `server_info` closure. Verification remains closeout-owned.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: covered contract-bound candidate polling in the public
   request schema and adapter. Dagger verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -27,6 +27,11 @@ index refresh, memory quality exposure, provider status and watcher
 current-state reporting, typed GrepAI and CodeGraphContext command
 construction, worktree tool behavior, and Codex benchmark execution policy
 reporting.
+
+ARSPAWN-L4 makes the core `server_info` fixture explicit: it supplies a fixed
+`ServingBuildPayload` derived from a fixed `ServingBuild` and asserts the complete serialized
+candidate identity beside the exact `PUBLIC_TOOLS` list. The builder no longer derives candidate
+identity from a version string or request-time probe.
 
 After the response-contract wiring, tests also protect that modeled payloads
 carry populated token metadata — `test_ping_payload` asserts a real `tokens`
@@ -112,11 +117,11 @@ adds a guard case: when `benchmarksEnabled` is `False`, both
 | --- | --- | --- |
 | Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
-| Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
 | The agent-facing control surface exposes only structural dispatch, parent/child messaging, lifecycle gates, and role-relative administration. | "test_agent_control_surface_exposes_only_structural_addresses" | mcp/tests/test_tools.py:156-221 |
-| Exact-session administrative tools, including inbox rows, task attachment, raw spawn, retire, and rename, are explicitly absent from the public agent roster. | "for retired in (" | mcp/tests/test_tools.py:414-428 |
+| Exact-session administrative tools, including inbox rows, task attachment, raw spawn, retire, and rename, are explicitly absent from the public agent roster. | "for retired in (" | mcp/tests/test_tools.py:438-438 |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -143,6 +148,12 @@ silently removing the scheduler surface while its implementation remains in the 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: the unit fixture now passes the strict
+  payload expected by the transport-thin builder. Verification remains closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 pins the complete shared serving-build payload in
+  `server_info`. Verification remains closeout-owned.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

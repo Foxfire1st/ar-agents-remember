@@ -402,6 +402,7 @@
     "mcp/tests/test_provider_watcher_actions.py",
     "mcp/tests/test_provider_workflow_integration.py",
     "mcp/tests/test_provider_worktree_routing.py",
+    "mcp/tests/test_public_surface_conformance.py",
     "mcp/tests/test_pytest_bootstrap_boundaries.py",
     "mcp/tests/test_python_runtime_contract.py",
     "mcp/tests/test_python_test_evidence_firewall.py",
@@ -538,8 +539,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 520,
-    "fileSidecars": 526,
+    "sourceFilesInScope": 521,
+    "fileSidecars": 527,
     "childRoutes": 0
   },
   "routingTerms": [

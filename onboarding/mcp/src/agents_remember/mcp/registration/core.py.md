@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastUpdated            | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -24,13 +24,18 @@ already pass keywords. Registered tools are unchanged.
 
 `register_core_tools(server, config)` declares server identity, the orientation reads, and the two
 installers: `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`,
-`runtime_install`, `skills_install`.
+`runtime_install`, `skills_install`. Its identity family binds the one process-scoped
+`ServingBuildPayload` used by `server_info`.
 
 ## Code Commentary
 
 ### Logic
 
 Seven `@server.tool()` declarations, each forwarding to its `mcp/tools/core.py` payload builder.
+`register_core_tools` obtains one strict payload through the application-owned
+`mcp_serving_build_payload()` gateway and passes that immutable value into the identity registrar;
+every `server_info` call therefore reports the same boot and candidate identity without
+request-time reprobes or an MCP-to-serving domain import.
 The docstrings are the model-visible contract and carry the semantics that are not in the types:
 
 - `ping` — liveness only; no configuration, no side effects.
@@ -60,6 +65,10 @@ The docstrings are the model-visible contract and carry the semantics that are n
   say to preview first; the default does not.
 - No behaviour here. `read_ar_files`'s onboarding-lookup status vocabulary, the route-index rule,
   and the per-session dedup all live in `application/read_files.py`.
+- `server_info` must receive the shared process build; constructing or re-resolving a new build in
+  the handler would break correlation with the dashboard and harness acceptance evidence.
+- Serving-domain ownership stays behind `application.runtime.startup`; this MCP adapter consumes
+  only the strict model payload.
 
 ## Repo-Internal References
 
@@ -71,6 +80,14 @@ The docstrings are the model-visible contract and carry the semantics that are n
 | What each declaration hands its builder, proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: routed serving identity through the
+  application gateway and typed the registrar against `ServingBuildPayload`. Verification remains
+  closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: the core registrar now captures the shared
+  process build once and projects it through every `server_info` response. Verification metadata
+  remains pinned until closeout.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

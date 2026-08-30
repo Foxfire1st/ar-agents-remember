@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/compact_content.py`     |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-05-29T08:53+02:00                               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`           |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`           |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../overview.md`                               |
 
 ## Purpose
@@ -51,7 +51,7 @@ compacted text remains a faithful mirror of the structured payload.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `create_server()` installs the shim as its first action. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| `create_server()` installs the shim as its first action. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | Behavior is verified through an in-process tool call. | `test_tool_call_text_block_is_compact_and_matches_structured` | mcp/tests/test_compact_content.py:50-72 |
 
 ## Update History

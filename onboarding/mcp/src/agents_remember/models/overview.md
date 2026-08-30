@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -59,6 +59,15 @@ record, and a deliberately smaller public projection. The record carries private
 candidate tree, PID, approval claim, and recovery details; the projection exposes only the task,
 kind, state, phase, heartbeat, current command, result/failure, and guidance required by agents
 and the dashboard. `models/worktree.py` embeds that projection without publishing operation IDs.
+
+## Shared Serving-Build Wire Identity
+
+ARSPAWN-L4 owns `ServingBuildPayload` in `models/core.py` so dashboard served state and MCP
+`server_info` cannot maintain parallel candidate-identity shapes. Co-location avoids adding a 26th
+flat model module while keeping one strict wire authority. Required version and boot time
+are supplemented by optional content digest, interpreter, package root, checkout commit, dashboard
+fingerprint, and proven-dirty evidence. Absence stays honest unknown; package version alone is not
+treated as exact candidate identity.
 
 ## Purpose
 
@@ -502,6 +511,14 @@ requirement versions, delivery attempts, candidate trees, and pair identity rema
 contracts.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: moved the shared serving-build payload
+  into the existing core model module and removed the transient extra module. Verification remains
+  closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: added the shared strict
+  `ServingBuildPayload` authority consumed by both MCP and dashboard serving surfaces. Verification
+  remains closeout-owned.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: added the canonical pair schema and shared wire bindings.
   Verification remains closeout-owned.

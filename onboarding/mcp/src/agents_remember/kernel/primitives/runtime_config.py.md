@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -186,7 +186,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar. | "def main(argv:"; "def create_server(config: McpRuntimeConfig) -> Any:" | mcp/src/agents_remember/mcp/server.py:51-73; mcp/src/agents_remember/mcp/server.py:32-46 |
+| The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar. | "def main(argv:"; "def create_server(config: McpRuntimeConfig) -> Any:" | mcp/src/agents_remember/mcp/server.py:58-58; mcp/src/agents_remember/mcp/server.py:77-77 |
 | Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | `McpConfigTests` | mcp/tests/test_config.py:73-438 |
 | `DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port. | `DashboardSettings`; `maybe_autostart_dashboard`; `_autostart` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95; mcp/src/agents_remember/serving/daemon.py:338-358; mcp/src/agents_remember/serving/daemon.py:361-366 |
 | Gate delegation policy validation lives in controlplane. | `make_gate_policy`; `apply_seam_verdict_requirement` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:75-107; mcp/src/agents_remember/kernel/primitives/gate_policy.py:130-149 |

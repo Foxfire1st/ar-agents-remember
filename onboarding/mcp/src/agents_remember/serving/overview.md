@@ -5,14 +5,28 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-28T14:15+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
+
+## ARSPAWN-L4 Shared Candidate Identity
+
+`build_info.process_serving_build()` now owns one cached identity for the Python process and feeds
+both dashboard serving composition and MCP `server_info`. In addition to version/boot/checkout
+facts, the stamp content-addresses sorted importable Python source and names the exact interpreter
+and package root. This distinguishes equal-version or dirty candidates without making paths part of
+the content digest. `models/core.py` is the one strict wire authority; served state only
+composes it and MCP only projects it.
+
+This identity is diagnostic and acceptance evidence, not package-update policy. Production starter
+registrations continue to launch `uvx --refresh-package agents-remember-mcp
+agents-remember-mcp@latest`; the disposable ARSPAWN acceptance runner launches exact local source
+only so it cannot accidentally certify a stale published artifact.
 
 ## Purpose
 
@@ -836,6 +850,14 @@ time, while exact dispatch briefs remain pinned to the private spawned generatio
 ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded `models/core.py` as the shared
+  serving-build wire authority. Verification remains closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: recorded the one process-scoped,
+  content-addressed build identity shared by dashboard and MCP surfaces, plus the production
+  self-update versus disposable exact-candidate acceptance boundary. Verification remains
+  closeout-owned.
 
 - 2026-08-28T14:15+02:00 — No parent-route content impact: the landed candidate changes only the
   Claude mapper inside the governed conversation/projectors child route, whose own overview carries

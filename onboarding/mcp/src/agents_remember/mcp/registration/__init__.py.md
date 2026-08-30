@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/__init__.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-07-31T15:31+02:00                                       |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`                   |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -49,7 +49,7 @@ instance) and nothing else; every `@server.tool()` definition lives in a family 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `create_server` consumer iterates `TOOL_REGISTRARS`. | `create_server` | mcp/src/agents_remember/mcp/server.py:32-44 |
+| The `create_server` consumer iterates `TOOL_REGISTRARS`. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | The advertised tool-name list is defined by `PUBLIC_TOOLS`. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 
 ## Update History

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/runtime/startup.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash | `a09b906bbf2855c3479b4d3199607ff8689b7d93` |
-| lastVerifiedCommitDate | 2026-08-13T13:51:44+02:00|
+| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,16 +16,17 @@
 
 ## Purpose
 
-Initializes MCP-process application collaborators after applying the bounded control-plane identity
-migration required by strict structural readers.
+Initializes MCP-process application collaborators and owns the one application-layer gateway that
+hands the MCP adapter its boot-resolved serving-build payload.
 
 ## Code Commentary
 
 ### Logic
 
-`initialize_mcp_application` declares MCP process ownership, migrates recognized durable logs without
-the dashboard-owned notifier log, then installs ambient lifecycle state. Dashboard autostart remains
-a separate startup hook.
+`initialize_mcp_application` migrates recognized durable logs without the dashboard-owned notifier
+log, then installs ambient lifecycle state. `mcp_serving_build_payload` converts the cached serving
+stamp to the strict shared wire model at the application boundary; MCP registration never imports
+the serving domain directly. Dashboard autostart remains a separate startup hook.
 
 ### Conventions
 
@@ -37,6 +38,7 @@ which process may migrate which log.
 - Migration is one-way, idempotent deployment work.
 - MCP startup does not mutate the dashboard-owned notifier log.
 - No dual-schema reader is installed.
+- MCP transport reaches serving identity through this application entry point only.
 
 ### Todos
 
@@ -50,13 +52,18 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/runtime/startup.py:20-28 |
+| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/runtime/startup.py:22-27 |
+| The application boundary returns the one cached, strict serving-build payload. | `mcp_serving_build_payload` | mcp/src/agents_remember/application/runtime/startup.py:30-33 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added the application-owned serving-build
+  payload gateway so MCP transport no longer imports the serving domain directly. Verification
+  remains closeout-owned.
 
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved this preserved startup card with its source into the cohesive `application/runtime/` package and rebound all current citations; startup behavior is unchanged. Verification metadata remains closeout-owned.
 

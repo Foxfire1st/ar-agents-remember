@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/sprint-graph/`             |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated            | 2026-08-24T12:59+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`       |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ contracts, and `SprintGraphPage.test.tsx` for the shell-level reachability proof
 | The exported responsive layout contracts. | `waveGridStyles`; `leafLineStyles` | dashboard/src/panels/sprint-graph/styles.ts:7-12; dashboard/src/panels/sprint-graph/styles.ts:77-87 |
 | The master reader mounts the scoped queue independently of its optional graph section. | `MasterOverview`; `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:246-253 |
 | The shell suite proves graph/queue reachability, graphless queue access, and mounted canonical-reset clearance. | "sprint page shell (L12-R5)" | dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx:53-174 |
-| The render-ready wire model this route consumes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:653-655 |
+| The render-ready wire model this route consumes. | `TaskExecutionGraphView` | dashboard/src/types/projection.ts:656-658 |
 | The deterministic mermaid document-diagram sibling of this view. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:173-213 |
 | The one-shot mounted-UI evidence surface. | `SprintGraphPage` | dashboard/src/dev/sprintGraphPage.tsx:16-20 |
 

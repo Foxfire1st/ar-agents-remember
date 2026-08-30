@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/src/agents_remember/serving/build_info.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -16,18 +16,19 @@
 
 ## Purpose
 
-The serving **build stamp** (260703-L15): resolves ONCE at app creation which code is answering —
-package version, best-effort commit short-hash, process boot time — so the cockpit can render it
-and a stale serving process (the July-4 ghost-process lesson) is visible at a glance instead of
-silently serving an old build.
+The serving **build stamp** resolves once per Python process which exact runtime is answering:
+package version, Python-source content digest, interpreter, package root, best-effort checkout
+commit, boot time, dashboard fingerprint, and proven-dirty state. Dashboard and MCP surfaces share
+that one immutable value so a stale or equal-version candidate is visible rather than guessed.
 
 ## Code Commentary
 
 ### 260731-EFA-L4 Current Delta — `payload()` Returns A Declared Model
 
-`ServingBuild.payload()` cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:77-77) no longer hand-builds a `dict[str, Any]`. It returns
-**`ServingBuildPayload`** cit:(["class ServingBuildPayload(BaseModel):"], mcp/src/agents_remember/serving/build_info.py:43-43), a `BaseModel` with `extra="forbid"` and the five camelCase
-fields the dict carried: `version`, `bootedAt`, `commit`, `dashboardBuild`, `dirty`. A model
+`ServingBuild.payload()` cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:59-59) no longer hand-builds a `dict[str, Any]`. It returns
+**`ServingBuildPayload`**, owned by `models/core.py`, a strict `BaseModel` carrying
+`version`, `bootedAt`, `sourceDigest`, `pythonExecutable`, `packageRoot`, `commit`,
+`dashboardBuild`, and `dirty`. A model
 rather than an untyped dict because this object is now a *field* of the served state contract
 (`served_state.ServedWorkspaceProjection.servingBuild`), and a contract whose members are
 untyped dicts only pretends to be one.
@@ -80,23 +81,24 @@ reads the packaged `dashboard.fingerprint` once at serving boot through `importl
 Missing, unreadable, undecodable, or empty fingerprint data yields `None` and omission from the wire
 rather than a fabricated identity; version, commit, and boot-time behavior is unchanged.
 
-`ServingBuild(version, commit, booted_at)` is a frozen dataclass; `payload()` returns the
+`ServingBuild(version, commit, booted_at, ...)` is a frozen dataclass; `payload()` returns the
 camelCase wire form — since **260731-EFA-L4** the declared `ServingBuildPayload` model rather
-than a hand-built dict, with a `None` commit dropped by the caller's `exclude_none=True`. The
-stamp never fakes a hash it could not resolve.
+than a hand-built dict, with unavailable facts dropped by the caller's `exclude_none=True`. The
+stamp never fakes a hash or digest it could not resolve.
 
 `resolve_serving_build(*, anchor=None)` composes the stamp: `version` from
 `agents_remember.mcp.SERVER_VERSION` (the same identity the daemon's restart-on-version-mismatch
 uses), `commit` via `_git_short_head` (`git rev-parse --short HEAD` anchored at the installed
 package directory — git walks up to the enclosing checkout), `booted_at` from
 `observer.events.now_iso()`. `_git_short_head` is best-effort by construction: fixed argv, a 2 s
-bound, every exception suppressed to `None` — from an installed wheel (no git metadata) the
-stamp serves version-only, never a crash.
+bound, every exception suppressed to `None`. From an installed wheel with no Git metadata the
+commit is omitted, while readable package source still yields content digest, interpreter, and
+package-root identity; failure remains omission, never a crash.
 
 ### 260731-EFA-L3 — Both Probes Run On The One Git Runner
 
-This module no longer spawns git itself. cit:([`_git_short_head`], mcp/src/agents_remember/serving/build_info.py:91-101) and `_git_worktree_dirty`
-cit:(["def _git_worktree_dirty("], mcp/src/agents_remember/serving/build_info.py:104-104) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
+This module no longer spawns git itself. cit:([`_git_short_head`], mcp/src/agents_remember/serving/build_info.py:104-114) and `_git_worktree_dirty`
+cit:(["def _git_worktree_dirty("], mcp/src/agents_remember/serving/build_info.py:117-117) each call `run_git` from `agents_remember.kernel.git_command` — the package's single
 runner — with the module's own bound:
 
 ```python
@@ -123,10 +125,11 @@ the MCP stdio protocol pipes), and every exception still suppressed to the hones
 
 ## Invariants And Boundaries
 
-- **Boot-time only** — `create_app` calls `resolve_serving_build()` once; no per-request work
-  and no per-tick work rides the stamp.
+- **Boot-time only** — `process_serving_build()` caches one `resolve_serving_build()` result for
+  both app and MCP composition; no per-request or per-tick probe rides the stamp.
 - **Never faked** — `commit` is `None` (and omitted from the payload) whenever the resolve
-  fails; the payload's `version` alone then carries the identity.
+  fails. `sourceDigest` is likewise omitted if package source cannot be read; a version string is
+  never promoted to exact-candidate evidence.
 - The stamp is **app-layer, not reducer truth**: it rides `/api/state` and the SSE `snapshot`
   (`serving/app.py`), never `WorkspaceProjection` or the persisted `latest-state.json`. Since
   **260731-EFA-L4** it is no longer *injected* into an undeclared dict either — the
@@ -135,8 +138,11 @@ the MCP stdio protocol pipes), and every exception still suppressed to the hones
 
 ### Logic
 
-Resolution combines package version, best-effort checkout commit, boot time, and the optional
-packaged dashboard fingerprint into one immutable boot stamp.
+Resolution combines package version, path-stable Python-source digest, exact interpreter and
+package root, best-effort checkout commit, boot time, and the optional packaged dashboard
+fingerprint into one immutable process stamp. The digest hashes sorted relative `.py` paths and
+bytes while excluding `__pycache__`, so relocating identical source does not change identity and
+changing source does.
 
 ### Conventions
 
@@ -144,8 +150,8 @@ Internal names are snake_case dataclass fields; `payload()` is the sole camelCas
 
 ### Invariants And Boundaries
 
-Unavailable commit or fingerprint evidence is omitted, never guessed, and the fingerprint is read
-from package resources rather than recomputed at request time.
+Unavailable source, commit, or fingerprint evidence is omitted, never guessed, and the dashboard
+fingerprint is read from package resources rather than recomputed at request time.
 
 ### Todos
 
@@ -189,6 +195,14 @@ Serving build identity now distinguishes a proven dirty checkout from an unprova
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: repointed the strict payload authority to
+  `models/core.py` after removing the transient extra model module. Verification remains
+  closeout-owned.
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: extended the shared process identity with
+  content-addressed Python source, exact interpreter, and package root; extracted its strict wire
+  model and made app/MCP consumers share `process_serving_build()`. Verification remains
+  closeout-owned.
 - 2026-08-12T20:25+02:00 — L23 curator: re-read the serving identity claim after package-version resolution moved behind `_resolve_server_version`; behavior remains installed metadata with a source-checkout fallback. Verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
@@ -201,7 +215,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 13 citation items (7 table rows and 6 prose citations); scoped citation check now passes.
 
 - 2026-08-01T08:30+02:00 — 260731-EFA-L4 curator: recorded the new `ServingBuildPayload`
-  cit:(["class ServingBuildPayload(BaseModel):"], mcp/src/agents_remember/serving/build_info.py:43-43) and `payload()`'s cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:77-77) return-type change from `dict[str, Any]` to that model,
+  cit:(["class ServingBuildPayload(BaseModel):"], mcp/src/agents_remember/models/core.py:14-14) and `payload()`'s cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:59-59) return-type change from `dict[str, Any]` to that model,
   including where the honest-unknown rule now lives — `None` on every best-effort field plus the
   caller's `exclude_none=True`, with the tri-state `dirty` still collapsed in code so
   proven-clean and unprovable both drop out. Corrected the FEUI-L9R sentence that still described
