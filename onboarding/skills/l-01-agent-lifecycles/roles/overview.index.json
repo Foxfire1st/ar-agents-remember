@@ -42,7 +42,7 @@
     "worker"
   ],
   "hotPath": {
-    "summary": "### IAS Frozen Role Boundary Architect, strategist, and orchestrator responsibilities operate on canonical task documents, not on a queue-owned copy of the plan. They may change approved planning whenever their role authority allows; downstream closeout projections are invalidated and rebuilt. For atomic work, selecting a different live master pauses the old one and reconciles the new source pair before implementation is exposed. No role should discard or terminalize a valid master merely to free scheduling state. When source reconciliation retains a conflict, the assigned agent resolves an...",
+    "summary": "Manager hosted dispatch consistently names the canonical leaf or master **task document**. That vocabulary matches the public structural request and its task-reference authority; generated and packaged role projections are synchronized from the canonical role file rather than edited apart. ### IAS Frozen Role Boundary Architect, strategist, and orchestrator responsibilities operate on canonical task documents, not on a queue-owned copy of the plan. They may change approved planning whenever their role authority allows; downstream closeout projections are invalidated and rebuilt. For atomic...",
     "candidateHints": [
       "skills/l-01-agent-lifecycles/roles",
       "skills/l-01-agent-lifecycles/roles/architect.md",
@@ -77,7 +77,7 @@
       "IAS",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "f9f92ca793811b6cb738d7e302dfecdf8636e96e",
+      "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
       "accepted",
       "rejected",
       "dispatch_agent",

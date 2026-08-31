@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T12:52+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-08-31T12:27+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -224,6 +224,10 @@ out work branches, source/base equality, and base ancestry before emitting the s
 No queue, report, repo-id lookup, branch switch, or fallback participates.
 
 ## Update History
+
+- 2026-08-31T12:27+02:00 — No route impact: A005 changes only the already-documented quality
+  executor and publication child route; the root worktree ownership, lifecycle boundaries, and
+  hot-path routing remain unchanged. Verification remains closeout-owned.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: added the canonical exact code/memory pair resolver to the
   worktree route. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_spawn_agent_session_settings.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Regression suite for configured harness definitions, role/level knob precedence,
 
 ### Logic
 
-Cases prove repository-local task context selects the right settings layer, level and role defaults deep-merge deterministically, declared vocabularies validate model/effort, free-form knobs flow only from settings, and legacy arguments/environment overrides are refused.
+Cases prove repository-local task context selects the right settings layer, level and role defaults deep-merge deterministically, declared vocabularies validate model/effort, free-form knobs flow only from settings, and legacy arguments/environment overrides are refused. Reviewer economics fixtures supply the mandatory manager parent separately from their leaf/master/portfolio spend level so ownership admission does not mask settings resolution.
 
 ### Conventions
 
@@ -53,6 +53,10 @@ testing settings-owned selection. This keeps launch knob assertions independent
 from, but compatible with, fail-closed structural admission.
 
 ## Update History
+- 2026-08-31T12:00+02:00 — A005 repair made reviewer settings fixtures carry explicit manager
+  parent provenance; the assertions remain scoped to settings-owned economics. Verification remains
+  closeout-owned.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented current-lineage setup for settings-driven spawn tests; verification remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 expressed the fixture's existing role-to-task-altitude mapping as one lookup table; the settings and refusal contract is unchanged.

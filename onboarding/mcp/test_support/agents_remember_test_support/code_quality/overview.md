@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T19:04+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-30T21:25+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -44,6 +44,11 @@ pytest result is explicitly merged and atomically republished for all downstream
 all-contexts-affected delta carries an explicit known-empty retained state; an unexpected missing
 retained database still fails closed.
 
+Non-Python product inputs that cannot participate in the import graph use narrow repository-owned
+consumer declarations only when independently observed literal reads match exactly. This lets the
+Codex starter configuration select its two real contract consumers without treating every unrelated
+test as affected; any declaration/source mismatch widens safely and names the reason.
+
 ## Local Invariants And Traps
 
 - Unknown ownership cannot produce `complete=True`.
@@ -60,6 +65,7 @@ retained database still fails closed.
 - Projection generation accepts the canonical Python 3.13 Pydantic shape for named literal
   vocabularies: a local enum definition plus local `$ref`. Every other referenced vocabulary shape
   still fails closed.
+- A non-Python consumer declaration never self-proves and cannot silently narrow targeted scope.
 
 ## File-Level Onboarding Map
 
@@ -72,6 +78,8 @@ The canonical overview is `docs/design/python-evidence-system.md`; retry and dir
 are in `docs/design/python-test-evidence.md` and the PDLS evidence reports.
 
 ## Update History
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added source-verified exact consumer ownership for `.codex/config.toml`; the candidate resolves completely without global invalidation or a silent narrow fallback. Verification remains closeout-owned.
 
 - 2026-08-29T19:04+02:00 — Reconciled the projection generator with Python 3.13 named-literal
   schema definitions after the lifecycle-owned fast gate exposed the former inline-only assumption.

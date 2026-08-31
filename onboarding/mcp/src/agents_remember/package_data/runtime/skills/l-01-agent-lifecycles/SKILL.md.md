@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T12:57+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,11 @@ advertised conflict continuation, and role-table dispatch/tool rows are structur
 not settings keys. An explicit takeover converges idempotently on the canonical seat: a viable
 occupant or durable queued brief is reused, and the launcher never manually replaces an incumbent.
 
+Unknown `AR_SPAWN_ROLE` values and role environments without plane-injected hosted identity fail
+closed; they never fall through to a pasted brief or free-chat launch. Reviewers bind the exact
+leaf, master, or sprint under review, and their manager/architect/orchestrator parent is stamped on
+the generation so a shared sprint reviewer address cannot blur plan and super authority.
+
 ### Conventions
 
 Edit the canonical skill and run the sync process; never hand-author independent packaged doctrine.
@@ -57,6 +62,9 @@ and cross-role invariants.
 - Ambient bootstrap and plane-hosted child dispatch are disjoint authority modes of the same
   transaction; no public session primitive or compatibility fallback exists.
 - Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
+- Malformed hosted role identity is a refusal, not an ambient/free-chat fallback.
+- Reviewer routing and retirement use the validated generation parent, never an occupant id or
+  first-role guess.
 
 ### Todos
 
@@ -162,6 +170,10 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized the
+  malformed-role refusal and polymorphic reviewer parent contract into the packaged onboarding.
+  Verification remains closeout-owned.
 
 - 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: synchronized the
   canonical-seat convergence and no-manual-replacement boundary for explicit task-seat takeover.

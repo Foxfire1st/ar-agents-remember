@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_inbox_rebinding_mechanics.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T00:08+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T14:31+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,34 +27,36 @@ stale-snapshot authority, in-flight supersession, and delivery to the replacemen
 
 ### Logic
 
-- `TransitionIdempotenceTests` cit:([`TransitionIdempotenceTests`], mcp/tests/test_inbox_rebinding_mechanics.py:72-141) — landed/superseded/unresolved/
+- `TransitionIdempotenceTests` cit:([`TransitionIdempotenceTests`], mcp/tests/test_inbox_rebinding_mechanics.py:75-143) — landed/superseded/unresolved/
   expired/rebind idempotence; rebind only rewrites pending rows; expiry can readdress the
   terminal marker.
-- `RowOwnerDerivationTests` cit:([`RowOwnerDerivationTests`], mcp/tests/test_inbox_rebinding_mechanics.py:143-224) — task containment resolves manager rows to the
+- `RowOwnerDerivationTests` cit:([`RowOwnerDerivationTests`], mcp/tests/test_inbox_rebinding_mechanics.py:146-226) — task containment resolves manager rows to the
   unique current orchestrator; stamped document-and-role owners rebind to their current occupant;
-  dispatch briefs and unroutable rows return empty, while ambiguous structural owners refuse.
-- `ActionSkipBranchTests` cit:([`ActionSkipBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:226-493) — rebind/rebind-expired/expire/unresolved
+  dispatch briefs, unroutable rows, and ambiguous structural owners refuse. Reviewer-specific
+  stamped-parent and invalid-parent forcing lives with the focused structural refusal suite so this
+  broad mechanics module remains below the repository file-size ceiling.
+- `ActionSkipBranchTests` cit:([`ActionSkipBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:229-495) — rebind/rebind-expired/expire/unresolved
   skip branches, replacement-appeared reroute, missing-entry silence, and the stale-sweep
   idempotent-false branch asserting final store states.
-- `EvaluationBranchTests` cit:([`EvaluationBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:495-544) — unparseable death stamps keep the grace
+- `EvaluationBranchTests` cit:([`EvaluationBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:498-547) — unparseable death stamps keep the grace
   unmeasured; running seats have no death stamp; unparseable created-at skips pending expiry.
-- `KeepRetentionBranchTests` cit:([`KeepRetentionBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:547-595) — legacy consumed marker retention,
+- `KeepRetentionBranchTests` cit:([`KeepRetentionBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:550-598) — legacy consumed marker retention,
   terminal-marker retention windows, and immediate ladder-resolved drops.
-- `LoopModeTests` cit:([`LoopModeTests`], mcp/tests/test_inbox_rebinding_mechanics.py:598-667) — loop/cadence behavior for the last-good settings and
+- `LoopModeTests` cit:([`LoopModeTests`], mcp/tests/test_inbox_rebinding_mechanics.py:601-672) — loop/cadence behavior for the last-good settings and
   relay-death surfaces.
-- `LegacyLandedFoldTests` cit:([`LegacyLandedFoldTests`], mcp/tests/test_inbox_rebinding_mechanics.py:669-788) — a pre-migration by-rule state-signal
+- `LegacyLandedFoldTests` cit:([`LegacyLandedFoldTests`], mcp/tests/test_inbox_rebinding_mechanics.py:675-793) — a pre-migration by-rule state-signal
   row folds into the formal `landed` state exactly once (`_fold_legacy_landed`, N13).
-- `CapFillBranchTests` cit:([`CapFillBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:790-835) — terminal markers fill the remaining cap slots
+- `CapFillBranchTests` cit:([`CapFillBranchTests`], mcp/tests/test_inbox_rebinding_mechanics.py:796-840) — terminal markers fill the remaining cap slots
   newest-first (D4 eviction class).
-- `StaleSnapshotTerminalAuthorityTests` cit:([`StaleSnapshotTerminalAuthorityTests`], mcp/tests/test_inbox_rebinding_mechanics.py:838-942) — the F1
+- `StaleSnapshotTerminalAuthorityTests` cit:([`StaleSnapshotTerminalAuthorityTests`], mcp/tests/test_inbox_rebinding_mechanics.py:844-947) — the F1
   shapes: concurrent supersede survives a stale landing append; concurrent landed survives a
   stale unresolved; concurrent expired survives a stale landing; stale unresolved after landed
   appends nothing; same-state idempotence still holds — each asserting final folded state and
   snapshot-count stability.
-- `SupersedeDuringInFlightDeliveryTests` cit:([`SupersedeDuringInFlightDeliveryTests`], mcp/tests/test_inbox_rebinding_mechanics.py:944-1059) — the
+- `SupersedeDuringInFlightDeliveryTests` cit:([`SupersedeDuringInFlightDeliveryTests`], mcp/tests/test_inbox_rebinding_mechanics.py:950-1064) — the
   e2e false-ack shape: delivery blocked mid-flight, explicit supersede, release — final state
   `superseded`/`overtaken`, NOT `landed`.
-- `ReboundDeliveryToReplacementTests` cit:([`ReboundDeliveryToReplacementTests`], mcp/tests/test_inbox_rebinding_mechanics.py:1061-1187) — sweep 1
+- `ReboundDeliveryToReplacementTests` cit:([`ReboundDeliveryToReplacementTests`], mcp/tests/test_inbox_rebinding_mechanics.py:1067-1189) — sweep 1
   rebinds to the replacement with no push; sweep 2 pushes the same durable row to the
   replacement's session exactly once and it lands with `deliveredToSession` on the new seat
   (F3 delivery-to-B proof).
@@ -64,7 +66,8 @@ stale-snapshot authority, in-flight supersession, and delivery to the replacemen
 Simulation-harness style shared with `test_inbox_arrival_guarantee.py`: temp-rooted stores,
 fake catalog rows, injected clocks, production transitions/actions (`store.transition`,
 `run_agent_notifier_sweep`, `deliver_inbox_entry`), and final-folded-store assertions rather
-than action-string-only checks.
+than action-string-only checks. The local `_Topology` implements both `parent` and `altitude`,
+matching the complete production `TaskHierarchy` protocol used by the routing seam.
 
 ### Invariants And Boundaries
 
@@ -88,7 +91,7 @@ rebinding/terminal mechanics are same-repository runtime behavior proven by sour
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines these mechanics; the F1 review shapes and the N-rulings are the authority. | `StaleSnapshotTerminalAuthorityTests` | mcp/tests/test_inbox_rebinding_mechanics.py:823-927 |
+| No external/domain document defines these mechanics; the F1 review shapes and the N-rulings are the authority. | `StaleSnapshotTerminalAuthorityTests` | mcp/tests/test_inbox_rebinding_mechanics.py:844-947 |
 
 ## Repo-Internal References
 
@@ -96,7 +99,7 @@ rebinding/terminal mechanics are same-repository runtime behavior proven by sour
 | --- | --- | --- |
 | The lock-held latest-fold transition primitive under test. | `transition` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:73-100 |
 | The terminal/rebind transitions under test. | `mark_landed`; `mark_superseded`; `mark_unresolved`; `mark_expired`; `rebind_entry` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:240-262; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:265-293; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:296-322; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:325-352; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:355-393 |
-| The row-owner derivation under test. | `derive_row_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:262-280 |
+| The row-owner derivation under test. | `derive_row_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:325-345 |
 | The rebind/expiry predicates under test. | `evaluate_rebind_findings`; `evaluate_pending_expiry_findings` | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:127-172; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:175-198 |
 | The legacy-landed migration fold under test. | `_fold_legacy_landed` | mcp/src/agents_remember/serving/agent_notifier.py:198-226 |
 | The retention branches under test. | `_keep_inbox_entry`; `inbox_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:140-163; mcp/src/agents_remember/controlplane/interaction_retention.py:199-221 |
@@ -124,6 +127,24 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 
 ## Update History
+
+- 2026-08-31T14:31+02:00 — Addendum-11 review corrected every test-class range shifted by the
+  `_Topology.altitude` insertion; the ranges now cover each complete AST class span.
+
+- 2026-08-31T14:26+02:00 — A005 closeout repair completed the focused `_Topology` double with
+  the protocol's `altitude` operation after the generation-14 Pyright gate exposed the missing
+  member; routing behavior and assertions are unchanged.
+
+- 2026-08-31T14:06+02:00 — A005 closeout size repair relocated reviewer-specific stamped-parent
+  and invalid-parent forcing to `test_leaf_structural_refusal_coverage.py`; this module retains the
+  generic durable-owner rebinding contract and is again below the 1,200-line hard limit.
+
+- 2026-08-31T13:42+02:00 — A005 closeout repair added stamped reviewer-row rebinding plus explicit
+  incomplete and mismatched reviewer-parent refusals.
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  the row-owner source range after the reviewed routing module moved; no semantic onboarding
+  claim changed. Verification remains closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

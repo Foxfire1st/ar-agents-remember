@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/seatEvents.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test. | `applySeatEvent`; `applySeatEventLine`; `createGatedSeatEventApplier` | dashboard/src/data/seatEvents.ts:40-92; dashboard/src/data/seatEvents.ts:95-104; dashboard/src/data/seatEvents.ts:113-130 |
-| The store whose rows the events mutate. | `sessionStore` | dashboard/src/data/sessions.ts:494-508 |
+| The store whose rows the events mutate. | `sessionStore` | dashboard/src/data/sessions.ts:511-525 |
 | The local `event()` factory supplies explicit `id`/`ts` over the shared defaults. | `event` | dashboard/src/data/seatEvents.test.ts:15-21 |
 | The shared `observerEvent` fixture supplies the schema/trust/actor defaults. | `observerEvent` | dashboard/src/test/fixtures/wire.ts:373-385 |
 

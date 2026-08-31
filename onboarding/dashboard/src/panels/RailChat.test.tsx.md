@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/RailChat.test.tsx`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-09T20:25+02:00 |
-| lastVerifiedCommitHash | `28a66feae742bf02fe4b647388b220f921cc7007`       |
-| lastVerifiedCommitDate | 2026-08-15T03:44:49+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -124,24 +124,24 @@ No Domain Documentation source is configured for this repository; repository cod
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite mocks the lazy `Terminal` module. | "vi.mock(\"./Terminal\"," | dashboard/src/panels/RailChat.test.tsx:108-108 |
-| The rejected attach case uses the 409 outcome. | "status: 409" | dashboard/src/panels/RailChat.test.tsx:405-405 |
+| The suite mocks the lazy `Terminal` module. | "vi.mock(\"./Terminal\"," | dashboard/src/panels/RailChat.test.tsx:126-126 |
+| The rejected attach case uses the 409 outcome. | "status: 409" | dashboard/src/panels/RailChat.test.tsx:496-496 |
 | `leafDoc` is the local mirror-typed fixture entry point. | `leafDoc` | dashboard/src/panels/RailChat.test.tsx:28-67 |
-| `leafProcess` explicitly supplies the packet's `worktreeGroup` fixture field. | `worktreeGroup` | dashboard/src/panels/RailChat.test.tsx:95-95 |
+| `leafProcess` explicitly supplies the packet's `worktreeGroup` fixture field. | `worktreeGroup` | dashboard/src/panels/RailChat.test.tsx:110-110 |
 | The shared `taskDoc` builder is defined here for the local fixture wrappers. | "function taskDoc" | dashboard/src/test/fixtures/wire.ts:284-284 |
 | The shared `engineProcess` builder is defined here for the local fixture wrappers. | "function engineProcess" | dashboard/src/test/fixtures/wire.ts:291-291 |
-| `findLeafProcess` is the leaf-identity lookup used by context construction. | "function findLeafProcess" | dashboard/src/panels/RailChat.tsx:255-255 |
-| `buildLeafContextPackage` is the context-package builder. | "function buildLeafContextPackage" | dashboard/src/panels/RailChat.tsx:268-268 |
-| The context package reads the process `worktreeGroup`. | `worktreeGroup` | dashboard/src/panels/RailChat.tsx:310-310 |
-| The context package reads `codeWorktree.path`. | `codeWorktree` | dashboard/src/panels/RailChat.tsx:311-311 |
-| The context package reads the optional `memoryWorktree.path`. | `memoryWorktree` | dashboard/src/panels/RailChat.tsx:312-312 |
-| `RailChatImpl` builds and reliably submits the context package at leaf bind/move time. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:545-643 |
-| `sessionStore` is declared here. | "const sessionStore" | dashboard/src/data/sessions.ts:508-508 |
+| `findLeafProcess` is the leaf-identity lookup used by context construction. | "function findLeafProcess" | dashboard/src/panels/RailChat.tsx:242-242 |
+| `buildLeafContextPackage` is the context-package builder. | "function buildLeafContextPackage" | dashboard/src/panels/RailChat.tsx:255-255 |
+| The context package reads the process `worktreeGroup`. | `worktreeGroup` | dashboard/src/panels/RailChat.tsx:297-297 |
+| The context package reads `codeWorktree.path`. | `codeWorktree` | dashboard/src/panels/RailChat.tsx:298-298 |
+| The context package reads the optional `memoryWorktree.path`. | `memoryWorktree` | dashboard/src/panels/RailChat.tsx:299-299 |
+| `RailChatImpl` builds and reliably submits the context package at leaf bind/move time. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
+| `sessionStore` is declared here. | "const sessionStore" | dashboard/src/data/sessions.ts:511-511 |
 | `findSessionForTask` is the structural task-document lookup entry. | "function findSessionForTask" | dashboard/src/data/sessions.ts:561-573 |
 | `submitSessionText` is part of the reliable submission seam mocked by the suite. | `submitSessionText` | dashboard/src/data/submitClient.ts:828-873 |
 | `waitForSubmissionReady` is the readiness entry. | "function waitForSubmissionReady" | dashboard/src/data/submitClient.ts:952-952 |
 | `attachSessionToTask` is the attach client path whose 200/409 (`seat-taken`) outcomes the tests mock. | `attachSessionToTask` | dashboard/src/data/terminal.ts:490-511 |
-| The rail's lifecycle-free answer case targets its exact session and never `/submit`. | "routes a pane's lifecycle-free non-choice answer by exact session" | dashboard/src/panels/RailChat.test.tsx:465-515 |
+| The rail's lifecycle-free answer case targets its exact session and never `/submit`. | "routes a pane's lifecycle-free non-choice answer by exact session" | dashboard/src/panels/RailChat.test.tsx:560-610 |
 
 ## Cross-Repo References
 
@@ -158,6 +158,10 @@ same reliable client, rejection honesty, and session-direct non-choice answers. 
 bracketed paste, Enter, or lifecycle gates as adapter-answer authority.
 
 ## Update History
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed code moved; no semantic onboarding claim changed. Verification
+  remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `RailChat.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-09T20:25+02:00 — 260713-TES-L5F2: removed the rail answer test's lifecycle/gate fixture

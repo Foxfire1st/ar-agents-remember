@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/lifecycleCopy.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-09T19:36+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | Every exported string/predicate. | `terminateConfirmCopy`; `cleanupOutcomeCopy`; `STOP_TURN_DISABLED_REASON`; `isControlledSession` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:39-51; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:108-114 |
 | The grammar state word the confirm/name builders consume. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
-| The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. | "          title={terminateConfirmCopy(session)}"; "  const outcomeCopy = cleanupOutcomeCopy(outcome);" | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:279-279 |
+| The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. | "          title={terminateConfirmCopy(session)}"; "  const outcomeCopy = cleanupOutcomeCopy(outcome);" | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:284-284 |
 | The stage notes consuming residual copy. | `terminateResidualCopy`; `retireResidualCopy` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:3-3; dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:56-57 |
 | The bar consuming the interaction constants. | "  INTERACTION_HONESTY_HINT"; "  INTERACTION_COMPOSER_MODE"; "  INTERACTION_ANSWERING"; "  INTERACTION_ANSWERED"; "  INTERACTION_NO_PROMPT_TEXT" | dashboard/src/panels/session-cockpit/interactionParts.tsx:13-13; dashboard/src/panels/session-cockpit/interactionParts.tsx:12-12; dashboard/src/panels/session-cockpit/interactionParts.tsx:11-11; dashboard/src/panels/session-cockpit/interactionParts.tsx:10-10; dashboard/src/panels/session-cockpit/interactionParts.tsx:16-16 |
 | The surface consuming archetype/name/toggle copy. | "isControlledSession"; "paneAccessibleName"; "paneArchetypeCopy"; "SCREEN_READER_MODE_NOTE" | dashboard/src/panels/session-cockpit/PtySurface.tsx:14-17; dashboard/src/panels/session-cockpit/PtySurface.tsx:211-211; dashboard/src/panels/session-cockpit/PtySurface.tsx:230-230; dashboard/src/panels/session-cockpit/PtySurface.tsx:305-305 |

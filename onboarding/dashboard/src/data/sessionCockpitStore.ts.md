@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -117,7 +117,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The exact snapshot and five-value set-acceptance wire vocabulary mirrored by the store. | `CapabilitySnapshotWire`; `SetAcceptance` | dashboard/src/types/harnessCapabilities.ts:59-65; dashboard/src/types/harnessCapabilities.ts:86-86 |
 | The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. | `refreshSessionSnapshot`; `sendSet`; `applySetResult`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested` | dashboard/src/data/setClient.ts:72-119; dashboard/src/data/setClient.ts:228-274; dashboard/src/data/setClient.ts:326-348; dashboard/src/data/setClient.ts:375-383; dashboard/src/data/setClient.ts:386-391; dashboard/src/data/setClient.ts:405-426 |
 | The beat writer (every catalog read records poll health). | `currentCatalogTransportAttempt` | dashboard/src/data/catalogPoll.ts:62-77 |
-| The catalog registry the mirror subscribes to. | `sessionStore` | dashboard/src/data/sessions.ts:494-508 |
+| The catalog registry the mirror subscribes to. | `sessionStore` | dashboard/src/data/sessions.ts:511-525 |
 | The view that mirrors layout/palette in and consumes focus + perSession. | "setLayout: (layout: { railCollapsed: boolean; inspectorCollapsed: boolean }) => void;"; "setPaletteOpen: (open: boolean) => void;"; "const { focused, focusedLive, focusedConversationLive, perSession } = data;" | dashboard/src/data/sessionCockpitStore.ts:225-225; dashboard/src/data/sessionCockpitStore.ts:226-226; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:186-186 |
 | The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | `WS_WORDS`; `HeaderStrip`; `freshness` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:101-101 |
 | The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | `recordPendingSet`; "QUEUED NEVER MOVES THE EFFECTIVE MARKER: ledger writes leave launchEvidence untouched" | dashboard/src/data/sessionCockpitStore.test.ts:41-56; dashboard/src/data/sessionCockpitStore.test.ts:75-89 |

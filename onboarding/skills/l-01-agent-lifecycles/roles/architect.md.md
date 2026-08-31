@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -35,6 +35,12 @@ session primitive. Once hosted, the architect's own dispatches use plane identit
 scope; any plane refusal remains a plane refusal. An explicit developer-declared task-seat takeover
 uses the same ambient transaction for the named role at its canonical altitude instead of forcing
 an architect bootstrap first.
+
+The architect dispatches the sprint-bound plan reviewer when the portfolio plan reaches its
+independent review seam. That reviewer generation is stamped with the sprint architect as its
+structural parent, which keeps it distinct from the orchestrator-owned super-exit reviewer at the
+same `(sprint document, reviewer)` seat. The architect may retire only its own stamped plan-review
+generation, never a live super reviewer.
 
 The architect compiles and cold-reads the complete requirement corpus before creating task
 topology. A later semantic change retains the stable ID, creates a new version-addressed packet,
@@ -104,6 +110,10 @@ rebuilt. A selector or queue cannot veto planning, and no valid task/master is d
 free a runtime selection.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented architect
+  dispatch and retirement authority for the architect-stamped sprint plan reviewer, excluding the
+  orchestrator-owned super generation. Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced the stale caller-visible
   spawn/readiness/dispatch sequence with one ordinary ambient architect launch transaction,

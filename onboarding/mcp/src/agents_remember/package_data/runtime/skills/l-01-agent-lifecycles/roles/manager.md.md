@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,10 @@ one-real-master manager lifecycle and owns no separate intent.
 The synchronized caller matrix makes the manager an ordinary plane-hosted caller for its direct
 worker/reviewer/curator children and an ambient target only for explicit developer-declared
 takeover. Dispatch/tools rows remain structural documentation, not settings keys.
+
+Reviewer is a direct manager child at two task altitudes: leaf review binds the leaf document and
+master-exit review binds this master document. The control plane stamps both generations back to
+the manager, and retirement remains confined to this manager's own master.
 
 The synchronized manager does not advance attempt IDs at dispatch or during internal reruns,
 validates the content-addressed handoff record, and rebuilds a non-gating summary that excludes
@@ -63,7 +67,7 @@ fallback. A constrained lifecycle environment alone explicitly opts into `memory
 | --- | --- | --- |
 | The packaged manager is one master-scoped owner of the leaf closeout chain. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
 | Its hosted child dispatch uses structural task document and role. | "## Hosted Role Dispatch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
-| Curator dispatch carries exact approved packets and per-revision reviewer adjudication. | "Curator coherence pass — mandatory, not skippable." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:206-206 |
+| Curator dispatch carries exact approved packets and per-revision reviewer adjudication. | "Curator coherence pass — mandatory, not skippable." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:207-207 |
 | The canonical source owns this doctrine. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
@@ -141,6 +145,13 @@ revision, delivery attempt, and content digest separate and states that memory r
 closeout admission consume the same validator. Historical Markdown cannot satisfy the handoff.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 synchronized the canonical manager's explicit leaf/master task
+  document wording into the packaged runtime projection. Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized leaf and
+  master-exit reviewer ownership, task altitude, and manager retirement scope. Verification remains
+  closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only leaf-seat dispatch,
   explicit ambient takeover, and fixed structural-row ownership. Verification remains

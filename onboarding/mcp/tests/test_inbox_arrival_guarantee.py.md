@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_arrival_guarantee.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

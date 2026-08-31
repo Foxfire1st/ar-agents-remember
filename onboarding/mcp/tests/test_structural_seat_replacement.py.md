@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_structural_seat_replacement.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T22:27+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,9 @@ a synchronized fake host. It then exercises same-seat concurrency, different-sea
 contradictory evidence refusal, receipt repair, inbox-compaction recovery, lock failure, crash-
 stranded generation replacement, actual queued-message delivery after manager replacement, and
 staged-heir promotion.
+The fake-host setup sets the dispatch readiness wait to zero: these tests prove serialization and
+durable queued-brief convergence, not a real adapter startup delay. Lock contention patches the
+transaction-owned `exclusive_structural_dispatch_lock` boundary.
 
 ### Conventions
 
@@ -68,6 +71,10 @@ No Domain Documentation source is configured.
 No cross-repository dependency governs this unit.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 aligned concurrency forcing with the extracted transaction-owned
+  serializer and removed two artificial ten-second fake-adapter waits without weakening the durable
+  queue/one-seat assertions. Verification remains closeout-owned.
 
 - 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: reconciled the complete
   544-line candidate, moved repository evidence out of Domain Documentation, and refreshed every

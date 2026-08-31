@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_document_structural_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-19T22:32+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,9 @@ fails closed, structural gates authorize only canonical relations, and lifecycle
 the same identity. Since 260815-DAG-L13 the parent-resolution fixture proves the effective-nature
 split directly: a nature-less standalone master resolves at master altitude with no parent edge,
 and only an explicit `organizational` standalone master still reaches the missing-parent refusal.
+ARSPAWN-L5 splits legacy migration assertions by concern: named reviewer scope without the original
+leaf identity refuses, while topology validates the current reviewer role independently at leaf,
+master, and sprint altitudes.
 
 ### Conventions
 
@@ -84,6 +87,10 @@ The missing-repository regression now calls the public
 the supported application boundary instead of a private implementation detail.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: pinned all current
+  reviewer altitudes and the leaf-only legacy reviewer migration refusal. Verification remains
+  closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Updated the absent-repository master-discovery assertion to the public helper boundary.
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the parent-resolution fixture now proves the

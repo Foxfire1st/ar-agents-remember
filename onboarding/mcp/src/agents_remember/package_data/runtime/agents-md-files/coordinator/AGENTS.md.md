@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-30T12:34+02:00                     |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../../../../overview.md`                              |
 
 ## Governing Overview
@@ -128,14 +128,14 @@ This onboarding is backed by the source template itself.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work. | `## Start Here — Route By Role` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:3-12 |
-| The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | `### Installed AGENTS.md Routing` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:46-53 |
+| The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. | `### Installed AGENTS.md Routing` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:55-62 |
 | The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | `### Onboarding Documentation`, `c-04-retrieval-strategy-router` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:58-70 |
 | The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. | `### Developer Clarifications`, `c-01-findings-capture`, `c-05-create-or-update-onboarding-files` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:71-84 |
 | The resolver section requires `c-08-ar-coordination-context-resolver` skill before relying on memory/task surfaces, then checks provider readiness through the `context_packet` MCP tool when the MCP server is configured and providers are enabled. | `## Ar-coordination & Memory Layer Resolver` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:85-178 |
-| Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. | `### Memory Repo User Settings, Instructions, and Guidelines` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:114-126 |
+| Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. | `### Memory Repo User Settings, Instructions, and Guidelines` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:130-143 |
 | The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. | `### Boundaries` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:163-178 |
 | Branch/worktree approval boundaries and memory-layer authority remain listed in the template. | `### Boundaries` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:163-178 |
-| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | `## Code Quality Instructions` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:175-182 |
+| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | `## Code Quality Instructions` | mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md:184-191 |
 
 ## Cross-Repo References
 
@@ -146,6 +146,10 @@ No sibling repository evidence is needed for this package template.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed template moved; no semantic onboarding claim changed.
+  Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the one-call canonical architect brief,
   separated ordinary bootstrap from explicit named-role takeover, and retained disjoint

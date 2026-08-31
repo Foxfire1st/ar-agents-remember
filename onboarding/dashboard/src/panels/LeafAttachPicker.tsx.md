@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/LeafAttachPicker.tsx`      |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -114,9 +114,9 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). | `TaskTreeNode`; `findMasterPath`; `buildTaskTree` | dashboard/src/data/taskIdentity.ts:133-139; dashboard/src/data/taskIdentity.ts:208-214; dashboard/src/data/taskIdentity.ts:218-225 |
-| `RailChat` builds the nested task tree used by the attach picker from projected task documents. | "const leafTree = buildTaskTree(taskDocuments);" | dashboard/src/panels/RailChat.tsx:521-521 |
-| `RailChat` renders the picker with right alignment and passes the selected leaf/role pair to its attach callback. | "import { LeafAttachPicker } from './LeafAttachPicker';"; "align=\"right\"" | dashboard/src/panels/RailChat.tsx:34-34; dashboard/src/panels/RailChat.tsx:1022-1029 |
-| `RailChat` performs the server-first attach/move and applies the returned task-document-and-role assignment only after success; a taken seat leaves local state untouched. | "const result = await attachSessionToTask(sessionId, taskDocumentRef, seatRole);"; "sessionStore.getState().applyTaskAssignment(sessionId, taskDocumentRef, seatRole);"; "result === 'seat-taken'" | dashboard/src/panels/RailChat.tsx:533-541 |
+| `RailChat` builds the nested task tree used by the attach picker from projected task documents. | "const leafTree = buildTaskTree(taskDocuments);" | dashboard/src/panels/RailChat.tsx:400-400 |
+| `RailChat` renders the picker with right alignment and passes the selected leaf/role pair to its attach callback. | "import { LeafAttachPicker } from './LeafAttachPicker';"; "align=\"right\"" | dashboard/src/panels/RailChat.tsx:39-39; dashboard/src/panels/RailChat.tsx:914-914 |
+| `RailChat` performs the server-first attach/move and applies the returned task-document-and-role assignment only after success; a taken seat leaves local state untouched. | "const result = await attachSessionToTask(sessionId, taskDocumentRef, seatRole);"; "sessionStore.getState().applyTaskAssignment(sessionId, taskDocumentRef, seatRole);"; "result === 'seat-taken'" | dashboard/src/panels/RailChat.tsx:412-412; dashboard/src/panels/RailChat.tsx:414-414; dashboard/src/panels/RailChat.tsx:417-417 |
 | `ChatContextBar` builds the tree, restricts terminal role options when needed, and attaches/moves the focused session server-first. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
 | Render/drill tests cover role selection, disabled leaf rows, and the two-argument callback. | "LeafAttachPicker drill-down" | dashboard/src/panels/LeafAttachPicker.test.tsx:35-134 |
 

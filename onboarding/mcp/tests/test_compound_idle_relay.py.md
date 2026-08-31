@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_compound_idle_relay.py`                  |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00                                    |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`               |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`               |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -115,7 +115,7 @@ landed-terminality predicate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:119-133; mcp/src/agents_remember/serving/state_signals.py:136-144; mcp/src/agents_remember/serving/state_signals.py:222-242 |
+| The predicates under test (set assembly, signature, findings). | `compound_idle_sets`; `compound_idle_signature`; `evaluate_compound_idle_findings` | mcp/src/agents_remember/serving/state_signals.py:159-173; mcp/src/agents_remember/serving/state_signals.py:176-184; mcp/src/agents_remember/serving/state_signals.py:262-282 |
 | The emitter under test (action-time signature, skip branches, boundary-gated post). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
 | The marker write seam with its no-op guard. | `record_compound_idle_emitted` | mcp/src/agents_remember/serving/seat_turn_truth.py:155-166 |
 | Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |

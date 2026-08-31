@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T12:57+02:00 |
-| lastVerifiedCommitHash |  `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate |  2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -46,6 +46,12 @@ takeover target, while the public request contains no caller-kind or runtime-ide
 `dispatch` and `tools` rows are structural documentation rather than settings keys. When the
 developer explicitly selects this seat, the launcher converges on the canonical sprint-bound
 orchestrator seat; it does not manually create or replace a live occupant.
+
+When the execution graph drains, the orchestrator dispatches the sprint-bound super-exit reviewer
+on the canonical sprint document. The plane stamps this generation back to the orchestrator, so its
+signals and verdict return to the super-exit owner rather than the architect's plan-review seam.
+The orchestrator's portfolio retirement authority remains the escape hatch for completed or stuck
+review generations.
 
 ### Invariants And Boundaries
 
@@ -112,6 +118,10 @@ decisions determine a resolution. Continue or cancel the contract-addressed oper
 advertised API; escalate only genuine semantic ambiguity through the architect.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the
+  orchestrator-stamped sprint super reviewer and its separation from the architect plan-review
+  generation. Verification remains closeout-owned.
 
 - 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: replaced create/replace
   takeover wording with idempotent canonical-seat convergence. Verification remains

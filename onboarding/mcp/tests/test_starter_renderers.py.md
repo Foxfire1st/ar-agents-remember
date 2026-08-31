@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_starter_renderers.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-06T18:19+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastUpdated            | 2026-08-30T22:33:39+02:00                     |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                        |
 
 ## Purpose
@@ -33,6 +33,8 @@ folder required by the harness, and runs that harness's local
 in that list proves the renderer's output de-duplicates repository ids while
 preserving the intended order. Shared assertions then verify MCP settings roots,
 absence of unresolved placeholders, command rendering, and hook smoke output.
+For Codex, the rendered MCP registration must also retain exact forwarding of
+`AR_HOSTED_SESSION_ID` and `AR_SPAWN_ROLE`.
 The missing-repository test runs the Codex renderer against an absent repo id
 and requires a non-zero exit plus an explicit `repository root does not exist`
 error.
@@ -45,6 +47,8 @@ error.
   `workspaceRoot`, `transcriptRoot`, and repository id ordering.
 - Generated executable hook commands must use the current Python interpreter
   selected at render time.
+- Rendered Codex MCP settings must forward exactly the hosted-seat and spawn-role lifecycle
+  variables needed to preserve ambient versus hosted routing.
 - Hook smoke tests only execute Python hook scripts; they do not launch Codex,
   Claude Code, Cursor, VS Code, or any other harness.
 - Missing repository paths must fail before writing a silently-invalid starter
@@ -81,6 +85,9 @@ No sibling repository evidence is needed for these tests.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded exact Codex lifecycle-variable
+  forwarding in copied starter output. Verification remains closeout-owned.
 
 - 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 8 citation findings; scoped check passed.
 

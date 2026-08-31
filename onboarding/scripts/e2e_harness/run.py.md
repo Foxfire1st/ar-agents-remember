@@ -1,0 +1,94 @@
+# run.py
+
+| Field | Value |
+|---|---|
+| repository | agents-remember |
+| path | `scripts/e2e_harness/run.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
+| governingOverview | `scripts/e2e_harness/overview.md` |
+
+## Governing Overview
+
+[Ambient Role-Chat E2E Harness](overview.md)
+
+## Purpose
+
+Owns exact candidate identity, targeted applicability, two fresh scenario replications, per-run
+artifacts, residual-resource acceptance, and the final no-retry summary.
+
+## Code Commentary
+
+### Logic
+
+`main` declares the test-process boundary, derives the base-to-working-tree delta, records the Git
+commit and candidate tree, skips only an unaffected targeted candidate, then executes exactly two
+fresh roots. `_run_once` always removes its root, captures exceptions as evidence, and writes a run
+report; a root-removal error is recorded separately and fails an otherwise successful run instead
+of being ignored. The summary names zero retries and links both immutable run reports.
+The fixture invocation id is preserved in skipped, per-run, and aggregate evidence. L5-C10 requires
+both an empty residual-session set and a clean structured teardown result.
+
+Admission is deliberately the first statement in `main`, before argument parsing, report-directory
+creation, candidate inspection, or fixture setup. A direct host invocation therefore fails without
+creating evidence or reaching any tmux command; this safety property does not depend on valid CLI
+arguments.
+
+### Conventions
+
+Immutable invocation context travels as one frozen record. Unix-socket roots are intentionally short,
+and candidate identity is computed before any scenario starts.
+
+### Invariants And Boundaries
+
+- `RUN_COUNT` is exactly two and failed runs are not retried.
+- Targeted skipping is controlled only by `selection.py`'s explicit dependency surface.
+- Only Dagger admission can enter the controller; host execution is rejected before all parsing and
+  side effects.
+- Candidate commit/tree, command, diff base, and selected paths appear in durable evidence.
+- Any tmux session or recorded cleanup failure surviving scenario teardown fails L5-C10.
+- Disposable-root cleanup errors are diagnostics; they never replace an earlier primary failure.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Candidate and replication evidence is repository-owned and recorded directly. | `_RunContext` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-203 |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Two fresh runs are performed without a retry branch. | `RUN_COUNT` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-158 |
+| Residual tmux ownership is a named acceptance checkpoint. | `_residual_tmux` | scripts/e2e_harness/run.py:111-158; scripts/e2e_harness/run.py:224-240 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Run roots and candidate identity stay within the current candidate and disposable fixture. | `_fresh_run_root` | scripts/e2e_harness/run.py:160-220 |
+
+## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: made and documented
+  Dagger admission as the controller's first operation, so malformed or direct host invocations
+  cannot touch reports or tmux. Verification remains closeout-owned.
+
+- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
+  canonical anchored citation format. Verification metadata remains closeout-owned.
+
+- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: preserved the fixture invocation and
+  made structured cleanup failures part of L5-C10 alongside residual-session checks, including
+  non-suppressed disposable-root removal. Verification metadata remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the exact-candidate, twice-fresh, no-retry acceptance controller. Verification metadata remains closeout-owned.

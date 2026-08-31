@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/flowModels.ts`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -48,9 +48,10 @@ cit:([`FlowModel`], dashboard/src/panels/flowModels.ts:44-52) bundles `id`, `lab
 **The 9 models** (HFX-L6 adds the architect), in `FLOW_MODELS` order: ROUTER · ARCHITECT · DESIGNER ·
 STRATEGIST · ORCHESTRATOR · MANAGER · WORKER · REVIEWER · COMMS:
 
-1. **`router`** (`ROUTER`, L56-101, the default) — the unified skill's spine: the three-condition entry
-   (AR_SPAWN_ROLE → fresh-session role brief → otherwise architect) with the decided edge cases
-   (unresolvable value falls through; a missing brief means announce-and-wait), the architect's owner
+1. **`router`** (`ROUTER`, the default) — the unified skill's spine: the three-condition entry
+   (valid hosted `AR_SPAWN_ROLE` → identity-free fresh-session role brief → otherwise free-chat
+   launcher) with fail-closed unknown-role/incomplete-hosted-identity admission and
+   announce-and-wait only for a valid hosted role missing its brief, the architect's owner
    loop (Design · Decision Relay · Spawn/Supervise + research-only exit), and the invariant ladder —
    task doc (approved) → branch (intent) → worktree (only where something is built), with "chat is
    never a build route" as a junction line.
@@ -93,7 +94,9 @@ STRATEGIST · ORCHESTRATOR · MANAGER · WORKER · REVIEWER · COMMS:
    **mandatory turn-report artifact**; no lifecycle machinery — closeout/integrate/finalize belong to
    the owning seat; since L12 a loop-position line marks it the loop's BUILDER (fix rounds resume the
    same session; reports append).
-8. **`reviewer`** (`REVIEWER`) — spawned at exactly the two seams; three-lens review
+8. **`reviewer`** (`REVIEWER`) — one role across four structural seats: leaf route/full-loop under
+   its manager, master-exit under its manager, portfolio plan under the architect, and super-exit
+   under the orchestrator. Its generation records the exact parent document+role; three-lens review
    (completion vs task docs · code quality per tools.md · onboarding-vs-code); its **verdict is evidence,
    not a decision** (attaches to the handover gate as judge evidence), and a blocking verdict must
    **decompose into fix leaves**, never prose complaints; since L12 the lens rundown binds the
@@ -109,7 +112,7 @@ STRATEGIST · ORCHESTRATOR · MANAGER · WORKER · REVIEWER · COMMS:
 ### Conventions
 
 Plain TypeScript data module — no React, no styling, no store. Each model is a `const` typed as
-`FlowModel`, and cit:([`FLOW_MODELS`], dashboard/src/panels/flowModels.ts:438-438) is the ordered export the nav renders; `FLOW_MODELS[0]`
+`FlowModel`, and cit:([`FLOW_MODELS`], dashboard/src/panels/flowModels.ts:451-451) is the ordered export the nav renders; `FLOW_MODELS[0]`
 (`ROUTER`) is FlowTab's default/fallback, so ordering is load-bearing for the default view. Prose
 carries the series' typographic conventions (`⟁` for a junction/decision, `⊘` for a gate/seam rider,
 `·` separators, mint/amber via `nextStatus`). A gate/seam node sets `rides`; when it needs a bespoke
@@ -161,6 +164,10 @@ As of the 260703-L8 remediation the registry drew the then-converged doctrine: a
 No meaningful cross-repo references found.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: replaced the drawn
+  unknown-role fallthrough with fail-closed hosted admission and expanded reviewer from two prose
+  seams to four explicit task-altitude/parent addresses. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `flowModels.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint provenance as part of command-seat flow

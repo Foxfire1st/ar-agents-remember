@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-30T22:33:39+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | mcp/tests/overview.md |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ Regression suite for the control-plane-owned initial dispatch-brief transaction.
 ### Logic
 
 The tests prove ready dispatch persists one exact internal row, accepted delivery starts expectation clocks, queued/not-ready delivery stays durable for retry, ambiguous receipts reconcile without resubmission, gate or caller refusal leaves evidence, and lifecycle doctrine advertises the structural dispatcher.
+The default gate also passes one explicit bounded spawn-startup wait into hosted readiness so bridge
+convergence remains part of the original dispatch attempt rather than becoming a caller retry.
 
 ### Conventions
 
@@ -30,7 +32,7 @@ Test-only evidence uses deterministic fakes/fixtures and exercises the public or
 
 ### Invariants And Boundaries
 
-The agent-facing result never exposes the child occupant id; an exact internal target never falls back by lifecycle; queued work does not duplicate briefs or respawn.
+The agent-facing result never exposes the child occupant id; an exact internal target never falls back by lifecycle; queued work does not duplicate briefs or respawn. The bounded readiness wait never authorizes a second dispatch attempt.
 
 ## Docs References
 
@@ -40,13 +42,16 @@ No Domain Documentation source is configured for this repository-local regressio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks` | mcp/tests/test_dispatch_brief.py:146-146 |
+| Current suite declaration anchoring this card. | `test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks` | mcp/tests/test_dispatch_brief.py:150-175 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded the single bounded
+  spawn-to-bridge readiness window and preserved no-resubmission semantics.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_dispatch_brief.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

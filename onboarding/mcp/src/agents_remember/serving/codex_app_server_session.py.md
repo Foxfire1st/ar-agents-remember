@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3` |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ catalog and thread evidence.
 | --- | --- | --- |
 | `parse_model_page` validates model descriptions, effort menus/defaults, visibility, and identity. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:156-227 |
 | Session-owned desired-model and desired-effort setters stage the next selection. | `set_desired_model`; `set_desired_effort` | mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
-| Fresh adapter `turn/start` acceptance promotes the submission's captured pair. | `_start_turn`; `_accept_started_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480; mcp/src/agents_remember/serving/codex_app_server_adapter.py:533-568 |
+| Fresh adapter `turn/start` acceptance promotes the submission's captured pair. | `_start_turn`; `_accept_started_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-530; mcp/src/agents_remember/serving/codex_app_server_adapter.py:583-618 |
 | The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:48-90 |
 | Initialize sends and then reuses the exact client identity when validating the host response. | `_initialize` | mcp/src/agents_remember/serving/codex_app_server_session.py:362-385 |
 

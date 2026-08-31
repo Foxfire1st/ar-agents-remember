@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -128,12 +128,12 @@ model"; its first clause is a claim about the walker, so each registration form 
 
 `GET /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`, so unlike the other 59
 FastAPI validates them for real — and a drifted payload is answered as **HTTP 500**, not passed
-through. On `/api/terminal/sessions` that is a 66-key body assembled by hand from a
-56-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
+through. On `/api/terminal/sessions` that is a 68-key body assembled by hand from a
+58-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
 scans** `TerminalCatalogEntry.to_json` (an instance cannot prove the set, because every optional key
 goes through `_present_fields` and is absent when `None`) and
 `test_the_catalog_wire_model_covers_every_key_to_json_emits` asserts set **equality in
-both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 66` so a scan
+both directions** against `TerminalCatalogEntryWire`'s aliases, plus `len(emitted) == 68` so a scan
 reading zero keys cannot satisfy the equality. This fires when the field is added — earlier than
 the runtime 500, and earlier than a conformance run, which only sees the fields its fixture
 happens to populate.
@@ -222,7 +222,7 @@ modules, and everything that proves them lives here.
 | The conversation surface's `CONTROL_RESPONSES` and `CONVERSATION_RESPONSES` tables. | `CONTROL_RESPONSES`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
 | The serving app factory and SSE generator under test. |"async def stream_events("; "def create_app("|mcp/src/agents_remember/serving/_app_common.py:116-116; mcp/src/agents_remember/serving/app.py:243-243|
 | The `StreamContractTests` suite that drives the SSE seam. | `StreamContractTests` | mcp/tests/test_serving_response_conformance.py:38-38 |
-| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:612-612 |
+| The producer's `_present_fields` conditionality. | "def _present_fields(" | mcp/src/agents_remember/models/terminal_catalog.py:629-629 |
 | The catalog-entry wire model and its aliases. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:280-346 |
 | The open-status map asserted total over the declared outcomes, and the `_open_call` that indexes it directly. | `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84 |
 | The control router and typed-error mapper. | `router`; `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:87-90; mcp/src/agents_remember/serving/conversation/control/api.py:136-153 |
@@ -260,6 +260,9 @@ being mistaken for response-contract failure.
 | The shared client waits only through the bounded 503 readiness window and then requires 200. | `_await_projector_ready` | mcp/tests/test_serving_response_conformance.py:829-838 |
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 refreshed the terminal-catalog hazard oracle to the reviewed
+  68-key wire and 58 optional model fields. Verification remains closeout-owned.
 
 - 2026-08-25T23:04+02:00 — L2 memory-quality repair: migrated the remaining two-column evidence table to anchored current-source citations after re-reading each claim; preserved all prior rationale and history.
 

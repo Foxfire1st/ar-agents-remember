@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-09T06:48+02:00|
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`                                    |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                    |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -83,7 +83,7 @@ The suite exercises `serving/state_signals.py`, `serving/_agent_notifier_actions
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:158-166; mcp/src/agents_remember/serving/state_signals.py:245-264; mcp/src/agents_remember/serving/state_signals.py:374-416 |
+| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:198-206; mcp/src/agents_remember/serving/state_signals.py:285-304; mcp/src/agents_remember/serving/state_signals.py:439-481 |
 | The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:452-514; mcp/src/agents_remember/serving/_agent_notifier_actions.py:584-655; mcp/src/agents_remember/serving/_agent_notifier_actions.py:658-667 |
 | Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |
 

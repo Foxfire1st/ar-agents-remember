@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/index.css`                        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -107,7 +107,7 @@ re-raster for scroll, video, or animation invalidations.
 | The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | "base.css" | dashboard/src/styles/webtui.css:12-12 |
 | Asserts the exact layer-order statement and the unlayered freeze. | "S1 spike (d): layer order + focus-visible survival (React Aria intact)" | dashboard/src/test/webtuiSpike.test.ts:156-172 |
 | The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | "word-break: break-all" | dashboard/src/index.css:117-127 |
-| Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | "export function InspectorFact"; "export const MarkdownBlock"; "export function SessionRail" | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:98-98; dashboard/src/panels/session-cockpit/SessionRail.tsx:160-160; dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
+| Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | "export function InspectorFact"; "export const MarkdownBlock"; "export function SessionRail" | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:98-98; dashboard/src/panels/session-cockpit/SessionRail.tsx:161-161; dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
 
 ## Update History
 

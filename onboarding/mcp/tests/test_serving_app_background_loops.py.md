@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_app_background_loops.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-29T17:50+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`         |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`         |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -17,8 +17,8 @@
 ## Purpose
 
 Behavioural coverage for the dashboard app's **background loops and their lifespan wiring**.
-`serving/app.py` runs four always-on background tasks (projection, provider metrics,
-supervisor sweep, workspace-river compaction) plus two opt-in ones (the heap diagnostic and
+`serving/app.py` runs five always-on background tasks (projection, provider metrics,
+supervisor sweep, agent notifier, workspace-river compaction) plus two opt-in ones (the heap diagnostic and
 the glibc arena trim). Their steady state is exercised by the rest of the suite simply by
 booting the app; what was never exercised is the part that matters operationally.
 
@@ -36,6 +36,7 @@ for an already-entered metrics worker write before propagating cancellation.
 | --- | --- |
 | `MetricsLoopTests` | A failed provider sample costs one interval, and cancellation cannot return while an in-flight metrics write still runs. |
 | `SupervisorLoopTests` | `orchestration.supervisor.enabled` is re-read **on every pass**, so turning the sweep on takes effect without restarting the daemon. Settings state, not boot state. |
+| `AgentNotifierLoopTests` | Every notifier pass refreshes canonical terminal liveness before evaluating inbox predicates; cancellation drains an in-flight refresh; enablement remains settings-driven per pass. |
 | `MallocTrimLoopTests` | The opt-in arena reclaim: never runs unless `AR_MALLOC_TRIM` is set; the interval is resolved **once at task start** rather than per tick; one trim per tick; failures survivable. |
 | `WorkspaceRiverCompactionLoopTests` | The one event river nothing else reclaims — it must keep shrinking, and keep going on error. |
 | `OptionalLifespanTaskTests` | The two `if`s in the lifespan that decide whether the opt-in tasks exist at all, plus the cancellation every background task shares on shutdown. `_TaskProbe` is an awaitable stand-in recording entry and cancellation. |
@@ -61,6 +62,10 @@ out anonymously.
   cancelled on shutdown.
 - Cancelling `_metrics_loop` during `ProviderMetricsStore.record` must leave the task pending until
   that worker returns, then propagate `CancelledError` with the completed sample readable.
+- Agent-notifier evaluation must not depend on dashboard browser polling; its own pass refreshes
+  liveness first.
+- Cancelling the notifier during its liveness refresh must leave the task pending until that worker
+  returns, then propagate `CancelledError` rather than detaching the thread.
 
 ## Repo-Internal References
 
@@ -68,6 +73,7 @@ out anonymously.
 | --- | --- | --- |
 | The metrics race regression blocks the worker write, cancels the loop, proves it remains pending, then releases and observes the written sample. | `test_cancellation_drains_an_inflight_metrics_write_before_returning` | mcp/tests/test_serving_app_background_loops.py:224-255 |
 | The drained worker-thread helper and metrics loop under test. | `_to_thread_drained_on_cancel`; `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:57-95 |
+| The notifier ordering and cancellation tests force refresh-before-sweep and in-flight drain semantics. | `AgentNotifierLoopTests` | mcp/tests/test_serving_app_background_loops.py:261-320 |
 | The lifespan cancels and awaits all background tasks. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:195-243 |
 | The same app's failing route arms. | `PasteRouteTests` | mcp/tests/test_serving_app_routes.py:486-540 |
 | The opt-in heap diagnostic's own suite. | `HeapDiagLoopTests` | mcp/tests/test_heap_diag.py:103-264 |
@@ -85,6 +91,13 @@ Forces dashboard lifespan wiring for projection, provider metrics, notifier, all
 - Background-loop failure or disablement remains isolated and observable.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the deterministic
+  in-flight notifier-refresh cancellation race and made its drain-before-return contract explicit.
+  Verification remains closeout-owned.
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded headless liveness refresh before
+  every notifier evaluation and corrected the always-on loop inventory.
 
 - 2026-08-29T17:50+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for `_to_thread_drained_on_cancel`; cancellation still drains the in-flight thread before propagating `CancelledError`. Refreshed the exact source range; verification remains closeout-owned.
 

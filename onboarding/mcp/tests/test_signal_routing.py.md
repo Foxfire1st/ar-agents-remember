@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_signal_routing.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview
@@ -44,6 +44,11 @@ S7 follow-up.
 Routing regressions now prove architect lookup and rebind traversal are bounded by the exact
 repository+sprint identity. Concurrent sprint architects remain distinct, and absence of a
 matching bound owner fails closed instead of selecting a global or merely role-matching row.
+
+ARSPAWN-L5 proves one reviewer role routes to the current occupant of its plane-stamped manager,
+architect, or orchestrator parent across master, plan, and super review contexts. An unstamped
+master reviewer raises instead of manufacturing the manager parent; the bounded historical
+unstamped route remains only the pre-polymorphic leaf-reviewer case.
 
 **260707-HFX2-L15 coverage.** Production-shaped same-cwd fixtures prove a declared unbound
 replacement with `replacementForLeaf` counts as this leaf's progress, while a worker for a parallel
@@ -114,11 +119,11 @@ No meaningful external design-doc references found yet (created this leaf).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids. | `test_worker_signal_routes_to_current_manager_without_spawn_ids`; `test_manager_routes_to_current_orchestrator` | mcp/tests/test_signal_routing.py:66-84; mcp/tests/test_signal_routing.py:119-131 |
-| One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator. | `test_missing_manager_never_falls_through_to_orchestrator` | mcp/tests/test_signal_routing.py:106-117 |
-| `decision-item` routing resolves the current architect on the sender's sprint document. | `test_decision_item_routes_to_sprint_architect` | mcp/tests/test_signal_routing.py:152-164 |
-| Sprint-level roles follow the approved direct-parent ladder rather than skipping levels. | `test_sprint_roles_follow_the_approved_direct_parent_ladder` | mcp/tests/test_signal_routing.py:133-150 |
-| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:230-251 |
+| Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids. | `test_worker_signal_routes_to_current_manager_without_spawn_ids`; `test_manager_routes_to_current_orchestrator` | mcp/tests/test_signal_routing.py:69-87; mcp/tests/test_signal_routing.py:161-173 |
+| One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator. | `test_missing_manager_never_falls_through_to_orchestrator` | mcp/tests/test_signal_routing.py:148-159 |
+| `decision-item` routing resolves the current architect on the sender's sprint document. | `test_decision_item_routes_to_sprint_architect` | mcp/tests/test_signal_routing.py:194-206 |
+| Sprint-level roles follow the approved direct-parent ladder rather than skipping levels. | `test_sprint_roles_follow_the_approved_direct_parent_ladder` | mcp/tests/test_signal_routing.py:161-178 |
+| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:258-279 |
 
 ## Cross-Repo References
 
@@ -134,6 +139,10 @@ no two-hop owner's-owner walk remains. One-hop `derive_signal_owner`, `is_seat_d
 scoped owner-derivation family stay covered as before.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the polymorphic
+  reviewer owner matrix and the explicit no-inference assertion for an unstamped master reviewer.
+  Verification remains closeout-owned.
 
 - 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 expressed the fixture's exact parent topology as a mapping instead of branches; the one-hop routing and refusal assertions remain unchanged.
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_signal_routing.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.

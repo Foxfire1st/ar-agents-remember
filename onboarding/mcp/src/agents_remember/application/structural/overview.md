@@ -7,9 +7,16 @@
 | sourceRoute | `mcp/src/agents_remember/application/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+
+## ARSPAWN-L5 A005 Serialized Dispatch Owner
+
+`dispatch_transaction.execute_serialized_dispatch` now owns the seat-scoped lock and bounded
+transaction call. `agent_tools.dispatch_agent_tool` remains the public composition boundary but no
+longer repeats serializer error translation. The extraction preserves the one canonical-seat lock
+policy and reduces the public function to 90 lines.
 
 ## IAS Frozen Structural Admission Boundary
 
@@ -205,6 +212,10 @@ incumbent leaves. Message envelopes remain address-only and delivery re-resolves
 so planning and messaging remain valid while a seat is vacant or replaced.
 
 ## Update History
+
+- 2026-08-31T12:27+02:00 — A005 recorded the serialized dispatch owner extraction in this route
+  overview: the lock plus transaction boundary moved into `dispatch_transaction` while the public
+  dispatcher retained orchestration ownership. Verification remains closeout-owned.
 
 - 2026-08-26T16:03+02:00 — Post-failure repair: recorded the receipt-store collaborator and
   rechecked the bounded two-generation transaction without changing public seat identity.

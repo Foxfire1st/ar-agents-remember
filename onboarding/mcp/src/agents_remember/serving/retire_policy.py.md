@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/retire_policy.py`      |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T15:07+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated            | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -18,9 +18,9 @@
 
 `retire_policy.py` is the server-side authority policy for seat retirement (260707-HFX-L8, issue
 #12). It is the single place that decides WHETHER an actor seat may retire a target seat — the
-developer-ruled authority split (a manager retires only its own master's worker/reviewer/curator
-seats; the orchestrator retires any seat; no seat ever retires itself) is enforced here, not trusted
-from the
+developer-ruled authority split (a manager retires its own leaf execution seats and master-exit
+reviewer; an architect retires only its architect-stamped plan reviewer; the orchestrator retires
+any seat; no seat ever retires itself) is enforced here, not trusted from the
 caller, and both the manual `session_retire` MCP tool / `POST /api/terminal/{session}/retire`
 endpoint and any future retire entry point must route through `check_retire_authority` before
 mutating the catalog. Completion-edge `landed` archive marking is not a retire entry point and is
@@ -30,23 +30,20 @@ documented in `serving/landing.py`.
 
 ### 260707-HFX2-L17 Pair-Based Retirement Authority
 
-`SeatRef` now derives its master from binding leaf identity and carries `seat_role`, so retirement
-authority follows the seat's current assignment rather than immutable spawn provenance. A manager
-may retire worker/reviewer/curator seats in its own master, an orchestrator retains portfolio-wide
-authority, and owner-never-self-retires remains first. Unbound failed dispatches recover their
-master through `replacementForLeaf`. Reviewer O2 is a trust-model observation: because attach with
-role is the operator's role-claim primitive, local callers can deliberately claim authority-bearing
-roles; this matches the single-operator product boundary rather than adding hidden authorization.
+`SeatRef` carries the current document+role binding and the generation-bound reviewer-parent pair,
+so retirement follows the task plane that owns the exact generation rather than immutable spawn
+ancestry. A manager may retire worker/reviewer/curator seats on its leaves plus its same-master
+reviewer. An architect may retire a same-sprint reviewer only when that reviewer explicitly names
+the architect as structural parent; it cannot retire the orchestrator-owned super-exit reviewer at
+the same canonical sprint address. The orchestrator retains portfolio-wide authority, and
+owner-never-self-retires remains first.
 
 ### Logic
 
-`SeatRef` is a frozen dataclass carrying the three retire-policy-relevant facts about one catalog
-seat: `session_id`, `role` (the seat's `spawn_role`), and `master` (the master identity the seat
-belongs to). `master_of(leaf_key)` derives that master identity from a qualified leaf key
-(`repo/master/doc-id`, `leaf_key.split("/", 2)[1]`), returning `None` for an unset/malformed key.
-This is uniform across dispatch levels: a worker/reviewer's `leaf_key` names its own leaf under the
-master folder, and a manager's own `leaf_key` names the master task-doc itself under the SAME
-folder — either way the second path segment is the identity `check_retire_authority` compares.
+`SeatRef` is a frozen dataclass carrying the retirement-relevant structural facts about one catalog
+seat: runtime generation, canonical document+role binding, and optional reviewer-parent
+document+role. `check_retire_authority` resolves containment through `TaskDocumentTopology`; it does
+not derive authority from path-string segments.
 
 `check_retire_authority(actor, target)` raises `RetirePolicyError` unless `actor` may retire
 `target`, in strict precedence order:
@@ -54,12 +51,12 @@ folder — either way the second path segment is the identity `check_retire_auth
    target.session_id` raises before any role branch runs, so no role's authority can ever override
    it (verified directly: even an actor mis-tagged with `role="worker"` retiring itself still hits
    this branch first, per the test matrix in `test_seat_lifecycle.py`).
-2. `actor.role == "manager"` — refused unless `target.role` is in `MANAGER_RETIRE_ROLES =
-   frozenset({"worker", "reviewer"})` AND `target.master == actor.master`; the raised message names
-   both clauses (`"own master"` substring) so a refusal is loud and policy-naming, never a silent
-   no-op.
-3. `actor.role == "orchestrator"` — always permitted, portfolio-wide.
-4. Anything else — refused with `"no retire authority"` in the message.
+2. `actor.seat_role == "manager"` — permitted only for worker/reviewer/curator seats on direct
+   leaves or the reviewer on the manager's own master.
+3. `actor.seat_role == "architect"` — permitted only for a same-sprint reviewer whose generation
+   is stamped with that architect as structural parent.
+4. `actor.seat_role == "orchestrator"` — always permitted, portfolio-wide.
+5. Anything else — refused with `"no retire authority"` in the message.
 
 `RetirePolicyError` subclasses `AgentsRememberError` so it composes with the repo's existing
 error-surfacing conventions (caught and translated into a `retire-refused` tool/HTTP status by
@@ -79,6 +76,8 @@ turning a raised `RetirePolicyError` into their own response shape.
   manager (which lives outside the master stack it manages) can never accidentally unseat itself.
 - Only the orchestrator has portfolio-wide retire authority; every other role is scoped or refused
   entirely.
+- The shared sprint reviewer address does not blur plan and super ownership: the current
+  generation's structural-parent stamp decides which plane may retire it.
 - This module never touches `TerminalCatalog` or `TerminalHost` — it is a pure authority check, kept
   separate from `retire.py`'s mechanics so the policy can be unit-tested without any catalog I/O.
 
@@ -98,11 +97,16 @@ encodes.
 | --- | --- | --- |
 | `session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status. | `session_retire_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83 |
 | `POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`. | "def _retire_response("; "def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:" | mcp/src/agents_remember/serving/_app_terminal_routes.py:572-572; mcp/src/agents_remember/serving/_app_terminal_routes.py:632-632 |
-| `TerminalCatalogEntry.binding_role` and `binding_task_document_ref` are the current structural identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | "def binding_role(self) -> str:"; "def binding_task_document_ref"; "def with_retirement(" | mcp/src/agents_remember/models/terminal_catalog.py:403-403; mcp/src/agents_remember/models/terminal_catalog.py:541-541; mcp/src/agents_remember/models/terminal_catalog.py:551-551 |
+| `TerminalCatalogEntry.binding_role` and `binding_task_document_ref` are the current structural identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates. | "def binding_role(self) -> str:"; "def binding_task_document_ref"; "def with_retirement(" | mcp/src/agents_remember/models/terminal_catalog.py:420-420; mcp/src/agents_remember/models/terminal_catalog.py:558-558; mcp/src/agents_remember/models/terminal_catalog.py:568-568 |
 | `retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement. | `retire_entry`; `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32; mcp/src/agents_remember/serving/retire.py:37-71 |
 | Failing-first tests for the exact authority matrix (manager-own-worker/reviewer ✓, other-master ✗, self-retire ✗ checked first, orchestrator-any-role ✓, unprivileged role ✗) and `master_of` segment extraction. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:192-256 |
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: replaced the obsolete
+  path-segment authority description with topology-backed document/role ownership, added the
+  architect-only plan-review rule, and recorded why the orchestrator-owned super reviewer is not
+  architect-retirable. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `retire_policy.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: corrected curator-role authority and split retire/landing implementation ownership while removing stale task/domain/cross-repo claims.

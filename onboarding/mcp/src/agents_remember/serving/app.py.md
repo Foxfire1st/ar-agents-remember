@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -90,7 +90,7 @@ omit registrars remain fail-closed.
   already-validated projection dict with nothing declaring them; both sites now call the single
   `served_state.served_state_tail` (L328-L329 for the SSE snapshot, L979-L982 for `/api/state`)
   and the result is declared as `ServedWorkspaceProjection`, which `/api/state` and `/api/stream`
-  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:256-256) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:116-116),
+  name. Corrected cit:(["def _agent_notifier_heartbeat_payload(runtime: _ServingRuntime) -> AgentNotifierHeartbeatPayload:"], mcp/src/agents_remember/serving/_app_lifespan.py:265-265) and cit:(["async def stream_events("], mcp/src/agents_remember/serving/_app_common.py:116-116),
   which return/accept declared models rather than bare dicts, and the `stream_events` paragraph,
   which now records that a snapshot with neither key is a valid served body and that deltas carry
   no tail. Documented all 17 route declarations with lines — including `/api/state`'s

@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ No Domain Documentation source is configured.
 | The worktree section requires the current pre-curator lineage projection and explains its evidence-only role. | "Pre-curator lineage:" | skills/l-01-agent-lifecycles/templates/curator-brief.md:32-32 |
 | Exact requirement packets and adjudications are mandatory task inputs. | "## Task inputs" | skills/l-01-agent-lifecycles/templates/curator-brief.md:44-54 |
 | Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:178-178 |
-| Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. | "Curator coherence pass — mandatory, not skippable." | skills/l-01-agent-lifecycles/roles/manager.md:206-206 |
+| Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. | "Curator coherence pass — mandatory, not skippable." | skills/l-01-agent-lifecycles/roles/manager.md:207-207 |
 
 ## 260821-DAGQC-L2 Briefed Quality Grammar
 

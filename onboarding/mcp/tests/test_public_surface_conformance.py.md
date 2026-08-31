@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/tests/test_public_surface_conformance.py`          |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-30T17:08:05+02:00                               |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`              |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated            | 2026-08-30T22:33:39+02:00                               |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`              |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -27,6 +27,8 @@ The production-starter proof parses the committed Claude, Codex, Cursor, VS Code
 Pi, and Antigravity registrations. Every one must launch `uvx` with exactly one
 `--refresh-package agents-remember-mcp` and `agents-remember-mcp@latest`. This preserves the starter
 promise that users do not have to remember to refresh their MCP package manually.
+The Codex registration must additionally forward `AR_HOSTED_SESSION_ID` and `AR_SPAWN_ROLE`, which
+preserves ambient versus hosted process identity across its MCP subprocess boundary.
 
 The disposable candidate proof must answer a different question: whether the exact code under
 review advertises the required live surface. Launching `@latest` there would certify the last
@@ -40,6 +42,8 @@ root, interpreter, and boot identity; live tools and dispatch schema must agree 
 - Live ordered registration and response-model parity pass through `validate_public_surface`.
 - Every inventory authority and malformed schema family has an explicit negative case; error
   branches cannot satisfy CRAP/diff coverage through only the happy path.
+- The consumer-scoped validator rejects both a renamed dispatch tool and a non-object schema before
+  delegating to the shared schema contract.
 - An undeclared spend override and an invalid role are rejected before the handler runs.
 - Ambient unknown-task resolution returns the typed public refusal.
 - Success, queued, unknown-task, role-altitude, and persistence-refusal outcomes round-trip through
@@ -53,6 +57,8 @@ root, interpreter, and boot identity; live tools and dispatch schema must agree 
 - Never replace the exact-candidate launch with `@latest`; those proofs cover different risks.
 - The test uses the public stdio/list/call boundary, not FastMCP private state.
 - Starter parsing must fail on malformed or missing entries rather than guess a filename or shape.
+- Codex starter validation requires the exact two lifecycle environment variables; forwarding an
+  incomplete or broader guessed set is not accepted.
 
 ## Repo-Internal References
 
@@ -64,6 +70,12 @@ root, interpreter, and boot identity; live tools and dispatch schema must agree 
 | All fail-closed inventory, schema, description, and ordering clauses have negative forcing cases. | `PublicSurfaceFailureTests` | mcp/tests/test_public_surface_conformance.py:337-503 |
 
 ## Update History
+
+- 2026-08-31T13:42+02:00 — A005 closeout repair covered the consumer validator's wrong-name and
+  non-object-schema branches without adding a second schema implementation.
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded exact Codex lifecycle-identity
+  forwarding while preserving the self-updating starter contract.
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added explicit forcing cases for every
   public-surface refusal family and live-order drift. Verification remains closeout-owned.

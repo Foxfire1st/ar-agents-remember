@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -45,9 +45,10 @@ typed as `AgentRole`, keeping worker/reviewer/curator fixtures inside the owned 
 Test classes, in file order:
 
 - **`RetirePolicyMatrixTests`** — pure `check_retire_authority` coverage over
-  `TaskDocumentTopology`: manager may retire worker/reviewer beneath its own master but not another
-  master or a manager; orchestrator may retire sprint descendants; self-retire and unprivileged
-  retire both fail closed.
+  `TaskDocumentTopology`: manager may retire leaf execution seats and its same-master reviewer but
+  not another master or a manager; an architect may retire only its architect-stamped same-sprint
+  plan reviewer, not the orchestrator-stamped super reviewer; orchestrator may retire sprint
+  descendants; self-retire and unprivileged retire both fail closed.
 - **`SessionRetireToolTests`** — the internal exact-session administrative payload against a real
   catalog: unknown actor/target refusals, structural manager/orchestrator authority, failed-dispatch
   replacement-task cleanup, self-retire refusal, and idempotent retirement provenance.
@@ -148,6 +149,10 @@ The current forcing seams include `test_manager_retires_own_worker`, `test_manag
 | The current test source exercises `test_manager_retires_own_worker`, `test_manager_retires_own_reviewer`, `test_manager_refused_against_other_masters_worker`, `test_manager_refused_against_a_manager_seat`. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:202-266 |
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: extended the retirement
+  matrix to the manager's master reviewer and architect-only plan reviewer while explicitly
+  refusing the same-address super reviewer. Verification remains closeout-owned.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

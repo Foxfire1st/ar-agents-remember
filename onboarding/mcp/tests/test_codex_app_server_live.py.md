@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_app_server_live.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -118,7 +118,7 @@ retaining only an allowlisted evidence projection.
 | Settings-shaped resolution validates unknown model/effort before launch and carries the accepted pair without `CODEX_CONFIG`. | `CODEX_CONFIG` | mcp/tests/test_codex_app_server_live.py:346-346 |
 | Setters are refused as unsupported, move from queued to effective on a fresh turn, repeat as immediate, and both accepted `turn/start` calls carry the one thread and the switched pair. | `_refused_unknown_selections`, `_queued_mid_thread_switch`, `_completed_turn`, `_accepted_turn_calls` | mcp/tests/test_codex_app_server_live.py:361-369; mcp/tests/test_codex_app_server_live.py:373-381; mcp/tests/test_codex_app_server_live.py:385-400; mcp/tests/test_codex_app_server_live.py:404-414 |
 | Printed evidence stays allowlisted behind its three parameter objects, and turn completion has a bounded timeout. | `_wait_for_turn` | mcp/tests/test_codex_app_server_live.py:518-523 |
-| The adapter carries launch state through native thread config, reports desired setters as queued until effective, and reports already-effective values as immediate. | `codex_launch_knobs`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224; mcp/src/agents_remember/serving/codex_app_server_session.py:35-54 |
+| The adapter carries launch state through native thread config, reports desired setters as queued until effective, and reports already-effective values as immediate. | `codex_launch_knobs`, `set_model`, `set_effort` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:209-240; mcp/src/agents_remember/serving/codex_app_server_adapter.py:242-270; mcp/src/agents_remember/serving/codex_app_server_session.py:38-57 |
 | The session fails closed and stops on startup error, discovers via initialize/model-list with forced teardown, and bounds paginated catalog reads. | `connect`, `discover`, `_read_models` | mcp/src/agents_remember/serving/codex_app_server_session.py:124-208; mcp/src/agents_remember/serving/codex_app_server_session.py:214-224; mcp/src/agents_remember/serving/codex_app_server_session.py:383-401 |
 
 ## Cross-Repo References
@@ -146,7 +146,7 @@ tests.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The three
   behaviours the row names sit together at
   cit:([`codex_launch_knobs`], mcp/src/agents_remember/serving/codex_app_server_session.py:35-54)
-  and cit:([`set_model`, `set_effort`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224):
+  and cit:([`set_model`, `set_effort`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:209-240; mcp/src/agents_remember/serving/codex_app_server_adapter.py:242-270):
   native thread config, never `CODEX_CONFIG`, and the immediate/queued acceptance ladder. No claim text changed.
 
 - 2026-07-31T16:50+02:00 — 260731-EFA-L2 curator: the conformance case this card describes was

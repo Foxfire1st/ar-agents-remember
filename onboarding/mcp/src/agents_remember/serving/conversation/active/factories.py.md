@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/factories.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ projector registry owns per-harness mapper selection; the service drives this fa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The validated exact-session IPC reads used here. | "def read_submission_authority(self"; "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover" | mcp/src/agents_remember/serving/harness_control_client.py:642-642; mcp/src/agents_remember/serving/harness_control_client.py:133-133 |
+| The validated exact-session IPC reads used here. | "def read_submission_authority(self"; "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:639-639 |
 | `AdapterSnapshot.vendor_session_id` is the proven native identity the factory requires. | `AdapterSnapshot` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151 |
 | The catalog row supplies status, kind, control endpoint, tmux name, and cwd. | "def from_json(cls" | mcp/src/agents_remember/models/terminal_catalog.py:80-510 |
 | `projector_for` returns `None` for harnesses without a projector, failing resolution typed. | `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:122-123 |

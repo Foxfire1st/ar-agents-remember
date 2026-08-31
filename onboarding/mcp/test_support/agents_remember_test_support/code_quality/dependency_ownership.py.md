@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T21:25+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,11 @@ and cannot make an otherwise incomplete graph complete. Every selected consumer 
 provenance. Parse failures, dynamic plugin declarations, ambiguous modules, unowned changes, or
 catalog disagreement return an explicit `fresh_rerun_reason` over the full population.
 
+Repository-owned non-Python product inputs that cannot enter the import graph may declare an exact
+consumer set here. That declaration is admitted only when source-observed literal reads match it
+exactly. The first such input is `.codex/config.toml`, whose two consumers validate the public surface
+and rendered starters; mismatch widens safely instead of trusting stale metadata.
+
 ### Conventions
 
 Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
@@ -45,6 +50,8 @@ the public function or model instead of re-deriving its lower-level state machin
   full measurement consume the explicit package-authority reader for that separate decision.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
+- An explicit non-Python consumer declaration never self-proves: the graph compares it with observed
+  consumers before targeted selection may use it.
 
 ### Todos
 
@@ -66,7 +73,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | Graph construction refuses source parse and module ambiguity before consulting declarations. | `DependencyOwnershipGraph`; `__init__`; `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-153 |
 | Catalog consumers are cross-checked against independently observed consumers. | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:167-226 |
-| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_safe_full` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:292-301 |
+| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_safe_full` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:306-315 |
 
 ## Cross-Repo References
 
@@ -78,6 +85,8 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-301 |
 
 ## Update History
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added source-verified exact consumer ownership for `.codex/config.toml`, avoiding both global invalidation and an unproved narrow selection. Verification remains closeout-owned.
 
 - 2026-08-27T14:04+02:00 — Removed the misleading graph-local `product_*` projection. Consumer
   ownership remains cross-package; explicit configured package authority now exclusively owns the

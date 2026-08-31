@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/harness/shared/workspace-directive.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T12:34+02:00                     |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00                     |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -30,13 +30,15 @@ For ordinary role-shaped work, free chat resolves the sprint and first leaf, com
 architect brief, and calls `dispatch_agent` once on the sprint document with role `architect`; it
 hands over after that exact brief is durable and never calls a session primitive. An explicit
 developer-declared task-seat takeover instead targets the named role on its canonical task
-document. Spawned role briefs remain authoritative.
+document. A present role marker must name a canonical role and carry hosted-session identity;
+unknown roles and incomplete hosted identity stop instead of falling through. A first-message role
+brief is authoritative only when no hosted identity was declared.
 
-The body is the same three-condition session routing as
-`shared/session-start-directive.md` — ignore the notice when `AR_SPAWN_ROLE` is set or
-the first message is a role brief; otherwise remain free chat, read the coordinator `AGENTS.md`,
-answer research inline, and use the one-call architect launcher for role-shaped work. The complete
-architect obligations arrive in the pinned canonical brief.
+The body is the same three-condition routing as `shared/session-start-directive.md`: validate a
+declared role plus hosted identity and fail closed if either is invalid; otherwise accept a fresh
+first-message role brief only in an identity-free session; otherwise remain free chat, read the
+coordinator `AGENTS.md`, answer research inline, and use the one-call architect launcher for
+role-shaped work. The complete architect obligations arrive in the pinned canonical brief.
 
 **The two differences from the sibling body are deliberate and are the entire reason two
 bodies exist:**
@@ -73,11 +75,15 @@ bodies exist:**
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generator's `HARNESSES` declaration table is defined here. | `HARNESSES` | scripts/sync-harness.py:202-408 |
-| The inside-the-workspace variant of the same directive uses the relative coordinator path. | "ar-coordination/AGENTS.md" | scripts/harness/shared/session-start-directive.md:8-8 |
+| The inside-the-workspace variant of the same directive uses the relative coordinator path. | "ar-coordination/AGENTS.md" | scripts/harness/shared/session-start-directive.md:11-11 |
 | `write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity. | `write_context_file` | scripts/harness/render_starter.py:86-105 |
 | The classification recording why the two directive bodies differ. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the shared
+  fail-closed role/hosted-identity admission and the identity-free-only role-brief route.
+  Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call canonical architect launcher,
   separated ordinary bootstrap from explicit named-role takeover, and retained exact brief

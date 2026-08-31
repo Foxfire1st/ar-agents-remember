@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T12:57+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -39,6 +39,10 @@ classification, priority, dependency, coherence, or topology reasoning. It never
 occupant id, exact readiness, raw inbox address, attachment id, or packet-carried gate id. Optional
 designer/strategist and plan-review reviewer seats are architect children; leaf/master-exit
 reviewers are manager children, and super-exit reviewers are orchestrator children.
+
+The sprint super-exit reviewer generation is stamped with this orchestrator as structural parent,
+so its signals and retirement authority cannot be confused with the architect-stamped plan
+reviewer that uses the same sprint document and role address at a different time.
 
 ### Conventions
 
@@ -182,6 +186,10 @@ contract-presence fallback exists. Technically derivable retained conflicts are 
 the advertised continue/cancel operation; only genuine semantic ambiguity returns to the architect.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized the
+  orchestrator-stamped super reviewer and its separation from the architect plan reviewer.
+  Verification remains closeout-owned.
 
 - 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: synchronized idempotent
   canonical-seat convergence for an explicit orchestrator takeover. Verification remains

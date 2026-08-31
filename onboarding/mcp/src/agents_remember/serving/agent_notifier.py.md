@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/agent_notifier.py`  |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated            | 2026-08-24T14:43+02:00               |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -382,13 +382,13 @@ source is the pilot-observer log (P-15) and the leaf task doc, not an external s
 | The heartbeat store `run_agent_notifier_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
 | The expectation-row store is read only for the compaction pass — the relay never evaluates expectation rows (owner-visible deadline surface, 260713-TES-L5). | `ExpectationRowStore`; "def compact(" | mcp/src/agents_remember/controlplane/expectation_rows.py:163-347 |
 | The operator inbox store is read and written directly through the landing/terminal/rebind/renew transitions (the ladder transitions are deleted, 260713-TES-L5). | `record_delivery`; `rebind_entry` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:163-212; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:359-397 |
-| The liveness check the rebind/dead-target and dead-upstream machinery reads (one-hop provenance; no ladder walk remains). | `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:180-186 |
+| The liveness check the rebind/dead-target and dead-upstream machinery reads (one-hop provenance; no ladder walk remains). | `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:243-249 |
 | `missing_artifact()` no longer exists on this module's path — the turn-report artifact/SLA predicates are retired (260713-TES-L2/L5). | `turn_report_path_for_leaf_key` | mcp/tests/test_facade_surface.py:136-136 |
-| The owner-derivation helper `_signal_emit` calls before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:147-177 |
+| The owner-derivation helper `_signal_emit` calls before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:206-240 |
 | The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
 | The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:311-311 |
 | HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal("; "def _signal_emit("; "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:96-96; mcp/src/agents_remember/serving/_agent_notifier_actions.py:311-311; mcp/src/agents_remember/serving/inbox_delivery.py:171-171; mcp/src/agents_remember/serving/owner_signals.py:94-94 |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:300-300; mcp/src/agents_remember/serving/terminal_catalog.py:62-62 |
+| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:300-300; mcp/src/agents_remember/serving/terminal_catalog.py:65-65 |
 | Failing-first predicate unit tests (one per fact family) plus one seeded-drift sweep integration test asserting the full finding→action chain, heartbeat tick included (the expectation/ladder predicate tests are deleted, 260713-TES-L5). | `test_mid_turn_pane_fires_a_finding`, `test_pending_row_with_no_next_attempt_is_immediately_redeliverable`, `test_stale_turn_state_past_cutoff_fires`, `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier.py:107-115; mcp/tests/test_agent_notifier.py:133-146; mcp/tests/test_agent_notifier_seat.py:38-48; mcp/tests/test_agent_notifier_seat.py:166-233 |
 
 ## Cross-Repo References

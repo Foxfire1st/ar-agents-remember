@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ completed master to the orchestrator.
 ## Logic
 
 For each dependency-ready real leaf, the manager calls structural `dispatch_agent` with the leaf
-document, role, and complete brief. The control plane owns readiness and the exact-pinned initial
+task document, role, and complete brief. The control plane owns readiness and the exact-pinned initial
 brief; the manager never requests or stores an occupant id. The manager gathers builder code/report
 and reviewer verdict, then calls `worktree_status` for the canonical leaf and requires the complete
 task-derived `sourceLineage` projection to be current immediately before curator dispatch. It
@@ -83,6 +83,8 @@ are curator blockers, not authority to write current onboarding intent.
 - Manager identity is the canonical master document plus `manager` role.
 - Manager never becomes a native sub-agent, worker, reviewer, curator, orchestrator, or architect.
 - Manager may retire only its own master's worker/reviewer/curator child seats.
+- Manager owns reviewer dispatch at two altitudes: leaf review on the leaf document and master-exit
+  review on its master document; both generations are stamped back to this manager.
 - Manager does not self-approve, bypass blocked checks, or invent portfolio-wide authority.
 - Handover and completion rely on durable artifacts and terminal/finalizer truth, not model completion posts.
 - A worker/reviewer pair must cover the same exact stable requirement set.
@@ -96,9 +98,9 @@ are curator blockers, not authority to write current onboarding intent.
 | One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
 | Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
 | The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-272 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:316-316; skills/l-01-agent-lifecycles/roles/manager.md:344-344 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:361-361 |
-| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:102-102 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:318-318; skills/l-01-agent-lifecycles/roles/manager.md:346-346 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:363-363 |
+| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:103-103 |
 
 ## L23 Manager And Leaf Admission
 
@@ -138,6 +140,14 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 normalized hosted-dispatch wording to the exact canonical leaf or
+  master task document vocabulary consumed by the structural tool and synchronized projections.
+  Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded manager
+  ownership of both leaf and master-exit reviewer generations, including exact task altitude and
+  parent stamping. Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded manager as a plane-hosted caller and
   explicit ambient-takeover target, with only manager-owned leaf-seat dispatch and no

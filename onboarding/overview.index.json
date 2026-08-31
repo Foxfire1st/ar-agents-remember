@@ -50,6 +50,11 @@
       "index": "examples/mcp/overview.index.json"
     },
     {
+      "route": "scripts/e2e_harness",
+      "overview": "scripts/e2e_harness/overview.md",
+      "index": "scripts/e2e_harness/overview.index.json"
+    },
+    {
       "route": "skills/c-09-git-worktree-manager",
       "overview": "skills/c-09-git-worktree-manager/overview.md",
       "index": "skills/c-09-git-worktree-manager/overview.index.json"
@@ -92,9 +97,9 @@
     "skills/w-02-light-task-workflow/workflow.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1875,
+    "sourceFilesInScope": 1899,
     "fileSidecars": 29,
-    "childRoutes": 10
+    "childRoutes": 11
   },
   "routingTerms": [
     "agent",
@@ -111,6 +116,7 @@
     "directive",
     "docs",
     "e2e",
+    "e2e_harness",
     "examples",
     "gated",
     "git",
@@ -174,6 +180,7 @@
       "docs/design",
       "docs/reference",
       "examples/mcp",
+      "scripts/e2e_harness",
       "skills/c-09-git-worktree-manager",
       "skills/l-01-agent-lifecycles",
       "git-blame-ignore-revs",
@@ -188,8 +195,7 @@
       "pyproject.toml",
       "requirements.txt",
       "scripts",
-      "scripts/bootstrap-mcp-venv.sh",
-      "scripts/check-python-runtime.py"
+      "scripts/bootstrap-mcp-venv.sh"
     ],
     "anchorHints": [
       "git-blame-ignore-revs",

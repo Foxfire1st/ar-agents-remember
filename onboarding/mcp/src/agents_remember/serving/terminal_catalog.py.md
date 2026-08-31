@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`        |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | The catalog queries current occupancy by task document and role through the shared selector. | `active_for_task` | mcp/src/agents_remember/serving/terminal_catalog.py:86-95 |
 | One exact generation idempotently binds one durable pinned-brief receipt. | `DispatchBriefReceiptStore` | mcp/src/agents_remember/serving/terminal_catalog.py:419-448 |
-| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:396-396 |
+| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:399-399 |
 | The current catalog model owns strict row serialization. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:67-550 |
 
 ## Cross-Repo References
@@ -70,12 +70,18 @@ No cross-repository implementation dependency governs this file.
 
 ## 260821-CLIVE Execution-Evidence-Safe Compaction
 
-Compaction recognizes task-bound worker, reviewer, and curator rows through their current or
-replacement task-document ref. A terminated row past retention is reclaimable only after its id is
+Compaction recognizes task-bound worker and curator rows plus reviewer rows whose recorded spawn
+altitude is leaf (including legacy rows with no recorded level) through their current or replacement
+task-document ref. Master and sprint reviewers are review-plane seats, not leaf execution evidence.
+A terminated leaf-execution row past retention is reclaimable only after its id is
 present in the explicit task-registered set. Running, exited, landed, recent, and unregistered leaf
 execution rows remain. Thus ordinary retention cannot turn observed execution into “never started.”
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: bounded execution-evidence
+  compaction to worker/curator and leaf-altitude reviewer generations rather than treating every
+  polymorphic reviewer as leaf execution. Verification remains closeout-owned.
 
 - 2026-08-26T16:03+02:00 — Post-failure repair: extracted dispatch-receipt mutation into
   `DispatchBriefReceiptStore`, preserving the same atomic catalog storage boundary while returning

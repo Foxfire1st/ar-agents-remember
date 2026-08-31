@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/controlplane/seats.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,9 @@ What the control plane needs to know about a seat, declared by the control plane
 
 Named command-seat classification includes architect, orchestrator, and manager as roles whose
 identity must be structurally qualified. `SeatRow` exposes primary, replacement, and binding
-identity as `TaskDocumentRef`; it does not expose leaf or sprint keys. This classification remains separate from
+identity as `TaskDocumentRef`; it does not expose leaf or sprint keys. It also exposes the optional
+reviewer structural-parent document+role pair required by routing and retirement consumers. This
+classification remains separate from
 notifier subordinate membership: wake supervision uses direct manager spawn topology and therefore
 admits reviewer, curator, and future subordinate role names without changing this finite set.
 
@@ -50,6 +52,8 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 - `replacement_for_task_document_ref` is a staged generation of the same canonical seat, not a
   second namespace.
 - Exactly one selector owns incumbent/heir precedence across the repository.
+- Structural parent fields are read-only canonical address facts; they do not turn runtime ids into
+  hierarchy authority.
 
 ### Todos
 
@@ -74,6 +78,10 @@ machinery). `SeatRow`/`SeatDirectory` behavior is unchanged: pure catalog reads 
 shape declared by the control plane.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: extended the read-only
+  seat protocol with reviewer parent document+role provenance for shared structural consumers.
+  Verification remains closeout-owned.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration for seat claimant selection and confirmed that incumbent/heir precedence and ambiguity refusal remain as documented. Verification remains closeout-owned.
 

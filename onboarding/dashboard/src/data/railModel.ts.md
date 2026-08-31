@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/railModel.ts`                |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,15 +54,19 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Structural rail nodes carry canonical task-document references. | `RailLeafCluster` | dashboard/src/data/railModel.ts:83-119 |
-| The default rail joins sessions to real task topology. | `buildRailModel` | dashboard/src/data/railModel.ts:361-387 |
-| Runtime provenance is a separate diagnostic projection. | `buildSpawnTree` | dashboard/src/data/railModel.ts:414-436 |
-| The row segment contract keeps status as the only elidable segment. | `ROW_SEGMENTS` | dashboard/src/data/railModel.ts:442-443 |
+| The default rail joins sessions to real task topology. | `buildRailModel` | dashboard/src/data/railModel.ts:397-423 |
+| Runtime provenance is a separate diagnostic projection. | `buildSpawnTree` | dashboard/src/data/railModel.ts:451-473 |
+| The row segment contract keeps status as the only elidable segment. | `ROW_SEGMENTS` | dashboard/src/data/railModel.ts:479-479 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed code moved; no semantic onboarding claim changed. Verification
+  remains closeout-owned.
 
 - 2026-08-11T23:40+02:00 — No content impact: the lint-only split of `buildRailModel` into
   document initialization, altitude-specific session classifiers, and section materialization

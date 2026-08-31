@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T16:32+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-31T12:39+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,19 @@ suite as an exact transitive consumer of both `closeout_input_test_support.py` a
 `curator_coherence_test_support.py`. The two catalog rows now declare those exact edges; no helper
 was copied and no direct-import exception was added.
 
+## ARSPAWN-L5 Ambient-Reviewer Consumer Delta
+
+`test_dispatch_agent_ambient_reviewer.py` imports the shared ambient-dispatch topology builder,
+whose test composition reaches both the closeout-input and curator-coherence fixture roots. The
+source-derived ownership graph therefore classifies the reviewer suite as an exact transitive
+consumer of `closeout_input_test_support.py` and `curator_coherence_test_support.py`; both catalog
+rows declare that edge explicitly.
+
 ## Update History
+
+- 2026-08-31T12:39+02:00 — Added `test_dispatch_agent_ambient_reviewer.py` to both exact transitive
+  consumer sets after the L5 closeout fast hook identified the previously undeclared ownership
+  edges.
 
 - 2026-08-30T16:32+02:00 — Added `test_public_surface_conformance.py` to both exact transitive
   consumer sets after the L4 staged fast hook exposed the source-derived ownership edges; the

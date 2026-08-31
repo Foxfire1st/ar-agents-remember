@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_hosted_interactions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-31T10:13+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,11 @@ disappearance expires the matching open gate, and protocol-owned null-requestId/
 completion projects onto the same accepted row while inbox consumption remains pending. The exact
 2.1.207, 0.144.3, and 0.80.7 values are fixture/smoke evidence only; production behavior is based
 on consumed structured fields.
+
+The direct-request completion case covers both an initially `accepted` row and an honestly
+`queued` row. In both cases the terminal transcript's exact `requestId` promotes the same durable
+row to `completed` without consuming it; the separate null-request-id cases retain their strict,
+accepted-row-only vendor-correlation boundary.
 
 ## Code Commentary
 ### Conventions
@@ -56,6 +61,10 @@ Hosted-interaction tests now cover serialized multi-question answers and failure
 This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
 
 ## Update History
+
+- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: extended direct request-id
+  completion proof to initially queued inbox rows while preserving strict null-id correlation.
+  Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,14 +5,33 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated            | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
+
+## ARSPAWN-L5 A005 Shared Task-Binding Admission
+
+`task_binding.py` is the one preflight for canonical document resolution, role altitude, current
+source lineage, and generation-bound reviewer parent. The plane-private spawn application invokes
+it before settings resolution; `terminal_opener.py` invokes the same API at the final pre-host seam.
+This ordering keeps stale-lineage recovery actionable and prevents a launch-selection refusal from
+hiding a malformed structural claim. There is no filename, settings, or compatibility fallback.
+
+## ARSPAWN-L5 Real Role Startup And Headless Delivery
+
+Codex role seats now remain in startup until the native app-server reports one connected configured
+MCP server advertising exact `dispatch_agent`. The shared readiness parser owns pagination, status,
+tool shape, settled absence, and timeout; the adapter has no alternate tool-name or discovery
+fallback. Dispatch briefs allow one bounded spawn-to-bridge convergence window without creating a
+second caller attempt. Agent-notifier sweeps refresh canonical terminal liveness themselves, so
+queued brief/message progress does not accidentally depend on dashboard browser polling. Control
+socket diagnostics distinguish absent, refused, and timed-out endpoints without claiming process
+death from socket state alone.
 
 ## ARSPAWN-L4 Shared Candidate Identity
 
@@ -427,13 +446,15 @@ limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cuto
 daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. Resource
 performance work remains queued.
 
-Codex terminal completion with a null protocol `requestId` is resolved only through its text vendor
-correlation on exactly one accepted inbox row for the same hosted session. Missing, non-text,
-unmatched, or ambiguous correlation fails loudly. Completion projects onto that same row as adapter
-delivery metadata while explicit inbox state remains `pending` and unconsumed. With no actual queued
-replacement the adapter reports `idle` / `immediate`; `settling` / `queued` means a replacement is
-actually queued. This is protocol-owned structured behavior, not a fixture-version, parser, pane,
-fallback, or resource performance behavior.
+Codex parent terminal completion carries the durable operation id as protocol `requestId` and the
+native turn id as vendor correlation. The direct id lets an initially queued receipt converge onto
+its exact inbox row when the turn completes. A terminal record that legitimately has a null
+`requestId` is resolved only through its text vendor correlation on exactly one accepted inbox row
+for the same hosted session; missing, non-text, unmatched, or ambiguous correlation fails loudly.
+Completion projects onto that same row as adapter delivery metadata while explicit inbox state
+remains `pending` and unconsumed. With no actual queued replacement the adapter reports `idle` /
+`immediate`; `settling` / `queued` means a replacement is actually queued. This is protocol-owned
+structured behavior, not fixture-version, parser, pane, or resource-performance behavior.
 
 The exact-session Unix IPC response lifecycle contains peer-loss `BrokenPipeError` and
 `ConnectionResetError` only after accepted dispatch, across response write/drain and close/
@@ -850,6 +871,12 @@ time, while exact dispatch briefs remain pinned to the private spawned generatio
 ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
 
 ## Update History
+
+- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
+  projection on parent Codex completion and deterministic queued-row convergence. Verification
+  remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 recorded connected-`dispatch_agent` role startup, bounded one-call brief convergence, headless liveness refresh, and honest socket-state diagnostics. Verification remains closeout-owned.
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded `models/core.py` as the shared
   serving-build wire authority. Verification remains closeout-owned.

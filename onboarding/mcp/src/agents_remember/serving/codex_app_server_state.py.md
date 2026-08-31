@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ the same strict thread and event helpers.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Session reads all model pages and validates desired/effective model-local settings against these rows. | `discover` | mcp/src/agents_remember/serving/codex_app_server_session.py:214-224 |
-| Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | `submit`; `_start_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:239-264; mcp/src/agents_remember/serving/codex_app_server_adapter.py:434-480 |
+| Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | `submit`; `_start_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:285-310; mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-530 |
 | Initialize parsing extracts the primary Codex product version while requiring exact client identity on host-first responses. | `validate_initialize_response` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-164 |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
+| lastUpdated | 2026-08-31T08:05+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,14 +29,30 @@ candidate-venv proof (`python-runtime.json` and `python-venv-runtime.json`). Run
 therefore exported with the same candidate-bound quality generation instead of living in an
 ephemeral console transcript.
 
-`_publish_reports` writes immutable generation artifacts and atomically publishes the schema-1.0
+`_publish_reports` writes immutable generation artifacts and atomically publishes the schema-2.0
 manifest pointer. Publication and recovery share `published_quality_manifest.py`; this module no
 longer carries an alternate attestation-only reader. `published_quality_attestation` and
 `published_report_path_from_manifest` both consume the already parsed strict snapshot.
 
+Report publication preserves approved nested paths instead of flattening them. The exporter walks
+the complete report tree without following links, rejects irregular entries and any file or
+directory outside the explicit allowlist, hashes every relative file, copies parent directories
+into one staged generation, validates the complete recursive inventory, and only then advances the
+manifest pointer. This keeps the ambient E2E summary and both run reports in one coherent candidate
+generation while path traversal, symlink substitution, and undeclared evidence fail closed.
+
+Before advancing that pointer, the publisher strictly reads the prior canonical generation (when
+present), validates every managed 64-hex historical generation entry without following links,
+prunes stale generations while protecting both the prior live generation and the candidate, removes
+the declared legacy projection, and repeats destination preflight. The atomic pointer replacement is
+the final operation: there is no cleanup step that can commit a candidate and then report failure.
+
 ### Conventions
 
-The Dagger, Codex, and base image versions are constants. The scratch sandbox is self-overwriting inside the enclosure and is separate from durable reports.
+The Dagger, Codex, and base image versions are constants. The certifying graph and executor share
+the exact Codex 0.151.0 pin so admission evidence cannot claim a different client than the container
+actually executes. The scratch sandbox is self-overwriting inside the enclosure and is separate
+from durable reports.
 
 ### Invariants And Boundaries
 
@@ -50,6 +66,11 @@ The Dagger, Codex, and base image versions are constants. The scratch sandbox is
   legacy shapes, malformed digest/size records, and partial manifests fail closed.
 - Recovery callers pass one immutable manifest snapshot through every artifact lookup; a pointer
   rotation cannot mix generations.
+- Nested report identity is relative-path preserving. Only declared files and their exact parent
+  directories may be published; links and irregular filesystem entries are refused.
+- Every managed historical-generation entry is inspected before cleanup; the prior live generation
+  remains protected until the new pointer commits, and publication performs no fallible cleanup
+  after that commit.
 - Report promotion uses the kernel-owned `atomic_replace` primitive after copying to the target's
   sibling temporary file; this keeps replacement semantics on the shared platform boundary.
 
@@ -63,7 +84,7 @@ The repository source pins the toolchain; no external Domain Documentation sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:40-45 |
+| Tool and image versions are repository-owned pinned inputs. | `DAGGER_VERSION`; `CODEX_VERSION`; `PLAYWRIGHT_IMAGE` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:49-54 |
 
 ## Repo-Internal References
 
@@ -71,7 +92,8 @@ The repository source pins the toolchain; no external Domain Documentation sourc
 | --- | --- | --- |
 | The executor validates, materializes, streams, parses, and publishes one clean quality run. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:112-193 |
 | The export allowlist includes the base and venv Python runtime proof artifacts. | `EXPORTED_REPORT_NAMES` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:48-70 |
-| Helper boundaries preserve Git identity, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:280-355; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:599-600 |
+| Helper boundaries preserve Git identity, pre-pointer cleanup, atomic report publication, and native Dagger resolution. | `_publish_reports`; `_published_generation_or_none`; `_prune_report_generations`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:299-351; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:428-435; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:560-579; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:703-704 |
+| Recursive inventory and generation validation preserve nested evidence without accepting undeclared paths. | `_validated_export_inventory`; "def report_tree_inventory("; `_validate_generation` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:347-358; mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:62-78; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:523-540 |
 
 ## Cross-Repo References
 
@@ -79,11 +101,11 @@ The only external boundary is the pinned container/tool runtime, not a sibling r
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:495-552; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:599-600 |
+| Dagger is explicitly resolved through the native subprocess boundary. | `_stream_dagger`; `_resolve_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:599-656; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:703-704 |
 
 ## 260821-DAGQC-L2 Canonical Publication Manifest
 
-Report publication and crash recovery now share the strict schema-1.0 manifest model. The writer
+Report publication and crash recovery now share the strict schema-2.0 manifest model. The writer
 publishes exactly the vocabulary the reader accepts, while recovery resolves attestation and result
 paths from one captured snapshot. There is no compatibility reader or root-shape fallback.
 
@@ -95,6 +117,16 @@ generation bound to the candidate tree. Only a digest-verified passed generation
 `CertifyingTestEvidence`. Diagnostic payloads and phase reports cannot be supplied as substitutes.
 
 ## Update History
+
+- 2026-08-31T08:05+02:00 — 260821-ARSPAWN-L5 A004 correction: recorded strict prior-pointer
+  resolution, pre-pointer historical-generation validation/pruning with prior-live protection, and
+  the invariant that atomic pointer replacement is the final publication operation.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented recursive,
+  allowlisted publication of the ambient E2E directory and staged-generation validation that
+  prevents nested evidence from being silently discarded. Verification remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 refreshed the executor's exact Codex admission pin from 0.147.0 to 0.151.0 in lockstep with the certifying Dagger graph. Verification remains closeout-owned.
 
 - 2026-08-29T16:27+02:00 — Added both canonical Python runtime proofs to the immutable recognized
   quality-report generation.

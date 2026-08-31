@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T10:28+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`                                        |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -27,6 +27,10 @@ Session-route registration exposes current catalog/open/assignment endpoints. Ca
 serialize task-document binding and staged replacement. `_attach_task_response` validates the real
 document against topology, applies the generalized assignment primitive, and maps strict success or
 refusal models.
+The HTTP retirement path now projects both actor and target reviewer parent stamps into `SeatRef`
+before calling the same central retirement policy as the MCP path. Thus a sprint architect cannot
+retire an orchestrator-owned super reviewer merely because both generations share the sprint
+reviewer address.
 
 ### Conventions
 
@@ -38,6 +42,8 @@ is task document plus role.
 - No attach-leaf endpoint or leaf-ref compatibility response remains.
 - Assignment refuses invalid altitude and occupied singular seats without mutation.
 - Open and catalog payloads return server-owned current facts.
+- HTTP retirement carries the generation-bound reviewer parent pair into the single authority
+  policy; the route does not reimplement ownership.
 
 ### Todos
 
@@ -66,6 +72,10 @@ preserve status, detail, and the strict projection. The dashboard receives
 operator-actionable evidence while the catalog remains unchanged.
 
 ## Update History
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded HTTP retirement
+  propagation of reviewer parent provenance into the shared plane-specific authority policy.
+  Verification remains closeout-owned.
+
 - 2026-08-12T20:10+02:00 — L23 curator: documented HTTP transport of lineage admission failures; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `_app_terminal_routes.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.

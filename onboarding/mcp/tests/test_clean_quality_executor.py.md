@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,12 @@ The publication fixture now exports both canonical Python proof files and requir
 through the immutable published-generation reader. This catches an executor allowlist that would
 silently discard runtime provenance even when Dagger produced it.
 
+The publication cases also export the nested ambient E2E summary and both run reports. They require
+the immutable manifest to preserve those relative paths, reject undeclared files/directories and
+links, verify every copied digest/size, and resolve each nested artifact through the same current
+generation reader. This catches the earlier flat allowlist behavior that discarded evidence Dagger
+had actually produced.
+
 ### Conventions
 
 Real Git state is used where candidate identity matters; process transport is doubled narrowly.
@@ -39,6 +45,8 @@ Real Git state is used where candidate identity matters; process transport is do
 - Dagger resolution passes through the native-command policy.
 - Both base-interpreter and venv-interpreter proof artifacts survive immutable publication and
   content lookup.
+- Nested E2E artifacts survive recursive publication exactly once; unsafe or undeclared paths fail
+  before the manifest pointer moves.
 
 ### Todos
 
@@ -93,6 +101,10 @@ successful pointer rotation makes the causal JSON discoverable through
 therefore part of one immutable published generation rather than an adjacent best-effort file.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the recursive
+  nested-report publication, path-safety, digest verification, and lookup regression contract.
+  Verification remains closeout-owned.
 
 - 2026-08-29T16:27+02:00 — Added immutable publication and lookup proof for both canonical Python
   runtime artifacts.

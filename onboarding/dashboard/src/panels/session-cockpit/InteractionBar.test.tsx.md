@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | The component under test (multiplexing fan-out + per-payload bar). | "export const InteractionBar = forwardRef<" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-54 |
 | The answer path + cross-slot exact-session routing the suite exercises end-to-end. | `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:570-615 |
 | The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). | `L6_INTERACTION_CHOICES`, `L6_INTERACTION_FREETEXT`, `L6_INTERACTION_UNREPRESENTABLE` | dashboard/src/test/fixtures/catalogRows.ts:271-287; dashboard/src/test/fixtures/catalogRows.ts:290-306; dashboard/src/test/fixtures/catalogRows.ts:309-321 |
-| The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:480-512 |
+| The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:477-509 |
 | The copy constants asserted verbatim (honesty hint). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:74-74; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:77-78; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:81-82 |
 
 ## Cross-Repo References

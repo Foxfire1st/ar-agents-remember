@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/ambient_seat.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `3eafc555c848ac45a07a07720641f1735f8df0eb`|
-| lastVerifiedCommitDate |  2026-08-21T05:15:52+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,9 +26,11 @@ from supplying their own session or lifecycle ids.
 ### Logic
 
 `resolve_ambient_seat` reads plane-seeded hosted context, finds its catalog row, and verifies the
-current task-document+role binding before returning the occupant — unchanged since 260731-EFA-L19.
+current task-document+role binding before returning the occupant. Hosted identity without a
+non-empty process role is now incomplete; a role that disagrees with the catalog remains a mismatch.
 `resolve_ambient_caller` returns the typed `AmbientCaller` (caller_kind `ambient`, no catalog row, no
-lifecycle of its own) only when the process has no `AR_HOSTED_SESSION_ID`; plane identity present
+lifecycle of its own) only when the process has neither `AR_HOSTED_SESSION_ID` nor `AR_SPAWN_ROLE`.
+A role without the plane-injected hosted identity is incomplete rather than ambient. Plane identity present
 means the caller must go through `resolve_ambient_seat`. Since 260821-ARSPAWN-L1 fix round 3
 `dispatch_agent`'s `_resolve_dispatch_caller` is ambient-first — `resolve_ambient_caller` decides
 the branch directly (the earlier both-fail defensive guard was dead code because both functions
@@ -70,6 +72,10 @@ None.
 
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: made hosted identity
+  complete only as the role+session pair and made either half without the other fail closed instead
+  of entering ambient dispatch. Verification remains closeout-owned.
 
 - 2026-08-21T03:45+02:00 — 260821-ARSPAWN-L1 fix round 3: `resolve_ambient_caller` is now the ambient-first branch decider for dispatch (the both-fail path was dead code and is gone) and its plane-present→`None` branch is unit-tested in `test_dispatch_agent_ambient.py`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 

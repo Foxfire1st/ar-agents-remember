@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -318,14 +318,14 @@ references, not imported governing implementations, so no cross-repository sourc
 | --- | --- | --- |
 | Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:48-48; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 | Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:361-387; dashboard/src/panels/session-cockpit/SessionRail.tsx:160-241 |
+| Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:397-423; dashboard/src/panels/session-cockpit/SessionRail.tsx:161-242 |
 | PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
 | Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
 | Effective keyboard contract. | "export function useEffectiveKeymap(): EffectiveKeymap {"; "export function useKeyboardZones({" | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97; dashboard/src/data/keymap/preferences.ts:369-369 |
 | Dev end-to-end scenario authority. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
 | The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | `SERVED`, `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243; dashboard/src/test/fixtures/wire.ts:66-66 |
 | The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
-| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:366-371 |
+| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:372-377 |
 
 ## Current L5I Route State
 
@@ -487,7 +487,7 @@ The session-cockpit forcing suites hardened teardown: async `afterEach` clears f
   recorded as a LOSS: its three `control: "starting"` keys are gone, so the surviving
   `not.toContain("adapter starting")` assertions can no longer fail and that guarantee is marked
   superseded here — verified `DetectedHarness` declares exactly `id`/`name`/`detected`
-  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:366-371) on a `WireResponse` with `extra="forbid"`
+  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:372-377) on a `WireResponse` with `extra="forbid"`
   cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:88-100), and
   that `HarnessInfo` mirrors the same three cit:([`HarnessInfo`], dashboard/src/data/harnessCatalog.ts:5-9). Recorded the replacement
   guarantee (typed `HARNESSES` annotation + the per-row `Object.keys` assertion) and the reason the

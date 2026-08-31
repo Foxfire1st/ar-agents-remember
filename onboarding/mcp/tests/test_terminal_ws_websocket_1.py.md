@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws_websocket_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Terminal HTTP/WebSocket suite for session I/O, lifecycle cleanup, catalog projec
 
 ### Logic
 
-Cases prove PTY forwarding and teardown, catalog reconciliation, termination/landing cleanup, and terminal open with canonical task-document persistence. Required task identity failures are explicit, while an intentionally unbound raw terminal remains supported where the endpoint contract allows it.
+Cases prove PTY forwarding and teardown, catalog reconciliation, termination/landing cleanup, and terminal open with canonical task-document persistence. The cleanup fixture marks its nominal running row live in the fake host, so the assertion distinguishes status-based cleanup from background liveness reconciliation. Required task identity failures are explicit, while an intentionally unbound raw terminal remains supported where the endpoint contract allows it.
 
 ### Conventions
 
@@ -47,6 +47,10 @@ No Domain Documentation source is configured for this repository-local regressio
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 made the landed-cleanup fixture's running row actually live so
+  the background liveness sweep cannot rewrite the condition being tested. Verification remains
+  closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_terminal_ws_websocket_1.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

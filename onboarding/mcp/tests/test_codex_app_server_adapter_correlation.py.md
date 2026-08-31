@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_codex_app_server_adapter_correlation.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                                        |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated            | 2026-08-31T10:13+02:00                                            |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -16,7 +16,10 @@
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_codex_app_server_adapter_correlation.py`'s source module; covers the behaviours named by its test classes.
+Part of the 260731-EFA-L7 in-place split family for `test_codex_app_server_adapter_correlation.py`'s
+source module. It pins early-completion, retained-turn, successor, and bounded-correlation behavior;
+the early-completion case also requires the emitted terminal transcript to carry the exact durable
+request id from its `ControlOperationRef`.
 
 ## Code Commentary
 
@@ -33,6 +36,10 @@ Part of the 260731-EFA-L7 in-place split family for `test_codex_app_server_adapt
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: the early-completion forcing case now
+  requires exact request-id projection on the terminal transcript. Verification remains
+  closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

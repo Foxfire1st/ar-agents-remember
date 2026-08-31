@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_spawn_agent_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T13:59+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,9 @@ commands, and stored private provenance. No test turns the primitive into an adv
 `test_spawn_records_caller_kind_provenance`, which runs the REAL primitive with a substituted host
 and asserts the payload carries `spawnedByKind` ("ambient") plus the catalog caller-kind row — the
 provenance the public `dispatch_agent` sets by caller kind.
+Reviewer forcing supplies both settings-owned launch selection and the exact manager parent pair,
+while the stale-super matrix confirms lineage refusal wins before a missing reviewer-parent or
+launch-selection error and before host creation.
 
 ## Invariants And Boundaries
 
@@ -59,7 +62,7 @@ No external domain source governs this repository-local test contract.
 | --- | --- | --- |
 | A successful spawn binds a seat without delivering a brief or claiming readiness. | `test_spawns_bound_seat_without_brief_or_readiness_claim` | mcp/tests/test_spawn_agent_session.py:318-339 |
 | The spawn payload and catalog row carry caller-kind provenance. | `test_spawn_records_caller_kind_provenance` | mcp/tests/test_spawn_agent_session.py:555-561 |
-| Canonical task-document identity is persisted and missing documents refuse before spawn. | `test_spawn_persists_canonical_task_document_reference`; `test_spawn_rejects_missing_task_document_before_spawning` | mcp/tests/test_spawn_agent_session.py:376-382; mcp/tests/test_spawn_agent_session.py:395-402 |
+| Canonical task-document identity is persisted and missing documents refuse before spawn. | `test_spawn_persists_canonical_task_document_reference`; `test_spawn_rejects_missing_task_document_before_spawning` | mcp/tests/test_spawn_agent_session.py:383-389; mcp/tests/test_spawn_agent_session.py:402-409 |
 | Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:449-470; mcp/tests/test_spawn_agent_session.py:472-476 |
 | Occupied structural seats refuse without takeover. | `test_seat_taken_is_surfaced_never_overridden` | mcp/tests/test_spawn_agent_session.py:484-518 |
 
@@ -72,6 +75,14 @@ insertion remain untouched. This is the control-plane race closure behind the ma
 status check: dispatch re-proves lineage rather than trusting a brief-carried snapshot.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 repair aligned reviewer fixtures with mandatory explicit parent
+  provenance and settings ownership while preserving stale-lineage as the first actionable refusal.
+  Verification remains closeout-owned.
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed spawn suite moved; no semantic onboarding claim changed.
+  Verification remains closeout-owned.
 
 - 2026-08-30T13:59+02:00 — 260821-ARSPAWN-L3 replaced the stale low-level brief-delivery recipe
   assertion with forcing proof that the internal primitive refuses before side effects and directs

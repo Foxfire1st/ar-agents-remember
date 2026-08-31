@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-30T21:49:22+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ the exact ordered `PUBLIC_TOOLS` inventory, live registration, response models, 
 `dispatch_agent` schema/description must agree. MCP `server_info` and dashboard served state share
 one process-scoped, content-addressed Python candidate identity so an equal-version stale artifact
 cannot pass as the code under review.
+
+The same canonical dispatch-advertisement validator is reusable at real-client boundaries that
+expose only one deferred tool-search result. The Codex clean-room proof therefore records the exact
+schema digest and caller-boundary description accepted by the full MCP validator; it does not own a
+second, weaker schema interpretation.
 
 Starter policy remains self-updating by design. Claude, Codex, Cursor, VS Code, Hermes, OpenClaw,
 Pi, and Antigravity all retain `uvx --refresh-package agents-remember-mcp
@@ -1064,6 +1069,10 @@ candidate change produces a typed refusal with the exact sync/reprepare route. N
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
 ## Update History
+
+- 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 recorded that the real-client clean-room
+  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
+  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
 
 - 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: documented exact public-surface parity,
   shared candidate identity, and the preserved eight-harness self-update contract. Verification

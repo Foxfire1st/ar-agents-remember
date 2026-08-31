@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:43+02:00                        |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00                        |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -57,8 +57,10 @@ rendered as a real markdown link). Both are sprint-only by validator
 with non-empty `orchestrates`; seat roles are unique among planned/active seats (a retired → active
 succession of the same role is the only reading consistent with a `state` field). The role
 altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/strategist/designer/
-system-specialist), `MASTER_ROLES` (manager), `LEAF_ROLES` (worker/reviewer/curator) — and
-`document_refs` re-exports them (importing from `document_refs` would cycle).
+system-specialist), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
+`REVIEWER_ALTITUDES` explicitly makes reviewer the one polymorphic role across sprint, master, and
+leaf review manifestations. `SprintSeat` consequently permits reviewer alongside the ordinary
+sprint roles. `document_refs` re-exports these definitions (importing from it here would cycle).
 
 Execution topology is explicit and separate from containment. A commanded master declares the
 closed `executionNature` value `organizational` or `atomic`; an orchestration sprint instead owns a
@@ -185,6 +187,10 @@ stay under the complexity target. The refusal dialect stays a `ValueError`-famil
 application boundary translates to the typed `TaskDocError` family.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded reviewer as one
+  explicitly polymorphic role across leaf, master, and sprint task documents, including sprint-seat
+  schema admission. Verification remains closeout-owned.
 
 - 2026-08-24T13:43+02:00 — DAGQC L1: removed `SprintExecutionNode` cross-type equality/hash
   aliasing with `TaskDocumentRef`; node identity is structural and ownership comparisons are

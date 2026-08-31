@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/lifecycle_state.py` |
 | doc_type               | `file-level-onboarding`                              |
 | lastUpdated            | 2026-08-01T10:40+02:00                               |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`           |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`           |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                        |
 
 ## Purpose
@@ -91,7 +91,7 @@ than defaulting it.
 ### Current module boundaries
 
 cit:(["Phase = Literal["], mcp/src/agents_remember/models/lifecycles/responses.py:20-27) — the session-lifecycle skill's heading vocabulary,
-orthogonal to state. cit:(["system-owned"], mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:180-180) binds the paused and
+orthogonal to state. cit:(["system-owned"], mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:183-183) binds the paused and
 awaiting-developer classification: `paused` is system-owned (no model signal),
 while `awaiting-developer` is the turn-end notification state on the live half.
 cit:([`await_developer`, `resume_from_await`], mcp/src/agents_remember/observer/ambient.py:205-221; mcp/src/agents_remember/observer/ambient.py:223-241)

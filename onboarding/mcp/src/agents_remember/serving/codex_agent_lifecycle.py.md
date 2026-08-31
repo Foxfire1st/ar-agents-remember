@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_agent_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter registry applies the shared ordering. | "thread/status/changed params" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:662-662 |
+| Adapter registry applies the shared ordering. | "thread/status/changed params" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:704-704 |
 | Lifecycle vocabulary regression. | `test_completed_turn_status_uses_roster_vocabulary` | mcp/tests/test_codex_agent_lifecycle.py:7-21 |
 
 ## Cross-Repo References

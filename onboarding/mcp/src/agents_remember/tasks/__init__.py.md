@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:756-756; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:111-111 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:758-758; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:111-111 |
 
 ## Series-Contract Notes
 

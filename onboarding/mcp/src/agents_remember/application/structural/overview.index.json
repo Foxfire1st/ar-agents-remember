@@ -14,11 +14,12 @@
     "mcp/src/agents_remember/application/structural/agent_tools.py",
     "mcp/src/agents_remember/application/structural/dispatch_transaction.py",
     "mcp/src/agents_remember/application/structural/gate_tools.py",
-    "mcp/src/agents_remember/application/structural/outcomes.py"
+    "mcp/src/agents_remember/application/structural/outcomes.py",
+    "mcp/src/agents_remember/application/structural/reviewer_parent.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 5,
-    "fileSidecars": 5,
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -35,7 +36,10 @@
     "init__",
     "mcp",
     "outcomes",
+    "parent",
     "remember",
+    "reviewer",
+    "reviewer_parent",
     "src",
     "structural",
     "tools",
@@ -49,7 +53,8 @@
       "mcp/src/agents_remember/application/structural/agent_tools.py",
       "mcp/src/agents_remember/application/structural/dispatch_transaction.py",
       "mcp/src/agents_remember/application/structural/gate_tools.py",
-      "mcp/src/agents_remember/application/structural/outcomes.py"
+      "mcp/src/agents_remember/application/structural/outcomes.py",
+      "mcp/src/agents_remember/application/structural/reviewer_parent.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -62,6 +67,8 @@
       "gate_tools",
       "outcomes.py",
       "outcomes",
+      "reviewer_parent.py",
+      "reviewer_parent",
       "caller",
       "structural-caller-conflict",
       "DAG",
@@ -72,7 +79,9 @@
       "mcp/src/agents_remember/application/structural/",
       "mcp/src/agents_remember/application/structural/overview.md",
       "application/overview.md",
-      "c51373425be3e3f488590ad2f444810df89b4ffb",
+      "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
+      "dispatch_transaction.execute_serialized_dispatch",
+      "agent_tools.dispatch_agent_tool",
       "dispatch_agent",
       "authorize_child",
       "AR_HOSTED_SESSION_ID",
@@ -95,11 +104,7 @@
       "application/task_docs/task_ref",
       "taskDocumentRef, role",
       "exclusive_structural_dispatch_lock",
-      "StructuralDispatchLockError",
-      "execute_dispatch_transaction",
-      "seat-taken",
-      "StructuralOutcome",
-      "current_seat_occupant"
+      "StructuralDispatchLockError"
     ]
   },
   "fallback": {
