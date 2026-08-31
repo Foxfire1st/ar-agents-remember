@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/HighlightComposer.test.tsx`|
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T15:22+02:00                           |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -84,7 +84,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The composer under test. | "export const HighlightComposer = memo(HighlightComposerImpl)" | dashboard/src/panels/HighlightComposer.tsx:1140-1140 |
-| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:783-783 |
+| The accepted-row create helper and routed session store. | "export async function createSession(" | dashboard/src/data/sessions.ts:792-792 |
 | The mocked reliable readiness, submission, retry, and reconcile seam. | "export async function executeReliableSubmit(" | dashboard/src/data/submitClient.ts:567-567 |
 | The stable-snapshot regression clears analytics, renders the composer, and refuses React's uncached-snapshot warning. | "keeps the pre-projection task-document snapshot stable" | dashboard/src/panels/HighlightComposer.test.tsx:140-153 |
 

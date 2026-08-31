@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_operator_inbox.py`    |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated            | 2026-07-10T13:03+02:00                |
-| lastVerifiedCommitHash |                                       `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |                                       2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash |                                       `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |                                       2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Governing Overview

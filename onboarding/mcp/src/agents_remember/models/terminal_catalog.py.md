@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/models/terminal_catalog.py`         |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-25T23:19+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -31,6 +31,11 @@ caller-kind provenance column: a loose `str | None` written only when set, round
 migration-safely through `from_json`/`to_json` (the serving `/api/terminal/sessions` wire model
 `TerminalCatalogEntryWire` mirrors the same field when set); the strict `Literal` vocabulary lives
 on the producers (`CallerKind`, `SpawnProvenance.spawned_by_kind`, `SpawnAgentSessionResponse.spawnedByKind`).
+Reviewer generations additionally persist `structural_parent_task_document_ref` and
+`structural_parent_role`. That pair is plane-owned hierarchy—not spawn ancestry or occupant
+identity—and lets the same `(document, reviewer)` seat at sprint altitude distinguish the plan and
+super-exit generations. JSON round trips both fields only when present. `with_task_binding` retains
+the pair only at the identical document+role address and clears it on a move.
 ARSPAWN-L2 adds `dispatch_brief_entry_id` (`dispatchBriefEntryId` on the catalog wire), a private
 durable receipt used to distinguish an already-briefed current generation from a crash-stranded
 spawn after inbox compaction. `with_task_binding` clears `replacement_for_task_document_ref` when a
@@ -48,6 +53,8 @@ absent; server response models mirror the emitted key set.
 - Seat identity is `(task_document_ref, seat_role)`.
 - Runtime id and lifecycle id are private occupant correlation.
 - Spawn ancestry is provenance, not hierarchy or authorization.
+- A reviewer generation's structural parent is a canonical document+role address; occupant ids do
+  not become hierarchy authority.
 - One-way migration owns legacy leaf fields; current writers do not.
 - A pinned-brief receipt is reconciliation evidence, never a seat address.
 - A promoted row cannot remain both a primary and a staged replacement.
@@ -69,14 +76,18 @@ No Domain Documentation source is configured.
 | The catalog row separates binding, replacement, spawn provenance, and pinned-brief receipt evidence. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:67-550 |
 | The catalog row round-trips caller-kind provenance and the dispatch receipt only when set. | `from_json`; `to_json` | mcp/src/agents_remember/models/terminal_catalog.py:186-357 |
 | Binding promotion clears its staging marker and preserves receipt evidence only for the identical document-and-role address. | `with_task_binding` | mcp/src/agents_remember/models/terminal_catalog.py:384-401 |
-| Current parsing recognizes task-document references explicitly. | `_optional_task_document_ref` | mcp/src/agents_remember/models/terminal_catalog.py:569-571 |
-| Role fallback is isolated to migrated/internal catalog interpretation. | `migrated_seat_role` | mcp/src/agents_remember/models/terminal_catalog.py:687-692 |
+| Current parsing recognizes task-document references explicitly. | `_optional_task_document_ref` | mcp/src/agents_remember/models/terminal_catalog.py:586-588 |
+| Role fallback is isolated to migrated/internal catalog interpretation. | `migrated_seat_role` | mcp/src/agents_remember/models/terminal_catalog.py:709-714 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the persisted
+  reviewer parent pair, its generation-bound authority meaning, JSON projection, and clearing on
+  cross-seat rebinding. Verification remains closeout-owned.
 
 - 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agent_doctrine_plane_identity.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash |  `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate |  2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,8 @@ historical provenance are outside this agent-instruction scan.
 - Packaged runtime doctrine cannot drift from the canonical source.
 - The internal primitive cannot reappear as caller guidance, and no role may omit its caller
   context or blur a plane refusal into ambient authority.
+- Malformed role/hosted identity cannot fall through, reviewer doctrine must name all four exact
+  altitude/parent mappings, and removed caller-supplied dispatch env syntax cannot reappear.
 
 ### Todos
 
@@ -89,6 +91,10 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added structural doctrine
+  forcing for fail-closed role identity, the four reviewer parent mappings, and the ban on removed
+  dispatch `env=` guidance. Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 added forcing coverage for the public vocabulary
   purge, ordinary-bootstrap-versus-takeover split, resumable lineage conflicts, fixed structural

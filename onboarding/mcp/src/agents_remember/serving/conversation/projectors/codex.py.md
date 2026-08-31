@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/projectors/codex.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -170,7 +170,7 @@ store's roster-aware upsert rules, and a dedicated collab/engine test module.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:734-734 |
+| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:776-776 |
 | The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229 |
 | `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod` (wire contracts in models since L9). | "payload[\"nativeMethod\"]" | mcp/src/agents_remember/models/conversations/evidence.py:158-158 |
 | `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | `parent_agent_id` | mcp/src/agents_remember/models/conversations/content.py:156-156 |

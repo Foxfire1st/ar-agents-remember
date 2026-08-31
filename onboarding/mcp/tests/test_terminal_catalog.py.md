@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,12 +51,16 @@ No Domain Documentation source is configured for this repository-local regressio
 | Current suite declaration anchoring this card. | `_entry` | mcp/tests/test_terminal_catalog.py:29-49 |
 | Dispatch receipts return missing-row absence, round-trip idempotently, and reject a different second binding. | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:236-251 |
 | Canonical promotion clears the staged-replacement marker. | `test_task_binding_promotes_a_staged_replacement_to_the_canonical_seat` | mcp/tests/test_terminal_catalog.py:251-262 |
+| Reviewer parent document+role round-trip, survive same-address rebinding, and clear on a task-address move. | `test_dispatch_binding_fields_round_trip`; `test_task_rebinding_drops_a_reviewer_parent_that_belongs_to_the_old_address` | mcp/tests/test_terminal_catalog.py:208-239; mcp/tests/test_terminal_catalog.py:267-286 |
 
 ## Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added reviewer parent
+  serialization and address-bound lifetime forcing. Verification remains closeout-owned.
 
 - 2026-08-26T16:03+02:00 — Post-failure repair: rebound receipt assertions to the dedicated
   `DispatchBriefReceiptStore`, including the missing-row result and second-receipt refusal. No

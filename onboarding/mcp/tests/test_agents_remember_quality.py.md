@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T10:33+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,6 +28,22 @@ export-before-verdict behavior, invalid public inputs, and green/red verificatio
 quality and non-accepting evidence routes must expose their generated Dagger contracts. Tests
 load the Dagger package from the explicit `.dagger/src` source root; the surrounding `.dagger`
 directory is not an import root.
+
+ARSPAWN-L5 also pins the repository-owned ambient-role harness as a Dagger graph prerequisite. The
+test enumerates every harness Python module, requires each one to parse, and requires the quality
+graph to invoke `scripts/e2e_harness/run.py` before the ordinary wrapper.
+Its focused tmux contract now proves both halves of isolation: server commands use the exact
+fixture socket root with server-scoped `exit-empty`, and the generated Codex MCP registration
+whitelists `TMUX_TMPDIR` so dispatch cannot create sessions in another server.
+The focused discovery-evidence regression also pins Codex's current `Wall time`/`Output` tool-result
+envelope: positive and negative structured results retain their meaning, while an arbitrary prefix
+cannot masquerade as the canonical envelope.
+
+The graph-result assertions now distinguish attempted, completed, skipped, and failed steps. A
+nonzero E2E exit cannot be represented as a completed/passed ambient proof, while the explicit
+targeted not-selected exit is recorded as a skip and allows the ordinary wrapper to continue.
+`promptSubmitted` and `codexProtocol` are derived from those observed states rather than hardcoded
+success values, so a partial graph cannot manufacture real-Codex evidence.
 
 The candidate-construction proof now requires the checksum-bound source-build step to precede
 workspace materialization, requires the canonical runtime to create the venv, and requires frozen
@@ -50,6 +66,14 @@ The suite tests graph semantics without a daemon; live field proof remains a sep
 - Runtime build, source materialization, dependency synchronization, and attempt-specific cache
   inputs remain strictly ordered; candidate-specific state cannot contaminate the shared runtime
   or dependency layers.
+- The ambient-role harness may not disappear from the Dagger graph or acquire an unparseable helper
+  without failing this structural test before live container execution.
+- Tmux isolation is incomplete unless both direct fixture commands and Codex-spawned candidate MCP
+  children inherit the same `TMUX_TMPDIR`.
+- Failed, skipped, and completed ambient runs must produce different result evidence; graph
+  construction alone never implies a prompt was submitted or the ambient protocol completed.
+- Discovery success is proven from the structured public result inside the exact current Codex
+  envelope, not from assistant completion text or a substring search.
 
 ### Todos
 
@@ -61,14 +85,16 @@ No external Domain Documentation source is configured for this test contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test contract is defined by the pinned repository module and its explicit source root. | `DAGGER_MANIFEST`; `DAGGER_SOURCE_ROOT`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:21-24 |
+| The test contract is defined by the pinned repository module and its explicit source root. | `DAGGER_MANIFEST`; `DAGGER_SOURCE_ROOT`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:24-27 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:28-34 |
-| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:106-129; mcp/tests/test_agents_remember_quality.py:210-237; mcp/tests/test_agents_remember_quality.py:252-257; mcp/tests/test_agents_remember_quality.py:320-376 |
+| Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:43-49 |
+| Focused structure proves the isolated server scope and the candidate MCP tmux namespace whitelist. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root`; `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:188-239 |
+| Focused discovery evidence preserves structured success through the exact current Codex envelope and rejects arbitrary prefixes. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:242-257 |
+| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:136-159; mcp/tests/test_agents_remember_quality.py:335-363; mcp/tests/test_agents_remember_quality.py:377-382; mcp/tests/test_agents_remember_quality.py:445-515 |
 
 ## Cross-Repo References
 
@@ -76,7 +102,7 @@ No sibling-repository boundary is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:38-87; mcp/tests/test_agents_remember_quality.py:90-98 |
+| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:67-116; mcp/tests/test_agents_remember_quality.py:119-127 |
 
 ## R39 Guard Wiring Proof
 
@@ -113,6 +139,26 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
+
+- 2026-08-31T10:33+02:00 — 260821-ARSPAWN-L5 closeout repair: added the forcing regression
+  for strict decoding of Codex's current execution-result envelope after generation 6 reached C09
+  with six successful dispatches but zero decoded success rows. Verification remains closeout-owned.
+
+- 2026-08-31T09:55+02:00 — 260821-ARSPAWN-L5 closeout memory repair: realigned the pinned-module,
+  Dagger-attestation, authoritative-result, and graph-construction citations to their current exact
+  symbol ranges. Behavior and requirement semantics are unchanged; verification remains
+  closeout-owned.
+
+- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: added the structural proof that
+  Codex forwards the fixture tmux namespace into its candidate MCP child and that `exit-empty` is
+  set at server scope. Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the structural
+  proof for truthful attempted/completed/skipped/failed Dagger evidence and derived prompt/protocol
+  claims. Verification remains closeout-owned.
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded structural ownership of the
+  real ambient-role harness and its pre-wrapper Dagger stage. Verification remains closeout-owned.
 
 - 2026-08-29T16:27+02:00 — Added structural graph proof that Dagger builds the canonical source
   runtime before materializing the candidate and synchronizes its venv before attempt caches.

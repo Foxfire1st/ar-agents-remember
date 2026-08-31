@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -122,7 +122,7 @@ parameter, whose `None` default keeps the parent-thread read byte-identical.
 | --- | --- | --- |
 | The bridge exposes live advertise and ordered setter operations only while running. | `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
 | The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | `native_page` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271 |
-| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:575-575 |
+| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:572-572 |
 | IPC tests pin capability actions, setters, same-id submit retention, response loss, and reconciliation. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control_ipc.py:148-181 |
 | Evidence contract tests pin the three additive actions over a real socket: pages, continuation, cross-domain typed rejection, epoch mismatch, and provenance. | `test_evidence_action_round_trip_with_epoch_and_paging` | mcp/tests/test_harness_control_evidence_ipc.py:57-89 |
 | The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | `MAX_OPERATION_TIMELINE_PAGE` | mcp/src/agents_remember/serving/harness_control_models.py:63-63 |

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-29T22:45+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-08-30T21:25+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -829,6 +829,8 @@ boundary translates the shared pair/coherence error families once, without dupli
 logic or adding a fallback route.
 
 ## Update History
+
+- 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
 
 - 2026-08-29T22:45+02:00 — MCAR-L03: traced the exact pair adapter through closeout preview,
   admission, memory preflight, result publication, and recovery; all consumers now expose the same

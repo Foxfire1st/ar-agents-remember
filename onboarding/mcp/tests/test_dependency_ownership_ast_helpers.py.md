@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-30T22:33:39+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,8 @@ Proves pytest-plugin and shared-support dependency discovery.
 The cases force AST assignment forms, relative imports, recursive plugin declarations, literal
 module consumers, and attributed consumer reasons. Nested static plugin edges expand to the full
 test population; a dynamic nested declaration makes ownership incomplete instead of being guessed.
+The Codex starter-config case proves its narrow non-Python declaration against the repository's
+observed literal readers and resolves exactly the public-surface and starter-renderer tests.
 
 ### Conventions
 
@@ -66,6 +68,9 @@ No cross-repository source is allowed by the resolved settings.
 | No meaningful cross-repository reference applies. | `test_file_imports_includes_python_and_declared_pytest_plugins` | mcp/tests/test_dependency_ownership_ast_helpers.py:1-194 |
 
 ## Update History
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 added the source-observed exact
+  `.codex/config.toml` consumer proof; an unobserved declaration cannot claim complete ownership.
 
 - 2026-08-28T06:28+02:00 — PDLS wave 005 curator: expanded the memory contract to recursive static
   pytest-plugin closure, dynamic-plugin fail-closed behavior, literal module consumers, and

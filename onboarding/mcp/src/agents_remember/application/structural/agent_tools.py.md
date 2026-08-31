@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,10 +55,12 @@ just-spawned child as a SYSTEM closure (`retire_entry` with `by_session=None`, e
 input, so an ambient caller cannot retire an arbitrary session; plane rollback stays
 `session_retire_tool`-gated. `StructuralMessageContext.sender` is optional so the ambient brief
 post carries no sender (`_signal_route`/`derive_signal_owner` tolerate a `None` sender;
-dispatch-brief rows stay exact-pinned). `_level_for_role` maps
-architect/orchestrator/strategist/designer/system-specialist to `portfolio`, so an ambient
-architect spawn records `spawn_level=portfolio` (a vocabulary decision for the L3 leaf if the
-l-01 doctrine wants sprint-level seats at another level).
+dispatch-brief rows stay exact-pinned). Spawn level is derived from the resolved task document—not
+from the role name—so the polymorphic reviewer records `leaf`, `master`, or `portfolio` at its actual
+review altitude. For a plane-owned reviewer dispatch, the caller's canonical document+role is also
+passed as the child generation's structural parent and supplied to the dispatch transaction as the
+expected parent. Ambient dispatch may create ordinary task roles, but cannot invent the missing
+owner of a polymorphic reviewer manifestation.
 
 ### Conventions
 
@@ -79,6 +81,8 @@ stay local to the application transaction.
   unbound plane identity refuses instead of silently downgrading.
 - Ambient rollback is a system closure bounded to the spawn result — an ambient caller cannot
   retire an arbitrary session.
+- Reviewer altitude comes from the target document, and reviewer ownership comes from the
+  authorizing plane seat; neither is inferred from the shared role name.
 
 ### Todos
 
@@ -96,8 +100,8 @@ No Domain Documentation source is configured; repository tests and the approved 
 | Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient). | `dispatch_agent_tool`; `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:338-487 |
 | Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. | `_implementation_series_admission_refusal`; `_dispatch_owning_master` | mcp/src/agents_remember/application/structural/agent_tools.py:624-674; mcp/src/agents_remember/application/structural/agent_tools.py:677-693 |
 | The shared series bootstrap owner binds durable contract identity to source-pair reconciliation-before-exposure. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:221-288 |
-| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:825-830 |
-| Focused tests exercise ambient routing, replacement, ambiguity, and exact-pin behavior. | `test_child_to_replacement_parent_is_resolved_by_task_containment` | mcp/tests/test_structural_agent_tools.py:169-194 |
+| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:828-833 |
+| Focused tests exercise ambient routing, replacement, ambiguity, and exact-pin behavior. | `test_child_to_replacement_parent_is_resolved_by_task_containment` | mcp/tests/test_structural_agent_tools.py:259-290 |
 | Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient). | `_retire_unbriefed_child` | mcp/src/agents_remember/application/structural/agent_tools.py:217-265 |
 
 ## Cross-Repo References
@@ -126,6 +130,14 @@ composed through `DispatchBriefReceiptStore`, keeping dispatch commit evidence s
 general terminal lifecycle surface while reusing the same atomic catalog storage boundary.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair delegates seat serialization and
+  transaction execution to `dispatch_transaction.execute_serialized_dispatch`, returning
+  `dispatch_agent_tool` to a 90-line composition function. Verification remains closeout-owned.
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented
+  document-derived spawn altitude, fail-closed invalid hosted identity, and the exact reviewer
+  parent passed by plane dispatch into spawn and reconciliation. Verification remains closeout-owned.
 
 - 2026-08-26T16:03+02:00 — Post-failure repair: recorded the dispatch-specific receipt collaborator,
   exact persistence seam used by ambient rollback forcing, and unchanged canonical-address boundary.

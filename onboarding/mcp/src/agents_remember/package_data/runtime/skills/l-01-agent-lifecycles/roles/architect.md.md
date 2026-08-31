@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,11 @@ rather than substituted for them.
 The synchronized dispatch table distinguishes ordinary identity-free architect bootstrap from an
 explicit named-role task-seat takeover. Once hosted, architect dispatch remains plane-authorized;
 the dispatch/tools rows describe fixed structural authority and capability rather than settings.
+
+The packaged role dispatches the sprint plan reviewer and receives a plane-stamped reviewer
+generation back at the architect parent address. This is distinct from the orchestrator-stamped
+super reviewer at the same sprint+reviewer seat; architect retirement authority cannot cross that
+generation boundary.
 
 The synchronized architect contract keeps semantic revision under explicit developer approval and
 keeps internal repair/test runs as protocol events until an exact candidate is handed to review.
@@ -132,7 +137,7 @@ No Domain Documentation source is configured for this memory root.
 | Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:36-36 |
 | Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:95-132 |
 | Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:162-162 |
-| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:120-120 |
+| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:123-123 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
 
@@ -210,6 +215,10 @@ verified requirement contradiction to developer-approved semantic revision. Work
 classification never rewrites the canonical packet.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized architect
+  ownership and retirement bounds for the sprint plan-review generation. Verification remains
+  closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized ordinary architect bootstrap versus
   explicit takeover, sole public dispatch vocabulary, and fixed structural-row ownership.

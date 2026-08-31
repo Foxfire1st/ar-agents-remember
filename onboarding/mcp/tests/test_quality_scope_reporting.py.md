@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T12:27+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,8 @@ populations, and refusal of a vacuous CRAP scope. `ConfigTruthTests` rejects mis
 configuration. `UntrackedExposureTests` proves source/test/dashboard siblings are reported without
 index mutation and that enumeration failure refuses. `CallerProvenanceTests` covers pre-push ref
 input, staged closeout, clean integration, generated targets, and every dashboard/workflow rail.
+Its dashboard-build assertion now pins 436 TypeScript inputs, accounting for the two governed
+ARSPAWN data modules added by this candidate without changing the measurement boundary.
 
 The two assertions that execute installed Node tooling now use `skipUnless(shutil.which("node"))`.
 Absence of the external runtime is an explicit environment skip; when Node is present the live
@@ -134,6 +136,10 @@ Radon and Coverage.py unit text now counts product Python files only; tests rema
 not measurement targets. CRAP mocks patch the canonical calculator module directly.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 refreshed the dashboard build scope oracle from 434 to 436
+  TypeScript inputs after the reviewed candidate added two governed source modules. Verification
+  remains closeout-owned.
 
 - 2026-08-29T16:27+02:00 — Reconciled the isolated sequencer-hook fixture with the canonical
   Python runtime contract it now consumes.

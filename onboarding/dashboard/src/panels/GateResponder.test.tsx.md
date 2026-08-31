@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/GateResponder.test.tsx`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -67,7 +67,7 @@ without a duplicate notice. The old `Chat` control must stay absent.
 | Component under test and its response branches. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
 | Gate decision client mocked for Yes/No/Dismiss. | `postGateDecision` | dashboard/src/data/actions.ts:14-38 |
 | Session store and attach lookup. | `sessionStore`, `findSessionForLifecycle` | dashboard/src/data/sessions.ts:508-522; dashboard/src/data/sessions.ts:527-531 |
-| Direct delivery seam asserted unused on the durable inbox route. | `deliverToSession` | dashboard/src/data/sessions.ts:736-759 |
+| Direct delivery seam asserted unused on the durable inbox route. | `deliverToSession` | dashboard/src/data/sessions.ts:760-784 |
 | Operator inbox helper used for ordinary approval/rejection routing. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact

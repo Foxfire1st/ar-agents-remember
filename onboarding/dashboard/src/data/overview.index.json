@@ -58,8 +58,10 @@
     "dashboard/src/data/pairChange.ts",
     "dashboard/src/data/ptyHarvest.test.ts",
     "dashboard/src/data/ptyHarvest.ts",
+    "dashboard/src/data/railChatSelection.ts",
     "dashboard/src/data/railModel.test.ts",
     "dashboard/src/data/railModel.ts",
+    "dashboard/src/data/reviewerContext.ts",
     "dashboard/src/data/screenWakeLock.test.ts",
     "dashboard/src/data/screenWakeLock.ts",
     "dashboard/src/data/seatEvents.test.ts",
@@ -114,8 +116,8 @@
     "dashboard/src/data/useTaskDocumentBody.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 111,
-    "fileSidecars": 86,
+    "sourceFilesInScope": 113,
+    "fileSidecars": 88,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -142,7 +144,9 @@
     "operatorinbox",
     "pairchange",
     "ptyharvest",
+    "railchatselection",
     "railmodel",
+    "reviewercontext",
     "screenwakelock",
     "seatevents",
     "selection",

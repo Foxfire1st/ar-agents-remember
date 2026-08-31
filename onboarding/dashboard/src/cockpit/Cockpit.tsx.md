@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-08T21:20+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -227,7 +227,7 @@ the reviewed task evidence for any current behavioral claim.
 | The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). | `startCatalogPollDriver` | dashboard/src/data/catalogPoll.ts:179-192 |
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:22-45; dashboard/src/data/taskIdentity.ts:47-58; dashboard/src/data/taskIdentity.ts:64-70 |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:94-106 |
-| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:545-643 |
+| The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
 | The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:784-784 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:132-206 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:710-780 |

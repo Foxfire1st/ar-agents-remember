@@ -6,8 +6,8 @@
 | path                   | `scripts/harness/session_start_hook.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                        |
 
 ## Governing Overview
@@ -75,7 +75,7 @@ among its fragments; the generator inserts the constant conditionally.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generator that assembles these fragments and emits the conditional `WORKSPACE_ROOT` constant and per-harness trailer. | `WORKSPACE_ROOT` | scripts/sync-harness.py:556-556 |
-| The directive body every hook reads at run time. | "Otherwise you are the developer-facing **free chat**: read" | scripts/harness/shared/session-start-directive.md:7-7 |
+| The directive body every hook reads at run time. | "Otherwise you are the developer-facing **free chat**: read" | scripts/harness/shared/session-start-directive.md:10-10 |
 | The classification recording that the envelope and the workspace guard are protocol requirements. | `started_inside_workspace`; "payload envelope" | scripts/harness/README.md:79-79; scripts/harness/README.md:81-81 |
 | Tests that every declared hook fragment exists and each generated program parses with one entry point. | `test_every_declared_fragment_exists_in_its_library`; `test_generated_programs_parse_and_have_an_entry_point` | mcp/tests/test_sync_harness.py:57-65; mcp/tests/test_sync_harness.py:75-87 |
 

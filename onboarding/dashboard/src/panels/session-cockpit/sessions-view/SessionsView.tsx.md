@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -141,7 +141,7 @@ carry zone ownership. The resize-handle hover transition follows the existing Du
 - All decisions (thresholds, floor, calibration percentages) live in data/sessionLayout.ts
   (cit:([`ptyFloorPx`; `railDefaultPercent`; `hasPersistedPanelLayout`; `stageBelowPtyFloor`; `autoCollapseTransition`], dashboard/src/data/sessionLayout.ts:21-23; dashboard/src/data/sessionLayout.ts:36-43; dashboard/src/data/sessionLayout.ts:50-61; dashboard/src/data/sessionLayout.ts:64-66; dashboard/src/data/sessionLayout.ts:74-85)), and
   The named rail/attention/focus derivations are implemented in data/railModel.ts
-  (cit:([`buildRailModel`; `attentionRollup`; `smartDefaultFocus`], dashboard/src/data/railModel.ts:361-387; dashboard/src/data/railModel.ts:470-485; dashboard/src/data/railModel.ts:544-560)).
+  (cit:([`buildRailModel`; `attentionRollup`; `smartDefaultFocus`], dashboard/src/data/railModel.ts:397-423; dashboard/src/data/railModel.ts:507-522; dashboard/src/data/railModel.ts:582-598)).
 - Focus handoff must never fight a deliberate landed-row inspection (the F17 only-under-us rule).
 - Model/effort palette commands and the header trigger must share one popover; queued hints,
   toasts, rail attention, and live regions must derive from the same cockpit evidence.
@@ -174,7 +174,7 @@ No task-independent technical debt was identified during review.
 | The rail renderer receiving the once-derived model/rollup as props. | `SessionRail`; `model`; `rollup` | dashboard/src/panels/session-cockpit/SessionRail.tsx:49-50; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
 | `SessionStage` is the stage container component. | "export function SessionStage({" | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
 | The accessible stable-mounted Evidence / Capabilities / Bus tab host. | `SeatInspector` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
-| The pure task-document rail, attention, and focus derivations are defined in `railModel.ts`. | `buildRailModel`; `attentionRollup`; `smartDefaultFocus` | dashboard/src/data/railModel.ts:361-387; dashboard/src/data/railModel.ts:470-485; dashboard/src/data/railModel.ts:544-560 |
+| The pure task-document rail, attention, and focus derivations are defined in `railModel.ts`. | `buildRailModel`; `attentionRollup`; `smartDefaultFocus` | dashboard/src/data/railModel.ts:397-423; dashboard/src/data/railModel.ts:507-522; dashboard/src/data/railModel.ts:582-598 |
 | The cockpit store and catalog mirror are defined in `sessionCockpitStore.ts`. | `sessionCockpitStore`; `startCockpitMirror` | dashboard/src/data/sessionCockpitStore.ts:588-601; dashboard/src/data/sessionCockpitStore.ts:612-632 |
 | The shared poll driver subscription is owned by the shell. | "useEffect(() => startCatalogPollDriver()" | dashboard/src/cockpit/Cockpit.tsx:861-861 |
 | The `LaunchFlow` component implementation. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-413 |

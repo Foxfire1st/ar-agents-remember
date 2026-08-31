@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_lifespan.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                                        |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -33,6 +33,12 @@ The lifespan first runs `migrate_control_plane_identity_logs` in a worker thread
 compaction/priming and starts the existing projection, liveness, metrics, agent-notifier, and
 diagnostic loops. Shutdown cancels and awaits those tasks through the established lifecycle.
 
+Each enabled agent-notifier iteration refreshes the terminal catalog through the one liveness
+sweeper immediately before evaluating delivery. Dashboard HTTP polling may perform the same refresh
+for display, but headless message progress no longer depends on a browser requesting terminal state.
+Both that refresh and the following notifier sweep use `_to_thread_drained_on_cancel`: lifespan
+cancellation cannot return while either worker thread is still reading or mutating durable state.
+
 ### Conventions
 
 Startup ordering is the compatibility boundary: migrate once before strict current readers.
@@ -45,6 +51,10 @@ Startup ordering is the compatibility boundary: migrate once before strict curre
 - Cancelling the metrics loop propagates cancellation only after its current worker-thread call is
   drained; no metrics mutation may outlive lifespan shutdown.
 - The drain does not turn cancellation into success and does not create a detached fallback worker.
+- Agent-notifier delivery evaluates current control/turn liveness even when no dashboard client is
+  polling; the lifespan reuses the canonical liveness owner rather than duplicating probe logic.
+- Notifier cancellation drains an in-flight liveness refresh or sweep before propagating
+  `CancelledError`; no notifier mutation outlives server shutdown.
 
 ### Todos
 
@@ -62,6 +72,7 @@ No Domain Documentation source is configured.
 | Every blocking metrics operation uses the drained cancellation boundary. | `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:73-95 |
 | The serving lifespan performs migration before compaction and loop startup, then cancels and awaits every background task. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:195-243 |
 | The regression holds cancellation open until an in-flight metrics write completes and then observes the committed sample. | `test_cancellation_drains_an_inflight_metrics_write_before_returning` | mcp/tests/test_serving_app_background_loops.py:224-255 |
+| The notifier refreshes liveness before each sweep and drains an in-flight refresh on cancellation. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:140-181 |
 
 ## Cross-Repo References
 
@@ -75,6 +86,12 @@ background-loop ordering remains intact; the new seam ensures registration happe
 reconciliation/compaction rather than adding a parallel cleanup loop.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: extended the existing
+  shield-and-drain cancellation owner to both notifier liveness refresh and notifier evaluation,
+  preventing post-shutdown background mutation. Verification remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 made each headless notifier sweep refresh canonical terminal liveness before delivery evaluation, removing dashboard polling as an accidental progress dependency. Verification remains closeout-owned.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 parameter-specification migration in `_to_thread_drained_on_cancel` and confirmed that cancellation draining and lifespan ownership remain as documented. Verification remains closeout-owned.
 

@@ -34,6 +34,8 @@
     "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
     "mcp/src/agents_remember/worktrees/modules/quality/gate.py",
     "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/result_artifacts.py",
     "mcp/src/agents_remember/worktrees/modules/start.py",
     "mcp/src/agents_remember/worktrees/modules/startup/__init__.py",
     "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py",
@@ -45,8 +47,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 34,
-    "fileSidecars": 33,
+    "sourceFilesInScope": 36,
+    "fileSidecars": 35,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -55,6 +57,7 @@
     "agents",
     "agents_remember",
     "args",
+    "artifacts",
     "clean",
     "clean_executor",
     "cleanup",
@@ -88,6 +91,7 @@
     "modules",
     "onboarding",
     "onboarding_acceptance",
+    "paths",
     "preflight",
     "provider",
     "publication",
@@ -98,7 +102,10 @@
     "recovery",
     "ref",
     "remember",
+    "report",
+    "report_publication_paths",
     "result",
+    "result_artifacts",
     "results",
     "src",
     "start",

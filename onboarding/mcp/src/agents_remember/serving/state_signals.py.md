@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-26T17:57+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -32,6 +32,13 @@ missing-occupant fallback is part of that path. Observer sweeps suppress a findi
 seat rather than choosing a generation or aborting unrelated seats. Inbox delivery/landing remains owned by the
 shared durable message path.
 
+Reviewer subjects are polymorphic: leaf and master reviewers route to their manager, while sprint
+reviewers route to the architect or orchestrator stamped on that generation. The non-reaction
+notifier expands only this reviewer family; it preserves its historical worker/curator subordinate
+scope and does not silently treat every sprint role as a notifier subject. Unstamped historical
+reviewers retain only the deterministic old leaf-manager meaning while those rows drain; master and
+sprint reviewer notifications require the generation's explicit parent stamp.
+
 ### Conventions
 
 Task hierarchy determines ownership; runtime ids only correlate observed episodes.
@@ -47,6 +54,8 @@ Task hierarchy determines ownership; runtime ids only correlate observed episode
 - State-signal delivery still obeys the target turn boundary.
 - Ambiguity is local to the affected canonical seat; observers neither guess nor fail the whole
   sweep.
+- Reviewer notification follows the generation's structural parent, while non-reviewer expansion
+  remains bounded to the notifier's historical subordinate classes.
 
 ### Todos
 
@@ -60,15 +69,24 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:118-132 |
-| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous seats. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:153-188 |
+| Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:159-173 |
+| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous seats. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:198-206 |
 | Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:240-343 |
+| Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. | `_notifier_subject_owner_id` | mcp/src/agents_remember/serving/state_signals.py:396-413 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — Tightened notifier ownership to the same bounded migration rule as
+  structural routing: unstamped leaf reviewers retain their historical manager; higher reviewers
+  require explicit parent provenance. Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented
+  plane-stamped reviewer routing across leaf/master/sprint altitudes and the deliberately narrow
+  notifier expansion. Verification remains closeout-owned.
 
 - 2026-08-26T17:57+02:00 — Removed the unreachable compound-idle missing-occupant fallback. Manager
   documents and occupants are selected from one running snapshot, so the only non-current case is

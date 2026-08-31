@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

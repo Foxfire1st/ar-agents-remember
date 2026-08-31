@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `df36127113619f4e85522eb615cc20c7eb637405`|
-| lastVerifiedCommitDate | 2026-08-12T08:57:17+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ protocol snapshot is recorded in the repository fixture instead.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Fixture pins the CLI version, protocol, and stable method inventory. | "codex-app-server/0.144.3", "generatedBy": "npx --yes @openai/codex@0.144.3 app-server generate-json-schema", "model/list" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-16 |
-| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | "class CodexAppServerSession:", "async def set_model(", "async def set_effort(" | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458; mcp/src/agents_remember/serving/codex_app_server_adapter.py:163-194; mcp/src/agents_remember/serving/codex_app_server_adapter.py:196-224 |
+| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | "class CodexAppServerSession:", "async def set_model(", "async def set_effort(" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:209-209; mcp/src/agents_remember/serving/codex_app_server_adapter.py:242-242; mcp/src/agents_remember/serving/codex_app_server_session.py:105-105 |
 
 ## Cross-Repo References
 

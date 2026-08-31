@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_evidence_lifecycle.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,9 +62,9 @@ No Domain Documentation source is configured; durable-evidence governance is an 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Repository closure, uncataloged evidence, and source-observed consumer completeness are forced. | `test_repository_inventory_is_closed_over_governed_artifacts`; `test_new_fixture_or_ordinary_shared_support_without_metadata_is_refused`; `test_source_observed_missing_or_unsupported_consumers_are_refused` | mcp/tests/test_evidence_lifecycle.py:122-175 |
-| Task/date baselines and configured large-fixture thresholds cannot escape governance. | `test_task_or_date_shaped_baseline_is_governed`; `test_configured_size_threshold_governs_unknown_fixture_suffixes` | mcp/tests/test_evidence_lifecycle.py:177-204 |
+| Task/date baselines and configured large-fixture thresholds cannot escape governance. | `test_task_or_date_shaped_baseline_is_governed`; `test_configured_size_threshold_governs_unknown_fixture_suffixes` | mcp/tests/test_evidence_lifecycle.py:198-205; mcp/tests/test_evidence_lifecycle.py:207-225 |
 | Missing artifacts, contradictory authority, nonexistent owners, and stale contract identities fail closed. | `test_stale_or_contradictory_metadata_is_refused`; `test_nonexistent_registered_contract_and_stale_contract_rows_are_refused` | mcp/tests/test_evidence_lifecycle.py:206-242 |
-| Temporary evidence requires an executable replacement and obeys expiry. | `test_temporary_evidence_requires_a_real_executable_replacement`; `test_expired_migration_fails_even_when_its_replacement_exists`; `test_future_migration_with_an_existing_replacement_is_valid` | mcp/tests/test_evidence_lifecycle.py:244-323 |
+| Temporary evidence requires an executable replacement and obeys expiry. | `test_temporary_evidence_requires_a_real_executable_replacement`; `test_expired_migration_fails_even_when_its_replacement_exists`; `test_future_migration_with_an_existing_replacement_is_valid` | mcp/tests/test_evidence_lifecycle.py:265-306; mcp/tests/test_evidence_lifecycle.py:308-325; mcp/tests/test_evidence_lifecycle.py:327-344 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,10 @@ No meaningful cross-repository boundary applies.
 | The suite constructs its own temporary repository; it does not assert a sibling-repository contract. | — | — |
 
 ## Update History
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed test module moved; no semantic onboarding claim changed.
+  Verification remains closeout-owned.
 
 - 2026-08-28T06:28+02:00 — PDLS wave 005 curator: created the missing sidecar for closed-world
   evidence lifecycle ownership, consumer truth, replacement contracts, and expiry.

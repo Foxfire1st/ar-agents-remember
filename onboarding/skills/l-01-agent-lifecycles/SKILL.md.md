@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:57+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,13 @@ through ordered contract-addressed sync; retained conflicts remain resumable thr
 continuation, with escalation reserved for semantic ambiguity. Repeating the same dispatch after
 that recovery converges on the existing viable occupant or durable queued brief; a developer
 takeover never means manually replacing a live incumbent.
+
+Malformed hosted identity never falls into ambient/free-chat behavior: an unknown
+`AR_SPAWN_ROLE`, or a role environment without its plane-injected hosted-session identity, fails
+closed before any pasted brief is interpreted. Reviewer uses one role across leaf, master, and
+sprint documents; the dispatching manager, architect, or orchestrator stamps the exact structural
+parent on each generation so plan and super reviewers can share an address without sharing
+authority.
 
 Continuity lives in task documents and durable artifacts rather than transcripts or a particular
 occupant. The agent-notifier relays mechanical facts; owners interpret them without seat-local
@@ -86,6 +93,9 @@ separate protocol events as delivery attempts.
 - Agents never poll readiness, retain another seat's runtime address, or duplicate an initial brief.
 - `dispatch_agent` is the sole public spawn choice. Ambient launcher and plane-hosted authority are
   disjoint modes of that one transaction, with no caller-mode field or fallback.
+- Invalid role environment is a refusal, never a fourth routing entry or free-chat fallback.
+- Reviewer parentage is task-altitude- and generation-specific; runtime occupant ids are not parent
+  authority.
 - Role-table `dispatch` and `tools` rows describe structural authority/capability, not settings
   keys; only the documented launch knobs participate in settings overrides.
 - Durable artifacts, delegated authority, and human-only gates retain their owning altitudes.
@@ -109,14 +119,14 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
-| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:116-116 |
+| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
 | The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
-| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:198-198 |
-| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:437-437; skills/l-01-agent-lifecycles/SKILL.md:444-444 |
+| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:203-203 |
+| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:442-442; skills/l-01-agent-lifecycles/SKILL.md:449-449 |
 | Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:243-264 |
+| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:269-269 |
 | Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes." | skills/l-01-agent-lifecycles/SKILL.md:266-307 |
-| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:332-332 |
+| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:337-337 |
 
 ## L23 Dispatch Admission
 
@@ -145,6 +155,10 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented fail-closed
+  malformed hosted role identity and the plane-stamped polymorphic reviewer parent contract.
+  Verification remains closeout-owned.
 
 - 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: clarified that an explicit
   task-seat takeover converges idempotently on the canonical seat and never authorizes manual

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_structural_agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T06:45+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T10:56+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,25 +17,22 @@
 ## Purpose
 
 Exercises the structural agent service boundary with real sprint/master/leaf task documents,
-ambient hosted caller identity, qualified targets, replacement-aware routing, and exact-pinned
-dispatch rollback.
+structural caller identity, qualified targets, replacement-aware routing, curator admission, and
+atomic-series bootstrap.
 
 ## Code Commentary
 
 ### Logic
 
 Fixtures materialize task containment and structural catalog seats. Tests cover both directions of
-replacement-aware messaging, ambiguity refusal, successful dispatch brief delivery, and rollback
-when the exact initial dispatch brief cannot be delivered. The 260821-ARSPAWN-L1 ambient
+replacement-aware messaging, ambiguity refusal, curator review admission, and atomic-series
+bootstrap/recovery. The 260821-ARSPAWN-L1 ambient
 dispatch cohort (ambient spawn without hosted env, unknown-ref and altitude-mismatch refusals,
 plane provenance kept structural, ambient rollback, sender-less brief post) moved VERBATIM into
 `test_dispatch_agent_ambient.py` by the leaf's file-size fix (this suite had crossed the
-1,200-line rail) — see that suite's card; this file retains the structural messaging, ambiguity,
-dispatch-brief, and rollback coverage. Fix round 3 adds two plane-refusal tests pinning the
-restructured (ambient-first) caller resolution's fail-closed property: a broken plane identity
-refuses (`ambient-seat-stale`) WITHOUT downgrading to ambient, and dispatching a
-`system-specialist` child from an architect seat refuses (`structural-child-refused`) — both assert
-the spawn primitive is never called.
+1,200-line rail) — see that suite's card. The closeout file-size repair moved the remaining
+plane-dispatch rollback and fail-closed caller-resolution cohort into that same dispatch-focused
+suite, leaving this file below the hard limit without changing any assertion.
 
 The atomic-series bootstrap repository fixture seeds external `memory.md` with the current
 `ar/super` code-tip mapping. Its partial-bootstrap restart case advances both protected source
@@ -53,7 +50,6 @@ the deployed coordination root.
 - Tests never identify targets by runtime id through the public operation.
 - Both replacement directions remain reachable through the same structural address.
 - Ambiguity is a typed failure, never first-match success.
-- A child whose initial exact-pinned brief fails is retired before the error escapes.
 - Atomic manager and worker seats are spawned only after the owning master is observed active; a
   released parent is reselected before worker spawn.
 - Missing sprint integrationBranch, invalid manager altitude, and missing repository surface as
@@ -72,9 +68,9 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixtures create real task containment and structural seats. | `_write_topology` | mcp/tests/test_structural_agent_tools.py:86-137 |
-| The suite exercises the structural operation boundary. | `StructuralAgentToolTests` | mcp/tests/test_structural_agent_tools.py:164-1090 |
-| The restructured caller resolution refuses broken plane identity and unauthorized child roles without downgrading. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_structural_agent_tools.py:1140-1157; mcp/tests/test_structural_agent_tools.py:1159-1180 |
+| Fixtures create real task containment and structural seats. | `_write_topology`; `_seat` | mcp/tests/test_structural_agent_tools.py:101-152; mcp/tests/test_structural_agent_tools.py:155-178 |
+| The suite exercises structural messaging, curator admission, and atomic-series bootstrap/recovery below the file-size hard limit. | `StructuralAgentToolTests` | mcp/tests/test_structural_agent_tools.py:181-1156 |
+| Plane dispatch rollback and fail-closed identity/role refusals remain covered in the dispatch-focused sibling suite. | `test_plane_dispatch_persistence_failure_retires_the_unbriefed_child_privately`; `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_dispatch_agent_ambient.py:649-702; mcp/tests/test_dispatch_agent_ambient.py:704-721; mcp/tests/test_dispatch_agent_ambient.py:723-744 |
 
 ## Cross-Repo References
 
@@ -97,17 +93,27 @@ The current forcing seams include `test_child_to_replacement_parent_is_resolved_
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_child_to_replacement_parent_is_resolved_by_task_containment`, `test_parent_to_replacement_child_is_resolved_by_document_and_role`, `test_duplicate_current_occupants_fail_closed`, `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract`. | `test_child_to_replacement_parent_is_resolved_by_task_containment`; `test_parent_to_replacement_child_is_resolved_by_document_and_role`; `test_duplicate_current_occupants_fail_closed`; `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract` | mcp/tests/test_structural_agent_tools.py:186-211; mcp/tests/test_structural_agent_tools.py:213-237; mcp/tests/test_structural_agent_tools.py:239-245; mcp/tests/test_structural_agent_tools.py:247-265 |
+| The current test source exercises `test_child_to_replacement_parent_is_resolved_by_task_containment`, `test_parent_to_replacement_child_is_resolved_by_document_and_role`, `test_duplicate_current_occupants_fail_closed`, `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract`. | `test_child_to_replacement_parent_is_resolved_by_task_containment`; `test_parent_to_replacement_child_is_resolved_by_document_and_role`; `test_duplicate_current_occupants_fail_closed`; `test_curator_dispatch_refuses_before_spawn_without_leaf_review_contract` | mcp/tests/test_structural_agent_tools.py:259-290; mcp/tests/test_structural_agent_tools.py:292-316; mcp/tests/test_structural_agent_tools.py:318-324; mcp/tests/test_structural_agent_tools.py:326-344 |
 
 ## 260821-ARSPAWN-L2 Transaction Boundary Coverage
 
-Replacement-aware message tests prove that durable envelopes contain only the canonical document
-and role, then reach the replacement through delivery-time resolution. Failed-briefing tests
-prove that rollback requires faithful plane provenance and positive no-brief evidence for the
-matching private generation; unknown evidence refuses without cleanup. The rollback directly
-uses transaction authority and does not invoke public retire policy.
+Replacement-aware message tests here prove that durable envelopes contain only the canonical
+document and role, then reach the replacement through delivery-time resolution. The relocated
+plane failed-briefing test in `test_dispatch_agent_ambient.py` proves that rollback requires
+faithful plane provenance and positive no-brief evidence for the matching private generation;
+unknown evidence refuses without cleanup. The rollback directly uses transaction authority and
+does not invoke public retire policy.
 
 ## Update History
+
+- 2026-08-31T10:56+02:00 — 260821-ARSPAWN-L5 closeout quality repair: moved the final three
+  plane-dispatch rollback/refusal tests unchanged into `test_dispatch_agent_ambient.py`, reducing
+  this suite from 1,255 to 1,159 lines and restoring the 1,200-line hard limit. Verification
+  remains closeout-owned.
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed structural suite moved; no semantic onboarding claim changed.
+  Verification remains closeout-owned.
 
 - 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 address-only replacement messaging and private,
   evidence-gated rollback forcing onto the IAS test card. No certifying test execution is

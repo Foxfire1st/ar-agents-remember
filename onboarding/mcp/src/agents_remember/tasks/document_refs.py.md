@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -44,8 +44,12 @@ drift on top of membership validation: every `subTasks` row carrying a typed `ma
 resolve to exactly one master the sprint commands (same-repository), no two rows may type the same
 master, and the target may not itself orchestrate. Legacy rows (seat-doc `file`, no `masterRef`)
 are not checked here — `linkage_report`/`linkageFacts` surface them as drift facts instead (L14-R7
-backward tolerance). The altitude role sets (`SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES`) are
-re-exported from `tasks/document.py`, their canonical home.
+backward tolerance). The altitude role sets (`SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES`) and
+`REVIEWER_ALTITUDES` are re-exported from `tasks/document.py`, their canonical home.
+`validate_role` treats reviewer as the deliberate exception to single-altitude roles: the same role
+may bind leaf, master, or sprint documents, while unsupported roles and every other altitude
+mismatch retain typed refusals. Reviewer ownership is not decided here; generation-bound parent
+validation belongs to the structural seat plane.
 
 Since 260815-DAG-L15 the atomic segment node-kind rule lives here once as the shared
 `refuse_segment_nodes_on_atomic_masters(nodes, nature_by_ref)`, consumed by both the final
@@ -149,6 +153,10 @@ function. The former public `repository_masters` method and private `_master_doc
 route are removed rather than retained as compatibility readers.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the one
+  polymorphic reviewer altitude contract while preserving parent ownership as a separate
+  generation-bound structural concern. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled repository-wide master discovery with the single module-level `repository_master_documents` query and removal of the former public/private duplicate methods.
 

@@ -5,14 +5,22 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T16:32+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## ARSPAWN-L5 A005 Review-Repair Evidence
+
+The A005 repair keeps production rules strict and corrects the forcing worlds around them. Reviewer
+fixtures now carry current lineage, settings-owned launch selection, and explicit structural parent
+provenance. Fake-host concurrency and WebSocket rows declare the liveness their assertions assume;
+they do not weaken background reconciliation. Catalog and dashboard scope pins reflect the exact
+reviewed 68-field wire and 436 TypeScript inputs. The final acceptance remains Dagger-owned.
 
 ## ARSPAWN-L4 Public Advertisement Acceptance
 
@@ -217,9 +225,12 @@ gate-only seams mock lineage where that independent boundary is not their subjec
 ## Structural Seat Regression Boundary
 
 `test_structural_agent_tools.py` pins both directions of replacement-aware messaging, ambiguity
-refusal, and exact-pinned dispatch rollback; `test_dispatch_agent_ambient.py` (extracted by the
-260821-ARSPAWN-L1 file-size fix) owns the ambient dispatch cohort — spawn without hosted env,
-unknown-ref/altitude-mismatch refusals, plane provenance, ambient rollback, sender-less brief post.
+refusal, curator admission, and atomic-series bootstrap/recovery. `test_dispatch_agent_ambient.py`
+(extracted by the 260821-ARSPAWN-L1 file-size fix) owns the complete ambient/plane caller-mode
+dispatch cohort — spawn without hosted env, unknown-ref/altitude-mismatch refusals, plane
+provenance, ambient and plane rollback, stale plane identity, unauthorized child-role refusal,
+and sender-less brief post. The ARSPAWN-L5 closeout split moved the final three plane tests there
+unchanged so the structural suite returned below the 1,200-line hard limit.
 `test_spawn_agent_session.py` asserts the real primitive's caller-kind provenance (`spawnedByKind`
 on the payload and the catalog row). `test_agent_doctrine_plane_identity.py` rejects
 agent-instruction regressions to control-plane id cognition and proves packaged lifecycle doctrine
@@ -271,6 +282,11 @@ the task checkout source root, so task code cannot silently replace the installe
 The clean-quality group (`test_agents_remember_quality.py`,
 `test_clean_quality_executor.py`, `test_clean_room.py`, and the Codex clean-room probe) separates
 Dagger graph semantics, host execution, CLI translation, and real-when-available harness proof.
+Its ambient-harness structure tests also require the fixture tmux server's explicit option scope
+and require Codex to forward the dynamic `TMUX_TMPDIR` into the candidate MCP child, preventing
+session creation from diverging from the liveness and teardown namespace. The same focused group
+pins strict decoding of Codex's current `Wall time`/`Output` result envelope, so C09 can prove
+successful public dispatches without accepting arbitrary prefix text.
 `test_platform_subprocess.py` owns the WSL/UNC/Windows-shim refusal matrix plus deterministic
 existing-native `$HOME/.local/bin` admission and executable resolution, while the small L23
 notifier batch suite keeps structural expiry-address edge coverage below the file-size rail.
@@ -427,13 +443,14 @@ status/completion and server requests, explicit busy behavior, bounded malformed
 and reconnect correlation without resend. An opt-in live smoke proves exact-version readiness using
 an ephemeral thread with no prompt or credential output.
 
-The current Codex completion regressions prove that a null protocol `requestId` is resolved only by
-the protocol-owned text vendor correlation on exactly one accepted inbox row in the same hosted
-session. Missing, non-text, unmatched, and ambiguous correlation evidence fails loudly. Completion
-records adapter delivery metadata on that same row while explicit inbox state remains `pending` and
-unconsumed; terminal state is `idle` / `immediate` without a queued replacement and
-`settling` / `queued` only for an actual replacement. Exact 2.1.207, 0.144.3, and 0.80.7 values
-remain fixture/smoke evidence, not production pins.
+The current Codex completion regressions prove that parent terminal events carry the exact durable
+operation/request id, so accepted and initially queued inbox receipts both converge onto their own
+row. A null protocol `requestId` is resolved only by the protocol-owned text vendor correlation on
+exactly one accepted inbox row in the same hosted session. Missing, non-text, unmatched, and
+ambiguous correlation evidence fails loudly. Completion records adapter delivery metadata on that
+same row while explicit inbox state remains `pending` and unconsumed; terminal state is `idle` /
+`immediate` without a queued replacement and `settling` / `queued` only for an actual replacement.
+Exact 2.1.207, 0.144.3, and 0.80.7 values remain fixture/smoke evidence, not production pins.
 
 Pinned Claude Code 2.1.207 JSONL fixtures, fake-transport conformance,
 a real-local-subprocess lifecycle tier,
@@ -1519,6 +1536,22 @@ refuses before scan/admission, official diagnostics cannot accept, and recovery 
 contract without mutating Git.
 
 ## Update History
+
+- 2026-08-31T10:56+02:00 — 260821-ARSPAWN-L5 closeout quality repair: recorded the bounded
+  three-test relocation from the oversized structural suite into the existing dispatch-focused
+  ambient/plane suite. Both files now satisfy the hard size rail; verification remains
+  closeout-owned.
+
+- 2026-08-31T10:33+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded the focused
+  regression for strict current-Codex execution-envelope decoding after generation 6 exposed the
+  evidence parser at C09. Verification remains closeout-owned.
+
+- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: added exact terminal request-id and
+  queued-inbox completion forcing evidence. Verification remains closeout-owned.
+
+- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: added route-level evidence for the
+  single tmux namespace shared by the harness, Codex MCP child, liveness probes, and cleanup.
+  Verification remains closeout-owned.
 
 - 2026-08-30T16:32+02:00 — ARSPAWN-L4 recorded the public-surface suite's exact transitive
   closeout-input and curator-coherence support edges after the staged lifecycle catalog check

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -100,8 +100,13 @@ Forces typed sprint-to-master attach, detach, reparent, judgment, route review, 
 
 - Linkage writes are task-authoring operations and publish when intrinsically valid.
 - The before/after sprint-scope union drives projection invalidation and rebuild after task truth.
+- Sprint-seat schema forcing permits reviewer as the shared plan/super review address while still
+  rejecting leaf-only worker as a sprint seat.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added explicit sprint-seat
+  schema forcing for the polymorphic reviewer. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Rebuilt topology fixtures after each task publication so linkage assertions always consume the current generation.
 

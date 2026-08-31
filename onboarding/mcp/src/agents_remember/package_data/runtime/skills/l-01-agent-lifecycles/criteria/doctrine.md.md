@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/doctrine.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-20T21:30+02:00 |
-| lastVerifiedCommitHash | `de3a0fd9204f2e64755032274fb4e741bfddf6df` |
-| lastVerifiedCommitDate | 2026-08-20T21:16:45+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 
 ## Purpose
 
@@ -45,7 +45,7 @@ None recorded.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Doctrine Review` | skills/l-01-agent-lifecycles/criteria/doctrine.md:1-58 |
-| The reviewer role that binds this catalog per review type. | "Criteria Catalogs (the review test bench — bound here)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:62-62 |
+| The reviewer role that binds this catalog per review type. | "Criteria Catalogs (the review test bench — bound here)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:69-69 |
 
 ## Cross-Repo References
 

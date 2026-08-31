@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-16T07:25+02:00                  |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00                  |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                     |
 
 ## Governing Overview
@@ -47,12 +47,18 @@ The page is documentation, not parser code. Runtime parsing lives in
 `serving/harnesses.py`, and enforcement happens in `mcp/tools/terminal.py` during
 `spawn_agent_session_payload`.
 
-HFX2-L10 reframes the manual around settings-owned spend authority. Ordinary callers declare
-`env.AR_SPAWN_ROLE` and `level`; they do not pass legacy `harness`/`model`/`effort`, direct
+HFX2-L10 reframes the manual around settings-owned spend authority. Public callers give
+`dispatch_agent` only the canonical target document, role, and complete brief; the structural plane
+derives role environment and dispatch level. They do not pass legacy `harness`/`model`/`effort`, direct
 launch/session controls, `AR_SPAWN_MODEL`/`AR_SPAWN_EFFORT`, or harness-native spend/endpoint env
 keys. Those caller values return `spend-override-unsupported` before any spawn side effect. The
 manual still documents `launchArgs`, `sessionCommands`, and `promptKeywords`, but now as
 settings-owned escape hatches that are recorded in spawn provenance.
+
+ARSPAWN-L5 corrects the level explanation: the structural dispatcher derives `leaf`, `master`, or
+`portfolio` from the canonical target document, not from the role name. This matters for reviewer,
+which intentionally occupies leaf, master, and sprint review seats while retaining one role-level
+settings family with per-level overrides.
 
 Production compatibility is negotiated from structured protocol evidence for Claude, Codex, and
 Pi; exact package strings are fixture/smoke baselines only. The full reload boundary includes the
@@ -107,11 +113,11 @@ references below use source evidence rather than treating this prose as runtime 
 | --- | --- | --- |
 | The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults. | `resolved_role_knobs`, "def _parse_harnesses(" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:290-311; mcp/src/agents_remember/kernel/_agentic_settings_harness.py:26-26 |
 | Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum. | `find_harness`, `invalid_model_detail` | mcp/src/agents_remember/serving/harnesses.py:61-70; mcp/src/agents_remember/serving/harnesses.py:160-172 |
-| Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload. | `_caller_spend_override_refusal`, `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:570-607; mcp/src/agents_remember/application/terminal_tools.py:783-867 |
+| Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload. | `_caller_spend_override_refusal`, `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:583-619; mcp/src/agents_remember/application/terminal_tools.py:764-873 |
 | Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message. | `parse_control_initialization`, `parse_system_initialization`, `list_models_request` | mcp/src/agents_remember/serving/claude_stream_protocol.py:156-161; mcp/src/agents_remember/serving/claude_stream_protocol.py:219-232; mcp/src/agents_remember/serving/claude_stream_protocol.py:235-263 |
 | Startup orders correlated initialize/bootstrap before a separate correlated dynamic catalog request. | `negotiate_claude_startup`, `negotiate_claude_catalog` | mcp/src/agents_remember/serving/claude_stream_startup.py:59-81; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111 |
 | Catalog parsing preserves native model keys and nests each effort menu under its owning model row. | `parse_list_models_response`, `_parse_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75 |
-| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | `test_level_override_deep_merges_harness_inherited`, `test_legacy_model_effort_args_are_refused_instead_of_beating_settings`, `test_spend_env_keys_are_refused_instead_of_overriding_settings` | mcp/tests/test_spawn_agent_session_settings.py:261-277; mcp/tests/test_spawn_agent_session_settings.py:309-318; mcp/tests/test_spawn_agent_session_settings.py:344-360 |
+| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | `test_level_override_deep_merges_harness_inherited`, `test_legacy_model_effort_args_are_refused_instead_of_beating_settings`, `test_spend_env_keys_are_refused_instead_of_overriding_settings` | mcp/tests/test_spawn_agent_session_settings.py:279-295; mcp/tests/test_spawn_agent_session_settings.py:327-336; mcp/tests/test_spawn_agent_session_settings.py:362-378 |
 
 ## Cross-Repo References
 
@@ -123,6 +129,10 @@ that initialize carried account/catalog data.
 | --- | --- | --- |
 
 ## Update History
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented
+  target-document-derived dispatch level for the polymorphic reviewer and removed stale public
+  caller-supplied role-env/level language. Verification remains closeout-owned.
+
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 "- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 7 citation rows (all Tier 2), deleted 2 unresolvable task-report rows under the 2026-08-02 14:10 ruling, and scoped-checked the card with zero unresolved sources.

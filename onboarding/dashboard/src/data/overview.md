@@ -6,8 +6,8 @@
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -314,11 +314,11 @@ own server contracts, so no external code path is cited as authority.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:114-114 |
+| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:116-116 |
 | Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:361-387; dashboard/src/data/railModel.ts:414-436 |
+| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:397-423; dashboard/src/data/railModel.ts:451-473 |
 | The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/data/taskHierarchy.ts:43-43 |
 | The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:329-400; dashboard/src/dev/ScenarioPlayer.tsx:21-39 |
 | The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:37-37;  |
@@ -340,6 +340,10 @@ agent-tagged notices, including selected-child history state, remain conversatio
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
 ## Update History
+
+- 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  route citations after reviewed source movement; the data-route ownership contract is unchanged.
+  Verification remains closeout-owned.
 
 - 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the route-level dev/test invariant
   that the one canonical dashboard reset is total over scenario-owned projections, including

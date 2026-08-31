@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Codex roster items consumed here. | "def _collab_roster_upserts(" | mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:273-273 |
-| Adapter registry authority. | `_publish_agent_registry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:1075-1083 |
+| Adapter registry authority. | `_publish_agent_registry` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:1125-1133 |
 
 ## Cross-Repo References
 

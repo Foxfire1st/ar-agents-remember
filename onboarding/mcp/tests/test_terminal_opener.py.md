@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_terminal_opener.py`               |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-13T12:53+02:00               |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`        |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00               |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -18,7 +18,7 @@
 
 `test_terminal_opener.py` covers the shared hosted-session opener (`serving.terminal_opener`) — the
 ONE spawn path both the dashboard `POST /api/terminal/{session}` route and the agent-facing
-`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:738-791) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:769-842). It drives `open_terminal_session` against a fake host
+`spawn_agent_session` MCP tool compose over cit:([`open_terminal_session`], mcp/src/agents_remember/serving/terminal_opener.py:738-791) cit:(["def _open_terminal_response("], mcp/src/agents_remember/serving/_app_terminal_routes.py:225-225) cit:([`spawn_agent_session_tool`], mcp/src/agents_remember/application/terminal_tools.py:764-873). It drives `open_terminal_session` against a fake host
 (records the `ensure` call, no real tmux) + a real JSON catalog, pinning the leaf-claim / provenance /
 env-seed behaviour both call paths inherit — and, since 260703-L16, the per-harness knob→argv
 application (`KnobApplicationTests`).
@@ -48,6 +48,12 @@ Exactly one wins `opened`, the other receives `launch-conflict`, the host create
 both results agree with the one durable catalog row. The role-based worker/reviewer/curator/manager
 coverage remains on this same opener, so dashboard and `spawn_agent_session` cannot diverge into
 parallel launch paths.
+
+ARSPAWN-L5 adds reviewer-generation forcing at the process boundary. A retired sprint reviewer can
+reopen at the same canonical `(sprint, reviewer)` seat under a different explicit plane parent, and
+the new generation records that new parent rather than preserving the departed one. Conversely,
+leaf, master, and sprint reviewer opens without a complete parent pair all return
+`task-binding-invalid` before the fake host records any spawned process.
 
 ### 260713-PHA-L1 control metadata coverage
 
@@ -87,6 +93,8 @@ Free-form provenance (`launch_args`/`prompt_keywords`/`session_commands`) remain
 row and survives JSON/re-open behavior. An injected effective registry still resolves a
 settings-defined harness without guessing native knob mapping, while an unknown-everywhere id
 refuses pointing at `orchestration.harnesses` and the harness manual.
+The shared task-binding owner is also forced directly for conflicting task/replacement claims,
+incomplete reviewer-parent pairs, a missing leaf parent, and a mismatched higher-level parent.
 - **leaf-taken** (`test_leaf_taken_surfaces_owner_without_spawning`): a running chat already owning the
   leaf makes the opener return `leaf-taken` with the owner and never spawn or upsert the intruder.
 - **bad kind** (`test_bad_kind_reports_detail`): an unknown launch kind returns `bad-kind` with a detail
@@ -169,6 +177,13 @@ host selection. Existing opener behavior is therefore tested after the same
 task-derived admission precondition production uses.
 
 ## Update History
+
+- 2026-08-31T13:42+02:00 — A005 closeout repair added direct changed-unit forcing for the shared
+  task-binding conflict and structural-parent refusal families.
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added forcing for
+  generation-bound reviewer reparenting and pre-spawn refusal of every unstamped new reviewer.
+  Verification remains closeout-owned.
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

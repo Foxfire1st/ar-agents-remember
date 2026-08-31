@@ -5,9 +5,9 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_sprint_role_seats.py`             |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-10T04:39+02:00                            |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`        |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00                            |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -64,9 +64,10 @@ The test source provides executable proof across the binding and routing seams.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sprint roles share one sprint document while remaining distinct role seats; identical roles on different repository sprints never cross. | `test_sprint_roles_share_document_but_remain_distinct_role_seats`; `test_same_role_on_different_sprints_never_crosses_repository_scope` | mcp/tests/test_sprint_role_seats.py:140-167 |
-| Structural authorization pins architect children to sprint roles, orchestrator children to sprint specialists and direct-master managers, and manager children to leaf roles inside its master. | `test_architect_children_are_only_its_sprint_coordination_roles`; `test_orchestrator_owns_sprint_specialist_and_one_manager_per_direct_master`; `test_manager_owns_only_leaf_roles_inside_its_master` | mcp/tests/test_sprint_role_seats.py:169-198 |
-| Replacing a role changes only the current occupant; the document-and-role seat identity remains stable. | `test_replacement_changes_only_the_current_occupant` | mcp/tests/test_sprint_role_seats.py:200-208 |
-| Duplicate current occupants and role-altitude mismatches fail closed before any arbitrary selection. | `test_duplicate_current_occupants_fail_closed`; `test_role_altitude_mismatch_fails_before_any_occupant_lookup` | mcp/tests/test_sprint_role_seats.py:210-219 |
+| Structural authorization includes the architect plan reviewer, orchestrator super reviewer, and manager leaf/master reviewers at their exact documents. | `test_architect_children_are_only_its_sprint_coordination_roles`; `test_orchestrator_owns_sprint_specialist_and_one_manager_per_direct_master`; `test_manager_owns_only_leaf_roles_inside_its_master` | mcp/tests/test_sprint_role_seats.py:181-194; mcp/tests/test_sprint_role_seats.py:196-208; mcp/tests/test_sprint_role_seats.py:210-220 |
+| Replacing a role changes only the current occupant; the document-and-role seat identity remains stable. | `test_replacement_changes_only_the_current_occupant` | mcp/tests/test_sprint_role_seats.py:217-225 |
+| Duplicate current occupants and role-altitude mismatches fail closed before any arbitrary selection. | `test_duplicate_current_occupants_fail_closed`; `test_role_altitude_mismatch_fails_before_any_occupant_lookup` | mcp/tests/test_sprint_role_seats.py:227-232; mcp/tests/test_sprint_role_seats.py:234-236 |
+| Reviewer parent resolution covers all four seams and refuses unstamped master/sprint generations. | `test_reviewer_parent_is_exact_for_each_review_seam`; `test_higher_reviewer_without_plane_stamped_parent_fails_closed` | mcp/tests/test_sprint_role_seats.py:238-255; mcp/tests/test_sprint_role_seats.py:257-263 |
 
 ## Cross-Repo References
 
@@ -77,6 +78,10 @@ No cross-repository boundary is owned by this suite.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: expanded sprint-seat and
+  child-authorization forcing to the four reviewer contexts and pinned the fail-closed higher-level
+  unstamped boundary. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the regression card for `test_sprint_role_seats.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: created the one-to-one onboarding card for concurrent-

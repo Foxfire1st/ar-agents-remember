@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T15:55+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,11 +40,10 @@ case asserts exactly one client request and therefore no transport retry.
 
 The 260718-CHATS-L5F R6 addition,
 `test_refused_control_socket_yields_honest_note_and_unlinks_stale_socket`, pins the control-stop
-exit-path repair: a control-socket `connect()` that raises `ECONNREFUSED` (the socket file exists but
-nothing is listening — an unclean runner exit) is mapped by `_connect_unavailable_detail` to the
-honest "already exited (stale control socket…)" lifecycle note rather than a raw `[Errno 111]`
-surprise, and the stale socket is unlinked so the next probe reads the absent (ENOENT) case. On Linux
-AF_UNIX, ECONNREFUSED means no listener, so the unlink cannot orphan a live endpoint.
+path repair: a control-socket `connect()` that raises `ECONNREFUSED` proves only that the socket file
+has no listening runner. `_connect_unavailable_detail` must state that bounded fact, never infer that
+the hosted process already exited, suppress raw errno text, and unlink the stale socket so the next
+probe reads the absent (ENOENT) case.
 
 `test_native_page_serializes_thread_id_only_when_set` pins the multiplexed selector at the client
 serialization seam: `read_control_native_page` emits the additive `threadId` on the
@@ -68,8 +67,8 @@ without starting an adapter, server, or terminal process.
 - A mismatched response cannot donate request or vendor correlation evidence to the caller.
 - Submit and setter helpers issue one request only; retry/reconciliation is an explicit caller
   operation, never an automatic resend.
-- A refused control socket yields the honest lifecycle note (never a raw errno) and unlinks the stale
-  socket so the next probe reads ENOENT (260718-CHATS-L5F R6).
+- A refused control socket says no runner is listening, makes no hosted-process death claim, emits
+  no raw errno, and unlinks the stale socket for the next ENOENT probe.
 
 ### Todos
 
@@ -91,13 +90,13 @@ owns the corresponding exact-session request encoding and unknown-result convers
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pre-accept socket case keeps `may_have_sent` false before any byte is accepted. | "test_may_have_sent_is_false_until_socket_accepts_a_byte"; `send_error` | mcp/tests/test_harness_control_client.py:182-191 |
-| The post-accept socket case records `may_have_sent` true after the first byte is accepted. | "test_may_have_sent_is_true_after_socket_accepts_a_byte"; `sendall_error` | mcp/tests/test_harness_control_client.py:193-202 |
+| The pre-accept socket case keeps `may_have_sent` false before any byte is accepted. | "test_may_have_sent_is_false_until_socket_accepts_a_byte" | mcp/tests/test_harness_control_client.py:182-191 |
+| The post-accept socket case records `may_have_sent` true after the first byte is accepted. | "test_may_have_sent_is_true_after_socket_accepts_a_byte" | mcp/tests/test_harness_control_client.py:193-202 |
 | Post-write submit loss and a mismatched receipt both remain unknown under the original request id with one request call. | `test_post_write_submit_failure_returns_unknown_with_same_request_id`; `test_mismatched_receipt_stays_unknown_and_is_not_resent`; "response timed out"; "different-request" | mcp/tests/test_harness_control_client.py:204-215; mcp/tests/test_harness_control_client.py:262-282 |
 | A post-write setter failure returns unknown for the requested model and is not retried. | `test_post_write_set_failure_returns_unknown_without_retry`; "response reset" | mcp/tests/test_harness_control_client.py:284-294 |
-| The blocking client preserves whole UTF-8 JSON text, records the first accepted byte, and reports the exact failure stage. | `request_control`; `_encode_control_request`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:479-491; mcp/src/agents_remember/serving/harness_control_client.py:494-508; mcp/src/agents_remember/serving/harness_control_client.py:534-568 |
-| Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | `submit_control_prompt`; `_set_control_value`; "def _unknown_set_result(value: str"; "def _submission_receipt(" | mcp/src/agents_remember/serving/_harness_control_parsing.py:114-114; mcp/src/agents_remember/serving/harness_control_claude.py:679-679; mcp/src/agents_remember/serving/harness_control_client.py:216-254; mcp/src/agents_remember/serving/harness_control_client.py:584-610 |
-| `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:520-540 |
+| The blocking client preserves whole UTF-8 JSON text, records the first accepted byte, and reports the exact failure stage. | `request_control`; `_encode_control_request`; `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:486-498; mcp/src/agents_remember/serving/harness_control_client.py:502-516; mcp/src/agents_remember/serving/harness_control_client.py:541-577 |
+| Submit and set helpers convert only post-write uncertainty into normalized unknown evidence while pre-write failures stay loud. | `submit_control_prompt`; `_set_control_value`; "def _unknown_set_result(value: str"; "def _submission_receipt(" | mcp/src/agents_remember/serving/_harness_control_parsing.py:114-114; mcp/src/agents_remember/serving/harness_control_claude.py:679-679; mcp/src/agents_remember/serving/harness_control_client.py:216-254; mcp/src/agents_remember/serving/harness_control_client.py:581-607 |
+| `_connect_unavailable_detail` maps a refused control socket to the honest exit note and unlinks the stale socket (R6). | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:520-537 |
 
 ## Cross-Repo References
 
@@ -125,6 +124,14 @@ A new class covering the submission-status lookup decoder, all of it refusal-sha
   no usable lifecycle state are each refused rather than defaulted.
 
 ## Update History
+
+- 2026-08-31T12:19+02:00 — A005 closeout reconciliation removed the ambiguous socket-fixture
+  keyword anchors from the two first-byte claims; each citation now binds only to its unique test
+  function while preserving the already-reviewed behavior and exact function range. Verification
+  remains closeout-owned.
+
+- 2026-08-31T12:00+02:00 — A005 repair corrected the refusal oracle: `ECONNREFUSED` proves no
+  listener, not that the hosted process exited. Verification remains closeout-owned.
 
 - 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound post-write submit, mismatched-receipt, and setter claims to complete focused-test function extents containing their calls and assertions; the scoped fixer/check remain green.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/RailChat.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-08-31T07:35+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -54,15 +54,18 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Selected structural identity resolves the current live chat occupant. | `useRailChatSessions` | dashboard/src/panels/RailChat.tsx:355-432 |
-| Task assignment derives and sends a real task-document reference. | "function useRailChatAttach(" | dashboard/src/panels/RailChat.tsx:506-540 |
-| The panel accepts structural task identity separately from leaf display context. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:545-644 |
+| Selected structural identity resolves the current live chat occupant. | "} = useRailChatSessions(taskDocumentRef, taskDocuments, selectedTaskRole);" | dashboard/src/panels/RailChat.tsx:482-492 |
+| Task assignment derives and sends a real task-document reference. | "function useRailChatAttach(" | dashboard/src/panels/RailChat.tsx:391-391 |
+| The panel accepts structural task identity separately from leaf display context. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-31T07:35+02:00 — 260821-ARSPAWN-L5 review repair: retargeted the session-selection
+  citation to the extracted hook call used by the panel. Verification remains closeout-owned.
 
 - 2026-08-11T23:40+02:00 — No content impact: the lint-only extraction of props, harness
   detection, sprint-role start, and termination helpers preserves structural document-and-role

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dispatch_agent_ambient.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T16:03+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T10:56+02:00 |
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,8 @@ The ambient caller-mode test cohort for `dispatch_agent`: proves that a caller w
 plane-injected hosted identity (`AR_HOSTED_SESSION_ID` absent) spawns on a canonical task document
 in ambient mode, that refusals stay intact, that provenance distinguishes ambient from plane, that
 rollback fires only when the just-created generation is positively proven unbriefed, and that the
-ambient brief post carries no plane sender. The suite was extracted verbatim from
+ambient brief post carries no plane sender. It also owns the plane-side rollback and fail-closed
+identity/role refusal cohort at this caller-mode boundary. The suite was extracted verbatim from
 `test_structural_agent_tools.py` by the
 260821-ARSPAWN-L1 file-size fix (that suite had crossed the 1,200-line rail); the shared fixtures
 came with it. Fix round 3 added a real-path cohort: direct `resolve_ambient_caller` unit tests, a
@@ -31,6 +32,10 @@ ARSPAWN-L2 additionally proves that a successful brief binds its durable receipt
 catalog generation and that observer-log failure remains secondary after catalog retirement has
 already fenced a failed spawn. The rollback test now injects failure at the actual
 `OperatorInboxStore.append` persistence boundary, avoiding an obsolete filesystem-layout assumption.
+The ARSPAWN-L5 closeout quality repair moved the final three plane-dispatch tests here unchanged:
+private unbriefed-child rollback, stale plane identity refusal without ambient downgrade, and
+unauthorized structural child-role refusal. This keeps all caller-mode dispatch failure evidence
+together while returning `test_structural_agent_tools.py` below the 1,200-line hard limit.
 
 ## Code Commentary
 
@@ -82,6 +87,11 @@ The fix-round-3 real-path cohort (8 tests):
   retirement raising or racing (`retire_entry` returning `None`) reports the narrower rollback
   failure after the matching unbriefed generation was positively identified.
 
+The plane caller-mode cohort (3 tests) proves that failed exact-brief persistence retires the
+private child through `dispatch-rollback`, a stale hosted identity cannot downgrade into ambient
+dispatch, and an architect cannot dispatch an unauthorized `system-specialist` child. Each
+fail-closed case asserts that the spawn primitive is not called.
+
 ## Invariants And Boundaries
 
 - Tests use fakes, a substituted host, and temporary roots only; no real tmux, daemon, or hosted
@@ -89,6 +99,8 @@ The fix-round-3 real-path cohort (8 tests):
 - Ambient spawns assert `caller_kind="ambient"` and no spawning session; the plane case asserts
   `caller_kind="plane"` with the caller session — the provenance distinction L1-R6 requires.
 - Refusal paths assert `spawn.assert_not_called()` so a fail-open regression cannot pass silently.
+- Role-without-hosted-id and hosted-id-without-role each produce `ambient-seat-incomplete` before
+  spawn; neither half-identity may enter ambient dispatch.
 - The rollback case asserts `session_retire_tool.assert_not_called()` — ambient rollback must stay a
   system closure, never an authority-gated actor retire.
 - The real-path cohort keeps the same temporary-root confinement while exercising the production
@@ -116,15 +128,26 @@ No external domain source governs this repository-local test contract.
 | Brief-persistence failure retires a positively identified unbriefed child as a system closure. | `test_ambient_dispatch_persistence_failure_retires_the_unbriefed_child` | mcp/tests/test_dispatch_agent_ambient.py:309-345 |
 | The ambient brief post carries no plane sender and binds its durable receipt. | `test_ambient_dispatch_persists_the_brief_without_a_plane_sender` | mcp/tests/test_dispatch_agent_ambient.py:346-382 |
 | `resolve_ambient_caller` is unit-tested both ways (plane-present → None; ambient). | `test_resolve_ambient_caller_returns_none_when_plane_identity_is_present`; `test_resolve_ambient_caller_returns_ambient_without_plane_identity` | mcp/tests/test_dispatch_agent_ambient.py:383-386; mcp/tests/test_dispatch_agent_ambient.py:387-393 |
-| The real spawn+brief path runs through the production primitive with a substituted host and settings-owned knobs. | `test_ambient_dispatch_runs_the_real_spawn_and_persists_the_brief` | mcp/tests/test_dispatch_agent_ambient.py:394-420 |
-| Real rollback forces the actual inbox append seam, asserts the terminated-row listing, and keeps observer failure secondary after durable retirement. | `test_ambient_dispatch_rolls_back_via_system_closure_when_brief_persistence_fails`; `test_ambient_dispatch_rollback_preserves_an_observer_log_failure_as_secondary` | mcp/tests/test_dispatch_agent_ambient.py:421-451; mcp/tests/test_dispatch_agent_ambient.py:561-600 |
-| Missing or already-terminal catalog evidence refuses reconciliation; rollback failures are reported only after positive unbriefed-generation proof. | `test_ambient_dispatch_refuses_rollback_when_the_child_row_is_missing`; `test_ambient_dispatch_refuses_rollback_when_the_child_is_already_terminated`; `test_ambient_dispatch_rollback_reports_when_retirement_raises`; `test_ambient_dispatch_rollback_reports_when_retirement_races` | mcp/tests/test_dispatch_agent_ambient.py:449-472; mcp/tests/test_dispatch_agent_ambient.py:473-497; mcp/tests/test_dispatch_agent_ambient.py:498-527; mcp/tests/test_dispatch_agent_ambient.py:528-557 |
+| The real spawn+brief path runs through the production primitive with a substituted host and settings-owned knobs. | `test_ambient_dispatch_runs_the_real_spawn_and_persists_the_brief` | mcp/tests/test_dispatch_agent_ambient.py:442-467 |
+| Real rollback forces the actual inbox append seam, asserts the terminated-row listing, and keeps observer failure secondary after durable retirement. | `test_ambient_dispatch_rolls_back_via_system_closure_when_brief_persistence_fails`; `test_ambient_dispatch_rollback_preserves_an_observer_log_failure_as_secondary` | mcp/tests/test_dispatch_agent_ambient.py:469-498; mcp/tests/test_dispatch_agent_ambient.py:609-647 |
+| Missing or already-terminal catalog evidence refuses reconciliation; rollback failures are reported only after positive unbriefed-generation proof. | `test_ambient_dispatch_refuses_rollback_when_the_child_row_is_missing`; `test_ambient_dispatch_refuses_rollback_when_the_child_is_already_terminated`; `test_ambient_dispatch_rollback_reports_when_retirement_raises`; `test_ambient_dispatch_rollback_reports_when_retirement_races` | mcp/tests/test_dispatch_agent_ambient.py:500-522; mcp/tests/test_dispatch_agent_ambient.py:524-547; mcp/tests/test_dispatch_agent_ambient.py:549-577; mcp/tests/test_dispatch_agent_ambient.py:579-607 |
+| Plane exact-brief failure retires the private unbriefed child through structural transaction authority. | `test_plane_dispatch_persistence_failure_retires_the_unbriefed_child_privately` | mcp/tests/test_dispatch_agent_ambient.py:649-702 |
+| Broken plane identity and unauthorized child roles refuse before spawn without ambient downgrade. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_dispatch_agent_ambient.py:704-721; mcp/tests/test_dispatch_agent_ambient.py:723-744 |
 
 ## Cross-Repo References
 
 No cross-repository boundary participates in this suite.
 
 ## Update History
+
+- 2026-08-31T10:56+02:00 — 260821-ARSPAWN-L5 closeout quality repair: received the unchanged
+  three-test plane dispatch rollback/refusal cohort from `test_structural_agent_tools.py`; this
+  dispatch-focused suite now owns the full ambient/plane caller-mode failure boundary while both
+  files remain below the hard size limit. Verification remains closeout-owned.
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added both incomplete
+  hosted-identity directions and asserted that neither can reach the spawn primitive.
+  Verification remains closeout-owned.
 
 - 2026-08-26T16:03+02:00 — Post-failure repair: rebound ambient rollback forcing to the real
   `OperatorInboxStore.append` commit boundary; removed reliance on an obsolete log path. No

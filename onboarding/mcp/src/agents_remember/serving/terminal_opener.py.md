@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,18 @@ spawn provenance; `_opened_catalog_entry` maps it onto the catalog row write-onc
 and the sibling provenance writers (`conversation/library/open_service.py`,
 `serving/_app_terminal_routes.py`) keep the `None` default.
 
+Reviewer ownership is a separate, generation-bound provenance pair:
+`structural_parent_task_document_ref` plus `structural_parent_role`. Admission validates the pair
+against the review altitude before any process is created: a leaf reviewer belongs to its manager,
+a master reviewer to that master's manager, and a sprint reviewer to either the architect plan seam
+or orchestrator super-exit seam. A new reviewer without the complete explicit pair refuses before
+tmux or catalog mutation; the opener never manufactures a parent from altitude alone. Unlike
+historical spawn ancestry, a freshly opened generation
+takes the newly admitted reviewer parent instead of preserving the departed generation's parent.
+`_task_binding_refusal` delegates document, role, lineage, and parent validation to
+`serving.task_binding.resolve_task_binding`; the opener retains a final admission read immediately
+before host creation but owns no parallel policy.
+
 ### Conventions
 
 Task reference and role arrive already authorized by the structural application for agent dispatch,
@@ -42,6 +54,8 @@ or through an operator API boundary.
 - A new process cannot inherit its caller's ambient seat identity.
 - Seat conflicts are task-document-and-role scoped.
 - Reopening never mutates a live occupant's launch provenance.
+- Reviewer parent document and role are supplied together, altitude-valid, and bound to one
+  process generation; other structural roles cannot carry that pair.
 - This module allocates occupants; it does not define public seat addresses.
 
 ### Todos
@@ -58,9 +72,10 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Hosted launch strips inherited daemon identity. | `_scrub_daemon_identity_env` | mcp/src/agents_remember/serving/terminal_opener.py:437-475 |
 | Binding conflict is checked before the transaction commits. | `_binding_conflict_owner` | mcp/src/agents_remember/serving/terminal_opener.py:578-602 |
-| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:722-775 |
+| Open coordinates launch, binding refusal, and persistence. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:742-795 |
 | Spawn provenance records caller kind write-once onto the catalog row. | `SpawnProvenance` | mcp/src/agents_remember/serving/terminal_opener.py:160-179 |
 | The opener maps spawn provenance onto the durable row write-once. | `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:519-575 |
+| Structural admission consumes the shared task-binding authority before process creation. | `_task_binding_refusal` | mcp/src/agents_remember/serving/terminal_opener.py:711-739 |
 
 ## Cross-Repo References
 
@@ -74,6 +89,18 @@ unavailable lineage returns a typed `OpenTerminalResult` with detail and the
 strict projection; non-structural terminals retain their existing path.
 
 ## Update History
+- 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair removed the opener-local binding and
+  reviewer-parent implementation; the opener now consumes the single `task_binding` authority and
+  retains only result translation. Verification remains closeout-owned.
+
+- 2026-08-31T04:59+02:00 — Tightened new reviewer admission: the exact structural parent pair is
+  mandatory at every altitude and absence refuses before process creation. Verification remains
+  closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the exact
+  altitude-specific reviewer-parent admission contract and why that parent is generation-bound
+  rather than preserved across a retired review generation. Verification remains closeout-owned.
+
 - 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `SpawnProvenance.spawned_by_kind` (`plane|ambient|unattributed`) mapped onto the catalog row by `_opened_catalog_entry` write-once via `_preserved`; sibling provenance writers keep the `None` default. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-12T20:10+02:00 — L23 curator: recorded task-derived lineage admission before structural process creation; verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 
 ## Purpose
 
@@ -16,6 +16,10 @@ which task-document altitude it occupies, the loop and artifacts it owns, its co
 and the work it must refuse or escalate.
 
 ## Hot Path Summary
+
+Manager hosted dispatch consistently names the canonical leaf or master **task document**. That
+vocabulary matches the public structural request and its task-reference authority; generated and
+packaged role projections are synchronized from the canonical role file rather than edited apart.
 
 ### IAS Frozen Role Boundary
 
@@ -30,12 +34,17 @@ reported worktree, then continues the same contract-addressed operation or expli
 Private journal/ref identity stays in the plane; role briefs carry the public contract address and
 recovery guidance.
 
-Architect owns sprint-level direction, the initial plan loop, and strategist/reviewer lineage.
+Architect owns sprint-level direction, the initial plan loop, and the sprint plan-review reviewer.
 Strategist authors the evidence-cited dependency graph when dispatched. Orchestrator adopts the
 ruled artifact, maintains the runtime frontier, and records bounded reprioritization judgments;
 substantial reshapes return through the architect-owned strategist loop. Manager owns readiness
-inside one organizational or atomic master. Worker owns one leaf, reviewer owns independent route
-or completion verdict evidence, and curator reconciles ruled intent with implementation.
+inside one organizational or atomic master. Worker owns one leaf; reviewer owns independent route
+or completion verdict evidence; and curator reconciles ruled intent with implementation.
+
+Reviewer is one target-only role projected at the reviewed artifact's altitude: leaf, master, or
+sprint. Managers own leaf and master-exit generations, the architect owns the plan generation, and
+the orchestrator owns the super-exit generation. The control plane stamps that structural parent;
+the shared role name and sprint address do not blur plan and super authority.
 
 Organizational masters have no integration branch: their leaves are direct super descendants and
 the final leaf is reviewed and full-gated as part of the exact proposed super candidate before it
@@ -106,7 +115,7 @@ remain read/search helpers and never become AR role seats.
 | Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
-| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:116-116 |
+| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
 | Worker and reviewer roles define the two independent halves of per-ID acceptance. | `### 4 — Per-Requirement Acceptance Envelope And Delivery Attempt`; `## Per-Requirement Independent Attempt Adjudication` | skills/l-01-agent-lifecycles/roles/worker.md:77-145; skills/l-01-agent-lifecycles/roles/reviewer.md:101-160 |
 
 ## L23 Role Recovery Semantics
@@ -153,6 +162,9 @@ No role authority changed. Curator doctrine now uses explicit sync/start/poll re
 treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the four reviewer
+  contexts and plane-stamped parent ownership to the role map. Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the complete role caller-context matrix,
   separated one-call architect bootstrap from explicit ambient takeover, corrected manager-only

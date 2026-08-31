@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -236,7 +236,7 @@ themselves.
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:46-128 |
 | Published workflow kind and structural agent-session tool docstrings. | `worktree_start`; `dispatch_agent`; `retire_child`; `rename_child`; `rename_self` | mcp/src/agents_remember/mcp/registration/worktrees.py:28-92; mcp/src/agents_remember/mcp/registration/sessions.py:27-57; mcp/src/agents_remember/mcp/registration/sessions.py:59-73; mcp/src/agents_remember/mcp/registration/sessions.py:75-89; mcp/src/agents_remember/mcp/registration/sessions.py:91-94 |
 | Session response vocabularies. | `SpawnAgentSessionResponse`; `SessionRetireResponse`; `SessionRenameResponse` | mcp/src/agents_remember/models/terminal.py:91-135; mcp/src/agents_remember/models/terminal.py:175-191; mcp/src/agents_remember/models/terminal.py:201-212 |
-| Terminal refusal/result production is split across the centralized spawn-refusal builder and the knob, retire, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-31; mcp/src/agents_remember/application/terminal_tools.py:466-484; mcp/src/agents_remember/application/terminal_tools.py:917-952; mcp/src/agents_remember/application/terminal_tools.py:1090-1111 |
+| Terminal refusal/result production is split across the centralized spawn-refusal builder and the knob, retire, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-13; mcp/src/agents_remember/application/terminal_tools.py:473-473; mcp/src/agents_remember/application/terminal_tools.py:947-947; mcp/src/agents_remember/application/terminal_tools.py:1129-1129 |
 | Leaf-reference refusal statuses. | `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66 |
 | Git facts, freshness, onboarding-read, and drift-status producers. | `git_facts_to_packet`; `freshness_to_packet`; `_resolve_onboarding`; `run_drift_summary` | mcp/src/agents_remember/application/read_files.py:218-247; mcp/src/agents_remember/kernel/git_facts.py:104-115; mcp/src/agents_remember/kernel/git_freshness.py:158-169; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:35-90 |
 | Invalid-contract start result. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |

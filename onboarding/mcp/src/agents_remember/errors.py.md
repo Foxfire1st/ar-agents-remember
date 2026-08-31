@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -112,7 +112,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | --- | --- | --- |
 | Structural occupancy, dispatch evidence, dispatch locking, and routing are distinct members of the shared domain family. | `SeatOccupancyError`; `StructuralDispatchError`; `StructuralDispatchLockError`; `StructuralRoutingError` | mcp/src/agents_remember/errors.py:20-33 |
 | Future-code candidate capture and currentness refusals use one central typed member with an explicit status. | `FutureCodeCandidateError` | mcp/src/agents_remember/errors.py:94-99 |
-| The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:544-580 |
+| The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:541-577 |
 | The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity blocker instead. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so `HarnessSubmissionAuthority` is the sole owner rather than the thing behind a facade. | `_preflight_declined`; `_send_and_settle` | mcp/src/agents_remember/serving/harness_submission_authority.py:639-659; mcp/src/agents_remember/serving/harness_submission_authority.py:702-729 |
 | The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes: `_untracked_source_candidates` re-raises `lstat` failures, `_require_repository_root` raises `AuthorityError`, and `_run_git` converts `TimeoutExpired`/`OSError` with `from error`. | `_untracked_source_candidates`; `_require_repository_root`; `_run_git` | mcp/src/agents_remember/kernel/route_index_census.py:126-156; mcp/src/agents_remember/kernel/route_index_census.py:159-179; mcp/src/agents_remember/kernel/route_index_census.py:189-205 |
 | The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | "class ConversationRuntime:"; "class LocalOperatorAuthorizationResolver:" | mcp/src/agents_remember/serving/conversation/runtime.py:58-104; mcp/src/agents_remember/serving/conversation/authorization.py:71-107 |

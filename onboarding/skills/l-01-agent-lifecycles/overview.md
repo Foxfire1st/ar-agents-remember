@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 
 ## Purpose
 
@@ -57,6 +57,12 @@ Role continuity is task-document and artifact based. Workers build and report, r
 independent verdict evidence, curators reconcile system intent and memory, managers decide
 delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
 fact relay replaces role-local polling and inference.
+
+Reviewer is polymorphic without becoming ambiguous: it binds the exact leaf, master, or sprint
+being reviewed, while the plane stamps the generation's parent document+role. Managers therefore
+own leaf and master-exit review, the architect owns plan review, and the orchestrator owns super
+review. An unstamped sprint reviewer cannot route because choosing between those two sprint planes
+would be invented authority.
 
 Requirement completion is an exact-set protocol. Before dispatch, the manager compiles the stable
 IDs inherited from the master and owned by the leaf. The worker must write one acceptance envelope
@@ -123,12 +129,12 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:393-393; skills/l-01-agent-lifecycles/SKILL.md:437-437; skills/l-01-agent-lifecycles/SKILL.md:444-444 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:398-398; skills/l-01-agent-lifecycles/SKILL.md:442-442; skills/l-01-agent-lifecycles/SKILL.md:449-449 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
 | Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
-| The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:243-264 |
+| The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:269-269 |
 
 ## L23 Pre-Dispatch Lineage
 
@@ -165,6 +171,10 @@ No lifecycle topology or authority changed. The curator brief now demonstrates t
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded task-altitude
+  reviewer binding, generation-bound parent stamping, and the fail-closed unstamped sprint seam.
+  Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted one public `dispatch_agent` verb, separated
   ordinary architect bootstrap from explicit takeover, clarified fixed role authority versus

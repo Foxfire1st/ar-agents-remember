@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-29T07:35+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-31T11:06+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 
 ## What This Area Is
 
@@ -227,13 +227,13 @@ engine/store and one over a real socket.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The validated IPC reads are the only substrate channels polled. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover"; "def read_submission_authority(self"; "def read_submission_status("; "def read_control_transcript(  # pragma: no cover"; "def read_control_evidence("; "def read_control_native_page(  # pragma: no cover"; "        return read_submission_provenance(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:149-149; mcp/src/agents_remember/serving/harness_control_client.py:642-642; mcp/src/agents_remember/serving/harness_control_client.py:169-169; mcp/src/agents_remember/serving/harness_control_client.py:335-335; mcp/src/agents_remember/serving/harness_control_client.py:351-351; mcp/src/agents_remember/serving/harness_control_client.py:375-375; mcp/src/agents_remember/serving/harness_control_client.py:693-693 |
+| The validated IPC reads are the only substrate channels polled. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover"; "def read_submission_authority(self"; "def read_submission_status("; "def read_control_transcript(  # pragma: no cover"; "def read_control_evidence("; "def read_control_native_page(  # pragma: no cover"; "        return read_submission_provenance(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:149-149; mcp/src/agents_remember/serving/harness_control_client.py:169-169; mcp/src/agents_remember/serving/harness_control_client.py:335-335; mcp/src/agents_remember/serving/harness_control_client.py:351-351; mcp/src/agents_remember/serving/harness_control_client.py:375-375; mcp/src/agents_remember/serving/harness_control_client.py:639-639; mcp/src/agents_remember/serving/harness_control_client.py:690-690 |
 | The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
 | Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "return snapshot_seat_turn_state(snapshot" | mcp/src/agents_remember/serving/hosted_control_projection.py:79-79; mcp/src/agents_remember/serving/hosted_control_projection.py:105-105 |
 | The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | "async def conversation_page("; "async def hydrate_agent_history("; "async def conversation_events("; "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:1000-1004 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:1017-1017; onboarding/mcp/tests/overview.md:1019-1021 |
 
 ## Cross-Repo References
 
@@ -408,6 +408,18 @@ offload are untouched.
 The active conversation routes now import the wire contracts from `models/conversations/` (moved from the serving monolith by L9) and consume the canonical ports from `serving/ports.py`. Route behavior is unchanged.
 
 ## Update History
+
+- 2026-08-31T11:06+02:00 — 260821-ARSPAWN-L5 closeout file-size repair: rebound the
+  focused-suite citation after the tests overview recorded the structural-test relocation.
+  Active-conversation behavior is unchanged; verification metadata remains pinned.
+
+- 2026-08-31T10:36+02:00 — 260821-ARSPAWN-L5 closeout memory repair: rebound the
+  focused-suite citation after the tests overview gained the C09 envelope-decoding evidence.
+  Active-conversation behavior is unchanged; verification metadata remains pinned.
+
+- 2026-08-31T09:55+02:00 — 260821-ARSPAWN-L5 closeout memory repair: widened the focused-suite
+  citation to the exact lines that carry all four named anchors. No active-conversation behavior
+  changed; verification metadata remains pinned.
 
 - 2026-08-29T07:35+02:00 — Rebound the focused-suite citation after the tests overview recorded
   explicit integration-lane ownership for the future-code candidate matrix; active-serving

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_client.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-08-30T21:25+02:00               |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,8 +25,8 @@ strictly validated reads for the evidence family: `read_control_evidence`,
 epoch-guarded `interrupt_control` write, the paged `read_operation_timeline` read with strict
 monotonicity/epoch/coherence validation, additive `assets` on `submit_control_prompt`, and strict
 withdrawal-recovery parsing. The evidence `nativeMethod` is deserialized on the frame round trip,
-and a control-socket connect failure maps to an honest "already exited" lifecycle note (unlinking
-the stale socket on `ECONNREFUSED`) instead of surfacing a raw `[Errno 111]`. The multiplexed
+and a control-socket connect failure maps to an honest socket observation (unlinking a stale socket
+on `ECONNREFUSED`) instead of inventing process-liveness truth. The multiplexed
 control plane adds the per-thread `thread_id` selector on `read_control_native_page`, parses the
 plural `pendingInteractions` on snapshots, and reads the optional evidence `threadId` wire key
 back into `EvidenceFrame.thread_id`.
@@ -47,12 +47,11 @@ zero-length send. Once the server had answered and closed with the request drain
 and that pointless write raised `EPIPE` — turning an exchange the server actually completed into a
 `may_have_sent=True` disconnect that forces reconciliation. Only a non-empty remainder is written now
 (260727-CHATS-IM-L4). A connect failure routes through
-cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-540): `ECONNREFUSED` (a stale socket file with nothing
-listening — the observed `[Errno 111]` banner) and `ENOENT` (an absent socket) both map to
-the honest "the controlled runner already exited (…)" note, and the stale socket is best-effort
-`unlink`ed on `ECONNREFUSED` so the next probe reads the absent case cleanly instead of repeating the
-refused surprise; a timeout and any other error get their own honest phrasings. On Linux AF_UNIX
-`ECONNREFUSED` means no listener, so the unlink cannot orphan a live endpoint. Post-write loss,
+cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-540): `ECONNREFUSED` records that a socket exists but no runner is listening, while `ENOENT`
+records only that the socket is absent. Neither proves that a newly spawned runner already exited:
+absence is also the normal endpoint-creation race. A refused stale socket is best-effort unlinked so
+the next probe sees the clean absent state; a timeout and any other error keep distinct honest
+phrasings. Post-write loss,
 malformed response, or mismatched post-dispatch evidence becomes an honest `unknown` receipt or
 `SetResult` carrying the original request id/value; it is never resent. The explicit reconcile
 operation queries the bridge's retained same-id truth.
@@ -120,9 +119,9 @@ protocol bound, not an invented acceptance result.
   never treated as settlement.
 - Asset-free submit payloads keep their exact previous key order; `assets` rides only as a
   sequence of objects.
-- A control-socket connect failure never leaks a raw errno: `ECONNREFUSED`/`ENOENT` map to the
-  designed "already exited" note, the stale socket is unlinked best-effort on `ECONNREFUSED`,
-  and the failure stays `may_have_sent=False` (retry-safe pre-write).
+- A control-socket connect failure never leaks a raw errno or claims process death from socket state:
+  `ECONNREFUSED`, `ENOENT`, timeout, and other unavailability remain distinct; the stale socket is
+  unlinked best-effort on refusal, and the failure stays `may_have_sent=False` (retry-safe pre-write).
 - A request the socket accepted whole issues NO further write. A completed exchange must never be
   reported as a disconnect, so the client never performs a write it has no bytes for.
 - The evidence `nativeMethod` is parsed only when present and must be non-empty text; it is
@@ -231,6 +230,8 @@ now imported from there; the client's control-operation surface is otherwise unc
 conversation tree reaches this client only through `ControlPlanePort` in `serving/ports.py`.
 
 ## Update History
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 corrected control-connect diagnostics so absent/refused sockets no longer falsely prove that a newly spawned runner exited. Verification remains closeout-owned.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the `ControlSubmission` move and the
   port-mediated consumer boundary; the L9 change section above documents the split. Verification

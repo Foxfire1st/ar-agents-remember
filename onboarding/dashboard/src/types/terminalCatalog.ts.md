@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/types/terminalCatalog.ts`         |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-08-25T22:27+02:00 |
-| lastVerifiedCommitHash |  `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview

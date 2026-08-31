@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_ws_websocket_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-16T04:06+02:00                                            |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                                        |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated            | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Terminal route suite for structural task attachment, seat collision, harness lau
 
 ### Logic
 
-`attach-task` binds a current session by canonical task document and role, refuses unknown/unmatchable/terminated/landed targets, and enforces role-scoped uniqueness. Reopen preserves live truth and replaces only dead ownership; settings-owned harness selections remain complete and validated.
+`attach-task` binds a current session by canonical task document and role, refuses unknown/unmatchable/terminated/landed targets, and enforces role-scoped uniqueness. The terminal-versus-chat sharing fixture proves its preloaded terminal is live in the fake host before app startup, so liveness reconciliation cannot turn a valid attachment subject into an exited row. Reopen preserves live truth and replaces only dead ownership; settings-owned harness selections remain complete and validated.
 
 ### Conventions
 
@@ -54,6 +54,10 @@ to `main`, and proves both terminal open and task attach return HTTP 409 with
 mutated on refusal.
 
 ## Update History
+
+- 2026-08-31T12:00+02:00 — A005 aligned the attachment fixture's catalog `running` claim with
+  fake-host liveness, preserving the intended role-scoped collision proof. Verification remains
+  closeout-owned.
 
 - 2026-08-16T04:06+02:00 — Dagger fixture repair: websocket stale-lineage setup advances the exact super ref and restores main before the public session boundary runs.
 - 2026-08-12T20:10+02:00 — L23 curator: documented dashboard-route fail-closed lineage responses; verification remains closeout-owned.

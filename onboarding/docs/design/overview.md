@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated            | 2026-08-28T14:15+02:00                      |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8`  |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00                   |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`  |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/testing/cadence_runner.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No external domain documentation governs the local cadence command.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Only scheduled, provider-bump, and migration triggers can execute. | `run_cadence_evidence` | mcp/test_support/agents_remember_test_support/testing/cadence_runner.py:23-113 |
-| The Dagger public route remains explicitly non-accepting. | `cadence_evidence` | .dagger/src/agents_remember_quality/main.py:531-600 |
+| The Dagger public route remains explicitly non-accepting. | `cadence_evidence` | .dagger/src/agents_remember_quality/main.py:690-759 |
 | Focused tests force host refusal, serial stress, provider selection, and not-applicable migration. | `test_host_process_is_refused_before_inventory_or_execution` | mcp/tests/test_cadence_runner.py:36-119 |
 
 ## Cross-Repo References

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated | 2026-08-25T23:19+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -33,6 +33,9 @@ carry structural identity; task assignment responses return the accepted or refu
 role. Other serving response families remain strict and unchanged in responsibility.
 ARSPAWN-L2 also mirrors `dispatch_brief_entry_id` (`dispatchBriefEntryId` on the wire), the private
 catalog receipt used for dispatch reconciliation after inbox compaction.
+ARSPAWN-L5 mirrors `structural_parent_task_document_ref` and `structural_parent_role`, so operator
+projections can distinguish the owner of an exact reviewer generation without consulting spawn
+ancestry or a runtime id.
 
 ### Conventions
 
@@ -45,6 +48,8 @@ response models validate where the framework owns serialization.
 - Session ids remain operator/transport occupant correlation.
 - A seat conflict is reported against task-document-and-role identity.
 - The dispatch receipt is diagnostic/reconciliation evidence, not a public structural address.
+- Reviewer structural parent is a canonical document+role address and remains separate from
+  spawned-by correlation.
 
 ### Todos
 
@@ -67,6 +72,10 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the reviewer
+  structural-parent pair to the strict terminal catalog wire mirror. Verification remains
+  closeout-owned.
 
 - 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
 

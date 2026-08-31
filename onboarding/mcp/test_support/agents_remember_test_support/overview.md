@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-08-31T12:27+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -60,6 +60,10 @@ Repository-owned design truth lives in `docs/design/python-evidence-system.md` a
 they do not replace this source-paired behavior description.
 
 ## Update History
+
+- 2026-08-31T12:27+02:00 — No route impact: A005 retains this package as Dagger-owned
+  verification support only; its child quality/testing refinements do not change the root
+  product-versus-verification boundary. Verification remains closeout-owned.
 
 - 2026-08-28T10:03:40+02:00 — Replaced the stale direct-diagnostics route summary with the current
   non-accepting Dagger evidence-route boundary after Candidate A retirement.

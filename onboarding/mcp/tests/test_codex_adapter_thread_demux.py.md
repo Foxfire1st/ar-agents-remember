@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_adapter_thread_demux.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -193,7 +193,7 @@ the acquisition implementation is now contract-probed rather than a direct whole
   loud), the bounded pending map declining only the newest request, and the load-shed
   queue pins (delta flood sheds oldest deltas with structural completions surviving, the
   consumer-side notice mint, and the notice-before-close-sentinel ordering). Refreshed
-  the import-block citations (cit:(["class CodexAppServerAdapter:", "class FakeCodexTransport:"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:95-95; mcp/tests/test_codex_app_server_adapter.py:47-47)) and the per-test anchors. Verification metadata
+  the import-block citations (cit:(["class CodexAppServerAdapter:", "class FakeCodexTransport:"], mcp/src/agents_remember/serving/codex_app_server_adapter.py:104-104; mcp/tests/test_codex_app_server_adapter.py:47-47)) and the per-test anchors. Verification metadata
   stays pinned — the change is uncommitted.
 - 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: created the sidecar for the new
   thread-demux incident-regression suite (R1; review R5 degrade/registry-eviction pins).

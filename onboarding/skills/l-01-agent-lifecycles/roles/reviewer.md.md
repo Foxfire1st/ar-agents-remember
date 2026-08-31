@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/reviewer.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -52,10 +52,13 @@ adjudication as another authority.
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
 successor is reviewed. An unrelated later candidate does not reopen an accepted attempt.
 
-The role table classifies reviewer as target-only. Only the manager is the ordinary plane-hosted
-caller that dispatches this leaf seat; an identity-free developer launcher may target it only for
-an explicit task-seat takeover. The reviewer cannot call `dispatch_agent` or use ambient authority,
-and its dispatch/tools rows are structural documentation rather than settings keys.
+The role table classifies reviewer as target-only, but the role is polymorphic across four review
+contexts: a manager owns leaf and master-exit reviewers, the architect owns the sprint plan
+reviewer, and the orchestrator owns the sprint super-exit reviewer. The plane stamps that exact
+parent document+role onto the reviewer generation. An identity-free launcher may target an
+altitude-valid reviewer for explicit takeover, but a sprint takeover cannot invent architect versus
+orchestrator parentage and parent operations fail closed. The reviewer cannot call
+`dispatch_agent`; its dispatch/tools rows are structural documentation rather than settings keys.
 
 ### Invariants And Boundaries
 
@@ -63,6 +66,8 @@ Canonical lifecycle doctrine owns canonical skill content; generated copies are 
 outputs. Requirement adjudication and the durable-evidence stable-contract-or-expiry hold point
 are independent mandatory concerns. Accepted attempts remain closed without one of the two
 authorized invalidation paths.
+One reviewer role serves leaf, master, plan, and super seams, but each generation reports only to
+its plane-stamped structural parent.
 
 ## Docs References
 
@@ -97,6 +102,10 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: replaced the leaf-only
+  parent description with the four-context reviewer model and its fail-closed ambient sprint
+  boundary. Verification remains closeout-owned.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified reviewer as target-only plus explicit
   ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept

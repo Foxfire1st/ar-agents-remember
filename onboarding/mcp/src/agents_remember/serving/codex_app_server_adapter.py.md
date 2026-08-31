@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
+| lastUpdated | 2026-08-31T10:13+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,13 +56,20 @@ prompt and retain the prior effective selection plus pending fresh-turn blocker.
 Launch-knob ownership, token-free discovery, interactions, events, and bounded reconciliation remain
 on their existing native paths.
 
+Parent-turn completion carries both correlation domains in one terminal transcript entry:
+`requestId` is the exact `ControlOperationRef.operation_id` owned by the durable submission, while
+`vendorCorrelationId` is the Codex turn id cit:([`_handle_turn_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:780-836). This lets a prompt whose initial
+receipt was honestly `queued` converge onto its exact inbox row when the turn completes; completion
+does not depend on text matching or retroactive vendor-id guessing. Foreign/sub-agent completions
+remain operation-free and therefore do not acquire a durable inbox request identity.
+
 Evidence forwarding places the full `params` of each previously trimmed emit under the reserved
 `arEvidence` raw key — consolidated through the `_emit_notification` helper cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728),
 with the parent-thread `thread/status/changed`/`thread/settings/updated` state emits keeping their
 direct path — while every pre-existing raw key (`codexMethod`, `turnId`) keeps its exact shape; the
 bridge diverts the payload so no projection changes. It additionally sets
 `AR_EVIDENCE_METHOD_KEY: method` inside `_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728), which also serves
-the item/completed evidence path cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:787-816), so the notification's native method reaches the
+the item/completed evidence path cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866), so the notification's native method reaches the
 projector as typed evidence rather than being stripped with the trimmed event; the bridge preserves
 it onto `EvidenceFrame.native_method` and strips the reserved key, keeping the redacted snapshot
 byte-identical. `codexMethod` still rides for diagnostics; the method-carry key is the discriminator
@@ -95,7 +102,7 @@ view. `self._threads` (bounded at `THREAD_REGISTRY_LIMIT = 64` cit:([`THREAD_REG
 `CodexThreadRegistry` cit:([`CodexThreadRegistry`], mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300). The old `_validate_thread` fail-on-foreign-thread gate is replaced by
 `resolve` cit:([`resolve`], mcp/src/agents_remember/serving/codex_app_server_threads.py:104-140), which still fails closed on a missing or non-text `threadId` exactly as
 before, but a well-formed foreign id auto-registers as an `unresolved` agent thread and is never an
-error. Every notification handler demuxes first (`_handle_message` cit:([`_handle_message`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:625-644)): parent-thread
+error. Every notification handler demuxes first (`_handle_message` cit:([`_handle_message`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:675-694)): parent-thread
 traffic keeps the pre-multiplexing snapshot/activity contract byte-identical, while sub-agent
 `thread/status/changed`, `turn/started`, `thread/settings/updated`, and `turn/completed` update
 only registry state plus raw evidence and never move the parent-scoped activity or settlement (D4).
@@ -103,7 +110,7 @@ Turn writes stay parent-only, so agent turn completions record `None` as the ope
 touch `_active_operation` or the submission ledger. `learn_collab_identity` cit:([`learn_collab_identity`], mcp/src/agents_remember/serving/codex_app_server_threads.py:231-245) (now a
 dispatcher over `_learn_sub_agent_activity` + `_learn_collab_tool_call`) binds
 agent identity from parent-thread `collabAgentToolCall` (`receiverThreadIds`/`agentsStates`) and
-`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` cit:([`_publish_agent_registry`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1075-1083)
+`subAgentActivity` (`agentThreadId`/`agentPath`) items, and `_publish_agent_registry` cit:([`_publish_agent_registry`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1125-1133)
 mirrors the bounded registry into `snapshot.raw.agentRegistry` for the serving projector.
 
 Server requests demux per thread and MULTIPLEX within a thread. `_handle_server_request` cit:([`_handle_server_request`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:818-890)
@@ -120,26 +127,26 @@ pending map keyed by approval id, so concurrent pendings on one thread are norma
 register, never raise; a full per-thread map (16) declines + degrades the NEW request, never a
 bridge failure and never a silent loss of an older unanswered one; a vendor rpc-id REUSE overwrites
 the older pending, which then becomes honestly unanswerable later (a JSON-RPC violation the vendor
-owns). `_handle_server_request_resolved` cit:([`_handle_server_request_resolved`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:892-908) pops the pending by rpc id.
-`_sync_pending_snapshot` cit:([`_sync_pending_snapshot`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:910-922) rebuilds `AdapterSnapshot.pending_interactions` from EVERY
+owns). `_handle_server_request_resolved` cit:([`_handle_server_request_resolved`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:942-958) pops the pending by rpc id.
+`_sync_pending_snapshot` cit:([`_sync_pending_snapshot`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:960-972) rebuilds `AdapterSnapshot.pending_interactions` from EVERY
 thread's full map (agent entries carry `raw.threadId` plus the bound `agentLabel`; concurrent
 parent entries beyond the oldest ride the tuple plainly), keeping the singular slot on the parent's
-OLDEST pending for back-compat. `respond` cit:([`respond`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:330-353) routes by interaction id via
+OLDEST pending for back-compat. `respond` cit:([`respond`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:376-403) routes by interaction id via
 `interaction_thread` cit:([`interaction_thread`], mcp/src/agents_remember/serving/codex_app_server_threads.py:166-173), which returns the owning (thread, rpc id) pair — the
 active-operation match is enforced only for parent-thread responses (the parent-only operation
-guard). `read_native_page` cit:([`read_native_page`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:395-421)
+guard). `read_native_page` cit:([`read_native_page`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:445-471)
 gains an additive `thread_id` selector: `None` reads the parent thread exactly as
 before, an explicit id pages that sub-agent thread through the same `thread/read` echo check.
-`_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:787-816) stamps agent transcripts with `raw.threadId` (parent entries
+`_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866) stamps agent transcripts with `raw.threadId` (parent entries
 deliberately carry none, keeping the pre-multiplexing parent transcript shape byte-identical — fix-round
 review finding 12), while `learn_item_thread` cit:([`learn_item_thread`, `route_delta_params`], mcp/src/agents_remember/serving/codex_app_server_threads.py:200-213; mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229) + `route_delta_params`
 bind thread-less delta frames (`item/.../delta`, `patchUpdated`) to their item's learned thread
-without ever inventing one. `_degrade_agent_frame` cit:([`_degrade_agent_frame`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:588-623) decides every `CodexAppServerError`
-the message loop catches (`_run_messages` cit:([`_run_messages`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:570-586)): only a well-formed FOREIGN threadId degrades to preserved raw evidence
+without ever inventing one. `_degrade_agent_frame` cit:([`_degrade_agent_frame`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:638-673) decides every `CodexAppServerError`
+the message loop catches (`_run_messages` cit:([`_run_messages`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:620-636)): only a well-formed FOREIGN threadId degrades to preserved raw evidence
 with the failure noted; a missing or parent threadId re-raises and still fails the bridge — unless
 `force=True` (the unknown-request-METHOD path above), which degrades on any thread. The four
 white-box parent views (`_active_turn_id`, `_turn_operations`, `_unbound_completions`,
-`_completed_turns` cit:([`_completed_turns`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1079-1081)) keep the original correlation-test surface as live mappings over the
+`_completed_turns` cit:([`_completed_turns`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:1121-1123)) keep the original correlation-test surface as live mappings over the
 parent `_ThreadState`.
 
 The event queue is a bounded LOAD-SHED queue, not a kill seam. `CodexEventQueue` cit:([`CodexEventQueue`], mcp/src/agents_remember/serving/codex_app_server_events.py:24-118) uses `offer` cit:([`offer`], mcp/src/agents_remember/serving/codex_app_server_events.py:59-72) and never
@@ -156,6 +163,12 @@ notice + sentinel, so the subscriber sees the loss account before termination). 
 rose 256 → `ADAPTER_EVENT_QUEUE_LIMIT = 1024` cit:([`ADAPTER_EVENT_QUEUE_LIMIT`], mcp/src/agents_remember/serving/codex_app_server_events.py:12-12). The shed notice rides the same monotonic
 sequence path as every other event, and a zero count makes the emit a no-op, so the notice itself
 never recurses.
+
+Structurally spawned role sessions now cross one additional startup gate after the native thread is
+opened and before the adapter handshake becomes ready: `_role_mcp_readiness` asks the canonical
+`codex_mcp_readiness` API for a connected configured server advertising exact `dispatch_agent`.
+Roleless sessions retain their existing path. A refusal stops the half-open session; if cleanup also
+fails, that secondary failure is attached as a note and cannot mask the original readiness error.
 
 ### Conventions
 
@@ -232,6 +245,10 @@ the only live pending. Sheddable queue pressure is identified by `codexMethod` m
 - Delta routing never invents a thread: a thread-less delta for an unknown item crosses unmodified
   on the parent/None path, and agent transcript entries carry `raw.threadId` while parent
   transcript entries stay byte-identical to the pre-multiplexing shape.
+
+- A role session is never advertised ready until its native app-server MCP inventory contains one
+  connected `dispatch_agent`; there is no name fallback or alternate discovery path, and startup
+  cleanup never hides the refusal that caused it.
 
 ### Todos
 
@@ -318,6 +335,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 ## Update History
 
+- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: parent Codex completion now projects
+  its exact operation/request id alongside the native turn id, allowing queued durable inbox
+  receipts to become completed without heuristic correlation. Verification remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added the bounded connected-`dispatch_agent` startup gate for role sessions and preserved the primary readiness error across cleanup failure. Verification remains closeout-owned.
+
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
@@ -328,7 +351,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   the same leaf's `StartedTurn` submit split and per-method handler split, which grew the file to
   1503 lines. `_learn_collab_identity` is L1385-L1450 (the dispatcher plus the two extracted
   learners the sentence describes), `_publish_agent_registry` is L1452-L1468, and
-  `_degrade_agent_frame` cit:([`_degrade_agent_frame`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:588-623) — the catch itself lives in `_run_messages` cit:([`_run_messages`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:570-586), so
+  `_degrade_agent_frame` cit:([`_degrade_agent_frame`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:638-673) — the catch itself lives in `_run_messages` cit:([`_run_messages`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:620-636), so
   that sentence now names the caller instead of implying the helper holds the `except`.
 
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `StartedTurn` and the per-method notification handler / item-learning split.
@@ -362,12 +385,12 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   `read_native_page(thread_id=...)`, agent-transcript `threadId` stamping with byte-identical parent
   entries, item→thread delta routing, bounded eviction, and degrade-not-fatal malformed agent frames.
   Fixed stale emit-site citations (`_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728) +
-  `_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:787-816), refreshed the protocol-cancellation (`CodexStdioTransport` cit:([`CodexStdioTransport`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:60-305)) and
+  `_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866), refreshed the protocol-cancellation (`CodexStdioTransport` cit:([`CodexStdioTransport`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:60-305)) and
   launch-refusal (`apply_launch_knobs` cit:([`apply_launch_knobs`], mcp/src/agents_remember/serving/harness_launch.py:173-206)) citations, and added rows for the models grammar and the
   `test_codex_adapter_thread_demux.py` regression suite. Verification metadata stays pinned: the L7
   change is uncommitted, so no commit hash can attest it.
 - 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the native-method carry: the
-  `codex-notification`/`item/completed` emits cit:([`_emit_notification`, `_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:712-728; mcp/src/agents_remember/serving/codex_app_server_adapter.py:787-816) now set
+  `codex-notification`/`item/completed` emits cit:([`_emit_notification`, `_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778; mcp/src/agents_remember/serving/codex_app_server_adapter.py:837-866) now set
   `AR_EVIDENCE_METHOD_KEY: method` so the codex projector recognizes the 0.144.5 startup burst by
   method instead of re-guessing from params shape; added the emit-only invariant. Verification
   metadata stays pinned until closeout stamps the candidate commit.

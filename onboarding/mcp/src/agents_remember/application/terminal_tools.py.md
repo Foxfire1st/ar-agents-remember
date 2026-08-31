@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/terminal_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T12:04+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-08-31T13:04+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,21 @@ rides `SpawnedBy.caller_kind` into `SpawnProvenance.spawned_by_kind`, the catalo
 caller kind (plane seats pass `plane`, ambient callers `ambient`; `None` stays unattributed,
 backward compatible).
 
+For polymorphic reviewer generations, `SpawnedBy` additionally carries the plane-owned structural
+parent document+role through `SpawnProvenance` into the catalog and spawn response. This is distinct
+from ancestry and is never synthesized by the low-level allocator. Retirement forwards both actor
+and target parent stamps into the central policy: managers own their leaf execution seats and
+same-master reviewer, architects own only their plan reviewer, and orchestrators retain their
+broader sprint authority.
+
+Before any settings rung is read, `spawn_agent_session_tool` derives the requested seat role and
+calls `_spawn_task_binding`, which is the application-level translator around
+`serving.task_binding.resolve_task_binding`. Canonical document, source-lineage, and reviewer-parent
+failures therefore precede launch-selection failures and host effects, while the public refusal
+dialect has one named owner outside the allocator's orchestration body. The shared opener repeats
+the same task-binding authority at the final process boundary to close task-movement races; neither
+layer carries a duplicate rule set.
+
 The primitive's own refusals now name that boundary instead of teaching callers to invoke the
 primitive. Unsupported spend overrides point public role callers to `dispatch_agent` and
 settings-owned spend. Any attempted context/submit brief delivery points callers to one
@@ -53,6 +68,10 @@ requests are the strict structural DTOs in `application/structural/`.
 - New hosted environment identity is plane-seeded and caller identity is scrubbed.
 - Initial brief persistence/delivery belongs to structural dispatch, not the raw spawn primitive.
 - Internal primitive refusals never become documentation for a second public spawning workflow.
+- Structural reviewer parent provenance crosses the low-level spawn unchanged; this primitive does
+  not decide or infer it.
+- Task-binding admission completes before settings resolution and uses the same validator as the
+  shared opener.
 
 ### Todos
 
@@ -67,9 +86,9 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Internal task assignment accepts canonical document and role. | `attach_terminal_session_to_task_tool` | mcp/src/agents_remember/application/terminal_tools.py:171-205 |
-| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:785-870 |
+| The low-level spawn primitive remains plane-owned composition. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:764-873 |
 | Caller-kind provenance rides the spawn into the catalog row and payload. | `CallerKind`; `SpawnedBy` | mcp/src/agents_remember/application/terminal_tools.py:522-534 |
-| Exact retire/rename operations remain behind structural resolution. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:955-1025; mcp/src/agents_remember/application/terminal_tools.py:1114-1128 |
+| Exact retire/rename operations remain behind structural resolution. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:985-1064; mcp/src/agents_remember/application/terminal_tools.py:1153-1167 |
 
 ## Cross-Repo References
 
@@ -83,6 +102,18 @@ detail/projection on attach and spawn, rather than duplicating the terminal
 opener's structural policy.
 
 ## Update History
+- 2026-08-31T13:04+02:00 — ARSPAWN-L5 A005 closeout repair extracted task-binding/refusal
+  translation into `_spawn_task_binding`, keeping `spawn_agent_session_tool` below the structural
+  function-length rail without duplicating binding policy. Verification remains closeout-owned.
+
+- 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair moved complete task-binding admission
+  ahead of settings selection and replaced the local document resolver with the shared
+  `serving.task_binding` API. Verification remains closeout-owned.
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded propagation of
+  reviewer parent provenance through the internal spawn response and plane-specific retirement
+  checks. Verification remains closeout-owned.
+
 - 2026-08-30T12:04+02:00 — 260821-ARSPAWN-L3 rewrote internal primitive remediation to direct
   callers to the one public dispatch transaction rather than a manual spawn/readiness/brief chain.
   Verification remains closeout-owned.

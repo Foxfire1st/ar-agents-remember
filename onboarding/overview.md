@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-30T21:25+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 
 > **Status:** active baseline
 
@@ -2549,7 +2549,19 @@ plane-hosted callers and which are target-only; product and harness documentatio
 two caller kinds and the no-fallback boundary. Canonical skills and generated package/harness
 copies are synchronized projections, not competing authorities.
 
+## 260821-ARSPAWN-L5 Repository Feature Impact
+
+The repository now carries a dedicated `scripts/e2e_harness/` clean-room acceptance route for the
+failure that motivated this master. The Dagger graph runs real Codex 0.151.0 against the candidate
+MCP server and a deterministic localhost Responses provider, twice from fresh state with no retry.
+It proves normally advertised `dispatch_agent` discovery for ambient and hosted callers, byte-exact
+architect bootstrap, the ambient-to-worker structural chain, canonical manager addressing through
+a real vacancy/replacement, actionable failure evidence, and complete teardown. Production starter
+commands remain self-updating; the static pin belongs only to reproducible candidate acceptance.
+
 ## Update History
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added the real Codex 0.151.0 twice-fresh ambient/hosted spawning harness, connected-tool startup gate, canonical replacement-routing proof, and route-local onboarding. Verification remains closeout-owned.
 
 - 2026-08-30T11:47+02:00 — 260821-ARSPAWN-L3 recorded one public spawn verb, the disjoint
   plane/ambient caller-kind matrix, one-call architect bootstrap, explicit role caller contexts,

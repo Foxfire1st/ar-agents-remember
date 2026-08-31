@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/test/fixtures/catalogRows.ts`     |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`       |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -94,12 +94,12 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared row builder. | "export function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:12-12 |
-| The mockup-mirroring terminal-row `FLEET` scenario, distinct from its task-document fixture. | "export const FLEET: TerminalCatalogRow[]" | dashboard/src/test/fixtures/catalogRows.ts:85-85 |
+| The mockup-mirroring terminal-row `FLEET` scenario, distinct from its task-document fixture. | "export const FLEET: TerminalCatalogRow[]" | dashboard/src/test/fixtures/catalogRows.ts:82-82 |
 | The appended L6 PTY, interaction, and residual fixture pack. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:245-257 |
 | The appended L5I structured-interaction fixture pack. | `L5I_INTERACTION_QUESTIONS` | dashboard/src/test/fixtures/catalogRows.ts:326-363 |
-| The appended L7 multiplexed-interaction fixture. | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:480-512 |
-| The wire type instantiated by these fixtures. | "interface TerminalCatalogRow" | dashboard/src/types/terminalCatalog.ts:31-31 |
-| The rail-state fixture consumer. | "hydrate(FLEET" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:68-68 |
+| The appended L7 multiplexed-interaction fixture. | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:477-509 |
+| The wire type instantiated by these fixtures. | "interface TerminalCatalogRow" | dashboard/src/types/terminalCatalog.ts:32-32 |
+| The rail-state fixture consumer. | "hydrate(FLEET" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:58-58 |
 | The lifecycle-flow consumer of the appended fixtures. | "const retired = fromTerminalSessionInfo(L6_RETIRED_WITH_STOP_ERROR)" | dashboard/src/data/sessionLifecycle.test.ts:89-89 |
 | The interaction-bar consumer, including the multiplex suite. | "const multiplexedSession" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:481-481 |
 | The PTY archetype-surface consumer. | "const controlled = () => fromTerminalSessionInfo(L6_CONTROLLED_WORKING)" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:39-39 |
@@ -113,6 +113,10 @@ No meaningful cross-repo references found.
 | This file implements a repository-local contract. | — | — |
 
 ## Update History
+
+- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  source ranges after the reviewed code moved; no semantic onboarding claim changed. Verification
+  remains closeout-owned.
 
 - 2026-08-14T05:26Z — L23 final curator: documented the separate sprint/master task-document
   fixture used to preserve dashboard grouping and disambiguated the terminal-row `FLEET` anchor.

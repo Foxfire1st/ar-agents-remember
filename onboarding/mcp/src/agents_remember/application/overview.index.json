@@ -60,7 +60,7 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 61,
+    "sourceFilesInScope": 62,
     "fileSidecars": 27,
     "childRoutes": 4
   },

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal.py`    |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -180,7 +180,7 @@ is proven by repository source and tests.
 | The serving layer this host joins (transport; localhost posture). | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
 | The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | "async def _serve_terminal_websocket("; "def _register_terminal_session_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_terminal_routes.py:86-86; mcp/src/agents_remember/serving/_app_terminal_routes.py:130-130 |
 | Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and "class TerminalCatalogEntry:" persists and reads those entries. | "class TerminalCatalogEntry:"; "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:44-474; mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
-| The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:534-617 |
+| The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:619-708 |
 | The terminal host registry behavior is exercised by the dedicated registry test class. | `TerminalHostRegistryTests` | mcp/tests/test_terminal.py:300-466 |
 | The optional real-tmux integration is exercised by the dedicated integration test class. | `TerminalHostTmuxIntegrationTests` | mcp/tests/test_terminal.py:792-844 |
 

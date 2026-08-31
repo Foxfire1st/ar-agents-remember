@@ -55,6 +55,7 @@
     "mcp/src/agents_remember/serving/codex_app_server_state.py",
     "mcp/src/agents_remember/serving/codex_app_server_threads.py",
     "mcp/src/agents_remember/serving/codex_app_server_turns.py",
+    "mcp/src/agents_remember/serving/codex_mcp_readiness.py",
     "mcp/src/agents_remember/serving/control_plane_identity_migration.py",
     "mcp/src/agents_remember/serving/daemon.py",
     "mcp/src/agents_remember/serving/degradation_delivery.py",
@@ -115,6 +116,7 @@
     "mcp/src/agents_remember/serving/static.py",
     "mcp/src/agents_remember/serving/structural_dispatch.py",
     "mcp/src/agents_remember/serving/structural_seats.py",
+    "mcp/src/agents_remember/serving/task_binding.py",
     "mcp/src/agents_remember/serving/terminal.py",
     "mcp/src/agents_remember/serving/terminal_catalog.py",
     "mcp/src/agents_remember/serving/terminal_catalog_lock.py",
@@ -129,8 +131,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 180,
-    "fileSidecars": 106,
+    "sourceFilesInScope": 182,
+    "fileSidecars": 108,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -186,6 +188,7 @@
     "codex_app_server_state",
     "codex_app_server_threads",
     "codex_app_server_turns",
+    "codex_mcp_readiness",
     "common",
     "configuration",
     "contract",
@@ -212,8 +215,7 @@
     "harness_capability_catalog",
     "harness_control_adapter",
     "harness_control_api",
-    "harness_control_bridge",
-    "harness_control_claude"
+    "harness_control_bridge"
   ],
   "hotPath": {
     "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",

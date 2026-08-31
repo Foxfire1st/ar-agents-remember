@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/FlowTab.test.tsx`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T21:17+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,8 +45,9 @@ straight into jsdom.
 - **per-model render census** — iterates `FLOW_MODELS` (9 models since 260707-HFX-L6) and asserts the
   DOM counts derived from the registry hold: `flow-gate` == nodes with `rides`, `flow-node` ==
   non-gate nodes, `flow-rundown` == rundown segments.
-- **router invariants** — three conditions/no fourth entry, the task-doc → branch → worktree
-  ladder, chat-is-never-a-build-route, and developer-facing sessions routing to `roles/architect.md`.
+- **router invariants** — three conditions/no fourth entry, fail-closed unknown-role/incomplete
+  hosted identity, the task-doc → branch → worktree ladder, chat-is-never-a-build-route, and
+  developer-facing sessions routing to the sprint-bound architect launcher.
 - **architect (HFX-L6)** — the developer-facing owner/drawing-board/decision-relay model, backend
   decision-item relay, and horizontal role expansion.
 - **orchestration invariants** — the master-granular DAG rule, the branch-not-worktree intent, the
@@ -62,7 +63,8 @@ straight into jsdom.
 - **worker** — brief-started, NEVER git commit, owning seat runs closeout → integrate → finalize.
 - **designer** — the hat the architect pulls; `ask — never fill silently`.
 - **reviewer** — verdicts-are-evidence with `requireReviewerVerdictAtSeams`, the backend
-  orchestrator master-exit decider, and `⟁ block? → decomposable fix leaves`.
+  orchestrator master-exit decider, all four reviewer task-altitude/parent mappings, and
+  `⟁ block? → decomposable fix leaves`.
 
 ### Conventions
 
@@ -87,11 +89,15 @@ exact on-canvas prose, so they double as a regression guard on the drawn spec.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). | `FlowTab`, `FLOW_MODELS` | dashboard/src/panels/FlowTab.tsx:111-148 |
-| The registry the census derives expectations from and whose invariant prose the suite asserts. | `ROUTER`, `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:56-101; dashboard/src/panels/flowModels.ts:438-438 |
+| The registry the census derives expectations from and whose invariant prose the suite asserts. | `ROUTER`, `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:56-102; dashboard/src/panels/flowModels.ts:451-451 |
 
 As of the 260703-L8 remediation the tests asserted the then-converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the coordination event loop, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pinned the ruled seam channel verbatim: the coordination assertion matched decide-by-packet-carried-gateId, and a manager assertion matched the gateId-rides-the-packet raise line. Cycle 7 adds a manager assertion pinning the raise node's enclosure address (`enclosure="<master task name>" — the exact address integration enforcement matches the gate by`).
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded focused
+  assertions for fail-closed router admission and all four reviewer structural-parent mappings.
+  Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `FlowTab.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: moved the flow fixture onto canonical sprint-bound

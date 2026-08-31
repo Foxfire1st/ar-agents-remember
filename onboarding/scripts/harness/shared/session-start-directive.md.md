@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/harness/shared/session-start-directive.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T13:59+02:00                     |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e` |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated            | 2026-08-31T04:59+02:00                     |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -31,17 +31,19 @@ research inline. For ordinary role-shaped work it creates or resolves the sprint
 the canonical architect brief, and calls `dispatch_agent` exactly once on the sprint document with
 role `architect`. The launcher hands over only after the exact brief is durable and never calls an
 internal session primitive. An explicit developer-declared task-seat takeover instead targets the
-named role on its canonical task document. `AR_SPAWN_ROLE` and fresh role briefs still enter their exact role
-lifecycle directly.
+named role on its canonical task document. A present `AR_SPAWN_ROLE` is not merely a routing hint:
+it must resolve to a canonical role file and arrive with `AR_HOSTED_SESSION_ID`. An unknown role or
+incomplete hosted identity fails closed instead of falling through. A fresh role brief may start a
+role lifecycle only when no hosted identity was declared.
 
 Caller kind remains process-derived: a plane-hosted seat uses structural authority, while absence
 of hosted identity selects the ambient launcher. A plane refusal never falls back to ambient.
 
 The body states the three-condition session routing that `l-01-agent-lifecycles` owns:
 
-1. If `AR_SPAWN_ROLE` is set, **or** the first user message is a role brief from an
-   orchestrating agent, the session must **ignore the notice entirely** — the brief is
-   the session start.
+1. If `AR_SPAWN_ROLE` is set, validate the canonical role and hosted identity first; invalid or
+   incomplete identity stops. With valid hosted identity—or with a first-message role brief and no
+   declared hosted identity—the session ignores the remaining notice and treats the brief as start.
 2. Otherwise the session is developer-facing free chat: read `ar-coordination/AGENTS.md`, answer
    research inline, and use the one-call canonical architect launcher for role-shaped work.
 3. The resulting sprint-bound architect receives its complete obligations in the pinned canonical
@@ -72,11 +74,15 @@ The body states the three-condition session routing that `l-01-agent-lifecycles`
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generator that composes this body into six files with per-harness framing. | `generated_files`, `compose` | scripts/sync-harness.py:576-621; scripts/sync-harness.py:631-633 |
-| The workspace-root variant of the same directive. | "as workspace instructions" | scripts/harness/shared/workspace-directive.md:8-9 |
+| The workspace-root variant of the same directive. | "as workspace instructions" | scripts/harness/shared/workspace-directive.md:11-12 |
 | The hook fragments that read this file at run time. | `DIRECTIVE_PATH`, `emit` | scripts/harness/session_start_hook.py:23-23; scripts/harness/session_start_hook.py:57-59 |
 | The lifecycle this directive routes a session into. | `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:6-416 |
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: reconciled the starter
+  source's fail-closed role/hosted-identity admission and removed the obsolete claim that any set
+  role value could fall through to a pasted brief. Verification remains closeout-owned.
 
 - 2026-08-30T13:59+02:00 — 260821-ARSPAWN-L3 made the process-derived caller-kind boundary and
   no-fallback rule explicit in the shared launcher directive after the targeted Dagger forcing

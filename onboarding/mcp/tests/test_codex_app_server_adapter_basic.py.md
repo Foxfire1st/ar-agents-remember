@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_codex_app_server_adapter_basic.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-12T04:15+02:00                                            |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                                        |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastUpdated            | 2026-08-30T22:33:39+02:00                                            |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -17,7 +17,8 @@
 ## Purpose
 
 Exercises basic Codex app-server negotiation, startup identity, model discovery, desired/effective
-settings, and fail-clean adapter teardown under the current Desktop user-agent contract.
+settings, connected-MCP-tool readiness for role launches, and fail-clean adapter teardown under the
+current Desktop user-agent contract.
 
 ## Code Commentary
 
@@ -34,20 +35,36 @@ change is pending, a matching desired echo promotes that selection, and an unrel
 the adapter. This raises meaningful branch coverage on the changed session owner rather than
 exempting its CRAP score.
 
+ARSPAWN-L5 adds the role-start readiness boundary: paginated native MCP status must converge on a
+connected server advertising exact `dispatch_agent`; settled absence and timeout refuse, and a
+cleanup failure remains secondary to the primary readiness refusal. Roleless startup retains its
+existing path.
+The negative matrix now covers invalid readiness requests, malformed status data and tool
+inventories, invalid/repeated/exhausted pagination, and a role-start thread with no established
+thread identity.
+
 
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_codex_app_server_adapter_basic.py`.
 - Both initialize wire forms retain the existing independent thread `cliVersion` agreement gate.
+- Readiness polling is bounded, uses the native app-server inventory, and has no alternate tool-name
+  or cleanup-masking fallback.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Desktop startup accepts the host-first product version only with the exact Agents Remember client suffix and rejects a version-mismatched suffix. | `test_client_user_agent_uses_host_version_and_exact_client_identity`; `test_client_user_agent_rejects_wrong_client_identity` | mcp/tests/test_codex_app_server_adapter_basic.py:200-234 |
-| Public settings notifications cover matching, stale-effective, desired-promotion, and drift-refusal branches. | `test_settings_updates_cover_matching_stale_and_drift_branches` | mcp/tests/test_codex_app_server_adapter_basic.py:296-356 |
+| Desktop startup accepts the host-first product version only with the exact Agents Remember client suffix and rejects a version-mismatched suffix. | `test_client_user_agent_uses_host_version_and_exact_client_identity`; `test_client_user_agent_rejects_wrong_client_identity` | mcp/tests/test_codex_app_server_adapter_basic.py:549-566; mcp/tests/test_codex_app_server_adapter_basic.py:569-581 |
+| Public settings notifications cover matching, stale-effective, desired-promotion, and drift-refusal branches. | `test_settings_updates_cover_matching_stale_and_drift_branches` | mcp/tests/test_codex_app_server_adapter_basic.py:663-723 |
 
 ## Update History
+
+- 2026-08-31T13:42+02:00 — A005 closeout repair completed fail-closed Codex MCP readiness parsing
+  and pagination coverage required by the changed-unit gate.
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded the connected-`dispatch_agent`
+  startup gate, pagination, bounded timeout, roleless preservation, and primary-failure retention.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

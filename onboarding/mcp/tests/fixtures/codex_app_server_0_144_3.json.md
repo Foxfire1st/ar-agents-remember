@@ -6,8 +6,8 @@
 | path | `mcp/tests/fixtures/codex_app_server_0_144_3.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ No Domain Documentation entries are configured in the resolved source registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Adapter tests load this fixture for fake protocol and effort assertions. | "FIXTURE_PATH = Path(__file__).parent / \"fixtures\" / \"codex_app_server_0_144_3.json\""; "def fixture() -> JsonObject:"; "async def test_handshake_uses_stable_protocol_and_exposes_effort_menu() -> None:"; "def test_fixture_pins_validated_01443_schema_and_stable_surface() -> None:" | mcp/tests/test_codex_app_server_adapter.py:38-38; mcp/tests/test_codex_app_server_adapter.py:142-142; mcp/tests/test_codex_app_server_adapter.py:307-307; mcp/tests/test_codex_app_server_adapter_basic.py:28-28 |
+| Adapter tests load this fixture for fake protocol and effort assertions. | "FIXTURE_PATH = Path(__file__).parent / \"fixtures\" / \"codex_app_server_0_144_3.json\""; "def fixture() -> JsonObject:"; "async def test_handshake_uses_stable_protocol_and_exposes_effort_menu() -> None:"; "def test_fixture_pins_validated_01443_schema_and_stable_surface() -> None:" | mcp/tests/test_codex_app_server_adapter.py:38-38; mcp/tests/test_codex_app_server_adapter.py:142-142; mcp/tests/test_codex_app_server_adapter.py:307-307; mcp/tests/test_codex_app_server_adapter_basic.py:283-283 |
 | Protocol tests validate thread-open parsing against representative messages. | `test_thread_open_parser_covers_fork_echo_and_structured_status` | mcp/tests/test_codex_app_server_protocol.py:294-314 |
 
 ## Cross-Repo References
