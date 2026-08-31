@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | 205c0b664e7dbf6efd07c2c811d0d8295aa07c91 |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,10 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the class `OffenderReportTests` (lines 283-301) — L6-R15: the message names every offender and the fix, or the check is unusable.. | `OffenderReportTests` | mcp/tests/test_citation_resolution.py:283-301 |
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No content impact: updated the synthetic known-good line-anchor fixture
+  to cite the helper's current `mcp/test_support/agents_remember_test_support/code_quality/citations.py`
+  location. The test's validation contract is unchanged.
 
 - 2026-08-28T06:28+02:00 — No content impact: moved the citation helper import and synthetic
   out-of-range path to the verification package; grammar and refusal behavior are unchanged.

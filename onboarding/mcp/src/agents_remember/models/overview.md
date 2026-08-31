@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -511,6 +511,9 @@ requirement versions, delivery attempts, candidate trees, and pair identity rema
 contracts.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No route impact: 260831-DER changes integration authority
+  classification and direct-landing documentation without adding or changing a model vocabulary.
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: moved the shared serving-build payload
   into the existing core model module and removed the transient extra module. Verification remains

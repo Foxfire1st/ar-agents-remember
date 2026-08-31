@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_retry_selection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-08-31T20:30+02:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
@@ -61,7 +61,7 @@ The implementation and explicit lane declaration are the load-bearing same-repos
 | --- | --- | --- |
 | The hook narrows executable items after canonical collection and distinguishes passing zero-body collection from an absent path. | `pytest_collectreport`; `pytest_collection_modifyitems`; `_refuse_uncollected_paths` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:47-119 |
 | The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes. | `test_retry_selection_keeps_only_explicit_affected_modules`; `test_retry_selection_accepts_successfully_collected_zero_body_modules`; `test_retry_selection_rejects_missing_or_escaping_population` | mcp/tests/test_retry_selection.py:12-71 |
-| The suite has explicit unit-regression membership. | "mcp/tests/test_retry_selection.py" | mcp/tests/test-evidence-lanes.toml:126-126 |
+| The suite has explicit unit-regression membership. | "mcp/tests/test_retry_selection.py" | mcp/tests/test-evidence-lanes.toml:127-127 |
 
 ## Cross-Repo References
 
@@ -72,6 +72,9 @@ No meaningful cross-repository boundary is involved.
 | Temporary paths and mocks remain local to the test process. | — | — |
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No content impact: repointed the explicit unit-regression manifest row
+  after the direct-execution regression entry was inserted. Retry-selection behavior is unchanged.
 
 - 2026-08-27T21:10+02:00 — Added the zero-body module forcing case and retained the distinct
   missing/uncollected-path refusal.

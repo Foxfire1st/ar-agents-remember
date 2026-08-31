@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -36,8 +36,9 @@ unchanged.
 ## Purpose
 
 `register_closeout_tools(server, config)` declares the **landing half** of a task:
-`direct_landing` (the branch-addressed direct-execution landing — L16-R8, policy-gated by
-`directExecutionEnabled`), `worktree_closeout_preview`, `worktree_closeout_apply`,
+`direct_landing` (the explicitly selected branch-addressed delivery for a leaf implemented without
+an enclosure — L16-R8, policy-gated by `directExecutionEnabled`),
+`worktree_closeout_preview`, `worktree_closeout_apply`,
 `worktree_integrate`, `worktree_cleanup`, `worktree_abandon`.
 
 The public registration entry delegates to four cohesive helpers:
@@ -102,6 +103,9 @@ The three destructive tools forward flat:
 ### Invariants And Boundaries
 
 - Keep `CloseoutApproval` separate from `CloseoutCommitMessages`.
+- The public direct-landing description must distinguish its narrow leaf-without-enclosure route
+  from ordinary master/series closeout and integration; contract kind alone does not select direct
+  execution, and those ordinary lifecycle routes never require `directExecutionEnabled`.
 - Preview is the non-mutating inspection surface, but it is not durable authority that apply may
   trust. Preview and direct apply each normalize the same effective input independently; apply
   additionally carries `CloseoutApproval`. A direct apply must therefore remain safe without a
@@ -164,6 +168,10 @@ mismatched evidence refuses deletion. Shared grade/admission request types come 
 closeout-source model.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: corrected the published direct-landing description so MCP
+  clients see the exact policy boundary: an explicitly selected leaf delivery without an enclosure,
+  not ordinary master/series closeout or master-to-parent integration.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout model/control import relocations; registered tools, request behavior, and quality/closeout boundaries are unchanged.
 - 2026-08-24T21:43+02:00 — No content impact: the file-size repair repointed

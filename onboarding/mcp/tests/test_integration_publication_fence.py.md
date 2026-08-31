@@ -1,0 +1,73 @@
+# mcp/tests/test_integration_publication_fence.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/test_integration_publication_fence.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00 |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[MCP tests overview](overview.md)
+
+## Purpose
+
+Focused regression proof for the boundary between ordinary series integration and policy-gated
+direct execution. It proves that a fresh series needs no closeout door, while a fresh leaf still
+needs an exact claimed source, and that retained journal recovery remains stable.
+
+## Code Commentary
+
+### Logic
+
+The test constructs minimal typed series and leaf contracts with the same branch facts, then calls
+`classify_integration_door_authority` directly. Four cases pin the state machine:
+
+- fresh series plus no door is valid `not-applicable`;
+- a series with an already-journaled `not-applicable` publication remains valid;
+- a fresh leaf without a claimed source is `preclaim-refused`;
+- a leaf with an already-journaled `not-applicable` publication retains exact-generation recovery.
+
+### Conventions
+
+This is a pure deterministic unit-regression module. It does not create repositories, invoke Git,
+or toggle `directExecutionEnabled`; the absence of that flag is part of what the classifier boundary
+must preserve.
+
+### Invariants And Boundaries
+
+- Contract kind and door history determine integration door authority; queue state is irrelevant.
+- A series contract does not by itself authorize direct landing.
+- Retained journal recovery is not fresh direct-execution admission.
+- The evidence lane is explicitly declared in `mcp/tests/test-evidence-lanes.toml`.
+
+### Todos
+
+None recorded.
+
+## Docs References
+
+No configured Domain Documentation source applies to this repository-internal lifecycle seam.
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Minimal fixtures differ only by series versus leaf topology. | `_series_contract`; `_leaf_contract` | mcp/tests/test_integration_publication_fence.py:30-55 |
+| Fresh and journaled series cases require valid `not-applicable` authority. | `test_fresh_ordinary_series_integration_needs_no_closeout_door`; `test_journaled_ordinary_series_absence_remains_valid` | mcp/tests/test_integration_publication_fence.py:67-82 |
+| Fresh leaf refusal and retained journal recovery remain distinct. | `test_leaf_without_claimed_closeout_source_is_still_refused`; `test_leaf_retains_an_already_journaled_not_applicable_publication` | mcp/tests/test_integration_publication_fence.py:85-100 |
+| The test is explicitly owned by the deterministic unit-regression lane. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:82-82 |
+
+## Cross-Repo References
+
+No meaningful cross-repository boundary is owned by this file.
+
+## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: created for the direct-execution scope-boundary regression
+  candidate. Commit-derived verification metadata remains blank until governed landing stamps the
+  exact code commit.

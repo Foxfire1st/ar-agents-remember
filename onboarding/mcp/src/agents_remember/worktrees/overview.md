@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T12:27+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -84,6 +84,10 @@ write-free, and no retry, fallback reader, compatibility route, or second lock n
    advances to `active`.
 7. Terminal cleanup attempts to vacate only the exact selected terminal contract. A missing,
    unreadable, vacant, or different selection is preserved and cannot be cleared by the old master.
+8. A fresh ordinary series integration has no leaf closeout door and records that authority as
+   `not-applicable`; it is not direct execution. Direct landing remains the policy-gated delivery
+   route for an explicitly selected leaf without an enclosure, while fresh leaf integration still
+   requires its exact claimed closeout source.
 
 ## Main Flows
 
@@ -224,6 +228,10 @@ out work branches, source/base equality, and base ancestry before emitting the s
 No queue, report, repo-id lookup, branch switch, or fallback participates.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: restored the ordinary series no-door integration state and
+  recorded the strict separation from policy-gated leaf-without-enclosure direct landing. Existing
+  leaf door and retained-journal recovery boundaries remain unchanged.
 
 - 2026-08-31T12:27+02:00 — No route impact: A005 changes only the already-documented quality
   executor and publication child route; the root worktree ownership, lifecycle boundaries, and

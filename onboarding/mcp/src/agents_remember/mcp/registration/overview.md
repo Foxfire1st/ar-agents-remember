@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -274,6 +274,10 @@ candidate runs. Candidate poll carries the original contract address; the public
 advertise repository id as acceptance authority.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No route impact: the direct-landing MCP description now advertises
+  only the explicit leaf-without-enclosure path and excludes ordinary series/master closeout and
+  integration. Registered tools and route ownership are unchanged.
 
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: documented the 63-tool exact-order
   public surface, the permanent cross-authority validator, and the narrow transport-owned refusal

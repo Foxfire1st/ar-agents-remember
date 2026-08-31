@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1536,6 +1536,10 @@ refuses before scan/admission, official diagnostics cannot accept, and recovery 
 contract without mutating Git.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No route impact: 260831-DER adds one deterministic unit-regression
+  module for fresh series, fresh leaf, and retained journal authority classification. Test-route
+  ownership remains unchanged.
 
 - 2026-08-31T10:56+02:00 — 260821-ARSPAWN-L5 closeout quality repair: recorded the bounded
   three-test relocation from the oversized structural suite into the existing dispatch-focused

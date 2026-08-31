@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-30T21:49:22+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1069,6 +1069,10 @@ candidate change produces a typed refusal with the exact sync/reprepare route. N
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No route impact: 260831-DER narrows direct landing to an explicitly
+  selected leaf delivery without an enclosure and restores ordinary series integration without
+  the policy flag. Package ownership and route topology are unchanged.
 
 - 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 recorded that the real-client clean-room
   boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather

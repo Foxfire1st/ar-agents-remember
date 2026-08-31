@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T08:05+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,9 @@ The A004 repair also classifies ambient reviewer dispatch, non-leaf reviewer ret
 publication security as `integration`, while the source-derived E2E selector closure proof is
 `architecture-fitness`. The four modules therefore enter the closed test population exactly once;
 none receives an inferred or compatibility lane.
+The direct-execution boundary regression module is explicitly `unit-regression`. Its four pure
+authority-classification cases therefore stay on the deterministic lane rather than silently
+falling into a default evidence class.
 
 ### Conventions
 
@@ -73,13 +76,13 @@ No external documentation governs this repository-owned evidence catalog.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Architecture-fitness membership explicitly includes the M38, M39, and M40-M45 structural proofs. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py"; "mcp/tests/test_requirement_attempt_journal_doctrine.py"; "mcp/tests/test_requirement_compilation_gate_doctrine.py" | mcp/tests/test-evidence-lanes.toml:468-470 |
+| Architecture-fitness membership explicitly includes the M38, M39, and M40-M45 structural proofs. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py"; "mcp/tests/test_requirement_attempt_journal_doctrine.py"; "mcp/tests/test_requirement_compilation_gate_doctrine.py" | mcp/tests/test-evidence-lanes.toml:469-471 |
 | The structural test checks the complete M38 template surface. | `test_worker_role_brief_and_report_require_one_complete_primary_block`; `test_reviewer_role_and_verdict_require_independent_adjudication_per_id`; `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:22-113 |
-| Retry selection, child-environment forcing, and coverage composition have explicit unit-regression, integration, and architecture-fitness membership respectively. | "mcp/tests/test_retry_selection.py"; "mcp/tests/test_quality_subprocess_environment.py"; "mcp/tests/test_retry_coverage.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:371-371; mcp/tests/test-evidence-lanes.toml:471-471 |
-| The seven retained kernel regressions remain explicitly classified while deleted Candidate A tests are absent. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
-| The future-code candidate real-Git matrix is explicitly classified as integration evidence. | "mcp/tests/test_future_code_candidate.py" | mcp/tests/test-evidence-lanes.toml:252-252 |
-| The exact code-memory pair suite is explicitly classified as integration evidence. | "mcp/tests/test_memory_candidate_pair.py" | mcp/tests/test-evidence-lanes.toml:334-334 |
-| Every new ARSPAWN repair proof has one explicit semantic lane. | "mcp/tests/test_dispatch_agent_ambient_reviewer.py"; "mcp/tests/test_non_leaf_reviewer_evidence_retention.py"; "mcp/tests/test_quality_report_publication_security.py"; "mcp/tests/test_e2e_harness_selection.py" | mcp/tests/test-evidence-lanes.toml:250-250; mcp/tests/test-evidence-lanes.toml:340-340; mcp/tests/test-evidence-lanes.toml:370-370; mcp/tests/test-evidence-lanes.toml:457-457 |
+| Retry selection, child-environment forcing, and coverage composition have explicit unit-regression, integration, and architecture-fitness membership respectively. | "mcp/tests/test_retry_selection.py"; "mcp/tests/test_quality_subprocess_environment.py"; "mcp/tests/test_retry_coverage.py" | mcp/tests/test-evidence-lanes.toml:127-127; mcp/tests/test-evidence-lanes.toml:372-372; mcp/tests/test-evidence-lanes.toml:472-472 |
+| The seven retained kernel regressions remain explicitly classified while deleted Candidate A tests are absent. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:124-124 |
+| The future-code candidate real-Git matrix is explicitly classified as integration evidence. | "mcp/tests/test_future_code_candidate.py" | mcp/tests/test-evidence-lanes.toml:253-253 |
+| The exact code-memory pair suite is explicitly classified as integration evidence. | "mcp/tests/test_memory_candidate_pair.py" | mcp/tests/test-evidence-lanes.toml:335-335 |
+| Every new ARSPAWN repair proof has one explicit semantic lane. | "mcp/tests/test_dispatch_agent_ambient_reviewer.py"; "mcp/tests/test_non_leaf_reviewer_evidence_retention.py"; "mcp/tests/test_quality_report_publication_security.py"; "mcp/tests/test_e2e_harness_selection.py" | mcp/tests/test-evidence-lanes.toml:251-251; mcp/tests/test-evidence-lanes.toml:341-341; mcp/tests/test-evidence-lanes.toml:371-371; mcp/tests/test-evidence-lanes.toml:458-458 |
 
 ## Cross-Repo References
 
@@ -96,6 +99,9 @@ the existing future-code real-Git suite. This prevents the Dagger selector from 
 the new filesystem/Git/task publication fixture as unit evidence.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: explicitly classified
+  `mcp/tests/test_integration_publication_fence.py` in the `unit-regression` lane.
 
 - 2026-08-31T08:05+02:00 — Classified the four A003-unregistered ARSPAWN proof modules exactly
   once: three integration routes and one architecture-fitness selector-closure route.
