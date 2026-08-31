@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/c-09-git-worktree-manager` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash |  `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
+| lastVerifiedCommitDate |  2026-08-31T20:38:14+02:00|
 
 ## Purpose
 
@@ -30,11 +30,15 @@ retains code or memory conflicts in operation-owned `.sync` worktrees, and adver
 `resolution_action=continue|cancel` on the same contract. Continue validates staged resolution and
 resumes; cancel restores pinned heads, removes retained temporary worktrees, terminalizes the
 journal, and releases an exact reconciling selection to durable `vacant`. No direct-Git recovery,
-For external memory, continuation proves that every exact parent ledger row survives. Repeated code
-commits are valid newest-first state history; the newest row supplies current authority and older
-same-code rows remain audit evidence.
+tolerant reader, or contract-presence fallback is part of the doctrine. For external memory,
+continuation proves that every exact parent ledger row survives. Repeated code commits are valid
+newest-first state history; the newest row supplies current authority and older same-code rows
+remain audit evidence.
 
-tolerant reader, or contract-presence fallback is part of the doctrine.
+Ordinary series integration records absent source-door authority as explicit `not-applicable` and
+does not consult `directExecutionEnabled`. The policy-gated direct-landing route is only for an
+explicitly selected leaf delivery without an enclosure; a fresh enclosed leaf continues to require
+its exact claimed closeout source.
 
 Terminal cleanup releases the exact selected contract before its authority can disappear. A newer
 selection is never cleared by cleanup of an older contract. Integration conflicts are agent-owned
@@ -56,6 +60,8 @@ returns through the architect.
 - Cleanup releases only the exact selected terminal pointer and preserves newer selections.
 - No fallback reader or duplicated lifecycle evidence is allowed.
 - Memory-merge validation preserves exact parent rows and never imposes global code-key uniqueness.
+- Ordinary series integration is never reclassified as direct execution merely because it uses a
+  root series contract.
 
 
 ### Todos
@@ -67,11 +73,16 @@ metadata awaits the real code commit.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical skill owns source-pair admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:254-290; skills/c-09-git-worktree-manager/SKILL.md:377-456 |
+| The canonical skill owns source-pair admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:254-290; skills/c-09-git-worktree-manager/SKILL.md:386-465 |
+| Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:346-353 |
 | Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:29-68 |
 | Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295 |
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: documented ordinary series `not-applicable` door authority,
+  the narrow leaf-without-enclosure direct-landing policy, and retained exact leaf/journal recovery.
+  Also repaired a pre-existing sentence-order defect in the sync summary.
 
 - 2026-08-26T14:32+02:00 — Corrected the route contract from per-code uniqueness to exact
   parent-row preservation with valid newest-first same-code history. Verification remains

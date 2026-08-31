@@ -256,6 +256,7 @@
     "mcp/tests/test_integration_branch_authority_series_drift.py",
     "mcp/tests/test_integration_branch_publication_helpers.py",
     "mcp/tests/test_integration_organizational_decisions_l2.py",
+    "mcp/tests/test_integration_publication_fence.py",
     "mcp/tests/test_integration_ref_cas_classification_l2.py",
     "mcp/tests/test_integration_ref_controls_l2.py",
     "mcp/tests/test_integration_ref_transaction.py",
@@ -543,8 +544,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 525,
-    "fileSidecars": 531,
+    "sourceFilesInScope": 526,
+    "fileSidecars": 532,
     "childRoutes": 0
   },
   "routingTerms": [

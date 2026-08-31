@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-The durable branch-addressed counterpart of worktree closeout commit execution for sanctioned
-direct work. It binds the task-root series contract, consumes the exact closed admission result,
+The durable branch-addressed counterpart of worktree closeout commit execution for a sanctioned
+leaf implemented without its own worktree enclosure. It is not ordinary master/series closeout or
+master-to-parent integration. It binds the task-root series contract, consumes the exact closed admission result,
 creates or resumes one canonical root-journal generation, verifies the exact code commit/tree and
 memory/ledger pre-state, then records intent and proof around each sequential external Git commit.
 The landing lock excludes concurrent writers while held; restart recovery comes from the journal.
@@ -60,6 +61,9 @@ scratch recovery exists.
 - Memory and ledger messages are explicit, stripped, and nonblank before lock or Git; code is
   verified-existing/not-applicable and has no message.
 - Only the task-root series contract binds; leaf contracts refuse (`direct-landing-series-required`).
+- A series-shaped contract is necessary but not sufficient: the route is only for an explicitly
+  selected leaf delivery without an enclosure. Ordinary series closeout and integration never
+  become direct execution and never require `directExecutionEnabled`.
 - The gate stays strictly pre-commit via `candidate_tree`; commit-then-gate is the accepted-risk
   exception only where the developer rules it (documented, L16-R7).
 - External memory only for apply; internal/disabled memory refuses
@@ -124,6 +128,11 @@ Direct landing now attaches the durable lifecycle operation projection to succes
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: made the direct-execution boundary explicit. Direct landing
+  is the policy-gated delivery route for a leaf intentionally implemented without its own enclosure;
+  ordinary series/master closeout and integration remain lifecycle operations and do not use the
+  direct-execution flag.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

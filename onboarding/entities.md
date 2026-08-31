@@ -4,9 +4,9 @@
 | ----------- | ---------------------- |
 | repository  | agents-remember     |
 | doc_type    | `repo-entity-catalog`  |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `a06d2ffcfae2c277f2ae19330c17d09c616b77e8` |
-| lastVerifiedCommitDate | `2026-08-28T13:58:55+02:00` |
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | `2026-08-31T20:38:14+02:00` |
 | status      | active                 |
 
 ## Purpose
@@ -16,7 +16,7 @@ This catalog documents load-bearing real entities in `agents-remember`. It is no
 ### Verified IAS Candidate Evidence Boundary
 
 The catalog is reconciled to committed code candidate
-`a06d2ffcfae2c277f2ae19330c17d09c616b77e8`. Entity fingerprints below resolve only committed
+`205c0b664e7dbf6efd07c2c811d0d8295aa07c91`. Entity fingerprints below resolve only committed
 `HEAD:<path>` blobs from that candidate; no working-tree fingerprint or provisional verification
 stamp is treated as authority.
 
@@ -35,13 +35,13 @@ Each row records the deterministic source evidence used by `c-02-memory-quality-
 | Light Task Artifact                 | `git-blob-set-v1` | `sha256:f4f929e882a0eca2941477961721673e5082882f52db8eadae316841ecfa3b89` | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md`; `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/requirement-packet-template.md`                                                                                                                                                                                               |
 | External Memory Ledger              | `git-blob-set-v1` | `sha256:433e87aaeaebd019891d3cec160962632ab2714ede8735be0d75ee6c9419f4c2` | `mcp/src/agents_remember/kernel/memory_ledger.py`; `mcp/src/agents_remember/memory/baseline.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | Sprint Closeout Queue               | `git-blob-set-v1` | `sha256:3046f6750181d09ec60a5e67d51330f96bff5fda40054142be4656b41f67d6f4` | `mcp/src/agents_remember/controlplane/closeout_queue_store.py`; `mcp/src/agents_remember/models/closeout/projection.py`; `mcp/src/agents_remember/models/queue/closeout_queue.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py`; `mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py`; `mcp/src/agents_remember/worktrees/queue/closeout_queue.py` |
-| Closeout Effective Input            | `git-blob-set-v1` | `sha256:0d17a683dbf3c151e2560262c371ff8d7146df482f182ab62f7ad4a3771d935d` | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
+| Closeout Effective Input            | `git-blob-set-v1` | `sha256:3dc6d098702e43907837a3126320666322f13fb7888742955525d8562d734b03` | `mcp/src/agents_remember/application/worktree_tools.py`; `mcp/src/agents_remember/mcp/registration/closeout.py`; `mcp/src/agents_remember/models/closeout/input.py`; `mcp/src/agents_remember/worktrees/closeout_input.py`; `mcp/src/agents_remember/worktrees/direct_landing.py`; `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
 | Curator Coherence Authority         | `git-blob-set-v1` | `sha256:c191a3f6bd82e60a019fd13fe8c092d8563c3fa7a625ed351755e88534c40401` | `mcp/src/agents_remember/application/curator_coherence.py`; `mcp/src/agents_remember/models/lifecycles/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_judgments.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py` |
 | Closeout Mutation Evidence          | `git-blob-set-v1` | `sha256:c6136c12cd390da022ced377ecf088376095944b2910bb105f5ae41c94b0778d` | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py`; `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py`; `mcp/src/agents_remember/models/lifecycles/operation.py`; `mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py`; `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py`; `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py`; `mcp/src/agents_remember/worktrees/modules/closeout_external.py`; `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | Memory Baseline Adoption            | `git-blob-set-v1` | `sha256:f7f1696e0c096898ca582e056d9130b8036a2e39a4c6360d524391ce01f91e63` | `mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md`; `mcp/src/agents_remember/memory/baseline.py`                                                                                                                                                                                                                                                                                  |
-| Worktree Contract                   | `git-blob-set-v1` | `sha256:0c43b2676f0bb3ee9f6575cdb14206008aeae46eeb705c6d35f1fc902d32ee8a` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
+| Worktree Contract                   | `git-blob-set-v1` | `sha256:48cec18d6cfadc92e2d27c48140dca3177f2ab2de550f26355248f9c71fcfc12` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/guidance.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | Source Lineage                      | `git-blob-set-v1` | `sha256:fac7120bd631b4575092df5fe2f48946cb0f79b3f39e8036edeeeb26a38aa73a` | `dashboard/src/panels/engine-room/DiagnosticsPanel.tsx`; `mcp/src/agents_remember/models/worktree.py`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md`; `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md`; `mcp/src/agents_remember/serving/terminal_opener.py`; `mcp/src/agents_remember/worktrees/modules/closeout.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py`; `mcp/src/agents_remember/worktrees/source_lineage.py` |
-| Worktree Integration                | `git-blob-set-v1` | `sha256:f5a4441a561252ce44d03616e092848a52635433bcf177e52c8e2be4b8f4f722` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
+| Worktree Integration                | `git-blob-set-v1` | `sha256:266e33718fbbe45cfb3036193441ebaa9aef501431d3a89b769c06a630d9fe51` | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md`; `mcp/src/agents_remember/worktrees/modules/cleanup.py`; `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | Branch-Gated Cross-Repo Source      | `git-blob-set-v1` | `sha256:8725cd636fe7a28a9cc46bc37f2ee1dd615c892c7e1733d10a9f865b8a042130` | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md`; `mcp/src/agents_remember/kernel/coordination_context_resolver.py`                                                                                                                                                                                                                                                 |
 | Provider Degradation Protocol       | `git-blob-set-v1` | `sha256:5d082082ded4b6f342b5a29710e753217878d4973302fea1ce78a56d35d47745` | `mcp/src/agents_remember/providers/degradation.py`; `mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py`; `mcp/src/agents_remember/controlplane/operator_inbox_records.py`; `mcp/src/agents_remember/controlplane/orchestration_artifacts.py`; `skills/l-01-agent-lifecycles/roles/system-specialist.md` |
 | Seat Binding Identity               | `git-blob-set-v1` | `sha256:dcd6892bcfbeedecea0682aeb0273cd4703e6e3b7efb2a1bfe0924f5c4a7d4cd` | `dashboard/src/data/railModel.ts`; `dashboard/src/data/sessions.ts`; `dashboard/src/data/taskHierarchy.ts`; `mcp/src/agents_remember/controlplane/signal_routing.py`; `mcp/src/agents_remember/models/declared_caller.py`; `mcp/src/agents_remember/models/task_document_ref.py`; `mcp/src/agents_remember/models/terminal_catalog.py`; `mcp/src/agents_remember/serving/ambient_seat.py`; `mcp/src/agents_remember/serving/structural_seats.py`; `mcp/src/agents_remember/serving/terminal_catalog.py`; `mcp/src/agents_remember/serving/terminal_task_assignment.py`; `mcp/src/agents_remember/tasks/document_refs.py` |
@@ -201,7 +201,7 @@ reconciled through the existing closeout/integration ledger owner.
 | --- | --- |
 | Category | Lifecycle admission entity |
 | Represents In Reality | The one accepted statement of which closeout commit legs apply and the exact explicit message for every enabled leg. |
-| Description | Raw public observations are normalized once against a lease-stable route, contract, and code candidate. An ordinary leaf's code candidate is plane-derived as the configured base plus stable observed HEAD plus the canonical isolated-index full add-all tree; callers never supply that authoritative tree, each concurrent observation has a distinct automatically cleaned index, and derivation never stages the real index. The resulting identity is immutable. The closeout input contains typed `code`, `memory`, and `ledger` legs: enabled legs carry stripped nonblank explicit messages; not-applicable legs carry reasons and no sentinel message. Worktree closeout persists this value in the lifecycle operation; entry returns it once and every preview, fingerprint, worker, code, external-memory, ledger, resume, and recovery consumer receives that exact typed value explicitly rather than rereading optional transport or creating shadow intent. Direct landing shares the contract for verified-existing code plus enabled external-memory/ledger intent, validating before its landing lock and Git. |
+| Description | Raw public observations are normalized once against a lease-stable route, contract, and code candidate. An ordinary leaf's code candidate is plane-derived as the configured base plus stable observed HEAD plus the canonical isolated-index full add-all tree; callers never supply that authoritative tree, each concurrent observation has a distinct automatically cleaned index, and derivation never stages the real index. The resulting identity is immutable. The closeout input contains typed `code`, `memory`, and `ledger` legs: enabled legs carry stripped nonblank explicit messages; not-applicable legs carry reasons and no sentinel message. Worktree closeout persists this value in the lifecycle operation; entry returns it once and every preview, fingerprint, worker, code, external-memory, ledger, resume, and recovery consumer receives that exact typed value explicitly rather than rereading optional transport or creating shadow intent. Direct landing shares the contract for verified-existing code plus enabled external-memory/ledger intent only for an explicitly selected leaf delivery without an enclosure; ordinary master/series closeout and integration are separate lifecycle routes and never require the direct-execution policy flag. |
 | Canonical Source Of Truth | `models/closeout/input.py` defines the leg vocabulary; `worktrees/integration/closeout/future_code_candidate.py` owns ordinary-leaf future-code identity; `worktrees/closeout_input.py` owns plan derivation, candidate adaptation, and normalization; `worktrees/integration/closeout/operation_admission.py` owns lease-stable durable admission. |
 | Current Naming Drift | Public code may call the raw shape messages or commit-message input, while durable code calls the result `effectiveInput` / `EffectiveCloseoutInput`. Only the latter may cross below validation. |
 | Key Identifiers | Route, resolved plan, code/memory/ledger leg state, explicit message, reason, observed code HEAD, configured code base, full add-all candidate tree, HEAD tree, invalid field observation, corrected call, candidate fingerprint. |
@@ -421,6 +421,10 @@ independently of task-document readability. Conflict worktrees under `.sync/` an
 `refs/agents-remember/sync/<digest>/...` are operation evidence, not contract fields, queue rows, or
 fallback lookup surfaces.
 
+`260831-DER route impact:` a root series contract does not by itself select direct execution.
+Ordinary series integration records absent source-door authority as `not-applicable`; only an
+explicitly selected leaf delivered without an enclosure uses policy-gated direct landing.
+
 ### Worktree Integration
 
 Entity inventory entry; current evidence and fingerprint are recorded above.
@@ -452,6 +456,11 @@ A paused or stale contract cannot clear a newer selection. Cancellation rolls ba
 from pinned pre-sync refs and durably publishes `vacant`; integration does not acquire selector or
 queue lifecycle ownership.
 
+`260831-DER route impact:` a fresh ordinary series integrates without a leaf closeout door and
+records that source-door authority as `not-applicable`, independently of `directExecutionEnabled`.
+Fresh leaf integration still requires its exact claimed closeout source, and retained no-door
+journal recovery stays bound to its existing generation rather than becoming fresh admission.
+
 ## Ownership Notes
 
 - This catalog intentionally excludes the eight worktree task files as onboarding subjects.
@@ -460,6 +469,10 @@ queue lifecycle ownership.
 - Legacy roadmap specs remain historical context where they disagree with the implemented memory/coordination split.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: reconciled Closeout Effective Input, Worktree Contract, and
+  Worktree Integration to the strict direct-execution boundary and recomputed their exact
+  `git-blob-set-v1` fingerprints from committed candidate `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: added the Curator Coherence Authority entity with
   explicit identity separation, one stable structured selector, exact judgment/evidence binding,

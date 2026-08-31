@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/providers.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af` |
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
+| lastUpdated            | 2026-08-31T20:30+02:00     |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -49,6 +49,11 @@ their service payloads can expose provider-specific fields.
 | Provider application entry point functions expose provider status, diagnostics, watcher, GrepAI, and CGC operations. | `provider_status_tool`; `provider_diagnostics_tool`; `provider_watchers_tool`; `grepai_search_tool`; `cgc_symbol_search_tool` | mcp/src/agents_remember/application/provider_tools.py:32-37; mcp/src/agents_remember/application/provider_tools.py:40-45; mcp/src/agents_remember/application/provider_tools.py:48-87; mcp/src/agents_remember/application/provider_tools.py:273-303; mcp/src/agents_remember/application/provider_tools.py:343-356 |
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No content impact: corrected the source-file verification citation
+  from the retired `mcp/tests/code_quality/` location to the current
+  `mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py` owner. Provider
+  models and wire behavior are unchanged.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 2 citation claims

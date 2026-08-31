@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_kernel_pure_regressions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-08-31T20:30+02:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
@@ -45,13 +45,16 @@ The Candidate A retirement and replacement measurement are described in
 | --- | --- | --- |
 | Seven exact tests preserve the former cohort's unique product assertions. | `test_stable_provider_id_never_returns_empty`; gate/role coercion tests; route-normalization tests | mcp/tests/test_kernel_pure_regressions.py:24-54 |
 | Representative measurement names these seven exact nodes as its pure cohort. | `COHORTS` | mcp/test_support/agents_remember_test_support/testing/route_measurement.py:79-112 |
-| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
+| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:124-124 |
 
 ## Cross-Repo References
 
 No cross-repository boundary applies.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No content impact: repointed the explicit evidence-lane row after the
+  manifest gained the direct-execution regression module. Test behavior is unchanged.
 
 - 2026-08-28T05:10+02:00 — Renamed and rewritten after deleting Candidate A while preserving its
   seven unique product regressions as ordinary explicit-lane pytest evidence.

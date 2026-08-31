@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastUpdated            | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
 
 ## Governing Overview
@@ -227,7 +227,7 @@ No external documentation is needed for this repository-local skill.
 | The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:129-129 |
 | Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:103-162 |
 | Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
-| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:356-356 |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:365-365 |
 | Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376 |
 | Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
 
@@ -280,7 +280,21 @@ contract-presence fallback is admitted.
 Memory resolution keeps every exact parent row and accepts repeated code commits as ordered history;
 the newest row is current authority. No global ledger-key uniqueness rule is admitted.
 
+## Direct-Execution Boundary
+
+The packaged skill now distinguishes ordinary series integration from the narrow direct-landing
+route. A fresh series integration aggregates already closed leaves and therefore has no closeout
+door of its own; its door authority is explicitly `not-applicable`, independent of
+`directExecutionEnabled`. Direct landing is reserved for an explicitly selected leaf delivery
+without a leaf enclosure. A fresh leaf still requires its exact claimed closeout/direct-landing
+source, and an already-journaled no-door operation remains recoverable only as that exact retained
+generation.
+
 ## Update History
+
+- 2026-08-31T20:30+02:00 — 260831-DER: synchronized the direct-execution boundary. Ordinary
+  series/master integration never requires `directExecutionEnabled`; only an explicitly selected
+  leaf delivery without an enclosure uses the policy-gated direct-landing route.
 
 - 2026-08-26T14:32+02:00 — Synchronized the corrected ledger-history doctrine: exact parent-row
   preservation remains strict, while repeated code commits remain valid. Verification remains

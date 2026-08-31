@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/abandon.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastUpdated | 2026-08-31T20:30+02:00 |
 | lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
 | lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
@@ -105,7 +105,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Provider teardown is delegated to the provider-runtime teardown function. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
 | `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_force`; `remove_empty_dir` | mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198; mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223; mcp/src/agents_remember/worktrees/modules/cleanup.py:265-291; mcp/src/agents_remember/worktrees/modules/cleanup.py:443-458 |
 | `WorktreeArgs` types the abandon input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
-| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:276-276 |
+| The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. | "def worktree_abandon" | mcp/src/agents_remember/mcp/registration/closeout.py:278-278 |
 | Unit tests cover unmerged-branch refusal, force discard, blocker reporting, and dry-run teardown. | `test_no_force_refuses_unmerged_and_reports_commits`; `test_force_discards_unmerged_branch`; `test_unmerged_branch_and_dirty_worktree_are_blockers`; `test_dry_run_lists_resources_without_touching_docker_or_disk` | mcp/tests/test_worktree_abandon.py:201-212; mcp/tests/test_worktree_abandon.py:214-222; mcp/tests/test_worktree_abandon.py:226-236; mcp/tests/test_worktree_abandon.py:137-157 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | `CleanupStatus` (declared in models/worktree.py), `ContractCells`, and `amend_contract` are the vocabulary and typed write used by the `abandoned` stamp. | "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/worktrees/worktree_contract.py:181-181; mcp/src/agents_remember/worktrees/worktree_contract.py:198-198 |
@@ -142,6 +142,10 @@ terminal release capability, never a persistent queue blocker. Already-abandoned
 surface terminal archive proof.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No content impact: repointed the `worktree_abandon` registration
+  citation after the direct-landing tool description shifted its source line. Abandon behavior is
+  unchanged.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for terminal abandon outputs and confirmed that the documented abandon contract is unchanged. Verification remains closeout-owned.
 

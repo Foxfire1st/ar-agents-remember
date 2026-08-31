@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T06:26+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
+| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -144,6 +144,10 @@ execution into their named owners. The split reduces repeated validation and fix
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
 ## Update History
+
+- 2026-08-31T20:30+02:00 — No route topology impact: 260831-DER restores fresh ordinary series
+  integration as explicit no-door `not-applicable` authority while retaining exact leaf-door and
+  journal recovery boundaries.
 
 - 2026-08-30T06:26+02:00 — MCAR-L03 A005: documented the canonical exact-pair owner, the narrow
   configured-authority delegation, and completed-integration memory-only reopen boundary.
