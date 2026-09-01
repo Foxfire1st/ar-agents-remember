@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
+| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
 | The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
 | The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
 
@@ -80,6 +80,9 @@ The surrounding task-publication CAS provides serialization. This prevents disca
 exposing a parent audit without removal or deleting the child without the audit.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged task-document
+  store model dependency. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented rollback-safe task-document publication plus exact source removal. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

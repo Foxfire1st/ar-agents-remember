@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -77,6 +77,19 @@ together.
   `SprintExecutionNode` equality/hash contract is structural node-to-node only; callers use the
   explicit `.ref` field when they mean the addressed task document. Legacy bare-reference JSON
   lifting/roundtrip is an independent wire contract.
+- `document_field_effects.py` — the exhaustive schema-derived effect taxonomy. Every persisted
+  root/nested field is classified by structural topology, normative intent, completion readiness,
+  progress, evidence, lifecycle, and/or prose audit; missing, stale, and empty memberships refuse.
+- `execution_graph_validation.py` — the schema's indexed intrinsic graph algorithm. One endpoint
+  index and resolved-edge population feed uniqueness, ownership, DAG, waves, and named cycles while
+  recording exact collection work.
+- `leaf_binding.py` — the pure canonical composite master-row/leaf identity owner shared by
+  lifecycle and semantic-topology consumers. Number, file, ref, directory, id, and stem must agree.
+- `semantic_topology.py` — the strict `semantic-topology/v2` candidate identity: exact refs, one
+  structural parent row, execution nature, and explicit DAG or atomic-sequential placement only.
+- `semantic_topology_graph.py` + `semantic_topology_graph_binding.py` — compare authored/resolved
+  graph bytes, refuse over-budget populations before admission, materialize one recursively immutable
+  graph generation, and index all candidate placements and incident edges for bounded reuse.
 - `render.py` — `render_markdown(doc)`: the only writer of the rendered markdown.
   Section helpers assemble lines from the model (mirroring
   `worktrees.worktree_contract.contract_to_text`); output is deterministic. A step renders a `### {id} — {title}`
@@ -230,7 +243,7 @@ master-qualified leaf-title keys.
 | --- | --- | --- |
 | Task source snapshots and publication. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError` | mcp/src/agents_remember/tasks/store.py:22-35; mcp/src/agents_remember/tasks/store.py:38-52 |
 | Application publication transaction. | `TaskDocPublicationTransaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:65-73 |
-| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
+| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
 | Qualified leaf-title join. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59; mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
 | Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
 
@@ -249,7 +262,21 @@ topology, sprint linkage, and topology-internal consumer scans all call that sea
 object no longer carries parallel public/private master-census methods, so branch-authority checks
 cannot drift across competing APIs.
 
+## 260831-CCR-L01 Stable Semantic Topology Identity
+
+Closeout topology currentness is now a task-domain semantic projection rather than a queue-private
+whole-document digest. The exhaustive field-effect taxonomy makes schema growth explicit;
+`semantic-topology/v2` includes only sprint/master/leaf refs, the uniquely bound structural parent
+row, effective execution nature, and candidate-applicable placement. One bounded immutable graph
+index is shared across the candidate population. The existing task-document schema remains the
+canonical persisted authority, and its intrinsic graph validation is now one indexed analysis
+reused by admission and wave/cycle reads.
+
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: added schema-owned field effects, canonical
+  composite leaf binding, `semantic-topology/v2`, one bounded immutable graph index, and the indexed
+  intrinsic graph-validation owner. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — Added the single module-level repository-master census boundary used by topology and linkage consumers.
 

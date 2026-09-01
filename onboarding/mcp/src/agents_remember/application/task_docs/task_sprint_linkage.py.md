@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -111,7 +111,7 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:614-627; mcp/src/agents_remember/tasks/document.py:633-663; mcp/src/agents_remember/tasks/document.py:679-804 |
+| The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes; `SprintSeat` itself is structurally unchanged in the candidate. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:546-560; mcp/src/agents_remember/tasks/document.py:630-662; mcp/src/agents_remember/tasks/document.py:677-896 |
 | The typed-linkage cross-check and altitude role sets this module relies on. | `validate_sprint_linkage` | mcp/src/agents_remember/tasks/document_refs.py:311-361 |
 | The public tool-layer operation routing. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
 | The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:433-474; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:758-778 |
@@ -168,6 +168,10 @@ lock or lifecycle evidence owner.
 | The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | `SprintLinkageError`; `SprintLinkageRequest`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:102-103; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:106-115; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:177-186 |
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read the reopened `SprintSeat` claim,
+  retained its behavior, and regenerated all three schema ranges. Verification remains
+  closeout-owned.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_parse_payload` and confirmed that payload validation and sprint-linkage behavior remain as documented. Verification remains closeout-owned.
 

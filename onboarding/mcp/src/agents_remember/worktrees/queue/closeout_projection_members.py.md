@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:25+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
+| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,9 +23,14 @@ Computes candidate-local readiness, dependency order, and stable source fingerpr
 ### Logic
 
 It combines task completion blockers, door admission reasons, candidate-local activation waits,
-authored dependency ordering, and topology/file digests into one bounded member record. A graph-less
+authored dependency ordering, and explicit source-plane digests into one bounded member record. A graph-less
 sprint adds no synthetic contract-census ordering reason; source-pair activation already says
 whether this exact master is selected, paused, or still reconciling.
+
+Candidate topology identity is owned by `tasks.semantic_topology`: this module adapts the shared
+`QueueGraphContext` to `semantic-topology/v2`, translates typed domain refusals without losing status
+or detail, and consumes the fingerprint already computed for the member. It no longer hashes the
+whole candidate document or maintains a queue-private v1 identity.
 
 ### Conventions
 
@@ -39,6 +44,7 @@ the public function or model instead of re-deriving its lower-level state machin
   selects a master or reconstructs an owner from live contract presence.
 - Without an authored graph, dependency waiting is empty; the removed global
   `atomic-series-lane-owned-by` fallback must not return.
+- Topology identity is exactly `semantic-topology/v2`; no whole-document or v1 fallback is accepted.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
 
@@ -52,7 +58,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-234 |
+| No external domain source is required to establish this repository-owned implementation. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-247 |
 
 ## Repo-Internal References
 
@@ -60,8 +66,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-234 |
-| Candidate-local activation waits are combined with door admission before optional DAG waits. | `projection_member`; `_admission_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:37-60; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:93-100 |
+| Member construction consumes an exact precomputed topology fingerprint and the typed bound graph context. | `projection_member` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:35-72 |
+| Candidate-local activation waits are combined with door admission before optional DAG waits. | `projection_member`; `_admission_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:48-72; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:99-107 |
+| Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals. | `candidate_task_topology_fingerprint`; `semantic_topology_projection` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:184-226 |
 
 ## Cross-Repo References
 
@@ -70,9 +77,17 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-234 |
+| No meaningful cross-repository reference applies. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-247 |
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — Checklist follow-up: re-read the structurally changed member context,
+  retained its exact claim/range, and anchored the row on the stable construction function while
+  leaving commit verification to closeout.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: replaced the queue-private whole-document
+  topology digest with the task-domain `semantic-topology/v2` owner, bound graph index, and exact
+  typed error translation. Verification remains closeout-owned.
 
 - 2026-08-26T08:25+02:00 — Rebound the three full-module citations to the frozen 234-line source;
   no semantic claim changed.

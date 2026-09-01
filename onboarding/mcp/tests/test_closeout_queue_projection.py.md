@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/tests/test_closeout_queue_projection.py`          |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -31,6 +31,11 @@ entries, a symlinked door ancestor, sprint completion, activation reselection, a
 activation. The two-series case selects master A then master B and checks that readiness and
 `atomic-series-paused-by` waiting reverse without deleting either series.
 
+The CCR cohort distinguishes completion-readiness invalidation from display/audit changes that stay
+outside source currentness, carries composite-binding failures into exact invalid-empty source
+problems, proves a candidate-relevant dependency edge changes v2 identity, and checks that both DAG
+and graphless atomic-sequential routes share one fingerprint across coherence, door, and queue.
+
 ### Conventions
 
 Filesystem hazards use real paths; projection membership is asserted through public model fields.
@@ -42,6 +47,9 @@ Selector corruption is injected directly only to prove strict observation and sc
 - Multiple live series are valid; selection supplies readiness, not existence or retirement.
 - Malformed/nonregular evidence becomes explicit invalid-empty projection evidence, never absence.
 - Projection failure does not mutate task truth, selector state, or operation lifecycle evidence.
+- Only classified completion-readiness and structural topology facts change currentness; display and
+  audit fields do not.
+- Coherence, the waiting door, and the rebuilt member must agree on one topology fingerprint.
 
 ### Todos
 
@@ -59,8 +67,11 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Rebuild discards old rows and derives membership only from current waiting doors. | `test_rebuild_uses_only_current_waiting_doors_not_old_rows` | mcp/tests/test_closeout_queue_projection.py:41-63 |
-| Multiple live series project selected/paused waiting independently. | `test_multiple_live_atomic_series_are_valid_active_paused_waiting_candidates` | mcp/tests/test_closeout_queue_projection.py:196-253 |
-| Malformed activation invalidates only the disposable projection and names selection repair. | `test_malformed_activation_invalidates_only_projection_and_names_selection_repair` | mcp/tests/test_closeout_queue_projection.py:255-275 |
+| Multiple live series project selected/paused waiting independently. | `test_multiple_live_atomic_series_are_valid_active_paused_waiting_candidates` | mcp/tests/test_closeout_queue_projection.py:307-364 |
+| Malformed activation invalidates only the disposable projection and names selection repair. | `test_malformed_activation_invalidates_only_projection_and_names_selection_repair` | mcp/tests/test_closeout_queue_projection.py:366-386 |
+| Readiness changes invalidate while display/audit-only edits preserve exact source identity. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:87-115 |
+| Composite-binding refusal and a relevant dependency edge affect the explicit topology source plane. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:117-168 |
+| Graphless and DAG routes share one topology fingerprint across coherence, door, and queue. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:170-197 |
 
 ## Cross-Repo References
 
@@ -92,6 +103,14 @@ evidence.
   or a task-authoring lock.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8 follow-up: documented readiness-versus-audit
+  invalidation, exact topology refusal, relevant-edge drift, and shared coherence/door/queue v2
+  identity for both DAG and graphless modes. Verification remains closeout-owned.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: regenerated the two moved multi-series
+  activation ranges after semantic-topology projection cases were added. Verification remains
+  closeout-owned.
 
 - 2026-08-26T08:45+02:00 — Replaced obsolete queue-artifact references with the frozen
   door-derived, multi-series activation cases and restored canonical Docs/Cross-Repo sections.

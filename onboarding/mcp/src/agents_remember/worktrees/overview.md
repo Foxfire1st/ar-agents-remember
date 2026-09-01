@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -227,7 +227,18 @@ It proves requested contract/repository identity, live roots, Git repository mem
 out work branches, source/base equality, and base ancestry before emitting the shared pair model.
 No queue, report, repo-id lookup, branch switch, or fallback participates.
 
+## 260831-CCR-L01 Shared Leaf Identity Boundary
+
+`task_leaf_binding.py` now delegates row/source identity to the pure task-domain
+`tasks/leaf_binding.py` owner used by semantic topology. Lifecycle start/discard and closeout
+topology therefore require the same composite facts: exact parent row number and file, canonical
+direct-child JSON ref, repository/directory, child id, and stem. Stem-only or split identities fail
+with typed status/detail; no worktree-local fallback remains.
+
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: unified lifecycle and semantic-topology leaf
+  identity on the canonical composite task-domain binding. Verification remains closeout-owned.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: restored the ordinary series no-door integration state and
   recorded the strict separation from policy-gated leaf-without-enclosure direct landing. Existing

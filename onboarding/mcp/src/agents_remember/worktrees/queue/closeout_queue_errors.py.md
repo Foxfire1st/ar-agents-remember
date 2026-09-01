@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,8 +23,9 @@ and lifecycle services, plus the shared request-reference validator.
 
 ### Logic
 
-`CloseoutQueueError` retains a machine-readable status while the base exception carries the status
-and human detail together, preserving the mechanistic refusal in detached worker diagnostics.
+`CloseoutQueueError` retains both machine-readable `status` and exact `detail` attributes while the
+base exception carries them together, preserving task-domain refusal facts through queue adapters
+and detached worker diagnostics.
 `queue_task_ref` (extracted from `closeout_queue.py` in 260815-DAG-L13) validates one
 request-carried task-document reference, failing closed with `closeout-queue-reference-required` /
 `closeout-queue-reference-invalid`.
@@ -50,7 +51,7 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared queue error stores the exact public status and detail. | `CloseoutQueueError` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:13-18 |
+| The shared queue error stores exact public status and detail as direct typed attributes. | `CloseoutQueueError` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:17-23 |
 | Request-carried task references validate fail-closed in one place. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:46-67 |
 
 ## Cross-Repo References
@@ -70,6 +71,10 @@ queue consumer's local exception formatting.
 | Task-reference validation also uses that constructor instead of echoing the supplied value. | `queue_task_ref` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:46-67 |
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: made exact refusal `detail` a direct typed
+  attribute so semantic-topology adapters preserve status and detail without reparsing exception
+  text. Verification remains closeout-owned.
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: documented the shared bounded queue failure-evidence API. Verified at code commit `1d446724`.
 

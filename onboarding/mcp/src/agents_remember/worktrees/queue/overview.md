@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,15 @@ task or door mutation
 `closeout_projection_members.py` recomputes readiness and deterministic priority/graph order; and
 `closeout_projection_publication.py` owns invalidation, preview, off-side rebuild, and exact-current
 publication. `closeout_queue.py` exposes status/rebuild and the short first-ready claim admission
-check. `closeout_queue_graph.py` owns only bounded DAG/order facts, while
+check. `closeout_queue_graph.py` owns the queue adapter around the task domain's one bounded,
+deep-immutable semantic graph index, while
 `closeout_queue_evidence.py` retains canonical grade/admission source parsing.
+
+`closeout_projection_source_facts.py` makes currentness inputs explicit: one source plane contains
+task address plus only fields classified as completion readiness, and a second contains the
+`semantic-topology/v2` fingerprint. `closeout_projection_snapshot.py` freezes one exact readable,
+classified census before publication. Whole task documents, private v1 topology tables, and old
+projection rows are not source inputs.
 
 Prior projection rows are never rebuild input. Only waiting door generations may be members.
 Projection state cannot claim, certify, consume, block, release, abort, carry commits, or own
@@ -105,7 +112,19 @@ evidence to the closeout integration route's sole structured currentness validat
 that exact evidence list into door/projection facts. Generated reports are evidence bytes only;
 historical files cannot compete with the stable manifest.
 
+## 260831-CCR-L01 Semantic Source Planes
+
+Member readiness now receives one already-computed task-domain topology fingerprint. Queue adapters
+translate typed topology refusals without changing status/detail and never maintain a parallel
+identity algorithm. Graph-backed rebuild resolves and compares the authored graph once, substitutes
+the sole immutable bound graph into the sprint context, and reuses its indexes for every candidate.
+Graphless atomic-sequential mode remains explicit and valid.
+
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: separated completion-readiness and
+  `semantic-topology/v2` source planes, added immutable source snapshots, and bound all graph-backed
+  member reads to one task-domain index. Verification remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — Replaced curator Markdown parsing with the shared structured authority
   validator. Verification remains closeout-owned.

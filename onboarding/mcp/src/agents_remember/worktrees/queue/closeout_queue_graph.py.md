@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T06:25+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,10 +65,10 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction validates/caps topology and derives the exact queue revision and indexes, with the strict/tolerant register split. | `graph_context` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:56-96 |
-| Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:279-305 |
-| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:224-231; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:234-247 |
-| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:257-264; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:267-282 |
+| Graph construction binds the caller's authored graph to one validated deep-immutable semantic index, then derives the exact queue revision and indexes with the strict/tolerant register split. | `graph_context`; `_sprint_with_bound_graph` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:62-128 |
+| Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:340-366 |
+| Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:266-273; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:276-289 |
+| The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:309-324; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:299-306 |
 
 ## Cross-Repo References
 
@@ -83,7 +83,7 @@ remains transitional until L3's waiting-only projection rewrite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction bounds failures at sprint, topology, and planning-register stages. | `graph_context`; `_validated_graph_documents` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:56-96; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:99-162 |
+| Graph construction bounds failures at sprint, semantic topology, and planning-register stages. | `graph_context`; `_validated_graph_documents` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:62-128; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:130-193 |
 
 ## 260821-CLIVE Projection Ordering Only
 
@@ -93,6 +93,10 @@ Ready order remains effective priority rank, graph declaration order, then leaf 
 graph-less atomic-sequential sprint is valid; the graph never owns in-flight lane state.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: documented the caller-authored graph
+  comparison, sole immutable semantic-topology index, and regenerated every moved graph-helper
+  range. Verification remains closeout-owned.
 
 - 2026-08-26T06:25+02:00 — Rebound the card to its nearest queue-route governor while preserving
   graph-derived ordering ownership; verification metadata remains closeout-owned.

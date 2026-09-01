@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T06:08+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
+| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,9 @@ evidence, candidate acceptance evidence, and the durable operation journal.
 the exact waiting source; `ledger_recovery.py` advances code and memory proof after partial
 closeout without making the disposable queue own commit evidence. `integration_reopen.py` decides
 whether exact newly produced code or memory output needs another plane-owned integration.
+For graph-backed candidates, both door reconstruction and curator-coherence observation pass the
+already resolved authored graph to the shared queue/task-domain context and use its bound immutable
+sprint snapshot. The door, coherence record, and projection therefore cannot mix graph generations.
 
 ## Local Invariants And Traps
 
@@ -42,6 +45,7 @@ whether exact newly produced code or memory output needs another plane-owned int
 - The validated record projects exact content/route no-impact identities to onboarding body gates;
   only unchanged stale content is eligible, while untraced edits remain closed.
 - Malformed live authority bytes remain replaceable only through exact prepared CAS.
+- Graph-backed closeout consumers share one admitted immutable graph generation per observation.
 
 ## File-Level Onboarding Map
 
@@ -69,6 +73,10 @@ re-prove it from the same exact contract so stale pre-commit evidence is never t
 fallback.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: door and curator-coherence task contexts now
+  bind the authored graph once and consume the same immutable sprint graph generation as projection
+  currentness. Verification remains closeout-owned.
 
 - 2026-08-30T06:08+02:00 — MCAR-L03 A005: added the extracted completed-integration reopen policy
   owner and its exact code/memory leg boundary. Verification remains closeout-owned.
