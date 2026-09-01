@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_integration_publication_fence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T08:13+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ No configured Domain Documentation source applies to this repository-internal li
 | Minimal fixtures differ only by series versus leaf topology. | `_series_contract`; `_leaf_contract` | mcp/tests/test_integration_publication_fence.py:30-55 |
 | Fresh and journaled series cases require valid `not-applicable` authority. | `test_fresh_ordinary_series_integration_needs_no_closeout_door`; `test_journaled_ordinary_series_absence_remains_valid` | mcp/tests/test_integration_publication_fence.py:67-82 |
 | Fresh leaf refusal and retained journal recovery remain distinct. | `test_leaf_without_claimed_closeout_source_is_still_refused`; `test_leaf_retains_an_already_journaled_not_applicable_publication` | mcp/tests/test_integration_publication_fence.py:85-100 |
-| The test is explicitly owned by the deterministic unit-regression lane. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:85-85 |
+| The test is explicitly owned by the deterministic unit-regression lane. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:90-90 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,10 @@ No meaningful cross-repository boundary is owned by this file.
 - 2026-09-01T05:22+02:00 — No content impact: re-anchored the unchanged explicit
   `unit-regression` declaration after six CCR-R01 manifest rows shifted its coordinate. Test
   behavior and lane ownership are unchanged.
+
+- 2026-09-01T04:34+02:00 — No content impact: repaired the explicit-lane citation after two
+  certification suites entered `unit-regression`; this module's behavior and classification are
+  unchanged.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: created for the direct-execution scope-boundary regression
   candidate. Commit-derived verification metadata remains blank until governed landing stamps the

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_retry_selection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T08:13+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ The implementation and explicit lane declaration are the load-bearing same-repos
 | --- | --- | --- |
 | The hook narrows executable items after canonical collection and distinguishes passing zero-body collection from an absent path. | `pytest_collectreport`; `pytest_collection_modifyitems`; `_refuse_uncollected_paths` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:47-119 |
 | The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes. | `test_retry_selection_keeps_only_explicit_affected_modules`; `test_retry_selection_accepts_successfully_collected_zero_body_modules`; `test_retry_selection_rejects_missing_or_escaping_population` | mcp/tests/test_retry_selection.py:12-71 |
-| The suite has explicit unit-regression membership. | "mcp/tests/test_retry_selection.py" | mcp/tests/test-evidence-lanes.toml:130-130 |
+| The suite has explicit unit-regression membership. | "mcp/tests/test_retry_selection.py" | mcp/tests/test-evidence-lanes.toml:135-135 |
 
 ## Cross-Repo References
 
@@ -80,6 +80,9 @@ No meaningful cross-repository boundary is involved.
 - 2026-09-01T05:22+02:00 — No content impact: re-anchored the unchanged explicit
   `unit-regression` row after six CCR-R01 manifest declarations shifted its coordinate. Retry
   behavior and lane ownership are unchanged.
+
+- 2026-09-01T04:34+02:00 — No content impact: repaired the explicit-lane citation after two
+  certification suites entered `unit-regression`; retry-selection behavior is unchanged.
 
 - 2026-08-31T20:30+02:00 — No content impact: repointed the explicit unit-regression manifest row
   after the direct-execution regression entry was inserted. Retry-selection behavior is unchanged.

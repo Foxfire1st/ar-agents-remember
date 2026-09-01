@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -145,6 +145,23 @@ Native POSIX subprocess preparation rejects inherited Windows interop PATH entri
 only an existing native `$HOME/.local/bin`. That deterministic user-local admission lets installed
 Linux harness commands and dashboard-local Node shebangs resolve without shell or version-manager
 probing; it is part of the same fail-closed platform boundary, not a fallback search.
+
+## Five-Gate Certification Contract Foundation
+
+`agents_remember.certification` now owns a repository-neutral immutable registry, plan-authority,
+bounded-validation, and typed terminal-result foundation for five ordered closeout gates:
+pre-test code quality, the large static suite, post-test quality that consumes suite artifacts,
+clean-room integration/E2E, and memory quality. Gate meaning is fixed, while concrete Gate 1–4
+rails, adapters, commands, applicability, and ownership remain repository-profile declarations;
+Gate 5 retains memory-domain authority.
+
+The foundation admits raw declarations before expensive allocation, returns all findings within
+one measured budget, binds plans to an exact profile/registry/candidate, and requires complete
+terminal results with typed evidence, artifact, owner, and blocker semantics. It contains no
+Agents Remember rail inventory, no safe-full or compatibility fallback, and no executor. The
+current Dagger wrapper remains the live repository acceptance path until later owners contribute
+the repository profile and integrate execution/lifecycle publication. Detailed ownership begins at
+[the certification route overview](src/agents_remember/certification/overview.md).
 
 ## Purpose
 
@@ -814,6 +831,9 @@ The MCP package separates three surfaces:
   and `runtime_install`.
 - `agents_remember.models` owns public MCP response contracts and the
   tool-to-response-model registry used by the `mcp/tools/` payload builders.
+- `agents_remember.certification` owns repository-neutral five-gate rail registry, canonical
+  plan, bounded validation, and typed terminal-result contracts. It does not own concrete
+  repository profiles or execution.
 - `agents_remember.tasks` owns JSON-primary task documents plus the strict persisted execution
   vocabulary: commanded-master nature, sprint reasoned AON graph, exact cross-document membership,
   deterministic derived waves, rendering, and rollback-safe publication. The application layer
@@ -1069,6 +1089,15 @@ candidate change produces a typed refusal with the exact sync/reprepare route. N
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
 ## Update History
+
+- 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 adds focused certification
+  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
+  five-gate foundation, package boundary, and absence of an executor or repository profile remain
+  unchanged. Verification remains closeout-owned.
+
+- 2026-09-01T03:11+02:00 — Added the route-owned generic five-gate certification contract
+  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
+  until repository-profile and integration owners land. Verification remains closeout-owned.
 
 - 2026-08-31T20:30+02:00 — No route impact: 260831-DER narrows direct landing to an explicitly
   selected leaf delivery without an enclosure and restores ordinary series integration without

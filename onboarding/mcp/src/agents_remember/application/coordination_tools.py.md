@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/coordination_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -49,7 +49,7 @@ repo is disallowed or a path escapes the coordination root.
 | Runtime/coordination response models include `ResolveContextResponse`. | `ResolveContextResponse` | mcp/src/agents_remember/models/runtime.py:30-33 |
 | Coordination context resolver owns the actual context construction. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
-| `AuthorityError` is the authority-violation error type the guards raise. | `AuthorityError` | mcp/src/agents_remember/errors.py:36-42 |
+| `AuthorityError` is the authority-violation error type the guards raise. | `AuthorityError` | mcp/src/agents_remember/errors.py:68-74 |
 
 ## Series-Contract Notes
 

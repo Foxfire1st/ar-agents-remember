@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-09-01T08:17+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 
 ## What This Area Is
 
@@ -233,7 +233,7 @@ engine/store and one over a real socket.
 | The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | "async def conversation_page("; "async def hydrate_agent_history("; "async def conversation_events("; "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:1027-1032 |
+| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:1053-1057 |
 
 ## Cross-Repo References
 
@@ -416,6 +416,15 @@ The active conversation routes now import the wire contracts from `models/conver
 - 2026-09-01T05:25+02:00 — 260831-CCR-L01 Attempt 9 citation maintenance: rebound the
   focused-suite citation after the tests overview recorded explicit unit-regression ownership.
   Active-conversation behavior is unchanged; verification metadata remains pinned.
+
+- 2026-09-01T04:37+02:00 — No route impact: rebound the focused-suite citation after the tests
+  overview recorded explicit certification-suite lane ownership. Active-conversation behavior is
+  unchanged, and verification metadata remains pinned.
+
+- 2026-09-01T03:50+02:00 — 260831-CCR-L11 curator citation maintenance: rebound the focused-suite
+  citation from `onboarding/mcp/tests/overview.md:1017-1021` to `onboarding/mcp/tests/overview.md:1032-1036`
+  after L11 inserted certification test-onboarding content. This is citation-range maintenance only;
+  no active-conversation route or source behavior changed, and verification metadata remains pinned.
 
 - 2026-08-31T11:06+02:00 — 260821-ARSPAWN-L5 closeout file-size repair: rebound the
   focused-suite citation after the tests overview recorded the structural-test relocation.

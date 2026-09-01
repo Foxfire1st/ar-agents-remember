@@ -30,6 +30,11 @@
       "index": "mcp/src/agents_remember/application/overview.index.json"
     },
     {
+      "route": "mcp/src/agents_remember/certification",
+      "overview": "mcp/src/agents_remember/certification/overview.md",
+      "index": "mcp/src/agents_remember/certification/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/controlplane",
       "overview": "mcp/src/agents_remember/controlplane/overview.md",
       "index": "mcp/src/agents_remember/controlplane/overview.index.json"
@@ -259,9 +264,9 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1461,
+    "sourceFilesInScope": 1475,
     "fileSidecars": 146,
-    "childRoutes": 20
+    "childRoutes": 21
   },
   "routingTerms": [
     "adopt",
@@ -296,6 +301,7 @@
     "carryover_authority",
     "catalog",
     "census",
+    "certification",
     "cgc",
     "cgcignore",
     "citations",
@@ -342,8 +348,7 @@
     "docs",
     "doctrine",
     "entity",
-    "errors",
-    "evidence"
+    "errors"
   ],
   "hotPath": {
     "summary": "The MCP package routes mutation tools through closed configured-contract admission, journal-rooted lifecycle controls, explicit enclosure adoption/legacy repair, and disposable door-based scheduling. **260731-EFA-L21 \u2014 checkout coordination isolation.** An undeclared source-checkout invocation is classified before runtime configuration is read: a linked worktree receives a synthetic provider-disabled configuration rooted at `provider-runtime/dev-ar-coordination`, while a primary checkout refuses live coordination access. Trusted MCP/dashboard declarations and installed package execution ret...",
@@ -353,6 +358,7 @@
       "mcp/native_helpers/conversation_library",
       "mcp/test_support/agents_remember_test_support",
       "mcp/src/agents_remember/application",
+      "mcp/src/agents_remember/certification",
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/memory_quality",
       "mcp/src/agents_remember/models",
@@ -370,8 +376,7 @@
       "mcp/src/agents_remember/providers/grepai",
       "mcp/src/agents_remember/providers/lifecycle",
       "mcp/README.md",
-      "mcp/pyproject.toml",
-      "mcp/requirements.txt"
+      "mcp/pyproject.toml"
     ],
     "anchorHints": [
       "README.md",

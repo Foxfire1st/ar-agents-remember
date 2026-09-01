@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T12:27+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -60,6 +60,11 @@ Repository-owned design truth lives in `docs/design/python-evidence-system.md` a
 they do not replace this source-paired behavior description.
 
 ## Update History
+
+- 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 narrows ownership for one
+  repository-level non-Python input inside `code_quality/`; this parent route remains verification
+  infrastructure and acquires no product or acceptance authority. Verification remains
+  closeout-owned.
 
 - 2026-08-31T12:27+02:00 — No route impact: A005 retains this package as Dagger-owned
   verification support only; its child quality/testing refinements do not change the root

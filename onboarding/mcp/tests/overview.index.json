@@ -22,6 +22,7 @@
     "mcp/tests/_scaling.py",
     "mcp/tests/_store_durability.py",
     "mcp/tests/_store_durability_source.py",
+    "mcp/tests/certification_registry_test_support.py",
     "mcp/tests/closeout_fixture_test_support.py",
     "mcp/tests/closeout_input_test_support.py",
     "mcp/tests/conftest.py",
@@ -71,6 +72,11 @@
     "mcp/tests/test_carryover_memory.py",
     "mcp/tests/test_causal_failure_localization.py",
     "mcp/tests/test_causal_quality_preflight.py",
+    "mcp/tests/test_certification_contract_model_edges.py",
+    "mcp/tests/test_certification_plan_authority.py",
+    "mcp/tests/test_certification_rail_registry.py",
+    "mcp/tests/test_certification_reachability_edges.py",
+    "mcp/tests/test_certification_registry_validation_edges.py",
     "mcp/tests/test_cgc_index_concurrency.py",
     "mcp/tests/test_cgc_installation.py",
     "mcp/tests/test_cgc_seed_bundle_path.py",
@@ -553,8 +559,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 535,
-    "fileSidecars": 541,
+    "sourceFilesInScope": 541,
+    "fileSidecars": 547,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -625,6 +631,8 @@
     "cases",
     "catalog",
     "causal",
+    "certification",
+    "certification_registry_test_support",
     "cgc",
     "change",
     "changeset",
@@ -635,9 +643,7 @@
     "child",
     "citation",
     "claim",
-    "classification",
-    "claude",
-    "claude_stream_json"
+    "classification"
   ],
   "hotPath": {
     "summary": "L2 forcing covers every configured-contract semantic refusal across public consumers, exact admitted-object reuse, task-addressed controls, crash cuts, locator/manifest/journal contradictions, worker termination, direct landing, bounded legacy repair, task publication races, and fail-closed cleanup. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrad...",
@@ -655,6 +661,7 @@
       "mcp/tests/_scaling.py",
       "mcp/tests/_store_durability.py",
       "mcp/tests/_store_durability_source.py",
+      "mcp/tests/certification_registry_test_support.py",
       "mcp/tests/closeout_fixture_test_support.py",
       "mcp/tests/closeout_input_test_support.py",
       "mcp/tests/conftest.py",
@@ -664,8 +671,7 @@
       "mcp/tests/fixtures/claude_stream_json/2.1.210/initialization.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions-multi.jsonl",
       "mcp/tests/fixtures/claude_stream_json/2.1.210/interactions.jsonl",
-      "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl",
-      "mcp/tests/fixtures/claude_stream_json/2.1.217"
+      "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl"
     ],
     "anchorHints": [
       "_adapter_event_scripts.py",
@@ -692,6 +698,8 @@
       "_store_durability",
       "_store_durability_source.py",
       "_store_durability_source",
+      "certification_registry_test_support.py",
+      "certification_registry_test_support",
       "closeout_fixture_test_support.py",
       "closeout_fixture_test_support",
       "closeout_input_test_support.py",
@@ -713,9 +721,7 @@
       "interrupt.jsonl",
       "interrupt",
       "codex_app_server_0_144_3.json",
-      "codex_app_server_0_144_3",
-      "claude-2.1.211.json",
-      "claude-2.1.211"
+      "codex_app_server_0_144_3"
     ]
   },
   "fallback": {

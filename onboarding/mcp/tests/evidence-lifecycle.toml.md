@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-31T12:39+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,7 +74,27 @@ source-derived ownership graph therefore classifies the reviewer suite as an exa
 consumer of `closeout_input_test_support.py` and `curator_coherence_test_support.py`; both catalog
 rows declare that edge explicitly.
 
+## Certification Registry Support Ownership
+
+`certification_registry_test_support.py` is permanent internal-canonical shared support for the
+generic certification registry contract. It owns portable registry/result builders and bounded
+graph families used by exactly the plan-authority, rail-registry, contract-model edge,
+reachability edge, and registry-validation edge suites. The catalog gives it affected cadence,
+in-process public-contract fidelity, a concrete replacement node, and an exact five-consumer set;
+it does not broaden to the full Python population or smuggle an Agents Remember repository profile
+into shared support.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The permanent shared-support artifact has exact ownership, replacement, and five-consumer declarations. | "mcp/tests/certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:1113-1133 |
+
 ## Update History
+
+- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 expanded the certification shared-support row to
+  the complete five-consumer set exposed by the source graph. Verification remains closeout-owned.
+
+- 2026-09-01T03:11+02:00 — Registered the portable certification composition owner with its two
+  exact focused-suite consumers. Verification remains closeout-owned.
 
 - 2026-08-31T12:39+02:00 — Added `test_dispatch_agent_ambient_reviewer.py` to both exact transitive
   consumer sets after the L5 closeout fast hook identified the previously undeclared ownership

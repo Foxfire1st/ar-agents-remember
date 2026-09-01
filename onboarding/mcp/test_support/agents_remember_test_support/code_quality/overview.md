@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -46,8 +46,9 @@ retained database still fails closed.
 
 Non-Python product inputs that cannot participate in the import graph use narrow repository-owned
 consumer declarations only when independently observed literal reads match exactly. This lets the
-Codex starter configuration select its two real contract consumers without treating every unrelated
-test as affected; any declaration/source mismatch widens safely and names the reason.
+Codex starter configuration select its two real contract consumers and the root layer contract
+select its five architecture/structural consumers without treating every unrelated test as
+affected; any declaration/source mismatch widens safely and names the reason.
 
 ## Local Invariants And Traps
 
@@ -78,6 +79,10 @@ The canonical overview is `docs/design/python-evidence-system.md`; retry and dir
 are in `docs/design/python-test-evidence.md` and the PDLS evidence reports.
 
 ## Update History
+
+- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 registered the five exact, independently observed
+  `layers.toml` consumers. The declaration avoids safe-full selection without making metadata
+  self-proving or adding a fallback. Verification remains closeout-owned.
 
 - 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added source-verified exact consumer ownership for `.codex/config.toml`; the candidate resolves completely without global invalidation or a silent narrow fallback. Verification remains closeout-owned.
 

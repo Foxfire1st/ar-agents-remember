@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T05:17+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate |  2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,7 +73,7 @@ low-level Git algorithm remains separately owned.
 | Capture observes HEAD around the one canonical isolated-index add-all tree calculation. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py:25-52 |
 | Reuse requires exact equality of the complete bound route identity. | `require_current_future_code_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py:55-68 |
 | Each capture gives the canonical helper its own enclosure-local temporary index. | `_candidate_tree` | mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py:71-78 |
-| Capture and stale-input outcomes use the package's central typed error family. | `FutureCodeCandidateError` | mcp/src/agents_remember/errors.py:94-99 |
+| Capture and stale-input outcomes use the package's central typed error family. | `FutureCodeCandidateError` | mcp/src/agents_remember/errors.py:126-131 |
 | The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:32-56 |
 
 ## Cross-Repo References
