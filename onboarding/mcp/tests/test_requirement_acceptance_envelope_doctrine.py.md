@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_requirement_acceptance_envelope_doctrine.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T08:13+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ No external documentation governs this repository-owned lifecycle contract.
 | Manager and task sources preserve primary ownership while keeping adjacent requirements contextual. | `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:82-112 |
 | Packet supersession and leaf/master gate boundaries remain explicit. | `test_packet_supersession_and_leaf_gate_boundaries_are_explicit` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:115-126 |
 | Durable-evidence promotion is structurally separate. | `test_durable_evidence_hold_point_is_explicitly_separate` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:132-146 |
-| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:478-478 |
+| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:483-483 |
 
 ## Cross-Repo References
 
@@ -91,6 +91,10 @@ No cross-repository evidence is required.
 - 2026-09-01T05:22+02:00 — No content impact: re-anchored the unchanged architecture-fitness row
   after six CCR-R01 unit-regression declarations shifted the manifest. Requirement-envelope proof
   and lane ownership are unchanged.
+
+- 2026-09-01T04:34+02:00 — No content impact: repaired the architecture-fitness manifest citation
+  after two certification suites entered `unit-regression`; the acceptance-envelope proof is
+  unchanged.
 
 - 2026-08-31T20:30+02:00 — No content impact: repointed the architecture-fitness manifest row
   after an earlier unit-regression entry was inserted. Requirement-envelope proof is unchanged.

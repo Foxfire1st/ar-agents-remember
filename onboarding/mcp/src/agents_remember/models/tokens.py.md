@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-30T22:29+02:00                     |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -147,7 +147,7 @@ operation-less responses such as `ping`.
 | Shared response envelopes define the token metadata fields on the `ResponseModel` base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
 | `_tool_payload` finalizes token metadata on every public tool response via this module. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | Direct tests for the counters, serializers, and the fixpoint self-consistency guarantee. | `FinalizePayloadTokensTests` | mcp/tests/test_tokens.py:80-104 |
-| `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:225-233 |
+| `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. | `TokenizerVocabularyError` | mcp/src/agents_remember/errors.py:256-264 |
 | The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`). | `VENDORED_VOCABULARY_SHA256` | mcp/src/agents_remember/package_data/tiktoken/README.md:46-46 |
 | The cold-start guard: `ColdStartTests` starts the server in a child with every socket blocked and cold tiktoken caches; `VendoredVocabularyTests` re-derives both hashes from the installed tiktoken (asserting `VENDORED_VOCABULARY_SHA256` equals the one it asks for), proves the cache-dir override does not outlive the load, pins the `.gitattributes` entry to the shipped file name, and joins a re-entrant load on a timeout to catch an `RLock` downgrade; `CorruptVendoredVocabularyTests` corrupts *copies* of the blob in a temp directory — CRLF-mangled, truncated, one flipped byte — and requires the refusal each time. | `ColdStartTests`; `VendoredVocabularyTests`; `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331; mcp/tests/test_cold_start.py:334-417 |
 | The `-text` attribute that stops a line-ending filter from changing the bytes this module hashes. | "-text" | .gitattributes:13-13 |

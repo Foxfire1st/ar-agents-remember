@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/models.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ No external documentation is needed for these package-local data models.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `MissingMemoryError` subclasses the typed `AgentsRememberError` base. | `MissingMemoryError` | mcp/src/agents_remember/kernel/coordination_context/models.py:10-29 |
-| `AgentsRememberError` remains a `ValueError`-compatible base. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:16-17 |
+| `AgentsRememberError` remains a `ValueError`-compatible base. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-19 |
 | Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract. | `build_coordination_context`; `_memory_mode` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:268-313; mcp/src/agents_remember/kernel/coordination_context/resolver.py:342-343 |
 | `MemoryMode` is the three-member memory vocabulary declaration (kernel-owned since L9). | "MemoryMode =" | mcp/src/agents_remember/kernel/coordination_context/models.py:209-209 |
 | The wire face of the same value imports and uses the shared alias for `memory.mode`. | `MemorySummary` | mcp/src/agents_remember/models/context_packet.py:79-86 |

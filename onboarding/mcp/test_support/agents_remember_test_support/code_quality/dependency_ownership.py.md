@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,8 +31,10 @@ catalog disagreement return an explicit `fresh_rerun_reason` over the full popul
 
 Repository-owned non-Python product inputs that cannot enter the import graph may declare an exact
 consumer set here. That declaration is admitted only when source-observed literal reads match it
-exactly. The first such input is `.codex/config.toml`, whose two consumers validate the public surface
-and rendered starters; mismatch widens safely instead of trusting stale metadata.
+exactly. `.codex/config.toml` names its two public-surface/starter consumers. `layers.toml` names its
+five architecture and structural-policy consumers through one composed `Path` identity; the
+source-observed literal scanner independently proves the same set. Any mismatch widens safely
+instead of trusting stale metadata.
 
 ### Conventions
 
@@ -73,7 +75,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | Graph construction refuses source parse and module ambiguity before consulting declarations. | `DependencyOwnershipGraph`; `__init__`; `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-153 |
 | Catalog consumers are cross-checked against independently observed consumers. | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:167-226 |
-| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_safe_full` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:306-315 |
+| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_safe_full` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:316-325 |
+| The root layer contract has one exact repository-owned declaration and five independently observed consumers. | `LAYERS_CONTRACT_PATH`; `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:29-50 |
 
 ## Cross-Repo References
 
@@ -85,6 +88,10 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-301 |
 
 ## Update History
+
+- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added exact, source-verified ownership for
+  `layers.toml`: five declared consumers, no full-population launch, and no scanner fallback.
+  Verification remains closeout-owned.
 
 - 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added source-verified exact consumer ownership for `.codex/config.toml`, avoiding both global invalidation and an unproved narrow selection. Verification remains closeout-owned.
 

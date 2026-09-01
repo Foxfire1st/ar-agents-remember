@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_codex_native_history.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash |  `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate |  2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The history reader implements the contracts exercised by this suite. | `CodexNativeHistoryReader`; `read_page` | mcp/src/agents_remember/serving/codex_app_server_history.py:110-612 |
-| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:331-336; mcp/src/agents_remember/errors.py:339-351 |
+| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:362-367; mcp/src/agents_remember/errors.py:370-382 |
 
 ## Cross-Repo References
 

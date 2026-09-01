@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T08:13+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,32 @@ semantic-topology, and task-document coverage-edge companions. They are determin
 pytest regressions over production owners and no longer enter the closed test population as
 unclassified files. The lane assignment governs selection and execution cost; it does not promote
 these tests into durable task evidence or replace independent requirement review.
+
+## Repository-Neutral Certification Contract Evidence
+
+`test_certification_rail_registry.py` proves the portable five-gate registry, exhaustive semantic
+findings, deterministic candidate-bound plans, strict evidence/artifact/blocker contracts, and
+complete typed terminal manifests. `test_certification_plan_authority.py` independently proves
+canonical plan authority, hostile-input pre-allocation refusal, exact budget boundaries, graph
+storage/operation census, and scaling headroom.
+
+Three focused edge companions make the previously aggregate boundaries independently falsifiable.
+`test_certification_contract_model_edges.py` owns closed models, digests, plan catalogs, terminal
+identity, and immutable error payloads. `test_certification_reachability_edges.py` owns prospective
+and raw-budget refusal plus both bounded graph-search directions.
+`test_certification_registry_validation_edges.py` owns typed profile, member, prerequisite, and
+artifact semantic findings.
+
+The closed lane manifest classifies all five suites as `unit-regression`, matching their in-process
+owned-product-behavior boundary. Omission fails before test collection instead of selecting a
+default or broader execution lane.
+
+All five suites consume `certification_registry_test_support.py` as one permanent internal-canonical
+composition owner. Its portable sample profile and generated graph families deliberately contain
+no Agents Remember rail inventory. `evidence-lifecycle.toml` declares exactly these five consumers;
+the helper is neither copied into the suites nor treated as an unowned test input. This evidence
+tests the generic contract foundation, not the later repository-profile executor or clean-room
+acceptance integration.
 
 ## ARSPAWN-L5 A005 Review-Repair Evidence
 
@@ -1561,6 +1587,11 @@ and graphless-no-owner forcing.
 
 ## Update History
 
+- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
+  registry-validation edge suites, classified all five certification suites as unit regressions,
+  and extended the permanent shared-support ownership to the exact five-consumer set.
+  Verification remains closeout-owned.
+
 - 2026-09-01T08:13+02:00 — Final CCR-R01 reconciliation: added the three coverage-edge suites to
   the durable test-route account, bringing the focused regression boundary to eleven and the
   explicit `unit-regression` manifest cohort to nine. Their delivery-attempt changes are test-only;
@@ -1570,9 +1601,16 @@ and graphless-no-owner forcing.
   ownership for the six focused CCR-R01 suites. Their ordinary-test status and the external
   reviewer-owned acceptance boundary remain unchanged; verification remains closeout-owned.
 
+- 2026-09-01T04:34+02:00 — Recorded the certification suites' explicit `unit-regression`
+  ownership after the fail-closed closeout census found both declarations absent. No executor,
+  product, or test-body behavior changed.
+
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: documented the focused field-taxonomy,
   semantic-topology, graph-scaling, source-plane, and composite-binding regression surface. These
   remain ordinary tests; accepted task evidence stays external. Verification remains closeout-owned.
+
+- 2026-09-01T03:11+02:00 — Added the two focused certification contract suites and their exact
+  permanent shared-support ownership boundary. Verification remains closeout-owned.
 
 - 2026-08-31T20:30+02:00 — No route impact: 260831-DER adds one deterministic unit-regression
   module for fresh series, fresh leaf, and retained journal authority classification. Test-route

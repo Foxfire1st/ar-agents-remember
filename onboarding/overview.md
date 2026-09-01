@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 
 > **Status:** active baseline
 
@@ -590,6 +590,8 @@ agents-remember/
     source checkout instructions and installed-runtime handoff
   README.md
     public setup and conceptual model
+  layers.toml
+    enforced top-level package dependency order and package charters
   mcp/
     package-managed MCP server, runtime/skills install, provider lifecycle/setup, benchmark tools, settings, and integrity checks
   mcp/src/agents_remember/package_data/runtime/
@@ -625,6 +627,7 @@ workspace ar-coordination/
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Source checkout instructions | [AGENTS.md](agents-remember/AGENTS.md)                                                                                                                               | Defines how agents work on this source checkout and when to hand off to the installed runtime instructions.    |
 | Public documentation | [README.md](agents-remember/README.md) and [docs](agents-remember/docs)                                                                                       | Keeps the root README as the public front door while focused docs pages own setup, concepts, architecture, workflows, install guides, guides, and reference material. |
+| Package dependency contract | [layers.toml](agents-remember/layers.toml) | Declares one fail-closed top-level package order and one charter per package. The repository-neutral `certification` contract is rank 3 between wire models and the stateful control plane; later integer ranks shift without changing their package charters or runtime behavior. |
 | MCP package          | [mcp](agents-remember/mcp)                                                                                                                                                       | Package-managed MCP server exposing context, runtime install, skills install, provider, worktree, memory, benchmark, settings-derived lifecycle, and memory quality tools. |
 | Core skills (C-*)    | [mcp/src/agents_remember/package_data/runtime/skills](agents-remember/mcp/src/agents_remember/package_data/runtime/skills)                                                                                                           | Resolver, memory quality control, repo bootstrap, onboarding maintenance, and related support skills — flat directly under `skills/`. |
 | Lifecycle + task workflow | [mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles) and [mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow) | The unified agent lifecycles (router + minimal frame + per-role lifecycles), and the durable light task workflow (which escalates to a master + light sub-task series for larger work). |
@@ -636,6 +639,23 @@ workspace ar-coordination/
 ### Source Checkout Contract
 
 `AGENTS.md` is the authoritative behavioral contract for agents operating on this source checkout. It now starts by separating the package source repository from the installed `ar-coordination` runtime: when the file is reached through a workspace-level pointer during sibling-repository work, agents should use the installed runtime `AGENTS.md` instead. For work on this repository itself, it keeps `agents-remember` as the resolver target, routes sessions by role through the `l-01-agent-lifecycles` skill (a spawned role follows its brief; a developer session runs the architect lifecycle on the request → trust-checkpoint → reframe-research → decide → build → close axis, whose build decision at `decide` is a research-only exit or a durable `w-02-light-task-workflow` skill task — chat is never a build route), requires `c-08-ar-coordination-context-resolver` skill resolution plus `c-02-memory-quality-control` skill memory quality control before relying on onboarding, separates implementation approval from commit approval, and points active settings reads at the resolved memory layer rather than a root-level source checkout `system/` directory.
+
+### Package Layer Contract
+
+`layers.toml` is the fail-closed authority for allowed top-level package knowledge, not a snapshot
+of whichever imports happen to exist today. Order position is rank: a package may import only a
+lower-ranked package, and undeclared packages or upward edges fail the layering rail without a
+baseline or exception. The generic certification domain is explicitly rank 3 in the sequence
+`errors < kernel < models < certification < controlplane`. That keeps its immutable registry,
+planning, bounded-admission, and typed-result contracts below their future stateful consumers while
+leaving concrete repository profiles, executors, lifecycle terminalization, and memory gates with
+their higher-layer owners. `controlplane` consequently remains the lowest stateful interaction
+service rather than the lowest domain contract.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4. | "order = ["; "[package.certification]"; "[package.controlplane]" | layers.toml:19-59; layers.toml:105-126 |
+| The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction. | `load_contract`; `undeclared_dirs`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:63-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:122-141; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-340 |
 
 ### Public Documentation
 
@@ -1236,6 +1256,17 @@ guidance is in `system/tools.md`. Host pytest, direct coverage, and the quality 
 prohibited, with no compatibility fallback.
 
 ## Update History
+
+- 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 preserves the rank-3
+  `certification` package boundary and root repository structure. Its changes are bounded internal
+  contract forcing, one dominated-refusal deletion, and exact verification-input ownership; no
+  executor, repository profile, lifecycle, or memory-gate authority moved. Verification remains
+  closeout-owned.
+
+- 2026-09-01T05:28+02:00 — CCR-L11 Attempt 9 surfaced the root `layers.toml` authority and the
+  explicit rank-3 `certification` boundary. Later rank integers shift to preserve order/index
+  identity; no executor, repository profile, lifecycle-terminalization, or memory-gate ownership
+  moved into the generic certification package. Verification remains closeout-owned.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: removed the obsolete direct-current-checkout wording and
   recorded the actual boundary: closeout remains worktree-only, ordinary series integration is

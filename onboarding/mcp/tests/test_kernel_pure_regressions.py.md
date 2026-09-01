@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_kernel_pure_regressions.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T08:13+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,7 +45,7 @@ The Candidate A retirement and replacement measurement are described in
 | --- | --- | --- |
 | Seven exact tests preserve the former cohort's unique product assertions. | `test_stable_provider_id_never_returns_empty`; gate/role coercion tests; route-normalization tests | mcp/tests/test_kernel_pure_regressions.py:24-54 |
 | Representative measurement names these seven exact nodes as its pure cohort. | `COHORTS` | mcp/test_support/agents_remember_test_support/testing/route_measurement.py:79-112 |
-| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:127-127 |
+| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:132-132 |
 
 ## Cross-Repo References
 
@@ -60,6 +60,9 @@ No cross-repository boundary applies.
 - 2026-09-01T05:22+02:00 — No content impact: re-anchored the unchanged explicit unit-lane row
   after six CCR-R01 manifest declarations shifted its coordinate. Test behavior and ownership are
   unchanged.
+
+- 2026-09-01T04:34+02:00 — No content impact: repaired the explicit-lane citation after two
+  certification suites entered `unit-regression`; the seven retained regressions are unchanged.
 
 - 2026-08-31T20:30+02:00 — No content impact: repointed the explicit evidence-lane row after the
   manifest gained the direct-execution regression module. Test behavior is unchanged.

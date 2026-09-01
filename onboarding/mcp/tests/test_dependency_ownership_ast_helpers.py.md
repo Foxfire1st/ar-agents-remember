@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T22:33:39+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-01T11:33+02:00 |
+| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
+| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,9 @@ The cases force AST assignment forms, relative imports, recursive plugin declara
 module consumers, and attributed consumer reasons. Nested static plugin edges expand to the full
 test population; a dynamic nested declaration makes ownership incomplete instead of being guessed.
 The Codex starter-config case proves its narrow non-Python declaration against the repository's
-observed literal readers and resolves exactly the public-surface and starter-renderer tests.
+observed literal readers and resolves exactly the public-surface and starter-renderer tests. The
+root layer-contract case independently proves the composed path identity resolves exactly the five
+architecture and structural-policy readers.
 
 ### Conventions
 
@@ -57,7 +59,8 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Static imports, recursive plugin closure, dynamic-declaration refusal, path-loaded owners, and dotted literal consumers are all forced here. | `test_file_imports_includes_python_and_declared_pytest_plugins`; `test_nested_pytest_plugin_edges_reach_the_complete_test_population`; `test_dynamic_nested_plugin_declaration_refuses_complete_ownership`; `test_imported_support_reaches_a_test_that_loads_its_owner_by_literal_path`; `test_exact_dotted_module_literal_is_an_observable_test_consumer` | mcp/tests/test_dependency_ownership_ast_helpers.py:1-194 |
+| Static imports, recursive plugin closure, dynamic-declaration refusal, path-loaded owners, and dotted literal consumers are all forced here. | `test_file_imports_includes_python_and_declared_pytest_plugins`; `test_nested_pytest_plugin_edges_reach_the_complete_test_population`; `test_dynamic_nested_plugin_declaration_refuses_complete_ownership`; `test_imported_support_reaches_a_test_that_loads_its_owner_by_literal_path`; `test_exact_dotted_module_literal_is_an_observable_test_consumer` | mcp/tests/test_dependency_ownership_ast_helpers.py:20-180 |
+| The root layer contract resolves completely to the exact five source-observed consumers. | `test_layers_contract_has_exact_observed_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:202-222 |
 
 ## Cross-Repo References
 
@@ -68,6 +71,10 @@ No cross-repository source is allowed by the resolved settings.
 | No meaningful cross-repository reference applies. | `test_file_imports_includes_python_and_declared_pytest_plugins` | mcp/tests/test_dependency_ownership_ast_helpers.py:1-194 |
 
 ## Update History
+
+- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the exact `layers.toml` ownership forcing
+  case and confirmed the composed declaration matches all five literal readers without safe-full
+  selection. Verification remains closeout-owned.
 
 - 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 added the source-observed exact
   `.codex/config.toml` consumer proof; an unobserved declaration cannot claim complete ownership.
