@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-31T04:59+02:00                        |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-01T03:58+02:00                        |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -73,16 +73,16 @@ leaf list. A caller asking which master owns a node compares `node.ref`; a calle
 uses endpoint resolution. Edges
 (`SprintExecutionEdge`) gain an optional `judgmentId`, and each endpoint is a bare ref or a
 `SprintExecutionEndpoint` (`ref` + `leafId`) addressing the segment that contains that leaf;
-resolution to exactly one node happens in graph validation, never at parse time. The graph rejects
+resolution to exactly one node happens in graph validation, never at endpoint parse time. The graph rejects
 duplicate nodes/edges, self edges, undeclared or ambiguous endpoints, blank reasons/judgment ids,
 and cycles; it enforces sprint-wide leaf-ownership uniqueness plus lump/segment mutual exclusion
 per master, then derives deterministic topological waves over nodes without persisting positions.
-Since 260815-DAG-L15 the acyclicity refusal names the exact cycle members
-(`execution-graph must be acyclic; cycle members: A -> B`) — `derived_waves` leaves the residual
-(cycle members plus nodes downstream of a cycle) to `_find_cycle_members`, which extracts one
-deterministic cycle via the shared `_CycleSearch` DFS (`_residual_adjacency` + `_dfs_cycle_members`,
-split under the complexity target), so the error carries the cycle instead of a bare refusal
-(playthrough F4).
+Attempt 8 moves that intrinsic algorithm into `execution_graph_validation.py`: one endpoint index
+and one resolved-edge population serve admission, waves, placement predecessors, and deterministic
+cycle discovery. `SprintExecutionGraph` retains the persisted schema and its `ValueError` surface,
+records exact `execution_graph_validation_work`, and delegates both initial admission and later wave
+reads to the same indexed analysis. Named cycle refusals therefore remain unchanged without the
+former duplicate DFS implementation in this already-large schema module.
 Legacy absence remains parseable only for the finite migration path; no validator infers a default.
 
 `derived_leaf_placement` maps one master's planned leaf ids onto its authored segments and derives
@@ -145,7 +145,11 @@ the escape hatch for bespoke prose; the standard template sections stay the back
   doc carrying the field, never a new kind; insignia/hierarchy consumers (observer projection →
   dashboard) treat an empty list as "not an orchestration task".
 - **Acyclicity refusals name the cycle (L15):** `derived_waves` raises with the exact cycle members,
-  never a bare "must be acyclic" — the member search is deterministic (declaration-order DFS).
+  never a bare "must be acyclic" — the delegated member search remains deterministic by declaration
+  order and shares the admitted indexed edge population.
+- **One intrinsic graph analysis:** node/leaf/edge validation, wave derivation, placement
+  predecessors, and cycle reporting all consume `execution_graph_validation.py`; the exact operation
+  record is available through `execution_graph_validation_work`.
 - **Node identity is structural:** `SprintExecutionNode` compares only with another node and hashes
   `(kind, ref, leafIds)`. It never aliases `TaskDocumentRef`; legacy bare-ref lifting and wire
   serialization are independent and remain unchanged.
@@ -166,8 +170,9 @@ No Domain Documentation sources are configured for this repository-internal pers
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
-| Graph validation relies on structural node uniqueness and resolves ownership/endpoints explicitly. | `resolve_graph_endpoint`; `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:309-330; mcp/src/agents_remember/tasks/document.py:333-427 |
+| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
+| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
+| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:320-341 |
 | Focused proof covers both comparison directions, set/dict insertion directions, and equal/unequal node identities. | `test_nodes_compare_structurally_without_cross_type_aliases` | mcp/tests/test_task_execution_topology_segments.py:237-265 |
 | Topology callers now project `node.ref` explicitly when they mean master ownership. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:116-217 |
 
@@ -179,14 +184,19 @@ an agent, select the task boundary.
 
 ## 260815-DAG-L15 Named Cycle Refusals
 
-The playthrough F4 finding ("cycle errors never name the cycle members") is fixed in the graph model:
-`SprintExecutionGraph.derived_waves` now raises `execution-graph must be acyclic; cycle members: A -> B`
-using `_find_cycle_members` (Kahn residual → deterministic DFS slice between the repeated node), with
-the traversal split into `_residual_adjacency` + `_dfs_cycle_members` + the `_CycleSearch` dataclass to
-stay under the complexity target. The refusal dialect stays a `ValueError`-family shape that the
-application boundary translates to the typed `TaskDocError` family.
+The playthrough F4 finding ("cycle errors never name the cycle members") remains fixed in the graph
+model: `SprintExecutionGraph.derived_waves` raises `execution-graph must be acyclic; cycle members:
+A -> B`. Attempt 8 delegates the Kahn/DFS work to the one indexed intrinsic graph analysis and keeps
+the thin `_find_cycle_members` compatibility helper on the same algorithm. The refusal dialect stays
+a `ValueError`-family shape that the application boundary translates to the typed `TaskDocError`
+family.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: extracted intrinsic execution-graph
+  validation into one indexed, operation-counted analysis reused by admission, waves, placement,
+  and cycle reporting; preserved the task-document wire and refusal surface. Verification remains
+  closeout-owned.
 
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded reviewer as one
   explicitly polymorphic role across leaf, master, and sprint task documents, including sprint-seat

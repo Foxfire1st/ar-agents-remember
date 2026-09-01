@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
+| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,6 +32,11 @@ fresh observation. `curator_coherence_no_impact` projects only the validated rec
 `no-content-impact` and `no-route-impact` identities for the onboarding body gates; it does not
 derive semantic decisions. `current_curator_coherence_predecessor` digests even malformed stable bytes so a
 prepared CAS repair cannot deadlock on a damaged pointer.
+
+Candidate topology observation now supplies the already resolved authored graph to `graph_context`
+and returns the sprint containing that context's sole bound immutable graph. Coherence therefore
+hashes the same admitted graph generation as queue projection and the closeout door; a second mutable
+resolution cannot be mixed into the frozen task-topology identity.
 
 ### Conventions
 
@@ -68,7 +73,8 @@ No external source governs this repository-local lifecycle authority.
 | Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:145-228 |
 | All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:285-327; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:330-331 |
 | Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:81-106 |
-| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:470-501 |
+| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-412 |
+| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:477-509 |
 
 ## Cross-Repo References
 
@@ -76,7 +82,7 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External memory is still the exact contract-resolved paired worktree, not an arbitrary repository. | `_require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:415-427 |
+| External memory is still the exact contract-resolved paired worktree, not an arbitrary repository. | `_require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:422-435 |
 
 ## MCAR-L03 Exact Pair Authority
 
@@ -86,6 +92,10 @@ includes it. Pair failures retain their named field and exact repair arguments t
 coherence error adapter.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: candidate topology observation now binds
+  the already resolved authored graph once and freezes the same immutable graph generation used by
+  queue and door consumers. Verification remains closeout-owned.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: made exact pair identity a first-class observation,
   attestation, record, and currentness fact. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:30+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
+| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-853 |
+| No external domain source is required to establish this repository-owned implementation. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-873 |
 
 ## Repo-Internal References
 
@@ -61,8 +61,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-853 |
-| Every live series is observed independently and activation waiting is threaded into its members. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:466-531; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:602-614 |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-873 |
+| Every live series is observed independently; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:464-550; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:620-633 |
 | The focused adapter converts strict selector observation into disposable source facts/waits/problems without lifecycle ownership. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:30-53 |
 
 ## Cross-Repo References
@@ -72,9 +72,14 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-853 |
+| No meaningful cross-repository reference applies. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:1-873 |
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read the reopened member-projection
+  claim and documented its exact precomputed `semantic-topology/v2` identity input. Projection
+  currentness now separates completion readiness from semantic topology; verification remains
+  closeout-owned.
 
 - 2026-08-26T08:30+02:00 — Rebounded the activation-projection adapter citation to the frozen
   focused module extent.

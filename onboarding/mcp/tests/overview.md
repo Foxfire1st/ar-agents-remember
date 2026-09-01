@@ -5,14 +5,24 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastUpdated | 2026-09-01T08:13+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`|
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## CCR-R01 Evidence-Lane Ownership
+
+Nine focused CCR-R01 suites are explicitly classified as `unit-regression` in
+`test-evidence-lanes.toml`: field effects, indexed graph admission, semantic-topology field
+effects/refusals/scaling, projection source facts, and the three closeout-projection,
+semantic-topology, and task-document coverage-edge companions. They are deterministic ordinary
+pytest regressions over production owners and no longer enter the closed test population as
+unclassified files. The lane assignment governs selection and execution cost; it does not promote
+these tests into durable task evidence or replace independent requirement review.
 
 ## ARSPAWN-L5 A005 Review-Repair Evidence
 
@@ -1535,7 +1545,34 @@ registration cases prove the pair survives every acceptance/report surface, stal
 refuses before scan/admission, official diagnostics cannot accept, and recovery rereads the exact
 contract without mutating Git.
 
+## 260831-CCR-L01 Semantic Topology Regression Boundary
+
+Eleven focused ordinary regression units pin the new source identity without becoming task evidence.
+They prove exhaustive field-effect classification and future-schema refusal; exact v2 shape and
+non-structural exclusion; every candidate-relevant row/ref/node/edge/endpoint field; composite leaf
+binding near misses; typed queue error preservation; broad/dense/shared-node operation counts;
+one-time immutable graph generation; mutation isolation; pre-admission budget refusal; explicit
+atomic-sequential mode; and projection currentness that contains only address plus completion
+readiness and the separate topology fingerprint. The three coverage-edge companions additionally
+pin complete source-problem shapes, exact adapter status/detail, unknown taxonomy/binding refusal,
+both post-capture work-budget guards, indexed cycle witnesses and operation counts, and defensive
+composite-binding paths. Existing closeout projection tests retain their multi-series activation
+and graphless-no-owner forcing.
+
 ## Update History
+
+- 2026-09-01T08:13+02:00 — Final CCR-R01 reconciliation: added the three coverage-edge suites to
+  the durable test-route account, bringing the focused regression boundary to eleven and the
+  explicit `unit-regression` manifest cohort to nine. Their delivery-attempt changes are test-only;
+  production semantics and external review authority remain unchanged.
+
+- 2026-09-01T05:22+02:00 — 260831-CCR-L01 Attempt 9: recorded explicit `unit-regression`
+  ownership for the six focused CCR-R01 suites. Their ordinary-test status and the external
+  reviewer-owned acceptance boundary remain unchanged; verification remains closeout-owned.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: documented the focused field-taxonomy,
+  semantic-topology, graph-scaling, source-plane, and composite-binding regression surface. These
+  remain ordinary tests; accepted task evidence stays external. Verification remains closeout-owned.
 
 - 2026-08-31T20:30+02:00 — No route impact: 260831-DER adds one deterministic unit-regression
   module for fresh series, fresh leaf, and retained journal authority classification. Test-route

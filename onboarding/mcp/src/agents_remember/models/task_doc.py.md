@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ inside their own functions and return raw operation payloads; without the declar
 | --- | --- | --- |
 | The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:195-195 |
 | The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
+| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
 | The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 | The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:392-414 |
 
@@ -92,6 +92,9 @@ Planning discard is therefore observable without treating queue state as task hi
 turning a started leaf into completion.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged persisted
+  `TaskDocument` model dependency. Verification remains closeout-owned.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; task-doc response and discard evidence shapes are unchanged.
 

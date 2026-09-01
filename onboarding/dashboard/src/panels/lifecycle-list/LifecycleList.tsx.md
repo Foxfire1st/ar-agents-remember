@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0`       |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -245,7 +245,7 @@ role of its own for the same reason.
 | Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:87-87; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-98; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:116-116; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-180; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:188-188; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:198-198; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:214-214 |
 | `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1017-1034 |
 | `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830 |
-| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:33-33 |
+| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:34-34 |
 | `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | `Dot`; `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:105-115; dashboard/src/grammar/Dot.tsx:104-114; dashboard/src/grammar/Dot.tsx:119-129 |
 | The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "<ListBoxItem" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:647-689 |
 | The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
@@ -274,6 +274,9 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged `DocStatus`
+  import after task-schema graph-validation extraction. Verification remains closeout-owned.
 
 - 2026-08-24T15:04+02:00 — Added the separate discarded-count progress segment; discarded work is
   never counted as completed work.

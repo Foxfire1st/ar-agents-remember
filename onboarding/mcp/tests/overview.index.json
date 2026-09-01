@@ -98,7 +98,9 @@
     "mcp/tests/test_closeout_input_model_invariants.py",
     "mcp/tests/test_closeout_ledger_evidence_order.py",
     "mcp/tests/test_closeout_mutation_evidence_boundary.py",
+    "mcp/tests/test_closeout_projection_coverage_edges.py",
     "mcp/tests/test_closeout_projection_member_helpers.py",
+    "mcp/tests/test_closeout_projection_source_facts.py",
     "mcp/tests/test_closeout_queue.py",
     "mcp/tests/test_closeout_queue_evidence_parsing.py",
     "mcp/tests/test_closeout_queue_lifecycle.py",
@@ -195,6 +197,7 @@
     "mcp/tests/test_e2e_harness_selection.py",
     "mcp/tests/test_evidence_lanes.py",
     "mcp/tests/test_evidence_lifecycle.py",
+    "mcp/tests/test_execution_graph_indexed_admission.py",
     "mcp/tests/test_execution_graph_render.py",
     "mcp/tests/test_execution_graph_view.py",
     "mcp/tests/test_expectation_rows.py",
@@ -430,6 +433,10 @@
     "mcp/tests/test_route_measurement.py",
     "mcp/tests/test_seat_lifecycle.py",
     "mcp/tests/test_seed_timeouts.py",
+    "mcp/tests/test_semantic_topology_coverage_edges.py",
+    "mcp/tests/test_semantic_topology_field_matrix.py",
+    "mcp/tests/test_semantic_topology_refusals.py",
+    "mcp/tests/test_semantic_topology_scaling.py",
     "mcp/tests/test_sequential_default_mode.py",
     "mcp/tests/test_served_state_conformance.py",
     "mcp/tests/test_serving.py",
@@ -486,6 +493,8 @@
     "mcp/tests/test_task_document.py",
     "mcp/tests/test_task_document_application_1.py",
     "mcp/tests/test_task_document_application_2.py",
+    "mcp/tests/test_task_document_coverage_edges.py",
+    "mcp/tests/test_task_document_field_effects.py",
     "mcp/tests/test_task_document_master.py",
     "mcp/tests/test_task_document_payload_cache.py",
     "mcp/tests/test_task_document_structural_identity.py",
@@ -544,8 +553,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 526,
-    "fileSidecars": 532,
+    "sourceFilesInScope": 535,
+    "fileSidecars": 541,
     "childRoutes": 0
   },
   "routingTerms": [

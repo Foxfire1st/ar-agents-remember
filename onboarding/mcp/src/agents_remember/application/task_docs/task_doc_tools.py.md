@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -127,7 +127,7 @@ validation failures, and invalid resolvable parent master docs.
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:404-447 |
 | Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:315-315 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
-| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:679-804 |
+| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
 | The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
 | The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:111-123 |
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
@@ -177,6 +177,9 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 | The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | `TaskDocTarget`; `TaskDocEdit`; `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:134-146; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:149-162; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269 |
 
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read and re-anchored the unchanged
+  `TaskDocument` dependency after task-schema extraction. Verification remains closeout-owned.
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: documented the extracted atomic raw-section
   scaffolding boundary and reconciled the dispatcher with the landed task-first publication and

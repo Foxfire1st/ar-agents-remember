@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
+| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -47,7 +47,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
-| Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:756-926 |
+| Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
 | Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:847-922 |
 | Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 
@@ -64,6 +64,9 @@ Finalize tests now assert bounded projection invalidation/rebuild effects alongs
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read and bounded the unchanged
+  `TaskDocument` fixture dependency to the current source. Verification remains closeout-owned.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
