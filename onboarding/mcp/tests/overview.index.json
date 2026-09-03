@@ -491,6 +491,7 @@
     "mcp/tests/test_serving_notes.py",
     "mcp/tests/test_serving_preflight.py",
     "mcp/tests/test_serving_raw_events.py",
+    "mcp/tests/test_serving_requirements.py",
     "mcp/tests/test_serving_response_conformance.py",
     "mcp/tests/test_serving_response_conformance_cases_1.py",
     "mcp/tests/test_serving_response_conformance_cases_2.py",
@@ -595,8 +596,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 567,
+    "fileSidecars": 584,
     "childRoutes": 0
   },
   "routingTerms": [

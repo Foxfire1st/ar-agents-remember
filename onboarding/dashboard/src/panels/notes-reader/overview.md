@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-20T05:06+02:00 |
-| lastVerifiedCommitHash | `8071a64497ed88f8f423e853dc9440532fd573af` |
-| lastVerifiedCommitDate | 2026-08-20T02:19:58+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -82,7 +82,24 @@ the reader kept mounted-hidden so selection survives.
 The current source-backed Notes Reader integration is recorded by the repository-local references
 above.
 
+
+## 260831-CCR-L23 Task-Artifact Reader (notes + requirements)
+
+L23 widened this child route from a notes-only reader to a discriminated
+task-artifact reader. `NotesReaderViewer.tsx` now takes the shared
+`TaskArtifactReaderTarget` (`data/taskArtifacts.ts`) with a `kind`
+member: `notes` keeps the unchanged `/api/notes/{list,read}` transport,
+and the new `requirements` kind reads the task-local packet root over
+`/api/requirements/{list,read}` (listing/content hooks branch on the kind and
+map packets into the existing rail/pane). Rail headers, the open-path label, failure
+copy, and the screen root (`data-artifact-kind`) are kind-aware; rendering still
+reuses the File Viewer `DualPane`. Entry surfaces (task prose via
+`Markdown`, `TaskNotes` references, the `DetailPanel` reader) open
+registered requirement packets through the same takeover.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 - 260831-CCR-L23 Gate-5 route impact: the notes-reader child route became a task-artifact reader (notes + task-local requirements packets) over `/api/requirements/{list,read}`; file-level detail in the `NotesReaderViewer.tsx` and `NotesReaderViewer.test.tsx` sidecars.
 
 - 2026-08-20T05:06+02:00 — No route impact: 260815-DAG-L14 only added `seats: []` to the
   `NotesReaderViewer` test fixture factory; the notes-reader route purpose is unchanged.

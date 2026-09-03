@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/kernel/sidecar_pairing.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -57,6 +57,20 @@ index, and `bootstrap/` docs are NOT per-source sidecars (they are
 overview-without-code nodes); any other `.md` is a 1:1 sidecar whose source path is
 the rel with the trailing `.md` stripped.
 
+
+## 260831-CCR-L23 No-Symlink Confinement
+
+L23 added `confine_non_symlink_rel(root, requested)`, the stricter confinement
+for artifact roots with immutable canonical addresses (the task-local
+`requirements/` surface). Unlike `confine_rel` — which deliberately
+follows in-root symlinks because code/onboarding pairing addresses the resolved
+repository file — the new guard requires every requested component to already exist
+beneath `root` and refuses ANY symlink, even one pointing back inside the root.
+It rejects empty/absolute/backslash/NUL paths and `.`/`..` segments, proves
+the root is a real non-symlink directory, walks each part with `lstat` (missing
+components surface as `FileNotFoundError` for the caller), and finishes with a
+containment proof against the resolved root. All refusals are `AuthorityError`.
+
 ### Invariants And Boundaries
 
 - **Purity is the contract.** No events, no ledger writes, no ambient state — this
@@ -88,6 +102,8 @@ the rel with the trailing `.md` stripped.
 | The `AuthorityError` raised on an out-of-root / absolute path. | `AuthorityError` | mcp/src/agents_remember/errors.py:96-104 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the new `confine_non_symlink_rel` guard (no-symlink, all-components-exist confinement for immutable artifact roots) and its contrast with the symlink-following `confine_rel`.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

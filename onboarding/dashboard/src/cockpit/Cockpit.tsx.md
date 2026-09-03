@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T21:20+02:00                           |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -35,6 +35,20 @@ Within the full-page cockpit, `ChatContextBar` owns launch and attach/move contr
 RailChat remains the contextual right-rail surface beside Operations; Notes/Change-Set takeovers and
 the other existing routes retain their established ownership. The dev lifecycle-design canvas stays
 outside production navigation.
+
+
+## 260831-CCR-L23 Requirement-Artifact Takeover Kind
+
+The L17 Notes takeover was widened into a generic task-artifact reader takeover:
+the notes-only `NotesReaderTarget` shape became the discriminated
+`TaskArtifactReaderTarget` (`dashboard/src/data/taskArtifacts.ts`) with a
+`kind` member, and that shared target type is now imported from the data module
+rather than from the notes reader. `NotesTakeover` spreads the whole target onto
+`NotesReaderViewer` (`{...target}`) and keys the view marker on the kind:
+`data-view` is `notes-reader` for a notes target and
+`requirements-reader` for a requirements target. The shell, the shared takeover
+flag, hidden-not-unmounted retention, and the `onOpenNotes` wiring are
+unchanged.
 
 ## Code Commentary
 
@@ -255,6 +269,8 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the notes-takeover widening — `NotesReaderTarget` became the shared discriminated `TaskArtifactReaderTarget` (kind notes/requirements), the import moved to `data/taskArtifacts`, and `NotesTakeover` now spreads the target and keys `data-view` on the kind.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `Cockpit.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.

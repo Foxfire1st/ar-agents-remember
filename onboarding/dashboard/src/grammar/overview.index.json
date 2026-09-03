@@ -21,11 +21,12 @@
     "dashboard/src/grammar/ProgressFill.tsx",
     "dashboard/src/grammar/RankBadge.test.tsx",
     "dashboard/src/grammar/RankBadge.tsx",
+    "dashboard/src/grammar/TaskRequirementLinks.tsx",
     "dashboard/src/grammar/TokenGauge.tsx"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 12,
-    "fileSidecars": 12,
+    "sourceFilesInScope": 13,
+    "fileSidecars": 13,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -40,6 +41,7 @@
     "progressfill",
     "rankbadge",
     "src",
+    "taskrequirementlinks",
     "test",
     "tokengauge",
     "tsx"
@@ -59,6 +61,7 @@
       "dashboard/src/grammar/ProgressFill.tsx",
       "dashboard/src/grammar/RankBadge.test.tsx",
       "dashboard/src/grammar/RankBadge.tsx",
+      "dashboard/src/grammar/TaskRequirementLinks.tsx",
       "dashboard/src/grammar/TokenGauge.tsx"
     ],
     "anchorHints": [
@@ -84,11 +87,13 @@
       "RankBadge.test",
       "RankBadge.tsx",
       "RankBadge",
+      "TaskRequirementLinks.tsx",
+      "TaskRequirementLinks",
       "TokenGauge.tsx",
       "TokenGauge",
       "dashboard/src/grammar/",
       "route-local-overview",
-      "cf5ef507f2542d6cd2f9d37a6b72148d3b91b340",
+      "1993dd25bdf8331a2c1e28171dff2bf92ea090e2",
       "/overview.md",
       "grammar/",
       "css",
@@ -107,9 +112,7 @@
       "width: 1ch",
       "flexShrink: 0",
       "color",
-      "background",
-      "border-radius",
-      "LIFECYCLE_STATES"
+      "background"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -870,7 +870,20 @@ generation selection to `current_seat_occupant`. Inbox delivery resolves the occ
 time, while exact dispatch briefs remain pinned to the private spawned generation. This lets
 ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
 
+
+## 260831-CCR-L23 Task-Local Requirements Routes
+
+L23 registered the read-only task-local requirement surface: `serving/requirements.py`
+walks one canonical `tasks/<repo>/<master>/requirements/` root selected by repository +
+single-segment master + canonical task-document reference and serves the confined GET endpoints
+`/api/requirements/{list,read}` with declared models (`RequirementsListing` /
+`RequirementContents`) under the shared scoped-read refusal table. The route family grew
+from 61 to 63 HTTP routes; composition adds one `register_requirements_routes(app, config)`
+call in `create_app` after the notes routes and before the static mount.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the task-local requirement routes (`/api/requirements/{list,read}`), the 61-to-63 route growth, and the `requirements.py` module in this route. File-level detail lives in the serving sidecars and the new requirement cards.
 
 - 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
   projection on parent Codex completion and deterministic queued-row convergence. Verification

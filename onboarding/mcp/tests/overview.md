@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1585,7 +1585,19 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+
+## 260831-CCR-L23 Requirement-Route Test Evidence
+
+L23 added `mcp/tests/test_serving_requirements.py` (explicit `integration` lane in
+`test-evidence-lanes.toml`) as the HTTP proof module for the task-local requirements
+surface, extended the response-conformance driver with requirement-route cases
+(`test_serving_response_conformance_cases_2.py`) and a `_seed_requirements` fixture, and
+advanced the declared/driven surface ledger (292 declared, 139 driven; 63 HTTP routes). The
+scope-reporting oracle for the dashboard build advanced from 436 to 441 TypeScript inputs.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the requirement-route test evidence (integration-lane registration, conformance driver cases, ledger advance, dashboard input-count oracle). File-level detail lives in the new test card and the refreshed conformance/scope cards.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,

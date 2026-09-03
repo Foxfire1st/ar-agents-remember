@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T15:04+02:00                                        |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -19,6 +19,16 @@
 Shared fixture builders for the split DetailPanel test files, extracted from
 `DetailPanel.test.tsx` by the 260731-EFA-L8 split. Seeds task documents, series,
 enclosures, projections, promoted-lifecycle scenarios, and counter stubs.
+
+
+## 260831-CCR-L23 Requirement-Listing Stub
+
+`stubNotes` gained an optional third argument: the registered requirement
+listing (rows shaped `{ name, path, address, size, sha256 }`). Its fetch stub
+now answers `/api/requirements/list` with
+`{ repo, master, document, registered, requirements }` so detail-panel suites
+can exercise the requirement-links provider without a live server. Existing notes and
+task-document branches are unchanged.
 
 ## Code Commentary
 
@@ -75,6 +85,8 @@ No helper behavior changed. `seriesNode()` now defaults the required `discardedC
 existing required `seats` and repository-qualified topology defaults remain intact.
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `/api/requirements/list` branch + requirement-listing argument added to the shared `stubNotes` fixture.
 
 - 2026-08-24T15:04+02:00 — No content impact: completed the shared `SeriesNode` fixture with the
   required empty discard-history cells.

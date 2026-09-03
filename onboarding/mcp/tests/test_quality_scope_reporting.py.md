@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,8 +40,10 @@ populations, and refusal of a vacuous CRAP scope. `ConfigTruthTests` rejects mis
 configuration. `UntrackedExposureTests` proves source/test/dashboard siblings are reported without
 index mutation and that enumeration failure refuses. `CallerProvenanceTests` covers pre-push ref
 input, staged closeout, clean integration, generated targets, and every dashboard/workflow rail.
-Its dashboard-build assertion now pins 436 TypeScript inputs, accounting for the two governed
-ARSPAWN data modules added by this candidate without changing the measurement boundary.
+Its dashboard-build assertion now pins 441 TypeScript inputs, accounting for the five governed
+requirement-root modules added by 260831-CCR-L23 (requirements.ts, requirements.test.ts,
+taskArtifacts.ts, TaskRequirementLinks.tsx, taskRequirements.test.tsx) without changing the
+measurement boundary.
 
 The two assertions that execute installed Node tooling now use `skipUnless(shutil.which("node"))`.
 Absence of the external runtime is an explicit environment skip; when Node is present the live
@@ -142,6 +144,8 @@ Radon and Coverage.py unit text now counts product Python files only; tests rema
 not measurement targets. CRAP mocks patch the canonical calculator module directly.
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: advanced the dashboard TypeScript-input oracle from 436 to 441 after the five governed requirement-root modules entered the tsc input count.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-based scope reporting proofs replacing the wrapper inventory assertions.
 
 
