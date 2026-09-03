@@ -105,6 +105,7 @@
     "mcp/tests/test_chats_l5_hardening.py",
     "mcp/tests/test_chats_l5f_leaks.py",
     "mcp/tests/test_checkout_coordination_isolation.py",
+    "mcp/tests/test_citation_deterministic_projection.py",
     "mcp/tests/test_citation_resolution.py",
     "mcp/tests/test_claude_stream_transport.py",
     "mcp/tests/test_clean_quality_executor.py",
@@ -595,8 +596,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 567,
+    "fileSidecars": 584,
     "childRoutes": 0
   },
   "routingTerms": [
