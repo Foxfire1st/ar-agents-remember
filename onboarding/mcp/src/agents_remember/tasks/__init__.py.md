@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,18 +31,24 @@ the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
 `leaf_placement_facts`, `numbering_drift_hints`), the 260815-DAG-L14 `SprintSeat`/`SprintSeatState` first-class seat surface, `render`
 (`render_markdown`), and
 `store` (`read_task_doc`/`write_task_doc`/`write_task_docs`/`json_path_for`/`markdown_path_for`/
-`doc_stem`). `__all__` lists the full public set.
+`doc_stem`). Since 260831-CCR (commit `99dc249b`) the facade also re-exports the typed
+task-intent slot models `AcceptanceObligationQuestion`, `ApprovedRequirementPacketRef`, and
+`TaskIntentIdentity` (line 11-15, also in `__all__` line 84-117) so callers reference the typed
+intent forms through the package surface. `__all__` lists the full public set.
 
 ### Invariants And Boundaries
 
 - Consumers (the `task_doc` application entry point, the observer S7 reader) import from
   `agents_remember.tasks`; keep the facade re-exporting the full set.
+- The typed task-intent forms are re-exported, not re-defined here; their home is
+  `models/task_intent`.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:677-677; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:111-111 |
+| Current facade re-exports of the typed task-intent slot models. | "from agents_remember.models.task_intent import ("; "TaskIntentIdentity" | mcp/src/agents_remember/tasks/__init__.py:11-15; mcp/src/agents_remember/tasks/__init__.py:117-117 |
 
 ## Series-Contract Notes
 
@@ -74,7 +80,19 @@ registration models plus `write_task_docs_and_remove`. These are canonical task-
 rollback-safe parent-write/child-removal primitive; they do not give the queue task-history or
 deletion authority.
 
+## CCR-R02@v2 Typed Intent Exports
+
+The facade re-exports `AcceptanceObligationQuestion`, `ApprovedRequirementPacketRef`, and
+`TaskIntentIdentity` per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, giving
+consumers (route review, serving readers, dashboards) one typed import surface for the normative
+intent slots and identity.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  facade card updated for the new typed task-intent re-exports (`AcceptanceObligationQuestion`,
+  `ApprovedRequirementPacketRef`, `TaskIntentIdentity` in imports and `__all__`). Verified at
+  code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the facade's unchanged
   `TaskDocument` export after schema-internal extraction. Verification remains closeout-owned.

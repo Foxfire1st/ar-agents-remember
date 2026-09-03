@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `../overview.md`                                       |
 
 ## Governing Overview
@@ -36,15 +36,28 @@ Task-document and series readers: summaries, full bodies, lifecycle binding. Tas
 - `_task_doc_node` since 260815-DAG-L14 passes `SubTaskRef.masterRef` through to
   `TaskSubTaskRefNode.masterRef` and projects `doc.seats` as `TaskSeatNode` rows
 
+Since 260831-CCR (commit `99dc249b`) the readers canonicalize the typed requirement and open-question
+slots into stable reader strings: `_requirement_reader_text` (line 494) renders an
+`ApprovedRequirementPacketRef` as `{stableId}@{version} — {path}`, `_question_reader_text`
+(line 500) renders an `AcceptanceObligationQuestion` as `Acceptance obligation {id}: {question}`,
+and `_task_doc_body_revision` (line 606) hashes typed intent slots through a stable by-alias dump
+(`_task_intent_body_value`, line 631) so a change to a packet version or an obligation question
+text alters the body revision and open readers refetch.
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py`.
+- Type-preserving intent slots must keep their canonicalized text stable: the reader surface is a
+  string projection, while the digest path uses the typed by-alias dump.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Canonicalized requirement text reader for typed packet refs. | `_requirement_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:494-498 |
+| Canonicalized open-question reader for typed acceptance obligations. | `_question_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:500-504 |
+| Body revision hashing of typed intent slots. | `_task_doc_body_revision`; `_task_intent_body_value` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:606-623; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:631-637 |
 
 
 ## 260815-DAG-L12 Render-Ready Graph View Wiring
@@ -60,7 +73,19 @@ participates in task-body revision identity so an open reader refetches after a 
 Discarded entries are historical task truth and never disappear merely because they are absent from
 the active subtask list.
 
+## CCR-R02@v2 Typed Slot Canonicalization
+
+Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, the reader surface accounts for
+typed `ApprovedRequirementPacketRef` and `AcceptanceObligationQuestion` slots (never raw model
+reprs) and includes them in body-revision identity, so served bodies and revision tokens reflect
+normative intent content exactly.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  the serving task-document readers now canonicalize typed requirement/accepted-obligation slots and
+  include them in `_task_doc_body_revision`; documented the stable reader-string and digest path.
+  Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented projection of audited discarded-unstarted task history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

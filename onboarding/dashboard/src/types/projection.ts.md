@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -17,8 +17,10 @@
 ## Purpose
 
 Generated TypeScript mirror of the served workspace projection plus its enumerable runtime
-vocabularies. It now carries canonical `TaskDocumentRef` values on task-aware analytics without
-turning runtime session/lifecycle ids into work identity.
+vocabularies. It carries canonical `TaskDocumentRef` values on task-aware analytics without
+turning runtime session/lifecycle ids into work identity. Since 260831-CCR (commit `99dc249b`)
+it also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` schema + 64-hex
+digest) and attaches it optionally to the lifecycle operation projection.
 
 ## Code Commentary
 
@@ -28,6 +30,10 @@ The generator emits lifecycle, task, attention, engine, and metrics wire shapes 
 state vocabularies. Structural additions share one `TaskDocumentRef` interface. Task documents
 remain the hierarchy authority; lifecycle and hosted-occupant fields are optional runtime
 attachments.
+
+`LifecycleOperationProjection` gains the optional `taskIntent?: TaskIntentIdentity` (line 349),
+and the new `TaskIntentIdentity` interface (line 687-693) mirrors the JSON Schema refinements:
+the required 64-hex `digest` and the closed `schema: "task-intent/v1"` union.
 
 ### Conventions
 
@@ -39,6 +45,7 @@ rather than hand-maintaining parallel declarations.
 - The task-document reference is repository-qualified and level-explicit.
 - Runtime ids remain projections/correlation, not structural seat identity.
 - Generated TypeScript and schema artifacts must remain synchronized.
+- The task-intent identity is observation-only: the dashboard never mints or mutates a digest.
 
 ### Todos
 
@@ -56,6 +63,8 @@ No Domain Documentation source is configured.
 | Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:580-614 |
 | The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:643-646; dashboard/src/types/projection.ts:657-661 |
 | Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:743-756 |
+| The optional canonical task-intent identity on lifecycle operations. | `taskIntent?` | dashboard/src/types/projection.ts:349-349 |
+| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:687-693 |
 
 ## Cross-Repo References
 
@@ -116,7 +125,19 @@ The generated `ServingBuild` interface now includes optional `sourceDigest`, `py
 are serve-time diagnostic facts, not persisted projection authority. They let dashboard and MCP
 evidence distinguish equal-version candidates and name the runtime that actually answered.
 
+## 260831-CCR-R02 Task-Intent Mirror
+
+The generated mirror adds the `TaskIntentIdentity` interface (closed `task-intent/v1` schema plus
+64-hex digest) and attaches it optionally to `LifecycleOperationProjection`. Dashboard consumers
+observe the exact identity a door/journal/operation binds; no intent authority transfers to the
+browser.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  regenerated-mirror card updated for the optional `LifecycleOperationProjection.taskIntent` and
+  the new `TaskIntentIdentity` interface (closed `task-intent/v1` + digest pattern with JSON Schema
+  refinements); documented the observation-only boundary. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-30T15:15:36+02:00 — Regenerated the serving-build mirror with source digest,
   interpreter, and package-root identity. Verification remains closeout-owned.
@@ -176,10 +197,10 @@ evidence distinguish equal-version candidates and name the runtime that actually
   model pairs, `LATE MIRROR`, `LandingRefNode.at?` / `EngineProcessNode.carryoverDoneAt?` /
   `ExpectationRowNode`) and six invariants. Recorded three limits rather than flattening them: the
   terminal/live split is NOT a composed partition on this side (`projection.py` L199-L217 says so and
-  names the fix), `SeriesSectionNode` is a slot and not a check, and the mirror↔server link is held by
+  names the fix), `SeriesSectionNode` is a slot and not a check, and the mirror-to-server link is held by
   no test because `snapshot.json` is hand-maintained. Re-derived all 12 pre-existing citations — every
-  range had moved (e.g. `WorkspaceProjection` L389-L397 → L674-L689, `EngineProcessNode` L332-L373 →
-  L566-L608, `ProcessFactState`/`ProcessHealth` L269-L287 → L487-L519) — and added 17 more. Verification
+  range had moved (e.g. `WorkspaceProjection` L389-L397 to L674-L689, `EngineProcessNode` L332-L373 to
+  L566-L608, `ProcessFactState`/`ProcessHealth` L269-L287 to L487-L519) — and added 17 more. Verification
   metadata pinned to the leaf base until closeout stamps the L4 code commit.
 
 - 2026-07-24T13:17:50Z — Documented optional dirty serving-build evidence and comment-only cleanup.
@@ -259,10 +280,10 @@ evidence distinguish equal-version candidates and name the runtime that actually
 - 2026-06-23T21:46+02:00 — Task 12 S2: clarified `ProviderNode.repoId` as covered-repo metadata for
   workspace providers and owning-repo metadata for worktree providers, with `worktreeGroup` documented as
   the precedence join key. Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-22T11:00 — slice 05o refused-conduit signal: added a `refused` member to the `EngineProcessEdge.state` union plus an optional `refusedPolarity?: "amber" | "red"` field (amber = a soft reroute/fallback, red = a fault/conflict), the projection signal that drives the new refused-conduit flash (T9B red, T9C amber, T14C red); lockstep with projection.py (`?:` = the server's `exclude_none` omission). Verification metadata pinned until closeout stamps the 05o code commit.
+- 2026-06-22T11:00 — slice 05o refused-conduit signal: added a `refused` member to the `EngineProcessEdge.state` union plus an optional `refusedPolarity?: "amber" | "red"` field (amber = a soft reroute/fallback, red = a fault/conflict), the projection signal that drives the new refused-conduit flash (T9B red, T9C amber, T14C red); lockstep with projection.py (`?` = the server's `exclude_none` omission). Verification metadata pinned until closeout stamps the 05o code commit.
 - 2026-06-21T02:44+02:00 — Slice 6g: mirrored the master-navigation additions from `projection.py` — `TaskSubTaskRefNode` (+`linkedLifecycleId?`), `TaskSectionNode`, and `subTasks`/`sections`/`masterLifecycleId?` on `TaskDocNode`. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T06:39+02:00 — engine-room crash fix: relaxed `EngineProcessNode.landing` to optional (`landing?:`) — a pre-5h/persisted projection omits it, and `EnclosureCanvas` was crashing on `node.landing.find`. Forward-compat, not an `exclude_none` change. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:25+02:00 — slice 5h Tier 2: mirrored the four optional `LedgerRefNode` fields `codeSubject?`/`codeDate?`/`memorySubject?`/`memoryDate?` (lockstep with projection.py; `?:` = the server's `exclude_none` omission). Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-19T06:39+02:00 — engine-room crash fix: relaxed `EngineProcessNode.landing` to optional (`landing?`) — a pre-5h/persisted projection omits it, and `EnclosureCanvas` was crashing on `node.landing.find`. Forward-compat, not an `exclude_none` change. Verification metadata pinned until closeout stamps the code commit.
+- 2026-06-18T21:25+02:00 — slice 5h Tier 2: mirrored the four optional `LedgerRefNode` fields `codeSubject?`/`codeDate?`/`memorySubject?`/`memoryDate?` (lockstep with projection.py; `?` = the server's `exclude_none` omission). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T18:00+02:00 — slice 5h ledger popover: mirrored `LedgerRefNode` + `LedgerNode.rows` + `EngineProcessNode.ledgerRows`/`ledgerRowCount` (lockstep with projection.py). Verification metadata pinned until closeout stamps the code commit.
 - 2026-06-18T14:05 — Task 6 slice 6c Part A: mirrored `GateNode` + the optional `LifecycleProjection.gate` from `projection.py`. Verification metadata pinned until closeout stamps the 6c Part A code commit.
 - 2026-06-18T08:51+02:00 — slice 5h H1: mirrored `LandingRefNode` + the additive `landing[]` / `integrationStrategy?` fields on `EngineProcessNode` (lockstep with projection.py). Verification metadata pinned until closeout stamps the 5h code commit.

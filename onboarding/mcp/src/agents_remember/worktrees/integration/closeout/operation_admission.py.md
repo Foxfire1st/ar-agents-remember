@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
-| governingOverview | `../overview.md` |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree integration overview](../overview.md)
+[closeout integration overview](overview.md)
 
 ## Purpose
 
@@ -26,16 +26,33 @@ Prevalidation captures contract and candidate state, resolves and normalizes the
 
 A new generation is allowed only after the prior one is terminal and exact contract/candidate state has advanced. Active same-kind and cross-kind lifecycle compatibility is intentionally decided later, while the contract lifecycle lease is held, so malformed input cannot learn or disturb operation state.
 
+Since 260831-CCR (commit `99dc249b`) admission binds canonical task intent into the candidate
+identity and refuses legacy absence:
+
+- `prevalidate_closeout_operation_admission` (line 89-110) obtains the current door task intent
+  (`current_door_task_intent(contract)`, line 100) and feeds it into the
+  `LifecycleOperationCandidateBinding.task_intent` so the durable candidate fingerprint covers the
+  exact intent bytes (line 110).
+- `resolve_closeout_operation_admission` (line 113-131) treats a missing-intent current generation
+  as not resumable: once it is completed/failed/cancelled, the missing-intent branch becomes
+  unreusable (line 128-131).
+- `_validate_existing_closeout_request` (line 136-202) propagates the candidate task intent into
+  the recovered candidate (line 187-193) and the rebuilt binding (line 200-201).
+- `_current_operation_task_intent` (line 311-321) re-asserts exact currentness, raising
+  `lifecycle-operation-task-intent-stale` with `next_action=retire-and-republish` when the
+  retained generation binds different intent.
+
 ### Invariants And Boundaries
 
 - Ordering is lease-stable candidate/plan normalization, then lifecycle compatibility, then journal/worker.
 - Task documents and queue projection are not input authorities.
 - Duplicate validation uses the immutable accepted plan and fingerprint.
-- A broad “completed” flag is insufficient to create a new generation.
+- A broad "completed" flag is insufficient to create a new generation.
+- A closeout generation without canonical task intent can never be admitted or reused as current.
 
 ### Todos
 
-Public retry/recover/revise commands and broader liveness controls are L2.
+None recorded.
 
 ## Docs References
 
@@ -45,9 +62,12 @@ See task `260821-CLIVE-L1` L1-R2, L1-R3, L1-R5, and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:70-100 |
-| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:103-116 |
+| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:89-110 |
+| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:113-131 |
 | Recovery identity admits only original or exact finalized publication. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:219-236 |
+| Currentness re-assertion for retained closeout candidates. | `_current_operation_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:311-321 |
+| The door-intent currentness source. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:69-85 |
+| The candidate binding carrying the intent into the fingerprint. | `LifecycleOperationCandidateBinding.task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:30-35 |
 
 ## Cross-Repo References
 
@@ -70,7 +90,19 @@ Closeout admission now requires a door and binds the exact door generation id th
 changes even if code tree and other inputs do not. Existing-generation replay compares the
 journal-retained door publication id; a projection member cannot substitute for it.
 
+## CCR-R02@v2 Intent-Bound Admission
+
+Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, admission binds exact current
+task intent into the durable candidate identity and refuses absent/mismatched intent with the exact
+stale/unavailable reason and `retire-and-republish` route. Part of the landed L25 candidate
+`99dc249b`.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  closeout admission now includes canonical task intent in the candidate fingerprint, refuses
+  reusable/missing-intent generations, and re-asserts currentness on retained candidates
+  (`_current_operation_task_intent`). Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

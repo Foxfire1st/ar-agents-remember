@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/store.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -35,6 +35,13 @@ exception-failure rollback across roots, not a claim of multi-file crash atomici
 for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_for` /
 `markdown_path_for` derive the sibling `.json` / `.md` paths in the task folder.
 
+Since 260831-CCR (commit `99dc249b`) the batch writer refuses to publish a document whose route
+review carries a missing or stale task intent: `_require_publishable_task_document` (line 221)
+runs on every document before the batch prepares target paths and calls
+`require_task_intent_identity(review.taskIntent, owner="route-review",
+next_action="record_route_review")` (line 225-227). A legacy review with no canonical identity can
+therefore no longer be written back to disk as current task truth.
+
 ### Invariants And Boundaries
 
 - Each destination replacement is atomic; the JSON is authoritative and the markdown is always a
@@ -42,6 +49,8 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 - Batch writes prepare all payloads before replacing any file. The duplicate-target guard is necessary
   because leaf/master coupled writes would otherwise risk overwriting one prepared document with another.
 - Reads go through `model_validate_json`; never reconstruct a document from markdown.
+- A document carrying a route review without canonical task intent is not publishable; the store
+  refuses before any file is touched.
 
 ## Repo-Internal References
 
@@ -50,6 +59,8 @@ for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_
 | The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
 | The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
 | The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
+| Publishability gate refusing legacy review intent. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-228 |
+| The shared identity rejection seam it calls. | `require_task_intent_identity` | mcp/src/agents_remember/models/task_intent/__init__.py:81-95 |
 
 
 ## 260815-DAG-L12 Title Threading
@@ -79,7 +90,18 @@ and restores exact prior bytes if any replacement or unlink fails; a rollback fa
 The surrounding task-publication CAS provides serialization. This prevents discard-unstarted from
 exposing a parent audit without removal or deleting the child without the audit.
 
+## CCR-R02@v2 Publishability Boundary
+
+Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, newly published containers must
+carry the exact canonical intent identity and writers may not emit the sentinel. The batch writer
+enforces this for route-review-bearing documents, so a legacy review cannot be persisted as current.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  the task-document store now refuses to publish a document whose route review has missing or stale
+  task intent (`_require_publishable_task_document`); documented the publishability gate. Verified
+  at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged task-document
   store model dependency. Verification remains closeout-owned.
