@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/tests/test_seat_lifecycle.py`            |
 | doc_type               | `file-level-onboarding`                       |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -21,6 +21,11 @@ renaming, liveness, landing, and completion cleanup. It exercises pure and end-t
 authority against a real task topology, diagnostic turn-state handling, task-scoped landing, and
 the integrate/finalize auto-close or opt-out landing paths. Runtime ids remain test correlations;
 task document plus role is the authority under test.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): `_config` now supplies a `repositories` map with a
+`RepositoryScope` for the seat-lifecycle fixtures, matching the runtime-config shape that
+carries `certification_profile`.
 
 ## Code Commentary
 
@@ -149,6 +154,8 @@ The current forcing seams include `test_manager_retires_own_worker`, `test_manag
 | The current test source exercises `test_manager_retires_own_worker`, `test_manager_retires_own_reviewer`, `test_manager_refused_against_other_masters_worker`, `test_manager_refused_against_a_manager_seat`. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:202-266 |
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the repositories/RepositoryScope fixture shape in seat lifecycle tests.
+
 
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: extended the retirement
   matrix to the manager's master reviewer and architect-only plan reviewer while explicitly

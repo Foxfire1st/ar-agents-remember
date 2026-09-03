@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T06:08+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -166,8 +166,14 @@ production module, a failed targeted run, or a missing wrapper refuses loudly.
 
 ## 260731-EFA-L4: The Gate Stages Before It Gates
 
-`_gate_staged_code(code_worktree, *, worktree_group, diff_base)` replaces the bare
-`run_strict_code_quality_gate(...)` call in `closeout_result`. It is four steps, and **the order is
+`_gate_staged_code` now lives behind `_quality_gate_target(contract, args)`, which builds
+`QualityGateTarget(code_worktree=contract.code_worktree, worktree_group=contract.worktree_group,
+repository_id=contract.repo_name, profile_reference=args.certification_profile)`. Since
+CCR-R22@v1 (L22, commit `685f83c44055`) every code-committing leaf requires one explicit
+configured profile: the old `_quality_gate_executor(contract)` settings loader and the
+`requires_integrated_acceptance(repo_name)` self-policy were removed, and the target now carries
+the profile reference instead of an executor string. `_gate_staged_code` (target-based)
+replaces the bare `run_strict_code_quality_gate(...)` call in `closeout_result`. It is four steps, and **the order is
 the contract**:
 
 1. `_refuse_outside_a_linked_worktree(code_worktree)`
@@ -175,7 +181,7 @@ the contract**:
 3. `require_git(code_worktree, ["reset", "--mixed", "--quiet", "HEAD"])`
 4. `require_git(code_worktree, ["add", "-A"])`
 5. `run_pre_commit_hook_if_configured(code_worktree)` → restage hook edits when configured
-6. `run_strict_code_quality_gate(QualityGateTarget(code_worktree, worktree_group), diff_base=diff_base)`
+6. `run_strict_code_quality_gate(_quality_gate_target(contract, args), diff_base=diff_base)`
 
 The commit side of the same contract is `commit_verified_staged`: it performs no `add -A` and
 uses `git commit --no-verify`, so the configured hook is not restarted after the wrapper's final
@@ -416,6 +422,8 @@ stale after commits; it never re-resolves from repository id. The pair policy li
 closeout pairing module rather than adding another resolver to this orchestration module.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the closeout gate cutover -- _quality_gate_target builds QualityGateTarget with repository id and certification_profile reference, the settings-level executor loader and requires_integrated_acceptance self-policy were removed, and every code-committing leaf requires one explicit configured profile.
+
 
 - 2026-08-30T06:08+02:00 — MCAR-L03 A005: extracted completed-integration reopen decisions into
   the closeout integration route, reducing this coordinator below the 1,200-line hard rail and
@@ -445,7 +453,6 @@ closeout pairing module rather than adding another resolver to this orchestratio
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: imports updated to the moved packages; closeout quality facts extracted into `_closeout_quality_facts`. Verified at code commit e5cb139f.
-
 
 - 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
 

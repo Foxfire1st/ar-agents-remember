@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated | 2026-09-01T03:11+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -32,6 +32,13 @@ future-code identity boundary.
 The certification contract adds `CertificationContractError`, whose recursively frozen findings
 preserve stable rail/plan/result failure codes, paths, details, owners, and evidence references
 without allowing a caller to mutate the accepted diagnostic snapshot.
+CCR-R22@v1 (L22, commit `685f83c44055`) extends the family with two profile-specific subclasses:
+`CertificationProfileError` (status `certification-profile-invalid`) for one repository profile
+authority failing before any certification command, and
+`CertificationExecutorPrerequisiteError` (status `certification-executor-prerequisite-failed`) for
+an admitted repository executor that cannot start its affected gate population. Both inherit
+`CertificationContractError`, so their findings stay frozen and typed while their status
+vocabulary remains distinct from contract and rail failures.
 
 ## Code Commentary
 
@@ -61,6 +68,9 @@ boundaries may contain the typed routing/occupancy failure to the affected row.
 `CertificationContractError` converts each supplied JSON-like finding into mapping proxies and
 tuples recursively. Unsupported mutable/object values and non-string mapping keys are rejected so
 typed certification failure evidence cannot degrade into a generic mutable exception payload.
+`CertificationProfileError` and `CertificationExecutorPrerequisiteError` reuse that
+frozen-findings machinery with the two new statuses; the executor-prerequisite variant
+additionally carries gate/owner/adapter/runtime findings for the earliest affected gate.
 
 ### Conventions
 
@@ -182,6 +192,8 @@ that evidence when the shared pair validator is consumed through coherence, avoi
 lower-level failure-family implementations.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the two new profile-admission subclasses -- CertificationProfileError (certification-profile-invalid) and CertificationExecutorPrerequisiteError (certification-executor-prerequisite-failed) -- extending CertificationContractError.
+
 
 - 2026-09-01T03:11+02:00 — Added the deeply immutable certification contract failure family and
   repaired every onboarding citation shifted by its insertion. Verification remains

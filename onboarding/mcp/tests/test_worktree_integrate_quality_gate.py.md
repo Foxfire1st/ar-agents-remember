@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,12 @@
 ## Purpose
 
 Integration-seam suite for leaf closeout-proof reuse versus master/full code-quality altitude.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): integration quality-gate tests forward the profile
+reference into the full gate -- previews/runs pass `profile_reference` and target
+construction, `integration_contract` gains the profile, and altitude tests cover
+profile-admission refusals on the master full gate.
 
 ## Code Commentary
 
@@ -109,6 +115,8 @@ Integration quality-gate forcing now reports exact certification identity mismat
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding in integration quality gate tests.
+
 
 - 2026-08-28T06:40+02:00 — No content impact: synthetic integration repositories now place the
   quality wrapper at its verification-package path; integration altitude and gate assertions are

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -298,12 +298,16 @@ Closeout instructions now target the leaf enclosure `series-contract.md`; the ro
 
 ## R39 Repository-Resolved Acceptance Doctrine
 
-The packaged closeout skill is generic again: repository memory resolves the concrete executor,
-environment, arguments, resource policy, retry semantics, and evidence. The cadence is one
-change-set acceptance at leaf closeout, no leaf-integration rerun, and one full check at master
-integration. A repository whose policy requires its adapter fails closed when the candidate
-removes it. No seat may infer a runner or add a compatibility fallback.
-
+The packaged closeout skill is generic again and, since CCR-R22@v1 (L22, commit `685f83c44055`),
+repository-owned: the exact configured repository certification profile
+(`repositories.<repo-id>.certificationProfile`) declares the concrete executor, environment,
+arguments, resource policy, retry semantics, evidence, and Gates 1-4 applicability; repository
+memory such as `system/git-workflow.md` explains intent but is not alternate execution authority.
+The cadence is one change-set acceptance at leaf closeout, no leaf-integration rerun, and one full
+check at master integration. Every code-committing repository requires one explicit profile;
+missing, ambiguous, invalid, or incomplete authority refuses as `certification-profile-invalid`
+before repository execution. No seat may discover a fixed wrapper, infer a runner, or add a
+default/compatibility/host fallback.
 ## 260821-CLIVE Closeout Admission And Recovery Doctrine
 
 Every enabled code, memory, and ledger leg requires its own explicit nonblank immutable commit
@@ -331,6 +335,8 @@ not require `directExecutionEnabled`; the existence of a root series contract al
 the direct route.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): updated the packaged closeout doctrine to the repository-profile authority model -- certificationProfile requirement, certification-profile-invalid refusal, and removal of the integrated-adapter/required-when-missing wording.
+
 
 - 2026-08-31T20:30+02:00 — 260831-DER: synchronized the narrow direct-execution boundary and
   explicitly excluded ordinary master/series closeout and integration from the policy flag.

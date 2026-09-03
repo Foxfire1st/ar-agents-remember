@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_resume_invariant_owner_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,11 @@
 ## Purpose
 
 Forces lifecycle resume invariant owner l2 behavior at the public and durable-state boundaries.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the fixture `memoryPolicy` literal changed from
+`pytestProcesses: "auto"` to `processPolicy: "profile-adapter-owned"` to match the
+profile-bound quality response model.
 
 ## Code Commentary
 
@@ -67,6 +72,8 @@ Forces the store choke point shared by ordinary update and crash-resume reconstr
 - Only narrowly authorized phase/status recovery differences are admitted.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the processPolicy literal change in the resume-invariant fixture.
+
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

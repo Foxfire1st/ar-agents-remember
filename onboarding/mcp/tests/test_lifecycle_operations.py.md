@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,11 @@
 ## Purpose
 
 This is the forcing suite for durable asynchronous closeout/integration operations. It proves task-addressed identity, exact retry, immutable candidate capture, legal recovery, cancellation boundaries, detached execution, worker reporting, and public projection privacy.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): `test_execute_operation_dispatches_closeout_and_integration_payloads`
+now mocks a config whose repository carries `certification_profile`, matching the worker's
+profile resolution at operation execution.
 
 ## Code Commentary
 
@@ -112,6 +117,8 @@ Lifecycle operation tests now cover explicit retry/replacement after failed or t
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile config mock in lifecycle operation dispatch tests.
+
 
 - 2026-08-29T16:27+02:00 — Extended detached-launch forcing to require ownership transfer of the
   exact `Popen` object to the lifecycle reaper.

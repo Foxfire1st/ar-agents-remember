@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:27+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,12 @@ caller altitude describes the actual candidate tree, and the GitHub workflow sta
 deterministic non-test hook instead of invoking a second Dagger/test rail. It also pins the hook's
 Python authority to a complete local or shared `mcp/.venv`, never an unrelated repository venv or
 bare system interpreter.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the caller-provenance proofs switched from the Dagger
+wrapper inventory to the repository profile -- the generated module must no longer contain
+`quality_wrapper_command` or the old dashboard command tuples, and the profile declares the
+rails instead.
 
 ## Code Commentary
 
@@ -136,6 +142,8 @@ Radon and Coverage.py unit text now counts product Python files only; tests rema
 not measurement targets. CRAP mocks patch the canonical calculator module directly.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-based scope reporting proofs replacing the wrapper inventory assertions.
+
 
 - 2026-08-31T12:00+02:00 — A005 refreshed the dashboard build scope oracle from 434 to 436
   TypeScript inputs after the reviewed candidate added two governed source modules. Verification

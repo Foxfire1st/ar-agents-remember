@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_worker_release_guards.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,11 @@
 Forces failed workers to preserve the journal generation after truthful irreversible evidence. The
 historical test names retain “queue ownership”, but the assertions now specifically prove that the
 worker does not publish a `queueReleaseFailure` lifecycle result.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): worker-release-guard tests now mock a config whose
+repository carries `certification_profile`, since `execute_operation` resolves the profile
+before dispatching closeout/integration.
 
 ## Code Commentary
 
@@ -74,6 +79,8 @@ Forces journal retention after a worker reports failure beyond mutation intent, 
 - The source intentionally asserts that no queue-release side channel is recorded; lifecycle authority is journal-owned despite legacy test names.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile config mocks in worker release guard tests.
+
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

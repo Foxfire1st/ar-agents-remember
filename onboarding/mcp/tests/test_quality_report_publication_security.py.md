@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_report_publication_security.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T08:05+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,12 @@
 
 Proves immutable quality-report publication refuses dangling result references and symlink
 substitution at nested legacy and generation boundaries.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) re-bases publication-security tests on profile-bound
+publication: helpers `_profile_execution` and `_publish_reports` publish a profile-admitted
+generation, inventory and size enforcement now follow `PublishedArtifactDefinition` limits, and
+assertions cover the schema-v3 profile identity fields.
 
 ## Code Commentary
 
@@ -64,6 +70,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this suite.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-bound publication security test re-base.
+
 
 - 2026-08-31T13:42+02:00 — A005 closeout repair completed the quality-result parser and immutable
   publication boundary matrix, including the branch set that had raised CRAP above threshold.

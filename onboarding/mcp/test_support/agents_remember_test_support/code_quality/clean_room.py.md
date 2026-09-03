@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/clean_room.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,13 +16,13 @@
 
 ## Purpose
 
-This is the narrow CLI boundary for the pinned Dagger clean-Linux quality executor. It accepts only the candidate checkout, enclosure, targeted/full mode, diff base, and optional memory cap, then returns the executor's real exit status without a local-container fallback.
+This is the narrow CLI boundary for the pinned Dagger clean-Linux quality executor. Since CCR-R22@v1 (L22, commit `685f83c44055`) it also requires `--repository-id` and `--certification-profile` arguments and forwards them as `CleanQualityRequest.repository_id`/`profile_reference`, so the CLI runs the same repository-profile admission as the lifecycle. It accepts the candidate checkout, enclosure, repository identity, profile reference, targeted/full mode, diff base, and optional memory cap, then returns the executor's real exit status without a local-container fallback.
 
 ## Code Commentary
 
 ### Logic
 
-`build_parser` defines the public arguments. `main` resolves paths, builds `CleanQualityRequest`, runs the canonical executor, streams its transcript, and reports invalid environment or request state as a refusal.
+`build_parser` defines the public arguments (now including the two required repository-identity/profile flags). `main` resolves paths, builds `CleanQualityRequest` with `repository_id` and `profile_reference`, runs the canonical executor, streams its transcript, and reports invalid environment or request state as a refusal.
 
 ### Conventions
 
@@ -61,6 +61,8 @@ No cross-repository contract is owned here.
 | The adapter is confined to one resolved code worktree and enclosure. | `main` | mcp/test_support/agents_remember_test_support/code_quality/clean_room.py:25-42 |
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new --repository-id / --certification-profile CLI arguments forwarded into CleanQualityRequest; the thin Dagger boundary is otherwise unchanged.
+
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the `clean_quality_executor` to `quality.clean_executor` import relocation; the documented thin Dagger CLI boundary and behavior are unchanged.
 - 2026-08-12T15:19+02:00 — Created for L23's clean-Linux Dagger quality entry point; verification provenance remains closeout-owned.

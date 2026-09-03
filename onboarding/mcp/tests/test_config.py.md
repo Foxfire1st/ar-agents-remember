@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `../overview.md`                              |
 
 ## Purpose
@@ -27,6 +27,13 @@ boot naming the file. `test_legacy_memory_settings_includes_key_is_tolerated_and
 replaces the old escape-boundary test: the removed dead plumbing means a
 leftover `memorySettingsIncludes` key parses fine and `RepositoryScope` no
 longer exposes the field.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) adds two repository-scope tests:
+`test_loads_explicit_repository_certification_profile_reference` (a relative
+`certificationProfile` parses into `RepositoryScope.certification_profile`) and
+`test_repository_certification_profile_reference_fails_closed` (absolute, drive,
+backslash, traversal, dot, and trailing-slash references all raise ConfigError).
 
 ## Code Commentary
 
@@ -97,6 +104,8 @@ As of the 260703-L8 seam ruling the orchestration settings tests prove the parse
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certificationProfile parse and fail-closed tests in config tests.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: added `directExecutionEnabled` coverage
   (`parse_direct_execution_enabled` bool requirement; fail-closed default). Verified at code

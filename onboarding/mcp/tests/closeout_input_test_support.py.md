@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,11 @@
 ## Purpose
 
 Provides canonical typed closeout admissions, normalized `WorktreeArgs`, and mutation-evidence recording/builders for L1 tests. It replaces repeated fixtures that previously smuggled raw or blank message fields below validation.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) makes `closeout_worktree_args` default
+`certification_profile` to `Path("mcp/certification-profile-v1.json")`, so closeout fixtures
+carry the repository-owned profile reference exactly like the real application path.
 
 ## Code Commentary
 
@@ -68,6 +73,8 @@ Builds explicit normalized closeout inputs and journal mutations for behavioral 
 - Fixture mutations preserve one operation generation and never synthesize fallback input.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile default in closeout_worktree_args.
+
 
 - 2026-08-26T10:44:52+02:00 — No behavior change: exposed `ensure_fixture_waiting_door` as the shared fixture seam and updated package imports; closeout input construction and waiting-door authority are unchanged.
 

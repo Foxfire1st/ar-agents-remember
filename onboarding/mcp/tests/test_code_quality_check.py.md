@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -17,6 +17,12 @@
 ## Purpose
 
 `test_code_quality_check.py` verifies the fixed source quality suite wrapper.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the Dagger-wrapper inventory proof was replaced by a
+repository-profile proof -- the test now asserts the generated Dagger module no longer contains
+`quality_wrapper_command` and that `mcp/certification-profile-v1.json` declares the
+`python-suite` rail instead.
 
 ## Code Commentary
 
@@ -264,6 +270,8 @@ validation is neither an optional Radon-style report nor an out-of-band check. A
 shifts the pytest command index, which the wrapper assertion tracks explicitly.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the wrapper-inventory-to-profile proof replacement in code quality check tests.
+
 
 - 2026-08-28T14:18+02:00 — Reconciled quality-orchestration test citations against the committed
   PDLS candidate after final test movement and naming changes.
