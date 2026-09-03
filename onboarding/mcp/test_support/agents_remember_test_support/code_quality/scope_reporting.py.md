@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `db57101a9001ede8c681ff9de4eb0147d8b636bc` |
+| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,14 @@ files, reverse-import closure, derived test files, size-scoped changed files);
 `build_parser` (lines 627-653) accepts the `targeted` hook tier. The matching
 provenance tests were extended in `mcp/tests/test_quality_scope_reporting.py`
 (integration invocation labels, targeted pre-push tier).
+
+## 260831-CCR-L19 Change
+
+L19 updated the targeted-ownership wording to the exact-ownership contract: the incomplete line now
+reads `targeted ownership: incomplete; Gate 2 blocked without population expansion` (it never
+prints a safe-full population), and the printed ownership reasons are the flattened set of every
+`test_impact.reasons` rather than only reasons nested per owned path. The report remains
+read-only.
 
 ## Purpose
 
@@ -94,6 +102,8 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 ### Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/...` path.
+- Targeted reporting never claims a safe-full population; incomplete ownership is reported as a
+  Gate-2 block (L19).
 
 ### Todos
 
@@ -114,7 +124,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `pyright_config_description`. | `pyright_config_description` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:116-133 |
 | Defines the function `wrapper_scope_line`, with the L17 targeted units branch. | `wrapper_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:136-161 |
 | Defines the function `fixed_step_scope_line`, with the L17 targeted per-rail lines. | `fixed_step_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:164-233 |
-| Defines the function `targeted_scope_lines` — the printed derivation for targeted runs. | `targeted_scope_lines` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:254-290 |
+| Defines the function `targeted_scope_lines` — the printed derivation for targeted runs; L19 reports flattened reasons and a Gate-2-blocked incomplete line. | `targeted_scope_lines` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:254-290 |
 | Defines the function `coverage_result_scope_line`. | `coverage_result_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:317-324 |
 | Defines the function `randomized_pytest_scope_line`. | `randomized_pytest_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:327-341 |
 | Defines the function `crap_scope_line`. | `crap_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:344-355 |
@@ -141,7 +151,21 @@ The scope report gained the `layering` tier: the armed package-layering step rep
 and cycle counts/edges alongside the other quality steps, and the wrapper's invocation labels
 carry the layering result.
 
+## Docs References
+
+No configured Domain Documentation source applies to this read-only reporting module.
+
+## Cross-Repo References
+
+No meaningful cross-repository boundary is owned by this module.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 targeted-report
+  wording change — incomplete ownership is reported as a Gate-2 block with no population
+  expansion, and ownership reasons are printed from the flattened `test_impact.reasons` set.
+  Verification is pinned to the owning commit.
 
 - 2026-08-28T14:18+02:00 — Reconciled scope-reporting source ranges against the committed PDLS
   candidate after final helper movement; the documented semantics are unchanged.
