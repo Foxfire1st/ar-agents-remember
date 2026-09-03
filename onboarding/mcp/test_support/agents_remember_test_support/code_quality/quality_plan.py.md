@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
+| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
 | governingOverview | overview.md |
 
 ## Governing Overview
@@ -30,7 +30,9 @@ module is not a second quality entrypoint and cannot publish acceptance evidence
 
 CheckConfig is the complete immutable input to a wrapper run: candidate root, derived GateScope,
 opaque Dagger admission capability, scoring thresholds, target base/scope, evidence paths, and
-progress state. Step encodes the enforcement distinction structurally: report_note is absent for an
+progress state. L19 added the optional `selection_digest` field (the immutable repository
+selector-result digest) so the retry/execution layers can bind and revalidate the exact selection
+identity. Step encodes the enforcement distinction structurally: report_note is absent for an
 enforcing step and present for a report-only step.
 
 QualityProgress atomically replaces one JSON current-state artifact. It records start time, current
@@ -74,6 +76,8 @@ policy.
 - Enforcing versus report-only behavior is carried by Step, not inferred from names.
 - Targeted populations are diff-derived; there is no arbitrary caller file list.
 - Evidence lane, retry selection, causal report, and coverage arguments remain explicit.
+- The immutable selection digest is part of the configuration but never shapes the rail plan
+  itself; it is consumed by retry/execution identity.
 - check.py is the stable facade; callers should not create a parallel wrapper.
 
 ## Docs References
@@ -85,7 +89,7 @@ None. This behavior is repository-owned.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Progress is one atomic current-state record. | `QualityProgress` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:57-96 |
-| The complete wrapper input is immutable. | `CheckConfig` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-120 |
+| The complete wrapper input is immutable and now carries the selection digest. | `CheckConfig`; `selection_digest` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-121 |
 | The ordered rail plan is pure construction. | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
 | Pytest command construction enforces Dagger admission. | `_pytest_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287 |
 
@@ -94,6 +98,11 @@ None. This behavior is repository-owned.
 None.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 addition of the
+  `selection_digest` field on `CheckConfig` that carries the immutable selector-result
+  identity into retry/execution consumers. Verification is pinned to the owning commit.
 
 - 2026-08-28T04:48+02:00 — Created by extracting the typed plan/progress responsibility from the
   oversized check.py facade without changing its caller contract.

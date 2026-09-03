@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
+| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,7 @@
 
 Forcing suite for local quality-proof reuse. It proves that retry acceleration is a pipeline
 contract with structural invalidation, not an agent assertion that old tests were probably fine.
+L19 forces the immutable selection identity as part of that structural invalidation.
 
 ## Code Commentary
 
@@ -48,6 +49,12 @@ no longer tests the removed private `_eligible_test_delta` heuristic. Mismatch/r
 stable causal reasons such as `global-test-input`, `selected-population-changed`, and
 `unusable-context-proof`.
 
+L19 threads the `selection_digest` through every `RetryInputs`/`RetryPlan` fixture and adds
+`stale_identity = retry_proof.prepare(replace(inputs, selection_digest="b"*64), ...)` to the
+exact-proof lifecycle case, asserting a fresh run and the
+`exact-selection-identity-changed` cache-miss reason; the manifest-miss case also asserts the
+`selection-digest` finding.
+
 The production-shaped cases additionally prove tracked directory symlinks are hashed by link
 identity without traversing their targets, malformed inventories and proof artifacts fail closed,
 newly selected test modules qualify only through the explicit delta rule, and the wrapper's
@@ -69,6 +76,7 @@ value, so package removal invalidates proof deterministically.
 - Only external subprocess execution and post-coverage arithmetic are doubled; command selection,
   manifest publication, filtering, invalidation, and fallback orchestration are real.
 - Cached coverage cannot survive a newly failing cheap rail, even on an exact-tree retry.
+- A changed immutable selection digest can never reuse the previous proof (L19).
 - A local dependency install behind a tracked symlink cannot disable content-addressed reuse or
   make external dependency bytes part of the repository snapshot.
 
@@ -88,9 +96,10 @@ No external Domain Documentation source is configured for this test contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retry proof owns manifest compatibility, retained-context preparation, and publication lifecycle. | `RetryPlan`; `prepare` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:117-203; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:205-248 |
+| Retry proof owns manifest compatibility, retained-context preparation, and publication lifecycle; the selection digest is part of the identity. | `RetryPlan`; `prepare` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:117-203; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:205-248 |
 | Coverage composition owns filtering, explicit retained/fresh merge, JSON regeneration, and fail-closed publication. | `retain_unchanged_contexts`; `merge_delta_artifacts` | mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:27-99 |
 | The wrapper owns canonical delta collection, exact affected execution paths, explicit merge completion, automatic full rerun, and stale-artifact deletion when a cheap rail prevents pytest. | `execute_quality_rails`; `complete_coverage_rails`; `_pytest_result_failures`; `_merge_retry_coverage` | mcp/test_support/agents_remember_test_support/code_quality/check.py:201-295; mcp/test_support/agents_remember_test_support/code_quality/check.py:526-565 |
+| A changed selection identity invalidates an otherwise exact proof. | `test_full_proof_becomes_exact_then_test_delta_and_source_change_invalidates` | mcp/tests/test_quality_retry_proof.py:58-125 |
 
 ## Cross-Repo References
 
@@ -107,6 +116,12 @@ delta reuse, disablement, and fail-closed invalidation only inside the certifyin
 diagnostic results cannot seed or consume retry proof.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 selection-identity
+  forcing — `selection_digest` threaded through inputs/plans, the
+  `exact-selection-identity-changed` stale-identity cache-miss case, and the
+  `selection-digest` manifest finding. Verification is pinned to the owning commit.
 
 - 2026-08-28T11:32+02:00 — Added explicit missing-distribution forcing for retry tool-version
   identity.

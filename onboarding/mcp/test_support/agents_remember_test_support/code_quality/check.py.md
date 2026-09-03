@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | mcp/test_support/agents_remember_test_support/code_quality/check.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
+| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
 | governingOverview | overview.md |
 
 ## Governing Overview
@@ -45,7 +45,9 @@ progress record.
 prepare_retry_plan accepts proof reuse only under the opaque Dagger admission capability and the
 current lane trigger. Ambiguous manifests, stale provenance, changed configuration, incompatible
 runtime, or incomplete dependency ownership produce a fresh run or a loud refusal; there is no
-host or diagnostic fallback.
+host or diagnostic fallback. L19 bound the immutable selector result into the retry identity:
+prepare_retry_plan now forwards `config.selection_digest` into the retry inputs so an unchanged
+selection cannot be accidentally re-executed.
 
 run_pytest_only and run_coverage_rails execute the planned pytest command and then finalize evidence.
 A delta retry retains old coverage separately, removes invalidated test contexts, writes fresh
@@ -67,6 +69,11 @@ full scope or the diff-owned targeted scope. The wrapper accepts no caller-autho
 Tracked source, pytest roots, product coverage paths, file-size arming, and the diff base all come
 from repository truth.
 
+L19 hardened targeted configuration: when the derived targeted test impact is incomplete,
+config_from_args raises `ScopeError("test-selection-ownership-incomplete: ...")` with every
+unresolved input reason, instead of broadening to the safe-full population. Gate 2 therefore
+blocks hard on ownership incompleteness before any test command starts.
+
 The staged index is intentional quality input. Closeout must stage the exact candidate before
 running the wrapper; widening git enumeration to arbitrary untracked files would certify content
 that may not enter the commit and would still not make those files diff-measurable.
@@ -87,7 +94,8 @@ silent fallback turns a finding into success.
 - Full and targeted scope are derived; callers cannot provide arbitrary paths.
 - Pytest evidence is finalized before CRAP or changed-line coverage reads it.
 - Retry reuse is candidate-, configuration-, selection-, runtime-, environment-, and
-  artifact-bound.
+  artifact-bound; the immutable selection digest is part of that identity.
+- An incomplete targeted test impact refuses config construction; there is no safe-full expansion.
 - Invalid causal evidence cannot suppress any test.
 - Host execution and diagnostic output cannot become acceptance evidence.
 - The progress file is one bounded, atomic current-state view rather than an append-only log.
@@ -104,13 +112,20 @@ None. This behavior is repository-owned.
 | One top-level execution transaction owns retry and progress. | `run_quality_check` | mcp/test_support/agents_remember_test_support/code_quality/check.py:148-198 |
 | Fixed rails consume the typed plan and apply causal continuation. | `run_fixed_checks` | mcp/test_support/agents_remember_test_support/code_quality/check.py:395-492 |
 | Coverage retry is merged explicitly before scoring. | `_merge_retry_coverage` | mcp/test_support/agents_remember_test_support/code_quality/check.py:550-565 |
-| CLI input becomes one validated derived configuration. | `config_from_args` | mcp/test_support/agents_remember_test_support/code_quality/check.py:737-798 |
+| Retry planning forwards the immutable selection digest into the proof identity. | `prepare_retry_plan` | mcp/test_support/agents_remember_test_support/code_quality/check.py:661-707 |
+| Targeted configuration refuses incomplete ownership before any test command. | `config_from_args` | mcp/test_support/agents_remember_test_support/code_quality/check.py:758-804 |
 
 ## Cross-Repo References
 
 None.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 exact-ownership
+  changes — targeted config now refuses incomplete test impact with
+  `test-selection-ownership-incomplete` instead of safe-full expansion, and the retry plan
+  binds `selection_digest`. Verification is pinned to the owning commit.
 
 - 2026-08-28T04:48+02:00 — Split typed plan construction and progress state into quality_plan.py,
   retained check.py as the stable execution facade, and corrected retry/causal ownership.
