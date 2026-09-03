@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -20,6 +20,16 @@ Vitest + Testing Library coverage for the L17 Notes Reader. It covers the two le
 content pane and the cockpit takeover wiring, and it absorbs the note-CONTENT rendering cases (markdown /
 text fallback / binary placeholder) that used to live in `TaskNotes.test.tsx` before the inline reader was
 retired.
+
+
+## 260831-CCR-L23 Requirements-Artifact Cases
+
+L23 re-tagged every existing render with `kind="notes"` and added a
+`requirements artifact reader` describe block: a stub serving
+`/api/requirements/{list,read}` proves the viewer shows the requirements root
+(`data-artifact-kind="requirements"`, title `requirements · <master>`,
+open-path `requirements/<path>`) and renders the exact selected packet's markdown
+over the real `/api/requirements/read` URL.
 
 ## Code Commentary
 
@@ -83,6 +93,8 @@ No meaningful cross-repo references found.
 | `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:402-409; dashboard/src/types/projection.ts:580-614; dashboard/src/types/projection.ts:743-756 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `kind="notes"` re-tagging of existing renders and the new requirements-artifact reader suite (list/read stub + exact packet render).
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.

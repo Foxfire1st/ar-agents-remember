@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -22,6 +22,26 @@ task-scoped **takeover** whose LEFT RAIL is the master's notes tree (from `/api/
 included) with the open note highlighted, and whose content pane renders the opened note by **reusing the
 File Viewer's `DualPane` primitive**. It replaces the retired inline `TaskNotes` reading pane; the compact
 `TaskNotes` list + resolved references stay as the ENTRY surfaces that open this reader.
+
+
+## 260831-CCR-L23 Task-Artifact Reader (notes + requirements)
+
+L23 widened the reader from notes-only to a discriminated task-artifact reader. The
+local `NotesReaderTarget` interface was deleted and re-exported as the shared
+`TaskArtifactReaderTarget` (`dashboard/src/data/taskArtifacts.ts`); the
+view now takes a `kind` member plus an optional `document` (requirements
+only). Listing/content hooks branch on the kind:
+
+- `kind === "notes"` (no document): the unchanged `listNotes` /
+  `readNote` path;
+- `kind === "requirements"`: `listRequirements` /
+  `readRequirement` with the task-document reference, mapping each packet row
+  into the notes rail shape (`language: "markdown"`, `truncated: false`).
+
+The rail header, open-path label, and failure copy are kind-aware (`notes` vs
+`requirements`), the screen root carries `data-artifact-kind`, and
+`CockpitShell` keys the takeover marker on the kind. Rendering still reuses
+`DualPane`; no second bespoke reader exists.
 
 ## Code Commentary
 
@@ -92,6 +112,8 @@ unchanged route props no longer reconstruct its reader subtree, while its own se
 and data reads remain unchanged.
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the notes-only reader widening into the discriminated task-artifact reader (kind notes/requirements; requirements packets map into the rail/pane over `data/requirements.ts`); target type re-exported from `data/taskArtifacts.ts`.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact

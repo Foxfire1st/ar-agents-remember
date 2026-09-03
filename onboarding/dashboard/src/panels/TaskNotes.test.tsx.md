@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/TaskNotes.test.tsx`        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -41,6 +41,14 @@ not-found` in the serving status idiom.
   code-path reference stays plain text with no link testid, asserted only after the
   listing has arrived so resolution is settled.
 
+
+## 260831-CCR-L23 Kind-Tagged Open Payloads
+
+L23 advanced the suite's `onOpenNotes` expectations to the discriminated
+artifact target: note rows and resolved note references now fire
+`{ kind: "notes", repo, master, path }` (the `kind` tag was added to every
+asserted payload).
+
 ### Conventions
 
 Fetch is stubbed per test (never a live server); assertions target testids
@@ -72,6 +80,8 @@ No meaningful cross-repo references found.
 | The moved note-content suite (markdown, text fallback, binary placeholder, truncation) covering the reader this surface opens. | "NotesReaderViewer content pane (reuses the File Viewer DualPane)" | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:110-179 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the kind-tagged open-payload expectations (`{ kind: "notes", repo, master, path }`) introduced by the task-artifact target union.
 
 - 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): narrowed the stub-shape claim to `NoteEntry` (bound to the suite's `entry()` use and the type definition) and the directly evidenced listing payload; `NoteContent` removed from this test's claim; moved note-reader ownership retained; the scoped fixer confirmed the final ranges with no writes.
 - 2026-07-07T14:00+02:00 — agent-orchestration L17: rewritten to the entry-surface contract — the list +

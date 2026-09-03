@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/app.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -31,6 +31,15 @@ cached process identity projected by MCP `server_info`.
 ### Conventions
 
 This facade re-exports tested patch/import seams but does not reimplement their behavior.
+
+
+## 260831-CCR-L23 Requirements Route Registration
+
+`create_app` now calls `register_requirements_routes(app, config)` right
+after `register_notes_routes`, mounting the read-only task-local
+`/api/requirements/{list,read}` surface before the greedy static mount. Route
+handlers live in `serving/requirements.py`; composition here is one registration
+call plus the import.
 
 ### Invariants And Boundaries
 
@@ -67,6 +76,8 @@ catalog/inbox deletion decisions and uses task-owned proof, while ordinary injec
 omit registrars remain fail-closed.
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `register_requirements_routes` composition call in `create_app` (mounted after the notes routes, before static).
 
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: app composition now consumes the shared cached
   process build used by MCP identity advertisement. Verification remains closeout-owned.

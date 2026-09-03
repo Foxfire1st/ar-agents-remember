@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1088,7 +1088,17 @@ promoted to closeout evidence, and a moved base, wrong valid checkout, changed c
 candidate change produces a typed refusal with the exact sync/reprepare route. No path guessing,
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
+
+## 260831-CCR-L23 No-Symlink Confinement
+
+`kernel/sidecar_pairing.py` gained `confine_non_symlink_rel`: the stricter path guard for
+immutable artifact roots (the task-local requirements surface) that requires every component to
+exist and refuses symlinks — including in-root aliases — unlike the symlink-following
+`confine_rel` used for code/onboarding pairing.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the `confine_non_symlink_rel` kernel guard addition in `sidecar_pairing.py`.
 
 - 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 adds focused certification
   forcing, exact test-input ownership, and removes one dominated internal refusal. The generic

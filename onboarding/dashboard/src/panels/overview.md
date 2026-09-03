@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/`                          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -308,7 +308,19 @@ surfaces preserve the same boundary: audited removal stays visible but never cou
 
 `session-cockpit` test suites (BusPane, ChatsStageBody, ConversationSurface, stageSurface) now flush the virtualizer scroll-observer debounce in an async `afterEach` before jsdom teardown.
 
+
+## 260831-CCR-L23 Task-Artifact Reader Routing
+
+L23 routed task-local requirement packets through the existing reader chrome: `DetailPanel.tsx`,
+`taskReader.tsx`, `TaskNotes.tsx`, and the takeover now carry the shared discriminated
+`TaskArtifactReaderTarget` (kind notes/requirements); the task reader mounts the
+`TaskRequirementLinks` provider so task prose and References can open registered
+`requirements/...` packets in the internal reader. The notes-reader child route owns the
+viewer change; file-level detail lives in the panel sidecars.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the requirement-artifact routing through the detail panel, task reader, and TaskNotes (shared `TaskArtifactReaderTarget` + `TaskRequirementLinks` provider).
 
 - 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
   the contextual-chat route citations after reviewed source movement; the panels-route ownership

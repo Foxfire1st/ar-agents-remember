@@ -91,6 +91,7 @@
     "dashboard/src/panels/detail-panel/taskBody.test.tsx",
     "dashboard/src/panels/detail-panel/taskDocPanels.tsx",
     "dashboard/src/panels/detail-panel/taskReader.tsx",
+    "dashboard/src/panels/detail-panel/taskRequirements.test.tsx",
     "dashboard/src/panels/detail-panel/test-utils.tsx",
     "dashboard/src/panels/detail-panel/viewedLeaf.test.tsx",
     "dashboard/src/panels/eventSummary.ts",
@@ -108,8 +109,8 @@
     "dashboard/src/panels/useCollapsedTaskGroups.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 243,
-    "fileSidecars": 65,
+    "sourceFilesInScope": 244,
+    "fileSidecars": 66,
     "childRoutes": 6
   },
   "routingTerms": [
@@ -171,6 +172,7 @@
     "taskgroupdisclosure",
     "tasknotes",
     "taskreader",
+    "taskrequirements",
     "terminal",
     "terminalsession",
     "test",

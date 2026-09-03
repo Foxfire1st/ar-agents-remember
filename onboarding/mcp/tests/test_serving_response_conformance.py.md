@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_serving_response_conformance.py`   |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 The enforcement for the declared HTTP response contract (`serving/response_contract.py`) across
-**all 61 HTTP routes** the serving app registers. It is the sibling of
+**all 63 HTTP routes** the serving app registers. It is the sibling of
 `test_served_state_conformance.py`, widened from one route to the whole surface.
 
 It exists because **declaration-only checks do not establish runtime response behavior**. The route
@@ -53,8 +53,8 @@ run partially, so a coverage number is never computed from a partial run.
 `test_the_conformance_table_accounts_for_every_declared_pair` pins three numbers,
 "so neither side can move without a decision":
 
-- **286** declared `(method, path, status)` triples
-- **133** driven against a real body
+- **292** declared `(method, path, status)` triples
+- **139** driven against a real body
 - **153** declared-and-undriven
 
 The 153 are not a suppression list. `UNDRIVEN_DECLARATIONS` is **39 route rows**,
@@ -68,14 +68,14 @@ history store; the projection surface's 503 "not primed yet", a startup race the
 deliberately do not have; and the harness-control 503s, which need a bridge that accepts a
 connection and then fails.
 
-**Record the shortfall as a number, not as an implication of completeness.** 153 of 286 declared
+**Record the shortfall as a number, not as an implication of completeness.** 153 of 292 declared
 legs are not driven. What changed with this suite is that the remainder is *counted*: before it,
 the driving tests kept a `self.checked` set that no assertion ever read, **88 of 286** pairs were
 driven, and **seven declared models could be made mathematically unsatisfiable** — a required `str`
 retyped to `int` — without one test going red.
 
 The claim that does hold without exception is the weaker one:
-`test_every_route_has_at_least_one_driven_status` asserts **every one of the 61
+`test_every_route_has_at_least_one_driven_status` asserts **every one of the 63
 routes is driven on at least one status**, which is what makes the ledger a list of unexercised
 *legs* rather than of unexercised routes.
 
@@ -95,7 +95,7 @@ entirely.
   `response_model` attribute at all, and the test asserts that absence, so the exemption cannot
   quietly widen to swallow a future undeclared HTTP route. The one socket is
   `/api/terminal/{session}`.
-- `test_the_declared_surface_is_the_whole_surface`: **61 HTTP + 1 websocket**, pinned.
+- `test_the_declared_surface_is_the_whole_surface`: **63 HTTP + 1 websocket**, pinned.
 - `test_no_registration_form_escapes_the_walker`: a kind the walker does not model is
   refused. FastAPI's own doc routes are excluded by the URLs the app reports for them, never by a
   hard-coded path list.
@@ -116,8 +116,8 @@ model"; its first clause is a claim about the walker, so each registration form 
 **served**, and then found at the path it actually answered on:
 
 - `include_router` — FastAPI keeps the included router behind one opaque `_IncludedRouter`; the 25
-  conversation routes live inside one, so a test reading `app.routes` alone would have seen 36 of
-  the 61. The inner `route.path` does **not** carry the prefix, so the walker applies
+  conversation routes live inside one, so a test reading `app.routes` alone would have seen 38 of
+  the 63. The inner `route.path` does **not** carry the prefix, so the walker applies
   `include_context.prefix` itself.
 - `app.mount` — a starlette `Mount` whose `.routes` is the mounted app's own table.
 - `app.router.add_route` — a plain starlette `Route`: serves HTTP 200 JSON, is neither an
@@ -126,7 +126,7 @@ model"; its first clause is a claim about the walker, so each registration form 
 
 #### `ValidatedRouteHazardTests`
 
-`GET /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`, so unlike the other 59
+`GET /api/terminal/sessions` and `GET /api/harnesses` return a bare `dict`, so unlike the other 61
 FastAPI validates them for real — and a drifted payload is answered as **HTTP 500**, not passed
 through. On `/api/terminal/sessions` that is a 68-key body assembled by hand from a
 58-optional-field dataclass that is actively grown. `_emitted_keys` therefore **AST
@@ -180,12 +180,12 @@ seeded catalog row before `GET /api/terminal/sessions` is conformance-tested.
 ### Invariants And Boundaries
 
 - The suite must keep **driving** routes. An assertion that only reads declarations enforces
-  nothing on 59 of the 61 handlers.
+  nothing on 59 of the 63 handlers.
 - `validate_wire`'s `by_alias=True, by_name=False` pairing is load-bearing and must not be relaxed
   to a plain `validate_python`; `field_name_form` exists to keep that provable.
 - `UNDRIVEN_DECLARATIONS` is asserted **exactly**, never as a subset. It is a ledger, not a
   suppression list.
-- The three headline numbers (286 / 133 / 153) are pinned deliberately. Moving any of them is a
+- The three headline numbers (292 / 139 / 153) are pinned deliberately. Moving any of them is a
   decision, and the ledger row must move with it.
 - Every route must stay driven on at least one status; that is the claim that holds without
   exception.
@@ -240,6 +240,17 @@ type is recorded separately below as an in-repo boundary.
 | --- | --- | --- |
 | The in-repo workspace projection wire type. | `WorkspaceProjection` | dashboard/src/types/projection.ts:743-756 |
 
+
+## 260831-CCR-L23 Requirement-Route Surface
+
+L23 grew the serving surface from 61 to 63 HTTP routes (both declared by
+`serving/requirements.py` with the shared scoped-read refusal table). The
+conformance fixture gained `_seed_requirements`, and the driving class now seeds
+a requirements root alongside notes/changeset/task-doc; the declared-surface coverage
+ledger advanced from 286/133 to 292/139 declared/driven pairs (153 undriven legs
+unchanged), and the per-route conformance driver covers the requirement endpoints'
+success/refusal shapes through `test_serving_response_conformance_cases_2.py`.
+
 ## L23 Contract-Backed Conformance Fixture
 
 The response-conformance changeset now constructs a real series contract and a
@@ -260,6 +271,8 @@ being mistaken for response-contract failure.
 | The shared client waits only through the bounded 503 readiness window and then requires 200. | `_await_projector_ready` | mcp/tests/test_serving_response_conformance.py:829-838 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the 63-route surface, the requirement fixtures (`_seed_requirements`) and the 292/139 declared/driven ledger advance for the new requirement endpoints.
 
 - 2026-08-31T12:00+02:00 — A005 refreshed the terminal-catalog hazard oracle to the reviewed
   68-key wire and 58 optional model fields. Verification remains closeout-owned.

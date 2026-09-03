@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/grammar/`                         |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T10:05+02:00                           |
-| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`       |
-| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -58,6 +58,13 @@ Material).
   Panda descendant-selector styling, GFM tables wrapped in a horizontal-scroll box, and an `inline`
   variant (unwraps the paragraph) for list items / decision cells. `React.memo` keeps the projection
   tick from re-parsing stable section strings (the source of the scroll-jank it fixed). No raw HTML.
+  Since 260831-CCR-L23 both render modes mount a custom anchor component that renders registered
+  `requirements/...` links as opening buttons and refuses unregistered requirement addresses (the
+  listing comes from the `TaskRequirementLinks` provider context, never a local fetch).
+- `TaskRequirementLinks.tsx` — the requirement-link provider/context (260831-CCR-L23): fetches the
+  registered task-local requirement listing for the viewed task document and exposes `open(path)`
+  lifting a `{ kind: "requirements", repo, master, document, path }` target; consumed by `Markdown`
+  and `TaskNotes` so registered packet addresses open in the internal reader.
 - `RankBadge.tsx` — the rank insignia (260703-L14, the developer-picked V4 chevrons): tier
   `orchestration` = three gold chevrons under a filled command pip, tier `management` = two purple
   chevrons; inline SVG on fixed viewBoxes with a soft token-mixed glow, sizes `row` (16px, task rows)
@@ -119,7 +126,18 @@ Material).
 | The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
 | The two panels rendered as siblings in one always-visible rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:65-65 |
 
+
+## 260831-CCR-L23 Requirement-Address Anchors
+
+L23 gave the route its first context-carrying primitive: `TaskRequirementLinks.tsx`
+holds the registered task-local requirement listing per viewed task document and exposes the
+`open(path)` callback; `Markdown.tsx` (block and inline) intercepts `requirements/...`
+anchors so registered packets open in the internal artifact reader and unregistered addresses
+render as refused spans while external/anchor links stay untouched.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: added the `TaskRequirementLinks.tsx` bullet to the Route Model and recorded `Markdown.tsx` requirement-address anchors (registered links open, unregistered refuse, external/anchor untouched).
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and source-backed ranges; exact non-fixing check returns zero findings.

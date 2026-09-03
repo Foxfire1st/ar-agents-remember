@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -533,7 +533,17 @@ The canonical schema now represents named attention and process `Literal` vocabu
 `$defs` enums referenced by their model properties. Their values and the generated TypeScript
 surface are unchanged; the dashboard remains a consumer of one server-owned generated contract.
 
+
+## 260831-CCR-L23 Notes Takeover Widen
+
+The cockpit takeover now distinguishes the artifact kind it opens: the notes reader view marker is
+`notes-reader` for a notes target and `requirements-reader` for a task-local requirement
+packet, with the shared `TaskArtifactReaderTarget` imported from `data/taskArtifacts.ts`.
+Route-shape, takeovers, and layer retention are unchanged; detail lives in the Cockpit.tsx sidecar.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the notes-takeover kind distinction (notes vs requirements reader) in the cockpit shell route.
 
 - 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: regenerated the diagnostic serving-build
   mirror with exact Python candidate provenance. Verification remains closeout-owned.

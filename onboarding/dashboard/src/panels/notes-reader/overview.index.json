@@ -47,7 +47,7 @@
       "CodeSide",
       "dashboard/src/panels/notes-reader/",
       "route-local-overview",
-      "8071a64497ed88f8f423e853dc9440532fd573af",
+      "1993dd25bdf8331a2c1e28171dff2bf92ea090e2",
       "/overview.md",
       "notes-reader/",
       "CockpitShell",
@@ -75,15 +75,15 @@
       "listNotes",
       "readNote",
       "resolveNoteReference",
-      "seats",
-      "executionWaves",
-      "masterDoc",
-      "as unknown as TaskDocNode",
-      "seedMaster",
-      "as unknown as WorkspaceProjection",
-      "satisfies WorkspaceProjection",
-      "metrics",
-      "metricsFor"
+      "TaskArtifactReaderTarget",
+      "data/taskArtifacts.ts",
+      "kind",
+      "notes",
+      "requirements",
+      "/api/requirements/{list,read",
+      "data-artifact-kind",
+      "Markdown",
+      "DetailPanel"
     ]
   },
   "fallback": {

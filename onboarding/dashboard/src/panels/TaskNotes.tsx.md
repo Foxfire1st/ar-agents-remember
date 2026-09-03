@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/TaskNotes.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T14:00+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -45,6 +45,19 @@ plain text: the failure handler deliberately does not touch state.
 markdown/text/binary rendering) was removed. Reading a note now happens in the full Notes Reader view, whose
 content pane REUSES the File Viewer `DualPane`; the note-content rendering tests moved to that view's suite.
 
+
+## 260831-CCR-L23 Requirement-Reference Routing
+
+L23 split reference resolution by reserved root. Each reference is first checked for
+a requirement address (`requirementAddressFromReference`); a hit resolves
+against the provider's registered requirement listing and renders as a
+`requirement-ref-<n>` button that opens a `kind: "requirements"` artifact
+target through the link context, while non-requirement references keep the existing
+notes resolution (`note-ref-<n>`). Series-note rows and note references now tag
+their `onOpenNotes` payload with an explicit `kind: "notes"`. Both the
+notes and requirement listings are read-only view state; opening stays delegated to
+`onOpenNotes`.
+
 ### Conventions
 
 Panda `css` local styles mirroring `DetailPanel`'s section/heading/row idioms; testids follow the house
@@ -77,6 +90,8 @@ No meaningful cross-repo references found.
 | The component test suite. | "TaskNotes entry surface" | dashboard/src/panels/TaskNotes.test.tsx:38-76 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the requirement-reference routing in `ReferenceList` (`requirement-ref-<n>` buttons over the requirement listing; notes resolution only for non-requirement refs) and the explicit `kind: "notes"` payload tag on note opens.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 5 repository-internal references for the notes client, renderer, mounting surfaces, serving routes, and component tests; final scoped result 0 (checker-clean).

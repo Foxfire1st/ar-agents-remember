@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -339,7 +339,19 @@ Conversation roster derivation now accepts only backend-minted roster identities
 agent-tagged notices, including selected-child history state, remain conversation items and cannot
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
+
+## 260831-CCR-L23 Task-Local Requirements Client
+
+L23 added the task-local requirement-packet client to this route: `data/requirements.ts`
+(typed `listRequirements`/`readRequirement` over `/api/requirements/{list,read}` plus the
+reserved `requirements/` address/reference resolvers) and the shared
+`data/taskArtifacts.ts` discriminated reader target (`TaskArtifactReaderTarget`: notes vs
+requirements with the task-document selector). Consumers: the requirement-link provider, the
+notes-reader viewer, TaskNotes references, and detail-panel task prose.
+
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the new `requirements.ts` client + `taskArtifacts.ts` artifact-target type modules. File-level detail in the new data cards.
 
 - 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
   route citations after reviewed source movement; the data-route ownership contract is unchanged.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/grammar/Markdown.tsx`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-21T02:44+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -51,6 +51,25 @@ XSS-safe. The `React.memo` is load-bearing for performance: the projection SSE r
 ~every second, and without memo every section body would re-parse on each tick (scroll jank). A wide
 table scrolls **inside** its box; the panel layout is never widened by content.
 
+
+## 260831-CCR-L23 Requirement-Address Anchors
+
+L23 made `Markdown` requirement-aware. Both the block and inline renderers now
+mount a custom `a` component (`requirementAnchor`) that consults
+`useTaskRequirementLinks()`:
+
+- an `href` that resolves against the registered requirement listing renders as
+  a styled button (`requirement-link`, `title` names the packet path) whose
+  click calls the context `open(path)`, so the packet opens in the internal
+  artifact reader;
+- a `requirements/...` address that is NOT registered renders as a refused
+  span (`requirement-link-refused`) — no dead hyperlink;
+- every other link (external URLs, section anchors) keeps its normal anchor element.
+
+The renderer stays presentational and memoized: the listing is read from the provider
+context mounted by the task reader, never fetched here, and non-requirement links are
+untouched.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -58,6 +77,8 @@ table scrolls **inside** its box; the panel layout is never widened by content.
 | `DetailPanel` renders task prose, master sections, bullets, and decisions through this primitive. | "export const DetailPanel = memo(DetailPanelImpl);"; "export function MasterOverview({"; "export function MasterSection({"; "export function Bullets({ items }: { items: string[] }) {"; "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/panels/detail-panel/taskReader.tsx:167-167; dashboard/src/panels/detail-panel/taskReader.tsx:264-264; dashboard/src/panels/detail-panel/taskReader.tsx:614-614; dashboard/src/panels/detail-panel/taskReader.tsx:675-675; dashboard/src/panels/detail-panel/taskReader.tsx:745-745 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the requirement-address anchor handling — registered `requirements/...` links render as opening buttons via `useTaskRequirementLinks`, unregistered requirement addresses render as refused spans, and external/anchor links are untouched; applies to block and inline variants.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.

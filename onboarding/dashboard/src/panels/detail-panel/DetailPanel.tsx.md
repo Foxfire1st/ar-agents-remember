@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:46+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,6 +59,17 @@ without changing the selected lifecycle token gauge. L8 removes the obsolete tas
 ask-only attention details; follow-up conversation belongs in the adjacent leaf chat, while durable gate
 decision controls still render for real `lifecycle.gate` requests. L8 also marks rendered leaf task
 content with `data-task-leaf-key` so highlight capture can identify text selected from the displayed leaf.
+
+
+## 260831-CCR-L23 Shared Task-Artifact Reader Target
+
+The panel's `NotesReaderTarget` import is now the shared discriminated
+`TaskArtifactReaderTarget` alias from `dashboard/src/data/taskArtifacts.ts`
+(`import type { TaskArtifactReaderTarget as NotesReaderTarget }`). The
+`onOpenNotes` callback `DetailPanel` threads therefore carries the union:
+a `kind: "notes"` member for note opens and a `kind: "requirements"` member
+(with the task-document reference) for requirement-packet opens. Routing the callback
+into the reader and takeover is unchanged.
 
 ## Code Commentary
 
@@ -314,6 +325,8 @@ master leg of the drill-down).
 | The shared empty-state backdrop the no-selection state renders. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `NotesReaderTarget` import relocation to the shared discriminated `TaskArtifactReaderTarget` (kind notes/requirements) from `data/taskArtifacts.ts`; the threaded `onOpenNotes` payload is now kind-tagged.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
