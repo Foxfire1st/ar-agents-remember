@@ -53,11 +53,14 @@ No external domain source governs this repository-local compatibility resolver.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Resolution returns canonical document identity or a typed not-found/ambiguous error. | `resolve_leaf_ref`; `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-68; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
-| Contract healing uses the bounded canonical-id index. | `canonical_leaf_doc_ids`; `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/leaf_refs.py:144-154; mcp/src/agents_remember/worktrees/worktree_contract.py:478-526 |
+| The bounded canonical-id skip index `canonical_leaf_doc_ids` is built per task root for contract healing. | `canonical_leaf_doc_ids` | mcp/src/agents_remember/worktrees/leaf_refs.py:144-154 |
+| The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
 | Worktree start is the live caller of leaf-document resolution. | `resolve_start_leaf_doc_id` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:15-32 |
 | Existing enclosure contracts can still be found through proven aliases or the explicit raw legacy path. | `resolve_leaf_enclosure_contract_for_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:175-222 |
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR provenance-debt repair: split the heal-index row so `canonical_leaf_doc_ids` cites only its definition in leaf_refs.py:144-154 and `heal_contract_leaf_ids` cites only its definition in worktree_contract.py:491-566. `canonical_leaf_doc_ids` previously resolved 3 times because the row cited worktree_contract.py as well, where the name occurs twice (docstring line 30, call site line 528) in addition to its leaf_refs.py definition; each claim now maps to exactly one definition and verifies uniquely.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

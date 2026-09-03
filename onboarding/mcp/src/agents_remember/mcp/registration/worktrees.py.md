@@ -83,7 +83,9 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | The public sync declaration exposes typed memory choice and contract-addressed continue/cancel with retained-conflict help. | `worktree_sync` | mcp/src/agents_remember/mcp/registration/worktrees.py:198-224 |
 | The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-53; mcp/src/agents_remember/mcp/tools/worktree.py:74-83; mcp/src/agents_remember/mcp/tools/worktree.py:86-95; mcp/src/agents_remember/mcp/tools/worktree.py:56-71 |
-| `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:100-113; mcp/src/agents_remember/application/worktree_tools.py:117-131; mcp/src/agents_remember/application/worktree_tools.py:135-142 |
+| The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-29 |
+| The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. | `TaskBases` | mcp/src/agents_remember/application/worktree_tool_requests.py:32-47 |
+| The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. | `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:50-56 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
 | The three-way split is proved through live registration. | `test_worktree_start_splits_identity_bases_and_execution` | mcp/tests/test_mcp_registration_wiring_tests_1.py:728-771 |
 | The light-task default is proved through live registration. | `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_2.py:84-101 |
@@ -124,6 +126,8 @@ the live root journal or exact terminal archive/receipt. Conflicting reservation
 terminal proof fail closed, with no inferred enclosure-root fallback.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR provenance-debt repair: replaced the terse multi-anchor `TaskIdentity`, `TaskBases`, `StartExecution` row with three rows, one per distinct definition, pointing each anchor at its unique class definition in application/worktree_tool_requests.py (15-29, 32-47, 50-56) and naming the per-object fields. The names previously resolved 3 times each because worktree_tools.py only imports and annotates them (import lines 113-115, signature annotations 121-124 and 229-232), so occurrence matching found three sites per name; each claim now maps to exactly one definition and verifies uniquely.
 
 - 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
   public worktree registration card.

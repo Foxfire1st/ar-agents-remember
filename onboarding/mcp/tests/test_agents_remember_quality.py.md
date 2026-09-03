@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T10:33+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
+| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-This suite proves the Dagger module itself is pinned, parseable, fail-closed, and builds the intended clean quality graph before live Docker execution is considered trustworthy.
+This suite proves the Dagger module itself is pinned, parseable, fail-closed, and builds the intended clean quality graph before live Docker execution is considered trustworthy. Since the root-owned canonical Python bootstrap repair (commit eb05a8727801) it additionally proves the installer and the runtime-directory/symlink linkage are distinct, ordered Dagger exec nodes whose failure cannot be masked.
 
 ## Code Commentary
 
@@ -48,7 +48,14 @@ success values, so a partial graph cannot manufacture real-Codex evidence.
 The candidate-construction proof now requires the checksum-bound source-build step to precede
 workspace materialization, requires the canonical runtime to create the venv, and requires frozen
 uv synchronization before any attempt-specific cache input. A broad container image or version
-label cannot stand in for the runtime provenance contract.
+label cannot stand in for the runtime provenance contract. The 2026-09-03 bootstrap repair sharpened
+`test_candidate_setup_precedes_every_attempt_specific_cache_input` (now at line 484): the test
+finds the installer exec (needle `install-python-runtime.sh`) and a distinct runtime-directory
+symlink exec whose needle is the quoted cpython symlink target carrying the `AR_PYTHON_VERSION`
+variable (in the Dagger graph text), asserts the installer node is `bash -euc` with `exec bash`
+and no `ln -s`, asserts the link node contains no installer invocation, and requires the exact
+order installer < link < workspace source < uv sync < late per-attempt environment
+(`test_agents_remember_quality.py:499-545`).
 
 ### Conventions
 
@@ -66,6 +73,9 @@ The suite tests graph semantics without a daemon; live field proof remains a sep
 - Runtime build, source materialization, dependency synchronization, and attempt-specific cache
   inputs remain strictly ordered; candidate-specific state cannot contaminate the shared runtime
   or dependency layers.
+- The runtime installer exec and the version-suffixed symlink exec are two distinct, ordered nodes;
+  only a successful installer can reach the linkage node, so installer failure cannot be masked by
+  a preexisting runtime.
 - The ambient-role harness may not disappear from the Dagger graph or acquire an unparseable helper
   without failing this structural test before live container execution.
 - Tmux isolation is incomplete unless both direct fixture commands and Codex-spawned candidate MCP
@@ -81,20 +91,23 @@ None.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this test contract.
+No external Domain Documentation source is configured for this test contract. The governing task
+artifact below documents the bootstrap-repair change this commit made to the suite.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test contract is defined by the pinned repository module and its explicit source root. | `DAGGER_MANIFEST`; `DAGGER_SOURCE_ROOT`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:24-27 |
+| The root-owned repair "Proves distinct, ordered installer and link exec nodes and proves installer failure cannot be masked." | "Changed surfaces and behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/notes/reports/l09-gate-evidence/runtime-bootstrap-unblocker-handover/260903-runtime-bootstrap-unblocker-worker-handover.md |
+| The 2026-09-03T06:20:00+02:00 master decision landed this root-owned repair external to L09/L12. | Decision record | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:43-49 |
-| Focused structure proves the isolated server scope and the candidate MCP tmux namespace whitelist. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root`; `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:188-239 |
-| Focused discovery evidence preserves structured success through the exact current Codex envelope and rejects arbitrary prefixes. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:242-257 |
-| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:136-159; mcp/tests/test_agents_remember_quality.py:335-363; mcp/tests/test_agents_remember_quality.py:377-382; mcp/tests/test_agents_remember_quality.py:445-515 |
+| Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `DAGGER_MANIFEST`; `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:43; mcp/tests/test_agents_remember_quality.py:65-84 |
+| Focused structure proves the isolated server scope and the candidate MCP tmux namespace whitelist. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root`; `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:415-446; mcp/tests/test_agents_remember_quality.py:447-469 |
+| Focused discovery evidence preserves structured success through the exact current Codex envelope and rejects arbitrary prefixes. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:470-483 |
+| The bootstrap repair proves distinct, ordered installer and runtime-link exec nodes. | `test_candidate_setup_precedes_every_attempt_specific_cache_input` | mcp/tests/test_agents_remember_quality.py:484-558 |
+| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_executes_the_exact_targeted_profile_plan` | mcp/tests/test_agents_remember_quality.py:324-350; mcp/tests/test_agents_remember_quality.py:635-664; mcp/tests/test_agents_remember_quality.py:677-697; mcp/tests/test_agents_remember_quality.py:748-833 |
 
 ## Cross-Repo References
 
@@ -102,7 +115,7 @@ No sibling-repository boundary is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:67-116; mcp/tests/test_agents_remember_quality.py:119-127 |
+| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:86-264; mcp/tests/test_agents_remember_quality.py:265-323 |
 
 ## R39 Guard Wiring Proof
 
@@ -139,6 +152,8 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the distinct ordered installer/link Dagger exec-node proof in `test_candidate_setup_precedes_every_attempt_specific_cache_input`; refreshed citation anchors (pinned-module, attestation, authoritative-result, and graph-construction tests moved to lines 324/635/677/748; `load_dagger_module` to line 65; the retired `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` name replaced by `test_dagger_quality_executes_the_exact_targeted_profile_plan`). Verification metadata rebased from `f2b7c648` to the bootstrap repair owning commit.
 
 - 2026-08-31T10:33+02:00 — 260821-ARSPAWN-L5 closeout repair: added the forcing regression
   for strict decoding of Codex's current execution-result envelope after generation 6 reached C09
