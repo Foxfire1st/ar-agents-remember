@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,13 +16,13 @@
 
 ## Purpose
 
-Runs altitude-aware acceptance for integration: ordinary leaves reuse their targeted closeout certification, while a final organizational leaf or atomic series runs one exact full gate.
+Runs altitude-aware acceptance for integration: ordinary leaves reuse their targeted closeout certification, while a final organizational leaf or atomic series runs one exact full gate. Since CCR-R22@v1 (L22, commit `685f83c44055`) the full gate is profile-bound: `quality_gate_preview` and `run_integration_quality_gate` now accept a `profile_reference` (the configured `certificationProfile` forwarded from `WorktreeArgs.certification_profile`) and build a `QualityGateTarget` with repository id and profile reference; the settings-level executor field is gone (executor identity lives in the repository profile), and `requires_integrated_acceptance` was removed -- every code-committing master integration uses the profile contract. A `CertificationContractError` from profile admission surfaces as its own integration-quality failure.
 
 ## Code Commentary
 
 ### Logic
 
-`quality_gate_mode` returns `GATE_FULL` for any branch-owning master integration and refuses a leaf. `run_integration_quality_gate` short-circuits a leaf with no completion plan to `_leaf_closeout_certification`; otherwise it runs (or reuses) the exact full gate against a detached checkout of the exact commit, binds the completion fingerprint to the Dagger result, and persists a crash-safe `IntegrationQualityCertification`. `organizational_quality_failure_payload` returns the repair handoff (`worktree_operation_cancel`) for a failed final-leaf gate.
+`quality_gate_mode` returns `GATE_FULL` for any branch-owning master integration and refuses a leaf. `quality_gate_preview(contract, *, profile_reference)` and `run_integration_quality_gate(contract, *, ..., profile_reference)` build the `QualityGateTarget` (checkout, worktree group, repository id, profile reference) for the detached exact-commit checkout and forward `plan=QualityGatePlan(mode=GATE_FULL, memory_cap_bytes=settings.memory_cap_bytes)` without an executor field. `_execute_integration_gate` admits the profile through `requires_strict_code_quality` on the target and catches both `CertificationContractError` and `RuntimeError` as integration-quality failures. `run_integration_quality_gate` short-circuits a leaf with no completion plan to `_leaf_closeout_certification`; otherwise it runs (or reuses) the exact full gate against a detached checkout of the exact commit, binds the completion fingerprint to the Dagger result, and persists a crash-safe `IntegrationQualityCertification`. The attestation block still reports `executor: dagger` as the framework-facing label.
 
 ### Invariants And Boundaries
 
@@ -30,6 +30,7 @@ Runs altitude-aware acceptance for integration: ordinary leaves reuse their targ
 - Organizational certification and publication evidence is persisted for crash-safe reuse in the
   integration journal; queue projection may schedule the door candidate but does not own repair.
 - A reused certification must match the current completion fingerprint, code commit, candidate tree, and Dagger plan.
+- Every code-committing master integration resolves one valid repository profile through the forwarded `profile_reference`; missing/invalid authority or an unavailable executor prerequisite fails closed before any commit.
 
 ## Repo-Internal References
 
@@ -75,6 +76,8 @@ Certification matching now reports the exact observed-versus-expected identity m
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-bound full gate -- `profile_reference` forwarding through preview/run/integrate, `QualityGateTarget` construction, removal of the settings executor field and `requires_integrated_acceptance`, and `CertificationContractError` surfacing as integration-quality failure.
+
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

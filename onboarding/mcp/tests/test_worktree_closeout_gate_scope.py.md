@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_gate_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,11 @@
 Prove that leaf closeout's quality gate observes exactly the content it will commit, including
 newly created files and staged deletions, and that a refused gate commits nothing while retaining
 the certified staged tree for a deterministic retry.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): closeout gate-scope fixtures now carry the profile
+arguments (closeout args with `certification_profile` and profile-installed repositories) so
+the staging-scope regressions run against the profile admission path.
 
 ## Code Commentary
 
@@ -87,6 +92,8 @@ and verification roots explicitly. The exact staged-candidate invariant is uncha
 now also proves that quality scope is derived from declared ownership rather than a silent default.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile args in closeout gate-scope test fixtures.
+
 
 - 2026-08-28T06:40+02:00 — Moved the quality wrapper to `mcp/test_support` and added explicit
   package-role configuration to the synthetic closeout repository.

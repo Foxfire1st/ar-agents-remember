@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-26T03:37+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -20,7 +20,7 @@ to read and write.
 
 ## Code Commentary
 
-`WorktreeArgs` now carries an optional `quality_certification` field for the organizational full-gate proof.
+`WorktreeArgs` now carries an optional `quality_certification` field for the organizational full-gate proof, and (CCR-R22@v1, L22, commit `685f83c44055`) the optional `certification_profile: Path | None` field: the configured repository-relative certification profile reference forwarded by the application entry points and lifecycle worker into closeout/integration, which the quality gate resolves and admits before any code commit.
 
 L23 adds worker-injected operation fingerprint, candidate-tree, and progress callback fields to `WorktreeArgs`; CLI namespaces cannot populate these plane-owned controls.
 
@@ -101,6 +101,8 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 | The current module exposes `WorktreeArgs`, `report_operation_progress` at this ownership boundary. | `WorktreeArgs`; `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:31-105; mcp/src/agents_remember/worktrees/modules/args.py:108-111 |
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional certification_profile field on WorktreeArgs carrying the repository-owned profile reference into closeout/integration.
+
 
 - 2026-08-26T03:37+02:00 — Narrowed sync inputs to shared `MemorySyncChoice` and
   `SyncResolutionAction` aliases and documented contract-addressed continue/cancel. Verification

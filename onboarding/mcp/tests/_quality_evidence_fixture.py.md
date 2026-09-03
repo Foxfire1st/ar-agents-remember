@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_quality_evidence_fixture.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,6 +19,12 @@
 Provides one canonical fixture for tests that need a successfully published immutable quality
 generation. It replaces repeated mocks that returned a green dictionary without publishing the
 evidence the lifecycle consumer actually verifies.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): `publish_passing_quality_gate` now admits the
+profile execution (`load_repository_profile` + `admit_repository_profile_execution`) and
+materializes the admitted profile's required passing publications
+(`_write_passing_artifacts`) instead of writing the fixed `clean-quality-results.json`.
 
 ## Code Commentary
 
@@ -64,5 +70,7 @@ The source file is the direct evidence for the canonical test publication seam.
 No meaningful cross-repository boundary is owned by this test helper.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-admission-based passing-evidence fixture.
+
 
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: created for the canonical published-quality fixture and verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this provenance does not certify the red Dagger gate.

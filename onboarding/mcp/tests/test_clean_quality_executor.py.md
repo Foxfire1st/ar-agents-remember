@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,12 @@
 ## Purpose
 
 This suite forces the host-side Dagger executor through exact candidate capture, export, result parsing, report publication, Git guards, progress streaming, and native executable resolution.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) rewires the executor tests to the repository-profile
+model: `quality_request` now carries repository id + profile reference + mode, fixtures publish
+through `_publish_reports` with a profile execution, and the old fixed wrapper/constants-driven
+assertions were replaced by profile-admission and manifest-bound expectations.
 
 ## Code Commentary
 
@@ -101,6 +107,8 @@ successful pointer rotation makes the causal JSON discoverable through
 therefore part of one immutable published generation rather than an adjacent best-effort file.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-admission rewiring of the clean quality executor tests.
+
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the recursive
   nested-report publication, path-safety, digest verification, and lookup regression contract.

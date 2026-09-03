@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,16 @@ conflicted-index refusal, and retry-recomputation classes.
 L23 adds two focused structural-rail branches: malformed/non-list memory-quality details still
 produce a bounded count-only refusal, and source lineage is checked a second time after quality but
 before approval claim. A source move in that window raises and the approval remains unclaimed.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) cuts this suite over from the fixed wrapper model to
+repository profiles: `_checkout_with_wrapper` became `_checkout_with_profile`
+(installing the Agents Remember or fixture profile), targets carry repository id and
+`AGENTS_REMEMBER_PROFILE_REFERENCE`, closeout-args carry `certification_profile`, and
+closeout mechanics publish profile-bound passing evidence via
+`publish_passing_closeout_quality` (from `test_worktree_support`) or
+`publish_passing_quality_gate` (from `_quality_evidence_fixture`). The no-profile code-commit
+route and the wrapper-unavailable state are gone.
 
 ## Code Commentary
 
@@ -333,7 +343,6 @@ The current forcing seams include `test_agents_remember_closeout_refuses_a_missi
 caller has not already supplied one. This keeps candidate-tree evidence tests from accidentally
 nesting/reinitializing a fixture repository while preserving existing closeout gate semantics.
 
-
 ## PDLS Reconciliation
 
 Closeout quality-gate forcing remains Dagger-only and now validates the repaired evidence identity and targeted/full authority split.
@@ -346,6 +355,8 @@ The interrupted-finalization scenario now asserts the recovered completed closeo
 same exact contract, code root, and memory root without recommitting either repository.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the wrapper-to-profile cutover of the closeout quality gate tests and the profile-bound evidence helpers.
+
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: added exact-pair assertions to durable closeout recovery.
   Dagger verification remains closeout-owned.
@@ -355,7 +366,6 @@ same exact contract, code root, and memory root without recommitting either repo
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.
-
 
 - 2026-08-24T21:23+02:00 — Made the shared checkout fixture safe for candidate-bound evidence tests.
 
@@ -395,7 +405,6 @@ same exact contract, code root, and memory root without recommitting either repo
 - 2026-08-13T12:53+02:00 — L23 Dagger-rail coverage: added the malformed/no-detail bounded
   memory-quality message branch and the post-quality lineage refusal-before-approval proof.
   Verification provenance remains closeout-owned.
-
 
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: added the post-quality source-lineage refusal proof before approval claim and supplied a task-derived parent series to the internal gate-scope fixture. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

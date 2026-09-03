@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-08-29T11:41+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -24,6 +24,16 @@ series contract, and returns that master identity. Committed-range and closed le
 from those master worktrees and record `parent_contract_path`; open closeout fixtures likewise
 attach a parent contract. Integration and closeout tests therefore exercise the actual
 super→master→leaf chain rather than a leaf that only names `main`.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): `test_worktree_support` becomes the profile-aware
+fixture hub. It defines `TEST_CERTIFICATION_PROFILE_REFERENCE` and
+`install_fixture_profile` (writes a fixture-owned profile from the checked-in
+`mcp/certification-profile-v1.json` with repository identity and recomputed digest), installs
+the profile into every external-contract fixture repository, adds
+`publish_passing_closeout_quality` (profile-admitted passing evidence), extends
+`closeout_args` with `certification_profile`, and adds `publish_code_quality` control to
+`run_authorized_closeout_mechanics` so closeout mechanics tests exercise the profile gate.
 
 ## Code Commentary
 
@@ -249,6 +259,8 @@ their intended seam merely because the older fixture created only a leaf documen
 gain a test-only bypass or a Markdown authority.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile fixture installation, TEST_CERTIFICATION_PROFILE_REFERENCE, publish_passing_closeout_quality, and the publish_code_quality mechanics flag.
+
 
 - 2026-08-29T11:41+02:00 — Extended the shared external-closeout success fixture with complete
   task topology and production-owned structured coherence publication. Verification remains
@@ -265,7 +277,6 @@ gain a test-only bypass or a Markdown authority.
 - 2026-08-20T05:12+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit
   (f2e2f4b9) touched this source; card re-verified against the current file, verification stamp
   advanced to f2e2f4b9. Body unchanged — the documented contract still holds.
-
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:40+02:00 — L23 final candidate review: support integration cases preserve

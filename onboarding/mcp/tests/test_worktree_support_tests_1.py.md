@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_worktree_support_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -17,6 +17,11 @@
 ## Purpose
 
 Part of the 260731-EFA-L7 in-place split family for `test_worktree_support_tests_1.py`'s source module; covers the behaviours named by its test classes.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the closeout-mechanics fixture now builds args via
+`closeout_args(contract, dry_run=True)` (which carries `certification_profile`) instead of a
+bare Namespace.
 
 ## Code Commentary
 
@@ -66,6 +71,8 @@ The real dry-run closeout preview now asserts the reported pair names the exact 
 worktree, and memory worktree while preserving the non-mutating commit plan.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the closeout_args switch in worktree support tests 1.
+
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: added exact-pair reporting assertions to closeout preview.
   Dagger verification remains closeout-owned.

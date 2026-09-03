@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -169,21 +169,13 @@ states:
 - **Radon is printed as a report and cannot fail either tier — it exits 0 whatever it
   finds.** The README says so explicitly rather than listing it beside the enforcing steps.
 
-- **Agents Remember acceptance runs through the pinned Dagger graph only.** Leaf and focused
-  work use its targeted mode; the master integration gate runs its full mode exactly once. Both
-  require the leaf/master's explicit Git diff base, and `dagger call quality --help` is the
-  executable public argument contract.
-- Host `pytest` is refused and Candidate A's direct wrapper no longer exists. Deterministic
-  non-test host checks are feedback only, and a failed Dagger run never falls back to the host.
-- Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
-  not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest, and
-  changed-lines CLI execution remain Dagger-owned; there is no direct Python wrapper.
-- **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
-  pushes do not duplicate it and GitHub does not run acceptance.
-- **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
-  lands that exact commit without a rerun; master integration owns the one full run.
-- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
-  there rather than duplicating them.
+- **Agents Remember acceptance runs through the pinned Dagger graph only**, declared in the
+  repository-owned `mcp/certification-profile-v1.json` and selected explicitly by
+  `repositories.agents-remember.certificationProfile` in the MCP authority settings (CCR-R22@v1,
+  L22, commit `685f83c44055`). Leaf and focused work use its targeted mode; the master
+  integration gate runs its full mode exactly once. Both require the leaf/master's explicit Git
+  diff base; the framework does not discover a wrapper or carry an Agents Remember command/report
+  inventory.
 
 Note that `sync-dashboard.py` is **not** among the generated-copy checks — it is a release
 build step with no `--check` mode, because the bundle it places is no longer in version control.
@@ -230,6 +222,19 @@ Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; di
 Vitest remains the only supported host test diagnostic.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the repository-owned profile declaration -- mcp/certification-profile-v1.json selected by repositories.agents-remember.certificationProfile -- replacing the qualityGate.executor settings wording in the acceptance bullet.
+- Host `pytest` is refused and Candidate A's direct wrapper no longer exists. Deterministic
+  non-test host checks are feedback only, and a failed Dagger run never falls back to the host.
+- Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
+  not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest, and
+  changed-lines CLI execution remain Dagger-owned; there is no direct Python wrapper.
+- **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
+  pushes do not duplicate it and GitHub does not run acceptance.
+- **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
+  lands that exact commit without a rerun; master integration owns the one full run.
+- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
+  there rather than duplicating them.
+
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted the one-call ambient launcher and
   plane-hosted `dispatch_agent` vocabulary in the public quickstart narrative, distinguishing

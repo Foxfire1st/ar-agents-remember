@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -21,7 +21,7 @@ escalation, spawn, and the quality gate (260731-EFA-L17).
 
 ## Code Commentary
 
-L23 parses `qualityGate.executor` as exactly `local` or `dagger` and refuses any other value instead of selecting a fallback.
+L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
 - `_parse_loops`
 - `_parse_loop_defaults`
@@ -39,15 +39,17 @@ L23 parses `qualityGate.executor` as exactly `local` or `dagger` and refuses any
 - `_parse_respawn_after_rung`
 - `_parse_spawn`
 - `_parse_quality_gate` (260731-EFA-L17/L24: `orchestration.qualityGate`,
-  absent/empty means host-managed, fail-loud unknown keys, positive-int
-  `memoryCapBytes` when present)
+  absent/empty means adapter-runtime-managed, fail-loud unknown keys, positive-int
+  `memoryCapBytes` when present; CCR-R22 removed the `executor` key)
 
 ## 260731-EFA-L17/L24 Quality-Gate Parser
 
 `_parse_quality_gate` parses `orchestration.qualityGate` into
 `QualityGateSettings`: an absent family/key keeps `memory_cap_bytes=None`, unknown keys
 fail loud via `_refuse_unknown(block, KNOWN_QUALITY_GATE_FIELDS, ...)`, and
-`memoryCapBytes` must be a positive integer (`_require_positive_int`). A `null` at the
+`memoryCapBytes` must be a positive integer (`_require_positive_int`). Since CCR-R22 the
+former `executor` key is no longer a known field: any value under it is rejected as an
+unknown key (the old permissive `dagger`-only acceptance branch was deleted). A `null` at the
 family key is refused by `_refuse_null_families` before this parser runs.
 
 ## Invariants And Boundaries
@@ -72,6 +74,8 @@ execution, not a lower-authority diagnostic option. The optional cap is a contai
 policy.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-key removal from the quality-gate section parser -- the old dagger-only acceptance branch was deleted and `executor` now fails loud as an unknown key; memoryCapBytes-only parsing remains.
+
 
 - 2026-08-14T11:25+02:00 — R39 curator: recorded the host-test refusal and container-owned cap
   semantics. Verification remains closeout-owned.

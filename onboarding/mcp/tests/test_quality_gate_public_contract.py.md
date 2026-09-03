@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_gate_public_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,12 @@
 
 Focused forcing suite for immutable quality-generation recovery and the strict public quality-result
 wire contract.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the public quality-gate contract tests now cover the
+profile-bound public payload -- executor adapter id, profile digest, profile plan digest,
+selection id, and result artifact fields on the strict gate result, plus the
+`profile-adapter-owned` process policy.
 
 ## Code Commentary
 
@@ -62,6 +68,8 @@ snapshot survives concurrent publication rotation. Evidence is minted from that 
 not from a second mutable read or a diagnostic payload.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-identity field coverage in the public gate contract tests.
+
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the clean-executor and quality-gate package relocations; public recovery and response-model contracts are unchanged.
 - 2026-08-24T21:23+02:00 — Added candidate-tree and one-snapshot certifying evidence proof.

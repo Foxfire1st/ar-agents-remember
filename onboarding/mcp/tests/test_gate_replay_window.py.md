@@ -5,9 +5,9 @@
 | repository             | agents-remember                          |
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -29,6 +29,12 @@ a second time with no error and no log line.
 
 `test_controlplane_store_durability.py` proves the loss across six record types. This file proves
 what that loss costs on the one log that carries authority.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the claim-before-irreversible-work test now verifies
+the accepted code commit as the first undoable action and spies on the renamed
+`commit_verified_staged` owner with `publish_code_quality=True` for profile-bound closeout
+mechanics.
 
 ## Code Commentary
 
@@ -171,6 +177,8 @@ only through the evidence lane that owns cross-process integration behavior rath
 deterministic acceptance.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the commit_verified_staged spy and publish_code_quality flag in gate replay window tests.
+
 
 - 2026-08-26T10:44:52+02:00 — Recorded `evidence_integration` ownership for the two real-process gate replay and approval-claim races.
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.

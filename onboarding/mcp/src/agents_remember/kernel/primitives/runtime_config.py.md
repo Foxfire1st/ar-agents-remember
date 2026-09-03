@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -48,7 +48,7 @@ sorted allowed repo/provider ids. The former
 `repositories.<id>.memorySettingsIncludes` parse (dead plumbing — parsed, never
 consumed) was REMOVED with 260703-L13: a leftover key in an existing settings
 file is tolerated-ignored like any other unknown repository field, and
-`RepositoryScope` no longer carries the field.
+`RepositoryScope` no longer carries the field. CCR-R22@v1 (L22, commit `685f83c44055`) adds the optional `certification_profile: Path | None` repository field: `_parse_repository_entry` reads `certificationProfile` through `_optional_repository_profile_reference`, which requires exactly one non-empty canonical, traversal-free, repository-relative POSIX path (absolute, drive, backslash, dot-segment, or trailing-slash references raise `ConfigError`); an absent key keeps `None`. `RepositoryScope.certification_profile` then reaches the lifecycle worker and worktree tools, which forward it as the profile authority for code-certifying operations.
 
 `parse_timeout_caps` validates the optional `timeoutCaps` object into the
 `timeout_caps` map: every cap must be a non-negative integer, cap names outside
@@ -210,12 +210,13 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional RepositoryScope.certification_profile field and its canonical-relative-path parser (_optional_repository_profile_reference) wiring the repository-owned certification profile into runtime config.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16: `McpRuntimeConfig.direct_execution_enabled` —
   fail-closed policy gate for sanctioned direct execution (`parse_direct_execution_enabled`,
   bool-only; default `False`; `_checkout_runtime_config` pins it off). Verified at code commit
   a9d50e08.
-
 
 - 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

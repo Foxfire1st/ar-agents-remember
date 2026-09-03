@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/organizational_completion_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,11 @@
 ## Purpose
 
 Provide current door/journal fixtures for organizational-completion tests.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): the full-gate fixture memory policy literal changed to
+`processPolicy: "profile-adapter-owned"` and fixture `WorktreeArgs` now carry
+`certification_profile=Path("mcp/certification-profile-v1.json")`.
 
 ## Code Commentary
 
@@ -54,6 +59,8 @@ No configured domain-documentation source applies to this repository-internal ro
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the processPolicy literal and certification_profile args in organizational completion fixtures.
+
 
 - 2026-08-26T10:44:52+02:00 — Reconciled organizational-completion fixtures with candidate-aware quality callbacks that publish exact passing evidence through the canonical test helper.
 

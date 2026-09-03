@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T02:00+02:00                                            |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca`                                        |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -20,7 +20,7 @@ Typed agentic settings models, constants, and validation primitives. The setting
 
 ## Code Commentary
 
-L23 adds the closed `QualityExecutor` choice and defaults `orchestration.qualityGate.executor` to `local`; `dagger` is the only clean-environment alternative.
+L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qualityGate.executor` to `local`. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor field entirely: `QualityExecutor` is deleted, `KNOWN_QUALITY_GATE_FIELDS` now contains only `memoryCapBytes`, and `QualityGateSettings` carries only `memory_cap_bytes` -- executor identity belongs to the repository certification profile, not to agentic settings.
 
 - `AgenticSettingsError`
 - `LoopComplexity`
@@ -31,7 +31,7 @@ L23 adds the closed `QualityExecutor` choice and defaults `orchestration.quality
 - `ExpectationSettings`
 - `SupervisorSettings`
 - `EscalationSettings`
-- `QualityGateSettings` (260731-EFA-L17/L24: optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap)
+- `QualityGateSettings` (260731-EFA-L17/L24: optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap; CCR-R22 removed the `executor` field -- the profile owns the adapter)
 - `AgenticSettings`
 - `agentic_settings_path`
 - `default_agentic_settings_seed`
@@ -49,10 +49,10 @@ L23 adds the closed `QualityExecutor` choice and defaults `orchestration.quality
 ## 260731-EFA-L17/L24 Quality-Gate Settings
 
 The module owns the `orchestration.qualityGate` family:
-`KNOWN_QUALITY_GATE_FIELDS` contains `memoryCapBytes` and the Dagger-only `executor`; the frozen
-`QualityGateSettings` model uses `None` for the container-runtime-managed default; and the
-generated settings seed deliberately omits the family. An explicit positive
-integer remains available for a constrained Dagger lifecycle run. Unknown keys fail loud through
+`KNOWN_QUALITY_GATE_FIELDS` contains only `memoryCapBytes` (the `executor` key was removed by
+CCR-R22); the frozen `QualityGateSettings` model uses `None` for the adapter-runtime-managed
+default; and the generated settings seed deliberately omits the family. An explicit positive
+integer remains available for a constrained full-gate run. Unknown keys fail loud through
 the shared `_refuse_unknown` machinery exactly like every other orchestration
 family.
 
@@ -68,8 +68,9 @@ family.
 
 ## L23 Final Candidate Disposition
 
-Quality settings accept the one Dagger executor contract and do not preserve `local` as a selectable
-acceptance mode. Optional resource policy configures the graph; it does not select a second runner.
+Quality settings no longer carry an executor field at all (CCR-R22): the one adopted acceptance
+adapter comes from the repository's certification profile. Optional resource policy configures the
+graph; agentic settings cannot select or constrain a second runner.
 
 ## R39 Dagger Resource Ownership
 
@@ -78,6 +79,8 @@ container runtime owns RAM and swap; an explicit cap reaches the graph inner wra
 systemd or address-space fallback is part of lifecycle acceptance.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): removed the executor-era claims -- QualityExecutor deleted, KNOWN_QUALITY_GATE_FIELDS narrowed to memoryCapBytes, QualityGateSettings carries only the memory cap; executor identity moved into the repository certification profile.
+
 
 - 2026-08-14T11:25+02:00 — R39 curator: reconciled resource prose with the container-only
   executor. Verification remains closeout-owned.

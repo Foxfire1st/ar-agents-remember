@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00 |
-| lastVerifiedCommitHash | `aeca9a2839c965218a61a3040e15cb84367ebeca` |
-| lastVerifiedCommitDate | 2026-08-14T13:35:55+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -24,6 +24,13 @@ overrides (`RolesPerLevelTests`), the harness-definition family
 (`HarnessesFamilyTests`), the agent-notifier sweep's own knob family (since 260707-HFX2-L2,
 now the supervisor cases inside `TypedModelTests`), and — since 260707-HFX2-L4 — the escalation ladder's own knob family
 (`EscalationSettingsTests`).
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) cuts the quality-gate settings tests over: the
+`quality_gate.executor` field assertions were replaced by `assertFalse(hasattr(settings.quality_gate,
+"executor"))`, and the old `dagger`-only executor acceptance tests became
+`test_executor_authority_is_not_accepted_in_agentic_settings` -- an `executor` key now fails
+loud as an unknown key.
 
 ## Code Commentary
 
@@ -204,6 +211,8 @@ non-Dagger executors to refuse as forbidden host test execution. No host-managed
 remains configurable.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-field removal assertions in agentic settings tests.
+
 
 - 2026-08-14T11:27+02:00 — R39 curator: aligned settings assertions with container-only
   acceptance. Verification remains closeout-owned.

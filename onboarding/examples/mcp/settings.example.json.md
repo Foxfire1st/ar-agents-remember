@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `examples/mcp/settings.example.json`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-09T14:05+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -29,16 +29,10 @@ fallback) and no `memorySettingsIncludes` key (dead plumbing removed).
 
 The file requires absolute `coordinationRoot` and `workspaceRoot` values,
 optionally sets `transcriptRoot`, names allowed repositories, and names allowed
-providers. Repository entries may carry `memorySettingsIncludes` and
-`contractPath`, both bounded by MCP config validation. The transcript root
-example points at the central MCP log directory under `logs/mcp/`. Repository
-entries do not carry source
-or memory root path fields: the MCP config derives source roots from
-`workspaceRoot/<repo-id>` and external memory roots from
-`coordinationRoot/memory-repos/ar-<repo-id>`. Provider entries are empty objects
-by design: `agents_remember.mcp.config` rejects provider-local path fields, and
-`agents_remember.providers.settings` derives provider lifecycle settings from
-the single configured coordination root.
+providers. Repository entries may carry `certificationProfile` (CCR-R22@v1, L22, commit `685f83c44055`):
+the example sets `repositories.agents-remember.certificationProfile` to
+`mcp/certification-profile-v1.json`, the repository-relative authority the quality gate admits
+before any code commit. Repository entries may (historically) carry `memorySettingsIncludes` and
 
 The example also carries a `timeoutCaps` block with `toolSeconds` and
 `providerSetupSeconds`. `providerSetupSeconds` caps only provider **image build
@@ -97,6 +91,17 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 | The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | "class ProviderDegradationSettings:" | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:37-37 |
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certificationProfile example entry binding the repository-owned profile for agents-remember.
+`contractPath`, both bounded by MCP config validation. The transcript root
+example points at the central MCP log directory under `logs/mcp/`. Repository
+entries do not carry source
+or memory root path fields: the MCP config derives source roots from
+`workspaceRoot/<repo-id>` and external memory roots from
+`coordinationRoot/memory-repos/ar-<repo-id>`. Provider entries are empty objects
+by design: `agents_remember.mcp.config` rejects provider-local path fields, and
+`agents_remember.providers.settings` derives provider lifecycle settings from
+the single configured coordination root.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

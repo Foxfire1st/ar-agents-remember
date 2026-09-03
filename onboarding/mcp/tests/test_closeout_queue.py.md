@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T11:41+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -20,6 +20,12 @@ Exercises the closeout queue's model, authority, ordering, evidence, transition,
 capacity, projection-cost, and sprint-publication contracts against real task and Git fixtures.
 The small model and split-evidence ownership checks live in `test_closeout_queue_models.py` so this
 behavior suite remains below the repository hard size limit.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`) updates `QueueFixture` to install a fixture
+certification profile into the code repository (`install_fixture_profile`) and sets
+`repositories.<repo>.certificationProfile` in the settings payload, so queue-driven closeout
+fixtures exercise the same profile authority as production.
 
 ## Code Commentary
 
@@ -107,6 +113,8 @@ sees the exact current topology on both sides of the mutation instead of a fixtu
 authority.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the fixture profile installation and certificationProfile settings in queue fixtures.
+
 
 - 2026-08-29T11:41+02:00 — Moved structured coherence setup into the shared test-support owner and
   made door fixtures explicitly republish around their two task-topology mutations. This preserves
@@ -132,9 +140,7 @@ authority.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 
-
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the removed `require_queue_candidate_current` import and
   its direct drift-test call are gone; the atomic-release mock re-points to

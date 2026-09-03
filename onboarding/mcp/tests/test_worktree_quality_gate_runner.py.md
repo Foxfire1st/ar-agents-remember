@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,6 +18,12 @@
 
 Owns the Dagger-only quality command, preview, host-refusal, container memory-cap,
 report-replacement, and failure-transport regressions split from the closeout mutation suite.
+
+
+CCR-R22@v1 (L22, commit `685f83c44055`): gate-runner tests cut over to profile-required
+targets (repository id + profile reference), add `_failed_quality_outcome` and profile
+admission/refusal coverage, and assert the profile-bound success payload (digest/plan
+digest/selection/executor adapter/result artifact).
 
 ## Code Commentary
 
@@ -94,6 +100,8 @@ the checkout's current `git write-tree`. Gate tests therefore exercise the same 
 consumer boundary as production instead of treating any zero-exit subprocess as acceptance.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-target cutover of the quality gate runner tests.
+
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the quality gate and clean executor package relocations; runner outcome and evidence assertions are unchanged.
 - 2026-08-24T21:23+02:00 — Replaced zero-exit-only fakes with candidate-bound certifying outcomes.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00 |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -17,34 +17,53 @@
 ## Purpose
 
 Defines the sole strict reader and immutable value model for the atomic current-quality-generation
-manifest consumed by quality recovery.
+manifest consumed by quality recovery. Since CCR-R22@v1 (L22, commit `685f83c44055`) the manifest
+schema advanced to `3.0` and now carries the full repository-profile identity: profile digest,
+profile plan digest, profile selection id, executor adapter id, and the declared result decoder
+model. The generation digest binds all of those fields with the candidate tree, files, and
+dependencies, so a published generation cannot be replayed under a different profile identity.
 
 ## Code Commentary
 
 ### Logic
 
-`load_published_quality_manifest` reads `quality-report-set.json` exactly once and validates it as
-schema `1.0`. The root must be an object with only `schemaVersion`, `generation`, `files`, and
-optional `attestation`. Generation and file digests are lowercase SHA-256 strings; file records
-contain exactly `sha256` and a non-negative integer `size`; attestations contain string pairs.
-Parsed file and attestation mappings are immutable. `require_file` selects a declared artifact
-without constructing an unverified path.
+`load_published_quality_manifest` reads `quality-report-set.json` exactly once and validates it
+as schema `3.0`. The root must be an object with only `schemaVersion`, `generation`,
+`candidateTree`, `profileDigest`, `profilePlanDigest`, `profileSelectionId`,
+`executorAdapterId`, `resultDecoder`, `files`, and optional `attestation`/`dependencies`.
+Digest fields must be lowercase 64-hex strings; selection/executor ids must be nonblank;
+`resultDecoder` is parsed through `JsonExitStatusDecoderDefinition.model_validate` and must name
+a published file. File records contain exactly `sha256` and a non-negative integer `size`;
+attestations contain string pairs. Parsed file/attestation mappings are immutable. `require_file`
+selects a declared artifact without constructing an unverified path.
+
+`quality_generation_digest(fields)` computes the generation id over exactly the declared field set
+(`_GENERATION_DIGEST_FIELDS`) with sorted compact JSON; any other field set is refused. The parser
+recomputes the expected generation from the parsed bound fields and refuses drift
+(`generation id does not match its bound fields`). `quality_report_dependencies` declares the
+exact candidate, execution (rail-plan over the profile identity), and report bytes consumed by
+consumers, accepting only the exact profile-identity field set. `_parse_dependencies` re-derives
+and compares the expected dependency record exactly as the evidence-dependency validator requires.
 
 Each manifest key is also a strict POSIX relative report path. Empty, absolute, backslash-bearing,
 non-normalized, or dot-segment paths are rejected before a `PublishedQualityFile` is constructed.
-Nested evidence is therefore addressable, but a manifest can never escape the immutable generation
-root or smuggle a platform-dependent alternate path spelling.
+Nested evidence is addressable, but a manifest can never escape the immutable generation root or
+smuggle an alternate path spelling.
 
 ### Invariants And Boundaries
 
-- There is one current schema and one reader; alternate roots, legacy shapes, unknown fields, and
-  partial records are rejected.
-- All filesystem, JSON, and structural failures collapse to the stable chained
-  `PublishedQualityManifestError` boundary.
+- There is one current schema (`3.0`) and one reader; alternate roots, legacy shapes (including
+  schema `2.0` / `1.0` without profile identity), unknown fields, and partial records are
+  rejected.
+- The generation digest binds candidate tree + profile identity + files + dependencies; a moved or
+  modified bound field makes the manifest invalid before any artifact lookup.
+- The result decoder must name a file present in the published files; recovery decodes through
+  exactly that declared decoder.
+- All filesystem, JSON, pydantic, and structural failures collapse to `ValueError` surfaces the
+  callers convert; no manifest variant is silently tolerated.
 - The parsed snapshot is immutable so one recovery cannot silently mix manifest generations.
-- The manifest declares evidence; downstream recovery still verifies declared digest and size.
-- Nested file names must be canonical safe relative POSIX paths; path traversal and alternate
-  separator spellings are invalid manifest evidence.
+- Nested file names must be canonical safe relative POSIX paths; traversal and alternate separator
+  spellings are invalid manifest evidence.
 
 ### Todos
 
@@ -52,37 +71,44 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies; this is an internal publication format.
+CCR-R22@v1 requires each gate certificate to name the exact admitted profile and its gate-specific
+plan digest, and a profile or referenced-input change to invalidate only the declared certificate
+dependency closure. The manifest v3 field set is this requirement's durable record in the quality
+publication path.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Each gate certificate names the exact admitted profile and its gate-specific plan digest. | `## Resolution And Freeze` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+| A profile or referenced-input change invalidates only the declared certificate dependency closure. | `## Invalidation Boundaries` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader reads the sole manifest pointer and returns one strict snapshot. | `load_published_quality_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:45-55 |
-| Schema version, root vocabulary, generation, files, and attestation are validated without compatibility readers. | `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:57-95 |
-| Each file record has an exact digest/size shape. | `_parse_file` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:98-107 |
-| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:119-127 |
+| The loader reads the sole manifest pointer and returns one strict v3 snapshot with profile identity. | `load_published_quality_manifest`; `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:56-64; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:66-183 |
+| Generation and dependency digests require the exact bound field sets (incomplete or ambiguous refuse). | `quality_generation_digest`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:204-216; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:268-295 |
+| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:257-259 |
+| The quality gate recovery recompiles the expected plan digest for the candidate before reuse, then decodes via the declared decoder. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository implementation reference applies.
 
-## 260824-PDLS — Strict Schema-2 Evidence Pointer
+## 260824-PDLS — Strict Schema-2 Evidence Pointer (Historical)
 
-The manifest reader is the one strict parser for the current immutable Dagger generation. It
-requires schema `2.0`, candidate tree, generation digest, exact file digests/sizes, and typed
-attestation. Schema `1.0` remains deliberately rejected by both public readers; optional crash
-recovery may report no recoverable generation, but there is no permanent compatibility reader or
-silent fallback.
+The manifest reader remains the one strict parser for the current immutable Dagger generation. The
+PDLS wave required schema `2.0` with candidate tree, generation digest, exact file digest/sizes,
+and typed attestation; schema `1.0` was deliberately rejected. CCR-R22 replaces that with schema
+`3.0` plus the mandatory profile identity, keeping the same no-compatibility-reader discipline.
 
 ## Update History
 
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the explicit
-  nested-path safety contract for immutable report manifests. Verification remains closeout-owned.
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): rewrote the card for the profile-bound schema-v3 manifest. Added the mandatory profileDigest/profilePlanDigest/profileSelectionId/executorAdapterId/resultDecoder fields, generation-digest field-set discipline, decoder-names-published-file rule, and the re-derived dependency identity; schema 1.0/2.0 without profile identity is now rejected like every legacy shape.
 
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
+- 2026-08-31T04:50+02:00 -- 260821-ARSPAWN-L5 independent-review repair: added the explicit nested-path safety contract for immutable report manifests. Verification remains closeout-owned.
 
-- 2026-08-24T21:23+02:00 — 260824-PDLS centralized strict manifest parsing and retained explicit
-  schema-1 rejection after advisory review.
+- 2026-08-25T08:16+02:00 -- 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the strict schema-1.0 published-quality manifest boundary. Verification remains blank until architect-owned closeout stamps the code commit.
+- 2026-08-24T21:23+02:00 -- 260824-PDLS centralized strict manifest parsing and retained explicit schema-1 rejection after advisory review.
+
+- 2026-08-24T14:19+02:00 -- 260821-DAGQC-L2: created for the strict schema-1.0 published-quality manifest boundary. Verification remains blank until architect-owned closeout stamps the code commit.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T05:55+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
+| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -105,6 +105,13 @@ success, gated by `config.retirement.auto_land_on_finalize`, with
 `confined_contract = require_within_coordination(...)` once (previously inlined directly into
 `WorktreeArgs(...)`) so the same confined path is reused by the auto-land call without
 re-deriving it.
+CCR-R22@v1 (L22, commit `685f83c44055`) makes the repository certification profile part of the
+typed plumbing: `worktree_integrate_tool` forwards
+`require_repo(config, configured.contract.repo_name).certification_profile` into
+`WorktreeArgs.certification_profile`, and `_worktree_closeout` plus `_worktree_namespace`
+thread the same `repo.certification_profile` value, so the closeout and integration paths carry
+the exact profile authority into `git_worktree_manager` without reading it from agentic settings
+(the settings-level quality-gate executor was removed by the same commit).
 
 `_auto_land_completed_seats(config, contract_path, *, roles, reason, edge) -> list[str]`
 resolves the contract's own qualified leaf key
@@ -175,7 +182,6 @@ The new `retry_provider_setup` flag is forwarded to the worktree layer, and the
 provider timeout is `config.timeout_caps["providerSetupSeconds"]` (default
 `DEFAULT_PROVIDER_SETUP_SECONDS`, 1800) instead of the docker-control 120 —
 the documented setup cap now actually governs the worktree flow.
-
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -254,6 +260,8 @@ domain projector, including the named field and exact repair route. The detached
 revalidates independently before mutation.
 
 ## Update History
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile plumbing into WorktreeArgs from the repository scope (require_repo) across integrate/closeout/namespace helpers -- profile authority now travels with the typed args instead of a settings executor.
+
 
 - 2026-08-30T05:55+02:00 — MCAR-L03 A005: closeout apply now reuses the canonical admission
   normalizer before exact-pair resolution, so omitted, empty, and whitespace-only enabled commit
@@ -279,15 +287,11 @@ revalidates independently before mutation.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 
-
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
@@ -362,7 +366,6 @@ revalidates independently before mutation.
 ## Docs References
 
 No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
-
 
 ## Cross-Repo References
 
