@@ -80,7 +80,7 @@ package application entry point and resolver contracts.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical quality scope is owned by the focused scope module. | `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:51-143 |
-| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:67-144 |
+| Typed quality execution and public run translation are owned by the controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:98-208 |
 | The route-index application entry point forwards resolver-owned authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
 | The route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The route-index builder receives storage authority explicitly in its typed signature. | "def build_route_indexes(" | mcp/src/agents_remember/kernel/route_index.py:184-197 |
@@ -106,6 +106,8 @@ checklist publication moved to `memory_scope.py` and `memory_quality_controller.
 caller from reimplementing the controller's failure vocabulary.
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller request-surface row (67-144 to 98-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: removed memory-quality scope/controller/registry ownership from this general application module and routed that contract through focused typed APIs. Verification metadata remains pinned until architect-owned closeout.
 

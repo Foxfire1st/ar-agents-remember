@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f10c24d72db6171c0d434b307e6806996e2f11d` |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastUpdated | 2026-09-04T01:48+02:00 |
+| lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
+| lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,6 +65,13 @@ durable evidence.
 L21 added `mcp/tests/test_gate_certificate_authority.py` to the `unit-regression` lane: the
 certificate suite exercises owned certification contracts through in-process pytest forcing, so its
 cost and evidence class are deliberate rather than inferred.
+CCR-R08 (260831-CCR-L08) registers the five final full memory-coherence certification suites
+(`test_final_full_memory_coherence_certification.py`, `test_final_gate_prefix_adapter.py`,
+`test_final_catalog_plan_attestation.py`, `test_final_catalog_readiness_projection.py`, and
+`test_final_certification_model_edges.py`) explicitly in the `integration` lane: they drive the
+full R21 admission/certificate chain, the R07 affected-closure planning, and the controller
+projection seam through production owners, so their cost and evidence class are deliberate
+rather than inferred from filename or location.
 
 ### Conventions
 
@@ -102,6 +109,7 @@ No external documentation governs this repository-owned evidence catalog.
 | The direct-execution boundary regression remains explicitly unit-regression evidence. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:92-92 |
 | The nine CCR-R01 focused suites each have explicit unit-regression ownership. | "mcp/tests/test_closeout_projection_coverage_edges.py"; "mcp/tests/test_closeout_projection_source_facts.py"; "mcp/tests/test_execution_graph_indexed_admission.py"; "mcp/tests/test_semantic_topology_coverage_edges.py"; "mcp/tests/test_semantic_topology_field_matrix.py"; "mcp/tests/test_semantic_topology_refusals.py"; "mcp/tests/test_semantic_topology_scaling.py"; "mcp/tests/test_task_document_coverage_edges.py"; "mcp/tests/test_task_document_field_effects.py" | mcp/tests/test-evidence-lanes.toml:29-30; mcp/tests/test-evidence-lanes.toml:64-64; mcp/tests/test-evidence-lanes.toml:148-151; mcp/tests/test-evidence-lanes.toml:170-171 |
 | The L21 gate-certificate suite enters the closed population exactly once as unit-regression. | "mcp/tests/test_gate_certificate_authority.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
+| The five CCR-R08 final certification suites each have explicit integration ownership. | "mcp/tests/test_final_full_memory_coherence_certification.py"; "mcp/tests/test_final_gate_prefix_adapter.py"; "mcp/tests/test_final_catalog_plan_attestation.py"; "mcp/tests/test_final_catalog_readiness_projection.py"; "mcp/tests/test_final_certification_model_edges.py" | mcp/tests/test-evidence-lanes.toml:365-365; mcp/tests/test-evidence-lanes.toml:366-366; mcp/tests/test-evidence-lanes.toml:367-367; mcp/tests/test-evidence-lanes.toml:368-368; mcp/tests/test-evidence-lanes.toml:369-369 |
 
 ## Cross-Repo References
 
@@ -118,6 +126,11 @@ the existing future-code real-Git suite. This prevents the Dagger selector from 
 the new filesystem/Git/task publication fixture as unit evidence.
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: recorded the CCR-R08
+  integration-lane registration of the five final full memory-coherence certification suites
+  (rows 365-369) so each forcing suite enters the closed population exactly once. Verification
+  metadata pinned to the owning commit 16d1a4d6.
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored all
   21 manifest lane citations to the exact current line numbers after the L21 gate-certificate

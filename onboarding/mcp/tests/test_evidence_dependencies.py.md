@@ -86,10 +86,12 @@ No configured Domain Documentation applies; the matrix follows the CCR-R03@v1 pa
 | --- | --- | --- |
 | The dependency encoding under test. | `EvidenceDependencies`, `EvidenceDependencyPolicy`, `build_evidence_dependencies`, `require_evidence_dependencies`, `validate_evidence_dependency_graph` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:122-213; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-324 |
 | The attestation, door, operation, and route-review binders under test. | `memory_quality_attestation_dependencies`; `closeout_door_dependencies`; `lifecycle_operation_dependencies`; `build_route_review` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129; mcp/src/agents_remember/models/lifecycles/door.py:161-202; mcp/src/agents_remember/models/lifecycles/operation.py:428-484; mcp/src/agents_remember/worktrees/route_review.py:56-116 |
-| The controller candidate guards under test. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:433-479 |
+| The controller candidate guards under test. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:490-509; mcp/src/agents_remember/application/memory_quality/controller.py:512-542 |
 | Companion coverage for the route-review record shape. | `test_route_review_dependency_and_content_addressing_guards` | mcp/tests/test_evidence_dependencies.py:299-354 |
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller candidate-guard row (433-479 to 490-509/512-542) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: repaired citation
   rows -- module-docstring prose quote anchored to the docstring literal, route-review

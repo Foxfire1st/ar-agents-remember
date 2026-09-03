@@ -60,7 +60,7 @@ No configured Domain Documentation source applies; the forcing set is repository
 | Direct registry forcing set. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:41-190 |
 | Canonical controller/identity forcing set. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:195-405 |
 | Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:27-161 |
-| Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:48-144 |
+| Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:72-89; mcp/src/agents_remember/application/memory_quality/controller.py:111-143; mcp/src/agents_remember/application/memory_quality/controller.py:146-208 |
 | R03 candidate-tree capture mock in the curator-publication case. | `_curator_candidate_inputs` | mcp/tests/test_memory_quality_runs.py:462-472 |
 
 ## Cross-Repo References
@@ -86,6 +86,8 @@ derived checklist evidence block the final publication write, and asynchronous s
 not rewritten as completion.
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller-under-test row (48-144 to exact spans) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the candidate-tree capture mock in the curator-publication controller case; prior registry, capacity, and pair-forcing prose preserved.
 

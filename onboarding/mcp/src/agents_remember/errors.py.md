@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T01:48+02:00 |
+| lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
+| lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -39,6 +39,13 @@ authority failing before any certification command, and
 an admitted repository executor that cannot start its affected gate population. Both inherit
 `CertificationContractError`, so their findings stay frozen and typed while their status
 vocabulary remains distinct from contract and rail failures.
+CCR-R08 (260831-CCR-L08, commit `16d1a4d6`) adds `FinalCertificationError`: the one bounded
+typed refusal family of the final full memory-coherence certification (Gate 5). It carries a
+stable `status`, bounded `detail`, optional expected/observed facts, and a legal `next_action`, and its
+`response_fields` projection publishes `certificationStatus`/`detail`/`nextAction` plus the two fact
+dictionaries only when present. It is a direct `AgentsRememberError` member, deliberately outside the
+frozen-findings certification-contract family: Gate-5 refusals are bounded keyed facts, not the
+recursively frozen finding lists of contract/rail failures.
 
 ## Code Commentary
 
@@ -56,7 +63,7 @@ capture or currentness refusal without moving Git logic into the error module.
 `ConversationCompositionError` identifies a conversation runtime composition bug —
 retrieval before installation, a second install, a foreign object on the reserved state key, or
 construction missing a required authority — that must fail at startup or request entry, never
-silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:284-292) marks the one packaging failure the
+silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:317-325) marks the one packaging failure the
 token counter cannot paper over: the tiktoken vocabulary it needs is not the one vendored into
 `package_data/tiktoken`. It is raised in place of letting tiktoken download the file it cannot
 find, because the counter is constructed while the MCP tool surface is still importing — a
@@ -71,6 +78,11 @@ typed certification failure evidence cannot degrade into a generic mutable excep
 `CertificationProfileError` and `CertificationExecutorPrerequisiteError` reuse that
 frozen-findings machinery with the two new statuses; the executor-prerequisite variant
 additionally carries gate/owner/adapter/runtime findings for the earliest affected gate.
+`FinalCertificationError` keeps its own status vocabulary (gate-five-prefix-incomplete,
+gate-five-code-candidate-mismatch, gate-five-prefix-stale, gate-five-prefix-invalidated,
+gate-five-coherence-blocked, gate-five-coherence-subrecords-missing, gate-five-inputs-invalid,
+gate-five-catalog-*, gate-five-affected-*, gate-five-executed-population-* and friends), stores
+optional expected/observed mapping facts by copy, and projects them through `response_fields`.
 
 ### Conventions
 
@@ -137,6 +149,7 @@ The blocking client uses the new stage evidence; the bridge/queue keep the nativ
 | The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes: `_untracked_source_candidates` re-raises `lstat` failures, `_require_repository_root` raises `AuthorityError`, and `_run_git` converts `TimeoutExpired`/`OSError` with `from error`. | `_untracked_source_candidates`; `_require_repository_root`; `_run_git` | mcp/src/agents_remember/kernel/route_index_census.py:126-156; mcp/src/agents_remember/kernel/route_index_census.py:159-179; mcp/src/agents_remember/kernel/route_index_census.py:189-205 |
 | The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | "class ConversationRuntime:"; "class LocalOperatorAuthorizationResolver:" | mcp/src/agents_remember/serving/conversation/runtime.py:58-104; mcp/src/agents_remember/serving/conversation/authorization.py:71-107 |
 | `_verify_vendored_vocabulary` raises `TokenizerVocabularyError` for an unknown/absent vendored vocabulary and for a digest mismatch. `vendored_vocabulary_cache` calls that verifier before installing the scoped `TIKTOKEN_CACHE_DIR`, and `TiktokenTokenCounter` enters the cache on the import path. | "def _verify_vendored_vocabulary"; "def vendored_vocabulary_cache"; "class TiktokenTokenCounter" | mcp/src/agents_remember/models/tokens.py:70-70; mcp/src/agents_remember/models/tokens.py:110-110; mcp/src/agents_remember/models/tokens.py:184-184 |
+| The final full memory-coherence certification refuses through one bounded typed family with a legal next action. | `FinalCertificationError` | mcp/src/agents_remember/errors.py:270-300 |
 
 ## Cross-Repo References
 
@@ -163,7 +176,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `NativeHistoryUnavailable` identifies one child/history read that can fail without invalidating
 the shared adapter; its stable `code` carries the exact local reason. The
 `NativeHistoryLimitExceeded` subtype adds `actual_bytes` and `limit_bytes` and fixes its code to
-cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:390-410). These types distinguish child-local acquisition/resource
+cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:423-443). These types distinguish child-local acquisition/resource
 outcomes from malformed shared protocol and bridge-fatal transport failure.
 
 ## 260821-CLIVE-L2 Current Contract
@@ -192,6 +205,13 @@ that evidence when the shared pair validator is consumed through coherence, avoi
 lower-level failure-family implementations.
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: recorded the CCR-R08
+  `FinalCertificationError` family (status/detail/expected/observed/next_action, bounded
+  `response_fields` projection, direct `AgentsRememberError` member outside the frozen-findings
+  certification-contract family) and re-anchored every errors.py citation the +33-line insertion
+  shifted (tokenizer 284-292 to 317-325, native-history 390-410 to 423-443). Verification
+  metadata pinned to the owning commit 16d1a4d6.
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored every
   shifted errors.py citation against the current source (structural family 80-93, future-code
   154-159, authority 96-115, tokenizer 284-292, native-history 390-410, freeze helpers

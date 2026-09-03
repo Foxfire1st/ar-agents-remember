@@ -72,10 +72,10 @@ run states.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Memory-quality requests are executed by the focused controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:67-144 |
+| Memory-quality requests are executed by the focused controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:98-208 |
 | Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. | `drift_check_tool`; `citation_fix_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:66-85; mcp/src/agents_remember/application/memory_tools.py:182-212; mcp/src/agents_remember/application/memory_tools.py:253-304; mcp/src/agents_remember/application/memory_tools.py:352-409 |
 | The strict sync/start/poll request models and discriminated union. | `MemoryQualitySyncRequest`; `MemoryQualityStartRequest`; `MemoryQualityPollRequest`; `MemoryQualityCheckRequest` | mcp/src/agents_remember/models/memory.py:102-105; mcp/src/agents_remember/models/memory.py:108-111; mcp/src/agents_remember/models/memory.py:114-122; mcp/src/agents_remember/models/memory.py:125-125 |
-| The typed controller fills the run envelope and guidance. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:67-144 |
+| The typed controller fills the run envelope and guidance. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:98-208 |
 | "status: DriftStatus" is the shared status declaration. | "status: DriftStatus" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:14-14 |
 | `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:13-27 |
 | `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:13-23 |
@@ -107,6 +107,8 @@ pair-refusal evidence. Candidate poll accepts the one original contract path; of
 it. `scope-refused` is terminal domain evidence and is never rewritten as a successful completion.
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored both controller request-surface rows (67-144 to 98-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: exposed exact pair identity/refusals and contract-bound poll
   input on the memory-quality wire. Verification remains closeout-owned.
