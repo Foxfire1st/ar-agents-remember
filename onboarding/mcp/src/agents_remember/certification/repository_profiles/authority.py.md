@@ -78,12 +78,18 @@ schema/graph/config finding before any Gate-1 command starts. The master task.md
 assigns the trusted host runtime-launch boundary to the framework exactly as this module's
 confinement rules implement it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Resolve one authoritative profile through the repository context/settings contract; zero or multiple authorities refuse. | `## Resolution And Freeze` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Invalid profile resolution produces typed admission failure certification-profile-invalid with every independent schema/graph/config finding; no Gate 1 command starts. | `## Failure And Recovery` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| No auto-discovery by newest file, filename convention, executable presence, or historical success; no built-in default that certifies an unconfigured code repository. | `## Exclusions And Forbidden Overreach` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| The MCP owns the trusted host runtime-launch boundary; a repository profile never owns or overrides Dagger runner/engine/session/layer-store authority. | `## Framework and repository boundary` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+CCR-R22@v1 (requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md) requires
+resolving one authoritative profile through the repository context/settings contract
+("## Resolution And Freeze") with zero or multiple authorities refusing; invalid resolution
+produces the typed admission failure certification-profile-invalid carrying every independent
+schema/graph/config finding before any Gate 1 command starts ("## Failure And Recovery").
+No auto-discovery by newest file, filename convention, executable presence, or historical
+success exists, and no built-in default certifies an unconfigured code repository
+("## Exclusions And Forbidden Overreach"). The master task boundary (task.md,
+"## Framework and repository boundary") assigns the trusted host runtime-launch boundary to
+the framework; a repository profile never owns or overrides Dagger runner/engine/session/
+layer-store authority.
+
 
 ## Repo-Internal References
 
@@ -99,9 +105,11 @@ against the exact candidate checkout so the profile bytes admitted are the candi
 | Confined one-file resolution with symlink and escape refusal. | `resolve_repository_profile_path`; `_reject_symlink_components` | mcp/src/agents_remember/certification/repository_profiles/authority.py:94-171; mcp/src/agents_remember/certification/repository_profiles/authority.py:173-196 |
 | 8 MiB budget and eager JSON parse for the admitted bytes. | `_read_profile_bytes` | mcp/src/agents_remember/certification/repository_profiles/authority.py:198-231 |
 | Settings parsing binds one canonical relative path per repository. | `_optional_repository_profile_reference` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:341-368 |
-| The quality gate admits the same profile per exact candidate checkout. | `_admitted_selection`; `_admit_prepared_profile` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:520-537; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:164-176 |
-| Path-authority regressions cover missing/ambiguous/escape/symlink/malformed/digest/repository-identity refusals. | `test_exact_repository_relative_authority_loads_one_file`; `test_invalid_authority_refuses_before_read`; `test_symlink_escape_is_refused`; `test_malformed_and_digest_mismatch_are_typed`; `test_repository_identity_mismatch_is_refused` | mcp/tests/test_repository_profile_authority.py:30-107 |
+| The quality gate admits the same profile per exact candidate checkout. | `_admitted_selection`; `_admit_prepared_profile` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:487-501; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:193-207 |
+| Path-authority regressions cover missing/ambiguous/escape/symlink/malformed/digest/repository-identity refusals. | `test_exact_repository_relative_authority_loads_one_file`; `test_invalid_authority_refuses_before_read`; `test_symlink_escape_is_refused`; `test_malformed_and_digest_mismatch_are_typed`; `test_repository_identity_mismatch_is_refused` | mcp/tests/test_repository_profile_authority.py:25-107 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose (absolute ar-coordination task-artifact paths are not repo-relative citations).
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new one-file profile authority resolver/admission module of the repository-owned certification profile package.

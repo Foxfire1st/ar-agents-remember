@@ -77,7 +77,7 @@ identity types directly.
 | --- | --- | --- |
 | Candidate and dependency observations feed the compiler through the two authority protocols. | `ScopeAuthority`, `DependencySnapshotAuthority` | mcp/src/agents_remember/memory_quality/incremental_scope/compiler.py:31-41 |
 | The manifest's `MCP`-visible schema and digest fields are declared in the scope models. | `ScopeManifest`, `EdgeClassEvidence` | mcp/src/agents_remember/memory_quality/incremental_scope/models.py:232-298 |
-| Reverse/direct closure, full-only, unavailable topology/intent, and candidate-move refusals are verified by the compiler-focused suites. | `test_*` closure cases | mcp/tests/test_memory_incremental_scope_compiler.py; mcp/tests/test_memory_incremental_scope_owners.py:217-239 |
+| Reverse/direct closure, full-only, unavailable topology/intent, and candidate-move refusals are verified by the compiler-focused suites. | `test_reverse_closure_terminates_when_an_edge_targets_an_already_selected_node`; `test_dependency_population_must_be_sorted_and_unique`; `test_private_root_or_task_identity_and_moved_candidate_are_refused` | mcp/tests/test_memory_incremental_scope_compiler.py:586-609; mcp/tests/test_memory_incremental_scope_compiler.py:610-630; mcp/tests/test_memory_incremental_scope_compiler.py:391-432 |
 
 ## Update History
 

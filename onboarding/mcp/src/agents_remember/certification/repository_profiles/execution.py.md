@@ -56,11 +56,14 @@ commands; each gate certificate names the exact admitted profile and its gate-sp
 digest. The framework owns result schema and certificate rules while the repository owns the
 concrete selections.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical local/pre-commit and closeout profiles are selections over the same rail definitions, never copied commands. | `## Required Profile Contract` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Each gate certificate names the exact admitted profile and its gate-specific plan digest. | `## Resolution And Freeze` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Framework owns result schema; the repository owns selections and applicability. | `## Framework and repository boundary` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+CCR-R22@v1 (requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md,
+"## Required Profile Contract") requires the canonical local/pre-commit and closeout
+profiles to be selections over the same rail definitions, never copied commands; each gate
+certificate names the exact admitted profile and its gate-specific plan digest
+("## Resolution And Freeze"). The master task boundary (task.md,
+"## Framework and repository boundary") assigns result schema to the framework while the
+repository owns the concrete selections and applicability.
+
 
 ## Repo-Internal References
 
@@ -73,9 +76,11 @@ reuse the same admission to fabricate passing evidence for tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | One-call selection/plan/executor/decoder/artifact admission for an exact candidate. | `admit_repository_profile_execution` | mcp/src/agents_remember/certification/repository_profiles/execution.py:38-81 |
-| The clean executor admits against the sandboxed candidate and serializes the execution into the admission manifest. | `_admit_prepared_profile`; `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:164-176; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:220-251 |
-| Fixtures admit a profile execution to publish passing gate evidence. | `publish_passing_quality_gate` | mcp/tests/_quality_evidence_fixture.py:49-80 |
+| The clean executor admits against the sandboxed candidate and serializes the execution into the admission manifest. | `_admit_prepared_profile`; `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:193-207; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:339-372 |
+| Fixtures admit a profile execution to publish passing gate evidence. | `publish_passing_quality_gate` | mcp/tests/_quality_evidence_fixture.py:47-86 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new exact-candidate profile-execution admission module of the repository-owned certification profile package.

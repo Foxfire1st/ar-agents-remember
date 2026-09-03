@@ -29,7 +29,7 @@ Under CCR-R03@v1 claiming re-requires the waiting generation's declared dependen
 declaration from the claimed predecessor's candidate trees, topology, intent, and provenance
 records before hashing the successor identity — so the successor is a declared content-addressed
 consumer of exactly the prior generation it reads
-cit:([`door_generation_for_operation`, `successor_waiting_door`], mcp/src/agents_remember/worktrees/integration/closeout/door.py:104-116, 128-172).
+cit:([`door_generation_for_operation`, `successor_waiting_door`], mcp/src/agents_remember/worktrees/integration/closeout/door.py:83-120; mcp/src/agents_remember/worktrees/integration/closeout/door.py:121-181).
 
 ### Conventions
 
@@ -58,7 +58,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:30-74 |
-| Claim and successor seams re-require or rebuild the door dependency declaration. | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:104-116, 128-172 |
+| Claim and successor seams re-require or rebuild the door dependency declaration. | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:83-120; mcp/src/agents_remember/worktrees/integration/closeout/door.py:121-181 |
 
 ## Cross-Repo References
 
@@ -79,6 +79,8 @@ reproven at claim, and the successor declares the exact predecessor generation a
 (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): widened the claim row and prose cit range to door.py:83-120 so the cited range holds the `door_generation_for_operation` declaration.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded dependency re-requirement at claim and successor dependency declaration; prior sole-authority and public-seam prose preserved.
 

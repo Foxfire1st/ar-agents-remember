@@ -157,7 +157,7 @@ served-state module plus the two producers of the tail.
 | The heartbeat half, which reports a never-ticked agent-notifier as explicit nulls, plus the store the fixture ticks. | `AgentNotifierHeartbeatPayload` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:31-55 |
 | The base projection the served model extends, and the `LifecycleProjection` node a delta frame must validate as. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 | The second consumer that must not gain serve-time fields. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:158-164 |
-| The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:198-226; mcp/src/agents_remember/worktrees/worktree_contract.py:344-394; mcp/src/agents_remember/worktrees/worktree_contract.py:488-489 |
+| The contract writer the enclosure fixture uses, including the typed `ContractCells` amendment for the landed leaf. | `default_contract`; `amend_contract`; `write_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:198-226; mcp/src/agents_remember/worktrees/worktree_contract.py:344-394; mcp/src/agents_remember/worktrees/worktree_contract.py:490-494 |
 | The route-wide sibling: the same job for the other 60 HTTP routes, against each route's own declaration. | "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:492-492 |
 | The serving suite that owns the ETag change gate and the build stamp in general; this file only pins that the declared tail does not break them. | `StateEtagTests`; `BuildInfoTests` | mcp/tests/test_serving.py:557-641; mcp/tests/test_serving_cli.py:36-181 |
 
@@ -168,7 +168,7 @@ cockpit bundle, which lives in this same repository under `dashboard/`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:746-746 |
+| No meaningful cross-repository references found; the served projection's consumer is the in-repo cockpit. | "export interface WorkspaceProjection" | dashboard/src/types/projection.ts:753-753 |
 
 ## 260821-CLIVE-L2 Addressable Served-State Fixture
 

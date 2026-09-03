@@ -50,7 +50,7 @@ No configured Domain Documentation source applies to this verification fixture.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The emitted population and digest are bound to the exact declared input identity. | `selected-tests`; `selectionDigest` | mcp/tests/fixtures/repository_profiles/rust/scripts/select-tests.sh:20-21 |
+| The emitted population and digest are bound to the exact declared input identity. | `selected-tests`; `selectionDigest` | mcp/tests/fixtures/repository_profiles/rust/scripts/select-tests.sh:17-19 |
 | The v2 result contract the fixture emits. | `RepositorySelectionResult` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:89-130 |
 | The profile test binds this fixture's configuration digest to its selector declaration. | `test_non_python_selector_fixture_emits_the_canonical_generic_result` | mcp/tests/test_repository_certification_profiles.py:651-684 |
 

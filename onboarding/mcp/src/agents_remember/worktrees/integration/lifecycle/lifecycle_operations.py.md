@@ -35,7 +35,7 @@ Under CCR-R03@v1 the closeout claim record and the queued integrate record are b
 typed dependency declaration (`lifecycle_operation_dependencies`), and the lifecycle launch gate
 re-requires the current record's declared dependencies (`require_lifecycle_operation_dependencies`)
 before a worker is launched
-cit:([`_prepare_closeout_claim`, `queued_operation_record`, `_recover_launch_and_project`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:439-449, 1031-1063, 845-856).
+cit:([`_prepare_closeout_claim`, `queued_operation_record`, `_recover_launch_and_project`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:422-449; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1026-1063; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:840-856).
 
 ### Conventions
 
@@ -77,7 +77,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1123 |
 | Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:883-938 |
-| R03 dependency binding on claims and queued records plus launch re-requirement. | `_prepare_closeout_claim`; `queued_operation_record`; `_recover_launch_and_project` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:439-449, 845-856, 1031-1063 |
+| R03 dependency binding on claims and queued records plus launch re-requirement. | `_prepare_closeout_claim`; `queued_operation_record`; `_recover_launch_and_project` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:422-449; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:840-856; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1026-1063 |
 
 ## Cross-Repo References
 

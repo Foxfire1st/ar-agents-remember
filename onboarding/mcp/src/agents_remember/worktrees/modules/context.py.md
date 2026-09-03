@@ -40,7 +40,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver facade and the coordination-context builder own topology, storage, path rules, and cross-repo resolution. | "def build_coordination_context(" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-312 |
-| Closeout planning uses this module before the sole external-phase owner refreshes onboarding metadata. | "def _memory_refresh_preview("; "def _closeout_contract_context("; "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout.py:223-223; mcp/src/agents_remember/worktrees/modules/closeout.py:955-955; mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-61 |
+| Closeout planning uses this module before the sole external-phase owner refreshes onboarding metadata. | "def _memory_refresh_preview("; "def _closeout_contract_context("; "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout.py:226-226; mcp/src/agents_remember/worktrees/modules/closeout.py:965-965; mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-61 |
 
 ## Series-Contract Notes
 

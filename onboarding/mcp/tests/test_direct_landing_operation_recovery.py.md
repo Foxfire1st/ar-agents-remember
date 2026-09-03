@@ -32,7 +32,7 @@ Under CCR-R03@v1 the admitted-store case now rebuilds the record through `direct
 with the stored candidate and admitted door publication, then requires the rebuilt record's
 declared dependency set (`require_lifecycle_operation_dependencies`) — so the recovery matrix proves
 a dependency-declared, door-bound record can be rebuilt and stays current
-cit:([`DirectLandingOperationRecoveryTests.test_*`], mcp/tests/test_direct_landing_operation_recovery.py:209-230).
+cit:([`test_exact_retry_resumes_the_existing_running_landing`], mcp/tests/test_direct_landing_operation_recovery.py:209-230).
 
 ### Conventions
 
@@ -57,7 +57,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:59-59 |
+| No external domain source is required for this repository-owned test contract. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:68-68 |
 
 ## Repo-Internal References
 
@@ -65,8 +65,8 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:59-59 |
-| R03 dependency-required rebuild of door-bound records. | `direct_landing_record`; `require_lifecycle_operation_dependencies` | mcp/tests/test_direct_landing_operation_recovery.py:209-230 |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:68-68 |
+| R03 dependency-required rebuild of door-bound records. | `direct_landing_record`; `require_lifecycle_operation_dependencies` | mcp/tests/test_direct_landing_operation_recovery.py:217-238 |
 
 ## Cross-Repo References
 
@@ -74,9 +74,12 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:59-59 |
+| No meaningful cross-repository reference applies. | `_RETRY_LEGS` | mcp/tests/test_direct_landing_operation_recovery.py:68-68 |
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: replaced the non-identifier
+  prose span with the identifier the cited range actually holds.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the dependency-required direct-landing-record rebuild proof; prior recovery-matrix prose preserved.
 

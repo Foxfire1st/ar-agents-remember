@@ -70,9 +70,12 @@ Authority observation and engine behavior are owned by `lifecycle_admission` /
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for the finalization journal semantics.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R05@v3 finalization required behavior: preserve current code-commit, external-memory-commit, ledger, and contract-finalization owners and ordering; journal every durable leg so an unchanged interruption resumes without any gate rerun; partial publication resumes the exact durable path. | "Finalization Required Behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md |
+CCR-R05@v3 (requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md, "Finalization
+Required Behavior") requires preserving current code-commit, external-memory-commit, ledger,
+and contract-finalization owners and ordering; journaling every durable leg so an unchanged
+interruption resumes without any gate rerun; and resuming the exact durable path on partial
+publication.
+
 
 ## Repo-Internal References
 
@@ -89,8 +92,10 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Certificate identities and creation provenance are imported from the R21 certificate owners. | `GateCertificateIdentity`; `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py |
+| Certificate identities and creation provenance are imported from the R21 certificate owners. | `GateCertificateIdentity`; `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py:79-86; mcp/src/agents_remember/certification/certificate_models.py:102-106 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose. Verification remains pinned to the pre-commit source history until closeout.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): created the card for the new immutable lifecycle boundary records; no prior sidecar existed.

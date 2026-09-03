@@ -81,8 +81,8 @@ values are produced/validated by the sibling scope modules.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task intent and document ref types come from the R02 task-intent owner. | `TaskIntentState`, `TaskDocumentRef` | mcp/src/agents_remember/models/task_intent/__init__.py |
-| Pair identity roots are the canonical code/memory pair authority. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py |
+| Task intent and document ref types come from the R02 task-intent owner. | `TaskIntentState`, `TaskDocumentRef` | mcp/src/agents_remember/models/task_intent/__init__.py:55-80; mcp/src/agents_remember/models/task_document_ref.py:18-36 |
+| Pair identity roots are the canonical code/memory pair authority. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-36 |
 | The candidate builder emits `ScopeCandidateIdentity`; owner adapters emit `DependencySnapshot`; the compiler closes the closure into `ScopeManifest`. | `observe_scope_candidate`, `observe_dependency_snapshot`, `compile_scope_manifest` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-99; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:59-97; mcp/src/agents_remember/memory_quality/incremental_scope/compiler.py:98-159 |
 | Individual digest and node/edge shape behaviors are covered by the scope test suites. | `test_exact_tree_diff_classifies_add_modify_delete_and_both_rename_ends`; `test_all_five_owner_extractors_emit_exact_content_addressed_edges` | mcp/tests/test_memory_incremental_scope_candidate.py:43-70; mcp/tests/test_memory_incremental_scope_owners.py:85-163 |
 

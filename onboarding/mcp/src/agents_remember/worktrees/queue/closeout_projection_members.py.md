@@ -68,7 +68,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-260 |
+| No external domain source is required to establish this repository-owned implementation. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-253 |
 
 ## Repo-Internal References
 
@@ -79,7 +79,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Member construction consumes an exact precomputed topology fingerprint and the typed bound graph context. | `projection_member` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:35-72 |
 | Candidate-local activation waits are combined with door admission before optional DAG waits. | `projection_member`; `_admission_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:48-72; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:99-107 |
 | Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals. | `candidate_task_topology_fingerprint`; `semantic_topology_projection` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:184-226 |
-| Door intent absence/staleness become explicit member blockers. | `ProjectionMemberContext.task_intent`; `_projection_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:45-45; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:79-99 |
+| Door intent absence/staleness become explicit member blockers. | `ProjectionMemberContext.task_intent`; `_projection_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:45-45; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:76-102 |
 
 ## Cross-Repo References
 
@@ -88,7 +88,7 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-260 |
+| No meaningful cross-repository reference applies. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-253 |
 
 ## CCR-R02@v2 Door-Intent Member Readiness
 

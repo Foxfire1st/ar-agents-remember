@@ -19,7 +19,7 @@
 Edge coverage for the CCR-R06@v2 candidate observation owner: contract admission refusals,
 typed-refusal preservation versus owner-failure wrapping, owner composition, closeout-door
 baseline binding and mismatch matrix, and the R01/R02 task-observation refusals
-cit:([`test_scope_candidate_requires_one_external_memory_leaf`, `test_scope_candidate_preserves_typed_refusal_and_wraps_owner_failures`, `test_task_pair_refuses_invalid_door_authority`], mcp/tests/test_memory_incremental_scope_candidate_edges.py:137-172, 222-229).
+cit:([`test_scope_candidate_requires_one_external_memory_leaf`, `test_scope_candidate_preserves_typed_refusal_and_wraps_owner_failures`, `test_task_pair_refuses_invalid_door_authority`], mcp/tests/test_memory_incremental_scope_candidate_edges.py:137-172; mcp/tests/test_memory_incremental_scope_candidate_edges.py:222-283).
 
 ## Code Commentary
 
@@ -70,7 +70,7 @@ No configured Domain Documentation applies; the refusals follow the CCR-R06@v2 p
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Production candidate observation under test. | `observe_scope_candidate`, `observe_contract_task`, `observe_contract_task_pair`, `_parse_name_status` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-296 |
-| Companion primary suite for the same surface. | — | mcp/tests/test_memory_incremental_scope_candidate.py |
+| Companion primary suite for the same surface. | `test_exact_tree_diff_classifies_add_modify_delete_and_both_rename_ends` | mcp/tests/test_memory_incremental_scope_candidate.py:43-71 |
 
 ## Update History
 

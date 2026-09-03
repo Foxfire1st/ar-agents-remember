@@ -50,8 +50,10 @@ below closes the informational gap for the enforced boundaries.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| CCR-R05@v3 admission and finalization required behavior; the suite's zero-start refusal and exact-leg resume assertions mirror it. | "Admission Required Behavior"; "Finalization Required Behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md |
-| L05 committed exact-candidate admission and recovery evidence into this suite. | "S2 — Implement only CCR-R05" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/05_exact-candidate-admission-and-recovery.md |
+The governing task artifacts are recorded as prose here (task artifact paths are not
+repo-relative citations): CCR-R05@v3 admission and finalization required behavior, which the
+suite's zero-start refusal and exact-leg resume assertions mirror; L05 committed the
+exact-candidate admission and recovery evidence into this suite.
 
 ## Repo-Internal References
 
@@ -90,6 +92,10 @@ instead of returning a precomputed value. The asserted certification and recover
 unchanged, but the test double can no longer bypass argument-sensitive evidence construction.
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
+  Docs References task-artifact rows as prose (absolute ar-coordination paths are not
+  repo-relative citations).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): documented the R05 exact-candidate admission, prior-red, recovery, and finalization edge layer added to this suite; refreshed the `L5QualityAndRecoveryEdgeTests` anchor from lines 23-122 to the current class at line 967 and added the production-owner fixture citations. Verification metadata rebased from `ae8c47ce` to the L05 owning commit.
 

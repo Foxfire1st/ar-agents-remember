@@ -38,15 +38,16 @@ fixtures can resolve a real, lockable Node module layout rather than a synthetic
 CCR-R22@v1 requires two non-Agents-Remember fixture repositories with different languages,
 commands, artifacts, and E2E tools to complete the same Gate 1-4 protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Two non-Agents-Remember fixture repositories with different languages, commands, artifacts, and E2E tools complete the same Gate 1-4 protocol. | `## Expected Verification Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Two non-Agents-Remember fixture repositories with different languages, commands, artifacts, and E2E tools complete the same Gate 1-4 protocol.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Node fixture manifest with its lockfile and ESM scripts/test layout. | `package.json` | mcp/tests/fixtures/repository_profiles/node/package.json; mcp/tests/fixtures/repository_profiles/node/package-lock.json |
+| The Node fixture manifest with its lockfile and ESM scripts/test layout. | "repository-profile-node-fixture" | mcp/tests/fixtures/repository_profiles/node/package.json:1-6; mcp/tests/fixtures/repository_profiles/node/package-lock.json:1-12 |
 
 ## Update History
 

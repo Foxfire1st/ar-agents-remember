@@ -39,9 +39,9 @@ Under CCR-R03@v1 curator-report publication is bound to the exact working-tree c
 and after the primary scan, and again immediately before the checklist write, the controller
 captures both candidate trees with `worktree_candidate_tree` (through scratch indexes outside the
 repositories) and refuses `memory-quality-candidate-changed` if the code or memory candidate moved
-while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:433-453, 455-479).
+while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:433-453; mcp/src/agents_remember/application/memory_quality/controller.py:455-479).
 The checklist writer receives `code_candidate_tree` and `memory_candidate_tree` so the attestation
-can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:313-361, 361-431).
+can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:314-358; mcp/src/agents_remember/application/memory_quality/controller.py:359-432).
 
 ### Invariants And Boundaries
 

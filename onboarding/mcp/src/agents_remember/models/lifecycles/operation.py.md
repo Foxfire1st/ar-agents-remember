@@ -73,8 +73,8 @@ No external Domain Documentation source is configured for these internal wire mo
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:324-389 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
-| The R03 dependency vocabulary used by these record types. | `EvidenceRecordType`, `EvidenceDependencies`, `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-52, 99-119, 228-237 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
+| The R03 dependency vocabulary used by these record types. | `EvidenceRecordType`, `EvidenceDependencies`, `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-54; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-239 |
 
 ## Cross-Repo References
 
@@ -82,7 +82,7 @@ No cross-repository vocabulary is defined here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:300-308; mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
+| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:311-321; mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
 
 ## L23 Final Candidate Disposition
 

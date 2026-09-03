@@ -117,6 +117,7 @@
   ],
   "coveredFiles": [
     "mcp/README.md",
+    "mcp/certification-profile-v1.json",
     "mcp/pyproject.toml",
     "mcp/requirements.txt",
     "mcp/src/agents_remember/benchmarks/runner.py",
@@ -264,8 +265,8 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1475,
-    "fileSidecars": 146,
+    "sourceFilesInScope": 1539,
+    "fileSidecars": 147,
     "childRoutes": 21
   },
   "routingTerms": [
@@ -376,11 +377,13 @@
       "mcp/src/agents_remember/providers/grepai",
       "mcp/src/agents_remember/providers/lifecycle",
       "mcp/README.md",
-      "mcp/pyproject.toml"
+      "mcp/certification-profile-v1.json"
     ],
     "anchorHints": [
       "README.md",
       "README",
+      "certification-profile-v1.json",
+      "certification-profile-v1",
       "pyproject.toml",
       "pyproject",
       "requirements.txt",
@@ -424,9 +427,7 @@
       "atomic_write.py",
       "atomic_write",
       "authority.py",
-      "authority",
-      "coordination_context_resolver.py",
-      "coordination_context_resolver"
+      "authority"
     ]
   },
   "fallback": {

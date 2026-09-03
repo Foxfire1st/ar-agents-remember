@@ -66,9 +66,11 @@ None recorded.
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for the plan/result semantics.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R07@v3 required behavior and exclusions: incremental validation does not waive the final full Gate-5 pass; no safe-full fallback or caller-declared completeness. | "Preserved Behavior"; "Exclusions And Forbidden Overreach" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R07-v3-incremental-affected-closure-validation.md |
+CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
+"Preserved Behavior"; "Exclusions And Forbidden Overreach") requires incremental
+validation not to waive the final full Gate-5 pass and forbids safe-full fallback or
+caller-declared completeness.
+
 
 ## Repo-Internal References
 
@@ -85,8 +87,10 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate certificate identities come from the R21 certificate owners inside the same repository. | `GateCertificateIdentity` | mcp/src/agents_remember/certification/certificate_models.py |
+| Gate certificate identities come from the R21 certificate owners inside the same repository. | `GateCertificateIdentity` | mcp/src/agents_remember/certification/certificate_models.py:102-106 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the new R07 affected-closure contract models; no prior sidecar existed.

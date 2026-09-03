@@ -135,7 +135,7 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:757-757 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:764-764 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
 | Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. | "export const dashboardStore"; `reset` | dashboard/src/data/store.ts:329-400 |
 | `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:403-403 |

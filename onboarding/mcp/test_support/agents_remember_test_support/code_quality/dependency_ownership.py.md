@@ -65,13 +65,12 @@ None recorded.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. The governing task artifact below
-documents the bootstrap repair that changed this file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The root-owned bootstrap repair declared the observed literal profile consumer and added no safe-full rule. | "Changed surfaces and behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/notes/reports/l09-gate-evidence/runtime-bootstrap-unblocker-handover/260903-runtime-bootstrap-unblocker-worker-handover.md |
-| The 2026-09-03T06:20:00+02:00 master decision landed this root-owned repair (advances no requirement leaf). | Decision record | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+The configured Domain Documentation registry is empty. The governing task artifacts are
+recorded as prose here (task artifact paths are not repo-relative citations, so the
+authoritative source for the facts below is the code itself). The root-owned bootstrap repair
+declared the observed literal profile consumer and added no safe-full rule; the
+2026-09-03T06:20:00+02:00 master decision landed this root-owned repair (advances no requirement
+leaf).
 
 ## Repo-Internal References
 
@@ -79,9 +78,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction refuses source parse and module ambiguity before consulting declarations. | `DependencyOwnershipGraph`; `__init__`; `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-153 |
-| Catalog consumers are cross-checked against independently observed consumers. | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:167-226 |
-| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_safe_full` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:316-325 |
+| Graph construction refuses source parse and module ambiguity before consulting declarations. | `DependencyOwnershipGraph`; `__init__`; `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:283-521 |
+| Catalog consumers are cross-checked against independently observed consumers. | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:387-419; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:421-457 |
+| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:323-355 |
 | The profile consumer set gained the exact gate-certificate authority test at the bootstrap repair. | `REPOSITORY_TEST_INPUT_CONSUMERS`; `Path("mcp/tests/test_gate_certificate_authority.py")` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:50; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:102 |
 | The root layer contract has one exact repository-owned declaration and five independently observed consumers. | `LAYERS_CONTRACT_PATH`; `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:29-50 |
 
@@ -95,6 +94,10 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-301 |
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
+  Docs References task-artifact rows as prose (absolute ar-coordination paths are not
+  repo-relative citations and carry no verifiable provenance).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the added exact literal consumer `mcp/tests/test_gate_certificate_authority.py` for the certification profile; verification metadata rebased from `0506b57a` to the bootstrap repair owning commit.
 

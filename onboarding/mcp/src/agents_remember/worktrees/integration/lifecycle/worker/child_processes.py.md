@@ -61,7 +61,7 @@ No configured Domain Documentation source applies to this repository-owned proce
 | --- | --- | --- |
 | Retention is idempotent for the same object, refuses PID aliasing, and starts one waiter. | "def retain(self, process: subprocess.Popen[Any]) -> None:" | mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py:10-30 |
 | The waiter reaps through `Popen.wait()` and releases only the exact retained owner. | "def _wait_and_release(self, process: subprocess.Popen[Any]) -> None:" | mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py:32-38 |
-| Lifecycle launch transfers the real child object to this owner. | "def retain_detached_worker_child(process: subprocess.Popen[Any]) -> None:"; "retain_detached_worker_child(process)" | mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py:41-47; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:883-924 |
+| Lifecycle launch transfers the real child object to this owner. | "def retain_detached_worker_child(process: subprocess.Popen[Any]) -> None:"; "retain_detached_worker_child(process)" | mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py:41-47; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:969-969 |
 
 ## Cross-Repo References
 

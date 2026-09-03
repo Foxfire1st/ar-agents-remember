@@ -62,8 +62,8 @@ The source file is the direct evidence for the canonical test publication seam.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper binds a passed published result to the current candidate tree and optional attestation. | `publish_passing_quality_gate` | mcp/tests/_quality_evidence_fixture.py:15-45 |
-| Publication uses the clean-executor report owner rather than a dictionary-only mock. | `_publish_reports` | mcp/tests/_quality_evidence_fixture.py:26-38 |
+| The helper binds a passed published result to the current candidate tree and optional attestation. | `publish_passing_quality_gate` | mcp/tests/_quality_evidence_fixture.py:47-86 |
+| Publication uses the clean-executor report owner rather than a dictionary-only mock. | `_publish_reports` | mcp/tests/_quality_evidence_fixture.py:73-79 |
 
 ## Cross-Repo References
 

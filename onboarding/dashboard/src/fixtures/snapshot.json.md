@@ -58,7 +58,7 @@ cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2).
 Under CCR-R03@v1 the R03 leaf reserialized this fixture (arrays collapsed to single-line JSON and
 empty/edge rows normalized) to re-synchronize it with the regenerated dashboard contract fixtures;
 no served field, row, or value semantics changed — the mirror guard and wire builders still read the
-same payload cit:([`lifecycles`, `metrics`], dashboard/src/fixtures/snapshot.json:1749-1749, 1887-1887).
+same payload cit:([`lifecycles`, `metrics`], dashboard/src/fixtures/snapshot.json:1749-1749; dashboard/src/fixtures/snapshot.json:1887-1887).
 
 ### Conventions
 
@@ -131,10 +131,10 @@ absent from the file rather than present as `null`.
 | All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:3-3 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
 | The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:445-459 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:435-449 |
 | The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:287-425; dashboard/src/test/contract.test.ts:485-495 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
-| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:188-191 |
+| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
 | The provenance boundary: this snapshot is manual, while the TypeScript contract is generated and stale-checked from the Pydantic schema. | "is NOT generated" | dashboard/src/test/fixtures/wire.ts:22-35; scripts/sync-projection-types.py:43-65 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
 | The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | `asServedProjection` | dashboard/src/test/servedProjection.ts:22-43 |

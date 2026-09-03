@@ -32,18 +32,18 @@ rail's selected-tests argument passes this file as one of the exact selected tes
 
 ## Docs References
 
-CCR-R22@v1 requires fixture repositories with different ordinary suites completing the same Gate
-1-4 protocol.
+CCR-R22@v1 requires fixture repositories with different ordinary suites completing the same Gate 1-4 protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories with different languages, commands, artifacts, and E2E tools complete the same Gate 1-4 protocol. | `## Expected Verification Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Fixture repositories with different languages, commands, artifacts, and E2E tools complete the same Gate 1-4 protocol.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture unit test selected by the suite rail. | `test("adds two values")` | mcp/tests/fixtures/repository_profiles/node/test/unit.test.mjs; mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs |
+| Fixture unit test selected by the suite rail. | `test("adds two values")` | mcp/tests/fixtures/repository_profiles/node/test/unit.test.mjs:1-8; mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs:1-23 |
 
 ## Update History
 

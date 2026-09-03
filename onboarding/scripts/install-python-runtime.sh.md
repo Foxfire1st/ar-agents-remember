@@ -74,13 +74,15 @@ None recorded.
 ## Docs References
 
 No configured Domain Documentation source applies; the canonical runtime contract carries the
-approved authoritative URL, digest, and builder identity. The governing task artifacts below
-document the deterministic-bootstrap repair scope.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The root-owned repair "Uses a normal `--no-checkout` clone in a unique sibling staging directory; checks out and validates the exact pinned builder and Python source definition before atomic no-clobber publication; validates/adopts a concurrent winner; rejects missing or foreign winners; and cleans only its own staging path." | "Changed surfaces and behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/notes/reports/l09-gate-evidence/runtime-bootstrap-unblocker-handover/260903-runtime-bootstrap-unblocker-worker-handover.md |
-| The 2026-09-03T04:26:53+02:00 decision classified the poisoned builder cache as a root-owned unblocker, and the 2026-09-03T06:20:00+02:00 decision landed it (advances no requirement leaf, does not satisfy L12). | Decision records | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+approved authoritative URL, digest, and builder identity. The root-owned deterministic-bootstrap
+repair, as documented in the L09 worker handover (Changed surfaces and behavior), uses a normal
+`--no-checkout` clone in a unique sibling staging directory, checks out and
+validates the exact pinned builder and Python source definition before atomic no-clobber
+publication, validates and adopts a concurrent winner, rejects missing or foreign winners, and
+cleans only its own staging path. The 2026-09-03T04:26:53+02:00 decision classified the poisoned
+canonical Python builder cache and semicolon-masked installer failure as a root-owned
+certification-infrastructure unblocker, and the 2026-09-03T06:20:00+02:00 decision landed it
+(advances no requirement leaf, does not satisfy L12).
 
 ## Repo-Internal References
 

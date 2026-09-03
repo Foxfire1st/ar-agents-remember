@@ -113,7 +113,7 @@ completion-cleanup, and internal administrative payload seams.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The pure authority matrix uses real task topology. | `RetirePolicyMatrixTests` | mcp/tests/test_seat_lifecycle.py:200-264 |
-| Task-scoped landing is exercised directly. | `LandSeatsForTaskTests` | mcp/tests/test_seat_lifecycle.py:674-719 |
+| Task-scoped landing is exercised directly. | `LandSeatsForTaskTests` | mcp/tests/test_seat_lifecycle.py:720-765 |
 | Turn-state classification and liveness wiring remain diagnostic. | `TurnStateClassificationTests`; `TurnStateSweepWiringTests` | mcp/tests/test_seat_lifecycle.py:464-554; mcp/tests/test_seat_lifecycle.py:557-622 |
 | Completion cleanup uses `AgentRole`-typed task-owned reports. | `AutoLandHookIntegrationTests`; `_post_report` | mcp/tests/test_seat_lifecycle.py:722-954; mcp/tests/test_seat_lifecycle.py:769-799 |
 | Internal retire/rename payloads are exercised end to end. | `SessionRetireToolTests`; `SessionRenameToolTests` | mcp/tests/test_seat_lifecycle.py:270-403; mcp/tests/test_seat_lifecycle.py:409-458 |

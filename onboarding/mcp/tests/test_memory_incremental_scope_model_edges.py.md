@@ -65,12 +65,11 @@ None recorded.
 ## Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifacts
-below close the informational gap for the model edges.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R07@v3 required behavior and failure behavior (incomplete closure, stale input, missing result refuse typed; unchanged interruption resumes exact subresults). | "Failure And Recovery"; "Required Behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R07-v3-incremental-affected-closure-validation.md |
-| Leaf L07 added "focused verification for required success, refusal, recovery, concurrency, and forbidden-overreach cases." | "S2 — Implement only CCR-R07" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/07_incremental-affected-closure-validation.md |
+close the informational gap for the model edges: the CCR-R07@v3 requirement packet (Required
+Behavior, Failure And Recovery) requires incomplete closures, stale input, and a missing result
+to refuse typed, while an unchanged interruption resumes exact subresults. The closing L07 leaf
+task step (S2 - Implement only CCR-R07) added focused verification for required success,
+refusal, recovery, concurrency, and forbidden-overreach cases.
 
 ## Repo-Internal References
 
@@ -79,7 +78,7 @@ below close the informational gap for the model edges.
 | R06 model shapes: git changes, deltas, candidate identity, nodes/edges, source index, error payload, and registry contract. | `test_git_change_accepts_every_exact_shape_and_canonical_none`; `test_candidate_requires_exact_namespaces_roots_and_tree_changes`; `test_registry_rejects_population_and_policy_contract_drift` | mcp/tests/test_memory_incremental_scope_model_edges.py:131-143; mcp/tests/test_memory_incremental_scope_model_edges.py:219-250; mcp/tests/test_memory_incremental_scope_model_edges.py:314-371 |
 | R07 store, executor, and registry model edges. | `test_r07_subresult_store_is_exact_atomic_bounded_and_has_no_latest_lookup`; `test_r07_range_executor_uses_one_planned_document_and_exact_live_index`; `test_r07_execution_registry_refuses_incomplete_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:372-404; mcp/tests/test_memory_incremental_scope_model_edges.py:418-460; mcp/tests/test_memory_incremental_scope_model_edges.py:996-1003 |
 | R07 plan/result aggregation and reuse consistency edges. | `test_r07_closure_plan_model_refuses_incomplete_or_rebound_populations`; `test_r07_aggregate_model_refuses_incomplete_or_inconsistent_result`; `test_r07_result_and_reuse_models_refuse_inconsistent_exact_state` | mcp/tests/test_memory_incremental_scope_model_edges.py:660-730; mcp/tests/test_memory_incremental_scope_model_edges.py:786-843; mcp/tests/test_memory_incremental_scope_model_edges.py:741-785 |
-| R07 planning and subresult store safety edges. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:844-951; mcp/tests/test_memory_incremental_scope_model_edges.py:1042-1082 |
+| R07 planning and subresult store safety edges. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:844-951; mcp/tests/test_memory_incremental_scope_model_edges.py:1042-1056 |
 
 ## Cross-Repo References
 

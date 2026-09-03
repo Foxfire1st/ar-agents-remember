@@ -62,12 +62,12 @@ See task `260821-CLIVE-L1` L1-R2, L1-R3, L1-R5, and L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:89-110 |
+| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:79-115 |
 | Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:113-131 |
-| Recovery identity admits only original or exact finalized publication. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:219-236 |
+| Recovery identity admits only original or exact finalized publication. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:250-269 |
 | Currentness re-assertion for retained closeout candidates. | `_current_operation_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:311-321 |
 | The door-intent currentness source. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:69-85 |
-| The candidate binding carrying the intent into the fingerprint. | `LifecycleOperationCandidateBinding.task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:30-35 |
+| The candidate binding field carrying the exact intent into the durable fingerprint. | `task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:26-37 |
 
 ## Cross-Repo References
 
@@ -81,7 +81,7 @@ The current source seams include `CloseoutOperationAdmission`, `CloseoutAdmissio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. | `CloseoutOperationAdmission`; `CloseoutAdmissionSnapshot`; `ValidatedCloseoutAdmission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:45-68 |
+| The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. | `CloseoutOperationAdmission`; `CloseoutAdmissionSnapshot`; `ValidatedCloseoutAdmission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:53-78 |
 
 ## 260821-CLIVE Door-Bound Admission Identity
 
@@ -98,6 +98,8 @@ stale/unavailable reason and `retire-and-republish` route. Part of the landed L2
 `99dc249b`.
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): named the `task_intent` field anchor instead of the dotted attribute span.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   closeout admission now includes canonical task intent in the candidate fingerprint, refuses

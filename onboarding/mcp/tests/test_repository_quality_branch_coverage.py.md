@@ -52,15 +52,11 @@ manifest dict.
 
 ## Docs References
 
-CCR-R22@v1 requires profile edits to invalidate only the declared certificate dependency closure
-and unchanged-byte interruption to resume with existing certificates; gate certificates name the
-exact admitted profile and plan digest. Expected verification evidence requires malformed,
-wrong-gate, undeclared-artifact fixtures to refuse before execution.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A profile or referenced-input change invalidates only the declared certificate dependency closure; unchanged interruption resumes. | `## Resolution And Freeze` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Missing, ambiguous, malformed, cyclic, later-gate-dependent, undeclared-artifact, and wrong-gate fixtures refuse before execution. | `## Expected Verification Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+CCR-R22@v1 requires profile edits or referenced-input changes to invalidate only the declared
+certificate dependency closure and an unchanged-byte interruption to resume with existing
+certificates; gate certificates name the exact admitted profile and plan digest. Expected
+verification evidence requires malformed, ambiguous, cyclic, later-gate-dependent,
+undeclared-artifact, and wrong-gate fixtures to refuse before execution.
 
 ## Repo-Internal References
 
@@ -72,7 +68,7 @@ publication internals of `clean_executor._publish_reports`, the schema-v3 manife
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Schema-v3 parser refusal matrix and helper field-discipline proofs. | `test_manifest_parser_refuses_each_uncovered_bound_field`; `test_manifest_digest_and_dependency_helpers_require_exact_field_sets` | mcp/tests/test_repository_quality_branch_coverage.py:48-110 |
-| Inventory bound proofs (oversized/missing required artifacts) and the integration-gate profile forwarding. | `test_report_publication_refuses_oversized_and_missing_required_artifacts` | mcp/tests/test_repository_quality_branch_coverage.py:113-133 |
+| Inventory bound proofs (oversized/missing required artifacts) and the integration-gate profile forwarding. | `test_report_publication_refuses_oversized_and_missing_required_artifacts` | mcp/tests/test_repository_quality_branch_coverage.py:106-125 |
 
 ## Update History
 

@@ -136,7 +136,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Remote branch deletion is handled by the cleanup helper. | `delete_remote_branch_if_present` | mcp/src/agents_remember/worktrees/modules/cleanup.py:312-335 |
 | Shared drift snapshot path/removal helper used by cleanup and the drift snapshot cleanup tests. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | The official ledger reader and mapping lookup the carryover-done signal is built on. | `load_ledger`; `find_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:232-234 |
-| The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:75-85; mcp/tests/test_worktree_support.py:89-109 |
+| The shared `git` and `init_repo` helper definitions reused here. | `git`; `init_repo` | mcp/tests/test_worktree_support.py:147-157; mcp/tests/test_worktree_support.py:161-181 |
 | This cleanup suite's `_official_memory` helper exercises the shared `git` and `init_repo` helpers. | `_official_memory` | mcp/tests/test_cleanup_carryover.py:221-234 |
 | The typed "class WorktreeArgs:" DTO "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" consumes. | "class WorktreeArgs:"; "def cleanup_result(args: WorktreeArgs) -> WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/args.py:32-32; mcp/src/agents_remember/worktrees/modules/cleanup.py:635-635 |
 

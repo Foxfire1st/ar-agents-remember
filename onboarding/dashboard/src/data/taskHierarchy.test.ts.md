@@ -61,7 +61,7 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs" | dashboard/src/data/taskHierarchy.test.ts:43-52; dashboard/src/data/taskHierarchy.test.ts:54-60; dashboard/src/data/taskHierarchy.test.ts:62-74; dashboard/src/data/taskHierarchy.test.ts:97-105 |
 | The `ref` / `series` factories, typed against the mirror rather than asserted past it. | "function ref("; "function series(" | dashboard/src/data/taskHierarchy.test.ts:9-9; dashboard/src/data/taskHierarchy.test.ts:13-13 |
 | The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:496-503; dashboard/src/types/projection.ts:719-727 |
+| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:497-504; dashboard/src/types/projection.ts:729-737 |
 
 ## Cross-Repo References
 

@@ -91,7 +91,7 @@ The configured Domain Documentation registry is empty; no external documentation
 | Currentness/staleness assertion for owners. | `require_current_task_intent` | mcp/src/agents_remember/tasks/task_intent.py:196-214 |
 | Allowlist/taxonomy symmetry enforcement. | `_validate_allowlisted_classifications` | mcp/src/agents_remember/tasks/task_intent.py:239-256 |
 | Requirement text/packet handling and the v2-cutover refusal. | `_requirements`; `_approved_packet_ref` | mcp/src/agents_remember/tasks/task_intent.py:259-313 |
-| The shared exhaustive field-effect taxonomy consumed here. | `TaskDocumentFieldEffect`; `fields_with_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:45-61 |
+| The shared exhaustive field-effect taxonomy consumed here. | `TaskDocumentFieldEffect`; `fields_with_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:50-61; mcp/src/agents_remember/tasks/document_field_effects.py:490-493 |
 | The typed slot/identity models imported from the sibling model module. | `TaskIntentIdentity`; `ApprovedRequirementPacketRef` | mcp/src/agents_remember/models/task_intent/__init__.py:55-59; mcp/src/agents_remember/models/task_intent/__init__.py:22-36 |
 
 ## CCR-R02@v2 Normative Task-Intent Identity

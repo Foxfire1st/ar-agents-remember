@@ -57,7 +57,7 @@ text alters the body revision and open readers refetch.
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 | Canonicalized requirement text reader for typed packet refs. | `_requirement_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:494-498 |
 | Canonicalized open-question reader for typed acceptance obligations. | `_question_reader_text` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:500-504 |
-| Body revision hashing of typed intent slots. | `_task_doc_body_revision`; `_task_intent_body_value` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:606-623; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:631-637 |
+| Body revision hashing of typed intent slots. | `_task_doc_body_revision`; `_task_intent_body_value` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:606-623; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:631-636 |
 
 
 ## 260815-DAG-L12 Render-Ready Graph View Wiring

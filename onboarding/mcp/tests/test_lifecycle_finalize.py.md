@@ -48,7 +48,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
 | Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
-| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:847-922 |
+| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:979-1054 |
 | Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 
 ## L23 Lifecycle Model Package Review
@@ -65,6 +65,8 @@ The test continues to exercise production-owned behavior. No diagnostic result i
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
 
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: widened the
+  WorktreeSupportTests citation to the class range it actually occupies (979-1054).
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read and bounded the unchanged
   `TaskDocument` fixture dependency to the current source. Verification remains closeout-owned.
 

@@ -262,7 +262,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:429-429; docs/reference/settings-json.md:431-432 |
+| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:442-442; docs/reference/settings-json.md:443-443; docs/reference/settings-json.md:440-440 |
 
 ## Repo-Internal References
 

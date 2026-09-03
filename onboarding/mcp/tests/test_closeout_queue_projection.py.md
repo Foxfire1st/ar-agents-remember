@@ -39,7 +39,7 @@ and graphless atomic-sequential routes share one fingerprint across coherence, d
 Under CCR-R03@v1 the review-evidence drift case expects `route-review-evidence-stale` as the
 projection reason (replacing the former `door-review-provenance-stale`), because review provenance
 is now the route-review record digest and evidence-byte drift surfaces through the route-review
-currentness seam cit:([`test_missing_or_stale_review_evidence_fails_closed`-class cases], mcp/tests/test_closeout_queue_projection.py:206-215).
+currentness seam cit:([`test_review_evidence_drift_changes_source_identity_and_blocks_member`], mcp/tests/test_closeout_queue_projection.py:203-212).
 
 ### Conventions
 
@@ -78,7 +78,7 @@ No Domain Documentation source is configured for this memory root.
 | Readiness changes invalidate while display/audit-only edits preserve exact source identity. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:87-115 |
 | Composite-binding refusal and a relevant dependency edge affect the explicit topology source plane. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:117-168 |
 | Graphless and DAG routes share one topology fingerprint across coherence, door, and queue. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:170-197 |
-| Review-evidence drift reason under the R03 evidence digest seam. | `test_*_review_evidence_drift` case | mcp/tests/test_closeout_queue_projection.py:206-215 |
+| Review-evidence drift reason under the R03 evidence digest seam. | `test_review_evidence_drift_changes_source_identity_and_blocks_member` | mcp/tests/test_closeout_queue_projection.py:203-212 |
 
 ## Cross-Repo References
 

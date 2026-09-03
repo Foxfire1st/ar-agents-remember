@@ -42,13 +42,13 @@ Under CCR-R03@v1 the observation and currentness seam binds declared dependencie
 reader takes `_QualityAttestationSource` (attestation/report paths, pair identity, and the exact
 code/memory candidate trees) and re-requires the attestation's dependency declaration against those
 trees (`memory-quality-attestation-dependencies-stale` refuses)
-cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:98-110, 470-520).
+cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:98-106; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:470-529).
 `require_current_curator_coherence` runs `_require_current_dependencies`, which rebuilds the
 `curator-coherence/v1` declaration from the record's code/memory candidate trees, topology
 fingerprint, digest-bearing task intent, attestation/report digests, every judgment evidence digest,
 and predecessor — refusing `curator-coherence-task-intent-missing`,
 `evidence-dependencies-missing`, or `curator-coherence-dependencies-stale`
-cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:341-370, 384-467).
+cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:323-383; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-465).
 
 ### Conventions
 
@@ -86,12 +86,12 @@ No external source governs this repository-local lifecycle authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:128-178 |
-| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:145-228 |
-| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:285-327; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:330-331 |
-| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:81-106 |
-| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-412 |
-| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:477-509 |
-| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-467, 470-520 |
+| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:237-322 |
+| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:323-383; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:466-469 |
+| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:117-143 |
+| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:530-559 |
+| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:623-656 |
+| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-465; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:470-529 |
 
 ## Cross-Repo References
 
@@ -99,7 +99,7 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External memory is still the exact contract-resolved paired worktree, not an arbitrary repository. | `_require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:422-435 |
+| External memory is still the exact contract-resolved paired worktree, not an arbitrary repository. | `_require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:568-582 |
 
 ## MCAR-L03 Exact Pair Authority
 

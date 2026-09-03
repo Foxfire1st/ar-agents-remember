@@ -45,7 +45,7 @@ The Candidate A retirement and replacement measurement are described in
 | --- | --- | --- |
 | Seven exact tests preserve the former cohort's unique product assertions. | `test_stable_provider_id_never_returns_empty`; gate/role coercion tests; route-normalization tests | mcp/tests/test_kernel_pure_regressions.py:24-54 |
 | Representative measurement names these seven exact nodes as its pure cohort. | `COHORTS` | mcp/test_support/agents_remember_test_support/testing/route_measurement.py:79-112 |
-| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:132-132 |
+| The explicit unit lane owns the module. | "mcp/tests/test_kernel_pure_regressions.py" | mcp/tests/test-evidence-lanes.toml:140-140 |
 
 ## Cross-Repo References
 
@@ -53,6 +53,8 @@ No cross-repository boundary applies.
 
 ## Update History
 
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: moved the lane-manifest
+  citation to the line that carries the module path (140).
 - 2026-09-01T08:13+02:00 — No content impact: re-anchored the unchanged explicit unit-lane row
   after the final CCR-R01 coverage companion shifted its coordinate. Test behavior and ownership
   are unchanged.

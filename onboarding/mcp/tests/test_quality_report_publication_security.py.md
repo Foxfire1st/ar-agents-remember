@@ -61,9 +61,9 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dangling result references refuse publication. | `test_result_cannot_reference_an_artifact_outside_the_export_inventory` | mcp/tests/test_quality_report_publication_security.py:24-49 |
-| Nested and generation symlinks cannot escape publication ownership. | `test_nested_legacy_directory_symlink_cannot_delete_external_reports`; `test_generation_symlink_cannot_substitute_external_evidence` | mcp/tests/test_quality_report_publication_security.py:51-120 |
-| An unrelated historical-generation symlink preserves both the external sentinel and prior live pointer. | `test_historical_generation_symlink_refuses_before_pointer_moves` | mcp/tests/test_quality_report_publication_security.py:118-151 |
+| Dangling result references refuse publication. | `test_export_cannot_publish_an_artifact_outside_the_profile_inventory` | mcp/tests/test_quality_report_publication_security.py:174-195 |
+| Nested and generation symlinks cannot escape publication ownership. | `test_nested_legacy_directory_symlink_cannot_delete_external_reports`; `test_generation_symlink_cannot_substitute_external_evidence` | mcp/tests/test_quality_report_publication_security.py:343-366; mcp/tests/test_quality_report_publication_security.py:368-405 |
+| An unrelated historical-generation symlink preserves both the external sentinel and prior live pointer. | `test_historical_generation_symlink_refuses_before_pointer_moves` | mcp/tests/test_quality_report_publication_security.py:407-432 |
 
 ## Cross-Repo References
 

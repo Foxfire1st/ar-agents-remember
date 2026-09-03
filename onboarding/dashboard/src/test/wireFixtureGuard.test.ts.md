@@ -180,15 +180,15 @@ an error.
 | The registry reconciliation unit cases. | "the registry cannot be quietly outgrown" | dashboard/src/test/wireFixtureGuard.test.ts:595-626 |
 | The five-rule mechanism and discovered vocabulary. | `wireTypeNames` | dashboard/src/test/wireFixtureGuard.ts:466-482 |
 | The guard's documented uncovered-evasions section names `ElementAccessExpression`. | "WHAT THIS DOES NOT COVER"; "ElementAccessExpression" | dashboard/src/test/wireFixtureGuard.ts:39-39; dashboard/src/test/wireFixtureGuard.ts:44-44 |
-| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:744-744 |
-| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:375-375 |
-| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:377-377 |
+| `SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`. | `SubTaskRow` | dashboard/src/types/projection.ts:751-751 |
+| The `StateCountField` mirror-internal cast. | `StateCountField` | dashboard/src/types/projection.ts:376-376 |
+| The `LifecycleStateCounts` mirror-internal cast. | `LifecycleStateCounts` | dashboard/src/types/projection.ts:378-378 |
 | The sanctioned narrowing the registry names. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
 | The `ActivePageCursor` brand mint. | `pageCursor` | dashboard/src/test/fixtures/conversationWire.ts:53-55 |
 | The `ActiveEventCursor` brand mint. | `eventCursor` | dashboard/src/test/fixtures/conversationWire.ts:58-60 |
 | The `LibraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
-| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:623-623; dashboard/src/test/contract.test.ts:625-625 |
-| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:644-644 |
+| The contract test suppresses invalid master/series property access with `@ts-expect-error`. | "masterRow.createdAt"; "seriesRow.linkedLifecycleId" | dashboard/src/test/contract.test.ts:610-610; dashboard/src/test/contract.test.ts:612-612 |
+| The contract test suppresses the carried `refusedPolarity` property. | "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:631-631 |
 | The deliberate widening in the topology suite. | `fromANewerServer` | dashboard/src/topology/model.test.ts:52-54 |
 | KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
 | KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |

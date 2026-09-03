@@ -33,7 +33,7 @@ work.
 Under CCR-R03@v1 the curator-publication controller case mocks the exact candidate-tree capture
 (`_curator_candidate_inputs`) so the checklist write path is exercised with stable code/memory
 candidate trees while the other seams stay real
-cit:([`MemoryQualityControllerTests`], mcp/tests/test_memory_quality_runs.py:462-472).
+cit:([`_curator_candidate_inputs`], mcp/tests/test_memory_quality_runs.py:462-472).
 
 ### Invariants And Boundaries
 
@@ -61,7 +61,7 @@ No configured Domain Documentation source applies; the forcing set is repository
 | Canonical controller/identity forcing set. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:195-405 |
 | Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:27-161 |
 | Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:48-144 |
-| R03 candidate-tree capture mock in the curator-publication case. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:462-472 |
+| R03 candidate-tree capture mock in the curator-publication case. | `_curator_candidate_inputs` | mcp/tests/test_memory_quality_runs.py:462-472 |
 
 ## Cross-Repo References
 

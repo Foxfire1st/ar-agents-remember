@@ -58,7 +58,7 @@ No external domain documentation governs the local cadence command.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Only scheduled, provider-bump, and migration triggers can execute. | `run_cadence_evidence` | mcp/test_support/agents_remember_test_support/testing/cadence_runner.py:23-113 |
-| The Dagger public route remains explicitly non-accepting. | `cadence_evidence` | .dagger/src/agents_remember_quality/main.py:690-759 |
+| The Dagger public route remains explicitly non-accepting. | `cadence_evidence` | .dagger/src/agents_remember_quality/main.py:976-1046 |
 | Focused tests force host refusal, serial stress, provider selection, and not-applicable migration. | `test_host_process_is_refused_before_inventory_or_execution` | mcp/tests/test_cadence_runner.py:36-119 |
 
 ## Cross-Repo References

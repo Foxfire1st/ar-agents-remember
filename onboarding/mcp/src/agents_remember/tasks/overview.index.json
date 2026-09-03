@@ -25,11 +25,12 @@
     "mcp/src/agents_remember/tasks/semantic_topology_graph.py",
     "mcp/src/agents_remember/tasks/semantic_topology_graph_binding.py",
     "mcp/src/agents_remember/tasks/serving_preflight.py",
-    "mcp/src/agents_remember/tasks/store.py"
+    "mcp/src/agents_remember/tasks/store.py",
+    "mcp/src/agents_remember/tasks/task_intent.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 17,
+    "fileSidecars": 17,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -48,6 +49,7 @@
     "graph",
     "init",
     "init__",
+    "intent",
     "leaf",
     "leaf_binding",
     "leaf_doc",
@@ -68,6 +70,8 @@
     "src",
     "store",
     "sync",
+    "task",
+    "task_intent",
     "tasks",
     "titles",
     "topology",
@@ -92,7 +96,8 @@
       "mcp/src/agents_remember/tasks/semantic_topology_graph.py",
       "mcp/src/agents_remember/tasks/semantic_topology_graph_binding.py",
       "mcp/src/agents_remember/tasks/serving_preflight.py",
-      "mcp/src/agents_remember/tasks/store.py"
+      "mcp/src/agents_remember/tasks/store.py",
+      "mcp/src/agents_remember/tasks/task_intent.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -127,6 +132,8 @@
       "serving_preflight",
       "store.py",
       "store",
+      "task_intent.py",
+      "task_intent",
       "task_doc",
       "application/task_doc_tools.py",
       "JSON",
@@ -140,9 +147,7 @@
       "author_execution_graph",
       "commanded_masters",
       "tasks/",
-      "ar-task-document/v1",
-      "task.md",
-      "reopen.py"
+      "ar-task-document/v1"
     ]
   },
   "fallback": {

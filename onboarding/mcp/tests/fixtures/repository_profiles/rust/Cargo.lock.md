@@ -34,15 +34,16 @@ matches `Cargo.toml`; no external crates are locked because the fixture has no d
 
 CCR-R22@v1 requires profiles to declare runtime/toolchain/image/lock identities per rail.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Each declared rail carries runtime/toolchain/image/lock identities. | `## Required Profile Contract` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Each declared rail carries runtime/toolchain/image/lock identities.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Rust fixture lockfile consumed via --locked by fixture suite/e2e scripts. | `Cargo.lock` | mcp/tests/fixtures/repository_profiles/rust/Cargo.lock; mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh; mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh |
+| Rust fixture lockfile consumed via --locked by fixture suite/e2e scripts. | "repository-profile-rust-fixture" | mcp/tests/fixtures/repository_profiles/rust/Cargo.lock:1-7; mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh:1-9; mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh:1-6 |
 
 ## Update History
 

@@ -136,7 +136,7 @@ The README routes readers into the split documentation tree and gives the curren
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
 | The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-298 |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:299-304 |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:307-312 |
 | The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:310-313 |
 | The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:314-318 |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | `# Agents Remember Documentation` | docs/README.md:1-65 |
@@ -223,16 +223,16 @@ Vitest remains the only supported host test diagnostic.
 
 ## Update History
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the repository-owned profile declaration -- mcp/certification-profile-v1.json selected by repositories.agents-remember.certificationProfile -- replacing the qualityGate.executor settings wording in the acceptance bullet.
-- Host `pytest` is refused and Candidate A's direct wrapper no longer exists. Deterministic
+- 2026-09-03T12:30+02:00 -- Host `pytest` is refused and Candidate A's direct wrapper no longer exists. Deterministic
   non-test host checks are feedback only, and a failed Dagger run never falls back to the host.
-- Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
+- 2026-09-03T12:30+02:00 -- Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
   not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest, and
   changed-lines CLI execution remain Dagger-owned; there is no direct Python wrapper.
-- **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
+- 2026-09-03T12:30+02:00 -- **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
   pushes do not duplicate it and GitHub does not run acceptance.
-- **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
+- 2026-09-03T12:30+02:00 -- **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
   lands that exact commit without a rerun; master integration owns the one full run.
-- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
+- 2026-09-03T12:30+02:00 -- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
   there rather than duplicating them.
 
 

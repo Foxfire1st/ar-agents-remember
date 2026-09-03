@@ -37,15 +37,16 @@ live in `tests/unit.rs` and `tests/service.rs`.
 CCR-R22@v1 requires two non-Agents-Remember fixture repositories with different languages,
 commands, artifacts, and E2E tools to complete the same Gate 1-4 protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Two non-Agents-Remember fixture repositories complete the same Gate 1-4 protocol. | `## Expected Verification Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Two non-Agents-Remember fixture repositories complete the same Gate 1-4 protocol.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Rust fixture manifest with its lockfile and test layout. | `[package]` | mcp/tests/fixtures/repository_profiles/rust/Cargo.toml; mcp/tests/fixtures/repository_profiles/rust/Cargo.lock |
+| Rust fixture manifest with its lockfile and test layout. | "repository-profile-rust-fixture" | mcp/tests/fixtures/repository_profiles/rust/Cargo.toml:1-6; mcp/tests/fixtures/repository_profiles/rust/Cargo.lock:1-7 |
 
 ## Update History
 

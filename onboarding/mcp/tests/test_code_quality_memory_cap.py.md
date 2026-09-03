@@ -68,7 +68,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The planning functions under test. | `plan_capped_command`, `systemd_scope_available`, `with_self_cap` | mcp/src/agents_remember/kernel/primitives/memory_cap.py:92-130; mcp/src/agents_remember/kernel/primitives/memory_cap.py:50-67; mcp/src/agents_remember/kernel/primitives/memory_cap.py:77-89 |
 | The wrapper main path that applies the rlimit and names the policy. | `main` | mcp/test_support/agents_remember_test_support/code_quality/check.py:801-855 |
-| The gate's cap-kill naming (returncode -9 / shell 137). | `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:506-530 |
+| The gate's cap-kill naming (returncode -9 / shell 137). | `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:552-576 |
 
 ## Cross-Repo References
 

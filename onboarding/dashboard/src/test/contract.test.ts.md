@@ -36,7 +36,7 @@ with `asServedProjection` and adds the two directions that were missing.
 Under CCR-R03@v1 the R03 leaf reformatted this file (double quotes → single quotes and collapsed
 multi-line literals) and re-synchronized the dashboard contract fixtures with the newly reserialized
 snapshot; no assertion, registry entry, or pinned expectation changed
-cit:([describe suites], dashboard/src/test/contract.test.ts:445-647).
+cit:(["the mirror declares everything the server sends"], dashboard/src/test/contract.test.ts:435-634).
 
 ## Code Commentary
 
@@ -56,16 +56,16 @@ cit:(["the server grows a field", "the mirror declares something the server neve
 **The walls of the walk, derived rather than described.**
 `AbsorbingPaths`/`INDEX_SIGNATURE_SITES` (seven absorbing nodes) and
 `ClosedUnionPaths`/`VOCABULARIES` (every literal-union path registered and sampled) are `Record`s
-over derived path unions, replacing prose lists cit:([`INDEX_SIGNATURE_SITES`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:226-260, 287-425).
+over derived path unions, replacing prose lists cit:([`INDEX_SIGNATURE_SITES`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:225-247; dashboard/src/test/contract.test.ts:287-425).
 `valuesAt` reads every value at a dotted path, fanning out over arrays
-cit:([`valuesAt`], dashboard/src/test/contract.test.ts:428-442).
+cit:([`valuesAt`], dashboard/src/test/contract.test.ts:418-433).
 
-**The runtime suites** (`the mirror declares everything the server sends` L445-459; `the fixture
-samples everything the mirror declares` L461-483; `every closed vocabulary in the mirror is checked
-against the payload` L485-495; `projection contract fixture` L499-522; `metrics bucket every live
-lifecycle state` L528-589; `mirror does not invent fields the server cannot send` L597-647) carry
+**The runtime suites** (`the mirror declares everything the server sends` L435-449; `the fixture
+samples everything the mirror declares` L451-473; `every closed vocabulary in the mirror is checked
+against the payload` L475-486; `projection contract fixture` L488-511; `metrics bucket every live
+lifecycle state` L517-577; `mirror does not invent fields the server cannot send` L584-634) carry
 the runtime membership, non-vacuity, bucket-uniqueness, spelling-parity, and inverted-pin checks
-cit:([runtime suites], dashboard/src/test/contract.test.ts:445-647).
+cit:(["the served payload carries a bucket per live state"], dashboard/src/test/contract.test.ts:435-634).
 
 ### Conventions
 
@@ -111,11 +111,11 @@ makes the behaviour load-bearing HERE.
 | The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | "it does so at three seams"; "snapshot as unknown as WorkspaceProjection"; "WHAT SCHEMA CODEGEN CLOSES" | dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:34-34; dashboard/src/test/contract.test.ts:62-62 |
 | `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | `ServedOnlyPaths`; `mirrorMustDeclare` | dashboard/src/test/contract.test.ts:94-120; dashboard/src/test/contract.test.ts:126-128 |
 | `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | `MirrorOnlyPaths`; `KnownUnsampled`; `fixtureMustSample`; `allowlistMustStayEarned` | dashboard/src/test/contract.test.ts:148-176; dashboard/src/test/contract.test.ts:186-189; dashboard/src/test/contract.test.ts:192-194; dashboard/src/test/contract.test.ts:197-199 |
-| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:206-224; dashboard/src/test/contract.test.ts:226-260 |
+| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed. | `AbsorbingPaths`; `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:210-222; dashboard/src/test/contract.test.ts:225-247 |
 | `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. | `ClosedUnionPaths`; `VOCABULARIES` | dashboard/src/test/contract.test.ts:262-283; dashboard/src/test/contract.test.ts:287-425 |
-| Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:485-495 |
-| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:528-589 |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:597-647 |
+| Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:476-485 |
+| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | "the served payload carries a bucket per live state"; "counts a lifecycle in each live state into its own bucket"; "gives each live state a bucket of its own"; "spells a bucket field the way the server spells it" | dashboard/src/test/contract.test.ts:517-577 |
+| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | "a master's index row is never stamped with a creation time"; "masterRow.createdAt"; "a series row never carries a cross-series lifecycle link"; "seriesRow.linkedLifecycleId"; "never carried on the edge"; "edge.refusedPolarity" | dashboard/src/test/contract.test.ts:585-634 |
 | The generated mirror's metric and analytics declarations. | `Metrics`; `Analytics` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:396-400 |
 | The generated mirror's gate and lifecycle projection declarations. | `GateNode`; `LifecycleProjection` | dashboard/src/types/projection.ts:290-300; dashboard/src/types/projection.ts:351-369 |
 | The sanctioned narrowing the fixture enters through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |

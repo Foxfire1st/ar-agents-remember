@@ -45,7 +45,7 @@ so the forced series/door identity includes the exact intent digest.
 | --- | --- | --- |
 | Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:61-90; mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:346-373; mcp/tests/integration_branch_authority_test_support.py:643-697 |
 | Claimed atomic-leaf doors bind the contract's canonical task intent. | `_claimed_atomic_leaf_door`; `contract_task_intent` | mcp/tests/integration_branch_authority_test_support.py:511-563; mcp/tests/integration_branch_authority_test_support.py:560-560 |
-| Additional atomic leaf landings attach the door only after task-document/master writes. | `_record_additional_atomic_leaf_landing` | mcp/tests/integration_branch_authority_test_support.py:476-506 |
+| Additional atomic leaf landings attach the door only after task-document/master writes. | `_record_additional_atomic_leaf_landing` | mcp/tests/integration_branch_authority_test_support.py:427-508 |
 
 ## Documentation References
 

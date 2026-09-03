@@ -62,10 +62,10 @@ No configured Domain Documentation applies; the assertions follow the CCR-R06@v2
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Production functions under test. | `observe_contract_task_pair`, `observe_git_tree_delta` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:102-149, 213-236 |
-| Candidate-tree staging matches the production memory-candidate path. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py |
-| Git plumbing call wrapper. | `run_git` | mcp/src/agents_remember/kernel/git_command.py |
-| Companion edge suite for the same candidate observation surface. | — | mcp/tests/test_memory_incremental_scope_candidate_edges.py |
+| Production functions under test. | `observe_contract_task_pair`, `observe_git_tree_delta` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:102-149; mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:213-236 |
+| Candidate-tree staging matches the production memory-candidate path. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:33-57 |
+| Git plumbing call wrapper. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:103-156 |
+| Companion edge suite for the same candidate observation surface. | `test_scope_candidate_composes_exact_pair_code_memory_and_task_owners` | mcp/tests/test_memory_incremental_scope_candidate_edges.py:175-229 |
 
 ## Update History
 

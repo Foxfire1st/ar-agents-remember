@@ -72,11 +72,13 @@ history-order checkers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The checker population is derived from the memory-quality package check catalog. | `AVAILABLE_CHECKS`, `DRIFT_CHECK_NAME` | mcp/src/agents_remember/memory_quality/check.py |
-| The one incremental checker is citation range resolution, whose selected-document mode makes it the only executably incremental policy. | `range_resolution.CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py |
+| The checker population is derived from the memory-quality package check catalog. | `AVAILABLE_CHECKS`, `DRIFT_CHECK_NAME` | mcp/src/agents_remember/memory_quality/check.py:31-77 |
+| The one incremental checker is citation range resolution, whose selected-document mode makes it the only executably incremental policy. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64 |
 | The manifest binds `checkerRegistryVersion` into every compiled scope. | `checker_registry_version` | mcp/src/agents_remember/memory_quality/incremental_scope/compiler.py:136-158 |
-| Missing/invalid policy combinations are refused by the registry tests in the compiler/lane suites. | `test_compiler_*` refusal cases | mcp/tests/test_memory_incremental_scope_candidate_edges.py; mcp/tests/test_memory_incremental_scope_compiler.py |
+| Missing/invalid policy combinations are refused by the registry tests in the compiler/lane suites. | `test_every_current_checker_has_one_executable_or_full_only_policy`; `test_empty_or_unknown_checker_population_is_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:267-274; mcp/tests/test_memory_incremental_scope_compiler.py:289-300 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): replaced the dotted anchor with the plain `CHECK_NAME` identifier anchor so the row names a single anchor.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 1ad9d51f743c5b17de51cc46d8b29e004736022d (CCR-R06@v2/L26): created the card for the new checker-scope registry of the R06v2 successor leaf; no prior sidecar existed.

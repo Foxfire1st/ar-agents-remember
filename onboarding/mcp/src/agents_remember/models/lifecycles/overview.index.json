@@ -16,6 +16,7 @@
     "mcp/src/agents_remember/models/lifecycles/door.py",
     "mcp/src/agents_remember/models/lifecycles/door_response.py",
     "mcp/src/agents_remember/models/lifecycles/enclosure.py",
+    "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
     "mcp/src/agents_remember/models/lifecycles/finalize.py",
     "mcp/src/agents_remember/models/lifecycles/legacy.py",
     "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
@@ -27,8 +28,8 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 15,
-    "fileSidecars": 15,
+    "sourceFilesInScope": 16,
+    "fileSidecars": 16,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -38,12 +39,14 @@
     "coherence",
     "curator",
     "curator_coherence",
+    "dependencies",
     "direct",
     "direct_landing",
     "door",
     "door_response",
     "enclosure",
     "evidence",
+    "evidence_dependencies",
     "finalize",
     "init",
     "init__",
@@ -76,6 +79,7 @@
       "mcp/src/agents_remember/models/lifecycles/door.py",
       "mcp/src/agents_remember/models/lifecycles/door_response.py",
       "mcp/src/agents_remember/models/lifecycles/enclosure.py",
+      "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
       "mcp/src/agents_remember/models/lifecycles/finalize.py",
       "mcp/src/agents_remember/models/lifecycles/legacy.py",
       "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
@@ -99,6 +103,8 @@
       "door_response",
       "enclosure.py",
       "enclosure",
+      "evidence_dependencies.py",
+      "evidence_dependencies",
       "finalize.py",
       "finalize",
       "legacy.py",
@@ -132,9 +138,7 @@
       "LifecycleOperationProjection",
       "_require_quality_certification_memory",
       "CloseoutOperationInput",
-      "IntegrateOperationInput",
-      "EnclosurePublicationState",
-      "TerminalEnclosurePredecessor"
+      "IntegrateOperationInput"
     ]
   },
   "fallback": {

@@ -60,7 +60,7 @@ No configured Domain Documentation source applies to this repository-internal li
 | Minimal fixtures differ only by series versus leaf topology. | `_series_contract`; `_leaf_contract` | mcp/tests/test_integration_publication_fence.py:30-55 |
 | Fresh and journaled series cases require valid `not-applicable` authority. | `test_fresh_ordinary_series_integration_needs_no_closeout_door`; `test_journaled_ordinary_series_absence_remains_valid` | mcp/tests/test_integration_publication_fence.py:67-82 |
 | Fresh leaf refusal and retained journal recovery remain distinct. | `test_leaf_without_claimed_closeout_source_is_still_refused`; `test_leaf_retains_an_already_journaled_not_applicable_publication` | mcp/tests/test_integration_publication_fence.py:85-100 |
-| The test is explicitly owned by the deterministic unit-regression lane. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:90-90 |
+| The test is explicitly owned by the deterministic unit-regression lane. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:92-92 |
 
 ## Cross-Repo References
 
@@ -68,6 +68,8 @@ No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
 
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: moved the lane-manifest
+  citation to the line that carries the module path (92).
 - 2026-09-01T08:13+02:00 — No content impact: re-anchored the unchanged explicit
   `unit-regression` row after the final CCR-R01 coverage companion entered the preceding manifest
   block. Test behavior and lane ownership are unchanged.

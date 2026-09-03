@@ -69,7 +69,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Cleanup behavior and branch/worktree removal are delegated here. | "def cleanup_result" | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-635 |
 | Carryover completion is proven against the official memory ledger here. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Git ancestry proof uses the worktree module Git adapter. | "def is_ancestor" | mcp/src/agents_remember/worktrees/modules/git.py:117-117 |
-| Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:107-107 |
+| Task document JSON/markdown reconciliation uses the task document service. | "def write_task_doc(task_root: Path" | mcp/src/agents_remember/tasks/store.py:108-108 |
 | Focused tests pin readiness, dry-run, cleanup-blocked, and task-doc update behavior. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
 
 ## Cross-Repo References

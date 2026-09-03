@@ -161,7 +161,7 @@ ever appears it is honored once.
 | The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
 | `test_every_onboarding_status_the_read_entry_point_returns_validates` asserts the set `_resolve_onboarding` returns equals `VALID_FILE_READ_STATUSES`. | `test_every_onboarding_status_the_read_entry_point_returns_validates` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:788-795 |
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:68-74 |
+| The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:96-104 |
 | The full read and the net-new ranged reader (`read_text_range`). | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |
 | Coordination-context resolution and per-path storage-mode resolution. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | The shared path-confinement + sidecar-pairing helpers, imported under their former private names (`_confined_rel`/`_route_sidecar_status`/`_sidecar_body`). | `confine_rel`, `route_sidecar_status`, `sidecar_body` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47; mcp/src/agents_remember/kernel/sidecar_pairing.py:50-65; mcp/src/agents_remember/kernel/sidecar_pairing.py:101-108 |

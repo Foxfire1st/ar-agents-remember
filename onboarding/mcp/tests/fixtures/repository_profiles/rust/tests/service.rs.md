@@ -36,15 +36,16 @@ script publishes `{"status": "passed", "tool": "cargo-test"}` when it passes.
 
 CCR-R22@v1: Gate 4 contains clean-room or external/runtime integration and E2E certification.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 4 contains clean-room or external/runtime integration and E2E certification. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 4 contains clean-room or external/runtime integration and E2E certification.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture service/E2E test target driven by the e2e script. | `clean_room_service_flow_composes_repository_behavior` | mcp/tests/fixtures/repository_profiles/rust/tests/service.rs; mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh |
+| Fixture service/E2E test target driven by the e2e script. | `clean_room_service_flow_composes_repository_behavior` | mcp/tests/fixtures/repository_profiles/rust/tests/service.rs:1-7; mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh:1-6 |
 
 ## Update History
 

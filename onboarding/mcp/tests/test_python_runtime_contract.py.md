@@ -66,13 +66,14 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies; repository configuration is the authority. The
-governing task artifacts below document the bootstrap repair the hermetic tests pin.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The root-owned repair "Hermetically proves full-clone publication, failed-clone cleanup, valid reuse, fail-closed invalid/foreign paths, competing publishers, and foreign directory/symlink publication races." | "Changed surfaces and behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/notes/reports/l09-gate-evidence/runtime-bootstrap-unblocker-handover/260903-runtime-bootstrap-unblocker-worker-handover.md |
-| The 2026-09-03T06:20:00+02:00 master decision landed the bootstrap repair; it advances no requirement leaf and does not satisfy L12. | Decision record | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+No configured Domain Documentation source applies; repository configuration is the authority, and
+the governing task artifacts document the bootstrap repair the hermetic tests pin. The root-owned
+canonical Python bootstrap repair, as documented in the L09 worker handover (Changed surfaces
+and behavior), hermetically proves full-clone publication, failed-clone cleanup, valid reuse,
+fail-closed invalid/foreign paths, competing publishers, and foreign directory/symlink
+publication races. The 2026-09-03T06:20:00+02:00 master decision (task.md, LAND ROOT-OWNED
+CANONICAL PYTHON BOOTSTRAP REPAIR AND RELEASE L09 VERIFICATION.) landed the bootstrap repair;
+it advances no requirement leaf and does not satisfy L12.
 
 ## Repo-Internal References
 
@@ -82,7 +83,7 @@ governing task artifacts below document the bootstrap repair the hermetic tests 
 | The executing Linux interpreter must pass the canonical native-pidfd probe. | `test_current_test_interpreter_passes_the_canonical_capability_probe` | mcp/tests/test_python_runtime_contract.py:180-202 |
 | The hermetic fixture fabricates git/sha256sum behavior and drives the installer with isolated roots. | `_runtime_fixture`; `_run_installer`; `_GIT_SHIM` | mcp/tests/test_python_runtime_contract.py:42-93; mcp/tests/test_python_runtime_contract.py:96-158 |
 | Full-clone publication, failed-clone cleanup, reuse, foreign-path refusal, and publisher races are proven. | `test_runtime_builder_is_fully_cloned_atomically_published_and_reused`; `test_failed_builder_clone_leaves_no_canonical_or_staging_checkout`; `test_existing_foreign_builder_is_refused_and_preserved`; `test_competing_publishers_adopt_only_the_validated_winner`; `test_foreign_builder_publication_race_fails_closed` | mcp/tests/test_python_runtime_contract.py:203-235; mcp/tests/test_python_runtime_contract.py:236-253; mcp/tests/test_python_runtime_contract.py:254-269; mcp/tests/test_python_runtime_contract.py:270-293; mcp/tests/test_python_runtime_contract.py:294-316 |
-| The contract consumed by the installer and probe lives in the canonical environment file. | `scripts/python-runtime-contract.env` | mcp/tests/test_python_runtime_contract.py:16-25 |
+| The contract consumed by the installer and probe lives in the canonical environment file. | "scripts/python-runtime-contract.env" | mcp/tests/test_python_runtime_contract.py:16-25 |
 
 ## Cross-Repo References
 

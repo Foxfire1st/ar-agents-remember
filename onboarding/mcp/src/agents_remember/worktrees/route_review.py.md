@@ -39,15 +39,15 @@ requires a passing record for the exact current tree, and rechecks its evidence 
 Under R03 `build_route_review` now stamps per-evidence-file SHA-256 digests
 (`_stamp_evidence_digests`), builds the `route-review/v1` dependency declaration (code tree,
 task intent, every evidence-bytes edge, validator), and computes `recordDigest` over the record's
-canonical JSON cit:([`build_route_review`, `_stamp_evidence_digests`], mcp/src/agents_remember/worktrees/route_review.py:56-116, 274-296).
+canonical JSON cit:([`build_route_review`, `_stamp_evidence_digests`], mcp/src/agents_remember/worktrees/route_review.py:56-116; mcp/src/agents_remember/worktrees/route_review.py:274-296).
 `_require_evidence_files` was replaced by digest-based currentness: `_evidence_file_sha256` names
 `route-review-evidence-outside-task` / `route-review-evidence-missing` / `route-review-evidence-stale`
 when evidence bytes change after publication
-cit:([`_evidence_file_sha256`], mcp/src/agents_remember/worktrees/route_review.py:309-331).
+cit:([`_evidence_file_sha256`], mcp/src/agents_remember/worktrees/route_review.py:309-329).
 `require_current_route_review_task_intent` and `_require_current_dependencies` refuse
 `route-review-task-intent-missing`, `evidence-dependencies-missing`, or
 `route-review-dependencies-stale` when the declared inputs no longer match the current record
-cit:([`require_current_route_review_task_intent`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/route_review.py:187-196, 229-271).
+cit:([`require_current_route_review_task_intent`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/route_review.py:172-196; mcp/src/agents_remember/worktrees/route_review.py:229-271).
 
 ### Conventions
 
@@ -82,8 +82,8 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The plane stamps reviewer payloads with the exact candidate and validates task-local evidence. | `build_route_review`; `_require_evidence_files` | mcp/src/agents_remember/worktrees/route_review.py:42-71; mcp/src/agents_remember/worktrees/route_review.py:114-134 |
-| Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. | `require_current_route_review` | mcp/src/agents_remember/worktrees/route_review.py:74-113 |
-| The R03 evidence-digest stamping and dependency currentness seam. | `_stamp_evidence_digests`; `_require_current_dependencies`; `_evidence_file_sha256` | mcp/src/agents_remember/worktrees/route_review.py:229-331 |
+| Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. | `require_current_route_review` | mcp/src/agents_remember/worktrees/route_review.py:123-169 |
+| The R03 evidence-digest stamping and dependency currentness seam. | `_stamp_evidence_digests`; `_require_current_dependencies`; `_evidence_file_sha256` | mcp/src/agents_remember/worktrees/route_review.py:229-329 |
 | The route-review record's content-addressed fields and self-digest validator. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/document.py:151-198 |
 
 ## Cross-Repo References

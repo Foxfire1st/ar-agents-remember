@@ -36,7 +36,7 @@ cit:([`test_git_node_owner_reads_candidate_and_deleted_base_blobs`, `test_citati
 `test_current_route_indexes_accept_exact_population_and_parse_documents`, and
 `test_current_route_indexes_refuse_owner_and_document_drift` prove the route-index population
 contract refuses stale, extra/missing, non-JSON, and non-object documents
-cit:([`test_current_route_indexes_*`], mcp/tests/test_memory_incremental_scope_owner_edges.py:213-287).
+cit:([`test_current_route_indexes_accept_exact_population_and_parse_documents`], mcp/tests/test_memory_incremental_scope_owner_edges.py:213-287).
 `test_tree_entries_keeps_only_recursive_blob_records` pins the `ls-tree -r -z` parsing repair: the
 canonical trailing NUL is removed and only blob records are kept
 cit:([`test_tree_entries_keeps_only_recursive_blob_records`], mcp/tests/test_memory_incremental_scope_owner_edges.py:290-304).
@@ -80,8 +80,8 @@ No configured Domain Documentation applies; the assertions follow the CCR-R06@v2
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Production owner internals under test. | `_tree_entries`, `_current_route_indexes`, `_require_index_matches_candidate`, `_citation_node`, `_require_roots`, `observe_git_nodes`, `extract_*` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:145-464 |
-| Companion primary suite for extractor/lease behavior. | — | mcp/tests/test_memory_incremental_scope_owners.py |
-| Fixture JSON shapes follow the citation source-index state module. | `Identity`, `SourceFile`, `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py |
+| Companion primary suite for extractor/lease behavior. | `test_source_index_accepts_exact_empty_candidate_and_refuses_stale_population` | mcp/tests/test_memory_incremental_scope_owners.py:217-241 |
+| Fixture JSON shapes follow the citation source-index state module. | `Identity`, `SourceFile`, `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:137-258 |
 
 ## Update History
 

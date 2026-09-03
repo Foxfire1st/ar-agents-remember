@@ -35,7 +35,7 @@ Under CCR-R03@v1 `_record` now builds the immutable record's `curator-coherence/
 declaration from the observed code/memory candidate trees, task-topology fingerprint,
 digest-bearing task intent, attestation and report digests, every judgment evidence digest, and the
 predecessor authority digest — so the published generation is a declared content-addressed consumer
-of exactly its inputs cit:([`_record`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:233-306).
+of exactly its inputs cit:([`_record`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:227-321).
 
 ### Conventions
 
@@ -74,9 +74,9 @@ No external documentation governs this local transaction.
 | --- | --- | --- |
 | The public action dispatcher keeps one tool surface. | `curator_coherence_action` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:56-66 |
 | Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. | `_publish` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:128-208 |
-| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:374-409 |
-| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:412-445 |
-| R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:233-306 |
+| Immutable generation installation is directory-atomic and collision-safe. | `_publish_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:457-494 |
+| Attempt snapshots point at immutable generation artifacts. | `_publish_snapshot` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:495-530 |
+| R03 record construction binds the declared dependency set. | `_record` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:227-321 |
 
 ## Cross-Repo References
 

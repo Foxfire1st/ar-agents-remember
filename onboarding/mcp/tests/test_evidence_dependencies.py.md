@@ -21,7 +21,7 @@ evidence record type owns exactly one versioned policy, declarations are canonic
 fingerprint-stable, missing/extra/wrong-type/duplicate dependencies fail closed, record closures
 refuse cycles without scanning for historical files, and each domain seam (route review, door,
 curator coherence, operation, memory-quality controller) refuses missing or stale declared inputs
-cit:([test module docstring], mcp/tests/test_evidence_dependencies.py:1).
+cit:(["Direct-input evidence declarations remain typed, bounded, and acyclic."], mcp/tests/test_evidence_dependencies.py:1).
 
 ## Code Commentary
 
@@ -52,7 +52,7 @@ cit:([`test_route_review_dependency_and_content_addressing_guards`], mcp/tests/t
 `test_curator_dependency_currentness_and_attestation_refusal` and
 `test_door_transition_projects_dependency_refusal` force the coherence and door-source refusal
 projections, while `test_memory_quality_candidate_guards_are_exact` forces the controller's
-candidate-tree guards (`memory-quality-candidate-changed`) cit:([`test_curator_dependency_currentness_and_attestation_refusal`, `test_door_transition_projects_dependency_refusal`, `test_memory_quality_candidate_guards_are_exact`], mcp/tests/test_evidence_dependencies.py:357-412, 414-468).
+candidate-tree guards (`memory-quality-candidate-changed`) cit:([`test_curator_dependency_currentness_and_attestation_refusal`, `test_door_transition_projects_dependency_refusal`, `test_memory_quality_candidate_guards_are_exact`], mcp/tests/test_evidence_dependencies.py:357-412; mcp/tests/test_evidence_dependencies.py:414-468).
 
 ### Conventions
 
@@ -84,11 +84,16 @@ No configured Domain Documentation applies; the matrix follows the CCR-R03@v1 pa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The dependency encoding under test. | `EvidenceDependencies`, `EvidenceDependencyPolicy`, `build_evidence_dependencies`, `require_evidence_dependencies`, `validate_evidence_dependency_graph` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119, 122-213, 228-324 |
+| The dependency encoding under test. | `EvidenceDependencies`, `EvidenceDependencyPolicy`, `build_evidence_dependencies`, `require_evidence_dependencies`, `validate_evidence_dependency_graph` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:122-213; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-324 |
 | The attestation, door, operation, and route-review binders under test. | `memory_quality_attestation_dependencies`; `closeout_door_dependencies`; `lifecycle_operation_dependencies`; `build_route_review` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129; mcp/src/agents_remember/models/lifecycles/door.py:161-202; mcp/src/agents_remember/models/lifecycles/operation.py:428-484; mcp/src/agents_remember/worktrees/route_review.py:56-116 |
 | The controller candidate guards under test. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:433-479 |
-| Companion coverage for the route-review record shape. | `test_route_review_dependency_and_content_addressing_guards` | mcp/tests/test_task_intent_consumers_and_legacy.py:299-315 |
+| Companion coverage for the route-review record shape. | `test_route_review_dependency_and_content_addressing_guards` | mcp/tests/test_evidence_dependencies.py:299-354 |
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: repaired citation
+  rows -- module-docstring prose quote anchored to the docstring literal, route-review
+  row re-pointed to the file that actually carries the anchor, and comma-separated
+  source cells split into ';'-separated path:start-end citations.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): created the card for the new evidence-dependency mutation/cycle/currentness matrix of the R03 leaf; no prior sidecar existed.

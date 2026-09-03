@@ -37,15 +37,16 @@ result when it passes.
 CCR-R22@v1: Gate 4 contains clean-room or external/runtime integration and E2E certification;
 repositories may choose tools and populations but not the ordering contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 4 contains clean-room or external/runtime integration and E2E certification. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 4 contains clean-room or external/runtime integration and E2E certification.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture e2e scenario executed by the Gate-4 rail. | `test("the clean-room service flow composes repository behavior")` | mcp/tests/fixtures/repository_profiles/node/test/e2e.test.mjs; mcp/tests/fixtures/repository_profiles/node/scripts/run-e2e.mjs |
+| Fixture e2e scenario executed by the Gate-4 rail. | `test("the clean-room service flow composes repository behavior")` | mcp/tests/fixtures/repository_profiles/node/test/e2e.test.mjs:1-9; mcp/tests/fixtures/repository_profiles/node/scripts/run-e2e.mjs:1-13 |
 
 ## Update History
 

@@ -55,7 +55,7 @@ See task `260821-CLIVE-L1` L1-R3 and L1-R6.
 | --- | --- | --- |
 | Candidate identity has explicit state/tree/fingerprint/intent fields. | `LifecycleOperationCandidate` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:16-22 |
 | Canonical JSON binds normalized input, Git provenance, and task intent. | `lifecycle_operation_candidate` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:34-79 |
-| The binding carrier for the exact intent. | `LifecycleOperationCandidateBinding.task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:30-35 |
+| The binding carrier for the exact intent. | `task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:30-35 |
 
 ## Cross-Repo References
 

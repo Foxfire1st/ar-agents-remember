@@ -67,7 +67,7 @@ L23 injects the Docker executable seam in mismatch-removal tests so their refusa
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Provider lifecycle, backends and watchers. | "def cgc_backend_start("; "def cgc_watcher_running("; "def watchers_run(" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:89-89; mcp/src/agents_remember/providers/lifecycle/watchers.py:186-186 |
-| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-211; mcp/src/agents_remember/tasks/document.py:185-185 |
+| Task-document edit operations and their required objects. | "def task_doc_tool("; "class TaskEnclosureRef(_Doc):" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-211; mcp/src/agents_remember/tasks/document.py:217-217 |
 | The sibling long-tail refusal collection. | "class RequestedHarnessTests(unittest.TestCase):"; "class OpenTerminalRefusalTests(unittest.TestCase):" | mcp/tests/test_platform_long_tail.py:363-363; mcp/tests/test_platform_long_tail.py:397-397 |
 
 ## Update History

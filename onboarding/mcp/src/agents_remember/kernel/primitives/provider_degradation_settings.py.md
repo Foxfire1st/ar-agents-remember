@@ -85,10 +85,10 @@ No known follow-up in this file.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
+| `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-125 |
 | The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
 | The public settings example ships a representative `providerDegradation` block. | `coordinationRoot` | examples/mcp/settings.example.json:3-3 |
-| Settings-parsing tests cover defaults, explicit thresholds, unknown-key rejection, and per-field type rejection. | `ProviderDegradationSettingsTests` | mcp/tests/test_config.py:480-556 |
+| Settings-parsing tests cover defaults, explicit thresholds, unknown-key rejection, and per-field type rejection. | `ProviderDegradationSettingsTests` | mcp/tests/test_config.py:568-644 |
 
 ## Cross-Repo References
 

@@ -19,7 +19,7 @@
 Focused evidence for the CCR-R06@v2 dependency-owner extractors: proves that all five edge classes
 are emitted as exact content-addressed edges from canonical route-index, citation, entity, and
 Git facts, and that the citation source-index lease accepts an exact candidate while refusing stale
-or malformed generations cit:([`test_all_five_owner_extractors_emit_exact_content_addressed_edges`, `test_source_index_accepts_exact_empty_candidate_and_refuses_stale_population`], mcp/tests/test_memory_incremental_scope_owners.py:85-163, 217-239).
+or malformed generations cit:([`test_all_five_owner_extractors_emit_exact_content_addressed_edges`, `test_source_index_accepts_exact_empty_candidate_and_refuses_stale_population`], mcp/tests/test_memory_incremental_scope_owners.py:85-163; mcp/tests/test_memory_incremental_scope_owners.py:217-239).
 
 ## Code Commentary
 
@@ -63,9 +63,9 @@ No configured Domain Documentation applies; the extractor contracts are reposito
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Production extractors and source-index lease under test. | `extract_file_sidecar_edges`, `extract_governing_route_edges`, `extract_citation_edges`, `extract_entity_edges`, `extract_route_index_edges`, `observe_source_index` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-142, 174-275 |
-| Fixture JSON shapes come from the citation source-index state module. | `ReadyGeneration`, `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py |
-| Companion edge suite for owner composition and refusal cases. | — | mcp/tests/test_memory_incremental_scope_owner_edges.py |
+| Production extractors and source-index lease under test. | `extract_file_sidecar_edges`, `extract_governing_route_edges`, `extract_citation_edges`, `extract_entity_edges`, `extract_route_index_edges`, `observe_source_index` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-142; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:174-275 |
+| Fixture JSON shapes come from the citation source-index state module. | `ReadyGeneration`, `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:47-258 |
+| Companion edge suite for owner composition and refusal cases. | `test_dependency_authority_composes_all_existing_owner_outputs` | mcp/tests/test_memory_incremental_scope_owner_edges.py:96-150 |
 
 ## Update History
 

@@ -25,11 +25,13 @@
     "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py",
-    "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+    "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py",
+    "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py",
+    "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 17,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 19,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -37,6 +39,7 @@
     "agents",
     "agents_remember",
     "candidate",
+    "census",
     "closeout",
     "code",
     "coherence",
@@ -53,13 +56,16 @@
     "evidence",
     "future",
     "future_code_candidate",
+    "identity",
     "initial",
     "initial_door_recovery",
     "integration",
     "integration_reopen",
+    "intent",
     "judgments",
     "ledger",
     "ledger_recovery",
+    "legacy",
     "mcp",
     "memory",
     "memory_candidate_pair",
@@ -77,6 +83,9 @@
     "reopen",
     "source",
     "src",
+    "task",
+    "task_intent_identity",
+    "task_intent_legacy_census",
     "worktrees"
   ],
   "hotPath": {
@@ -98,7 +107,9 @@
       "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py",
-      "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+      "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py",
+      "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py",
+      "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py"
     ],
     "anchorHints": [
       "curator_coherence.py",
@@ -133,6 +144,10 @@
       "operation_admission",
       "recovery_projection.py",
       "recovery_projection",
+      "task_intent_identity.py",
+      "task_intent_identity",
+      "task_intent_legacy_census.py",
+      "task_intent_legacy_census",
       "mcp/src/agents_remember/worktrees/integration/closeout",
       "route-local-overview",
       "47c8d102c2430d5337dbe207d4601efb4844fec0",
@@ -144,11 +159,7 @@
       "T03",
       "lastVerifiedCommitHash",
       "c8d102c2430d5337dbe207d4601efb4844fec0",
-      "lastVerifiedCommitDate",
-      "T08",
-      "governingOverview",
-      "CAS",
-      "MCAR"
+      "lastVerifiedCommitDate"
     ]
   },
   "fallback": {

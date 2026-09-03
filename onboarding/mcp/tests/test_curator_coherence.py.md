@@ -32,7 +32,7 @@ of the same validator.
 Under CCR-R03@v1 the deterministic memory-quality byte fixture now supplies the exact
 `code_candidate_tree` / `memory_candidate_tree` checklist fields the attestation dependency
 declaration requires, keeping the byte-stability assertion valid for the tree-bound attestation
-cit:([`test_memory_quality_attestation_is_byte_stable_for_identical_input`], mcp/tests/test_curator_coherence.py:234-260).
+cit:([`test_memory_quality_attestation_is_byte_stable_for_identical_input`], mcp/tests/test_curator_coherence.py:228-257).
 
 ### Conventions
 
@@ -70,7 +70,7 @@ No configured external documentation applies; this is repository-owned regressio
 | Public publication ignores competing historical Markdown and converges across crash replay. | `test_public_tool_publishes_one_live_authority_and_ignores_historical_markdown` | mcp/tests/test_curator_coherence.py:226-293 |
 | Malformed canonical bytes remain replaceable through exact CAS. | `test_prepare_and_publish_can_replace_a_malformed_authority_by_exact_cas` | mcp/tests/test_curator_coherence.py:296-338 |
 | Memory readiness and closeout invoke the same canonical validator. | `test_memory_quality_never_reports_combined_closeout_readiness_without_coherence`; `test_closeout_memory_preflight_calls_the_same_validator` | mcp/tests/test_curator_coherence.py:370-401; mcp/tests/test_curator_coherence.py:404-432 |
-| Byte-stability fixture now carries the candidate trees the tree-bound attestation requires. | `test_memory_quality_attestation_is_byte_stable_for_identical_input` | mcp/tests/test_curator_coherence.py:234-260 |
+| Byte-stability fixture now carries the candidate trees the tree-bound attestation requires. | `test_memory_quality_attestation_is_byte_stable_for_identical_input` | mcp/tests/test_curator_coherence.py:228-257 |
 
 ## Cross-Repo References
 
@@ -91,6 +91,9 @@ The byte-stability forcing case was extended to supply exact candidate trees so 
 declaration can be validated (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: widened the byte-stability
+  prose citation range to the lines that actually carry the anchor (228-257).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the byte-stability fixture's candidate-tree fields for the tree-bound attestation; prior judgment, CAS, and shared-validator prose preserved.
 

@@ -54,8 +54,8 @@ No configured Domain Documentation source applies to these repository-internal f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pointer rotation after the loader snapshot cannot redirect recovered evidence. | `test_recovery_uses_one_manifest_generation_when_the_pointer_rotates` | mcp/tests/test_quality_gate_public_contract.py:18-83 |
-| Strict worktree response models retain both quality paths and reject an unmodeled path. | `test_public_worktree_response_models_and_retains_both_quality_paths` | mcp/tests/test_quality_gate_public_contract.py:85-129 |
+| Pointer rotation after the loader snapshot cannot redirect recovered evidence. | `test_recovery_uses_one_manifest_generation_when_the_pointer_rotates` | mcp/tests/test_quality_gate_public_contract.py:131-205 |
+| Strict worktree response models retain both quality paths and reject an unmodeled path. | `test_public_worktree_response_models_and_retains_both_quality_paths` | mcp/tests/test_quality_gate_public_contract.py:207-251 |
 
 ## Cross-Repo References
 
@@ -68,6 +68,11 @@ snapshot survives concurrent publication rotation. Evidence is minted from that 
 not from a second mutable read or a diagnostic payload.
 
 ## Update History
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored the two
+  public-contract test citations to their current definitions (pointer-rotation 131-205,
+  response-models 207-251) after the readiness coverage companion moved later test content.
+  Verification remains pinned to the pre-commit source history until closeout.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-identity field coverage in the public gate contract tests.
 
 

@@ -80,7 +80,9 @@ The configured Domain Documentation registry is empty; no external documentation
 | Canonical schema-plus-digest identity and the legacy absence sentinel union. | `TaskIntentIdentity`; `MissingTaskIntent`; `TaskIntentState` | mcp/src/agents_remember/models/task_intent/__init__.py:55-59; mcp/src/agents_remember/models/task_intent/__init__.py:62-65; mcp/src/agents_remember/models/task_intent/__init__.py:68-68 |
 | The single currentness/reuse/publication rejection seam. | `require_task_intent_identity` | mcp/src/agents_remember/models/task_intent/__init__.py:81-95 |
 | The projection owner built on this vocabulary. | `task_intent_projection` | mcp/src/agents_remember/tasks/task_intent.py:132-177 |
-| The field taxonomy that classifies which slots are normative. | `TaskDocumentFieldEffect.NORMATIVE_INTENT` | mcp/src/agents_remember/tasks/document_field_effects.py:45-61 |
+| The field taxonomy that classifies which slots are normative. | `NORMATIVE_INTENT` | mcp/src/agents_remember/tasks/document_field_effects.py:50-54 |
+
+
 
 ## CCR-R02@v2 Normative Task-Intent Identity
 
@@ -93,18 +95,24 @@ legacy containers while granting them no semantic or acceptance authority; the r
 `worktrees/integration/closeout/task_intent_legacy_census.py` removes the compatibility decoder when
 every record class reaches zero.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical identity contract from the approved requirement packet. | "Closeout evidence must bind a separate, versioned normative task-intent identity" | tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R02-v2-normative-task-intent-identity.md:13-15 |
-| Legacy sentinel rules: absence not identity, decode-boundary-only materialization. | "Only the legacy persisted-record decoder/currentness boundary may materialize a typed `missing-intent` sentinel" | tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R02-v2-normative-task-intent-identity.md:53-55 |
+The canonical identity contract comes from the approved requirement packet
+(requirements/CCR-R02-v2-normative-task-intent-identity.md, "Closeout evidence must bind a
+separate, versioned normative task-intent identity"): closeout evidence binds one
+versioned normative identity that changes only for an obligation or implementation-plan
+change. The legacy sentinel rules ("Only the legacy persisted-record decoder/currentness
+boundary may materialize a typed missing-intent sentinel") keep absence distinct from
+identity and allow materialization only at the decode boundary.
+
 
 ## 260831-CCR-L25 Successor Repair
 
-Commit `99dc249b` (L25) carries the sealed L02 Attempt-10 candidate forward to landed state; this
-new package is part of that combined CCR-R02@v2 implementation and is verified at the landed
-commit. See `notes/reports/260831-CCR-L25-worker-delivery.md`.
+The sealed L02 Attempt-10 candidate, carried forward to landed state under L25 (commit `99dc249b`),
+includes this new package cit:([`TaskIntentIdentity`], mcp/src/agents_remember/models/task_intent/__init__.py:55-62); the
+package is verified at that landed commit. See `notes/reports/260831-CCR-L25-worker-delivery.md`.
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact identity-contract rows as prose (absolute task artifact paths are not repo-relative citations).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   created this card for the new typed task-intent slot/identity model package (`TASK_INTENT_SCHEMA`,

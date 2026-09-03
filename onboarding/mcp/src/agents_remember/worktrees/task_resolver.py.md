@@ -82,7 +82,7 @@ Same-repository source and tests define the supported task-folder and series-con
 | `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. | "def load_contract_from_args" | mcp/src/agents_remember/worktrees/modules/start.py:104-104 |
 | `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. | `archive_completed_root_task` | mcp/src/agents_remember/worktrees/task_resolver.py:147-184 |
 | Resolver parity tests pin parent-task disambiguation and archive exclusion from active task discovery. | `ResolverCliTests` | mcp/tests/test_resolver_parity.py:56-251 |
-| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:847-922 |
+| Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:979-1054 |
 
 ## Cross-Repo References
 

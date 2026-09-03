@@ -92,12 +92,10 @@ None.
 ## Docs References
 
 No external Domain Documentation source is configured for this test contract. The governing task
-artifact below documents the bootstrap-repair change this commit made to the suite.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The root-owned repair "Proves distinct, ordered installer and link exec nodes and proves installer failure cannot be masked." | "Changed surfaces and behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/notes/reports/l09-gate-evidence/runtime-bootstrap-unblocker-handover/260903-runtime-bootstrap-unblocker-worker-handover.md |
-| The 2026-09-03T06:20:00+02:00 master decision landed this root-owned repair external to L09/L12. | Decision record | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+artifacts are recorded as prose here (task artifact paths are not repo-relative citations, so
+the authoritative evidence is the suite itself): the root-owned repair proves distinct, ordered
+installer and link exec nodes and proves installer failure cannot be masked; the
+2026-09-03T06:20:00+02:00 master decision landed this root-owned repair external to L09/L12.
 
 ## Repo-Internal References
 
@@ -152,6 +150,10 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
+  Docs References task-artifact rows as prose (absolute ar-coordination paths are not
+  repo-relative citations and carry no verifiable provenance).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the distinct ordered installer/link Dagger exec-node proof in `test_candidate_setup_precedes_every_attempt_specific_cache_input`; refreshed citation anchors (pinned-module, attestation, authoritative-result, and graph-construction tests moved to lines 324/635/677/748; `load_dagger_module` to line 65; the retired `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` name replaced by `test_dagger_quality_executes_the_exact_targeted_profile_plan`). Verification metadata rebased from `f2b7c648` to the bootstrap repair owning commit.
 

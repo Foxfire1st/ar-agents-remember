@@ -58,9 +58,11 @@ None recorded.
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for subresult retention.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R07@v3 required behavior: retain unchanged valid memory subresults; an unchanged interrupted closure reuses exact subresults; no newest-result search. | "Required Behavior"; "Exclusions And Forbidden Overreach" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R07-v3-incremental-affected-closure-validation.md |
+CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
+"Required Behavior"; "Exclusions And Forbidden Overreach") requires retaining unchanged
+valid memory subresults, reusing exact subresults on an unchanged interrupted closure, and no
+newest-result search.
+
 
 ## Repo-Internal References
 
@@ -68,8 +70,8 @@ below closes the informational gap for subresult retention.
 | --- | --- | --- |
 | The store publishes and loads exact SHA-256-addressed unit results. | `ContentAddressedSubresultStore`; `publish`; `load` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:31-119 |
 | Capacity and object-safety boundaries are enforced with typed refusals. | `_require_capacity`; `_read_regular_file` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:94-119; mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:129-143 |
-| Atomic writes come from the kernel-owned writer. | `atomic_write_bytes` | mcp/src/agents_remember/kernel/atomic_write.py |
-| Store edges are proven by the focused suites. | `test_r07_subresult_store_is_exact_atomic_bounded_and_has_no_latest_lookup`; `test_r07_subresult_store_refuses_collision_readback_and_wrong_address`; `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:372-404; mcp/tests/test_memory_incremental_scope_model_edges.py:1004-1041; mcp/tests/test_memory_incremental_scope_model_edges.py:1042-1082 |
+| Atomic writes come from the kernel-owned writer. | `atomic_write_bytes` | mcp/src/agents_remember/kernel/atomic_write.py:51-72 |
+| Store edges are proven by the focused suites. | `test_r07_subresult_store_is_exact_atomic_bounded_and_has_no_latest_lookup`; `test_r07_subresult_store_refuses_collision_readback_and_wrong_address`; `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:372-404; mcp/tests/test_memory_incremental_scope_model_edges.py:1004-1041; mcp/tests/test_memory_incremental_scope_model_edges.py:1042-1056 |
 
 ## Cross-Repo References
 
@@ -80,5 +82,7 @@ No cross-repository implementation boundary is owned here.
 | The store persists inside the coordination memory area, not the code repository. | — | — |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the new content-addressed subresult store; no prior sidecar existed.

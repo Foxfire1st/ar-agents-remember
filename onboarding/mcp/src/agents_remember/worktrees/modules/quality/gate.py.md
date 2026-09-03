@@ -177,9 +177,9 @@ profile.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The profile is configurable; the gate semantics are not; repositories may not redefine the ordering contract. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Missing, ambiguous, invalid, or incomplete profile authority fails during admission; no fallback or compatibility route. | `## Normative Requirement` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| The MCP owns trusted host runtime-launch; every code-committing repository requires one explicit profile. | `## Framework and repository boundary` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+| The profile is configurable; the gate semantics are not; repositories may not redefine the ordering contract. | `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:487-501 |
+| Missing, ambiguous, invalid, or incomplete profile authority fails during admission; no fallback or compatibility route. | `load_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/authority.py:42-92 |
+| The MCP owns trusted host runtime-launch; every code-committing repository requires one explicit profile. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-136 |
 
 ## Repo-Internal References
 
@@ -188,14 +188,14 @@ checks; this module routes between them.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Target/plan shape and the strict-required decision that always admits one valid profile when code would commit. | `QualityGateTarget`; `QualityGatePlan`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:48-65; mcp/src/agents_remember/worktrees/modules/quality/gate.py:66-69; mcp/src/agents_remember/worktrees/modules/quality/gate.py:126-134 |
-| Preview reports the profile-admitted enforced state or no-code-commit; success payload carries profile identity and evidence. | `code_quality_gate_preview`; `_strict_quality_success_payload`; `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:136-191; mcp/src/agents_remember/worktrees/modules/quality/gate.py:396-442; mcp/src/agents_remember/worktrees/modules/quality/gate.py:520-537 |
-| The strict run certifies the index it is handed, publishes the report, and refuses failures before any commit. | `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:235-278; mcp/src/agents_remember/worktrees/modules/quality/gate.py:445-518; mcp/src/agents_remember/worktrees/modules/quality/gate.py:590-606 |
+| Target/plan shape and the strict-required decision that always admits one valid profile when code would commit. | `QualityGateTarget`; `QualityGatePlan`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:48-65; mcp/src/agents_remember/worktrees/modules/quality/gate.py:66-69; mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-136 |
+| Preview reports the profile-admitted enforced state or no-code-commit; success payload carries profile identity and evidence. | `code_quality_gate_preview`; `_strict_quality_success_payload`; `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:136-191; mcp/src/agents_remember/worktrees/modules/quality/gate.py:358-403; mcp/src/agents_remember/worktrees/modules/quality/gate.py:520-537 |
+| The strict run certifies the index it is handed, publishes the report, and refuses failures before any commit. | `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:191-286; mcp/src/agents_remember/worktrees/modules/quality/gate.py:419-471; mcp/src/agents_remember/worktrees/modules/quality/gate.py:552-570 |
 | Recovery reuses one exact passed generation only when profile identity and plan digest match the current candidate. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
-| The named local entry point refuses before resolving or executing a host command. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:443-444 |
-| Closeout builds the target from the configured profile reference and runs targeted mode; integration forwards the reference for the full gate. | `_quality_gate_target`; `_closeout_quality_gate_preview`; `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:147-155; mcp/src/agents_remember/worktrees/modules/closeout.py:836-852; mcp/src/agents_remember/worktrees/integration/integration_quality.py:140-196 |
+| The named local entry point refuses before resolving or executing a host command. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:406-416 |
+| Closeout builds the target from the configured profile reference and runs targeted mode; integration forwards the reference for the full gate. | `_quality_gate_target`; `_closeout_quality_gate_preview`; `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:147-155; mcp/src/agents_remember/worktrees/modules/closeout.py:829-850; mcp/src/agents_remember/worktrees/integration/integration_quality.py:137-195 |
 | The profile package provides admission/adapters/planning consumed here. | `load_repository_profile`; `DaggerModuleExecutorAdapter`; `compile_repository_profile_plan` | mcp/src/agents_remember/certification/repository_profiles/authority.py:42-92; mcp/src/agents_remember/certification/repository_profiles/adapters.py:60-97; mcp/src/agents_remember/certification/repository_profiles/planning.py:71-118 |
-| Regressions cover enforced/no-code states, profile admission refusals, targeted/full modes, cap-kill naming, immediate host refusal, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:140-1088; mcp/tests/test_worktree_quality_gate_runner.py:183-536 |
+| Regressions cover enforced/no-code states, profile admission refusals, targeted/full modes, cap-kill naming, immediate host refusal, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:109-736; mcp/tests/test_worktree_quality_gate_runner.py:68-550 |
 
 ## Cross-Repo References
 
@@ -205,7 +205,7 @@ that repository's own executable contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is decided by the configured profile reference plus the admitted profile in the target checkout — no wrapper discovery, no repository-name special case. | `load_repository_profile`; `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:126-134; mcp/src/agents_remember/worktrees/modules/quality/gate.py:520-537 |
+| Applicability is decided by the configured profile reference plus the admitted profile in the target checkout — no wrapper discovery, no repository-name special case. | `load_repository_profile`; `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:126-134; mcp/src/agents_remember/worktrees/modules/quality/gate.py:487-501 |
 
 ## L23 Acceptance Interpretation (Preserved)
 

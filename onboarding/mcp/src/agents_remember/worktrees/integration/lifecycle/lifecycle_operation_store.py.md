@@ -72,7 +72,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `_OWNERSHIP` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:1-710 |
-| Task intent joins the compared generation identity. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:318-330 |
+| Task intent joins the compared generation identity. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:310-355 |
 | Legacy missing-intent generation archive + successor write. | `_retire_missing_intent_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:638-668 |
 | The write-side identity requirement for closeout/direct-landing records. | `_write` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:676-689 |
 

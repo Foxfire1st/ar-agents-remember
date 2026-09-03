@@ -24,6 +24,8 @@
     "mcp/test_support/agents_remember_test_support/code_quality/file_size.py",
     "mcp/test_support/agents_remember_test_support/code_quality/layering.py",
     "mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py",
+    "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py",
+    "mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py",
     "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py",
     "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py",
     "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py",
@@ -37,8 +39,8 @@
     "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 25,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 27,
+    "fileSidecars": 27,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -82,12 +84,16 @@
     "post",
     "post_coverage",
     "preflight",
+    "profile",
+    "profile_rails",
+    "profile_selection",
     "projection",
     "projection_types",
     "proof",
     "quality",
     "quality_plan",
     "quality_subprocess_environment",
+    "rails",
     "remember",
     "reporting",
     "retry",
@@ -96,6 +102,7 @@
     "room",
     "scope",
     "scope_reporting",
+    "selection",
     "single",
     "single_owner",
     "size",
@@ -128,15 +135,15 @@
       "mcp/test_support/agents_remember_test_support/code_quality/file_size.py",
       "mcp/test_support/agents_remember_test_support/code_quality/layering.py",
       "mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py",
+      "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py",
+      "mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py",
       "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py",
       "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py",
       "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py",
       "mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py",
       "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py",
       "mcp/test_support/agents_remember_test_support/code_quality/scope.py",
-      "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py",
-      "mcp/test_support/agents_remember_test_support/code_quality/single_owner.py",
-      "mcp/test_support/agents_remember_test_support/code_quality/structural_limits.py"
+      "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -167,6 +174,10 @@
       "layering",
       "post_coverage.py",
       "post_coverage",
+      "profile_rails.py",
+      "profile_rails",
+      "profile_selection.py",
+      "profile_selection",
       "projection_types.py",
       "projection_types",
       "quality_plan.py",
@@ -182,11 +193,7 @@
       "scope_reporting.py",
       "scope_reporting",
       "single_owner.py",
-      "single_owner",
-      "structural_limits.py",
-      "structural_limits",
-      "targeted.py",
-      "targeted"
+      "single_owner"
     ]
   },
   "fallback": {

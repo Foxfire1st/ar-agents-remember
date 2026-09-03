@@ -44,7 +44,7 @@ Under CCR-R03@v1 `CuratorChecklist` now carries the exact `code_candidate_tree` 
 `memory_candidate_tree`, and the attestation embeds the `memory-quality-attestation/v1` dependency
 declaration built from the pair, both trees, and the rendered-report SHA-256 — so the checklist
 attestation content-addresses exactly the candidate trees it inspected
-cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:37-49, 147-161).
+cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:34-51; mcp/src/agents_remember/memory_quality/curator_checklist.py:88-173).
 
 ### Conventions
 
@@ -87,7 +87,7 @@ The application layer decides when the report exists, and worktree cleanup owns 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:283-303; mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396; mcp/src/agents_remember/application/memory_quality/controller.py:361-431 |
+| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_scope.py:107-131; mcp/src/agents_remember/application/memory_quality/controller.py:283-303; mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396; mcp/src/agents_remember/application/memory_quality/controller.py:359-431 |
 | Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
 | The enclosure regression proves same-path overwrite, one-file cardinality, component-count arithmetic, and subset-call non-interference. | `test_full_contract_check_replaces_one_enclosure_local_curator_report`; `test_subset_contract_check_does_not_replace_the_curator_report` | mcp/tests/test_memory_tool_enclosure_scope.py:261-301; mcp/tests/test_memory_tool_enclosure_scope.py:303-319 |
 | R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |

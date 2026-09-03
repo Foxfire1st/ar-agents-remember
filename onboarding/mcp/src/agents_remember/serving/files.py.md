@@ -163,7 +163,7 @@ rejected, never silently re-rooted).
 | The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:145-147 |
 | The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
-| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1043-1043 |
+| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1058-1058 |
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
 | The test suite for this module. | `test_response_shape_and_filtering_are_unchanged` | mcp/tests/test_serving_files.py:333-394 |
 | The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:714-720 |

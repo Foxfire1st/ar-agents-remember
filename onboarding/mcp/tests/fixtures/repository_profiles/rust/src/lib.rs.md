@@ -36,15 +36,16 @@ fixture has a real Rust source file for the second-language repository proof.
 CCR-R22@v1 verifies cross-language repository configurability through two foreign fixture
 repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories with different languages complete the same Gate 1-4 protocol. | `## Expected Verification Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Fixture repositories with different languages complete the same Gate 1-4 protocol.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Rust fixture source consumed by unit and service tests. | `add` | mcp/tests/fixtures/repository_profiles/rust/src/lib.rs; mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs; mcp/tests/fixtures/repository_profiles/rust/tests/service.rs |
+| Rust fixture source consumed by unit and service tests. | `add` | mcp/tests/fixtures/repository_profiles/rust/src/lib.rs:1-3; mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs:1-6; mcp/tests/fixtures/repository_profiles/rust/tests/service.rs:1-7 |
 
 ## Update History
 

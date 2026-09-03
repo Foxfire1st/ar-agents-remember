@@ -37,15 +37,16 @@ either is absent.
 CCR-R22@v1: Gate 3 contains only checks that consume a green Gate-2 certificate or its declared
 artifacts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 3 contains only checks that consume a green Gate-2 certificate or its declared artifacts. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 3 contains only checks that consume a green Gate-2 certificate or its declared artifacts.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture post-suite proof consumer over the suite artifact. | `post-suite.sh` | mcp/tests/fixtures/repository_profiles/rust/scripts/post-suite.sh; mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh |
+| Fixture post-suite proof consumer over the suite artifact. | `suiteResult` | mcp/tests/fixtures/repository_profiles/rust/scripts/post-suite.sh:1-5; mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh:1-9 |
 
 ## Update History
 

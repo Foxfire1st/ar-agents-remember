@@ -55,14 +55,10 @@ writes a valid fixture profile from `repository_profile_test_support.fixture_pro
 ## Docs References
 
 CCR-R22@v1 requires missing/ambiguous/invalid/incomplete profile authority to fail during
-admission with typed findings (status `certification-profile-invalid`) and never silently
-disable certification; invalid profile resolution produces every independent schema/graph/config
-finding before any Gate-1 command starts.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Missing, ambiguous, invalid, or incomplete profile authority fails during admission; it must never silently disable code certification or enter a compatibility/fallback route. | `## Normative Requirement` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Invalid profile resolution produces typed admission failure with every independent finding; no Gate-1 command starts. | `## Failure And Recovery` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+admission with typed refusal findings (status `certification-profile-invalid`) and never
+silently disable code certification or enter a compatibility/fallback route; invalid profile
+resolution produces every independent schema/graph/config finding before any Gate-1 command
+starts.
 
 ## Repo-Internal References
 
@@ -72,8 +68,8 @@ package.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| One-exact-file happy path and typed refusal matrix for authority resolution. | `test_exact_repository_relative_authority_loads_one_file`; `test_invalid_authority_refuses_before_read`; `test_symlink_escape_is_refused`; `test_malformed_and_digest_mismatch_are_typed`; `test_repository_identity_mismatch_is_refused` | mcp/tests/test_repository_profile_authority.py:30-107 |
-| Fixture profile generator shared by authority and quality tests. | `fixture_profile` | mcp/tests/repository_profile_test_support.py |
+| One-exact-file happy path and typed refusal matrix for authority resolution. | `test_exact_repository_relative_authority_loads_one_file`; `test_invalid_authority_refuses_before_read`; `test_symlink_escape_is_refused`; `test_malformed_and_digest_mismatch_are_typed`; `test_repository_identity_mismatch_is_refused` | mcp/tests/test_repository_profile_authority.py:25-107 |
+| Fixture profile generator shared by authority and quality tests. | `fixture_profile` | mcp/tests/repository_profile_test_support.py:268-414 |
 
 ## Update History
 

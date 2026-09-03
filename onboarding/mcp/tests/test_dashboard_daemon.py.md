@@ -80,7 +80,7 @@ minimal real settings JSON for CLI dispatch tests.
 | --- | --- | --- |
 | The module under test. | `ensure` | mcp/src/agents_remember/serving/daemon.py:264-290 |
 | The CLI wiring under test. | `_run_daemon_command` | mcp/src/agents_remember/cli/dashboard.py:270-297 |
-| The `dashboard` settings key parsing (companion tests live in test_config.py). | `parse_dashboard_settings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:495-511 |
+| The `dashboard` settings key parsing (companion tests live in test_config.py). | `parse_dashboard_settings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:539-556 |
 
 ## Update History
 

@@ -40,15 +40,16 @@ inherited stdio, exits with the spawned status on failure, then writes
 CCR-R22@v1 classifies Gate 4 as clean-room or external/runtime integration and E2E certification;
 the profile must not merge Gate 2 and Gate 3 or move Gate 4 ahead of cheaper gates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 4 contains clean-room or external/runtime integration and E2E certification. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 4 contains clean-room or external/runtime integration and E2E certification.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture E2E rail publishing the e2e result artifact. | `run-e2e.mjs` | mcp/tests/fixtures/repository_profiles/node/scripts/run-e2e.mjs; mcp/tests/fixtures/repository_profiles/node/test/e2e.test.mjs |
+| Fixture E2E rail publishing the e2e result artifact. | `spawnSync` | mcp/tests/fixtures/repository_profiles/node/scripts/run-e2e.mjs:1-13; mcp/tests/fixtures/repository_profiles/node/test/e2e.test.mjs:1-9 |
 
 ## Update History
 

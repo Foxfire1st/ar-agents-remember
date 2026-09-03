@@ -86,7 +86,7 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
+| MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-125 |
 | Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. | "def lifecycle_settings_from_config" | mcp/src/agents_remember/providers/settings.py:32-32 |
 | The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). | "class ProviderDegradationSettings:" | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:37-37 |
 

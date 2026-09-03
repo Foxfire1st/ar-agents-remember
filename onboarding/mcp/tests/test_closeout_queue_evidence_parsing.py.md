@@ -54,7 +54,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
+| No external domain source is required for this repository-owned test contract. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:30-31 |
 
 ## Repo-Internal References
 
@@ -62,8 +62,8 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
-| The shared coherence record fixture binds canonical task intent. | `_record`; `taskIntent` | mcp/tests/test_closeout_queue_evidence_parsing.py:71-89; mcp/tests/test_closeout_queue_evidence_parsing.py:81-81 |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:30-31 |
+| The shared coherence record fixture binds canonical task intent. | `_record`; `taskIntent` | mcp/tests/test_closeout_queue_evidence_parsing.py:70-91; mcp/tests/test_closeout_queue_evidence_parsing.py:81-81 |
 
 ## Cross-Repo References
 
@@ -71,7 +71,7 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:28-29 |
+| No meaningful cross-repository reference applies. | `_contract` | mcp/tests/test_closeout_queue_evidence_parsing.py:30-31 |
 
 ## MCAR-L03 Structured Pair Shape
 

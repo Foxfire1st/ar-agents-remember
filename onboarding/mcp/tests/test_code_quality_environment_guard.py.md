@@ -58,7 +58,7 @@ The resolved Dagger-only execution contract is recorded in `system/tools.md` and
 | --- | --- | --- |
 | Missing or mismatched attestation refuses before parser construction. | `test_direct_wrapper_refuses_before_targeted_or_retry_planning_without_attestation`; `test_direct_wrapper_refuses_a_mismatched_dagger_attestation_before_planning` | mcp/tests/test_code_quality_environment_guard.py:16-51 |
 | Accepted entry always supplies the fixed native scratch root, with or without a durable report path. | `test_main_uses_the_report_environment_to_select_its_native_temp_root`; `test_main_without_a_report_uses_the_native_default_temp_root` | mcp/tests/test_code_quality_environment_guard.py:53-86 |
-| Production authorization is shared by the wrapper and certifying pytest composition through one admission API. | "def require_dagger_admission("; "Agents Remember quality wrapper"; "Admit first, then resolve any collection/bootstrap state." | mcp/test_support/agents_remember_test_support/testing/dagger_admission.py:73-90; mcp/test_support/agents_remember_test_support/code_quality/check.py:801-807; mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:32-39 |
+| Production authorization is shared by the wrapper and certifying pytest composition through one admission API. | "def require_dagger_admission("; "Agents Remember quality wrapper"; "Admit first, then resolve any collection/bootstrap state." | mcp/test_support/agents_remember_test_support/testing/dagger_admission.py:73-93; mcp/test_support/agents_remember_test_support/code_quality/check.py:825-855; mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:32-39 |
 
 ## Cross-Repo References
 

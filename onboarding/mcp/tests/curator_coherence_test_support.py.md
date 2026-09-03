@@ -38,7 +38,7 @@ Under CCR-R03@v1 the fixture attestation now stamps the exact code candidate tre
 (`capture_future_code_candidate`) and memory candidate tree (scratch-indexed `worktree_candidate_tree`
 over the memory worktree) and embeds the `memory-quality-attestation/v1` dependency declaration —
 so the fixture can only produce attestations whose declared inputs match the production currentness
-validator's expectations cit:([`write_curator_evidence`], mcp/tests/curator_coherence_test_support.py:111-160).
+validator's expectations cit:([`write_curator_evidence`], mcp/tests/curator_coherence_test_support.py:105-202).
 
 ### Conventions
 
@@ -79,7 +79,7 @@ reimplementing their authority logic.
 | --- | --- | --- |
 | The fixture writes a complete leaf/master/sprint lineage and returns the architect's exact sprint reference. | `write_curator_task_topology` | mcp/tests/curator_coherence_test_support.py:28-80 |
 | The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities. | `write_curator_evidence` | mcp/tests/curator_coherence_test_support.py:83-158 |
-| Production resolves the exact leaf, master, and sprint and rejects missing topology. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:382-404 |
+| Production resolves the exact leaf, master, and sprint and rejects missing topology. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:530-557 |
 | Production publication refuses a changed contract under the task lock before atomically replacing the authority. | "curator-coherence-contract-stale" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:163-203 |
 | R03 attestation declaration builder used by the fixture. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
 

@@ -77,11 +77,15 @@ executor boundary. The expected implementation evidence requires generic executo
 artifact/result-decoder interfaces with no repository-specific imports or report names in the
 framework layer.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Raw commands may be repository-owned configuration, but the MCP executes only the exact admitted bytes through the declared sandbox adapter. | `## Required Profile Contract` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Expected implementation evidence: generic executor-adapter and artifact/result-decoder interfaces with no repository-specific imports or report names in the framework layer. | `## Expected Implementation Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| The MCP owns fixed gate meanings, order, and typed schemas; each repository owns commands or adapters and result decoders. | `## Framework and repository boundary` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+CCR-R22@v1 (requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md,
+"## Required Profile Contract") states raw commands may be repository-owned configuration,
+but the MCP executes only the exact admitted bytes through the declared sandbox adapter; the
+expected implementation evidence ("## Expected Implementation Evidence") requires generic
+executor-adapter and artifact/result-decoder interfaces with no repository-specific imports
+or report names in the framework layer. The master task boundary (task.md,
+"## Framework and repository boundary") assigns fixed gate meanings, order, and typed
+schemas to the MCP while each repository owns commands or adapters and result decoders.
+
 
 ## Repo-Internal References
 
@@ -94,10 +98,11 @@ artifact. The old hardcoded result inventory it replaces was deleted in
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generic executor/decoder protocol and the concrete Dagger + JSON implementations. | `RepositoryExecutorAdapter`; `RepositoryResultDecoder`; `DaggerModuleExecutorAdapter`; `JsonExitStatusDecoder` | mcp/src/agents_remember/certification/repository_profiles/adapters.py:43-58; mcp/src/agents_remember/certification/repository_profiles/adapters.py:60-97; mcp/src/agents_remember/certification/repository_profiles/adapters.py:99-133 |
-| The preview and success payload render the profile-declared command through the same adapter. | `_profile_report_command`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:539-557; mcp/src/agents_remember/worktrees/modules/quality/gate.py:396-442 |
-| The clean executor runs the admitted adapter against the exact candidate and decodes the exported result; recovery decodes through the same decoder. | `run_clean_quality`; `_executor_command`; `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:90-144; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:178-196; mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
-| The generic decoder replaces the deleted hardcoded result-inventory validations. | (deleted) `validate_result_artifact_references` | mcp/src/agents_remember/worktrees/modules/quality/result_artifacts.py (removed at this commit) |
+| The preview and success payload render the profile-declared command through the same adapter. | `_profile_report_command`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:504-530; mcp/src/agents_remember/worktrees/modules/quality/gate.py:358-403 |
+| The clean executor runs the admitted adapter against the exact candidate and decodes the exported result; recovery decodes through the same decoder. | `run_clean_quality`; `_executor_command`; `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:128-192; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:210-241; mcp/src/agents_remember/worktrees/modules/quality/gate.py:289-357 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose and removed the citation row for the deleted `result_artifacts.py` (the deletion fact stays in the prose above the table).
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new repository-neutral executor/decoder interface module of the repository-owned certification profile package.

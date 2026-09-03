@@ -56,7 +56,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-240 |
+| No external domain source is required for this repository-owned test contract. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
 
 ## Repo-Internal References
 
@@ -64,9 +64,9 @@ The test file is direct evidence for the production boundary named above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-240 |
+| The selected scenarios and assertions implement this test unit's forcing proof. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
 | Completed-disposition task authority is built through the store and a fixed-now route review. | `publish_completed_disposition_task_authority`; `build_route_review` | mcp/tests/lifecycle_control_test_support.py:39-103; mcp/tests/lifecycle_control_test_support.py:87-93 |
-| The typed candidate ref derived for the leaf document. | `document_ref` | mcp/tests/lifecycle_control_test_support.py:45-63 |
+| The typed candidate ref derived for the leaf document. | `document_ref` | mcp/tests/lifecycle_control_test_support.py:85-86 |
 
 ## Cross-Repo References
 
@@ -74,7 +74,7 @@ No cross-repository source is allowed by the resolved settings.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-240 |
+| No meaningful cross-repository reference applies. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
 
 ## CCR-R02@v2 Intent-Bound Fixture Reviews
 
