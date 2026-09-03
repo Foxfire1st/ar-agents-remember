@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,6 +35,14 @@ observes the same `run-not-found` result as an absent or evicted run.
 route-index preview, drift rows, and commit-owned versus curator-owned findings into the one
 enclosure-local checklist. Sync and async paths therefore share one execution implementation.
 
+Under CCR-R03@v1 curator-report publication is bound to the exact working-tree candidate: before
+and after the primary scan, and again immediately before the checklist write, the controller
+captures both candidate trees with `worktree_candidate_tree` (through scratch indexes outside the
+repositories) and refuses `memory-quality-candidate-changed` if the code or memory candidate moved
+while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:433-453, 455-479).
+The checklist writer receives `code_candidate_tree` and `memory_candidate_tree` so the attestation
+can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:313-361, 361-431).
+
 ### Invariants And Boundaries
 
 - Public callers choose exactly one request mode; no flat legacy overload or inferred wait mode is
@@ -44,6 +52,8 @@ enclosure-local checklist. Sync and async paths therefore share one execution im
 - Polling never discloses whether another configured repository owns the supplied run id.
 - Curator-report publication is derived from resolved leaf scope and a full check, never from a
   caller-provided path.
+- Curator publication requires the exact code/memory candidate trees frozen at start and unchanged
+  through publication; a moved candidate refuses instead of publishing evidence under a new tree.
 
 ### Todos
 
@@ -60,6 +70,7 @@ No configured Domain Documentation source applies; the controller contract is re
 | The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:65-83 |
 | Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:67-144 |
 | Full leaf checks compose and atomically publish the curator checklist. | `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396 |
+| R03 candidate-tree freezing and change refusal around curator publication. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:433-479 |
 
 ## Cross-Repo References
 
@@ -83,7 +94,16 @@ revalidates once more after missing-onboarding and route-index derivation, immed
 report/attestation write. Candidate polls must repeat the exact contract path and re-prove the
 stored pair; a changed pair remains `scope-refused` rather than being relabelled as completed.
 
+## 260831-CCR-R03 Exact-Candidate Checklist Publication
+
+Curator publication now freezes both working-tree candidate trees in scratch indexes and refuses a
+moved candidate before and after the scan and at the final write, so the attestation's declared
+code/memory tree inputs always match the bytes it reports (worker handover:
+notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the exact candidate-tree freeze/change guard for curator publication and the tree inputs passed to the checklist writer; prior mode, identity, and pair-scope prose preserved.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: bound sync/start/poll and curator publication to one exact
   contract pair with pre-scan, post-scan, and final pre-publication refusal. Verification remains

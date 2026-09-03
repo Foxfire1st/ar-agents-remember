@@ -1,13 +1,13 @@
 # run.py
 
 | Field | Value |
-|---|---|
+| ---|---|
 | repository | agents-remember |
 | path | `scripts/e2e_harness/run.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `scripts/e2e_harness/overview.md` |
 
 ## Governing Overview
@@ -36,10 +36,16 @@ creation, candidate inspection, or fixture setup. A direct host invocation there
 creating evidence or reaching any tmux command; this safety property does not depend on valid CLI
 arguments.
 
+Under CCR-R03@v1 `_candidate_identity` stages the candidate index in an OS temp directory that is
+proven outside the repository, instead of a scratch directory inside it — so the temporary index
+can never self-include in the hashed candidate tree (the L26-documented diagnostic limitation is
+fixed for this harness) cit:([`_candidate_identity`], scripts/e2e_harness/run.py:225-238).
+
 ### Conventions
 
 Immutable invocation context travels as one frozen record. Unix-socket roots are intentionally short,
-and candidate identity is computed before any scenario starts.
+and candidate identity is computed before any scenario starts. The candidate-index scratch root must
+never be inside the repository being staged.
 
 ### Invariants And Boundaries
 
@@ -50,6 +56,8 @@ and candidate identity is computed before any scenario starts.
 - Candidate commit/tree, command, diff base, and selected paths appear in durable evidence.
 - Any tmux session or recorded cleanup failure surviving scenario teardown fails L5-C10.
 - Disposable-root cleanup errors are diagnostics; they never replace an earlier primary failure.
+- The candidate tree is hashed from a scratch index outside the repository; `.arspawn-e2e-*`
+  artifacts cannot enter it.
 
 ### Todos
 
@@ -69,6 +77,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Two fresh runs are performed without a retry branch. | `RUN_COUNT` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-158 |
 | Residual tmux ownership is a named acceptance checkpoint. | `_residual_tmux` | scripts/e2e_harness/run.py:111-158; scripts/e2e_harness/run.py:224-240 |
+| R03 outside-repo candidate-index staging. | `_candidate_identity` | scripts/e2e_harness/run.py:225-238 |
 
 ## Cross-Repo References
 
@@ -79,6 +88,8 @@ No meaningful cross-repository reference applies.
 | Run roots and candidate identity stay within the current candidate and disposable fixture. | `_fresh_run_root` | scripts/e2e_harness/run.py:160-220 |
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the outside-repository candidate-index scratch move in `_candidate_identity`; prior admission-first, two-run, and residual-evidence prose preserved.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: made and documented
   Dagger admission as the controller's first operation, so malformed or direct host invocations

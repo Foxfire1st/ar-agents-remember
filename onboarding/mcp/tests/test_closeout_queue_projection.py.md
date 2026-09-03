@@ -5,9 +5,9 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/tests/test_closeout_queue_projection.py`          |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated            | 2026-09-03T12:30:00+02:00                              |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b`            |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00                              |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -36,6 +36,11 @@ outside source currentness, carries composite-binding failures into exact invali
 problems, proves a candidate-relevant dependency edge changes v2 identity, and checks that both DAG
 and graphless atomic-sequential routes share one fingerprint across coherence, door, and queue.
 
+Under CCR-R03@v1 the review-evidence drift case expects `route-review-evidence-stale` as the
+projection reason (replacing the former `door-review-provenance-stale`), because review provenance
+is now the route-review record digest and evidence-byte drift surfaces through the route-review
+currentness seam cit:([`test_missing_or_stale_review_evidence_fails_closed`-class cases], mcp/tests/test_closeout_queue_projection.py:206-215).
+
 ### Conventions
 
 Filesystem hazards use real paths; projection membership is asserted through public model fields.
@@ -50,6 +55,7 @@ Selector corruption is injected directly only to prove strict observation and sc
 - Only classified completion-readiness and structural topology facts change currentness; display and
   audit fields do not.
 - Coherence, the waiting door, and the rebuilt member must agree on one topology fingerprint.
+- Review-evidence drift is reported as `route-review-evidence-stale` under the R03 digest seam.
 
 ### Todos
 
@@ -72,6 +78,7 @@ No Domain Documentation source is configured for this memory root.
 | Readiness changes invalidate while display/audit-only edits preserve exact source identity. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:87-115 |
 | Composite-binding refusal and a relevant dependency edge affect the explicit topology source plane. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:117-168 |
 | Graphless and DAG routes share one topology fingerprint across coherence, door, and queue. | "L3 source-census purity, drift fencing, and terminal-empty forcing." | mcp/tests/test_closeout_queue_projection.py:1-1; mcp/tests/test_closeout_queue_projection.py:170-197 |
+| Review-evidence drift reason under the R03 evidence digest seam. | `test_*_review_evidence_drift` case | mcp/tests/test_closeout_queue_projection.py:206-215 |
 
 ## Cross-Repo References
 
@@ -104,6 +111,8 @@ evidence.
 
 ## Update History
 
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the `route-review-evidence-stale` projection reason replacing `door-review-provenance-stale`; prior rebuild, activation, and fingerprint prose preserved.
+
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8 follow-up: documented readiness-versus-audit
   invalidation, exact topology refusal, relevant-edge drift, and shared coherence/door/queue v2
   identity for both DAG and graphless modes. Verification remains closeout-owned.
@@ -121,16 +130,6 @@ evidence.
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
 
 - 2026-08-18T00:00+02:00 — 260815-DAG-L8: created the closeout-queue projection test suite.
   Verification metadata pinned until closeout stamps the L8 commit.

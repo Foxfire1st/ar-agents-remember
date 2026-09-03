@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/curator_checklist.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -40,12 +40,20 @@ The renderer preserves the important distinction between a zeroable pre-closeout
 source/real-commit evidence that must remain visible until governed closeout supplies a real
 commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:181-237; mcp/src/agents_remember/memory_quality/curator_checklist.py:290-316).
 
+Under CCR-R03@v1 `CuratorChecklist` now carries the exact `code_candidate_tree` and
+`memory_candidate_tree`, and the attestation embeds the `memory-quality-attestation/v1` dependency
+declaration built from the pair, both trees, and the rendered-report SHA-256 — so the checklist
+attestation content-addresses exactly the candidate trees it inspected
+cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:37-49, 147-161).
+
 ### Conventions
 
 - The report filename is stable and contains no timestamp; generation time lives inside the file.
 - Every list is sorted before rendering so identical inputs produce the same work order.
 - Markdown cells collapse whitespace and escape table separators so finding text cannot corrupt
   the checklist layout.
+- The attestation's dependency declaration is generated from the exact candidate trees and report
+  digest, matching what the coherence observer re-requires.
 
 ### Invariants And Boundaries
 
@@ -57,6 +65,8 @@ commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality
   pre-commit verification stamp.
 - The writer owns no quality classification, onboarding mutation, route-index mutation, or
   cleanup. It renders already-computed results and atomically publishes one file.
+- The attestation binds the exact code/memory candidate trees; a changed tree produces a different
+  dependency declaration and stales the attestation.
 
 ### Todos
 
@@ -77,9 +87,10 @@ The application layer decides when the report exists, and worktree cleanup owns 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:283-303; mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396; mcp/src/agents_remember/application/memory_scope.py:105-129 |
+| A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist. | `resolve_leaf_memory_scope`; `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:283-303; mcp/src/agents_remember/application/memory_quality/controller.py:306-333; mcp/src/agents_remember/application/memory_quality/controller.py:336-396; mcp/src/agents_remember/application/memory_quality/controller.py:361-431 |
 | Cleanup removes the reserved reports directory before it attempts to remove the enclosure. | `_removed_directories` | mcp/src/agents_remember/worktrees/modules/cleanup.py:532-559 |
 | The enclosure regression proves same-path overwrite, one-file cardinality, component-count arithmetic, and subset-call non-interference. | `test_full_contract_check_replaces_one_enclosure_local_curator_report`; `test_subset_contract_check_does_not_replace_the_curator_report` | mcp/tests/test_memory_tool_enclosure_scope.py:261-301; mcp/tests/test_memory_tool_enclosure_scope.py:303-319 |
+| R03 attestation dependency declaration source. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
 
 ## Cross-Repo References
 
@@ -110,7 +121,15 @@ The structured memory-quality attestation now carries the full exact pair identi
 generated checklist displays the contract and pair digest. The attestation therefore cannot be
 reused for another valid checkout or branch pair.
 
+## 260831-CCR-R03 Tree-Bound Attestation
+
+The attestation now also declares the exact code/memory candidate trees it inspected, so changing
+either tree stales the checklist attestation (worker handover:
+notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the candidate-tree fields on the checklist and the tree-bound attestation dependency declaration; prior sorting, atomic-write, and pair-binding prose preserved.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: bound the curator worklist and structured attestation to the
   exact code/memory pair. Verification remains closeout-owned.
