@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `6f10c24d72db6171c0d434b307e6806996e2f11d` |
+| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,14 +17,24 @@
 ## Purpose
 
 This TOML file is the enforced lifecycle registry for durable Python test evidence, shared support,
-fixtures, and their stable executable replacement contracts.
+fixtures, and their stable executable replacement contracts. L21 registered the new
+gate-certificate authority suite as an exact consumer of the certification shared-support rows it
+exercises.
 
-## Logic
+## Code Commentary
+
+### Logic
 
 Contract rows bind an owner to an executable evidence node. Artifact rows state authority,
 category, fidelity, cadence, provenance, lifetime, permanence/expiry rationale, replacement
 contract, and exact source-observed consumers. The public lifecycle validator rejects missing,
 stale, contradictory, unowned, or consumer-incomplete rows.
+
+### Invariants And Boundaries
+
+- The registry is fail-closed: missing, stale, contradictory, unowned, or consumer-incomplete rows are rejected by the public lifecycle validator.
+- Catalog rows name exact source-observed consumers; ownership is never reduced to direct importers.
+- The catalog is policy input to operational discovery, never its own artifact population.
 
 ## Current PDLS Delta
 
@@ -47,6 +57,28 @@ replacement node exercises the public single-authority publication and historica
 non-authority contract. The row makes the helper's local-composition fidelity, affected cadence,
 permanent lifetime, and production-publication boundary explicit; exact ownership is not reduced
 to the three files that import it directly.
+
+## Docs References
+
+No configured Domain Documentation source applies; this is the enforced lifecycle registry for repository-local test evidence.
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| L21 registered the gate-certificate suite as an exact consumer of the shared certification and closeout-input rows. | "mcp/tests/test_gate_certificate_authority.py" | mcp/tests/evidence-lifecycle.toml:1157-1225 |
+
+## Cross-Repo References
+
+No cross-repository evidence is required.
+
+## L21 Gate-Certificate Consumer Delta
+
+L21 added `mcp/tests/test_gate_certificate_authority.py` as an exact consumer of the
+certification shared-support and closeout-input rows whose builders the certificate forcing suite
+imports (the same executable-node consumer sets used by the certification and quality-gate
+suites). The catalog rows name that edge explicitly so the evidence-lifecycle validator can
+distinguish an intentional shared dependency from an incomplete ownership declaration.
 
 ## MCAR-L03 Exact Pair Consumer Delta
 
@@ -89,6 +121,12 @@ into shared support.
 | The permanent shared-support artifact has exact ownership, replacement, and five-consumer declarations. | "mcp/tests/certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:1113-1133 |
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): recorded the L21 registration of
+  `test_gate_certificate_authority.py` as an exact consumer of the shared certification and
+  closeout-input support rows whose builders its forcing suite imports. Verification is pinned
+  to the owning commit.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 expanded the certification shared-support row to
   the complete five-consumer set exposed by the source graph. Verification remains closeout-owned.

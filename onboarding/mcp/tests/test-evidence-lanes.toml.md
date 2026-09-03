@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `6f10c24d72db6171c0d434b307e6806996e2f11d` |
+| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,8 @@
 
 Canonical explicit classification manifest for Python test and shared-evidence lanes. It prevents
 unmarked, unknown, or conflicting files from silently inheriting a cheap/default class and gives
-selection, lifecycle, and cadence logic one reviewable declaration of test intent.
+selection, lifecycle, and cadence logic one reviewable declaration of test intent. L21 registered
+the new gate-certificate forcing suite in the `unit-regression` lane.
 
 ## Code Commentary
 
@@ -61,6 +62,10 @@ companions. Those suites exercise production owners through deterministic in-pro
 fixtures; their lane classification governs test selection and cost, not task acceptance or
 durable evidence.
 
+L21 added `mcp/tests/test_gate_certificate_authority.py` to the `unit-regression` lane: the
+certificate suite exercises owned certification contracts through in-process pytest forcing, so its
+cost and evidence class are deliberate rather than inferred.
+
 ### Conventions
 
 - Every classified test path is explicit and repository-relative.
@@ -96,6 +101,7 @@ No external documentation governs this repository-owned evidence catalog.
 | Every new ARSPAWN repair proof has one explicit semantic lane. | "mcp/tests/test_dispatch_agent_ambient_reviewer.py"; "mcp/tests/test_non_leaf_reviewer_evidence_retention.py"; "mcp/tests/test_quality_report_publication_security.py"; "mcp/tests/test_e2e_harness_selection.py" | mcp/tests/test-evidence-lanes.toml:265-265; mcp/tests/test-evidence-lanes.toml:355-355; mcp/tests/test-evidence-lanes.toml:385-385; mcp/tests/test-evidence-lanes.toml:472-472 |
 | The direct-execution boundary regression remains explicitly unit-regression evidence. | "mcp/tests/test_integration_publication_fence.py" | mcp/tests/test-evidence-lanes.toml:90-90 |
 | The nine CCR-R01 focused suites each have explicit unit-regression ownership. | "mcp/tests/test_closeout_projection_coverage_edges.py"; "mcp/tests/test_closeout_projection_source_facts.py"; "mcp/tests/test_execution_graph_indexed_admission.py"; "mcp/tests/test_semantic_topology_coverage_edges.py"; "mcp/tests/test_semantic_topology_field_matrix.py"; "mcp/tests/test_semantic_topology_refusals.py"; "mcp/tests/test_semantic_topology_scaling.py"; "mcp/tests/test_task_document_coverage_edges.py"; "mcp/tests/test_task_document_field_effects.py" | mcp/tests/test-evidence-lanes.toml:29-30; mcp/tests/test-evidence-lanes.toml:63-63; mcp/tests/test-evidence-lanes.toml:136-139; mcp/tests/test-evidence-lanes.toml:158-159 |
+| The L21 gate-certificate suite enters the closed population exactly once as unit-regression. | "mcp/tests/test_gate_certificate_authority.py" | mcp/tests/test-evidence-lanes.toml:68-68 |
 
 ## Cross-Repo References
 
@@ -112,6 +118,12 @@ the existing future-code real-Git suite. This prevents the Dagger selector from 
 the new filesystem/Git/task publication fixture as unit evidence.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): recorded the L21 lane registration of
+  `mcp/tests/test_gate_certificate_authority.py` as explicit `unit-regression` evidence so the
+  new forcing suite enters the closed population exactly once. Verification is pinned to the
+  owning commit.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added explicit `unit-regression` ownership for the
   three focused certification edge suites and re-anchored every manifest citation shifted by
