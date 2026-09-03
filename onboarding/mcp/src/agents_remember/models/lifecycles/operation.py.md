@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,15 +30,31 @@ full-Dagger proof with result-hash revalidation) and
 the former queue-completion evidence model; integration claim/publication evidence now lives in the
 journal-owned operation fields rather than a queue-removal lifecycle cell.
 
+Under CCR-R03@v1 the durable record carries a typed direct-dependency declaration:
+`lifecycle_operation_dependencies` maps the operation kind to the correct record type
+(`lifecycle-closeout-operation/v3` / `lifecycle-direct-landing-operation/v3` /
+`lifecycle-integration-operation/v3`) and declares the admitted candidate state, normalized
+operation input, gate-policy rail plan, and validator; commit operations additionally bind the exact
+code tree, digest-bearing task intent, and admitted closeout-door generation, refusing
+`lifecycle-operation-candidate-dependencies-missing` or
+`lifecycle-operation-door-dependency-missing` when absent
+cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:428-484).
+`require_lifecycle_operation_dependencies` refuses `lifecycle-operation-dependencies-stale` when the
+record's declared edges differ from its admitted immutable inputs
+cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:486-510).
+
 ### Conventions
 
-All models forbid extra fields. The input union is discriminated by `kind`; public status uses `StrictResponseModel` and camel-case wire names.
+All models forbid extra fields. The input union is discriminated by `kind`; public status uses `StrictResponseModel` and camel-case wire names. Operation dependency edges reuse the shared evidence-dependency encoding and are recomputed before persistence and every launch/currentness gate.
 
 ### Invariants And Boundaries
 
 - Operation identity is plane-owned and private.
 - Task, operation kind, accepted input, state fingerprint, and candidate tree are immutable across retry.
 - Only the public projection crosses the MCP/dashboard boundary.
+- The declared dependencies are the admitted door, certifying plan, and acceptance candidate; a
+  record never binds a universal candidate tuple, and dependencies are omitted only when the
+  record-type policy proves the record never reads them.
 
 ### Todos
 
@@ -58,6 +74,7 @@ No external Domain Documentation source is configured for these internal wire mo
 | --- | --- | --- |
 | The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:324-389 |
 | The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
+| The R03 dependency vocabulary used by these record types. | `EvidenceRecordType`, `EvidenceDependencies`, `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-52, 99-119, 228-237 |
 
 ## Cross-Repo References
 
@@ -107,7 +124,17 @@ Lifecycle record validation was decomposed into single-purpose commit-leg, irrev
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+
+## 260831-CCR-R03 Declared Operation Dependencies
+
+The lifecycle record now carries `dependencies`; every claim, direct-landing, door-intent, and
+queued-integrate writer recomputes the exact declaration from the admitted candidate, door, plan,
+and input before persistence, and launch/currentness gates re-require it (worker handover:
+notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed direct-dependency declaration on lifecycle operation records, the per-kind dependency builders, and the launch/currentness refusal; prior input/record/projection prose preserved.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

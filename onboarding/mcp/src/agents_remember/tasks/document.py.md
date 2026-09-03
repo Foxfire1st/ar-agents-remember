@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-01T03:58+02:00                        |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated            | 2026-09-03T12:30:00+02:00                  |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00                  |
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -118,6 +118,13 @@ For lossless round-trip of our real hand files (R4), a leaf doc also carries: a 
 `sections` (the master-only field, now legal on a leaf, `freeform` kind only — rendered after References as
 the escape hatch for bespoke prose; the standard template sections stay the backbone).
 
+Under CCR-R03@v1 the route-review record became self-content-addressing. `RouteReviewUnit` carries
+`evidenceSha256` per evidence file, and `RouteReviewRecord` carries `verdictSha256`,
+`dependencies` (the typed `route-review/v1` declaration), and `recordDigest`. The record validator
+requires all content-addressing fields together, validates the declaration against the route-review
+policy, and forces `recordDigest` to equal the canonical SHA-256 of the record's own JSON bytes
+cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/document.py:138-160, 151-198).
+
 ### Invariants And Boundaries
 
 - Persisted/served contract, **not** an MCP response model (peer of
@@ -153,6 +160,9 @@ the escape hatch for bespoke prose; the standard template sections stay the back
 - **Node identity is structural:** `SprintExecutionNode` compares only with another node and hashes
   `(kind, ref, leafIds)`. It never aliases `TaskDocumentRef`; legacy bare-ref lifting and wire
   serialization are independent and remain unchanged.
+- **Route-review content addressing is all-or-nothing (R03):** partial digest fields, an invalid
+  dependency declaration, or a non-matching record digest all refuse validation, so no record can
+  mix hashed and unhashed evidence.
 
 ### Todos
 
@@ -175,6 +185,8 @@ No Domain Documentation sources are configured for this repository-internal pers
 | Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:320-341 |
 | Focused proof covers both comparison directions, set/dict insertion directions, and equal/unequal node identities. | `test_nodes_compare_structurally_without_cross_type_aliases` | mcp/tests/test_task_execution_topology_segments.py:237-265 |
 | Topology callers now project `node.ref` explicitly when they mean master ownership. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:116-217 |
+| The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/document.py:151-198 |
+| The R03 route-review dependency vocabulary. | `EvidenceDependencies`, `require_evidence_dependencies`, `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119, 240-275, 327-331 |
 
 ## L23 Final Candidate Disposition
 
@@ -191,7 +203,15 @@ the thin `_find_cycle_members` compatibility helper on the same algorithm. The r
 a `ValueError`-family shape that the application boundary translates to the typed `TaskDocError`
 family.
 
+## 260831-CCR-R03 Route-Review Content Addressing
+
+The route-review record now binds per-evidence-file SHA-256 digests, the `route-review/v1`
+dependency declaration, and a canonical self-digest; `build_route_review` stamps all three from the
+exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the route-review record's content-addressing fields (evidence SHA-256 digests, dependencies, recordDigest) and the all-or-nothing validator binding; prior task-schema and graph-model prose preserved.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: extracted intrinsic execution-graph
   validation into one indexed, operation-counted analysis reused by admission, waves, placement,

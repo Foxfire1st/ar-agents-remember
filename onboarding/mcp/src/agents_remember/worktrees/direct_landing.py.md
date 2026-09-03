@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -46,6 +46,11 @@ the focused `integration/direct_landing_*` owners. Those owners preserve accepte
 identity, write intent before memory and ledger mutation, journal each produced commit, and resume
 the same generation across crash cuts or unreadable-ledger recovery.
 
+Under CCR-R03@v1 `_claim_waiting_direct_landing` binds the claimed operation's typed dependency
+declaration (`lifecycle_operation_dependencies`) before the direct claim is created, so the landed
+operation content-addresses the admitted door, candidate, plan, and input
+cit:([`_claim_waiting_direct_landing`], mcp/src/agents_remember/worktrees/direct_landing.py:702-708).
+
 ### Conventions
 
 The sequence uses a direct-landing record in the same canonical root journal architecture while
@@ -73,6 +78,8 @@ scratch recovery exists.
 - Observing an existing action-required journal is a public refusal (`ok: false`, `state: refused`)
   with the lifecycle operation nested; intermediate journal states never escape as top-level
   direct-landing outcomes.
+- The claimed direct-landing operation must carry the declared dependency set of its admitted
+  inputs before persistence.
 
 ### Todos
 
@@ -90,6 +97,7 @@ No configured Domain Documentation source applies.
 | Journaled memory/ledger execution and recovery own all partial-output cuts. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
 | The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
 | The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:54-103 |
+| R03 dependency binding at direct-landing claim. | `_claim_waiting_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:702-708 |
 
 ## Cross-Repo References
 
@@ -127,7 +135,16 @@ Direct landing now attaches the durable lifecycle operation projection to succes
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+
+## 260831-CCR-R03 Dependency-Declared Direct Landing
+
+The claimed direct-landing generation now carries `lifecycle_operation_dependencies`, binding the
+admitted door, candidate, plan, and input (worker handover:
+notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the direct-landing claim dependency binding and its launch/currentness re-requirement; prior policy-gated and journaled-execution prose preserved.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: made the direct-execution boundary explicit. Direct landing
   is the policy-gated delivery route for a leaf intentionally implemented without its own enclosure;

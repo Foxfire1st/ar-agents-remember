@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,10 +31,18 @@ generation is safely cancelled, replacement binds the current exact waiting door
 proven worker exit; current candidate-tree and first-ready checks remain in the subsequent claim
 transaction.
 
+Under CCR-R03@v1 the closeout claim record and the queued integrate record are bound with their
+typed dependency declaration (`lifecycle_operation_dependencies`), and the lifecycle launch gate
+re-requires the current record's declared dependencies (`require_lifecycle_operation_dependencies`)
+before a worker is launched
+cit:([`_prepare_closeout_claim`, `queued_operation_record`, `_recover_launch_and_project`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:439-449, 1031-1063, 845-856).
+
 ### Conventions
 
 Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
-the public function or model instead of re-deriving its lower-level state machine.
+the public function or model instead of re-deriving its lower-level state machine. Dependency
+declarations are recomputed from the exact admitted inputs whenever the record's door intent or
+input changes.
 
 ### Invariants And Boundaries
 
@@ -46,6 +54,8 @@ the public function or model instead of re-deriving its lower-level state machin
   eventual reaping; PID/fingerprint evidence remains a separate lifecycle concern.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
+- Launch and projection require the record's declared dependencies to match its admitted inputs;
+  a stale or missing declaration refuses before any worker starts.
 
 ### Todos
 
@@ -67,6 +77,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1123 |
 | Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:883-938 |
+| R03 dependency binding on claims and queued records plus launch re-requirement. | `_prepare_closeout_claim`; `queued_operation_record`; `_recover_launch_and_project` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:439-449, 845-856, 1031-1063 |
 
 ## Cross-Repo References
 
@@ -77,7 +88,14 @@ protocol claim.
 | --- | --- | --- |
 | No meaningful cross-repository reference applies. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1118 |
 
+## 260831-CCR-R03 Dependency-Gated Launch
+
+Closeout/integrate records now bind their declared inputs and launch refuses a stale declaration
+(worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the claim/queued-record dependency binding and the launch-time dependency re-requirement; prior claim, cancellation, and detached-launch prose preserved.
 
 - 2026-08-29T16:27+02:00 — Reconciled detached launch with native-pidfd runtime admission and the
   separate lifecycle-owned `Popen` reaping boundary.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,6 +38,12 @@ competing-declaration refusal. Crash-cut recovery is intentionally supersede-spe
 the disposition that publishes a successor door; a pre-write cut returns executable recovery
 arguments, while a post-write cut is observed as already successful.
 
+Under CCR-R03@v1 the artifact-preservation contract now requires the current record's declared
+dependency set (`require_lifecycle_operation_dependencies`), excludes `dependencies` from the
+expected preserved artifacts, and asserts supersede produces a new dependency declaration while
+retire/integrate preserve the record's existing one
+cit:([`_disposition_preserved_artifacts`, `test_completed_unintegrated_disposition_preserves_artifacts`], mcp/tests/test_lifecycle_operation_dispositions_l2.py:64-77, 148-164).
+
 ### Conventions
 
 Tests address operations by task/contract plus kind and generation, assert durable evidence and public legal controls, and compare state across failure cuts. Helpers remain test-only and invoke the same public/domain seams as production.
@@ -49,6 +55,7 @@ Tests address operations by task/contract plus kind and generation, assert durab
   authorize them, while leaf execution is neither advertised nor accepted.
 - Queue projection is never accepted as lifecycle evidence, and private operation identifiers do not cross the public test boundary.
 - Failure-path assertions check non-mutation or exact same-generation recovery, not merely an exception string.
+- Supersede changes the record's dependency declaration (new successor inputs); retire preserves it.
 
 ### Todos
 
@@ -67,6 +74,7 @@ The test source is the direct evidence for the regression contract.
 | The file defines five public completed-closeout disposition forcing seams covering artifact preservation, sprint-orchestrator execution, leaf refusal, multi-operation status projection, and interrupted publication recovery. | `_sprint_owner`; `_disposition_preserved_artifacts`; `test_completed_unintegrated_disposition_preserves_artifacts`; `test_sprint_orchestrator_status_payload_executes_public_disposition` | mcp/tests/test_lifecycle_operation_dispositions_l2.py:54-58; mcp/tests/test_lifecycle_operation_dispositions_l2.py:61-108; mcp/tests/test_lifecycle_operation_dispositions_l2.py:111-155; mcp/tests/test_lifecycle_operation_dispositions_l2.py:158-192 |
 | `completed_disposition_authorized` is imported directly and asserts standalone-owner and sprint-orchestrator authorization plus leaf-worker denial before the corresponding public control paths are exercised. | "from agents_remember.application.lifecycle.lifecycle_control_authority import (" | mcp/tests/test_lifecycle_operation_dispositions_l2.py:10-12 |
 | A disposition interrupted before contract publication remains recoverable through the returned public control arguments; a cut after the write is observed as successful, and both paths end with proven durable publication. | `test_public_supersede_recovers_before_and_after_contract_publication`; `test_supersede_exact_replay_converges_and_competing_declaration_refuses` | mcp/tests/test_lifecycle_operation_dispositions_l2.py:283-361; mcp/tests/test_lifecycle_operation_dispositions_l2.py:364-407 |
+| R03 dependency-required artifact preservation. | `_disposition_preserved_artifacts`; `test_completed_unintegrated_disposition_preserves_artifacts` | mcp/tests/test_lifecycle_operation_dispositions_l2.py:64-77, 148-164 |
 
 ## Cross-Repo References
 
@@ -85,6 +93,8 @@ Forces completed-closeout integrate, retire, and supersede dispositions while pr
 - Retirement preserves door publication/history; supersession creates a distinct waiting generation and retains the claimed predecessor in history.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the dependency-required preservation contract and the supersede-changes/preserve-otherwise declaration assertions; prior disposition-authorization and recovery prose preserved.
 
 - 2026-08-26T10:44:52+02:00 — Corrected the disposition contract: retire preserves the current door under standalone authority, while sprint-owned supersede alone publishes/retries a waiting successor and retains predecessor proof in history.
 

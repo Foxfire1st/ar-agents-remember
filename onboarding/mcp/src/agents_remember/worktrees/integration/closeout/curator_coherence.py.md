@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,10 +38,23 @@ and returns the sprint containing that context's sole bound immutable graph. Coh
 hashes the same admitted graph generation as queue projection and the closeout door; a second mutable
 resolution cannot be mixed into the frozen task-topology identity.
 
+Under CCR-R03@v1 the observation and currentness seam binds declared dependencies. The attestation
+reader takes `_QualityAttestationSource` (attestation/report paths, pair identity, and the exact
+code/memory candidate trees) and re-requires the attestation's dependency declaration against those
+trees (`memory-quality-attestation-dependencies-stale` refuses)
+cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:98-110, 470-520).
+`require_current_curator_coherence` runs `_require_current_dependencies`, which rebuilds the
+`curator-coherence/v1` declaration from the record's code/memory candidate trees, topology
+fingerprint, digest-bearing task intent, attestation/report digests, every judgment evidence digest,
+and predecessor — refusing `curator-coherence-task-intent-missing`,
+`evidence-dependencies-missing`, or `curator-coherence-dependencies-stale`
+cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:341-370, 384-467).
+
 ### Conventions
 
 Evidence references use exactly one explicit `code:`, `memory:`, or `task:` namespace. The resolver
-confines each path to its named root and requires an existing file.
+confines each path to its named root and requires an existing file. Dependency declarations are
+recomputed from the same canonical inputs the validator reads — never from caller-supplied tuples.
 
 ### Invariants And Boundaries
 
@@ -52,6 +65,9 @@ confines each path to its named root and requires an existing file.
 - Every consumer calls `require_current_curator_coherence` or its evidence adapter.
 - No-impact projection is candidate-bound and disposition-exact; downstream gates decide whether
   an accepted identity is actually eligible to clear.
+- Coherence currentness now includes the declared dependency equality: a record whose code/memory
+  trees, topology, intent, or evidence digests drift from its declaration refuses publication
+  state, and no evidence digest points back into a semantic projection.
 
 ### Todos
 
@@ -75,6 +91,7 @@ No external source governs this repository-local lifecycle authority.
 | Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:81-106 |
 | Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-412 |
 | Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:477-509 |
+| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-467, 470-520 |
 
 ## Cross-Repo References
 
@@ -91,7 +108,17 @@ attestation must name that same pair, the immutable record stores it, and curren
 includes it. Pair failures retain their named field and exact repair arguments through the typed
 coherence error adapter.
 
+## 260831-CCR-R03 Dependency-Current Coherence
+
+Coherence currentness now requires the record's typed `curator-coherence/v1` declaration and the
+attestation's `memory-quality-attestation/v1` declaration to match the exact candidate trees,
+topology, intent, and evidence digests; the door therefore stales exactly when a declared input
+changes and never when unrelated semantics move (worker handover:
+notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the dependency-currentness seam (`_QualityAttestationSource`, `_require_current_dependencies`, attestation dependency re-requirement) added by the R03 leaf; prior graph-binding and pair authority prose preserved.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: candidate topology observation now binds
   the already resolved authored graph once and freezes the same immutable graph generation used by

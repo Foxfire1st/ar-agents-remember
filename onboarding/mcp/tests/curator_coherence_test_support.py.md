@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/curator_coherence_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T18:40+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,6 +34,12 @@ one explicit judgment per tuple, then performs prepare and publish with all opti
 identities. Repeated exact input may return `already-current`; changed task truth publishes a new
 canonical generation.
 
+Under CCR-R03@v1 the fixture attestation now stamps the exact code candidate tree
+(`capture_future_code_candidate`) and memory candidate tree (scratch-indexed `worktree_candidate_tree`
+over the memory worktree) and embeds the `memory-quality-attestation/v1` dependency declaration —
+so the fixture can only produce attestations whose declared inputs match the production currentness
+validator's expectations cit:([`write_curator_evidence`], mcp/tests/curator_coherence_test_support.py:111-160).
+
 ### Conventions
 
 Callers mutate their task fixtures first, then call this helper with the exact curator leaf or
@@ -49,6 +55,8 @@ helper; fixtures that already own canonical topology call only the evidence publ
   are not searched and Markdown is not reparsed as authority.
 - Publication remains fail-closed on contract, task, code, memory, attestation, predecessor, or
   judgment drift because the production CAS implementation performs the write.
+- The fixture derives candidate trees through the production capture/scratch-index helpers; it
+  cannot fabricate a tree that mismatches the declaration.
 
 ### Todos
 
@@ -73,6 +81,7 @@ reimplementing their authority logic.
 | The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities. | `write_curator_evidence` | mcp/tests/curator_coherence_test_support.py:83-158 |
 | Production resolves the exact leaf, master, and sprint and rejects missing topology. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:382-404 |
 | Production publication refuses a changed contract under the task lock before atomically replacing the authority. | "curator-coherence-contract-stale" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:163-203 |
+| R03 attestation declaration builder used by the fixture. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
 
 ## Cross-Repo References
 
@@ -89,7 +98,14 @@ Fixture attestations now derive their mandatory pair through the production reso
 creating the real onboarding root. Tests therefore cannot hand-author a pair that bypasses branch,
 base, repository, or path checks.
 
+## 260831-CCR-R03 Fixture Tree Binding
+
+The fixture now captures the exact code/memory candidate trees and declares them in the
+attestation dependencies (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the fixture's exact candidate-tree capture and attestation dependency declaration; prior lineage, CAS, and pair prose preserved.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: routed coherence fixtures through the production exact-pair
   resolver. Dagger verification remains closeout-owned.

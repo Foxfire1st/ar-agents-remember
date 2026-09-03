@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T05:55+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
+| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,11 @@ every result-affecting identity field, leaf curator-publication identity, typed 
 identical wrong-repository/unknown poll shape, and unknown-check refusal before scope or registry
 work.
 
+Under CCR-R03@v1 the curator-publication controller case mocks the exact candidate-tree capture
+(`_curator_candidate_inputs`) so the checklist write path is exercised with stable code/memory
+candidate trees while the other seams stay real
+cit:([`MemoryQualityControllerTests`], mcp/tests/test_memory_quality_runs.py:462-472).
+
 ### Invariants And Boundaries
 
 - Each test clears the process-local registry; retained state never crosses a case.
@@ -38,6 +43,15 @@ work.
 - Controller tests mock the slow execution/scope seams narrowly while exercising real identity and
   admission logic.
 - Wrong-repository polling is compared structurally with unknown polling to prevent disclosure.
+- Curator-publication identity now includes the exact candidate trees captured around the scan.
+
+## Docs References
+
+No configured Domain Documentation source applies; the forcing set is repository-owned.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external authority governs the run registry contract. | — | — |
 
 ## Repo-Internal References
 
@@ -47,6 +61,7 @@ work.
 | Canonical controller/identity forcing set. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:195-405 |
 | Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:27-161 |
 | Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:48-144 |
+| R03 candidate-tree capture mock in the curator-publication case. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:462-472 |
 
 ## Cross-Repo References
 
@@ -71,6 +86,8 @@ derived checklist evidence block the final publication write, and asynchronous s
 not rewritten as completion.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the candidate-tree capture mock in the curator-publication controller case; prior registry, capacity, and pair-forcing prose preserved.
 
 - 2026-08-30T05:55+02:00 — MCAR-L03 A005: expanded total controller proof for async
   pair refusal, stale candidate polling, official running/failed polling, final publication
