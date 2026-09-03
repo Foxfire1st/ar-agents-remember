@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `3e276f2b2052b641afbee180a472259f21b500df` |
+| lastVerifiedCommitDate | 2026-09-02T14:46:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,7 +18,9 @@
 
 Force the persisted execution-nature and sprint activity-on-node graph contract through schema,
 cross-document topology, task-doc graph bootstrap/authoring, deterministic rendering, observer
-projection, and atomic rollback behavior.
+projection, and atomic rollback behavior, including the L04 mutation-classified publication scope:
+an unchanged document batch resolves no projection scope even when an unrelated malformed task
+exists.
 
 ## Code Commentary
 
@@ -38,9 +40,14 @@ coordination lock, and separately proves that neither queue state nor a pending 
 The suite also directly imports the extracted queue-scope owner so targeted gate derivation keeps
 the new application module attached to this existing behavioral topology suite.
 After `SprintExecutionNode` equality became structural and node-to-node only, topology assertions
-that mean “which master does this node address?” compare explicit `node.ref` values. This is a
+that mean `which master does this node address?` compare explicit `node.ref` values. This is a
 mechanical consumer migration: wave derivation, validation, publication, and projection behavior
 are unchanged.
+
+L04 renamed the unrelated-malformed-task case to
+`test_unchanged_documents_have_no_scope_despite_unrelated_malformed_task` and asserts an empty
+scope: the classifier sees no field delta for the unchanged documents, so no projection refresh is
+selected even though an unrelated malformed task is also being written in the same batch.
 
 ### Invariants And Boundaries
 
@@ -52,6 +59,8 @@ are unchanged.
   unchanged.
 - Node identity and master-reference identity are distinct: this suite uses `.ref` explicitly for
   master-facing comparisons and does not depend on node-to-`TaskDocumentRef` equality aliases.
+- Scope selection is classifier-driven: an unchanged or evidence/audit-only document batch selects
+  no projection scope.
 
 ## Repo-Internal References
 
@@ -67,6 +76,7 @@ are unchanged.
 | Schema-wave assertions compare explicit node references after graph construction. | `test_graph_derives_stable_waves_without_persisting_positions` | mcp/tests/test_task_execution_topology.py:116-151 |
 | Bootstrap, topology, projection, and pinned-read wave assertions project `node.ref` before comparison. | `test_bootstrap_previews_then_atomically_publishes_graph_natures_render_and_projection`; `test_execution_waves_validates_and_returns_one_pinned_sprint_snapshot` | mcp/tests/test_task_execution_topology.py:721-803; mcp/tests/test_task_execution_topology.py:838-862 |
 | The production node model defines structural node equality/hash and exposes the addressed document explicitly as `.ref`. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-275 |
+| Unchanged documents publish no projection scope despite an unrelated malformed task in the batch. | `test_unchanged_documents_have_no_scope_despite_unrelated_malformed_task` | mcp/tests/test_task_execution_topology.py:361-387 |
 
 ## 260815-DAG-L9 Inventory Forcing
 
@@ -88,7 +98,21 @@ The current forcing seams include `test_graph_derives_stable_waves_without_persi
 | --- | --- | --- |
 | The current test source exercises `test_graph_derives_stable_waves_without_persisting_positions`, `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`, `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`, `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master`. | `test_graph_derives_stable_waves_without_persisting_positions`; `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`; `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`; `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master` | mcp/tests/test_task_execution_topology.py:117-124; mcp/tests/test_task_execution_topology.py:126-151; mcp/tests/test_task_execution_topology.py:153-199; mcp/tests/test_task_execution_topology.py:201-217 |
 
+## Docs References
+
+No configured Domain Documentation source applies to this repository-local forcing suite.
+
+## Cross-Repo References
+
+No meaningful cross-repository boundary is exercised.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the L04 case rename and
+  expectation change — `test_unchanged_documents_have_no_scope_despite_unrelated_malformed_task`
+  now asserts an empty projection scope because unchanged documents carry no classifier
+  invalidation. Verification is pinned to the owning commit.
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled master-facing wave assertions to explicit
   `node.ref` projection after structural node-only equality; this is a mechanical consumer change,
@@ -99,13 +123,8 @@ The current forcing seams include `test_graph_derives_stable_waves_without_persi
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (task_doc_tool takes
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: signature-compat update (`task_doc_tool` takes
   `call: TaskDocCall`); suite purpose unchanged. Verified at code commit a9d50e08.
-
 
 - 2026-08-19T22:32+02:00 — 260815-DAG-L13: the finite migration operation is removed; the former
   migration cases are now graph-bootstrap forcing through `author_execution_graph`
