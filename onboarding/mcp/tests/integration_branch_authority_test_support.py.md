@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T05:55+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,13 @@ Builds real repository, contract, task-topology, atomic blocker, closed-leaf, an
 
 Shared fixture construction uses production task documents, queue state, contracts, Git refs, and external-memory ledger commits so the main and edge suites do not counterfeit authority or depend on one another. Closed external-memory leaf fixtures materialize the contract-required `onboarding/` root before closeout, ensuring conflict and integration tests reach their intended branch-authority seam instead of failing earlier on an invalid memory-candidate shape.
 
+Since 260831-CCR (commit `99dc249b`) the atomic-leaf authority fixtures bind canonical task intent:
+`_record_additional_atomic_leaf_landing` reorders the work so the claimed closeout door is only
+attached after the leaf document and master row are updated (line 500-506), and
+`_claimed_atomic_leaf_door` (line 511-563) now stamps
+`taskIntent=contract_task_intent(leaf, candidate_ref=leaf_ref)` (line 560) on the door it builds,
+so the forced series/door identity includes the exact intent digest.
+
 ## Invariants And Boundaries
 
 - The suite exercises production owners rather than copying their state-transition logic.
@@ -29,12 +36,16 @@ Shared fixture construction uses production task documents, queue state, contrac
   the onboarding root required by exact code-memory pairing.
 - Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
 - Crash/retry cases retain exact durable identity and expected-old facts.
+- Claimed doors produced by fixtures carry a canonical task-intent identity, matching the
+  production admission requirement.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:61-90; mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:346-373; mcp/tests/integration_branch_authority_test_support.py:643-697 |
+| Claimed atomic-leaf doors bind the contract's canonical task intent. | `_claimed_atomic_leaf_door`; `contract_task_intent` | mcp/tests/integration_branch_authority_test_support.py:511-563; mcp/tests/integration_branch_authority_test_support.py:560-560 |
+| Additional atomic leaf landings attach the door only after task-document/master writes. | `_record_additional_atomic_leaf_landing` | mcp/tests/integration_branch_authority_test_support.py:476-506 |
 
 ## Documentation References
 
@@ -69,7 +80,19 @@ Shared integration-authority builders now expose the canonical current topology 
 
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
+
+## CCR-R02@v2 Intent-Bound Door Fixtures
+
+Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, doors produced by these fixtures
+now bind the canonical task-intent digest so authority tests exercise the production currentness
+rule instead of counterfeiting a pre-intent door.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  claimed atomic-leaf door fixtures now stamp `taskIntent=contract_task_intent(...)` and the
+  additional-landing helper attaches the door after task/master writes; documented the intent-bound
+  fixture contract. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-30T05:55+02:00 — MCAR-L03 A005: external-memory closeout fixtures now create the
   onboarding directory required by the exact pair contract, so lifecycle-conflict tests exercise

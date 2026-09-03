@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -41,10 +41,18 @@ placeholders. For an empty "Proposed Code Examples" section, `_code_example_line
 genuinely needs none (R3). A leaf doc may also carry freeform `sections`, rendered after References as
 bespoke-prose extras (R4 — the master-only field, now legal on a leaf, `freeform` kind only).
 
+Since 260831-CCR (commit `99dc249b`) the renderer renders the typed intent slot forms:
+`_requirement_lines` (line 399) renders an `ApprovedRequirementPacketRef` as
+`- `{stableId}@{version}` — `{path}`` instead of a raw repr; `_question_lines` (line 409) renders an
+`AcceptanceObligationQuestion` as `- **Acceptance obligation `{id}`:** {question}`; and the Route
+Review section (`_route_review_lines`, line 492) emits a `**Task intent:** `{schema}:{digest}``
+line under the candidate tree when the review carries a `TaskIntentIdentity` (line 500-501),
+pinned to the new normative intent identity.
+
 A `master` (`doc.kind == "master"`) dispatches to `_render_master`: the header block,
 then an ordered walk of `doc.sections`. A `freeform` section renders `## {heading}` +
 its `body` verbatim; a `subTasks` / `sharedDecisions` section renders the generated
-block (the `subTasks` index list — `_MARKER` maps `DocStatus` → ✅/🔨/⬜ — or the
+block (the `subTasks` index list — `_MARKER` maps `DocStatus` to check/emoji — or the
 `decisions` table) after an optional `body` intro. The `light`/`subTask` path is
 unchanged.
 
@@ -52,7 +60,7 @@ Since 260815-DAG-L14 the master renderer also emits real sprint structure: a typ
 row renders as a relative markdown link to the commanded master document (`_master_ref_link` —
 `../<folder>/task.md` under `tasks/<repo>/`), while a row without one keeps the plain bold name +
 file code span; a sprint with `orchestrates` + rows but no `subTasks` section still gets its
-`## Master Index` section rendered (the durable markdown must show the sprint → master list); and
+`## Master Index` section rendered (the durable markdown must show the sprint to master list); and
 the header block gains a `**Seats:**` banner (`_seat_lines`) — one line per first-class `SprintSeat`
 (role, state, optional label/identity) when `doc.seats` is non-empty.
 
@@ -60,7 +68,7 @@ Execution topology renders without scheduler interpretation: a commanded master'
 appears in its header, while a sprint's `Execution Graph` section lists canonical nodes, every
 reasoned dependency edge, and the deterministic waves derived from that graph. Since
 260815-DAG-L11 the node/edge/wave labels go through `_graph_node_label` over
-`SprintExecutionNode`: a segment node renders as `` `master.key` (leafs: `L1`, `L2`) `` with its
+`SprintExecutionNode`: a segment node renders as ```master.key` (leafs: `L1`, `L2`)`` with its
 leaf list as the qualifier, and edge endpoints resolve through `graph.resolve_endpoint` before
 labeling. DAGQC L1 separates private diagram identity from user-authored labels: `_mermaid_leaf_ids`
 allocates `n<node ordinal>_l<leaf ordinal>` once from the canonical graph declaration order, and
@@ -86,6 +94,7 @@ durable task identity.
 - Follows the `w-02` `template.md` section order; that template is the render spec.
 - A single ordinal allocation table serves declarations and edge endpoints. Do not reintroduce a
   sanitizer, a collision suffix branch, or a second endpoint-id authority.
+- Typed intent slots render as stable strings; decision prose and generic questions stay literal.
 
 ### Todos
 
@@ -107,6 +116,7 @@ No Domain Documentation sources are configured for this repository-internal rend
 | Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:310-328; mcp/src/agents_remember/tasks/render.py:331-345; mcp/src/agents_remember/tasks/render.py:348-363; mcp/src/agents_remember/tasks/render.py:366-382 |
 | The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
 | Focused proof forces sanitizer-equivalent labels, independent edge roles, repeat render, and title-only changes. | `ExecutionGraphMermaidRenderTests` | mcp/tests/test_execution_graph_render.py:57-291 |
+| The typed requirement/question renderers and the review task-intent line. | `_requirement_lines`; `_question_lines`; `_route_review_lines` | mcp/src/agents_remember/tasks/render.py:399-407; mcp/src/agents_remember/tasks/render.py:409-417; mcp/src/agents_remember/tasks/render.py:492-512 |
 
 
 ## 260815-DAG-L12 Mermaid Document Diagram
@@ -120,7 +130,19 @@ pipe/quote-escaped. The compact machine-readable Nodes / Dependencies / Derived 
 alongside the diagram.
 
 
+## CCR-R02@v2 Intent Rendering
+
+The renderer now surfaces the canonical `task-intent/v1` identity in the Route Review section
+and renders typed approved-packet refs / acceptance obligations in their sections
+(`requirements/CCR-R02-v2-normative-task-intent-identity.md`). Rendering remains deterministic
+and one-way; markdown never becomes authority.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  the task-document renderer now renders `ApprovedRequirementPacketRef` and
+  `AcceptanceObligationQuestion` lines and emits the `**Task intent:**` identity line in the
+  Route Review section when present. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-24T13:43+02:00 — DAGQC L1: replaced lossy user-id sanitization with one canonical
   node/leaf-ordinal Mermaid-id allocation shared by declarations and endpoints; leaf labels now
@@ -154,11 +176,11 @@ alongside the diagram.
   still holds.
 
 - 2026-07-06T23:57:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): `_header_lines` renders
-  `**Orchestrates:** \`name\`, …` after the `**Master:**` line when `doc.orchestrates` is non-empty
-  — the orchestration-command relation surfaces in the rendered markdown; absent field ⇒ no line,
+  `**Orchestrates:** `name`, …` after the `**Master:**` line when `doc.orchestrates` is non-empty
+  — the orchestration-command relation surfaces in the rendered markdown; absent field = no line,
   existing renders byte-identical. Verification metadata pinned until closeout stamps the L14 commit.
 - 2026-06-19T06:03 — Slice 3c reopened (R4, leaf-doc fidelity): `_header_lines` now appends a `statusNote` suffix on `**Status:**` + the `headerNotes` lines, and leaf `render_markdown` appends freeform `sections` after References. Verification metadata pinned until closeout stamps the R4 code commit.
 - 2026-06-19T05:15 — Slice 3c reopened (R3, deferred-examples honesty): `_code_example_lines` gained a `note` parameter — for an empty `codeExamples` it renders `doc.codeExamplesNote` when set (e.g. "Drafted at the plan gate.") instead of the "no code examples are needed" default; `render_markdown` passes `doc.codeExamplesNote` through. Verification metadata pinned until closeout stamps the R3 code commit.
 - 2026-06-19T04:18 — Slice 3c reopened (R2, heading-vs-outcome): `_step_lines` now puts the distinct `Step.outcome` on the checkbox line (`- [x] {outcome or title}`) and drops the line for a bare step (no outcome, no substeps) — the heading is the step, no redundant title echo. Verification metadata pinned until closeout stamps the R2 code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: added the `_render_master` path (ordered `sections` walk — `freeform` verbatim, `subTasks`/`sharedDecisions` generated; `_MARKER` status→emoji), dispatched from `render_markdown` on `kind == "master"`. The light/subTask renderer is unchanged. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the deterministic `TaskDocument` → markdown renderer. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-14T00:16 — Slice 3c commit 3: added the `_render_master` path (ordered `sections` walk — `freeform` verbatim, `subTasks`/`sharedDecisions` generated; `_MARKER` status to emoji), dispatched from `render_markdown` on `kind == "master"`. The light/subTask renderer is unchanged. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
+- 2026-06-13T22:34 — Created for slice 3c commit 1: the deterministic `TaskDocument` to markdown renderer. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

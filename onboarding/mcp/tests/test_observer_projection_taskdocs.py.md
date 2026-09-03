@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection_taskdocs.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -22,15 +22,24 @@ Part of the 260731-EFA-L7 in-place split family for `test_observer_projection_ta
 
 - `TaskDocumentsReaderTests`
 
+Since 260831-CCR (commit `99dc249b`) the suite adds
+`test_body_revision_canonicalizes_typed_intent_slots` (line 246-287): it builds a document with a
+plain requirement plus an `ApprovedRequirementPacketRef`, and a plain question plus an
+`AcceptanceObligationQuestion`, and proves `_task_doc_body_revision` is stable for the same
+document and changes when the packet version or the obligation question text changes — the typed
+intent slots participate in body-revision identity exactly.
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_observer_projection_taskdocs.py`.
+- Typed intent slots are canonicalized into body revision; the reader surface keeps stable strings.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| Typed intent slots canonicalize into the body revision. | `test_body_revision_canonicalizes_typed_intent_slots` | mcp/tests/test_observer_projection_taskdocs.py:246-287 |
 
 ## L23 Final Candidate Disposition
 
@@ -66,7 +75,19 @@ A discarded child whose live artifacts have been removed projects both `childJso
 absence of each former source artifact explicitly instead of omitting those fields or treating the
 audit as a live child.
 
+## CCR-R02@v2 Typed-Slot Body Revision
+
+Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, typed
+`ApprovedRequirementPacketRef` and `AcceptanceObligationQuestion` slots are canonicalized into
+the served body revision; this regression proves a packet-version or obligation-text change moves
+the revision. Part of the landed L25 candidate `99dc249b`.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  added the typed-intent-slot body-revision regression (packet version and obligation text change
+  the revision); documented the canonicalization. Verified at code commit
+  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled discarded-child projection with explicit missing JSON and Markdown artifact states.
 

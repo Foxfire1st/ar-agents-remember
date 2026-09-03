@@ -5,14 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `../../../overview.md`                     |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../overview.md)
+[worktrees/overview.md](overview.md)
 
 ## Purpose
 
@@ -410,7 +410,26 @@ membership is derived elsewhere and cannot be reconstructed as durable binding. 
 parses exact retained/archive bytes using the same validation as `load_contract`, without creating a
 temporary-file authority. Existing strict writer, normalization, and unknown-cell behavior remain.
 
+
+## CCR-R02@v2 Publishable Closeout Door
+
+`contract_publication_text` (line 483) now refuses to publish a contract whose live closeout door
+predates canonical task intent: `_require_publishable_closeout_door` (line 853-863) runs after
+validation and calls `require_task_intent_identity(contract.closeout_door.taskIntent, owner=
+"closeout-door", next_action="closeout_door.update-provenance")`, translating `TaskIntentError`
+into a path-naming `ContractError`. A legacy door therefore stays readable but its exact bytes
+cannot be republished as current contract truth without `update-provenance` first
+(`requirements/CCR-R02-v2-normative-task-intent-identity.md`). Part of the landed L25 candidate
+`99dc249b`.
+
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  the worktree-contract writer now refuses to publish a contract whose closeout door predates
+  canonical task intent (`_require_publishable_closeout_door` with
+  `next_action=closeout_door.update-provenance`); documented the publishability boundary. Verified
+  at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
+
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_vocabulary_cell` and confirmed that invalid-cell quarantine and fallback semantics remain as documented. Verification remains closeout-owned.
 

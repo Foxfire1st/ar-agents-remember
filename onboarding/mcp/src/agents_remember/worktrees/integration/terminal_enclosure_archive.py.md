@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
+| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,16 @@ Publishes a crash-safe terminal enclosure archive before destructive worktree-ro
 
 It proves terminal operations, resolved workers/mutations/publications, exact cleanup arguments, canonical manifest entries, receipt readback, and convergent retry after interrupted archive/unlink.
 
+Since 260831-CCR (commit `99dc249b`) the canonical lifecycle root also owns the preserved legacy
+missing-intent generation archives: `_LEGACY_MISSING_INTENT_RECORD` (line 52-55) matches
+`closeout-operation.legacy-missing-intent-generation-{n}.json` /
+`direct-landing-operation.legacy-missing-intent-generation-{n}.json`. `_canonical_entries`
+(line 488-509) admits those names as owned artifacts (operation-record or missing-intent-record),
+rejects anything else as `unowned artifact exists in canonical lifecycle root`, and parses the
+archive as a `LifecycleOperationRecord` with `current=False` for the archive name (so the 
+archived legacy generation is terminal/non-current-validated). The missing-intent archive is thus
+carried into the immutable terminal archive beside the successor generation.
+
 ### Conventions
 
 Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
@@ -34,6 +44,8 @@ the public function or model instead of re-deriving its lower-level state machin
 - Cleanup cannot remove the enclosure root until durable archive and receipt prove everything needed for later status/recovery; mismatched existing evidence refuses.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
+- The legacy missing-intent archive is an owned canonical artifact; the plain `.log`/generation
+  forms are unchanged.
 
 ### Todos
 
@@ -45,7 +57,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-883 |
+| No external domain source is required to establish this repository-owned implementation. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-889 |
 
 ## Repo-Internal References
 
@@ -53,7 +65,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-883 |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-889 |
+| Missing-intent generation archives are owned canonical artifacts. | `_LEGACY_MISSING_INTENT_RECORD`; `_canonical_entries` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:52-55; mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:488-509 |
 
 ## Cross-Repo References
 
@@ -62,9 +75,21 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-883 |
+| No meaningful cross-repository reference applies. | `_OPERATION_RECORD` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:1-889 |
+
+## CCR-R02@v2 Terminal Archive Of Legacy Intent
+
+The lifecycle store preserves a superseded missing-intent generation as
+`*.legacy-missing-intent-generation-{n}.json`; this archive seam admits those files into the
+canonical terminal archive so cleanup keeps the proof that the legacy bytes were preserved while a
+canonical intent-bound successor replaced them. Part of the landed L25 candidate `99dc249b`.
 
 ## Update History
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  the terminal enclosure archive now recognizes `*.legacy-missing-intent-generation-{n}.json` as
+  an owned canonical artifact and archives it as a non-current operation record. Verified at code
+  commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
 
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.
