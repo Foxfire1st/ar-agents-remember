@@ -78,7 +78,7 @@ No sibling-repository contract is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary Git repositories isolate each executor proof. | `repository` | mcp/tests/test_clean_quality_executor.py:18-36 |
+| Temporary Git repositories isolate each executor proof. | `repository` | mcp/tests/test_clean_quality_executor.py:76-87 |
 
 ## L23 Final Candidate Disposition
 

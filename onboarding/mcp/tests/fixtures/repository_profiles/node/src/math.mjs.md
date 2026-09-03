@@ -38,15 +38,16 @@ script checks it (along with the tests) for tabs and `var` usage; the suite scri
 CCR-R22@v1 verifies repository configurability through two foreign fixture repositories with
 different languages, commands, artifacts, and E2E tools.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Two non-Agents-Remember fixture repositories complete the same Gate 1-4 protocol. | `## Expected Verification Evidence` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Two non-Agents-Remember fixture repositories complete the same Gate 1-4 protocol.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Source module exercised by the fixture lint/suite/e2e rails. | `add` | mcp/tests/fixtures/repository_profiles/node/src/math.mjs |
+| Source module exercised by the fixture lint/suite/e2e rails. | `add` | mcp/tests/fixtures/repository_profiles/node/src/math.mjs:1-3 |
 
 ## Update History
 

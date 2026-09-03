@@ -20,7 +20,7 @@ Consumer threading and bounded legacy task-intent cutover matrices: proves every
 owner (route review, door evidence, curator projection, door/operation projection, closeout start,
 direct landing) rejects missing and stale task intent exactly, that legacy records decode typed
 absence, and that the deterministic four-class legacy census gates decoder removal
-cit:([module docstring], mcp/tests/test_task_intent_consumers_and_legacy.py:1).
+cit:(["Consumer threading and bounded legacy task-intent cutover matrices."], mcp/tests/test_task_intent_consumers_and_legacy.py:1).
 
 ## Code Commentary
 
@@ -30,14 +30,14 @@ The suite drives `require_current_task_intent` through every consumer with missi
 and stale-digest matrices, proves the R02 legacy decoder cannot be cut before the census reaches the
 class population, and verifies that public start/landing entry points preserve typed intent refusal
 cit:([`test_each_currentness_owner_rejects_missing_and_stale`,
-`test_deterministic_four_class_census_controls_decoder_removal`], mcp/tests/test_task_intent_consumers_and_legacy.py:328-345, 810-889).
+`test_deterministic_four_class_census_controls_decoder_removal`], mcp/tests/test_task_intent_consumers_and_legacy.py:328-345; mcp/tests/test_task_intent_consumers_and_legacy.py:810-889).
 
 Under CCR-R03@v1 the route-review and door-review provenance cases were re-driven through the new
 content-addressed builders: `_route_review_author_payload` feeds `build_route_review` (which stamps
 evidence digests and the record digest), and the door-review case mocks
 `require_current_route_review` before asserting the intent-currentness refusal, matching the
 record-digest review provenance consumed by the door
-cit:([`_route_review_author_payload`, `test_door_review_provenance_reuses_route_review_intent_currentness`], mcp/tests/test_task_intent_consumers_and_legacy.py:132-157, 347-398).
+cit:([`_route_review_author_payload`, `test_door_review_provenance_reuses_route_review_intent_currentness`], mcp/tests/test_task_intent_consumers_and_legacy.py:132-157; mcp/tests/test_task_intent_consumers_and_legacy.py:347-398).
 
 ### Conventions
 
@@ -69,10 +69,10 @@ packets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Intent identity and currentness owners under test. | `task_intent_identity`; `require_current_task_intent` | mcp/src/agents_remember/tasks/task_intent.py |
-| Legacy census and decoder-removal gate under test. | `task_intent_legacy_census`; `require_task_intent_decoder_removal` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py |
-| R03 route-review builder consumed by the updated fixtures. | `build_route_review`; `_stamp_evidence_digests` | mcp/src/agents_remember/worktrees/route_review.py:56-116, 274-296 |
-| R03 door-review currentness seam. | `_review_provenance`; `require_current_route_review` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:228-250 |
+| Intent identity and currentness owners under test. | `task_intent_identity`; `require_current_task_intent` | mcp/src/agents_remember/tasks/task_intent.py:180-216 |
+| Legacy census and decoder-removal gate under test. | `task_intent_legacy_census`; `require_task_intent_decoder_removal` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py:61-100 |
+| R03 route-review builder consumed by the updated fixtures. | `build_route_review`; `_stamp_evidence_digests` | mcp/src/agents_remember/worktrees/route_review.py:65-122; mcp/src/agents_remember/worktrees/route_review.py:274-298 |
+| R03 door-review currentness seam. | `_review_provenance`; `require_current_route_review` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:195-253 |
 | Companion coverage for the dependency matrix. | `test_route_review_dependency_and_content_addressing_guards` | mcp/tests/test_evidence_dependencies.py:299-355 |
 
 ## Update History

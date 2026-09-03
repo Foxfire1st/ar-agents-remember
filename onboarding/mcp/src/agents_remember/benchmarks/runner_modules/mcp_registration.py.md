@@ -96,7 +96,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. | `_clone_inputs` | mcp/src/agents_remember/providers/grepai/seed.py:145-167 |
 | The service entry points open every prepare/run pass with the registration sweep. | `disarm_stale_benchmark_registrations` | mcp/src/agents_remember/benchmarks/runner_modules/services.py:39-92 |
 | Containment tests pin the sweep's narrow/idempotent/None behavior. | `test_stale_registration_sweep_narrows_to_authority` | mcp/tests/test_provider_containment.py:235-273 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:847-922; mcp/tests/test_worktree_support_benchmark.py:117-117 |
+| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:979-1054; mcp/tests/test_worktree_support_benchmark.py:117-117 |
 
 ## Cross-Repo References
 

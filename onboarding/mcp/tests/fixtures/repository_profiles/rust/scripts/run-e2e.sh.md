@@ -36,15 +36,16 @@ executor runs a repository-owned Rust integration scenario in Gate 4.
 
 CCR-R22@v1: Gate 4 contains clean-room or external/runtime integration and E2E certification.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 4 contains clean-room or external/runtime integration and E2E certification. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 4 contains clean-room or external/runtime integration and E2E certification.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture E2E rail invoking cargo --locked service tests. | `run-e2e.sh` | mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh; mcp/tests/fixtures/repository_profiles/rust/tests/service.rs |
+| Fixture E2E rail invoking cargo --locked service tests. | `result_path` | mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh:1-6; mcp/tests/fixtures/repository_profiles/rust/tests/service.rs:1-7 |
 
 ## Update History
 

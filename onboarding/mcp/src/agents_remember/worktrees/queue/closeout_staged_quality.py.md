@@ -62,16 +62,16 @@ any commit, with missing/invalid profile authority refusing as certification-pro
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Invalid profile resolution produces typed admission failure before any Gate-1 command starts. | `## Failure And Recovery` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+| Invalid profile resolution produces typed admission failure before any Gate-1 command starts. | `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:487-501 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Linked-worktree and conflict refusals precede any index rewrite. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:24-40; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:43-55 |
-| The staged gate proves the accepted tree around reset, staging, hook execution, and the targeted profile call. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:82-143 |
-| Closeout imports this owner under the established private call name and passes the profile-built target. | `_closeout_quality_preflight` (calls `_gate_staged_code`) | mcp/src/agents_remember/worktrees/modules/closeout.py:802-833 |
-| The strict gate admits the same target/profile and certifies the index. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:235-278 |
+| The staged gate proves the accepted tree around reset, staging, hook execution, and the targeted profile call. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-141 |
+| Closeout imports this owner under the established private call name and passes the profile-built target. | `_closeout_quality_preflight` (calls `_gate_staged_code`) | mcp/src/agents_remember/worktrees/modules/closeout.py:800-826 |
+| The strict gate admits the same target/profile and certifies the index. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:191-286 |
 
 ## Cross-Repo References
 

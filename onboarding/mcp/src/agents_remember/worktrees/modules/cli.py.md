@@ -42,7 +42,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The CLI module exposes the public main entry point for `python -m` execution. | "def main" | mcp/src/agents_remember/worktrees/modules/cli.py:192-199 |
-| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:125-222; mcp/src/agents_remember/application/worktree_tools.py:287-296; mcp/src/agents_remember/application/worktree_tools.py:299-322; mcp/src/agents_remember/application/worktree_tools.py:621-702; mcp/src/agents_remember/application/worktree_tools.py:961-977 |
+| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:125-222; mcp/src/agents_remember/application/worktree_tools.py:287-296; mcp/src/agents_remember/application/worktree_tools.py:299-322; mcp/src/agents_remember/application/worktree_tools.py:621-702; mcp/src/agents_remember/application/worktree_tools.py:979-995 |
 | The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
 | The CLI seam regression drives `main(["heal-leaf-ids", ...])` end to end. | `test_heal_cli_command_is_the_on_demand_seam` | mcp/tests/test_leaf_ref_resolution.py:419-433 |
 

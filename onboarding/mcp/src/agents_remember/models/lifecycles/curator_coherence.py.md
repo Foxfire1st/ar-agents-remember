@@ -21,7 +21,7 @@ immutable coherence generations, the sole live authority manifest, optional atte
 the four-action public request/response API. Under CCR-R03@v1 the memory-quality attestation and
 immutable coherence record additionally carry a typed direct-dependency declaration so evidence is
 a content-addressed consumer of exactly its declared inputs
-cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:79, 207).
+cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:62-89; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:186-230).
 
 ## Code Commentary
 
@@ -39,7 +39,7 @@ digest), exact code and memory candidate trees (git-object digests), the rendere
 and both validator identities; `require_memory_quality_attestation_dependencies` rebuilds that
 expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
-cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129, 131-165).
+cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-130; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:131-156).
 
 ### Conventions
 
@@ -75,9 +75,9 @@ No configured external documentation applies; the schemas are repository-owned.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:50-74 |
-| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:106-140 |
-| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:166-220 |
-| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`, `dependency`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119, 216-275 |
+| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:186-232 |
+| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:256-314 |
+| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`, `dependency`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-227; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277 |
 
 ## Cross-Repo References
 

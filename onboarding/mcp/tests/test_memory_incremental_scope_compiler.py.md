@@ -62,12 +62,12 @@ R08 final full certification remains out of scope for this suite.
 ## Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifacts
-below close the informational gap for the enforced behaviors.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R07@v3 required behavior and exclusions (execute only the closure, retain unchanged subresults, no implicit full-scan fallback, incremental proof never replaces full certification). | "Required Behavior"; "Exclusions And Forbidden Overreach" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R07-v3-incremental-affected-closure-validation.md |
-| Leaf L07 "final selected Python suite passed 120 tests" with focused affected coverage. | "S2 — Implement only CCR-R07" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/07_incremental-affected-closure-validation.md |
+close the informational gap for the enforced behaviors: the CCR-R07@v3 requirement packet
+(Required Behavior, Exclusions And Forbidden Overreach) fixes the affected-closure contract
+to execute only the closure, retain unchanged subresults, allow no implicit full-scan fallback,
+and never let incremental proof replace full certification. The closing L07 leaf task step
+(S2 - Implement only CCR-R07) recorded the final selected Python suite passing 120 tests with
+focused affected coverage.
 
 ## Repo-Internal References
 

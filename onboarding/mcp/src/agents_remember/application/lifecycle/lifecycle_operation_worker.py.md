@@ -64,7 +64,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:1-511 |
-| Profile resolution at execution and forwarding into closeout/integration common args. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:308-312 |
+| Profile resolution at execution and forwarding into closeout/integration common args. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:301-350 |
 
 ## Cross-Repo References
 

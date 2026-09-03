@@ -150,7 +150,7 @@ declared nor part of the input."
 | `_tool_payload()` is the production validation path mirrored here. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:76-78 |
 | `complete_tool_response()` attaches the shared public envelope. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:53-67 |
 | The strict/flexible response-model taxonomy lives in the model base. | `StrictResponseModel`, `FlexibleResponseModel` | mcp/src/agents_remember/models/base.py:13-16; mcp/src/agents_remember/models/base.py:19-30 |
-| Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:85-105; mcp/tests/test_worktree_support.py:178-199; mcp/tests/test_worktree_support.py:332-360 |
+| Worktree/carryover fixtures reuse worktree test helpers. | `init_repo`, `write_file_onboarding`, `initialized_memory_repo` | mcp/tests/test_worktree_support.py:161-205; mcp/tests/test_worktree_support.py:289-422; mcp/tests/test_worktree_support.py:443-786 |
 | Schema-level registry coverage is asserted separately. | `test_every_public_tool_has_a_response_model` | mcp/tests/test_models.py:17-18 |
 | Inbox representative payloads call the real post, poll, consume, and supersede builders. | `_operator_inbox_payloads` | mcp/tests/test_tool_response_conformance.py:918-945 |
 | Lifecycle finalizer representative payload exercises the new terminal worktree tool. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |

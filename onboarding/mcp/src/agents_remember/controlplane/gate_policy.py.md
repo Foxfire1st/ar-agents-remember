@@ -63,7 +63,7 @@ already proved it. Refusal messages and their order are identical to before the 
 | --- | --- | --- |
 | Gate records carry `decidedBy`/`decidedVia`/`decidingRole` and evidence refs checked here. | "class GateRecord" | mcp/src/agents_remember/controlplane/records.py:45-45 |
 | The pure resolver consumes this policy. | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
-| MCP settings parse the named/custom policy into this model. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
+| MCP settings parse the named/custom policy into this model. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-125 |
 | Gate decision payloads reject invalid orchestration decisions before appending. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:44-44 |
 
 As of the 260703-L8 seam ruling: `master-handover-approval` joins DELEGABLE_GATE_KINDS; SEAM_GATE_KINDS names the seam set; `apply_seam_verdict_requirement(policy)` binds reviewer-verdict evidence to every DELEGATED seam rule (the requireReviewerVerdictAtSeams wiring — human-decided seam kinds are untouched since the human sees the attached verdict); the named policy manager-decides-leaf-gates now also routes the master-exit handover to the ORCHESTRATOR.

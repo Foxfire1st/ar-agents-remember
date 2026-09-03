@@ -64,7 +64,7 @@ No Domain Documentation source is configured for this repository-local runner su
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:35-498 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:46-60; mcp/tests/test_worktree_closeout_quality_gate.py:63-69 |
+| Stable helpers remain in the closeout mutation suite. | `_checkout_with_profile`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:51-68; mcp/tests/test_worktree_closeout_quality_gate.py:69-82 |
 
 ## Cross-Repo References
 
@@ -72,7 +72,7 @@ The runner can certify a consuming repository's checkout when that checkout carr
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is determined from the supplied checkout rather than a repository name. | `quality_wrapper_path`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:80-82; mcp/src/agents_remember/worktrees/modules/quality/gate.py:119-132 |
+| Applicability is determined from the supplied checkout rather than a repository name. | `QualityGateTarget`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:68-77; mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-138 |
 
 ## L23 Host-Execution Removal
 

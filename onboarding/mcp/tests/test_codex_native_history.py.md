@@ -59,7 +59,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The history reader implements the contracts exercised by this suite. | `CodexNativeHistoryReader`; `read_page` | mcp/src/agents_remember/serving/codex_app_server_history.py:110-612 |
-| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:362-367; mcp/src/agents_remember/errors.py:370-382 |
+| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:390-397; mcp/src/agents_remember/errors.py:398-410 |
 
 ## Cross-Repo References
 

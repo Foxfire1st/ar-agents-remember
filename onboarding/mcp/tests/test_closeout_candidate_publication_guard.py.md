@@ -39,7 +39,7 @@ See task `260821-CLIVE-L1` L1-R5 and L1-R6.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | A contract changed at publication is refused before candidate commit. | `test_closeout_candidate_publication_rechecks_the_contract` | mcp/tests/test_closeout_candidate_publication_guard.py:16-64 |
-| The production callback reloads and revalidates under authority. | "def publication() -> tuple[_CloseoutCommitPhase, Any]:"; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:1001-1001; mcp/src/agents_remember/worktrees/modules/closeout.py:1036-1036 |
+| The production callback reloads and revalidates under authority. | "def publication() -> tuple[_CloseoutCommitPhase, Any]:"; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:1010-1044; mcp/src/agents_remember/worktrees/modules/closeout.py:1045-1100 |
 
 ## Cross-Repo References
 

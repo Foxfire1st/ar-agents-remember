@@ -125,24 +125,24 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `wrapper_scope_line`, with the L17 targeted units branch. | `wrapper_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:136-161 |
 | Defines the function `fixed_step_scope_line`, with the L17 targeted per-rail lines. | `fixed_step_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:164-233 |
 | Defines the function `targeted_scope_lines` — the printed derivation for targeted runs; L19 reports flattened reasons and a Gate-2-blocked incomplete line. | `targeted_scope_lines` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:254-290 |
-| Defines the function `coverage_result_scope_line`. | `coverage_result_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:317-324 |
-| Defines the function `randomized_pytest_scope_line`. | `randomized_pytest_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:327-341 |
-| Defines the function `crap_scope_line`. | `crap_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:344-355 |
-| Defines the function `diff_input_description`, including the integration-tree labels. | `diff_input_description` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:358-379 |
-| Defines the function `diff_scope_line`. | `diff_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:382-396 |
+| Defines the function `coverage_result_scope_line`. | `coverage_result_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:315-322 |
+| Defines the function `randomized_pytest_scope_line`. | `randomized_pytest_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:325-339 |
+| Defines the function `crap_scope_line`. | `crap_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:342-353 |
+| Defines the function `diff_input_description`, including the integration-tree labels. | `diff_input_description` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:356-377 |
+| Defines the function `diff_scope_line`. | `diff_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:380-394 |
 | Defines the function `untracked_scope_lines`. | `untracked_scope_lines` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:375-403 |
 | Defines the function `generated_scope_line`. | `generated_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:406-432 |
-| Defines the function `frontend_files`. | `frontend_files` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:462-470 |
-| Defines the function `read_json_object`. | `read_json_object` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:473-480 |
+| Defines the function `frontend_files`. | `frontend_files` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:460-468 |
+| Defines the function `read_json_object`. | `read_json_object` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:471-478 |
 | Defines the function `tsconfig_project_inputs`. | `tsconfig_project_inputs` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:459-485 |
 | Defines the function `tsconfig_inputs`. | `tsconfig_inputs` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:512-533 |
 | Defines the function `config_input_files`. | `config_input_files` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:536-556 |
 | Defines the function `dashboard_lint_scope_line`. | `dashboard_lint_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:559-575 |
 | Defines the function `dashboard_test_scope_line`. | `dashboard_test_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:578-597 |
 | Defines the function `dashboard_typecheck_scope_line`. | `dashboard_typecheck_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:600-606 |
-| Defines the function `dashboard_build_scope_line`. | `dashboard_build_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:611-636 |
+| Defines the function `dashboard_build_scope_line`. | `dashboard_build_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:609-634 |
 | Defines the function `dashboard_scope_line`. | `dashboard_scope_line` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:613-653 |
-| Defines the function `build_parser`, including the `targeted` hook tier choice. | `build_parser` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:682-706 |
+| Defines the function `build_parser`, including the `targeted` hook tier choice. | `build_parser` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:680-704 |
 | Defines the function `main`. | `main` | mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py:743-753 |
 
 ## 260731-EFA-L9 Change

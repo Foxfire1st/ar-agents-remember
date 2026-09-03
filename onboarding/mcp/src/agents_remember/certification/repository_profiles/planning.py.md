@@ -64,11 +64,14 @@ reason and no hidden work), and framework-owned classification rules fix gate se
 order while repositories choose tools and populations. Each gate certificate names the exact
 admitted profile and its gate-specific plan digest.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Explicit applicability for each of Gates 1-4; an empty gate is legal only as a typed not-applicable result with a repository-owned reason. | `## Required Profile Contract` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Framework-owned classification rules: gate meanings and order are fixed; repositories choose tools and populations. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| Each gate certificate names the exact admitted profile and its gate-specific plan digest. | `## Resolution And Freeze` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+CCR-R22@v1 (requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md,
+"## Required Profile Contract") requires explicit applicability for each of Gates 1-4, an
+empty gate being legal only as a typed not-applicable result with a repository-owned reason;
+framework-owned classification rules fix gate meanings and order while repositories choose
+tools and populations ("## Framework-Owned Classification Rules"); each gate certificate
+names the exact admitted profile and its gate-specific plan digest ("## Resolution And
+Freeze").
+
 
 ## Repo-Internal References
 
@@ -86,5 +89,7 @@ registry/rail/wave primitives come from `certification/models.py` and `certifica
 | Recovery recompiles the expected plan digest for a candidate before reuse. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new Gate 1-4 plan compilation/admission module of the repository-owned certification profile package.

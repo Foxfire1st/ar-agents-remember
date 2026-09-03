@@ -36,15 +36,16 @@ proof artifact.
 CCR-R22@v1: Gate 2 contains the configured ordinary test suite and publishes complete
 exact-candidate result artifacts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 2 contains the configured ordinary test suite and publishes its complete exact-candidate result artifacts. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 2 contains the configured ordinary test suite and publishes its complete exact-candidate result artifacts.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture unit test target driven by the suite script. | `adds_two_values` | mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs; mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh |
+| Fixture unit test target driven by the suite script. | `adds_two_values` | mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs:1-6; mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh:1-9 |
 
 ## Update History
 

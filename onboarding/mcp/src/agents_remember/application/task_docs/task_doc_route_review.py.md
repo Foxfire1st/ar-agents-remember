@@ -87,12 +87,12 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Call-level knobs and the branch-addressed policy gate. | `TaskDocCall`; `_enforce_branch_addressed_policy` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:36-45; mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:52-67 |
-| The binding form that records a review over the resolved candidate document and re-validates. | `_record_route_review_bound` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:156-175 |
-| The legacy positional recorder passing the resolved leaf document. | `_record_route_review` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:120-132 |
+| The binding form that records a review over the resolved candidate document and re-validates. | `_record_route_review_bound` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:139-173 |
+| The legacy positional recorder passing the resolved leaf document. | `_record_route_review` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:90-136 |
 | Exact-binding refusal with the L16-R9 recovery dialect. | `_require_route_review_binding` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:157-196 |
 | The route-review authority rule (create/replace cannot author or change evidence). | `_enforce_route_review_authority` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:199-218 |
 | The stamping owner it delegates to; now takes the resolved candidate document. | `build_route_review` | mcp/src/agents_remember/worktrees/route_review.py:56-90 |
-| The typed candidate ref derived from the selected path. | `document_ref` | mcp/src/agents_remember/worktrees/route_review.py:166-180 |
+| The typed candidate ref derived from the selected path. | `document_ref` | mcp/src/agents_remember/worktrees/route_review.py:198-211 |
 | The facade that dispatches into this module. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 
 ## Cross-Repo References

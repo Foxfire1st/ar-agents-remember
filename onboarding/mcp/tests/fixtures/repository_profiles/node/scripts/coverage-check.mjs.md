@@ -41,15 +41,16 @@ CCR-R22@v1 classifies Gate 3 as containing only checks that consume a green Gate
 its declared artifacts; a Gate-3 rail without a Gate-2 input makes the profile invalid at
 admission.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 3 contains only checks that consume a green Gate-2 certificate or its declared artifacts. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 3 contains only checks that consume a green Gate-2 certificate or its declared artifacts.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture post-suite coverage proof over the suite artifact. | `coverage-check.mjs` | mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs; mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs |
+| Fixture post-suite coverage proof over the suite artifact. | `statementCoverage` | mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs:1-7; mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs:1-23 |
 
 ## Update History
 

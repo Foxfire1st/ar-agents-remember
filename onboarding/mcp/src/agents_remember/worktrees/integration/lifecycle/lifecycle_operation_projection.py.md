@@ -65,7 +65,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-320 |
+| No external domain source is required to establish this repository-owned implementation. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
 
 ## Repo-Internal References
 
@@ -73,9 +73,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-320 |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
 | Missing-intent blocking, the public unavailable override, and cancellability. | `legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:67-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:163-181; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:185-201 |
-| Exit-proven cancellation-pending state keeps its cancel surface. | `_exit_proven_cancellation_pending`; `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:153-160; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:220-243 |
+| Exit-proven cancellation-pending state keeps its cancel surface. | `_exit_proven_cancellation_pending`; `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:153-160; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:216-251 |
 | The wire now carries the canonical intent identity when present. | `taskIntent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:120-121 |
 
 ## Cross-Repo References
@@ -85,7 +85,7 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-320 |
+| No meaningful cross-repository reference applies. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
 
 ## CCR-R02@v2 Legacy Intent Projection Barrier
 

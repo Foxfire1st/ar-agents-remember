@@ -63,9 +63,11 @@ the boundary records only.
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for recovery and finalization semantics.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R05@v3 recovery decision: resume the exact durable finalization leg with zero certification starts and reuse every exact green predecessor; candidate or authority movement before a write refuses. | "Recovery Decision" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md |
+CCR-R05@v3 (requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md, "Recovery
+Decision") requires resuming the exact durable finalization leg with zero certification
+starts, reusing every exact green predecessor, and refusing when candidate or authority
+movement precedes a write.
+
 
 ## Repo-Internal References
 
@@ -82,8 +84,10 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate certificate and invalidation contracts are imported from the R21 owners. | `GateCertificate`; `GateFiveSemanticInputs`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py; mcp/src/agents_remember/certification/certificate_invalidation.py |
+| Gate certificate and invalidation contracts are imported from the R21 owners. | `GateCertificate`; `GateFiveSemanticInputs`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:152-176; mcp/src/agents_remember/certification/certificate_models.py:221-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-164 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose. Verification remains pinned to the pre-commit source history until closeout.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): created the card for the new certificate-reuse recovery and durable finalization-leg module; no prior sidecar existed.

@@ -49,7 +49,7 @@ the same generation across crash cuts or unreadable-ledger recovery.
 Under CCR-R03@v1 `_claim_waiting_direct_landing` binds the claimed operation's typed dependency
 declaration (`lifecycle_operation_dependencies`) before the direct claim is created, so the landed
 operation content-addresses the admitted door, candidate, plan, and input
-cit:([`_claim_waiting_direct_landing`], mcp/src/agents_remember/worktrees/direct_landing.py:702-708).
+cit:([`_claim_waiting_direct_landing`], mcp/src/agents_remember/worktrees/direct_landing.py:678-701).
 
 ### Conventions
 
@@ -97,7 +97,7 @@ No configured Domain Documentation source applies.
 | Journaled memory/ledger execution and recovery own all partial-output cuts. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
 | The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
 | The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:54-103 |
-| R03 dependency binding at direct-landing claim. | `_claim_waiting_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:702-708 |
+| R03 dependency binding at direct-landing claim. | `_claim_waiting_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:678-701 |
 
 ## Cross-Repo References
 

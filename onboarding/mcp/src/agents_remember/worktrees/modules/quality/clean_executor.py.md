@@ -100,18 +100,18 @@ failure owned by the affected gate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP executes only the exact admitted bytes through the declared sandbox adapter; configuration cannot inject host execution outside the admitted executor boundary. | `## Required Profile Contract` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| An executor valid at admission but unavailable at execution produces a typed executor prerequisite failure owned by the affected gate. | `## Failure And Recovery` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+| The MCP executes only the exact admitted bytes through the declared sandbox adapter; configuration cannot inject host execution outside the admitted executor boundary. | `_resolve_executor` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:917-918 |
+| An executor valid at admission but unavailable at execution produces a typed executor prerequisite failure owned by the affected gate. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:921-948 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The executor prepares the exact candidate sandbox, admits the profile execution, runs the declared adapter, and publishes the certified generation. | `run_clean_quality`; `_prepare_sandbox`; `_admit_prepared_profile`; `_write_sandbox_manifest`; `_publish_executor_outcome` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:90-144; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:246-308; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:164-176; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:220-251; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:198-219 |
-| Profile-bound publication: inventory validated against declared artifacts, generation digest binds candidate + profile identity, atomic pointer advance. | `_publish_reports`; `_validated_export_inventory`; `_generation_digest`; `_profile_identity` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:311-383; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:413-443; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:560-586; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:445-462 |
-| Manifest/artifact/evidence helpers consume one strict snapshot. | `published_report_path_from_manifest`; `certifying_evidence_from_published_manifest`; `require_published_quality_evidence` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:655-668; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:683-706; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:708-714 |
-| The strict gate admits the same profile and enforces candidate identity around the run. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:235-278 |
-| The generic decoder replaces the deleted hardcoded result-inventory validator. | (deleted) `validate_result_artifact_references` | mcp/src/agents_remember/worktrees/modules/quality/result_artifacts.py (removed at this commit) |
+| Profile-bound publication: inventory validated against declared artifacts, generation digest binds candidate + profile identity, atomic pointer advance. | `_publish_reports`; `_validated_export_inventory`; `_generation_digest`; `_profile_identity` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:393-490; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:413-443; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:560-586; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:445-462 |
+| Manifest/artifact/evidence helpers consume one strict snapshot. | `published_report_path_from_manifest`; `certifying_evidence_from_published_manifest`; `require_published_quality_evidence` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:655-668; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:744-756; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:708-714 |
+| The strict gate admits the same profile and enforces candidate identity around the run. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:191-286 |
+| The generic decoder replaces the deleted hardcoded result-inventory validator. | `_validate_artifact_references` | mcp/src/agents_remember/certification/repository_profiles/adapters.py:138-160 |
 
 ## Cross-Repo References
 
@@ -121,7 +121,7 @@ declared adapter.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared executable is resolved through the native platform boundary, then run by the Dagger adapter. | `_resolve_executor`; `_executor_command`; `_stream_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:928-929; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:178-196; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:802-866 |
+| The declared executable is resolved through the native platform boundary, then run by the Dagger adapter. | `_resolve_executor`; `_executor_command`; `_stream_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:917-918; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:210-239; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:802-866 |
 
 ## 260821-DAGQC-L2 And 260824-PDLS Historical Notes
 

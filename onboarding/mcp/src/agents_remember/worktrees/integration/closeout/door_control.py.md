@@ -48,7 +48,7 @@ bytes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public door commands publish under the canonical task CAS. | `closeout_door_tool`; `task_publication_lock`; `publish_door_intent` | mcp/src/agents_remember/worktrees/integration/closeout/door_control.py:38-84 |
-| Status response reports legacy missing-intent doors with the update-provenance route. | `_response`; unavailable computation | mcp/src/agents_remember/worktrees/integration/closeout/door_control.py:92-120 |
+| Status response reports legacy missing-intent doors with the update-provenance route. | `_response`; unavailable computation | mcp/src/agents_remember/worktrees/integration/closeout/door_control.py:88-122 |
 
 ## CCR-R02@v2 Door Currentness
 

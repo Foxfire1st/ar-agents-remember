@@ -48,8 +48,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Strict tool response base class is defined here. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:13-13 |
 | Public response registry maps `lifecycle_finalize_task` to this model. | `lifecycle_finalize_task` | mcp/src/agents_remember/models/tools/tool_registry.py:209-209 |
 | Conformance tests validate representative finalizer payloads against this model. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:958-1093 |
-| `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | "def worktree_start_tool" | mcp/src/agents_remember/application/worktree_tools.py:125-125 |
-| `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | "class McpRuntimeConfig" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-124 |
+| `lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`. | "def lifecycle_finalize_task_tool(" | mcp/src/agents_remember/application/worktree_tools.py:1036-1036 |
+| `RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on. | "class RetirementSettings:" | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-111 |
 
 ## Series-Contract Notes
 

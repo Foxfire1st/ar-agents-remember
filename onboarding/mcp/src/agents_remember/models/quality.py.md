@@ -69,7 +69,7 @@ certifying evidence minted from the verified Dagger publication path. These are 
 
 ## Update History
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-aware response model -- new executorAdapterId/profileDigest/profilePlanDigest/profileSelectionId/resultArtifact fields and the processPolicy literal replacing pytestProcesses-auto.
-- The model is shared by closeout and integration response owners.
+- 2026-09-03T12:30+02:00 -- The model is shared by closeout and integration response owners.
 
 
 - 2026-08-24T21:23+02:00 — 260824-PDLS added typed admission, phase reporting, and certifying

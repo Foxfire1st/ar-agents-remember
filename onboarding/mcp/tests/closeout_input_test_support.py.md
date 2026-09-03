@@ -43,8 +43,8 @@ See task `260821-CLIVE-L1` L1-R1 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:83-127; mcp/tests/closeout_input_test_support.py:233-258 |
-| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:50-80; mcp/tests/closeout_input_test_support.py:285-307; mcp/tests/closeout_input_test_support.py:310-341; mcp/tests/closeout_input_test_support.py:344-356 |
+| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:90-136; mcp/tests/closeout_input_test_support.py:342-367 |
+| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:50-84; mcp/tests/closeout_input_test_support.py:395-417; mcp/tests/closeout_input_test_support.py:420-451; mcp/tests/closeout_input_test_support.py:454-466 |
 
 ## Cross-Repo References
 

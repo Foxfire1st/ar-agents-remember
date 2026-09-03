@@ -54,7 +54,7 @@ No external Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| All public CLI result and forwarding branches are exercised. | `test_clean_room_cli_passes_explicit_candidate_and_memory_limit`; `test_clean_room_script_entry_exits_with_the_canonical_result` | mcp/tests/test_clean_room.py:13-73 |
+| All public CLI result and forwarding branches are exercised. | `test_clean_room_cli_passes_explicit_candidate_and_memory_limit`; `test_clean_room_script_entry_exits_with_the_canonical_result` | mcp/tests/test_clean_room.py:13-68; mcp/tests/test_clean_room.py:88-108 |
 
 ## Cross-Repo References
 
@@ -62,7 +62,7 @@ No cross-repository boundary is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary paths stay within each test. | `test_clean_room_cli_passes_explicit_candidate_and_memory_limit` | mcp/tests/test_clean_room.py:13-73 |
+| Temporary paths stay within each test. | `test_clean_room_cli_passes_explicit_candidate_and_memory_limit` | mcp/tests/test_clean_room.py:13-68 |
 
 ## Update History
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the repository-id/certification-profile CLI assertions in clean-room tests.

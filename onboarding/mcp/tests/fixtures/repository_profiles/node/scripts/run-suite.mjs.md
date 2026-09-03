@@ -41,15 +41,16 @@ spawned status on failure, then writes the suite artifact
 CCR-R22@v1 classifies Gate 2 as the configured ordinary test suite publishing its complete
 exact-candidate result artifacts; prerequisites and artifact flow cannot point backward.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 2 contains the configured ordinary test suite and publishes its complete exact-candidate result artifacts. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 2 contains the configured ordinary test suite and publishes its complete exact-candidate result artifacts.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture suite rail publishing suite and coverage artifacts. | `run-suite.mjs` | mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs; mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs |
+| Fixture suite rail publishing suite and coverage artifacts. | `selectedTests` | mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs:1-23; mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs:1-7 |
 
 ## Update History
 

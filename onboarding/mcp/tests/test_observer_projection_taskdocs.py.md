@@ -55,8 +55,8 @@ lifecycle attachment is discovered through the enclosure-root address chain.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper publishes the normal lifecycle location after contract publication. | `_write_addressable_contract` | mcp/tests/test_observer_projection_taskdocs.py:51-57 |
-| Lifecycle-attached task-document cases all use the addressable helper. | `test_resolves_leaf_doc_lifecycle_from_matching_enclosure_leaf_id`; `test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively` | mcp/tests/test_observer_projection_taskdocs.py:304-336; mcp/tests/test_observer_projection_taskdocs.py:338-378 |
+| The helper publishes the normal lifecycle location after contract publication. | `_write_addressable_contract` | mcp/tests/test_observer_projection_taskdocs.py:58-64 |
+| Lifecycle-attached task-document cases all use the addressable helper. | `test_resolves_leaf_doc_lifecycle_from_matching_enclosure_leaf_id`; `test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively` | mcp/tests/test_observer_projection_taskdocs.py:352-385; mcp/tests/test_observer_projection_taskdocs.py:386-441 |
 
 ## Current Contract — 260821 CLIVE Final
 

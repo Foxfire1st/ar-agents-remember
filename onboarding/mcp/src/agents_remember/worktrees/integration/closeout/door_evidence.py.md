@@ -31,7 +31,7 @@ Under CCR-R03@v1 the review provenance seam now re-requires the current route re
 provenance as the review record's own `recordDigest` instead of recomputing a local tuple over the
 record and its evidence facts — so the door consumes the record's content-addressed identity
 directly; `door-review-provenance-stale` is reported when the route review's evidence bytes changed
-cit:([`_review_provenance`], mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:228-250).
+cit:([`_review_provenance`], mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:195-253).
 
 ## Invariants And Boundaries
 
@@ -54,7 +54,7 @@ No configured Domain Documentation source applies to this repository-internal li
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Door evidence is captured before generation identity is published. | `capture_door_candidate_evidence`; `DoorCandidateEvidence` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:30-160 |
-| Review provenance re-requires current route review and fingerprints its record digest. | `_review_provenance` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:228-250 |
+| Review provenance re-requires current route review and fingerprints its record digest. | `_review_provenance` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:195-253 |
 
 ## Update History
 

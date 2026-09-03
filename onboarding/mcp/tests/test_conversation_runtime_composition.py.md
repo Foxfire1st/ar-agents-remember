@@ -85,7 +85,7 @@ evidence.
 | The production seam accepts the already-built runtime and installs it once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
 | The live composition that constructs the runtime and mints the resolver the identity scan looks for. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
 | The root registration installs the runtime then mounts the unchanged root router. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
-| The typed composition error asserted by every failure-shape case. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:246-253 |
+| The typed composition error asserted by every failure-shape case. | `ConversationCompositionError` | mcp/src/agents_remember/errors.py:274-281 |
 
 ## Cross-Repo References
 

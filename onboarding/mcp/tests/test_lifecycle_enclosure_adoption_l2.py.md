@@ -57,7 +57,7 @@ The test source is the direct evidence for the regression contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file defines `test_adoption_and_schema_migration_execute_in_either_order`, `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`, `test_lost_response_and_idempotent_replay_converge_to_one_receipt`, `test_adoption_conflict_refuses_before_locator_or_manifest_publication` as its principal forcing seams. | `test_adoption_and_schema_migration_execute_in_either_order`; `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`; `test_lost_response_and_idempotent_replay_converge_to_one_receipt`; `test_adoption_conflict_refuses_before_locator_or_manifest_publication` | mcp/tests/test_lifecycle_enclosure_adoption_l2.py:118-156; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:212-229; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:232-261; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:264-279 |
+| The file defines `test_adoption_and_schema_migration_execute_in_either_order`, `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`, `test_lost_response_and_idempotent_replay_converge_to_one_receipt`, `test_adoption_conflict_refuses_before_locator_or_manifest_publication` as its principal forcing seams. | `test_adoption_and_schema_migration_execute_in_either_order`; `test_adoption_binds_exact_preview_and_refuses_changed_bytes_without_publication`; `test_lost_response_and_idempotent_replay_converge_to_one_receipt`; `test_adoption_conflict_refuses_before_locator_or_manifest_publication` | mcp/tests/test_lifecycle_enclosure_adoption_l2.py:118-156; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:212-261; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:264-279; mcp/tests/test_lifecycle_enclosure_adoption_l2.py:280-327 |
 | The missing-intent generation archive preservation regression. | `test_adoption_preserves_exact_missing_intent_generation_archive` | mcp/tests/test_lifecycle_enclosure_adoption_l2.py:163-201 |
 | The shared closeout record payload builder used for the archive bytes. | `_closeout_record_payload` | mcp/tests/test_task_intent_consumers_and_legacy.py:1-700 |
 
@@ -74,6 +74,8 @@ terminal archive admits it. Part of the landed L25 candidate `99dc249b`.
 
 ## Update History
 
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: widened the two
+  forcing-seam citations to the ranges that carry them (280-309 and 312-327).
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   added the missing-intent generation archive adoption regression to the documented forcing seams;
   verified byte-exact adoption and terminal-archive admission. Verified at code commit

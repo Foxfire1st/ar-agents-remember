@@ -40,15 +40,16 @@ CCR-R22@v1 classifies Gate 1 as deterministic pre-test quality that does not con
 results and does not require the clean-room integration environment; repositories choose tools
 and populations but not the ordering contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 1 contains deterministic pre-test quality that does not consume Gate-2 results. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 1 contains deterministic pre-test quality that does not consume Gate-2 results.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture static-quality rail over the fixture source and tests. | `lint.mjs` | mcp/tests/fixtures/repository_profiles/node/scripts/lint.mjs |
+| Fixture static-quality rail over the fixture source and tests. | `readFileSync` | mcp/tests/fixtures/repository_profiles/node/scripts/lint.mjs:1-8 |
 
 ## Update History
 

@@ -32,7 +32,7 @@ Under CCR-R03@v1 the attestation edge cases route through a `_QualityAttestation
 carries the exact code/memory candidate trees; the attestation boundary refusals
 (unreadable, not-ready, wrong pair) are re-driven through that source shape
 cit:([`_quality_source`, `test_attestation_topology_and_path_boundaries_fail_with_typed_refusals`,
-`test_attestation_rejects_a_different_code_memory_pair`], mcp/tests/test_curator_coherence_edges.py:156-176, 576-606, 621-640).
+`test_attestation_rejects_a_different_code_memory_pair`], mcp/tests/test_curator_coherence_edges.py:156-176; mcp/tests/test_curator_coherence_edges.py:568-634; mcp/tests/test_curator_coherence_edges.py:635-654).
 
 ### Conventions
 
@@ -68,7 +68,7 @@ No configured external documentation applies; this is repository-owned lifecycle
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Strict models and public translations reject malformed or incomplete authority inputs. | `test_models_refuse_blank_mismatched_and_duplicate_authority_inputs`; `test_request_and_response_shapes_are_total_and_action_specific`; `test_application_projects_domain_and_post_execution_refusals` | mcp/tests/test_curator_coherence_edges.py:156-310 |
-| Authority loading, exact candidate identity, topology, containment, and status are independently forced. | `test_authority_loader_rejects_wrong_paths_bytes_digests_and_projection`; `test_current_validator_rejects_source_and_task_identity_drift`; `test_status_distinguishes_source_absence_staleness_and_current_authority` | mcp/tests/test_curator_coherence_edges.py:433-483; mcp/tests/test_curator_coherence_edges.py:486-516; mcp/tests/test_curator_coherence_edges.py:620-659 |
+| Authority loading, exact candidate identity, topology, containment, and status are independently forced. | `test_authority_loader_rejects_wrong_paths_bytes_digests_and_projection`; `test_current_validator_rejects_source_and_task_identity_drift`; `test_status_distinguishes_source_absence_staleness_and_current_authority` | mcp/tests/test_curator_coherence_edges.py:482-534; mcp/tests/test_curator_coherence_edges.py:535-567; mcp/tests/test_curator_coherence_edges.py:678-719 |
 | Publish-time CAS and atomicity checks refuse changed authority or partial output. | `test_publish_rechecks_predecessor_contract_replay_authority_and_source`; `test_projection_and_atomic_publication_edges_refuse_without_partial_output` | mcp/tests/test_curator_coherence_edges.py:692-764; mcp/tests/test_curator_coherence_edges.py:767-843 |
 | Every recorded evidence reference is reopened and revalidated. | `test_recorded_judgments_report_unreadable_evidence_and_recheck_every_item` | mcp/tests/test_curator_coherence_edges.py:846-875 |
 | R03 dependency-aware attestation source shape. | `_quality_source` | mcp/tests/test_curator_coherence_edges.py:156-176 |

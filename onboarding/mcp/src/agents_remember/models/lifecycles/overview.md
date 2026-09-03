@@ -56,7 +56,7 @@ None.
 | --- | --- | --- |
 | Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-35 |
 | Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
-| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:801-819 |
+| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
 
 ## Docs References
 
@@ -93,7 +93,7 @@ The journal record is the durable authority after scheduling claim transfer. Ret
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current journal record and projection. | `_require_quality_certification_memory`; `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:281-297; mcp/src/agents_remember/models/lifecycles/operation.py:300-308; mcp/src/agents_remember/models/lifecycles/operation.py:311-320 |
+| Current journal record and projection. | `_require_quality_certification_memory`; `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:281-297; mcp/src/agents_remember/models/lifecycles/operation.py:300-308; mcp/src/agents_remember/models/lifecycles/operation.py:311-331 |
 | Enclosure address models. | `EnclosurePublicationState`; `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:20-25; mcp/src/agents_remember/models/lifecycles/enclosure.py:28-42 |
 | Worker termination evidence. | `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` | mcp/src/agents_remember/models/lifecycles/termination.py:12-33; mcp/src/agents_remember/models/lifecycles/termination.py:36-53 |
 

@@ -49,7 +49,7 @@ repo is disallowed or a path escapes the coordination root.
 | Runtime/coordination response models include `ResolveContextResponse`. | `ResolveContextResponse` | mcp/src/agents_remember/models/runtime.py:30-33 |
 | Coordination context resolver owns the actual context construction. | "_resolver.resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:131-146 |
 | `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
-| `AuthorityError` is the authority-violation error type the guards raise. | `AuthorityError` | mcp/src/agents_remember/errors.py:68-74 |
+| `AuthorityError` is the authority-violation error type the guards raise. | `AuthorityError` | mcp/src/agents_remember/errors.py:96-104 |
 
 ## Series-Contract Notes
 

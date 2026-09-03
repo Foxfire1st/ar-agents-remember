@@ -68,10 +68,15 @@ Execution and repository-profile wiring are owned by later consumers, not this m
 No Domain Documentation source is configured for this memory root. The governing task artifacts
 below close the informational gap for the exact-candidate admission CAS semantics.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R05@v3 admission required behavior: refuse ambiguity rather than scan or infer; validate mutation/source/branch authority; abort only when there is no valid candidate to examine; a successor after a red gate requires a corrective disposition for every failed/blocked catalog root and at least one relevant changed input. | "Admission Required Behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md |
-| Leaf L05 delivered "Exact-candidate admission, prior-red recovery, certificate currentness, and finalization boundary contracts landed without fallback behavior." | "S2 — Implement only CCR-R05" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/05_exact-candidate-admission-and-recovery.md |
+CCR-R05@v3 (requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md, "Admission
+Required Behavior") requires admitting one supplied owner-produced authority set without
+scanning or inference: validate mutation/source/branch authority, abort only when there is no
+valid candidate to examine, and require a corrective disposition for every failed/blocked
+catalog root plus at least one relevant changed input after a red gate. Leaf L05
+(05_exact-candidate-admission-and-recovery.md, "S2 — Implement only CCR-R05") landed the
+exact-candidate admission, prior-red recovery, certificate currentness, and finalization
+boundary contracts without fallback behavior.
+
 
 ## Repo-Internal References
 
@@ -93,5 +98,7 @@ No cross-repository implementation boundary is owned here.
 | Repository-specific rail declarations enter through repository profiles outside this contract. | — | — |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose (absolute ar-coordination task-artifact paths are not repo-relative citations). Verification remains pinned to the pre-commit source history until closeout.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): created the card for the new exact-candidate admission and prior-red corrective authority module; no prior sidecar existed.

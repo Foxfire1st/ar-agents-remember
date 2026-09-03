@@ -32,7 +32,7 @@ source generation reads; `closeout_door_dependencies` builds the `closeout-door/
 three provenance-record edges, admission, scheduling, validator, and predecessor edge), and
 `require_closeout_door_dependencies` refuses `closeout-door-dependencies-stale` when a generation's
 declared inputs no longer match its canonical source facts
-cit:([`DoorDependencyInputs`, `closeout_door_dependencies`, `require_closeout_door_dependencies`], mcp/src/agents_remember/models/lifecycles/door.py:148-160, 161-202, 203-258).
+cit:([`DoorDependencyInputs`, `closeout_door_dependencies`, `require_closeout_door_dependencies`], mcp/src/agents_remember/models/lifecycles/door.py:148-160; mcp/src/agents_remember/models/lifecycles/door.py:161-202; mcp/src/agents_remember/models/lifecycles/door.py:203-233).
 
 ### Conventions
 
@@ -60,8 +60,8 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration`; `DoorPublicationEvidence` | mcp/src/agents_remember/models/lifecycles/door.py:78-124; mcp/src/agents_remember/models/lifecycles/door.py:127-144 |
-| The R03 door dependency vocabulary owned by this record type. | `EvidenceDependencies`, `build_evidence_dependencies`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119, 228-275 |
+| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration`; `DoorPublicationEvidence` | mcp/src/agents_remember/models/lifecycles/door.py:89-147; mcp/src/agents_remember/models/lifecycles/door.py:234-253 |
+| The R03 door dependency vocabulary owned by this record type. | `EvidenceDependencies`, `build_evidence_dependencies`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-239; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277 |
 
 ## Cross-Repo References
 

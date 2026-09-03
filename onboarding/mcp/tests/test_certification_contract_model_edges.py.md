@@ -56,11 +56,8 @@ Keep repository-profile and executor behavior out of this generic model-edge sui
 ## Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifact
-below closes the informational gap for the model-edge additions.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R05@v3 finalization journal and prior-red disposition semantics; the added model edges mirror them. | "Finalization Required Behavior"; "Admission Required Behavior" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md |
+is recorded as prose here (task artifact paths are not repo-relative citations): CCR-R05@v3
+finalization journal and prior-red disposition semantics; the added model edges mirror them.
 
 ## Repo-Internal References
 
@@ -81,6 +78,10 @@ No external repository implementation is consumed.
 | The suite uses the portable sample registry rather than an Agents Remember rail inventory. | `certification_registry_test_support` | mcp/tests/test_certification_contract_model_edges.py:43-57 |
 
 ## Update History
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
+  Docs References task-artifact row as prose (absolute ar-coordination paths are not
+  repo-relative citations and carry no verifiable provenance).
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): documented the added R05 lifecycle-model closed edges (exact candidate conflict shapes, finalization legs, prior-red dispositions, finalization journal) and refreshed all citation ranges to the current 550-line file. Verification metadata rebased from `0506b57a` to the L05 owning commit.
 

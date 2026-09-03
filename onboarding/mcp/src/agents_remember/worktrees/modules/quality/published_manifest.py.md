@@ -78,16 +78,16 @@ publication path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Each gate certificate names the exact admitted profile and its gate-specific plan digest. | `## Resolution And Freeze` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| A profile or referenced-input change invalidates only the declared certificate dependency closure. | `## Invalidation Boundaries` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+| Each gate certificate names the exact admitted profile and its gate-specific plan digest. | `profile_plan_digest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:129-130 |
+| A profile or referenced-input change invalidates only the declared certificate dependency closure. | `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:261-302 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The loader reads the sole manifest pointer and returns one strict v3 snapshot with profile identity. | `load_published_quality_manifest`; `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:56-64; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:66-183 |
-| Generation and dependency digests require the exact bound field sets (incomplete or ambiguous refuse). | `quality_generation_digest`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:204-216; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:268-295 |
-| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:257-259 |
+| Generation and dependency digests require the exact bound field sets (incomplete or ambiguous refuse). | `quality_generation_digest`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:204-216; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:261-302 |
+| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:305-313 |
 | The quality gate recovery recompiles the expected plan digest for the candidate before reuse, then decodes via the declared decoder. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
 
 ## Cross-Repo References

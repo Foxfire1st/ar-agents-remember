@@ -69,8 +69,8 @@ below document the regenerated digests and the repair scope.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The root-owned repair "Regenerates the canonical authority after the Dagger-source and selector-ownership changes," binding profileDigest 87142fc2..., selector configurationDigest 8ceb5c1d..., and adapter runtimeDigest 32b57c79.... | "Changed surfaces and behavior"; "The regenerated profile binds" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/notes/reports/l09-gate-evidence/runtime-bootstrap-unblocker-handover/260903-runtime-bootstrap-unblocker-worker-handover.md |
-| The 2026-09-03T06:20:00+02:00 master decision landed the bootstrap repair; it advances no requirement leaf and does not satisfy L12. | Decision record | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+| The regenerated canonical authority binds profileDigest 87142fc2..., selector configurationDigest 8ceb5c1d..., and adapter runtimeDigest 32b57c79.... | `profileDigest`; `configurationDigest`; `runtimeDigest` | mcp/certification-profile-v1.json:6-6; mcp/certification-profile-v1.json:2583-2583; mcp/certification-profile-v1.json:2643-2643 |
+| The 2026-09-03T06:20:00+02:00 master decision landed the bootstrap repair; it advances no requirement leaf and does not satisfy L12. | `## Update History` | onboarding/mcp/certification-profile-v1.json.md:93-95 |
 
 ## Repo-Internal References
 
@@ -80,7 +80,7 @@ below document the regenerated digests and the repair scope.
 | The regenerated selector configuration digest. | `configurationDigest` | mcp/certification-profile-v1.json:2583 |
 | The regenerated adapter runtime digest. | `runtimeDigest` | mcp/certification-profile-v1.json:2643 |
 | The profile's literal consumer ownership names the gate-certificate authority test. | `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:50-104 |
-| Repository-profile admission/canonicalization consume this authority at plan compile time. | `compile_repository_profile_plan`; `canonicalize_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/planning.py; mcp/src/agents_remember/certification/repository_profiles/canonical.py |
+| Repository-profile admission/canonicalization consume this authority at plan compile time. | `compile_repository_profile_plan`; `canonicalize_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/planning.py:71-119; mcp/src/agents_remember/certification/repository_profiles/canonical.py:13-27 |
 
 ## Cross-Repo References
 

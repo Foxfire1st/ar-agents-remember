@@ -64,7 +64,7 @@ No meaningful cross-repository reference applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Evidence remains confined to contract-owned roots. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:470-501 |
+| Evidence remains confined to contract-owned roots. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:623-656 |
 
 ## Update History
 

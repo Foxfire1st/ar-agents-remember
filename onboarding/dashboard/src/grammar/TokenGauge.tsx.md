@@ -37,7 +37,7 @@ uPlot-deferral). Cyan = the progress/charge grammar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:729-732 |
+| The `TokenSample` shape (ts + cumulative) it plots. | `TokenSample` | dashboard/src/types/projection.ts:739-742 |
 
 ## Update History
 

@@ -57,18 +57,19 @@ No Domain Documentation source is configured for this memory root. The governing
 below are the authoritative documentary sources used to close the informational gap for this
 change's scope (exact-candidate admission and recovery).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R05@v3 defines admission and finalization as lifecycle boundaries with zero gate starts; the facade exposes those boundaries. | "Admission and finalization are lifecycle boundaries, not certification gates." | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R05-v3-exact-candidate-admission-and-recovery.md |
-| Leaf L05 landed this exact-candidate surface at commit 4e0ea4b3c493. | "Commit 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/05_exact-candidate-admission-and-recovery.md |
+The governing task artifacts (CCR-R05@v3 requirement packet and the 05_exact-candidate-admission-
+and-recovery leaf doc) define admission and finalization as lifecycle boundaries with zero gate
+starts, which this facade exposes; leaf L05 landed that surface at commit 4e0ea4b3c493. Task
+artifact paths are not repo-relative citations, so these facts are recorded as prose here.
+
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The facade imports and re-exports the L05 lifecycle admission boundary. | `from agents_remember.certification.lifecycle_admission import (...)` | mcp/src/agents_remember/certification/__init__.py:18-21 |
-| The facade imports and re-exports the L05 recovery and finalization boundary. | `from agents_remember.certification.lifecycle_recovery import (...)` | mcp/src/agents_remember/certification/__init__.py:22-27 |
-| `__all__` fixes the complete public surface, including the six new L05 functions. | `__all__` | mcp/src/agents_remember/certification/__init__.py:45-71 |
+| The facade imports the L05 lifecycle admission boundary from its owning module. | `lifecycle_admission` | mcp/src/agents_remember/certification/__init__.py:18-21 |
+| The facade imports the L05 recovery and finalization boundary from its owning module. | `lifecycle_recovery` | mcp/src/agents_remember/certification/__init__.py:22-27 |
+| `__all__` fixes the complete public surface, including the six L05 lifecycle functions. | `__all__` | mcp/src/agents_remember/certification/__init__.py:65-105 |
 
 ## Cross-Repo References
 
@@ -79,6 +80,14 @@ No cross-repository implementation boundary is owned here.
 | Repository-specific declarations enter through profiles outside this facade. | — | — |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): re-anchored the two lifecycle import rows to the owning-module identifiers (`lifecycle_admission`, `lifecycle_recovery`) so each anchor resolves once in the facade, and widened the `__all__` row to its current extent. Verification remains pinned to the pre-commit source history until closeout.
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored the two lifecycle
+  import rows to identifier anchors present inside their cited ranges, and rewrote the
+  Docs References task-artifact rows as prose (absolute ar-coordination paths are not
+  repo-relative citations and carried no range). Verification remains pinned to the pre-commit
+  source history until closeout.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): facade widened to export the exact-candidate lifecycle admission and recovery/finalization contracts (`compile_lifecycle_admission`, `validate_lifecycle_admission_currentness`, `authorize_finalization_leg`, `compile_certification_recovery_record`, `compile_lifecycle_finalization`, `validate_lifecycle_finalization_currentness`); body updated, verification metadata rebased from `0506b57a` to the L05 owning commit.
 

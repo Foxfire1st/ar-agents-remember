@@ -28,7 +28,7 @@ lock; the journal retains the accepted proof before downstream projections are r
 Under CCR-R03@v1 `record_door_intent` rebinds the updated record's typed dependency declaration
 (`lifecycle_operation_dependencies`) after the new door publication intent is attached, so the
 journaled operation content-addresses the exact admitted door generation it now reads
-cit:([`record_door_intent`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py:44-54).
+cit:([`record_door_intent`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py:36-54).
 
 ## Invariants And Boundaries
 
@@ -49,7 +49,7 @@ No configured Domain Documentation source applies to this repository-internal li
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Door intent is recorded on the journaled operation and its dependency declaration is rebound. | `record_door_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py:44-54 |
+| Door intent is recorded on the journaled operation and its dependency declaration is rebound. | `record_door_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py:36-54 |
 | The operation dependency vocabulary this seam uses. | `lifecycle_operation_dependencies` | mcp/src/agents_remember/models/lifecycles/operation.py:428-484 |
 
 ## Update History

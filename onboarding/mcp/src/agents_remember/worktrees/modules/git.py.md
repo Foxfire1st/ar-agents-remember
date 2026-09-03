@@ -113,7 +113,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The one `run_git` every helper here calls: the `GIT_DIR`-family scrub, the DEVNULL stdin guard, and the three timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
 | Memory baseline code reuses these facade-exported Git helpers. | "def run_drift" | mcp/src/agents_remember/memory/baseline.py:85-85 |
 | The L3 serving change-set API consuming `changed_files_with_counts` + `commit_text_or_none`. | "def task_changeset" | mcp/src/agents_remember/serving/changeset.py:80-80 |
-| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1150-1163 |
+| Worktree tests cover changed-path behavior for long filesystem paths. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1143-1156 |
 | The extracted closeout staging owner runs the configured hook before its strict Dagger wrapper and later commits the certified index through this Git facade. | `gate_staged_code`; `commit_verified_staged` | mcp/src/agents_remember/worktrees/modules/git.py:188-198; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
 | The hook-failure regression proves the raw runner retains a surrogateescaped byte while the facade exception is UTF-8 JSON serializable. | `test_failed_hook_diagnostic_with_invalid_bytes_is_json_serializable` | mcp/tests/test_git_command.py:337-354 |
 | Candidate-tree capture gives every observation a unique temporary index inside the caller-selected scratch namespace. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:33-55 |

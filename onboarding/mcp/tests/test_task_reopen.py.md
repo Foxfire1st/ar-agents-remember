@@ -60,7 +60,7 @@ task doc id when the task tree proves the mapping.
 | The recreate-fresh start path publishes its restamp through task-first mutation and projection invalidation. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
 | Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
-| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:1008-1015 |
+| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:1026-1035 |
 
 ## L23 Reopen Lineage Regression
 

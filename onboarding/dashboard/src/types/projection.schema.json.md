@@ -60,7 +60,7 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `` block contains all reusable projection schema definitions. | "\"\": {" | dashboard/src/types/projection.schema.json:2-2 |
+| The `$defs` block contains all reusable projection schema definitions. | "\"$defs\": {" | dashboard/src/types/projection.schema.json:2-2 |
 | `ActionAvailability` declares reducer-decided action safety for the cockpit. | "\"ActionAvailability\": {" | dashboard/src/types/projection.schema.json:3-3 |
 | `AgentPickupNode` declares a pending unacked dashboard response. | "\"AgentPickupNode\": {" | dashboard/src/types/projection.schema.json:47-47 |
 | The generated `task-intent/v1` identity definition with closed schema and digest pattern. | "\"TaskIntentIdentity\": {" | dashboard/src/types/projection.schema.json:3776-3796 |

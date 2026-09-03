@@ -27,7 +27,7 @@ The public surface is `DirectLandingRuntime`, `direct_landing_store`, `direct_la
 Under CCR-R03@v1 `direct_landing_record` now binds the record's typed dependency declaration
 (`lifecycle_operation_dependencies`) whenever an admitted door publication is present; a record
 without door publication intentionally stays dependency-free until the claim intent is attached
-cit:([`direct_landing_record`], mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:177-211).
+cit:([`direct_landing_record`], mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:169-213).
 
 ### Conventions
 
@@ -56,7 +56,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module defines `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` as its public seam. | `DirectLandingRuntime`; `direct_landing_store`; `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:45-161; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:164-165; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:168-206 |
-| R03 dependency declaration bound for admitted-door records. | `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:177-211 |
+| R03 dependency declaration bound for admitted-door records. | `direct_landing_record` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py:169-213 |
 
 ## Cross-Repo References
 
@@ -75,6 +75,8 @@ Records with an admitted door now declare their exact direct inputs at construct
 handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): widened the `direct_landing_record` ranges to 169-213 so the cited ranges hold the declaration line.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the admitted-door dependency declaration on direct-landing records; prior door-intent and recovery prose preserved.
 

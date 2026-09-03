@@ -63,7 +63,7 @@ No Domain Documentation source is configured.
 | Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:580-614 |
 | The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:643-646; dashboard/src/types/projection.ts:657-661 |
 | Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:743-756 |
-| The optional canonical task-intent identity on lifecycle operations. | `taskIntent?` | dashboard/src/types/projection.ts:349-349 |
+| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:349-349 |
 | The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:687-693 |
 
 ## Cross-Repo References

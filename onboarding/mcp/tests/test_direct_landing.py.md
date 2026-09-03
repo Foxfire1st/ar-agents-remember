@@ -69,7 +69,7 @@ No configured Domain Documentation source applies.
 | Code-commit verification then ledger/memory commit. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:195-265 |
 | Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:315-339 |
 | Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:482-504; mcp/tests/test_direct_landing.py:573-593 |
-| Exact-current re-land is idempotent, while a historical same-code mapping is superseded by a recovered memory-only change without losing history. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_historical_mapping_is_superseded_by_recovered_memory_only_change` | mcp/tests/test_direct_landing.py:648-683; mcp/tests/test_direct_landing_operation_recovery.py:702-727 |
+| Exact-current re-land is idempotent, while a historical same-code mapping is superseded by a recovered memory-only change without losing history. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_historical_mapping_is_superseded_by_recovered_memory_only_change` | mcp/tests/test_direct_landing.py:648-683; mcp/tests/test_direct_landing_operation_recovery.py:728-753 |
 | Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:786-824 |
 | The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
 

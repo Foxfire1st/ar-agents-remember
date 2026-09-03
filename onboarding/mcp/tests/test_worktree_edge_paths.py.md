@@ -109,7 +109,7 @@ No Domain Documentation source is configured for this memory root.
 | `_contract_after_memory_start` is the memory-disabled/reconciled recovery. | `_contract_after_memory_start` | mcp/src/agents_remember/worktrees/modules/start.py:206-228 |
 | `invalid_contract_request_result` returns the `exit 2` / `state: invalid-request` payload for a refusal. | `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
 | Contract lifecycle anchors cover schema/lifecycle round trips. | `ContractLifecycleAnchorTests` | mcp/tests/test_worktree_contract_lifecycle.py:51-81 |
-| Worktree and sync suites cover the adjacent happy paths. | `WorktreeSupportTests`; `WorktreeSyncTests` | mcp/tests/test_worktree_support.py:807-882; mcp/tests/test_worktree_sync.py:111-244 |
+| Worktree and sync suites cover the adjacent happy paths. | `WorktreeSupportTests`; `WorktreeSyncTests` | mcp/tests/test_worktree_support.py:979-1056; mcp/tests/test_worktree_sync.py:176-587 |
 | Helper-level arms of the same lifecycle. | `InspectContainersTests`; `InspectContainersIndividuallyTests`; `DockerRemoveHelpersTests`; `RouteOverviewMetadataRefreshPlanTests` | mcp/tests/test_worktree_and_observer_helpers.py:102-189; mcp/tests/test_worktree_and_observer_helpers.py:192-240; mcp/tests/test_worktree_and_observer_helpers.py:243-357; mcp/tests/test_worktree_and_observer_helpers.py:454-732 |
 
 ## Cross-Repo References

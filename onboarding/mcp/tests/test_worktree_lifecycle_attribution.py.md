@@ -39,7 +39,7 @@ snake_case result payloads (no git/provider machinery).
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:246-246 |
+| The application entry point attribution helpers under test. | "def _attribute_start" | mcp/src/agents_remember/application/worktree_tools.py:250-250 |
 | The ambient lifecycle they drive (`promote`/`attach`). | "def promote"; "def attach" | mcp/src/agents_remember/observer/ambient.py:348-348; mcp/src/agents_remember/observer/ambient.py:364-364 |
 | The save-gate signal they assert (`SaveGateRequired`). | `SaveGateRequired` | mcp/src/agents_remember/observer/save_gate.py:34-48 |
 

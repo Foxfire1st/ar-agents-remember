@@ -72,7 +72,7 @@ No external documentation governs this repository-owned lifecycle contract.
 | Manager and task sources preserve primary ownership while keeping adjacent requirements contextual. | `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:82-112 |
 | Packet supersession and leaf/master gate boundaries remain explicit. | `test_packet_supersession_and_leaf_gate_boundaries_are_explicit` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:115-126 |
 | Durable-evidence promotion is structurally separate. | `test_durable_evidence_hold_point_is_explicitly_separate` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:132-146 |
-| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:483-483 |
+| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:497-497 |
 
 ## Cross-Repo References
 

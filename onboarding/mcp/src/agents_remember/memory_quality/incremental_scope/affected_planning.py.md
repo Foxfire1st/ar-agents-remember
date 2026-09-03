@@ -65,10 +65,14 @@ None recorded.
 No Domain Documentation source is configured for this memory root. The governing task artifacts
 below close the informational gap for the planning boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R07@v3 invalidation boundaries and forbidden overreach: no whole-memory fallback disguised as incremental and no memory work before Gate 4 is green; a code/profile change uses R21 invalidation and cannot be mislabeled memory-only. | "Invalidation Boundaries"; "Exclusions And Forbidden Overreach" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R07-v3-incremental-affected-closure-validation.md |
-| Leaf L07 delivered "Exact affected-closure planning, selected execution, typed results, pending-full visibility, and exact subresult reuse" without fallback. | "S2 — Implement only CCR-R07" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/07_incremental-affected-closure-validation.md |
+CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
+"Invalidation Boundaries"; "Exclusions And Forbidden Overreach") forbids a whole-memory
+fallback disguised as incremental and any memory work before Gate 4 is green; a code/profile
+change uses R21 invalidation and cannot be mislabeled memory-only. Leaf L07
+(07_incremental-affected-closure-validation.md, "S2 — Implement only CCR-R07") delivered
+exact affected-closure planning, selected execution, typed results, pending-full visibility,
+and exact subresult reuse without fallback.
+
 
 ## Repo-Internal References
 
@@ -85,8 +89,10 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate certificate and reuse contracts come from the R21 owners inside this repository. | `GateCertificate`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py; mcp/src/agents_remember/certification/certificate_invalidation.py |
+| Gate certificate and reuse contracts come from the R21 owners inside this repository. | `GateCertificate`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:221-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-164 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the new affected-closure planner; no prior sidecar existed.

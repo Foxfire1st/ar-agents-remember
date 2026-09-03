@@ -39,15 +39,16 @@ consumes the proof path as the Gate-3 rail.
 CCR-R22@v1: Gate 2 is the configured ordinary test suite publishing complete exact-candidate
 result artifacts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gate 2 contains the configured ordinary test suite and publishes its complete exact-candidate result artifacts. | `## Framework-Owned Classification Rules` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
+Gate 2 contains the configured ordinary test suite and publishes its complete exact-candidate result artifacts.
+
+The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
+recorded as prose here (task artifact paths are not repo-relative citations).
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture suite rail invoking cargo --locked and publishing artifacts. | `run-suite.sh` | mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh; mcp/tests/fixtures/repository_profiles/rust/scripts/post-suite.sh; mcp/tests/fixtures/repository_profiles/rust/Cargo.lock |
+| Fixture suite rail invoking cargo --locked and publishing artifacts. | `test_name` | mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh:1-9; mcp/tests/fixtures/repository_profiles/rust/scripts/post-suite.sh:1-5; mcp/tests/fixtures/repository_profiles/rust/Cargo.lock:1-7 |
 
 ## Update History
 

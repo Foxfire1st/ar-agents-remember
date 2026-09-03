@@ -39,7 +39,7 @@ arguments.
 Under CCR-R03@v1 `_candidate_identity` stages the candidate index in an OS temp directory that is
 proven outside the repository, instead of a scratch directory inside it — so the temporary index
 can never self-include in the hashed candidate tree (the L26-documented diagnostic limitation is
-fixed for this harness) cit:([`_candidate_identity`], scripts/e2e_harness/run.py:225-238).
+fixed for this harness) cit:([`_candidate_identity`], scripts/e2e_harness/run.py:224-238).
 
 ### Conventions
 
@@ -77,7 +77,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Two fresh runs are performed without a retry branch. | `RUN_COUNT` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-158 |
 | Residual tmux ownership is a named acceptance checkpoint. | `_residual_tmux` | scripts/e2e_harness/run.py:111-158; scripts/e2e_harness/run.py:224-240 |
-| R03 outside-repo candidate-index staging. | `_candidate_identity` | scripts/e2e_harness/run.py:225-238 |
+| R03 outside-repo candidate-index staging. | `_candidate_identity` | scripts/e2e_harness/run.py:224-238 |
 
 ## Cross-Repo References
 

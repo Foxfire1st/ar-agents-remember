@@ -50,7 +50,7 @@ strict door-wire tests exercise the current intent-bearing generation shape.
 | Door dispositions, claimed-operation identity, and source/projection request separation are fail closed. | `CloseoutDoorModelTests` | mcp/tests/test_closeout_queue_models.py:85-124 |
 | Invalid-empty and terminal valid-built projection states carry no illicit membership or lifecycle state. | `CloseoutProjectionModelTests` | mcp/tests/test_closeout_queue_models.py:127-195 |
 | Projection member reasons and every persisted wire list are bounded. | `test_member_reasons_and_all_wire_lists_are_bounded` | mcp/tests/test_closeout_queue_models.py:163-195 |
-| The door fixture binds canonical task intent. | `door_generation`; `taskIntent` | mcp/tests/test_closeout_queue_models.py:48-58; mcp/tests/test_closeout_queue_models.py:52-52 |
+| The door fixture binds canonical task intent. | `door_generation`; `taskIntent` | mcp/tests/test_closeout_queue_models.py:35-66; mcp/tests/test_closeout_queue_models.py:52-52 |
 
 ## Current Contract — 260821 CLIVE Final
 

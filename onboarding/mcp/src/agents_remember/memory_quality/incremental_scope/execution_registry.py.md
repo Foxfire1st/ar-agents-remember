@@ -55,9 +55,10 @@ None recorded.
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for execution identity.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CCR-R07@v3 requires changed runtime identity to invalidate the dependent closure; the execution-registry digest makes that true. | "Invalidation Boundaries" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R07-v3-incremental-affected-closure-validation.md |
+CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
+"Invalidation Boundaries") requires changed runtime identity to invalidate the dependent
+closure; the execution-registry digest makes that true.
+
 
 ## Repo-Internal References
 
@@ -74,8 +75,10 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The checker name and scope registry come from the same-repository R06 owners. | `range_resolution`; `checker_scope_registry` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py; mcp/src/agents_remember/memory_quality/incremental_scope/registry.py |
+| The checker name and scope registry come from the same-repository R06 owners. | `range_resolution`; `checker_scope_registry` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64; mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:108-131 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the new R07 execution registry; no prior sidecar existed.

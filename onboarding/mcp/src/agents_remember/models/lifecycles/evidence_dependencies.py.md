@@ -20,7 +20,7 @@ The shared typed dependency-edge encoding of CCR-R03@v1: one versioned direct-de
 declaration per evidence record type. It models only the one-way relation "evidence content-addresses
 its declared direct inputs" — it does not select a current record, infer domain semantics, or place
 evidence back into topology or task intent
-cit:([module docstring], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:1-6).
+cit:(["Typed direct-input identities for immutable lifecycle evidence"], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:1-6).
 
 ## Code Commentary
 
@@ -44,7 +44,7 @@ cit:([`build_evidence_dependencies`, `require_evidence_dependencies`], mcp/src/a
 while treating edges to records outside the supplied set as external roots — no historical file scan
 cit:([`validate_evidence_dependency_graph`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:289-324).
 `dependency` and `canonical_sha256` are the two builder helpers every domain uses to construct edges
-cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-225, 327-331).
+cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-225; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:327-331).
 
 ### Conventions
 
@@ -84,9 +84,11 @@ matrix in the evidence-dependency test suite fixes the contract.
 | The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
 | The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/ledger/admission/scheduling provenance records. | `closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:161-202 |
 | Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | `lifecycle_operation_dependencies` | mcp/src/agents_remember/models/lifecycles/operation.py:428-484 |
-| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `_require_current_dependencies` | mcp/src/agents_remember/worktrees/route_review.py:56-116, 229-271 |
-| Policy registry shape, refusal statuses, and graph-cycle guard are fixed by focused tests. | `test_every_record_type_has_one_versioned_policy`; `test_missing_extra_wrong_type_and_duplicate_dependencies_fail_closed`; `test_supplied_record_closure_refuses_cycles_without_scanning_for_external_roots` | mcp/tests/test_evidence_dependencies.py:88-90, 159-187, 202-242 |
+| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `_require_current_dependencies` | mcp/src/agents_remember/worktrees/route_review.py:65-122; mcp/src/agents_remember/worktrees/route_review.py:229-273 |
+| Policy registry shape, refusal statuses, and graph-cycle guard are fixed by focused tests. | `test_every_record_type_has_one_versioned_policy`; `test_missing_extra_wrong_type_and_duplicate_dependencies_fail_closed`; `test_supplied_record_closure_refuses_cycles_without_scanning_for_external_roots` | mcp/tests/test_evidence_dependencies.py:88-158; mcp/tests/test_evidence_dependencies.py:159-201; mcp/tests/test_evidence_dependencies.py:202-242 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): repaired the prose cit anchor (quoted module docstring) and separated the two-range source with a semicolon.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): created the card for the new shared typed evidence-dependency encoding introduced by the R03 leaf; no prior sidecar existed.

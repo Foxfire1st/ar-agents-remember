@@ -74,7 +74,7 @@ evidence.
 | The production resolver, loopback classification, and OS-resolved principal under test. | "class LocalOperatorAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:72-72 |
 | The request dependency that forwards only the ASGI TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:28-28 |
 | The strict binding, cursor, scope, and fingerprint carriers used as own/foreign evidence. |"class ConversationEventEnvelope"|mcp/src/agents_remember/models/conversations/stream_events.py:88-88|
-| The typed `AuthorityError` refusal asserted across the suite. | `AuthorityError` | mcp/src/agents_remember/errors.py:68-74 |
+| The typed `AuthorityError` refusal asserted across the suite. | `AuthorityError` | mcp/src/agents_remember/errors.py:96-104 |
 
 ## Cross-Repo References
 

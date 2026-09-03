@@ -47,7 +47,7 @@ intent forms through the package surface. `__all__` lists the full public set.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:677-677; mcp/src/agents_remember/tasks/render.py:39-39; mcp/src/agents_remember/tasks/store.py:111-111 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:709-709; mcp/src/agents_remember/tasks/render.py:45-45; mcp/src/agents_remember/tasks/store.py:112-112 |
 | Current facade re-exports of the typed task-intent slot models. | "from agents_remember.models.task_intent import ("; "TaskIntentIdentity" | mcp/src/agents_remember/tasks/__init__.py:11-15; mcp/src/agents_remember/tasks/__init__.py:117-117 |
 
 ## Series-Contract Notes
@@ -71,7 +71,7 @@ write/remove primitive described below.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations. | "from .document import ("; "from .store import ("; "__all__ = [" | mcp/src/agents_remember/tasks/__init__.py:11-11; mcp/src/agents_remember/tasks/__init__.py:58-58; mcp/src/agents_remember/tasks/__init__.py:75-75 |
+| The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations. | "from .document import ("; "from .store import ("; "__all__ = [" | mcp/src/agents_remember/tasks/__init__.py:17-17; mcp/src/agents_remember/tasks/__init__.py:64-64; mcp/src/agents_remember/tasks/__init__.py:81-81 |
 
 ## 260821-CLIVE Task Audit And Registration Exports
 

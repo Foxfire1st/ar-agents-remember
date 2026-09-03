@@ -66,8 +66,8 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public request vocabulary exposes projection-only status and invalidation actions, not a selector. | `test_queue_request_has_projection_only_actions` | mcp/tests/test_closeout_queue.py:545-553 |
-| Waiting membership appears only after closeout-door publication; an empty queue does not invent candidates. | `test_door_publication_is_the_only_fixture_membership_source` | mcp/tests/test_closeout_queue.py:555-561 |
+| The public request vocabulary exposes projection-only status and invalidation actions, not a selector. | `test_queue_request_has_projection_only_actions` | mcp/tests/test_closeout_queue.py:571-579 |
+| Waiting membership appears only after closeout-door publication; an empty queue does not invent candidates. | `test_door_publication_is_the_only_fixture_membership_source` | mcp/tests/test_closeout_queue.py:581-587 |
 
 ## Cross-Repo References
 
@@ -88,7 +88,7 @@ compatibility-reader, or task-authoring lock behavior is assigned to the queue.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises the projection-only request and door-membership cases. | `CloseoutProjectionSurfaceTests` | mcp/tests/test_closeout_queue.py:534-551 |
+| The current test source exercises the projection-only request and door-membership cases. | `CloseoutProjectionSurfaceTests` | mcp/tests/test_closeout_queue.py:570-587 |
 
 ## Current Contract — 260821 CLIVE Final
 

@@ -49,13 +49,13 @@ No external Domain Documentation source is configured for this integration probe
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Harness availability selects the real or explicit fake integration mode. | `_selected_mode`; `test_codex_initialize_and_thread_list_use_real_when_available` | mcp/tests/test_codex_clean_room_probe.py:72-90 |
+| Harness availability selects the real or explicit fake integration mode. | `_selected_mode`; `test_codex_initialize_and_thread_list_use_selected_transport` | mcp/tests/test_codex_clean_room_probe.py:73-85; mcp/tests/test_codex_clean_room_probe.py:87-119 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test drives initialize and thread-list through the production conversation adapter. | `CODEX`; `test_codex_initialize_and_thread_list_use_real_when_available` | mcp/tests/test_codex_clean_room_probe.py:19-119 |
+| The test drives initialize and thread-list through the production conversation adapter. | `CODEX`; `test_codex_initialize_and_thread_list_use_selected_transport` | mcp/tests/test_codex_clean_room_probe.py:20-21; mcp/tests/test_codex_clean_room_probe.py:87-119 |
 
 ## Cross-Repo References
 

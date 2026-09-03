@@ -68,11 +68,16 @@ leaf `22_repository-owned-certification-gate-profiles.md` and master `task.md`
 "Framework and repository boundary" section confirm the framework/repository split this module
 implements (framework owns schema/digest rules; repository owns profile bytes).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Freeze the profile digest and every directly consumed configuration/runtime identity into the admission manifest; profile bytes changes invalidate the certificate dependency closure. | `## Resolution And Freeze` / `## Invalidation Boundaries` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| One explicit versioned repository-owned profile compiles Gates 1-4 while the framework owns gate meanings, order, dependency legality, result schema and certificate rules. | `## Normative Requirement` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md |
-| The MCP owns the fixed gate meanings, order, and typed schemas; each repository owns one explicit versioned Gate 1-4 profile. | `## Framework and repository boundary` | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/task.md |
+CCR-R22@v1 (requirements/CCR-R22-v1-repository-owned-certification-gate-profiles.md,
+"## Normative Requirement") has one explicit versioned repository-owned profile compile
+Gates 1-4 while the framework owns gate meanings, order, dependency legality, result schema,
+and certificate rules; the framework freezes the profile digest and every directly consumed
+configuration/runtime identity into the admission manifest, and profile bytes changes
+invalidate the certificate dependency closure ("## Resolution And Freeze" /
+"## Invalidation Boundaries"). The master task boundary (task.md,
+"## Framework and repository boundary") assigns fixed gate meanings, order, and typed
+schemas to the MCP while each repository owns one explicit versioned Gate 1-4 profile.
+
 
 ## Repo-Internal References
 
@@ -87,10 +92,12 @@ plan digest compilation.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content. | `canonicalize_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/canonical.py:13-24 |
-| The digest is computed by `repository_profile_digest` over normalized content in models. | `repository_profile_digest` | mcp/src/agents_remember/certification/repository_profiles/models.py |
+| The digest is computed by `repository_profile_digest` over normalized content in models. | `repository_profile_digest` | mcp/src/agents_remember/certification/repository_profiles/models.py:308-312 |
 | `load_repository_profile` calls canonicalization and converts digest refusal into a typed `profile-digest-mismatch` finding. | `load_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/authority.py:42-92 |
 | The canonical profile is what planning digests into immutable per-gate plans. | `compile_repository_profile_plan` | mcp/src/agents_remember/certification/repository_profiles/planning.py:71-118 |
 
 ## Update History
+
+- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new canonicalization/digest-entry module of the repository-owned certification profile package.

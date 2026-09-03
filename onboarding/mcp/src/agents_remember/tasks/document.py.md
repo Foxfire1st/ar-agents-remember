@@ -123,7 +123,7 @@ Under CCR-R03@v1 the route-review record became self-content-addressing. `RouteR
 `dependencies` (the typed `route-review/v1` declaration), and `recordDigest`. The record validator
 requires all content-addressing fields together, validates the declaration against the route-review
 policy, and forces `recordDigest` to equal the canonical SHA-256 of the record's own JSON bytes
-cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/document.py:138-160, 151-198).
+cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/document.py:134-150; mcp/src/agents_remember/tasks/document.py:151-200).
 
 ### Invariants And Boundaries
 
@@ -182,11 +182,11 @@ No Domain Documentation sources are configured for this repository-internal pers
 | --- | --- | --- |
 | Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
 | The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
-| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:320-341 |
+| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:352-414 |
 | Focused proof covers both comparison directions, set/dict insertion directions, and equal/unequal node identities. | `test_nodes_compare_structurally_without_cross_type_aliases` | mcp/tests/test_task_execution_topology_segments.py:237-265 |
 | Topology callers now project `node.ref` explicitly when they mean master ownership. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:116-217 |
 | The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/document.py:151-198 |
-| The R03 route-review dependency vocabulary. | `EvidenceDependencies`, `require_evidence_dependencies`, `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119, 240-275, 327-331 |
+| The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:327-334 |
 
 ## L23 Final Candidate Disposition
 
