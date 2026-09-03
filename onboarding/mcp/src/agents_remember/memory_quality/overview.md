@@ -61,6 +61,15 @@ and report-only detail into the enclosure's one atomically replaced curator work
 - `curator_checklist.py` deterministically separates zeroable curator repairs from truthful
   closeout-only provenance, renders every worklist class, and publishes one operational report
   outside both Git worktrees.
+- `final_certification/` (CCR-R08, added by 260831-CCR-L08) owns the final full
+  memory-coherence certification (Gate 5): the deterministic complete final catalog
+  (`catalog.py`), the closed typed models (`models.py`), the R21 Gate-5 semantic-input
+  assembly and coherence subrecord derivation (`certificate.py`), the executable
+  certification protocol (`certify.py`), and the exact green Gate 1-4 prerequisite adapter
+  (`gate_prefix.py`). The interactive full contract-scoped quality run publishes the
+  non-certifying `finalFullCatalog` readiness projection through the application controller;
+  only the certification executor holds the R21 certificates and R07 affected-closure plan
+  needed for a green certification.
 - `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
@@ -101,7 +110,7 @@ and report-only detail into the enclosure's one atomically replaced curator work
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:86-96; mcp/src/agents_remember/application/memory_quality/controller.py:306-333 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:98-108; mcp/src/agents_remember/application/memory_quality/controller.py:318-360 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
@@ -268,7 +277,25 @@ identity into the structured curator attestation. Repository-only quality remain
 cannot publish candidate acceptance. Pre/post-scan revalidation makes wrong or raced scope a
 typed refusal before evidence can be accepted.
 
+## 260831-CCR-L08 — Final Full Memory-Coherence Certification (Gate 5)
+
+This route now owns the final full memory-coherence certification package
+(`final_certification/`). The complete Gate-5 catalog is the exhaustion surface: every
+applicable memory checker, the missing-onboarding and route-index alignment owners, the R07
+affected-closure plan, the canonical curator-coherence record, and the exact code/memory
+candidate pair return pass/fail/blocked/not-applicable, and the attestation proves it ran exactly
+the planned population. The interactive full run projects the deterministic, non-certifying
+`finalFullCatalog` readiness surface onto its result (controller `_attach_final_full_catalog`); the
+executable certification (green/red/blocked, finalization-eligible only when green) is the
+certification executor's surface.
+
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: added the
+  `final_certification/` route-model bullet and the CCR-R08 leaf section (final full
+  memory-coherence certification: complete catalog, readiness projection on the full run,
+  executable certification) and re-anchored the controller row shifted by the +57-line change.
+  Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: bound leaf quality and curator attestations to the exact
   code/memory pair. Verification remains closeout-owned.

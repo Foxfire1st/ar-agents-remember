@@ -59,7 +59,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The history reader implements the contracts exercised by this suite. | `CodexNativeHistoryReader`; `read_page` | mcp/src/agents_remember/serving/codex_app_server_history.py:110-612 |
-| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:390-397; mcp/src/agents_remember/errors.py:398-410 |
+| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:423-428; mcp/src/agents_remember/errors.py:431-443 |
 
 ## Cross-Repo References
 
@@ -70,6 +70,8 @@ No cross-repository fixture is used.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the native-history errors.py citations (390-397/398-410 to 423-428/431-443) shifted by the CCR-R08 +33-line errors.py insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
