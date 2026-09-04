@@ -46,7 +46,7 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 35,
+    "sourceFilesInScope": 36,
     "fileSidecars": 34,
     "childRoutes": 0
   },

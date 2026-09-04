@@ -40,7 +40,7 @@
     "mcp/src/agents_remember/certification/validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 28,
+    "sourceFilesInScope": 34,
     "fileSidecars": 28,
     "childRoutes": 0
   },

@@ -72,7 +72,7 @@ No external documentation governs this repository-owned lifecycle contract.
 | Manager and task sources preserve primary ownership while keeping adjacent requirements contextual. | `test_manager_and_task_workflow_preserve_primary_ownership_and_adjacent_context` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:82-112 |
 | Packet supersession and leaf/master gate boundaries remain explicit. | `test_packet_supersession_and_leaf_gate_boundaries_are_explicit` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:115-126 |
 | Durable-evidence promotion is structurally separate. | `test_durable_evidence_hold_point_is_explicitly_separate` | mcp/tests/test_requirement_acceptance_envelope_doctrine.py:132-146 |
-| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:497-497 |
+| The manifest classifies this proof explicitly as architecture fitness. | "mcp/tests/test_requirement_acceptance_envelope_doctrine.py" | mcp/tests/test-evidence-lanes.toml:513-513 |
 
 ## Cross-Repo References
 
@@ -83,6 +83,11 @@ No cross-repository evidence is required.
 | The test reads only this repository's canonical doctrine. | — | — |
 
 ## Update History
+
+- 2026-09-04T17:15+02:00 — No content impact: re-anchored the unchanged architecture-fitness row
+  to mcp/tests/test-evidence-lanes.toml:513-513 (committed tree `ce7f10b5`) after intermediate
+  lane registrations and the L20 standalone terminal rail-failure registration shifted the
+  manifest. Requirement-envelope proof and lane ownership are unchanged.
 
 - 2026-09-01T08:13+02:00 — No content impact: re-anchored the unchanged architecture-fitness row
   after the three final CCR-R01 coverage companions shifted the manifest. Requirement-envelope
