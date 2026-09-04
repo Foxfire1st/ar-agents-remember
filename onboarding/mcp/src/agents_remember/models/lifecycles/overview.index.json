@@ -28,7 +28,7 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
+    "sourceFilesInScope": 17,
     "fileSidecars": 16,
     "childRoutes": 0
   },
