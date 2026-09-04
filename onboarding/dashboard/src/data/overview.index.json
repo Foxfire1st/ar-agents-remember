@@ -116,7 +116,7 @@
     "dashboard/src/data/useTaskDocumentBody.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 113,
+    "sourceFilesInScope": 116,
     "fileSidecars": 88,
     "childRoutes": 3
   },

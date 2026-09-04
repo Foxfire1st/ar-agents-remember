@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T17:50+02:00 |
+| lastVerifiedCommitHash | `4ba18bb23ba90e201bb37341d61c0efc64161fcf` |
+| lastVerifiedCommitDate | 2026-09-04T17:23:11+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -101,8 +101,29 @@ No Domain Documentation source or cross-repository implementation is configured 
 root. The accepted behavior is repository-owned and the package remains independent of any one
 repository's commands.
 
+
+
+## 260831-CCR-L13 — Optional Non-Certifying Diagnostic E2E Lane
+
+CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`, leaf 260831-CCR-L13) adds the
+`diagnostics/` subpackage to this route: the closed, immutable vocabulary and durable store for one
+optional real-Codex replication of the canonical ARSPAWN scenario that may run only after the exact
+candidate's R12 Gates 1-3 are green and stays explicitly non-certifying. `diagnostics/models.py`
+fixes the structural separation (`acceptanceEligible`/`certifying` false literals, diagnostic-altitude
+manifest carriage, typed scenario/infrastructure/parser failures, immutable gapless attempt/result
+chains, and content-verified digests); `diagnostics/planning.py` projects the exact canonical scenario
+rail at diagnostic altitude and refuses any second scenario implementation; `diagnostics/projection.py`
+owns the optional-lane readiness projection (not-requested-optional, running, newest-terminal blocking,
+plan-currentness staling, and the stable R14 non-satisfaction rule); and `diagnostics/store.py` keeps
+one stable digest-chained manifest per candidate in an isolated namespace that can never overlap the
+certifying quality-report manifest. The route facade (`__init__.py`) re-exports the full diagnostic
+surface; actual run control that binds the trusted R12 host authority lives in
+`worktrees.modules.quality.diagnostic_executor`.
+
+
 ## Update History
 
+- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): added the CCR-L13 section for the optional non-certifying diagnostic E2E lane - the `diagnostics/` subpackage (closed models, altitude plan projection, optional-lane readiness projection, isolated durable store) and the widened facade re-exports, with the higher worktree run controller consuming the trusted R12 authority. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 reconciled the bounded-reachability owner after
   removing a dominated second refusal: the prospective pre-allocation refusal and measured
   traversal reservations remain the complete route contract. Verification remains closeout-owned.

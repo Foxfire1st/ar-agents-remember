@@ -206,6 +206,12 @@
     "mcp/tests/test_curator_coherence_edges.py",
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_dependency_ownership_ast_helpers.py",
+    "mcp/tests/test_diagnostic_diff_coverage.py",
+    "mcp/tests/test_diagnostic_executor.py",
+    "mcp/tests/test_diagnostic_models.py",
+    "mcp/tests/test_diagnostic_planning.py",
+    "mcp/tests/test_diagnostic_projection.py",
+    "mcp/tests/test_diagnostic_store.py",
     "mcp/tests/test_diff_coverage.py",
     "mcp/tests/test_direct_landing.py",
     "mcp/tests/test_direct_landing_and_projection_helpers.py",
@@ -595,8 +601,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 587,
+    "fileSidecars": 589,
     "childRoutes": 0
   },
   "routingTerms": [

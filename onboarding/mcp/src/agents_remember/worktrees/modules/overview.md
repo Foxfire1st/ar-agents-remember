@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T17:50+02:00 |
+| lastVerifiedCommitHash | `4ba18bb23ba90e201bb37341d61c0efc64161fcf` |
+| lastVerifiedCommitDate | 2026-09-04T17:23:11+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -828,8 +828,25 @@ contract refuses with typed pair facts instead of resuming against ambient Git. 
 boundary translates the shared pair/coherence error families once, without duplicating resolver
 logic or adding a fallback route.
 
+
+
+## 260831-CCR-L13 — Optional Non-Certifying Diagnostic E2E Run Control
+
+CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`, leaf 260831-CCR-L13) adds
+`quality/diagnostic_executor.py` to this route: the run controller for the optional one-replication
+real-Codex diagnostic lane. It consumes the trusted R12 host authority exactly as closeout and
+integration do - admission freezes one existing connection-only runner/store snapshot and registers
+the attempt as a live owner; run executes at most one replication and terminalizes pass/fail from a
+complete diagnostic-altitude manifest (or a typed infrastructure/parser hard failure); abort
+terminalizes with teardown evidence and no pass; and every terminalization releases only the
+attempt's own owner, never retiring a runner or deleting the reusable layer store owned by another
+operation. Gates 1-3 must be green at certifying altitude for the exact candidate before any
+scenario step, and R16 telemetry envelopes are emitted under the diagnostic nonce.
+
+
 ## Update History
 
+- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): added the CCR-L13 section for the optional diagnostic run controller (`quality/diagnostic_executor.py`) that consumes the trusted R12 host authority for the non-certifying E2E lane. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
 - 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
 
 - 2026-08-29T22:45+02:00 — MCAR-L03: traced the exact pair adapter through closeout preview,

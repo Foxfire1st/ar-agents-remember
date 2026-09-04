@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T17:50+02:00 |
+| lastVerifiedCommitHash | `4ba18bb23ba90e201bb37341d61c0efc64161fcf` |
+| lastVerifiedCommitDate | 2026-09-04T17:23:11+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1585,8 +1585,28 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+
+
+## 260831-CCR-L13 Non-Certifying Diagnostic E2E Evidence
+
+CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`) adds the standalone diagnostic
+suite group to `mcp/tests`. Four contract suites are registered in the `unit-regression` lane in
+`test-evidence-lanes.toml`: `test_diagnostic_models.py` (closed vocabulary, structural
+non-certifying literals, promotion refusal, immutable attempt/manifest chains), `test_diagnostic_planning.py`
+(canonical scenario rail projection at diagnostic altitude and second-scenario refusal),
+`test_diagnostic_projection.py` (optional-lane readiness projection: not-requested-optional,
+running, newest-terminal blocking, R14 non-satisfaction), and `test_diagnostic_store.py` (durable
+isolated manifest, gapless chain identity, in-flight/abandon guards, CAS fail-closed). The two
+run-control suites are registered in the `integration` lane: `test_diagnostic_executor.py` (R12
+authority freeze, Gate 1-3 green admission, one-replication terminalization, exact-owner release,
+frozen-snapshot retry, R16 telemetry) and `test_diagnostic_diff_coverage.py` (diff-coverage closure
+cells across the model, store, projection, planning, and executor guards, reusing only the leaf's own
+builders).
+
+
 ## Update History
 
+- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): recorded the six standalone CCR-R13 diagnostic suites (four unit-regression, two integration) and their `test-evidence-lanes.toml` lane registrations. File-level detail lives in the new test cards. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,
   and extended the permanent shared-support ownership to the exact five-consumer set.

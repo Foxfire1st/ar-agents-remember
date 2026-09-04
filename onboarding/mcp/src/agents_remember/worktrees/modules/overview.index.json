@@ -32,6 +32,7 @@
     "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
     "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/gate.py",
     "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py",
     "mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py",
@@ -46,8 +47,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 35,
-    "fileSidecars": 34,
+    "sourceFilesInScope": 37,
+    "fileSidecars": 35,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -66,6 +67,8 @@
     "context",
     "contract",
     "contract_reader",
+    "diagnostic",
+    "diagnostic_executor",
     "executor",
     "external",
     "finalize",
@@ -190,10 +193,10 @@
       "clean_executor",
       "closeout_memory.py",
       "closeout_memory",
+      "diagnostic_executor.py",
+      "diagnostic_executor",
       "gate.py",
-      "gate",
-      "published_manifest.py",
-      "published_manifest"
+      "gate"
     ]
   },
   "fallback": {
