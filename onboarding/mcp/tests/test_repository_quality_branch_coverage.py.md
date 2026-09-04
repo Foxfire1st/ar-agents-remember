@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_repository_quality_branch_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,6 +22,12 @@ discipline, publication inventory bounds (oversized and missing required artifac
 integration-gate wiring that forwards the profile reference through
 `worktrees/integration/integration_quality.py`. It closes the branch-coverage gaps the R22
 cutover opened in manifest parsing and profile wiring.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) extends the schema-v3.1 coverage: the strict-gate
+visible manifest is built with `runtime_authority_digest=None`, recovery publishes through
+`ReportBindings(attestation=..., runtime_authority_digest=None)`, and the bound-field matrix now
+implicitly covers the optional runtime-authority root field the parser validates.
 
 ## Code Commentary
 
@@ -71,5 +77,8 @@ publication internals of `clean_executor._publish_reports`, the schema-v3 manife
 | Inventory bound proofs (oversized/missing required artifacts) and the integration-gate profile forwarding. | `test_report_publication_refuses_oversized_and_missing_required_artifacts` | mcp/tests/test_repository_quality_branch_coverage.py:106-125 |
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the schema-v3.1/runtime-authority coverage additions in the repository-quality branch-coverage suite.
+
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new repository-profile publication/branch-coverage tests.

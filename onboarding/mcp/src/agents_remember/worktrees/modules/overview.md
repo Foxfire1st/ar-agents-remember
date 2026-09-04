@@ -828,7 +828,27 @@ contract refuses with typed pair facts instead of resuming against ambient Git. 
 boundary translates the shared pair/coherence error families once, without duplicating resolver
 logic or adding a fallback route.
 
+## 260831-CCR-L12 — Cost-Ordered Five-Gate Execution And Shared Dagger Authority
+
+CCR-R12@v4 (commit `cfd09381`) adds `quality/dagger_authority.py` to this route: one host-level,
+repository-external declaration (AR_DAGGER_RUNTIME_AUTHORITY) selects the already-running
+connection-only Dagger endpoint and exact reusable layer store; admission inspects the live engine
+connection-only, freezes an immutable `dagger-runtime-authority/v1` snapshot, registers the exact
+consumer in a locked host-level owner registry (PID-safe process fingerprints, typed
+authority-transition barriers, exact-owner release, crash reconciliation), and every refusal is a
+typed `DaggerRuntimeAuthorityError` before any Dagger command starts. `clean_executor.py` admits or
+reuses the authority for every profile-declared launch and releases the exact owner on
+terminalization; `published_manifest.py` advanced the quality manifest to schema 3.1 with
+`runtimeAuthorityDigest`; `gate.py` threads the digest through report/preview/payload/transcript;
+and `closeout.py` runs its closeout gates in Gate-5 order - the Dagger-backed code-quality gate
+first, the memory-quality pre-refresh only after it is green or not required. The checked-in
+certification profile was regenerated (profile/runtime digests) with explicit per-rail
+`successExitCodes`/`skippedExitCodes` and `consumingGates` declarations.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass (route impact): added the CCR-L12 section for the cost-ordered five-gate execution and shared Dagger authority - new `quality/dagger_authority.py` module, authority-bound clean executor, schema-3.1 manifest with `runtimeAuthorityDigest`, gate digest threading, and Gate-5 closeout ordering. Verification metadata stays pinned until closeout stamps the leaf code commit.
+
 
 - 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_closeout_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,14 @@ closeout mechanics publish profile-bound passing evidence via
 `publish_passing_closeout_quality` (from `test_worktree_support`) or
 `publish_passing_quality_gate` (from `_quality_evidence_fixture`). The no-profile code-commit
 route and the wrapper-unavailable state are gone.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) reorders the closeout-gate regressions to the Gate-5
+order: `test_memory_preflight_failure_never_starts_the_code_quality_gate` became
+`test_memory_preflight_aborts_closeout_after_the_code_quality_gate` (the memory preflight now runs
+after the code gate is green or not required), and the new
+`test_a_red_code_quality_gate_blocks_the_memory_preflight_and_every_commit` pins that a red gate
+raises before any memory preflight, approval claim, or commit.
 
 ## Code Commentary
 
@@ -356,6 +364,9 @@ The interrupted-finalization scenario now asserts the recovered completed closeo
 same exact contract, code root, and memory root without recommitting either repository.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the Gate-5-order regression changes - memory-preflight-abort now runs after a green code gate and a red code gate blocks the memory preflight and every commit.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the wrapper-to-profile cutover of the closeout quality gate tests and the profile-bound evidence helpers.
 
 

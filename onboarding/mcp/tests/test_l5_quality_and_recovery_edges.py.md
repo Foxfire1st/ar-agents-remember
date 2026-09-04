@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_l5_quality_and_recovery_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3` |
-| lastVerifiedCommitDate | 2026-09-03T00:47:35+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,13 @@ the Dagger quality and recovery paths touch the surrounding lifecycle: residual 
 publication, certification revalidation, ledger-kind and series-prefix constraints on the
 external-memory mapping, and the integration-only boundary that ordinary leaves never cross
 (`clean_quality_executor`/Dagger attestation/manifest seams).
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): the residual-publication cases now invoke
+`_publish_reports` with `clean_quality_executor.ReportBindings(attestation=...,
+runtime_authority_digest=None)` because the attestation parameter became an explicit bindings
+object; the recovery/manifest model under test therefore carries the schema-v3.1
+`runtimeAuthorityDigest` field (None here).
 
 ## Invariants And Boundaries
 
@@ -92,6 +99,9 @@ instead of returning a precomputed value. The asserted certification and recover
 unchanged, but the test double can no longer bypass argument-sensitive evidence construction.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `ReportBindings`-carried attestation in the L5 residual-publication/recovery edge cases and the schema-v3.1 manifest model under test.
+
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
   Docs References task-artifact rows as prose (absolute ar-coordination paths are not
