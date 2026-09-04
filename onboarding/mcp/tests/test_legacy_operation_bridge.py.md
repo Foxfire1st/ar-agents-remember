@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_legacy_operation_bridge.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00|
 | lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,13 @@ No cross-repository source is allowed by the resolved settings.
 | --- | --- | --- |
 | No meaningful cross-repository reference applies. | `_byte_tree` | mcp/tests/test_legacy_operation_bridge.py:1-1123 |
 
+## CCR-R18@v1 Legacy Recovery-Required Result
+
+260831-CCR-L18 updated the schema-1 bridge forcing: while the launched recovery worker is live with a retained exact worker binding, the active legacy closeout operation projects `legacy-closeout-recovery-required` with `nextAction: recover` (not a synthetic `worker-termination-required` result) and advertises only the `cancel` legal control — a live retained worker binding is ordinary authority until a real cancellation/termination transition records durable termination evidence (`worker_termination_required_result`).
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the legacy bridge live-worker projection update (recovery-required, not synthetic termination). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

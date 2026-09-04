@@ -236,6 +236,7 @@
     "mcp/tests/test_gate_replay_window.py",
     "mcp/tests/test_gate_scope.py",
     "mcp/tests/test_gated_integration_runner.py",
+    "mcp/tests/test_generation_coherent_lifecycle_projection.py",
     "mcp/tests/test_git_command.py",
     "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_global_state_isolation.py",
@@ -595,8 +596,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 567,
+    "fileSidecars": 584,
     "childRoutes": 0
   },
   "routingTerms": [

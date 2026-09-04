@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -38,10 +38,10 @@ operation input, gate-policy rail plan, and validator; commit operations additio
 code tree, digest-bearing task intent, and admitted closeout-door generation, refusing
 `lifecycle-operation-candidate-dependencies-missing` or
 `lifecycle-operation-door-dependency-missing` when absent
-cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:428-484).
+cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:400-457).
 `require_lifecycle_operation_dependencies` refuses `lifecycle-operation-dependencies-stale` when the
 record's declared edges differ from its admitted immutable inputs
-cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:486-510).
+cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:458-475).
 
 ### Conventions
 
@@ -72,8 +72,8 @@ No external Domain Documentation source is configured for these internal wire mo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:295-303; mcp/src/agents_remember/models/lifecycles/operation.py:324-389 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
+| The input and record models capture immutable approval and recovery identity. | `CloseoutOperationInput`; `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:282-293; mcp/src/agents_remember/models/lifecycles/operation.py:311-399 |
+| The public projection envelope now lives in operation_projection.py and is re-exported here for back-compat imports. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-388 |
 | The R03 dependency vocabulary used by these record types. | `EvidenceRecordType`, `EvidenceDependencies`, `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-54; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-239 |
 
 ## Cross-Repo References
@@ -82,7 +82,7 @@ No cross-repository vocabulary is defined here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:311-321; mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
+| Models represent one repository task contract and its lifecycle edge. | `CloseoutOperationInput`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:282-399; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-388 |
 
 ## L23 Final Candidate Disposition
 
@@ -106,7 +106,7 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent` at this ownership boundary. | `LifecycleOperationRecoveryCommits`; `OrganizationalTaskPublicationIntent`; `IntegrationPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:68-75; mcp/src/agents_remember/models/lifecycles/operation.py:78-108; mcp/src/agents_remember/models/lifecycles/operation.py:111-149 |
+| The current module exposes `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent` at this ownership boundary. | `LifecycleOperationRecoveryCommits`; `OrganizationalTaskPublicationIntent`; `IntegrationPublicationIntent` | mcp/src/agents_remember/models/lifecycles/operation.py:50-57; mcp/src/agents_remember/models/lifecycles/operation.py:60-91; mcp/src/agents_remember/models/lifecycles/operation.py:93-132 |
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 
@@ -132,7 +132,15 @@ queued-integrate writer recomputes the exact declaration from the admitted candi
 and input before persistence, and launch/currentness gates re-require it (worker handover:
 notes/reports/260902-CCR-L03-worker-delivery.md).
 
+## CCR-R18@v1 Generation-Coherent Record And Projection Split
+
+260831-CCR-L18 moved the closed `LifecycleOperationStatus` and `LifecycleOperationPhase` Literals out of this module into `operation_kinds.py` and moved the public `LifecycleOperationProjection` envelope (plus its identity/binding/worker/approval/recommendation cells) into the new `operation_projection.py`. This module now imports both and publicly re-exports `LifecycleOperationProjection` (noqa F401) so existing consumers keep one import path.
+
+`LifecycleOperationRecord` gained `recordRevision: int = Field(default=1, ge=1)` (line 327): the monotonic journal revision that the store advances exactly once per accepted mutation and that every projection identity binds. `operation.py` no longer defines the status/phase vocabulary or the wire envelope itself.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the generation-coherent projection split — status/phase vocabulary moved to `operation_kinds.py`, the public envelope moved to `operation_projection.py` (re-exported here), and `LifecycleOperationRecord.recordRevision` added as the monotonic journal revision. Re-anchored the projection references off the deleted in-file class. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed direct-dependency declaration on lifecycle operation records, the per-kind dependency builders, and the launch/currentness refusal; prior input/record/projection prose preserved.
 

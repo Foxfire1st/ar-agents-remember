@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -76,7 +76,7 @@ No sibling-repository protocol is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:98-182; mcp/tests/test_lifecycle_operations.py:185-186 |
+| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:98-182; mcp/tests/test_lifecycle_operations.py:189-331 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -116,7 +116,14 @@ Lifecycle operation tests now cover explicit retry/replacement after failed or t
 
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
+
+## CCR-R18@v1 Location-Decision Binding
+
+260831-CCR-L18 added `test_operation_location_decision_binds_developer_decision`: a `LifecycleOperationLocationError` on a started closeout operation produces a read-only developer-decision projection through `bind_projection_decision` — `result.state == "operation-location-mismatch"` with `developerDecisionRequired: true`, a `developer-decision` `recommendedAction`, empty legal controls, and `cancellable: false` — proving location contradictions never advertise mutating authority.
+
 ## Update History
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the new operation-location developer-decision binding test. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile config mock in lifecycle operation dispatch tests.
 
 

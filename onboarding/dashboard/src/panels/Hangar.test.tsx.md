@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/Hangar.test.tsx`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T15:28+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -70,7 +70,13 @@ operations never expose controls or projection refresh effects.
 | The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:204-222 |
 | The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. | `legalControls`; `projectionEffects`; "shows the durable live command" | dashboard/src/panels/Hangar.test.tsx:140-166 |
 
+## CCR-R18@v1 Fixture Envelope Fields
+
+260831-CCR-L18 added `schemaVersion: "lifecycle-operation-projection/v1"` and `stateMatrixVersion: "lifecycle-operation-state-matrix/v1"` to the hand-built `lifecycleOperation` fixture inside the Hangar worktree-truth test, matching the generated mirror's now-required version literals. The worktree-existence visibility contract under test is unchanged.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the Hangar fixture lifecycle operation gaining the schema/state-matrix version literals. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-24T15:28+02:00 — No content impact: added the generated contract's required empty
   `projectionEffects` witness to the inline operation fixture; command-rendering assertions and

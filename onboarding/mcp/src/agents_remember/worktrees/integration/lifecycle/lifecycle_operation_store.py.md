@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,15 @@ publishes one canonical intent-bound successor generation; the enclosed archive 
 adopted, and terminally archived by the related enclosure/archive seams. Part of the landed L25
 candidate `99dc249b`.
 
+## CCR-R18@v1 Monotonic Record-Revision Discipline
+
+260831-CCR-L18 made the durable journal revision monotonic and store-owned. `_validate_identity_and_evidence_transition` now refuses any mutation whose `recordRevision` is not exactly `current.recordRevision + 1` (line 316), and `_advance_record_revision` (line 361) is the one canonical writer boundary that assigns the next revision — a transform may not assign one itself. Every accepted `update`/`mutate`/`create`-adjacent write path goes through it, and a transform that leaves the record byte-identical short-circuits as a no-op instead of burning a revision.
+
+`create` refuses any record that does not begin at revision 1 (line 552), and `resume_generation` revalidates the resume contract (attempt increment exactly once, sanctioned status/phase, disposition identity) before any no-op short-circuit. `publish_successor_generation` advances the archived predecessor by one revision while the successor begins at `current.recordRevision + (1 if the current closeout/direct-landing generation is missing task intent else 2)` (lines 648-672), so retire/supersede journal arithmetic is explicit and exact.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the store-owned monotonic `recordRevision` advance (exactly once per accepted mutation, no-op short-circuit, revision-1 creation gate, successor +1/+2 arithmetic). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the lifecycle operation store now includes `taskIntent` in generation identity, refuses
