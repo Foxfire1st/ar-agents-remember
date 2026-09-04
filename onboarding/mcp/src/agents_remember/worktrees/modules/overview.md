@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T22:45+02:00 |
+| lastVerifiedCommitHash | `54ff803a05209e06f732f2de1f90e2a71a069e08` |
+| lastVerifiedCommitDate | 2026-09-04T22:31:30+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -828,7 +828,26 @@ contract refuses with typed pair facts instead of resuming against ambient Git. 
 boundary translates the shared pair/coherence error families once, without duplicating resolver
 logic or adding a fallback route.
 
+
+
+## 260831-CCR-L14 - Final Real-Codex Gate-4 Run Control
+
+CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`, leaf 260831-CCR-L14) adds
+quality/final_codex_executor.py to this route: the run controller for the certifying two-fresh
+no-retry real-Codex Gate-4 lane. It consumes the trusted R12 host authority exactly as closeout and
+integration do - admission freezes one existing connection-only runner/store snapshot and registers
+the attempt as a live owner only after the exact candidate certifying Gate-1..3 manifests are
+green against the frozen plan; run executes each fresh certifying repetition exactly once and
+terminalizes the run from the complete certifying Gate-4 result manifests (or a typed
+infrastructure/parser hard failure); abort terminalizes the unpublished slots with teardown evidence
+and no pass; and every terminalization releases only the attempt own runtime owner, never retiring
+a runner or deleting the reusable layer store owned by another operation. Retry is disabled for the
+exact same plan identity, and fresh client/process identities are minted per repetition.
+
+
 ## Update History
+
+- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): added the CCR-L14 section for the final real-codex run controller (quality/final_codex_executor.py) that consumes the trusted R12 host authority for the certifying two-fresh-no-retry Gate-4 lane. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
 
 - 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
 

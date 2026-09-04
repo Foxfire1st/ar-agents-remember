@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T22:45+02:00 |
+| lastVerifiedCommitHash | `54ff803a05209e06f732f2de1f90e2a71a069e08` |
+| lastVerifiedCommitDate | 2026-09-04T22:31:30+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1585,7 +1585,30 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+
+
+## 260831-CCR-L14 Final Real-Codex Gate-4 Certification Evidence
+
+CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`) adds the standalone final-codex
+suite group to mcp/tests. Five contract suites are registered in the unit-regression lane in
+test-evidence-lanes.toml (rows 64-68): test_final_codex_models.py (closed two-fresh vocabulary,
+structural certifying literals and retry-zero, immutable attempt/run/repetition chains, one-pass
+never compensates), test_final_codex_planning.py (plan-record compilation against the canonical
+R11 registry and the exact Gate-1..3 must-not-run barriers), test_final_codex_projection.py
+(lane readiness: not-started, running, two-fresh-pass, red, stale), test_final_codex_store.py
+(durable CAS run manifest, retry-disabled reservation, exact slot ordering, namespace
+isolation, corrupt-file fail-closed), and test_final_codex_certificate.py (bound Gate-4
+certificate with the exact ordered Gate-1..3 predecessors and the two-fresh run). The two
+run-control suites are registered in the integration lane (rows 291-292):
+test_final_codex_executor.py (R12 authority freeze, Gate 1-3 green admission, two fresh
+certifying repetitions, no-compensation red aggregates, typed hard failures, abort, exact-owner
+release) and test_final_codex_diff_coverage.py (diff-coverage closure cells across the model,
+store, projection, planning, and certificate modules plus the executor, reusing only the leaf
+own builders).
+
 ## Update History
+
+- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): recorded the seven standalone CCR-R14 final-codex suites (five unit-regression rows 64-68, two integration rows 291-292) and their test-evidence-lanes.toml lane registrations. File-level detail lives in the new test cards. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,

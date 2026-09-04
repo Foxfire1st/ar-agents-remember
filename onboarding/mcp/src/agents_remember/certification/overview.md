@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T22:45+02:00 |
+| lastVerifiedCommitHash | `54ff803a05209e06f732f2de1f90e2a71a069e08` |
+| lastVerifiedCommitDate | 2026-09-04T22:31:30+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -44,7 +44,7 @@ terminal catalog only after all result contracts pass.
 
 ## Local Invariants And Traps
 
-- Gate meaning is fixed, while the concrete Gate 1–4 rails, adapters, commands, ownership, and
+- Gate meaning is fixed, while the concrete Gate 1-4 rails, adapters, commands, ownership, and
   applicability are repository-profile data. Gate 5 remains memory-domain authority.
 - Registry admission is bounded before expensive allocation and validation is exhaustive within
   that boundary. Reachability uses one prospective pre-allocation refusal followed by measured
@@ -78,8 +78,8 @@ meaning without inventing a parallel `layers.toml` sidecar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. | "order = ["; "[package.certification]" | layers.toml:32-59; layers.toml:105-114 |
-| The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. | "[package.controlplane]" | layers.toml:116-126 |
+| `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. | `order = [`; `[package.certification]` | layers.toml:32-59; layers.toml:105-114 |
+| The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. | `[package.controlplane]` | layers.toml:116-126 |
 | The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. | `load_contract`; `undeclared_dirs`; `_record_edge`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:63-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:122-141; mcp/test_support/agents_remember_test_support/code_quality/layering.py:151-154; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-340 |
 
 ## File-Level Onboarding Map
@@ -101,17 +101,40 @@ No Domain Documentation source or cross-repository implementation is configured 
 root. The accepted behavior is repository-owned and the package remains independent of any one
 repository's commands.
 
+## 260831-CCR-L14 - Final Real-Codex Gate-4 Certification Lane
+
+CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`, leaf 260831-CCR-L14) adds the
+`final_codex/` subpackage to this route: the closed, immutable vocabulary and durable store for the
+certifying two-fresh-no-retry Gate-4 proof of the exact candidate's canonical scenario rails.
+`final_codex/models.py` fixes the structural two-fresh semantics (acceptanceEligible/certifying=true
+literals, retryCount zero, disabled retry with no successor slot, one-pass-never-compensates, typed
+scenario/infrastructure/parser failures, immutable attempt/run/repetition records with self-verified
+digests, and no shape for CCR-R13 diagnostic evidence); `final_codex/planning.py` compiles the
+immutable plan record only from the exact canonical R11 registry compilation for a certifying profile
+planning the complete Gate-1..4 prefix and enforces the exact Gate-1..3 must-not-run barriers;
+`final_codex/projection.py` owns the lane readiness projection (not-started, running,
+two-fresh-pass, red, stale); `final_codex/store.py` keeps one stable digest-chained CAS run
+manifest per candidate in an isolated namespace that can never overlap a forbidden certifying or
+diagnostic quality-report root; and `final_codex/certificate.py` compiles the one bound Gate-4
+certificate from the exact two-fresh run, the ordered Gate-1..3 certificate identities, and the
+shared frozen runtime authority. The route facade (`__init__.py`) re-exports the full final-codex
+surface; actual run control that binds the trusted R12 host authority lives in
+`worktrees.modules.quality.final_codex_executor`.
+
+
 ## Update History
 
-- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 reconciled the bounded-reachability owner after
+- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): added the CCR-L14 section for the final real-Codex Gate-4 certification lane - the `final_codex/` subpackage (closed two-fresh models, plan-record compilation with exact-predecessor barriers, lane readiness projection, isolated CAS run store, and the bound Gate-4 certificate compiler) and the widened facade re-exports, with the higher worktree run controller consuming the trusted R12 authority. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
+
+- 2026-09-01T11:33+02:00 - CCR-L11 Attempt 10 reconciled the bounded-reachability owner after
   removing a dominated second refusal: the prospective pre-allocation refusal and measured
   traversal reservations remain the complete route contract. Verification remains closeout-owned.
 
-- 2026-09-01T05:28+02:00 — CCR-L11 Attempt 9 recorded the enforced rank-3 package declaration
+- 2026-09-01T05:28+02:00 - CCR-L11 Attempt 9 recorded the enforced rank-3 package declaration
   and its `models < certification < controlplane` ownership boundary. The accepted registry,
   planning, admission, and typed-result implementation account is unchanged; only its explicit
   repository architecture declaration is new. Verification remains closeout-owned.
 
-- 2026-09-01T03:11+02:00 — Created the route-owned overview for the generic five-gate registry,
+- 2026-09-01T03:11+02:00 - Created the route-owned overview for the generic five-gate registry,
   plan-authority, bounded-validation, and typed-result foundation. Verification remains
   closeout-owned until the source candidate is committed.
