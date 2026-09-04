@@ -549,6 +549,12 @@
     "mcp/tests/test_task_reopen_guards.py",
     "mcp/tests/test_task_sprint_linkage.py",
     "mcp/tests/test_task_unstarted_recovery_routes.py",
+    "mcp/tests/test_telemetry_models.py",
+    "mcp/tests/test_telemetry_projection.py",
+    "mcp/tests/test_telemetry_projection_edges.py",
+    "mcp/tests/test_telemetry_store.py",
+    "mcp/tests/test_telemetry_validation.py",
+    "mcp/tests/test_telemetry_validation_edges.py",
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
     "mcp/tests/test_terminal_catalog_dashboard_contract.py",
@@ -595,8 +601,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 581,
+    "fileSidecars": 589,
     "childRoutes": 0
   },
   "routingTerms": [
