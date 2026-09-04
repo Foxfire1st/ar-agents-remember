@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_intent_consumers_and_legacy.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -75,6 +75,12 @@ packets.
 | R03 door-review currentness seam. | `_review_provenance`; `require_current_route_review` | mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:195-253 |
 | Companion coverage for the dependency matrix. | `test_route_review_dependency_and_content_addressing_guards` | mcp/tests/test_evidence_dependencies.py:299-355 |
 
+## CCR-R18@v1 Coherent Failed-After-Exit Fixture
+
+260831-CCR-L18 updated the legacy worker-termination preservation fixture: because the state matrix refuses `cancelRequested` outside `termination-required`/`cancelled`, the failed-after-exit record mirrors `release_worker_after_exit` and now writes `cancelRequested: false` so it is a coherent journal revision while still preserving worker-termination evidence until exact exit.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the coherent failed-after-exit fixture (`cancelRequested: false`) aligned to the state matrix. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): created the card covering the task-intent consumer/legacy matrix and its R03-related route-review and door-review fixture updates; the source file was modified by the R03 leaf but no prior sidecar existed.

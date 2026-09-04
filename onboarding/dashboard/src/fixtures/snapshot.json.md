@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-03T12:30:00+02:00                        |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b`      |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00                        |
+| lastUpdated            | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b`      |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2).
 Under CCR-R03@v1 the R03 leaf reserialized this fixture (arrays collapsed to single-line JSON and
 empty/edge rows normalized) to re-synchronize it with the regenerated dashboard contract fixtures;
 no served field, row, or value semantics changed — the mirror guard and wire builders still read the
-same payload cit:([`lifecycles`, `metrics`], dashboard/src/fixtures/snapshot.json:1749-1749; dashboard/src/fixtures/snapshot.json:1887-1887).
+same payload cit:([`lifecycles`, `metrics`], dashboard/src/fixtures/snapshot.json:1823-1823; dashboard/src/fixtures/snapshot.json:1961-1961).
 
 ### Conventions
 
@@ -125,13 +125,13 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1749-1749 |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1823-1823 |
 | One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1887-1887 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1961-1961 |
 | All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:3-3 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
 | The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:435-449 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:456-470 |
 | The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:287-425; dashboard/src/test/contract.test.ts:485-495 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
 | `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
@@ -167,7 +167,13 @@ The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-r
 
 The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) as representative dashboard contract examples.
 
+## CCR-R18@v1 Lifecycle Operation Fixture Envelope
+
+260831-CCR-L18 extended the dashboard fixture lifecycle operations to the new envelope: the failed and queued/running/quality sample operations now carry `schemaVersion` (`lifecycle-operation-projection/v1`) and `stateMatrixVersion` (`lifecycle-operation-state-matrix/v1`), and the failed closeout operation additionally carries `identity`, `componentBindings` (digest-per-present-cell), `worker` (an exit-proven `exited` observation with `identityRetained: false`), `approval` (`claimed`), and a `recover` `recommendedAction` bound to the exact `cancel`/`recover` legal control on `/tasks/sim`. The fixture keeps its role as the representative sample that `contract.test.ts` drives against the generated mirror.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the fixture lifecycle-operation envelope additions (identity/componentBindings/worker/approval/recommendedAction + schema/state-matrix versions). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the R03 fixture reserialization (single-line array formatting; 1,979 → 1,923 lines) and refreshed the top-level key anchor ranges; no served-field or value semantics changed.
 

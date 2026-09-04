@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -382,7 +382,13 @@ async run identity and polling, revalidates around scanning/publication, and exp
 at closeout apply admission. Public refusal projection retains the named pair field and exact
 contract-addressed repair arguments.
 
+## CCR-R18@v1 Task-Addressed Next-Step Bounding
+
+260831-CCR-L18 added `bound_next_step` to `application/tool_response.py`: lifecycle tool responses omit any `nextStep` guidance whose arguments name a different task address than the response's own exact contract/enclosure path. File-level detail lives in that sidecar.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the `bound_next_step` task-address guard in `tool_response.py`.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: documented exact-pair admission, async revalidation, and
   closeout application reporting. Verification remains closeout-owned.

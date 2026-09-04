@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,7 +92,13 @@ Forces completed-closeout integrate, retire, and supersede dispositions while pr
 - A completed-unintegrated operation remains journal-addressable outside the queue.
 - Retirement preserves door publication/history; supersession creates a distinct waiting generation and retains the claimed predecessor in history.
 
+## CCR-R18@v1 Revision-Aware Dispositions
+
+260831-CCR-L18 made this suite revision-aware: `recordRevision` is excluded from the preserved-artifact comparison (it is journal-mutable, advancing exactly once per accepted store mutation), the retired/superseded assertions now pin the journal advance (`retire` = +1 revision, `supersede` = +2 for the two store writes), and a new `test_completed_unintegrated_supersede_dry_run_previews_would_supersede` test drives the `dry_run: true` supersede preview through `worktree_operation_control_tool`, asserts the `would-supersede` result state, and proves the completed journal is left byte-identical by the preview.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the revision-aware disposition artifacts (retire +1 / supersede +2) and the new dry-run supersede preview forcing. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: split the
   comma-separated source cells into ';'-separated path:start-end citations and widened

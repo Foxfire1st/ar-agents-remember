@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,9 +74,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `OperationProjectionContext` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:1-319 |
-| Missing-intent blocking, the public unavailable override, and cancellability. | `legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:67-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:163-181; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:185-201 |
-| Exit-proven cancellation-pending state keeps its cancel surface. | `_exit_proven_cancellation_pending`; `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:153-160; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:216-251 |
-| The wire now carries the canonical intent identity when present. | `taskIntent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:120-121 |
+| Missing-intent blocking, the public unavailable override, and cancellability. | `legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:233-251; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:548-566; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:570-580 |
+| Exit-proven cancellation-pending state keeps its cancel surface. | `_exit_proven_cancellation_pending`; `_general_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:233-251; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:594-660 |
+| The wire now carries the canonical intent identity when present. | `taskIntent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:203-205 |
 
 ## Cross-Repo References
 
@@ -95,7 +95,17 @@ longer project as an ordinary reusable generation merely because it is nontermin
 projection reports `lifecycle-operation-task-intent-unavailable` with `retire-and-republish` and
 wholly omits recover/retry/cancel except for the proven same-generation cancellation-pending path.
 
+## CCR-R18@v1 Generation-Coherent Envelope Builder
+
+260831-CCR-L18 rewrote this module from a flat projection function into the coherent/incoherent envelope builder for the new `operation_projection.py` contracts. `operation_projection(record, contract, context)` now always returns a readable-shaped envelope: it computes the revision-bound `operation_projection_identity(record)` (kind + contractPath + generation + `recordRevision` + candidateTupleDigest + planIdentityDigest hashed into `identityDigest`), validates dependent identities from `OperationProjectionContext` (`doorIdentity`/`resultIdentity`/`approvalIdentity`/`workerIdentity` must equal the envelope identity when supplied), and either builds a coherent projection (`_coherent_operation_projection` + `_projection_components`) or, on `LifecycleProjectionIncoherence`, returns an `incoherent` envelope (`_incoherent_operation_projection`) carrying the bounded expected/observed refusal facts — never a spliced projection.
+
+Component cells are now first-class: `_worker_observation` projects the durable worker binding as `LifecycleWorkerObservation` (live / termination-bound / released, with a SHA-256 over `pid\0lease\0fingerprint` and an all-or-none binding refusal), `approval` is a claimed/unclaimed `LifecycleApprovalObservation`, and `_recommended_action` derives one `LifecycleRecommendedAction` (cancel for termination in progress / developer-decision / observe-via-`worktree_status` / the exact legal recover or retry control). `validate_projection_state` runs over every coherent envelope so no status/phase/worker/result/control cell escapes the state matrix.
+
+`bind_projection_result` and `bind_projection_decision` are the two sanctioned ways to rewrite a composed projection's result: they rebind every component digest to the same envelope identity and route the payload back through `LifecycleOperationProjection`'s sole validator (`_rebind_projection`), so a would-supersede preview or a developer-decision can never drift from its exact journal revision. `_operation_cancellable` was simplified to a contract-scoped rule: cancellable is true only when a task contract is present and the derived legal controls include an exact `cancel` action; the old record-only closeout/integrate retention heuristics were removed.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: rewrote the module around the revision-bound coherent/incoherent envelope: identity + component bindings, first-class worker/approval observations, recommended-action derivation, `bind_projection_result`/`bind_projection_decision` rebinding through the sole validator, state-matrix validation of every coherent projection, and the contract-scoped `_operation_cancellable`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the lifecycle operation projection now blocks recovery reuse for legacy missing-intent

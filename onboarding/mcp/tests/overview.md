@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b`|
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1585,7 +1585,13 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+## CCR-R18@v1 Generation-Coherent Projection Evidence
+
+260831-CCR-L18 added `mcp/tests/test_generation_coherent_lifecycle_projection.py` (explicit `unit-regression` lane) as the state-matrix/envelope/revision-discipline forcing suite, and updated the task-intent coverage, disposition, lifecycle-operation, legacy-bridge, generation-boundary, recovery-projection-invariant, and legacy-consumer suites for the coherent envelope, contract-scoped cancellable, and monotonic `recordRevision`. File-level detail lives in the test sidecars.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the new generation-coherent projection suite and the refreshed lifecycle/test suites. File-level detail in the mcp/tests sidecars.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,

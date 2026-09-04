@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Task-addressed controls. | `LifecycleControlAction`; `LifecycleControlCommand`; `control_operation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:24-248 |
 | Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:70-167 |
 | Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:79-191 |
-| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:54-227 |
+| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-660 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
@@ -143,7 +143,13 @@ classification, topology repair, legacy archive proof, queue-evidence parsing, a
 execution into their named owners. The split reduces repeated validation and fixture coupling; it
 does not create a second authority route, queue-owned lifecycle evidence, or a compatibility reader.
 
+## CCR-R18@v1 Observed-Exit Archive Guards
+
+260831-CCR-L18 updated `terminal_enclosure_archive.py` so `_require_archivable_operation` consumes the projection-owned `project_worker_exit(record)` observation for the absent-worker/resolved-termination archive guards. File-level detail lives in that sidecar.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the terminal-archive observed-exit guard change in `terminal_enclosure_archive.py`.
 
 - 2026-08-31T20:30+02:00 — No route topology impact: 260831-DER restores fresh ordinary series
   integration as explicit no-door `not-applicable` authority while retaining exact leaf-door and

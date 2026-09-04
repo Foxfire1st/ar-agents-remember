@@ -23,13 +23,14 @@
     "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
     "mcp/src/agents_remember/models/lifecycles/operation.py",
     "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
+    "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
     "mcp/src/agents_remember/models/lifecycles/policy.py",
     "mcp/src/agents_remember/models/lifecycles/responses.py",
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 17,
+    "fileSidecars": 17,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -62,7 +63,9 @@
     "mutation_evidence",
     "operation",
     "operation_kinds",
+    "operation_projection",
     "policy",
+    "projection",
     "remember",
     "response",
     "responses",
@@ -86,6 +89,7 @@
       "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
       "mcp/src/agents_remember/models/lifecycles/operation.py",
       "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
+      "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
       "mcp/src/agents_remember/models/lifecycles/policy.py",
       "mcp/src/agents_remember/models/lifecycles/responses.py",
       "mcp/src/agents_remember/models/lifecycles/termination.py"
@@ -117,6 +121,8 @@
       "operation",
       "operation_kinds.py",
       "operation_kinds",
+      "operation_projection.py",
+      "operation_projection",
       "policy.py",
       "policy",
       "responses.py",
@@ -125,7 +131,7 @@
       "termination",
       "mcp/src/agents_remember/models/lifecycles/",
       "route-local-overview",
-      "346507af24396ab7b491e02511c4af006ccd3dc5",
+      "f93ac631ca161e5880db3a937728cb256686b13b",
       "/overview.md",
       "__init__.py.md",
       "responses.py.md",
@@ -136,9 +142,7 @@
       "LifecycleFinalizeTaskResponse",
       "LifecycleOperationRecord",
       "LifecycleOperationProjection",
-      "_require_quality_certification_memory",
-      "CloseoutOperationInput",
-      "IntegrateOperationInput"
+      "_require_quality_certification_memory"
     ]
   },
   "fallback": {

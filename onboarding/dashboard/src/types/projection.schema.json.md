@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -63,8 +63,8 @@ None.
 | The `$defs` block contains all reusable projection schema definitions. | "\"$defs\": {" | dashboard/src/types/projection.schema.json:2-2 |
 | `ActionAvailability` declares reducer-decided action safety for the cockpit. | "\"ActionAvailability\": {" | dashboard/src/types/projection.schema.json:3-3 |
 | `AgentPickupNode` declares a pending unacked dashboard response. | "\"AgentPickupNode\": {" | dashboard/src/types/projection.schema.json:47-47 |
-| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | "\"TaskIntentIdentity\": {" | dashboard/src/types/projection.schema.json:3776-3796 |
-| The optional task-intent reference on the lifecycle operation projection. | "\"taskIntent\": {" | dashboard/src/types/projection.schema.json:1993-2006 |
+| The generated `task-intent/v1` identity definition with closed schema and digest pattern. | "\"TaskIntentIdentity\": {" | dashboard/src/types/projection.schema.json:4103-4140 |
+| The optional task-intent reference on the lifecycle operation projection. | "\"taskIntent\": {" | dashboard/src/types/projection.schema.json:2073-2110 |
 
 ## L23 Source-Lineage Schema
 
@@ -96,7 +96,7 @@ authority to the dashboard or to the disposable closeout projection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle operation generation, kind, legal controls, and terminal/unreadable statuses are generated together. | "Public task-addressed view; process and resume identities never cross the wire." | dashboard/src/types/projection.schema.json:1812-2004 |
+| Lifecycle operation generation, kind, legal controls, and terminal/unreadable statuses are generated together. | "LifecycleOperationProjection" | dashboard/src/types/projection.schema.json:1831-2110 |
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
 
@@ -128,7 +128,13 @@ digest) as a `` entry and attaches it optionally to `LifecycleOperationProjectio
 Observers see the exact canonical identity a door/operation/journal binds; the schema remains
 projection-only and transfers no intent authority to the dashboard.
 
+## CCR-R18@v1 Lifecycle Envelope Schema Regeneration
+
+260831-CCR-L18 regenerated the JSON Schema for the lifecycle operation envelope: `LifecycleOperationProjection` gained `schemaVersion` and `stateMatrixVersion` (closed v1 literals), the `status` enum gained `incoherent`, and the new `$defs` `LifecycleProjectionIdentity`, `LifecycleProjectionComponentBindings`, `LifecycleWorkerObservation`, `LifecycleApprovalObservation`, and `LifecycleRecommendedAction` are referenced as optional envelope cells with the exact Pydantic refinements (64-hex digest patterns, bounded strings, `maxItems` lists). The schema remains a generated artifact; the Python wire schemas plus `scripts/sync-projection-types.py` are the source of truth.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the regenerated lifecycle envelope schema (versions, incoherent status, new identity/binding/worker/approval/recommendation `$defs`). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   regenerated-schema card updated for the optional `LifecycleOperationProjection.taskIntent` and

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,12 +59,12 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:631-634 |
-| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:580-614 |
-| The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:643-646; dashboard/src/types/projection.ts:657-661 |
-| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:743-756 |
-| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:349-349 |
-| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:687-693 |
+| Structural analytics fields use the shared task-document reference. | `TaskDocumentRef` | dashboard/src/types/projection.ts:697-706 |
+| Generated task documents carry real hierarchy and optional runtime attachment. | `TaskDocNode` | dashboard/src/types/projection.ts:646-696 |
+| The leaf-segmented sprint graph wire shape (nodes, endpoints, edges). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | dashboard/src/types/projection.ts:709-728 |
+| Workspace projection remains the generated top-level wire contract. | `WorkspaceProjection` | dashboard/src/types/projection.ts:815-828 |
+| The optional canonical task-intent identity on lifecycle operations. | `taskIntent` | dashboard/src/types/projection.ts:360-360 |
+| The generated `task-intent/v1` identity interface. | `TaskIntentIdentity` | dashboard/src/types/projection.ts:749-756 |
 
 ## Cross-Repo References
 
@@ -132,7 +132,15 @@ The generated mirror adds the `TaskIntentIdentity` interface (closed `task-inten
 observe the exact identity a door/journal/operation binds; no intent authority transfers to the
 browser.
 
+## CCR-R18@v1 Lifecycle Operation Envelope Types
+
+260831-CCR-L18 regenerated the lifecycle-operation mirror. `LifecycleOperationProjection` now carries `schemaVersion` (`lifecycle-operation-projection/v1`), `stateMatrixVersion` (`lifecycle-operation-state-matrix/v1`), and the status union extended with `incoherent`. New optional envelope cells mirror the Python contracts: `identity` (`LifecycleProjectionIdentity`: kind/contractPath/generation/recordRevision/candidateTupleDigest/planIdentityDigest/identityDigest), `componentBindings` (`LifecycleProjectionComponentBindings`), `worker` (`LifecycleWorkerObservation` with live/termination-requested/termination-required/exited state plus identityRetained/workerIdentitySha256), `approval` (`LifecycleApprovalObservation`: claimed/unclaimed), and `recommendedAction` (`LifecycleRecommendedAction` with action/tool/arguments/summary/mutating).
+
+All digest fields carry the JSON Schema refinement `{"pattern":"^[0-9a-f]{64}$"}`; `legalControls` and `projectionEffects` keep their `maxItems` refinements. The mirror remains generated from the Pydantic wire schemas; no hand-maintained parallel declaration was added.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the regenerated lifecycle envelope types (schema/state-matrix versions, incoherent status, identity/componentBindings/worker/approval/recommendedAction cells). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   regenerated-mirror card updated for the optional `LifecycleOperationProjection.taskIntent` and
