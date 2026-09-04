@@ -5,9 +5,9 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -34,6 +34,11 @@ the profile into every external-contract fixture repository, adds
 `publish_passing_closeout_quality` (profile-admitted passing evidence), extends
 `closeout_args` with `certification_profile`, and adds `publish_code_quality` control to
 `run_authorized_closeout_mechanics` so closeout mechanics tests exercise the profile gate.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): `publish_passing_closeout_quality` now passes
+`clean_quality_executor.ReportBindings(attestation=..., runtime_authority_digest=None)` when it
+publishes the passing closeout evidence, matching the executor publication signature cutover.
 
 ## Code Commentary
 
@@ -259,6 +264,9 @@ their intended seam merely because the older fixture created only a leaf documen
 gain a test-only bypass or a Markdown authority.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `ReportBindings` publication cutover in the shared closeout-quality fixture helper.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile fixture installation, TEST_CERTIFICATION_PROFILE_REFERENCE, publish_passing_closeout_quality, and the publish_code_quality mechanics flag.
 
 

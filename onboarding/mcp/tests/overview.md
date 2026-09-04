@@ -1585,7 +1585,24 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+## 260831-CCR-L12 — Five-Gate Execution And Shared Authority Suite
+
+CCR-R12@v4 (commit `cfd09381`) adds the host-authority proof suite
+`mcp/tests/test_dagger_runtime_authority.py` (registered in the `integration` lane) and reworks the
+clean-quality group for the cost-ordered five-gate executor and shared Dagger authority:
+`test_clean_quality_executor.py` forces authority admission/registration/exact-owner release without
+docker, `test_agents_remember_quality.py` drives the portable `_execute_gate_rails` profile execution
+with authority-digest-bound manifests and exhaustive same-gate terminalization, and the closeout-gate
+suite (`test_worktree_closeout_quality_gate.py`, `test_worktree_support_tests_2.py`) pins the Gate-5
+order - red code gate blocks the memory preflight; memory preflight aborts only after a green code
+gate. Publication fixtures across the suite route attestation through
+`clean_quality_executor.ReportBindings` and the strict manifest model validates the schema-v3.1
+`runtimeAuthorityDigest` root field.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass (route impact): added the CCR-L12 section for the host-authority suite, the five-gate/authority rework of the clean-quality group, and the Gate-5-order closeout regressions. Verification metadata stays pinned until closeout stamps the leaf code commit.
+
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,

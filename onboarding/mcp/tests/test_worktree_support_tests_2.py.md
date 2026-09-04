@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_worktree_support_tests_2.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -23,6 +23,13 @@ CCR-R22@v1 (L22, commit `685f83c44055`): closeout fixtures now carry
 `certification_profile=TEST_CERTIFICATION_PROFILE_REFERENCE` and
 `run_authorized_closeout_mechanics(args, publish_code_quality=True)` so the mechanics closeout
 runs profile-bound passing evidence.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): the memory-preflight failure regression now runs
+after a stubbed green staged-code gate (`code_gate_probe` under `mock.patch.object(closeout_module,
+`_gate_staged_code`)`), proving the closeout memory-quality preflight still aborts closeout when the
+code gate is green, while the closeout-gate suite itself pins that a red code gate blocks the memory
+preflight entirely (Gate-5 order).
 
 ## Code Commentary
 
@@ -67,6 +74,9 @@ The second worktree support suite was aligned with current lifecycle output iden
 The test continues to exercise production-owned behavior. No diagnostic result is treated as
 certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the Gate-5-order update - memory-preflight failure is forced after a green (stubbed) code gate and a red code gate blocks the memory preflight.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile args and publish_code_quality in worktree support tests 2.
 
 

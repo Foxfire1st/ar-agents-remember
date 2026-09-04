@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/_quality_evidence_fixture.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -25,6 +25,12 @@ CCR-R22@v1 (L22, commit `685f83c44055`): `publish_passing_quality_gate` now admi
 profile execution (`load_repository_profile` + `admit_repository_profile_execution`) and
 materializes the admitted profile's required passing publications
 (`_write_passing_artifacts`) instead of writing the fixed `clean-quality-results.json`.
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): `publish_passing_quality_gate` now routes the
+attestation through the executor publication bindings - `clean_quality_executor.ReportBindings(
+attestation=..., runtime_authority_digest=None)` - because `_publish_reports` no longer takes a
+bare `attestation` argument; fixture consumers therefore keep publishing schema-v3.1 manifests
+without an admitted authority digest.
 
 ## Code Commentary
 
@@ -70,6 +76,9 @@ The source file is the direct evidence for the canonical test publication seam.
 No meaningful cross-repository boundary is owned by this test helper.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the fixture cutover to `ReportBindings`-carried attestation with `runtime_authority_digest=None` in the passing-evidence fixture.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-admission-based passing-evidence fixture.
 
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
-| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,6 +56,17 @@ variable (in the Dagger graph text), asserts the installer node is `bash -euc` w
 and no `ln -s`, asserts the link node contains no installer invocation, and requires the exact
 order installer < link < workspace source < uv sync < late per-attempt environment
 (`test_agents_remember_quality.py:499-545`).
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) reworks the suite around the cost-ordered five-gate
+execution and the shared runtime authority: the module-level fake Dagger objects drive the portable
+`_execute_gate_rails` profile execution, `runtime_authority_manifest` (lines 114-122) binds the
+admitted `dagger-runtime-authority/v1` digest into execution manifests (`_require_plan_authority`
+refuses a missing or mismatched digest), `test_dagger_quality_red_gate_one_still_terminalizes_every_gate_one_sibling`
+(lines 956-1027) proves exhaustive same-gate terminalization with zero later-gate starts, gate-four
+applicability and real-Codex-rail facts are pinned (lines 403-477), a rail runtime outside the
+admitted adapter image is refused (lines 782-841), and full-mode selection uses the explicit diff
+base without targeted flags (lines 919-955).
 
 ### Conventions
 
@@ -150,6 +161,9 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the five-gate/authority rework of the Dagger-module suite - gate-exhaustion forcing, authority-digest-bound execution manifests, adapter-runtime refusal, and gate-four applicability facts.
+
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
   Docs References task-artifact rows as prose (absolute ar-coordination paths are not

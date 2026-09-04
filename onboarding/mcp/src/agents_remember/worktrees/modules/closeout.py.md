@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -39,8 +39,11 @@ contracts obtain the configured preflight checks and run them against the unstam
 while other memory modes return an empty result. The actual phase runner, bounded failure
 formatting, and two-phase result composition now live in `closeout_memory_quality.py`; this
 behavior-preserving extraction keeps the closeout coordinator below the repository's 1,200-line
-structural rail without weakening the gate. `closeout_result` still invokes the pre-refresh helper
-immediately before deciding and running the strict code-quality gate. The post-refresh pass,
+structural rail without weakening the gate. Since CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) the closeout gates run in Gate-5 order inside
+`_closeout_quality_preflight`: the Dagger-backed code-quality gate (the profile Gates 1-4 rails) runs
+first, a red verdict raises before anything else starts, and the memory-quality pre-refresh
+(`_memory_quality_before_refresh`, leaf external-memory contracts only) is neither started nor prefetched
+before that gate is green or not required. The post-refresh pass,
 external memory commit, and ledger commit are now owned solely by
 `closeout_external.external_closeout_commits`; no compatibility copy remains in this coordinator.
 Closeout is worktree-only: the former direct-closeout functions
@@ -53,8 +56,8 @@ Closeout admission now combines the immediate source-head check with the full ta
 transitive lineage projection. That source state is checked once at preflight and again after the
 memory/code quality work, on the last reversible line before approval claim. A parent branch that
 moves during the long gate therefore refuses before the approval is spent or any code, memory,
-ledger, or contract commit is created. `_closeout_quality_preflight` owns the reversible memory and
-code gates; `_CloseoutResultFacts` and `_closed_result_payload` isolate the completed result shape
+ledger, or contract commit is created. `_closeout_quality_preflight` owns the reversible code and memory gates in that Gate-5 order;
+`_CloseoutResultFacts` and `_closed_result_payload` isolate the completed result shape
 without moving mutation intent, Git, or contract-publication ordering.
 
 At that same last reversible boundary, `_revalidate_reviewed_candidate` recomputes the full Git
@@ -315,7 +318,7 @@ No external Domain Documentation source is configured for this memory repo.
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:24-29 |
 | Closeout imports the extracted staged-quality owner, then invokes it with the accepted candidate before approval claim. | "gate_staged_code as _gate_staged_code"; "code_quality_gate = _gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:104-104; mcp/src/agents_remember/worktrees/modules/closeout.py:821-821 |
 | The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
-| The external-memory citation preflight remains immediately before strict code quality; the extracted helper module owns phase execution and combination without moving this coordinator boundary. | "def _memory_quality_before_refresh("; "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout.py:648-648; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56 |
+| The closeout code-quality gate runs before the external-memory pre-refresh; a red code gate raises (Gate-5 order), and the helper module owns phase execution/combination. | "def _closeout_quality_preflight("; "def _memory_quality_before_refresh("; "def run_memory_quality_phase(" | mcp/src/agents_remember/worktrees/modules/closeout.py:800-841; mcp/src/agents_remember/worktrees/modules/closeout.py:648-668; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33 |
 | `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:465-467 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
 | Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:602-638 |
@@ -422,6 +425,9 @@ stale after commits; it never re-resolves from repository id. The pair policy li
 closeout pairing module rather than adding another resolver to this orchestration module.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the closeout gate-order change - `_closeout_quality_preflight` now runs the Dagger-backed code-quality gate first and raises when it is red, and the memory-quality pre-refresh is blocked (neither started nor prefetched) until that gate is green or not required; re-anchored the preflight/reference rows.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the closeout gate cutover -- _quality_gate_target builds QualityGateTarget with repository id and certification_profile reference, the settings-level executor loader and requires_integrated_acceptance self-policy were removed, and every code-committing leaf requires one explicit configured profile.
 
 

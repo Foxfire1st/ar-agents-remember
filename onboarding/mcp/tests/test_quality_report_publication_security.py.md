@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_report_publication_security.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ CCR-R22@v1 (L22, commit `685f83c44055`) re-bases publication-security tests on p
 publication: helpers `_profile_execution` and `_publish_reports` publish a profile-admitted
 generation, inventory and size enforcement now follow `PublishedArtifactDefinition` limits, and
 assertions cover the schema-v3 profile identity fields.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): the suite now also refuses a forged or malformed
+`runtimeAuthorityDigest` in the current manifest pointer (`test_manifest_rejects_an_invalid_runtime_authority_digest`),
+and the manual manifest-construction case passes `runtime_authority_digest=None` because the strict
+schema-v3.1 model validates the new optional root field.
 
 ## Code Commentary
 
@@ -70,6 +76,9 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this suite.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the new invalid-`runtimeAuthorityDigest` refusal case and the schema-v3.1 model field in the publication-security suite.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-bound publication security test re-base.
 
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/certification-profile-v1.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
-| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b`|
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,14 +34,16 @@ secret-policy digests), evidence contracts, output artifacts, and execution adap
 clean-room and teardown policy). Each of the two closeout selections and the local pre-commit
 selection restates the applicable gate populations.
 
-At the root-owned bootstrap repair (commit eb05a8727801) the profile was regenerated after the
-Dagger source change split the installer from the runtime-directory/symlink exec node and the
-selector-ownership change added the gate-certificate authority test consumer. Three digest
-authorities moved and are now self-consistent with the regenerated sources
-(`certification-profile-v1.json:6`, line 2583, line 2643): `profileDigest`
-`87142fc2...`, selector `configurationDigest` `8ceb5c1d...`, adapter `runtimeDigest`
-`32b57c79...`. Per the bootstrap handover, canonicalization, selector authority, and the
-candidate module digest agreed before the accepted run (candidate tree 3e984eb0...).
+At the root-owned bootstrap repair (commit eb05a8727801) the profile was regenerated after a
+Dagger source change split the installer from the runtime-directory/symlink exec node; that
+history is preserved below the current state. CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`)
+regenerated the profile after the Dagger module
+cutover to cost-ordered five-gate execution with the shared runtime authority: `profileDigest`
+`34858daa...` (line 6) and adapter `runtimeDigest` `4cf0e133...` (line 2793) moved with the changed
+module bytes, while the selector `configurationDigest` `8ceb5c1d...` (line 2733) is unchanged. Every
+rail now declares explicit `successExitCodes` / `skippedExitCodes` arrays (the ambient-role-chat
+E2E rail keeps 0 and 78; every other rail declares [0] and []), and `consumingGates` arrays are
+declared for the gate scheduler instead of relying on defaults.
 
 ### Conventions
 
@@ -69,16 +71,19 @@ below document the regenerated digests and the repair scope.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The regenerated canonical authority binds profileDigest 87142fc2..., selector configurationDigest 8ceb5c1d..., and adapter runtimeDigest 32b57c79.... | `profileDigest`; `configurationDigest`; `runtimeDigest` | mcp/certification-profile-v1.json:6-6; mcp/certification-profile-v1.json:2583-2583; mcp/certification-profile-v1.json:2643-2643 |
-| The 2026-09-03T06:20:00+02:00 master decision landed the bootstrap repair; it advances no requirement leaf and does not satisfy L12. | `## Update History` | onboarding/mcp/certification-profile-v1.json.md:93-95 |
+| The regenerated canonical authority after CCR-R12@v4 binds profileDigest 34858daa..., selector configurationDigest 8ceb5c1d..., and adapter runtimeDigest 4cf0e133.... | `profileDigest`; `configurationDigest`; `runtimeDigest` | mcp/certification-profile-v1.json:6-6; mcp/certification-profile-v1.json:2733-2733; mcp/certification-profile-v1.json:2793-2793 |
+| The 2026-09-03T06:20:00+02:00 master decision landed the bootstrap repair; it advances no requirement leaf and does not satisfy L12. | `## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the profile regeneration for the five-gate/authority cutover - `profileDigest` `34858daa...` and adapter `runtimeDigest` `4cf0e133...` moved with the changed Dagger module bytes, every rail now declares explicit `successExitCodes`/`skippedExitCodes` arrays, and digest anchor lines were re-pointed (2733/2793).
+` | onboarding/mcp/certification-profile-v1.json.md:93-95 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The regenerated profile digest after the bootstrap repair. | `profileDigest` | mcp/certification-profile-v1.json:6 |
-| The regenerated selector configuration digest. | `configurationDigest` | mcp/certification-profile-v1.json:2583 |
-| The regenerated adapter runtime digest. | `runtimeDigest` | mcp/certification-profile-v1.json:2643 |
+| The regenerated profile digest after the CCR-R12@v4 five-gate/authority profile cutover. | `profileDigest` | mcp/certification-profile-v1.json:6 |
+| The unchanged selector configuration digest. | `configurationDigest` | mcp/certification-profile-v1.json:2733 |
+| The regenerated adapter runtime digest after the Dagger module byte change. | `runtimeDigest` | mcp/certification-profile-v1.json:2793 |
 | The profile's literal consumer ownership names the gate-certificate authority test. | `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:50-104 |
 | Repository-profile admission/canonicalization consume this authority at plan compile time. | `compile_repository_profile_plan`; `canonicalize_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/planning.py:71-119; mcp/src/agents_remember/certification/repository_profiles/canonical.py:13-27 |
 

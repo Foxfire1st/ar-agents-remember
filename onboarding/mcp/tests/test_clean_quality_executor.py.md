@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,14 @@ CCR-R22@v1 (L22, commit `685f83c44055`) rewires the executor tests to the reposi
 model: `quality_request` now carries repository id + profile reference + mode, fixtures publish
 through `_publish_reports` with a profile execution, and the old fixed wrapper/constants-driven
 assertions were replaced by profile-admission and manifest-bound expectations.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) adds the authority cutover layer: `_AuthorityProbe`
+(lines 55-67) and `_test_authority` (lines 68-80) double the host-level shared Dagger authority, and
+`test_declared_host_authority_is_admitted_registered_and_released_without_docker` (lines 285-373)
+forces admission, registry registration, and exact-owner release across a real run without any
+docker engine; `publish_reports`/publication fixtures thread `ReportBindings` with
+`runtime_authority_digest`.
 
 ## Code Commentary
 
@@ -107,6 +115,9 @@ successful pointer rotation makes the causal JSON discoverable through
 therefore part of one immutable published generation rather than an adjacent best-effort file.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the host-authority admission/registration/release forcing case and probe doubles added to the clean-executor suite.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-admission rewiring of the clean quality executor tests.
 
 

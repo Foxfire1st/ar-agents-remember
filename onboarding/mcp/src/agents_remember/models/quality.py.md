@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,9 @@ CCR-R22@v1 (L22, commit `685f83c44055`) the model is profile-aware: `QualityGate
 `profileSelectionId`, and `resultArtifact`, and `QualityMemoryPolicy.processPolicy` replaces
 the old `pytestProcesses: Literal["auto"]` literal with `profile-adapter-owned` -- process
 policy now belongs to the repository profile adapter, not pytest.
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) adds the optional `runtimeAuthorityDigest` field (64-hex) to `QualityGateResult`: the frozen host-level shared Dagger
+authority snapshot digest admitted for the run, surfaced by the strict gate report and the published quality
+manifest schema-v3.1. It stays optional so ownerless/preview and no-authority fixture paths still validate.
 
 ## Code Commentary
 
@@ -68,6 +71,9 @@ certifying evidence minted from the verified Dagger publication path. These are 
 `dict[str, unknown]` flags that a direct caller can elevate.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the optional `runtimeAuthorityDigest` (64-hex) field on `QualityGateResult` binding the frozen shared-Dagger-authority snapshot digest into gate reports and published manifests.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-aware response model -- new executorAdapterId/profileDigest/profilePlanDigest/profileSelectionId/resultArtifact fields and the processPolicy literal replacing pytestProcesses-auto.
 - 2026-09-03T12:30+02:00 -- The model is shared by closeout and integration response owners.
 

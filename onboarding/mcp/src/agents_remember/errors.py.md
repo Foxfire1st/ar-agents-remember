@@ -5,9 +5,9 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/src/agents_remember/errors.py`   |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview      | `../../overview.md`                   |
 
 ## Governing Overview
@@ -39,6 +39,11 @@ authority failing before any certification command, and
 an admitted repository executor that cannot start its affected gate population. Both inherit
 `CertificationContractError`, so their findings stay frozen and typed while their status
 vocabulary remains distinct from contract and rail failures.
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) adds `DaggerRuntimeAuthorityError` (status `dagger-runtime-authority-invalid`) for every refusal of the host-level shared Dagger runner/layer-store authority: a missing, malformed,
+unsupported, provisioning-capable, worktree-local, or ambient-conflicting declaration; an engine or store that
+fails live connection-only inspection; or an active authority-transition barrier with live owners. It inherits
+`CertificationContractError` so its findings stay frozen and typed, and it is raised before any
+Dagger command starts (see dagger_authority.py).
 
 ## Code Commentary
 
@@ -192,6 +197,9 @@ that evidence when the shared pair validator is consumed through coherence, avoi
 lower-level failure-family implementations.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the new `DaggerRuntimeAuthorityError` subclass (status `dagger-runtime-authority-invalid`) that types every host-level shared Dagger authority refusal before any Dagger command starts.
+
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored every
   shifted errors.py citation against the current source (structural family 80-93, future-code
   154-159, authority 96-115, tokenizer 284-292, native-history 390-410, freeze helpers

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f10c24d72db6171c0d434b307e6806996e2f11d` |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -45,6 +45,13 @@ The exact code-memory candidate-pair suite is also explicitly `integration` evid
 create real temporary repositories and linked worktrees, advance source branches, and exercise the
 contract-owned memory-quality admission boundary. The lifecycle gate rejects the candidate if this
 row is absent instead of silently assigning a cheaper lane.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) registers `mcp/tests/test_dagger_runtime_authority.py`
+explicitly in the `integration` lane (sorted beside `test_curator_coherence_edges.py` and
+`test_dashboard_daemon.py`): the host-authority suite touches real process liveness (`/proc`), runs
+docker-inspection subprocess probes, and uses real temporary registry files, so its cost and
+evidence class are deliberate rather than inferred.
 The ARSPAWN public-surface suite is explicitly `integration` evidence because it launches bounded
 stdio MCP subprocesses and performs real protocol initialization, tool listing, and calls for all
 eight controlled harness registrations. It must never silently inherit a unit lane.
@@ -118,6 +125,9 @@ the existing future-code real-Git suite. This prevents the Dagger selector from 
 the new filesystem/Git/task publication fixture as unit evidence.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the explicit `integration` lane registration for the new host-authority suite `test_dagger_runtime_authority.py`.
+
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored all
   21 manifest lane citations to the exact current line numbers after the L21 gate-certificate
