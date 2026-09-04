@@ -1,0 +1,71 @@
+# mcp/src/agents_remember/certification/replay/compare.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/certification/replay/compare.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
+| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
+| governingOverview | `../overview.md` |
+
+## Governing Overview
+
+[Certification contract overview](../overview.md)
+
+## Purpose
+
+Owns the CCR-R17 (leaf 260831-CCR-L17) baseline-vs-treatment replay comparison report. The report binds the exact freeze identity of each leg, the pair comparability verdict, the measured treatment facts, and the machine-readable outcome of every mandatory acceptance scenario. It carries raw measurements only: no numeric reduction threshold appears anywhere in the record.
+
+## Code Commentary
+
+### Logic
+
+- `ReplayComparisonInput` (lines 34-44) - the complete frozen pair plus measured legs one comparison report binds (baseline/treatment freezes, the comparability report, both run measurements, the scenario evidence envelope, optional population, and a note).
+- `ReplayComparisonReport` (lines 47-69) - one digest-bound comparison: both freezes, the comparability report, optional population, the exact baseline and treatment leg digests, exactly seventeen ordered scenario outcomes (min/max length 17), and a self-verifying `reportDigest` (validator lines 64-68); the fixed literal `measured-replay-comparison/v1` schemaVersion identifies the record.
+- `build_replay_comparison_report` (lines 72-96) copies the measured treatment/baseline into the evidence envelope, evaluates all seventeen scenarios over it, constructs the draft report, digests the content excluding `reportDigest`, and returns a validated report.
+
+### Conventions
+
+The report is a closed immutable `FrozenContractModel` whose digest binds every carried fact; the builder always revalidates the final record.
+
+### Invariants And Boundaries
+
+- The comparison report always carries the exact seventeen ordered scenario outcomes.
+- Each leg digest names its freeze digest; the report digest binds both freezes, comparability, population, and outcomes.
+- The report records measurements only and never embeds an approved reduction threshold.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root. The governing task artifacts (the CCR-R17 approved replay protocol requirement packet and the 17_measured-replay-and-reduction leaf doc) define the pair comparison report; task artifact paths are not repo-relative citations, so these facts are recorded as prose here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The report binds exact leg freezes, comparability, measured legs, and all scenario outcomes in one digest. | `ReplayComparisonReport` | mcp/src/agents_remember/certification/replay/compare.py:47-69 |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The report binds freeze and population records from the freeze owner. | `ReplayFreeze`; `ReplayComparabilityReport`; `ReplayPopulation` | mcp/src/agents_remember/certification/replay/freeze.py:57-71; mcp/src/agents_remember/certification/replay/freeze.py:74-90; mcp/src/agents_remember/certification/replay/freeze.py:93-116 |
+| The builder projects the mandatory scenarios over the measured evidence. | `evaluate_all_replay_scenarios` | mcp/src/agents_remember/certification/replay/scenarios.py:188-192 |
+| The report consumes the measured vocabulary from the replay models module. | `RunMeasurement`; `ReplayScenarioEvidence`; `ScenarioOutcome` | mcp/src/agents_remember/certification/replay/models.py:255-286; mcp/src/agents_remember/certification/replay/models.py:362-385; mcp/src/agents_remember/certification/replay/models.py:92-105 |
+| Content digests follow the shared certification digest helper. | `content_digest` | mcp/src/agents_remember/certification/digests.py:12-22 |
+| The public subpackage facade re-exports the comparison surface. | `replay.__all__` | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |
+
+## Cross-Repo References
+
+No cross-repository implementation boundary is owned here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Comparison reporting stays repository-neutral over the measured evidence envelope. | - | - |
+
+## Update History
+
+- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass: created this card for the new CCR-R17 comparison-report owner delivered in code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).

@@ -458,6 +458,12 @@
     "mcp/tests/test_random_order.py",
     "mcp/tests/test_read_ar_files.py",
     "mcp/tests/test_register_scaffold.py",
+    "mcp/tests/test_replay_fold_coverage.py",
+    "mcp/tests/test_replay_freeze.py",
+    "mcp/tests/test_replay_model_edges.py",
+    "mcp/tests/test_replay_scenario_branches.py",
+    "mcp/tests/test_replay_scenarios_and_compare.py",
+    "mcp/tests/test_replay_spans_and_measure.py",
     "mcp/tests/test_repository_certification_profiles.py",
     "mcp/tests/test_repository_profile_authority.py",
     "mcp/tests/test_repository_profile_branch_coverage.py",
@@ -595,8 +601,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 594,
+    "fileSidecars": 589,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -651,6 +657,7 @@
     "boundaries",
     "boundary",
     "branch",
+    "branches",
     "bridge",
     "brief",
     "budgets",
@@ -678,8 +685,7 @@
     "chats",
     "check",
     "checkout",
-    "child",
-    "citation"
+    "child"
   ],
   "hotPath": {
     "summary": "L2 forcing covers every configured-contract semantic refusal across public consumers, exact admitted-object reuse, task-addressed controls, crash cuts, locator/manifest/journal contradictions, worker termination, direct landing, bounded legacy repair, task publication races, and fail-closed cleanup. The harness sub-agent regression set: `_agent_wire_fixtures.py` (shared codex vendored-shape builders), `test_codex_adapter_thread_demux.py` (the 2026-07-24 bridge-death incident regression \u2014 three sub-agents mid-turn, multiplexed approvals answered by request-id, collab identity binding, degrad...",

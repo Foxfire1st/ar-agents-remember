@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
+| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -1585,7 +1585,23 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+
+## 260831-CCR-L17 Measured Replay And Reduction Evidence
+
+CCR-R17 (commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185`, leaf 260831-CCR-L17) adds six fully
+standalone measured-replay suites to `mcp/tests`, all registered in the `unit-regression`
+lane of `test-evidence-lanes.toml` (rows 148-153): `test_replay_freeze.py` (freeze
+digest determinism/tamper refusal, frozen-dimension comparability, append-only three-view population),
+`test_replay_model_edges.py` (validator/comparability/reducer/digest refusal edges),
+`test_replay_spans_and_measure.py` (union-wall arithmetic and the measured-run reducer),
+`test_replay_scenario_branches.py` (green/red/not-applicable arms of all seventeen
+scenarios), `test_replay_scenarios_and_compare.py` (ordered scenario projection and the
+digest-bound comparison report), and `test_replay_fold_coverage.py` (every reducer fold
+branch and every wall-union arc). No suite shares certification-run, evidence-lifecycle, or Dagger
+artifacts, and none asserts a numeric reduction threshold.
+
 ## Update History
+- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass (route impact): recorded the six standalone CCR-R17 measured-replay suites (unit-regression rows 148-153) and their `test-evidence-lanes.toml` lane registrations. File-level detail lives in the six new test cards. Verification stamp is the full leaf code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,
