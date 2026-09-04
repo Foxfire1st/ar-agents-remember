@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -95,8 +95,23 @@ longer project as an ordinary reusable generation merely because it is nontermin
 projection reports `lifecycle-operation-task-intent-unavailable` with `retire-and-republish` and
 wholly omits recover/retry/cancel except for the proven same-generation cancellation-pending path.
 
+
+## 260831-CCR-L15 Meaningful Revision Propagation
+
+Both envelope builders — the coherent adapter and the incoherent refusal adapter — now populate
+`LifecycleOperationProjection.meaningfulRevision` from the exact durable record, so every
+record-bound status snapshot (including a wait snapshot) carries the durable meaningful-state
+cursor of the journal revision it projects.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Coherent envelope carries the record cursor. | `_coherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:217-224 |
+| Incoherent refusal envelope carries the record cursor too. | `_incoherent_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:515-522 |
+| The envelope field being populated. | `LifecycleOperationProjection.meaningfulRevision` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:376-380 |
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the adapters' propagation of `meaningfulRevision` from the durable record into coherent and incoherent envelopes.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the lifecycle operation projection now blocks recovery reuse for legacy missing-intent
   closeout/direct-landing generations, emits the `lifecycle-operation-task-intent-unavailable`

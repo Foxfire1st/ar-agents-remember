@@ -24,7 +24,7 @@
     "dashboard/src/grammar/TokenGauge.tsx"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 12,
+    "sourceFilesInScope": 13,
     "fileSidecars": 12,
     "childRoutes": 0
   },

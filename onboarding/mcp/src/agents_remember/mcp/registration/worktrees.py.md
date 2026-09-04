@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -125,8 +125,20 @@ and never scans task/worktree/report paths; status resolves the independent loca
 the live root journal or exact terminal archive/receipt. Conflicting reservations and invalid
 terminal proof fail closed, with no inferred enclosure-root fallback.
 
+## 260831-CCR-L15 Status-Wait Server Tool
+
+`_register_worktree_observation_tools` now registers the `@server.tool()`
+`worktree_status_wait` tool addressed by `contract_path`,
+`operation_kind`, `expected_generation`, `after_revision`, and
+`timeout_seconds` (default 30.0), dispatching to
+`worktree_status_wait_payload`. The tool docstring promises the read-only CCR-R15 wait
+contract: heartbeats/log growth never wake it, a generation successor wakes an old-generation wait
+with explicit successor information, and wrong contract/generation/cursor and unreadable journals
+refuse typed.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait` server-tool registration under the observation tools.
 - 2026-09-03T12:30+02:00 — 260831-CCR provenance-debt repair: replaced the terse multi-anchor `TaskIdentity`, `TaskBases`, `StartExecution` row with three rows, one per distinct definition, pointing each anchor at its unique class definition in application/worktree_tool_requests.py (15-29, 32-47, 50-56) and naming the per-object fields. The names previously resolved 3 times each because worktree_tools.py only imports and annotates them (import lines 113-115, signature annotations 121-124 and 229-232), so occurrence matching found three sites per name; each claim now maps to exactly one definition and verifies uniquely.
 
 - 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operation_dispositions_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -92,8 +92,16 @@ Forces completed-closeout integrate, retire, and supersede dispositions while pr
 - A completed-unintegrated operation remains journal-addressable outside the queue.
 - Retirement preserves door publication/history; supersession creates a distinct waiting generation and retains the claimed predecessor in history.
 
+## 260831-CCR-L15 Disposition Cursor Parity
+
+Disposition-preserved artifacts now exclude `meaningfulRevision` alongside
+`recordRevision` (both are journal-mutable), and the completed-unintegrated tests assert
+the CCR-R15 cursor advances exactly once per accepted store mutation, in parity with
+`recordRevision` (retire one advance, supersede two).
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `meaningfulRevision` disposition-exclusion and cursor-parity assertions.
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: split the
   comma-separated source cells into ';'-separated path:start-end citations and widened
   the second range to the test lines that carry the anchor.

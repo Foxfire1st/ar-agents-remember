@@ -37,14 +37,15 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 34,
-    "fileSidecars": 31,
+    "sourceFilesInScope": 35,
+    "fileSidecars": 32,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -115,9 +116,12 @@
     "resume",
     "src",
     "state",
+    "status",
+    "status_wait",
     "store",
     "terminal",
     "termination",
+    "wait",
     "worker",
     "worktrees"
   ],

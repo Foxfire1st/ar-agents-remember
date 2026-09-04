@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -132,8 +132,26 @@ queued-integrate writer recomputes the exact declaration from the admitted candi
 and input before persistence, and launch/currentness gates re-require it (worker handover:
 notes/reports/260902-CCR-L03-worker-delivery.md).
 
+
+## 260831-CCR-L15 Meaningful-State Revision
+
+The durable record now carries a second monotonic revision: `meaningfulRevision`
+(defaults to 1, ge=1) is the CCR-R15 wait cursor that advances exactly once per
+accepted store mutation whose meaningful projection subset changed, while
+`recordRevision` still advances on every durable write (heartbeats, unchanged
+current commands, log growth, and append-only histories advance only
+`recordRevision`). `_MEANINGFUL_STATE_FIELDS` names exactly the durable
+journal fields that move the cursor (generation, generationDisposition, status,
+phase, attempt, approval claim, irreversible boundary, cancellation evidence,
+worker termination, mutation evidence, recovery commits, finalization,
+publication/direct-landing/legacy cells, result, and typed failure); the digest
+and comparison helpers `meaningful_state_payload` and
+`meaningful_state_changed` give the store, adapters, and waiters one shared
+rule, so a waiter compares this field and never `recordRevision`.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the durable `meaningfulRevision` wait cursor on `LifecycleOperationRecord`, the `_MEANINGFUL_STATE_FIELDS` subset, and the `meaningful_state_payload`/`meaningful_state_changed` digest helpers shared by the store and waiters.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed direct-dependency declaration on lifecycle operation records, the per-kind dependency builders, and the launch/currentness refusal; prior input/record/projection prose preserved.
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary

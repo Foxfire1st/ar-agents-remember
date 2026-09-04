@@ -18,11 +18,12 @@
     "mcp/src/agents_remember/application/lifecycle/lifecycle_enclosure_tools.py",
     "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py",
     "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py",
+    "mcp/src/agents_remember/application/lifecycle/lifecycle_status_wait.py",
     "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
-    "fileSidecars": 9,
+    "sourceFilesInScope": 11,
+    "fileSidecars": 10,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -48,14 +49,17 @@
     "lifecycle_enclosure_tools",
     "lifecycle_operation_location",
     "lifecycle_operation_worker",
+    "lifecycle_status_wait",
     "lifecycle_tools",
     "location",
     "mcp",
     "operation",
     "remember",
     "src",
+    "status",
     "tool",
     "tools",
+    "wait",
     "worker"
   ],
   "hotPath": {
@@ -70,6 +74,7 @@
       "mcp/src/agents_remember/application/lifecycle/lifecycle_enclosure_tools.py",
       "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py",
       "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py",
+      "mcp/src/agents_remember/application/lifecycle/lifecycle_status_wait.py",
       "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py"
     ],
     "anchorHints": [
@@ -89,12 +94,15 @@
       "lifecycle_operation_location",
       "lifecycle_operation_worker.py",
       "lifecycle_operation_worker",
+      "lifecycle_status_wait.py",
+      "lifecycle_status_wait",
       "lifecycle_tools.py",
       "lifecycle_tools",
       "mcp/src/agents_remember/application/lifecycle",
       "route-local-overview",
       "346507af24396ab7b491e02511c4af006ccd3dc5",
       "/overview.md",
+      "worktree_status_wait",
       "sourceRoute",
       "agents_remember",
       "doc_type",
@@ -105,6 +113,11 @@
       "lastVerifiedCommitDate",
       "T07",
       "governingOverview",
+      "T20",
+      "CCR",
+      "L15",
+      "e375f2ebdc87f6843bc76168b646d606fa79caec",
+      "R15",
       "MCAR",
       "L03",
       "A005",

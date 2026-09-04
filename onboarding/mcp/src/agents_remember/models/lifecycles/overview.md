@@ -141,6 +141,7 @@ base, branch, onboarding root, ledger, or contract structurally ineligible for t
 
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the typed status-change wait vocabulary (`operation_wait.py`) and refreshes `operation.py` / `operation_projection.py` with the CCR-R15 `meaningfulRevision` cursor; route index regenerated.
 - 2026-08-29T22:45+02:00 — MCAR-L03: bound quality attestations, coherence records, public
   responses, and mismatch recovery to the complete contract-derived code-memory pair identity.
 

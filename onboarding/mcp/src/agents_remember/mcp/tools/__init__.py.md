@@ -5,9 +5,9 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -105,8 +105,15 @@ The package exports `curator_coherence_payload` alongside the existing task/door
 task registrar imports the one canonical payload boundary. This is wiring only; it creates no
 second action implementation.
 
+## 260831-CCR-L15 Status-Wait Export
+
+The package surface now re-exports `worktree_status_wait_payload` (added to the import
+list and to `__all__`) so registration and conformance imports resolve the read-only
+wait payload from the tools package boundary.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` package export.
 - 2026-08-29T08:52+02:00 — Exported the sole curator-coherence payload adapter. Verification
   remains closeout-owned.
 

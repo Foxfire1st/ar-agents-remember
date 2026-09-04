@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -132,8 +132,16 @@ The generated mirror adds the `TaskIntentIdentity` interface (closed `task-inten
 observe the exact identity a door/journal/operation binds; no intent authority transfers to the
 browser.
 
+## 260831-CCR-L15 Meaningful Revision Wire Field
+
+The generated `LifecycleOperationProjection` interface gains the optional
+`meaningfulRevision?: number` field (JSON Schema refinement `minimum: 1`), the
+dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-change wait tool
+returns on snapshots.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the optional `meaningfulRevision` field on the generated `LifecycleOperationProjection` interface.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   regenerated-mirror card updated for the optional `LifecycleOperationProjection.taskIntent` and
   the new `TaskIntentIdentity` interface (closed `task-intent/v1` + digest pattern with JSON Schema

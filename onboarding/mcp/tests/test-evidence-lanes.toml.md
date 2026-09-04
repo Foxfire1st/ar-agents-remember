@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f10c24d72db6171c0d434b307e6806996e2f11d` |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -117,8 +117,16 @@ The manifest classifies `test_curator_coherence.py` explicitly as integration ev
 the existing future-code real-Git suite. This prevents the Dagger selector from silently treating
 the new filesystem/Git/task publication fixture as unit evidence.
 
+## 260831-CCR-L15 Status-Wait Evidence Lane
+
+The integration evidence lane adds the three CCR-R15 status-wait modules
+(`test_lifecycle_status_wait_outcomes.py`, `test_lifecycle_status_wait_registration.py`,
+`test_lifecycle_status_wait_store.py`) so the lane keeps covering the lifecycle
+integration evidence surface.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the three status-wait test modules added to the integration evidence lane.
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored all
   21 manifest lane citations to the exact current line numbers after the L21 gate-certificate
   registration and prior registrations shifted rows (doctrine 497-499, retry 147/400/500,

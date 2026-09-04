@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-26T03:37+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -195,8 +195,19 @@ Closeout preview and apply schemas now declare the exact pair plus bounded pair-
 repair arguments. The fields are scoped to closeout responses rather than being generalized to
 unrelated worktree operations.
 
+## 260831-CCR-L15 Status-Wait Wire Response
+
+`WorktreeStatusWaitResponse` (operation literal `worktree_status_wait`) carries
+the typed `outcome` (`LifecycleWaitOutcome`), optional `operationKind`,
+`successorGeneration`, `meaningfulRevision`, `timeoutSeconds` /
+`elapsedSeconds`, the projected `lifecycleOperation` snapshot, and opaque
+`nextArgs`. It never carries an operation key, PID, or worker/queue/gate authority, and
+on timeout returns the unchanged snapshot and cursor without claiming failure. The module now
+imports `LifecycleOperationKind` and `LifecycleWaitOutcome` for the vocabulary.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded `WorktreeStatusWaitResponse` and its read-only wait wire shape.
 - 2026-08-29T21:46+02:00 — MCAR-L03: made exact-pair success and refusal fields discoverable on
   preview/apply response schemas. Verification remains closeout-owned.
 

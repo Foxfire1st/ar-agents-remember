@@ -57,6 +57,7 @@ authority is documented by the linked source sidecars and the worktrees integrat
 
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the `lifecycle_status_wait.py` read-only wait controller (CCR-R15 `worktree_status_wait`); route index regenerated.
 - 2026-08-30T06:26+02:00 — MCAR-L03 A005: documented the strict-by-default admission boundary
   and its narrow single-owner transfer of candidate identity to exact-pair validation.
 

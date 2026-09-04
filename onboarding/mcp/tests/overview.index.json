@@ -352,6 +352,9 @@
     "mcp/tests/test_lifecycle_operations.py",
     "mcp/tests/test_lifecycle_reconciliation_concurrency_l2.py",
     "mcp/tests/test_lifecycle_resume_invariant_owner_l2.py",
+    "mcp/tests/test_lifecycle_status_wait_outcomes.py",
+    "mcp/tests/test_lifecycle_status_wait_registration.py",
+    "mcp/tests/test_lifecycle_status_wait_store.py",
     "mcp/tests/test_lifecycle_worker_release_guards.py",
     "mcp/tests/test_liveness_simulations.py",
     "mcp/tests/test_log_capture.py",
@@ -595,8 +598,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 566,
-    "fileSidecars": 583,
+    "sourceFilesInScope": 591,
+    "fileSidecars": 586,
     "childRoutes": 0
   },
   "routingTerms": [
