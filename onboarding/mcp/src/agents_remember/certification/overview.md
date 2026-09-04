@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
+| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -101,7 +101,27 @@ No Domain Documentation source or cross-repository implementation is configured 
 root. The accepted behavior is repository-owned and the package remains independent of any one
 repository's commands.
 
+
+## 260831-CCR-L17 - Measured Replay And Reduction Targeting
+
+CCR-R17 (commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185`, leaf 260831-CCR-L17) adds the
+`replay/` subpackage to this route: the correctness replay protocol records for measured replay of a
+frozen incident baseline through the five-gate treatment. `replay/freeze.py` fixes replay freeze
+identity (source, candidate, R22 profile, R11 plan, configuration, runtime/toolchain/executor/image,
+machine class, instrumentation, measurement schema) and the append-only three-view incident
+population (frozen original generations 1-8, post-analysis tail 9-13, dated supplements 14+ that
+never enter the denominator); `replay/spans.py` reduces R16 telemetry spans to a closed
+per-category union-wall reduction with reproducible arithmetic; `replay/measure.py` folds an R16
+closeout event export into per-gate measured facts; `replay/models.py` fixes the closed
+measured-run vocabulary (strata, span reductions, gate facts, the seventeen acceptance-scenario
+expectations, evidence envelope); `replay/scenarios.py` projects the seventeen mandatory
+acceptance scenarios to machine-readable green/red/not-applicable outcomes; and `replay/compare.py`
+binds one digest-verified baseline-vs-treatment comparison report. Numeric reduction thresholds are
+intentionally absent from the entire subpackage: the protocol approves measured replay and cost
+reduction measurement, not a numeric performance claim.
+
 ## Update History
+- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass (route impact): added the CCR-L17 section for the measured-replay and reduction subpackage - replay freeze identity and comparability, the append-only three-view incident population, the deterministic span analyzer, the measured-run reducer, the seventeen acceptance scenarios, and the digest-bound comparison report, with numeric reduction thresholds deliberately out of scope. Verification stamp is the full leaf code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 reconciled the bounded-reachability owner after
   removing a dominated second refusal: the prospective pre-allocation refusal and measured

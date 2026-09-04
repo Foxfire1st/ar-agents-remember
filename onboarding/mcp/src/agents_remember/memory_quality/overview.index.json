@@ -70,7 +70,7 @@
     "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 63,
+    "sourceFilesInScope": 70,
     "fileSidecars": 58,
     "childRoutes": 0
   },

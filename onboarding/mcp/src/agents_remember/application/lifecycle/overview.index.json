@@ -21,7 +21,7 @@
     "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 9,
+    "sourceFilesInScope": 10,
     "fileSidecars": 9,
     "childRoutes": 0
   },
