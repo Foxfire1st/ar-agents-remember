@@ -37,11 +37,17 @@
     "mcp/src/agents_remember/certification/repository_profiles/selection_results.py",
     "mcp/src/agents_remember/certification/repository_profiles/validation.py",
     "mcp/src/agents_remember/certification/results.py",
+    "mcp/src/agents_remember/certification/telemetry/__init__.py",
+    "mcp/src/agents_remember/certification/telemetry/adapters.py",
+    "mcp/src/agents_remember/certification/telemetry/models.py",
+    "mcp/src/agents_remember/certification/telemetry/projection.py",
+    "mcp/src/agents_remember/certification/telemetry/store.py",
+    "mcp/src/agents_remember/certification/telemetry/validation.py",
     "mcp/src/agents_remember/certification/validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 28,
-    "fileSidecars": 28,
+    "sourceFilesInScope": 34,
+    "fileSidecars": 34,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -72,6 +78,7 @@
     "models",
     "planning",
     "profiles",
+    "projection",
     "readiness",
     "readiness_models",
     "readiness_transitions",
@@ -84,6 +91,7 @@
     "selection_results",
     "src",
     "store",
+    "telemetry",
     "transitions",
     "validation"
   ],
@@ -162,8 +170,8 @@
       "validation",
       "results.py",
       "results",
-      "canonicalize_registry",
-      "validate_registry"
+      "projection.py",
+      "projection"
     ]
   },
   "fallback": {

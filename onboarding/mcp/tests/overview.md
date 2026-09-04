@@ -1585,7 +1585,28 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+
+## 260831-CCR-L16 - Durable Gate And Rail Telemetry Suite
+
+CCR-R16@v3 (certified commit `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`, leaf 260831-CCR-L16) adds six focused
+suites to this route, each registered in the `unit-regression` lane of the evidence-lanes manifest
+(`mcp/tests/test-evidence-lanes.toml` rows 178-183): `test_telemetry_models.py` forces the frozen event
+schema and closed vocabularies of `certification/telemetry/models.py`; `test_telemetry_store.py` verifies
+the CAS-published, digest-chained durable journal on temporary roots; `test_telemetry_validation.py`
+and its `_edges` companion force the exhaustive stream validator and readiness to fail closed;
+`test_telemetry_projection.py` and its `_edges` companion verify the lossless boundary/Gate 1-5
+reconstruction from compiled events. The suites exercise owned certification telemetry
+contracts through deterministic in-process pytest forcing, so their cost and evidence class are
+deliberate rather than inferred.
+
 ## Update History
+
+- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5 memory pass (route impact): added the CCR-L16
+  section for the six durable gate-and-rail telemetry suites
+  (`test_telemetry_models.py`, `test_telemetry_projection.py`, `test_telemetry_projection_edges.py`,
+  `test_telemetry_store.py`, `test_telemetry_validation.py`, `test_telemetry_validation_edges.py`)
+  registered in the `unit-regression` lane. Verification metadata stays pinned until closeout
+  stamps the leaf code commit.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,

@@ -265,7 +265,7 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1539,
+    "sourceFilesInScope": 1570,
     "fileSidecars": 147,
     "childRoutes": 21
   },

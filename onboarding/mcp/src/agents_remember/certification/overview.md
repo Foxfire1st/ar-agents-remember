@@ -101,7 +101,30 @@ No Domain Documentation source or cross-repository implementation is configured 
 root. The accepted behavior is repository-owned and the package remains independent of any one
 repository's commands.
 
+
+## 260831-CCR-L16 - Durable Gate And Rail Telemetry
+
+CCR-R16@v3 (certified commit `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`, leaf 260831-CCR-L16) adds the
+`telemetry/` subpackage to this route: one execution-coherent, content-addressed durable stream for
+closeout generations and diagnostic runs. `telemetry/models.py` fixes the closed event vocabulary
+(execution kinds, certificate dispositions and refusal codes, terminal result classes, the
+exhaustive `EVENT_MATRIX`) and the immutable `TelemetryEvent` schema whose validators enforce the
+matrix ID cardinality and the exact gate/rail identity rules; `telemetry/adapters.py` compiles one
+event per owner-produced R11/R20/R21/R22 object without inventing authority;
+`telemetry/store.py` CAS-publishes digest-chained journal entries into separate closeout and
+diagnostic envelopes under an operation-scoped capacity policy; `telemetry/projection.py` folds the
+durable events into a lossless boundary and Gate 1-5 projection with a content digest; and
+`telemetry/validation.py` exhaustively validates one ordered stream without raising and without
+deriving a rail pass from telemetry alone. The route facade (`__init__.py`) re-exports the full
+telemetry surface.
+
 ## Update History
+
+- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5 memory pass (route impact): added the CCR-L16
+  section for the durable gate and rail telemetry subpackage - closed event vocabulary with an
+  exhaustive matrix, compile adapters, digest-chained journal store, lossless projection, and
+  never-raising validator. Verification metadata stays pinned until closeout stamps the leaf
+  code commit.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 reconciled the bounded-reachability owner after
   removing a dominated second refusal: the prospective pre-allocation refusal and measured
