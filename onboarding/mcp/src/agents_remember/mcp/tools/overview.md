@@ -389,6 +389,7 @@ tool-response boundary validates every success/refusal body.
 
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the public `worktree_status_wait` tool surface (payload export, package export, `PUBLIC_TOOLS` census); route index regenerated.
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: the public inventory is 63 names in
   exact live order, and `server_info` projects the shared content-addressed runtime identity.
   Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                 |
 | path                   | `mcp/tests/test_tool_response_conformance.py`      |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-30T17:08:05+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Purpose
@@ -217,8 +217,16 @@ Its real worktree lifecycle fixture now retains the updated contract returned by
 publication before preparing coherence. Prepare and publish therefore use the same exact contract
 generation, preserving the production contract-CAS check instead of mocking or bypassing it.
 
+## 260831-CCR-L15 Status-Wait Representative Payload
+
+The conformance suite captures the read-only wait tool's representative payload
+(`worktree_status_wait_payload` with a `LifecycleStatusWaitRequest` against the
+completed closeout generation, zero timeout, admission cursor) and asserts it deterministically
+returns the changed outcome with its next cursor as a strict public payload.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait` representative-payload conformance case.
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: the representative server-info fixture
   now crosses the same strict payload boundary as production registration. Verification remains
   closeout-owned.

@@ -535,6 +535,7 @@ surface are unchanged; the dashboard remains a consumer of one server-owned gene
 
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: types coverage refreshes the generated `LifecycleOperationProjection` wire mirror with the optional `meaningfulRevision` cursor (interface, schema, fixture sample); route index regenerated.
 - 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: regenerated the diagnostic serving-build
   mirror with exact Python candidate provenance. Verification remains closeout-owned.
 

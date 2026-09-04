@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-03T12:30:00+02:00                        |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b`      |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00                        |
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -167,8 +167,15 @@ The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-r
 
 The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) as representative dashboard contract examples.
 
+## 260831-CCR-L15 Fixture Cursor Sample
+
+The hand-kept fixture snapshot now seeds `meaningfulRevision: 1` on the lifecycle
+operation node that previously carried only the revision-less projection fields, so dashboard and
+wire-fixture consumers have a cursor-carrying sample matching the regenerated schema.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `meaningfulRevision: 1` fixture sample on the lifecycle operation node.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the R03 fixture reserialization (single-line array formatting; 1,979 → 1,923 lines) and refreshed the top-level key anchor ranges; no served-field or value semantics changed.
 
 - 2026-08-25T16:21:43+02:00 — 260824-PDLS-L12 curator: removed the stale claim that this

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T08:27+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,22 @@ The source defines the total observation and degraded-projection contract.
 
 No meaningful cross-repository boundary is owned by this file.
 
+
+## 260831-CCR-L15 Observed Operation Projection
+
+`observed_operation_projection` projects one exact durable journal read through the
+shared status pipeline: `_project_observed_record` performs only read-only
+reconciliation, then `operation_projection` renders the envelope. CCR-R18/R15: a
+status-change wait snapshot must be the same coherent envelope a task status read returns for the
+exact record whose durable meaningful revision the waiter compared, so the returned cursor and
+envelope never splice facts from different journal revisions.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The read-only wait snapshot projection entry point. | `observed_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py:260-283 |
+| The wait controller consuming it for the changed snapshot. | `worktree_status_wait_tool` | mcp/src/agents_remember/application/lifecycle/lifecycle_status_wait.py:81-111 |
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded `observed_operation_projection` and its R18/R15 same-envelope guarantee for wait snapshots.
 - 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: created for the extracted read-only projection owner and verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this provenance does not certify the red Dagger gate.

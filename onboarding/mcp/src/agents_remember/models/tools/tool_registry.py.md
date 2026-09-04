@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -93,8 +93,15 @@ same single response-model boundary as other AR-owned tools. It remains distinct
 The strict response registry maps `curator_coherence` to `CuratorCoherenceResponse`, so every
 success and typed refusal from all four actions passes the same no-extra-fields public boundary.
 
+## 260831-CCR-L15 Status-Wait Response Model
+
+`TOOL_RESPONSE_MODELS` now maps `worktree_status_wait` to
+`WorktreeStatusWaitResponse` (imported from `models.worktree`), so the read-only
+wait tool shares the strict typed response registry with the other worktree tools.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait` response-model registry row.
 - 2026-08-29T08:52+02:00 — Registered strict response conformance for the one curator-coherence
   tool. Verification remains closeout-owned.
 

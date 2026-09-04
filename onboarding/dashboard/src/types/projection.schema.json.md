@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -128,8 +128,16 @@ digest) as a `` entry and attaches it optionally to `LifecycleOperationProjectio
 Observers see the exact canonical identity a door/operation/journal binds; the schema remains
 projection-only and transfers no intent authority to the dashboard.
 
+## 260831-CCR-L15 Meaningful Revision Schema Regeneration
+
+The regenerated `projection.schema.json` adds `meaningfulRevision` to
+`LifecycleOperationProjection` as an `anyOf` of integer (`minimum: 1`)
+or null, defaulting to null — the schema mirror of the optional CCR-R15 wait cursor that adapters
+populate for record-bound envelopes.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the regenerated `meaningfulRevision` schema member.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   regenerated-schema card updated for the optional `LifecycleOperationProjection.taskIntent` and
   the new `TaskIntentIdentity` `` (closed `task-intent/v1` schema + digest pattern);

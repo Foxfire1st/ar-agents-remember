@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -89,8 +89,15 @@ compatibility name and does not change token/envelope finalization for existing 
 `PUBLIC_TOOLS` includes exactly one `curator_coherence` name. Status, preparation, publication, and
 validation remain actions of that tool rather than four overlapping public tools.
 
+## 260831-CCR-L15 Status-Wait Public Tool
+
+The public tool census `PUBLIC_TOOLS` adds `worktree_status_wait`, so the
+read-only lifecycle status-change wait is part of the public tool inventory enforced by the
+conformance suite.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded `worktree_status_wait` in the `PUBLIC_TOOLS` census.
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: corrected the current public census to 63 and
   recorded exact-order parity as the permanent advertisement contract. Verification remains
   closeout-owned.
