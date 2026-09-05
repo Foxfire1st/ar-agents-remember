@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/mcp/server.py`    |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-30T15:15:36+02:00                  |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
 | lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -116,7 +116,9 @@ that skips this line loses no records — it just stops being distinguishable fr
 | --- | --- | --- |
 | `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
 | The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
-| The stable `mcp.tools` package imports the payload builders and exports that builder surface for the registered tool families. | "Pure payload builders"; "from .worktree import ("; "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:1-1; mcp/src/agents_remember/mcp/tools/__init__.py:96-96; mcp/src/agents_remember/mcp/tools/__init__.py:115-115 |
+| The stable tools package declares the public import surface for payload builders. | "Pure payload builders for Agents Remember MCP tools." | mcp/src/agents_remember/mcp/tools/__init__.py:1-6 |
+| The package imports worktree payload builders from the owning module. | "from .worktree import (" | mcp/src/agents_remember/mcp/tools/__init__.py:96-110 |
+| The package explicitly exports its builder vocabulary. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:116-203 |
 
 ## Cross-Repo References
 
@@ -133,6 +135,8 @@ The transport server now imports its composition boundary as
 durable-store ownership remain application concerns; only their package location changed.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated package purpose, worktree imports, and public exports, repairing the blank-line export anchor. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: recorded `AgentsRememberMCP` as the one strict
   dispatch transport seam. Production registration remains family-owned; no compatibility handler

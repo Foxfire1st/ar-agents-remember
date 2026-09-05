@@ -1,68 +1,75 @@
 # mcp/src/agents_remember/worktrees/services.py
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/worktrees/services.py`              |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-08T14:38+02:00                                      |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                  |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                               |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/worktrees/services.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-05T06:14:14+00:00 |
+| lastVerifiedCommitHash | `668d710bf2a9898fb706614163462ff346d986b7` |
+| lastVerifiedCommitDate | 2026-09-05T02:45:47+02:00 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktree modules overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
-`worktrees/services.py` (260731-EFA-L9) declares the service ports the worktree lifecycle needs
-from packages above it (providers, memory quality, code quality) and the `WorktreeServices`
-bundle that binds them at the composition root. Worktrees ranks below those packages, so the
-lifecycle modules never import them.
+Defines the service protocols and process-local binding consumed by worktree lifecycle code. It preserves package layering while allowing application composition to provide concrete provider, memory and citation services.
 
 ## Code Commentary
 
 ### Logic
 
-`TerminalGuard`, `CitationGuardPort`, `ProviderLifecyclePort` (cit:(["class ProviderLifecyclePort"], mcp/src/agents_remember/worktrees/services.py:42-42)), and
-"class MemoryQualityPort(Protocol):" are the protocols; "class WorktreeServices:" (cit:(["class WorktreeServices:"], mcp/src/agents_remember/worktrees/services.py:107-107)) is the frozen bundle.
-`bind_worktree_services`/`reset_worktree_services` manage the process-global binding and
-`worktree_services()` retrieves it, raising `WorktreeServicesUnboundError`
-(cit:(["class WorktreeServicesUnboundError"], mcp/src/agents_remember/worktrees/services.py:136-136)) when unbound.
+WorktreeServices carries provider_lifecycle, memory_quality, citation_guard and the optional certification_memory_rails port. CertificationMemoryRailsPort returns R11 RailDefinition objects for an admitted profile selection. ProviderSetupRequestSpec keeps higher-level provider option objects opaque to worktrees.
+
+bind_worktree_services assigns the composed bundle, reset_worktree_services clears it for tests/teardown, and worktree_services refuses when no bundle is bound. The getter does not lazily create dependencies. The optional rail field permits bundles without that capability, but the Agents Remember certification-record consumer explicitly refuses if it is missing.
+
+### Conventions
+
+Protocols are the downward dependency boundary. Adapter implementations live above worktrees; module-level binding is explicit process composition.
 
 ### Invariants And Boundaries
 
-- Ports live in worktrees; implementations live in application (composition root). Do not import
-  providers/memory-quality/code-quality from this package.
+- Worktrees must not import providers or memory_quality to satisfy a missing service.
+- An unbound service bundle is an error, not a signal to invent a default.
+- Rail population is data authority; this port does not run Gate 5.
+- The citation terminal guard retains its publication/rollback callback boundary.
 
 ### Todos
 
-No known follow-up.
+Absence of the optional rail port must remain visible at the consumer that requires it.
 
 ## Docs References
 
-No external/domain documentation is configured.
+No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+| External domain documentation is not configured. | N/A | N/A |
 
 ## Repo-Internal References
 
+The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The default bundle is built in the application layer. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:184-189 |
+| Citation, provider, memory-rail and memory-check protocols | `CitationGuardPort`; `ProviderLifecyclePort`; `CertificationMemoryRailsPort`; `MemoryQualityPort` | mcp/src/agents_remember/worktrees/services.py:21-116 |
+| Service bundle and opaque provider setup specification | `WorktreeServices`; `ProviderSetupRequestSpec` | mcp/src/agents_remember/worktrees/services.py:119-144 |
+| Explicit binding, reset and unbound refusal | `bind_worktree_services`; `reset_worktree_services`; `worktree_services` | mcp/src/agents_remember/worktrees/services.py:147-185 |
 
 ## Cross-Repo References
 
-No cross-repository implementation participates.
+No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-05T06:14:14+00:00 — Documented the new rail-population port alongside the preserved layering and explicit-binding invariants.
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the worktrees service-port
   surface added by the layering cleanup. Verification metadata pinned until closeout stamps the

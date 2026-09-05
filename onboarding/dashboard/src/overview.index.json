@@ -26,6 +26,7 @@
     }
   ],
   "coveredFiles": [
+    "dashboard/src/App.tsx",
     "dashboard/src/cockpit/Cockpit.memo.test.tsx",
     "dashboard/src/cockpit/Cockpit.test.tsx",
     "dashboard/src/cockpit/Cockpit.tsx",
@@ -33,6 +34,7 @@
     "dashboard/src/dev/CockpitScenarioHarness.tsx",
     "dashboard/src/dev/DevApp.tsx",
     "dashboard/src/dev/PtyRenderBench.tsx",
+    "dashboard/src/dev/Reference.tsx",
     "dashboard/src/dev/ScenarioPlayer.tsx",
     "dashboard/src/dev/benchProbes.ts",
     "dashboard/src/dev/cockpitScenarios.test.ts",
@@ -64,6 +66,7 @@
     "dashboard/src/test/fixtures/wire.ts",
     "dashboard/src/test/servedProjection.ts",
     "dashboard/src/test/setup.ts",
+    "dashboard/src/test/smoke.test.ts",
     "dashboard/src/test/webtuiSpike.test.ts",
     "dashboard/src/test/wireFixtureGuard.test.ts",
     "dashboard/src/test/wireFixtureGuard.ts",
@@ -71,6 +74,7 @@
     "dashboard/src/topology/constel.ts",
     "dashboard/src/topology/model.test.ts",
     "dashboard/src/topology/model.ts",
+    "dashboard/src/types/event.ts",
     "dashboard/src/types/harnessCapabilities.ts",
     "dashboard/src/types/projection.schema.json",
     "dashboard/src/types/projection.ts",
@@ -79,11 +83,12 @@
     "dashboard/src/vite-env.d.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 423,
-    "fileSidecars": 51,
+    "sourceFilesInScope": 428,
+    "fileSidecars": 55,
     "childRoutes": 3
   },
   "routingTerms": [
+    "app",
     "bench",
     "benchprobes",
     "busscenarios",
@@ -103,6 +108,7 @@
     "dev",
     "devapp",
     "env",
+    "event",
     "fixtureoverrides",
     "fixtures",
     "grammar",
@@ -119,11 +125,13 @@
     "panels",
     "projection",
     "ptyrenderbench",
+    "reference",
     "scenarioplayer",
     "scenarios",
     "schema",
     "servedprojection",
     "setup",
+    "smoke",
     "snapshot",
     "sprintgraphfixture",
     "sprintgraphpage",
@@ -144,12 +152,13 @@
     "wirefixtureguard"
   ],
   "hotPath": {
-    "summary": "",
+    "summary": "The cockpit composes projected task and lifecycle state, while `data/` owns server transport and stores and `panels/` owns task/artifact views. For CCR, start with `data/taskArtifacts.ts`, the notes/requirements reader discriminator, and the versioned lifecycle projection with its server-owned meaningful revision.",
     "candidateHints": [
       "dashboard/src",
       "dashboard/src/data",
       "dashboard/src/grammar",
       "dashboard/src/panels",
+      "dashboard/src/App.tsx",
       "dashboard/src/cockpit",
       "dashboard/src/cockpit/Cockpit.memo.test.tsx",
       "dashboard/src/cockpit/Cockpit.test.tsx",
@@ -159,6 +168,7 @@
       "dashboard/src/dev/CockpitScenarioHarness.tsx",
       "dashboard/src/dev/DevApp.tsx",
       "dashboard/src/dev/PtyRenderBench.tsx",
+      "dashboard/src/dev/Reference.tsx",
       "dashboard/src/dev/ScenarioPlayer.tsx",
       "dashboard/src/dev/benchProbes.ts",
       "dashboard/src/dev/cockpitScenarios.test.ts",
@@ -167,11 +177,11 @@
       "dashboard/src/dev/fixtures.ts",
       "dashboard/src/dev/lineLogFixture.ts",
       "dashboard/src/dev/mockTerminalSocket.ts",
-      "dashboard/src/dev/scenarios.test.ts",
-      "dashboard/src/dev/scenarios.ts",
-      "dashboard/src/dev/sprintGraphFixture.ts"
+      "dashboard/src/dev/scenarios.test.ts"
     ],
     "anchorHints": [
+      "App.tsx",
+      "App",
       "Cockpit.memo.test.tsx",
       "Cockpit.memo.test",
       "Cockpit.test.tsx",
@@ -186,6 +196,8 @@
       "DevApp",
       "PtyRenderBench.tsx",
       "PtyRenderBench",
+      "Reference.tsx",
+      "Reference",
       "ScenarioPlayer.tsx",
       "ScenarioPlayer",
       "benchProbes.ts",
@@ -215,11 +227,7 @@
       "index.css",
       "index",
       "main.tsx",
-      "main",
-      "tokens.css",
-      "tokens",
-      "webtui.css",
-      "webtui"
+      "main"
     ]
   },
   "fallback": {

@@ -70,7 +70,6 @@
       "DetailPanel",
       "@xyflow/react",
       "MasterOverview",
-      "TaskExecutionGraphView",
       "_execution_graph_lines",
       "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
       "dashboard/src/panels/sprint-graph/styles.ts",
@@ -81,7 +80,7 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T12",
+      "T06",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T17",
@@ -89,7 +88,8 @@
       "DAG",
       "L12",
       "CSS",
-      "NOT"
+      "NOT",
+      "TaskExecutionGraphView"
     ]
   },
   "fallback": {

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_generation_boundary.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -69,7 +69,13 @@ Forces validation ordering and retained same-generation recovery across no-op fi
 - Invalid effective input refuses before operation authority or side effects.
 - A durable incomplete or completed-unintegrated generation remains journal-addressable and cannot be replaced by a newer candidate.
 
+## CCR-R18@v1 Contract-Scoped Cancellable
+
+260831-CCR-L18 updated `test_recovery_cells_without_exact_finalization_state_do_not_retain_generation`: cancel is now a task-addressed control derived from the contract, so the assertion passes the `contract` into `operation_projection(recorded, contract=contract)` — the no-contract projection no longer advertises `cancellable` (see `_operation_cancellable`). Generation identity and admission-ordering semantics under test are unchanged.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the contract-scoped cancellable assertion update. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed closeout recovery-projection and lifecycle-worker package relocations; generation-boundary forcing is unchanged.
 

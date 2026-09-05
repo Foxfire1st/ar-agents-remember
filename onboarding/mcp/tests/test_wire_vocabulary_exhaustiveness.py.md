@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                    |
@@ -230,7 +230,12 @@ themselves.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The six contract cells (declared in models/worktree.py), typed amendment, tolerant read, and refusing write. | "WorkflowKind = Literal["; "CleanupStatus = Literal["; "class ContractCells"; "def amend_contract"; "def load_contract"; "def write_contract"; "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/models/worktree.py:21-21; mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/worktrees/worktree_contract.py:73-73; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199; mcp/src/agents_remember/worktrees/worktree_contract.py:438-438; mcp/src/agents_remember/worktrees/worktree_contract.py:490-490 |
+| Wire vocabulary declares workflow, closeout, integration, and cleanup states centrally. | "WorkflowKind = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:23-28 |
+| The contract's valid memory modes derive from its MemoryMode literal. | "VALID_MEMORY_MODES: frozenset[MemoryMode]" | mcp/src/agents_remember/worktrees/worktree_contract.py:73-73 |
+| The typed amendment record carries the six persisted vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
+| The amendment helper applies supplied typed cells and preserves omitted values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
+| Contract loading logs unknown vocabulary cells while refusing malformed contract shape. | "def load_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:438-468 |
+| Contract publication normalizes and validates before atomic write. | "def contract_publication_text("; "def write_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:481-491 |
 | The wire model every contract and guidance value must validate at. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:148-198 |
 | Guidance state machines use the grouped wire-alias import and keep separate lifecycle, next-step, and recovery builders and recovery vocabulary. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool`; `lifecycle_guidance`; `next_guidance`; `recovery_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14; mcp/src/agents_remember/worktrees/modules/guidance.py:38-55; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:225-235 |
 | Worktree status projects invalid-contract errors onto the payload. | `worktree_status_packet`; `status_payload` | mcp/src/agents_remember/application/worktree_status.py:46-128 |
@@ -266,6 +271,8 @@ caller to closeout preview/apply for the exact candidate-derived message plan. T
 projection contract-pure and prevents guidance from becoming a second applicability owner.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated vocabulary, amendment, tolerant read, and validated publication into precise ownership claims. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

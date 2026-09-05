@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-05T07:20+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -42,12 +42,12 @@ planned and running work from the same JSON source (slice 3c; closes note-03 gap
 ## Hot Path Summary
 
 Task JSON remains planning/source truth. The application publisher captures exact source snapshots,
-serializes structural publication, commits task truth plus affected-scope invalidation, and then
+serializes structural publication, commits task truth plus invalidation for semantic/readiness mutations (observational changes do not invalidate), and then
 rebuilds each waiting projection from current closeout-door facts. Queue state is derived scheduling
 output, so it cannot make an otherwise-valid task mutation unavailable.
 
 The `task_doc` MCP tool authors documents: its application entry point
-(`application/task_doc_tools.py`) loads or creates the JSON, applies one operation,
+(`application/task_docs/task_doc_tools.py`) loads or creates the JSON, applies one operation,
 and rewrites both the JSON and the rendered markdown through this package. Leaf writes
 can also plan a same-root master-row update through `master_sync.py`, so the parent
 master `subTasks[]` checklist follows deterministic leaf facts without overwriting
@@ -61,7 +61,7 @@ together.
 
 - `document.py` — the `ar-task-document/v1` Pydantic schema (`TaskDocument` +
   `Step`/`SubStep`/`Decision`/`CodeExample`, plus `SubTaskRef`/`Section` for masters),
-  the `DocKind` (`light`|`subTask`|`master`), `DocStatus`, and `StepStatus` Literals,
+  the `DocKind` (`light`|`subTask`|`master`) and imported `DocStatus`/`StepStatus` from `models/task_document.py`,
   the progress helpers (`step_total`/`step_done`/`current_step` for leaves; `series_total`/`series_done`
   for a master's `subTasks` checkboxes — R1), the optional leaf-only `codeExamplesNote`
   (R3) plus the leaf header companions `statusNote`/`headerNotes` (`HeaderNote`) and freeform leaf
@@ -113,6 +113,19 @@ together.
   master discovery, `SubTaskRef` derivation from leaf id/title/rendered filename/status, manual
   `scope` preservation, strict parent-master validation, and the step/substep status collapse that
   maps any active/blocked/done progress to master `inProgress` and all-done progress to `Completed`.
+
+## Current Normative Intent And Evidence Publication
+
+`task_intent.py` derives `task-intent/v1` from the exhaustive field-effect taxonomy. Exact requirement text stays normative; typed approved packet references supplement that text and are checked for task-relative containment and matching packet identity/version. Packet references alone require an explicit v2 cutover. Typed acceptance-obligation questions contribute to the digest; ordinary progress/audit prose does not. The renderer presents both structured forms without converting them back into authority from Markdown.
+
+Route reviews now bind task intent, content digests and declared direct dependencies. Partial content-addressing fields refuse validation, and publication rejects a review with missing task intent. This publication check does not independently recompute every accepted review from source. Mutation classification projects actual before/after field changes into topology, intent, readiness, evidence and operational-audit classes; schema additions cannot silently escape classification.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Canonical task intent is hashed from the validated normative projection. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:180-193 |
+| Exact task text remains mandatory alongside supplemental packet references. | `_requirements` | mcp/src/agents_remember/tasks/task_intent.py:259-280 |
+| Task-document publication rejects a route review missing intent identity. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-231 |
+| Mutation classification consumes the accepted/candidate field delta. | `classify_task_document_mutation` | mcp/src/agents_remember/tasks/document_field_effects.py:317-330 |
 
 ## Invariants And Boundaries
 
@@ -176,7 +189,7 @@ together.
 
 Task reopening now clears the completed landing-final artifact as part of restoring live task state and exposes a clearing failure, so a historical completed landing projection does not survive as the current truth for reopened work. Since 260731-EFA-L6 that clearing lives in `worktrees/reopen.py`, not in this route; the document half of the same reset still runs through this route's `store.py`.
 
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+Route indexes remain parent-owned for one aggregate refresh after disjoint curation. This overview records the cumulative frozen-source review; index regeneration and aggregate acceptance are separate work.
 
 ## 260731-EFA-L9 Route Impact — Vocabulary Moved
 
@@ -274,6 +287,8 @@ reused by admission and wave/cycle reads.
 
 ## Update History
 
+
+- 2026-09-05T07:20+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected task-tool ownership, status vocabulary, semantic mutation invalidation, and current intent/evidence publication contracts. Verification records source review, not execution or acceptance.
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: added schema-owned field effects, canonical
   composite leaf binding, `semantic-topology/v2`, one bounded immutable graph index, and the indexed
   intrinsic graph-validation owner. Verification remains closeout-owned.

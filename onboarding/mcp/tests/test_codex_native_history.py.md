@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_native_history.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash |  `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
 | lastVerifiedCommitDate |  2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
@@ -59,7 +59,8 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The history reader implements the contracts exercised by this suite. | `CodexNativeHistoryReader`; `read_page` | mcp/src/agents_remember/serving/codex_app_server_history.py:110-612 |
-| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:390-397; mcp/src/agents_remember/errors.py:398-410 |
+| Native-history unavailability retains a typed machine-readable code. | "class NativeHistoryUnavailable(" | mcp/src/agents_remember/errors.py:437-442 |
+| Native-history limit failures retain actual and permitted byte counts. | "class NativeHistoryLimitExceeded(" | mcp/src/agents_remember/errors.py:445-457 |
 
 ## Cross-Repo References
 
@@ -70,6 +71,10 @@ No cross-repository fixture is used.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated the unavailable and bounded-materialization exception definitions. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the native-history errors.py citations (390-397/398-410 to 423-428/431-443) shifted by the CCR-R08 +33-line errors.py insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

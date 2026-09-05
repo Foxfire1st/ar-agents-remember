@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation_kinds.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,15 @@ This cycle-free model owner now defines both `LifecycleOperationKind` and the cl
 Registration, request models, and lifecycle-control policy import the same literal set instead of
 redeclaring it across layers.
 
+## CCR-R18@v1 Centralized Status And Phase Vocabulary
+
+260831-CCR-L18 centralized the full lifecycle-operation vocabulary in this module: `LifecycleOperationKind`, the closed `LifecycleOperationStatus` (queued/running/input-required/termination-required/completed/failed/cancelled), the closed `LifecycleOperationPhase` (queued/preflight/memory-preflight/quality/approval-claim/recovering-after-claim/code-commit/memory-refresh/memory-commit/ledger-commit/integration-replay/integration-quality/source-merge/contract-finalization/door-publication/termination-required/direct-preflight/direct-memory-commit/direct-ledger-commit/direct-terminal-publication/completed/failed/cancelled), and the existing `LifecycleControlAction` literal union.
+
+The state matrix in `models/lifecycles/operation_projection.py` consumes these status/phase literals directly, and its import-time exhaustiveness check (`validate_state_matrix_is_exhaustive`) fails if either vocabulary grows without a matching matrix update. No I/O or scheduling authority lives here.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the move of `LifecycleOperationStatus` / `LifecycleOperationPhase` into this centralized vocabulary module and their consumption by the new projection state matrix. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-26T10:44:52+02:00 — Documented the newly centralized closed lifecycle-control action vocabulary alongside operation kinds.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

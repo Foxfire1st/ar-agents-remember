@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-08-30T15:15:36+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-05T07:22+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## IAS Frozen Worktree Payload Boundary
@@ -54,8 +54,8 @@ unchanged in responsibility — it is still the payload-builder registry — but
 `registration/<family>.py` imports the `*_payload` builders from `agents_remember.mcp.tools`, and
 `server.py` is process wiring only.
 
-That split is also why the builders here **do** take parameter objects while the tool declarations
-do not. FastMCP derives each tool's published JSON schema from the Python signature, so a
+That split is also why the builders here **do** take parameter objects while most tool declarations
+retain flat signatures (approved discriminated request schemas are explicit exceptions). FastMCP derives each tool's published JSON schema from the Python signature, so a
 model-typed parameter on a declaration would republish the tool as a nested object; a payload
 builder has no such constraint. 260731-EFA-L2 armed `PLR0913` and moved these builders onto the
 concept objects their application entry points take:
@@ -97,6 +97,10 @@ operator assignment. Structural dispatch composes the same opener internally, th
 exact-pinned first brief. Ordinary structural messages persist a document+role address and re-resolve
 the current occupant at post and delivery time; replacement therefore does not change the sender's
 address.
+
+### Historical Task-27 Through HFX Builder Account
+
+The following retained migration account describes the earlier adapter-owned implementation. Current ownership is stated below; former public terminal/inbox/nudge names here are not in the current advertised set.
 
 The `mcp/registration/` family modules import the advertised `*_payload` builders from
 `agents_remember.mcp.tools`; each builder forwards its arguments to its
@@ -160,7 +164,17 @@ retires, manager scoped to its own master's worker/reviewer seats, orchestrator 
 caller (mirrors `spawn_agent_session`'s `spawned_by_session` pattern) — there is no ambient "who is
 calling me" session-id resolution anywhere in this codebase.
 
-## Layout
+## Current Response And Adapter Ownership
+
+`base.py` lists exactly 64 public tools and forwards `_tool_payload` to `application/tool_response.py::complete_tool_response`. That application owner attaches bounded task-addressed guidance and notifier banners before `models/tools/tool_response.py::finalize_tool_response` performs its single validation/dump/token pass, then emits the completed call. `application/next_step.py` owns guidance. Gate policy and gate-log reclamation now live in `application/gate_tools.py`; this route's `gates.py` forwards public structural requests and separately retained internal exact-id adapters. `terminal.py`, `operator_inbox.py`, and the nudge helper likewise retain internal adapters; their exports do not advertise tools. `leaf_ref.py` is absent.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The MCP adapter delegates completed-response ownership to the application. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The application attaches bounded guidance and records the completed result after finalization. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:84-98 |
+| Wire validation and token finalization consume the enriched model in one serialization pass. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
+
+## Historical EFA/HFX Layout
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
@@ -199,13 +213,13 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
   stays in server signatures and application entry points).
 - **Anything the choke point adds to a response is a declared field of that response's
   model, set before the dump — never a key written into the dumped dict** (260731-EFA-L4).
-  There is exactly ONE `model_dump` in `_tool_payload` and exactly one
+  There is exactly ONE `model_dump` in the current model-owned finalizer reached through `_tool_payload`, and exactly one
   `finalize_payload_tokens` pass over its result, so "everything the caller receives is
   inside the count" holds by construction. A key added after the dump is served but
   uncounted, and — on the strict envelopes, which are `extra="forbid"` — makes the emitted
   object fail its own model. `TOOL_RESPONSE_MODELS` is typed `dict[str, type[ResponseEnvelope]]`
   precisely so setting these fields on the validated response type-checks.
-- **`amb.emit_tool` is the LAST thing `_tool_payload` does**, so the `tokens` recorded against
+- **`amb.emit_tool` follows finalization in `application/tool_response.py`**, so the `tokens` recorded against
   the lifecycle is the count the caller was actually served. Moving it back before the tail
   attachment re-introduces the short count in the event log even if the wire count is right.
   One consequence worth knowing when reading a log: the auto-dismiss now precedes the
@@ -231,7 +245,7 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
   `test_tool_response_budgets.py` holds every compact builder under
   `INLINE_BUDGET_CHARS` with deliberately fat inputs.
 - **A builder on this route may reclaim a durable log it owns, and only on a write path, and only
-  behind a non-raising ownership question** (260731-EFA-L5). `gates.py::_reclaim_gate_log` is the
+  behind a non-raising ownership question** (260731-EFA-L5). `application/gate_tools.py::_reclaim_gate_log` is the
   one instance: `if not GATE_OWNERSHIP.is_compaction_owner(): return`, then
   `GateStore.compact` under `contextlib.suppress(OSError, ValueError)`, called at the end of
   `gate_decide_payload`. Two constraints, each with a named failure. It must not move onto a read
@@ -271,7 +285,7 @@ readiness and liveness, correlated receipts sit beneath durable inbox rows, inte
 gates, legacy/custom sessions are explicit unsupported states, and pane/log signals are diagnostic
 only. Dashboard and packaged projections remain additive and synchronized.
 
-## 260731-EFA-L4 — The Choke Point Emits Its Own Contract
+## Historical 260731-EFA-L4 — The Choke Point Emits Its Own Contract
 
 `_tool_payload` used to do this: validate, dump, count tokens, emit the observer event, then
 write `nextStep` and `supervisorBanner` into the dumped dict. Two things were wrong with the
@@ -313,7 +327,7 @@ ticks the heartbeat into the past (`_stale_supervisor`) and asserts that the cap
 contain both injections, so a fixture that quietly stops producing them fails there instead of
 hollowing out every assertion below it.
 
-## 260731-EFA-L5 — A Builder On This Route Now Reclaims A Durable Log
+## Historical 260731-EFA-L5 — Gate-Log Reclamation Before The Application Move
 
 One file on this route changed, `gates.py`, and the change is a **responsibility moving into this
 route** rather than a payload edit: gate-log compaction. It used to ride
@@ -373,7 +387,7 @@ Tool payload composition preserves the closed application result vocabulary. The
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle/adoption/legacy payloads. | `worktree_enclosure_adopt_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:101-108 |
+| Lifecycle/adoption/legacy payloads. | `worktree_enclosure_adopt_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:117-125 |
 
 ## 260821-DAGQC-L2 Typed Memory-Quality Adapters
 
@@ -387,7 +401,28 @@ capacity/poll failure translations.
 filename aliases or policy: configured admission and publication remain upstream, while the shared
 tool-response boundary validates every success/refusal body.
 
+## Status-Change Wait Payload
+
+`worktree_status_wait_payload` forwards the typed wait request to the application adapter and
+passes its result through the ordinary tool-response boundary. It does not add polling, retry,
+cancellation, cursor advancement or journal mutation of its own.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The payload builder delegates the exact typed request and uses the standard response wrapper. | "def worktree_status_wait_payload(" | mcp/src/agents_remember/mcp/tools/worktree.py:107-114 |
+
 ## Update History
+
+
+
+
+- 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Separated historical adapter/public-name accounts from current application-owned response, guidance and gate behavior; reviewed the new wait adapter. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the public `worktree_status_wait` tool surface (payload export, package export, `PUBLIC_TOOLS` census); route index regenerated.
+
 
 - 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: the public inventory is 63 names in
   exact live order, and `server_info` projects the shared content-addressed runtime identity.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-03T12:30:00+02:00                        |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b`      |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00                        |
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -50,15 +50,17 @@ producer's private-plane boundary while making the generated dashboard contract 
 
 ### Logic
 
-Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
-`activeWorktreeGroups`, `metrics`, `analytics`. `analytics` now begins at line 3 and `lifecycles` at
-line 1749, `metrics` at line 1887 in the reserialized file
+The current serialized fixture starts with `activeWorktreeGroups` and `analytics`; it also carries
+`closeoutQueues`, `enclosures`, `generatedAt`, `lifecycles`, `metrics`, `providers`, and `version` (1).
+Use the current reference rows below for source locations
 cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2).
 
-Under CCR-R03@v1 the R03 leaf reserialized this fixture (arrays collapsed to single-line JSON and
-empty/edge rows normalized) to re-synchronize it with the regenerated dashboard contract fixtures;
-no served field, row, or value semantics changed — the mirror guard and wire builders still read the
-same payload cit:([`lifecycles`, `metrics`], dashboard/src/fixtures/snapshot.json:1749-1749; dashboard/src/fixtures/snapshot.json:1887-1887).
+The CCR-R03@v1 curation entry records a formatting-only reserialization at source commit
+`fbc89847233b1c5959f56475f2cb51f936d5ef0b`. That historical statement does not describe
+all later fixture changes: the current operation sample also carries the L15 meaningful revision
+field described below. The current lifecycle sample is
+cit:(["\"lifecycles\": ["], dashboard/src/fixtures/snapshot.json:1824-1961);
+the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/snapshot.json:1962-1973).
 
 ### Conventions
 
@@ -125,13 +127,13 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1749-1749 |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1824-1824 |
 | One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1887-1887 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1962-1962 |
 | All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:3-3 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
 | The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:435-449 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:456-470 |
 | The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:287-425; dashboard/src/test/contract.test.ts:485-495 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
 | `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
@@ -167,7 +169,24 @@ The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-r
 
 The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) as representative dashboard contract examples.
 
+## 260831-CCR-L15 Fixture Cursor Sample
+
+The hand-kept fixture snapshot now seeds `meaningfulRevision: 1` on the lifecycle
+operation node that previously carried only the revision-less projection fields, so dashboard and
+wire-fixture consumers have a cursor-carrying sample matching the regenerated schema.
+
 ## Update History
+
+- 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
+
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `lifecycles` repointed to dashboard/src/fixtures/snapshot.json:1824-1824. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `metrics` repointed to dashboard/src/fixtures/snapshot.json:1962-1962. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "the mirror declares everything the server sends" repointed to dashboard/src/test/contract.test.ts:456-470. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `meaningfulRevision: 1` fixture sample on the lifecycle operation node.
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the fixture lifecycle-operation envelope additions (identity/componentBindings/worker/approval/recommendedAction + schema/state-matrix versions). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the R03 fixture reserialization (single-line array formatting; 1,979 → 1,923 lines) and refreshed the top-level key anchor ranges; no served-field or value semantics changed.
 

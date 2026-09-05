@@ -78,7 +78,7 @@
     "validation"
   ],
   "hotPath": {
-    "summary": "Task JSON remains planning/source truth. The application publisher captures exact source snapshots, serializes structural publication, commits task truth plus affected-scope invalidation, and then rebuilds each waiting projection from current closeout-door facts. Queue state is derived scheduling output, so it cannot make an otherwise-valid task mutation unavailable. The `task_doc` MCP tool authors documents: its application entry point (`application/task_doc_tools.py`) loads or creates the JSON, applies one operation, and rewrites both the JSON and the rendered markdown through this packag...",
+    "summary": "Task JSON remains planning/source truth. The application publisher captures exact source snapshots, serializes structural publication, commits task truth plus invalidation for semantic/readiness mutations (observational changes do not invalidate), and then rebuilds each waiting projection from current closeout-door facts. Queue state is derived scheduling output, so it cannot make an otherwise-valid task mutation unavailable. The `task_doc` MCP tool authors documents: its application entry point (`application/task_docs/task_doc_tools.py`) loads or creates the JSON, applies one operation, an...",
     "candidateHints": [
       "mcp/src/agents_remember/tasks",
       "mcp/src/agents_remember/tasks/__init__.py",
@@ -135,19 +135,19 @@
       "task_intent.py",
       "task_intent",
       "task_doc",
-      "application/task_doc_tools.py",
+      "application/task_docs/task_doc_tools.py",
       "JSON",
       "MCP",
+      "task_docs",
       "task_doc_tools",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "47c8d102c2430d5337dbe207d4601efb4844fec0",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "/../../../overview.md",
       "organizational",
       "author_execution_graph",
       "commanded_masters",
-      "tasks/",
-      "ar-task-document/v1"
+      "tasks/"
     ]
   },
   "fallback": {

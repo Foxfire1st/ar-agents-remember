@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-05T07:14+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -126,7 +126,8 @@ write-free, and no retry, fallback reader, compatibility route, or second lock n
 
 ## Local Invariants And Traps
 
-- Task authoring is upstream and wholly unlocked; neither activation nor queue state may veto it.
+- Task authoring is upstream of scheduling and selection; neither activation nor queue state
+  may veto it. Its exact source publication still uses the canonical task-publication lock.
 - The activation snapshot is disposable selection, not a lifecycle journal or retirement record.
 - Multiple live series contracts for one source pair are normal. Selection change auto-pauses old
   work without deleting or terminalizing it.
@@ -196,10 +197,21 @@ When changing worktree coordination:
 4. Keep task truth, disposable scheduling, selection, and lifecycle evidence in their separate
    authority planes.
 
+## CCR Intent And Certification Composition
+
+Route reviews, closeout doors and lifecycle candidates now share canonical task intent and
+content-digested direct evidence dependencies. Direct landing refuses absent/stale intent;
+contract publication rejects a door without current intent. Task publication classifies
+semantic versus observational edits before deriving affected queue scopes.
+`services.CertificationMemoryRailsPort` supplies the memory-domain registry contribution
+without importing memory quality upward. The quality child route freezes R11/R22/R21
+admission, but ordinary R05 finalization, R16 telemetry, and R07/R08 final memory execution
+remain unwired at this candidate. Child overviews retain the precise current boundaries.
+
 ## Needs Verification
 
-- [CLOSEOUT] Verification hashes and entity fingerprints require the real code commit; exact names,
-  states, citations, and changed-file membership are reconciled to the frozen candidate.
+- This overview is source-reviewed at the recorded frozen commit. Aggregate execution,
+  final provenance publication, and acceptance remain separate closeout work.
 - [CURATOR] Generated route indexes are refreshed from explicit frozen code/onboarding roots in
   this final pass; they are never hand-edited.
 
@@ -236,6 +248,8 @@ direct-child JSON ref, repository/directory, child id, and stem. Stem-only or sp
 with typed status/detail; no worktree-local fallback remains.
 
 ## Update History
+
+- 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected scheduling independence versus publication locking and added current intent/certification composition. Verification records source review, not execution or acceptance.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: unified lifecycle and semantic-topology leaf
   identity on the canonical composite task-domain binding. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-08-10T07:30+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastUpdated            | 2026-09-05T07:05+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## Purpose
 
@@ -27,6 +27,9 @@ carries NO `orchestration` block and no `memorySettingsIncludes` key: the
 agentic family (including gateDelegation) lives in the global agentic settings
 file (`docs/reference/settings-json.md`, Agentic Settings), and the dead
 includes plumbing was removed.
+The `agents-remember` repository entry now explicitly selects
+`certificationProfile: "mcp/certification-profile-v1.json"` beside `contractPath: null`.
+This is an authority-settings reference to the checked-in profile, not an alternate executor.
 Repository source roots are derived from `workspaceRoot/<repo-id>`, and external
 memory roots are derived from `coordinationRoot/memory-repos/ar-<repo-id>`.
 Provider entries stay empty because the MCP server derives provider runtime
@@ -54,14 +57,16 @@ aliases, while the example uses only the current keys.
 that teams can adapt for a memory repo. It is documentation-shaped example
 content, not a runtime input.
 
-In this leaf the example renamed its layer heading from `### Controller` to
+The historical L9 edit renamed its layer heading from `### Controller` to
 `### Application entry point` (and anti-pattern 7's wording with it), mirroring the
 `controllers/` → `application/` package move in the repo; the file remains
 documentation-shaped example content, not a runtime input.
-The staged L9 example edit remains confined to that documentation-shaped heading/prose rename;
-the settings template and runtime-facing example shape are unchanged.
+That historical heading-only scope does not describe later changes: CCR subsequently added
+the repository certification-profile reference described above.
 
 ## Update History
+
+- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current certification-profile reference and made old L9 unchanged-settings statement explicitly historical. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
 
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: route impact: re-read the examples/mcp body
   against the staged example change; the route body records the rename and confirms the settings

@@ -31,6 +31,7 @@
     }
   ],
   "coveredFiles": [
+    "mcp/src/agents_remember/worktrees/__init__.py",
     "mcp/src/agents_remember/worktrees/atomic_series_seal.py",
     "mcp/src/agents_remember/worktrees/closeout_input.py",
     "mcp/src/agents_remember/worktrees/direct_landing.py",
@@ -57,8 +58,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 167,
-    "fileSidecars": 24,
+    "sourceFilesInScope": 172,
+    "fileSidecars": 25,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -77,6 +78,8 @@
     "fact",
     "git",
     "git_worktree_manager",
+    "init",
+    "init__",
     "input",
     "integration",
     "landing",
@@ -141,6 +144,7 @@
       "mcp/src/agents_remember/worktrees/integration",
       "mcp/src/agents_remember/worktrees/modules",
       "mcp/src/agents_remember/worktrees/queue",
+      "mcp/src/agents_remember/worktrees/__init__.py",
       "mcp/src/agents_remember/worktrees/atomic_series_seal.py",
       "mcp/src/agents_remember/worktrees/closeout_input.py",
       "mcp/src/agents_remember/worktrees/direct_landing.py",
@@ -158,10 +162,11 @@
       "mcp/src/agents_remember/worktrees/sync_transaction.py",
       "mcp/src/agents_remember/worktrees/sync_transaction_authority.py",
       "mcp/src/agents_remember/worktrees/sync_transaction_git.py",
-      "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py",
-      "mcp/src/agents_remember/worktrees/sync_transaction_results.py"
+      "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
     ],
     "anchorHints": [
+      "__init__.py",
+      "__init__",
       "atomic_series_seal.py",
       "atomic_series_seal",
       "closeout_input.py",
@@ -207,9 +212,7 @@
       "task_leaf_binding.py",
       "task_leaf_binding",
       "task_resolver.py",
-      "task_resolver",
-      "worktree_contract.py",
-      "worktree_contract"
+      "task_resolver"
     ]
   },
   "fallback": {

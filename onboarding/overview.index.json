@@ -97,7 +97,7 @@
     "skills/w-02-light-task-workflow/workflow.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1995,
+    "sourceFilesInScope": 2085,
     "fileSidecars": 29,
     "childRoutes": 11
   },
@@ -170,7 +170,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "CLIVE separates current-contract admission and durable lifecycle recovery from scheduling. Public mutation consumers use one closed admission result, and normal operations are addressed by locator -> immutable enclosure manifest -> canonical root journal. The queue is now only a disposable invalid-empty/valid-built projection of current task truth and waiting door generations: task mutation publishes first, invalidates affected projections, and rebuilds without consulting stale rows. Atomic implementation admission is a separate source-pair selector: switching masters pauses the previous li...",
+    "summary": "CCR's current implementation map begins at the [certification overview](mcp/src/agents_remember/certification/overview.md), [worktree modules overview](mcp/src/agents_remember/worktrees/modules/overview.md), and [memory quality overview](mcp/src/agents_remember/memory_quality/overview.md). They distinguish the implemented R11/R22 bridge and per-rail emission from still-unwired R05/R16/R07/R08 production contracts; library presence and green process exits alone do not establish complete certification. CLIVE separates current-contract admission and durable lifecycle recovery from scheduling....",
     "candidateHints": [
       "dev-skills",
       "mcp",

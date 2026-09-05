@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,13 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 No meaningful cross-repository boundary is owned by this file.
 
+## CCR-R18@v1 Durable-Termination-Only Projection
+
+260831-CCR-L18 tightened `worker_termination_required_result` (line 243): it returns None unless durable `workerTermination` evidence exists on the record — a retained exact worker binding is ordinary live authority until a real cancellation/termination transition records termination evidence, and an exit-proven termination on a non-`termination-required` record no longer forces a termination result. The synthetic `_public_active_worker_authority` helper (which fabricated a termination-required result from live PID/lease/fingerprint cells) was deleted; the state matrix and the projection worker observation (`_worker_observation`) now own that classification. `worker_exit_unproven` and `bounded_worker_termination_outcome` remain for the cancel/termination mutation path.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the durable-termination-only `worker_termination_required_result` and removal of the synthetic live-authority termination projection. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-29T16:27+02:00 — Added the explicit Linux native-pidfd runtime admission contract and
   recorded that compatibility signaling and child reaping are separate, non-duplicated concerns.

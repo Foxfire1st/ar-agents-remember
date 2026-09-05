@@ -7,9 +7,9 @@
 | sourceRoute | `scripts/e2e_harness` |
 | onboardingRoute | `onboarding/scripts/e2e_harness/overview.md` |
 | parentOverview | [Repository overview](../../overview.md) |
-| lastUpdated | 2026-08-31T10:33+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-05T07:12+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## What This Area Is
 
@@ -53,6 +53,9 @@ selection.
 
 1. Dagger invokes `run.py` with an exact diff base and report directory.
 2. `run.py` proves Dagger admission before parsing arguments, creating reports, or touching tmux.
+Candidate hashing uses a temporary index outside the repository and refuses an in-repository
+scratch location; inspection cannot add its own index file to the candidate being measured.
+
 3. Targeted mode intersects changed paths with the declared dependency surface; full mode always runs.
 4. Each of two fresh replications creates isolated repositories, MCP/Codex configuration, dashboard,
    tmux server, and deterministic Responses endpoint. Codex forwards the fixture `TMUX_TMPDIR` to
@@ -182,6 +185,8 @@ execution owned by the lifecycle Dagger gate.
 None.
 
 ## Update History
+
+- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Documented external temporary candidate-index ownership and preserved twice-fresh no-retry scenario semantics. Verification records source review, not execution or acceptance.
 
 - 2026-08-31T10:33+02:00 — 260821-ARSPAWN-L5 closeout repair: documented the strict Codex
   execution-envelope normalization required for C09 to read the successful public dispatch results

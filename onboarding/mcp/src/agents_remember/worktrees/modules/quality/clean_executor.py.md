@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,7 +23,12 @@ executor adapter and result decoder; it no longer recognizes a fixed Agents Reme
 inventory, a hardcoded wrapper path, or repository commands. The module materializes an isolated
 sandbox clone of the exact candidate (HEAD plus the staged overlay), admits the candidate's own
 profile from inside that sandbox, runs the declared adapter, and publishes an immutable generation
-whose manifest binds the candidate tree, profile identity, plan digest, and files.
+whose manifest binds the candidate tree, profile identity, plan digest, files, and - since
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) - the frozen host-level shared Dagger authority
+snapshot digest. `run_clean_quality` admits the shared authority (or reuses an explicitly passed frozen
+one for retry/recovery) before any Dagger command starts, launches through the deterministic
+authority environment (dagger_authority.py), and releases the exact registered owner on
+terminalization; the published quality manifest advanced to schema 3.1 with `runtimeAuthorityDigest`.
 
 ## Code Commentary
 
@@ -31,14 +36,16 @@ whose manifest binds the candidate tree, profile identity, plan digest, and file
 `profile_reference`, mode, diff base, optional memory cap, and optional attestation.
 `CleanQualityOutcome` wraps the process result with governed evidence and the published manifest.
 
-`run_clean_quality(request)` validates mode and Windows-interop, prepares the sandbox
+`run_clean_quality(request, *, authority=...)` validates mode and Windows-interop, admits the host-level
+shared Dagger authority when none is passed (registering one exact live owner), prepares the sandbox
 (`_prepare_sandbox` clones `--no-local --no-checkout`, checks out the detached HEAD, applies
 the staged overlay, resolves the candidate tree, and bundles ancestry), admits the exact profile
 execution (`_admit_prepared_profile` -> `load_repository_profile` +
 `admit_repository_profile_execution`), writes the sandbox admission manifest
 (`_write_sandbox_manifest`, schema `repository-certification-admission/v1`), resolves the
 declared executable through the native platform boundary (`_resolve_executor`), and runs the
-declared Dagger adapter via `DaggerModuleExecutorAdapter().command(...)`. A non-zero exported
+declared Dagger adapter via `DaggerModuleExecutorAdapter().command(...)`, then releases the exact
+authority owner in a `finally` once the run terminalizes. A non-zero exported
 pipeline result returns the outcome with no evidence; a start failure raises a typed
 `CertificationExecutorPrerequisiteError` bound to the earliest affected gate and corrective
 owners.
@@ -86,6 +93,10 @@ diff base, export root, and optional memory cap.
   manifest.
 - Recovery callers pass one immutable manifest snapshot through every artifact lookup; a pointer
   rotation cannot mix generations.
+- Every Dagger launch crosses the shared authority boundary: the admitted snapshot digest is bound
+  into the sandbox manifest and the published schema-v3.1 manifest, and only the exact registered
+  owner is released at terminalization (an explicitly passed frozen authority is never re-admitted
+  or released here).
 
 ### Todos
 
@@ -100,17 +111,17 @@ failure owned by the affected gate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP executes only the exact admitted bytes through the declared sandbox adapter; configuration cannot inject host execution outside the admitted executor boundary. | `_resolve_executor` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:917-918 |
-| An executor valid at admission but unavailable at execution produces a typed executor prerequisite failure owned by the affected gate. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:921-948 |
+| The MCP executes only the exact admitted bytes through the declared sandbox adapter; configuration cannot inject host execution outside the admitted executor boundary. | `_resolve_executor` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:999-1002 |
+| An executor valid at admission but unavailable at execution produces a typed executor prerequisite failure owned by the affected gate. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:1003-1030 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executor prepares the exact candidate sandbox, admits the profile execution, runs the declared adapter, and publishes the certified generation. | `run_clean_quality`; `_prepare_sandbox`; `_admit_prepared_profile`; `_write_sandbox_manifest`; `_publish_executor_outcome` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:90-144; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:246-308; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:164-176; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:220-251; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:198-219 |
-| Profile-bound publication: inventory validated against declared artifacts, generation digest binds candidate + profile identity, atomic pointer advance. | `_publish_reports`; `_validated_export_inventory`; `_generation_digest`; `_profile_identity` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:393-490; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:413-443; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:560-586; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:445-462 |
-| Manifest/artifact/evidence helpers consume one strict snapshot. | `published_report_path_from_manifest`; `certifying_evidence_from_published_manifest`; `require_published_quality_evidence` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:655-668; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:744-756; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:708-714 |
-| The strict gate admits the same profile and enforces candidate identity around the run. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:191-286 |
+| The executor prepares the exact candidate sandbox, admits the profile execution, runs the declared adapter, and publishes the certified generation. | `run_clean_quality`; `_prepare_sandbox`; `_admit_prepared_profile`; `_write_sandbox_manifest`; `_publish_executor_outcome` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:140-229; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:334-377; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:230-246; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:378-413; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:281-333 |
+| Profile-bound publication: inventory validated against declared artifacts, generation digest binds candidate + profile identity, atomic pointer advance. | `_publish_reports`; `_validated_export_inventory`; `_generation_digest`; `_profile_identity` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:450-543; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:544-567; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:605-622; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:623-634 |
+| Manifest/artifact/evidence helpers consume one strict snapshot. | `published_report_path_from_manifest`; `certifying_evidence_from_published_manifest`; `require_published_quality_evidence` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:713-733; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:763-796; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:797-811 |
+| The strict gate admits the same profile and enforces candidate identity around the run. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:193-293 |
 | The generic decoder replaces the deleted hardcoded result-inventory validator. | `_validate_artifact_references` | mcp/src/agents_remember/certification/repository_profiles/adapters.py:138-160 |
 
 ## Cross-Repo References
@@ -121,7 +132,7 @@ declared adapter.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared executable is resolved through the native platform boundary, then run by the Dagger adapter. | `_resolve_executor`; `_executor_command`; `_stream_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:917-918; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:210-239; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:802-866 |
+| The declared executable is resolved through the native platform boundary, then run by the Dagger adapter. | `_resolve_executor`; `_executor_command`; `_stream_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:999-1002; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:247-280; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:895-954 |
 
 ## 260821-DAGQC-L2 And 260824-PDLS Historical Notes
 
@@ -130,6 +141,9 @@ in force but are now profile-bound: the manifest schema advanced to `3.0` with p
 fields, and evidence is minted only from a digest-verified passed generation.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the authority-bound executor cutover - `run_clean_quality` admits or reuses the host-level shared Dagger authority, writes the snapshot into the sandbox manifest, launches through the deterministic authority environment, releases the exact owner on terminalization, and publishes schema-v3.1 manifests carrying `runtimeAuthorityDigest`; re-anchored reference ranges to the current 1030-line layout.
+
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): rewrote the card for the repository-profile executor cutover. `CleanQualityRequest` now carries `repository_id`/`profile_reference`/mode; the module admits the candidate's own profile, runs the profile-declared Dagger adapter and decoder, and publishes a schema-v3 manifest with profile identity; the fixed report-inventory/constants model (EXPORTED_REPORT_NAMES, CODEX_VERSION, base/venv runtime proofs, `_resolve_dagger`) was replaced by declared published artifacts and `_resolve_executor`.
 

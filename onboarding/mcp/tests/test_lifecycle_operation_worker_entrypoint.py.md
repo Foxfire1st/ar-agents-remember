@@ -39,13 +39,18 @@ See task `260821-CLIVE-L1` L1-R4 and L1-R5.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Parser, main, and installed script use task addressing and declare the worker before services. | `test_worker_parser_main_and_script_entry_use_task_addressing` | `mcp/tests/test_lifecycle_operation_worker_entrypoint.py:21-77` |
-| Production entrypoint dispatches task-addressed durable execution. | `main` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:499-507 |
+| Production entrypoint dispatches task-addressed durable execution. | `main` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:515-524 |
 
 ## Cross-Repo References
 
 No cross-repository boundary applies.
 
 ## Update History
+
+- 2026-09-04T17:15+02:00 — No content impact: re-anchored the `main` entrypoint citation to
+  lifecycle_operation_worker.py:515-524 after CCR-R20 (260831-CCR-L20, `ce7f10b5`) added the
+  typed terminal rail-failure routing in `OperationRuntime.fail`, shifting the file tail.
+  Worker-entrypoint behavior is unchanged.
 
 - 2026-08-24T21:23+02:00 — No content impact: the owned-state context manager moved from the test
   tree to `agents_remember_test_support.testing.global_state`; worker-entrypoint behavior is unchanged.

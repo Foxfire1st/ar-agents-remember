@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/src/panels/detail-panel/taskReader.tsx`          |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T15:04+02:00                                        |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                  |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                            |
 
 ## Governing Overview
@@ -21,6 +21,19 @@ by the 260731-EFA-L8 split. Owns `TaskContent`, the master overview/step renderi
 (`MasterOverview`, `MasterSection`, `TaskReader`), the sub-task index with cross-series
 jumps (`SubTaskIndex`), the slice list, spine lane, section/bullets/step-list
 primitives, skipped dispositions, code examples, and the on-demand task-body notice.
+
+
+## 260831-CCR-L23 Task-Requirement Boundary
+
+L23 mounts a `TaskRequirementBoundary` around both `MasterOverview` and
+`TaskReader`. The boundary renders a `TaskRequirementLinksProvider`
+(`grammar/TaskRequirementLinks.tsx`) scoped to the viewed task document
+(`repo=doc.repository`, `master=dirName(doc.docPath)`,
+`document=taskDocumentRefForDoc(doc)?.path`) and forwards the panel's
+`onOpenNotes` as its `onOpenArtifact`. Task prose and the mounted
+`TaskNotes` surface therefore see the registered requirement listing and can
+open requirement packets through the internal reader. Non-requirement rendering is
+unchanged.
 
 ## Code Commentary
 
@@ -62,7 +75,9 @@ configured for this file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The reader entry and master overview mount optional graph content and the independently scoped queue. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:85-132; dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
-| The sub-task index and section primitives. | `SubTaskIndex`; `SliceList`; `StepList` | dashboard/src/panels/detail-panel/taskReader.tsx:440-478; dashboard/src/panels/detail-panel/taskReader.tsx:481-517; dashboard/src/panels/detail-panel/taskReader.tsx:700-724 |
+| The sub-task index composes rows in received order. | "export function SubTaskIndex({" | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
+| The slice list orders and opens authored task documents. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
+| StepList renders implementation steps, nested substeps, and explicit skip dispositions. | "export function StepList({" | dashboard/src/panels/detail-panel/taskReader.tsx:726-750 |
 
 ## Cross-Repo References
 
@@ -90,6 +105,10 @@ extraction of the existing kind/title/status header, body notice, change-set bar
 it keeps `MasterOverview` within the function-size gate without changing render order or conditions.
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `TaskRequirementBoundary` provider mount around `MasterOverview`/`TaskReader` (requirement listing scoped to the viewed task document, forwarded `onOpenNotes`).
 
 - 2026-08-24T15:04+02:00 — Added separate discard-before-start audit rendering, corrected the
   sprint surface contract (optional graph, independent scoped projection), and recorded the

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `db57101a9001ede8c681ff9de4eb0147d8b636bc` |
 | lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
 | governingOverview | `overview.md` |
@@ -114,7 +114,9 @@ No external domain contract governs this repository-local verification cache.
 | A changed selection identity misses the cache and runs fresh; the manifest counter-check names it. | `_reuse_plan`; `_manifest_findings` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:262-281; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:506-530 |
 | Incomplete ownership reports every unresolved input and runs the admitted population fresh. | `_retry_impact` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:322-339 |
 | The production container mounts the locked cache and supplies the retry root to the quality route. | `_bind_candidate_attempt`; `RETRY_CACHE_ROOT` | .dagger/src/agents_remember_quality/main.py:49-49; .dagger/src/agents_remember_quality/main.py:224-263 |
-| Dagger forcing exercises exact reuse, dependency families, lane/environment drift, corrupt proof, and explicit disablement. | `retry_evidence`; `retry_matrix_evidence` | .dagger/src/agents_remember_quality/main.py:853-894; .dagger/src/agents_remember_quality/main.py:895-927 |
+| The Dagger retry evidence entry point delegates a fresh run followed by exact reuse under the same candidate context. | "async def retry_evidence(" | .dagger/src/agents_remember_quality/main.py:949-988 |
+| The retry-matrix entry point delegates the controlled mutation/lane/context scenario run. | "async def retry_matrix_evidence(" | .dagger/src/agents_remember_quality/main.py:991-1021 |
+| The retry matrix explicitly includes dependency-family, lane/context, corrupt-proof, and disabled-retry cases. | "_SCENARIOS = (" | .dagger/src/agents_remember_quality/retry_evidence_route.py:376-388 |
 | Delta retries rebuild canonical collection evidence and execute only explicit dependency-owned paths. | `_pytest_step`; `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287; mcp/test_support/agents_remember_test_support/testing/retry_selection.py:62-79 |
 
 ## Cross-Repo References
@@ -128,6 +130,8 @@ cache across attempts. A diagnostic runner cannot publish or restore this proof,
 diagnostic candidate digest is not a certifying reuse key.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Kept the forcing claim but separated the entry points from the actual scenario catalog. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 exact-selection

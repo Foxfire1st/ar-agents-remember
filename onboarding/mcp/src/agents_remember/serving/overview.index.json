@@ -103,6 +103,7 @@
     "mcp/src/agents_remember/serving/ports.py",
     "mcp/src/agents_remember/serving/projector.py",
     "mcp/src/agents_remember/serving/relay_death_watch.py",
+    "mcp/src/agents_remember/serving/requirements.py",
     "mcp/src/agents_remember/serving/response_contract.py",
     "mcp/src/agents_remember/serving/retire.py",
     "mcp/src/agents_remember/serving/retire_policy.py",
@@ -131,8 +132,8 @@
     "mcp/src/agents_remember/serving/turn_state.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 182,
-    "fileSidecars": 108,
+    "sourceFilesInScope": 183,
+    "fileSidecars": 109,
     "childRoutes": 2
   },
   "routingTerms": [

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/repository_profile_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | cfd0938103b1392e471144b6997c51a41591ad2b |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,14 @@ declared `externalInputs` tuple, and a command that consumes
 `{selector-output}`, `{selection-mode}`, `{diff-base}`, `{candidate-kind}`,
 `{candidate-value}`, `{selector-id}`, `{selector-version}`, and
 `{selector-configuration-digest}` — matching the v2 fixture scripts.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) extends the builders for five-gate execution tests:
+rail specs now carry gate/wave placement and runtime image identity, `dagger_runtime_digest` (lines
+126-134) recomputes the pinned Dagger module source digest, `fixture_execution_manifest` (lines
+434-466) compiles the exact `repository-certification-admission/v1` execution manifest with a
+fixture `dagger-runtime-authority/v1` snapshot, and `FakeContainer`/`FakeFile`/`FakeDag` (lines
+566-755) double the Dagger graph so the portable profile execution functions run without a daemon.
 `install_fixture_profile`/`install_agents_remember_profile` copy the fixture source or the
 real profile into a temporary repository root, and `agents_remember_profile_execution` derives
 the admitted execution for the real profile.
@@ -63,6 +71,9 @@ No configured Domain Documentation source applies; this is test-only support.
 None; the fixture data is repository-local.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the gate-execution builder extensions - runtime digest helper, fixture execution manifest with runtime authority, rail gate/wave specs, and fake Dagger containers used by the portable profile execution tests.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card and recorded the

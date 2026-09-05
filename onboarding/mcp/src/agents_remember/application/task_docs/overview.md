@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-05T07:05+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -31,7 +31,8 @@ the task-document authoring seam owns one package.
 Task-document authoring is the source-of-truth publication plane. An otherwise-valid mutation is
 never subordinate to queue or atomic-series activation state. The exact transaction rechecks accepted source bytes, writes task
 truth and invalidates every affected waiting projection under the task-publication lock, then
-rebuilds each disposable projection independently from current closeout-door facts. A planning
+rebuilds each disposable projection independently from current closeout-door facts. The closed field-effect classifier excludes observation-only updates from invalidation;
+semantic/planning changes invalidate their old/new affected sprint union. A planning
 change therefore yields a clear invalidation/rebuild signal without freezing unrelated task-doc
 authoring, changing selector state, or claiming lifecycle evidence for an operation already
 underway. Selection and retained sync state are downstream worktree authorities that re-evaluate
@@ -41,7 +42,9 @@ the changed plan at their next admission boundary.
 ops); the special ops (sprint linkage + execution graph authoring) publish inside their own
 functions and return raw operation payloads merged with the standard identity via
 `_sprint_doc_identity`. Route review, topology enforcement, and master-row completion
-checks run before any publication; everything validates against the strict `TaskDocResponse` wire
+checks run before any publication; exact route-review admission receives the selected
+`ResolvedTaskDocument` and binds its semantic task-intent identity. Dry-run publication
+also resolves the affected scope union through the same validation owner; everything validates against the strict `TaskDocResponse` wire
 shape (the special-op fields declared in `models/task_doc.py`).
 
 Graph-bearing writers share `task_doc_graph_titles`: pure batch cardinality is checked early and a
@@ -93,6 +96,8 @@ from queue state. Task mutations remain legal; affected closeout projections are
 rebuilt from current task truth instead of freezing authoring or carrying stale rows forward.
 
 ## Update History
+
+- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Recorded field-classified invalidation, exact resolved task intent for route review, and dry-run scope preflight. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
 
 - 2026-08-29T18:29+02:00 — Reconciled the graph-title citation coordinate after the runtime and
   coherence refactor moved the cited symbol; task-publication behavior is unchanged.

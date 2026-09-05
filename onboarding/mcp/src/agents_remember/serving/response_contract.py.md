@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -36,6 +36,18 @@ catalog receipt used for dispatch reconciliation after inbox compaction.
 ARSPAWN-L5 mirrors `structural_parent_task_document_ref` and `structural_parent_role`, so operator
 projections can distinguish the owner of an exact reviewer generation without consulting spawn
 ancestry or a runtime id.
+
+
+## 260831-CCR-L23 Task-Local Requirement Models
+
+L23 added the strict task-local requirement response models under the shared
+scoped-read refusal table: `RequirementRow` (one canonical Markdown packet:
+name/path/address/size/sha256), `RequirementsListing` (repo/master/document/
+registered + rows for `GET /api/requirements/list`), and
+`RequirementContents` (listing metadata + decoded content for
+`GET /api/requirements/read`). The route family grew from 61 to 63 HTTP routes,
+of which 59 return a `Response` subclass directly (the module header counts were
+advanced to match).
 
 ### Conventions
 
@@ -72,6 +84,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `RequirementRow`/`RequirementsListing`/`RequirementContents` models and the 61-to-63 route-count advance for the new requirement endpoints.
 
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the reviewer
   structural-parent pair to the strict terminal catalog wire mirror. Verification remains

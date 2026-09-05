@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-05T07:28+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -45,10 +45,18 @@ behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycl
 status guidance, start preparation, onboarding refresh, strict code-quality gating, closeout, integration,
 cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
-`task_reopen` lives in the tasks package (leaf L11) because it reopens a task, and this route's start path
+`task_reopen` enters through the task-doc application route and executes `worktrees/reopen.py`; this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
 The committed L2 layout groups the start-contract, provider-preflight, leaf-ref, and result helpers
 under `startup/`; `start.py` remains the coordinating mutation entrypoint.
+
+## Current Profile, Publication And Lifecycle Ownership
+
+`quality/gate.py` admits one explicitly configured repository certification profile through `QualityGateTarget`; wrapper presence is no longer authority. The real R11/R22/R21 bridge freezes that profile plus the memory-service rail catalog before Dagger. Leaf acceptance is targeted at closeout; series closeout requires clean landed code and master integration owns the full gate. Required unresolved test ownership refuses before Gate 2 rather than expanding to a full population. The Gate-5 memory preflight starts only after the code gate is green or not required.
+
+`quality/clean_executor.py` publishes immutable schema-3.1 report generations and an atomic current pointer. Fresh and recovery callers retain the exact `publishedResultPath`; the strict reader verifies the declared inventory and candidate identity. Metadata certification records do not establish retained rail-log bytes: the specific emission/producer defects are recorded below. Existing synchronous lifecycle journals, approval claims, locks and exact ref convergence remain authority; the available R05/R16/R07/R08 libraries are not a replacement production path yet.
+
+Older EFA/L23 paragraphs below preserve the migration account and its original flat module names. Their wrapper discovery, local interpreter selection, citation-first ordering and schema-1/2 descriptions are historical; current paths are `quality/gate.py`, `quality/clean_executor.py`, `quality/closeout_memory.py`, and `quality/published_manifest.py`. Provider setup/teardown moved to `application/provider_runtime.py`, and `reopen.py` to `worktrees/`.
 
 ## Hot Path Summary
 
@@ -365,11 +373,11 @@ No external Domain Documentation source is configured for this memory repo.
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:34-554 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:27-27; mcp/src/agents_remember/models/worktree.py:172-172 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:29-38; mcp/src/agents_remember/models/worktree.py:174-174 |
 | The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:566-674 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
-## 260731-EFA-L2 Lifecycle Parameter Objects
+## Historical 260731-EFA-L2 Lifecycle Parameter Objects
 
 The worktree lifecycle's long argument lists became frozen value objects, most of which are
 route-level vocabulary rather than local tidy-ups:
@@ -392,7 +400,7 @@ route-level vocabulary rather than local tidy-ups:
 precedence contract. `context.py` builds the kernel resolver's `CoordinationHints` /
 `EnclosureSelector`. Every payload, refusal, recovery choice and written contract is unchanged.
 
-## 260731-EFA-L3 This Route No Longer Runs Its Own Git
+## Historical 260731-EFA-L3 This Route No Longer Runs Its Own Git
 
 **`git.py` used to define its own `run_git`, and it was the kernel's function with the
 environment guard dropped.** Only `kernel/git_command.py`'s copy passed
@@ -471,7 +479,7 @@ repository and asserts the real one received the commit and the decoy did not
 strips the selectors, but the decoy test re-sets them inside its own scope precisely so
 it cannot pass on the conftest's account — do not "simplify" that away.
 
-## 260731-EFA-L4 Typed Vocabularies, And A Gate That Sees What It Certifies
+## Historical 260731-EFA-L4 Typed Vocabularies, And A Gate That Sees What It Certifies
 
 Two independent things landed here, and both are about a check that could be defeated with
 nothing reporting it.
@@ -591,7 +599,7 @@ is refused before anything is staged; a series contract's `code_worktree` is exa
 checkout), `ConflictedIndexTests::test_the_reset_runs_after_the_conflict_check_not_before_it`,
 and `RetryStagesWhatAFirstRunWouldTests::test_a_retry_commits_the_tree_a_first_run_would`.
 
-## 260731-EFA-L5 Spending An Approval Is One Step Now, And One Consumer Still Does Not Spend It
+## Historical 260731-EFA-L5 Spending An Approval Is One Step Now, And One Consumer Still Does Not Spend It
 
 This route holds two of the three reproduced ways one human approval could be spent twice. The
 framing worth carrying at route level: **durability of a record is not atomicity of a decision.**
@@ -649,7 +657,7 @@ The retention half is already in place: `master-handover-approval` is in
 `interaction_retention.SEAM_CONSUMED_GATE_KINDS`, hence in `CONSUMED_APPROVAL_GATE_KINDS`, so an
 `applied` snapshot of that kind would be retained with no TTL the moment something writes one.
 
-## 260731-EFA-L16 — Closeout's Citation Gate Before The Suite
+## Historical 260731-EFA-L16 — Closeout's Citation Gate Before The Suite
 
 `closeout_result` runs the citation gate (`range_resolution` + `claim_reopen`) before the strict
 wrapper and the code commit — working-tree checks that clear without a commit — and keeps drift,
@@ -658,7 +666,7 @@ commit it was checking against, deadlocking every structural change; `_combined_
 reports the two phases as one gate. The approval claim still precedes the first irreversible
 act.
 
-## 260731-EFA-L17 — The Altitude-Routed Quality Gate
+## Historical 260731-EFA-L17 — The Altitude-Routed Quality Gate
 
 This route owns the quality altitude ladder's machinery half. `code_quality_gate.py` gained
 `QualityGatePlan` (mode `targeted`/`full` + optional cap), `GATE_TARGETED`/`GATE_FULL`, the
@@ -787,7 +795,7 @@ the pinned Dagger graph certifies acceptance. The module inventory and executabl
 unchanged. Direct targeted Vitest remains a dashboard-owned diagnostic-only loop; this worktree
 adapter still exposes no host quality executor, bypass, compatibility reader, or fallback.
 
-## 260821-DAGQC-L2 Immutable Quality Publication
+## Historical 260821-DAGQC-L2 Immutable Quality Publication
 
 `published_quality_manifest.py` is the sole strict schema-1.0 reader for the atomic quality pointer.
 The clean executor writes that contract, and gate recovery consumes one immutable snapshot for
@@ -795,7 +803,7 @@ attestation, artifact integrity, and path resolution. Public recovery retains st
 and adds optional `publishedResultPath`; no legacy reader or host fallback was introduced. The
 concurrent L4 Vitest diagnostic boundary remains unchanged.
 
-## 260824-PDLS — Dagger Publication Is The Evidence Altitude Boundary
+## Historical 260824-PDLS — Dagger Publication Is The Evidence Altitude Boundary
 
 The clean quality executor publishes route-neutral phase timing but mints certifying evidence only
 after verifying one immutable schema-2 report generation and exact candidate tree. Code-quality
@@ -828,7 +836,108 @@ contract refuses with typed pair facts instead of resuming against ambient Git. 
 boundary translates the shared pair/coherence error families once, without duplicating resolver
 logic or adding a fallback route.
 
+## 260831-CCR-L12 — Cost-Ordered Five-Gate Execution And Shared Dagger Authority
+
+CCR-R12@v4 (commit `cfd09381`) adds `quality/dagger_authority.py` to this route: one host-level,
+repository-external declaration (AR_DAGGER_RUNTIME_AUTHORITY) selects the already-running
+connection-only Dagger endpoint and exact reusable layer store; admission inspects the live engine
+connection-only, freezes an immutable `dagger-runtime-authority/v1` snapshot, registers the exact
+consumer in a locked host-level owner registry (PID-safe process fingerprints, typed
+authority-transition barriers, exact-owner release, crash reconciliation), and every refusal is a
+typed `DaggerRuntimeAuthorityError` before any Dagger command starts. `clean_executor.py` admits or
+reuses the authority for every profile-declared launch and releases the exact owner on
+terminalization; `published_manifest.py` advanced the quality manifest to schema 3.1 with
+`runtimeAuthorityDigest`; `gate.py` threads the digest through report/preview/payload/transcript;
+and `closeout.py` runs its closeout gates in Gate-5 order - the Dagger-backed code-quality gate
+first, the memory-quality pre-refresh only after it is green or not required. The checked-in
+certification profile was regenerated (profile/runtime digests) with explicit per-rail
+`successExitCodes`/`skippedExitCodes` and `consumingGates` declarations.
+
+## 260831-CCR-L13 — Optional Non-Certifying Diagnostic E2E Run Control
+
+CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`, leaf 260831-CCR-L13) adds
+`quality/diagnostic_executor.py` to this route: the run controller for the optional one-replication
+real-Codex diagnostic lane. It consumes the trusted R12 host authority exactly as closeout and
+integration do - admission freezes one existing connection-only runner/store snapshot and registers
+the attempt as a live owner; run executes at most one replication and terminalizes pass/fail from a
+complete diagnostic-altitude manifest (or a typed infrastructure/parser hard failure); abort
+terminalizes with teardown evidence and no pass; and every terminalization releases only the
+attempt's own owner, never retiring a runner or deleting the reusable layer store owned by another
+operation. Gates 1-3 must be green at certifying altitude for the exact candidate before any
+scenario step, and R16 telemetry envelopes are emitted under the diagnostic nonce.
+
+## 260831-CCR-L14 - Final Real-Codex Gate-4 Run Control
+
+CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`, leaf 260831-CCR-L14) adds
+quality/final_codex_executor.py to this route: the run controller for the certifying two-fresh
+no-retry real-Codex Gate-4 lane. It consumes the trusted R12 host authority exactly as closeout and
+integration do - admission freezes one existing connection-only runner/store snapshot and registers
+the attempt as a live owner only after the exact candidate certifying Gate-1..3 manifests are
+green against the frozen plan; run executes each fresh certifying repetition exactly once and
+terminalizes the run from the complete certifying Gate-4 result manifests (or a typed
+infrastructure/parser hard failure); abort terminalizes the unpublished slots with teardown evidence
+and no pass; and every terminalization releases only the attempt own runtime owner, never retiring
+a runner or deleting the reusable layer store owned by another operation. Retry is disabled for the
+exact same plan identity, and fresh client/process identities are minted per repetition.
+
+## Certificate Records And Executor Evidence
+
+The strict quality gate freezes the exact R11/R22/R21 lane before calling Dagger. After a green
+published generation, and on recovery of an exact green generation, it reads the verified decoder
+artifact and delegates terminal catalogs to `quality/certification_records.py`. That adapter writes
+`reports/certification-records/admission.json`, `gates.json`, and content-addressed objects; it
+records missing required run evidence as a refusal. The current caller raises on a red wrapper
+result before reaching this adapter, so wrapper diagnostics must not be described as R11 manifests
+for every terminal outcome.
+
+The Dagger pass branch now attaches per-rail evidence and artifacts. `rail_bindings.py` hashes the
+bounded observed stdout/stderr capture and actually observed artifact files; `rail_emission.py`
+uses detached handles so inspection does not change the next rail's execution container. Required
+artifacts without observed files remain `unboundRequiredArtifacts`. The evidence record's
+`/tmp/ar-quality/rail-evidence/<rail>.log` reference is constructed metadata: this emission function
+does not write that log, so the reference alone is not proof of a persisted/exported file.
+
+Three declared Gate-4 artifacts remain unmapped in the inspected candidate:
+`dashboard-e2e-result`, `provider-integration-result`, and `teardown-proof`. A green process exit
+cannot cure those missing producer/binding contracts. The ordinary closeout path also still lacks
+R05 typed admission/finalization, R16 durable closeout telemetry, and R07/R08 certification
+execution; those library surfaces require actual caller integration before claiming end-to-end
+closeout certification. `diagnostic_executor.py` and `final_codex_executor.py` are separate
+controllers and do not establish that integration by merely existing.
+
+The `.dagger/` implementation and `dashboard/package.json` / `dashboard/scripts/` are outside
+current file-card path rules. Their relevant cross-route contracts belong here: the dashboard
+coverage script chains `write-suite-result.mjs` after a successful Vitest run, which writes
+`dashboard-suite-result.json`; artifact bindings use the real report location. It is a suite-result
+producer, not the still-missing browser-E2E producer.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Freeze precedes Dagger; record publication follows only the green branch, including green recovery. | "def run_strict_code_quality_gate("; "def recover_strict_code_quality_gate(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-398 |
+| The adapter publishes manifests/certificates from terminal payloads and persists typed refusals. | "def record_published_generation(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:195-242 |
+| Only the pass branch attaches evidence/artifact bindings. | "**await rail_emission.attach_rail_terminal_bindings(" | .dagger/src/agents_remember_quality/main.py:576-603 |
+| Inspection hashes real observed artifacts on detached handles; the capture reference is not written. | "async def attach_rail_terminal_bindings("; "async def capture_rail_output(container: Any) -> str:"; "async def observed_artifact_files(" | .dagger/src/agents_remember_quality/rail_emission.py:21-123 |
+| The explicit artifact map omits the three clean-room producer gaps. | "ARTIFACT_FILE_PATHS: dict[str, str] = {"; "def build_artifact_bindings(" | .dagger/src/agents_remember_quality/rail_bindings.py:54-134 |
+| A successful dashboard suite can write its own result JSON. | "writeFileSync(" | dashboard/scripts/write-suite-result.mjs:10-44 |
+
 ## Update History
+
+
+
+
+- 2026-09-05T07:28+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Established explicit current profile/publication/ordering authority and corrected moved source owners while preserving the superseded gate narratives as history. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:12+00:00 — Composed host-authority and optional/final-Codex controller knowledge; documented the actual pre-G1 freeze, green-only record adapter and producer-backed binding limits.
+
+- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): added the CCR-L14 section for the final real-codex run controller (quality/final_codex_executor.py) that consumes the trusted R12 host authority for the certifying two-fresh-no-retry Gate-4 lane. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
+
+
+- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): added the CCR-L13 section for the optional diagnostic run controller (`quality/diagnostic_executor.py`) that consumes the trusted R12 host authority for the non-certifying E2E lane. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
+
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass (route impact): added the CCR-L12 section for the cost-ordered five-gate execution and shared Dagger authority - new `quality/dagger_authority.py` module, authority-bound clean executor, schema-3.1 manifest with `runtimeAuthorityDigest`, gate digest threading, and Gate-5 closeout ordering. Verification metadata stays pinned until closeout stamps the leaf code commit.
+
 
 - 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
 

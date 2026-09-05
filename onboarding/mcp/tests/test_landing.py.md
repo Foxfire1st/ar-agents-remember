@@ -99,6 +99,8 @@ index or a prefix match — a positional assertion here would have broken on the
 Landing tests continue to pin landing-state projection, with fixture contract paths updated from task-root contracts to leaf `series-contract.md` enclosures.
 
 ## Update History
+
+- 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Archived 2 historical citation wrappers as inert historical-source text under the bounded L31 ruling. Dated narrative, anchors and original coordinates remain unchanged. The recovered card carried verification commit 346507af24396ab7b491e02511c4af006ccd3dc5; this historical provenance is not a current-source claim. Current-body evidence and verification metadata are retained. This scoped repair does not promote the card's verification stamp or certify a gate.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows and
@@ -108,7 +110,7 @@ Landing tests continue to pin landing-state projection, with fixture contract pa
 - 2026-08-01T09:52+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff is one
   fixture value, `_contract`'s `"workflow_kind": "chat"` becoming `"chat-task"`, forced by
   `WorkflowKind` narrowing to `Literal["chat-task", "light-task"]`
-  cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:21-21). No test, class, mock, probe branch or assertion changed,
+  historical source: (["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:21-21). No test, class, mock, probe branch or assertion changed,
   and the card names no workflow kind anywhere — it claims the landing-window gate, the
   observed/planned/missing honesty axis, the origin-main semantics, the `gh` process boundary and
   the shared-`subprocess`-module patching argument, none of which the fixture value reaches.
@@ -120,7 +122,7 @@ Landing tests continue to pin landing-state projection, with fixture contract pa
   `LandingRefsTests` 7 + `DefaultBranchTests` 2, matching the Purpose line.
 
 - 2026-07-31T21:38+02:00 — 260731-EFA-L3 curator: the suite gained
-  cit:([`test_the_gh_probe_does_not_inherit_the_repository_selectors`], mcp/tests/test_landing.py:171-195) and the sidecar had not
+  historical source: ([`test_the_gh_probe_does_not_inherit_the_repository_selectors`], mcp/tests/test_landing.py:171-195) and the sidecar had not
   been touched this leaf, so it was stale in three places. "8 tests across two classes" is now 9
   (LandingRefsTests 7 + DefaultBranchTests 2) — counted, then confirmed by running the module: 9
   tests, all ok. Documented the new test (what it captures, the eight selectors from the imported

@@ -32,7 +32,7 @@
     "room"
   ],
   "hotPath": {
-    "summary": "In-repo design documentation for the dashboard. Child route `engine-room/` is the engine-room design reference \u2014 a living spec paired with the prototype/scenario player the React engine room was built from. The `dashboard/` folder now carries the FEUI-L8 scenario matrix and reproducible accessibility/performance evidence, the closeout evidence pack, and the upstream-register boundary for contracts the frontend must not fabricate. Two top-level notes also live here: `observable-lifecycle.md` and `harness-matrix.md`.",
+    "summary": "In-repo design documentation for the dashboard and Python verification architecture. Child route `engine-room/` is the engine-room design reference \u2014 a living spec paired with the prototype/scenario player the React engine room was built from. The `dashboard/` folder now carries the FEUI-L8 scenario matrix and reproducible accessibility/performance evidence, the closeout evidence pack, and the upstream-register boundary for contracts the frontend must not fabricate. Top-level notes include `observable-lifecycle.md`, `harness-matrix.md`, and the three Python evidence documents listed below.",
     "candidateHints": [
       "docs/design",
       "docs/design/engine-room",
@@ -48,7 +48,7 @@
       "FEUI",
       "docs/design/",
       "route-local-overview",
-      "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "/../overview.md",
       "dashboard/src/panels/engine-room/",
       "dashboard/scenario-catalog.md",
@@ -79,10 +79,10 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T07",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T15",
+      "T06",
       "governingOverview",
       "TES",
       "TTL",

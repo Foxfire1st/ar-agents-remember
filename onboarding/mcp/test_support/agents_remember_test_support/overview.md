@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-05T07:08+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -30,6 +30,12 @@ under `mcp/src/agents_remember` must not import this package.
 - `pytest_certifying_bootstrap.py` is the one certifying pytest plugin root; `__init__.py` exports no
   convenience facade.
 
+The CCR profile path adds `code_quality/profile_selection.py` for immutable repository-owned
+selection and `code_quality/profile_rails.py` for the actual Python rail adapters. An
+incomplete ownership result preserves unresolved inputs and blocks targeted test execution;
+it no longer silently broadens to the full Python suite. Retry compatibility now binds the
+exact selection digest.
+
 ## Operating Model
 
 The root quality configuration explicitly classifies top-level Python packages as product or
@@ -44,7 +50,9 @@ comparisons, and route measurements remain non-accepting evidence.
   exhaustive, non-overlapping, and stale rows fail.
 - No product import may point into `agents_remember_test_support`.
 - Unknown test lanes, consumers, plugin declarations, effects, or cache integrity fail loudly or
-  select an explicitly reasoned fresh/full route; none silently becomes unit evidence.
+  refuse the affected selector/rail; retry cache rejection may run the already admitted
+  population fresh, while declared full mode or proven global invalidators remain explicit.
+  None silently becomes unit evidence.
 - Verification code may consume product APIs; product code cannot consume verification policy.
 - Host execution cannot mint Dagger admission or certifying evidence.
 
@@ -60,6 +68,8 @@ Repository-owned design truth lives in `docs/design/python-evidence-system.md` a
 they do not replace this source-paired behavior description.
 
 ## Update History
+
+- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled explicit profile selector/rail owners and fail-closed incomplete selection, retaining non-accepting evidence boundaries. Verification records current source claims, not execution or acceptance.
 
 - 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 narrows ownership for one
   repository-level non-Python input inside `code_quality/`; this parent route remains verification

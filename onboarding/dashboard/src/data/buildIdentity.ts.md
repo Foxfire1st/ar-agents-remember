@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/buildIdentity.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-05T08:27+02:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -26,8 +26,8 @@ process, allowing the shell to distinguish a matching client/server pair from a 
 
 `CLIENT_DASHBOARD_BUILD` is the compile-time `__AR_DASHBOARD_BUILD__` value. The pure
 `clientMatchesServingBuild` helper returns `null` when an older server omits `dashboardBuild`, and
-otherwise returns exact string equality. It diagnoses identity only: reload remains an explicit
-operator action owned by the cockpit, never an automatic loop in this data module.
+otherwise returns exact string equality. It diagnoses identity only: the cockpit stamp adds a
+reload instruction to its tooltip on mismatch; this helper does not reload the page.
 
 ### Conventions
 
@@ -63,8 +63,8 @@ proven by repository source and direct consumers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Declares the optional server fingerprint consumed by the comparator. | `ServingBuild` | dashboard/src/types/projection.ts:505-511 |
-| Renders the comparison and owns the explicit reload action. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:923-953 |
+| The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. | "export interface ServingBuild {" | dashboard/src/types/projection.ts:570-579 |
+| Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:933-962 |
 | Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
 
 ## Cross-Repo References
@@ -76,6 +76,8 @@ No meaningful cross-repository implementation source governs this repository-loc
 | The reviewed behavior is wholly repository-local. | — | — |
 
 ## Update History
+
+- 2026-09-05T08:27+02:00 — L31 native curator: Retained the optional dashboard-fingerprint contract after reviewing the expanded ServingBuild type; corrected the cockpit consumer to a mismatch tooltip rather than a reload action and refreshed its evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 

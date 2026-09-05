@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -64,7 +64,13 @@ The operation lease now lives outside the deletable enclosure at the stable loca
 operation inspection uses strict record reads plus projected exits. Terminal cleanup therefore
 cannot delete the lock that serializes its own final transaction.
 
+## CCR-R18@v1 Terminal Status Vocabulary
+
+260831-CCR-L18 added the `_TERMINAL = frozenset({"completed", "failed", "cancelled"})` module constant (line 20) alongside the existing `_ACTIVE` set, so the lease/compatibility seam can classify terminal lifecycle statuses without string literals. Serialization semantics are unchanged: the lease remains pure per-contract filesystem serialization that never inspects durable operation records.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the `_TERMINAL` status vocabulary constant on the per-contract lease seam. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the worker-state package relocation; external lease identity and strict location matching are unchanged.
 

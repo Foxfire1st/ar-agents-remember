@@ -30,8 +30,13 @@
     "mcp/src/agents_remember/worktrees/modules/models.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/__init__.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py",
     "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/gate.py",
     "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py",
     "mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py",
@@ -46,8 +51,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 35,
-    "fileSidecars": 34,
+    "sourceFilesInScope": 39,
+    "fileSidecars": 39,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -56,6 +61,9 @@
     "agents",
     "agents_remember",
     "args",
+    "authority",
+    "certification",
+    "certification_records",
     "clean",
     "clean_executor",
     "cleanup",
@@ -63,11 +71,18 @@
     "closeout",
     "closeout_external",
     "closeout_memory",
+    "codex",
     "context",
     "contract",
     "contract_reader",
+    "dagger",
+    "dagger_authority",
+    "diagnostic",
+    "diagnostic_executor",
     "executor",
     "external",
+    "final",
+    "final_codex_executor",
     "finalize",
     "gate",
     "git",
@@ -97,6 +112,7 @@
     "published_manifest",
     "quality",
     "reader",
+    "records",
     "recovery",
     "ref",
     "remember",
@@ -142,8 +158,8 @@
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
       "mcp/src/agents_remember/worktrees/modules/quality",
-      "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
-      "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py"
+      "mcp/src/agents_remember/worktrees/modules/quality/__init__.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -186,14 +202,14 @@
       "onboarding",
       "onboarding_acceptance.py",
       "onboarding_acceptance",
+      "certification_records.py",
+      "certification_records",
       "clean_executor.py",
       "clean_executor",
       "closeout_memory.py",
       "closeout_memory",
-      "gate.py",
-      "gate",
-      "published_manifest.py",
-      "published_manifest"
+      "dagger_authority.py",
+      "dagger_authority"
     ]
   },
   "fallback": {

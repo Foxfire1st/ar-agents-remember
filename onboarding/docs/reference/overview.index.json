@@ -56,7 +56,7 @@
       "skills.md",
       "skills",
       "dispatch_agent",
-      "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "orchestration.agentNotifier",
       "orchestration.supervisor",
       "landed",
@@ -76,7 +76,13 @@
       "roles.<role>",
       "rolesPerLevel",
       "worktrees-c09.md",
-      "agents-remember",
+      "certificationProfile",
+      "repository-certification-profile.md",
+      "repositories.<id>.certificationProfile",
+      "orchestration.qualityGate",
+      "reportPath",
+      "publishedResultPath",
+      "resultArtifact",
       "reconciling",
       "worktree_closeout_apply",
       "mcp/server.py",
@@ -86,13 +92,7 @@
       "TOOL_REGISTRARS",
       "models/",
       "tool_registry.PUBLIC_TOOL_RESPONSE_MODELS",
-      "registration/",
-      "docs/",
-      "contract_path",
-      "drift_check",
-      "memory_quality_check",
-      "route_index_refresh",
-      "worktree_*"
+      "registration/"
     ]
   },
   "fallback": {

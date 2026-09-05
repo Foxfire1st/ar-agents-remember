@@ -49,7 +49,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "`legacy_operation_bridge.py` inspects and migrates; `legacy_operation_archive.py` validates and publishes crash-safe terminal archives and receipts.",
+    "summary": "`legacy_operation_bridge.py` inspects and migrates; `legacy_operation_archive.py` validates and publishes crash-safe terminal archives and receipts. Migrated closeout records now derive canonical task intent from the exact contract-owned leaf. Failure to resolve that intent becomes the same typed `LegacyBridgeError` family; the bridge does not manufacture an intent from historic prose. The authority, failure, public-result, and schema modules remain explicit siblings of the two main entry owners.",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/integration/legacy",
       "mcp/src/agents_remember/worktrees/integration/legacy/__init__.py",
@@ -75,20 +75,22 @@
       "legacy_operation_public",
       "legacy_operation_schema.py",
       "legacy_operation_schema",
+      "LegacyBridgeError",
       "mcp/src/agents_remember/worktrees/integration/legacy",
       "route-local-overview",
-      "1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "/overview.md",
       "sourceRoute",
       "agents_remember",
       "doc_type",
       "lastUpdated",
-      "T15",
+      "T07",
       "lastVerifiedCommitHash",
-      "abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e",
       "lastVerifiedCommitDate",
-      "T17",
-      "governingOverview"
+      "T06",
+      "governingOverview",
+      "L31",
+      "T15"
     ]
   },
   "fallback": {

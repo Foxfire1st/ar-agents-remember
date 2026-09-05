@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -84,7 +84,13 @@ The lifecycle store preserves a superseded missing-intent generation as
 canonical terminal archive so cleanup keeps the proof that the legacy bytes were preserved while a
 canonical intent-bound successor replaced them. Part of the landed L25 candidate `99dc249b`.
 
+## CCR-R18@v1 Observed-Exit Archive Guards
+
+260831-CCR-L18 made `_require_archivable_operation` (line 531) consume the projection-owned worker-exit observation: it calls `project_worker_exit(record)` (from `worker/state.py`) once and passes that observed snapshot to `_require_absent_worker_authority` / `_require_resolved_worker_termination`, so the archive proof checks the same coherent worker observation the public projection shows instead of re-deriving worker authority twice from raw record cells. Archive admissibility semantics (absent worker binding and resolved termination before destructive cleanup) are unchanged.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the terminal-archive worker guards switching to the shared `project_worker_exit` observation. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the terminal enclosure archive now recognizes `*.legacy-missing-intent-generation-{n}.json` as

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/serving/changeset.py` |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-01T08:46+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`     |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                  |
@@ -166,12 +166,17 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | --- | --- | --- |
 | The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:71-73; mcp/src/agents_remember/serving/scope.py:102-113; mcp/src/agents_remember/serving/scope.py:216-236 |
 | The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:81-84; mcp/src/agents_remember/worktrees/modules/git.py:217-220; mcp/src/agents_remember/worktrees/modules/git.py:271-310 |
-| The sidecar-pairing helpers (`route_sidecar_status`, `confine_rel`) reused for `hasSidecar` + confinement. | `route_sidecar_status`; `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47; mcp/src/agents_remember/kernel/sidecar_pairing.py:50-65 |
+| Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. | "def route_sidecar_status(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:91-106 |
+| Shared path confinement resolves the requested path and refuses repository escape. | "def confine_rel(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
 | The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/worktrees/task_resolver.py:18-23 |
 | The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI" | mcp/src/agents_remember/serving/changeset.py:503-503 |
 | The test suite for this module. | `TaskChangesetTests` | mcp/tests/test_serving_changeset.py:179-259 |
-| The declared response models and the shared `SCOPED_READ_RESPONSES` table these three routes name (`TaskChangeSet`, `LeafChangeSet`, `FileDiff`, `MasterChangeSet`). | `TaskChangeSet`; `LeafChangeSet`; `MasterChangeSet`; `FileDiff`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:797-803; mcp/src/agents_remember/serving/response_contract.py:806-809; mcp/src/agents_remember/serving/response_contract.py:819-826; mcp/src/agents_remember/serving/response_contract.py:835-843; mcp/src/agents_remember/serving/response_contract.py:1066-1072 |
-| The suite that enforces the declarations by driving each route and validating the real body. | `test_changeset_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:40-64 |
+| The task change-set envelope carries code/memory changes and counters. | "class TaskChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:834-840 |
+| The leaf change-set extends the task shape with the selected committed/working mode. | "class LeafChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:843-846 |
+| The master change-set carries net changes and per-leaf counters. | "class MasterChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:856-863 |
+| The file-diff envelope carries separate optional before and after content. | "class FileDiff(" | mcp/src/agents_remember/serving/response_contract.py:872-880 |
+| The shared scoped-read refusal table declares 400 and 404 response envelopes. | "SCOPED_READ_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1103-1109 |
+| The suite that enforces the declarations by driving each route and validating the real body. | `test_changeset_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:82-106 |
 
 ## 260731-EFA-L2 Current Delta
 
@@ -185,6 +190,9 @@ binds it with FastAPI `Depends()`, so the wire query parameters are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 2 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split the pairing and confinement helpers and selected their actual definitions. Separated five independent response contracts rather than pooling moved source ranges. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `test_changeset_routes_conform` repointed to mcp/tests/test_serving_response_conformance_cases_2.py:82-106. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

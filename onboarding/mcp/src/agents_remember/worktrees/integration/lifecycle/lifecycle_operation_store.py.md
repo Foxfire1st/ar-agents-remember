@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -73,8 +73,8 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `_OWNERSHIP` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:1-710 |
 | Task intent joins the compared generation identity. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:310-355 |
-| Legacy missing-intent generation archive + successor write. | `_retire_missing_intent_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:638-668 |
-| The write-side identity requirement for closeout/direct-landing records. | `_write` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:676-689 |
+| Legacy missing-intent generation archive + successor write. | `_retire_missing_intent_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:702-729 |
+| The write-side identity requirement for closeout/direct-landing records. | `_write` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:740-758 |
 
 ## Cross-Repo References
 
@@ -94,7 +94,38 @@ publishes one canonical intent-bound successor generation; the enclosed archive 
 adopted, and terminally archived by the related enclosure/archive seams. Part of the landed L25
 candidate `99dc249b`.
 
+
+## 260831-CCR-L15 Meaningful Revision Advance Rules
+
+The store now advances two monotonic revisions at the one canonical journal writer boundary:
+`recordRevision` advances on every durable write, while the CCR-R15
+`meaningfulRevision` advances only when the meaningful projection subset changed.
+`_validate_identity_and_evidence_transition` asserts the exact rule
+(`updated.meaningfulRevision == current.meaningfulRevision + int(meaningful_state_changed(
+current, updated))`) and refuses a transform that advances the cursor on
+heartbeat/current-command/log/history writes; `_advance_record_revision` assigns both
+revisions after validation and refuses transforms that pre-assign either. The successor and
+supersede writers bump `meaningfulRevision` alongside the generation/record-revision
+advance, so a successor is always visible to an old-generation waiter.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Exactly-once cursor validation on the meaningful subset. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:311-340 |
+| Both revisions assigned at the canonical writer boundary. | `_advance_record_revision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:370-393 |
+| Successor/supersede writers bump the cursor too. | `replace_terminal`; `meaningfulRevision`; `_advance_record_revision`; `update`; "superseded" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:646-700; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:370-393; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:581-597; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:707-723 |
+| The shared meaningful-change comparison. | `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:516-534 |
+
 ## Update History
+
+- 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
+
+
+- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:702-729. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `_write` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:740-758. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the store's dual-revision advance rules (`recordRevision` every write, `meaningfulRevision` exactly once per meaningful state change) and the successor/supersede cursor bumps.
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the store-owned monotonic `recordRevision` advance (exactly once per accepted mutation, no-op short-circuit, revision-1 creation gate, successor +1/+2 arithmetic). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the lifecycle operation store now includes `taskIntent` in generation identity, refuses

@@ -5,20 +5,21 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/application/next_step.py`     |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-08-01T01:15+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`             |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-05T08:27+02:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
 
-Nearest route overview: [overview.md](agents-remember/mcp/src/agents_remember/application/overview.md).
+Nearest route overview: [application overview](overview.md).
 
 ## Purpose
 
 The lifecycle next-step engine (task 27). Computes the single `NextStep` hint
-attached to EVERY MCP tool response at the `mcp/tools/base.py::_tool_payload`
-choke point, so an agent mid-thread always knows the one next move. It folds the
+available to the `mcp/tools/base.py::_tool_payload` response boundary. With an ambient
+lifecycle, enrichment uses this computed hint when the producer did not already supply one;
+an operation's explicit recovery hint takes precedence and contradictory task addresses are omitted. It folds the
 pre-lifecycle worktree-guidance system into the whole lifecycle spine across two
 regimes — a prose-guided non-linear FRONT HALF and a per-tool LINEAR HALF — and
 makes a terminal `lifecycle_end` loop back rather than dead-end. Task 28 makes
@@ -115,8 +116,9 @@ else None`. The hint is a declared field of the response envelope
 serializing it belongs to the choke point's single `model_dump` — dumping it here
 is what made the hint a key *written into an already-dumped, already-token-counted
 dict*, which is how the advertised token count came to under-report every
-in-lifecycle response. `_tool_payload` now assigns `response.nextStep =
-next_step_for(amb, tool_name)` and dumps once afterwards. The hint's rendered JSON
+in-lifecycle response. `_tool_payload` delegates to `complete_tool_response`, whose enrichment preserves an
+explicit producer hint or calls `next_step_for`, applies `bound_next_step`, and sets
+`response.nextStep` before the one final dump. The hint's rendered JSON
 is unchanged: the envelope is dumped with the same `mode="json", exclude_none=True`.
 
 cit:([`_load_contract`], mcp/src/agents_remember/application/next_step.py:297-314) looks-before-leaping: `not state.enclosure` →
@@ -157,7 +159,9 @@ producer's narrower typed shape.
   been set on the envelope. Do not re-add a `model_dump` here — a separately
   dumped hint is a key outside the response model and outside
   `finalize_payload_tokens`, which is exactly the token under-count 260731-EFA-L4
-  removed.
+  removed. The application enrichment boundary preserves an explicit producer `nextStep`
+  and otherwise calls this engine; `bound_next_step` drops a hint whose address contradicts
+  the response's exact contract/enclosure address.
 - The engine only HINTS; it must not call `lifecycle_turn_end_notification` or
   `lifecycle_gate`. Human approval moments
   (`closeout`/`integration`/`cleanup`/`plan`/`worktree-intent`) stay
@@ -182,9 +186,11 @@ None.
 
 ## Docs References
 
-| Source | Relevance |
-| --- | --- |
-No relevant documentation found after checking live sources.
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation governs this repository-local hint engine. | — | — |
 
 ## Repo-Internal References
 
@@ -194,7 +200,7 @@ and the ambient lifecycle / phase definitions.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Choke point that calls `next_step_for` and now SETS `nextStep` on the response model before the single dump, rather than stamping it onto a dumped dict. | `_attach_lifecycle_tail`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:34-50; mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. | `_attach_lifecycle_tail`; `bound_next_step`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/mcp/tools/base.py:79-81 |
 | `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:47-63; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114 |
 | `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
 | `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
@@ -215,7 +221,13 @@ As of cycle 5 the front-half summary speaks event-routing (the last job-selectio
 
 No meaningful cross-repo references found.
 
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The reviewed response-hint boundary is internal to this repository. | — | — |
+
 ## Update History
+
+- 2026-09-05T08:27+02:00 — L31 native curator: Reviewed current response enrichment and documented explicit producer-hint precedence plus exact task-address binding; retained the model-before-serialization contract and refreshed the response-boundary evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: source moved from
   `mcp/tools/next_step.py` to `application/next_step.py`; this card moved with

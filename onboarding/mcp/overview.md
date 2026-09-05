@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-05T07:30+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -36,7 +36,7 @@ proofs, not alternative starter strategies.
 ## IAS Source-Pair Coordination Boundary
 
 Task documents remain upstream canonical planning truth and are always authorable. A task mutation
-never waits on queue or atomic-series activation state: it publishes first, invalidates the affected
+never waits on queue or atomic-series activation state: it publishes first, invalidates semantic/readiness-affected
 disposable scheduling projection, and lets current waiting candidates be recomputed.
 
 Atomic implementation admission uses one source-pair-scoped replace-in-place selector. Multiple
@@ -111,8 +111,8 @@ The package's development extra supplies pytest-xdist 3.x, while root pytest `ad
 `-n=auto` for raw and wrapped runs alike. The quality wrapper adds only derived selection,
 coverage, and retry-proof arguments. Every test file has one explicit evidence-lane declaration;
 missing, stale, unknown, duplicate, or conflicting lane identity refuses collection. Retry proof
-persists across real quality attempts in the locked `ar-quality-retry-v3` Dagger cache. Its key
-binds the exact lane population and executor/tool identity; every cache miss is named before the
+persists across real quality attempts in the locked `ar-quality-retry-v3` Dagger cache. Its schema-5 key
+binds the exact lane population, typed selection digest and executor/tool identity; every cache miss is named before the
 same admitted route runs fresh.
 
 L23 makes the pinned Dagger graph the only Agents Remember acceptance environment. It materializes
@@ -159,9 +159,20 @@ The foundation admits raw declarations before expensive allocation, returns all 
 one measured budget, binds plans to an exact profile/registry/candidate, and requires complete
 terminal results with typed evidence, artifact, owner, and blocker semantics. It contains no
 Agents Remember rail inventory, no safe-full or compatibility fallback, and no executor. The
-current Dagger wrapper remains the live repository acceptance path until later owners contribute
-the repository profile and integrate execution/lifecycle publication. Detailed ownership begins at
+repository profile and Dagger executor are now integrated through the worktree quality gate,
+including the pre-Gate-1 R11/R22/R21 admission bridge and green-generation certificate-record seam.
+R05 typed finalization, R16 ordinary closeout telemetry, and R07/R08 final-memory execution still
+lack production callers; existing journal recovery and interactive memory readiness do not prove
+those new protocols are integrated. Detailed ownership begins at
 [the certification route overview](src/agents_remember/certification/overview.md).
+
+## Current CCR Candidate And Evidence Boundaries
+
+The explicit `repositories[].certificationProfile` selects the repository rail declaration; wrapper discovery cannot authorize certification. The worktree gate compiles the real profile plus Gate-5 memory rail service into the R11/R22/R21 lane before execution, and writes certificates after green published generations. Unresolved targeted ownership refuses before Gate 2; no broad test-population expansion manufactures missing selection proof.
+
+`tasks/task_intent.py` derives normative task identity from classified fields, exact requirements, supplemental versioned packet references and typed acceptance obligations. Route reviews, coherence records, doors and lifecycle operations bind that identity and direct evidence dependencies. Operational prose can change without changing normative intent. Full memory runs preserve exact code/memory candidate trees and report catalog readiness separately from R08 authority.
+
+Two implementation defects remain explicitly open at this source: the R10 citation fixer can retain a declined staged edit and writes cached document text without fresh publication revalidation; R21 rail-log locators do not yet name persisted/exported log bytes, and three Gate-4 result producers are absent. Evidence locators participate in semantic certificate identity, so generation-dependent replacements require careful identity/retention design. These source findings prevent stronger end-to-end claims; no repaired behavior is attributed to this frozen candidate.
 
 ## Purpose
 
@@ -262,6 +273,10 @@ registration again; the local-operator ruling is loopback-only with no browser p
 channel. The shared error family gains `ConversationCompositionError` for missing, duplicate,
 foreign, or missing-member composition failures. The route remains behavior-free: no projector,
 native-history service, control implementation, or renderer.
+
+### Historical Package, HFX And Early Hosted-Adapter Account
+
+These dated additions retain their original public names and intermediate authority models. Current structural dispatch, protocol-backed delivery, application-owned response finalization and the completed conversation children above govern present behavior.
 
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
@@ -640,9 +655,9 @@ which families a server advertises and in what order. The `mcp/tools/` package
 still holds the payload builders those declarations call; verbose tools
 additionally file bulk diagnostics under `temp/tool-reports/` via
 `mcp/tool_reports.py` and return compact outcomes with a `reportPath`. Then
-`models/tool_registry.py` for public response contracts,
+`models/tools/tool_registry.py` for public response contracts,
 `application/context_packet.py` for compact `ContextPacketV2` startup packets,
-and `application/runtime_install.py` plus `install/runtime.py` for MCP-owned
+and `application/runtime/install.py` plus `install/runtime.py` for MCP-owned
 runtime installation. Provider status is composed in `providers/status.py`; the serving/observer path can
 refresh the persisted provider current-state snapshot before live dashboard projection so provider rows are
 not limited to the last explicit diagnostics/status command.
@@ -692,8 +707,7 @@ near-identical private copies had drifted apart — in `worktrees/modules/git.py
 therefore landed in a *different repository* depending on which copy ran, and the
 unguarded worktree copy sat behind `commit`, `merge --ff-only`, `reset --hard`,
 `rebase`, `branch -D`, `worktree remove --force` and `push origin --delete`.
-**Twenty-six package modules import from the single runner** — re-counted against the current
-tree, and the count needs both import shapes to come out right: twenty-four take the symbol
+The historical EFA-L3 census counted twenty-six imports from the single runner; it is not a current count. Twenty-four took the symbol
 (`from agents_remember.kernel.git_command import ...`) and two take the module
 (`from agents_remember.kernel import git_command`, in `code_quality/check.py` and
 `code_quality/diff_coverage.py`). Two of the twenty-six want `git_environment()` rather than, or
@@ -792,7 +806,7 @@ are the download — and `mcp/tests/test_cold_start.py` is the regression line.
 - `native_helpers/conversation_library/` — private locked Node helper for redacted repository-only
   runtime observations. Its output and fixture versions are evidence, never capability promotion.
 - `serving/pi_rpc_protocol.py`, `serving/pi_rpc_process.py`, `serving/pi_rpc_events.py`, and
-  `serving/pi_rpc_adapter.py` — the unregistered Pi RPC protocol/process/event/adapter chain;
+  `serving/pi_rpc_adapter.py` — the currently registered Pi RPC protocol/process/event/adapter chain beneath the shared factory; historical leaf-local evidence includes
   `mcp/tests/test_pi_rpc_adapter.py`, `test_pi_rpc_process.py`, `test_pi_rpc_real_smoke.py`, and
   the two `fixtures/pi_rpc/` files provide the fake, subprocess, and isolated pinned-smoke proof.
 
@@ -855,8 +869,8 @@ The MCP package separates three surfaces:
   workspace provider nodes (CGC watcher rows and GrepAI configured `targetRepos` become repo satellites;
   GrepAI `targetRepos` are addressable project targets inside one aggregate provider instance, not
   separate per-repo provider processes, while providers without explicit target evidence stay aggregate),
-  and the **full task content** on
-  `TaskDocNode` for the in-dashboard task reader. Task 29 adds lifecycle-aware raw-event lifetime
+  and body-free task summaries on
+  `TaskDocNode`; the path-confined on-demand task-document endpoint supplies full reader content. Task 29 adds lifecycle-aware raw-event lifetime
   handling and projection freshness hygiene: terminal lifecycle `events.jsonl` logs are physically
   pruned after the post-completion grace window, fresh raw-event SSE connections start from retained
   offsets instead of replaying all history, projection reads cache repo surfaces briefly, and worktree
@@ -894,7 +908,7 @@ The MCP package separates three surfaces:
   worktree/provider-runtime removals. Task 14 narrows cleanup to the finalized child edge: cleanup
   retires task work branches only and preserves parent/source branches for their own lifecycle edge.
   Task 23/24/L3 adds the interaction-retention read side: gate logs and operator-inbox rows are treated as
-  disposable interaction records, `read_gates` can TTL-compact them, and `AgentPickupNode` projects
+  disposable interaction records; reads project retained state while approved writer-owned compaction reclaims logs, and `AgentPickupNode` projects
   pending inbox entries as waiting-for-agent/check-chat feedback for the dashboard, including L3
   sender/recipient role, message kind, artifact, and hosted-delivery metadata.
   The series-contract resolver helpers in `worktrees/task_resolver.py` now own task-name lookup,
@@ -903,11 +917,8 @@ The MCP package separates three surfaces:
   qualified/doc-id/legacy-stem leaf-ref validation and canonical id normalization for write surfaces,
   including schema-marker screening for sibling task-document JSON and standalone/light `task.json`
   doc-id candidates.
-  260712-PTS-L1 makes contract READS…35938 tokens truncated…p`/`--no-access-log` with settings-default
-  `--port`, `mcp/config.py` parses the fail-loud `dashboard` settings object (autoStart, port), and
-  `mcp/server.py` `main()` gains the threaded `maybe_autostart_dashboard` boot hook. Covered by
-  `mcp/tests/test_dashboard_daemon.py` + new `test_config.py` cases. Verification metadata pinned
-  until closeout stamps the code commit.
+  Current contract loading parses the named contract without healing task identities as a read side effect; explicit migration and startup own repairs. Package startup composes the optional dashboard daemon through its trusted runtime entry. The damaged legacy paragraph recovered in L31 cannot supply further current claims.
+
 ## L23 Plane-Owned Source Lineage
 
 The MCP now resolves task identity to contract-backed super/master/leaf Git
@@ -932,7 +943,7 @@ The package now owns a shared nonce/file Dagger environment validator used by py
 the direct quality wrapper before planning. The lifecycle adapter has no host executor: Agents
 Remember requires its self-owned wrapper, leaf closeout runs targeted once, leaf integration
 reuses that commit, and master integration runs full once. Series/master closeout records clean
-landed code. Settings expose only Dagger and an optional container-inner cap.
+landed code. Current settings declare an explicit repository certification profile and optional resource policy; the retired qualityGate.executor setting is not authority.
 
 ## R42 Recovery And Test Ownership
 
@@ -968,7 +979,7 @@ Delegated-authority redesign, disabled-memory behavior, mandatory-graph runtime,
 trust redesign remain outside this leaf. Canonical and generated skill copies were synchronized,
 but that sync check and direct targeted Vitest diagnostics are not Dagger acceptance evidence.
 
-## 260815-DAG-L3 Closeout Queue Control Plane
+## Historical 260815-DAG-L3 Closeout Queue Control Plane (Superseded By CLIVE)
 
 `closeout_queue` is the MCP route for declaring reviewed leaves before history moves, recomputing
 their current readiness, and exposing deterministic ready/waiting/blocked/in-flight projections.
@@ -1004,7 +1015,7 @@ New `tasks/serving_preflight.py` (served-build preflight, L15-R4) and `applicati
 
 New sub-package routes `application/task_docs/`, `models/queue/`, `worktrees/queue/`, `worktrees/integration/` (32 moved modules); the `task_doc` special-op wire-shape fix (`TaskDocResponse` fields + `_sprint_doc_identity`); closeout/reopen refactors; the package_data orchestration-task template copy re-synced.
 
-## 260821-CLIVE-L1 Closeout Architecture
+## Historical 260821-CLIVE-L1 Closeout Architecture
 
 Closeout now crosses one explicit input boundary before lifecycle authority or Git. `worktrees/closeout_input.py` derives typed enabled/not-applicable legs and emits one stripped `EffectiveCloseoutInput`; worktree closeout journals that value and per-repository mutation evidence, while direct landing shares the input contract but remains synchronous, lock-serialized, and intentionally not crash durable in L1. Lifecycle records—not queue rows—own accepted input, mutation proof, recovery projection, and exact contract-finalization identity. The queue remains a scheduling projection outside this leaf. Strict schema 3.0 replaces compatibility readers, and `contract_publication_text` is the one serializer used by publication and hashes.
 
@@ -1016,7 +1027,7 @@ The package surface now exposes retry, recover, cancel, revise, integrate, retir
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public worktree payload surface. | `worktree_closeout_apply_payload`; `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:119-128; mcp/src/agents_remember/mcp/tools/worktree.py:151-158 |
+| Public worktree payload surface. | `worktree_closeout_apply_payload`; `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:138-148; mcp/src/agents_remember/mcp/tools/worktree.py:170-178 |
 | Admission forcing across every consumer. | `test_every_public_consumer_exhaustively_refuses_each_semantic_category`; `test_public_consumers_do_not_enumerate_configured_reread_lower_families` | mcp/tests/test_configured_contract_admission_l2.py:185-281; mcp/tests/test_configured_contract_admission_l2.py:697-715 |
 
 ## 260821-DAGQC-L2 Packaged Doctrine Synchronization
@@ -1088,7 +1099,25 @@ promoted to closeout evidence, and a moved base, wrong valid checkout, changed c
 candidate change produces a typed refusal with the exact sync/reprepare route. No path guessing,
 ambient-checkout inference, duplicate resolver, or compatibility fallback was added.
 
+## 260831-CCR-L23 No-Symlink Confinement
+
+`kernel/sidecar_pairing.py` gained `confine_non_symlink_rel`: the stricter path guard for
+immutable artifact roots (the task-local requirements surface) that requires every component to
+exist and refuses symlinks — including in-root aliases — unlike the symlink-following
+`confine_rel` used for code/onboarding pairing.
+
 ## Update History
+
+
+
+
+- 2026-09-05T07:30+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled current CCR profiles, task intent and evidence limits; corrected public/service ownership and repaired a pre-existing literal truncation. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the `confine_non_symlink_rel` kernel guard addition in `sidecar_pairing.py`.
+
 
 - 2026-09-01T11:33+02:00 — No route impact: CCR-L11 Attempt 10 adds focused certification
   forcing, exact test-input ownership, and removes one dominated internal refusal. The generic

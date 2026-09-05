@@ -91,6 +91,7 @@
     "dashboard/src/panels/detail-panel/taskBody.test.tsx",
     "dashboard/src/panels/detail-panel/taskDocPanels.tsx",
     "dashboard/src/panels/detail-panel/taskReader.tsx",
+    "dashboard/src/panels/detail-panel/taskRequirements.test.tsx",
     "dashboard/src/panels/detail-panel/test-utils.tsx",
     "dashboard/src/panels/detail-panel/viewedLeaf.test.tsx",
     "dashboard/src/panels/eventSummary.ts",
@@ -108,8 +109,8 @@
     "dashboard/src/panels/useCollapsedTaskGroups.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 243,
-    "fileSidecars": 65,
+    "sourceFilesInScope": 244,
+    "fileSidecars": 66,
     "childRoutes": 6
   },
   "routingTerms": [
@@ -171,6 +172,7 @@
     "taskgroupdisclosure",
     "tasknotes",
     "taskreader",
+    "taskrequirements",
     "terminal",
     "terminalsession",
     "test",
@@ -182,7 +184,7 @@
     "viewer"
   ],
   "hotPath": {
-    "summary": "",
+    "summary": "Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. `detail-panel/taskReader.tsx` mounts the requirement-link context; `notes-reader/NotesReaderViewer.tsx` owns the kind-aware content transport and takeover.",
     "candidateHints": [
       "dashboard/src/panels",
       "dashboard/src/panels/changeset",

@@ -1,204 +1,98 @@
 # mcp/src/agents_remember/errors.py
 
-| Field                  | Value                                 |
-| ---------------------- | ------------------------------------- |
-| repository             | agents-remember                    |
-| path                   | `mcp/src/agents_remember/errors.py`   |
-| doc_type               | `file-level-onboarding`               |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview      | `../../overview.md`                   |
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/src/agents_remember/errors.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-05T06:14:14+00:00 |
+| lastVerifiedCommitHash | `95e61fdc2c29191f051afafc33dc2d6910c66a9c` |
+| lastVerifiedCommitDate | 2026-09-04T10:18:42+02:00 |
+| governingOverview | `../../overview.md` |
 
 ## Governing Overview
 
-[agents_remember overview](../../overview.md)
+[Governing route overview](../../overview.md)
 
 ## Purpose
 
-Defines the shared typed error family for Agents Remember. It distinguishes route-index census
-failures from authority failures while retaining the harness-control contract, adapter disconnect,
-Codex protocol, and client-side first-byte ambiguity families. 260718-CHATS-L0 adds the
-conversation-composition family: `ConversationCompositionError` marks a violated app-scoped
-conversation runtime composition contract, kept distinct from `AuthorityError`, which remains the
-type for identity/authorization refusals such as the conversation resolver's loopback ruling.
-260731-EFA-L3 adds `TokenizerVocabularyError`: a build-integrity family for a packaged asset the
-server needs before it can finish starting. ARSPAWN-L2 adds one coherent structural family:
-`SeatOccupancyError` for duplicate canonical-seat claimants, `StructuralDispatchError` for
-contradictory durable brief evidence, `StructuralDispatchLockError` for serializer
-setup/acquisition failure, and `StructuralRoutingError` for absent or ambiguous structural routes.
-MCAR-L02 adds `FutureCodeCandidateError` for typed capture and stale-input outcomes at the exact
-future-code identity boundary.
-The certification contract adds `CertificationContractError`, whose recursively frozen findings
-preserve stable rail/plan/result failure codes, paths, details, owners, and evidence references
-without allowing a caller to mutate the accepted diagnostic snapshot.
-CCR-R22@v1 (L22, commit `685f83c44055`) extends the family with two profile-specific subclasses:
-`CertificationProfileError` (status `certification-profile-invalid`) for one repository profile
-authority failing before any certification command, and
-`CertificationExecutorPrerequisiteError` (status `certification-executor-prerequisite-failed`) for
-an admitted repository executor that cannot start its affected gate population. Both inherit
-`CertificationContractError`, so their findings stay frozen and typed while their status
-vocabulary remains distinct from contract and rail failures.
+Defines the common typed failure vocabulary used by certification, memory, lifecycle, authority, and harness boundaries. The base remains a ValueError, while subclasses preserve the distinctions callers need to refuse unsafe work, present bounded diagnostics, or determine whether a retry could duplicate an operation.
 
 ## Code Commentary
 
 ### Logic
 
-`AgentsRememberError` remains the package base and a `ValueError`. `HarnessControlClientError`
-extends `HarnessControlError` with `may_have_sent`: failures before the Unix socket accepts a byte
-remain retryable, while failures after the first accepted byte must be reported as unknown and
-reconciled under the same request id. `HarnessAdapterDisconnectedError` carries the equivalent
-native-adapter ambiguity plus optional vendor correlation. Codex-specific subclasses preserve
-app-server method/code evidence. `RouteIndexCensusError` identifies a validated-root census failure
-without conflating it with `AuthorityError`, which remains the type for a root mismatch or missing
-write authority. `FutureCodeCandidateError` carries the stable status of a leaf-only future-code
-capture or currentness refusal without moving Git logic into the error module.
-`ConversationCompositionError` identifies a conversation runtime composition bug —
-retrieval before installation, a second install, a foreign object on the reserved state key, or
-construction missing a required authority — that must fail at startup or request entry, never
-silently at first use. cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:284-292) marks the one packaging failure the
-token counter cannot paper over: the tiktoken vocabulary it needs is not the one vendored into
-`package_data/tiktoken`. It is raised in place of letting tiktoken download the file it cannot
-find, because the counter is constructed while the MCP tool surface is still importing — a
-download there is a network round trip on the server's startup path, which is what made a cold
-container, an offline machine, and a hermetic CI job unable to start at all.
-The four structural errors remain direct `AgentsRememberError` members. Lower owners raise their
-own type; public adapters translate only when their status vocabulary differs, and notifier
-boundaries may contain the typed routing/occupancy failure to the affected row.
-`CertificationContractError` converts each supplied JSON-like finding into mapping proxies and
-tuples recursively. Unsupported mutable/object values and non-string mapping keys are rejected so
-typed certification failure evidence cannot degrade into a generic mutable exception payload.
-`CertificationProfileError` and `CertificationExecutorPrerequisiteError` reuse that
-frozen-findings machinery with the two new statuses; the executor-prerequisite variant
-additionally carries gate/owner/adapter/runtime findings for the earliest affected gate.
+`CertificationContractError` recursively freezes findings, including nested mappings and sequences. Profile admission, unavailable executor prerequisites, contradictory readiness, and invalid shared Dagger authority remain separate subclasses with stable statuses. `DaggerRuntimeAuthorityError` covers invalid declarations, connection-only inspection failures, authority conflicts and live-owner transition barriers before executor launch.
+
+Task-intent failures carry an explicit next action. Seat occupancy, dispatch evidence, dispatch locking and structural routing retain separate error types. Configured-contract authority errors expose the failing authority cell; reread errors retain a closed reason and bounded expected/observed facts rather than leaking backend exception input.
+
+`CuratorCoherenceError`, `MemoryCandidatePairError`, `CuratorCoherencePairError` and `FinalCertificationError` have distinct public response fields. Pair errors preserve the exact failing field and recovery arguments; the coherence adapter forwards the shared pair diagnosis. Final certification uses `certificationStatus`, while pair validation uses `pairStatus` and `pairField`.
+
+Harness errors distinguish a request that sent no bytes, one that may have been sent, a busy adapter that proved zero bytes were sent, request-id conflicts, stale bridge epochs and non-pending interaction responses. Tokenizer and grammar failures remain explicit integrity failures; native-history unavailability does not automatically invalidate the harness adapter.
 
 ### Conventions
 
-Classes name one failure category and inherit from the nearest family member. Ambiguity evidence is
-an explicit constructor argument, not inferred later from exception text.
+Raise the narrow typed family rather than a generic exception when a domain contract is known. Expected and observed dictionaries are copied at response boundaries; only certification findings are recursively frozen.
 
 ### Invariants And Boundaries
 
-- `AgentsRememberError` must keep subclassing `ValueError` so existing
-  `except ValueError` handlers and the FastMCP error surface keep working
-  unchanged. Do not reparent it to `Exception` or `RuntimeError`.
-- Every domain error in the package should subclass `AgentsRememberError` (or a
-  member of the family) rather than raising bare `ValueError` / `RuntimeError`,
-  so the public surface stays one coherent contract.
-- Structural occupancy, evidence, serializer, and route failures remain distinct types; callers
-  must not reconstruct those categories by parsing exception text.
-- This module holds only error-type declarations and small evidence constructors. It imports no
-  package internals and stays safe at the bottom of the dependency graph.
-- `CodexAppServerError` identifies malformed, incompatible, or boundedness failures at the pinned
-  Codex app-server protocol boundary; disconnect errors preserve possible-send state for reconcile.
-- `may_have_sent=True` is never permission to retry; it is evidence that the same request id must be
-  reconciled.
-- Route-index root/official-settings refusal remains `AuthorityError`; Git record, command, or path
-  classification failure after authority is established remains `RouteIndexCensusError` with the
-  original cause attached.
-- Future-code capture/currentness refusal remains `FutureCodeCandidateError`; callers consume its
-  explicit status and never infer the condition from exception text.
-- Conversation composition failures (missing/duplicate/foreign/missing-member runtime binding)
-  remain `ConversationCompositionError`; identity and cross-principal refusals in the same route
-  remain `AuthorityError` — the two families are never interchangeable.
-- `TokenizerVocabularyError` must stay a raise, never a fallback. A missing vendored vocabulary is
-  a build defect, and the only alternatives are downloading it (the startup network call this
-  exists to remove) or silently degrading the counter, which would make the failure visible only
-  on machines without egress. It is not an authority or protocol failure and shares no boundary
-  with the harness-control family.
-- `CertificationContractError.findings` is a deeply immutable snapshot. Registry, plan, and
-  terminal-result admission must preserve its typed finding vocabulary rather than replacing it
-  with a generic wrapper error.
+- Preserve certification refusal codes and ownership details; do not flatten them into successful or generic lifecycle output.
+- A busy-adapter error means zero operation bytes were sent. Generic disconnects cannot establish that retry safety.
+- Pair, coherence and final certification errors report missing authority; constructing an error does not validate or repair that authority.
+- Grammar and tokenizer failures never silently replace the configured parser or vendored vocabulary.
 
 ### Todos
 
-None known for the L4 error boundary.
+No additional source change is performed by this documentation pass.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository, so no live domain-documentation
-pass was available for this update.
+No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+| External domain documentation is not configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-The blocking client uses the new stage evidence; the bridge/queue keep the native ambiguity type.
+The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Certification contract failures recursively freeze JSON-like findings and reject mutable or unsupported payload shapes. | `CertificationContractError`; `_freeze_contract_value` | mcp/src/agents_remember/errors.py:22-31; mcp/src/agents_remember/errors.py:56-67 |
-| Structural occupancy, dispatch evidence, dispatch locking, and routing are distinct members of the shared domain family. | `SeatOccupancyError`; `StructuralDispatchError`; `StructuralDispatchLockError`; `StructuralRoutingError` | mcp/src/agents_remember/errors.py:80-93 |
-| Future-code candidate capture and currentness refusals use one central typed member with an explicit status. | `FutureCodeCandidateError` | mcp/src/agents_remember/errors.py:154-159 |
-| The socket exchange flips `may_have_sent` only after a successful first write and maps post-write response failures accordingly. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:541-577 |
-| The ordered dispatcher converts native disconnect evidence into requeued or `unknown` receipts without blind resend: a disconnect certified pre-send requeues the head, a `may_have_sent` disconnect installs the ambiguity blocker instead. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so `HarnessSubmissionAuthority` is the sole owner rather than the thing behind a facade. | `_preflight_declined`; `_send_and_settle` | mcp/src/agents_remember/serving/harness_submission_authority.py:639-659; mcp/src/agents_remember/serving/harness_submission_authority.py:702-729 |
-| The route-index census raises the dedicated type after root validation and preserves timeout/OS/path-classification causes: `_untracked_source_candidates` re-raises `lstat` failures, `_require_repository_root` raises `AuthorityError`, and `_run_git` converts `TimeoutExpired`/`OSError` with `from error`. | `_untracked_source_candidates`; `_require_repository_root`; `_run_git` | mcp/src/agents_remember/kernel/route_index_census.py:126-156; mcp/src/agents_remember/kernel/route_index_census.py:159-179; mcp/src/agents_remember/kernel/route_index_census.py:189-205 |
-| The conversation runtime raises `ConversationCompositionError` for missing/duplicate/foreign/missing-member bindings; the resolver raises `AuthorityError` for identity refusals. | "class ConversationRuntime:"; "class LocalOperatorAuthorizationResolver:" | mcp/src/agents_remember/serving/conversation/runtime.py:58-104; mcp/src/agents_remember/serving/conversation/authorization.py:71-107 |
-| `_verify_vendored_vocabulary` raises `TokenizerVocabularyError` for an unknown/absent vendored vocabulary and for a digest mismatch. `vendored_vocabulary_cache` calls that verifier before installing the scoped `TIKTOKEN_CACHE_DIR`, and `TiktokenTokenCounter` enters the cache on the import path. | "def _verify_vendored_vocabulary"; "def vendored_vocabulary_cache"; "class TiktokenTokenCounter" | mcp/src/agents_remember/models/tokens.py:70-70; mcp/src/agents_remember/models/tokens.py:110-110; mcp/src/agents_remember/models/tokens.py:184-184 |
+| Certification findings and distinct pre-execution error statuses | `CertificationContractError`; `CertificationProfileError`; `CertificationExecutorPrerequisiteError`; `CloseoutReadinessContractError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:22-81 |
+| Bounded configured-contract authority and reread errors | `ConfiguredContractAuthorityError`; `ConfiguredContractRereadError` | mcp/src/agents_remember/errors.py:119-161 |
+| Separate coherence, exact-pair and final-certification response shapes | `CuratorCoherenceError`; `MemoryCandidatePairError`; `CuratorCoherencePairError`; `FinalCertificationError` | mcp/src/agents_remember/errors.py:176-314 |
+| Composition, integrity, harness retry safety and history failures | `ConversationCompositionError`; `TokenizerVocabularyError`; `GrammarUnavailableError`; `HarnessAdapterDisconnectedError`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:321-457 |
 
 ## Cross-Repo References
 
-No external repository boundary is implemented by the error declarations.
+No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## 260715-FEUI-L5 Submission Authority Delta
-
-The shared error family now distinguishes certified native busy/pre-dispatch failure, immutable
-request-id conflict, and bridge-epoch mismatch. These types preserve the first-byte boundary: only a
-certified pre-dispatch condition may advertise retry safety; possible-write failures remain unknown.
-
-## 260718-CHATS-L5I Current Delta
-
-`HarnessInteractionNotPendingError` gives direct interaction-response callers a typed refusal when no pending interaction is available. It prevents a normal stale or already-settled response from being reported as an undifferentiated control failure.
-
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## 260727-CHATS-IM-L2 Native-History Error Delta
-
-`NativeHistoryUnavailable` identifies one child/history read that can fail without invalidating
-the shared adapter; its stable `code` carries the exact local reason. The
-`NativeHistoryLimitExceeded` subtype adds `actual_bytes` and `limit_bytes` and fixes its code to
-cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:390-410). These types distinguish child-local acquisition/resource
-outcomes from malformed shared protocol and bridge-fatal transport failure.
-
-## 260821-CLIVE-L2 Current Contract
-
-The current source seams include `AgentsRememberError`, `AuthorityError`, `ConfiguredContractAuthorityError`. This supporting seam carries bounded error/command evidence used by the L2 owners. It does not become a second lifecycle authority, exception-family translator, or Git fallback path.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module exposes the common base, authority, and configured-contract authority types at this ownership boundary. | `AgentsRememberError`; `AuthorityError`; `ConfiguredContractAuthorityError` | mcp/src/agents_remember/errors.py:18-19; mcp/src/agents_remember/errors.py:96-115 |
-
-## MCAR-L02 Curator-Coherence Failure Family
-
-`CuratorCoherenceError` carries the stable status, bounded detail, expected/observed facts, and
-legal next action for authority, candidate, judgment, evidence, CAS, generation, and projection
-failures. The application boundary translates this family once, so individual tools do not need to
-repeat lower-level exception vocabularies. `FutureCodeCandidateError` remains the separate exact
-future-code derivation family.
-
-## MCAR-L03 Pair Error Family
-
-`MemoryCandidatePairError` owns one bounded public refusal shape: status, exact field, contract
-path, expected/observed facts, and repair action/arguments. `CuratorCoherencePairError` preserves
-that evidence when the shared pair validator is consumed through coherence, avoiding repeated
-lower-level failure-family implementations.
+| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-05T06:14:14+00:00 — Reconciled the shared error family across cumulative CCR changes, including readiness and final-memory failures; retained the harness retry-safety and authority-boundary distinctions.
+
+  Historical-reference repair: the five source references in the July 31 entry below are inert provenance, preserving the labels and coordinates recovered from memory commit `139cda0f751466a3ab859ad51897da959b8e3947` (recorded source verification `cfd0938103b1392e471144b6997c51a41591ad2b`). That later card had already changed the original July coordinates. The original entry remains in memory commit `bfdbc6dd6717cd842ecd6190471c34852f1f95ea`, with recorded source verification `abc7cbcc74921cdcb57a61529445f61641e919e7`. Neither historical stamp certifies the recovered coordinates against current code. Current error-family evidence is in Repo-Internal References above.
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the new `DaggerRuntimeAuthorityError` subclass (status `dagger-runtime-authority-invalid`) that types every host-level shared Dagger authority refusal before any Dagger command starts.
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: recorded the CCR-R08
+  `FinalCertificationError` family (status/detail/expected/observed/next_action, bounded
+  `response_fields` projection, direct `AgentsRememberError` member outside the frozen-findings
+  certification-contract family) and re-anchored every errors.py citation the +33-line insertion
+  shifted (tokenizer 284-292 to 317-325, native-history 390-410 to 423-443). Verification
+  metadata pinned to the owning commit 16d1a4d6.
+
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored every
   shifted errors.py citation against the current source (structural family 80-93, future-code
   154-159, authority 96-115, tokenizer 284-292, native-history 390-410, freeze helpers
   22-31/56-67). Verification remains pinned to the pre-commit source history until closeout.
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the two new profile-admission subclasses -- CertificationProfileError (certification-profile-invalid) and CertificationExecutorPrerequisiteError (certification-executor-prerequisite-failed) -- extending CertificationContractError.
-
 
 - 2026-09-01T03:11+02:00 — Added the deeply immutable certification contract failure family and
   repaired every onboarding citation shifted by its insertion. Verification remains
@@ -226,6 +120,7 @@ lower-level failure-family implementations.
 
 - 2026-08-11T15:20+02:00 — Replaced multiply occurring error-class anchors with the two unique
   runtime/resolver declarations whose bodies implement the stated refusals.
+
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: rebound the tokens row to the
   real definitions and corrected the native-history range to `150-170`; exact non-fixing check
   returns zero findings.
@@ -235,21 +130,23 @@ lower-level failure-family implementations.
   cache context changes the environment. The new range is explicit `:1-1` curator input.
 
 - 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 3 table citations and 6 prose citations; left the stale tokenizer-cache ownership claim unresolved as Tier 3.
+
 - 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: body updated for the typed error this leaf added.
-  Documented cit:([`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:284-292) in Purpose and Logic as a build-integrity family
+  Documented historical source: ``[`TokenizerVocabularyError`], mcp/src/agents_remember/errors.py:284-292`` in Purpose and Logic as a build-integrity family
   — the vendored tiktoken vocabulary is absent or not the one shipped — raised instead of letting
   tiktoken download it on the server's import-time startup path, and added the invariant that it
   must stay a raise rather than become a download or a silent degrade. Repaired 2 citations into
   files this leaf changed. (1) The census row's whole-file `L1-L226` → `L126-L205`, which actually
   contains the three claimed raisers: `_untracked_source_candidates` re-raising `lstat` failures
-  cit:([`_untracked_source_candidates`], mcp/src/agents_remember/kernel/route_index_census.py:126-156),
+  historical source: ``[`_untracked_source_candidates`], mcp/src/agents_remember/kernel/route_index_census.py:126-156``,
   `_require_repository_root` raising `AuthorityError`
-  cit:([`_require_repository_root`], mcp/src/agents_remember/kernel/route_index_census.py:159-179), and `_run_git`
+  historical source: ``[`_require_repository_root`], mcp/src/agents_remember/kernel/route_index_census.py:159-179``, and `_run_git`
   converting `TimeoutExpired`/`OSError` `from error`
-  cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205); the file is now 229 lines, so the
+  historical source: ``[`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205``; the file is now 229 lines, so the
   old range was both stale and unanchored. (2) The native-history delta's own-file
-  cit:([`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:390-410):
+  historical source: ``[`NativeHistoryUnavailable`; `NativeHistoryLimitExceeded`; "materialization-limit"], mcp/src/agents_remember/errors.py:390-410``:
   inserting `TokenizerVocabularyError` above pushed `NativeHistoryUnavailable` to the current
   class range and `NativeHistoryLimitExceeded`, with its `code="materialization-limit"`,
   `actual_bytes` and `limit_bytes`, to the same exact source range. Added a `models/tokens.py` row for
@@ -268,16 +165,22 @@ lower-level failure-family implementations.
   the typed conversation runtime composition failure, distinct from the identity/authorization
   `AuthorityError` family. Verification metadata remains pinned until closeout stamps the
   candidate commit.
+
 - 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented `RouteIndexCensusError` as the typed
   post-authority census failure, distinct from root and official-settings `AuthorityError`.
+
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented typed busy certificate, id-conflict, and epoch-
   mismatch errors used by the reliable submit boundary.
+
 - 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the client-side first-byte
   ambiguity type and its retry-safe versus reconcile-required evidence boundary.
+
 - 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the error-sidecar body for the negotiated protocol
   failure wording change.
+
 - 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: documented the typed Codex app-server
   protocol failure addition. Verification remains pinned until the leaf code commit exists.
+
 - 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: documented typed control-contract and
   ambiguous-disconnect errors used by the new bridge surfaces.
 

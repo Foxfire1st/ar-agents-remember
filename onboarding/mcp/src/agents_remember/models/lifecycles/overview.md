@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T22:45+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ None.
 | --- | --- | --- |
 | Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-35 |
 | Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
-| Asynchronous operation records keep private identity out of the public projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
+| Asynchronous operation records keep private identity out of the public projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
 
 ## Docs References
 
@@ -93,7 +93,7 @@ The journal record is the durable authority after scheduling claim transfer. Ret
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current journal record and projection. | `_require_quality_certification_memory`; `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:281-297; mcp/src/agents_remember/models/lifecycles/operation.py:300-308; mcp/src/agents_remember/models/lifecycles/operation.py:311-331 |
+| Current journal record and projection. | `_require_quality_certification_memory`; `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:263-279; mcp/src/agents_remember/models/lifecycles/operation.py:282-290; mcp/src/agents_remember/models/lifecycles/operation.py:293-302 |
 | Enclosure address models. | `EnclosurePublicationState`; `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:20-25; mcp/src/agents_remember/models/lifecycles/enclosure.py:28-42 |
 | Worker termination evidence. | `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` | mcp/src/agents_remember/models/lifecycles/termination.py:12-33; mcp/src/agents_remember/models/lifecycles/termination.py:36-53 |
 
@@ -139,7 +139,35 @@ coherence response carries that same pair on prepared, published, valid, and typ
 without exposing a second authority. This makes a record from another otherwise-valid checkout,
 base, branch, onboarding root, ledger, or contract structurally ineligible for the current leaf.
 
+## CCR-R18@v1 Generation-Coherent Projection Contracts
+
+260831-CCR-L18 added `models/lifecycles/operation_projection.py` to this route: the closed state matrix (status/phase/worker-state/result-class/control-action cells, versioned `lifecycle-operation-state-matrix/v1`) and the revision-bound public `LifecycleOperationProjection` envelope (identity, component bindings, worker/approval/recommendation cells). `operation_kinds.py` now centralizes `LifecycleOperationStatus` and `LifecycleOperationPhase`; `operation.py` gained the monotonic `recordRevision` field and re-exports the envelope. File-level detail lives in the three sidecars.
+
+## Observation Cursor Contract
+
+`operation_wait.py` declares the status-change wait vocabulary. `operation.py` retains both
+`recordRevision` for durable writes and `meaningfulRevision` for meaningful state changes;
+`operation_projection.py` carries the optional public wait cursor in the versioned coherent
+envelope. These revisions have different purposes and must not be substituted for one another.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The durable record owns both revisions and the canonical meaningful-state comparison. | "class LifecycleOperationRecord(BaseModel):"; "def meaningful_state_payload(record: LifecycleOperationRecord) -> dict[str, Any]:"; "def meaningful_state_changed("; "def _decode_legacy_missing_intent(cls, value: Any) -> Any:"; "def _require_altitude_authority(self) -> LifecycleOperationRecord:" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403; mcp/src/agents_remember/models/lifecycles/operation.py:516-528 |
+| The public envelope carries the wait cursor beside versioned identity and component bindings. | "class LifecycleOperationProjection(StrictResponseModel):"; "def _require_component_identity(self) -> Self:" | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+
 ## Update History
+
+
+
+- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
+
+- 2026-09-05T06:12+00:00 — Combined coherent projection and status-wait vocabularies; corrected current source anchors and distinguished record from meaningful revisions.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the typed status-change wait vocabulary (`operation_wait.py`) and refreshes `operation.py` / `operation_projection.py` with the CCR-R15 `meaningfulRevision` cursor; route index regenerated.
+
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the new `operation_projection.py` module, the centralized status/phase vocabulary, and the record revision field. File-level detail in the models/lifecycles sidecars.
+
 
 - 2026-08-29T22:45+02:00 — MCAR-L03: bound quality attestations, coherence records, public
   responses, and mismatch recovery to the complete contract-derived code-memory pair identity.

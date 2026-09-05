@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-07-24T13:17:17Z |
+| lastUpdated | 2026-09-05T06:21+00:00 |
 | lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
 | lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
 | governingOverview      | `../overview.md`                                 |
@@ -78,7 +78,7 @@ a file is selected; kept mounted so state survives a tab switch.
 | --- | --- | --- |
 | The L1 read-only files API this view consumes. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:296-325 |
 | The same-origin client wrapping that API. | `fetchRepos` | dashboard/src/data/files.ts:108-111 |
-| The shell that registers + keeps this view mounted. | `filesLayer` | dashboard/src/cockpit/Cockpit.tsx:337-337 |
+| The shell that registers + keeps this view mounted. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:335-338; dashboard/src/cockpit/Cockpit.tsx:774-776 |
 | The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
 
 ## Current L5I Route State
@@ -88,6 +88,9 @@ its first selected view, retains that settled result across later visibility cha
 in-flight read during development effect replay.
 
 ## Update History
+
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: FileViewer.tsx changed only by behavior-preserving lint remediation.
 
 - 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 8 citation findings (4 rows); scoped recheck clean.

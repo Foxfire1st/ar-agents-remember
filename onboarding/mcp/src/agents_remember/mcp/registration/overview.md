@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91`|
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastUpdated | 2026-09-05T07:22+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -20,7 +20,7 @@ exposing an uncurrent atomic master.
 
 Task-document authoring remains independently advertised and wholly upstream. No queue/activation
 lock field or whitelist is added to its schema. Exact parameter descriptions and response-state
-vocabulary are reconciled to the frozen implementation; commit verification remains closeout-owned.
+vocabulary are reconciled to the frozen implementation; this source review grants no lifecycle acceptance.
 
 ## Purpose
 
@@ -86,18 +86,18 @@ an explicitly approved public nested contract, as memory quality now has. The ca
 | `__init__.py`       | `TOOL_REGISTRARS` (the ordered tuple `create_server` loops over) and the `ToolRegistrar` alias. |
 | `core.py`           | `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`, `runtime_install`, `skills_install`. |
 | `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; `dispatch_agent` accepts both plane-hosted and ambient (no plane identity) callers, with the caller-kind matrix documented in its published description; runtime allocation stays plane-owned. |
-| `memory.py`         | `drift_check`, strict discriminated-request `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
+| `memory.py`         | `drift_check`, `citation_fix`, strict discriminated-request `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
-| `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
-| `closeout.py`       | `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_cleanup`, `worktree_abandon` — the landing half. |
-| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph), the classification/wave previews, and the policy-gated `branch_addressed` direct-execution mode (L16-R6), while closeout-queue mutations use a strict action-specific request and the hosted seat or — when none exists — a request-carried declared caller (L16-R2). |
+| `worktrees.py`      | `worktree_start`, `worktree_enclosure_adopt`, `worktree_attach`, `worktree_status`, `worktree_status_wait`, `worktree_sync` — the working half of a task. |
+| `closeout.py`       | `direct_landing`, `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_operation_control`, `worktree_legacy_operation`, `worktree_cleanup`, `worktree_abandon` — the landing half. |
+| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `curator_coherence`, `closeout_door`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph), the classification/wave previews, and the policy-gated `branch_addressed` direct-execution mode (L16-R6), while closeout-queue mutations use a strict action-specific request and the hosted seat or — when none exists — a request-carried declared caller (L16-R2). |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars, 63 advertised tools — the same ordered names
+Twelve registrars, 64 advertised tools — the same ordered names
 `mcp/tools/base.py::PUBLIC_TOOLS` lists. `mcp/public_surface.py` checks the exact live
 `list_tools()` order, response-model projection, dispatch schema, and description together.
 
@@ -141,8 +141,8 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 
 ## Invariants And Boundaries
 
-- **Never give a tool function a model-typed parameter.** The signature is the published schema;
-  a parameter object here is a breaking wire change for every client. This is the reason for the
+- **Preserve the approved public schema shape.** Flat signatures remain the default; the existing
+  discriminated memory-quality, queue and coherence request contracts intentionally use model-typed parameters. This is the reason for the
   `PLR0913` exemption and the reason nobody may "tidy" these functions.
 - Keep bodies to packing + one forwarded call. Any ordinary logic added under this path fails
   `ToolSignatureExemptionTests::test_every_function_in_the_exempted_path_is_a_published_tool_declaration`.
@@ -171,7 +171,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:162-176 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
-## 260731-EFA-L17 Change
+## Historical 260731-EFA-L17 Change
 
 The closeout-family docstrings now state the quality altitude ladder: preview/apply name the
 leaf change-set-scoped contract (`--targeted`: changed files + reverse-import closure + derived
@@ -250,7 +250,7 @@ This route composes public signatures only. It exposes the one closed applicatio
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Worktree registration composition. | `register_worktree_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:27-31 |
-| Public payload builders. | `worktree_enclosure_adopt_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:101-108 |
+| Public payload builders. | `worktree_enclosure_adopt_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:117-125 |
 
 ## 260821-DAGQC-L2 Published Quality Schema
 
@@ -273,7 +273,28 @@ The memory-quality tool schema and description distinguish official diagnostics 
 candidate runs. Candidate poll carries the original contract address; the public contract does not
 advertise repository id as acceptance authority.
 
+## Status-Change Wait Registration
+
+`worktrees.py` registers `worktree_status_wait` with the exact contract, operation kind,
+expected generation, prior meaningful revision and bounded timeout. It admits no operation key or
+PID and forwards the typed request to the payload builder; waiting grants no mutation authority.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The public wait registration declares read-only addressing, refusal behavior and typed request construction. | "def worktree_status_wait(" | mcp/src/agents_remember/mcp/registration/worktrees.py:202-232 |
+
 ## Update History
+
+
+
+
+- 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Updated the public inventory to 64 tools, preserved approved nested schema exceptions, and reviewed the read-only status-wait declaration. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the `worktree_status_wait` server-tool registration; route index regenerated.
+
 
 - 2026-08-31T20:30+02:00 — No route impact: the direct-landing MCP description now advertises
   only the explicit leaf-without-enclosure path and excludes ordinary series/master closeout and

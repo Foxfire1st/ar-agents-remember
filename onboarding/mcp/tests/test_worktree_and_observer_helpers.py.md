@@ -5,7 +5,7 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_worktree_and_observer_helpers.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-08-26T18:38+02:00 |
+| lastUpdated | 2026-09-05T07:08:26+00:00 |
 | lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
 | lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                                      |
@@ -113,6 +113,8 @@ This task extends this suite's production-bound fixtures or assertions for task-
 
 ## Update History
 
+- 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Archived 1 historical citation wrappers as inert historical-source text under the bounded L31 ruling. Dated narrative, anchors and original coordinates remain unchanged. The recovered card carried verification commit 346507af24396ab7b491e02511c4af006ccd3dc5; this historical provenance is not a current-source claim. Current-body evidence and verification metadata are retained. This scoped repair does not promote the card's verification stamp or certify a gate.
+
 - 2026-08-26T18:38+02:00 — Citation-only repair: the bootstrap preflight mutex moved
   `_parent_series_contract` seven lines; repointed its exact source anchor without changing the
   documented helper behavior. Verification remains closeout-owned.
@@ -144,7 +146,7 @@ This task extends this suite's production-bound fixtures or assertions for task-
 - 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
 - 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: `ParentSeriesContractTests` moved both its
   fixtures from `workflow_kind="master-task"` to `"light-task"`, because `WorkflowKind` is now
-  `Literal["chat-task", "light-task"]` (cit:(["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:21-21)). The Classes-table
+  `Literal["chat-task", "light-task"]` (historical source: (["WorkflowKind = Literal["], mcp/src/agents_remember/models/worktree.py:21-21)). The Classes-table
   claim "mint one for a master task" survives, and the note added under the table says why it is
   now a demonstration rather than a coincidence: `_parent_series_contract` reads `**Type:** Master`
   off the `task.md` the fixture writes, so with the workflow kind no longer able to say "master",

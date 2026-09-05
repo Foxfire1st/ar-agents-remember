@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_gate_public_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,12 @@ CCR-R22@v1 (L22, commit `685f83c44055`): the public quality-gate contract tests 
 profile-bound public payload -- executor adapter id, profile digest, profile plan digest,
 selection id, and result artifact fields on the strict gate result, plus the
 `profile-adapter-owned` process policy.
+
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): the suite publishes its recovery generations
+through `clean_quality_executor.ReportBindings(attestation=..., runtime_authority_digest=None)`
+because `_publish_reports` now takes explicit bindings; the immutable manifest under test is the
+schema-v3.1 shape with the optional `runtimeAuthorityDigest` root field (absent/None here).
 
 ## Code Commentary
 
@@ -68,6 +74,9 @@ snapshot survives concurrent publication rotation. Evidence is minted from that 
 not from a second mutable read or a diagnostic payload.
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `ReportBindings`-based publication in the public quality-gate contract suite and the schema-v3.1 manifest shape it forces.
+
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: re-anchored the two
   public-contract test citations to their current definitions (pointer-rotation 131-205,
   response-models 207-251) after the readiness coverage companion moved later test content.
