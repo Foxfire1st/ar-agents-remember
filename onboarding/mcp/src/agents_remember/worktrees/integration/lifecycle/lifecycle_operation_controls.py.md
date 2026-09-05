@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,13 @@ operation-kind vocabulary. This control module consumes that model; it no longer
 action literal/enum or imports action identity from worker-termination evidence. Request parsing,
 control classification, and public responses therefore share one exhaustive action type.
 
+## CCR-R18@v1 Rebinding Controls And Previews
+
+260831-CCR-L18 routed the control-layer projection rewrites through the envelope binders: `_preview_completed_supersede` now returns `bind_projection_result(operation_projection(record, contract=contract), {...})` for the `would-supersede` dry-run preview, and `_revise_closeout` uses `bind_projection_result` with a `LifecycleRecommendedAction` (`apply-closeout-successor` → `worktree_closeout_apply`) plus guidance instead of mutating a `model_copy` projection. Every rewritten control projection therefore rebinds its component digests to the exact journal revision through the sole validator.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the supersede-preview and closeout-revision rewrites moving to `bind_projection_result` with a typed `LifecycleRecommendedAction`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled lifecycle controls with the centralized `LifecycleControlAction` model and removal of the local action declaration.
 

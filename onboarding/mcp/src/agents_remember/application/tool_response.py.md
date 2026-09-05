@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/tool_response.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response.. | `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:22-31 |
-| Defines the function `_attach_lifecycle_tail` (lines 34-44). | `_attach_lifecycle_tail` | mcp/src/agents_remember/application/tool_response.py:34-44 |
-| Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result.. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:47-61 |
+| Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response.. | `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:53-62 |
+| Defines the function `_attach_lifecycle_tail` (lines 34-44). | `_attach_lifecycle_tail` | mcp/src/agents_remember/application/tool_response.py:65-81 |
+| Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result.. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:84-98 |
 
 ## L23 Final Candidate Disposition
 
@@ -56,7 +56,13 @@ The response completion boundary continues to normalize bounded task-addressed p
 operation phase and report evidence can pass through the existing response contract, while private
 operation keys, worker PIDs, leases, and resume tokens remain absent.
 
+## CCR-R18@v1 Task-Addressed Next-Step Bounding
+
+260831-CCR-L18 added `bound_next_step(response, step)` (line 30): before a lifecycle tool response advertises `nextStep`, any guidance whose `nextArgs` name a task address (`contract_path` / `enclosure_path` / camel-case variants) is checked against the response's own exact address (`contractPath` / `enclosurePath`). Guidance that names a different task address — or whose response is ambiguously addressed across multiple paths — is omitted (step becomes None), while exact-address and address-free/external guidance survives unchanged. `_attach_lifecycle_tail` now routes both the producer-supplied `nextStep` and the ambient-derived step through this guard before publishing the envelope, so a cross-task recovery edge can never be offered from another contract's response.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the `bound_next_step` task-address guard on lifecycle tool responses (cross-task guidance omitted). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints `finalize_tool_response` to its moved `models.tools` package. Verified at code commit `1d446724`.
 - 2026-08-14T06:30+02:00 — No contract expansion: L23 keeps tool-response completion bounded while

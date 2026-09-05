@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_intent_coverage_edges.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-03T12:30:00+02:00                  |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00                  |
+| lastUpdated            | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview      | `overview.md`                             |
 
 ## Governing Overview
@@ -72,10 +72,10 @@ The configured Domain Documentation registry is empty; no external documentation
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Operation-model intent coherence refusal rows. | `test_operation_model_refuses_every_incoherent_task_intent_state`; `test_operation_model_compares_legacy_intent_to_every_door_publication` | mcp/tests/test_task_intent_coverage_edges.py:79-101; mcp/tests/test_task_intent_coverage_edges.py:105-123 |
-| Claimed direct-landing replay requires current canonical intent. | `test_claimed_direct_landing_replay_requires_current_canonical_intent` | mcp/tests/test_task_intent_coverage_edges.py:260-315 |
-| Closeout door and admission missing/mismatched-intent refusals. | `test_closeout_door_and_admission_refuse_missing_or_mismatched_intent` | mcp/tests/test_task_intent_coverage_edges.py:522-553 |
-| Legacy store retirement failure and bridge intent-binding boundary rows. | `test_lifecycle_store_legacy_retirement_failure_matrix`; `test_legacy_bridge_preserves_task_intent_refusal` | mcp/tests/test_task_intent_coverage_edges.py:555-589; mcp/tests/test_task_intent_coverage_edges.py:643-697 |
-| Census internal and per-container classification matrices. | `test_legacy_census_internal_failure_and_bounded_input_matrix`; `test_legacy_census_scanners_classify_every_malformed_current_container` | mcp/tests/test_task_intent_coverage_edges.py:809-865; mcp/tests/test_task_intent_coverage_edges.py:906-1002 |
+| Claimed direct-landing replay requires current canonical intent. | `test_claimed_direct_landing_replay_requires_current_canonical_intent` | mcp/tests/test_task_intent_coverage_edges.py:251-305 |
+| Closeout door and admission missing/mismatched-intent refusals. | `test_closeout_door_and_admission_refuse_missing_or_mismatched_intent` | mcp/tests/test_task_intent_coverage_edges.py:513-543 |
+| Legacy store retirement failure and bridge intent-binding boundary rows. | `test_lifecycle_store_legacy_retirement_failure_matrix`; `test_legacy_bridge_preserves_task_intent_refusal` | mcp/tests/test_task_intent_coverage_edges.py:546-632; mcp/tests/test_task_intent_coverage_edges.py:634-687 |
+| Census internal and per-container classification matrices. | `test_legacy_census_internal_failure_and_bounded_input_matrix`; `test_legacy_census_scanners_classify_every_malformed_current_container` | mcp/tests/test_task_intent_coverage_edges.py:800-855; mcp/tests/test_task_intent_coverage_edges.py:897-993 |
 | Shared payload builders the suite imports. | `_closeout_record_payload`; `_door_payload`; `_route_review_payload` | mcp/tests/test_task_intent_consumers_and_legacy.py:1-700 |
 
 ## CCR-R02@v2 Normative Task-Intent Identity
@@ -86,7 +86,13 @@ the exact unavailable/stale reason and never synthesizes a digest, and that the 
 missing-intent recover/retry blocking holds across projection and public control. Part of the
 landed `99dc249b` commit.
 
+## CCR-R18@v1 Cancellable And Incoherent-Result Forcing
+
+260831-CCR-L18 updated this suite to the new `_operation_cancellable` contract: it now asserts the record-free signature (contract present + exact `cancel` control), drops the removed closeout-generation-retained / irreversible-boundary heuristics, and documents that a no-contract projection never advertises cancel. The non-mapping public result forcing changed from a raised `RuntimeError` to the bounded incoherent envelope: `operation_projection(record)` returns `status == "incoherent"` with the `lifecycle-projection-incoherent` result carrying the expected/observed facts, and empty legal controls, no recommendedAction, and `cancellable: false`.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the cancellable-signature and incoherent-envelope forcing updates. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   created this card for the new focused task-intent consumer edge suite; documented the model

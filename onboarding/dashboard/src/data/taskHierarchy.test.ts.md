@@ -61,7 +61,8 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs" | dashboard/src/data/taskHierarchy.test.ts:43-52; dashboard/src/data/taskHierarchy.test.ts:54-60; dashboard/src/data/taskHierarchy.test.ts:62-74; dashboard/src/data/taskHierarchy.test.ts:97-105 |
 | The `ref` / `series` factories, typed against the mirror rather than asserted past it. | "function ref("; "function series(" | dashboard/src/data/taskHierarchy.test.ts:9-9; dashboard/src/data/taskHierarchy.test.ts:13-13 |
 | The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:497-504; dashboard/src/types/projection.ts:729-737 |
+| The master task reference declares linkedLifecycleId and masterRef, with no createdAt field. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:793-801 |
+| The series row declares optional createdAt and no linkedLifecycleId. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
 
 ## Cross-Repo References
 
@@ -78,6 +79,8 @@ and `discardedSubTasks` to an empty list because those cells are required on pro
 matching, creation-order tie breaking, and the per-list cache boundary remain unchanged.
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 
 - 2026-08-24T15:04+02:00 — No content impact: added the required empty discard-history cells to
   the local `SeriesNode` test builder; hierarchy assertions and lookup semantics are unchanged.

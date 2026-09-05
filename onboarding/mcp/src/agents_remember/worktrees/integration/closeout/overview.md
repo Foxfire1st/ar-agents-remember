@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-05T07:12+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,14 @@ whether exact newly produced code or memory output needs another plane-owned int
 For graph-backed candidates, both door reconstruction and curator-coherence observation pass the
 already resolved authored graph to the shared queue/task-domain context and use its bound immutable
 sprint snapshot. The door, coherence record, and projection therefore cannot mix graph generations.
+
+CCR now binds canonical semantic `taskIntent` and declared direct dependency digests through
+curator coherence, waiting/claimed doors, and lifecycle admission. A stale or missing intent
+refuses current use and names republishing, rather than accepting topology alone.
+`task_intent_identity.py` resolves the exact contract-owned leaf;
+`task_intent_legacy_census.py` separately counts current legacy containers before decoder
+removal. Historical generations remain audit evidence. These existing door/journal owners
+are distinct from the still-unwired R05 certificate-admission/finalization library.
 
 ## Local Invariants And Traps
 
@@ -73,6 +81,8 @@ re-prove it from the same exact contract so stale pre-commit evidence is never t
 fallback.
 
 ## Update History
+
+- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current task-intent and direct evidence dependencies across coherence, door and operation admission, with bounded legacy census. Verification records source review, not execution or acceptance.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: door and curator-coherence task contexts now
   bind the authored graph once and consume the same immutable sprint graph generation as projection

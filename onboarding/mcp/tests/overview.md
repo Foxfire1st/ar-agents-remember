@@ -5,14 +5,33 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-05T07:45+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../overview.md)
+
+## Current CCR assertion and integration boundaries
+
+The current test tree distinguishes portable certification primitives from the host composition that constructs them. `test_certification_lane_bridge.py` compares the real R22 rail population plus Gate-5 memory rails with the derived five-gate R11 plan and checks provenance-independent identities. `test_gate_certification_records.py` invokes the real host gate seam but replaces clean execution with hand-built published payloads; its green certificate assertions are not proof that Dagger produced every referenced byte.
+
+R05/R16/R07/R08 test families exercise admission/dependencies, telemetry journals, incremental closure, and final memory certification through their library owners. The R07 recording executor proves non-accepting incremental success; the R08 fixture supplies executed-check results to the final certifier. Neither constructs missing production callers. Likewise the R13/R14 run-control suites use injected inspectors/runners and temporary authority stores, so their lane classification does not imply a live Codex or Dagger invocation. The separately owned real-Codex clean-room route remains required.
+
+The L29 rail-binding census records three missing Gate-4 artifact mappings; source inspection also found that rail log references are emitted without persisted log bytes. R10 deterministic-projection tests currently include a declined-repair case that expects the staged citation edit to land. These are unresolved source/test contract gaps, not repaired behavior. A metadata certificate or a passing synthetic payload cannot close them.
+
+Current targeted tests explicitly require incomplete ownership to refuse with `test-selection-ownership-incomplete`, empty selected outputs, and no broader test command. Retry proof identity includes `selectionDigest`; a changed selection forces fresh evidence. Task-intent matrices separately cover exact text, supplemental typed packet refs, observational exclusions, consumer currentness and bounded legacy archival; direct evidence dependencies are typed, bounded and acyclic.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The real repository-profile bridge preserves every applicable repository rail and adds the memory-rail population. | `test_bridge_derives_one_canonical_five_gate_authority_from_the_real_profile` | mcp/tests/test_certification_lane_bridge.py:74-108 |
+| Bridge digests are stable when only creation provenance changes. | `test_bridge_is_deterministic_and_ignores_creation_provenance` | mcp/tests/test_certification_lane_bridge.py:111-122 |
+| R07 success remains non-accepting and keeps final-full obligations pending. | `test_r07_execution_publishes_every_member_and_never_promotes_incremental_success` | mcp/tests/test_memory_incremental_scope_compiler.py:896-917 |
+| R08 green composition receives already-executed checker facts from its fixture, then binds the exact candidate pair. | `_evidence`; `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:858-885; mcp/tests/test_final_full_memory_coherence_certification.py:888-904 |
+| Missing profile authority is a typed refusal, never a skipped code gate. | `test_preview_refuses_a_missing_profile_instead_of_skipping` | mcp/tests/test_worktree_quality_gate_runner.py:119-140 |
+| The current frontend and HTTP assertion oracles are 441 TypeScript inputs and 292 declared/139 driven/153 undriven response pairs. | `test_dashboard_build_reports_only_config_owned_stable_inputs`; `test_the_conformance_table_accounts_for_every_declared_pair` | mcp/tests/test_quality_scope_reporting.py:702-736; mcp/tests/test_serving_response_conformance_live.py:515-526 |
 
 ## CCR-R01 Evidence-Lane Ownership
 
@@ -55,8 +74,7 @@ acceptance integration.
 The A005 repair keeps production rules strict and corrects the forcing worlds around them. Reviewer
 fixtures now carry current lineage, settings-owned launch selection, and explicit structural parent
 provenance. Fake-host concurrency and WebSocket rows declare the liveness their assertions assume;
-they do not weaken background reconciliation. Catalog and dashboard scope pins reflect the exact
-reviewed 68-field wire and 436 TypeScript inputs. The final acceptance remains Dagger-owned.
+they do not weaken background reconciliation. Catalog and dashboard scope pins historically reflected the reviewed 68-field wire and 436 TypeScript inputs; the current requirement-route delta advances the dashboard oracle to 441 inputs. The final acceptance remains Dagger-owned.
 
 ## ARSPAWN-L4 Public Advertisement Acceptance
 
@@ -95,7 +113,7 @@ real temporary Git repositories; unknown-lane fallback remains forbidden.
 
 The focused forcing boundary must prove architecture, not just successful Git commands: multiple
 live series coexist; selection replacement pauses old work; `reconciling` blocks implementation
-exposure; task mutation remains unlocked and causes projection recomputation; the queue owns no
+exposure; task authoring remains independent of implementation selection, retains its serialized publication lock, and invalidates projections according to field effects; the queue owns no
 lifecycle or commit evidence; retained code and memory conflicts can be agent-resolved and
 continued or exactly cancelled; stable-journal status survives task/contract damage; terminal
 cleanup cannot clear another selected master; and malformed authority fails closed without a
@@ -171,7 +189,7 @@ The retry matrix also exposed missing changed-branch coverage in the direct-land
 snapshots, and prepared ledger-intent convergence. The focused `test_direct_recovery_*` cases in
 `test_lifecycle_reconciliation_concurrency_l2.py` own developer-decision refusal, typed-error fact
 preservation, current-record recovery, and untyped interruption translation. These tests repair
-candidate coverage without weakening retry's conservative full-fallback rule.
+candidate coverage without widening the current selected test population: invalid reuse executes that selected population freshly, while unresolved selection authority refuses.
 
 ## M38 Requirement-Acceptance Structural Proof
 
@@ -220,7 +238,9 @@ the real repository-configured Ruff invocation used by both suites. The helper a
 are lifecycle-cataloged under `repository-ruff-policy-evidence`; there is no duplicated fallback
 configuration.
 
-## L3 Final Targeted-Gate Repair
+## Historical L3 Final Targeted-Gate Repair
+
+The sequential-lane, read-degradation and legacy-nature filenames below record the earlier implementation; removed modules are not current test entry points. Current source-pair selection and task-intent evidence supersede their prior lane assumptions.
 
 The final closeout-queue repair set turns the prior targeted Dagger artifact into exact owner
 coverage: scheduling registers are forced against the canonical orchestration template and reject
@@ -283,8 +303,7 @@ resulting responsibility units stay below the hard 1,200-line gate. The separate
 `test_leaf_structural_refusal_coverage.py` concentrates the fail-closed matrix:
 ambiguous or missing seats/topology, invalid durable shapes, persistence-first dispatch rollback,
 structural mutation refusals, dead/live binding conflicts, and exact dispatch/launch boundaries.
-These are focused coverage companions; the targeted gate may conservatively expand to its derived
-full selection when fragments cannot be merged narrowly.
+These are focused coverage companions. The current targeted selector refuses incomplete ownership rather than expanding to a full population; proof reuse failure can require a fresh run only within the admitted selection.
 
 The three installed harness suites convert OS/subprocess failure of their version probe into an
 explicit unavailable-runtime skip. `test_quality_scope_reporting.py` applies the same boundary only
@@ -329,7 +348,7 @@ notifier batch suite keeps structural expiry-address edge coverage below the fil
 
 `test_code_quality_check_scope.py` proves root pytest `addopts` includes `-n=auto`, while the
 derived-scope command test separately retains its coverage targets. This pins the single
-configuration owner used by raw pytest and every wrapper.
+configuration owner used by pytest inside the attested Dagger boundary.
 
 `test_code_quality_check.py` now exercises both sides of the L23 progress-report precedence seam in
 one targeted-configuration regression: an omitted CLI path derives from
@@ -467,7 +486,7 @@ The first end-to-end authoritative submit/withdraw regression matrix: the new
 focused authority suite and expanded common/API/native-adapter suites prove one epoch-bound
 prompt/setter timeline, atomic queued-withdraw versus dispatch, exact full-ref completion,
 completion-before-receipt dominance, no native queue/steer fallback, bounded privacy-aware retention,
-and browser-visible status semantics. All backend blockers found during review are closed.
+and browser-visible status semantics. That historical review closed the then-recorded submission blockers; it is not an assertion about later CCR findings.
 
 A fake-adapter conformance suite covers normalized harness control,
 correlated acceptance/reconciliation, private IPC, bounded queue/ledger behavior, shutdown failure
@@ -630,9 +649,7 @@ delete `env=` from the runner and it fails.
 over every package module asserting that the only file that spawns git is `kernel/git_command.py`.
 Six near-identical runners is exactly how the defect was born, so the rule is that no module may
 grow a seventh. **Its reach is stated rather than assumed** — it recognises a spawn whose argv is a
-list literal whose head names git, so `benchmarks/runner_modules/commands.py`, which composes its
-argv through `git_command()`, is invisible to it and is asserted directly by
-`BenchmarkRunnerEnvironmentTests` instead. That is not a formality: the benchmark runner holds the
+list literal whose head names git, so computed argv is outside that scan. The former benchmark-local builder has been removed: current benchmark operations use `run_git`, `BenchmarkRunnerEnvironmentTests` asserts their real decoy-repository behavior, and `test_single_owner_primitives.py` owns the construction-site guard. That is not a formality: the benchmark runner holds the
 most destructive argv in the package (`clone`, `checkout --detach`, `reset --hard`, `clean -fdx`).
 
 **`SingleRunnerGuardReachTests` is the guard on the guard, and it exists because of how this sweep
@@ -968,15 +985,15 @@ tool that exits 0 on every finding can only exit non-zero when broken),
 `PLR0911`, `PLR0912` and `PLR0915` are selected, unignored and proven to reject a real over-complex
 function at this repository's configuration; the format step is enforcing over the derived scope;
 and `test_the_complexity_baseline_and_its_gate_step_are_gone` keeps the deleted ratchet deleted),
-`ToolSignatureExemptionTests` (`PLR0913`'s one exemption covers the MCP registration directory and
+`test_code_quality_tool_signature_exemption.py::ToolSignatureExemptionTests` (`PLR0913`'s one exemption covers the MCP registration directory and
 nothing else — an AST walk over every file the `pyproject.toml` pattern really resolves to proves
 each function there is a published `@server.tool()` declaration or its registrar),
 `CrapThresholdEnforcementTests` (every offender named, the clearing branch coverage inverted from
 the CRAP formula, "split it" when no coverage can clear it, and no exemption file anywhere),
-`GateScopeDerivationTests` (no hand-written scope constant may return; `git ls-files` reads the
+`test_code_quality_check_scope.py::GateScopeDerivationTests` (no hand-written scope constant may return; `git ls-files` reads the
 index; a file in no importable package still reaches both rails; an underivable scope refuses
 rather than certifying nothing; `main` reports the gate's verdict rather than owning one), and
-`PytestConfigurationTests` (strictness switches, `python_classes`, an **exact-count** cap of 5 on
+`test_code_quality_check_scope.py::PytestConfigurationTests` (strictness switches, `python_classes`, an **exact-count** cap of 3 on
 `filterwarnings` ignores, and two-way reconciliation between registered markers and the suite's
 real `AR_*` environment gates).
 
@@ -1141,35 +1158,40 @@ first-byte ambiguity without blind retry, whole UTF-8 multiline submit, pending 
 request-id idempotency, retained-known reconciliation without native resend, raw-free public
 serialization, and liveness-first 404/409 classification. Opener/app cases prove complete-pair
 pre-spawn validation, same-pair live reopen, changed launch conflict with actual retained truth,
-fresh dead replacement, and a cross-process diffe…13126 tokens truncated…_harness.py:35-107 |
-| The closeout gate suite covers all three statuses and spies on the real argument passed from unannotated closeout call sites. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-473; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
+fresh dead replacement, and a concurrent different-pair race on two threads that must retain one process and one catalog truth (`test_terminal_opener.py:678-737`). The damaged predecessor text did not preserve its full cross-process claim, so no cross-process proof is inferred here.
+
+### Current Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The quality runner requires explicit repository profile authority, distinguishes enforced/no-code preview, refuses missing authority, and the closeout suite spies on the real passed gate target. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-473; mcp/tests/test_worktree_closeout_quality_gate.py:55-257 |
 | The gate is shown the commit content: a created file reaches ruff through real `derive_scope`, a deleted one leaves it, and the lint-path set equals the Python paths in the resulting commit tree. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
-| Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:846-958; mcp/tests/test_worktree_closeout_quality_gate.py:961-1015 |
-| A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:966-1025 |
-| The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 286-declared / 133-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:443-447; mcp/tests/test_serving_response_conformance_live.py:460-483; mcp/tests/test_serving_response_conformance_live.py:486-486; mcp/tests/test_serving_response_conformance_cases_1.py:12-12 |
+| Both staging refusals are asserted as damage that does not happen: the repository checkout preserves its `add -p` selection and untracked secret, and a conflicted worktree keeps `MERGE_HEAD` intact. | `TaskWorktreePreconditionTests`; `ConflictedIndexTests` | mcp/tests/test_worktree_closeout_quality_gate.py:974-1084; mcp/tests/test_worktree_closeout_quality_gate.py:1087-1139 |
+| A retry commits the tree a first run would: two worktrees driven to the same end state, one through a refused gate, are asserted to produce the identical commit tree, so the ignored `.dmypy.json` a refused attempt staged is not carried into the retry (`RetryStagesWhatAFirstRunWouldTests`). | `RetryStagesWhatAFirstRunWouldTests` | mcp/tests/test_worktree_closeout_quality_gate.py:1145-1199 |
+| The whole HTTP surface is driven and validated against the model declared for the returned status, alias-strict, with the inventory, walker coverage, two runtime-validated dict routes, and the exact 292-declared / 139-driven / 153-listed ledger. | `_grouped`; `_driven_pairs`; "class DeclaredSurfaceCoverageTests(unittest.TestCase):" | mcp/tests/test_serving_response_conformance_live.py:449-453; mcp/tests/test_serving_response_conformance_live.py:466-489; mcp/tests/test_serving_response_conformance_live.py:492-549 |
 | `/api/state` and the SSE snapshot validate as `ServedWorkspaceProjection` and refuse `WorkspaceProjection`; 304 is bodyless, deltas omit `SERVED_TAIL_FIELDS`, and the populated-projection guard rejects an empty scaffold. | `ServedStateTailTests`; `ServedStateRouteConformanceTests`; `ServedSnapshotConformanceTests` | mcp/tests/test_served_state_conformance.py:213-257; mcp/tests/test_served_state_conformance.py:260-352; mcp/tests/test_served_state_conformance.py:355-410 |
-| Every producible vocabulary member validates at its wire field by three mechanisms; the module header states which vocabulary each mechanism defends. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-294; mcp/tests/test_wire_vocabulary_exhaustiveness.py:632-817; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:45-45; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:450-450 |
-| The reader tolerates an unclassifiable contract cell by degrading and naming it while the writer refuses it, and every refusal names the contract file it was reading (`ContractBoundaryTests`). | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:144-144 |
-| Tool-response conformance captures `nextStep` and `supervisorBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:538-616 |
+| Every producible vocabulary member validates at its wire field by three mechanisms; the module header states which vocabulary each mechanism defends. | "class GuidanceWalkTests(unittest.TestCase):"; "class ProducedLiteralTests(unittest.TestCase):"; "class AdvertisedVocabularyTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:230-307; mcp/tests/test_wire_vocabulary_exhaustiveness.py:646-835; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:49-118 |
+| The reader tolerates an unclassifiable contract cell by degrading and naming it while the writer refuses it, and every refusal names the contract file it was reading (`ContractBoundaryTests`). | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:159-513 |
+| Tool-response conformance captures `nextStep` and `supervisorBanner` where both envelope additions fire, then validates representative payloads against their registered models. | `ToolResponseConformanceTests`; `test_the_choke_point_injections_are_actually_exercised` | mcp/tests/test_tool_response_conformance.py:1001-1136; mcp/tests/test_tool_response_conformance.py:1031-1048 |
 | Next-step regressions require advertised token counts to cover the served payload including `nextStep` and `supervisorBanner`. | `test_advertised_token_count_covers_the_attached_next_step`; `test_advertised_token_count_covers_the_agent_notifier_banner` | mcp/tests/test_next_step.py:305-317; mcp/tests/test_next_step.py:319-331 |
 | The lifecycle state vocabulary is partitioned live and terminal with both halves total and disjoint, every live state counted, and terminality held to the reducer that produces it. | `MetricsBucketVocabularyTests`; `StatePartitionTests`; `TerminalityIsStructuralTests` | mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:236-300; mcp/tests/test_observer_projection_metrics.py:303-420 |
 | The live boundary suite proves unknown contract cells degrade with the raw token retained and disappear after a canonical rewrite. | `test_an_unknown_cleanup_cell_degrades_and_names_itself`; `test_an_unreadable_memory_mode_degrades_to_the_topology_on_disk`; `test_a_rewrite_heals_the_file_and_that_is_the_recovery_path` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:249-314 |
-| A decoy repository named by all eight selectors receives none of the real repository writes or reads, an AST sweep asserts `kernel/git_command.py` is the only git-spawning module, and the benchmark runner argv including `reset --hard` is asserted directly. | `DecoyRepositoryTests`; `SingleRunnerTests`; `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:155-211; mcp/tests/test_git_command.py:393-465; mcp/tests/test_git_command.py:663-791 |
-| The sweep reach is planted and asserted for subprocess aliases, a path-qualified git argv head, a `kwargs` splat that is not proof of `env`, and per-command timeout bands. | `SingleRunnerGuardReachTests`; `TimeoutClassTests` | mcp/tests/test_git_command.py:468-547; mcp/tests/test_git_command.py:550-660 |
-| The runner scrubs repository selectors on every call, uses `input_text` for git patch-id and DEVNULL otherwise, and carries the local, remote, and metadata timeout constants. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-72; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:85-151 |
+| A decoy repository named by all eight selectors receives none of the real repository writes or reads, an AST sweep asserts `kernel/git_command.py` is the only git-spawning module, and the benchmark runner argv including `reset --hard` is asserted directly. | `DecoyRepositoryTests`; `SingleRunnerTests`; `BenchmarkRunnerEnvironmentTests` | mcp/tests/test_git_command.py:168-224; mcp/tests/test_git_command.py:510-582; mcp/tests/test_git_command.py:780-908 |
+| The sweep reach is planted and asserted for subprocess aliases, a path-qualified git argv head, a `kwargs` splat that is not proof of `env`, and per-command timeout bands. | `SingleRunnerGuardReachTests`; `TimeoutClassTests` | mcp/tests/test_git_command.py:585-664; mcp/tests/test_git_command.py:667-777 |
+| The runner scrubs repository selectors on every call, uses `input_text` for git patch-id and DEVNULL otherwise, and carries the local, remote, and metadata timeout constants. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:34-43; mcp/src/agents_remember/kernel/git_command.py:71-74; mcp/src/agents_remember/kernel/git_command.py:94-100; mcp/src/agents_remember/kernel/git_command.py:103-154 |
 | A cold-cache child process with blocked sockets starts the real server and matches the warm parent count; the shipped vocabulary name and bytes are re-derived and the filename pin and re-entrant-load guard are covered. | `ColdStartTests`; `VendoredVocabularyTests` | mcp/tests/test_cold_start.py:199-218; mcp/tests/test_cold_start.py:221-331 |
 | A present but incorrect vendored vocabulary is refused and left on disk across CRLF, truncation, and flipped-byte cases. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
-| The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:120-177; mcp/tests/_store_durability.py:571-573; mcp/tests/_store_durability.py:588-613; mcp/tests/_store_durability.py:1069-1073; mcp/tests/_store_durability.py:1088-1092; mcp/tests/_store_durability.py:1101-1108 |
-| `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:876-903 |
+| The measurement instrument uses eight store adapters, three forked scenarios, raw on-disk loss accounting, and a dual-mode script path guarded by `_require_source_root`. | `StoreAdapter`; `ADAPTERS`; `SCENARIOS`; `surviving_ids`; `run_case`; `_require_source_root` | mcp/tests/_store_durability.py:137-194; mcp/tests/_store_durability.py:576-596; mcp/tests/_store_durability.py:1086-1090; mcp/tests/_store_durability.py:605-630; mcp/tests/_store_durability.py:1105-1109; mcp/tests/_store_durability.py:1118-1125 |
+| `harness_work_dir` derives each run bookkeeping directory as a sibling named from that run root, preventing sibling cases from sharing stop or error files. | `harness_work_dir` | mcp/tests/_store_durability.py:875-902 |
 | The shared non-vacuity gate refuses incomplete durability results or runs below `MIN_SUCCESSFUL_RECLAIMS` by raising `VacuousRunError`. | `MIN_SUCCESSFUL_RECLAIMS`; `VacuousRunError`; `require_stress_measurement` | mcp/tests/_durability_measurement.py:11-11; mcp/tests/_durability_measurement.py:14-15; mcp/tests/_durability_measurement.py:18-55 |
 | No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:125-211; mcp/tests/test_controlplane_store_durability.py:214-343; mcp/tests/test_controlplane_store_durability.py:346-401 |
 | The provider durability suite is the second consumer covered by the instrument tick floor; its `case_root` docstring records the shared-stop-flag defect and source fix. | `ProviderStoreDurabilityTests`; `case_root` | mcp/tests/test_provider_store_durability.py:262-277; mcp/tests/test_provider_store_durability.py:280-351 |
 | One human approval is consumable exactly once, and the counterfactual proves the defence is one appended record. | `GateReplayWindowTests`; `test_the_applied_record_is_the_only_thing_closing_the_window` | mcp/tests/test_gate_replay_window.py:176-324 |
 | The in-process axis covers the mutex, re-entrancy across both locks, unsafe-filesystem refusal, schema major/minor policy, and failed-rewrite temp cleanup. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `SchemaVersionMajorTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:167-365; mcp/tests/test_durable_store_contract.py:368-431; mcp/tests/test_durable_store_contract.py:434-520; mcp/tests/test_durable_store_contract.py:650-728 |
 | The contract the four suites are named after: what prevents loss (the unconditional lock) stated apart from what merely documents (advisory ownership), the rewrite that never unlinks, and the record validator that gives both read policies their behaviour with no version branch in either. | `exclusive_access`; `rewrite_lines`; `require_lock_held`; `thread_mutex_for`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:248-271; mcp/src/agents_remember/controlplane/durable_store.py:301-315; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
-| The projection tick this leaf stopped rewriting on — the reclaim pass that ran in a process owning nothing here, and the source of the measured gate-log loss. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:103-103 |
+| The projection tick this leaf stopped rewriting on — the reclaim pass that ran in a process owning nothing here, and the source of the measured gate-log loss. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-141 |
 | Interaction retention separates projection non-mutating reads from owner-side compaction, and owner compaction leaves an empty named log. | `test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log` | mcp/tests/test_interaction_retention.py:31-76 |
-| Projection-side attention acknowledgement pruning leaves an empty file rather than unlinking the log. | `test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement` | mcp/tests/test_observer_projection_snapshot.py:511-545 |
+| Projection-side attention acknowledgement pruning leaves an empty file rather than unlinking the log. | `test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement` | mcp/tests/test_observer_projection_snapshot.py:556-590 |
 | GateStore compaction that removes the last gate leaves an empty workspace log rather than unlinking it. | `test_pruning_the_last_gate_empties_the_workspace_log_without_unlinking_it` | mcp/tests/test_packaged_assets_and_context_values.py:419-444 |
 | Serving attention-store pruning requires zero rows and zero bytes while retaining the log path. | `test_attention_store_upserts_and_prunes_lifecycle_rows` | mcp/tests/test_serving_actions.py:355-388 |
 | The worktree contract's front matter read under the same major/minor rule as the JSONL records, through the same helper, so the two version policies cannot drift. | `ContractSchemaVersionTests` | mcp/tests/test_worktree_contract_lifecycle.py:84-145 |
@@ -1200,7 +1222,7 @@ codex-agents projector suite (concurrent-parent projection with plain parent ent
 singular-rotation resolution semantics), and one in `test_harness_control.py` (the entry-thread
 operation guard for concurrent parent tuple entries); the legacy experimental-request case in
 `test_codex_app_server_adapter.py` flips to decline-not-fail with the decline itself unchanged.
-Verification metadata remains pre-commit.
+The original entry retained pre-commit metadata; the current document stamp records the separate L31 cumulative source review.
 
 ## Codex Native-History And Projection-Containment Regression Route Impact
 
@@ -1221,7 +1243,7 @@ repaired and remains a named follow-up.
 
 ## Serving Performance And Quality-Gate Route Impact
 
-The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. Existing verification metadata remains pre-commit.
+The regression set covers the serving performance/truth changes (single-pass repository discovery, projection-body reuse, gzip/SSE separation), opt-in heap diagnostics, landing-final reopen safety, structured multi-question interaction responses, native interrupt correlation, active page/event bootstrap recovery, and terminal startup/liveness boundaries. The final focused additions prove mandatory default CRAP failure and wrapper parity, fail-closed closeout with zero mutation on quality failure and quality-before-commit on success, updated public tool descriptions, and Claude mutation parsing through public projector paths for valid and malformed vendor inputs. These tests are split across the existing focused suites; no new test route is introduced. The original entry retained pre-commit metadata; the current stamp records the separate L31 cumulative source review.
 
 ## 260731-EFA-L16 Route Impact — cross-store lock-order forcing tests
 
@@ -1240,10 +1262,10 @@ the citation gate BEFORE the code commit with no commit spent.
 
 ## 260731-EFA-L7 — Test-Tree Remediation And New Suites
 
-All 27 over-limit test modules were split in place into families (79 new modules; every original `test_*` name reconciled item for item, plus one intentional new name for R17). New suites added: `test_file_size_detector.py` (the File Size Budget rail — bands, exit codes, wiring, scope), `test_facade_surface.py` (the eight-facade surface pin), and the harness-control conformance family `test_harness_control_conformance_1.py` / `_2.py` + `test_harness_control_ipc.py` (L8's deterministic receipt-before-release rewrite applied verbatim). `test_quality_scope_reporting.py` now asserts the live 426-TypeScript-input count.
+All 27 over-limit test modules were split in place into families (79 new modules; every original `test_*` name reconciled item for item, plus one intentional new name for R17). New suites added: `test_file_size_detector.py` (the File Size Budget rail — bands, exit codes, wiring, scope), `test_facade_surface.py` (the eight-facade surface pin), and the harness-control conformance family `test_harness_control_conformance_1.py` / `_2.py` + `test_harness_control_ipc.py` (L8's deterministic receipt-before-release rewrite applied verbatim). That milestone recorded 426 TypeScript inputs; the current scope-reporting oracle asserts 441.
 
 
-## 260731-EFA-L17 — Targeted-Contract And Altitude Proofs
+## Historical 260731-EFA-L17 — Targeted-Contract And Altitude Proofs
 
 The test tree gained three focused suites for the quality ladder: `test_code_quality_targeted.py`
 (derivation selectors, transitive reverse-import closure, uncovered-module refusal, real targeted
@@ -1294,7 +1316,7 @@ The lineage suite additionally creates a real sibling linked checkout and points
 contract at it while the leaf remains on the original checkout. A current projection proves the
 policy compares shared Git repository identity rather than literal checkout paths.
 
-## L23 Full-Dagger Coverage And Stability Follow-up
+## Historical L23 Full-Dagger Coverage And Stability Follow-up
 
 The full-gate repair adds focused branch proof for static conversation-helper preflight, provider
 subprocess stdin/timeout handling, and Docker inspect command/JSON/shape handling. These are
@@ -1319,7 +1341,7 @@ The final forcing surface covers Dagger-only suite attestation, fresh attempts w
 result, bounded output and stale-report pruning, candidate-bound route review, transitive lineage
 rechecks, failure-atomic integration, and monotonic post-claim recovery.
 
-## R39 Acceptance Forcing Matrix
+## Historical R39 Acceptance Forcing Matrix
 
 The test route now proves all bypass seams: pytest and the direct wrapper share one before-planning
 nonce/file guard; Agents Remember cannot delete its wrapper; leaf integration cannot rerun
@@ -1335,7 +1357,7 @@ native scratch-root selection. `test_worktree_closeout_gate_scope.py` owns creat
 scope equality against the committed tree. The extraction changes ownership and citations only;
 it does not weaken the Dagger authorization or staged-candidate contracts.
 
-## R43 Failure-Repair Matrix
+## Historical R43 Failure-Repair Matrix
 
 The focused repair tests now force accepted candidate identity in recovery fixtures, clean series
 closeout reuse without commit, positive recovery outcome proof, self-versus-consumer wrapper
@@ -1358,7 +1380,9 @@ ordinary leaves, atomic blocker placement, ready-frontier reprioritization, exac
 master-exit candidates, leaf-owned remediation, retired-topology wording, and rectangular changed
 templates. The suite also proves every generated mirror is byte-identical to canonical doctrine.
 
-## 260815-DAG-L3 Closeout Queue Verification
+## Historical 260815-DAG-L3 Closeout Queue Verification
+
+This is the original queue-era test inventory. Some named forcing/integration modules were subsequently removed or split; current projection source/field effects and lifecycle evidence owners are listed in the CCR sections. The queue does not regain lifecycle authority from this historical account.
 
 Eleven focused suites cover the queue at complementary altitudes. `test_closeout_queue.py` exercises
 models, authority, deterministic ordering, evidence drift, blockers, bounded state/WAL recovery,
@@ -1494,7 +1518,7 @@ Six focused test modules now have complete one-to-one onboarding and high-risk f
   nodes continue;
 - `test_causal_quality_preflight.py` proves contract-chain admission and fail-closed continuation;
 - `test_evidence_lanes.py` proves exhaustive explicit categories with no unit fallback;
-- `test_evidence_lifecycle.py` proves the 34-artifact inventory and real consumer/owner contracts;
+- `test_evidence_lifecycle.py` proves the lifecycle inventory and real consumer/owner contracts (the 34-artifact count belongs to the historical PDLS wave);
 - `test_route_measurement.py` proves repeated pure, integration, and durability measurement under
   serial and repository-default xdist modes.
 
@@ -1585,7 +1609,144 @@ both post-capture work-budget guards, indexed cycle witnesses and operation coun
 composite-binding paths. Existing closeout projection tests retain their multi-series activation
 and graphless-no-owner forcing.
 
+## 260831-CCR-L23 Requirement-Route Test Evidence
+
+L23 added `mcp/tests/test_serving_requirements.py` (explicit `integration` lane in
+`test-evidence-lanes.toml`) as the HTTP proof module for the task-local requirements
+surface, extended the response-conformance driver with requirement-route cases
+(`test_serving_response_conformance_cases_2.py`) and a `_seed_requirements` fixture, and
+advanced the declared/driven surface ledger (292 declared, 139 driven; 63 HTTP routes). The
+scope-reporting oracle for the dashboard build advanced from 436 to 441 TypeScript inputs.
+
+## 260831-CCR-L12 — Five-Gate Execution And Shared Authority Suite
+
+CCR-R12@v4 (commit `cfd09381`) adds the host-authority proof suite
+`mcp/tests/test_dagger_runtime_authority.py` (registered in the `integration` lane) and reworks the
+clean-quality group for the cost-ordered five-gate executor and shared Dagger authority:
+`test_clean_quality_executor.py` forces authority admission/registration/exact-owner release without
+docker, `test_agents_remember_quality.py` drives the portable `_execute_gate_rails` profile execution
+with authority-digest-bound manifests and exhaustive same-gate terminalization, and the closeout-gate
+suite (`test_worktree_closeout_quality_gate.py`, `test_worktree_support_tests_2.py`) pins the Gate-5
+order - red code gate blocks the memory preflight; memory preflight aborts only after a green code
+gate. Publication fixtures across the suite route attestation through
+`clean_quality_executor.ReportBindings` and the strict manifest model validates the schema-v3.1
+`runtimeAuthorityDigest` root field.
+
+## CCR-R18@v1 Generation-Coherent Projection Evidence
+
+260831-CCR-L18 added `mcp/tests/test_generation_coherent_lifecycle_projection.py` (explicit `unit-regression` lane) as the state-matrix/envelope/revision-discipline forcing suite, and updated the task-intent coverage, disposition, lifecycle-operation, legacy-bridge, generation-boundary, recovery-projection-invariant, and legacy-consumer suites for the coherent envelope, contract-scoped cancellable, and monotonic `recordRevision`. File-level detail lives in the test sidecars.
+
+## 260831-CCR-L16 - Durable Gate And Rail Telemetry Suite
+
+CCR-R16@v3 (certified commit `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`, leaf 260831-CCR-L16) adds six focused
+suites to this route, each registered in the `unit-regression` lane of the evidence-lanes manifest
+(`mcp/tests/test-evidence-lanes.toml` rows 178-183): `test_telemetry_models.py` forces the frozen event
+schema and closed vocabularies of `certification/telemetry/models.py`; `test_telemetry_store.py` verifies
+the CAS-published, digest-chained durable journal on temporary roots; `test_telemetry_validation.py`
+and its `_edges` companion force the exhaustive stream validator and readiness to fail closed;
+`test_telemetry_projection.py` and its `_edges` companion verify the lossless boundary/Gate 1-5
+reconstruction from compiled events. The suites exercise owned certification telemetry
+contracts through deterministic in-process pytest forcing, so their cost and evidence class are
+deliberate rather than inferred.
+
+## 260831-CCR-L13 Non-Certifying Diagnostic E2E Evidence
+
+CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`) adds the standalone diagnostic
+suite group to `mcp/tests`. Four contract suites are registered in the `unit-regression` lane in
+`test-evidence-lanes.toml`: `test_diagnostic_models.py` (closed vocabulary, structural
+non-certifying literals, promotion refusal, immutable attempt/manifest chains), `test_diagnostic_planning.py`
+(canonical scenario rail projection at diagnostic altitude and second-scenario refusal),
+`test_diagnostic_projection.py` (optional-lane readiness projection: not-requested-optional,
+running, newest-terminal blocking, R14 non-satisfaction), and `test_diagnostic_store.py` (durable
+isolated manifest, gapless chain identity, in-flight/abandon guards, CAS fail-closed). The two
+run-control suites are registered in the `integration` lane: `test_diagnostic_executor.py` (R12
+authority freeze, Gate 1-3 green admission, one-replication terminalization, exact-owner release,
+frozen-snapshot retry, R16 telemetry) and `test_diagnostic_diff_coverage.py` (diff-coverage closure
+cells across the model, store, projection, planning, and executor guards, reusing only the leaf's own
+builders).
+
+## 260831-CCR-L17 Measured Replay And Reduction Evidence
+
+CCR-R17 (commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185`, leaf 260831-CCR-L17) adds six fully
+standalone measured-replay suites to `mcp/tests`, all registered in the `unit-regression`
+lane of `test-evidence-lanes.toml` (rows 148-153): `test_replay_freeze.py` (freeze
+digest determinism/tamper refusal, frozen-dimension comparability, append-only three-view population),
+`test_replay_model_edges.py` (validator/comparability/reducer/digest refusal edges),
+`test_replay_spans_and_measure.py` (union-wall arithmetic and the measured-run reducer),
+`test_replay_scenario_branches.py` (green/red/not-applicable arms of all seventeen
+scenarios), `test_replay_scenarios_and_compare.py` (ordered scenario projection and the
+digest-bound comparison report), and `test_replay_fold_coverage.py` (every reducer fold
+branch and every wall-union arc). No suite shares certification-run, evidence-lifecycle, or Dagger
+artifacts, and none asserts a numeric reduction threshold.
+
+## 260831-CCR-L14 Final Real-Codex Gate-4 Certification Evidence
+
+CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`) adds the standalone final-codex
+suite group to mcp/tests. Five contract suites are registered in the unit-regression lane in
+test-evidence-lanes.toml (rows 64-68): test_final_codex_models.py (closed two-fresh vocabulary,
+structural certifying literals and retry-zero, immutable attempt/run/repetition chains, one-pass
+never compensates), test_final_codex_planning.py (plan-record compilation against the canonical
+R11 registry and the exact Gate-1..3 must-not-run barriers), test_final_codex_projection.py
+(lane readiness: not-started, running, two-fresh-pass, red, stale), test_final_codex_store.py
+(durable CAS run manifest, retry-disabled reservation, exact slot ordering, namespace
+isolation, corrupt-file fail-closed), and test_final_codex_certificate.py (bound Gate-4
+certificate with the exact ordered Gate-1..3 predecessors and the two-fresh run). The two
+run-control suites are registered in the integration lane (rows 291-292):
+test_final_codex_executor.py (R12 authority freeze, Gate 1-3 green admission, two fresh
+certifying repetitions, no-compensation red aggregates, typed hard failures, abort, exact-owner
+release) and test_final_codex_diff_coverage.py (diff-coverage closure cells across the model,
+store, projection, planning, and certificate modules plus the executor, reusing only the leaf
+own builders).
+
+## Certificate Payload And Wait Regression Boundaries
+
+`test_rail_bindings.py` covers the L29 evidence/artifact builders and detached-handle observation;
+its artifact-map census deliberately names the three still-unmapped Gate-4 artifacts. That census
+is evidence of a remaining production contract gap, not proof that full certification can succeed.
+`test_certification_lane_bridge.py`, `test_gate_certification_records.py`, and the quality-gate tests cover the
+bridge and record seam. Hand-built payload tests must be read together with the actual Dagger
+producer before using them as end-to-end certificate evidence.
+
+The status-wait group (`test_lifecycle_status_wait_outcomes.py`,
+`test_lifecycle_status_wait_registration.py`, `test_lifecycle_status_wait_store.py`) protects typed
+wait outcomes, public registration and the meaningful-revision store discipline. These tests do
+not establish that the R05 finalization or R07/R08 certification APIs gained production callers.
+
 ## Update History
+
+- 2026-09-05T07:45+00:00 — L31 cumulative source review at ea35964985f30080488270e71ac81657ac40682b: reconciled current profile selection/refusal, assertion ownership, route counts, library/production evidence limits and exact-intent tests; restored the damaged evidence-table boundary from verified current source and retained its damaged predecessor in the curation report. Verification records source review, not execution or acceptance.
+
+
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): recorded the seven standalone CCR-R14 final-codex suites (five unit-regression rows 64-68, two integration rows 291-292) and their test-evidence-lanes.toml lane registrations. File-level detail lives in the new test cards. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
+
+
+- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass (route impact): recorded the six standalone CCR-R17 measured-replay suites (unit-regression rows 148-153) and their `test-evidence-lanes.toml` lane registrations. File-level detail lives in the six new test cards. Verification stamp is the full leaf code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).
+
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds three status-wait test cards (outcomes, registration, store) and refreshes dispositions/conformance/evidence-lane cards; route index regenerated.
+
+
+- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): recorded the six standalone CCR-R13 diagnostic suites (four unit-regression, two integration) and their `test-evidence-lanes.toml` lane registrations. File-level detail lives in the new test cards. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
+
+
+- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5 memory pass (route impact): added the CCR-L16
+  section for the six durable gate-and-rail telemetry suites
+  (`test_telemetry_models.py`, `test_telemetry_projection.py`, `test_telemetry_projection_edges.py`,
+  `test_telemetry_store.py`, `test_telemetry_validation.py`, `test_telemetry_validation_edges.py`)
+  registered in the `unit-regression` lane. Verification metadata stays pinned until closeout
+  stamps the leaf code commit.
+
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the new generation-coherent projection suite and the refreshed lifecycle/test suites. File-level detail in the mcp/tests sidecars.
+
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass (route impact): added the CCR-L12 section for the host-authority suite, the five-gate/authority rework of the clean-quality group, and the Gate-5-order closeout regressions. Verification metadata stays pinned until closeout stamps the leaf code commit.
+
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the requirement-route test evidence (integration-lane registration, conformance driver cases, ledger advance, dashboard input-count oracle). File-level detail lives in the new test card and the refreshed conformance/scope cards.
+
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added the three focused model, reachability, and
   registry-validation edge suites, classified all five certification suites as unit regressions,

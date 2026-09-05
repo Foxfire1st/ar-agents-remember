@@ -126,20 +126,20 @@
       "mcp/src/agents_remember/kernel/primitives/",
       "mcp/src/agents_remember/kernel/primitives/overview.md",
       "mcp/overview.md",
-      "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "mcp/config.py",
       "mcp",
       "controlplane",
       "providers",
       "worktrees",
+      "RepositoryScope.certification_profile",
       "controlplane/",
       "worktrees/",
       "application/",
       "models/",
       "application/provider_runtime.py",
       "ConfigError",
-      "rank(Q) < rank(P",
-      "lifecycle-operation"
+      "rank(Q) < rank(P"
     ]
   },
   "fallback": {

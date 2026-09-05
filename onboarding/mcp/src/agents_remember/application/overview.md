@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-05T07:22+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -25,7 +25,7 @@ integration lock free between calls.
 Status observes the stable enclosure-root sync journal independently from task-document health.
 Application adapters translate failures into bounded tool results; they do not recreate the journal
 from task prose, queue rows, or ambient Git. Task-document mutation remains an upstream application
-flow: it publishes canonical truth, invalidates affected projections, and never asks queue or
+flow: it publishes canonical truth, invalidates projections for semantic/readiness mutations, and never asks queue or
 activation state for permission.
 
 ## Current Structural Application Boundary
@@ -89,7 +89,7 @@ carryover; `gate_tools.py` and `hosted_readiness.py` for gate/readiness operatio
 and orchestration operations; `runtime/startup.py` and `terminal_tools.py` for startup and terminal
 operations; `provider_tools.py` for provider operations; `worktree_tools.py` for worktree operations;
 `benchmark_tools.py`, `runtime/install.py`, and `runtime/skills.py` for benchmark, install, and skill
-surfaces; `task_doc_tools.py` for JSON-primary task-document authoring; `tool_response.py` for response
+surfaces; `task_docs/task_doc_tools.py` for JSON-primary task-document authoring; `tool_response.py` for response
 completion; `worktree_status.py` for status packets; and `read_files.py` for paired source/onboarding
 reads. Route-index refresh still resolves context first and forwards repository/storage authority to
 the deterministic builder.
@@ -124,10 +124,10 @@ payload builder and the tool declaration:
 
 | Module | Selected types it defines |
 | --- | --- |
-| `task_ref.py` (new) | `TaskRef` — the repo plus whichever locator a caller holds; shared by `resolve_context_tool`, `worktree_attach_tool`, `worktree_status_tool`. |
+| `task_docs/task_ref.py` | `TaskRef` — the repo plus whichever locator a caller holds; shared by `resolve_context_tool`, `worktree_attach_tool`, `worktree_status_tool`. |
 | `worktree_tool_requests.py` | `TaskIdentity`, `TaskBases`, `StartExecution`, `OperationControlRequest`, `CloseoutCommitMessages`, `CloseoutApproval`, `FinalizeTaskDocs` (+ `DEFAULT_TASK_BASES`, `DEFAULT_START_EXECUTION`, `PREVIEW_ONLY`, `NO_TASK_DOCS`). `worktree_tools.py` consumes these types and owns operation composition. |
 | `memory_tools.py` | `MemoryBranches`, `CarryoverSelection`, `CarryoverCommitMessages` (+ their defaults). |
-| `task_doc_tools.py` | `TaskDocTarget`, `TaskDocEdit` (+ `NO_EDIT`). |
+| `task_docs/task_doc_tools.py` | `TaskDocTarget`, `TaskDocEdit` (+ `NO_EDIT`). |
 | `benchmark_tools.py` | `BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun` (+ `ALL_CASES`, `DEFAULT_PREPARATION`, `DEFAULT_RUN`). |
 | `provider_tools.py` | `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery` (+ `WORKSPACE_QUERY_SCOPE`, `ALL_INDEXED_REPOS`). |
 | `runtime/` | Groups MCP startup, typed runtime-install delegation, and skill deployment without a package facade. |
@@ -193,7 +193,7 @@ L14: the task-doc application entry point accepts the additive `orchestrates` fi
 | `ResponseModel` is the public response-model base. | `ResponseModel` | mcp/src/agents_remember/models/base.py:66-88 |
 | `TOOL_RESPONSE_MODELS` is the registry of public response models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
 | Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. | `MemoryScopeIdentity`; `resolve_memory_scope`; `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:27-143 |
-| The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:86-96; mcp/src/agents_remember/application/memory_quality/controller.py:99-131; mcp/src/agents_remember/application/memory_quality/controller.py:134-196; mcp/src/agents_remember/application/memory_quality/controller.py:336-396 |
+| The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:98-108; mcp/src/agents_remember/application/memory_quality/controller.py:111-143; mcp/src/agents_remember/application/memory_quality/controller.py:146-208; mcp/src/agents_remember/application/memory_quality/controller.py:363-441 |
 | `route_index_refresh_tool` resolves context and supplies repository/storage authority. | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:254-290 |
 | `build_route_indexes` is the deterministic route-index builder. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:21-56 |
@@ -352,7 +352,7 @@ The committed route now groups these application owners under `application/lifec
 ## 260821-DAGQC-L2 Quality Controller And Direct-Landing Projection
 
 Memory quality now has one focused application API: `memory_scope.py` freezes configured official
-or leaf authority, and `memory_quality_controller.py` owns strict sync/start/poll execution,
+or leaf authority, and `memory_quality/controller.py` owns strict sync/start/poll execution,
 complete run identity, checklist publication, capacity guidance, and nondisclosing polling.
 `memory_tools.py` no longer repeats that failure family. The lifecycle direct-landing application
 boundary separately keeps the closed result outcome authoritative while nesting journal recovery
@@ -382,7 +382,28 @@ async run identity and polling, revalidates around scanning/publication, and exp
 at closeout apply admission. Public refusal projection retains the named pair field and exact
 contract-addressed repair arguments.
 
+## Current CCR Composition And Remaining Authority Gaps
+
+The task publication owner classifies exact field deltas and preflights affected scopes before canonical writes. Route-review and closeout admission now bind current normative task intent and direct evidence dependencies; typed intent refusals stay visible at the application boundary. Detached lifecycle workers and direct worktree paths load the repository's explicit certification profile. The default service graph provides Gate-5 rail definitions through `CertificationMemoryRailsAdapter`, allowing the quality seam to compile the real R11/R22/R21 authority.
+
+The full memory controller snapshots both working trees with external temporary indexes before scanning and revalidates those exact tree identities before checklist publication. Its `finalFullCatalog` reports executed catalog checks and missing authority; it explicitly supplies no affected-closure plan and cannot create R08 acceptance from checklist readiness. R05 frozen lifecycle admission/finalization, ordinary R16 durable telemetry and complete R07/R08 production orchestration remain unconstructed at this source. Terminal failure translation preserves already-classified organizational repair/ledger recovery before supplying an otherwise missing typed rail failure.
+
+## CCR-R18@v1 Task-Addressed Next-Step Bounding
+
+260831-CCR-L18 added `bound_next_step` to `application/tool_response.py`: lifecycle tool responses omit any `nextStep` guidance whose arguments name a different task address than the response's own exact contract/enclosure path. File-level detail lives in that sidecar.
+
 ## Update History
+
+
+
+- 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected task/memory package paths and semantic invalidation; recorded exact tree revalidation, profile service composition, and remaining R05/R16/R07/R08 gaps. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the `bound_next_step` task-address guard in `tool_response.py`.
+
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller row of the application overview (run/start/poll/attach to 98-108/111-143/146-208/363-441) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
+
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: documented exact-pair admission, async revalidation, and
   closeout application reporting. Verification remains closeout-owned.

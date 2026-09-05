@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated            | 2026-08-28T14:15+02:00                      |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`  |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-05T07:10+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -22,7 +22,7 @@
 names the agent-notifier); the design specs themselves are historical records and their route
 shape is unchanged.
 
-`docs/design/` holds the **in-repo design documentation** for the Agents Remember dashboard — durable design
+`docs/design/` holds the **in-repo design documentation** for Agents Remember, including the dashboard and Python evidence system — durable design
 references kept beside the code so the design intent survives across sessions without running the dashboard.
 It covers the engine-room visualization, top-level observable-lifecycle and harness-matrix notes, and the
 `dashboard/` evidence set. FEUI-L8 makes that evidence set the bounded home for the canonical Chats scenario
@@ -31,11 +31,12 @@ dashboard route overview.
 
 ## Hot Path Summary
 
-In-repo design documentation for the dashboard. Child route `engine-room/` is the engine-room design
+In-repo design documentation for the dashboard and Python verification architecture. Child route `engine-room/` is the engine-room design
 reference — a living spec paired with the prototype/scenario player the React engine room was built from.
 The `dashboard/` folder now carries the FEUI-L8 scenario matrix and reproducible accessibility/performance
 evidence, the closeout evidence pack, and the upstream-register boundary for contracts the frontend must not
-fabricate. Two top-level notes also live here: `observable-lifecycle.md` and `harness-matrix.md`.
+fabricate. Top-level notes include `observable-lifecycle.md`, `harness-matrix.md`, and the three Python
+evidence documents listed below.
 
 ## Child Routes
 
@@ -51,8 +52,9 @@ fabricate. Two top-level notes also live here: `observable-lifecycle.md` and `ha
 - `dashboard/session-cockpit-closeout-evidence.md` — the bounded closeout evidence pack for the complete
   Sessions-to-Chats cockpit series.
 - `dashboard/session-cockpit-upstream-register.md` — the explicit serving-contract gaps plus the ruled
-  one-Chats cutover and duty-transfer record; UA-1 remains absent, so xterm's runner line-log is not described
-  as a structured conversation UI.
+  one-Chats cutover and duty-transfer record. Its UA-1-absent account describes the FEUI-L8
+  handoff snapshot; later adapter-normalized conversation work must be checked in the serving
+  and conversation routes rather than inferred from that old register.
 - `observable-lifecycle.md` — top-level design note on the observable lifecycle, now including
   `lifecycle_gate` as the public gate junction plus the interaction-retention tiers: durable work
   records stay, gate/inbox interactions delete on response, dismiss, clear, consume, or the
@@ -77,8 +79,8 @@ fabricate. Two top-level notes also live here: `observable-lifecycle.md` and `ha
   built to satisfy; keep them and the renderers in sync.
 - The L8 evidence documents record tested behavior and missing upstream contracts. They do not enlarge the
   product contract: the one product-facing Chats destination is backed by the session cockpit, Operations
-  remains the default, RailChat remains contextual, and structured transcript/history authority stays future
-  work until an adapter-normalized feed exists.
+  remains the default, RailChat remains contextual, and the register's outstanding transcript/history asks remain dated FEUI evidence rather than a
+  statement that the current product has no normalized conversation feed.
 - `observable-lifecycle.md` is covered by file-level onboarding; `harness-matrix.md` remains present but
   not yet file-onboarded, so document only verified harness-matrix facts when it is onboarded later.
 
@@ -117,6 +119,14 @@ The cockpit performance/evidence design document now labels its test-capable mea
 an internal nonce-attested Dagger invocation and explicitly refuses host execution. This is an
 evidence-location clarification; the dashboard architecture is unchanged.
 
+## CCR Selection And Evidence Contract
+
+`python-evidence-system.md` now requires typed incomplete selection to stop before Gate 2.
+Unresolved ownership never silently expands to safe-full; deleted tests leave the population,
+and irrelevant inputs remain explicit. The immutable selector result binds candidate,
+configuration, scope and dependency reasons. Retry binds that selector digest and may refresh
+only the already admitted population when its cached proof is unusable.
+
 ## 260824-PDLS Evidence-Authority Design
 
 The Python test-evidence design now separates diagnostic execution from certifying evidence,
@@ -130,6 +140,8 @@ still-valid content is carried by `python-evidence-system.md`, `python-pytest-bo
 with the accepted authority model.
 
 ## Update History
+
+- 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current CCR selector/retry contract, broadened design route purpose, and marked the FEUI upstream-absence account historical. Verification records current source claims, not execution or acceptance.
 
 - 2026-08-28T14:15+02:00 — Closed the PDLS design route on the landed candidate: recorded the
   three canonical Python evidence documents and the deliberate retirement of the two superseded

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/certification/repository_profiles/adapters.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-05T07:08:26+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `../overview.md` |
@@ -98,10 +98,17 @@ artifact. The old hardcoded result inventory it replaces was deleted in
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The generic executor/decoder protocol and the concrete Dagger + JSON implementations. | `RepositoryExecutorAdapter`; `RepositoryResultDecoder`; `DaggerModuleExecutorAdapter`; `JsonExitStatusDecoder` | mcp/src/agents_remember/certification/repository_profiles/adapters.py:43-58; mcp/src/agents_remember/certification/repository_profiles/adapters.py:60-97; mcp/src/agents_remember/certification/repository_profiles/adapters.py:99-133 |
-| The preview and success payload render the profile-declared command through the same adapter. | `_profile_report_command`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:504-530; mcp/src/agents_remember/worktrees/modules/quality/gate.py:358-403 |
-| The clean executor runs the admitted adapter against the exact candidate and decodes the exported result; recovery decodes through the same decoder. | `run_clean_quality`; `_executor_command`; `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:128-192; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:210-241; mcp/src/agents_remember/worktrees/modules/quality/gate.py:289-357 |
+| The profile report command selects the admitted executor and renders it through DaggerModuleExecutorAdapter. | "def _profile_report_command(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:594-618 |
+| The success payload uses the shared gate-command renderer and reports the admitted profile identity. | "def _strict_quality_success_payload(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:402-448 |
+| The clean executor runs the admitted adapter against the exact candidate. | "def run_clean_quality("; "def _executor_command(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:140-228; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:247-278 |
+| The clean executor publishes the exported result and obtains its exit status through the configured JSON decoder. | "def _publish_executor_outcome("; "def _exported_pipeline_exit(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:281-331; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:418-431 |
+| Recovery verifies the published candidate/profile/result authority and decodes through the same JSON result decoder. | "def recover_strict_code_quality_gate(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399 |
 
 ## Update History
+
+- 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Split execution, terminal decoding and recovery into current unique owner definitions; refreshed moved ranges and retained the shared-adapter claim after reading the changed executor/recovery bodies. This scoped repair does not promote the card's verification stamp or certify a gate.
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split symbolic command rendering from success-payload composition and retained the shared-adapter behavior. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose and removed the citation row for the deleted `result_artifacts.py` (the deletion fact stays in the prose above the table).
 

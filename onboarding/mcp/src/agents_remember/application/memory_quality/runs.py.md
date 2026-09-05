@@ -63,7 +63,7 @@ snapshot copy, and maps wrong-repository lookup to the same absence as an unknow
 | Admission reuses equivalent live work before terminal pruning and hard live-cap refusal. | `start_quality_run` | mcp/src/agents_remember/application/memory_quality/runs.py:70-104 |
 | Polling requires repository ownership and returns a detached snapshot. | `poll_quality_run` | mcp/src/agents_remember/application/memory_quality/runs.py:107-119 |
 | Pruning removes terminal rows only. | `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:140-161 |
-| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:76-144 |
+| The typed controller owns public capacity and nondisclosure translations. | `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:111-143; mcp/src/agents_remember/application/memory_quality/controller.py:146-208 |
 
 ## Cross-Repo References
 
@@ -79,6 +79,8 @@ No cross-repo boundary applies to this runtime registry.
 same exact code/memory pair instead of reconstructing scope from repository id.
 
 ## Update History
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller start/poll row (76-144 to 111-143/146-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: retained exact admitted scope identity in poll snapshots.
   Verification remains closeout-owned.

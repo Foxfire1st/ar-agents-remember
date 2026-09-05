@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving_response_conformance_live.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -37,6 +37,14 @@ Part of the 260731-EFA-L7 in-place split family for `test_serving_response_confo
 | --- | --- | --- |
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
+
+## 260831-CCR-L23 Declared-Surface Ledger
+
+L23 advanced the live declared-surface ledger for the two new requirement routes:
+292 declared pairs (was 286), 139 driven against a real body (was 133), 153
+declared-and-undriven with a reason each, and the weaker claim now reads "every one of
+the 63 routes is driven on at least one status" (was 61).
+
 ## 260821-CLIVE-L2 Live Readiness Reuse
 
 The live stream contract reuses the same bounded projector-readiness helper before deriving the
@@ -58,6 +66,8 @@ test owns the scenario while production remains the sole refusal translator.
 | The declared 422 operation body is driven by an explicit native refusal at the scenario boundary. | `ConversationSuccessConformanceTests` | mcp/tests/test_serving_response_conformance_live.py:50-300 |
 
 ## Update History
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the declared/driven ledger advance (292/139, 63 routes) for the requirement endpoints in the live surface-coverage suite.
 
 - 2026-08-28T06:40+02:00 — Replaced fake-owned implicit refusal behavior with explicit
   scenario-local native-error injection for the 422 conformance case.

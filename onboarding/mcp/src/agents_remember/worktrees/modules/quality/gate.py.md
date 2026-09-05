@@ -5,217 +5,79 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-05T06:14:14+00:00 |
+| lastVerifiedCommitHash | `668d710bf2a9898fb706614163462ff346d986b7` |
+| lastVerifiedCommitDate | 2026-09-05T02:45:47+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
 
-[worktrees/modules overview](../overview.md)
+[Governing route overview](../overview.md)
 
 ## Purpose
 
-This module is the narrow policy and process adapter that makes the repository-owned
-certification profile a mandatory, fail-closed lifecycle gate. Since CCR-R22@v1 (L22, commit
-`685f83c44055`) leaf closeout requires one explicit configured profile whenever code would be
-committed, admits it against the exact task worktree, and runs the profile-declared
-change-set-scoped adapter exactly once before creating its commit; leaf integration reuses that
-certified commit without invoking this runner again. Master integration runs the full
-profile-declared adapter once with container-runtime-managed RAM and swap by default inside
-`worktree_integrate` itself. An explicit settings cap (memoryCapBytes) remains available for
-full runs; the executor identity now belongs to the profile, not to agentic settings.
-
-It also owns the latest completed gate transcript. The caller supplies a `QualityGateTarget`
-containing the checkout, its worktree enclosure, the repository id, and the profile reference;
-every completed run atomically replaces `<worktree_group>/reports/test-results.md`, and success
-returns that path plus profile-bound evidence while failure publishes the same full output before
-raising.
-
-Applicability is now all-or-nothing for code commits: there is no consumer
-`wrapper-unavailable` state. A repository with no valid configured profile has no legal
-code-commit route; preview and apply refuse with `certification-profile-invalid` instead of
-skipping the gate. Older tasks without code changes remain valid and do not need a profile merely
-to be read or recovered. The former self-policy `requires_integrated_acceptance` (removed in
-this commit) is replaced by the universal requirement that every code-committing repository admit
-its own profile.
+Owns repository-profile admission and the lifecycle-facing quality gate boundary. It runs or recovers the exact candidate's Dagger generation, publishes the durable test report, and invokes the certification-record adapter around the run.
 
 ## Code Commentary
 
 ### Logic
 
-`QualityGateTarget` binds the exact repository context: `code_worktree`, `worktree_group`,
-`repository_id`, and `profile_reference` (the configured repository-relative
-`certificationProfile` path or `None`). `QualityGatePlan` carries only `mode` (targeted/full)
-and the optional `memory_cap_bytes`; there is no executor field anymore because the executor
-identity comes from the profile.
+`QualityGateTarget` binds checkout, enclosure, repository id and configured profile reference; `QualityGatePlan` carries targeted/full mode and an optional memory cap. A code commit requires one admitted profile. Missing profile authority refuses instead of providing the former wrapper-unavailable opt-out.
 
-`requires_strict_code_quality(target, *, code_would_commit)` returns False when nothing would
-commit, otherwise it admits the profile via `load_repository_profile` (fail-closed on missing or
-invalid authority) and returns True: code commits always need one valid configured profile.
+`run_strict_code_quality_gate` captures the staged tree, freezes certification admission before `run_clean_quality`, writes the completed test report, rejects failed or uncertified output, then rechecks both the evidence tree and current staged tree. The index is supplied by the caller: this module neither stages nor undoes staging. The recorded task diff base determines the measured change set.
 
-`code_quality_gate_preview(target, *, code_would_commit, diff_base, plan)` reports one of three
-states. In the enforced state it admits the profile/selection (`_admitted_selection`),
-renders the profile-declared symbolic command (`_gate_command` / `_profile_report_command` via
-`DaggerModuleExecutorAdapter`), and returns mode, `executor: "dagger"` (the framework-facing
-label), `executorAdapterId`, `profileDigest`, `profileSelectionId`, and (full mode) the memory
-policy block. `GATE_NO_CODE_COMMIT` reports no-code-commit; the old
-`GATE_WRAPPER_UNAVAILABLE` state no longer exists.
+`recover_strict_code_quality_gate` requires matching attestation, tree, profile, plan, selection, adapter and decoder, then validates the published generation and certifying evidence before recording it. Its public report remains the stable developer-facing transcript; the immutable published result path is separate.
 
-`run_strict_code_quality_gate(target, *, diff_base, plan, invocation, attestation)` requires a
-valid profile (else `certification-profile-invalid` before anything runs), hands the exact
-candidate to `run_clean_quality` with the profile reference, writes the complete exported
-transcript through `_write_test_results_report`, refuses a pass without a published manifest,
-re-verifies the candidate write-tree before and after publication, and raises with both the stable
-report path and a bounded output tail on any non-zero result. Success returns a payload validated
-through `QualityGateResult` with `profileDigest`, `profilePlanDigest`,
-`profileSelectionId`, `resultArtifact`, `reportPath`, `publishedResultPath`, and
-certifying-test evidence. `_memory_policy_payload` reports `processPolicy:
-profile-adapter-owned` and `swap: container-host-managed` with an explicit cap option for full
-runs.
-
-`recover_strict_code_quality_gate` loads the strict v3 published manifest once, checks the
-caller-bound attestation and the declared result from that same immutable snapshot, recompiles the
-expected profile plan digest for the current candidate, requires the manifest's profile identity
-(profile/plan digest, selection, executor adapter, result decoder) to match the admitted
-selection, decodes the terminal artifact through the declared decoder, and recovers one exact
-passed generation after a caller crash. Its public `reportPath` remains the stable
-`reports/test-results.md`; recovery additionally exposes `publishedResultPath`.
-
-`run_local_quality_diagnostic` refuses immediately; there is no host command planner or
-fallback executor. `test_results_report_path` fixes the report location at
-`reports/test-results.md` under the supplied worktree group. `_write_test_results_report`
-renders status, invocation, mode, executor adapter, profile digest, plan digest, selection, diff
-base, exit code, timing, exact shell command, cap facts, and the full output, then publishes with
-the shared `atomic_write_text` primitive. The command reported in the payload is the
-profile-declared adapter command a reader can rerun exactly.
-
-### The Index Is The Scope, And This Function Does Not Own It
-
-The profile-declared adapter derives its scope from the index/working tree of the staged task
-worktree — so **what is staged when this runs is what gets certified**. Since the staging commit
-wave closeout stages the whole task worktree first (`closeout._gate_staged_code`), the gate's
-scope and the commit's content are one set; before that, a file the task *created* went into the
-commit with no rail of the gate having read it.
-
-This module deliberately does not do the staging and does not describe it. The failure message
-states only what is true of every caller — "code" — and **does not say the staging was undone,
-because closeout does not undo it**. This function certifies the index it is handed and says
-nothing about how it came to look that way. The refusals, the reset and the `add -A` all live in
-`closeout.py`, where the disposable-worktree precondition that makes staging safe is actually
-established.
-
-### `diff_base` Is What Makes The Coverage Floor Passable
-
-`diff_base` must be the task's recorded base commit. Leaf closeout passes
-`contract.code_base_commit`; master integration passes the recorded super base. The lifecycle
-executor materializes a separate ancestry bundle and the exact staged candidate, then the
-profile-declared Dagger function refuses an empty or unprovable base.
-
-Using the wrong base is the wrong measurement for a leaf: the profile's per-diff floor demands
-full coverage of the changed statements and branch arcs, so measuring against `main` charges a
-leaf for every change on the whole integration branch rather than for its own diff — a gate no
-leaf can pass, which is exactly as useless as a gate that cannot fail. GitHub PR validation does
-not invoke this acceptance path; the lifecycle always supplies the task-derived base.
-
-`_gate_command` renders the profile-declared symbolic Dagger call into the payload's
-`command` key, including exact-candidate and ancestry-bundle placeholders, mode, base, and
-optional cap. `diffBase` reports the base on its own key.
-
-### Host Execution Refuses
-
-`run_local_quality_diagnostic` is an explicit refusal surface: the only executable path is
-`run_clean_quality`, which reconstructs the accepted candidate inside the pinned Dagger graph
-through the profile-declared adapter. This refusal is scoped to the Python quality/acceptance
-wrapper; it does not overclaim that every direct diagnostic in the repository is forbidden.
-Direct targeted Vitest unit/component diagnostics are governed by the dashboard configuration and
-never enter this adapter.
+The record helper reopens the published decoder artifact and delegates its gate catalog. Its returned refusal list is currently ignored: the outer success payload describes Dagger quality success, not a guarantee that every R21 certificate was minted. The ordinary red-run branch raises before that record helper, so typed result publication for every terminal outcome is not established by this seam.
 
 ### Conventions
 
-`status` is the machine-readable field; `reason` is prose for a human reading the closeout
-payload. Callers branch on `status`, not on `required` alone.
+Only the pinned Dagger path supplies acceptance evidence. A symbolic command in a preview is not execution evidence. Preserve the profile and shared runtime-authority digests in reports and recovered payloads.
 
 ### Invariants And Boundaries
 
-- The target carries the repository id and profile reference independently of the checkout path;
-  authority is a configured repository settings value, never a discovered path.
-- No-code closeout is skipped. Every code commit requires one valid configured profile; a missing,
-  invalid, incomplete, or candidate-incoherent profile refuses as
-  `certification-profile-invalid` before memory quality, approval claim, or commit.
-- `requires_integrated_acceptance` and the consumer `wrapper-unavailable` state were removed at
-  this commit; there is no no-adapter code-commit route and no repository-name special case.
-- A required missing/invalid profile, an unavailable executor prerequisite, or a non-zero adapter
-  result refuses before irreversible closeout or integration mutation.
-- The leaf contract is the only sanctioned narrowing: targeted mode is explicit in the
-  profile-declared command; full mode is explicit at master integration.
-- **A closeout must pass the leaf's own base commit.** Dropping `diff_base` at a call site does
-  not weaken the gate, it makes it unpassable.
-- Failure output is bounded to the last 40 lines while preserving the actionable exit status.
-- `reports/test-results.md` retains the complete stdout/stderr transcript for both pass and fail
-  and is replaced atomically only after a run completes.
-- **This module never stages, resets or restores.** The index it is handed is the scope it
-  certifies; producing that index is the caller's job.
-- This module never builds or launches a host wrapper command. `run_clean_quality` owns exact
-  candidate reconstruction and profile-declared Dagger execution.
-- `reportPath` always names the stable enclosure report. `publishedResultPath` is optional,
-  recovery-only evidence and must never replace the stable path.
-- Recovery loads one strict v3 manifest snapshot and uses it for attestation, profile identity,
-  digest/size verification, and artifact-path resolution; no second pointer read or compatibility
-  reader is permitted.
+- Freeze admission before Gate 1; never manufacture authority after execution from unbound inputs.
+- Candidate, profile, selection, decoder and attestation must match during recovery.
+- A green quality result and a complete certificate chain are separate facts at this boundary.
+- Host diagnostic execution refuses; a failed gate leaves caller-owned staging intact.
+- An explicit memory cap changes resource policy, not the test population or evidence requirements.
 
 ### Todos
 
-None recorded.
+Certificate refusal propagation and complete red/interrupted R21 record integration are not complete here. The typed lifecycle, telemetry and Gate-5 executors are not wired by this helper.
 
 ## Docs References
 
-The gate semantics are governed by CCR-R22@v1 and the master task.md framework/repository boundary:
-the profile is configurable, the gate semantics are not; Gate 1-4 meanings and order are fixed
-while the repository owns the concrete rails; Gate 5 remains memory-domain authority outside the
-profile.
+No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The profile is configurable; the gate semantics are not; repositories may not redefine the ordering contract. | `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:487-501 |
-| Missing, ambiguous, invalid, or incomplete profile authority fails during admission; no fallback or compatibility route. | `load_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/authority.py:42-92 |
-| The MCP owns trusted host runtime-launch; every code-committing repository requires one explicit profile. | `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-136 |
+| External domain documentation is not configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-Closeout owns sequencing, while the profile-declared adapter performs the actual repository-quality
-checks; this module routes between them.
+The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Target/plan shape and the strict-required decision that always admits one valid profile when code would commit. | `QualityGateTarget`; `QualityGatePlan`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:48-65; mcp/src/agents_remember/worktrees/modules/quality/gate.py:66-69; mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-136 |
-| Preview reports the profile-admitted enforced state or no-code-commit; success payload carries profile identity and evidence. | `code_quality_gate_preview`; `_strict_quality_success_payload`; `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:136-191; mcp/src/agents_remember/worktrees/modules/quality/gate.py:358-403; mcp/src/agents_remember/worktrees/modules/quality/gate.py:520-537 |
-| The strict run certifies the index it is handed, publishes the report, and refuses failures before any commit. | `run_strict_code_quality_gate`; `_write_test_results_report`; `_gate_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:191-286; mcp/src/agents_remember/worktrees/modules/quality/gate.py:419-471; mcp/src/agents_remember/worktrees/modules/quality/gate.py:552-570 |
-| Recovery reuses one exact passed generation only when profile identity and plan digest match the current candidate. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
-| The named local entry point refuses before resolving or executing a host command. | `run_local_quality_diagnostic` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:406-416 |
-| Closeout builds the target from the configured profile reference and runs targeted mode; integration forwards the reference for the full gate. | `_quality_gate_target`; `_closeout_quality_gate_preview`; `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:147-155; mcp/src/agents_remember/worktrees/modules/closeout.py:829-850; mcp/src/agents_remember/worktrees/integration/integration_quality.py:137-195 |
-| The profile package provides admission/adapters/planning consumed here. | `load_repository_profile`; `DaggerModuleExecutorAdapter`; `compile_repository_profile_plan` | mcp/src/agents_remember/certification/repository_profiles/authority.py:42-92; mcp/src/agents_remember/certification/repository_profiles/adapters.py:60-97; mcp/src/agents_remember/certification/repository_profiles/planning.py:71-118 |
-| Regressions cover enforced/no-code states, profile admission refusals, targeted/full modes, cap-kill naming, immediate host refusal, exact leaf base forwarding, bounded failures, and mutation ordering. | `CodeQualityGateTests`; `CloseoutCodeQualityGateTests` | mcp/tests/test_worktree_closeout_quality_gate.py:109-736; mcp/tests/test_worktree_quality_gate_runner.py:68-550 |
+| Required profile admission and preview | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:125-185 |
+| Pre-run freeze, durable report and exact-tree recheck | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-324 |
+| Exact published-generation recovery and quality success payload | `recover_strict_code_quality_gate`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-448 |
+| Host refusal and record helper whose result is not propagated | `run_local_quality_diagnostic`; `_record_certification_generation`; `record_published_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:451-505 |
 
 ## Cross-Repo References
 
-This gate acts on whatever code worktree closeout hands it; for a consuming repository that
-checkout carries that repository's own configured profile, and the profile-declared adapter is
-that repository's own executable contract.
+No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is decided by the configured profile reference plus the admitted profile in the target checkout — no wrapper discovery, no repository-name special case. | `load_repository_profile`; `_admitted_selection` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:126-134; mcp/src/agents_remember/worktrees/modules/quality/gate.py:487-501 |
-
-## L23 Acceptance Interpretation (Preserved)
-
-This module owns only the pinned Dagger acceptance adapter. Leaf closeout runs targeted mode once;
-leaf integration reuses that certified commit; master integration runs full mode once. Both
-acceptance runs require the exact task-derived diff base. Host pytest and direct wrapper execution
-are refused. The wording has evolved from the L23/R43 self-owned-wrapper era to the CCR-R22
-profile-admission era captured above.
+| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-05T06:14:14+00:00 — Updated the accumulated profile gate to document admission freeze, successful-generation recording, and the remaining gap between quality success and certificate-chain completeness.
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the runtime-authority cutover - `_QualityGateReport` and the success payload carry `runtimeAuthorityDigest`, preview returns it as None, the strict run reads it from the published schema-v3.1 manifest, and the test-results transcript renders it; re-anchored gate.py reference ranges to the current layout.
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): rewrote the card for the repository-profile cutover. `QualityGateTarget` gained `repository_id`/`profile_reference`, the plan lost its executor field, `requires_strict_code_quality` now always admits one valid profile for code commits, the `wrapper-unavailable` state and `requires_integrated_acceptance` were removed, preview/success payloads carry profile digest/plan digest/selection/executor adapter id/result artifact, and recovery re-derives the expected plan digest and profile identity before reuse.
 

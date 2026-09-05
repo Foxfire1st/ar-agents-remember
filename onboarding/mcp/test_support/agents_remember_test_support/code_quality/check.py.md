@@ -3,123 +3,82 @@
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | mcp/test_support/agents_remember_test_support/code_quality/check.py |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
-| governingOverview | overview.md |
+| path | `mcp/test_support/agents_remember_test_support/code_quality/check.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-05T06:14:14+00:00 |
+| lastVerifiedCommitHash | `c87d61cf3ed2fa467cb3e16bbdd5271c92c80c28` |
+| lastVerifiedCommitDate | 2026-09-04T14:53:25+02:00 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
-check.py is the Dagger-only execution facade for the repository Python quality rail. It consumes
-the typed plan from quality_plan.py, executes each rail, controls retry and causal continuation,
-merges coverage proof, runs CRAP and changed-line scoring, and returns the one wrapper result. It
-does not own test selection metadata or lifecycle publication.
-
-The module deliberately re-exports the established CheckConfig, Step, GateScope, scope helpers,
-quality_steps, and RADON_REPORT_NOTE names from quality_plan.py. Existing callers keep one stable
-facade while planning and execution have separate implementation owners.
+Executes the repository's Dagger-admitted Python quality plan. It owns command/result interpretation, retry and causal continuation, coverage finalization and the wrapper outcome; quality_plan owns command planning and types.
 
 ## Code Commentary
 
-### Execution transaction
+### Logic
 
-run_quality_check establishes the candidate root and progress artifact, reports full or targeted
-scope, prepares content-addressed retry proof, and delegates the actual transaction to
-execute_quality_rails. Deterministic source rails run before pytest. A failed source rail does not
-let pytest consume stale or unrelated evidence; causal continuation may skip only the proven
-dependent population and records the skipped set explicitly.
+run_quality_check validates the opaque admission capability, reports derived full/targeted scope and runs one execution transaction. execute_quality_rails removes stale coverage and report artifacts before any attempt, prepares retry proof, executes fixed checks, then scores only finalized current coverage. Failed pre-test checks cannot reuse an old report as success.
 
-run_fixed_checks executes the plan in order. The plan itself comes from quality_plan. This module
-owns result interpretation: report-only Radon commands still fail when the tool process breaks,
-enforcing commands fail on any non-zero result, and every step updates the one self-overwriting
-progress record.
+The facade preserves public planning exports. run_fixed_checks consumes the ordered plan; report-only Radon diagnostics still fail when the tool process itself fails. Causal continuation may skip only the proven dependent population and never turns its failed owner into a passing result. Invalid or missing causal proof cannot suppress tests.
 
-### Pytest, retry, and coverage
+Retry binds candidate, configuration, selector, runtime, environment and artifacts. Delta retry removes invalidated test contexts, runs fresh evidence and merges coverage only after success. The immutable selection digest is forwarded into retry identity. Incomplete targeted ownership raises ScopeError rather than broadening to a guessed population.
 
-prepare_retry_plan accepts proof reuse only under the opaque Dagger admission capability and the
-current lane trigger. Ambiguous manifests, stale provenance, changed configuration, incompatible
-runtime, or incomplete dependency ownership produce a fresh run or a loud refusal; there is no
-host or diagnostic fallback. L19 bound the immutable selector result into the retry identity:
-prepare_retry_plan now forwards `config.selection_digest` into the retry inputs so an unchanged
-selection cannot be accidentally re-executed.
+main requires Dagger admission before quality work, normalizes the native subprocess environment, resets tempfile's cached root and creates /tmp/arq before temporary coverage allocation. This avoids the prior failure where the configured short temp root did not exist. A positive optional memory cap is applied explicitly; memory or scope failures return wrapper failure.
 
-run_pytest_only and run_coverage_rails execute the planned pytest command and then finalize evidence.
-A delta retry retains old coverage separately, removes invalidated test contexts, writes fresh
-coverage independently, and merges the two only after the delta passes. Missing or inconclusive
-coverage cannot be reported as success. complete_coverage_rails feeds the same finalized JSON to
-CRAP and changed-line coverage so the scorers do not perform competing measurements.
+### Conventions
 
-### Causal continuation
+Derived repository scope and the recorded diff base are inputs; callers cannot substitute arbitrary file lists. Keep plan construction, execution, and lifecycle publication in their distinct owners.
 
-The causal report can suppress only tests proven to depend on an observed failed owner. Invalid,
-missing, or incomplete causal evidence selects the full population. Independent tests continue,
-and a failed owner remains a failing quality result even when downstream execution is reduced.
+### Invariants And Boundaries
 
-### Scope and configuration
+- No host or diagnostic fallback can create acceptance evidence.
+- The staged candidate is the intended quality input; unrelated untracked files are not silently included.
+- Fresh pytest/coverage evidence is finalized before CRAP and changed-line scoring.
+- Incomplete ownership and invalid admission refuse instead of inventing a selection.
+- Clear stale artifacts before execution; never report old coverage as current.
+- Create the short temporary root before allocating beneath it.
 
-config_from_args validates the repository-owned configuration, resolves all report paths beneath
-the project root, obtains Dagger admission before any quality behavior, and derives either the
-full scope or the diff-owned targeted scope. The wrapper accepts no caller-authored file list.
-Tracked source, pytest roots, product coverage paths, file-size arming, and the diff base all come
-from repository truth.
+### Todos
 
-L19 hardened targeted configuration: when the derived targeted test impact is incomplete,
-config_from_args raises `ScopeError("test-selection-ownership-incomplete: ...")` with every
-unresolved input reason, instead of broadening to the safe-full population. Gate 2 therefore
-blocks hard on ownership incompleteness before any test command starts.
-
-The staged index is intentional quality input. Closeout must stage the exact candidate before
-running the wrapper; widening git enumeration to arbitrary untracked files would certify content
-that may not enter the commit and would still not make those files diff-measurable.
-
-### Result text
-
-step_header, step_failure, and step_success keep the enforcement distinction visible in durable
-logs. Radon is explicitly report-only because findings do not change Radon's exit status. A
-non-zero Radon process remains a tool failure. No baseline, exemption, compatibility path, or
-silent fallback turns a finding into success.
-
-## Invariants And Boundaries
-
-- The wrapper runs only with a valid Dagger admission capability.
-- check.py owns execution and result interpretation; quality_plan.py owns types and command
-  construction.
-- The facade re-exports the pre-split public planning names so callers do not fork.
-- Full and targeted scope are derived; callers cannot provide arbitrary paths.
-- Pytest evidence is finalized before CRAP or changed-line coverage reads it.
-- Retry reuse is candidate-, configuration-, selection-, runtime-, environment-, and
-  artifact-bound; the immutable selection digest is part of that identity.
-- An incomplete targeted test impact refuses config construction; there is no safe-full expansion.
-- Invalid causal evidence cannot suppress any test.
-- Host execution and diagnostic output cannot become acceptance evidence.
-- The progress file is one bounded, atomic current-state view rather than an append-only log.
+No source change or quality run was performed during this documentation recovery.
 
 ## Docs References
 
-None. This behavior is repository-owned.
-
-## Repo-Internal References
+No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Stable facade re-exports the extracted plan contract. | `__all__` | mcp/test_support/agents_remember_test_support/code_quality/check.py:81-95 |
-| One top-level execution transaction owns retry and progress. | `run_quality_check` | mcp/test_support/agents_remember_test_support/code_quality/check.py:148-198 |
-| Fixed rails consume the typed plan and apply causal continuation. | `run_fixed_checks` | mcp/test_support/agents_remember_test_support/code_quality/check.py:395-492 |
-| Coverage retry is merged explicitly before scoring. | `_merge_retry_coverage` | mcp/test_support/agents_remember_test_support/code_quality/check.py:550-565 |
-| Retry planning forwards the immutable selection digest into the proof identity. | `prepare_retry_plan` | mcp/test_support/agents_remember_test_support/code_quality/check.py:661-707 |
-| Targeted configuration refuses incomplete ownership before any test command. | `config_from_args` | mcp/test_support/agents_remember_test_support/code_quality/check.py:758-804 |
+| External domain documentation is not configured. | N/A | N/A |
+
+## Repo-Internal References
+
+The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Admission, progress, stale-artifact removal and execution transaction | `run_quality_check`; `execute_quality_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:168-270 |
+| Finalized coverage before scoring | `complete_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:273-315 |
+| Ordered checks and causal continuation | `run_fixed_checks` | mcp/test_support/agents_remember_test_support/code_quality/check.py:415-512 |
+| Coverage retry merge and evidence reporting | `_merge_retry_coverage`; `report_cached_pytest`; `report_pytest_result` | mcp/test_support/agents_remember_test_support/code_quality/check.py:570-647 |
+| Retry eligibility and immutable selection binding | `prepare_retry_plan` | mcp/test_support/agents_remember_test_support/code_quality/check.py:661-707 |
+| Derived configuration, Dagger admission and short temporary-root creation | `config_from_args`; `main`; `QUALITY_TEMP_ROOT` | mcp/test_support/agents_remember_test_support/code_quality/check.py:758-870 |
 
 ## Cross-Repo References
 
-None.
+No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-05T06:14:14+00:00 — Reconciled execution/retry invariants and recorded the actual short-temporary-root creation fix, preserving the selection and stale-evidence lessons.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 exact-ownership
@@ -129,7 +88,9 @@ None.
 
 - 2026-08-28T04:48+02:00 — Split typed plan construction and progress state into quality_plan.py,
   retained check.py as the stable execution facade, and corrected retry/causal ownership.
+
 - 2026-08-27T18:33+02:00 — Documented product-only scoring, dependency-owned retry, causal
   continuation, evidence lanes, and Dagger-only acceptance.
+
 - 2026-08-25T08:27+02:00 — Moved the quality implementation from shipped product source into the
   repository test-support package.

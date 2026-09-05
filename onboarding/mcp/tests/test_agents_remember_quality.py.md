@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
-| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
+| lastUpdated | 2026-09-05T08:46+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,17 @@ and no `ln -s`, asserts the link node contains no installer invocation, and requ
 order installer < link < workspace source < uv sync < late per-attempt environment
 (`test_agents_remember_quality.py:499-545`).
 
+
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) reworks the suite around the cost-ordered five-gate
+execution and the shared runtime authority: the module-level fake Dagger objects drive the portable
+`_execute_gate_rails` profile execution, `runtime_authority_manifest` (lines 114-122) binds the
+admitted `dagger-runtime-authority/v1` digest into execution manifests (`_require_plan_authority`
+refuses a missing or mismatched digest), `test_dagger_quality_red_gate_one_still_terminalizes_every_gate_one_sibling`
+(lines 956-1027) proves exhaustive same-gate terminalization with zero later-gate starts, gate-four
+applicability and real-Codex-rail facts are pinned (lines 403-477), a rail runtime outside the
+admitted adapter image is refused (lines 782-841), and full-mode selection uses the explicit diff
+base without targeted flags (lines 919-955).
+
 ### Conventions
 
 The suite tests graph semantics without a daemon; live field proof remains a separate Dagger run.
@@ -101,11 +112,16 @@ installer and link exec nodes and proves installer failure cannot be masked; the
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Dynamic graph-contract tests load the package from `.dagger/src`, independent of ambient host paths. | `DAGGER_MANIFEST`; `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:43; mcp/tests/test_agents_remember_quality.py:65-84 |
-| Focused structure proves the isolated server scope and the candidate MCP tmux namespace whitelist. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root`; `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:415-446; mcp/tests/test_agents_remember_quality.py:447-469 |
-| Focused discovery evidence preserves structured success through the exact current Codex envelope and rejects arbitrary prefixes. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:470-483 |
-| The bootstrap repair proves distinct, ordered installer and runtime-link exec nodes. | `test_candidate_setup_precedes_every_attempt_specific_cache_input` | mcp/tests/test_agents_remember_quality.py:484-558 |
-| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_executes_the_exact_targeted_profile_plan` | mcp/tests/test_agents_remember_quality.py:324-350; mcp/tests/test_agents_remember_quality.py:635-664; mcp/tests/test_agents_remember_quality.py:677-697; mcp/tests/test_agents_remember_quality.py:748-833 |
+| Graph-contract tests derive Dagger manifest and source paths from the repository root. | "DAGGER_MANIFEST ="; "DAGGER_SOURCE_ROOT =" | mcp/tests/test_agents_remember_quality.py:43-46 |
+| The dynamic loader imports the package from that .dagger/src root after clearing prior module entries. | "def load_dagger_module(" | mcp/tests/test_agents_remember_quality.py:66-72 |
+| Fixture tmux commands drop inherited TMUX and use the fixture socket root for every subprocess. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root` | mcp/tests/test_agents_remember_quality.py:258-287 |
+| The candidate MCP configuration inherits only the declared hosted-role and fixture tmux namespace variables. | `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:290-309 |
+| Focused discovery evidence preserves structured success through the exact current Codex envelope and rejects arbitrary prefixes. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:312-324 |
+| The bootstrap repair proves distinct, ordered installer and runtime-link exec nodes. | `test_candidate_setup_precedes_every_attempt_specific_cache_input` | mcp/tests/test_agents_remember_quality.py:327-400 |
+| The module contract test checks the pinned Dagger engine, parseable class, public functions, and disabled default function caching. | `test_agents_remember_quality_module_is_pinned_and_parseable` | mcp/tests/test_agents_remember_quality.py:167-191 |
+| Missing/mismatched attestation and host bootstrap admission are refused. | `test_python_suite_refuses_missing_or_mismatched_dagger_attestation` | mcp/tests/test_agents_remember_quality.py:478-505 |
+| The report contract keeps one profile-declared authoritative result artifact. | `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result` | mcp/tests/test_agents_remember_quality.py:520-529 |
+| Fake graph construction checks the exact targeted profile commands, order, and published result metadata. | `test_dagger_quality_executes_the_exact_targeted_profile_plan` | mcp/tests/test_agents_remember_quality.py:591-673 |
 
 ## Cross-Repo References
 
@@ -113,7 +129,8 @@ No sibling-repository boundary is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:86-264; mcp/tests/test_agents_remember_quality.py:265-323 |
+| The shared fake container records commands, files, environment, and graph operations without external transport. | "class FakeContainer:" | mcp/tests/repository_profile_test_support.py:566-668 |
+| The shared fake Dagger client supplies that one recording container and named cache volumes. | "class FakeDag:" | mcp/tests/repository_profile_test_support.py:745-753 |
 
 ## R39 Guard Wiring Proof
 
@@ -150,6 +167,13 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 4 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated source-path constants from module loading. Selected the two current namespace tests rather than former line ranges. Split four tests and qualified graph execution as fake graph construction, not a live Dagger run. Repointed moved fake definitions to their actual shared support owner. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` repointed to mcp/tests/test_agents_remember_quality.py:312-324. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `test_candidate_setup_precedes_every_attempt_specific_cache_input` repointed to mcp/tests/test_agents_remember_quality.py:327-400. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the five-gate/authority rework of the Dagger-module suite - gate-exhaustion forcing, authority-digest-bound execution manifests, adapter-runtime refusal, and gate-four applicability facts.
+
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
   Docs References task-artifact rows as prose (absolute ar-coordination paths are not

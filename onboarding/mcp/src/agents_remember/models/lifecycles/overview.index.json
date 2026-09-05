@@ -23,13 +23,15 @@
     "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
     "mcp/src/agents_remember/models/lifecycles/operation.py",
     "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
+    "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
+    "mcp/src/agents_remember/models/lifecycles/operation_wait.py",
     "mcp/src/agents_remember/models/lifecycles/policy.py",
     "mcp/src/agents_remember/models/lifecycles/responses.py",
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 16,
-    "fileSidecars": 16,
+    "sourceFilesInScope": 18,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -62,12 +64,16 @@
     "mutation_evidence",
     "operation",
     "operation_kinds",
+    "operation_projection",
+    "operation_wait",
     "policy",
+    "projection",
     "remember",
     "response",
     "responses",
     "src",
-    "termination"
+    "termination",
+    "wait"
   ],
   "hotPath": {
     "summary": "This route is the strict vocabulary for root-journal operations: generations, closeout-door and successor publication, worker termination, direct landing, legacy migration proof, and public legal controls. Use `responses.py` for lifecycle signal vocabularies and tool responses, `finalize.py` for the terminal finalizer response, and `operation.py` for asynchronous closeout/integration inputs, durable records, and public projections.",
@@ -86,6 +92,8 @@
       "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
       "mcp/src/agents_remember/models/lifecycles/operation.py",
       "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
+      "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
+      "mcp/src/agents_remember/models/lifecycles/operation_wait.py",
       "mcp/src/agents_remember/models/lifecycles/policy.py",
       "mcp/src/agents_remember/models/lifecycles/responses.py",
       "mcp/src/agents_remember/models/lifecycles/termination.py"
@@ -117,6 +125,10 @@
       "operation",
       "operation_kinds.py",
       "operation_kinds",
+      "operation_projection.py",
+      "operation_projection",
+      "operation_wait.py",
+      "operation_wait",
       "policy.py",
       "policy",
       "responses.py",
@@ -125,7 +137,7 @@
       "termination",
       "mcp/src/agents_remember/models/lifecycles/",
       "route-local-overview",
-      "346507af24396ab7b491e02511c4af006ccd3dc5",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "/overview.md",
       "__init__.py.md",
       "responses.py.md",
@@ -134,11 +146,7 @@
       "LiveState",
       "LifecycleResponse",
       "LifecycleFinalizeTaskResponse",
-      "LifecycleOperationRecord",
-      "LifecycleOperationProjection",
-      "_require_quality_certification_memory",
-      "CloseoutOperationInput",
-      "IntegrateOperationInput"
+      "_require_quality_certification_memory"
     ]
   },
   "fallback": {

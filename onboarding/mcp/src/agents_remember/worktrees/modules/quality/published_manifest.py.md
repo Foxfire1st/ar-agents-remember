@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -18,19 +18,20 @@
 
 Defines the sole strict reader and immutable value model for the atomic current-quality-generation
 manifest consumed by quality recovery. Since CCR-R22@v1 (L22, commit `685f83c44055`) the manifest
-schema advanced to `3.0` and now carries the full repository-profile identity: profile digest,
-profile plan digest, profile selection id, executor adapter id, and the declared result decoder
-model. The generation digest binds all of those fields with the candidate tree, files, and
-dependencies, so a published generation cannot be replayed under a different profile identity.
+schema advanced to `3.1` (260831-CCR-L12, commit `cfd09381`) and carries the full repository-profile identity: profile digest, profile plan digest, profile
+selection id, executor adapter id, the declared result decoder model, and the optional frozen
+`runtimeAuthorityDigest` of the host-level shared Dagger authority admitted for the run. The generation
+digest binds all of those fields with the candidate tree, files, and dependencies, so a published
+generation cannot be replayed under a different profile identity or authority.
 
 ## Code Commentary
 
 ### Logic
 
 `load_published_quality_manifest` reads `quality-report-set.json` exactly once and validates it
-as schema `3.0`. The root must be an object with only `schemaVersion`, `generation`,
+as schema `3.1`. The root must be an object with only `schemaVersion`, `generation`,
 `candidateTree`, `profileDigest`, `profilePlanDigest`, `profileSelectionId`,
-`executorAdapterId`, `resultDecoder`, `files`, and optional `attestation`/`dependencies`.
+`executorAdapterId`, `resultDecoder`, `files`, and optional `attestation`/`dependencies`/`runtimeAuthorityDigest` (`_parse_runtime_authority_digest`, lines 259-267, accepts only a 64-hex digest when present).
 Digest fields must be lowercase 64-hex strings; selection/executor ids must be nonblank;
 `resultDecoder` is parsed through `JsonExitStatusDecoderDefinition.model_validate` and must name
 a published file. File records contain exactly `sha256` and a non-negative integer `size`;
@@ -40,8 +41,8 @@ selects a declared artifact without constructing an unverified path.
 `quality_generation_digest(fields)` computes the generation id over exactly the declared field set
 (`_GENERATION_DIGEST_FIELDS`) with sorted compact JSON; any other field set is refused. The parser
 recomputes the expected generation from the parsed bound fields and refuses drift
-(`generation id does not match its bound fields`). `quality_report_dependencies` declares the
-exact candidate, execution (rail-plan over the profile identity), and report bytes consumed by
+(`generation id does not match its bound fields`). `quality_report_dependencies` (lines 296-346) declares the exact candidate, execution (rail-plan over the profile identity), report
+bytes, and - when the manifest carries `runtimeAuthorityDigest` - one `shared-dagger-authority` admission edge consumed by
 consumers, accepting only the exact profile-identity field set. `_parse_dependencies` re-derives
 and compares the expected dependency record exactly as the evidence-dependency validator requires.
 
@@ -52,11 +53,12 @@ smuggle an alternate path spelling.
 
 ### Invariants And Boundaries
 
-- There is one current schema (`3.0`) and one reader; alternate roots, legacy shapes (including
-  schema `2.0` / `1.0` without profile identity), unknown fields, and partial records are
-  rejected.
-- The generation digest binds candidate tree + profile identity + files + dependencies; a moved or
-  modified bound field makes the manifest invalid before any artifact lookup.
+- There is one current schema (`3.1`) and one reader; alternate roots, legacy shapes (including
+  schema `3.0` / `2.0` / `1.0` without the runtime-authority field set), unknown fields, and
+  partial records are rejected.
+- The generation digest binds candidate tree + profile identity + files + dependencies + the optional
+  runtime authority digest; a moved or modified bound field makes the manifest invalid before any
+  artifact lookup.
 - The result decoder must name a file present in the published files; recovery decodes through
   exactly that declared decoder.
 - All filesystem, JSON, pydantic, and structural failures collapse to `ValueError` surfaces the
@@ -78,17 +80,18 @@ publication path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Each gate certificate names the exact admitted profile and its gate-specific plan digest. | `profile_plan_digest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:129-130 |
+| The published quality manifest binds the exact admitted profile and the overall profile-plan digest; this record is distinct from a per-gate certificate. | "class PublishedQualityManifest:" | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:83-104 |
 | A profile or referenced-input change invalidates only the declared certificate dependency closure. | `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:261-302 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader reads the sole manifest pointer and returns one strict v3 snapshot with profile identity. | `load_published_quality_manifest`; `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:56-64; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:66-183 |
-| Generation and dependency digests require the exact bound field sets (incomplete or ambiguous refuse). | `quality_generation_digest`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:204-216; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:261-302 |
-| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:305-313 |
-| The quality gate recovery recompiles the expected plan digest for the candidate before reuse, then decodes via the declared decoder. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
+| The loader reads the sole manifest pointer and returns one strict schema-3.1 snapshot with profile identity and optional runtime authority digest. | `load_published_quality_manifest`; `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:107-116; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:117-193 |
+| Generation and dependency digests require the exact bound field sets; a present runtime authority digest participates in both. | `quality_generation_digest`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:239-248; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:296-346 |
+| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:347-357 |
+| Recovery recompiles the expected candidate/profile plan, checks exact identities, and decodes the retained result before reuse. | "def recover_strict_code_quality_gate(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399 |
+| The test-results report renders the profile and runtime-authority digests from its report record. | "def _write_test_results_report(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:508-561 |
 
 ## Cross-Repo References
 
@@ -98,10 +101,16 @@ No meaningful cross-repository implementation reference applies.
 
 The manifest reader remains the one strict parser for the current immutable Dagger generation. The
 PDLS wave required schema `2.0` with candidate tree, generation digest, exact file digest/sizes,
-and typed attestation; schema `1.0` was deliberately rejected. CCR-R22 replaces that with schema
-`3.0` plus the mandatory profile identity, keeping the same no-compatibility-reader discipline.
+and typed attestation; schema `1.0` was deliberately rejected. CCR-R22 replaced that with schema `3.0` plus the mandatory profile identity, and CCR-R12@v4 (this
+commit) advanced it to schema `3.1` with the optional shared-Dagger-authority digest, keeping the same
+no-compatibility-reader discipline.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 2 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Corrected the category error: the cited field belongs to the published quality manifest, not a gate certificate. Separated recovery admission from report rendering and selected the current function bodies. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): advanced the card to the schema-`3.1` manifest: new optional root field `runtimeAuthorityDigest` (64-hex, parsed by `_parse_runtime_authority_digest`), a `shared-dagger-authority` admission dependency edge in `quality_report_dependencies` when the digest is present, and refreshed loader/generator/recovery ranges.
+
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): rewrote the card for the profile-bound schema-v3 manifest. Added the mandatory profileDigest/profilePlanDigest/profileSelectionId/executorAdapterId/resultDecoder fields, generation-digest field-set discipline, decoder-names-published-file rule, and the re-derived dependency identity; schema 1.0/2.0 without profile identity is now rejected like every legacy shape.
 

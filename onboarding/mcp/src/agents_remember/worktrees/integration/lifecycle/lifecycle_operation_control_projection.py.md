@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00|
+| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
+| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,7 +83,13 @@ recovery; the L25 repair (commit `99dc249b`) removes `recover`/`retry` from the 
 controls of every missing-intent closeout/direct-landing path while preserving the exit-proven
 cancellation route.
 
+## CCR-R18@v1 Exact Same-Generation Cancellation Cell
+
+260831-CCR-L18 added an explicit `termination-required` branch in `legal_operation_controls` (line 98): a record whose status is `termination-required` projects exactly one `cancel` control (“Complete exact same-generation cancellation.”) instead of falling into the generic worker-exit-unproven retry path. The state matrix reserves that cell for `cancel` only, and the exit-proven cancelled state keeps its same-generation cancel behavior unchanged.
+
 ## Update History
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the explicit `termination-required` → exact same-generation cancel control cell. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   public legal controls now withhold `recover`/`retry` for legacy missing-intent

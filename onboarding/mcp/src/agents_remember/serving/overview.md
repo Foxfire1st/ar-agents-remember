@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-05T07:27+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -79,8 +79,8 @@ and explicitly closes the subscription on disconnect or cancellation.
 
 ### Current Structured-Conversation Contract
 
-`serving/conversation/` is the protocol-neutral contract roof for the future
-Chats interface. Strict Pydantic wire models normalize harness identity, active transcript/event
+The original `serving/conversation/` contract-only leaf established the protocol-neutral roof for the
+Chats interface. Its initial state is recorded in this paragraph; the production children below supersede the empty-router state. Strict Pydantic wire models normalize harness identity, active transcript/event
 pages, independent active/library cursor scopes, evidence-backed status and capabilities,
 operation queue/withdrawal recovery, attachments, and telemetry without claiming that native
 history/control implementations or a renderer already exist. Exactly two read ports define the
@@ -219,6 +219,10 @@ byte-identical), an `unsupported` terminal receipt on non-capable adapters, and 
 is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
 at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays the control
 child's obligation.
+
+### Historical Slice-04 Through HFX Serving Account
+
+The following migration account predates the current protocol-owned hosted and conversation paths above. Its pane/log delivery and transport-only framing are history, not current authority.
 
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
@@ -359,9 +363,9 @@ For folded-state stream convergence, start at `projector.py::_publish_projection
 registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator
 closure owns subscriber cleanup.
 
-The structured-conversation contract establishes structure rather than a live endpoint path: consumers validate hostile
-normalized products through `conversation/models.py`; future active and library implementations
-must satisfy their separate read ports and cursor purposes; future mutations stay on the control
+The original contract-only leaf established structure before live endpoints: consumers validate hostile
+normalized products through `conversation/models.py`; the now-implemented active and library services
+satisfy their separate read ports and cursor purposes; mutations stay on the control
 router. The root composition is mounted once beside existing harness-control routes. The locked
 repository helper and redacted installed-runtime fixtures are compatibility evidence only and may
 not promote a capability by being present.
@@ -487,7 +491,7 @@ same-role holder; attach requires identity for an untyped hand-opened harness; r
 landing paths consume binding identity. The supervisor also preserves role in findings, rows,
 cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
 
-Harness JSONL is the only submitted-delivery authority across spawn, inbox,
+The superseded pre-protocol delivery implementation used harness JSONL as submitted-delivery authority across spawn, inbox,
 supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
 Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
@@ -623,8 +627,8 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `model/list` page (including hidden rows), retain the catalog at connect, and expose a cold
   initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
-  readiness; later turns reuse the resolved effort. Initialize identity accepts only the current
-  Codex Desktop host-first product ending in the exact clientInfo name/version suffix, while the
+  readiness; later turns reuse the resolved effort. Initialize identity accepts a product-agnostic
+  server-product/version followed by optional diagnostics ending in the exact clientInfo name/version suffix, while the
   primary product version must still agree with thread evidence.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
@@ -788,21 +792,14 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   ~780 KB/tick → 0; the dashboard-tab OOM driver). `StableProjectionState` +
   `stable_projection_state` are the projector's per-tick cache.
 - `response_contract.py` — the **declared HTTP wire** (260731-EFA-L4): `WireResponse`
-  (strict/frozen/camel-aliased, `populate_by_name`) and 93 model classes covering every route's
+  (strict/frozen/camel-aliased, `populate_by_name`) and the declared model classes covering every route's
   success and refusal shapes, plus three shared `responses=` tables — `SCOPED_READ_RESPONSES`
   (the files/notes/change-set family), `SESSION_CONTROL_RESPONSES` (every `harness_control_api`
   route) and `ACTION_RESPONSES`. Declared here and enforced in
   `mcp/tests/test_serving_response_conformance.py`, because FastAPI validates only the two routes
   that return a bare `dict`; see the 260731-EFA-L4 route impact for the exact boundary. Deliberately
-  free of any `serving.conversation` import so it stays importable before that package…22839 tokens truncated…erived** from `lock_path_for` and suffix-matched in every
-  watched directory, which is what lets it cover the per-lifecycle `gates.jsonl.lock` a
-  workspace-scoped basename list structurally could not. Recorded, on the `app.py` sampling-loop
-  bullet, that this route's `_metrics_loop` is now the declared compaction owner of both provider
-  stores, that the ownership is enforced structurally (one reclaim caller each, inside this loop),
-  that neither store earned the operator-inbox's `compaction_owner=None` exception, and the route
-  consequence — provider-log reclamation follows this loop's 30s cadence and every write on the path
-  holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
-  this leaf. Verification metadata untouched.
+  free of any `serving.conversation` import so the response-contract module can load independently of conversation composition. The requirement additions declare packet/list/content responses; returning a Response object still requires the existing conformance enforcement rather than relying on FastAPI serialization.
+
 ## L23 Structural Host Boundary
 
 Serving resolves lineage after task-role validation and before host creation or
@@ -870,7 +867,25 @@ generation selection to `current_seat_occupant`. Inbox delivery resolves the occ
 time, while exact dispatch briefs remain pinned to the private spawned generation. This lets
 ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
 
+## 260831-CCR-L23 Task-Local Requirements Routes
+
+L23 registered the read-only task-local requirement surface: `serving/requirements.py`
+walks one canonical `tasks/<repo>/<master>/requirements/` root selected by repository +
+single-segment master + canonical task-document reference and serves the confined GET endpoints
+`/api/requirements/{list,read}` with declared models (`RequirementsListing` /
+`RequirementContents`) under the shared scoped-read refusal table. The route family grew
+from 61 to 63 HTTP routes; composition adds one `register_requirements_routes(app, config)`
+call in `create_app` after the notes routes and before the static mount.
+
 ## Update History
+
+
+
+- 2026-09-05T07:27+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reviewed the requirement routes, corrected current conversation/initialize ownership and repaired a literal truncated paragraph while retaining recoverable historical provenance. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the task-local requirement routes (`/api/requirements/{list,read}`), the 61-to-63 route growth, and the `requirements.py` module in this route. File-level detail lives in the serving sidecars and the new requirement cards.
+
 
 - 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
   projection on parent Codex completion and deterministic queued-row convergence. Verification

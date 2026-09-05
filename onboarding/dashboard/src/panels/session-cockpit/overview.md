@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastUpdated | 2026-09-05T06:21+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                 |
@@ -316,7 +316,7 @@ references, not imported governing implementations, so no cross-repository sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:48-48; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
+| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:49-49; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 | Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
 | Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:397-423; dashboard/src/panels/session-cockpit/SessionRail.tsx:161-242 |
 | PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
@@ -415,6 +415,9 @@ latest-chip assertions.
 The session-cockpit forcing suites hardened teardown: async `afterEach` clears fake timers / flushes the 150 ms virtualizer scroll-observer debounce before jsdom teardown so orphaned callbacks cannot fire without a `window`.
 
 ## Update History
+
+
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
 - 2026-08-26T10:44:52+02:00 — No route impact: refreshed the `VOCABULARIES` forcing range after test growth; Chats cockpit ownership and behavior are unchanged.
 

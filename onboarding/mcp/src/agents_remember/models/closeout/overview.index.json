@@ -10,19 +10,22 @@
   ],
   "childRoutes": [],
   "coveredFiles": [
+    "mcp/src/agents_remember/models/closeout/__init__.py",
     "mcp/src/agents_remember/models/closeout/input.py",
     "mcp/src/agents_remember/models/closeout/projection.py",
     "mcp/src/agents_remember/models/closeout/source.py"
   ],
   "coverageCounts": {
     "sourceFilesInScope": 4,
-    "fileSidecars": 3,
+    "fileSidecars": 4,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
     "closeout",
+    "init",
+    "init__",
     "input",
     "mcp",
     "models",
@@ -35,11 +38,14 @@
     "summary": "`projection.py` defines the `valid-built` / `invalid-empty` state machine and bounded member, source-problem, invalidation, rebuild, and task-doc effect payloads.",
     "candidateHints": [
       "mcp/src/agents_remember/models/closeout",
+      "mcp/src/agents_remember/models/closeout/__init__.py",
       "mcp/src/agents_remember/models/closeout/input.py",
       "mcp/src/agents_remember/models/closeout/projection.py",
       "mcp/src/agents_remember/models/closeout/source.py"
     ],
     "anchorHints": [
+      "__init__.py",
+      "__init__",
       "input.py",
       "input",
       "projection.py",

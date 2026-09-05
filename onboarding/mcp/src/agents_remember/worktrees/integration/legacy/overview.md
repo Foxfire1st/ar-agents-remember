@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/legacy` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
-| lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
+| lastUpdated | 2026-09-05T07:08+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,11 @@ legacy records and publishes current journal/archive evidence through explicit t
 
 `legacy_operation_bridge.py` inspects and migrates; `legacy_operation_archive.py` validates and
 publishes crash-safe terminal archives and receipts.
+
+Migrated closeout records now derive canonical task intent from the exact contract-owned
+leaf. Failure to resolve that intent becomes the same typed `LegacyBridgeError` family;
+the bridge does not manufacture an intent from historic prose. The authority, failure,
+public-result, and schema modules remain explicit siblings of the two main entry owners.
 
 ## Local Invariants And Traps
 
@@ -42,6 +47,8 @@ publishes crash-safe terminal archives and receipts.
 No configured external source applies. Schema/current-operation owners are same-repository.
 
 ## Update History
+
+- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Documented canonical task intent on schema-1 closeout migration and explicit sibling ownership. Verification records current source claims, not execution or acceptance.
 
 - 2026-08-25T15:44+02:00 — Created for the isolated schema-1 migration/archive boundary.
   Verification remains closeout-owned.

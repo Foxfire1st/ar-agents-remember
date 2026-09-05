@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/cockpit/Cockpit.tsx`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-08T21:20+02:00                           |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                |
 
 ## Governing Overview
@@ -35,6 +35,20 @@ Within the full-page cockpit, `ChatContextBar` owns launch and attach/move contr
 RailChat remains the contextual right-rail surface beside Operations; Notes/Change-Set takeovers and
 the other existing routes retain their established ownership. The dev lifecycle-design canvas stays
 outside production navigation.
+
+
+## 260831-CCR-L23 Requirement-Artifact Takeover Kind
+
+The L17 Notes takeover was widened into a generic task-artifact reader takeover:
+the notes-only `NotesReaderTarget` shape became the discriminated
+`TaskArtifactReaderTarget` (`dashboard/src/data/taskArtifacts.ts`) with a
+`kind` member, and that shared target type is now imported from the data module
+rather than from the notes reader. `NotesTakeover` spreads the whole target onto
+`NotesReaderViewer` (`{...target}`) and keys the view marker on the kind:
+`data-view` is `notes-reader` for a notes target and
+`requirements-reader` for a requirements target. The shell, the shared takeover
+flag, hidden-not-unmounted retention, and the `onOpenNotes` wiring are
+unchanged.
 
 ## Code Commentary
 
@@ -215,7 +229,9 @@ the reviewed task evidence for any current behavioral claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `bodyGrid` `bleed` variant, the `fullBleed` derivation, and the gated `railEnter` fade on `rail--left`. | "const bodyGrid = cva({"; "const fullBleed ="; "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:206-206; dashboard/src/cockpit/Cockpit.tsx:446-446; dashboard/src/cockpit/Cockpit.tsx:452-452 |
+| The body grid bleed variant switches between three railed columns and a single full-width column. | "const bodyGrid = cva({" | dashboard/src/cockpit/Cockpit.tsx:207-223 |
+| Files, Engine Room, Topology, and Chats request the full-bleed layout. | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-451 |
+| Rail fade properties are selected by the animation permission. | "const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;" | dashboard/src/cockpit/Cockpit.tsx:453-453 |
 | The visible registry has exactly one Chats destination and no Sessions route; Engine Room, Topology, and Chats are full-bleed. | `CockpitView`, `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:63-70; dashboard/src/cockpit/Cockpit.tsx:72-80 |
 | The `chatsLayer` keep-alive class used by the Chats layer. | `chatsLayer` | dashboard/src/cockpit/Cockpit.tsx:322-328 |
 | The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. | `SessionsViewImpl` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:15-18 |
@@ -228,12 +244,15 @@ the reviewed task evidence for any current behavioral claim.
 | Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). | `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:22-45; dashboard/src/data/taskIdentity.ts:47-58; dashboard/src/data/taskIdentity.ts:64-70 |
 | The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). | `viewedLeafKey` | dashboard/src/panels/detail-panel/state.ts:94-106 |
 | The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. | `RailChatImpl` | dashboard/src/panels/RailChat.tsx:469-537 |
-| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:784-784 |
+| The mounted Chats session view receives the selected leaf key from the cockpit. | "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:786-786 |
 | The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). | `ChatContextBar`, `ChatSessionActions` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117; dashboard/src/panels/session-cockpit/ChatContextBar.tsx:132-206 |
 | The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. | `HighlightComposerImpl` | dashboard/src/panels/HighlightComposer.tsx:710-780 |
 | The frontend `Analytics` projection includes the `engineProcesses` process-map collection. | `engineProcesses` | dashboard/src/types/projection.ts:96-96 |
-| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:691-691 |
-| The rollup the top bar reads: `Metrics extends LifecycleStateCounts` (one required `…Count` per `ActiveState` via `StateCountField`), plus `metricsFor()` — the client mirror of `reducer.py::_metrics` that test seeds now call instead of hand-listing buckets. | `Metrics`, `LifecycleStateCounts`, `StateCountField`, `metricsFor` | dashboard/src/types/projection.ts:376-376; dashboard/src/types/projection.ts:378-378; dashboard/src/types/projection.ts:397-401; dashboard/src/types/projection.ts:403-411 |
+| The cockpit passes the process-map prop into `RailChat`. | "engineProcesses={engineProcesses}" | dashboard/src/cockpit/Cockpit.tsx:693-693 |
+| Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields. | "export interface Metrics extends LifecycleStateCounts {" | dashboard/src/types/projection.ts:461-465 |
+| Every ActiveState maps to a required count field. | "export type LifecycleStateCounts =" | dashboard/src/types/projection.ts:442-442 |
+| The count-field name is derived from the camel-cased state vocabulary. | "export type StateCountField<S extends ActiveState>" | dashboard/src/types/projection.ts:440-440 |
+| metricsFor builds the client rollup from lifecycles and spreads the derived state counts. | "export function metricsFor(" | dashboard/src/types/projection.ts:467-474 |
 | The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket. | "def _metrics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-60 |
 | `AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-984 |
 | The `AgentNotifierHeartbeat` type this badge's props shape mirrors. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-65 |
@@ -255,6 +274,12 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "selectedLeafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:786-786. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "engineProcesses={engineProcesses}" repointed to dashboard/src/cockpit/Cockpit.tsx:693-693. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the notes-takeover widening — `NotesReaderTarget` became the shared discriminated `TaskArtifactReaderTarget` (kind notes/requirements), the import moved to `data/taskArtifacts`, and `NotesTakeover` now spreads the target and keys `data-view` on the kind.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `Cockpit.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.

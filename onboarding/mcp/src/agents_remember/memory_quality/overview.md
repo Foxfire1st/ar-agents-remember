@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated | 2026-09-05T07:14+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -48,19 +48,24 @@ and report-only detail into the enclosure's one atomically replaced curator work
   attention can say which repo/memory pair raised the notice and when it was measured. Task 32 routes
   that writer through the shared observer drift-snapshot path helper so producer
   writes, projection pruning, and cleanup deletion share one filename contract.
-  **260731-EFA-L4 makes this subpackage the declaring owner of the drift-summary wire
-  vocabulary**, not just its producer: `models.py` declares `DriftStatus = Literal["notChecked",
-  "checked", "error"]` and the `DriftSummaryPacket` TypedDict (`status` required; `count`,
-  `actionableCount`, `reportPath`, `actionableSample`, `error` all `NotRequired`), and
-  `summary.py`'s `not_checked`, `run_drift_summary` and `summarize_rows` are annotated with it
-  instead of `dict[str, Any]`. This is an INBOUND dependency edge that did not exist before —
-  `models/drift.py` (context-packet `DriftSummary`), `models/memory.py`
-  (`DriftCheckResponse`) and `application/context_packet.py` all import from here now.
+  The packet owner remains `integrity/onboarding_drift_check/models.py`; it imports the
+  single `DriftStatus` declaration from `models/drift.py`. The packet includes required
+  `status` and optional counts, paths, rows, samples and error. Wire consumers share that
+  lower-layer vocabulary rather than importing a status declaration upward.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.
 - `curator_checklist.py` deterministically separates zeroable curator repairs from truthful
   closeout-only provenance, renders every worklist class, and publishes one operational report
   outside both Git worktrees.
+- `final_certification/` (CCR-R08, added by 260831-CCR-L08) owns the final full
+  memory-coherence certification (Gate 5): the deterministic complete final catalog
+  (`catalog.py`), the closed typed models (`models.py`), the R21 Gate-5 semantic-input
+  assembly and coherence subrecord derivation (`certificate.py`), the executable
+  certification protocol (`certify.py`), and the exact green Gate 1-4 prerequisite adapter
+  (`gate_prefix.py`). The interactive full contract-scoped quality run publishes the
+  non-certifying `finalFullCatalog` readiness projection through the application controller;
+  the certification API requires the R21 certificates and R07 affected-closure plan for green.
+  No production closeout caller currently supplies those inputs or invokes that API.
 - `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
@@ -82,15 +87,9 @@ and report-only detail into the enclosure's one atomically replaced curator work
   focused fix scripts.
 - New memory-quality checks should be placed under `style/` or `integrity/`
   according to what they validate.
-- **A status this route can emit is declared here, once, and imported by every wire model that
-  carries it** (260731-EFA-L4). `run_drift_summary` produces `notChecked`, `checked` and
-  `error`; before this leaf there were three declarations of that vocabulary — one here (via
-  the packet's actual behaviour), one on `models.drift.DriftStatus` missing `error`, one on
-  `models.memory.DriftCheckStatus` complete but separate. The short copy was reachable: a
-  missing onboarding root makes this route return `{"status": "error", "error": ...}`, so
-  `context_packet(include_drift=true)` against a repo without onboarding raised out of the
-  tool rather than reporting why. Adding a status here now propagates by import; adding one
-  to a wire model instead re-creates the split.
+- `models/drift.py` owns the shared drift-status vocabulary. Packet and response consumers
+  import it; the older EFA-L4 declaring-owner narrative below is historical and was
+  superseded by the L9 layering move.
 - **A `NotRequired` key on `DriftSummaryPacket` must be read with `.get`, including by
   consumers on this route.** `check.py`'s `run_drift_quality_check` reads `count`,
   `reportPath` and `actionableCount` with `.get(...)`, not `[...]`: those keys accompany a
@@ -101,15 +100,15 @@ and report-only detail into the enclosure's one atomically replaced curator work
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:86-96; mcp/src/agents_remember/application/memory_quality/controller.py:306-333 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:98-108; mcp/src/agents_remember/application/memory_quality/controller.py:318-360 |
 | Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
-| The two wire models that import this route's status vocabulary instead of retyping it. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
+| The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126 |
 
-## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
+## Historical 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
 The check catalogue, the dispatch contract and the diagnostic-only rule are unchanged. What changed
 is that each classifier now emits its verdicts through a single constructor, which is what makes the
@@ -137,7 +136,7 @@ rebuilt at every branch, and a field could silently disagree between two of them
   [kernel/coordination_context](../kernel/coordination_context/overview.md)). Resolved contexts are
   identical.
 
-## 260731-EFA-L3 — Every Verdict Is Now Read Through One Git Runner
+## Historical 260731-EFA-L3 — Every Verdict Is Now Read Through One Git Runner
 
 Every check this route emits is ultimately a statement about *a repository*: which files
 the worktree added, which blobs a source has, whether a recorded commit is in history.
@@ -173,7 +172,7 @@ unchanged. What changed is that a verdict can no longer be computed against a re
 the caller did not name. `mcp/tests/test_git_command.py` holds the proof against a decoy
 repository named by the selectors.
 
-## 260731-EFA-L4 — The Drift Summary Is A Typed Packet With A Named Vocabulary
+## Historical 260731-EFA-L4 — The Drift Summary Is A Typed Packet With A Named Vocabulary
 
 The drift summary crossed three module boundaries as `dict[str, Any]`, which meant its shape
 was agreed by convention at each of them. It is now `DriftSummaryPacket`, a `TypedDict` declared
@@ -245,7 +244,8 @@ The curator checklist now emits a machine-readable `ar-curator-memory-quality/v1
 the rendered report. It binds checklist status and zero/actionable counts, the exact onboarding
 root, the report path and digest, and the complete source-change candidate set. Queue declaration
 requires this structured zero gate; when candidates exist it also requires the canonical leaf
-curator report's five-column dispositions to match the set exactly. A free-text ready sentence or
+curator authority to match the set exactly. The former five-column Markdown review
+is historical; current consumers use the structured coherence manifest and record. A free-text ready sentence or
 path mention is not readiness evidence.
 
 ## 2026-08-26 Application Controller Boundary
@@ -268,7 +268,60 @@ identity into the structured curator attestation. Repository-only quality remain
 cannot publish candidate acceptance. Pre/post-scan revalidation makes wrong or raced scope a
 typed refusal before evidence can be accepted.
 
+## 260831-CCR-L08 — Final Full Memory-Coherence Certification (Gate 5)
+
+This route now owns the final full memory-coherence certification package
+(`final_certification/`). The complete Gate-5 catalog is the exhaustion surface: every
+applicable memory checker, the missing-onboarding and route-index alignment owners, the R07
+affected-closure plan, the canonical curator-coherence record, and the exact code/memory
+candidate pair return pass/fail/blocked/not-applicable, and the attestation checks the caller-supplied executed-check population against the plan.
+The `certify_final_full_memory_coherence` function itself consumes those results; it does
+not launch the checkers or independently establish that they ran. The interactive full run projects the deterministic, non-certifying
+`finalFullCatalog` readiness surface onto its result (controller `_attach_final_full_catalog`); the
+executable certification API (green/red/blocked, finalization-eligible only when green) remains
+separate. The current closeout path does not invoke it; a readiness result is not a Gate-5 certificate.
+
+## Current Deterministic Citation Repair Limit
+
+R10 adds uniquely resolved range/move repair and deterministic projection planning. The
+current fixer stages an edit before the projection decision; a later projection decline
+does not remove that edit, so apply can still write it. Document reads are cached and the
+publication loop does not call `verify_unchanged`. The existing caller scope guard and
+atomic replacement do not provide fresh-document compare-and-swap. These confirmed defects
+remain pending repair; a dry-run proposal is not safe-apply certification.
+
+## Gate-5 Registry And Execution Boundary
+
+`gate_five_rails.py` derives one enforcing memory-domain R11 rail per item in the complete
+final catalog. Its configuration identity includes the final catalog version, checker registry
+version and exact population. This is the Gate-5 registry contribution consumed by the R11/R22
+bridge; declaring that contribution does not execute the checkers.
+
+The interactive application controller calls `final_catalog_readiness` with the exact memory tree
+and candidate-pair authority but explicitly passes `affected_closure_plan_digest=None`. The R07
+`compile_affected_closure_plan` / `execute_affected_closure` and R08
+`certify_final_full_memory_coherence` APIs have no production callers outside their own packages
+in the inspected source. Existing closeout memory checks and curator-coherence publication remain
+real behavior, but must not be equated with the new affected-closure/full-certification protocol.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:444-480 |
+| Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
+
 ## Update History
+
+- 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected drift vocabulary ownership, historical Markdown coherence authority, final certification producer claims, and explicit R10 write defects. Verification records source review, not execution or acceptance.
+
+
+- 2026-09-05T06:12+00:00 — Recovered final-catalog knowledge and corrected readiness versus certification ownership; added the Gate-5 rail derivation and the still-unwired R07/R08 execution boundary.
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: added the
+  `final_certification/` route-model bullet and the CCR-R08 leaf section (final full
+  memory-coherence certification: complete catalog, readiness projection on the full run,
+  executable certification) and re-anchored the controller row shifted by the +57-line change.
+  Verification metadata stays pinned until closeout stamps the code commit.
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: bound leaf quality and curator attestations to the exact
   code/memory pair. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-30T12:42+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-05T07:10+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## Purpose
 
@@ -15,8 +15,8 @@
 
 L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and
 cancellation, and Dagger as the sole acceptance executor. Host/unit invocations are diagnostic;
-Python, Vitest, and Playwright refuse direct execution without the Dagger run nonce and container
-attestation.
+Python, Playwright, and changed-lines execution require the Dagger run nonce and container
+attestation; targeted Vitest is a supported non-certifying diagnostic loop.
 
 ### 260713-TES-L1 Rename — Settings And Harness Reference
 
@@ -86,8 +86,20 @@ operation.
 The quality boundary remains separate. `skills.md` records synchronized skill-copy checks at both
 pre-commit and pre-push. The hook tiers are not equivalent: pre-commit runs a fast staged-content
 tier without the wrapper, pre-push runs the change-set-scoped targeted Dagger tier, and the full
-Dagger graph runs once per master at the master integration gate. The closeout gate applies to any
-repository whose checkout carries the wrapper, not only `agents-remember`.
+Dagger graph runs once per master at the master integration gate. Current closeout authority requires the repository's explicit `certificationProfile`;
+wrapper presence and repository-name discovery no longer grant authority.
+
+## CCR Repository Profile And Result Reference
+
+`repository-certification-profile.md` is now the versioned authoring and admission reference
+for Gates 1–4: explicit configured path, exact profile and selector identities, sandbox adapter,
+decoder and bounded publication inventory. Gate 5 stays memory-owned. `settings-json.md`
+assigns execution selection to `repositories.<id>.certificationProfile`;
+`orchestration.qualityGate` now owns only optional resource policy, with no executor setting.
+The quality result's `reportPath` is the human summary. `publishedResultPath` identifies the
+exact immutable decoder artifact for fresh success and recovery, with `resultArtifact`
+carrying its relative identity; no universal result-filename fallback exists. This differs
+from the memory-quality request's separate sync/start/poll result contract below.
 
 ## IAS Execution-Topology Reference Impact
 
@@ -107,9 +119,8 @@ tolerant-reader fallback is documented.
 
 The public reference route now exposes the same mandatory source-quality order
 as the implementation and runtime guidance. `worktree_closeout_apply` runs the
-strict project-owned wrapper before a source commit — in any repository whose
-checkout carries that wrapper, since 260731-EFA-L1 removed the
-`agents-remember`-only condition;
+admitted repository-profile gate before a source commit. The historical L1 wrapper-presence
+trigger has been superseded by explicit configured profile authority;
 `worktrees-c09.md` places that gate before code, onboarding, memory, and ledger
 commit steps; and the skills reference names both pre-commit and pre-push sync
 checks. These are documentation projections of the existing gate authority, not
@@ -154,11 +165,14 @@ closeout mutation, and still fails closed. What changed is what the gate can cat
    worktree; `route_index_refresh` **writes**, so running it unscoped from inside a leaf dirties
    the official memory repo. The response carries `onboardingRoot`, so the acted-on tree is always
    visible.
-2. **Citation ranges are not repaired by hand.** `agents-remember memory-citations --repo <id>
+2. **Citation repair is source-derived.** `agents-remember memory-citations --repo <id>
    --contract <enclosure contract> [--fix]` regenerates every range that can be regenerated from
    its anchor after a package move and prints a work order for the rest. `--contract` is required,
-   and only pure moves (symbol keeps its name, changes file) are repaired — a rename, deletion, or
-   ambiguous match is refused rather than guessed.
+   and the current fixer proposes uniquely resolvable range/move repairs and deterministic
+   projection work; ambiguous matches remain curator work. At this frozen candidate, L31
+   source audit found declined projection edits can remain staged and cached document bytes
+   lack publication-time revalidation. Treat its dry-run as a proposal, not proof that apply
+   safely refuses every declined row; the R10 repair is still pending.
 3. **Task-document and lifecycle rows were added.** `worktree_cleanup` is explicitly non-terminal
    for task documents; `lifecycle_finalize_task` proves the landed edge and completes the exact
    contract-bound leaf (with parent-row reconciliation); the new Task documents section names
@@ -236,6 +250,8 @@ cannot smuggle start-only fields. These newer DAGQC facts are additive to the CL
 `execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
 
 ## Update History
+
+- 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled explicit repository-profile authority, fresh/recovery result paths, diagnostic Vitest boundary, and known fixer safety limitation. Verification records current source claims, not execution or acceptance.
 
 - 2026-08-30T12:42+02:00 — 260821-ARSPAWN-L3 review correction: distinguished ordinary
   architect bootstrap from an explicit named-role takeover and made the structural role-table

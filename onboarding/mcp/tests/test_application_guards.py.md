@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_application_guards.py`      |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-03T14:00+02:00                     |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`                         |
 | lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -63,10 +63,13 @@ substring of each guard's message rather than the full string.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The two guards under test live in the application layer. | `require_repo`; `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
-| `AuthorityError` is the rejection type and is a `ValueError` subclass via `AgentsRememberError`. | `AuthorityError`; `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-19; mcp/src/agents_remember/errors.py:96-104 |
+| AuthorityError is the typed repository/path refusal used by application guards. | "class AuthorityError(" | mcp/src/agents_remember/errors.py:110-117 |
+| All such domain errors inherit ValueError through AgentsRememberError. | "class AgentsRememberError(" | mcp/src/agents_remember/errors.py:18-19 |
 | `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:77-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-147; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743 |
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated the concrete refusal class from its base class. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-09-03T14:00+02:00 — 260831-CCR-L27 Gate-5 memory pass: re-read the
   `RepositoryScope` claim against the current construct (still a dataclass at

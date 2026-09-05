@@ -41,7 +41,7 @@
       "settings.example",
       "route-local-overview",
       "examples/mcp",
-      "7bf564a663bb61f12844dee39538dd09a1633cdb",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "examples/mcp/",
       "system/settings.json",
       "benchmarksEnabled",
@@ -52,6 +52,9 @@
       "orchestration",
       "memorySettingsIncludes",
       "docs/reference/settings-json.md",
+      "agents-remember",
+      "certificationProfile: \"mcp/certification-profile-v1.json",
+      "contractPath: null",
       "workspaceRoot/<repo-id>",
       "coordinationRoot/memory-repos/ar-<repo-id>",
       "timeoutCaps",
@@ -79,10 +82,7 @@
       "Application entry point",
       "autoLandOnIntegration",
       "autoLandOnFinalize",
-      "autoRetireOnIntegration",
-      "autoRetireOnFinalize",
-      "true",
-      "orchestration.gateDelegation"
+      "autoRetireOnIntegration"
     ]
   },
   "fallback": {

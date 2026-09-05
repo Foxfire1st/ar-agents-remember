@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-29T10:16+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-05T07:12+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,9 +21,7 @@ and retry, public projection, legal controls, cancellation, and completed-dispos
 
 ## Hot Path Summary
 
-Read `lifecycle_operations.py` for start/resume/retry, `lifecycle_operation_location.py` for the
-locator-to-enclosure chain, `lifecycle_operation_store.py` for transition validation, and
-`lifecycle_operation_control_projection.py` for legal next actions.
+Read `lifecycle_operations.py` for start/resume/retry and `lifecycle_operation_location.py` for the locator-to-enclosure chain. `lifecycle_operation_store.py` owns record and meaningful revisions; `observation/status_wait.py` waits for meaningful change, while `lifecycle_operation_projection.py` and the control projector derive one generation-coherent public view.
 
 ## Operating Model
 
@@ -66,7 +64,44 @@ evidence and legal controls are calculated without mutating the journal.
 No configured Domain Documentation or cross-repository source applies. The model/lifecycle and
 integration overviews are same-repository context.
 
+## CCR-R18@v1 Generation-Coherent Projection And Revision
+
+260831-CCR-L18 made this route's projection and store generation-coherent: `lifecycle_operation_projection.py` now builds the coherent/incoherent envelope with revision-bound identity, component bindings, worker/approval observations, recommended-action derivation, and the `bind_projection_result`/`bind_projection_decision` rebinding helpers; `lifecycle_operation_store.py` owns the monotonic `recordRevision` advance (exactly once per accepted mutation, revision-1 create gate); `lifecycle_operation_control_projection.py` adds the explicit `termination-required` cancel cell; `worker/termination.py` projects durable-termination evidence only; and `observation/projection.py` routes location/unreadable decisions through the binder. File-level detail lives in the route sidecars.
+
+Current closeout and direct-landing journal writes require canonical `taskIntent`. A
+terminal legacy generation without intent is archived byte-for-byte before an intent-bound
+successor is published; active missing-intent generations refuse reuse and require a
+developer decision. Closeout claim and launch verify the same intent/dependency authority
+as the waiting door. No currentness check silently rewrites a live legacy record.
+
+## Meaningful Revision And Wait Ownership
+
+The store increments `recordRevision` on durable mutations and advances `meaningfulRevision`
+only when the canonical meaningful state changes. The bounded `observation/status_wait.py`
+observer consumes the latter cursor and never mutates the journal. A timeout is an unchanged
+snapshot, while changed generation, invalid cursor and unreadable state remain typed outcomes.
+
+This journal and projection work does not itself wire the R05 certificate-admission/finalization
+library into the production closeout transaction. Preserve that distinction when diagnosing a
+recovered legacy operation or planning certificate reuse.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Store validation and transition construction distinguish durable-write and meaningful-state revisions. | "expected_meaningful = current.meaningfulRevision + int(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:317-322; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:373-393 |
+| The exact-generation observer returns bounded change/timeout outcomes. | "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:105-146 |
+
 ## Update History
+
+- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added intent-bound journal writes, exact legacy retirement, and claim/launch dependency checks. Verification records source review, not execution or acceptance.
+
+
+- 2026-09-05T06:12+00:00 — Combined coherent projection and status-wait ownership; clarified that journal recovery does not establish R05 certificate integration.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the read-only status-change wait observer (`observation/status_wait.py`) and refreshes store/adapter/observation cards for the CCR-R15 `meaningfulRevision` cursor; route index regenerated.
+
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the generation-coherent projection envelope, store revision discipline, termination/control/observation updates. File-level detail in the lifecycle sidecars.
+
 
 - 2026-08-29T10:16+02:00 — Separated failed-gate staging and successor repair bytes from protected
   Git output identity so an output-free generation can be cancelled without discarding later work.

@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/context.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
 | lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
@@ -40,13 +40,17 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver facade and the coordination-context builder own topology, storage, path rules, and cross-repo resolution. | "def build_coordination_context(" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-312 |
-| Closeout planning uses this module before the sole external-phase owner refreshes onboarding metadata. | "def _memory_refresh_preview("; "def _closeout_contract_context("; "def external_closeout_commits(" | mcp/src/agents_remember/worktrees/modules/closeout.py:226-226; mcp/src/agents_remember/worktrees/modules/closeout.py:965-965; mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-61 |
+| Closeout preview resolves candidate-rooted context for route-index and sidecar classification. | "def _memory_refresh_preview(" | mcp/src/agents_remember/worktrees/modules/closeout.py:226-310 |
+| Closeout replaces the resolved context's code root with the task worktree. | "def _closeout_contract_context(" | mcp/src/agents_remember/worktrees/modules/closeout.py:978-980 |
+| The external-memory phase resolves that contract context before refreshing onboarding and running post-refresh quality. | "def _refresh_external_memory(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-160 |
 
 ## Series-Contract Notes
 
 The context wrapper forwards `parent_task` and `leaf_id` from `WorktreeArgs` to the resolver before operation modules build or load contracts.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split planning context, candidate-root replacement, and external refresh ownership. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

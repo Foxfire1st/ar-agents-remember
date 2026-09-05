@@ -61,6 +61,8 @@
     "dashboard/src/data/railChatSelection.ts",
     "dashboard/src/data/railModel.test.ts",
     "dashboard/src/data/railModel.ts",
+    "dashboard/src/data/requirements.test.ts",
+    "dashboard/src/data/requirements.ts",
     "dashboard/src/data/reviewerContext.ts",
     "dashboard/src/data/screenWakeLock.test.ts",
     "dashboard/src/data/screenWakeLock.ts",
@@ -105,6 +107,7 @@
     "dashboard/src/data/submitMachine.ts",
     "dashboard/src/data/submitRetention.test.ts",
     "dashboard/src/data/submitRetention.ts",
+    "dashboard/src/data/taskArtifacts.ts",
     "dashboard/src/data/taskDocuments.ts",
     "dashboard/src/data/taskHierarchy.test.ts",
     "dashboard/src/data/taskHierarchy.ts",
@@ -116,8 +119,8 @@
     "dashboard/src/data/useTaskDocumentBody.ts"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 113,
-    "fileSidecars": 88,
+    "sourceFilesInScope": 116,
+    "fileSidecars": 91,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -146,6 +149,7 @@
     "ptyharvest",
     "railchatselection",
     "railmodel",
+    "requirements",
     "reviewercontext",
     "screenwakelock",
     "seatevents",
@@ -171,6 +175,7 @@
     "submitclient",
     "submitmachine",
     "submitretention",
+    "taskartifacts",
     "taskdocuments",
     "taskhierarchy",
     "taskidentity",

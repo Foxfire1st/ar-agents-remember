@@ -5,95 +5,76 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
-| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
+| lastUpdated | 2026-09-05T06:14:14+00:00 |
+| lastVerifiedCommitHash | `8f670ceecd75323600c873d40c47c4a1cc946ab3` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:24+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Python quality overview](overview.md)
+[Governing route overview](overview.md)
 
 ## Purpose
 
-Provides the canonical test-consumer graph used by targeted selection, retry proof, and causal localization.
+Owns the source-derived test-consumer graph shared by targeted selection, retry proof and causal localization. It preserves reason provenance and distinguishes proved global invalidation from unresolved ownership.
 
 ## Code Commentary
 
 ### Logic
 
-It builds one immutable graph from tracked Python imports, recursive literal `pytest_plugins`
-declarations, exact source references, and the complete test population. Lifecycle-catalog
-consumers are only an independently checked assertion: they must agree with observed source facts
-and cannot make an otherwise incomplete graph complete. Every selected consumer retains its reason
-provenance. Parse failures, dynamic plugin declarations, ambiguous modules, unowned changes, or
-catalog disagreement return an explicit `fresh_rerun_reason` over the full population.
+DependencyOwnershipGraph builds repository dependency facts, observed imports/literal consumers and independently checked evidence-catalog declarations. resolve retains every unresolved input and returns complete=false instead of silently expanding an incomplete graph. Parse failures, ambiguous modules and invalid lifecycle catalogs produce explicit unresolved reasons.
 
-Repository-owned non-Python product inputs that cannot enter the import graph may declare an exact
-consumer set here. That declaration is admitted only when source-observed literal reads match it
-exactly. The root bootstrap repair (commit eb05a8727801) added the observed literal consumer
-`mcp/tests/test_gate_certificate_authority.py` to the `mcp/certification-profile-v1.json`
-consumer set (`REPOSITORY_TEST_INPUT_CONSUMERS`, entry at
-`dependency_ownership.py:102`), matching the new content-addressed gate-certificate authority
-test; no safe-full rule was added. `.codex/config.toml` names its two public-surface/starter
-consumers. `layers.toml` names its five architecture and structural-policy consumers through one
-composed `Path` identity; the source-observed literal scanner independently proves the same set.
-Any mismatch widens safely instead of trusting stale metadata.
+Changed tests own themselves; deleted tests leave the population. Shared support must have observed consumers. Repository-owned non-Python inputs, including the certification profile, may declare exact consumers only when the observed set matches exactly. The profile consumer set now includes bridge, record-seam and rail-binding tests. A declaration does not prove itself.
+
+Global inputs and conftest roots deliberately invalidate the full population and are separately recorded. Otherwise observed import/literal relationships are preferred; filename matching remains a labeled heuristic. ownership_configuration_digest binds the versioned global inputs, declarations, irrelevant roots/suffixes and dashboard test patterns, so selection authority changes are visible.
 
 ### Conventions
 
-Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
-the public function or model instead of re-deriving its lower-level state machine.
+Keep test-consumer ownership separate from product-package/coverage ownership. Use deterministic sorted paths and typed SelectionReasonKind values when reporting why a test was selected or an input remains unresolved.
 
 ### Invariants And Boundaries
 
-- Selection, retry, and causal localization share one owner; necessary import fan-out is preserved
-  and attributed; unknown or ambiguous dependency truth fails closed to a named fresh rerun.
-- Source-derived facts are authoritative. Lifecycle declarations are validated against them and
-  never self-prove their own consumer completeness.
-- The graph answers dependency/test-consumer questions across product and verification packages;
-  it deliberately does not infer which importable package is operational product. Targeted and
-  full measurement consume the explicit package-authority reader for that separate decision.
-- Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
-  fallback or compatibility shadow.
-- An explicit non-Python consumer declaration never self-proves: the graph compares it with observed
-  consumers before targeted selection may use it.
+- Unknown ownership does not become a safe-full success at this layer.
+- Catalog declarations must agree with independently observed consumers.
+- Intentional pytest-global invalidation is distinct from incomplete ownership.
+- Necessary import fan-out remains attributable rather than being pruned for speed.
+- The selector configuration digest changes when classification authority changes.
 
 ### Todos
 
-None recorded.
+The previous card incorrectly described unresolved ownership as a full-population fallback. Current source retains incomplete/unresolved results and the targeted caller refuses them.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. The governing task artifacts are
-recorded as prose here (task artifact paths are not repo-relative citations, so the
-authoritative source for the facts below is the code itself). The root-owned bootstrap repair
-declared the observed literal profile consumer and added no safe-full rule; the
-2026-09-03T06:20:00+02:00 master decision landed this root-owned repair (advances no requirement
-leaf).
+No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| External domain documentation is not configured. | N/A | N/A |
 
 ## Repo-Internal References
 
-The source file is the direct evidence for this unit; its governing overview records adjacent owners.
+The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph construction refuses source parse and module ambiguity before consulting declarations. | `DependencyOwnershipGraph`; `__init__`; `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:283-521 |
-| Catalog consumers are cross-checked against independently observed consumers. | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:387-419; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:421-457 |
-| Incomplete ownership returns the full population with one stable fresh-rerun reason. | `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:323-355 |
-| The profile consumer set gained the exact gate-certificate authority test at the bootstrap repair. | `REPOSITORY_TEST_INPUT_CONSUMERS`; `Path("mcp/tests/test_gate_certificate_authority.py")` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:50; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:102 |
-| The root layer contract has one exact repository-owned declaration and five independently observed consumers. | `LAYERS_CONTRACT_PATH`; `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:29-50 |
+| Global inputs and versioned repository-owned declarations | `GLOBAL_TEST_INPUTS`; `OWNERSHIP_AUTHORITY_VERSION`; `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:24-52 |
+| Typed reasons and incomplete graph behavior | `SelectionReasonKind`; `SelectionReason`; `TestImpact`; `resolve`; `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:227-365 |
+| Global invalidation and exact consumer matching | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:368-459 |
+| Import closure and evidence-catalog consumer discovery | `transitive_importers`; `reverse_import_closure`; `_declared_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:527-581 |
+| Selection authority configuration digest | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:598-619 |
 
 ## Cross-Repo References
 
-No cross-repository source is allowed by the resolved settings, and this unit owns no external
-protocol claim.
+No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-301 |
+| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-05T06:14:14+00:00 — Corrected obsolete safe-full wording to the implemented explicit unresolved-ownership contract and incorporated new profile consumers.
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
   Docs References task-artifact rows as prose (absolute ar-coordination paths are not
@@ -110,8 +91,10 @@ protocol claim.
 - 2026-08-27T14:04+02:00 — Removed the misleading graph-local `product_*` projection. Consumer
   ownership remains cross-package; explicit configured package authority now exclusively owns the
   distinct product-versus-verification measurement decision.
+
 - 2026-08-27T11:14+02:00 — Reconciled source-first ownership: recursive plugin/import/reference
   facts are authoritative, catalog consumers are a cross-check, and incomplete truth names a fresh
   rerun instead of silently selecting a narrower population.
+
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

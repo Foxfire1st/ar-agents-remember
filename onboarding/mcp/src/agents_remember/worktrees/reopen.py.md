@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/worktrees/reopen.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
 | lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -56,7 +56,7 @@ packet that reports it disagreed about the contract this tool had just written.
 front of the checker, leaving any cell they were
 not handed alone. `cleanup: "reopened"` remains the tombstone marker `worktree_start`'s
 existing-contract branch treats like `abandoned` (recreate fresh, never attach) — and it is now a
-declared member of `CleanupStatus`, so the packet accepts it. cit:([`ContractCells`; `amend_contract`; "CleanupStatus = Literal["], mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226)
+declared member of `CleanupStatus`, so the packet accepts it. cit:(["class ContractCells:"; "def amend_contract("; "CleanupStatus = Literal["], mcp/src/agents_remember/models/worktree.py:28-28; mcp/src/agents_remember/worktrees/worktree_contract.py:181-196; mcp/src/agents_remember/worktrees/worktree_contract.py:199-227)
 
 `_plan_leaf_doc_reset` prepares the leaf task-document reset and publishes it only with the
 contract-side reopen transaction. cit:([`_plan_leaf_doc_reset`], mcp/src/agents_remember/worktrees/reopen.py:393-436)
@@ -92,7 +92,9 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | The recreate-fresh branch admits `cleanup: reopened`. | "existing.cleanup in (\"abandoned\", \"reopened\")" | mcp/src/agents_remember/worktrees/modules/start.py:508-508 |
 | Reopen publishes the frozen-landing clear, task resets, and contract rewrite under one task-fact CAS and reports projection refresh separately. | `publish_task_fact_mutation`; `_publish_reopen_transition` | mcp/src/agents_remember/worktrees/reopen.py:471-493 |
 | The application entry point exposing this as the `task_reopen` MCP tool beside `task_doc`. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
-| The contract dataclass, amendment helper, and `CleanupStatus` vocabulary definitions (the vocabulary in models/worktree.py since L9). | "class ContractCells"; "def amend_contract"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:26-26; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
+| The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. | "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:28-28 |
+| The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
+| The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:148-198 |
 | `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:302-306; mcp/tests/test_wire_vocabulary_exhaustiveness.py:669-677 |
 
@@ -148,6 +150,8 @@ authoritative; dry-run and apply report the same affected projection scopes/effe
 failure does not undo the reopen batch.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 2 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated cleanup vocabulary from the typed amendment record and helper. Kept the prose claim and repaired its precise definitions and cleanup literal. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged exact terminal-predecessor proof, task-CAS publication, and independent projection refresh into reopen. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

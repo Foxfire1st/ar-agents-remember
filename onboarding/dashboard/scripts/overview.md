@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/scripts/`                             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-24T13:51:26+02:00                       |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`       |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastUpdated            | 2026-09-05T07:05+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -20,7 +20,8 @@ The dashboard quality-rail scripts route owns
 `require-dagger-test-environment.mjs` (the canonical nonce/attestation validator), its
 type declaration, `check-diff-coverage.mjs` (the per-diff changed-lines coverage floor
 mirroring the Python `diff_coverage.py` gate), its contract test, and
-`check-bundle-size.mjs` (the 32 MiB bundle budget wired into `npm run build`). Vitest
+`check-bundle-size.mjs` (the 32 MiB bundle budget wired into `npm run build`). The route also owns `write-suite-result.mjs`, which writes the CCR dashboard-suite result
+after a successful coverage command. Vitest
 collects `scripts/**/*.test.mjs` from `dashboard/vitest.config.ts`. Direct targeted
 Vitest runs are supported diagnostic loops; the changed-lines CLI itself and all
 acceptance remain Dagger-only.
@@ -52,10 +53,21 @@ the diff pipe uses a 256 MiB buffer so series-fork diffs cannot ENOBUFS.
 
 ### Invariants And Boundaries
 
-The route is read-only reporting: it never writes coverage, config, or git state.
+The admission, coverage-scoring, and bundle-budget scripts read and report facts without
+writing coverage, configuration, or Git state. `write-suite-result.mjs` is the explicit
+report writer: `test:coverage` invokes it only after Vitest exits successfully. It writes
+`dashboard-suite-result.json` beside `AR_QUALITY_PROGRESS_REPORT`, or in the current directory
+when that variable is absent. The script records `passed: true` from that command-chain
+assumption; direct execution does not independently prove a test passed. Missing or unreadable
+coverage leaves `totals` empty and does not suppress the suite-result file.
 The floor defaults to 90% (`AR_DASHBOARD_DIFF_COVERAGE_FLOOR` override). No code here
 writes a nonce, accepts a fake token, bypasses attestation, shadows configuration, or
 falls back to a host acceptance executor.
+
+`write-suite-result.mjs` records the coverage path and rounds numeric `coverage.total`
+percentages when that optional object exists; ordinary per-file Istanbul coverage need
+not contain that summary object. The suite-result record is one artifact, not independent
+certification or proof that all required Gate-4 artifacts were produced.
 
 ### Todos
 
@@ -89,6 +101,8 @@ No cross-repository implementation source governs this route.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added suite-result publication ownership and its command-chain, output-path, and optional-coverage limits. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: onboarded the canonical
   Dagger admission validator and declaration, the direct-main changed-lines guard, and the

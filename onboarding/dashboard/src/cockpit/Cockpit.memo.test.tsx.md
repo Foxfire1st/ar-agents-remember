@@ -54,7 +54,17 @@ documentation was invented.
 | --- | --- | --- |
 | The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). | "function CountedEngineRoom()", "function CountedDetailPanel(props: ComponentProps<typeof Real>)", "function CountedSessionsView(props: ComponentProps<typeof Real>)", "function CountedFileViewer(props: ComponentProps<typeof Real>)", "function CountedAttentionQueue(props: ComponentProps<typeof Real>)", "function CountedLifecycleList(props: ComponentProps<typeof Real>)", "function CountedEventRiver()" | dashboard/src/cockpit/Cockpit.memo.test.tsx:32-32; dashboard/src/cockpit/Cockpit.memo.test.tsx:43-43; dashboard/src/cockpit/Cockpit.memo.test.tsx:54-54; dashboard/src/cockpit/Cockpit.memo.test.tsx:65-65; dashboard/src/cockpit/Cockpit.memo.test.tsx:76-76; dashboard/src/cockpit/Cockpit.memo.test.tsx:87-87; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98 |
 | The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). | "keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290 |
-| The production shell owns the persistent layers under test: the `chatsLayer`/`filesLayer`/`operationsLayer`/`engineLayer` consts and the four divs that toggle their `display`. | "const chatsLayer = css({", "const filesLayer = chatsLayer;", "const operationsLayer = chatsLayer;", "const engineLayer = chatsLayer;", "className={engineLayer}", "className={operationsLayer}", "className={filesLayer}", "className={chatsLayer}" | dashboard/src/cockpit/Cockpit.tsx:327-327; dashboard/src/cockpit/Cockpit.tsx:337-337; dashboard/src/cockpit/Cockpit.tsx:342-342; dashboard/src/cockpit/Cockpit.tsx:348-348; dashboard/src/cockpit/Cockpit.tsx:755-755; dashboard/src/cockpit/Cockpit.tsx:760-760; dashboard/src/cockpit/Cockpit.tsx:772-772; dashboard/src/cockpit/Cockpit.tsx:780-780 |
+| The persistent layer layout is declared once for Chats. | "const chatsLayer = css({" | dashboard/src/cockpit/Cockpit.tsx:328-334 |
+| The file layer reuses the persistent layout. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:338-338 |
+| The Operations layer reuses the persistent layout. | "const operationsLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:343-343 |
+| The Engine Room layer reuses the persistent layout. | "const engineLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:349-349 |
+| The shell hides each layer through display and aria-hidden while retaining its children. | "function ViewLayer({" | dashboard/src/cockpit/Cockpit.tsx:701-719 |
+| The Engine Room instance remains mounted. | "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" | dashboard/src/cockpit/Cockpit.tsx:757-759 |
+| The Operations reader remains mounted. | "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:762-770 |
+| The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:774-776 |
+| Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:782-790 |
+
+| The current series sub-task model owns optional createdAt; the historical fixture split below records why that distinction matters. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
 
 ## Cross-Repo References
 
@@ -65,6 +75,8 @@ No meaningful cross-repository references found.
 | This is dashboard-local test coverage. | "persistent layers skip the setView reconcile (260721 tab-switch CPU)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:218-322 |
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 
@@ -79,7 +91,7 @@ No meaningful cross-repository references found.
   the master's `subTasks[0]` shed a `createdAt` "that `TaskSubTaskRefNode` declares on neither side" —
   **false in both directions**. `git show abc7cbc:dashboard/src/types/projection.ts` declares
   `createdAt?: string` on `TaskSubTaskRefNode` at L206-L214, and this same leaf removed it there
-  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (cit:([`SeriesSubTaskNode`], dashboard/src/types/projection.ts:496-503)) as part of splitting one
+  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (historical-source provenance (recorded source commit `e52edaf5b655f495580efd93306afdf922b19b51` in memory commit `a289dbcd3db405a0b63a4183b4affad7d60fb541`; original narrative coordinates `dashboard/src/types/projection.ts` L380-L387; later pre-L31 citation coordinates `dashboard/src/types/projection.ts:496-503`; anchor `SeriesSubTaskNode`)) as part of splitting one
   interface back into the two `extra="forbid"` server models it had collapsed. So the fixture edit was
   compile-forced by that mirror split, not a tidy-up. The card's conclusion survives — nothing reads
   the subtask row's `createdAt` either way — so only the stated reason changed. Also re-verified the two

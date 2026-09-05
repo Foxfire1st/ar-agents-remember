@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T11:33+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastUpdated | 2026-09-05T07:08+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -23,22 +23,25 @@ operational product behavior; its owner and consumers are repository verificatio
 
 ## Hot Path Summary
 
-`check.py` executes and interprets the rails; `quality_plan.py` owns their typed configuration,
+`profile_selection.py` publishes the immutable repository-owned selector result;
+`profile_rails.py` rederives that exact scope and executes the selected Python rails.
+`check.py` executes and interprets the shared rail machinery; `quality_plan.py` owns their typed configuration,
 progress state, and deterministic command plan. `scope.py` proves complete
 product/verification package authority.
 `dependency_ownership.py` consumes source-derived imports, recursive pytest plugins, and literal
 artifact readers. `retry_proof.py` owns Dagger-cache identity/lifecycle, `retry_coverage.py` owns
 retained/fresh Coverage.py composition, and `quality_subprocess_environment.py` owns the child-rail
 environment boundary. `causal_preflight.py` binds failed contracts to exact dependent nodes;
-`causal_continuation.py` rejects missing or contradictory reports into full-population safe mode.
+`causal_continuation.py` rejects missing or contradictory reports into an unsuppressed run
+of the already selected population; it does not broaden unknown ownership.
 
 ## Operating Model
 
 Targeted selection and retry share one immutable source fact graph. Lifecycle declarations are
-validated against observed consumers; they never make themselves complete. A missing, ambiguous,
-dynamic, stale, or contradictory graph selects the full current test population with a stable
-fresh-rerun reason. Retry proof persists only in the locked `ar-quality-retry-v3` Dagger cache and
-binds the exact lane population, environment digest, tools, selection, candidate snapshot, and
+validated against observed consumers; they never make themselves complete. Missing, ambiguous, dynamic, stale, or contradictory ownership retains explicit unresolved
+inputs; targeted `CheckConfig` construction refuses before tests run. Full mode and proven
+global invalidators remain explicit scope decisions, not recovery from unknown ownership. Retry proof persists only in the locked `ar-quality-retry-v3` Dagger cache and
+binds the exact lane population, environment digest, tools, immutable selection digest, candidate snapshot, and
 coverage artifacts. Delta coverage keeps retained and fresh databases separate until a passing
 pytest result is explicitly merged and atomically republished for all downstream scorers. An
 all-contexts-affected delta carries an explicit known-empty retained state; an unexpected missing
@@ -48,7 +51,7 @@ Non-Python product inputs that cannot participate in the import graph use narrow
 consumer declarations only when independently observed literal reads match exactly. This lets the
 Codex starter configuration select its two real contract consumers and the root layer contract
 select its five architecture/structural consumers without treating every unrelated test as
-affected; any declaration/source mismatch widens safely and names the reason.
+affected; any declaration/source mismatch marks the selector incomplete and names the reason.
 
 ## Local Invariants And Traps
 
@@ -68,6 +71,12 @@ affected; any declaration/source mismatch widens safely and names the reason.
   still fails closed.
 - A non-Python consumer declaration never self-proves and cannot silently narrow targeted scope.
 
+The profile rail writes Coverage.py and pytest event/phase artifacts through the declared
+reports directory. Its `verify-teardown` adapter validates the existing ambient summary;
+at this candidate it prints a result and does not publish a distinct teardown-proof JSON.
+The three absent Gate-4 evidence producers and missing persisted rail logs are open CCR
+repair findings, not complete artifact coverage.
+
 ## File-Level Onboarding Map
 
 All Python files in this route have one adjacent sidecar. The generated index is the exhaustive
@@ -79,6 +88,8 @@ The canonical overview is `docs/design/python-evidence-system.md`; retry and dir
 are in `docs/design/python-test-evidence.md` and the PDLS evidence reports.
 
 ## Update History
+
+- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Removed obsolete safe-full selection behavior; added selector identity, exact rail scope, causal selected-population limit and unproduced teardown-proof boundary. Verification records current source claims, not execution or acceptance.
 
 - 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 registered the five exact, independently observed
   `layers.toml` consumers. The declaration avoids safe-full selection without making metadata

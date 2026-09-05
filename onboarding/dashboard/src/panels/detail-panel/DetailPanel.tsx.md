@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/detail-panel/DetailPanel.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:46+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,6 +59,17 @@ without changing the selected lifecycle token gauge. L8 removes the obsolete tas
 ask-only attention details; follow-up conversation belongs in the adjacent leaf chat, while durable gate
 decision controls still render for real `lifecycle.gate` requests. L8 also marks rendered leaf task
 content with `data-task-leaf-key` so highlight capture can identify text selected from the displayed leaf.
+
+
+## 260831-CCR-L23 Shared Task-Artifact Reader Target
+
+The panel's `NotesReaderTarget` import is now the shared discriminated
+`TaskArtifactReaderTarget` alias from `dashboard/src/data/taskArtifacts.ts`
+(`import type { TaskArtifactReaderTarget as NotesReaderTarget }`). The
+`onOpenNotes` callback `DetailPanel` threads therefore carries the union:
+a `kind: "notes"` member for note opens and a `kind: "requirements"` member
+(with the task-document reference) for requirement-packet opens. Routing the callback
+into the reader and takeover is unchanged.
 
 ## Code Commentary
 
@@ -289,31 +300,57 @@ master leg of the drill-down).
 | The hook owns fetch, merge, availability, and path-plus-revision caching; the API literal remains in the transport helper. | `useTaskDocumentBody`; `mergeTaskDocumentBody`; `taskDocumentBodyKey`; `fetchTaskDocument` | dashboard/src/data/useTaskDocumentBody.ts:9-11; dashboard/src/data/useTaskDocumentBody.ts:13-27; dashboard/src/data/useTaskDocumentBody.ts:29-74; dashboard/src/data/taskDocuments.ts:3-9 |
 | Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching. | "loads the complete task body before mounting reader ancillary requests"; "renders the complete on-demand task-document body while retaining its summary"; "shows the available summary when the on-demand task-document body is absent"; "reuses an unchanged task body and refetches when its revision changes" | dashboard/src/panels/detail-panel/taskBody.test.tsx:115-115; dashboard/src/panels/detail-panel/taskBody.test.tsx:12-12; dashboard/src/panels/detail-panel/taskBody.test.tsx:184-184; dashboard/src/panels/detail-panel/taskBody.test.tsx:208-208 |
 | `parseTaskSelection` resolves typed taskdoc/series/lifecycle selections before rendering by task-document `kind`. | "const selectedTaskDoc = resolveSelectedTaskDoc(selection, allDocs);"; "const TASKDOC_PREFIX = \"taskdoc:\";"; "const SERIES_PREFIX = \"series:\";"; "const LIFECYCLE_PREFIX = \"lifecycle:\";" | dashboard/src/panels/detail-panel/state.ts:125-125; dashboard/src/data/taskIdentity.ts:13-16 |
-| Typed Operations selection helpers shared with Cockpit and LifecycleList. | "export const taskDocSelectionKey"; "key: taskDocSelectionKey(doc.docPath)"; "key: seriesSelectionKey(series.seriesId)"; "key: lifecycleSelectionKey(lifecycle.id)"; "function selectionKey(selection"; "lifecycleSelectionKey(id)" | dashboard/src/cockpit/Cockpit.tsx:517-517; dashboard/src/data/taskIdentity.ts:18-18; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:755-755; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:804-804; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:882-882; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1007-1007 |
+| The shared task-document selector prefixes the canonical docPath. | "export const taskDocSelectionKey" | dashboard/src/data/taskIdentity.ts:18-18 |
+| Task-document rows use the shared task-document key. | "key: taskDocSelectionKey(doc.docPath)" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:755-755 |
+| Series rows use the shared series key. | "key: seriesSelectionKey(series.seriesId)" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:804-804 |
+| Lifecycle rows use the shared lifecycle key. | "key: lifecycleSelectionKey(lifecycle.id)" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:882-882 |
+| Selected typed identities map back to the same three row-key helpers. | "function selectionKey(selection" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1007-1012 |
+| Cockpit preserves typed selection keys and qualifies a raw lifecycle id before opening Operations. | "const open = useCallback((id: string) => {" | dashboard/src/cockpit/Cockpit.tsx:512-521 |
 | The selected-series derivation: `selectedIsRootTask`, `selectedSeries`, `seriesAsMasterDoc`, `seriesSliceDocs`. | "selectedIsRootTask: boolean"; "const selectedSeries = resolveSelectedSeries("; "? seriesSliceDocs(allDocs, master.docPath)"; ": seriesAsMasterDoc(selectedSeries);" | dashboard/src/panels/detail-panel/state.ts:75-76; dashboard/src/panels/detail-panel/state.ts:131-137; dashboard/src/panels/detail-panel/lifecycleBody.tsx:67-67; dashboard/src/panels/detail-panel/lifecycleBody.tsx:87-87 |
 | Lifecycle-bound selected masters render `MasterOverview` with sibling docs from the full projected task-document pool, so master rows can open authored leaves that are not sidebar rows. | "import { MasterOverview, TaskReader } from \"./taskReader\";"; "export function taskDocsForLifecycle(" | dashboard/src/data/taskIdentity.ts:281-281; dashboard/src/panels/detail-panel/taskDocPanels.tsx:15-15 |
-| Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection. | "import { parentTaskLinkForDoc } from \"../../data/taskHierarchy\";"; "export function parentTaskLinkForDoc("; "export function TaskContent({" | dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/taskDocPanels.tsx:1-1; dashboard/src/panels/detail-panel/taskReader.tsx:85-85 |
+| Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection. | "import { parentTaskLinkForDoc } from \"../../data/taskHierarchy\";"; "export function parentTaskLinkForDoc("; "export function TaskContent({" | dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/taskDocPanels.tsx:1-1; dashboard/src/panels/detail-panel/taskReader.tsx:107-107 |
 | `displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1). | "import { displayedLeafDoc, displayedReaderDoc, docPathForTaskRef } from './model';"; "export function displayedLeafDoc({"; "const viewedLeafDoc = displayedLeafDoc({"; "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-65; dashboard/src/panels/detail-panel/model.ts:136-136; dashboard/src/panels/detail-panel/state.ts:21-21; dashboard/src/panels/detail-panel/state.ts:152-152 |
-| The task reader wraps rendered leaf content in `data-task-leaf-key={qualifiedLeafKey(doc)}` so selection capture can attribute highlighted text to the displayed leaf. | "const TASK_LEAF_SELECTOR ="; "export function readSelection(selection: Selection"; "export function qualifiedLeafKey("; "export function TaskReader({" | dashboard/src/data/selection.ts:22-22; dashboard/src/data/selection.ts:39-39; dashboard/src/data/taskIdentity.ts:65-65; dashboard/src/panels/detail-panel/taskReader.tsx:614-614 |
+| The task reader derives the displayed leaf key and places it on the rendered content wrapper. | "export function TaskReader({" | dashboard/src/panels/detail-panel/taskReader.tsx:638-674 |
+| The shared qualified key is repo/master/leaf-id and requires all three parts. | "export function qualifiedLeafKey(" | dashboard/src/data/taskIdentity.ts:65-71 |
+| Selection attribution looks for the closest task-leaf wrapper. | "function leafKeyForAnchor(" | dashboard/src/data/selection.ts:34-36 |
+| Mouse selection context carries the leaf key read from that wrapper. | "export function readSelection(selection: Selection" | dashboard/src/data/selection.ts:39-49 |
 | `findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel. | `findParentTaskMatch`; `parentTaskLinkForDoc`; `orderedByCreation`; `parentSelectionKey` | dashboard/src/data/taskHierarchy.ts:43-51; dashboard/src/data/taskHierarchy.ts:68-82; dashboard/src/data/taskHierarchy.ts:152-156; dashboard/src/data/taskHierarchy.ts:145-150 |
-| `SubTaskRow`; `TaskSubTaskRefNode`; `SeriesSubTaskNode`; `linkedLifecycleId` | `SubTaskRow`; `TaskSubTaskRefNode`; `linkedLifecycleId` | dashboard/src/types/projection.ts:729-737; dashboard/src/types/projection.ts:751-751 |
+| SubTaskRow is the union of the distinct task-master and series row shapes. | "export type SubTaskRow =" | dashboard/src/types/projection.ts:815-815 |
+| Task-master rows may carry a linked lifecycle id and masterRef. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:793-801 |
+| Series rows instead carry optional creation time. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
 | The two `extra="forbid"` server models the union mirrors. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | mcp/src/agents_remember/observer/projection.py:585-606; mcp/src/agents_remember/observer/projection.py:797-812 |
 | `_series_subtask_nodes`; `seriesAsMasterDoc`; `orderedByCreation`; `createdAt` | "export function orderedByCreation" | dashboard/src/data/taskHierarchy.ts:145-145 |
 | `MasterDocView`; `SubTaskRow`; `seriesAsMasterDoc`; `orderedByCreation` | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | `SubTaskIndex` renders in received order and reads the cross-link as `"linkedLifecycleId" in ref`, so the `→` branch is unreachable for a series. | `SubTaskIndex` | dashboard/src/panels/detail-panel/taskReader.tsx:440-478 |
 | `parentTaskLinkForDoc` links an enclosure-opened leaf back to its parent task document (`master-parent-link`), pinned by the promotedIdentity suite. | "export function parentTaskLinkForDoc("; "links an enclosure-opened leaf back to its parent task document" | dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/promotedIdentity.test.tsx:29-29 |
-| `taskStepProgress`, `SubTaskIndex`, `SliceList`, `TaskReader`, and `ProgressFill` compose the master/slice progress UI. | "export const taskStepProgress = (doc: TaskDocNode): { done: number; total: number } => ({"; "export function SubTaskIndex({"; "export function SliceList({"; "export function TaskReader({"; "export function ProgressFill({" | dashboard/src/grammar/ProgressFill.tsx:27-27; dashboard/src/panels/detail-panel/model.ts:168-168; dashboard/src/panels/detail-panel/taskReader.tsx:440-440; dashboard/src/panels/detail-panel/taskReader.tsx:481-481; dashboard/src/panels/detail-panel/taskReader.tsx:614-614 |
-| Master leaf rows render in received order and display the matched child task document `id`, with `position` kept separate purely for stable test ids; `SliceList` keeps the `createdAt` sort because it orders `TaskDocNode`s. | "export function SubTaskIndex({"; "export function SliceList({"; "export function subTaskKey(ref: SubTaskRow"; "import { orderedByCreation } from \"../../data/taskHierarchy\";" | dashboard/src/panels/detail-panel/model.ts:226-226; dashboard/src/panels/detail-panel/taskReader.tsx:12-12; dashboard/src/panels/detail-panel/taskReader.tsx:440-440; dashboard/src/panels/detail-panel/taskReader.tsx:481-481 |
-| `TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document. | "export function TaskReader({"; "export function ProgressFill({" | dashboard/src/grammar/ProgressFill.tsx:27-27; dashboard/src/panels/detail-panel/taskReader.tsx:614-614 |
+| Task progress forwards the projected done and total counts. | "export const taskStepProgress =" | dashboard/src/panels/detail-panel/model.ts:168-171 |
+| The master index renders its received sub-task references. | "export function SubTaskIndex({" | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
+| The master-less slice list sorts task documents and displays their progress. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
+| The task reader places ProgressFill in the header before body sections. | "export function TaskReader({" | dashboard/src/panels/detail-panel/taskReader.tsx:638-674 |
+| ProgressFill is the shared progress display primitive. | "export function ProgressFill({" | dashboard/src/grammar/ProgressFill.tsx:27-45 |
+| The master index preserves received order and passes a separate one-based position for test ids. | "export function SubTaskIndex({" | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
+| Sub-task labels prefer the matched child task id and title, then the received reference values. | "function subTaskDisplay(" | dashboard/src/panels/detail-panel/taskReader.tsx:444-452 |
+| The row uses position for test ids and the resolved child for navigation. | "function SubTaskIndexRow({" | dashboard/src/panels/detail-panel/taskReader.tsx:362-442 |
+| The slice list retains createdAt ordering because it operates on task documents. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
+| `TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document. | "export function TaskReader({"; "export function ProgressFill({" | dashboard/src/grammar/ProgressFill.tsx:27-27; dashboard/src/panels/detail-panel/taskReader.tsx:638-638 |
 | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary` | `masterDocWithSeriesTokens` | dashboard/src/panels/detail-panel/model.ts:216-219 |
-| The `SeriesNode`, `TaskDocNode`, and `SeriesSubTaskNode.createdAt` contract fields consumed by this panel, mirrored in the dashboard projection types. | `SeriesNode`; `TaskDocNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:470-488; dashboard/src/types/projection.ts:496-503; dashboard/src/types/projection.ts:580-614 |
+| SeriesNode provides the series fields and typed sub-task rows consumed by the panel. | "export interface SeriesNode {" | dashboard/src/types/projection.ts:535-553 |
+| TaskDocNode provides authored task identity, creation time and task-master references. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:648-682 |
+| Only the series sub-task row has optional createdAt. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
 | `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. | `taskLabel`; `taskDocsForLifecycle`; `taskDocumentLabel`; `findLifecycleEnclosure` | dashboard/src/data/taskIdentity.ts:253-260; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:281-286; dashboard/src/data/taskIdentity.ts:288-293 |
 | The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. | "testId=\"gate-review\""; "function DetailPanelImpl({"; "<GateResponder" | dashboard/src/panels/detail-panel/lifecycleBody.tsx:226-226; dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/lifecycleBody.tsx:222-222 |
-| `Markdown`; `Bullets`; `DecisionList`; `MasterSection` | `DecisionList` | dashboard/src/panels/detail-panel/taskReader.tsx:745-760 |
+| `Markdown`; `Bullets`; `DecisionList`; `MasterSection` | `DecisionList` | dashboard/src/panels/detail-panel/taskReader.tsx:771-786 |
 | `ProgressFill` + `TokenGauge` grammar it composes. | `ProgressFill`; `TokenGauge` | dashboard/src/grammar/ProgressFill.tsx:27-45; dashboard/src/grammar/TokenGauge.tsx:18-53 |
 | The shared empty-state backdrop the no-selection state renders. | `EmptyStateBackdrop` | dashboard/src/panels/EmptyStateBackdrop.tsx:52-97 |
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "import { parentTaskLinkForDoc } from \"../../data/taskHierarchy\";"; "export function parentTaskLinkForDoc("; "export function TaskContent({" repointed to dashboard/src/panels/detail-panel/taskDocPanels.tsx:1-1; dashboard/src/data/taskHierarchy.ts:68-68; dashboard/src/panels/detail-panel/taskReader.tsx:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "export function TaskReader({"; "export function ProgressFill({" repointed to dashboard/src/panels/detail-panel/taskReader.tsx:638-638; dashboard/src/grammar/ProgressFill.tsx:27-27. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `DecisionList` repointed to dashboard/src/panels/detail-panel/taskReader.tsx:771-786. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `NotesReaderTarget` import relocation to the shared discriminated `TaskArtifactReaderTarget` (kind notes/requirements) from `data/taskArtifacts.ts`; the threaded `onOpenNotes` payload is now kind-tagged.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
@@ -367,7 +404,7 @@ master leg of the drill-down).
   `createdAt`). Repaired nine citations that had drifted off their symbols, including
   `topLevelStepProgress` L553-L556 → L932-L935, `displayedLeafDoc` L771-L818 → L884-L931,
   `MasterTokenSummary` L652-L705 → L1099-L1108, `TaskReader` L833-L866 → L1307-L1345, and the
-  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:470-488; dashboard/src/types/projection.ts:496-503; dashboard/src/types/projection.ts:580-614),
+  projection-mirror row historical-source provenance (recorded source commit `e52edaf5b655f495580efd93306afdf922b19b51` in memory commit `a289dbcd3db405a0b63a4183b4affad7d60fb541`; original narrative coordinates `dashboard/src/types/projection.ts` L196-L250;L375-L386, recorded there as missing TaskDocNode L381, SeriesNode L412 and SeriesSubTaskNode L343; later pre-L31 citation coordinates `dashboard/src/types/projection.ts:470-488; dashboard/src/types/projection.ts:496-503; dashboard/src/types/projection.ts:580-614`; anchors `TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`),
   whose prior ranges contained none of the named types.
 
 - 2026-08-01T09:58+02:00 — 260731-EFA-L4 curator: corrected two false body claims. `SubTaskIndex` no
@@ -385,7 +422,7 @@ master leg of the drill-down).
   `createdAt`). Repaired nine citations that had drifted off their symbols, including
   `topLevelStepProgress` L553-L556 → L932-L935, `displayedLeafDoc` L771-L818 → L884-L931,
   `MasterTokenSummary` L652-L705 → L1099-L1108, `TaskReader` L833-L866 → L1307-L1345, and the
-  projection-mirror row cit:([`TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`], dashboard/src/types/projection.ts:470-488; dashboard/src/types/projection.ts:496-503; dashboard/src/types/projection.ts:580-614),
+  projection-mirror row historical-source provenance (recorded source commit `e52edaf5b655f495580efd93306afdf922b19b51` in memory commit `a289dbcd3db405a0b63a4183b4affad7d60fb541`; original narrative coordinates `dashboard/src/types/projection.ts` L196-L250;L375-L386, recorded there as missing TaskDocNode L381, SeriesNode L412 and SeriesSubTaskNode L343; later pre-L31 citation coordinates `dashboard/src/types/projection.ts:470-488; dashboard/src/types/projection.ts:496-503; dashboard/src/types/projection.ts:580-614`; anchors `TaskDocNode`, `SeriesNode`, `SeriesSubTaskNode`),
   whose prior ranges contained none of the named types.
 
 - 2026-07-24T13:17:50Z — Added persistent DetailPanel memoization semantics. Verification hash/date

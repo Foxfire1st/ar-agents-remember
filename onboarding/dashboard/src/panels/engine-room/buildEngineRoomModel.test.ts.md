@@ -48,13 +48,17 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 | `node`/`lifecycle`/`worktreeEngine` fixture factories | `node`; `lifecycle`; `worktreeEngine` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:10-42; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:44-58; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:60-69 |
 | Lifecycle join + workspace lift + fallback cases | `buildEngineRoomModel`; `workspaceEngines`; `fallbackStacks`; `usesFallback` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:39-39; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:59-59; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:63-63 |
 | `enclosureKey` = worktreeGroup stable-across-id-swap case | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:132-134 |
-| `EngineProcessNode`, `LifecycleProjection`, `ProviderNode` fixture types | `EngineProcessNode`; `LifecycleProjection`; `ProviderNode` | dashboard/src/types/projection.ts:234-275; dashboard/src/types/projection.ts:351-369; dashboard/src/types/projection.ts:449-460 |
+| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:234-275 |
+| LifecycleProjection is the generated projection contract consumed by this surface. | "export interface LifecycleProjection {" | dashboard/src/types/projection.ts:366-384 |
+| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:514-525 |
 
 ## Series-Contract Notes
 
 The stable-key regression uses a real-node id ending in `series-contract.md`, preserving the invariant that process identity comes from `worktreeGroup` rather than the contract file path.
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-03T09:35+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 6 citation findings (3 missing anchors and 3 malformed sources) in the three assigned repository-reference rows; all anchors and ranges were resolved against the frozen source index.

@@ -99,7 +99,9 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 | The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. | "prunes the stale base node and raises a fleeting block with BOTH recovery choices" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:352-360 |
 | The bird's-eye scene (the render body, given `workspaceEngines`). | `workspaceEngines` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:50-50 |
 | The honest-motion gate. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| Projection types `EngineProcessNode` / `ProviderNode` / `GateNode`. | `EngineProcessNode`; `ProviderNode`; `GateNode` | dashboard/src/types/projection.ts:234-275; dashboard/src/types/projection.ts:290-300; dashboard/src/types/projection.ts:449-460 |
+| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:234-275 |
+| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:514-525 |
+| GateNode is the generated projection contract consumed by this surface. | "export interface GateNode {" | dashboard/src/types/projection.ts:290-300 |
 
 ## Current L5I Maintenance
 
@@ -107,6 +109,8 @@ The process-map wrapper is observed for visibility. A hidden keep-alive room pau
 blueprint video, then resumes playback on re-show without unmounting the map.
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
 

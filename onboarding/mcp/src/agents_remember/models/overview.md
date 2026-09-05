@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -244,8 +244,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:649-659; mcp/tests/test_wire_vocabulary_exhaustiveness.py:705-720; mcp/tests/test_wire_vocabulary_exhaustiveness.py:755-765 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:21-22; mcp/src/agents_remember/models/worktree.py:24-24; mcp/src/agents_remember/models/worktree.py:26-26 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:27-27; mcp/src/agents_remember/models/worktree.py:37-37; mcp/src/agents_remember/models/worktree.py:46-46 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:23-28 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:29-54 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
@@ -467,7 +467,7 @@ Registered tool request/response contracts now live under `models/tools/`; the m
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Strict lifecycle operation record/projection. | `LifecycleOperationRecord`; `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:329-401; mcp/src/agents_remember/models/lifecycles/operation.py:919-938 |
+| Strict lifecycle operation record/projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
 | Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38; mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
 
 ## 260821-DAGQC-L2 Closed Quality And Landing Models
@@ -510,7 +510,34 @@ closeout response models reference that schema rather than copying its fields. S
 requirement versions, delivery attempts, candidate trees, and pair identity remain separate
 contracts.
 
+## Status-Change Wait Response
+
+`models/worktree.py` owns `WorktreeStatusWaitResponse`, and `models/tools/tool_registry.py`
+registers that response for `worktree_status_wait`. It carries a typed outcome, optional successor
+generation and meaningful revision, elapsed/timeout observations, and the coherent lifecycle
+projection. It introduces no public worker PID or private operation key.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:259-278 |
+| Public response registration uses the dedicated wait response. | "\"worktree_status_wait\": WorktreeStatusWaitResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
+
 ## Update History
+
+
+
+
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
+
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes `WorktreeStatusWaitResponse` (`models/worktree.py`) and the `TOOL_RESPONSE_MODELS` row (`models/tools/tool_registry.py`); route index regenerated.
+
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: re-anchored the strict record/projection row after the public projection envelope moved from `operation.py` into `models/lifecycles/operation_projection.py`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
+
 
 - 2026-08-31T20:30+02:00 — No route impact: 260831-DER changes integration authority
   classification and direct-landing documentation without adding or changing a model vocabulary.

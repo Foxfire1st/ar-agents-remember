@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated            | 2026-09-05T07:12+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## What This Area Is
 
@@ -83,7 +83,8 @@ observer write side through `kernel/primitives/observer_paths.py`).
 
 - Readers reuse the producing subsystem's own parser rather than re-parsing.
 - Projection writes are atomic; readers never observe half-written state.
-- Do not import the observer write side from here (layering: observer is below serving).
+- Readers may consume observer projection/reducer APIs; observer event mutation remains
+  with its write-side owner. Layering permits serving to consume lower observer APIs.
 
 ## Repo-Internal References
 
@@ -169,6 +170,12 @@ invalid-empty rather than disappearing or serving stale candidates.
 and series projections. The audited proof/reason/timestamp remain task history and participate in
 body revision identity. Neither projection mutates its source authority.
 
+## CCR Typed Requirement Projection
+
+The task reader now renders approved requirement packet references and acceptance-obligation
+questions as readable strings, while its body-revision digest retains the full typed JSON
+values. This preserves wire compatibility without losing semantic edit invalidation.
+
 ## 2026-08-26 Atomic Task Refresh And Retry
 
 `ProjectionInputState._refresh_tasks` builds contracts, enclosures, task documents, and series into
@@ -179,6 +186,8 @@ waiting for a second task mutation. This is part of the route's bounded-retentio
 publication contract, not a cache optimization.
 
 ## Update History
+
+- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added typed requirement/question rendering with semantic body identity and clarified observer read API imports. Verification records source review, not execution or acceptance.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled the projections route with atomic task refresh, retained last-good state, and heartbeat retry semantics.
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the effective closeout projection and discarded-unstarted task history surfaces. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

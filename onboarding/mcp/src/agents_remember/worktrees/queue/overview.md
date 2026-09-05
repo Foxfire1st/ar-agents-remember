@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastUpdated | 2026-09-05T07:08+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -58,8 +58,8 @@ reconciling, or paused by another selected master. A malformed snapshot becomes 
 source problem with an explicit selecting repair; rebuild does not infer a winner from prior queue
 rows, task ordering, a contract census, or ambient Git.
 
-This does not subordinate task authoring to selection. Task mutation publishes canonical truth,
-invalidates the affected projection to empty, and causes a rebuild from that new truth. Selection
+This does not subordinate task authoring to selection. Task mutation publishes canonical truth; classified semantic/readiness changes
+invalidate affected projections to empty, and causes a rebuild from that new truth. Selection
 and sync lifecycle remain separate worktree authorities, so invalidation cannot destroy retained
 conflicts, commit evidence, or an in-flight operation.
 
@@ -86,7 +86,8 @@ deep-immutable semantic graph index, while
 
 `closeout_projection_source_facts.py` makes currentness inputs explicit: one source plane contains
 task address plus only fields classified as completion readiness, and a second contains the
-`semantic-topology/v2` fingerprint. `closeout_projection_snapshot.py` freezes one exact readable,
+`semantic-topology/v2` fingerprint. The member source census additionally binds canonical
+`taskIntent`; missing or changed door intent becomes a typed blocker. `closeout_projection_snapshot.py` freezes one exact readable,
 classified census before publication. Whole task documents, private v1 topology tables, and old
 projection rows are not source inputs.
 
@@ -121,6 +122,8 @@ the sole immutable bound graph into the sprint context, and reuses its indexes f
 Graphless atomic-sequential mode remains explicit and valid.
 
 ## Update History
+
+- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added canonical task intent as a source-currentness input and qualified classified task invalidation. Verification records current source claims, not execution or acceptance.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: separated completion-readiness and
   `semantic-topology/v2` source planes, added immutable source snapshots, and bound all graph-backed

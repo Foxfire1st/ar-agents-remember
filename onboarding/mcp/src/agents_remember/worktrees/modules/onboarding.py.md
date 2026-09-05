@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-29T18:29+02:00 |
+| lastUpdated | 2026-09-05T08:46+02:00 |
 | lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
 | lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
@@ -183,7 +183,10 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | "def build_route_indexes("; "def route_index_source_snapshot(" | mcp/src/agents_remember/kernel/route_index.py:184-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
-| Worktree tests cover missing sidecar blocking, metadata refresh, long paths, and entity fingerprints. |"test_onboarding_refresh_plan_detects_long_sidecar_paths"; "test_closeout_refreshes_onboarding_metadata_to_new_code_commit"; "test_closeout_blocks_missing_onboarding_for_changed_source"; "test_closeout_refreshes_entity_fingerprint_after_code_commit"|mcp/tests/test_worktree_support_tests_1.py:1175-1175; mcp/tests/test_worktree_support_tests_2.py:91-91; mcp/tests/test_worktree_support_tests_2.py:139-139; mcp/tests/test_worktree_support_tests_2.py:608-608|
+| Long sidecar paths remain discoverable by the refresh plan. | `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1175-1192 |
+| Closeout mechanics stamp onboarding to the resulting code commit and link it in the ledger. | `test_closeout_refreshes_onboarding_metadata_to_new_code_commit` | mcp/tests/test_worktree_support_tests_2.py:91-137 |
+| Missing onboarding blocks closeout and leaves the worktree dirty and closeout incomplete. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support_tests_2.py:139-160 |
+| Entity fingerprints are recomputed after code changes and included in the memory content commit. | `test_closeout_refreshes_entity_fingerprint_after_code_commit` | mcp/tests/test_worktree_support_tests_2.py:616-674 |
 
 ## Cross-Repo References
 
@@ -195,6 +198,8 @@ implementation governs this module.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated four forcing tests and replaced one-line anchors with complete behavioral evidence. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
 - 2026-08-29T18:29+02:00 — Routed candidate-bound no-content/no-route decisions through the body
   validation and refresh boundaries. Only unchanged stale content is eligible; untraced edits

@@ -5,9 +5,9 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -124,8 +124,16 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 | --- | --- | --- |
 | The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86 |
 
+## 260831-CCR-L15 Status-Wait Payload Export
+
+The module now imports `LifecycleStatusWaitRequest` /
+`worktree_status_wait_tool` and exports
+`worktree_status_wait_payload`, which wraps the read-only wait application tool into the
+standard `_tool_payload` envelope for the public `worktree_status_wait` tool.
+
 ## Update History
 
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` export for the new public wait tool.
 - 2026-08-26T08:45+02:00 — Restored canonical Docs/Repo/Cross-Repo reference sections for the
   changed worktree payload adapter.
 

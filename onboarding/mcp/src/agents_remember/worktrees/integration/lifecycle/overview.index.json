@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/worktrees/integration/lifecycle/__init__.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/control/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
@@ -36,15 +37,18 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 34,
-    "fileSidecars": 31,
+    "sourceFilesInScope": 35,
+    "fileSidecars": 35,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -115,18 +119,22 @@
     "resume",
     "src",
     "state",
+    "status",
+    "status_wait",
     "store",
     "terminal",
     "termination",
+    "wait",
     "worker",
     "worktrees"
   ],
   "hotPath": {
-    "summary": "Read `lifecycle_operations.py` for start/resume/retry, `lifecycle_operation_location.py` for the locator-to-enclosure chain, `lifecycle_operation_store.py` for transition validation, and `lifecycle_operation_control_projection.py` for legal next actions.",
+    "summary": "Read `lifecycle_operations.py` for start/resume/retry and `lifecycle_operation_location.py` for the locator-to-enclosure chain. `lifecycle_operation_store.py` owns record and meaningful revisions; `observation/status_wait.py` waits for meaningful change, while `lifecycle_operation_projection.py` and the control projector derive one generation-coherent public view.",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/integration/lifecycle",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/__init__.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/control",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/control/__init__.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
@@ -146,8 +154,7 @@
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location_errors.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_read_decision.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_read_decision.py"
     ],
     "anchorHints": [
       "__init__.py",

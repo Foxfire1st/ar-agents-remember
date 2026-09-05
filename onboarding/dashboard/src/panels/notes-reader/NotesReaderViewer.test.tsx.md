@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:44+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-04T01:06+02:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -20,6 +20,16 @@ Vitest + Testing Library coverage for the L17 Notes Reader. It covers the two le
 content pane and the cockpit takeover wiring, and it absorbs the note-CONTENT rendering cases (markdown /
 text fallback / binary placeholder) that used to live in `TaskNotes.test.tsx` before the inline reader was
 retired.
+
+
+## 260831-CCR-L23 Requirements-Artifact Cases
+
+L23 re-tagged every existing render with `kind="notes"` and added a
+`requirements artifact reader` describe block: a stub serving
+`/api/requirements/{list,read}` proves the viewer shows the requirements root
+(`data-artifact-kind="requirements"`, title `requirements · <master>`,
+open-path `requirements/<path>`) and renders the exact selected packet's markdown
+over the real `/api/requirements/read` URL.
 
 ## Code Commentary
 
@@ -55,8 +65,9 @@ these are hand-written literals — the double cast was the only thing between t
 it made the seed immune to contract change: a new required `Analytics` field failed fifteen other
 files and not this one. `metrics` is now `metricsFor([])` rather than a hand-listed bucket literal, so
 a new lifecycle state adds a required bucket that this seed derives instead of missing.
-(`Analytics.agentPickups` and `.expectationRows` are optional in the mirror, which is why the
-deliberately short `analytics` literal still satisfies the type.)
+`Analytics.agentPickups` and `.expectationRows` are required in the current generated mirror.
+The local `seedMaster` literal supplies both as empty arrays, so it remains checked against
+that contract.
 
 ### Invariants And Boundaries
 
@@ -77,12 +88,22 @@ No meaningful cross-repo references found.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:274-274 |
-| The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:858-858 |
-| `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:188-229 |
-| `TaskDocNode`, `Analytics` with its optional `agentPickups`/`expectationRows`, `WorkspaceProjection`, and `metricsFor`. | `TaskDocNode`; `Analytics`; `WorkspaceProjection`; `metricsFor` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:402-409; dashboard/src/types/projection.ts:580-614; dashboard/src/types/projection.ts:743-756 |
+| The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:309-309 |
+| The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:860-860 |
+| `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:258-301 |
+| The seed task document is checked against the generated TaskDocNode. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:648-682 |
+| Analytics requires agentPickups and expectationRows arrays, along with the other projected collections. | "export interface Analytics {" | dashboard/src/types/projection.ts:92-106 |
+| The seeded snapshot satisfies the generated workspace contract. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:817-830 |
+| The seed derives metrics through the shared lifecycle rollup helper. | "export function metricsFor(" | dashboard/src/types/projection.ts:467-474 |
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" repointed to dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:309-309. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "export function CockpitShell(" repointed to dashboard/src/cockpit/Cockpit.tsx:860-860. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `masterDoc`; `seedMaster` repointed to dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:258-284; dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:285-301. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `kind="notes"` re-tagging of existing renders and the new requirements-artifact reader suite (list/read stub + exact packet render).
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.

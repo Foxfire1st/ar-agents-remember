@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
+| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,11 @@ declaration deterministically cit:([`EvidenceDependencies`], mcp/src/agents_reme
 direct dependency kinds for every evidence domain: memory-quality attestation, route review, curator
 coherence, quality report, closeout door, and the three lifecycle operation kinds
 cit:([`EVIDENCE_DEPENDENCY_POLICIES`, `EvidenceDependencyPolicy`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:122-213).
+CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) makes the `admission` dependency kind optional for
+`quality-report/v2` records: a published quality report binds the shared-Dagger-authority snapshot digest as a
+`shared-dagger-authority` edge whenever the manifest carries `runtimeAuthorityDigest`, and the record stays
+valid without one (ownerless admission, preview, fixtures). The policy registry remains the single authority for the
+kinds each record may bind.
 `build_evidence_dependencies` validates an owner's declared inputs against its exact policy, and
 `require_evidence_dependencies` refuses missing, extra, wrong-type, or unsupported declarations
 with typed `EvidenceDependencyError` statuses
@@ -88,6 +93,9 @@ matrix in the evidence-dependency test suite fixes the contract.
 | Policy registry shape, refusal statuses, and graph-cycle guard are fixed by focused tests. | `test_every_record_type_has_one_versioned_policy`; `test_missing_extra_wrong_type_and_duplicate_dependencies_fail_closed`; `test_supplied_record_closure_refuses_cycles_without_scanning_for_external_roots` | mcp/tests/test_evidence_dependencies.py:88-158; mcp/tests/test_evidence_dependencies.py:159-201; mcp/tests/test_evidence_dependencies.py:202-242 |
 
 ## Update History
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `quality-report/v2` policy change - `admission` became an optional dependency kind so a published report binds the shared-Dagger-authority snapshot digest when present and stays valid without one.
+
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): repaired the prose cit anchor (quoted module docstring) and separated the two-range source with a semicolon.
 
