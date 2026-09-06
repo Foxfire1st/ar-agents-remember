@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
+| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -172,7 +172,7 @@ The explicit `repositories[].certificationProfile` selects the repository rail d
 
 `tasks/task_intent.py` derives normative task identity from classified fields, exact requirements, supplemental versioned packet references and typed acceptance obligations. Route reviews, coherence records, doors and lifecycle operations bind that identity and direct evidence dependencies. Operational prose can change without changing normative intent. Full memory runs preserve exact code/memory candidate trees and report catalog readiness separately from R08 authority.
 
-L30 now persists exact rail-log bytes at stable report-relative paths, connects browser/provider/teardown producers, binds complete immutable publication snapshots to selected certificates, and reopens nested evidence before certification. Selected generations survive later report publication, and the gate propagates returned certificate refusals. The R10 citation fixer still retains its declined-write and stale-document defects until L32 is synchronized and delivered. Ordinary red-run result publication and R05/R16/R07/R08 composition remain separate production obligations.
+L30 now persists exact rail-log bytes at stable report-relative paths, connects browser/provider/teardown producers, binds complete immutable publication snapshots to selected certificates, and reopens nested evidence before certification. Selected generations survive later report publication, and the gate propagates returned certificate refusals. At prepared private C `b34f4a59562b76a3e2413027468e0f699117b36f`, L32 excludes projection-declined edits before staging and uses `citations/documents/transaction.py` for full-byte, source-cell and held-snapshot preconditions immediately before atomic publication. Preview counts remain prospective and `documentsWritten` stays zero; observed conflicts preserve the concurrent document and refuse its complete batch. The final-read boundary does not serialize an uncooperative later writer. Gate 5 and delivery remain pending. Ordinary red-run result publication and R05/R16/R07/R08 composition remain separate production obligations.
 
 `kernel/file_lock.py` owns neutral resource locking: the host Dagger registry uses it directly, while `controlplane/durable_store.py` first enforces checkout coordination and translates kernel capability errors. Both use the existing physical lock protocol; sharing exclusion mechanics does not share domain mutation authority.
 
@@ -1108,7 +1108,17 @@ immutable artifact roots (the task-local requirements surface) that requires eve
 exist and refuses symlinks — including in-root aliases — unlike the symlink-following
 `confine_rel` used for code/onboarding pairing.
 
+
+### L32 Citation Publication Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
+| Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Replaced the superseded L32 defect sentence with the actual private-C transaction, preview and conflict behavior; preserved separate remaining production obligations.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

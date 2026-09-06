@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T04:54:41+00:00 |
+| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
+| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,11 @@ incomplete ownership result preserves unresolved inputs and blocks targeted test
 it no longer silently broadens to the full Python suite. Retry compatibility now binds the
 exact selection digest. L30's runner-input ownership explicitly names the 16 actual consumers instead of leaving shared-fixture reads unresolved or declaring a global invalidator. `profile_rails.py` writes a teardown proof derived from the existing clean-room summary and both real `L5-C10` checkpoint reports. The profile-declared provider rail directly invokes pytest with the existing `testing.pytest_phase_reporter` plugin and its explicit phase-report output path. The focused code-quality overview owns those detailed adapter and selector contracts; the package remains verification infrastructure rather than product authority.
 
+The Python rail adapter compares executable scope with the exact selector outputs in canonical
+POSIX-string order. This keeps full-mode populations equal when component-wise `Path` ordering
+differs, such as `conversation/` beside `conversation-library/`. The comparison covers lint,
+type, coverage, test, and size paths; sorting retains duplicate entries for validation.
+
 ## Operating Model
 
 The root quality configuration explicitly classifies top-level Python packages as product or
@@ -53,6 +58,8 @@ comparisons, and route measurements remain non-accepting evidence.
   refuse the affected selector/rail; retry cache rejection may run the already admitted
   population fresh, while declared full mode or proven global invalidators remain explicit.
   None silently becomes unit evidence.
+- Executable scope must match the independently rederived selector population. Missing, extra,
+  or duplicate paths refuse before pytest.
 - Verification code may consume product APIs; product code cannot consume verification policy.
 - Host execution cannot mint Dagger admission or certifying evidence.
 
@@ -61,6 +68,16 @@ comparisons, and route measurements remain non-accepting evidence.
 Every current Python source below this route has one same-route sidecar. Generated route indexes
 are refreshed after the move and include the complete source population.
 
+## Repo-Internal References
+
+These owners bind the package's executable rail scope to the repository selector.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The adapter rederives the selector and compares each executable path population exactly. | `_require_exact_scope` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:85-121 |
+| Canonical POSIX-string sorting retains duplicate path entries. | `_paths` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:124-127 |
+| The full selector and real admitted configuration are compared before deliberate missing, extra and duplicate size-path mutations. | `test_full_python_rail_uses_canonical_selector_order_and_still_refuses_scope_drift` | mcp/tests/test_repository_certification_profiles.py:930-968 |
+
 ## Docs And Boundary References
 
 Repository-owned design truth lives in `docs/design/python-evidence-system.md` and
@@ -68,6 +85,8 @@ Repository-owned design truth lives in `docs/design/python-evidence-system.md` a
 they do not replace this source-paired behavior description.
 
 ## Update History
+
+- 2026-09-06T04:54:41+00:00 — L32 route-impact review against prepared commit `b34f4a59562b76a3e2413027468e0f699117b36f`: Documented canonical executable-scope ordering and retained exact missing, extra and duplicate population refusals after reading the adapter, selector and full-mode regression.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

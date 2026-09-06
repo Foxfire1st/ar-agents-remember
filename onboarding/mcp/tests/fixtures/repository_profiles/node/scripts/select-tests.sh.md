@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/fixtures/repository_profiles/node/scripts/select-tests.sh` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
 | lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
 | lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
 | governingOverview | `../../../../overview.md` |
@@ -52,13 +52,15 @@ No configured Domain Documentation source applies to this verification fixture.
 | --- | --- | --- |
 | The emitted population and digest are bound to the exact declared input identity. | `selected-tests`; `selectionDigest` | mcp/tests/fixtures/repository_profiles/node/scripts/select-tests.sh:17-19 |
 | The v2 result contract the fixture emits. | `RepositorySelectionResult` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:89-130 |
-| The profile test binds this fixture's configuration digest to its selector declaration. | `test_non_python_selector_fixture_emits_the_canonical_generic_result` | mcp/tests/test_repository_certification_profiles.py:651-684 |
+| The profile test binds this fixture's configuration digest to its selector declaration. | `test_non_python_selector_fixture_emits_the_canonical_generic_result` | mcp/tests/test_repository_certification_profiles.py:653-686 |
 
 ## Cross-Repo References
 
 None; the fixture is repository-local verification data.
 
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 incoming-evidence curation: verified the exact cited lane member or current test-function owner against private C b34f4a59 and corrected only its moved coordinates. Existing own-source verification provenance is retained.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card and recorded the
