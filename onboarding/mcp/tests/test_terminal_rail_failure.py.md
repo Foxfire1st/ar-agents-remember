@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_terminal_rail_failure.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:42:13+00:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
 | lastVerifiedCommitHash | `ce7f10b565f82bc41421d60ba914ee1d0abf61c4` |
 | lastVerifiedCommitDate | 2026-09-04T17:04:29+02:00 |
 | governingOverview | `overview.md` |
@@ -90,7 +90,7 @@ are the governing artifacts.
 | Typed unavailable/unclassified census covers crash, profile, executor-prerequisite, and evidence-state edges. | `TestUnclassifiedAndUnavailable` | mcp/tests/test_terminal_rail_failure.py:364-504 |
 | Boundedness keeps raw logs/secrets/environment/prompt/command bytes out of the envelope. | `TestBoundednessAndParity` | mcp/tests/test_terminal_rail_failure.py:507-598 |
 | `OperationRuntime.fail` records the typed envelope in a real lifecycle journal. | `TestLifecycleJournalIntegration` | mcp/tests/test_terminal_rail_failure.py:601-639 |
-| The suite is explicitly integration evidence in the closed lane manifest. | "mcp/tests/test_terminal_rail_failure.py" | mcp/tests/test-evidence-lanes.toml:494-494 |
+| The suite is explicitly integration evidence in the closed lane manifest. | "mcp/tests/test_terminal_rail_failure.py" | mcp/tests/test-evidence-lanes.toml:495-495 |
 
 ## Cross-Repo References
 
@@ -101,6 +101,8 @@ No cross-repository evidence is required.
 | The suite is repository-local and exercises the production detached-worker failure boundary through its standalone fixtures. | `TestLifecycleJournalIntegration` | mcp/tests/test_terminal_rail_failure.py:601-639 |
 
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 incoming-evidence curation: verified the exact cited lane member or current test-function owner against private C b34f4a59 and corrected only its moved coordinates. Existing own-source verification provenance is retained.
 
 - 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 

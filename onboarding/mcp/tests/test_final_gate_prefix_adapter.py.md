@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_gate_prefix_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:42:13+00:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
 | lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
 | lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview | `overview.md` |
@@ -68,9 +68,11 @@ None.
 | Reuse and memory-only-repair routes force the green prefix proof. | `test_green_prefix_adapter_reuses_exact_gate_one_to_four`; `test_green_prefix_adapter_reuses_prefix_for_memory_only_repair` | mcp/tests/test_final_gate_prefix_adapter.py:40-52; mcp/tests/test_final_gate_prefix_adapter.py:98-109 |
 | Incomplete, code-mismatch, stale, and invalidated prefix refusals. | `test_green_prefix_adapter_refuses_incomplete_prefix`; `test_green_prefix_adapter_refuses_when_code_tree_mismatches_admission`; `test_green_prefix_adapter_restarts_at_gate_one_on_code_change`; `test_green_prefix_adapter_refuses_stale_certificate_prefix` | mcp/tests/test_final_gate_prefix_adapter.py:55-66; mcp/tests/test_final_gate_prefix_adapter.py:69-80; mcp/tests/test_final_gate_prefix_adapter.py:83-95; mcp/tests/test_final_gate_prefix_adapter.py:112-123 |
 | R21 refusals translate into typed Gate-5 refusals with and without findings. | `test_green_prefix_adapter_translates_r21_refusal_with_findings`; `test_green_prefix_adapter_translates_plain_r21_value_error` | mcp/tests/test_final_gate_prefix_adapter.py:126-143; mcp/tests/test_final_gate_prefix_adapter.py:146-160 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_gate_prefix_adapter.py" | mcp/tests/test-evidence-lanes.toml:404-404 |
+| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_gate_prefix_adapter.py" | mcp/tests/test-evidence-lanes.toml:405-405 |
 
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 incoming-evidence curation: verified the exact cited lane member or current test-function owner against private C b34f4a59 and corrected only its moved coordinates. Existing own-source verification provenance is retained.
 
 - 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 

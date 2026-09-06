@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
+| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 
 > **Status:** active baseline
 
@@ -17,7 +17,13 @@ The repository has a production R22-profile → R11-registry → frozen R21-plan
 
 This does not establish complete master finalization: ordinary R05 admission/finalization, R16 durable telemetry, and R07/R08 incremental/final memory certification still lack their required production composition. Ordinary failed quality runs also raise before the R21 record adapter. Existing Gate-5 checker catalogs do not prove those protocols execute.
 
-R10 citation fixing retains the known L32 safety defect at this code commit: a projection-declined edit may remain in the staged write set, and cached document bytes are not revalidated at publication. L32 is a separate candidate, not integrated behavior.
+R10 citation fixing in the prepared L32 code commit `b34f4a59562b76a3e2413027468e0f699117b36f` admits projections before staging and revalidates complete document bytes, accepted source cells and the held source-index generation before atomic publication. A declined edit never enters a write batch; conflicts suppress the complete affected document batch. This describes the private candidate, whose Gate 5 and delivery remain pending. The final-read check is not an operating-system compare-and-swap or exclusion of an uncooperative later writer.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
+| Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+
 
 The host Dagger registry now uses `kernel/file_lock.py` for neutral file exclusion. Checkout durable stores retain their coordination guard before invoking that same kernel mechanism; host registry access neither impersonates a lifecycle process nor relaxes checkout isolation.
 
@@ -1274,6 +1280,8 @@ guidance is in `system/tools.md`. Host pytest, direct coverage, and the quality 
 prohibited, with no compatibility fallback.
 
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Updated the current citation-repair boundary from the retained L30 defect to source-reviewed private C b34f4a59. Existing unrelated route/history content is preserved; this is not an aggregate acceptance or delivery statement.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

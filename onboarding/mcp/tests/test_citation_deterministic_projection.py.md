@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_citation_deterministic_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:42:13+00:00 |
-| lastVerifiedCommitHash | `709dd07671b07d85ac49eaf3b77f4609b1e5fc5f` |
-| lastVerifiedCommitDate | 2026-09-04T00:53:17+02:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
+| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,63 +16,17 @@
 
 ## Purpose
 
-CCR-R10 forcing fixtures for the deterministic anchor-to-range projection. Only exact unique
-moves generate: the range is projected from the frozen source-index snapshot through the shared
-oracle (`symbol_index.locate` / `Sightings.unique`), the claim is rewritten inside the
-same byte-level edit transaction as an explicit generated no-content-impact Update History
-bullet, and every projection binds snapshot id, prior claim digest, anchor, resolved extent, new
-document digest, and repair-tool version. Multiple definitions, parsed mention-only anchors,
-renames, deletions, stale snapshots, conflicting writes, and malformed claims refuse
-deterministically and never accept the old range as a fallback. The module is standalone and
-in-memory/on-tempdir: it never imports test-support or fixture modules.
+CCR-R10 forcing fixtures for exact anchor-to-range projection and its integration with the citation fixer. Unique moves bind the frozen source-index snapshot, prior claim digest, oracle extents, final document digest and repair-tool version. The same accepted document batch carries the generated no-content-impact history when a section exists. Multiple definitions, mention-only anchors, renames, deletion, stale snapshots and malformed claims retain explicit refusals without guessing.
+
+This standalone temporary-file suite focuses on projection semantics. The actual publication/conflict/normalization seam is covered in `test_citation_document_transaction.py`; the removed planning-only `TransactionSeamTests` and mocked normalization class are not current coverage.
 
 ## Code Commentary
 
 ### Logic
 
-The module builds a two-root fixture (`Tree`, `test_citation_deterministic_projection.py:74-120)
-holding a code repository and the memory onboarding tree it documents, with helpers to write
-canonical cards carrying an optional Update History section (`document`,
-`test_citation_deterministic_projection.py:59-67), to run the real fixer with an injected UTC
-clock (`Tree.fix`, `test_citation_deterministic_projection.py:103-105), and to run the
-range-resolution checker (`Tree.check`, `test_citation_deterministic_projection.py:107-108).
-`TreeCase` (`test_citation_deterministic_projection.py:123-146) is the shared base.
+`document`, `Tree` and `TreeCase` construct code and memory roots, canonical cards and a fixed-clock fixer invocation. `UniqueMoveProjectionTests` checks complete bindings, parseable newest-first history, prospective dry-run records, repeat no-ops, deterministic replay, absent history sections, multi-anchor extents, in-file tiebreakers and unparsed single occurrences. `ProjectionRefusalTests` covers rename/deletion/ambiguity/mention-only/malformed input and stale snapshots.
 
-The forcing groups then pin the seam:
-
-- `UniqueMoveProjectionTests` (`test_citation_deterministic_projection.py:149-334):
-  a unique move projects the range and binds every packet field
-  (`test_a_unique_move_projects_the_range_and_binds_every_packet_field`,
-  `test_citation_deterministic_projection.py:161-196); the history bullet is newest-first and
-  parseable by the checker (`test_citation_deterministic_projection.py:198-216); dry runs stage
-  but write nothing (`test_citation_deterministic_projection.py:218-228); a second run is a
-  byte-for-byte no-op (`test_citation_deterministic_projection.py:230-241); identical inputs
-  produce identical projection records (`test_citation_deterministic_projection.py:243-261); a
-  document without an Update History section gets a bound projection but no invented bullet
-  (`test_citation_deterministic_projection.py:263-277); multi-anchor claims bind every resolved
-  extent (`test_citation_deterministic_projection.py:279-298); in-file tiebreaker moves and
-  unparsed-language single-occurrence moves stay projectable
-  (`test_citation_deterministic_projection.py:300-315; test_citation_deterministic_projection.py:317-334).
-- `ProjectionRefusalTests` (`test_citation_deterministic_projection.py:337-433): renames,
-  deletions, multiple definitions, parsed mention-only anchors, and malformed claims refuse
-  without guessing; a stale snapshot refuses the whole run before any write
-  (`test_citation_deterministic_projection.py:419-433).
-- `TransactionSeamTests` (`test_citation_deterministic_projection.py:436-518): a
-  conflicting write between plan and stage refuses the rewrite
-  (`test_citation_deterministic_projection.py:439-478); the staged range edit and the history
-  edit land in one document batch (`test_citation_deterministic_projection.py:480-518).
-- `ProjectionBoundaryTests` (`test_citation_deterministic_projection.py:525-600): an
-  anchor placed in two cited files and a repair with no matching extent decline the empty
-  projection.
-- `ProjectionDeclineThroughFixerTests` (`test_citation_deterministic_projection.py:603-637):
-  a two-file anchor resolution stages the edit and refuses the projection through the real fixer.
-- `StagingGuardTests` (`test_citation_deterministic_projection.py:640-704): a pre-existing
-  run stamp is kept without reconsulting the clock; each document batch digest binds only its own
-  projection.
-- `ClockContractTests` (`test_citation_deterministic_projection.py:707-718): the
-  injectable clock returns a UTC-aware instant.
-- `ScopedNormalisationEditTests` (`test_citation_deterministic_projection.py:721-766): a
-  normalised passing claim stages the edit and skips the projection.
+`ProjectionBoundaryTests` forces ambiguous or missing repair extents. `ProjectionDeclineThroughFixerTests` now requires a two-file anchor decline to leave the entire document and existing history unchanged, with zero repairs, writes and projections. `StagingGuardTests` retains one run timestamp and exact per-document digests; `ClockContractTests` requires a UTC-aware instant.
 
 ### Conventions
 
@@ -82,28 +36,50 @@ refusal assertions read the exact decline codes.
 
 ### Invariants And Boundaries
 
-- Only exact unique moves generate; every refusal is deterministic and never falls back to the old range.
-- Range rewrites and their generated no-content-impact bullets share one document batch.
-- No test-support or fixture-module imports, so the evidence-lifecycle catalog records no
-  transitive test-support consumer here.
+- Only exact unique moves produce a deterministic projection; no old-range fallback or similarity search is admitted.
+- A projection decline cannot stage its source edit or history, and never contributes a successful repair count.
+- Accepted range and generated history edits share their complete document digest.
+- The module does not import test-support fixture modules; real publication interference scenarios live in the adjacent transaction suite.
 
 ### Todos
 
 None.
 
-## Repo-Internal References
+## Docs References
+
+No external Domain Documentation source is configured. This card describes the repository's own implementation and forcing contracts without an external documentation claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical-card and two-root fixture builders shape every forcing scenario. | `document`; `Tree` | mcp/tests/test_citation_deterministic_projection.py:59-67; mcp/tests/test_citation_deterministic_projection.py:74-120 |
-| Unique-move projection binds snapshot id, prior claim digest, resolved extents, digest, and version. | `test_a_unique_move_projects_the_range_and_binds_every_packet_field` | mcp/tests/test_citation_deterministic_projection.py:161-196 |
-| Refusals are forced across rename, deletion, multiple-definition, mention-only, malformed, and stale-snapshot cases. | `ProjectionRefusalTests` | mcp/tests/test_citation_deterministic_projection.py:337-433 |
-| The plan-then-stage seam refuses conflicting writes and batches the range and history edits. | `TransactionSeamTests` | mcp/tests/test_citation_deterministic_projection.py:436-518 |
-| The real fixer stages the edit and refuses the projection for two-file anchor resolutions. | `ProjectionDeclineThroughFixerTests` | mcp/tests/test_citation_deterministic_projection.py:603-637 |
-| The run stamp and per-document digest guards hold across a full fixer run. | `StagingGuardTests` | mcp/tests/test_citation_deterministic_projection.py:640-704 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_citation_deterministic_projection.py" | mcp/tests/test-evidence-lanes.toml:251-251 |
+| No configured external domain source. | N/A | N/A |
+
+## Repo-Internal References
+
+Projection semantics and actual publication interference retain distinct forcing owners.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The two-root fixture drives the actual fixer and range checker. | `Tree` | mcp/tests/test_citation_deterministic_projection.py:72-118 |
+| Successful projections bind every packet field and deterministic document/history behavior. | `UniqueMoveProjectionTests` | mcp/tests/test_citation_deterministic_projection.py:147-332 |
+| Rename, deletion, ambiguity, mention-only, malformed and stale-snapshot scenarios refuse. | `ProjectionRefusalTests` | mcp/tests/test_citation_deterministic_projection.py:335-431 |
+| Missing and multiple exact repair extents cannot produce a projection. | `ProjectionBoundaryTests` | mcp/tests/test_citation_deterministic_projection.py:434-509 |
+| A two-file decline leaves exact original document bytes and all successful counters unchanged. | `ProjectionDeclineThroughFixerTests` | mcp/tests/test_citation_deterministic_projection.py:512-550 |
+| A full fixer run preserves its timestamp and isolates each document digest. | `StagingGuardTests` | mcp/tests/test_citation_deterministic_projection.py:553-617 |
+| The injected clock contract stays UTC-aware. | `ClockContractTests` | mcp/tests/test_citation_deterministic_projection.py:620-631 |
+| Publication-time conflicts are exercised through actual document writes in the companion suite. | `test_observed_conflict_refuses_the_whole_document_and_preserves_other_batches` | mcp/tests/test_citation_document_transaction.py:159-192 |
+| The projection suite remains an integration-lane member. | "mcp/tests/test_citation_deterministic_projection.py" | mcp/tests/test-evidence-lanes.toml:251-251 |
+
+## Cross-Repo References
+
+This file introduces no separate cross-repository protocol. Local temporary code/memory roots and their application write-scope contract remain distinct from a cross-repository authority.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No new cross-repository protocol. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Replaced the accepted-decline expectation with exact unchanged-document refusal; routed removed planning-only seam coverage to the real transaction suite and refreshed all live class ranges. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
 
 - 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 

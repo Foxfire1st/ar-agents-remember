@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
+| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,8 @@ The file lists unit-regression, architecture-fitness and integration populations
 The retained gate-evidence and rail-publication suites are explicitly `unit-regression`. Their temporary Git and SDK-contract fixtures exercise repository owners but do not claim a whole live executor run. `test_dagger_registry_lock.py` is explicitly `integration` because it tests the shared lock protocol across actual processes and threads.
 
 These lane labels describe evidence classification. They do not prove that a test invokes a real external executor or production closeout composition. In particular, a synthetic green certificate fixture can be unit-regression coverage while leaving the actual producer path unverified. Consumer ownership and the evidence lifecycle are separately governed.
+
+`test_citation_document_transaction.py` is explicitly in the integration lane beside the existing deterministic-projection suite. It exercises the real fixer, source index, document transaction and atomic writer over temporary files, with controlled interleavings and replace failure. That classification does not establish whole closeout acceptance or a memory-file mutex.
 
 ### Conventions
 
@@ -59,9 +61,10 @@ These source owners establish the current behavior and the stated fixture bounda
 | --- | --- | --- |
 | Retained certificate evidence has an explicit unit-regression registration. | "\"mcp/tests/test_gate_certification_evidence.py\"" | mcp/tests/test-evidence-lanes.toml:80-80 |
 | Producer publication and exact byte export have an explicit unit-regression registration. | "\"mcp/tests/test_rail_evidence_publication.py\"" | mcp/tests/test-evidence-lanes.toml:156-156 |
-| The real-process/thread registry lock suite is classified as integration. | "\"mcp/tests/test_dagger_registry_lock.py\"" | mcp/tests/test-evidence-lanes.toml:300-300 |
-| Final Codex executor integration remains classified separately. | "\"mcp/tests/test_final_codex_executor.py\"" | mcp/tests/test-evidence-lanes.toml:305-305 |
-| Lifecycle status-wait integration obligations remain present. | "\"mcp/tests/test_lifecycle_status_wait_outcomes.py\"" | mcp/tests/test-evidence-lanes.toml:377-377 |
+| The real-process/thread registry lock suite is classified as integration. | "\"mcp/tests/test_dagger_registry_lock.py\"" | mcp/tests/test-evidence-lanes.toml:301-301 |
+| Final Codex executor integration remains classified separately. | "\"mcp/tests/test_final_codex_executor.py\"" | mcp/tests/test-evidence-lanes.toml:306-306 |
+| Lifecycle status-wait integration obligations remain present. | "\"mcp/tests/test_lifecycle_status_wait_outcomes.py\"" | mcp/tests/test-evidence-lanes.toml:378-378 |
+| The actual document-publication suite is explicitly integration evidence. | "mcp/tests/test_citation_document_transaction.py" | mcp/tests/test-evidence-lanes.toml:252-252 |
 
 ## Cross-Repo References
 
@@ -71,8 +74,9 @@ No separate cross-repository protocol is established by this file. In-tree fixtu
 | --- | --- | --- |
 | No cross-repository evidence is required. | N/A | N/A |
 
-
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Recorded the real transaction suite integration membership and shifted only exact affected lane citations; classification remains distinct from acceptance. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

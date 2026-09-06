@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_catalog_plan_attestation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:42:13+00:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
 | lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
 | lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview | `overview.md` |
@@ -70,9 +70,11 @@ None.
 | Exact plan binding to one candidate pair. | `test_plan_refuses_affected_closure_bound_to_another_memory_tree`; `test_compile_plan_refuses_affected_closure_code_tree_mismatch` | mcp/tests/test_final_catalog_plan_attestation.py:143-157; mcp/tests/test_final_catalog_plan_attestation.py:281-294 |
 | Attestation exhaustion and green/red/blocked mapping. | `test_attestation_must_exhaust_the_planned_population`; `test_attestation_green_and_red_and_blocked` | mcp/tests/test_final_catalog_plan_attestation.py:80-93; mcp/tests/test_final_catalog_plan_attestation.py:96-140 |
 | Coherence subrecords and Gate-5 semantic-input assembly. | `test_coherence_subrecords_cover_judgment_evidence`; `test_assemble_gate_five_inputs_binds_exact_certificate_inputs` | mcp/tests/test_final_catalog_plan_attestation.py:361-380; mcp/tests/test_final_catalog_plan_attestation.py:165-188 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_catalog_plan_attestation.py" | mcp/tests/test-evidence-lanes.toml:405-405 |
+| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_catalog_plan_attestation.py" | mcp/tests/test-evidence-lanes.toml:406-406 |
 
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 incoming-evidence curation: verified the exact cited lane member or current test-function owner against private C b34f4a59 and corrected only its moved coordinates. Existing own-source verification provenance is retained.
 
 - 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 

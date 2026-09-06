@@ -118,7 +118,7 @@
     "wire_contract"
   ],
   "hotPath": {
-    "summary": "`profile_selection.py` publishes the immutable repository-owned selector result; `profile_rails.py` rederives that exact scope and executes the selected Python rails; its teardown adapter publishes hash-bound proof from the actual clean-room reports. `check.py` executes and interprets the shared rail machinery; `quality_plan.py` owns their typed configuration, progress state, and deterministic command plan. `scope.py` proves complete product/verification package authority. `dependency_ownership.py` consumes source-derived imports, recursive pytest plugins, and literal artifact readers. `ret...",
+    "summary": "`profile_selection.py` publishes the immutable repository-owned selector result; `profile_rails.py` rederives that exact scope, compares path populations in canonical POSIX-string order without dropping duplicates, and executes the selected Python rails; its teardown adapter publishes hash-bound proof from the actual clean-room reports. `check.py` executes and interprets the shared rail machinery; `quality_plan.py` owns their typed configuration, progress state, and deterministic command plan. `scope.py` proves complete product/verification package authority. `dependency_ownership.py` consu...",
     "candidateHints": [
       "mcp/test_support/agents_remember_test_support/code_quality",
       "mcp/test_support/agents_remember_test_support/code_quality/__init__.py",

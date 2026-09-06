@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T00:38:37+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
+| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ L30's source-index recovery adds real linked-checkout evidence for an explicit G
 
 `test_memory_incremental_scope_owners.py` composes real Git deltas, the actual citation index and R06 observation, including post-acquisition tracked-source revalidation. `test_memory_incremental_scope_model_edges.py` additionally composes real candidate Git nodes, citation edges, R06 scope, R07 planning and the production range checker. Valid ranges succeed and invalid ranges/ignored generated targets produce the expected checker findings. That case retains fixture-supplied task/admission/gate-prefix facts; it proves the library composition without establishing production admission, full Gate-5 execution or lifecycle acceptance.
 
-L30 replaces the accepted-gap census with complete artifact-map and producer/export/host-consumer checks. `test_rail_evidence_publication.py` uses the actual clean-room reporting owners for checkpoint serialization, verifies provider phase reporting and arbitrary byte capture publication, and retains negative cases for unavailable/missing output. Its container doubles are distinct from the separately required real Dagger/clean-room execution. `test_gate_certification_evidence.py` protects selected-journal bounds, cross-authority refusal, immutable-generation retention and physical report reopening. `test_dagger_registry_lock.py` proves host admission, unchanged checkout isolation, nested release and real process/thread exclusion. R10 deterministic-projection tests still include the declined-repair expectation until L32 lands.
+L30 replaces the accepted-gap census with complete artifact-map and producer/export/host-consumer checks. `test_rail_evidence_publication.py` uses the actual clean-room reporting owners for checkpoint serialization, verifies provider phase reporting and arbitrary byte capture publication, and retains negative cases for unavailable/missing output. Its container doubles are distinct from the separately required real Dagger/clean-room execution. `test_gate_certification_evidence.py` protects selected-journal bounds, cross-authority refusal, immutable-generation retention and physical report reopening. `test_dagger_registry_lock.py` proves host admission, unchanged checkout isolation, nested release and real process/thread exclusion. The L32 private candidate removes the accepted-decline expectation: `test_citation_deterministic_projection.py` now requires unchanged document/history and zero successful counters for a declined projection. `test_citation_document_transaction.py` exercises the actual fixer and atomic writer with real temporary document interleavings, exact lease/cell corruption, conflict isolation, CRLF and unavailable scoped recheck. Its integration-lane membership does not claim an OS compare-and-swap or complete closeout acceptance. The full-profile regression separately proves canonical string ordering while still refusing missing, extra and duplicate scope paths. These are source-reviewed obligations at private C `b34f4a59562b76a3e2413027468e0f699117b36f`; Gate 5 and delivery remain pending.
 
 Current targeted tests explicitly require incomplete ownership to refuse with `test-selection-ownership-incomplete`, empty selected outputs, and no broader test command. Retry proof identity includes `selectionDigest`; a changed selection forces fresh evidence. Task-intent matrices separately cover exact text, supplemental typed packet refs, observational exclusions, consumer currentness and bounded legacy archival; direct evidence dependencies are typed, bounded and acyclic.
 
@@ -1718,7 +1718,18 @@ The status-wait group (`test_lifecycle_status_wait_outcomes.py`,
 wait outcomes, public registration and the meaningful-revision store discipline. These tests do
 not establish that the R05 finalization or R07/R08 certification APIs gained production callers.
 
+
+### L32 Repair Forcing Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Real document interleavings refuse one complete batch while allowing an independent batch. | `test_observed_conflict_refuses_the_whole_document_and_preserves_other_batches` | mcp/tests/test_citation_document_transaction.py:159-192 |
+| Observed remove/rename preserves explicit failure and an unavailable postcheck. | `test_scoped_disappearance_preserves_the_conflict_payload_without_a_fictitious_recheck` | mcp/tests/test_citation_document_transaction.py:313-358 |
+| Actual full selector/configuration preserve exact membership while sharing canonical string order. | `test_full_python_rail_uses_canonical_selector_order_and_still_refuses_scope_drift` | mcp/tests/test_repository_certification_profiles.py:930-968 |
+
 ## Update History
+
+- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Updated the current projection/refusal expectation, routed actual transaction forcing, and added the four-case full scope regression at private C b34f4a59 without asserting live test/closeout acceptance from fixture classification.
 
 - 2026-09-06T00:38:37+00:00 — L30 independent-review correction: refreshed the four durable-store test class ranges and five owner ranges, including thread_mutex_for in kernel/file_lock.py, against actual C 97e8ed2e1fae21756c3ad995c30613d4fbfcc503. Preserved the existing behavior account and complete prior history.
 

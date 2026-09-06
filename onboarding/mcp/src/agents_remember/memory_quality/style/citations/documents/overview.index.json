@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/memory_quality/style/citations/documents",
+  "overview": "mcp/src/agents_remember/memory_quality/style/citations/documents/overview.md",
+  "index": "mcp/src/agents_remember/memory_quality/style/citations/documents/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/memory_quality/style/citations/documents/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/memory_quality/style/citations/documents/__init__.py",
+    "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 2,
+    "fileSidecars": 2,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "citations",
+    "documents",
+    "init",
+    "init__",
+    "mcp",
+    "memory",
+    "memory_quality",
+    "quality",
+    "remember",
+    "src",
+    "style",
+    "transaction"
+  ],
+  "hotPath": {
+    "summary": "`transaction.py` defines `Edit` and `DocumentTransaction`. The fixer admits edits before constructing a batch; `render`, `unchanged`, `preview` and `publish` own composition and the final-read boundary. `__init__.py` is a docstring-only package marker. Exact-name resolution remains in the parent citation route.",
+    "candidateHints": [
+      "mcp/src/agents_remember/memory_quality/style/citations/documents",
+      "mcp/src/agents_remember/memory_quality/style/citations/documents/__init__.py",
+      "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "transaction.py",
+      "transaction",
+      "Edit",
+      "DocumentTransaction",
+      "render",
+      "unchanged",
+      "preview",
+      "publish",
+      "init__",
+      "mcp/src/agents_remember/memory_quality/style/citations/documents",
+      "route-local-overview",
+      "b34f4a59562b76a3e2413027468e0f699117b36f",
+      "/../../overview.md",
+      "_decide",
+      "mcp/src/agents_remember/memory_quality/style/citations/fixer.py",
+      "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py",
+      "sourceRoute",
+      "agents_remember",
+      "memory_quality",
+      "doc_type",
+      "lastUpdated",
+      "T04",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T06",
+      "governingOverview",
+      "UTF",
+      "CRLF",
+      "L32",
+      "b34f4a59"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/memory_quality/style/citations/documents/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

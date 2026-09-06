@@ -8,7 +8,13 @@
   "sourceScope": [
     "mcp/src/agents_remember/memory_quality/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/memory_quality/style/citations/documents",
+      "overview": "mcp/src/agents_remember/memory_quality/style/citations/documents/overview.md",
+      "index": "mcp/src/agents_remember/memory_quality/style/citations/documents/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/memory_quality/__init__.py",
     "mcp/src/agents_remember/memory_quality/check.py",
@@ -85,9 +91,9 @@
     "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 73,
+    "sourceFilesInScope": 75,
     "fileSidecars": 73,
-    "childRoutes": 0
+    "childRoutes": 1
   },
   "routingTerms": [
     "affected",
@@ -125,6 +131,7 @@
     "discovery",
     "document",
     "document_shape",
+    "documents",
     "drafts",
     "drift",
     "editing",
@@ -168,13 +175,13 @@
     "migration",
     "missing",
     "model",
-    "models",
-    "old"
+    "models"
   ],
   "hotPath": {
     "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes. `style/do...",
     "candidateHints": [
       "mcp/src/agents_remember/memory_quality",
+      "mcp/src/agents_remember/memory_quality/style/citations/documents",
       "mcp/src/agents_remember/memory_quality/__init__.py",
       "mcp/src/agents_remember/memory_quality/check.py",
       "mcp/src/agents_remember/memory_quality/curator_checklist.py",
@@ -196,8 +203,7 @@
       "mcp/src/agents_remember/memory_quality/incremental_scope/errors.py",
       "mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py",
       "mcp/src/agents_remember/memory_quality/incremental_scope/models.py",
-      "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py",
-      "mcp/src/agents_remember/memory_quality/incremental_scope/registry.py"
+      "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
     ],
     "anchorHints": [
       "__init__.py",
