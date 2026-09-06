@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-05T22:25+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
@@ -264,7 +264,7 @@ are proven by repository source and the test suite itself.
 | The gate write-path the `/api/actions` gate verbs drive (slice 6b). | `gate_create_payload`; `gate_decide_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-54; mcp/src/agents_remember/mcp/tools/gates.py:92-109 |
 | The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
 | The compact attention acknowledgement store asserted by `ActionDismissTests`; `dismiss` is a whole-file read-modify-write and `prune_lifecycles` now empties the log through the contract's rewrite instead of unlinking it. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
-| The rewrite that makes "emptied" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The rewrite that makes "emptied" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | The prune-to-emptiness assertion this leaf rewrote, and the loss it used to hide. | `test_attention_store_upserts_and_prunes_lifecycle_rows` | mcp/tests/test_serving_actions.py:355-388 |
 | Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | `ActionDismissTests` | mcp/tests/test_serving_actions.py:271-513 |
 | The CLI dispatcher + dashboard adapter under test. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
@@ -310,7 +310,11 @@ caller-visible result. Together they pin both success and failure arms of the
 cleanup-race fix without converting late worker-thread failure into the public
 cancellation result.
 
+
 ## Update History
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 - 2026-08-28T06:40+02:00 — No content impact: removed the unused `FIXTURE_DIR` constant; serving
   behavior and the surviving fixture owners documented above are unchanged.
 - 2026-08-12T21:39+02:00 — L23 curator follow-up: documented the complementary drain-failure forcing case: a blocked `_tick_sync` raises after cancellation, the late failure is logged, and `CancelledError` remains public. The owner reports the drain-success, drain-failure, and crashed-watcher cases green 3/3. Verification remains closeout-owned.

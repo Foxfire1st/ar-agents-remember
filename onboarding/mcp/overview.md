@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-05T07:30+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -172,7 +172,9 @@ The explicit `repositories[].certificationProfile` selects the repository rail d
 
 `tasks/task_intent.py` derives normative task identity from classified fields, exact requirements, supplemental versioned packet references and typed acceptance obligations. Route reviews, coherence records, doors and lifecycle operations bind that identity and direct evidence dependencies. Operational prose can change without changing normative intent. Full memory runs preserve exact code/memory candidate trees and report catalog readiness separately from R08 authority.
 
-Two implementation defects remain explicitly open at this source: the R10 citation fixer can retain a declined staged edit and writes cached document text without fresh publication revalidation; R21 rail-log locators do not yet name persisted/exported log bytes, and three Gate-4 result producers are absent. Evidence locators participate in semantic certificate identity, so generation-dependent replacements require careful identity/retention design. These source findings prevent stronger end-to-end claims; no repaired behavior is attributed to this frozen candidate.
+L30 now persists exact rail-log bytes at stable report-relative paths, connects browser/provider/teardown producers, binds complete immutable publication snapshots to selected certificates, and reopens nested evidence before certification. Selected generations survive later report publication, and the gate propagates returned certificate refusals. The R10 citation fixer still retains its declined-write and stale-document defects until L32 is synchronized and delivered. Ordinary red-run result publication and R05/R16/R07/R08 composition remain separate production obligations.
+
+`kernel/file_lock.py` owns neutral resource locking: the host Dagger registry uses it directly, while `controlplane/durable_store.py` first enforces checkout coordination and translates kernel capability errors. Both use the existing physical lock protocol; sharing exclusion mechanics does not share domain mutation authority.
 
 ## Purpose
 
@@ -1107,6 +1109,10 @@ exist and refuses symlinks — including in-root aliases — unlike the symlink-
 `confine_rel` used for code/onboarding pairing.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Updated cross-route publication and neutral lock ownership; retained the unresolved citation and lifecycle composition boundaries.
 
 
 

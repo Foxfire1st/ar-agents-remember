@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:14+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,10 @@ same existing per-master bootstrap mutex on apply. A concurrent starter therefor
 live journal or the published contract across that handoff; it cannot read before publication,
 wait behind the winner, then treat the retired journal as an orphan. Dry-run remains unlocked and
 write-free, and no retry, fallback reader, compatibility route, or second lock namespace is added.
+
+## L30 Quality Publication Boundary
+
+The child `modules/quality` route now retains actual rail evidence and immutable selected certificate generations. Its host Dagger registry uses the neutral kernel file lock while checkout durable stores preserve their coordination guard. Public lifecycle, sync, activation, queue and integration ownership in this route is unchanged; the new publication checks do not establish the later R05/R16/R07/R08 production composition. See [the modules overview](modules/overview.md) for the concrete read/export/prune owners.
 
 ## What Belongs Here
 
@@ -248,6 +252,10 @@ direct-child JSON ref, repository/directory, child id, and stem. Stem-only or sp
 with typed status/detail; no worktree-local fallback remains.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Reviewed the seven changed child quality sources; routed the new publication and host-lock behavior without changing lifecycle or source-pair ownership.
 
 - 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected scheduling independence versus publication locking and added current intent/certification composition. Verification records source review, not execution or acceptance.
 

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_replay_scenario_branches.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
 | lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
 | governingOverview | `overview.md` |
@@ -55,7 +55,7 @@ No external Domain Documentation source is configured for this repository-owned 
 | The scenario evaluators under test. | `evaluate_replay_scenario`; `evaluate_all_replay_scenarios` | mcp/src/agents_remember/certification/replay/scenarios.py:177-185; mcp/src/agents_remember/certification/replay/scenarios.py:188-192 |
 | The acceptance scenario catalog under test. | `REPLAY_ACCEPTANCE_SCENARIOS` | mcp/src/agents_remember/certification/replay/scenarios.py:34-174 |
 | The evidence envelope and profile/placement vocabulary used to build scenarios. | `ReplayScenarioEvidence`; `ReplayProfileSnapshot`; `ReplayRailPlacement` | mcp/src/agents_remember/certification/replay/models.py:362-385; mcp/src/agents_remember/certification/replay/models.py:350-359; mcp/src/agents_remember/certification/replay/models.py:313-340 |
-| The explicit unit-regression lane registration. | "mcp/tests/test_replay_scenario_branches.py" | mcp/tests/test-evidence-lanes.toml:160-160 |
+| The explicit unit-regression lane registration. | "mcp/tests/test_replay_scenario_branches.py" | mcp/tests/test-evidence-lanes.toml:162-162 |
 
 ## Cross-Repo References
 
@@ -66,6 +66,8 @@ No cross-repository implementation boundary is owned here.
 | Same-repository forcing suite; nothing crosses repositories. | - | - |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

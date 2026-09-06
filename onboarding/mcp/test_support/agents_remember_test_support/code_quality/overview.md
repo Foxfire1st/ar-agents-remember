@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ operational product behavior; its owner and consumers are repository verificatio
 ## Hot Path Summary
 
 `profile_selection.py` publishes the immutable repository-owned selector result;
-`profile_rails.py` rederives that exact scope and executes the selected Python rails.
+`profile_rails.py` rederives that exact scope and executes the selected Python rails; its teardown adapter publishes hash-bound proof from the actual clean-room reports.
 `check.py` executes and interprets the shared rail machinery; `quality_plan.py` owns their typed configuration,
 progress state, and deterministic command plan. `scope.py` proves complete
 product/verification package authority.
@@ -51,7 +51,7 @@ Non-Python product inputs that cannot participate in the import graph use narrow
 consumer declarations only when independently observed literal reads match exactly. This lets the
 Codex starter configuration select its two real contract consumers and the root layer contract
 select its five architecture/structural consumers without treating every unrelated test as
-affected; any declaration/source mismatch marks the selector incomplete and names the reason.
+affected. The ambient runner has sixteen exact pytest consumers because the profile fixture and its importers observe its output contract; this ownership remains distinct from the lifecycle policy file's explicit global invalidation. Any declaration/source mismatch marks the selector incomplete and names the reason.
 
 ## Local Invariants And Traps
 
@@ -71,23 +71,36 @@ affected; any declaration/source mismatch marks the selector incomplete and name
   still fails closed.
 - A non-Python consumer declaration never self-proves and cannot silently narrow targeted scope.
 
-The profile rail writes Coverage.py and pytest event/phase artifacts through the declared
-reports directory. Its `verify-teardown` adapter validates the existing ambient summary;
-at this candidate it prints a result and does not publish a distinct teardown-proof JSON.
-The three absent Gate-4 evidence producers and missing persisted rail logs are open CCR
-repair findings, not complete artifact coverage.
+The profile rail writes Coverage.py and pytest event/phase artifacts through the declared reports directory. Its `verify-teardown` adapter now requires a proof destination and publishes `teardown-proof/v1` from exact summary and replication bytes after every listed report proves `L5-C10` passed. A skipped scenario has explicit not-applicable proof. The clean-room producer owns the two-replication population; the adapter validates every listed report. Dagger emission and export own persisted binary rail logs and the stable file publications consumed by the host certificate evidence owner. The previously absent Gate-4 artifacts are current declared outputs, with producer and retention forcing in the test route.
 
 ## File-Level Onboarding Map
 
 All Python files in this route have one adjacent sidecar. The generated index is the exhaustive
 source/sidecar map after refresh.
 
+## Repo-Internal References
+
+These source owners establish the current behavior and the stated fixture boundaries.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Exact repository declarations are cross-checked against observed consumers. | `_repository_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:409-441 |
+| Proved globals remain separate from unresolved ownership. | `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:345-377 |
+| Teardown validates exact checkpoint observations and hashes real report bytes. | `_verify_teardown` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:244-295 |
+| The adapter writes the declared proof artifact. | `_write_teardown_proof` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:298-308 |
+| The adjacent suite carries real verifier bytes through retained publication. | `test_real_teardown_producer_bytes_reach_the_emitted_binding_and_export` | mcp/tests/test_rail_evidence_publication.py:288-353 |
+
 ## Docs And Boundary References
 
 The canonical overview is `docs/design/python-evidence-system.md`; retry and direct-route details
 are in `docs/design/python-test-evidence.md` and the PDLS evidence reports.
 
+
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Reconciled exact ambient-runner ownership, persisted teardown proof and repaired producer/publication boundaries; removed obsolete print-only and missing-producer claims.
 
 - 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Removed obsolete safe-full selection behavior; added selector identity, exact rail scope, causal selected-population limit and unproduced teardown-proof boundary. Verification records current source claims, not execution or acceptance.
 

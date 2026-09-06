@@ -100,7 +100,7 @@
     "transitions"
   ],
   "hotPath": {
-    "summary": "L23 extends the validated store seam for batched operator-inbox transitions used by notifier expiry. Batch preparation resolves canonical task/owner addresses first and fails closed when a row is missing, mismatched, or structurally unaddressable; it never guesses a replacement runtime identity. The same durable-store containment and model-validation rules apply to these rewrites. **260731-EFA-L21 \u2014 target containment precedes filesystem effects.** The shared durable-store lock, append, and rewrite primitives ask the kernel checkout policy to authorize the target before creating a parent di...",
+    "summary": "Start at `durable_store.py` for guarded JSONL writes, record validation and advisory ownership; `records.py`/`store.py` own gates and `operator_inbox_records.py`/`operator_inbox_store.py` own inbox rows. Lock admission authorizes the checkout target before entering `kernel.file_lock`; atomic replacement uses `kernel.atomic_write`. A host registry uses its own policy over the shared kernel lock, so coordinator isolation remains intact. Signal routing and expectation rows feed the serving-owned notifier; retention never changes authority-read strictness.",
     "candidateHints": [
       "mcp/src/agents_remember/controlplane",
       "mcp/src/agents_remember/controlplane/__init__.py",
@@ -174,8 +174,8 @@
       "store",
       "task_publication_lock.py",
       "task_publication_lock",
-      "L23",
-      "EFA"
+      "kernel.file_lock",
+      "kernel.atomic_write"
     ]
   },
   "fallback": {

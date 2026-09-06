@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_full_memory_coherence_certification.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T07:12:23Z |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
 | lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview | `overview.md` |
@@ -87,9 +87,11 @@ None.
 | The composable evidence builder behind every scenario. | `_EvidenceSpec`; `_evidence` | mcp/tests/test_final_full_memory_coherence_certification.py:848-855; mcp/tests/test_final_full_memory_coherence_certification.py:858-885 |
 | The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:888-904 |
 | Red, blocked, and typed-refusal routes. | `test_final_certification_red_blocks_finalization`; `test_final_certification_blocked_when_full_only_rerun_not_consumed`; `test_final_certification_refuses_without_current_coherence`; `test_final_certification_refuses_stale_prefix_before_any_catalog_work` | mcp/tests/test_final_full_memory_coherence_certification.py:907-917; mcp/tests/test_final_full_memory_coherence_certification.py:920-927; mcp/tests/test_final_full_memory_coherence_certification.py:930-935; mcp/tests/test_final_full_memory_coherence_certification.py:938-945 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:400-400 |
+| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:403-403 |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T07:12:23Z — CCR L31 independent-review correction: reread the passing-check
   dictionary builder, evidence fixture and actual library calls at ea359649. Qualified the

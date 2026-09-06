@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:45+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:38:37+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -20,7 +20,11 @@ The current test tree distinguishes portable certification primitives from the h
 
 R05/R16/R07/R08 test families exercise admission/dependencies, telemetry journals, incremental closure, and final memory certification through their library owners. The R07 recording executor proves non-accepting incremental success; the R08 fixture supplies executed-check results to the final certifier. Neither constructs missing production callers. Likewise the R13/R14 run-control suites use injected inspectors/runners and temporary authority stores, so their lane classification does not imply a live Codex or Dagger invocation. The separately owned real-Codex clean-room route remains required.
 
-The L29 rail-binding census records three missing Gate-4 artifact mappings; source inspection also found that rail log references are emitted without persisted log bytes. R10 deterministic-projection tests currently include a declined-repair case that expects the staged citation edit to land. These are unresolved source/test contract gaps, not repaired behavior. A metadata certificate or a passing synthetic payload cannot close them.
+L30's source-index recovery adds real linked-checkout evidence for an explicit Git candidate population. `test_memory_citation_source_index_snapshot.py` preserves ordinary filesystem discovery while exercising staged additions/deletions/renames, excluded generated competitors, retained tracked ignored source, exact frozen policy/tree binding, unsafe or changed source refusal, and capacity checks before Git hashing. Its hash-race cases run the actual Git hash command before injecting a source change; malformed census and truncated-response cases are explicit transport fault injection. The L6 source-index/database companions follow the shared state-layer bound owner and require explicit candidate identity in generation metadata.
+
+`test_memory_incremental_scope_owners.py` composes real Git deltas, the actual citation index and R06 observation, including post-acquisition tracked-source revalidation. `test_memory_incremental_scope_model_edges.py` additionally composes real candidate Git nodes, citation edges, R06 scope, R07 planning and the production range checker. Valid ranges succeed and invalid ranges/ignored generated targets produce the expected checker findings. That case retains fixture-supplied task/admission/gate-prefix facts; it proves the library composition without establishing production admission, full Gate-5 execution or lifecycle acceptance.
+
+L30 replaces the accepted-gap census with complete artifact-map and producer/export/host-consumer checks. `test_rail_evidence_publication.py` uses the actual clean-room reporting owners for checkpoint serialization, verifies provider phase reporting and arbitrary byte capture publication, and retains negative cases for unavailable/missing output. Its container doubles are distinct from the separately required real Dagger/clean-room execution. `test_gate_certification_evidence.py` protects selected-journal bounds, cross-authority refusal, immutable-generation retention and physical report reopening. `test_dagger_registry_lock.py` proves host admission, unchanged checkout isolation, nested release and real process/thread exclusion. R10 deterministic-projection tests still include the declined-repair expectation until L32 lands.
 
 Current targeted tests explicitly require incomplete ownership to refuse with `test-selection-ownership-incomplete`, empty selected outputs, and no broader test command. Retry proof identity includes `selectionDigest`; a changed selection forces fresh evidence. Task-intent matrices separately cover exact text, supplemental typed packet refs, observational exclusions, consumer currentness and bounded legacy archival; direct evidence dependencies are typed, bounded and acyclic.
 
@@ -32,6 +36,10 @@ Current targeted tests explicitly require incomplete ownership to refuse with `t
 | R08 green composition receives already-executed checker facts from its fixture, then binds the exact candidate pair. | `_evidence`; `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:858-885; mcp/tests/test_final_full_memory_coherence_certification.py:888-904 |
 | Missing profile authority is a typed refusal, never a skipped code gate. | `test_preview_refuses_a_missing_profile_instead_of_skipping` | mcp/tests/test_worktree_quality_gate_runner.py:119-140 |
 | The current frontend and HTTP assertion oracles are 441 TypeScript inputs and 292 declared/139 driven/153 undriven response pairs. | `test_dashboard_build_reports_only_config_owned_stable_inputs`; `test_the_conformance_table_accounts_for_every_declared_pair` | mcp/tests/test_quality_scope_reporting.py:702-736; mcp/tests/test_serving_response_conformance_live.py:515-526 |
+| Exact candidate acquisition follows staged Git membership while ordinary discovery remains available. | `test_linked_candidate_excludes_generated_competitors_but_retains_tracked_ignored_files`; `test_staged_add_delete_and_rename_define_the_candidate_without_moving_head` | mcp/tests/test_memory_citation_source_index_snapshot.py:314-366; mcp/tests/test_memory_citation_source_index_snapshot.py:368-386 |
+| Capacity refuses before Git hashing and preserves previous readiness. | `test_candidate_size_cap_refuses_before_hashing_tracked_or_dirty_oversized_members`; `test_candidate_population_caps_refuse_before_hashing_and_preserve_prior_readiness` | mcp/tests/test_memory_citation_source_index_snapshot.py:688-722; mcp/tests/test_memory_citation_source_index_snapshot.py:724-751 |
+| R06 observes actual staged candidate files and revalidates tracked source after acquisition. | `test_source_index_composes_exact_staged_git_members_with_real_candidate_observation`; `test_source_index_observer_revalidates_tracked_bytes_and_unsafe_nodes_after_acquisition` | mcp/tests/test_memory_incremental_scope_owners.py:255-279; mcp/tests/test_memory_incremental_scope_owners.py:283-306 |
+| Actual R07 range-checker composition excludes generated competitors and refuses another candidate before checker start. | `test_r07_real_range_checker_uses_only_the_candidate_source_population`; `test_r07_range_executor_refuses_another_candidate_before_checker_start` | mcp/tests/test_memory_incremental_scope_model_edges.py:520-568; mcp/tests/test_memory_incremental_scope_model_edges.py:572-594 |
 
 ## CCR-R01 Evidence-Lane Ownership
 
@@ -1187,8 +1195,8 @@ fresh dead replacement, and a concurrent different-pair race on two threads that
 | No record reported written is missing afterwards for the six record types; loss and raising are asserted separately, torn-line policy is held per consumer class, and the harness detects the defect against a git archive of the base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests`; `HarnessSensitivityTests` | mcp/tests/test_controlplane_store_durability.py:125-211; mcp/tests/test_controlplane_store_durability.py:214-343; mcp/tests/test_controlplane_store_durability.py:346-401 |
 | The provider durability suite is the second consumer covered by the instrument tick floor; its `case_root` docstring records the shared-stop-flag defect and source fix. | `ProviderStoreDurabilityTests`; `case_root` | mcp/tests/test_provider_store_durability.py:262-277; mcp/tests/test_provider_store_durability.py:280-351 |
 | One human approval is consumable exactly once, and the counterfactual proves the defence is one appended record. | `GateReplayWindowTests`; `test_the_applied_record_is_the_only_thing_closing_the_window` | mcp/tests/test_gate_replay_window.py:176-324 |
-| The in-process axis covers the mutex, re-entrancy across both locks, unsafe-filesystem refusal, schema major/minor policy, and failed-rewrite temp cleanup. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `SchemaVersionMajorTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:167-365; mcp/tests/test_durable_store_contract.py:368-431; mcp/tests/test_durable_store_contract.py:434-520; mcp/tests/test_durable_store_contract.py:650-728 |
-| The contract the four suites are named after: what prevents loss (the unconditional lock) stated apart from what merely documents (advisory ownership), the rewrite that never unlinks, and the record validator that gives both read policies their behaviour with no version branch in either. | `exclusive_access`; `rewrite_lines`; `require_lock_held`; `thread_mutex_for`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:248-271; mcp/src/agents_remember/controlplane/durable_store.py:301-315; mcp/src/agents_remember/controlplane/durable_store.py:348-394; mcp/src/agents_remember/controlplane/durable_store.py:397-415; mcp/src/agents_remember/controlplane/durable_store.py:439-446 |
+| The in-process axis covers the mutex, re-entrancy across both locks, unsafe-filesystem refusal, schema major/minor policy, and failed-rewrite temp cleanup. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `SchemaVersionMajorTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:165-363; mcp/tests/test_durable_store_contract.py:366-429; mcp/tests/test_durable_store_contract.py:432-518; mcp/tests/test_durable_store_contract.py:648-726 |
+| The contract the four suites are named after: what prevents loss (the unconditional lock) stated apart from what merely documents (advisory ownership), the rewrite that never unlinks, and the record validator that gives both read policies their behaviour with no version branch in either. | `exclusive_access`; `rewrite_lines`; `require_lock_held`; `thread_mutex_for`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:421-428; mcp/src/agents_remember/controlplane/durable_store.py:363-381; mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/controlplane/durable_store.py:256-279 |
 | The projection tick this leaf stopped rewriting on — the reclaim pass that ran in a process owning nothing here, and the source of the measured gate-log loss. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-141 |
 | Interaction retention separates projection non-mutating reads from owner-side compaction, and owner compaction leaves an empty named log. | `test_an_open_gate_past_24h_leaves_the_projection_then_leaves_the_log` | mcp/tests/test_interaction_retention.py:31-76 |
 | Projection-side attention acknowledgement pruning leaves an empty file rather than unlinking the log. | `test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement` | mcp/tests/test_observer_projection_snapshot.py:556-590 |
@@ -1700,9 +1708,7 @@ own builders).
 
 ## Certificate Payload And Wait Regression Boundaries
 
-`test_rail_bindings.py` covers the L29 evidence/artifact builders and detached-handle observation;
-its artifact-map census deliberately names the three still-unmapped Gate-4 artifacts. That census
-is evidence of a remaining production contract gap, not proof that full certification can succeed.
+`test_rail_bindings.py` now requires a complete artifact map, stable report-relative references, exact bounded byte tails and detached-handle observations. `gate_certification_test_support.py` owns shared real Git/profile/lane/catalog fixture construction for exactly two consumers. `test_gate_certification_records.py` additionally corrupts real admission/certificate store objects to prove invalid semantic digest and wrong exact-address refusals. These tests protect the owner boundaries; real Dagger execution remains separate acceptance evidence.
 `test_certification_lane_bridge.py`, `test_gate_certification_records.py`, and the quality-gate tests cover the
 bridge and record seam. Hand-built payload tests must be read together with the actual Dagger
 producer before using them as end-to-end certificate evidence.
@@ -1713,6 +1719,12 @@ wait outcomes, public registration and the meaningful-revision store discipline.
 not establish that the R05 finalization or R07/R08 certification APIs gained production callers.
 
 ## Update History
+
+- 2026-09-06T00:38:37+00:00 — L30 independent-review correction: refreshed the four durable-store test class ranges and five owner ranges, including thread_mutex_for in kernel/file_lock.py, against actual C 97e8ed2e1fae21756c3ad995c30613d4fbfcc503. Preserved the existing behavior account and complete prior history.
+
+- 2026-09-06T00:21:02+00:00 — CCR L30 candidate-index recovery: added source-index/R06/R07 composition evidence and its fixture/full-acceptance boundary without changing existing producer or lock evidence.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Routed new lock, immutable-evidence and producer/export regressions; replaced accepted producer-gap assertions while retaining fixture-versus-live and pending L32 boundaries.
 
 - 2026-09-05T07:45+00:00 — L31 cumulative source review at ea35964985f30080488270e71ac81657ac40682b: reconciled current profile selection/refusal, assertion ownership, route counts, library/production evidence limits and exact-intent tests; restored the damaged evidence-table boundary from verified current source and retained its damaged predecessor in the curation report. Verification records source review, not execution or acceptance.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,11 @@ back into the config via `dataclasses.replace(config, selection_digest=...)`. Th
 `selection-ownership` and `quality-config` rails run the same exact-scope proof without
 executing tests. `_run_python_suite` runs the pytest rail (with retry/causal continuation),
 and `_run_post_coverage` dispatches CRAP or diff-coverage from the exact suite artifacts.
-`_verify_teardown` requires the clean-room summary schema and a passing teardown checkpoint.
+`_verify_teardown(summary, proof)` consumes the actual clean-room summary and every listed replication report. A passed run requires the exact `L5-C10` checkpoint to pass in each report; unsafe report basenames and missing or malformed observations refuse. It writes `teardown-proof/v1` with the summary SHA-256, each report SHA-256 and its observed checkpoint. A skipped scenario emits `status="not-applicable"` with no replication observations. The adapter validates the listed runs; the scenario producer owns the configured two-replication population.
+
+### Conventions
+
+The `verify-teardown` CLI requires both `--summary` and `--proof`; it uses the same Dagger admission boundary as the Python rails. Persisted proof bytes are a declared rail artifact, while printed PASS remains diagnostic output.
 
 ### Invariants And Boundaries
 
@@ -51,22 +55,40 @@ None recorded.
 
 ## Docs References
 
-No configured Domain Documentation source applies; rails are repository-owned adapters.
-
-## Repo-Internal References
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Rail config validates the exact selector result and stamps its digest. | `_profile_config`; `_require_exact_scope` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:53-80; mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:83-119 |
-| Suite/post-coverage rails consume the exact selector-bound config. | `_run_python_suite`; `_run_post_coverage` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:126-203; mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:223-239 |
-| Teardown verification requires the clean-room summary schema and passing checkpoint. | `_verify_teardown` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:242-281 |
-| The selector result contract validated here. | `RepositorySelectionResult` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:89-130 |
+| No configured external domain source. | N/A | N/A |
+
+## Repo-Internal References
+
+These source owners establish the current behavior and the stated fixture boundaries.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The teardown command requires a proof destination. | `build_parser` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:30-42 |
+| Executable scope receives the exact selector digest. | `_profile_config` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:55-82 |
+| Published selection is compared with its repository-owned derivation and executable scope. | `_require_exact_scope` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:85-121 |
+| The Python rail handles declared retry and causal continuation without changing ownership. | `_run_python_suite` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:128-205 |
+| CRAP and changed coverage consume the exact suite artifact. | `_run_post_coverage` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:225-241 |
+| Actual report bytes must carry passing L5-C10 checkpoints; skipped applicability is explicit. | `_verify_teardown` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:244-295 |
+| The persisted proof binds summary bytes and observed replication reports. | `_write_teardown_proof` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:298-308 |
 
 ## Cross-Repo References
 
-None; these are repository-local rail adapters.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repository evidence is required. | N/A | N/A |
+
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Documented required teardown-proof publication, exact L5-C10 consumer identity, observed report hashes and explicit not-applicable output.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card and recorded the

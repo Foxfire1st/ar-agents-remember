@@ -31,6 +31,7 @@
     "mcp/src/agents_remember/worktrees/modules/onboarding.py",
     "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
     "mcp/src/agents_remember/worktrees/modules/quality/__init__.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py",
     "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py",
     "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
@@ -51,8 +52,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 39,
-    "fileSidecars": 39,
+    "sourceFilesInScope": 40,
+    "fileSidecars": 40,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -63,6 +64,7 @@
     "args",
     "authority",
     "certification",
+    "certification_evidence",
     "certification_records",
     "clean",
     "clean_executor",
@@ -79,6 +81,7 @@
     "dagger_authority",
     "diagnostic",
     "diagnostic_executor",
+    "evidence",
     "executor",
     "external",
     "final",
@@ -159,7 +162,7 @@
       "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
       "mcp/src/agents_remember/worktrees/modules/quality",
       "mcp/src/agents_remember/worktrees/modules/quality/__init__.py",
-      "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+      "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -202,14 +205,14 @@
       "onboarding",
       "onboarding_acceptance.py",
       "onboarding_acceptance",
+      "certification_evidence.py",
+      "certification_evidence",
       "certification_records.py",
       "certification_records",
       "clean_executor.py",
       "clean_executor",
       "closeout_memory.py",
-      "closeout_memory",
-      "dagger_authority.py",
-      "dagger_authority"
+      "closeout_memory"
     ]
   },
   "fallback": {

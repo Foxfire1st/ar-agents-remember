@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:10+00:00 |
+| lastUpdated | 2026-09-05T22:23+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../../../overview.md` |
@@ -193,14 +193,7 @@ applicability or missing/wrong-authority memory rails refuse before this admissi
 The production caller is `worktrees/modules/quality/certification_records.py`, reached before
 Gate 1 and after a green result through `quality/gate.py`. That caller currently registers memory
 rails only for `agents-remember`; the generic bridge itself has no repository-specific inventory.
-The record seam validates the supplied typed evidence/artifact metadata and can mint a
-certificate from that metadata. At this frozen candidate it does not resolve every nested
-reference to retained bytes: L29 computes rail-log references without persisting the logs,
-and three required Gate-4 artifacts have no mapped producer. Exact accepted report binding
-and retention remain an open repair; metadata alone must not be described as retained
-reproducible evidence. This
-capability does not imply that every declared artifact has a producer or that every terminal
-outcome is published as an R11 result manifest.
+The record seam now requires the exact admitted candidate/profile/full plan/selection and physically reopens every nested evidence/artifact against the complete immutable report snapshot before publication. Selected certificate rows retain that snapshot and pin the actual generation; canonical store loads retain original semantic objects and provenance. Returned certification refusals propagate through the green caller. This repairs L30 evidence retention, while ordinary failed runs still raise before the record seam and therefore do not establish a complete R11 result population for every terminal outcome.
 
 `lifecycle_admission.py` and `lifecycle_recovery.py` define R05 admission, finalization and recovery
 contracts, but the inspected production tree has no caller of `compile_lifecycle_admission`,
@@ -216,11 +209,13 @@ required input/result identities.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. | "def compile_certification_lane("; "def _project_repository_rail(rail: CompiledRail) -> RailDefinition:"; "def _require_applicable_repository_gates(plan: RepositoryProfilePlan) -> None:" | mcp/src/agents_remember/certification/certification_lane.py:79-121; mcp/src/agents_remember/certification/certification_lane.py:187-245 |
-| The production seam resolves the exact profile, binds memory rails and persists admission. | "def prepare_certification_records(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:156-192 |
-| The gate freezes admission before execution and invokes the record adapter after a green result. | "def run_strict_code_quality_gate("; "def _freeze_certification_records(target, *, plan, candidate_tree) -> None:"; "def _record_certification_generation(target, *, plan, candidate_tree, manifest) -> None:" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-323; mcp/src/agents_remember/worktrees/modules/quality/gate.py:464-505 |
+| The production seam resolves the exact profile, binds memory rails and persists admission. | "def prepare_certification_records(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:165-200 |
+| The gate freezes admission before execution and invokes the record adapter after a green result. | "def run_strict_code_quality_gate("; "def _freeze_certification_records(target, *, plan, candidate_tree) -> None:"; "def _record_certification_generation(target, *, plan, candidate_tree, manifest) -> None:" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-323; mcp/src/agents_remember/worktrees/modules/quality/gate.py:464-507 |
 | Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. | "def compile_certification_recovery_record("; "def compile_lifecycle_finalization("; "def validate_lifecycle_finalization_currentness("; "def authorize_finalization_leg(" | mcp/src/agents_remember/certification/lifecycle_recovery.py:53-160 |
 
 ## Update History
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Updated incoming publication-owner claims and source references. Certification-route source itself is unchanged; its genuine older verification stamp is preserved.
 
 - 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected evidence retention overclaim, named R07/R08 production gap, and repaired bridge citation to the exact compiling function. Verification records current source claims, not execution or acceptance.
 

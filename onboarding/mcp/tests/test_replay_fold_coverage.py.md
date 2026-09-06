@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_replay_fold_coverage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
 | lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
 | governingOverview | `overview.md` |
@@ -54,7 +54,7 @@ No external Domain Documentation source is configured for this repository-owned 
 | The reducer fold under coverage. | `measure_replay_run`; `_fold_event`; `_GATE_FOLDERS` | mcp/src/agents_remember/certification/replay/measure.py:53-86; mcp/src/agents_remember/certification/replay/measure.py:89-101; mcp/src/agents_remember/certification/replay/measure.py:225-235 |
 | The span wall-union under coverage. | `_wall_union_millis`; `category_wall_union_millis`; `gross_wall_union_millis` | mcp/src/agents_remember/certification/replay/spans.py:79-90; mcp/src/agents_remember/certification/replay/spans.py:26-31; mcp/src/agents_remember/certification/replay/spans.py:34-36 |
 | The measured run/catalog records produced by the folds. | `RunMeasurement`; `GateRunMeasurement`; `CatalogRailRecord` | mcp/src/agents_remember/certification/replay/models.py:255-286; mcp/src/agents_remember/certification/replay/models.py:196-252 |
-| The explicit unit-regression lane registration. | "mcp/tests/test_replay_fold_coverage.py" | mcp/tests/test-evidence-lanes.toml:157-157 |
+| The explicit unit-regression lane registration. | "mcp/tests/test_replay_fold_coverage.py" | mcp/tests/test-evidence-lanes.toml:159-159 |
 
 ## Cross-Repo References
 
@@ -65,6 +65,8 @@ No cross-repository implementation boundary is owned here.
 | Same-repository forcing suite; nothing crosses repositories. | - | - |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

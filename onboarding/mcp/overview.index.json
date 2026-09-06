@@ -145,6 +145,7 @@
     "mcp/src/agents_remember/kernel/atomic_write.py",
     "mcp/src/agents_remember/kernel/authority.py",
     "mcp/src/agents_remember/kernel/coordination_context_resolver.py",
+    "mcp/src/agents_remember/kernel/file_lock.py",
     "mcp/src/agents_remember/kernel/filesystem.py",
     "mcp/src/agents_remember/kernel/git_command.py",
     "mcp/src/agents_remember/kernel/git_facts.py",
@@ -271,8 +272,8 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1624,
-    "fileSidecars": 153,
+    "sourceFilesInScope": 1632,
+    "fileSidecars": 154,
     "childRoutes": 21
   },
   "routingTerms": [

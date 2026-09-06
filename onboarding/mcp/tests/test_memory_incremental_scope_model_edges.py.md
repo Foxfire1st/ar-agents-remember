@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_incremental_scope_model_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
-| lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
+| lastUpdated | 2026-09-06T00:21:02+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,47 +16,30 @@
 
 ## Purpose
 
-Forces the closed-model edges of the incremental memory dependency scope vocabulary: exact
-`GitPathChange`/`GitTreeDelta` shapes, canonical task and roots, node/edge identities with
-reason evidence, the checker-scope registry contract, and the typed error payload — plus, since
-CCR-R07@v3, the full affected-closure model, planning, executor, registry, and subresult-store
-refusal edges.
+Protects the R06 scope vocabulary and R07 affected-closure models, planning, execution and subresult storage. Alongside model and refusal cases, the suite composes actual Git candidate observation, a leased citation index, R06 dependency compilation and the production range checker for one affected document.
 
 ## Code Commentary
 
 ### Logic
 
-The R06 model layer (lines 131-314) proves git change shapes reject noncanonical paths and
-invalid statuses, tree deltas reject bad roots/order/duplicates, task and index roots must be exact
-absolute paths, candidate identity requires exact namespaces/roots/tree changes, node identity and
-reason evidence fail closed, scope errors preserve all optional authority evidence, and the
-checker registry rejects population and policy contract drift.
+The R06 cases exercise canonical Git changes and tree deltas, exact task/index roots and candidate namespaces, node and edge reason evidence, optional typed-error authority fields, and checker-registry population/policy drift. The R07 model cases retain exact input identities and complete plan, result, reuse and aggregate populations.
 
-The R07 layer (lines 372-1082) proves the affected-closure contracts: the subresult store is
-exact, atomic, bounded, and has no latest lookup (line 372); `load` refuses corrupt or
-wrongly-addressed bytes (line 405); the range executor uses one planned document and the exact live
-index (line 418) and refuses wrong roots or source generations (line 461); invalid plans and
-checker exceptions refuse typed (line 499); checker status requires the exact selected-document
-count (line 525); evidence refuses every unproven or non-canonical shape (line 590); unit/member
-plans refuse non-canonical authority (line 621); the closure plan refuses incomplete or rebound
-populations (line 660) and its units retain every exact input identity (line 731); result/reuse
-and aggregate models refuse inconsistent exact state (lines 741, 786); planning refuses stale
-scope/registry/edges/gate prefix (line 844) and requires complete canonical closure targets (line
-952); the execution registry refuses an incomplete population (line 996); and the store refuses
-collisions, readback mismatches, wrong addresses (line 1004), and non-regular or unreadable
-objects (line 1042).
+Subresult-store tests exercise exact digest lookup, concurrent identical publication, bounded object capacity and atomic readback; malformed, wrongly addressed, colliding, nonregular or unreadable objects refuse. Planning tests reject stale scope, registry, edges and gate prefixes, and require a complete canonical set of closure targets. Checker failures and contradictory selected-document counts retain typed refusals.
+
+The range-executor forwarding fixture asserts one planned document, the already leased index and `Trees` carrying `unit.codeTree`; it does not request another frozen snapshot. Wrong roots or source generations refuse. A separate wrong-policy/wrong-tree fixture preserves the snapshot identity but asserts `checker-source-index-candidate-mismatch` before the checker is called.
+
+`test_r07_real_range_checker_uses_only_the_candidate_source_population` creates actual code/memory Git candidates in a linked checkout. It composes `observe_git_nodes`, `observe_source_index`, citation-edge extraction, dependency snapshot construction, scope compilation, affected planning and `RangeResolutionAffectedExecutor` with the actual range checker. A valid source range succeeds; a wrong source range reports `citation_anchor_absent_from_range`; a citation to ignored generated output reports `citation_source_vanished`. The wrong-range diagnostic must name the tracked source and omit the generated file's competing symbol.
 
 ### Conventions
 
-Every assertion is a strict model `ValueError` or a typed closure refusal; the suite never
-re-implements the owners it proves.
+Model/refusal fixtures inject authority or fault seams where needed; store operations and the checker composition use their production owners. The actual checker case still obtains admission/gate-prefix facts from `_r07_admission` and task facts from a fixture. It therefore proves library composition and candidate-bounded range checking, not production admission, full Gate-5 execution or lifecycle acceptance.
 
 ### Invariants And Boundaries
 
-- Digests, roots, node ids, and edge reasons are canonical and unique; any drift refuses.
-- The affected plan/result populations must exactly match each other and the R06 selection.
-- The executor may consume only the planned document with the exact rented source-index
-  generation.
+- Digests, roots, node identities and edge reasons must satisfy the exercised canonical contracts; affected plan/result populations must agree with their R06 selection.
+- The range executor receives only the planned document and exact leased source snapshot and candidate tree.
+- Matching indexed bytes or snapshot identity alone cannot authorize a different candidate policy/tree.
+- Actual checker success in the fixture supplies no final/full certification or acceptance authority.
 
 ### Todos
 
@@ -73,12 +56,17 @@ refusal, recovery, concurrency, and forbidden-overreach cases.
 
 ## Repo-Internal References
 
+These source anchors distinguish model/refusal coverage, store behavior, forwarding assertions and actual Git/index/checker composition.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| R06 model shapes: git changes, deltas, candidate identity, nodes/edges, source index, error payload, and registry contract. | `test_git_change_accepts_every_exact_shape_and_canonical_none`; `test_candidate_requires_exact_namespaces_roots_and_tree_changes`; `test_registry_rejects_population_and_policy_contract_drift` | mcp/tests/test_memory_incremental_scope_model_edges.py:131-143; mcp/tests/test_memory_incremental_scope_model_edges.py:219-250; mcp/tests/test_memory_incremental_scope_model_edges.py:314-371 |
-| R07 store, executor, and registry model edges. | `test_r07_subresult_store_is_exact_atomic_bounded_and_has_no_latest_lookup`; `test_r07_range_executor_uses_one_planned_document_and_exact_live_index`; `test_r07_execution_registry_refuses_incomplete_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:372-404; mcp/tests/test_memory_incremental_scope_model_edges.py:418-460; mcp/tests/test_memory_incremental_scope_model_edges.py:996-1003 |
-| R07 plan/result aggregation and reuse consistency edges. | `test_r07_closure_plan_model_refuses_incomplete_or_rebound_populations`; `test_r07_aggregate_model_refuses_incomplete_or_inconsistent_result`; `test_r07_result_and_reuse_models_refuse_inconsistent_exact_state` | mcp/tests/test_memory_incremental_scope_model_edges.py:660-730; mcp/tests/test_memory_incremental_scope_model_edges.py:786-843; mcp/tests/test_memory_incremental_scope_model_edges.py:741-785 |
-| R07 planning and subresult store safety edges. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:844-951; mcp/tests/test_memory_incremental_scope_model_edges.py:1042-1056 |
+| R06 Git/candidate shapes and registry policy are constrained. | `test_git_change_accepts_every_exact_shape_and_canonical_none`; `test_candidate_requires_exact_namespaces_roots_and_tree_changes`; `test_registry_rejects_population_and_policy_contract_drift` | mcp/tests/test_memory_incremental_scope_model_edges.py:144-153; mcp/tests/test_memory_incremental_scope_model_edges.py:232-260; mcp/tests/test_memory_incremental_scope_model_edges.py:327-357 |
+| Store publication is exact and bounded; range execution forwards the selected document, candidate Trees and live index. | `test_r07_subresult_store_is_exact_atomic_bounded_and_has_no_latest_lookup`; `test_r07_range_executor_uses_one_planned_document_and_exact_live_index` | mcp/tests/test_memory_incremental_scope_model_edges.py:385-415; mcp/tests/test_memory_incremental_scope_model_edges.py:431-471 |
+| Actual Git/index/R06/R07 composition constrains checker diagnostics to the candidate population. | `test_r07_real_range_checker_uses_only_the_candidate_source_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:520-568 |
+| A wrong candidate policy/tree refuses before checker start. | `test_r07_range_executor_refuses_another_candidate_before_checker_start` | mcp/tests/test_memory_incremental_scope_model_edges.py:572-594 |
+| Plan, reuse and aggregate populations must retain exact state. | `test_r07_closure_plan_model_refuses_incomplete_or_rebound_populations`; `test_r07_result_and_reuse_models_refuse_inconsistent_exact_state`; `test_r07_aggregate_model_refuses_incomplete_or_inconsistent_result` | mcp/tests/test_memory_incremental_scope_model_edges.py:758-817; mcp/tests/test_memory_incremental_scope_model_edges.py:839-881; mcp/tests/test_memory_incremental_scope_model_edges.py:884-933 |
+| Stale planning authority and incomplete registry populations refuse. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_execution_registry_refuses_incomplete_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:942-1047; mcp/tests/test_memory_incremental_scope_model_edges.py:1094-1099 |
+| Nonregular or unreadable stored objects refuse exact lookup. | `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:1140-1154 |
 
 ## Cross-Repo References
 
@@ -86,8 +74,10 @@ No cross-repository implementation boundary is exercised.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite proves repository-owned contract shapes only. | — | — |
+| The exercised Git, index, checker, model and store owners belong to this repository. | — | — |
 
 ## Update History
+
+- 2026-09-06T00:21:02+00:00 — CCR L30 candidate-index recovery: documented actual R06/R07 range-checker composition, exact candidate forwarding/refusal and retained admission-fixture limits; reconciled shifted model/store citations.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card covering the R06 model shapes and the R07 affected-closure plan/executor/store model edges added by this commit; no prior sidecar existed.

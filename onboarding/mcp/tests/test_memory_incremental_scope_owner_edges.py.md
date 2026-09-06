@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_incremental_scope_owner_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
 | lastVerifiedCommitHash | `1ad9d51f743c5b17de51cc46d8b29e004736022d` |
 | lastVerifiedCommitDate | 2026-09-02T06:25:51+02:00 |
 | governingOverview | `overview.md` |
@@ -79,10 +79,12 @@ No configured Domain Documentation applies; the assertions follow the CCR-R06@v2
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Production owner internals under test. | `_tree_entries`, `_current_route_indexes`, `_require_index_matches_candidate`, `_citation_node`, `_require_roots`, `observe_git_nodes`, `extract_*` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:145-464 |
-| Companion primary suite for extractor/lease behavior. | `test_source_index_accepts_exact_empty_candidate_and_refuses_stale_population` | mcp/tests/test_memory_incremental_scope_owners.py:217-241 |
-| Fixture JSON shapes follow the citation source-index state module. | `Identity`, `SourceFile`, `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:137-258 |
+| Production owner internals under test. | `observe_git_nodes`; `_current_route_indexes`; `_require_index_matches_candidate`; `_citation_node`; `_require_roots` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:155-181; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:292-332; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:347-397; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:422-435; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:445-462 |
+| Companion primary suite for extractor/lease behavior. | `test_source_index_accepts_real_linked_empty_candidate_without_git_metadata` | mcp/tests/test_memory_incremental_scope_owners.py:242-252 |
+| Fixture JSON shapes follow the citation source-index state module. | `Identity`, `SourceFile`, `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:155-201; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:224-242; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:253-298 |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming owner, real empty-candidate test and schema-9 state ranges; unchanged test source retains its verification stamp.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 1ad9d51f743c5b17de51cc46d8b29e004736022d (CCR-R06@v2/L26): created the card for the new owner edge suite of the R06v2 successor leaf; no prior sidecar existed.

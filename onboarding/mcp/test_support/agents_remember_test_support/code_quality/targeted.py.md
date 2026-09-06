@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/targeted.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-06T00:40:15+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,7 +27,7 @@ being reimplemented here.
 `changed_paths` reads the complete ACMRD diff against the caller's explicit base. The current
 Python subset drives Ruff, formatting, file-size, and product-only coverage/CRAP. A single
 `DependencyOwnershipGraph` supplies module identity, reverse-import type closure, affected tests,
-selection reasons, completeness, and an explicit conservative-full decision. `TargetedScopeResult` retains all of this
+selection reasons, completeness, explicit global invalidators and unresolved input decisions. `TargetedScopeResult` retains all of this
 evidence for scope reporting and conversion to `GateScope`.
 
 Product measurement authority is resolved separately from that consumer graph through the
@@ -50,8 +50,8 @@ or claim their own dependency completeness.
 - Importability never implies product ownership. Missing, overlapping, or stale package authority
   refuses through the shared configured-authority reader instead of falling back to directory
   placement.
-- An incomplete or ambiguous graph selects the full Python test population with a printed
-  reason; it never guesses a narrow subset.
+- An incomplete or ambiguous graph retains unresolved inputs with `complete=False`. Explicit
+  global invalidators select the full population; proven dependency fan-out can also reach every test.
 - Large import fan-out is a truthful ownership result, not a reason to silently cap selection.
 
 ### Todos
@@ -66,16 +66,20 @@ No external domain documentation governs this repository-local scope contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The result carries exact rail scope plus typed ownership evidence. | `TargetedScopeResult` | mcp/test_support/agents_remember_test_support/code_quality/targeted.py:19-42 |
+| The result carries exact rail scope plus typed ownership evidence. | `TargetedScopeResult` | mcp/test_support/agents_remember_test_support/code_quality/targeted.py:25-49 |
 | The diff includes deletions and refuses Git failures. | "def changed_paths(" | mcp/test_support/agents_remember_test_support/code_quality/targeted.py:60-91 |
 | One graph derives closure and affected tests while explicit package authority derives product measurement scope. | `derive_targeted_scope` | mcp/test_support/agents_remember_test_support/code_quality/targeted.py:103-147 |
-| Consumer semantics and the fail-closed full-population decision live at the canonical owner without deciding product ownership. | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:81-301 |
+| Consumer semantics, explicit global invalidation and unresolved-input decisions live at the canonical owner without deciding product ownership. | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:305-543 |
 
 ## Cross-Repo References
 
 No cross-repository graph participates in targeted selection.
 
 ## Update History
+
+- 2026-09-06T00:40:15+00:00 — L30 independent-review correction: the complete population can also result from proven dependency fan-out, including a transitive conftest importer; corrected the global-invalidator exclusivity claim against C97.
+
+- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-reviewed the complete unchanged projection source and its changed dependency graph; corrected the superseded implicit-full claim to explicit global invalidators and unresolved inputs, refreshed evidence, and verified at C97.
 
 - 2026-08-27T14:04+02:00 — Corrected targeted product measurement to consume the same explicit
   package-authority declaration as full mode; verification packages remain statically checked but

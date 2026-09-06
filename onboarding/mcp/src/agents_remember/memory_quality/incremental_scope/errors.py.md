@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T00:38:37+00:00 |
 | lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
 | lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
 | governingOverview | `../overview.md` |
@@ -62,7 +62,9 @@ stale input, unknown consumer, missing result, or changed certificate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| All R07 modules raise `GateFiveClosureRefusedError` for typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:375-385; mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:493-503; mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:146-154 |
+| The R07 planner raises typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:375-385 |
+| The R07 executor raises typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:505-515 |
+| The R07 subresult store raises typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:146-154 |
 | The base error carries the canonical agents-remember failure status machinery. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-21 |
 
 ## Cross-Repo References
@@ -74,6 +76,10 @@ No cross-repository implementation boundary is owned here.
 | No external boundary is exercised by the error vocabulary. | — | — |
 
 ## Update History
+
+- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Separated three same-named refusal owners into distinct evidence claims so historical source resolution is unique; retained unchanged-source verification provenance.
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming references and schema ownership against the reviewed candidate; unchanged source retains its genuine verification stamp.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ The CCR profile path adds `code_quality/profile_selection.py` for immutable repo
 selection and `code_quality/profile_rails.py` for the actual Python rail adapters. An
 incomplete ownership result preserves unresolved inputs and blocks targeted test execution;
 it no longer silently broadens to the full Python suite. Retry compatibility now binds the
-exact selection digest.
+exact selection digest. L30's runner-input ownership explicitly names the 16 actual consumers instead of leaving shared-fixture reads unresolved or declaring a global invalidator. `profile_rails.py` writes a teardown proof derived from the existing clean-room summary and both real `L5-C10` checkpoint reports. The profile-declared provider rail directly invokes pytest with the existing `testing.pytest_phase_reporter` plugin and its explicit phase-report output path. The focused code-quality overview owns those detailed adapter and selector contracts; the package remains verification infrastructure rather than product authority.
 
 ## Operating Model
 
@@ -68,6 +68,10 @@ Repository-owned design truth lives in `docs/design/python-evidence-system.md` a
 they do not replace this source-paired behavior description.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Reviewed the two code-quality source changes and routed exact runner consumer ownership plus actual provider/teardown report production; package authority remains unchanged.
 
 - 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled explicit profile selector/rail owners and fail-closed incomplete selection, retaining non-accepting evidence boundaries. Verification records current source claims, not execution or acceptance.
 

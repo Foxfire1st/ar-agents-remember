@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_citation_deterministic_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T01:15+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `709dd07671b07d85ac49eaf3b77f4609b1e5fc5f` |
 | lastVerifiedCommitDate | 2026-09-04T00:53:17+02:00 |
 | governingOverview | `overview.md` |
@@ -101,9 +101,11 @@ None.
 | The plan-then-stage seam refuses conflicting writes and batches the range and history edits. | `TransactionSeamTests` | mcp/tests/test_citation_deterministic_projection.py:436-518 |
 | The real fixer stages the edit and refuses the projection for two-file anchor resolutions. | `ProjectionDeclineThroughFixerTests` | mcp/tests/test_citation_deterministic_projection.py:603-637 |
 | The run stamp and per-document digest guards hold across a full fixer run. | `StagingGuardTests` | mcp/tests/test_citation_deterministic_projection.py:640-704 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_citation_deterministic_projection.py" | mcp/tests/test-evidence-lanes.toml:249-249 |
+| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_citation_deterministic_projection.py" | mcp/tests/test-evidence-lanes.toml:251-251 |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

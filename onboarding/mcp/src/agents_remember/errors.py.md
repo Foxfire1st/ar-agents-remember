@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/errors.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `95e61fdc2c29191f051afafc33dc2d6910c66a9c` |
-| lastVerifiedCommitDate | 2026-09-04T10:18:42+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,8 @@ Defines the common typed failure vocabulary used by certification, memory, lifec
 ## Code Commentary
 
 ### Logic
+
+`LockCapabilityError` names a failed resource-filesystem exclusion capability. The shared kernel lock raises it without assigning a coordinator role or registry policy. Control-plane callers translate it to `UnsafeLockFilesystemError`; the Dagger registry translates it to `DaggerRuntimeAuthorityError` with finding `runtime-authority-registry-lock-unsafe`.
 
 `CertificationContractError` recursively freezes findings, including nested mappings and sequences. Profile admission, unavailable executor prerequisites, contradictory readiness, and invalid shared Dagger authority remain separate subclasses with stable statuses. `DaggerRuntimeAuthorityError` covers invalid declarations, connection-only inspection failures, authority conflicts and live-owner transition barriers before executor launch.
 
@@ -36,6 +38,7 @@ Raise the narrow typed family rather than a generic exception when a domain cont
 
 ### Invariants And Boundaries
 
+- Lock capability failure must stay explicit through each caller's domain error; a shared primitive does not grant caller authority.
 - Preserve certification refusal codes and ownership details; do not flatten them into successful or generic lifecycle output.
 - A busy-adapter error means zero operation bytes were sent. Generic disconnects cannot establish that retry safety.
 - Pair, coherence and final certification errors report missing authority; constructing an error does not validate or repair that authority.
@@ -55,14 +58,17 @@ No external Domain Documentation source is configured for this repository. This 
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+The error families preserve distinct authority, recovery and transport meanings. The shared lock capability has two domain-specific callers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Certification findings and distinct pre-execution error statuses | `CertificationContractError`; `CertificationProfileError`; `CertificationExecutorPrerequisiteError`; `CloseoutReadinessContractError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:22-81 |
-| Bounded configured-contract authority and reread errors | `ConfiguredContractAuthorityError`; `ConfiguredContractRereadError` | mcp/src/agents_remember/errors.py:119-161 |
-| Separate coherence, exact-pair and final-certification response shapes | `CuratorCoherenceError`; `MemoryCandidatePairError`; `CuratorCoherencePairError`; `FinalCertificationError` | mcp/src/agents_remember/errors.py:176-314 |
-| Composition, integrity, harness retry safety and history failures | `ConversationCompositionError`; `TokenizerVocabularyError`; `GrammarUnavailableError`; `HarnessAdapterDisconnectedError`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:321-457 |
+| Policy-free lock capability failure. | `LockCapabilityError` | mcp/src/agents_remember/errors.py:22-23 |
+| Immutable certification findings and pre-execution statuses. | `CertificationContractError`; `CertificationProfileError`; `CertificationExecutorPrerequisiteError`; `CloseoutReadinessContractError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:26-35; mcp/src/agents_remember/errors.py:38-41; mcp/src/agents_remember/errors.py:44-47; mcp/src/agents_remember/errors.py:50-53; mcp/src/agents_remember/errors.py:56-67 |
+| Bounded configured-contract authority and reread errors. | `ConfiguredContractAuthorityError`; `ConfiguredContractRereadError` | mcp/src/agents_remember/errors.py:123-133; mcp/src/agents_remember/errors.py:143-165 |
+| Separate coherence, exact-pair and final-certification response shapes. | `CuratorCoherenceError`; `MemoryCandidatePairError`; `CuratorCoherencePairError`; `FinalCertificationError` | mcp/src/agents_remember/errors.py:180-211; mcp/src/agents_remember/errors.py:226-262; mcp/src/agents_remember/errors.py:265-285; mcp/src/agents_remember/errors.py:288-318 |
+| Composition, integrity, harness retry safety and history failures. | `ConversationCompositionError`; `TokenizerVocabularyError`; `GrammarUnavailableError`; `HarnessAdapterDisconnectedError`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:325-332; mcp/src/agents_remember/errors.py:335-343; mcp/src/agents_remember/errors.py:346-354; mcp/src/agents_remember/errors.py:373-385; mcp/src/agents_remember/errors.py:449-461 |
+| Control-plane translation preserves the durable-store error family. | `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360 |
+| Host registry translation preserves typed pre-launch authority refusal. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
 
 ## Cross-Repo References
 
@@ -73,6 +79,11 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:28+02:00 — Documented LockCapabilityError and the distinct durable-store/host-registry translations; reopened all current error-family references against the prepared L30 commit.
+
 
 - 2026-09-05T06:14:14+00:00 — Reconciled the shared error family across cumulative CCR changes, including readiness and final-memory failures; retained the harness retry-safety and authority-boundary distinctions.
 

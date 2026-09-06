@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_clean_quality_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `8f670ceecd75323600c873d40c47c4a1cc946ab3` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:24+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ Tests the profile-declared clean executor boundary: exact staged candidate expor
 
 Tests build small Git repositories and synthetic exported artifacts, inject a command runner and connection-only authority probe, then inspect the clean executor's returned result and durable publication state. The staged-candidate test binds the exact source export and separate ancestry input to one pipeline. Subsequent cases reject missing or contradictory profile/runtime/candidate authority and prevent invalid exports from replacing prior evidence.
 
-Publication cases cover nested artifact directories, stale managed projections for non-applicable gates, incomplete-copy visibility, competing publishers, manifest/pruning failures and Git publication guards. Stream tests constrain chunk reads and progress windows. The fixtures track the current profile artifact inventory, including the additional suite result, so a changed profile affects these tests through real literal profile reads.
+Publication cases cover nested artifact directories, stale managed projections for non-applicable gates, incomplete-copy visibility, competing publishers, manifest/pruning failures and Git publication guards. Stream tests constrain chunk reads and progress windows. The pipeline assertion compares the complete ordered `publishedArtifacts` value with the actual profile JSON instead of pinning an old numeric artifact count. The current profile has fifty-one declarations; their identities and fields, rather than that count alone, are the assertion oracle. A profile edit therefore affects this suite through a real literal profile read.
 
 ### Conventions
 
@@ -39,37 +39,51 @@ These are injected-runner boundary tests. They verify command and publication co
 
 ### Todos
 
-Actual Gate-4 producer coverage belongs to real producer/consumer verification; these mocked exports do not discharge the missing producer obligation.
+Keep this injected-runner suite distinct from producer-backed publication tests and the separate live Dagger gate run. No unresolved producer absence is asserted here.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+| No configured external domain source. | N/A | N/A |
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+These source owners establish the current behavior and the stated fixture boundaries.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact staged source and one pinned pipeline | `test_exact_staged_candidate_is_passed_to_one_pinned_dagger_pipeline` | mcp/tests/test_clean_quality_executor.py:176-249 |
-| Authority ownership and typed executor failures | `test_declared_host_authority_is_admitted_registered_and_released_without_docker`; `test_unavailable_admitted_executor_is_a_typed_gate_owned_failure`; `test_admitted_executor_start_failure_is_typed_and_gate_owned` | mcp/tests/test_clean_quality_executor.py:288-426 |
-| Invalid exports and profile artifact publication | `test_exported_result_validation_rejects_missing_and_contradictory_authority`; `test_invalid_or_unowned_exports_never_replace_durable_evidence`; `test_not_applicable_gate_cleans_stale_managed_projection_without_requiring_it` | mcp/tests/test_clean_quality_executor.py:486-619 |
-| Atomic publication and fail-closed generation checks | `test_report_generation_pointer_never_exposes_a_partial_copy`; `test_competing_report_publisher_reuses_the_complete_generation`; `test_report_manifest_verification_and_generation_pruning_fail_closed` | mcp/tests/test_clean_quality_executor.py:621-816 |
-| Git guards, bounded stream behavior and native executor resolution | `test_report_publish_git_guard_and_streaming_progress_are_fail_closed`; `test_stream_reads_fixed_chunks_and_writes_at_most_two_progress_windows`; `test_profile_executor_resolution_uses_the_native_command_boundary` | mcp/tests/test_clean_quality_executor.py:818-1026 |
+| The exact pipeline compares the full actual profile publication inventory. | `_assert_exact_pipeline_publication` | mcp/tests/test_clean_quality_executor.py:120-177 |
+| One pinned invocation receives exact staged source and ancestry. | `test_exact_staged_candidate_is_passed_to_one_pinned_dagger_pipeline` | mcp/tests/test_clean_quality_executor.py:179-252 |
+| Injected authority admission, registration and release preserve owner identity. | `test_declared_host_authority_is_admitted_registered_and_released_without_docker` | mcp/tests/test_clean_quality_executor.py:291-372 |
+| Missing executor resolution is a typed gate failure. | `test_unavailable_admitted_executor_is_a_typed_gate_owned_failure` | mcp/tests/test_clean_quality_executor.py:374-400 |
+| Executor launch failure retains gate ownership. | `test_admitted_executor_start_failure_is_typed_and_gate_owned` | mcp/tests/test_clean_quality_executor.py:402-429 |
+| Exported authority must agree with the candidate and profile. | `test_exported_result_validation_rejects_missing_and_contradictory_authority` | mcp/tests/test_clean_quality_executor.py:489-526 |
+| Invalid exports preserve prior evidence. | `test_invalid_or_unowned_exports_never_replace_durable_evidence` | mcp/tests/test_clean_quality_executor.py:528-585 |
+| Non-applicable gates remove only stale managed projections. | `test_not_applicable_gate_cleans_stale_managed_projection_without_requiring_it` | mcp/tests/test_clean_quality_executor.py:593-622 |
+| The public pointer never exposes a partial generation. | `test_report_generation_pointer_never_exposes_a_partial_copy` | mcp/tests/test_clean_quality_executor.py:624-695 |
+| Competing publication converges on complete bytes. | `test_competing_report_publisher_reuses_the_complete_generation` | mcp/tests/test_clean_quality_executor.py:697-717 |
+| Manifest and pruning failures refuse publication. | `test_report_manifest_verification_and_generation_pruning_fail_closed` | mcp/tests/test_clean_quality_executor.py:719-819 |
+| Git publication guards and stream refusals stay intact. | `test_report_publish_git_guard_and_streaming_progress_are_fail_closed` | mcp/tests/test_clean_quality_executor.py:821-924 |
+| Stream reading remains bounded. | `test_stream_reads_fixed_chunks_and_writes_at_most_two_progress_windows` | mcp/tests/test_clean_quality_executor.py:926-984 |
+| Executor resolution uses the native command boundary. | `test_profile_executor_resolution_uses_the_native_command_boundary` | mcp/tests/test_clean_quality_executor.py:1021-1029 |
 
 ## Cross-Repo References
 
-No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
+| No cross-repository evidence is required. | N/A | N/A |
+
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Documented complete profile-owned publication equality instead of a stale artifact count and refreshed shifted assertions without implying live producer proof.
 
 - 2026-09-05T06:14:14+00:00 — Refreshed the accumulated profile/export test contract and distinguished injected publication fixtures from proof of real artifact producers.
 

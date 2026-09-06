@@ -5,7 +5,7 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_change_watcher.py`             |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-12T21:27+02:00 |
+| lastUpdated | 2026-09-06T00:28+02:00 |
 | lastVerifiedCommitHash |                                                `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
 | lastVerifiedCommitDate |                                                2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                  |
@@ -29,9 +29,8 @@ end-to-end pass (inotify → debounce → projection).
 ### Logic
 
 `ProjectionInputRootsTests` prove an empty tree yields no roots, a fully-populated tree derives
-exactly the documented projection-input surfaces and nothing else (including the two-level
-`worktrees/*/*/provider-runtime` glob), and missing surfaces are skipped until they exist.
-cit:([`InputEventFilterTests`], mcp/tests/test_change_watcher.py:98-139) prove genuine inputs pass while `*.tmp`, dotfiles, the
+exactly the documented projection-input surfaces and nothing else (explicitly excluding every `worktrees/` descendant, including live provider-runtime data), and missing surfaces are skipped until they exist.
+cit:([`InputEventFilterTests`], mcp/tests/test_change_watcher.py:100-141) prove genuine inputs pass while `*.tmp`, dotfiles, the
 projection's own `latest-state/metrics.json` outputs, every control-plane lockfile, and the
 remaining `workspace/` non-input churn (event river, cursor/lock, supervisor heartbeat) are dropped
 — and that a *lifecycle's* `events.jsonl` is NOT confused with the workspace river (the parent-dir
@@ -85,7 +84,7 @@ cancellation semantics are unchanged.
 **The lockfile exclusion is asserted as a derived rule, not as a name list, and the second case is
 what makes that visible.** The filter no longer carries a literal basename; it matches the suffix
 `_DURABLE_LOG_LOCK_SUFFIX`, which the module computes from
-`durable_store.lock_path_for(Path("log.jsonl"))` and applies in **every** watched directory. That
+`kernel.file_lock.lock_path_for(Path("log.jsonl"))` and applies in **every** watched directory. That
 derivation is what the new `lifecycles/L1/gates.jsonl.lock` case pins: five of the six durable logs
 live only under `workspace/`, but `gates.jsonl` also exists once per lifecycle, so its lockfile
 appears in every lifecycle directory — a place a `workspace/`-scoped name list structurally could
@@ -93,6 +92,16 @@ not reach. The first case, `operator-inbox.jsonl.lock`, records why derivation w
 the list held `operator-inbox.lock` while `lock_path_for` had moved to the whole-log-name form, so
 the exclusion had silently stopped matching anything and the busiest write in the tree was waking
 the projector.
+
+### Invariants And Boundaries
+
+- Test input filtering must cover lockfiles outside workspace as well as inside it.
+- Pure pacer deadlines remain distinct from asynchronous watcher integration.
+- Injected watch failures must not silently stop projection; temporary test resources are cleaned up after projector shutdown.
+
+### Todos
+
+No additional behavior change was identified in this lock-owner reference review.
 
 ## Docs References
 
@@ -107,12 +116,12 @@ Domain Documentation entries.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Root derivation and event filtering are covered by focused tests. | `ProjectionInputRootsTests`; `InputEventFilterTests` | mcp/tests/test_change_watcher.py:48-95; mcp/tests/test_change_watcher.py:98-139 |
-| Domain mapping and the pure pacer deadline are covered separately. | `ProjectionDomainMappingTests`; `ChangePacerDeadlineTests` | mcp/tests/test_change_watcher.py:142-170; mcp/tests/test_change_watcher.py:173-221 |
-| Adaptive projection and real watchfiles integration are covered separately. | `AdaptiveProjectorTests`; `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:252-441; mcp/tests/test_change_watcher.py:444-485 |
-| The module derives roots and filters lockfiles/events through named helpers and exposes the pacer and watcher. | `_DURABLE_LOG_LOCK_SUFFIX`; `projection_input_roots`; `is_projection_input_event`; `ChangePacer`; `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:156-156; mcp/src/agents_remember/serving/change_watcher.py:159-184; mcp/src/agents_remember/serving/change_watcher.py:187-205; mcp/src/agents_remember/serving/change_watcher.py:283-376; mcp/src/agents_remember/serving/change_watcher.py:379-487 |
-| The current projector run loop owns pacer wiring, watch-task lifecycle, fail-open completion, and wake instrumentation while finalization drains the watcher and landing refresher. | `ProjectionRefreshers`; `NO_PROJECTION_REFRESHERS`; "async def run(self) -> None:"; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:128-128; mcp/src/agents_remember/serving/projector.py:197-240; mcp/src/agents_remember/serving/projector.py:263-275 |
-| The lock exclusion is derived from the durable-store naming function and held by the access context. | `lock_path_for`; `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:291-298; mcp/src/agents_remember/controlplane/durable_store.py:348-394 |
+| Root derivation and event filtering are covered by focused tests. | `ProjectionInputRootsTests`; `InputEventFilterTests` | mcp/tests/test_change_watcher.py:50-97; mcp/tests/test_change_watcher.py:100-141 |
+| Domain mapping and pure pacer deadlines are covered separately. | `ProjectionDomainMappingTests`; `ChangePacerDeadlineTests` | mcp/tests/test_change_watcher.py:144-172; mcp/tests/test_change_watcher.py:175-223 |
+| Adaptive projection and real watchfiles integration are covered separately. | `AdaptiveProjectorTests`; `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:254-441; mcp/tests/test_change_watcher.py:444-485 |
+| Actual watcher roots, event filtering, scheduler and watch lifecycle. | `projection_input_roots`; `is_projection_input_event`; `ChangePacer`; `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:161-186; mcp/src/agents_remember/serving/change_watcher.py:189-207; mcp/src/agents_remember/serving/change_watcher.py:285-378; mcp/src/agents_remember/serving/change_watcher.py:381-489 |
+| Projector wiring and callback retain current source ownership. | `ProjectionRefreshers`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:262-273 |
+| Lock exclusion is derived from shared kernel naming. | `lock_path_for`; `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:87-114 |
 
 ## Cross-Repo References
 
@@ -136,6 +145,9 @@ fallback for an unknown accepted path, and the exact task-domain wake through bo
 worker and real watchfiles integration.
 
 ## Update History
+
+- 2026-09-06T00:28+02:00 — Reconciled watcher lockfile derivation with the shared kernel owner; retained the suffix and every-directory filtering contract. Source file is unchanged; its genuine prior verification stamp is preserved.
+
 - 2026-08-12T21:27+02:00 — L23 curator follow-up: re-read the closeout-only cleanup race and documented the `AdaptiveProjectorTests` LIFO fixture boundary: later async projector cancellation/await runs before the earlier registered temporary-directory cleanup. Production projector behavior is unchanged; the owner reports the crashed-watcher case green in 20 consecutive sanitized runs. Verification remains closeout-owned.
 - 2026-08-12T20:24+02:00 — L23 curator: re-read the adaptive projector tests against shield-and-drain cancellation; existing watcher claims remain accurate and the focused cancellation arm lives in `test_serving.py`. Verification remains closeout-owned.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

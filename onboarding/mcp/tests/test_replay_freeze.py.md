@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_replay_freeze.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
 | lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
 | governingOverview | `overview.md` |
@@ -55,7 +55,7 @@ No external Domain Documentation source is configured for this repository-owned 
 | --- | --- | --- |
 | The freeze/population contracts under test. | `compile_replay_freeze`; `compare_replay_freezes`; `compile_replay_population`; `require_append_only_population` | mcp/src/agents_remember/certification/replay/freeze.py:119-124; mcp/src/agents_remember/certification/replay/freeze.py:134-157; mcp/src/agents_remember/certification/replay/freeze.py:267-278; mcp/src/agents_remember/certification/replay/freeze.py:311-336 |
 | The population row vocabulary under test. | `PopulationGeneration` | mcp/src/agents_remember/certification/replay/models.py:115-132 |
-| The explicit unit-regression lane registration. | "mcp/tests/test_replay_freeze.py" | mcp/tests/test-evidence-lanes.toml:158-158 |
+| The explicit unit-regression lane registration. | "mcp/tests/test_replay_freeze.py" | mcp/tests/test-evidence-lanes.toml:160-160 |
 
 ## Cross-Repo References
 
@@ -66,6 +66,8 @@ No cross-repository implementation boundary is owned here.
 | Same-repository forcing suite; nothing crosses repositories. | - | - |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

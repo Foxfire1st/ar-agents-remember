@@ -5,9 +5,9 @@
 | repository             | agents-remember                          |
 | path                   | `mcp/tests/test_gate_replay_window.py`   |
 | doc_type               | `file-level-onboarding`                  |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -145,7 +145,7 @@ record. The rows below are each of them, plus the sibling suites that hold the o
 | The pure snapshot the append carries: same gate id, `state="applied"`, decision attribution carried forward unchanged. | `apply_gate` | mcp/src/agents_remember/controlplane/records.py:189-200 |
 | The log that has to keep it: the strict authority read, the last-wins fold the enforcement asks, and the compaction the regression races. | `read`; `current`; `compact` | mcp/src/agents_remember/controlplane/store.py:129-139; mcp/src/agents_remember/controlplane/store.py:176-181; mcp/src/agents_remember/controlplane/store.py:259-289 |
 | The interposition primitive imported to park the compactor between its read and its commit. | `parked_rewrite` | mcp/tests/_store_durability.py:705-754 |
-| Why the append now survives: the lock is unconditional across append and rewrite, and the rewrite never unlinks. | `exclusive_access`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:393-448; mcp/src/agents_remember/controlplane/durable_store.py:509-516 |
+| Append/rewrite exclusion retains checkout authorization and kernel-owned per-log locking. The rewrite requires the held lock and atomically publishes an empty file without unlinking the destination. | `exclusive_access`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:320-360; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | The suite that proves the same loss across all six record types and against the base commit; this file is the authority-level consequence of it. | `MultiProcessDurabilityTests` | mcp/tests/test_controlplane_store_durability.py:125-211 |
 | The precise version of the torn-line claim this file's fourth test states loosely. | `test_gate_enforcement_fold_refuses_a_torn_line` | mcp/tests/test_controlplane_store_durability.py:238-257 |
 | The policy tests around the same enforcement fold: `apply_gate` purity, every `evaluate_closeout_gate` branch, and the closeout helpers over a temp `GateStore`. | `ApplyGateTests`; `EvaluateCloseoutGateTests`; `CloseoutEnforcementHelperTests` | mcp/tests/test_controlplane_gates_closeout.py:36-50; mcp/tests/test_controlplane_gates_closeout.py:88-188; mcp/tests/test_controlplane_gates_closeout.py:191-262 |
@@ -177,6 +177,8 @@ only through the evidence lane that owns cross-process integration behavior rath
 deterministic acceptance.
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 claim re-review against C97: reconciled current durable-store/kernel locking ownership and exact source evidence. The test or harness source bytes match the prior verified source; verification advances for the reopened claim review.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the commit_verified_staged spy and publish_code_quality flag in gate replay window tests.
 
 

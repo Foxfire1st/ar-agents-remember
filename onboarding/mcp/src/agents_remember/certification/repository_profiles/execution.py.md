@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/certification/repository_profiles/execution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
+| lastUpdated | 2026-09-05T22:25+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -92,7 +92,7 @@ reuse the same admission to fabricate passing evidence for tests.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | One-call selection/plan/executor/decoder/artifact admission for an exact candidate. | `admit_repository_profile_execution` | mcp/src/agents_remember/certification/repository_profiles/execution.py:38-76 |
-| The clean executor admits the sandbox tree and serializes the execution with its frozen runtime authority into the admission manifest. | `_admit_prepared_profile`; `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:230-244; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:378-411 |
+| The clean executor admits the sandbox tree and serializes the execution with its frozen runtime authority into the admission manifest. | `_admit_prepared_profile`; `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:236-250; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:384-417 |
 | Fixtures admit a profile execution to publish passing gate evidence. | `publish_passing_quality_gate` | mcp/tests/_quality_evidence_fixture.py:47-86 |
 
 ## Cross-Repo References
@@ -103,7 +103,11 @@ No cross-repository implementation boundary is owned by this profile-selection a
 | --- | --- | --- |
 | No applicable cross-repository source was found. | — | — |
 
+
 ## Update History
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 
 - 2026-09-05T08:27+02:00 — L31 native curator: Retained exact-candidate profile admission after reading the clean-executor consumer; documented the serialized runtime-authority snapshot and regenerated exact admission/manifest evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `8f670ceecd75323600c873d40c47c4a1cc946ab3` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:24+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ Owns the source-derived test-consumer graph shared by targeted selection, retry 
 
 DependencyOwnershipGraph builds repository dependency facts, observed imports/literal consumers and independently checked evidence-catalog declarations. resolve retains every unresolved input and returns complete=false instead of silently expanding an incomplete graph. Parse failures, ambiguous modules and invalid lifecycle catalogs produce explicit unresolved reasons.
 
-Changed tests own themselves; deleted tests leave the population. Shared support must have observed consumers. Repository-owned non-Python inputs, including the certification profile, may declare exact consumers only when the observed set matches exactly. The profile consumer set now includes bridge, record-seam and rail-binding tests. A declaration does not prove itself.
+Changed tests own themselves; deleted tests leave the population. Shared support must have observed consumers. Repository-owned non-Python inputs, including the certification profile, may declare exact consumers only when the observed set matches exactly. The profile consumer set includes bridge, record-seam, retained-evidence and producer-publication tests. The ambient runner has exactly sixteen pytest consumers: its direct readers plus the transitive consumers of the shared profile fixture that models runner output. Both declarations must equal independently observed consumers; they do not prove themselves or globally invalidate the suite.
 
 Global inputs and conftest roots deliberately invalidate the full population and are separately recorded. Otherwise observed import/literal relationships are preferred; filename matching remains a labeled heuristic. ownership_configuration_digest binds the versioned global inputs, declarations, irrelevant roots/suffixes and dashboard test patterns, so selection authority changes are visible.
 
@@ -46,33 +46,41 @@ The previous card incorrectly described unresolved ownership as a full-populatio
 
 ## Docs References
 
-No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+| No configured external domain source. | N/A | N/A |
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+These source owners establish the current behavior and the stated fixture boundaries.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Global inputs and versioned repository-owned declarations | `GLOBAL_TEST_INPUTS`; `OWNERSHIP_AUTHORITY_VERSION`; `REPOSITORY_TEST_INPUT_CONSUMERS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:24-52 |
-| Typed reasons and incomplete graph behavior | `SelectionReasonKind`; `SelectionReason`; `TestImpact`; `resolve`; `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:227-365 |
-| Global invalidation and exact consumer matching | `_repository_consumers`; `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:368-459 |
-| Import closure and evidence-catalog consumer discovery | `transitive_importers`; `reverse_import_closure`; `_declared_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:527-581 |
-| Selection authority configuration digest | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:598-619 |
+| Global pytest configuration inputs remain explicit. | `GLOBAL_TEST_INPUTS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:24-29 |
+| The ambient runner declares the complete sixteen-consumer pytest closure. | `test_ambient_role_runner_has_exact_pytest_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:202-236 |
+| Incomplete ownership retains typed unresolved inputs without broadening. | `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:325-343 |
+| Only proved global inputs deliberately select the full population. | `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:345-377 |
+| Repository declarations are compared with observed ownership before acceptance. | `_repository_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:409-441 |
+| Shared-support declarations must equal observed consumers; deleted tests leave the population. | `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:443-479 |
+| Import and literal-source consumers compose with distinct reasons. | `_observed_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:517-533 |
+| The digest binds globals, declarations and dashboard classification policy. | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:617-638 |
 
 ## Cross-Repo References
 
-No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
+| No cross-repository evidence is required. | N/A | N/A |
+
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Reconciled exact ambient-runner consumer closure and added publication/evidence consumers; preserved incomplete-ownership refusal and explicit global invalidation.
 
 - 2026-09-05T06:14:14+00:00 — Corrected obsolete safe-full wording to the implemented explicit unresolved-ownership contract and incorporated new profile consumers.
 

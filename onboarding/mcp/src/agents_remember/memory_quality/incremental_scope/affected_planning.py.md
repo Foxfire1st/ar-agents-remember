@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
 | lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
 | lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
 | governingOverview | `../overview.md` |
@@ -81,7 +81,7 @@ and exact subresult reuse without fallback.
 | Planning observes live candidate authority and validates the R06 scope against the current checker registry. | `compile_affected_closure_plan`; `_validate_scope`; `_validate_scope_registry` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:133-183 |
 | R21 admits the exact Gate 1-4 prefix and requires a memory-only Gate-5 start. | `_admit_gate_certificates` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:196-236 |
 | One unit per incremental document/checker is compiled with a transitive reverse dependency closure. | `_compile_units`; `_unit`; `_dependency_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:239-331 |
-| Planning-edge refusals are proven by the focused suites. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_planning_closure_targets_are_complete_and_canonical` | mcp/tests/test_memory_incremental_scope_model_edges.py:844-951; mcp/tests/test_memory_incremental_scope_model_edges.py:952-995 |
+| Planning-edge refusals are proven by the focused suites. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_planning_closure_targets_are_complete_and_canonical` | mcp/tests/test_memory_incremental_scope_model_edges.py:942-1047; mcp/tests/test_memory_incremental_scope_model_edges.py:1050-1091 |
 
 ## Cross-Repo References
 
@@ -92,6 +92,8 @@ No cross-repository implementation boundary is owned here.
 | Gate certificate and reuse contracts come from the R21 owners inside this repository. | `GateCertificate`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:221-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-164 |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming references and schema ownership against the reviewed candidate; unchanged source retains its genuine verification stamp.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
 

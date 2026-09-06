@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_catalog_readiness_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T01:48+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
 | lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview | `overview.md` |
@@ -63,9 +63,11 @@ None.
 | Determinism and the non-certifying shape of the readiness projection. | `test_final_catalog_readiness_projection_is_deterministic_and_non_certifying` | mcp/tests/test_final_catalog_readiness_projection.py:62-77 |
 | Blocked coherence, failing executed check, and present affected-plan projection. | `test_final_catalog_readiness_blocks_without_current_coherence`; `test_final_catalog_readiness_reports_failing_executed_check`; `test_final_catalog_readiness_projects_present_affected_plan` | mcp/tests/test_final_catalog_readiness_projection.py:80-84; mcp/tests/test_final_catalog_readiness_projection.py:87-99; mcp/tests/test_final_catalog_readiness_projection.py:102-106 |
 | Unknown catalog items refuse instead of projecting. | `test_final_catalog_readiness_refuses_unknown_catalog_item` | mcp/tests/test_final_catalog_readiness_projection.py:109-121 |
-| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_catalog_readiness_projection.py" | mcp/tests/test-evidence-lanes.toml:403-403 |
+| The suite is registered in the integration lane of the evidence manifest. | "mcp/tests/test_final_catalog_readiness_projection.py" | mcp/tests/test-evidence-lanes.toml:406-406 |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

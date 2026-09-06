@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_interaction_retention.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T14:20+02:00                     |
+| lastUpdated            | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
@@ -71,12 +71,14 @@ strict reader proves the records physically left rather than that a file disappe
 | --- | --- | --- |
 | Retention constants and policy helpers under test. | `INTERACTION_RECORD_TTL_SECONDS`; `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:16-16; mcp/src/agents_remember/controlplane/interaction_retention.py:125-137 |
 | The compaction the test now drives directly, and the strict read it checks the result with; `_replace` routes through the contract's rewrite, which never unlinks. | `compact`; `read`; `_replace` | mcp/src/agents_remember/controlplane/store.py:120-130; mcp/src/agents_remember/controlplane/store.py:247-277; mcp/src/agents_remember/controlplane/store.py:316-325 |
-| The rewrite that makes "emptied" true for every store at once: an empty record set is written as an empty file. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The rewrite that makes "emptied" true for every store at once: an empty record set is written as an empty file. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | The projection this test now asserts is non-destructive, and its own record that the 30 s physical prune was removed because it ran in a process that owns nothing here. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107 |
 | Agent-pickup projection exercised by the state test. | "def read_agent_pickups(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:144-144 |
 | The suite that measures the loss this test's removed rewrite was causing, across all six stores and against the leaf's base commit. | `MultiProcessDurabilityTests`; `TornLinePolicyTests` | mcp/tests/test_controlplane_store_durability.py:123-205; mcp/tests/test_controlplane_store_durability.py:208-336 |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited empty-file rewrite behavior and corrected its incoming range. Existing source verification provenance is retained.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

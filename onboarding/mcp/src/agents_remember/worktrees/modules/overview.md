@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-05T07:28+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -54,7 +54,7 @@ under `startup/`; `start.py` remains the coordinating mutation entrypoint.
 
 `quality/gate.py` admits one explicitly configured repository certification profile through `QualityGateTarget`; wrapper presence is no longer authority. The real R11/R22/R21 bridge freezes that profile plus the memory-service rail catalog before Dagger. Leaf acceptance is targeted at closeout; series closeout requires clean landed code and master integration owns the full gate. Required unresolved test ownership refuses before Gate 2 rather than expanding to a full population. The Gate-5 memory preflight starts only after the code gate is green or not required.
 
-`quality/clean_executor.py` publishes immutable schema-3.1 report generations and an atomic current pointer. Fresh and recovery callers retain the exact `publishedResultPath`; the strict reader verifies the declared inventory and candidate identity. Metadata certification records do not establish retained rail-log bytes: the specific emission/producer defects are recorded below. Existing synchronous lifecycle journals, approval claims, locks and exact ref convergence remain authority; the available R05/R16/R07/R08 libraries are not a replacement production path yet.
+`quality/clean_executor.py` publishes immutable schema-3.1 report generations and an atomic current pointer. Fresh and recovery callers retain the exact `publishedResultPath`; the strict reader verifies the declared inventory and candidate identity. L30 selected certificate records bind complete accepted manifest snapshots and physically reopened rail bytes; selected generations are protected from subsequent pruning. Existing synchronous lifecycle journals, approval claims, locks and exact ref convergence remain authority; the available R05/R16/R07/R08 libraries are not a replacement production path yet.
 
 Older EFA/L23 paragraphs below preserve the migration account and its original flat module names. Their wrapper discovery, local interpreter selection, citation-first ordering and schema-1/2 descriptions are historical; current paths are `quality/gate.py`, `quality/clean_executor.py`, `quality/closeout_memory.py`, and `quality/published_manifest.py`. Provider setup/teardown moved to `application/provider_runtime.py`, and `reopen.py` to `worktrees/`.
 
@@ -882,45 +882,37 @@ exact same plan identity, and fresh client/process identities are minted per rep
 
 ## Certificate Records And Executor Evidence
 
-The strict quality gate freezes the exact R11/R22/R21 lane before calling Dagger. After a green
-published generation, and on recovery of an exact green generation, it reads the verified decoder
-artifact and delegates terminal catalogs to `quality/certification_records.py`. That adapter writes
-`reports/certification-records/admission.json`, `gates.json`, and content-addressed objects; it
-records missing required run evidence as a refusal. The current caller raises on a red wrapper
-result before reaching this adapter, so wrapper diagnostics must not be described as R11 manifests
-for every terminal outcome.
+The strict quality gate freezes the exact R11/R22/R21 lane before Dagger. Fresh and recovered green generations reopen the verified decoder artifact and delegate the terminal catalog to `quality/certification_records.py`. The adapter requires the exact candidate, profile digest, full plan and selection, then reopens all nested evidence and artifacts before publishing canonical results/certificates. Returned refusals now raise at the gate boundary. Ordinary red runs still raise before this adapter, so their wrapper diagnostics are not a complete R11 terminal-result population.
 
-The Dagger pass branch now attaches per-rail evidence and artifacts. `rail_bindings.py` hashes the
-bounded observed stdout/stderr capture and actually observed artifact files; `rail_emission.py`
-uses detached handles so inspection does not change the next rail's execution container. Required
-artifacts without observed files remain `unboundRequiredArtifacts`. The evidence record's
-`/tmp/ar-quality/rail-evidence/<rail>.log` reference is constructed metadata: this emission function
-does not write that log, so the reference alone is not proof of a persisted/exported file.
+`quality/certification_evidence.py` reads only the bounded selected `gates.json` journal, cross-binds its certificate/result objects to complete strict manifest snapshots, and retains the original generation for a semantically equal certificate only after full execution-authority equality. `clean_executor.py` obtains those exact pins before pruning; the existing confined reader and historical pruner now live in `report_publication_paths.py`. No second report store or historical search selects authority.
 
-Three declared Gate-4 artifacts remain unmapped in the inspected candidate:
-`dashboard-e2e-result`, `provider-integration-result`, and `teardown-proof`. A green process exit
-cannot cure those missing producer/binding contracts. The ordinary closeout path also still lacks
-R05 typed admission/finalization, R16 durable closeout telemetry, and R07/R08 certification
-execution; those library surfaces require actual caller integration before claiming end-to-end
-closeout certification. `diagnostic_executor.py` and `final_codex_executor.py` are separate
-controllers and do not establish that integration by merely existing.
+The Dagger interpreter captures executed pass, fail and skipped handles while retaining complete same-gate outcomes and zero-start later gates. `rail_emission.py` distinguishes observed empty output from unavailable streams, keeps exact bounded byte captures and producer file handles apart from the execution handle, and refuses a green rail when required observed evidence is unavailable. `rail_bindings.py` uses stable report-relative locators; dashboard coverage keeps its Vitest source and receives a separate stable publication name.
 
-The `.dagger/` implementation and `dashboard/package.json` / `dashboard/scripts/` are outside
-current file-card path rules. Their relevant cross-route contracts belong here: the dashboard
-coverage script chains `write-suite-result.mjs` after a successful Vitest run, which writes
-`dashboard-suite-result.json`; artifact bindings use the real report location. It is a suite-result
-producer, not the still-missing browser-E2E producer.
+`profile_results.QualityProgress` carries retained bytes/file handles until `profile_publication.prepare_profile_reports` builds the report branch. Captures are written through a base64 transport that preserves arbitrary byte tails. Required publications are checked on that actual output branch before the final decoder payload is serialized/exported. The finite profile declares all capture paths as octet streams; reference metadata is not substituted for bytes.
+
+The three previously missing Gate-4 producers are connected: Playwright writes the configured browser JSON report, provider pytest writes its phase report, and the teardown adapter validates both successful `L5-C10` checkpoints and summary/report identities before writing the proof. The separate dashboard suite-result writer remains its existing Vitest companion. These `.dagger/` contracts belong in this governing overview because `.dagger/` is excluded from file-card path rules.
+
+`quality/dagger_authority.py` now uses neutral `kernel/file_lock.py` exclusion for the host registry. Checkout durable stores still enforce their coordination guard before entering the same lock implementation. No process-role declaration or second lock namespace is introduced.
+
+Ordinary R05 admission/finalization, R16 telemetry, and R07/R08 memory certification remain incomplete production composition; separate diagnostic/final-Codex controllers do not establish those callers merely by existing.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Freeze precedes Dagger; record publication follows only the green branch, including green recovery. | "def run_strict_code_quality_gate("; "def recover_strict_code_quality_gate(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-398 |
-| The adapter publishes manifests/certificates from terminal payloads and persists typed refusals. | "def record_published_generation(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:195-242 |
-| Only the pass branch attaches evidence/artifact bindings. | "**await rail_emission.attach_rail_terminal_bindings(" | .dagger/src/agents_remember_quality/main.py:576-603 |
-| Inspection hashes real observed artifacts on detached handles; the capture reference is not written. | "async def attach_rail_terminal_bindings("; "async def capture_rail_output(container: Any) -> str:"; "async def observed_artifact_files(" | .dagger/src/agents_remember_quality/rail_emission.py:21-123 |
-| The explicit artifact map omits the three clean-room producer gaps. | "ARTIFACT_FILE_PATHS: dict[str, str] = {"; "def build_artifact_bindings(" | .dagger/src/agents_remember_quality/rail_bindings.py:54-134 |
-| A successful dashboard suite can write its own result JSON. | "writeFileSync(" | dashboard/scripts/write-suite-result.mjs:10-44 |
+| The green record seam propagates certification evidence refusals. | `_record_certification_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:478-507 |
+| Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:256-274; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:342-394 |
+| Selected publications retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:99-114; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:117-139; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:84-96 |
+| All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/main.py:513-584 |
+| Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:26-63; .dagger/src/agents_remember_quality/rail_emission.py:66-100; .dagger/src/agents_remember_quality/rail_emission.py:103-117 |
+| Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:87-91; .dagger/src/agents_remember_quality/rail_bindings.py:115-144 |
+| The report branch persists retained bytes and exports the authoritative payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
+| Required files are checked on the actual publication branch. | `_verify_required_profile_publications` | .dagger/src/agents_remember_quality/engine_helpers.py:128-166 |
+| Execution progress separately retains publication bytes and file handles. | `QualityProgress` | .dagger/src/agents_remember_quality/profile_results.py:19-32 |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Replaced superseded producer-gap claims with actual emission/export/retention owners, preserved useful publication history and named the remaining ordinary lifecycle gaps.
 
 
 

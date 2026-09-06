@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_replay_model_edges.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:23+02:00 |
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
 | lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
 | lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
 | governingOverview | `overview.md` |
@@ -59,7 +59,7 @@ No external Domain Documentation source is configured for this repository-owned 
 | The freeze comparability/population refusals under test. | `ReplayComparabilityReport`; `ReplayPopulation`; `compare_replay_freezes` | mcp/src/agents_remember/certification/replay/freeze.py:74-90; mcp/src/agents_remember/certification/replay/freeze.py:93-116; mcp/src/agents_remember/certification/replay/freeze.py:134-157 |
 | The comparison report digest under test. | `ReplayComparisonReport`; `build_replay_comparison_report` | mcp/src/agents_remember/certification/replay/compare.py:47-69; mcp/src/agents_remember/certification/replay/compare.py:72-96 |
 | The reducer refusal paths under test. | `measure_replay_run`; `_required_gate` | mcp/src/agents_remember/certification/replay/measure.py:53-86; mcp/src/agents_remember/certification/replay/measure.py:243-250 |
-| The explicit unit-regression lane registration. | "mcp/tests/test_replay_model_edges.py" | mcp/tests/test-evidence-lanes.toml:159-159 |
+| The explicit unit-regression lane registration. | "mcp/tests/test_replay_model_edges.py" | mcp/tests/test-evidence-lanes.toml:161-161 |
 
 ## Cross-Repo References
 
@@ -70,6 +70,8 @@ No cross-repository implementation boundary is owned here.
 | Same-repository forcing suite; nothing crosses repositories. | - | - |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

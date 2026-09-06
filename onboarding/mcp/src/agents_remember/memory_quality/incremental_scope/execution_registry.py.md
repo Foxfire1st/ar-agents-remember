@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
 | lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
 | lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
 | governingOverview | `../overview.md` |
@@ -67,7 +67,7 @@ closure; the execution-registry digest makes that true.
 | The single execution policy binds the range-resolution checker to its validator/runtime/owner. | `_EXECUTION_POLICIES` | mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py:11-18 |
 | The registry refuses incomplete or stale populations relative to the checker scope registry. | `checker_execution_registry` | mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py:21-34 |
 | The planner binds the registry version into every affected plan. | `checker_execution_registry_version` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:97; mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:115 |
-| Population-refusal is proven by the focused suites. | `test_r07_execution_registry_refuses_incomplete_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:996-1003 |
+| Population-refusal is proven by the focused suites. | `test_r07_execution_registry_refuses_incomplete_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:1094-1099 |
 
 ## Cross-Repo References
 
@@ -78,6 +78,8 @@ No cross-repository implementation boundary is owned here.
 | The checker name and scope registry come from the same-repository R06 owners. | `range_resolution`; `checker_scope_registry` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64; mcp/src/agents_remember/memory_quality/incremental_scope/registry.py:108-131 |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming references and schema ownership against the reviewed candidate; unchanged source retains its genuine verification stamp.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
 

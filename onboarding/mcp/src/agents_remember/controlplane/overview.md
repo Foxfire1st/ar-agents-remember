@@ -5,10 +5,14 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated            | 2026-08-25T17:21+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../../../overview.md`                         |
+
+## Governing Overview
+
+[MCP overview](../../../overview.md)
 
 ## Purpose
 
@@ -41,6 +45,10 @@ than lifecycle-scoped. These rows are throwaway interaction data, not durable ta
 
 ## Hot Path Summary
 
+Start at `durable_store.py` for guarded JSONL writes, record validation and advisory ownership; `records.py`/`store.py` own gates and `operator_inbox_records.py`/`operator_inbox_store.py` own inbox rows. Lock admission authorizes the checkout target before entering `kernel.file_lock`; atomic replacement uses `kernel.atomic_write`. A host registry uses its own policy over the shared kernel lock, so coordinator isolation remains intact. Signal routing and expectation rows feed the serving-owned notifier; retention never changes authority-read strictness.
+
+## Durable Store And Routing Operating Context
+
 L23 extends the validated store seam for batched operator-inbox transitions used by notifier
 expiry. Batch preparation resolves canonical task/owner addresses first and fails closed when a
 row is missing, mismatched, or structurally unaddressable; it never guesses a replacement runtime
@@ -49,8 +57,7 @@ identity. The same durable-store containment and model-validation rules apply to
 **260731-EFA-L21 — target containment precedes filesystem effects.** The shared durable-store lock,
 append, and rewrite primitives ask the kernel checkout policy to authorize the target before
 creating a parent directory, lock file, temporary file, or durable row. In undeclared linked
-worktree mode only the deterministic `provider-runtime/dev-ar-coordination` subtree is writable;
-trusted MCP/dashboard and explicit test modes retain their declared roots.
+worktree mode permits the deterministic `provider-runtime/dev-ar-coordination` subtree for coordinator rows and enclosure `reports/` for operational artifacts; trusted MCP/dashboard/lifecycle-operation and explicit test execution follow their declared policy.
 
 TES-L6 keeps owner routing sprint-local. `signal_routing.py` resolves architect custody and rebind
 chains inside the row's exact repository+sprint identity, while `seats.py` names command roles
@@ -68,12 +75,12 @@ output is stored and no test asserts a rate. Two figures are carried at several 
 and are quoted here on that authority: attention-dismissals lost **31.45 percent** of appended
 records (`durable_store.py`, `agent_notifier_signals.py`, `test_durable_store_contract.py`,
 `test_observer_projection.py`) and gate **11.50 percent** (`durable_store.py`, `store.py`,
-`test_interaction_retention.py`). `durable_store.py`'s module docstring reports the rest at that one
-site — and it is the text these cards document, so quoting it back is not corroboration:
+`test_interaction_retention.py`). The historical `durable_store.py` module docstring reported the rest at that one
+site — and those retained historical claims are not present in the shortened current contract docstring:
 supervisor-signals 10.50 percent, expectation-rows 10.20 percent, orchestration-nudges 9.20 percent,
 operator-inbox 0.00 percent (the one that already held a lock), 127 of 2000
-`AttentionDismissalStore.dismiss` calls raising, and ten runs per store. That docstring is also the
-only authority for records disappearing whole rather than torn — the property that would explain why
+`AttentionDismissalStore.dismiss` calls raising, and ten runs per store. That historical docstring was also the
+only recorded authority for records disappearing whole rather than torn — the property that would explain why
 no reader-side validation could have caught this while the caller was told the write succeeded.
 
 **Against the current tree the checkable claim is narrower than "all six stores, all scenarios",**
@@ -87,17 +94,14 @@ one base-commit figure a reader can check is not a rate: `HarnessSensitivityTest
 `git archive` of `e52edaf5`, that each of the five unlocked stores loses its single record in
 `forced_lost_update` while operator-inbox loses none.
 
-All six now implement one declared contract, `ar-durable-store/1.0` in `durable_store.py`, and
-every byte of control-plane file I/O routes through it — exactly one `open("a", ...)`, one
-`os.replace`, one temp-path construction and one `import fcntl` remain in the whole package, all
-four in that module.
+All six implement the declared `ar-durable-store/1.0` contract in `durable_store.py`. Guarded log access and single/batched append remain there; mechanical exclusion has one owner in `kernel.file_lock` and temporary-file publication has one owner in `kernel.atomic_write`. The earlier count of raw file operations describes the original consolidation, not the current owner map.
 
 **The lock is the mechanism; ownership is advisory.** Every append and every rewrite of every one
 of the six logs takes that log's lock, in every process, whether or not that process declared
 anything. There is no flag that turns it off and no store exempt from it; the `serialized` opt-out
 an earlier draft carried was deleted. Ownership is expressed two ways, neither of them a durability
 guarantee: `StoreOwnership.check_declared_writer` raises but only inside a process that called
-`declare_process_role` (the MCP server and the dashboard daemon, nowhere else), and
+`declare_process_role` (MCP, dashboard and the detached lifecycle-operation writer), and
 `is_compaction_owner` is a question that never raises. Where ownership does real work it does it
 structurally, by moving code rather than by checking at runtime. `require_lock_held` is the one
 check that raises unconditionally, from inside `rewrite_lines`, so no store can rewrite a log it
@@ -108,7 +112,7 @@ thread's own lock rather than about a process-wide declaration.
 single-writer stores (attention-dismissals, supervisor-signals) unlocked on the strength of being
 single-writer, and the sources put 31.45 percent loss on attention-dismissals doing exactly
 that. `AttentionDismissalStore.dismiss` is a whole-file read-modify-write reached from the
-dashboard HTTP dismiss route at `serving/app.py:1164`, so two concurrent dismisses lose each other
+dashboard HTTP dismiss route through the serving route, so two concurrent dismisses lose each other
 with no compactor involved and no second writer required. The store that looked safest was the
 worst.
 
@@ -143,7 +147,7 @@ readers skip it. Verified on all six record types: minor `1.99` accepted, major 
 `worktrees/worktree_contract.py` imports the same constant and predicate, so the tree has one
 version policy.
 
-**A per-log process-wide `RLock`** (`thread_mutex_for`) is taken before the flock, always in that
+**A per-log process-wide `RLock`** (`kernel.file_lock.thread_mutex_for`) is taken before the flock, always in that
 order. Stated carefully: `flock` **does** already serialise threads within one process on POSIX,
 because the lock lives on the open file description and `exclusive_access` opens a fresh one per
 non-reentrant acquisition. The mutex is therefore **not** fixing a reproducible loss. What it
@@ -354,7 +358,7 @@ signal, while targetless provider-down dismissals are not accepted.
 | `signal_routing.py` | One-hop owner routing from task containment and role; decision items resolve the sprint architect, ordinary rows rebind to current occupants, and ambiguity fails closed. Spawn ancestry is excluded from resolution. |
 | `escalation_ladder.py` | (260707-HFX2-L4 + L13/HFX3 correction; DORMANT since 260713-TES-L4, N3) `rung_due`/`next_step`/`seat_is_suspect`: the pure tier-3 ladder walker, configured dwell plus redundant five-minute later-rung floor, scoped architect terminal custody via leaf-key pass-through (R13), and dead/stalled-seat respawn-candidate detection. The sweep no longer drives it; L5 deletes the module. |
 | `orphan_policy.py` | (260707-HFX2-L4, R3) `find_orphaned_workers`: a pure catalog read for a dead/respawned manager's still-running worker seats -- detection/surfacing only, no re-parent action. |
-| `durable_store.py` | (260731-EFA-L5) `ar-durable-store/1.0`: the one contract all six JSONL stores implement, and the only place in the package that appends, rewrites, builds a temp path or imports `fcntl`. Owns `DurableRecord` (the shared record base with `extra="forbid"` and a validated `schemaVersion`), `StoreOwnership` plus the six per-store ownership constants, `declare_process_role`, the `exclusive_access` / `thread_mutex_for` / `require_lock_held` locking primitives, the `_verify_lock_capability` filesystem probe, and `append_line` / `rewrite_lines`. |
+| `durable_store.py` | `ar-durable-store/1.0`: record/schema validation, the six store ownership declarations, process-role view, target-guarded access, durable appends and held-lock atomic rewrite. Kernel owners provide shared file exclusion and atomic temp publication. |
 | `__init__.py` | Package export surface (gate records/store/enforcement + operator inbox records/store), plus the durable-store contract surface: constants, error types, `DurableRecord`, `StoreOwnership` and the process-role pair. The locking and rewrite primitives and the per-store ownership constants are deliberately not re-exported. |
 
 The structural `gate_*` MCP tools live in `mcp/tools/gates.py`; internal exact correlations are
@@ -407,9 +411,7 @@ operator-facing inbox administration remains a separate internal surface.
   not read either as a guarantee, and do not remove a lock because an owner is named.
 - **Rewrites never unlink.** An empty kept set is written as an empty file, so a concurrent
   appender cannot write into an inode with no remaining links.
-- **All file I/O for this route lives in `durable_store.py`.** Adding a second `open("a", ...)`,
-  `os.replace`, temp-path construction or `fcntl` import anywhere else in the package is the
-  regression this leaf exists to prevent.
+- **Store writes compose through `durable_store.py`.** Keep checkout authorization before lock side effects, use the shared `kernel.file_lock` mechanics, and publish replacements through `kernel.atomic_write`; duplicating those owners would split the protection contract.
 - **The read-policy split is a decision, not an inconsistency**, and every rewrite of an
   authority-bearing log reads strictly. Pointing a strict store's rewrite at a tolerant reader
   turns a torn line into a silently deleted record.
@@ -427,7 +429,8 @@ operator-facing inbox administration remains a separate internal surface.
 | The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:70-70 |
 | The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
 | The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
-| The `ar-durable-store/1.0` contract every JSONL store in this route implements, and the only module in the package that appends, rewrites, builds a temp path or imports `fcntl`. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
+| Guarded durable-store composition preserves coordinator containment and held-lock rewrite. | `exclusive_access`; `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:363-381; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
+| Shared kernel exclusion is independent of caller authorization. | `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
 | Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/runtime/startup.py:41-44; mcp/src/agents_remember/cli/dashboard.py:64-94; mcp/src/agents_remember/cli/dashboard.py:174-209 |
 | Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:92-122 |
 | The projection tick reads folded gates and pending expectation rows without rewriting them. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197 |
@@ -557,6 +560,11 @@ this selector instead of re-deriving generation choice.
 address cannot abort unrelated rows.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:28+02:00 — Reconciled durable-store route ownership after shared kernel lock extraction, preserved coordinator target isolation and historical incident context, and separated concise hot-path routing from the retained operating detail.
+
 
 - 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 shared incumbent/heir selection and per-finding routing
   containment onto the IAS control-plane overview. Verification remains closeout-owned.
