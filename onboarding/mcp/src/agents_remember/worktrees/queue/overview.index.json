@@ -124,6 +124,7 @@
       "semantic-topology/v2",
       "taskIntent",
       "QueueBinding",
+      "prepare_staged_code",
       "closeout_queue_state.py",
       "1d446724d099517f6f52d596b47827ae2391a2a4",
       "4241908c",
@@ -135,8 +136,7 @@
       "doc_type",
       "lastUpdated",
       "T07",
-      "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate"
+      "lastVerifiedCommitHash"
     ]
   },
   "fallback": {

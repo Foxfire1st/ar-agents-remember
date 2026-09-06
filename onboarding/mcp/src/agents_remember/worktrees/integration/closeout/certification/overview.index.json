@@ -74,7 +74,7 @@
       "CAS",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/",
       "route-local-overview",
-      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "/overview.md",
       "PreparedCloseoutContinuation",
       "prepare_closeout_certification",
@@ -89,7 +89,7 @@
       "build_default_worktree_services",
       "_refresh_selected_recovery",
       "245057ab16e19afdaabd5c188c9576b22e0c0870",
-      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py",
@@ -103,7 +103,7 @@
       "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T16",
+      "T22",
       "governingOverview"
     ]
   },

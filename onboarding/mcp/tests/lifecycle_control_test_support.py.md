@@ -22,7 +22,7 @@ Provides public lifecycle-control helpers for tests that own a current generatio
 
 ### Logic
 
-Builders preserve canonical generation, contract, worker, and control identity so tests do not hand-author partial journal state.
+Builders preserve canonical generation, contract, worker and control identity. Existing door scheduling provenance supplies the judgment ID when present; the explicit standalone case detaches only the asserted singleton fixture sprint through the task store before returning master-scoped caller authority. This support module has no collected tests and does not itself establish coverage.
 
 Since 260831-CCR (commit `99dc249b`) the completed-disposition authority helper
 `publish_completed_disposition_task_authority` (line 39) builds the leaf through the real
@@ -60,12 +60,12 @@ The configured Domain Documentation registry is empty. No external documentation
 
 ## Repo-Internal References
 
-The test file is direct evidence for the production boundary named above.
+The helper source establishes fixture construction; retained consumer assertions determine actual protection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected scenarios and assertions implement this test unit's forcing proof. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
-| Completed-disposition task authority is built through the store and a fixed-now route review. | `publish_completed_disposition_task_authority`; `build_route_review` | mcp/tests/lifecycle_control_test_support.py:39-103; mcp/tests/lifecycle_control_test_support.py:87-93 |
+| The fixed fixture judgment is used only when no selected door supplies scheduling provenance. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
+| Completed-disposition task authority is built through the store and a fixed-now route review. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:39-198 |
 | Completed task authority derives the typed candidate reference inside the store-backed publication. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:39-198 |
 
 ## Cross-Repo References
@@ -84,6 +84,8 @@ through the production owner so lifecycle-control tests operate on current, inte
 Part of the landed L25 candidate `99dc249b`.
 
 ## Update History
+
+- 2026-09-06T23:08:28+00:00 — Reconciled retained source behavior and fixture limitations for IAS recovery; prior verification pins retained.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the completed-disposition helper now builds the leaf through the task store and stamps a

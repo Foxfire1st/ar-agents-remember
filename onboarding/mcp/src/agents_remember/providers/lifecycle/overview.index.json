@@ -140,7 +140,7 @@
       "--from-settings",
       "require_lifecycle_settings_path",
       "providers/current_state.py",
-      "_EXPORT_MODULES"
+      "watchers_run"
     ]
   },
   "fallback": {

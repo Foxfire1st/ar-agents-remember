@@ -115,12 +115,12 @@
       "selected",
       "mcp/src/agents_remember/worktrees/integration/closeout/preparation",
       "route-local-overview",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "/overview.md",
       "select_preparation_intent",
-      "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py",
       "resume_prepared_closeout",
       "245057ab16e19afdaabd5c188c9576b22e0c0870",
-      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
+      "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py",
       "sourceRoute",
       "agents_remember",
       "doc_type",
@@ -128,11 +128,11 @@
       "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
+      "T22",
       "governingOverview",
       "init__",
       "CAS",
-      "preparation_selection",
-      "IAS"
+      "preparation_selection"
     ]
   },
   "fallback": {

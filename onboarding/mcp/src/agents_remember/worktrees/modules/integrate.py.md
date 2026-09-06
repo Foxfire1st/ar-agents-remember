@@ -169,6 +169,11 @@ Integration recovery now rejects external-memory commit evidence on internal-mem
 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
+
+## Current Landed Composition
+
+The integration quality call passes `args.integration_certification_owner` to `run_integration_quality_gate`; journal selection/reuse authority travels through this typed owner rather than an injected ad-hoc gate runner. The configured repository profile is still forwarded.
+
 ## Update History
 
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated wire state vocabulary from the typed amendment record and helper. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.

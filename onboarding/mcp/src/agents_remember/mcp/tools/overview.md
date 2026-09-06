@@ -81,6 +81,8 @@ shape on the application-facing side moved.
 
 ## Hot Path Summary
 
+The worktree closeout payload forwards typed corrective catalog dispositions unchanged. Validation and recovery stay in the application/lifecycle owners, not this transport layer.
+
 Payload builders now cover task-addressed operation controls, enclosure adoption, legacy inspect/migrate/archive, and fail-closed cleanup/abandon responses without private ids.
 
 ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request

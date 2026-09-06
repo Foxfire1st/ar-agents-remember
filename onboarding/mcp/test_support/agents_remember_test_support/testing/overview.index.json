@@ -99,7 +99,7 @@
     "testing"
   ],
   "hotPath": {
-    "summary": "`dependency_facts.py` is the declaration-free import/plugin/consumer fact graph. `lane_manifest.py` binds every test file and override to one explicit category. `evidence_lifecycle.py` validates every governed durable artifact/support file and its real contract, lifetime, and observed consumers; `evidence_governance.py` owns the threshold-aware discovery rule. `candidate_snapshot.py` and `evidence_provenance.py` bind non-accepting artifacts to the exact staged candidate and machine. `retry_selection.py` rebuilds current collection/import coverage while allowing only dependency-owned affecte...",
+    "summary": "`dependency_facts.py` and `consumer_inventory.py` derive import/plugin/consumer ownership from current source. `lane_manifest.py` and `evidence_lanes.py` validate the explicitly declared evidence population. `evidence_lifecycle.py` validates catalog ownership, lifetime, real contract nodes and observed consumers; `evidence_governance.py` owns artifact discovery. `candidate_snapshot.py` and `evidence_provenance.py` bind generated artifacts to candidate and machine facts. `retry_selection.py` observes canonical collection and admits only the explicit affected module population. `causal_depend...",
     "candidateHints": [
       "mcp/test_support/agents_remember_test_support/testing",
       "mcp/test_support/agents_remember_test_support/testing/__init__.py",
@@ -164,13 +164,13 @@
       "random_order",
       "retry_selection.py",
       "retry_selection",
+      "causal_depend",
       "mcp/test_support/agents_remember_test_support/testing",
       "route-local-overview",
       "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
       "/overview.md",
-      "route_measurement.py",
-      "causal_route_evidence.py",
-      "pytest_plugins",
+      "prepare_certifying_pytest_bootstrap",
+      "pytest_collection_modifyitems",
       "pytest SKIPPED"
     ]
   },

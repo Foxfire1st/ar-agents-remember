@@ -22,7 +22,7 @@ Same-generation journal recovery and direct-landing execution ownership.
 
 ### Logic
 
-The public surface is `recover_direct_landing`, `direct_recovery_refusal`, `reconcile_control_mutations`, `requeued_same_generation`. Task-addressed retry, recover, cancel, revise, integrate, retire, and supersede decisions are derived from immutable journal state plus exact live Git/process evidence. Retry preserves accepted input; revise composes proven-safe cancellation with a write-ahead successor; ambiguity routes to same-generation recovery.
+Direct recovery enters through `recover_direct_landing_under_authority`; same-generation requeue is supplied by `generation.resume.requeued_same_generation`. Task-addressed retry, recover, cancel, revise, integrate, retire, and supersede decisions are derived from immutable journal state plus exact live Git/process evidence. Retry preserves accepted input; revise composes proven-safe cancellation with a write-ahead successor; ambiguity routes to same-generation recovery.
 
 `recover_direct_landing_under_authority` delegates the pre-attempt recoverability guard, typed
 post-failure translation, and strict-current-record selection to named helpers. Only the

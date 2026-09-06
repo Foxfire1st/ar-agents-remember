@@ -56,7 +56,7 @@ No source-local TODO is asserted here.
 
 ## Update History
 
-- 2026-09-07 — Reconciled the package marker’s landed-source status; retained prior verification pins.
+- 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the package marker’s landed-source status; retained prior verification pins."
 
 
 ### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card

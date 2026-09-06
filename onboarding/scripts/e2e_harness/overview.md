@@ -24,7 +24,7 @@ from fresh state.
 Start with `run.py` for candidate/run ownership, `scenario.py` for checkpoints L5-C01 through
 L5-C08, `codex_driver.py` for the real Codex boundary, and `responses_server.py` for deterministic
 tool discovery and calls. `dispatch_sentinels.py` owns the controlled malformed-advertisement
-proofs. `selection.py` owns when this expensive proof applies.
+proofs. `selection.py` validates the profile-owned applicability decision before a replication starts.
 
 ## What Belongs Here
 
@@ -51,12 +51,12 @@ selection.
 
 ## Operating Model
 
-1. Dagger invokes `run.py` with an exact diff base and report directory.
+1. Dagger invokes `run.py` with an exact diff base, report directory and admitted source-selection artifact.
 2. `run.py` proves Dagger admission before parsing arguments, creating reports, or touching tmux.
 Candidate hashing uses a temporary index outside the repository and refuses an in-repository
 scratch location; inspection cannot add its own index file to the candidate being measured.
 
-3. Targeted mode intersects changed paths with the declared dependency surface; full mode always runs.
+3. The repository profile owns targeted dependency selection and full-mode applicability. The runner independently verifies its admitted candidate/base/mode selection and refuses a not-applicable decision; zero-start teardown proof belongs to the profile adapter.
 4. Each of two fresh replications creates isolated repositories, MCP/Codex configuration, dashboard,
    tmux server, and deterministic Responses endpoint. Codex forwards the fixture `TMUX_TMPDIR` to
    its MCP child so every dispatched role occupies that same server.

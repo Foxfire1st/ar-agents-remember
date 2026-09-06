@@ -65,7 +65,7 @@
     "withdrawals"
   ],
   "hotPath": {
-    "summary": "Start with `__init__.py` (the curated `__all__` export surface) and `primitives.py` (`WireModel`, opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts; `status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py` owns `ConversationItem` and the sub-agent grammar. The migration-only zero-drift snapshot is retired: stable architecture requirements live in `mcp/tests/test_conversation_model_architecture.py`, while serialization and contract behavior stay with their owning focused suites. Do not recreate a task/date sna...",
+    "summary": "Start with `__init__.py` (the curated `__all__` export surface) and `primitives.py` (`WireModel`, opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts; `status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py` owns `ConversationItem` and the sub-agent grammar. The migration-only zero-drift snapshot is retired. The later architecture and contract suites were also retired in the d3610903 reduction; no current test enforcement is claimed here. The source owners listed below remain the type and serialization authorit...",
     "candidateHints": [
       "mcp/src/agents_remember/models/conversations",
       "mcp/src/agents_remember/models/conversations/__init__.py",
@@ -124,17 +124,17 @@
       "__all__",
       "WireModel",
       "ConversationItem",
-      "mcp/tests/test_conversation_model_architecture.py",
       "init__",
       "all__",
-      "test_conversation_model_architecture",
+      "d3610903",
       "route-local-overview",
       "mcp/src/agents_remember/models/conversations/",
       "mcp/src/agents_remember/models/conversations/overview.md",
       "models/overview.md",
       "60e429d17e9fcbca3ab1c02563afcaa5761b8c5a",
       "serving/conversation/models.py",
-      "_models_*"
+      "_models_*",
+      "operation_fingerprint"
     ]
   },
   "fallback": {

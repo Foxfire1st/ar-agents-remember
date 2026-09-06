@@ -29,7 +29,7 @@ still without naming any repository command.
 ### Logic
 
 `AdmittedRepositoryProfileExecution` is the frozen bundle consumed by the clean executor.
-`admit_repository_profile_execution(admitted, *, purpose, mode, candidate_identity)` performs
+`admit_repository_profile_execution(admitted, *, purpose, mode, candidate_identity, source_selection=None)` performs
 the whole selection in one call: `resolve_repository_profile_selection` picks the sole
 purpose/mode selection, `compile_repository_profile_plan` (re)validates the canonical graph and
 compiles the digest-bound plan for the candidate, executor decoders and adapters are indexed by
@@ -58,6 +58,14 @@ ambient executors or render commands.
 ### Todos
 
 No task-independent follow-up was identified in this profile-selection adapter.
+
+### Current source-selection contract
+
+Execution admission accepts optional CandidateSourceSelection and passes it unchanged into compile_repository_profile_plan, binding the selected source applicability into the resulting exact candidate plan. Executor and decoder lookup remain profile-owned.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `admit_repository_profile_execution` carries the current contract described above. | "def admit_repository_profile_execution" | mcp/src/agents_remember/certification/repository_profiles/execution.py:41-81 |
 
 ## Docs References
 
@@ -104,6 +112,9 @@ No cross-repository implementation boundary is owned by this profile-selection a
 
 
 ## Update History
+
+- 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
+
 
 - 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
 

@@ -54,7 +54,7 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private. A tool body usually packs flat MCP arguments into the parameter objects the payload builder and its application entry point take, then returns the builder's result unchanged. Memory quality instead dispatches its already validated request DTO by mode and returns the matching builder result. Packing is the whole content \u2014 `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`, `CloseoutCommitMessages`, `TaskIdentity`/`Ta...",
+    "summary": "The closeout registrar accepts typed corrective catalog dispositions and forwards them to the existing application owner; registration creates no alternative approval or retry authority. Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private. A tool body usually packs flat MCP arguments into the parameter objects the payload builder and its application entry point take, then returns the builder's result unchanged. Memory quality instead dispatches its already validated request DT...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/registration",
       "mcp/src/agents_remember/mcp/registration/__init__.py",
@@ -98,14 +98,7 @@
       "tasks",
       "worktrees.py",
       "worktrees",
-      "TaskRef",
-      "SpawnSeat",
-      "GateVerdict",
-      "CarryoverSelection",
-      "CloseoutCommitMessages",
-      "TaskIdentity",
       "MCP",
-      "DTO",
       "mcp/src/agents_remember/mcp/registration",
       "route-local-overview",
       "ea35964985f30080488270e71ac81657ac40682b",
@@ -119,7 +112,14 @@
       "memory_quality_check(request=",
       "register_<family>_tools(server, config) -> None",
       "mcp/tools/",
-      "pyproject.toml"
+      "pyproject.toml",
+      "dispatch_agent(task_document_ref, role, brief",
+      "PLR0913",
+      "noqa",
+      "create_server",
+      "ToolRegistrar",
+      "ping",
+      "server_info"
     ]
   },
   "fallback": {

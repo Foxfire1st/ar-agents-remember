@@ -16,66 +16,63 @@
 
 ## What This Area Is
 
-Repository-owned test and evidence infrastructure: Dagger admission, hermetic pytest setup,
-explicit evidence lanes, lifecycle governance, source-derived dependency facts, cadence execution,
-retry/causal forcing routes, and representative route measurement.
+Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and
+certifying startup are distinct: `pytest_bootstrap.py` owns deterministic ordering, isolated caches
+and restoration of owned mutable state, while `certifying_bootstrap.py` requires Dagger admission
+before preparing a certifying candidate process. Ordinary bootstrap does not grant certification or
+external-service capability.
 
 ## Hot Path Summary
 
-`dependency_facts.py` is the declaration-free import/plugin/consumer fact graph.
-`lane_manifest.py` binds every test file and override to one explicit category.
-`evidence_lifecycle.py` validates every governed durable artifact/support file and its real
-contract, lifetime, and observed consumers; `evidence_governance.py` owns the threshold-aware
-discovery rule. `candidate_snapshot.py` and `evidence_provenance.py` bind non-accepting artifacts to
-the exact staged candidate and machine. `retry_selection.py` rebuilds current collection/import
-coverage while allowing only dependency-owned affected test modules to execute during a delta
-retry. `route_measurement.py` compares exact pure, integration, and durability populations under
-serial and repository-default xdist. `causal_failures.py` owns the exact-node suppression boundary
-and distinct observed async/process/multiprocessing/subprocess/socket/timeout/environment families;
-`causal_route_evidence.py` measures the three-symptom/two-independent repair protocol.
+`dependency_facts.py` and `consumer_inventory.py` derive import/plugin/consumer ownership from
+current source. `lane_manifest.py` and `evidence_lanes.py` validate the explicitly declared evidence
+population. `evidence_lifecycle.py` validates catalog ownership, lifetime, real contract nodes and
+observed consumers; `evidence_governance.py` owns artifact discovery.
+
+`candidate_snapshot.py` and `evidence_provenance.py` bind generated artifacts to candidate and
+machine facts. `retry_selection.py` observes canonical collection and admits only the explicit
+affected module population. `causal_dependency.py` and `causal_failures.py` retain the exact-node
+causal evidence boundary. `cadence_runner.py` and `pytest_phase_reporter.py` own their retained
+execution/reporting adapters. The former route-measurement and causal-route matrix modules are
+retired; their old measured populations are historical evidence, not current route obligations.
 
 ## Operating Model
 
-Certifying pytest admits the Dagger capability before collection. Python has no supported host
-pytest route: Candidate A was retired after its exact-candidate retention falsifier failed, and no
-compatibility classifier or runner remains. Scheduled/provider/migration cadence and
-retry/causal/measurement routes run only inside Dagger and write non-accepting reports. A retry
-delta collects the canonical population so unattributed import coverage is current, then deselects
-every body outside its explicit affected-module set. The eight evidence categories are explicit;
-no unmarked item defaults to unit.
+Use the ordinary bootstrap for its declared local pytest responsibilities. Certifying entry uses
+`prepare_certifying_pytest_bootstrap`, which proves the Dagger capability before candidate setup.
+Neither route's mere execution supplies acceptance. The retained lane, lifecycle and dependency
+validators describe current source and configured evidence; they do not require reconstruction of
+removed test matrices or older source/test censuses.
 
 ## Local Invariants And Traps
 
-- Every current test file has exactly one explicit lane; missing, stale, unknown, or conflicting
-  membership refuses collection.
-- Recursive literal `pytest_plugins` edges are source facts in every Python module; dynamic
-  declarations make ownership incomplete.
-- Candidate-A host execution, manifest, classifier, and diagnostic evidence type are absent; the
-  seven unique product assertions remain ordinary certifying regressions.
-- Causal suppression skips only exact nodes with an independently proved contract chain.
-- Retry selection requires each explicit affected path to own an executable item or have a passing
-  Pytest module-collection report. This admits observed zero-body shared-definition modules while
-  absent/uncollected paths still fail; neither case converts into broad execution.
-- Controlled Python mutations used by retry-route evidence preserve Ruff-valid module spacing, so
-  a matrix harness formatting defect cannot masquerade as retry invalidation.
-- Plan-only retry scenarios prove non-execution through the wrapper's explicit `pytest SKIPPED`
-  result; empty output is not accepted as evidence that pytest stayed closed.
-- The product retry scenario uses the designated low-fan-out product owner. A central primitive
-  would correctly select most of the suite and would no longer be a targeted product-consumer proof.
-- Route evidence never becomes certifying merely because it ran inside Dagger.
-- Every cadence/retry/causal/measurement artifact carries candidate and machine provenance; route
-  measurement also records exact commands, population digests, phases, repeated distributions,
-  and content-addressed raw logs.
+- Ordinary pytest setup has no certifying or external-service authority. Dagger admission remains
+  mandatory at the certifying composition boundary.
+- Owned mutable module state is restored after each test; a leak is reported rather than silently
+  accepted. Seeded ordering uses a local RNG and does not perturb the process-global RNG.
+- Literal plugin/import relationships are source facts. Unknown dynamic ownership cannot be
+  promoted to an exact dependency claim.
+- Explicit lane membership and discovered evidence catalog coverage remain exact; missing,
+  stale or conflicting declarations are findings.
+- Retry selection accepts only explicit affected modules whose collection was observed. It never
+  expands execution silently to repair missing ownership.
+- Causal suppression requires exact independently supported nodes. Reports and candidate/machine
+  provenance do not become certification merely because the tool ran in Dagger.
+- Coverage is diagnostic and retired matrix populations are not restoration requirements. Full
+  suites and aggregate review belong to the master completion route.
 
 ## File-Level Onboarding Map
 
-All Python files in this route have one adjacent sidecar. The generated index is refreshed from the
-current source tree rather than copied from the retired `mcp/src` route.
+The generated route index inventories the surviving source owners and their paired cards.
+It must be rebuilt from current source, never copied from a retired route census.
 
-## Docs And Boundary References
+## Source References
 
-See `docs/design/python-evidence-system.md` and `docs/design/python-test-evidence.md`. Candidate
-measurements and rollback evidence remain task reports, not timeless onboarding claims.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Ordinary bootstrap owns local ordering/cache/state isolation without certification. | "Reusable pytest bootstrap with no certifying or external-service capability." | mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:1-1 |
+| Certifying setup admits Dagger before candidate preparation. | `prepare_certifying_pytest_bootstrap` | mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:27-39 |
+| Retry execution retains exact explicit affected modules. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:63-79 |
 
 ## Update History
 

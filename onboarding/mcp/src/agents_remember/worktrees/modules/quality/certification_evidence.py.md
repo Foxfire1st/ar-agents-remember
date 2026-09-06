@@ -22,7 +22,7 @@ Owns the exact immutable report-generation bindings selected by the existing gat
 
 ### Logic
 
-`read_gate_records` opens only `certification-records/gates.json`, enforces an 8 MiB byte bound and the exact journal schema, and treats an absent file as no selection. A valid journal with an empty gate list also returns an empty tuple. `validate_gate_records` allows at most five rows, rejects malformed/duplicate gate identities, and requires valid certificate/result digests and a complete strict publication snapshot for certificate rows.
+`read_gate_records` opens only `certification-records/gates.json`, enforces an 8 MiB byte bound and the exact journal schema, and treats an absent file as no selection. A valid journal with an empty gate list also returns an empty tuple. `validate_gate_records` allows at most five rows, rejects malformed/duplicate gate identities, and requires valid result/publication identities for both certificate and terminal rows.
 
 `verify_selected_publications` loads the selected canonical objects and cross-binds row gate, result digest, candidate, registry, gate plan, admitted profile and selection. A syntactically valid publication from another authority is refused even if report bytes happen to match. `protected_certificate_generations` returns only those selected generation ids and requires their real retained directories to exist before the publisher can prune.
 
@@ -74,6 +74,10 @@ No cross-repository implementation protocol is defined here.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No cross-repository evidence is required for these local claims. | N/A | N/A |
+
+## Current Landed Composition
+
+Non-certifying terminal rows bind their result to an exact stored `FrozenCertificationRun`. The verifier compares registry, certification/gate plan, candidate, profile altitude, repository plan and publication identity before retaining the terminal generation. A terminal row cannot substitute for a certificate; its frozen-run reference is type-checked by the canonical object store.
 
 ## Update History
 

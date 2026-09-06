@@ -51,6 +51,16 @@ names, declared membership, and list-placeholder token atomicity.
 
 None recorded.
 
+### Current source-selection contract
+
+Profile validation rejects duplicate generated-input identities and requires each generated input checkRail to identify a declared Gate-1 rail. It delegates environment reconstruction and source applicability to their canonical validators. Executor argument uniqueness includes retainedReportsArgument when declared, with no diff-base argument. Rail command validation permits only the source placeholders admitted for that rail’s exact applicability; the extracted validation_primitives owner supplies shared gate-set, duplicate and finding helpers.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `validate_repository_profile` carries the current contract described above. | "def validate_repository_profile" | mcp/src/agents_remember/certification/repository_profiles/validation.py:69-156 |
+| `_validate_executor` carries the current contract described above. | "def _validate_executor" | mcp/src/agents_remember/certification/repository_profiles/validation.py:245-276 |
+| `_validate_rail_runtime` carries the current contract described above. | "def _validate_rail_runtime" | mcp/src/agents_remember/certification/repository_profiles/validation.py:528-597 |
+
 ## Docs References
 
 No configured Domain Documentation source applies; validation is repository-neutral R22 behavior.
@@ -62,7 +72,7 @@ No configured Domain Documentation source applies; validation is repository-neut
 | The aggregate validator returns every independent finding. | `validate_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/validation.py:57-126 |
 | Selector duplicates and identity placeholders refuse before execution. | `_validate_selector`; `_validate_selector_command` | mcp/src/agents_remember/certification/repository_profiles/validation.py:663-672; mcp/src/agents_remember/certification/repository_profiles/validation.py:675-706 |
 | Command placeholders must be complete, declared, and list-atomic. | `_validate_command_placeholders` | mcp/src/agents_remember/certification/repository_profiles/validation.py:709-750 |
-| Rail validation checks the declared rail contract and ownership constraints. | "def _validate_rail" | mcp/src/agents_remember/certification/repository_profiles/validation.py:491-510 |
+| Rail validation checks the declared rail contract and ownership constraints. | "def _validate_rail(" | mcp/src/agents_remember/certification/repository_profiles/validation.py:491-510 |
 | Artifact dependencies must name valid producing rails and artifacts. | "def _validate_artifact_dependencies" | mcp/src/agents_remember/certification/repository_profiles/validation.py:621-662 |
 | Gate semantic validation checks the applicable gate contract. | "def _validate_gate_semantics" | mcp/src/agents_remember/certification/repository_profiles/validation.py:665-683 |
 
@@ -71,6 +81,9 @@ No configured Domain Documentation source applies; validation is repository-neut
 None; this is the repository-neutral validation authority.
 
 ## Update History
+
+- 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card and recorded the
