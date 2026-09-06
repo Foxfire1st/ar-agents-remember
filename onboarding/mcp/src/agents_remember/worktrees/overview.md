@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T13:51:59+00:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../../../overview.md` |
@@ -39,7 +39,9 @@ write-free, and no retry, fallback reader, compatibility route, or second lock n
 
 ## L30 Quality Publication Boundary
 
-The child `modules/quality` route now retains actual rail evidence and immutable selected certificate generations. Its host Dagger registry uses the neutral kernel file lock while checkout durable stores preserve their coordination guard. Public lifecycle, sync, activation, queue and integration ownership in this route is unchanged; the new publication checks do not establish the later R05/R16/R07/R08 production composition. See [the modules overview](modules/overview.md) for the concrete read/export/prune owners.
+The child `modules/quality` route retains actual rail evidence and immutable selected certificate generations. Its host Dagger registry uses the neutral kernel file lock while checkout durable stores preserve their coordination guard. L33 composes journal-selected admission, original certificate readback and suffix execution through the existing lifecycle owners. Gate-5 observation/execution and finalization remain explicit continuation capabilities; the default application bundle leaves that continuation unbound. See [the modules overview](modules/overview.md) for read/export/prune owners and [the integration overview](integration/overview.md) for operation-selected execution.
+
+`services.py` is the downward service boundary for provider, citation and memory work. Its canonical task-observation method and separate memory/finalization continuation avoid imports from worktrees into higher-level memory implementations. Read [the service card](services.py.md) for explicit binding and absent-capability behavior.
 
 ## What Belongs Here
 
@@ -51,6 +53,7 @@ The child `modules/quality` route now retains actual rail evidence and immutable
 | `modules/` | public lifecycle command composition |
 | `queue/` | disposable waiting-candidate scheduling projection |
 | `integration/` | protected branch integration and lifecycle journals |
+| `services.py` | explicit provider, memory, citation and certification-continuation ports |
 
 ## What Does Not Belong Here
 
@@ -149,6 +152,7 @@ The child `modules/quality` route now retains actual rail evidence and immutable
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:108-125; mcp/src/agents_remember/worktrees/services.py:128-138; mcp/src/agents_remember/worktrees/services.py:142-147 |
 | The activation record is a strict source-pair fingerprinted snapshot with explicit selection states. | `AtomicSeriesSourceRef`; `AtomicSeriesSourcePair`; `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-30; mcp/src/agents_remember/models/structural/atomic_series_activation.py:33-39; mcp/src/agents_remember/models/structural/atomic_series_activation.py:42-54; mcp/src/agents_remember/models/structural/atomic_series_activation.py:57-72 |
 | Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:105-127; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:170-187 |
 | Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:82-100 |
@@ -208,14 +212,17 @@ content-digested direct evidence dependencies. Direct landing refuses absent/sta
 contract publication rejects a door without current intent. Task publication classifies
 semantic versus observational edits before deriving affected queue scopes.
 `services.CertificationMemoryRailsPort` supplies the memory-domain registry contribution
-without importing memory quality upward. The quality child route freezes R11/R22/R21
-admission, but ordinary R05 finalization, R16 telemetry, and R07/R08 final memory execution
-remain unwired at this candidate. Child overviews retain the precise current boundaries.
+without importing memory quality upward. The quality and integration routes now compose frozen
+admission, journal-selected original certificates and R21 suffix execution.
+`CertificationContinuationPort` separates current memory observation, Gate-5 execution and
+finalization; it does not install those production owners. The default application bundle leaves
+that continuation unbound, so an incomplete downstream composition refuses instead of completing.
+Child overviews retain the precise execution and publication boundaries.
 
 ## Needs Verification
 
-- This overview is source-reviewed at the recorded frozen commit. Aggregate execution,
-  final provenance publication, and acceptance remain separate closeout work.
+- Verification stamps record source review. Aggregate execution, final provenance publication,
+  and acceptance require their separate closeout evidence.
 - [CURATOR] Generated route indexes are refreshed from explicit frozen code/onboarding roots in
   this final pass; they are never hand-edited.
 
@@ -252,6 +259,9 @@ direct-child JSON ref, repository/directory, child id, and stem. Stem-only or sp
 with typed status/detail; no worktree-local fallback remains.
 
 ## Update History
+
+- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Routed canonical task observation and selected certification through the existing service/integration owners; distinguished implemented admission/execution from absent default continuation. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

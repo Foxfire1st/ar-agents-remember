@@ -8,7 +8,13 @@
   "sourceScope": [
     "mcp/src/agents_remember/worktrees/integration/closeout/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/worktrees/integration/closeout/certification",
+      "overview": "mcp/src/agents_remember/worktrees/integration/closeout/certification/overview.md",
+      "index": "mcp/src/agents_remember/worktrees/integration/closeout/certification/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/worktrees/integration/closeout/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py",
@@ -31,9 +37,9 @@
     "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 19,
+    "sourceFilesInScope": 26,
     "fileSidecars": 19,
-    "childRoutes": 0
+    "childRoutes": 1
   },
   "routingTerms": [
     "admission",
@@ -41,6 +47,7 @@
     "agents_remember",
     "candidate",
     "census",
+    "certification",
     "closeout",
     "code",
     "coherence",
@@ -95,6 +102,7 @@
     "summary": "`future_code_candidate.py` derives the exact isolated-index pre-commit route identity; `curator_coherence.py` captures and validates the exact code/memory/task/attestation candidate; `curator_coherence_publication.py` publishes the sole live content-addressed authority; `curator_coherence_judgments.py` binds agent-owned decisions to evidence bytes; and `curator_coherence_render.py` produces a one-way human projection. `door_source.py` reconstructs the exact waiting source; `ledger_recovery.py` advances code and memory proof after partial closeout without making the disposable queue own comm...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/integration/closeout",
+      "mcp/src/agents_remember/worktrees/integration/closeout/certification",
       "mcp/src/agents_remember/worktrees/integration/closeout/__init__.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_judgments.py",
@@ -154,16 +162,16 @@
       "task_intent_identity",
       "task_intent_legacy_census.py",
       "task_intent_legacy_census",
+      "certification",
       "mcp/src/agents_remember/worktrees/integration/closeout",
       "route-local-overview",
       "ea35964985f30080488270e71ac81657ac40682b",
       "/overview.md",
       "taskIntent",
-      "sourceRoute",
-      "agents_remember",
-      "doc_type",
-      "lastUpdated",
-      "T07"
+      "certification/",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "certification/overview.md",
+      "sourceRoute"
     ]
   },
   "fallback": {

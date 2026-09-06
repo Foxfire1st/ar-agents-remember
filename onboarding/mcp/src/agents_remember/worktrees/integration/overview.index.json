@@ -29,6 +29,7 @@
     "mcp/src/agents_remember/worktrees/integration/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py",
     "mcp/src/agents_remember/worktrees/integration/atomic_series_terminal.py",
+    "mcp/src/agents_remember/worktrees/integration/certification.py",
     "mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py",
     "mcp/src/agents_remember/worktrees/integration/direct_landing/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py",
@@ -56,8 +57,8 @@
     "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 89,
-    "fileSidecars": 28,
+    "sourceFilesInScope": 100,
+    "fileSidecars": 29,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -69,6 +70,7 @@
     "atomic_series_terminal",
     "authority",
     "branch",
+    "certification",
     "checkout",
     "claim",
     "closeout",
@@ -147,6 +149,7 @@
       "mcp/src/agents_remember/worktrees/integration/__init__.py",
       "mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py",
       "mcp/src/agents_remember/worktrees/integration/atomic_series_terminal.py",
+      "mcp/src/agents_remember/worktrees/integration/certification.py",
       "mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py",
       "mcp/src/agents_remember/worktrees/integration/direct_landing",
       "mcp/src/agents_remember/worktrees/integration/direct_landing/__init__.py",
@@ -162,8 +165,7 @@
       "mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py",
       "mcp/src/agents_remember/worktrees/integration/integration_publication_fence.py",
       "mcp/src/agents_remember/worktrees/integration/integration_quality.py",
-      "mcp/src/agents_remember/worktrees/integration/integration_quality_checkout.py",
-      "mcp/src/agents_remember/worktrees/integration/integration_ref_state.py"
+      "mcp/src/agents_remember/worktrees/integration/integration_quality_checkout.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -172,6 +174,8 @@
       "atomic_series_landing",
       "atomic_series_terminal.py",
       "atomic_series_terminal",
+      "certification.py",
+      "certification",
       "configured_contract_authority.py",
       "configured_contract_authority",
       "direct_landing_errors.py",
@@ -211,9 +215,7 @@
       "integration_topology_repair.py",
       "integration_topology_repair",
       "mutation_evidence.py",
-      "mutation_evidence",
-      "organizational_completion.py",
-      "organizational_completion"
+      "mutation_evidence"
     ]
   },
   "fallback": {

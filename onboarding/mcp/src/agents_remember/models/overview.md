@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastUpdated | 2026-09-06T14:48:58+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
@@ -68,6 +68,10 @@ flat model module while keeping one strict wire authority. Required version and 
 are supplemented by optional content digest, interpreter, package root, checkout commit, dashboard
 fingerprint, and proven-dirty evidence. Absence stays honest unknown; package version alone is not
 treated as exact candidate identity.
+
+## Shared Certification Wire Ownership
+
+[The certification wire route](certification/overview.md) owns shared frozen primitives, canonical corrective dispositions and exact stored-object references. Domain certification and lifecycle models import these concrete values; wire validity does not establish observed authority, execute a gate or select a journal record. Registry/plan compilers and the existing certificate store remain the semantic and storage owners. This extraction changes retrieval ownership while preserving the moved constraints.
 
 ## Purpose
 
@@ -523,6 +527,9 @@ projection. It introduces no public worker PID or private operation key.
 | Public response registration uses the dedicated wait response. | "\"worktree_status_wait\": WorktreeStatusWaitResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
 
 ## Update History
+
+- 2026-09-06T14:48:58+00:00 — Added the nearest certification wire route from source at `c69d5171187fa1957025e393270db9f5a864ab14`; the remaining model domains are outside this bounded routing update. Prior verification stamps and all earlier history are preserved.
+
 
 
 

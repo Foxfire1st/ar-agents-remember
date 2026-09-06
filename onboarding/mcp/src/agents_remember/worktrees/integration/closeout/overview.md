@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:12+00:00 |
+| lastUpdated | 2026-09-06T14:58:25+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -40,7 +40,13 @@ refuses current use and names republishing, rather than accepting topology alone
 `task_intent_identity.py` resolves the exact contract-owned leaf;
 `task_intent_legacy_census.py` separately counts current legacy containers before decoder
 removal. Historical generations remain audit evidence. These existing door/journal owners
-are distinct from the still-unwired R05 certificate-admission/finalization library.
+are distinct from the selected certification graph: admission and code-suffix execution are now
+composed under `certification/`, while the default production memory/finalization continuation
+remains unbound.
+
+## Selected Certification Route
+
+[The selected certification overview](certification/overview.md) follows actual frozen admission, explicit predecessor/publication readback, journal CAS and suffix execution. It also explains retained red evidence, current Gate-5 observations and the narrowly proven code-output recovery comparison. These responsibilities extend the existing door/coherence/journal separation; they do not make queue state own certification or establish an installed memory/finalization continuation.
 
 ## Local Invariants And Traps
 
@@ -81,6 +87,9 @@ re-prove it from the same exact contract so stale pre-commit evidence is never t
 fallback.
 
 ## Update History
+
+- 2026-09-06T14:58:25+00:00 — Added the selected certification child route from source at `c69d5171187fa1957025e393270db9f5a864ab14` and corrected the obsolete all-unwired claim. Preserved all earlier history and the broader route verification stamps; other closeout owners are outside this bounded update.
+
 
 - 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current task-intent and direct evidence dependencies across coherence, door and operation admission, with bounded legacy census. Verification records source review, not execution or acceptance.
 

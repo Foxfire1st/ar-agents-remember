@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:12+00:00 |
+| lastUpdated | 2026-09-06T14:48:58+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -22,6 +22,10 @@ and retry, public projection, legal controls, cancellation, and completed-dispos
 ## Hot Path Summary
 
 Read `lifecycle_operations.py` for start/resume/retry and `lifecycle_operation_location.py` for the locator-to-enclosure chain. `lifecycle_operation_store.py` owns record and meaningful revisions; `observation/status_wait.py` waits for meaningful change, while `lifecycle_operation_projection.py` and the control projector derive one generation-coherent public view.
+
+## Generation Construction And Retained Resume
+
+[The generation route](generation/overview.md) owns queued-record construction, integration-authority snapshots and the pure same-generation resume transition. `creation.py` returns an in-memory candidate; the lifecycle store/coordinator still own durable initial certification selection, claims and launch. `resume.py` preserves the existing worker-exit, mutation-history and retained closeout-claim rules after its path move. Use the concrete child cards before changing these boundaries.
 
 ## Operating Model
 
@@ -91,6 +95,9 @@ recovered legacy operation or planning certificate reuse.
 | The exact-generation observer returns bounded change/timeout outcomes. | "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:105-146 |
 
 ## Update History
+
+- 2026-09-06T14:48:58+00:00 — Routed the extracted generation constructors and unchanged resume transition at `c69d5171187fa1957025e393270db9f5a864ab14`; other journal/projection contracts are not reverified by this routing update. Prior verification stamps and all earlier history are preserved.
+
 
 - 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added intent-bound journal writes, exact legacy retirement, and claim/launch dependency checks. Verification records source review, not execution or acceptance.
 

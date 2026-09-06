@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/worktrees/modules/quality/execution",
+  "overview": "mcp/src/agents_remember/worktrees/modules/quality/execution/overview.md",
+  "index": "mcp/src/agents_remember/worktrees/modules/quality/execution/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/worktrees/modules/quality/execution/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "execution",
+    "init",
+    "init__",
+    "mcp",
+    "models",
+    "modules",
+    "quality",
+    "remember",
+    "reports",
+    "retained",
+    "retained_reports",
+    "sandbox",
+    "src",
+    "worktrees"
+  ],
+  "hotPath": {
+    "summary": "Start with `models.py` for the code-only launch contract, `retained_reports.py` for original byte transport, and `sandbox.py` for candidate/profile/source-selection composition. The package marker has no initialization behavior.",
+    "candidateHints": [
+      "mcp/src/agents_remember/worktrees/modules/quality/execution",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "models.py",
+      "models",
+      "retained_reports.py",
+      "retained_reports",
+      "sandbox.py",
+      "sandbox",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/",
+      "route-local-overview",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "/../overview.md",
+      "CodeCertificationExecution",
+      "retained_report_inventory",
+      "snapshot_retained_reports",
+      "_selected_profile",
+      "_write_sandbox_manifest",
+      "SelectedCodeCertification",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py",
+      "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py",
+      "sourceRoute",
+      "agents_remember",
+      "doc_type",
+      "lastUpdated",
+      "T15",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T16",
+      "governingOverview",
+      "R21",
+      "DTO",
+      "init__",
+      "selected_profile",
+      "write_sandbox_manifest",
+      "certification_run"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/worktrees/modules/quality/execution/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

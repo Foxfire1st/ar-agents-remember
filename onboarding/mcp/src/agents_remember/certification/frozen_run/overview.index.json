@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/certification/frozen_run",
+  "overview": "mcp/src/agents_remember/certification/frozen_run/overview.md",
+  "index": "mcp/src/agents_remember/certification/frozen_run/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/certification/frozen_run/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/certification/frozen_run/__init__.py",
+    "mcp/src/agents_remember/certification/frozen_run/authorities.py",
+    "mcp/src/agents_remember/certification/frozen_run/models.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 3,
+    "fileSidecars": 3,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "authorities",
+    "certification",
+    "frozen",
+    "frozen_run",
+    "init",
+    "init__",
+    "mcp",
+    "models",
+    "remember",
+    "run",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Read `models.py` for `FrozenCertificationRun` and `freeze_certification_run`; read `authorities.py` for `CandidateAuthorityRecords`, exact input snapshots and semantic projections. Run identity includes original provenance; certificate semantic identity has its own narrower contract.",
+    "candidateHints": [
+      "mcp/src/agents_remember/certification/frozen_run",
+      "mcp/src/agents_remember/certification/frozen_run/__init__.py",
+      "mcp/src/agents_remember/certification/frozen_run/authorities.py",
+      "mcp/src/agents_remember/certification/frozen_run/models.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "authorities.py",
+      "authorities",
+      "models.py",
+      "models",
+      "FrozenCertificationRun",
+      "freeze_certification_run",
+      "CandidateAuthorityRecords",
+      "mcp/src/agents_remember/certification/frozen_run",
+      "route-local-overview",
+      "/overview.md",
+      "CandidateAuthorityEnvelope",
+      "prepare_closeout_certification",
+      "mcp/src/agents_remember/certification/frozen_run/models.py",
+      "mcp/src/agents_remember/certification/frozen_run/authorities.py",
+      "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py",
+      "sourceRoute",
+      "agents_remember",
+      "frozen_run",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "lastVerifiedCommitDate",
+      "T16",
+      "governingOverview",
+      "init__"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/certification/frozen_run/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

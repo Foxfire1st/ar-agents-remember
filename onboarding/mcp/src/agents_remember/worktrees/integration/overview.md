@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastUpdated | 2026-09-06T13:51:59+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -57,6 +57,17 @@ policy is isolated in `closeout/integration_reopen.py`: it permits memory-only s
 only when the source head is either the recorded base or the exact recorded integrated commit;
 unrelated source movement still refuses.
 
+`integration_quality.py` composes the exact-commit full profile through the journal-owned
+`certification.py` selection. Preparation freezes once, readback reopens original publications, and
+R21 selects only the uncertified code suffix. Interrupted attempts retain their original history;
+an unchanged red catalog refuses. Completed organizational proof binds the selected frozen run and
+G1–4 terminal prefix before publication. Ordinary leaves still reuse their exact closeout-certified
+commit. Read [the integration quality card](integration_quality.py.md) for this boundary.
+
+The closeout path uses its distinct selected operation state and an explicit continuation port for
+current memory observation, Gate-5 execution, and finalization. These source boundaries do not
+establish that a production continuation is installed or that the candidate has been accepted.
+
 ## Conventions
 
 - The package keeps the `worktrees` layering altitude: it never imports the queue package's
@@ -68,6 +79,8 @@ unrelated source movement still refuses.
 
 - Lifecycle operation identity/lease/store are runtime-authority surfaces (bounded, evictable).
 - Integration never falls back to a host quality run; the Dagger graph owns acceptance.
+- Frozen run and terminal references are selected by the live operation owner. Resume reopens
+  those originals; a result payload, latest report, or another generation cannot substitute for them.
 - Exact-pair consumers have one candidate-identity owner; disabling the duplicate configured check
   never disables repository-root, separation, task, or enclosure authority.
 - External-memory ledger order is authoritative: the newest same-code row is current, while older
@@ -103,12 +116,14 @@ The route decomposition mirrors those boundaries without adding new authority: n
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:78-125; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:180-265 |
-| Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:24-165 |
+| Exact integration selection and original-publication readback precede suffix execution. | `prepare_integration_certification`; `_load`; `_execute_integration_gate` | mcp/src/agents_remember/worktrees/integration/certification.py:192-216; mcp/src/agents_remember/worktrees/integration/certification.py:235-296; mcp/src/agents_remember/worktrees/integration/integration_quality.py:166-227 |
+| Completed organizational proof binds original selected references through the operation owner. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
+| Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
+| Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
 | Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:40-47; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:113-127; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:157-227 |
-| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:70-167 |
-| Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:79-191 |
-| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-660 |
+| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
+| Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:95-102; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:122-162; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:165-203 |
+| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:583-593; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:662-694 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
@@ -148,6 +163,9 @@ does not create a second authority route, queue-owned lifecycle evidence, or a c
 260831-CCR-L18 updated `terminal_enclosure_archive.py` so `_require_archivable_operation` consumes the projection-owned `project_worker_exit(record)` observation for the absent-worker/resolved-termination archive guards. File-level detail lives in that sidecar.
 
 ## Update History
+
+- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Added journal-selected original certification and suffix-execution ownership; refreshed cited existing lifecycle owner extents while retaining source-pair, publication and recovery boundaries. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
+
 
 
 

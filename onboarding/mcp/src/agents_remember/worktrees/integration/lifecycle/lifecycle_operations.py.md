@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T14:48:58+00:00 |
 | lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
 | lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
@@ -35,7 +35,11 @@ Under CCR-R03@v1 the closeout claim record and the queued integrate record are b
 typed dependency declaration (`lifecycle_operation_dependencies`), and the lifecycle launch gate
 re-requires the current record's declared dependencies (`require_lifecycle_operation_dependencies`)
 before a worker is launched
-cit:([`_prepare_closeout_claim`, `queued_operation_record`, `_recover_launch_and_project`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:422-449; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1026-1063; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:840-856).
+cit:([`_prepare_closeout_claim`, `queued_operation_record`, `_recover_launch_and_project`], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:488-523; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:911-931).
+
+Queued-record construction now lives in `generation/creation.py`; its candidate/task identity
+and integrate dependency binding are unchanged. Durable generation publication and launch remain
+owned by the coordinator and store.
 
 ### Conventions
 
@@ -77,7 +81,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1123 |
 | Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:883-938 |
-| R03 dependency binding on claims and queued records plus launch re-requirement. | `_prepare_closeout_claim`; `queued_operation_record`; `_recover_launch_and_project` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:422-449; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:840-856; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1026-1063 |
+| R03 dependency binding on claims and queued records plus launch re-requirement. | `_prepare_closeout_claim`; `queued_operation_record`; `_recover_launch_and_project` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:488-523; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:911-931; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71 |
 
 ## Cross-Repo References
 
@@ -94,6 +98,9 @@ Closeout/integrate records now bind their declared inputs and launch refuses a s
 (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-06T14:48:58+00:00 — Repaired both queued_operation_record citations to its extracted owner at `c69d5171187fa1957025e393270db9f5a864ab14` after proving identical function AST; broader changed coordinator behavior remains for its source-card review. Prior verification stamps and all earlier history are preserved.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the claim/queued-record dependency binding and the launch-time dependency re-requirement; prior claim, cancellation, and detached-launch prose preserved.
 

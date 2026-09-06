@@ -10,6 +10,11 @@
   ],
   "childRoutes": [
     {
+      "route": "mcp/src/agents_remember/models/certification",
+      "overview": "mcp/src/agents_remember/models/certification/overview.md",
+      "index": "mcp/src/agents_remember/models/certification/overview.index.json"
+    },
+    {
       "route": "mcp/src/agents_remember/models/closeout",
       "overview": "mcp/src/agents_remember/models/closeout/overview.md",
       "index": "mcp/src/agents_remember/models/closeout/overview.index.json"
@@ -67,9 +72,9 @@
     "mcp/src/agents_remember/models/worktree.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 74,
+    "sourceFilesInScope": 80,
     "fileSidecars": 29,
-    "childRoutes": 5
+    "childRoutes": 6
   },
   "routingTerms": [
     "agents",
@@ -80,6 +85,7 @@
     "benchmarks",
     "caller",
     "catalog",
+    "certification",
     "closeout",
     "context",
     "context_packet",
@@ -141,6 +147,7 @@
     "summary": "The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate. The closeout input, source, and projection vocabulary now lives under `models/closeout/`. This is a one-to-one package move of the existing typed contracts, not a compatibility namespace: input owns accepted plan shape, source owns exact candidate provenance, and projection owns disposable scheduling facts while journal models retain lifecycle evidence. ACPUI-L2 adds `launch-selection-in...",
     "candidateHints": [
       "mcp/src/agents_remember/models",
+      "mcp/src/agents_remember/models/certification",
       "mcp/src/agents_remember/models/closeout",
       "mcp/src/agents_remember/models/conversations",
       "mcp/src/agents_remember/models/lifecycles",
@@ -162,8 +169,7 @@
       "mcp/src/agents_remember/models/quality.py",
       "mcp/src/agents_remember/models/read_files.py",
       "mcp/src/agents_remember/models/runtime.py",
-      "mcp/src/agents_remember/models/skills.py",
-      "mcp/src/agents_remember/models/task_doc.py"
+      "mcp/src/agents_remember/models/skills.py"
     ],
     "anchorHints": [
       "__init__.py",

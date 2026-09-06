@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/models/lifecycles/__init__.py",
+    "mcp/src/agents_remember/models/lifecycles/certification.py",
     "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
     "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
     "mcp/src/agents_remember/models/lifecycles/door.py",
@@ -18,6 +19,7 @@
     "mcp/src/agents_remember/models/lifecycles/enclosure.py",
     "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
     "mcp/src/agents_remember/models/lifecycles/finalize.py",
+    "mcp/src/agents_remember/models/lifecycles/integration_certification.py",
     "mcp/src/agents_remember/models/lifecycles/legacy.py",
     "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
     "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
@@ -30,14 +32,15 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 18,
-    "fileSidecars": 18,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
     "candidate",
+    "certification",
     "coherence",
     "curator",
     "curator_coherence",
@@ -52,6 +55,8 @@
     "finalize",
     "init",
     "init__",
+    "integration",
+    "integration_certification",
     "kinds",
     "landing",
     "legacy",
@@ -76,10 +81,11 @@
     "wait"
   ],
   "hotPath": {
-    "summary": "This route is the strict vocabulary for root-journal operations: generations, closeout-door and successor publication, worker termination, direct landing, legacy migration proof, and public legal controls. Use `responses.py` for lifecycle signal vocabularies and tool responses, `finalize.py` for the terminal finalizer response, and `operation.py` for asynchronous closeout/integration inputs, durable records, and public projections.",
+    "summary": "This route is the strict vocabulary for root-journal operations: generations, closeout-door and successor publication, worker termination, direct landing, legacy migration proof, and public legal controls. Use `responses.py` for lifecycle signal vocabularies and tool responses, `finalize.py` for the terminal finalizer response, and `operation.py` for asynchronous closeout/integration inputs, durable records, and public projections. The operation record separately retains closeout selection, integration selection, and completed organizational certification. `certification.py` and `integratio...",
     "candidateHints": [
       "mcp/src/agents_remember/models/lifecycles",
       "mcp/src/agents_remember/models/lifecycles/__init__.py",
+      "mcp/src/agents_remember/models/lifecycles/certification.py",
       "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
       "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
       "mcp/src/agents_remember/models/lifecycles/door.py",
@@ -87,6 +93,7 @@
       "mcp/src/agents_remember/models/lifecycles/enclosure.py",
       "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
       "mcp/src/agents_remember/models/lifecycles/finalize.py",
+      "mcp/src/agents_remember/models/lifecycles/integration_certification.py",
       "mcp/src/agents_remember/models/lifecycles/legacy.py",
       "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
       "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
@@ -101,6 +108,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "certification.py",
+      "certification",
       "curator_coherence.py",
       "curator_coherence",
       "direct_landing.py",
@@ -115,6 +124,8 @@
       "evidence_dependencies",
       "finalize.py",
       "finalize",
+      "integration_certification.py",
+      "integration_certification",
       "legacy.py",
       "legacy",
       "memory_candidate.py",
@@ -142,11 +153,7 @@
       "__init__.py.md",
       "responses.py.md",
       "finalize.py.md",
-      "operation.py.md",
-      "LiveState",
-      "LifecycleResponse",
-      "LifecycleFinalizeTaskResponse",
-      "_require_quality_certification_memory"
+      "operation.py.md"
     ]
   },
   "fallback": {

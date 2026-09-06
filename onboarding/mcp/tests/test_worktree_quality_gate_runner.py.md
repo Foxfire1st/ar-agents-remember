@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-06T15:11:59+00:00 |
+| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
+| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,40 +16,32 @@
 
 ## Purpose
 
-Owns the Dagger-only quality command, preview, host-refusal, container memory-cap,
-report-replacement, and failure-transport regressions split from the closeout mutation suite.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`): gate-runner tests cut over to profile-required
-targets (repository id + profile reference), add `_failed_quality_outcome` and profile
-admission/refusal coverage, and assert the profile-bound success payload (digest/plan
-digest/selection/executor adapter/result artifact).
+Owns profile-required Dagger command planning, preview, host refusal, memory-cap policy, report replacement and failure transport. These runner tests remain separate from closeout commit and publication mechanics.
 
 ## Code Commentary
 
 ### Logic
 
-`CodeQualityGateTests` proves wrapper applicability and altitude, exact diff-base forwarding,
-container-runtime-managed and explicitly capped full Dagger gates, immediate host-execution
-refusal, atomic replacement of the one enclosure test report, and bounded failure output.
+`CodeQualityGateTests` requires an explicit repository profile whenever code would commit and returns the no-code-commit preview only when no commit is planned. A separate consumer repository with its own registered profile follows the same policy. Missing profiles refuse before the injected executor starts.
+
+The successful outcome helper observes the real temporary Git candidate and comparison base, preserves the admitted source selection, writes a complete fixture catalog and publishes it through the real host report owner. Runner tests inspect the typed result, exact diff-base forwarding, profile adapter command and requested full-mode cap. The report cases replace one completed enclosure report and preserve its previous bytes on interruption.
 
 ### Conventions
 
-Checkout and target helpers remain single-owned in `test_worktree_closeout_quality_gate.py` and are
-imported here; runner policy and closeout mutation are separate test responsibilities.
+The self-profile checkout and catalog are shared with `gate_certification_test_support.py`; the generic checkout and target helpers remain in `test_worktree_closeout_quality_gate.py`. Rail execution is injected. Physical fixture publication and typed consumer validation do not certify a live Dagger run or perform leaf finalization.
 
 ### Invariants And Boundaries
 
-- Leaf closeout runs targeted Dagger acceptance; master integration runs full Dagger acceptance.
-- Explicit caps report `mode=explicit-cap`; absent caps report
-  `mode=container-host-managed`. Both retain container-runtime-managed swap.
-- Host quality execution refuses before resolving an interpreter or invoking a wrapper.
-- The report path is stable and each completed run replaces its predecessor.
-- Missing wrappers and invalid modes fail loudly rather than weakening the gate.
+- Profiles are mandatory for code certification regardless of repository name; wrapper presence alone is not admission authority.
+- Targeted and full modes are explicit plan inputs, and the real Git comparison base reaches the executor request and report.
+- Explicit caps report `mode=explicit-cap`; absent caps report `mode=container-host-managed`. Both retain container-host-managed swap and profile-adapter-owned process policy.
+- Host quality execution refuses before running a profile.
+- The enclosure report path is stable: completed runs replace it, while interruption preserves the prior completed report.
+- Unknown modes refuse, and failure output remains bounded.
 
 ### Todos
 
-None.
+None recorded.
 
 ## Docs References
 
@@ -57,49 +49,54 @@ No Domain Documentation source is configured for this repository-local runner su
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+| No relevant external documentation is configured. | N/A | N/A |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:35-498 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_profile`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:51-68; mcp/tests/test_worktree_closeout_quality_gate.py:69-82 |
+| Profiles are required for planned code commits and symbolic previews. | `test_preview_requires_the_explicit_repository_profile_for_code` | mcp/tests/test_worktree_quality_gate_runner.py:85-113 |
+| Another configured repository has the same strict profile authority. | `test_profile_authority_is_repository_generic_without_a_name_special_case` | mcp/tests/test_worktree_quality_gate_runner.py:158-176 |
+| Missing profile authority prevents executor invocation. | `test_gate_refuses_to_run_when_the_profile_is_missing` | mcp/tests/test_worktree_quality_gate_runner.py:178-196 |
+| The successful fixture publishes exact candidate and source-selection catalog bytes through the host owner. | `_successful_quality_outcome` | mcp/tests/test_worktree_quality_gate_runner.py:32-73 |
+| Full mode, exact base, cap and profile identity reach the injected executor. | `test_dagger_executor_uses_the_same_staged_candidate_and_never_runs_host_rails` | mcp/tests/test_worktree_quality_gate_runner.py:204-242 |
+| Completed runs replace the single report. | `test_gate_replaces_one_test_report_instead_of_accumulating_runs` | mcp/tests/test_worktree_quality_gate_runner.py:244-278 |
+| Interruption preserves the previous completed report. | `test_interrupted_gate_keeps_the_previous_completed_test_report` | mcp/tests/test_worktree_quality_gate_runner.py:280-300 |
+| The real leaf base reaches the request and report without a separate CLI diff-base argument. | `test_gate_measures_the_leaf_diff_not_the_whole_branch` | mcp/tests/test_worktree_quality_gate_runner.py:302-329 |
+| The command uses only the declared adapter and its default memory policy. | `test_command_planning_uses_only_the_declared_profile_adapter` | mcp/tests/test_worktree_quality_gate_runner.py:354-376 |
+| Explicit caps retain profile-owned process and host-managed swap policy. | `test_full_gate_preview_names_the_memory_cap_and_policy` | mcp/tests/test_worktree_quality_gate_runner.py:407-429 |
+| Gate failures transport only bounded adapter output. | `test_gate_failure_includes_bounded_profile_adapter_output` | mcp/tests/test_worktree_quality_gate_runner.py:558-587 |
+| Generic checkout authority remains in the closeout test owner. | `_checkout_with_profile` | mcp/tests/test_worktree_closeout_quality_gate.py:79-94 |
+| The target helper binds repository and profile explicitly. | `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:97-108 |
 
 ## Cross-Repo References
 
-The runner can certify a consuming repository's checkout when that checkout carries the wrapper.
+The generic consumer fixture remains same-repository test evidence; it proves that a configured profile, rather than a repository-name special case, controls applicability.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is determined from the supplied checkout rather than a repository name. | `QualityGateTarget`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:68-77; mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-138 |
+| No separate cross-repository protocol is introduced by this test module. | N/A | N/A |
 
 ## L23 Host-Execution Removal
 
-The former local diagnostic runner, interpreter selection, host environment construction,
-systemd/rlimit command planning, and their tests are removed from the acceptance adapter. The
-remaining named local entry point is a refusal surface and never resolves or starts a wrapper.
+The surviving local diagnostic entry point is a refusal surface. Its test requires the host-quality prohibition before any profile execution; the removed interpreter and host memory-cap machinery is not reconstructed here.
 
 ## R39 Runner Policy Proofs
 
-The runner suite separates consumer adapter opt-in from the Agents Remember self-wrapper policy
-and requires the latter to refuse when missing. It proves local quality execution always raises
-before wrapper resolution, keeps Dagger as the only plan/executor, and removes tests for deleted
-host interpreter, environment, subprocess, and memory-cap machinery.
+Current policy is expressed through explicit profile admission for both the self repository and a consumer fixture. Missing-profile refusal replaces the former wrapper-presence policy, while Dagger remains the declared acceptance adapter.
 
 ## R43 Builder-Level Dagger Refusal
 
-The runner suite now calls `_gate_command_parts` and `_memory_policy_payload` with a local executor
-and requires both to reject it with pinned-Dagger guidance. The missing-wrapper assertion uses the
-same `self-owned wrapper` wording as production.
+Current builder tests assert the exact profile adapter command and memory-policy payload. The suite no longer passes a local executor argument to these builders; direct host execution remains covered by the separate refusal test.
 
 ## 260824-PDLS Lifecycle Evidence Proof
 
-Successful clean-quality fakes now return `CleanQualityOutcome` with certifying evidence bound to
-the checkout's current `git write-tree`. Gate tests therefore exercise the same typed lifecycle
-consumer boundary as production instead of treating any zero-exit subprocess as acceptance.
+The successful fixture returns `CleanQualityOutcome` carrying the exact candidate tree, decoder digest and original published manifest. Full catalog validation then supplies the record seam with observed fixture bytes; a zero subprocess exit alone is insufficient.
 
 ## Update History
+
+- 2026-09-06T15:11:59+00:00 — L33 pending candidate curation: Re-read the prepared source, reconciled profile-required planning and shared fixture ownership, preserved report/cap/host-refusal contracts, and replaced obsolete wrapper/local-builder claims with their current tests. Verification names the real prepared source commit c69d5171187fa1957025e393270db9f5a864ab14; this entry does not claim CCR acceptance.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-target cutover of the quality gate runner tests.
 
 
