@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/gate_certification_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T14:56:02+00:00 |
+| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
+| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,25 +16,31 @@
 
 ## Purpose
 
-Owns the shared fixture composition for gate-record and retained-evidence tests: isolated Git candidates, admitted repository plans and exact synthetic report bytes.
+Owns shared fixture composition for gate-record, retained-evidence, and selected lifecycle tests: isolated Git candidates, production-admitted repository plans, source-applicability decisions, and exact report bytes with explicit fixture execution boundaries.
 
 ## Code Commentary
 
 ### Logic
 
-`_checkout_with_profile` creates a real temporary Git repository and copies the current profile. `_lane_for` derives the staged tree, repository plan and five-gate lane through the production compilers. `_artifact_paths` reads the actual Dagger binding map; `_fixture_record` writes deterministic fixture bytes and returns their real SHA-256 and size.
+`_checkout_with_profile` creates a real temporary Git repository and copies the current profile. `_lane_for` derives the staged tree, resolves the requested targeted/full selection, observes the actual Git delta against the supplied comparison base (or fixture HEAD), and compiles the repository plan and five-gate lane through production owners. The frozen source selection is carried into later execution admission.
 
-`_gate_catalog` builds the planned Gates 1–4 catalog from those exact per-rail log and artifact paths. `_green_outcome_factory` publishes the exported bytes with the real host report owner, reopens the manifest and returns a `CleanQualityOutcome` for an injected successful Dagger boundary. Tests can therefore exercise actual admission, certificate stores and retention while keeping the synthetic producer visible.
+`_artifact_paths` reads the actual Dagger binding map. `_fixture_record` writes either supplied bytes or deterministic report text and returns the real SHA-256 and size. `_gate_catalog` serializes the plan's canonical source decisions at their declared evidence paths; inapplicable rails retain not-applicable status, zero starts, and their exact decision evidence instead of synthetic pass records.
+
+For applicable Gates 1–4, `_gate_catalog` binds per-rail log/artifact bytes. Environment reconstruction fixtures derive their definition, producer runtime digest, candidate identity and output path from the admitted plan, then call the production census owner over real temporary dependency files through the shared fixture helper. Caller-supplied supplemental artifact paths extend the source-owned binding map for the selected test case. Gate 5 is excluded.
+
+`_green_outcome_factory` admits execution with that same source selection, publishes exported bytes through the real host report owner, reopens the manifest and returns a `CleanQualityOutcome` at an injected successful Dagger boundary. This composes actual admission, storage and retention owners while keeping rail execution and the Dagger environment injected. The canonical census observes actual fixed fixture directories, not a live installed Dagger environment.
 
 ### Conventions
 
-Only the record and retained-evidence suites consume this permanent lifecycle-cataloged helper. Scenario mutations belong in those tests; the common builder remains one fixture owner.
+The evidence-lifecycle catalog declares this permanent helper's observed direct and transitive consumers, including gate, lifecycle and integration suites. Consumer membership is source-derived rather than a fixed two-suite list. Scenario mutations belong in the consuming tests; the common builder remains one fixture owner.
 
 ### Invariants And Boundaries
 
 - Fixture reports and a synthetic successful subprocess are not real Dagger execution or master acceptance.
 - Evidence digests and sizes describe actual written bytes, not invented placeholder hashes.
-- Artifact IDs use the current producer binding map; no duplicate artifact catalog is maintained.
+- Artifact IDs use the current producer binding map, explicit case supplements and frozen environment definitions; the helper does not maintain a second policy catalog.
+- Source-inapplicable rails preserve the admitted decision and zero-start evidence.
+- Canonical environment manifests observe real temporary fixture files and bind the frozen plan inputs; they do not prove an actual container installation.
 - Gate 5 is deliberately excluded from the synthetic code-gate catalog.
 
 ### Todos
@@ -51,16 +57,16 @@ No external Domain Documentation source is configured. These are repository-owne
 
 ## Repo-Internal References
 
-These source owners establish the current behavior and the stated fixture boundaries.
+These source owners establish the fixture composition and its execution limits. Canonical admission and written-byte checks do not turn an injected producer into real Dagger evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture candidates have real Git identity and the current profile. | `_checkout_with_profile` | mcp/tests/gate_certification_test_support.py:59-71 |
-| Production owners compile candidate-bound plans and memory rail declarations. | `_lane_for` | mcp/tests/gate_certification_test_support.py:74-90 |
-| Artifact path mapping comes from the actual Dagger source. | `_artifact_paths` | mcp/tests/gate_certification_test_support.py:93-97 |
-| Fixture report bindings match bytes written to the export. | `_fixture_record` | mcp/tests/gate_certification_test_support.py:100-106 |
-| Each planned code rail receives complete fixture evidence/artifact bindings. | `_gate_catalog` | mcp/tests/gate_certification_test_support.py:109-162 |
-| The synthetic runner boundary composes real report publication and manifest reopening. | `_green_outcome_factory` | mcp/tests/gate_certification_test_support.py:165-203 |
+| Fixture candidates have real Git identity and the current profile. | `_checkout_with_profile` | mcp/tests/gate_certification_test_support.py:64-76 |
+| Production owners compile plans from the candidate tree and actual source-selection delta. | `_lane_for` | mcp/tests/gate_certification_test_support.py:79-103 |
+| Artifact paths come from the Dagger binding map. | `_artifact_paths` | mcp/tests/gate_certification_test_support.py:106-110 |
+| Fixture digests and sizes match the exact supplied or generated bytes. | `_fixture_record` | mcp/tests/gate_certification_test_support.py:113-121 |
+| Planned not-applicable rails retain zero starts; applicable code rails bind logs and plan-derived environment fixtures. | `_gate_catalog` | mcp/tests/gate_certification_test_support.py:124-255 |
+| The injected runner preserves source-selection admission and composes real report publication/readback. | `_green_outcome_factory` | mcp/tests/gate_certification_test_support.py:258-297 |
 
 ## Cross-Repo References
 
@@ -72,6 +78,11 @@ No separate cross-repository protocol is established by this file. In-tree fixtu
 
 
 ## Update History
+
+- 2026-09-06T14:56:02+00:00 — Bound the reviewed card body and active citations to actual source commit c69d5171187fa1957025e393270db9f5a864ab14 after checking source-byte equality. Preserved prior history; this verifies memory claims and does not assert additional test execution.
+
+- 2026-09-06T14:02:39+00:00 — L33 candidate curation: Documented Git-derived source selection, exact planned not-applicable/environment artifacts, and the broader catalog-owned consumer population; preserved the synthetic-execution boundary. Reviewed uncommitted source matching run28; existing verification commit/date remain unchanged. This records source behavior, not test execution or acceptance.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

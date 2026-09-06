@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/certification/repository_profiles/source_selection",
+  "overview": "mcp/src/agents_remember/certification/repository_profiles/source_selection/overview.md",
+  "index": "mcp/src/agents_remember/certification/repository_profiles/source_selection/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/__init__.py",
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/compilation.py",
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/git.py",
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/models.py",
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/reader.py",
+    "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "certification",
+    "compilation",
+    "git",
+    "init",
+    "init__",
+    "mcp",
+    "models",
+    "profiles",
+    "reader",
+    "remember",
+    "repository",
+    "repository_profiles",
+    "selection",
+    "source",
+    "source_selection",
+    "src",
+    "validation"
+  ],
+  "hotPath": {
+    "summary": "Use `git.py` to observe exact base/candidate trees, `compilation.py` to derive rail applicability, and `models.py` to validate the complete frozen decision. `validation.py` binds evidence publication, command placeholders and conditional prerequisites; `reader.py` reopens the bounded decision file.",
+    "candidateHints": [
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/__init__.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/compilation.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/git.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/models.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/reader.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "compilation.py",
+      "compilation",
+      "git.py",
+      "git",
+      "models.py",
+      "models",
+      "reader.py",
+      "reader",
+      "validation.py",
+      "validation",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection",
+      "route-local-overview",
+      "/../overview.md",
+      "observe_candidate_source_selection",
+      "RailSourceSelection",
+      "validate_source_applicability",
+      "_validate_conditional",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/git.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/models.py",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py",
+      "sourceRoute",
+      "agents_remember",
+      "repository_profiles",
+      "source_selection",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "lastVerifiedCommitDate",
+      "T16",
+      "governingOverview",
+      "init__",
+      "validate_conditional"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/certification/repository_profiles/source_selection/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

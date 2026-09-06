@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T15:15:01+00:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../overview.md`                           |
@@ -54,7 +54,7 @@ under `startup/`; `start.py` remains the coordinating mutation entrypoint.
 
 `quality/gate.py` admits one explicitly configured repository certification profile through `QualityGateTarget`; wrapper presence is no longer authority. The real R11/R22/R21 bridge freezes that profile plus the memory-service rail catalog before Dagger. Leaf acceptance is targeted at closeout; series closeout requires clean landed code and master integration owns the full gate. Required unresolved test ownership refuses before Gate 2 rather than expanding to a full population. The Gate-5 memory preflight starts only after the code gate is green or not required.
 
-`quality/clean_executor.py` publishes immutable schema-3.1 report generations and an atomic current pointer. Fresh and recovery callers retain the exact `publishedResultPath`; the strict reader verifies the declared inventory and candidate identity. L30 selected certificate records bind complete accepted manifest snapshots and physically reopened rail bytes; selected generations are protected from subsequent pruning. Existing synchronous lifecycle journals, approval claims, locks and exact ref convergence remain authority; the available R05/R16/R07/R08 libraries are not a replacement production path yet.
+`quality/clean_executor.py` publishes immutable schema-3.1 report generations and an atomic current pointer. Fresh and recovery callers retain the exact `publishedResultPath`; the strict reader verifies the declared inventory and candidate identity. Selected certificate records bind complete original manifest snapshots and physically reopened rail bytes. The lifecycle-selected path supplies current-owner callbacks for terminal selection, protected generations and last-moment start authorization. Its admission and code-suffix composition use the existing operation journal; the default production memory/finalization continuation remains unbound.
 
 Older EFA/L23 paragraphs below preserve the migration account and its original flat module names. Their wrapper discovery, local interpreter selection, citation-first ordering and schema-1/2 descriptions are historical; current paths are `quality/gate.py`, `quality/clean_executor.py`, `quality/closeout_memory.py`, and `quality/published_manifest.py`. Provider setup/teardown moved to `application/provider_runtime.py`, and `reopen.py` to `worktrees/`.
 
@@ -882,9 +882,9 @@ exact same plan identity, and fresh client/process identities are minted per rep
 
 ## Certificate Records And Executor Evidence
 
-The strict quality gate freezes the exact R11/R22/R21 lane before Dagger. Fresh and recovered green generations reopen the verified decoder artifact and delegate the terminal catalog to `quality/certification_records.py`. The adapter requires the exact candidate, profile digest, full plan and selection, then reopens all nested evidence and artifacts before publishing canonical results/certificates. Returned refusals now raise at the gate boundary. Ordinary red runs still raise before this adapter, so their wrapper diagnostics are not a complete R11 terminal-result population.
+The strict quality gate freezes the exact R11/R22/R21 lane before Dagger. `quality/certification_run.py` reopens the verified decoder artifact and delegates actual terminal catalogs to `quality/certification_records.py`, including available red/interrupted results. The gate records returned terminals and invokes the selected owner callback before propagating recording or process failure. The adapter requires the exact candidate, profile digest, full plan and selection, then reopens nested evidence and artifacts before publishing canonical results/certificates. A decoder omission or an uncertified terminal does not become green evidence.
 
-`quality/certification_evidence.py` reads only the bounded selected `gates.json` journal, cross-binds its certificate/result objects to complete strict manifest snapshots, and retains the original generation for a semantically equal certificate only after full execution-authority equality. `clean_executor.py` obtains those exact pins before pruning; the existing confined reader and historical pruner now live in `report_publication_paths.py`. No second report store or historical search selects authority.
+`quality/certification_evidence.py` reads the bounded gate-record journal and cross-binds its certificate/result objects to complete strict manifest snapshots. Lifecycle selection separately retains explicit original references in the operation journal. `quality/certification_reuse.py` validates zero-start rows against those supplied original objects and physical publication bytes. `clean_executor.py` combines the existing gate-record pins with the caller’s verified selected-graph generations before pruning; confined report reads remain in `report_publication_paths.py`. No historical scan selects authority.
 
 The Dagger interpreter captures executed pass, fail and skipped handles while retaining complete same-gate outcomes and zero-start later gates. `rail_emission.py` distinguishes observed empty output from unavailable streams, keeps exact bounded byte captures and producer file handles apart from the execution handle, and refuses a green rail when required observed evidence is unavailable. `rail_bindings.py` uses stable report-relative locators; dashboard coverage keeps its Vitest source and receives a separate stable publication name.
 
@@ -894,13 +894,13 @@ The three previously missing Gate-4 producers are connected: Playwright writes t
 
 `quality/dagger_authority.py` now uses neutral `kernel/file_lock.py` exclusion for the host registry. Checkout durable stores still enforce their coordination guard before entering the same lock implementation. No process-role declaration or second lock namespace is introduced.
 
-Ordinary R05 admission/finalization, R16 telemetry, and R07/R08 memory certification remain incomplete production composition; separate diagnostic/final-Codex controllers do not establish those callers merely by existing.
+Selected closeout admission, original-reference readback and code-suffix execution are composed through the lifecycle journal. Current Gate-5 observation is an explicit continuation-port obligation; the default production continuation remains unbound. Finalization and telemetry obligations are not established by the existence of the quality helpers or separate diagnostic/final-Codex controllers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The green record seam propagates certification evidence refusals. | `_record_certification_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:478-507 |
-| Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:256-274; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:342-394 |
-| Selected publications retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:99-114; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:117-139; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:84-96 |
+| Returned terminals are recorded and selected before recording/process refusal propagation. | `run_strict_code_quality_gate`; `record_terminal_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361; mcp/src/agents_remember/worktrees/modules/quality/certification_run.py:47-70 |
+| Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:279-297; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:367-444 |
+| Gate-record publication bindings retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
 | All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/main.py:513-584 |
 | Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:26-63; .dagger/src/agents_remember_quality/rail_emission.py:66-100; .dagger/src/agents_remember_quality/rail_emission.py:103-117 |
 | Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:87-91; .dagger/src/agents_remember_quality/rail_bindings.py:115-144 |
@@ -908,7 +908,26 @@ Ordinary R05 admission/finalization, R16 telemetry, and R07/R08 memory certifica
 | Required files are checked on the actual publication branch. | `_verify_required_profile_publications` | .dagger/src/agents_remember_quality/engine_helpers.py:128-166 |
 | Execution progress separately retains publication bytes and file handles. | `QualityProgress` | .dagger/src/agents_remember_quality/profile_results.py:19-32 |
 
+## Selected Quality Execution Routes
+
+The selected code contract and original report transport have a local [execution overview](quality/execution/overview.md). The journal decides the permitted recovery suffix; these owners validate supplied originals, bind the exact sandbox and return real terminal evidence to that journal.
+
+| Source File | Onboarding | Responsibility |
+| --- | --- | --- |
+| `quality/certification_run.py` | [certification_run.py.md](quality/certification_run.py.md) | Actual terminal recording, selected callbacks and complete original code-prefix readback |
+| `quality/certification_terminal.py` | [certification_terminal.py.md](quality/certification_terminal.py.md) | Typed publication outputs and exact planned rail catalog decoding |
+| `quality/certification_reuse.py` | [certification_reuse.py.md](quality/certification_reuse.py.md) | Original-object and physical-publication validation of zero-start rows |
+| `quality/execution/` | [Execution overview](quality/execution/overview.md) | Canonical suffix DTO, frozen declaration bounds and prepared sandbox manifest |
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The selected code transport recomputes R21 reuse and admits only a code gate start. | `CodeCertificationExecution` | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:42-100 |
+| Retained transport membership and byte limits come from frozen producer declarations. | `retained_report_inventory`; `snapshot_retained_reports` | mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:37-77; mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:80-109 |
+| The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
+
 ## Update History
+
+- 2026-09-06T15:15:01+00:00 — Added the missing selected-terminal and execution-package routes from actual source at `c69d5171187fa1957025e393270db9f5a864ab14`; corrected the bounded green-only recording and uncomposed-admission claims. Preserved the broad verification stamps and complete prior history; this route update is not gate or acceptance evidence.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

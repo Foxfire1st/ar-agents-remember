@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T07:05+00:00 |
+| lastUpdated | 2026-09-06T15:08:14+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -23,6 +23,10 @@ requests; they do not own journal transition policy.
 ## Hot Path Summary
 
 Use `lifecycle_status_wait.py` for bounded read-only change waits, `direct_landing.py` for the public direct route, and `lifecycle_operation_worker.py` / `terminal_rail_failure.py` for typed detached-worker terminalization. Journal transition policy remains in the worktree lifecycle domain.
+
+## Complete Admission Refusals
+
+[`certification_refusal.py`](certification_refusal.py.md) renders all typed admission findings, including nested byte evidence, for public adapters. Its zero-start refusal shape reports the admission boundary; the renderer itself does not observe processes or alter journal state.
 
 ## Operating Model
 
@@ -77,6 +81,8 @@ R16 telemetry production callers.
 | The observer validates the cursor, polls the exact generation, and returns change or timeout. | "def validate_wait_cursor(after_revision: int)"; "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:87-146 |
 
 ## Update History
+
+- 2026-09-06T15:08:14+00:00 — Added the current selected-certification/refusal source routes and their precise fixture/model boundaries; corrected stale pending-candidate wording where present. Preserved broader prior verification stamps and all earlier history.
 
 - 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Qualified typed-failure precedence and documented configured profile propagation plus telemetry helper boundary. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
 

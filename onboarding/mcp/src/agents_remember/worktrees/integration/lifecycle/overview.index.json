@@ -8,16 +8,22 @@
   "sourceScope": [
     "mcp/src/agents_remember/worktrees/integration/lifecycle/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation",
+      "overview": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/overview.md",
+      "index": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/worktrees/integration/lifecycle/__init__.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/certification_observation.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/control/__init__.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py",
-    "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_generation_resume.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py",
@@ -47,9 +53,9 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 35,
+    "sourceFilesInScope": 38,
     "fileSidecars": 35,
-    "childRoutes": 0
+    "childRoutes": 1
   },
   "routingTerms": [
     "adoption",
@@ -58,6 +64,8 @@
     "binding",
     "cancellation",
     "candidate",
+    "certification",
+    "certification_observation",
     "child",
     "child_processes",
     "claim",
@@ -83,7 +91,6 @@
     "lifecycle_completed_disposition",
     "lifecycle_enclosure_adoption",
     "lifecycle_enclosure_terminal",
-    "lifecycle_generation_resume",
     "lifecycle_operation_binding",
     "lifecycle_operation_candidate",
     "lifecycle_operation_control_errors",
@@ -116,7 +123,6 @@
     "recovery",
     "remember",
     "request",
-    "resume",
     "src",
     "state",
     "status",
@@ -132,7 +138,9 @@
     "summary": "Read `lifecycle_operations.py` for start/resume/retry and `lifecycle_operation_location.py` for the locator-to-enclosure chain. `lifecycle_operation_store.py` owns record and meaningful revisions; `observation/status_wait.py` waits for meaningful change, while `lifecycle_operation_projection.py` and the control projector derive one generation-coherent public view.",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/integration/lifecycle",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/__init__.py",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/certification_observation.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/control",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/control/__init__.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py",
@@ -140,7 +148,6 @@
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_generation_resume.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py",
@@ -153,12 +160,13 @@
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location_errors.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_read_decision.py"
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "certification_observation.py",
+      "certification_observation",
       "cancellation.py",
       "cancellation",
       "lifecycle_closeout_claim_evidence.py",
@@ -169,8 +177,6 @@
       "lifecycle_enclosure_adoption",
       "lifecycle_enclosure_terminal.py",
       "lifecycle_enclosure_terminal",
-      "lifecycle_generation_resume.py",
-      "lifecycle_generation_resume",
       "lifecycle_operation_binding.py",
       "lifecycle_operation_binding",
       "lifecycle_operation_candidate.py",

@@ -11,6 +11,7 @@
   "childRoutes": [],
   "coveredFiles": [
     "mcp/src/agents_remember/application/lifecycle/__init__.py",
+    "mcp/src/agents_remember/application/lifecycle/certification_refusal.py",
     "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py",
     "mcp/src/agents_remember/application/lifecycle/direct_landing.py",
     "mcp/src/agents_remember/application/lifecycle/legacy_operation_tool.py",
@@ -23,8 +24,8 @@
     "mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 11,
-    "fileSidecars": 11,
+    "sourceFilesInScope": 12,
+    "fileSidecars": 12,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -33,6 +34,8 @@
     "agents_remember",
     "application",
     "authority",
+    "certification",
+    "certification_refusal",
     "configured",
     "configured_contract_admission",
     "contract",
@@ -57,6 +60,7 @@
     "mcp",
     "operation",
     "rail",
+    "refusal",
     "remember",
     "src",
     "status",
@@ -72,6 +76,7 @@
     "candidateHints": [
       "mcp/src/agents_remember/application/lifecycle",
       "mcp/src/agents_remember/application/lifecycle/__init__.py",
+      "mcp/src/agents_remember/application/lifecycle/certification_refusal.py",
       "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py",
       "mcp/src/agents_remember/application/lifecycle/direct_landing.py",
       "mcp/src/agents_remember/application/lifecycle/legacy_operation_tool.py",
@@ -86,6 +91,8 @@
     "anchorHints": [
       "__init__.py",
       "__init__",
+      "certification_refusal.py",
+      "certification_refusal",
       "configured_contract_admission.py",
       "configured_contract_admission",
       "direct_landing.py",
@@ -122,16 +129,14 @@
       "agents_remember",
       "doc_type",
       "lastUpdated",
-      "T07",
+      "T15",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T06",
       "governingOverview",
       "CCR",
       "R20",
-      "OperationRuntime",
-      "R16",
-      "LifecycleStatusWaitRequest"
+      "OperationRuntime"
     ]
   },
   "fallback": {

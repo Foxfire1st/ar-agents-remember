@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/integration_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-06T14:55:31+00:00 |
+| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
+| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,35 +16,66 @@
 
 ## Purpose
 
-Runs altitude-aware acceptance for integration: ordinary leaves reuse their targeted closeout certification, while a final organizational leaf or atomic series runs one exact full gate. Since CCR-R22@v1 (L22, commit `685f83c44055`) the full gate is profile-bound: `quality_gate_preview` and `run_integration_quality_gate` now accept a `profile_reference` (the configured `certificationProfile` forwarded from `WorktreeArgs.certification_profile`) and build a `QualityGateTarget` with repository id and profile reference; the settings-level executor field is gone (executor identity lives in the repository profile), and `requires_integrated_acceptance` was removed -- every code-committing master integration uses the profile contract. A `CertificationContractError` from profile admission surfaces as its own integration-quality failure.
+Runs altitude-aware acceptance for integration. An ordinary leaf lands its exact closeout-certified commit without another acceptance run; a branch-owning master or final organizational leaf selects the repository profile in full mode. The integration journal owns the original frozen run, terminal references, and completed organizational proof. Resumption reuses the selected certified prefix and executes only its uncertified code-gate suffix.
 
 ## Code Commentary
 
 ### Logic
 
-`quality_gate_mode` returns `GATE_FULL` for any branch-owning master integration and refuses a leaf. `quality_gate_preview(contract, *, profile_reference)` and `run_integration_quality_gate(contract, *, ..., profile_reference)` build the `QualityGateTarget` (checkout, worktree group, repository id, profile reference) for the detached exact-commit checkout and forward `plan=QualityGatePlan(mode=GATE_FULL, memory_cap_bytes=settings.memory_cap_bytes)` without an executor field. `_execute_integration_gate` admits the profile through `requires_strict_code_quality` on the target and catches both `CertificationContractError` and `RuntimeError` as integration-quality failures. `run_integration_quality_gate` short-circuits a leaf with no completion plan to `_leaf_closeout_certification`; otherwise it runs (or reuses) the exact full gate against a detached checkout of the exact commit, binds the completion fingerprint to the Dagger result, and persists a crash-safe `IntegrationQualityCertification`. The attestation block still reports `executor: dagger` as the framework-facing label.
+`quality_gate_mode` returns full mode for branch-owning master integration and refuses a leaf. Preview and execution preserve the configured `profile_reference`, comparison base, memory-cap policy, and detached checkout of the exact integration commit. A leaf without an organizational completion plan returns the existing leaf-closeout certification description.
+
+Execution builds an `IntegrationCertificationRequest` with the explicit operation owner, prepares or reopens its selected original run, and refuses an unchanged red catalog. `SelectedCodeCertification` carries terminal-selection, generation-retention and immediate start-authorization callbacks. Only the first uncertified G1–4 suffix runs; afterward the owner reopens selected terminals and renders the result from those original publications.
+
+For organizational completion, a prior completed proof is revalidated against the current fingerprint, commit, tree and attestation. Otherwise `_certification` binds the selected frozen-run reference and terminal prefix, and `select_completed_integration` persists that exact proof through the operation owner. There is no report-directory search or caller-supplied certification sink. Execution errors retain the stable integration-quality failure vocabulary and cancel/repair handoff.
+
+### Conventions
+
+Repository profile authority chooses execution details. The framework-facing full-gate attestation keeps the `dagger` label; the lifecycle owner supplies journal authority explicitly.
 
 ### Invariants And Boundaries
 
 - A final organizational leaf and an atomic series both use the detached exact-commit checkout.
 - Organizational certification and publication evidence is persisted for crash-safe reuse in the
   integration journal; queue projection may schedule the door candidate but does not own repair.
-- A reused certification must match the current completion fingerprint, code commit, candidate tree, and Dagger plan.
+- A reused certification must match the current completion fingerprint, code commit, candidate tree, Dagger plan, and exact journal-selected original references.
+- A red original catalog requires a corrected candidate and successor operation; missing certificates do not become success.
+- Original terminal publications and interrupted history remain protected while selected; selection and start callbacks recheck the live operation owner.
 - Every code-committing master integration resolves one valid repository profile through the forwarded `profile_reference`; missing/invalid authority or an unavailable executor prerequisite fails closed before any commit.
+
+### Todos
+
+This card records source behavior only. Leaf acceptance and later production memory/finalization composition require their own evidence.
 
 ## Repo-Internal References
 
+The orchestration module delegates selection and readback to the integration certification owner. These references distinguish retained original authority from a reconstructed result payload.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Mode is full for branch-owning integration; leaves reuse closeout. | `quality_gate_mode` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:96-101 |
-| Dry-run preview carries the organizational completion scope and fingerprint. | `quality_gate_preview` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:97-119 |
-| One exact full gate runs or reuses a matching certification. | `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:122-222 |
-| Failed final-leaf gate returns the cancel-repair handoff. | `organizational_quality_failure_payload` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:246-301 |
-| Certification binds completion fingerprint, commit, tree, and attestation. | `_certification`, `_require_matching_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:331-345; mcp/src/agents_remember/worktrees/integration/integration_quality.py:365-397 |
+| Branch-owning integration uses full mode; ordinary leaf integration reuses closeout. | `quality_gate_mode`; `_leaf_closeout_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:98-103; mcp/src/agents_remember/worktrees/integration/integration_quality.py:230-240 |
+| Preview preserves exact checkout, profile, comparison base and completion identity. | `quality_gate_preview` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:106-135 |
+| The public gate requires an explicit owner and preserves stable failure classification. | `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:138-163 |
+| Selected originals control suffix execution, publication retention and result rendering. | `_execute_integration_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:166-227 |
+| The exact final-leaf failure retains its cancel/repair handoff. | `organizational_quality_failure_payload` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:251-306 |
+| Completed proof binds selected references and current attestation. | `_certification`; `_quality_attestation`; `_require_matching_certification` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:309-326; mcp/src/agents_remember/worktrees/integration/integration_quality.py:329-343; mcp/src/agents_remember/worktrees/integration/integration_quality.py:346-378 |
+| The integration owner selects once, verifies original publications and refuses unchanged red evidence. | `prepare_integration_certification`; `_load`; `require_resumable_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:192-216; mcp/src/agents_remember/worktrees/integration/certification.py:235-296; mcp/src/agents_remember/worktrees/integration/certification.py:343-349 |
+| Terminal and completion writes use the selected journal owner. | `select_integration_terminals`; `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:352-364; mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
 
-## Documentation References
+## Docs References
 
-No configured domain-documentation or cross-repository source applies to this file.
+No external Domain Documentation source is configured for this repository-owned integration boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured external source governs these integration-local claims. | N/A | N/A |
+
+## Cross-Repo References
+
+Code and external-memory integration authority is passed through the canonical worktree contract. This module establishes no independent cross-repository protocol.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The implementation evidence is owned by the same repository and cited above. | N/A | N/A |
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -54,7 +85,7 @@ The current source seams include `IntegrationQualityFailure`, `integration_quali
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes failure, projection, and outcome types at this ownership boundary. | `IntegrationQualityFailure`; `integration_quality_failure`; `IntegrationQualityOutcome` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:46-65; mcp/src/agents_remember/worktrees/integration/integration_quality.py:68-80; mcp/src/agents_remember/worktrees/integration/integration_quality.py:83-86 |
+| The current module exposes failure, projection, and outcome types at this ownership boundary. | `IntegrationQualityFailure`; `integration_quality_failure`; `IntegrationQualityOutcome` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:55-74; mcp/src/agents_remember/worktrees/integration/integration_quality.py:77-89; mcp/src/agents_remember/worktrees/integration/integration_quality.py:93-95 |
 
 ## 260821-CLIVE No Local Behavior Delta
 
@@ -76,6 +107,11 @@ Certification matching now reports the exact observed-versus-expected identity m
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+
+- 2026-09-06T14:55:31+00:00 — Completed source verification against actual commit c69d5171187fa1957025e393270db9f5a864ab14 after rechecking equality with the independently reviewed candidate source. Preserved the curated body, all citations and earlier history; certification remains pending.
+
+- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Replaced obsolete report-recovery/sink descriptions with operation-selected original readback and suffix execution; retained exact-commit full-profile policy and repair handoff. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-bound full gate -- `profile_reference` forwarding through preview/run/integrate, `QualityGateTarget` construction, removal of the settings executor field and `requires_integrated_acceptance`, and `CertificationContractError` surfacing as integration-quality failure.
 
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
-| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
+| lastUpdated | 2026-09-06T14:55:31+00:00 |
+| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
+| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,10 +22,12 @@ This module defines the strict input, durable-record, and public-projection voca
 
 ### Logic
 
-The closeout and integration inputs capture every accepted decision needed for retry. `LifecycleOperationRecord` persists the immutable operation fingerprint, candidate tree, gate snapshot, worker progress, boundary, terminal result, and failure evidence. `LifecycleOperationProjection` exposes task state without leaking the operation key or worker PID.
+The closeout and integration inputs capture every accepted decision needed for retry. Closeout input retains explicit corrective red-catalog dispositions alongside normalized input and gate policy. `LifecycleOperationRecord` persists the immutable operation fingerprint, candidate tree, gate snapshot, worker progress, boundary, terminal result, and failure evidence. `LifecycleOperationProjection` exposes task state without leaking the operation key or worker PID.
+
+The record has separate `certification` and `integrationCertification` cells for closeout and integration selections. Each selected state belongs to the exact operation kind, key, and generation. `qualityCertification` is the completed organizational integration proof: it requires a frozen-run reference and the original, complete G1–4 terminal prefix. Its references must equal the journal-selected references, its completion fingerprint/comparison base/memory cap must match that selection, and its code commit must equal `integrationAuthority.codeCandidateCommit`.
 
 The integration evidence vocabulary includes `IntegrationQualityCertification` (durable exact
-full-Dagger proof with result-hash revalidation) and
+full-Dagger code-prefix proof with result-hash revalidation and original selected references) and
 `OrganizationalCompletionRepairEvidence` (immutable reset-generation identity). CLIVE L2 removes
 the former queue-completion evidence model; integration claim/publication evidence now lives in the
 journal-owned operation fields rather than a queue-removal lifecycle cell.
@@ -38,10 +40,10 @@ operation input, gate-policy rail plan, and validator; commit operations additio
 code tree, digest-bearing task intent, and admitted closeout-door generation, refusing
 `lifecycle-operation-candidate-dependencies-missing` or
 `lifecycle-operation-door-dependency-missing` when absent
-cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:428-484).
+cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:435-490).
 `require_lifecycle_operation_dependencies` refuses `lifecycle-operation-dependencies-stale` when the
 record's declared edges differ from its admitted immutable inputs
-cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:464-479).
+cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:493-508).
 
 ### Conventions
 
@@ -52,6 +54,8 @@ All models forbid extra fields. The input union is discriminated by `kind`; publ
 - Operation identity is plane-owned and private.
 - Task, operation kind, accepted input, state fingerprint, and candidate tree are immutable across retry.
 - Only the public projection crosses the MCP/dashboard boundary.
+- A completed integration result cannot replace its selected frozen run, terminal references, completion identity, or admitted code commit.
+- Selecting or advancing either certification cell changes the meaningful-state projection; heartbeat-only writes still do not.
 - The declared dependencies are the admitted door, certifying plan, and acceptance candidate; a
   record never binds a universal candidate tuple, and dependencies are omitted only when the
   record-type policy proves the record never reads them.
@@ -70,21 +74,26 @@ No external Domain Documentation source is configured for these internal wire mo
 
 ## Repo-Internal References
 
+The operation model owns strict serialization and cross-field identity checks. The selected-state models own their reference shapes; the store and execution owners perform publication readback and transition checks. The public projection remains a separate same-repository model.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The closeout input records the exact contract, normalized effective input, approval note, and gate-policy snapshot. | "class CloseoutOperationInput(" | mcp/src/agents_remember/models/lifecycles/operation.py:282-290 |
-| The durable operation record captures candidate/approval identity, mutation evidence, and recovery outputs. | "class LifecycleOperationRecord(" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403 |
-| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation.py:38-38 |
-| The R03 dependency vocabulary used by these record types. | `EvidenceRecordType`, `EvidenceDependencies`, `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-54; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-239 |
+| Closeout input retains the contract, effective input, approval, policy and corrective dispositions. | `CloseoutOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:308-317 |
+| The durable record carries both selected certification states and the completed quality proof. | `LifecycleOperationRecord` | mcp/src/agents_remember/models/lifecycles/operation.py:338-432 |
+| Completed integration requires an exact original full code prefix and a matching result digest. | `IntegrationQualityCertification` | mcp/src/agents_remember/models/lifecycles/operation.py:205-242 |
+| Attestation, passing result, comparison base and memory policy are checked together. | `_require_quality_certification_attestation`; `_require_quality_certification_result`; `_require_quality_certification_memory` | mcp/src/agents_remember/models/lifecycles/operation.py:257-271; mcp/src/agents_remember/models/lifecycles/operation.py:274-286; mcp/src/agents_remember/models/lifecycles/operation.py:289-305 |
+| Completed proof must match the selected operation generation, references and integration code authority. | `_require_integration_certification_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:562-585 |
+| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:518-544; mcp/src/agents_remember/models/lifecycles/operation.py:547-550; mcp/src/agents_remember/models/lifecycles/operation.py:553-559 |
+| The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+| The R03 dependency vocabulary is shared by these record types. | `EvidenceRecordType`; `EvidenceDependencies`; `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-30; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-237 |
 
 ## Cross-Repo References
 
-No cross-repository vocabulary is defined here.
+No cross-repository vocabulary is defined here. Config/contract input and the public operation projection are same-repository contracts documented above.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The closeout input names one config and task contract for the lifecycle operation. | "class CloseoutOperationInput(" | mcp/src/agents_remember/models/lifecycles/operation.py:282-290 |
-| The task-addressed public lifecycle envelope is defined in operation_projection and re-exported by this module. | "class LifecycleOperationProjection(" | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+| No separate cross-repository source is required for these model-local claims. | N/A | N/A |
 
 ## L23 Final Candidate Disposition
 
@@ -108,9 +117,9 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Recovery evidence records the exact code, memory-content, and ledger commits. | "class LifecycleOperationRecoveryCommits(" | mcp/src/agents_remember/models/lifecycles/operation.py:50-57 |
-| Organizational publication intent records and validates accepted/intended task-document bytes and digests. | "class OrganizationalTaskPublicationIntent(" | mcp/src/agents_remember/models/lifecycles/operation.py:60-90 |
-| Integration publication intent captures the claimed source operation and checks completeness of that identity. | "class IntegrationPublicationIntent(" | mcp/src/agents_remember/models/lifecycles/operation.py:93-131 |
+| Recovery evidence records the exact code, memory-content, and ledger commits. | "class LifecycleOperationRecoveryCommits(" | mcp/src/agents_remember/models/lifecycles/operation.py:61-68 |
+| Organizational publication intent records and validates accepted/intended task-document bytes and digests. | "class OrganizationalTaskPublicationIntent(" | mcp/src/agents_remember/models/lifecycles/operation.py:71-101 |
+| Integration publication intent captures the claimed source operation and checks completeness of that identity. | "class IntegrationPublicationIntent(" | mcp/src/agents_remember/models/lifecycles/operation.py:104-142 |
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 
@@ -148,12 +157,17 @@ current commands, log growth, and append-only histories advance only
 journal fields that move the cursor (generation, generationDisposition, status,
 phase, attempt, approval claim, irreversible boundary, cancellation evidence,
 worker termination, mutation evidence, recovery commits, finalization,
-publication/direct-landing/legacy cells, result, and typed failure); the digest
+publication/direct-landing/legacy cells, both selected certification states, result, and typed failure); the digest
 and comparison helpers `meaningful_state_payload` and
 `meaningful_state_changed` give the store, adapters, and waiters one shared
 rule, so a waiter compares this field and never `recordRevision`.
 
 ## Update History
+
+- 2026-09-06T14:55:31+00:00 — Completed source verification against actual commit c69d5171187fa1957025e393270db9f5a864ab14 after rechecking equality with the independently reviewed candidate source. Preserved the curated body, all citations and earlier history; certification remains pending.
+
+- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Documented corrective input and separate selected certification cells, exact original completion-reference/identity binding, and meaningful-state changes; repaired same-repository source citations without altering recovered history. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
+
 
 - 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
 

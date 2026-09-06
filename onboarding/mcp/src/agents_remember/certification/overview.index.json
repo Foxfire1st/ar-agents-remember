@@ -8,7 +8,18 @@
   "sourceScope": [
     "mcp/src/agents_remember/certification/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/certification/frozen_run",
+      "overview": "mcp/src/agents_remember/certification/frozen_run/overview.md",
+      "index": "mcp/src/agents_remember/certification/frozen_run/overview.index.json"
+    },
+    {
+      "route": "mcp/src/agents_remember/certification/repository_profiles/source_selection",
+      "overview": "mcp/src/agents_remember/certification/repository_profiles/source_selection/overview.md",
+      "index": "mcp/src/agents_remember/certification/repository_profiles/source_selection/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/certification/__init__.py",
     "mcp/src/agents_remember/certification/canonical.py",
@@ -50,11 +61,13 @@
     "mcp/src/agents_remember/certification/repository_profiles/adapters.py",
     "mcp/src/agents_remember/certification/repository_profiles/authority.py",
     "mcp/src/agents_remember/certification/repository_profiles/canonical.py",
+    "mcp/src/agents_remember/certification/repository_profiles/environment_validation.py",
     "mcp/src/agents_remember/certification/repository_profiles/execution.py",
     "mcp/src/agents_remember/certification/repository_profiles/models.py",
     "mcp/src/agents_remember/certification/repository_profiles/planning.py",
     "mcp/src/agents_remember/certification/repository_profiles/selection_results.py",
     "mcp/src/agents_remember/certification/repository_profiles/validation.py",
+    "mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py",
     "mcp/src/agents_remember/certification/results.py",
     "mcp/src/agents_remember/certification/telemetry/__init__.py",
     "mcp/src/agents_remember/certification/telemetry/adapters.py",
@@ -65,9 +78,9 @@
     "mcp/src/agents_remember/certification/validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 53,
-    "fileSidecars": 53,
-    "childRoutes": 0
+    "sourceFilesInScope": 64,
+    "fileSidecars": 55,
+    "childRoutes": 2
   },
   "routingTerms": [
     "adapters",
@@ -88,10 +101,14 @@
     "compare",
     "diagnostics",
     "digests",
+    "environment",
+    "environment_validation",
     "execution",
     "final",
     "final_codex",
     "freeze",
+    "frozen",
+    "frozen_run",
     "init",
     "init__",
     "invalidation",
@@ -105,6 +122,7 @@
     "measure",
     "models",
     "planning",
+    "primitives",
     "profiles",
     "projection",
     "readiness",
@@ -116,20 +134,26 @@
     "repository",
     "repository_profiles",
     "results",
+    "run",
     "scenarios",
     "selection",
     "selection_results",
+    "source",
+    "source_selection",
     "spans",
     "src",
     "store",
     "telemetry",
     "transitions",
-    "validation"
+    "validation",
+    "validation_primitives"
   ],
   "hotPath": {
     "summary": "Start with `certification_lane.py` for the R22-plan plus Gate-5-rails bridge, `certificate_admission.py` for exact authority alignment, and `results.py` / `certificate_authority.py` for terminal manifests and green certificates. `repository_profiles/`, `telemetry/`, `diagnostics/`, `final_codex/`, and `replay/` preserve separate profile, observation, execution-contract, and measurement vocabularies; a library API is not proof of a production caller.",
     "candidateHints": [
       "mcp/src/agents_remember/certification",
+      "mcp/src/agents_remember/certification/frozen_run",
+      "mcp/src/agents_remember/certification/repository_profiles/source_selection",
       "mcp/src/agents_remember/certification/__init__.py",
       "mcp/src/agents_remember/certification/canonical.py",
       "mcp/src/agents_remember/certification/certificate_admission.py",
@@ -150,9 +174,7 @@
       "mcp/src/agents_remember/certification/final_codex/certificate.py",
       "mcp/src/agents_remember/certification/final_codex/models.py",
       "mcp/src/agents_remember/certification/final_codex/planning.py",
-      "mcp/src/agents_remember/certification/final_codex/projection.py",
-      "mcp/src/agents_remember/certification/final_codex/store.py",
-      "mcp/src/agents_remember/certification/lifecycle_admission.py"
+      "mcp/src/agents_remember/certification/final_codex/projection.py"
     ],
     "anchorHints": [
       "__init__.py",

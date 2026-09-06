@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/models/certification",
+  "overview": "mcp/src/agents_remember/models/certification/overview.md",
+  "index": "mcp/src/agents_remember/models/certification/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/models/certification/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/models/certification/__init__.py",
+    "mcp/src/agents_remember/models/certification/base.py",
+    "mcp/src/agents_remember/models/certification/corrective.py",
+    "mcp/src/agents_remember/models/certification/references.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 4,
+    "fileSidecars": 4,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "base",
+    "certification",
+    "corrective",
+    "init",
+    "init__",
+    "mcp",
+    "models",
+    "references",
+    "remember",
+    "src"
+  ],
+  "hotPath": {
+    "summary": "Start with `base.py` for frozen models and rail identity, `corrective.py` for exact prior-red repair shapes, and `references.py` for semantic-address versus exact-byte binding. The initializer performs no registration.",
+    "candidateHints": [
+      "mcp/src/agents_remember/models/certification",
+      "mcp/src/agents_remember/models/certification/__init__.py",
+      "mcp/src/agents_remember/models/certification/base.py",
+      "mcp/src/agents_remember/models/certification/corrective.py",
+      "mcp/src/agents_remember/models/certification/references.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "base.py",
+      "base",
+      "corrective.py",
+      "corrective",
+      "references.py",
+      "references",
+      "mcp/src/agents_remember/models/certification/",
+      "route-local-overview",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "/overview.md",
+      "FrozenContractModel",
+      "RailIdentity",
+      "CorrectiveInputChange",
+      "RedCatalogDisposition",
+      "CertificateObjectReference",
+      "mcp/src/agents_remember/models/certification/base.py",
+      "mcp/src/agents_remember/models/certification/corrective.py",
+      "mcp/src/agents_remember/models/certification/references.py",
+      "sourceRoute",
+      "agents_remember",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T16",
+      "governingOverview",
+      "init__"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/models/certification/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}

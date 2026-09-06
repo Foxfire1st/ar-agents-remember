@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-05T22:23+00:00 |
+| lastUpdated | 2026-09-06T14:50:51+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../../../overview.md` |
@@ -29,6 +29,11 @@ It owns immutable registry, repository-profile, plan, certificate, and terminal-
 profile lives at `mcp/certification-profile-v1.json`. `certification_lane.py` derives the R11 registry
 from that admitted R22 plan plus caller-supplied memory rails. Execution and lifecycle publication
 remain owned by the worktree and application layers.
+
+[frozen_run/](frozen_run/overview.md) retains complete original admission and candidate-authority
+records before execution. [repository_profiles/source_selection/](repository_profiles/source_selection/overview.md)
+fixes explicitly declared rail applicability from exact Git tree deltas. These contracts do not
+replace the dependency-closure selector or certify that any gate executed.
 
 The repository layer contract declares this package at rank 3, after root errors, feature-free
 kernel primitives, and served wire models, and before the stateful control plane. The placement is
@@ -214,6 +219,8 @@ required input/result identities.
 | Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. | "def compile_certification_recovery_record("; "def compile_lifecycle_finalization("; "def validate_lifecycle_finalization_currentness("; "def authorize_finalization_leg(" | mcp/src/agents_remember/certification/lifecycle_recovery.py:53-160 |
 
 ## Update History
+
+- 2026-09-06T14:50:35+00:00 — Added the frozen-run and source-applicability route boundaries and links after reading their actual C69 source. Broader route verification remains pending; preserved prior verification metadata and all history.
 
 - 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Updated incoming publication-owner claims and source references. Certification-route source itself is unchanged; its genuine older verification stamp is preserved.
 

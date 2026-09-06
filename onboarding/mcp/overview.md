@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastUpdated | 2026-09-06T14:11:47+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview      | `../overview.md`                           |
@@ -170,9 +170,11 @@ those new protocols are integrated. Detailed ownership begins at
 
 The explicit `repositories[].certificationProfile` selects the repository rail declaration; wrapper discovery cannot authorize certification. The worktree gate compiles the real profile plus Gate-5 memory rail service into the R11/R22/R21 lane before execution, and writes certificates after green published generations. Unresolved targeted ownership refuses before Gate 2; no broad test-population expansion manufactures missing selection proof.
 
+The repository profile binds resumed environments through a bounded dependency census and reconstruction proof, declares generated source/output ownership, and retains the ambient-role source-applicability report even for a not-applicable result. The teardown prerequisite is conditional on that declared rail. These contracts are described in [the profile card](certification-profile-v1.json.md); they do not make the ordinary Python or dashboard population narrower by themselves.
+
 `tasks/task_intent.py` derives normative task identity from classified fields, exact requirements, supplemental versioned packet references and typed acceptance obligations. Route reviews, coherence records, doors and lifecycle operations bind that identity and direct evidence dependencies. Operational prose can change without changing normative intent. Full memory runs preserve exact code/memory candidate trees and report catalog readiness separately from R08 authority.
 
-L30 now persists exact rail-log bytes at stable report-relative paths, connects browser/provider/teardown producers, binds complete immutable publication snapshots to selected certificates, and reopens nested evidence before certification. Selected generations survive later report publication, and the gate propagates returned certificate refusals. At prepared private C `b34f4a59562b76a3e2413027468e0f699117b36f`, L32 excludes projection-declined edits before staging and uses `citations/documents/transaction.py` for full-byte, source-cell and held-snapshot preconditions immediately before atomic publication. Preview counts remain prospective and `documentsWritten` stays zero; observed conflicts preserve the concurrent document and refuse its complete batch. The final-read boundary does not serialize an uncooperative later writer. Gate 5 and delivery remain pending. Ordinary red-run result publication and R05/R16/R07/R08 composition remain separate production obligations.
+L30 now persists exact rail-log bytes at stable report-relative paths, connects browser/provider/teardown producers, binds complete immutable publication snapshots to selected certificates, and reopens nested evidence before certification. Selected generations survive later report publication, and the gate propagates returned certificate refusals. Citation document publication excludes projection-declined edits before staging and uses `citations/documents/transaction.py` for full-byte, source-cell and held-snapshot preconditions immediately before atomic publication. Preview counts remain prospective and `documentsWritten` stays zero; observed conflicts preserve the concurrent document and refuse its complete batch. The final-read boundary does not serialize an uncooperative later writer. Selected certification retains original terminal evidence, including red outcomes, through the journal-owned admission and suffix-execution path. The default continuation for production memory execution and finalization remains unbound; protocol and fixture coverage do not install that composition.
 
 `kernel/file_lock.py` owns neutral resource locking: the host Dagger registry uses it directly, while `controlplane/durable_store.py` first enforces checkout coordination and translates kernel capability errors. Both use the existing physical lock protocol; sharing exclusion mechanics does not share domain mutation authority.
 
@@ -1117,6 +1119,12 @@ exist and refuses symlinks — including in-root aliases — unlike the symlink-
 | Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
 
 ## Update History
+
+- 2026-09-06T14:11:47+00:00 — Candidate curation review correction: Removed stale L32 private-output/delivery status from durable prose and described the current selected-terminal and unbound continuation boundaries. Historical entries and verification stamps are preserved.
+
+
+- 2026-09-06T14:03:43+00:00 — L33 candidate route curation: Routed exact environment reconstruction, generated-input ownership and retained source-applicability evidence to the repository profile card. Preserved earlier source verification stamps and complete history; this records current source structure without a gate or acceptance claim.
+
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Replaced the superseded L32 defect sentence with the actual private-C transaction, preview and conflict behavior; preserved separate remaining production obligations.
 

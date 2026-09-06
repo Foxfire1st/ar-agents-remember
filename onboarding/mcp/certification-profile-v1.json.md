@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/certification-profile-v1.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-06T15:03:51+00:00 |
+| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
+| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,15 +24,17 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
-The publication inventory is finite: 51 declared paths, including 32 stable `rail-evidence/` capture paths. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
+The publication inventory is finite: 54 declared paths, including 32 stable `rail-evidence/` capture paths. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
 
-Dashboard browser execution writes the Playwright JSON result at the explicitly configured report path with both line and JSON reporters. Provider integration writes the actual pytest phase report to `provider-integration-result.json`. The teardown rail requests a proof artifact from the report verifier, which checks the existing clean-room summary and both successful `L5-C10` checkpoint records before writing `teardown-proof.json`. Dashboard coverage retains its existing Vitest producer location and receives the stable exported name `dashboard-coverage.json`.
+Dashboard browser execution writes the Playwright JSON result at the explicitly configured report path with both line and JSON reporters. Provider integration writes the actual pytest phase report to `provider-integration-result.json`. For an applicable ambient scenario, the teardown verifier checks the existing clean-room summary and both successful `L5-C10` checkpoint records before writing `teardown-proof.json`. For an admitted not-applicable scenario, it requires summary absence and writes a zero-start proof with the exact source-decision digest and empty replications. Dashboard coverage retains its existing Vitest producer location and receives the stable exported name `dashboard-coverage.json`.
+
+The profile also declares a bounded dashboard dependency census and reconstruction proof for resumed Gates 2–4, generated-input source/output scopes, and exact source applicability for the ambient-role rail. Its source-selection report remains required even when that rail is not applicable; teardown treats the ambient-role prerequisite conditionally. These declarations do not narrow the unconditional dashboard suite or turn full Python ownership into a focused population.
 
 The Dagger emission/export owners retain real files and exact output captures on a separate report branch. The profile declares those paths and their bounds; the host validates the full published snapshot and nested evidence before certificates can reference them. These concrete producers close the earlier three Gate-4 mapping gaps.
 
 ### Conventions
 
-Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The inspected candidate binds profile digest `8a3385ad68a89ebdc1e6ffc64296ad7a2eb7039cd5ba20384790150a60ec498b`, selector configuration digest `c140e8eb3623b81676de126c5d3cf07698c18a3a1519cc464622c7ec2ec8eaaf`, and runtime digest `f45228d2bf00df9e4d0894e0cf3b8f4c977f00e5b46931245ba4343f68b205d4`.
+Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The current declaration binds profile digest `da307cd8d609068479ca24c9c0d4c4cadfb6f04f4e215ee5f0170916a7131117`, selector configuration digest `5a6c02980b9428702808d770c2961d55b73c51990509f84b584a0daaa1c39309`, and runtime digest `c3a5108ddf6c1fc519cf6f52bf570bc956c4ac31a045a543e2e05a2ef4383b63`.
 
 ### Invariants And Boundaries
 
@@ -58,12 +60,15 @@ No external Domain Documentation source is configured for this repository. This 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exact canonical profile digest is declared. | "profileDigest" | mcp/certification-profile-v1.json:6-6 |
-| Closeout and local selections carry explicit gate applicability. | "selections" | mcp/certification-profile-v1.json:7-506 |
-| Selectors bind the exact configuration owner digest. | "selectors" | mcp/certification-profile-v1.json:2736-2786 |
-| The Dagger adapter and result decoder are explicit profile contracts. | "executorAdapters" | mcp/certification-profile-v1.json:2787-2809 |
-| The finite publication inventory declares actual report paths and byte bounds. | "publishedArtifacts" | mcp/certification-profile-v1.json:2894-3360 |
-| Real rail files and exact captures are retained without mutating the execution handle. | `attach_rail_terminal_bindings` | .dagger/src/agents_remember_quality/rail_emission.py:66-100 |
+| The exact canonical profile digest is declared. | "profileDigest" | mcp/certification-profile-v1.json:182-182 |
+| Closeout and local selections carry explicit gate applicability. | "selections" | mcp/certification-profile-v1.json:3117-3616 |
+| Selectors bind the exact configuration owner digest. | "selectors" | mcp/certification-profile-v1.json:3617-3667 |
+| The Dagger adapter and result decoder are explicit profile contracts. | "executorAdapters"; "resultDecoders" | mcp/certification-profile-v1.json:35-57; mcp/certification-profile-v1.json:3032-3115 |
+| The finite publication inventory declares actual report paths and byte bounds. | "publishedArtifacts" | mcp/certification-profile-v1.json:184-679 |
+| The profile declares bounded reconstruction and generated source/input ownership. | "environments"; "generatedInputs" | mcp/certification-profile-v1.json:2-34; mcp/certification-profile-v1.json:58-181 |
+| Ambient source applicability retains explicit evidence and teardown depends on it conditionally. | "sourceApplicability"; "conditionalPrerequisites" | mcp/certification-profile-v1.json:767-805; mcp/certification-profile-v1.json:2934-2939 |
+| Real rail files and exact captures are retained without mutating the execution handle. | `attach_rail_terminal_bindings` | .dagger/src/agents_remember_quality/rail_emission.py:71-107 |
+| Teardown verifies started evidence or proves admitted zero-start with no summary. | `_verify_teardown`; `_write_unstarted_teardown` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:253-263; mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:266-276 |
 | The report branch persists retained bytes before validating/exporting the final payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
 
 ## Cross-Repo References
@@ -75,6 +80,11 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T15:03:51+00:00 — Verified the curated profile card at actual commit c69d5171187fa1957025e393270db9f5a864ab14: exact profile/selector/runtime pins, 54 publications including 32 captures, conditional ambient/teardown behavior and active references. Preserved all earlier history; declarations remain distinct from executed certification evidence.
+
+- 2026-09-06T14:03:43+00:00 — L33 candidate curation: Reconciled the finite environment/source-selection publications, reconstruction and generated-input declarations, conditional ambient prerequisite, and actual canonical digest pins; repaired source ranges. Existing verification commit/date and all prior history are retained pending review against a real code commit.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

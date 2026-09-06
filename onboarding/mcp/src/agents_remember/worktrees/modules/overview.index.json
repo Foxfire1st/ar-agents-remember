@@ -8,7 +8,13 @@
   "sourceScope": [
     "mcp/src/agents_remember/worktrees/modules/**"
   ],
-  "childRoutes": [],
+  "childRoutes": [
+    {
+      "route": "mcp/src/agents_remember/worktrees/modules/quality/execution",
+      "overview": "mcp/src/agents_remember/worktrees/modules/quality/execution/overview.md",
+      "index": "mcp/src/agents_remember/worktrees/modules/quality/execution/overview.index.json"
+    }
+  ],
   "coveredFiles": [
     "mcp/src/agents_remember/worktrees/modules/__init__.py",
     "mcp/src/agents_remember/worktrees/modules/abandon.py",
@@ -33,6 +39,9 @@
     "mcp/src/agents_remember/worktrees/modules/quality/__init__.py",
     "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py",
     "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/certification_reuse.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py",
+    "mcp/src/agents_remember/worktrees/modules/quality/certification_terminal.py",
     "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
     "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py",
     "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py",
@@ -52,9 +61,9 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 40,
-    "fileSidecars": 40,
-    "childRoutes": 0
+    "sourceFilesInScope": 47,
+    "fileSidecars": 43,
+    "childRoutes": 1
   },
   "routingTerms": [
     "abandon",
@@ -66,6 +75,9 @@
     "certification",
     "certification_evidence",
     "certification_records",
+    "certification_reuse",
+    "certification_run",
+    "certification_terminal",
     "clean",
     "clean_executor",
     "cleanup",
@@ -82,6 +94,7 @@
     "diagnostic",
     "diagnostic_executor",
     "evidence",
+    "execution",
     "executor",
     "external",
     "final",
@@ -123,6 +136,8 @@
     "report_publication_paths",
     "result",
     "results",
+    "reuse",
+    "run",
     "src",
     "start",
     "start_contract",
@@ -130,16 +145,13 @@
     "start_provider_preflight",
     "start_result",
     "startup",
-    "sync",
-    "terminal",
-    "terminal_validation",
-    "validation",
-    "worktrees"
+    "sync"
   ],
   "hotPath": {
     "summary": "Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists. Quality execution, lifecycle gating, closeout memory checks, and immutable published-manifest reads now live under `modules/quality/`. The package is a behavior-preserving ownership/size split: the clean executor remains the sole Dagger report publisher, the gate remains the lifecycle consumer, closeout memory remains phase composition, and the strict manifest rea...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/modules",
+      "mcp/src/agents_remember/worktrees/modules/quality/execution",
       "mcp/src/agents_remember/worktrees/modules/__init__.py",
       "mcp/src/agents_remember/worktrees/modules/abandon.py",
       "mcp/src/agents_remember/worktrees/modules/args.py",
@@ -161,8 +173,7 @@
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
       "mcp/src/agents_remember/worktrees/modules/quality",
-      "mcp/src/agents_remember/worktrees/modules/quality/__init__.py",
-      "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
+      "mcp/src/agents_remember/worktrees/modules/quality/__init__.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -209,10 +220,10 @@
       "certification_evidence",
       "certification_records.py",
       "certification_records",
-      "clean_executor.py",
-      "clean_executor",
-      "closeout_memory.py",
-      "closeout_memory"
+      "certification_reuse.py",
+      "certification_reuse",
+      "certification_run.py",
+      "certification_run"
     ]
   },
   "fallback": {

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "kind": "agents-remember-route-index",
+  "repository": "agents-remember",
+  "route": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation",
+  "overview": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/overview.md",
+  "index": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/overview.index.json",
+  "sourceScope": [
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/**"
+  ],
+  "childRoutes": [],
+  "coveredFiles": [
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/__init__.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+  ],
+  "coverageCounts": {
+    "sourceFilesInScope": 3,
+    "fileSidecars": 3,
+    "childRoutes": 0
+  },
+  "routingTerms": [
+    "agents",
+    "agents_remember",
+    "creation",
+    "generation",
+    "init",
+    "init__",
+    "integration",
+    "lifecycle",
+    "mcp",
+    "remember",
+    "resume",
+    "src",
+    "worktrees"
+  ],
+  "hotPath": {
+    "summary": "Use `creation.py` to build queued records or snapshot integration refs. Use `resume.py` when retrying the exact retained generation: termination proof and mutation history determine what can be reset.",
+    "candidateHints": [
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/__init__.py",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+    ],
+    "anchorHints": [
+      "__init__.py",
+      "__init__",
+      "creation.py",
+      "creation",
+      "resume.py",
+      "resume",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/",
+      "route-local-overview",
+      "c69d5171187fa1957025e393270db9f5a864ab14",
+      "/overview.md",
+      "queued_operation_record",
+      "snapshot_integration_authority",
+      "requeued_same_generation",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py",
+      "sourceRoute",
+      "agents_remember",
+      "doc_type",
+      "lastUpdated",
+      "T14",
+      "lastVerifiedCommitHash",
+      "lastVerifiedCommitDate",
+      "T16",
+      "governingOverview",
+      "CAS",
+      "init__"
+    ]
+  },
+  "fallback": {
+    "governingOverview": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/overview.md",
+    "sidecarAbsence": "inferFromCoveredFiles"
+  }
+}
