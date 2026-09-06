@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_agent_notifier.py`             |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

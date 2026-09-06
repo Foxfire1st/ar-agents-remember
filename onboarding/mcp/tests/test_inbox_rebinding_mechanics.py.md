@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_inbox_rebinding_mechanics.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

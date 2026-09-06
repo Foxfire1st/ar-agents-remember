@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation_kinds.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T10:05+02:00|
-| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
-| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_certification_lane_bridge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `668d710bf2a9898fb706614163462ff346d986b7` |
-| lastVerifiedCommitDate | 2026-09-05T02:45:47+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

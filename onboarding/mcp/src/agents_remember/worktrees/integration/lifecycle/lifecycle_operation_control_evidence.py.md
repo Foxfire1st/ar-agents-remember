@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T10:09+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

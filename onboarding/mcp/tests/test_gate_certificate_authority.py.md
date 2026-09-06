@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_gate_certificate_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | 6f10c24d72db6171c0d434b307e6806996e2f11d |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:48:32+00:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

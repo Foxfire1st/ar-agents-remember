@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_read_ar_files.py`                  |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`         |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`         |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

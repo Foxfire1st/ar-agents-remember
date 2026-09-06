@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T15:03:08+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

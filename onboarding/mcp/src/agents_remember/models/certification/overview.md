@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/certification/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-06T14:48:58+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

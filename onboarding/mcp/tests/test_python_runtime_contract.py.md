@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_python_runtime_contract.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
-| lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
