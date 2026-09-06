@@ -88,7 +88,7 @@ No Domain Documentation source is configured.
 | The stricter no-symlink confinement reused by read. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-92 |
 | The declared models + shared scoped-read refusal table. | `RequirementRow`; `RequirementsListing`; `RequirementContents`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:767-798; mcp/src/agents_remember/serving/response_contract.py:1103-1109 |
 | Composition: the app registers this surface. | `register_requirements_routes` | mcp/src/agents_remember/serving/app.py:283-284 |
-| The HTTP proofs. | `RequirementRouteTests` | mcp/tests/test_serving_requirements.py:30-276 |
+
 
 ## Cross-Repo References
 

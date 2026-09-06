@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T22:00:40+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
@@ -24,7 +24,7 @@ Implements the journaled closeout Git-mutation protocol: snapshot, mutation inte
 
 `initial_closeout_mutation_evidence` relies on the validated effective-input/contract pairing for repository applicability, then creates cells for exactly the enabled legs. `begin_git_mutation` validates that the lifecycle operation authorizes the enabled leg and exact contract repository, records the pre-mutation snapshot, and durably publishes intent before Git. `bind_expected_output_tree` captures the staged result where applicable. `prove_git_commit` requires the exact branch, single-parent advance, parent/tree relation, and observed repository state before publishing commit-proven evidence.
 
-Reconciliation compares the current repository with the durable before/expected facts. An exact unchanged snapshot becomes `reconciled-unchanged`; an exact expected output becomes commit-proven; moved-and-returned refs, wrong refs, unexpected trees, or ambiguous state refuse loudly. Cancellation is permitted only before any intent or proven evidence.
+Reconciliation compares the current repository with the durable before/expected facts. An exact unchanged snapshot becomes `reconciled-unchanged`; an exact expected output becomes commit-proven; moved-and-returned refs, wrong refs, unexpected trees or ambiguous state remain unresolved for the typed recovery consumer. Cancellation is permitted when no leg remains `mutation-intent` or `commit-proven`; an exactly unchanged intent may become `reconciled-unchanged` while retaining `expectedOutputTree`. That tree is intended output, not proof of a commit. Unreadable snapshot/reflog facts and conflicting intermediate state leave the original intent unchanged for same-generation recovery; they do not become false unchanged proof.
 
 The module also owns the shared definition of an exact clean mutation snapshot: expected HEAD,
 index tree, candidate tree, and the SHA-256 fingerprint of empty porcelain-v2 status must agree.
@@ -74,6 +74,9 @@ The current source seams include `require_closeout_mutation_authority`, `initial
 | The current module exposes `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation` at this ownership boundary. | `require_closeout_mutation_authority`; `initial_closeout_mutation_evidence`; `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:64-67; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:70-90; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:93-113 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Corrected current journal recovery semantics against production source while preserving previous verification pins. Source inspection only.
+
 
 - 2026-08-27T18:33+02:00 — Centralized the exact clean-snapshot predicate previously duplicated
   by direct execution and recovery state; no mutation or recovery acceptance semantics changed.

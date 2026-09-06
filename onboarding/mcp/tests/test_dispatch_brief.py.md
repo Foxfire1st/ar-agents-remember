@@ -5,50 +5,69 @@
 | repository | agents-remember |
 | path | mcp/tests/test_dispatch_brief.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T22:33:39+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | mcp/tests/overview.md |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-Governing overview: mcp/tests/overview.md
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Regression suite for the control-plane-owned initial dispatch-brief transaction.
+Durable initial dispatch-brief delivery and exact-target retry.
 
 ## Code Commentary
 
 ### Logic
 
-The tests prove ready dispatch persists one exact internal row, accepted delivery starts expectation clocks, queued/not-ready delivery stays durable for retry, ambiguous receipts reconcile without resubmission, gate or caller refusal leaves evidence, and lifecycle doctrine advertises the structural dispatcher.
-The default gate also passes one explicit bounded spawn-startup wait into hosted readiness so bridge
-convergence remains part of the original dispatch attempt rather than becoming a caller retry.
+Ready delivery creates one inbox-rooted landed row and meets the briefed-by expectation through the adapter. Rejected or not-ready delivery preserves one pending row. Ambiguous retry reconciles retained adapter truth without another submit; an exact missing agent target never redirects to a matching lifecycle.
 
 ### Conventions
 
-Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-The agent-facing result never exposes the child occupant id; an exact internal target never falls back by lifecycle; queued work does not duplicate briefs or respawn. The bounded readiness wait never authorizes a second dispatch attempt.
+No raw paste fallback is allowed. A durable row ID is not embedded as prompt content, and unresolved acceptance must remain unconfirmed.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local regression contract.
-
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks` | mcp/tests/test_dispatch_brief.py:150-175 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Ready dispatch is inbox rooted lands and starts expectation clocks. | `test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks` | mcp/tests/test_dispatch_brief.py:148-173 |
+| Rejected adapter receipt keeps same row pending. | `test_rejected_adapter_receipt_keeps_same_row_pending` | mcp/tests/test_dispatch_brief.py:176-184 |
+| Ambiguous redelivery reconciles without resubmitting. | `test_ambiguous_redelivery_reconciles_without_resubmitting` | mcp/tests/test_dispatch_brief.py:187-233 |
+| Not ready queues one durable dispatch row for plane retry. | `test_not_ready_queues_one_durable_dispatch_row_for_plane_retry` | mcp/tests/test_dispatch_brief.py:236-260 |
+| Exact agent target never falls back to matching lifecycle. | `test_exact_agent_target_never_falls_back_to_matching_lifecycle` | mcp/tests/test_dispatch_brief.py:263-287 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this test module.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded the single bounded
   spawn-to-bridge readiness window and preserved no-resubmission semantics.

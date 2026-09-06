@@ -5,95 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dagger_runtime_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
 | lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-This suite proves the host-level shared Dagger runner/layer-store authority contract
-(CCR-R12@v4, delivered by 260831-CCR-L12, commit `cfd09381`) without contacting a real engine:
-every production refusal and admission decision of dagger_authority.py is forced with unit fakes,
-monkeypatched docker inspection, and temporary registry roots. It is the focused proof envelope
-for host-authority parsing/admission, ownership and transition, and the docker inspector, so a
-change to the authority boundary is pinned here before any live Dagger evidence is produced.
+Shared Dagger authority snapshot and exact-owner release tests.
 
 ## Code Commentary
 
 ### Logic
 
-`FakeInspector` (lines 34-73) and `declaration_env` (lines 74-84) provide a deterministic engine
-probe and a host declaration environment; `owner_for` (lines 85-108) builds one registered owner;
-`refusal_code` (lines 109-113) extracts the typed defect code from a
-`DaggerRuntimeAuthorityError`. Module-level tests cover: missing/malformed declarations and
-unsupported/provisioning-capable endpoints (`test_refuses_a_missing_host_declaration_before_any_engine_contact` ...
-`test_refuses_unsupported_and_provisioning_capable_endpoints`, lines 114-156), a worktree-local
-declaration source (lines 147-156), a non-running engine or missing store mount (lines 157-174),
-one admitted shared authority with a deterministic snapshot (lines 175-198), ambient
-`DAGGER_HOST` conflict refusal (lines 199-207), two worktrees and two operation kinds reusing one
-authority identity (lines 208-237), exact-owner release with stale/foreign owner refusal (lines
-238-298), the typed transition barrier and zero-census activation (lines 299-350), continuation
-reusing the frozen snapshot without ambient re-resolution (lines 351-403), crash reconciliation
-dropping only stale owners (lines 404-442), and registry corruption refusing with a typed defect
-(lines 443-453). The docker-inspector group (lines 454-652) proves the running-engine and
-layer-store mount checks with `monkeypatch`, including typed defects when inspection cannot start,
-mount inspection fails, mount output is unparsable or non-list, foreign or malformed mount entries
-are skipped, and an endpoint that is not one engine container is refused. Parse-admission tests
-(lines 653-698) pin the missing/non-object/unsupported payload refusals and the invalid
-endpoint/layer-store/engine-version refusals; `_FalsyRootPath` (lines 699-705) plus the
-resolve-failure tolerance case (lines 706-737) prove host-root checks survive path resolution
-errors around unrelated roots. Registry tests (lines 738-927) force corrupt state/owner payloads,
-owner defaults, duplicate-owner refusal, custom-liveness census, malformed-owner-cell handling,
-and PID-reuse-safe liveness fingerprints; admission/continuation registry tests (lines 956-1102)
-pin barrier re-admission refusal, ownerless admission/release leaving the registry untouched,
-pending-barrier activation when the census reaches zero, replacement activation once the old
-census reaches zero, and activation on an empty registry.
+Repeated admission of one declared shared engine/store yields the same snapshot digest and bound environment. A changed inspected source changes identity. Release rejects missing, foreign or stale owners while preserving the valid active owner census.
 
 ### Conventions
 
-The suite never starts or provisions an engine; the inspector boundary is doubled with
-`monkeypatch` against `docker inspect` output shapes, and every registry mutation runs on a
-temporary root so no host state is touched.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Every refusal is asserted through the typed defect code (never a bare exception message), and
-  each refusal happens before any command would start.
-- Owner release requires the exact owner record and matching process liveness; stale rows are
-  removed only by reconciliation and never rewrite an operation result.
-- A changed declaration with live owners always produces the typed transition barrier; the
-  replacement activates only after the locked zero-owner census.
-- Continuation always reuses the frozen snapshot digest and never re-resolves ambient state.
+No Dagger commands run in these unit fixtures. Historical declaration, transition and crash-reconciliation matrices are not all retained in this file.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-CCR-R12@v4 requires pre-admission engine/container and store verification, an immutable frozen
-authority snapshot bound into operations, and a locked host-level registry with process-start
-liveness, typed transition barriers, and crash reconciliation; this suite is the focused proof
-envelope for those clauses (see 260903-CCR-L12-implementation-readiness, proof envelope items 1-2).
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Host authority parsing/admission refusals and successful admission are unit-forced before any live Dagger use. | `test_refuses_a_missing_host_declaration_before_any_engine_contact`; `test_admits_one_shared_authority_and_binds_a_deterministic_snapshot` | mcp/tests/test_dagger_runtime_authority.py:114-122; mcp/tests/test_dagger_runtime_authority.py:175-198 |
-| Ownership/transition, exact release, stale-owner handling, crash reconciliation, and continuation are pinned. | `test_release_only_the_exact_owner_and_reject_stale_or_foreign_owners`; `test_changed_host_declaration_enters_a_typed_barrier_and_activates_after_zero_census`; `test_continuation_reuses_the_frozen_snapshot_and_never_resolves_ambient_state` | mcp/tests/test_dagger_runtime_authority.py:238-298; mcp/tests/test_dagger_runtime_authority.py:299-350; mcp/tests/test_dagger_runtime_authority.py:351-403 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite exercises the host declaration parser, snapshot, environment, and registry directly. | `test_parse_host_declaration_refuses_missing_non_object_and_unsupported_payloads`; `test_registry_owners_default_when_absent_then_refuse_corrupt_payloads` | mcp/tests/test_dagger_runtime_authority.py:653-669; mcp/tests/test_dagger_runtime_authority.py:798-823 |
-| The clean-executor authority test doubles this boundary with a probe inspector and owner registry root. | `_AuthorityProbe`; `_test_authority` | mcp/tests/test_clean_quality_executor.py:55-67; mcp/tests/test_clean_quality_executor.py:68-80 |
+| Admits one shared authority and binds a deterministic snapshot. | `test_admits_one_shared_authority_and_binds_a_deterministic_snapshot` | mcp/tests/test_dagger_runtime_authority.py:113-134 |
+| Release only the exact owner and reject stale or foreign owners. | `test_release_only_the_exact_owner_and_reject_stale_or_foreign_owners` | mcp/tests/test_dagger_runtime_authority.py:137-195 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass: created this file-level
   onboarding card for the new host-authority proof suite (CCR-R12@v4) delivered in code commit

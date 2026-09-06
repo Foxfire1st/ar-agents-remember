@@ -5,123 +5,68 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T10:05+02:00|
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
 | lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-This is the forcing suite for durable asynchronous closeout/integration operations. It proves task-addressed identity, exact retry, immutable candidate capture, legal recovery, cancellation boundaries, detached execution, worker reporting, and public projection privacy.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`): `test_execute_operation_dispatches_closeout_and_integration_payloads`
-now mocks a config whose repository carries `certification_profile`, matching the worker's
-profile resolution at operation execution.
+Asynchronous lifecycle operation launch and cancellation authority.
 
 ## Code Commentary
 
 ### Logic
 
-Tests create real task contracts and durable operation records, then exercise duplicate convergence, conflicting input refusal, changed candidate identity, stale recovery, exact approval reuse, cancellation, detached launch, progress, terminal outcomes, closeout/integration dispatch, and completion cleanup. Failed integration dispatch now preserves the truthful queue-release failure and reports `safeToReplace: false`; it does not collapse a failed release into a replaceable operation. Strict store-transition forcing—including public refusal to cancel an irreversible integrate operation—and parser/script bootstrap forcing live in `test_lifecycle_operation_store_invariants.py` and `test_lifecycle_operation_worker_entrypoint.py`, keeping this suite focused on public lifecycle behavior.
-
-The detached-launch regression separately proves the native environment keeps its installed
-`PYTHONPATH` byte-for-byte and does not inject the task worktree's `mcp/src`, while retaining the
-private process group and task-addressed module invocation. It now also proves that the exact
-`Popen` object transfers to the lifecycle-owned child registry before PID/fingerprint publication.
-Together the regressions cover both sides of worker bootstrap: select installed code at launch,
-retain and reap the real child, then bind its real services in `main`.
+Starting returns queued immediately and an exact duplicate observes one launch. A contract lease excludes cross-kind or terminal mutation. Before the boundary, cancellation proves worker exit before releasing its authority. After commit proof, cancellation refuses with immutable-output recovery required and keeps approval claimed.
 
 ### Conventions
 
-Filesystem and model transitions are real; subprocess and lifecycle mutation endpoints are doubled only at their external boundary.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Agents use task and operation kind, never operation keys or worker PIDs.
-- Input, candidate, state fingerprint, and approval claim cannot change across recovery.
-- Cancellation cannot reclaim a consumed approval.
-- A post-boundary failure remains recoverable as the same operation.
-- An integration result is safe to replace only when its literal returned payload proves that boundary; queue-release failure remains visible.
-- Detached launch retains the real process object for reaping; lifecycle journal identity remains
-  PID/fingerprint-based and separate.
+Public projection omits worker internals. An irreversible result cannot make spent approval reusable or turn cancellation into rollback.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this project-owned operation protocol.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external source governs the internal durable lifecycle state machine. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, cancellation, launch, worker, and integration edges are forced on the public controller/runtime. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_run_worker_refuses_missing_or_non_startable_durable_state` | mcp/tests/test_lifecycle_operations.py:316-334; mcp/tests/test_lifecycle_operations.py:999-1026 |
-| Failed integration dispatch preserves the exact queue-release failure and a truthful false replacement signal. | `test_execute_operation_dispatches_closeout_and_integration_payloads` | mcp/tests/test_lifecycle_operations.py:886-938 |
-| Irreversible integrate cancellation is forced through the public controller in the focused store suite. | `test_integrate_boundary_cannot_be_cleared_or_cancelled` | mcp/tests/test_lifecycle_operation_store_invariants.py:291-317 |
+| Start returns immediately and duplicate observes one launch. | `test_start_returns_immediately_and_duplicate_observes_one_launch` | mcp/tests/test_lifecycle_operations.py:40-57 |
+| Contract lifecycle lease excludes cross kind and terminal mutation. | `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation` | mcp/tests/test_lifecycle_operations.py:60-71 |
+| Cancel before boundary proves exit before releasing worker authority. | `test_cancel_before_boundary_proves_exit_before_releasing_worker_authority` | mcp/tests/test_lifecycle_operations.py:74-135 |
+| Cancel after boundary refuses without making approval reusable. | `test_cancel_after_boundary_refuses_without_making_approval_reusable` | mcp/tests/test_lifecycle_operations.py:138-162 |
 
 ## Cross-Repo References
 
-No sibling-repository protocol is exercised.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:98-182; mcp/tests/test_lifecycle_operations.py:189-331 |
-
-## L23 Lifecycle Model Package Review
-
-The suite imports closeout/integration operation inputs from `models.lifecycles.operation`, the
-dedicated model owner. Durable operation, installed-runtime selection, service binding, and
-non-daemon authority coverage are unchanged.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260815-DAG Master Full-Gate Repair
-
-The 260815-DAG master full-gate repair moved the lifecycle-operation imports under
-`worktrees/integration/` and `TaskRef` under `application/task_docs/`; the cross-kind and terminal
-lease refusals now drive `lease.__enter__()` explicitly instead of opening the lease inside the
-raises context, and the `killpg` patch target follows the moved module.
-
-## 260821-CLIVE-L1 Lifecycle Journal Coverage
-
-This suite now constructs closeout admission from normalized effective input and exercises strict schema 3.0, immutable duplicate plans, stable candidate identity, explicit cross-kind compatibility under the lease, evidence-derived cancellation/retention, worker rehydration, and recovery projection. Raw closeout input through the generic starter and legacy/extra store shapes fail closed; queue projection is not used as journal evidence.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. The L2 additions force locator-rooted journal access, legal task-addressed controls, write-ahead successors, exact worker termination, total expected-failure projection, and same-generation convergence.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current test source exercises `test_integration_authority_refuses_incomplete_closeout_edges`, `test_start_returns_immediately_and_duplicate_observes_one_launch`, `test_conflicting_commit_message_refuses_while_task_operation_exists`, `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation`. | `test_integration_authority_refuses_incomplete_closeout_edges`; `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_conflicting_commit_message_refuses_while_task_operation_exists`; `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation` | mcp/tests/test_lifecycle_operations.py:292-313; mcp/tests/test_lifecycle_operations.py:316-334; mcp/tests/test_lifecycle_operations.py:337-347; mcp/tests/test_lifecycle_operations.py:350-361 |
-
-
-## PDLS Reconciliation
-
-Lifecycle operation tests now cover explicit retry/replacement after failed or terminal generations and convergent initial-door publication.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
-
-## CCR-R18@v1 Location-Decision Binding
-
-260831-CCR-L18 added `test_operation_location_decision_binds_developer_decision`: a `LifecycleOperationLocationError` on a started closeout operation produces a read-only developer-decision projection through `bind_projection_decision` — `result.state == "operation-location-mismatch"` with `developerDecisionRequired: true`, a `developer-decision` `recommendedAction`, empty legal controls, and `cancellable: false` — proving location contradictions never advertise mutating authority.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the new operation-location developer-decision binding test. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile config mock in lifecycle operation dispatch tests.

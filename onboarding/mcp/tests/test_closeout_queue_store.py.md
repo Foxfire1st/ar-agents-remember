@@ -5,64 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Owns confinement and atomic persistence for the two-state disposable closeout projection store:
-`invalid-empty` after invalidation and `valid-built` only after a current-source rebuild.
+Disposable closeout projection store currentness and publication refusals.
 
 ## Code Commentary
 
 ### Logic
 
-The suite forces absent, malformed, nonregular, stale-source, terminal-empty, and oversized inputs.
-It proves that invalidation is durable and idempotent, malformed artifacts are recoverably replaced
-without a compatibility reader, stale builders cannot publish, and an exact current-source build is
-atomically exposed with bounded members and diagnostics.
+An effective read preserves artifact diagnostics and rejects source-fingerprint mismatch with an invalid-empty view. An off-side builder whose source moved never publishes; unreadable source stays non-admitting and retains the concrete source problem.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Queue paths remain task-root confined.
-- The only persisted service conditions are `invalid-empty` and `valid-built`.
-- Invalidation never retains candidates; publication requires exact source identity and cannot
-  expose an off-side or stale build.
+Projection persistence cannot override current source authority. Invalid-empty is a refusal state, not an empty eligible queue.
 
-## Repo-Internal References
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Store paths are confined and persisted conditions are exactly valid-built or invalid-empty. | `test_paths_are_confined_and_persisted_conditions_are_exactly_two` | mcp/tests/test_closeout_queue_store.py:80-92 |
-| Invalidation is idempotent and malformed artifacts are overwritten without legacy parsing. | `test_absent_invalidation_publishes_and_reports_persisted_empty`; `test_existing_invalid_empty_is_idempotent`; `test_malformed_artifact_is_recoverably_overwritten_without_legacy_parse` | mcp/tests/test_closeout_queue_store.py:94-99; mcp/tests/test_closeout_queue_store.py:101-105; mcp/tests/test_closeout_queue_store.py:107-120 |
-| Stale builders never publish; terminal empty remains valid-built and persisted collections stay bounded. | `test_stale_off_side_builder_never_publishes`; `test_terminal_empty_is_valid_built_not_a_third_condition`; `test_every_persisted_and_wire_collection_is_capped` | mcp/tests/test_closeout_queue_store.py:163-171; mcp/tests/test_closeout_queue_store.py:190-211; mcp/tests/test_closeout_queue_store.py:213-241 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## Current Contract — 260821 CLIVE Final
+## Repo-Internal References
 
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-Forces the two-state disposable projection store, invalidation receipts, atomic replacement, source-fingerprint checks, and strict-read degradation.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Effective read preserves artifact diagnostic and refuses source mismatch. | `test_effective_read_preserves_artifact_diagnostic_and_refuses_source_mismatch` | mcp/tests/test_closeout_queue_store.py:73-95 |
+| Stale off side builder never publishes. | `test_stale_off_side_builder_never_publishes` | mcp/tests/test_closeout_queue_store.py:97-105 |
+| Source unreadability keeps canonical state non admitting. | `test_source_unreadability_keeps_canonical_state_non_admitting` | mcp/tests/test_closeout_queue_store.py:107-122 |
 
-### Current Invariants
+## Cross-Repo References
 
-- Invalidation durably publishes invalid-empty with no candidates.
-- Only a complete current-source build can publish valid-built.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
-## PDLS Reconciliation
-
-Queue-store tests now enforce disposable valid-built/invalid-empty projection semantics instead of stale-row lifecycle transitions.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

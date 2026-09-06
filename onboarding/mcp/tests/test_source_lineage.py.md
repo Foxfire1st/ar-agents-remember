@@ -5,138 +5,78 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:45+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP test overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Provides real-Git acceptance coverage for task-derived source-lineage policy.
-The fixture builds canonical sprint, master, and leaf documents plus matching
-series/leaf contracts and repositories, so the tests exercise ancestry from the
-same durable identities used by structural dispatch rather than caller-supplied
-ids.
+Builds real Git repositories and canonical sprint/master/leaf contracts to check transitive code and memory lineage. Parent movement blocks the leaf; start and attach recheck exact source tips; sibling worktrees of the same repository remain legitimate. The lineage chain comes from task authority rather than caller-invented identifiers.
 
 ## Code Commentary
 
-## Test Coverage
+### Logic
 
-`SourceLineageTests` proves sprint/no-edge behavior and the full
-code/external-memory edge order for a leaf, then moves actual branch tips to
-cover blocked super-to-master, master-to-leaf, and diverged ancestry. The start case explicitly supplies
-`stale_base_choice="proceed-stale"` and still expects a lineage refusal, proving
-that the human stale-base option cannot bypass this structural gate. Attach is
-also refused before stale task context resumes. Organizational and atomic pre-start cases
-separately prove forward code movement, rewound external memory, and a
-preflight-to-repository-lock source race all refuse without creating either worktree or rewriting
-the contract.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-The missing-contract tests pin relation attribution: a missing leaf contract is
-reported as an unavailable `master-to-leaf` edge, while a missing master series
-contract is `super-to-master`. This keeps dashboard/recovery evidence useful
-even when no branch comparison can be performed. Additional cases cover
-malformed/missing parent contracts, non-task contracts, mismatched parent
-branches, absent repositories/branch names/refs, and an unavailable Git
-comparison. Unavailable projections deliberately expose no sync command because
-there is not yet a safe branch movement to perform.
+### Conventions
 
-The sibling-worktree regression creates a real detached linked checkout for the parent contract
-while leaving the leaf contract on the repository's original checkout. The full leaf projection
-must stay current, proving repository identity follows Git's shared common directory rather than
-literal checkout path. Complementary cases prove repository identity is unavailable for a missing
-path and for an existing non-Git directory, while `require_current_source_lineage` accepts a fully
-current transitive chain and raises operation-specific sync guidance after the super moves.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
-## Invariants And Boundaries
+### Invariants And Boundaries
 
-- Repositories are initialized and advanced with Git commands; ancestry tests do
-  not mock the fact source.
-- Task identity is resolved from canonical JSON documents and enclosure paths.
-- The fixture can enable external memory to prove both code and memory edges.
-- Refusal tests assert both the blocked state and the exact recovery contract.
-- The lifecycle-boundary helper accepts a current full chain, then refuses after the real super
-  branch moves and names the parent-first `worktree_sync` recovery.
-- Parent and leaf contracts may name sibling worktrees of one repository without producing a false
-  unavailable lineage edge.
-- The suite is collected by pytest only. It has no `__main__`/`unittest.main()` script launcher;
-  removing that pytest-inert footer changes no test semantics and prevents dead launcher lines
-  from appearing as uncovered acceptance delta.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sprint roles have no single master edge; leaf identity proves the ordered transitive code and external-memory edges. | `test_sprint_roles_have_no_single_master_lineage_edge`; `test_leaf_identity_proves_code_and_memory_transitively` | mcp/tests/test_source_lineage.py:42-70 |
-| Super movement blocks start despite a stale-base override and points to the master contract. | `test_super_move_blocks_before_leaf_start_even_with_stale_override` | mcp/tests/test_source_lineage.py:232-254 |
-| Master movement blocks leaf dispatch and points to the leaf contract. | `test_master_move_blocks_leaf_dispatch_with_leaf_sync_recovery` | mcp/tests/test_source_lineage.py:256-272 |
-| Missing/malformed task or parent contracts fail closed with relation-specific evidence. | `test_missing_leaf_contract_fails_closed`; `test_missing_master_contract_names_the_super_to_master_edge`; `test_parent_only_preflight_fails_closed_for_every_missing_parent_shape` | mcp/tests/test_source_lineage.py:288-300; mcp/tests/test_source_lineage.py:302-314; mcp/tests/test_source_lineage.py:329-347 |
-| Unavailable repositories/branches/Git comparisons carry no fabricated sync recovery. | `test_unavailable_lineage_has_no_sync_recovery_command`; `test_contract_branch_mismatch_and_git_failures_are_unavailable` | mcp/tests/test_source_lineage.py:364-373; mcp/tests/test_source_lineage.py:375-404 |
-| Sibling linked worktree paths resolve as the same repository and keep the leaf chain current. | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:406-426 |
-| Diverged master ancestry reports both ahead and behind counts. | `test_diverged_master_reports_divergence` | mcp/tests/test_source_lineage.py:428-439 |
-| The shared fixtures write canonical atomic and organizational task topology, contracts, real code/external-memory branches, and exact pre-start base snapshots. | `_fixture`, `_organizational_fixture`, `_write_task_tree`, `_repo` | mcp/tests/test_source_lineage.py:472-536; mcp/tests/test_source_lineage.py:539-562; mcp/tests/test_source_lineage.py:565-608; mcp/tests/test_source_lineage.py:611-624 |
+| Leaf identity proves code and memory transitively | `test_leaf_identity_proves_code_and_memory_transitively` | mcp/tests/test_source_lineage.py:48-65 |
+| Organizational super move blocks the leaf boundary | `test_organizational_super_move_blocks_the_leaf_boundary` | mcp/tests/test_source_lineage.py:67-81 |
+| Start rechecks exact source tips before start effects | `test_start_rechecks_exact_source_tips_before_start_effects` | mcp/tests/test_source_lineage.py:83-114 |
+| Attach refuses before stale task context is resumed | `test_attach_refuses_before_stale_task_context_is_resumed` | mcp/tests/test_source_lineage.py:117-130 |
+| Parent and leaf paths may be sibling worktrees of one repository | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:132-152 |
+| Lifecycle boundary requires the full transitive chain | `test_lifecycle_boundary_requires_the_full_transitive_chain` | mcp/tests/test_source_lineage.py:154-166 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies beyond the configured code/memory repositories
-that the lineage fixture models explicitly.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
-## L23 Final Candidate Disposition
-
-Lineage regressions compare Git common-directory identity across sibling worktrees and require
-current super-to-master-to-leaf ancestry for both code and external memory. Missing, behind,
-diverged, or foreign-repository evidence fails closed with task-addressed recovery.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260821-CLIVE-L2 Lifecycle Location Fixture Sequencing
-
-Source-lineage fixtures normally publish master and leaf locators/manifests with their contracts.
-The organizational fixture deliberately delays publication until task structure is rewritten, then
-publishes only the final accepted leaf identity. This prevents stale pre-rewrite lifecycle
-addresses from becoming test authority.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Standard fixtures publish addressable master and leaf contracts from canonical publication text. | `_fixture` | mcp/tests/test_source_lineage.py:473-553 |
-| Organizational setup delays publication and emits the final leaf location after its task rewrite. | `_organizational_fixture` | mcp/tests/test_source_lineage.py:556-587 |
-
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Forces transitive source-line enforcement from canonical task identity through leaf, organizational, atomic-series, code, memory, and ledger routes.
-
-### Current Invariants
-
-- Candidate bases and landing refs derive from exact task/contract lineage.
-- Stale or mismatched lineage fails closed before protected mutation.
-
-
-## PDLS Reconciliation
-
-Source-lineage forcing now recognizes the current integration package owners while retaining exact no-shadow/no-fallback constraints.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-26T08:45+02:00 — Restored the canonical commentary and Docs/Cross-Repo reference section
   shape for this changed lineage suite card.

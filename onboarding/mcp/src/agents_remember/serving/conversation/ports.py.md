@@ -58,10 +58,13 @@ No Domain Documentation source is configured for this repository-owned port boun
 
 ## Repo-Internal References
 
+The conversation facade imports its library protocol from the canonical serving port owner. Current source: `ConversationLibraryPort` (mcp/src/agents_remember/serving/ports.py:94-119).
+
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally. |"class ConversationEventEnvelope"|mcp/src/agents_remember/models/conversations/stream_events.py:88-88|
-| The topology regression requires exactly these two ports and forbids a control port. | `test_exactly_two_conversation_ports_exist` | mcp/tests/test_conversation_foundation.py:22-29 |
+
 
 ## Cross-Repo References
 

@@ -60,7 +60,7 @@ instead of re-pulling it over the network.
 | Provider setup combines isolated GrepAI and CGC settings before running workflow-local provider lifecycle operations. | `isolated_cgc_settings`, `isolated_grepai_settings`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:52-53; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | GrepAI database warm-start is handled by the seed module after isolated target settings exist. | `grepai_clone_bundle`, `_clone_database` | mcp/src/agents_remember/providers/grepai/seed.py:88-101; mcp/src/agents_remember/providers/grepai/seed.py:266-310 |
 | Provider identity helpers derive the worktree instance id and ownership labels. | `provider_instance_id`, `provider_ownership_labels` | mcp/src/agents_remember/kernel/primitives/identity.py:31-57; mcp/src/agents_remember/kernel/primitives/identity.py:123-135 |
-| Unit tests verify active-root swapping and preservation of unrelated memory roots. | `test_isolated_grepai_settings_swaps_only_active_memory_root` | mcp/tests/test_provider_setup.py:632-706 |
+
 
 ## Update History
 

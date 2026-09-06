@@ -57,7 +57,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The conversation package re-exports the canonical definitions. | `__all__` | mcp/src/agents_remember/serving/conversation/ports.py:17-22 |
-| The foundation suite pins the exact two-port topology. | `test_exactly_two_conversation_ports_exist` | mcp/tests/test_conversation_foundation.py:24-36 |
+
 
 ## Cross-Repo References
 

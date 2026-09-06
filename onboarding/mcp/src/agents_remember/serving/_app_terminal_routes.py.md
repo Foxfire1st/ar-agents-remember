@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastUpdated | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                          |
@@ -20,6 +20,8 @@ Owns terminal catalog, open, structural task-assignment, paste/submit, terminate
 cleanup HTTP route behavior.
 
 ## Code Commentary
+
+The WebSocket endpoint attaches only to an already live session. An unavailable attachment closes with 4404; it never creates a replacement process. The bridge carries raw terminal I/O, independently of reliable whole-message adapter submission. On exit it marks a dead process exited, otherwise closes only the attached client, then closes the WebSocket. HTTP callers receive catalog-owned launch/binding facts. cit:([`_serve_terminal_websocket`], mcp/src/agents_remember/serving/_app_terminal_routes.py:86-112).
 
 ### Logic
 
@@ -72,6 +74,8 @@ preserve status, detail, and the strict projection. The dashboard receives
 operator-actionable evidence while the catalog remains unchanged.
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded HTTP retirement
   propagation of reviewer parent provenance into the shared plane-specific authority policy.
   Verification remains closeout-owned.

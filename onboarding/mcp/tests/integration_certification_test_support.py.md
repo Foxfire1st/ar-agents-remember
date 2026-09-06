@@ -26,7 +26,7 @@ Provides real integration journal ownership and physically published original co
 
 `selected_code_fixture` creates a real checkout with the repository profile, derives its candidate lane, freezes the full run and persists admission. The shared injected outcome factory supplies code-rail results while actual publication owners write and reopen the result document. `record_published_generation` constructs original typed terminal references and the fixture requires no recording refusal. This is physical object/publication composition, not ordinary-suite execution in Dagger.
 
-`SelectedCodeFixture.render` calls the selected-certification renderer with those supplied originals, the fixture HEAD comparison base and frozen mode. `structural_quality_references` instead constructs deterministic small reference dictionaries and an empty canonical publication object for model-shape tests; it issues no backing objects or accepted certificates.
+`render` calls the selected-certification renderer with those supplied originals, the fixture HEAD comparison base and frozen mode. `structural_quality_references` instead constructs deterministic small reference dictionaries and an empty canonical publication object for model-shape tests; it issues no backing objects or accepted certificates.
 
 ### Conventions
 
@@ -59,7 +59,7 @@ These source anchors establish the actual owner calls, fixture inputs and execut
 | --- | --- | --- |
 | The integration owner comes from an actual started operation runtime. | `integration_fixture` | mcp/tests/integration_certification_test_support.py:54-108 |
 | The selected fixture retains one target, prepared run and ordered original terminals. | `SelectedCodeFixture` | mcp/tests/integration_certification_test_support.py:112-124 |
-| Rendering consumes supplied originals and the frozen mode. | `SelectedCodeFixture.render` | mcp/tests/integration_certification_test_support.py:117-124 |
+| Rendering consumes supplied originals and the frozen mode. | `render` | mcp/tests/integration_certification_test_support.py:117-124 |
 | Stored objects derive from a physical publication with injected code execution. | `selected_code_fixture` | mcp/tests/integration_certification_test_support.py:127-162 |
 | Structural references are deterministic shapes without a backing evidence publication. | `structural_quality_references` | mcp/tests/integration_certification_test_support.py:165-184 |
 

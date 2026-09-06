@@ -65,7 +65,7 @@ The source and focused application tests prove the raw-shape and no-write bounda
 | --- | --- | --- |
 | The helper validates the entire raw list before copying and scaffolding only missing registers. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
 | `_build_doc` routes create and replace candidates through this helper before canonical model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:554-584 |
-| Focused proof covers hostile containers/members, byte-and-mode preservation, caller preservation, and semantic delegation. | `TaskDocSectionScaffoldingTests` | mcp/tests/test_task_doc_section_scaffolding.py:38-127 |
+| Register section scaffolding has one production entry point and validates the supplied section collection. | `scaffold_register_sections` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37 |
 
 ## Cross-Repo References
 

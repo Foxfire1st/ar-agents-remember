@@ -56,7 +56,6 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Stable model completion is proved without snapshotting the old split shape. | `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:47-56 |
 
 ## Cross-Repo References
 
@@ -67,6 +66,9 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-25T01:56+02:00 — 260824-PDLS replaced the retired split baseline reference with the
   stable architecture owner; verification remains closeout-owned.

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastUpdated | 2026-09-06T22:15:27+00:00 |
 | lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
 | lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `overview.md`                                                |
@@ -52,6 +52,8 @@ payload owners remain unchanged.
 
 ## Code Commentary
 
+Current IAS policy treats coverage as diagnostic and production CRAP above 20 as a review signal, not a numeric rejection. The retained registration docstrings still contain older mandatory-CRAP wording; that wording is stale and must not restore a metric gate. Full suite and whole-master review remain master-end obligations. The registrar preserves distinct commit messages and approval intent, and an accepted journal generation survives disposable queue loss.
+
 ### Logic
 
 The preview/apply pair (`worktree_closeout_preview` L24-L46, `worktree_closeout_apply` L47-L76)
@@ -61,14 +63,14 @@ dry_run)`, precisely so the approval-bearing half cannot be confused with the co
 `dry_run` in with the messages would let a preview read as an approved apply.
 
 Both docstrings state the real order, and it is not commit-first. Preview reports whether strict
-project-owned quality **including mandatory CRAP enforcement** will run — since 260731-EFA-L4 the
+project-owned quality under the selected project checks will run — since 260731-EFA-L4 the
 description is specific about *what it runs over*: "over the staged task worktree before the code
 commit", not merely "before the code commit".
 
 Apply's docstring was rewritten in the same leaf, and it is now a conditional statement rather
 than an unconditional one. It reads: when code would commit **AND the checkout carries the
 project-owned quality wrapper**, apply resets the index, stages the whole task worktree, and runs
-strict quality with mandatory CRAP enforcement **over exactly that staged content**, before any
+strict quality with diagnostic CRAP reporting **over exactly that staged content**, before any
 code, memory, ledger, contract, or applied-gate **commit**; then commits code, memory and ledger
 in order. It states four things the previous text did not:
 
@@ -127,11 +129,10 @@ The three destructive tools forward flat:
 | --- | --- | --- |
 | The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:127-135 |
 | `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:98-115 |
-| The two pre-staging refusals and reset-then-stage Dagger gate described by apply live in the extracted staged-quality owner. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree`; `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:20-36; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:39-51; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:77-129 |
+| Refuse to stage anywhere except a task's own throwaway worktree. | "def _refuse_outside_a_linked_worktree" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:25-41 |
+| Refuse before staging when the checkout has unresolved conflicts. | "def _refuse_conflicted_worktree" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
+| Prepare and certify a fresh candidate through the ordinary gate entry point. | "def gate_staged_code" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
 | The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap. | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-136; mcp/src/agents_remember/worktrees/modules/quality/gate.py:139-183 |
-| The approval/message split proved through a live server. | `test_closeout_apply_keeps_the_approval_separate_from_the_messages` | mcp/tests/test_mcp_registration_wiring_tests_2.py:165-187 |
-| The closeout descriptions are asserted to pin quality-before-commit. | `test_closeout_tool_descriptions_pin_strict_quality_before_mutation` | mcp/tests/test_tools.py:245-259 |
-| The staged-gate behaviour the rewritten descriptions promise. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 
 ## R39 Integration Tool Contract
 
@@ -168,6 +169,9 @@ mismatched evidence refuses deletion. Shared grade/admission request types come 
 closeout-source model.
 
 ## Update History
+
+- 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
+
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `worktree_closeout_preview_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:127-135. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: corrected the published direct-landing description so MCP

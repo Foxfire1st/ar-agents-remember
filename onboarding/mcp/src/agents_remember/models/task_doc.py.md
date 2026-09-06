@@ -80,7 +80,8 @@ inside their own functions and return raw operation payloads; without the declar
 execution-graph authoring results validate against the strict `extra="forbid"` envelope after their
 writes (the same defect class as the L18 `remove_subtask` fix), and the application entry point
 merges the standard task-doc identity into those raw operation payloads via
-`_sprint_doc_identity`. The new wire-shape behavior is pinned by `mcp/tests/test_task_doc_wire_shape.py`.
+`_sprint_doc_identity` (mcp/src/agents_remember/application/task_docs/task_doc_tools.py:396-418). The former wire-shape suite
+was retired; these model and application owners remain the current contract authority.
 
 ## 260821-CLIVE Discard And Projection-Effect Response Models
 

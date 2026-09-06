@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Canonical item/revision behavior. | `apply_item` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249 |
-| The `OverflowGapTests` regression suite. | `OverflowGapTests` | mcp/tests/test_conversation_active_service_gaps.py:22-65 |
+
 
 ## Cross-Repo References
 

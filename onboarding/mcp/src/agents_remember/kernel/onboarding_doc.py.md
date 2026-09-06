@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-04T03:03+02:00                     |
+| lastUpdated            | 2026-09-06T22:01:41+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                                  |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -65,9 +65,13 @@ No external Domain Documentation source is configured for this memory repo.
 | Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:262-287; mcp/src/agents_remember/worktrees/modules/onboarding.py:323-339; mcp/src/agents_remember/worktrees/modules/onboarding.py:342-372; mcp/src/agents_remember/worktrees/modules/onboarding.py:694-748 |
 | Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:457-488; mcp/src/agents_remember/worktrees/modules/onboarding.py:853-894 |
 | The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import (" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:66-66 |
-| Helper unit tests cover body stripping, history extraction, and marker detection. | `test_strips_metadata_rows_and_update_history`; `test_extracts_history_lines_without_heading`; `test_detects_content_marker` | mcp/tests/test_onboarding_doc.py:42-49; mcp/tests/test_onboarding_doc.py:75-77; mcp/tests/test_onboarding_doc.py:98-101 |
+| Meaningful-body normalization strips verification fields and history. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:94-108 |
+| History extraction is section-aware. | `update_history_section` | mcp/src/agents_remember/kernel/onboarding_doc.py:115-126 |
+| A recognized no-impact marker requires its explicit colon form. | `has_no_impact_marker` | mcp/src/agents_remember/kernel/onboarding_doc.py:135-143 |
 
 ## Update History
+
+- 2026-09-06T22:01:41+00:00 — Reconciled retired test evidence against current owning source; retained production invariants and verification pins without claiming removed suite protection.
 
 - 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the three split consumer ranges (3 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
 - 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: split the

@@ -52,7 +52,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Package metadata and source-checkout fallback are selected through the explicit resolver. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
-| Version fallback behavior is pinned by the structural-coverage suite. | `test_version_fallback` | mcp/tests/test_leaf_structural_coverage.py:189-189 |
+| Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-20 |
 
 ## Cross-Repo References
 

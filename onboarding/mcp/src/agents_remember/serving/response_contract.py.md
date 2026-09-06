@@ -5,7 +5,7 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated | 2026-09-04T01:06+02:00 |
+| lastUpdated | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
 | lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                           |
@@ -20,6 +20,8 @@ Defines strict served HTTP response models. Terminal catalog, open, conflict, an
 responses now expose canonical task-document binding rather than leaf-key identity.
 
 ## Code Commentary
+
+`WireResponse` is frozen, generates camelCase aliases and forbids extra fields. Separate refusal models declare which identifier each status may echo; an untyped status-plus-arbitrary-data envelope would discard this boundary. Internal population by field name is allowed, so wire validation must still distinguish the emitted alias form. The removed route-conformance matrices are historical evidence, not an active coverage claim. cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:89-109).
 
 ### Logic
 
@@ -84,6 +86,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 
 - 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `RequirementRow`/`RequirementsListing`/`RequirementContents` models and the 61-to-63 route-count advance for the new requirement endpoints.
 

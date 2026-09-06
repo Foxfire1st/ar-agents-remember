@@ -84,10 +84,10 @@ the helper host reports the runtime/helper versions as informational evidence (n
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A codex version drift still ENABLES the surface when the connect+list probe passes; a failed probe demotes to unverified. | "def test_version_drift_still_enables_codex_when_the_probe_passes(self) -> None:"; "def test_failed_probe_is_unverified_not_unavailable(self) -> None:" | mcp/tests/test_conversation_library_gates.py:124-124; mcp/tests/test_conversation_library_gates.py:143-143 |
-| Helper success enables Pi fully; helper failure and missing locked dependencies demote to unverified. | "def test_helper_success_enables_pi_with_full_completeness(self) -> None:"; "def test_helper_failure_is_unverified(self) -> None:"; "def test_missing_helper_dependencies_are_unverified(self) -> None:" | mcp/tests/test_conversation_library_gates.py:189-189; mcp/tests/test_conversation_library_gates.py:208-208; mcp/tests/test_conversation_library_gates.py:225-225 |
+| Codex history support follows the real connection/list probe; observed version is informational and a failed probe is unverified. | `_codex_gate` | mcp/src/agents_remember/serving/conversation/library/gates.py:243-270 |
+| Helper preflight or native list failure is unverified; successful Pi helper proof supplies the supported history shape. | `_helper_gate` | mcp/src/agents_remember/serving/conversation/library/gates.py:272-310 |
 | The helper host reports observed runtime/helper versions as informational evidence only; the operation result is the gate (no version comparison). | "def helper_preflight(" | mcp/src/agents_remember/serving/conversation/library/helper_host.py:74-74 |
-| The installed-runtime suite re-proves the Codex and Pi gates on real harnesses (the exact-identity checks still skip on version drift — recorded conservatism). |"async def test_live_gate_supports_list_read_and_partial_completeness("; "def test_live_helper_gate_supports_pi_history(self) -> None:"; "def test_open_real_pi_session_proves_exact_identity(self) -> None:"|mcp/tests/test_conversation_library_installed.py:148-148; mcp/tests/test_conversation_library_installed.py:237-237; mcp/tests/test_conversation_library_installed.py:394-394|
+| Historical evidence (retired with the d3610903 suite reduction): The installed-runtime suite re-historically exercised the Codex and Pi gates on real harnesses (the exact-identity checks still skip on version drift — recorded conservatism). These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 
 ## Cross-Repo References
 

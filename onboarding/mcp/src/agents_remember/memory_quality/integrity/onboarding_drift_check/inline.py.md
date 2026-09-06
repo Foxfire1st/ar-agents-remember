@@ -39,7 +39,7 @@ finds inline-eligible sources via storage resolution.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Inline source enumeration reads repo files through `git_ops.list_repo_sources`. | `list_repo_sources` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:41-45 |
-| Inline parsing and CLI behavior are covered by the package tests. | `InlineOnboardingTests`; `DriftMainCliTests` | mcp/tests/test_onboarding_drift.py:62-121; mcp/tests/test_onboarding_drift.py:124-153 |
+| Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted. | `extract_inline_onboarding_block` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:61-82 |
 
 ## Update History
 

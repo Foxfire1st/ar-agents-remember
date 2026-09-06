@@ -5,136 +5,73 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `../overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_terminal_liveness.py` (new in **260707-HFX-L5**) pins the catalog liveness hysteresis
-semantics of `serving/terminal_liveness.py` + the liveness transitions in
-`serving/terminal_catalog.py` and the stderr-aware probe classification in
-`serving/terminal.py`. It is the regression net against the false-dead-fleet failure mode: a
-transient tmux command-failure storm must never mass-exit live sessions, and a false exit must
-self-heal. **260707-HFX2-L11** extends the regression net to a second failure mode: landed rows
-must cost the sweeper nothing per-row, at any fleet size, since they now accumulate by design.
+Retains the transient-failure-storm regression: sessions stay running while the liveness hysteresis window has not elapsed. Fake probes and clock-driven setup model that boundary. Historical fleet-scaling, landed-row cost and broad false-exit recovery claims are no longer the retained assertions in this module.
 
 ## Code Commentary
 
-### 260707-HFX2-L12 CS-6 Update
-
-The terminal-liveness scaling regression now counts true disk reads/writes separately from in-memory batch operations and proves landed-row-heavy sweeps still perform one disk read and one disk write regardless of catalog size.
-
 ### Logic
 
-Helpers: `_entry(session_id)` builds a running harness `TerminalCatalogEntry` with deterministic
-timestamps; `_Clock` is a dataclass fake clock (`__call__` returns `moment`, `advance(seconds)`
-steps it) injected as the sweeper's `now`, so every case is sleepless. Two fake hosts: `_FakeHost`
-returns a canned `TmuxProbeResult` (with optional `entered`/`release` threading events for the
-overlap case, and a `calls` counter for the rate-limit case); `_TmuxSubprocessProbeHost` calls the
-**real production classifier** `_tmux_probe_session` with `subprocess.run` mocked — the stderr
-cases bite the shipping classification, not a fake.
-
-`TerminalCatalogLivenessTests` builds a temp-dir `TerminalCatalog` per case; `_sweeper(...)`,
-`_snapshot_sweeper(...)`, and `_control_sweeper(...)` construct a
-`TerminalCatalogLivenessSweeper` with one `probe=LivenessProbe(...)` argument carrying the
-hysteresis config plus the injected doubles — `hysteresis=TerminalCatalogLivenessConfig(threshold
-3 / window 5s / pane-gone 1 / interval 0 unless overridden)`, and where a case needs them,
-`pane_capturer=` and `snapshot_reader=`. Only `now=self.clock` stays a loose keyword. Cases:
-
-- `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` — 14 sessions,
-  `tmux-command-failed` on every probe, 3 sweeps over 3 seconds: all rows stay `running` with
-  `liveness_failures == 3` (the count is met but the 5s window is not — no mass exit).
-- `test_pane_gone_evidence_marks_exited_without_command_failure_window` — one `pane-gone` probe
-  marks `exited` immediately with `exit_evidence == "pane-gone"` (definitive evidence, threshold 1,
-  zero window).
-- `test_non_missing_tmux_nonzero_stderr_uses_hysteresis` (L5R2) — a nonzero tmux exit with stderr
-  `error connecting to tmux server` classifies `tmux-command-failed`: the row stays `running`,
-  `liveness_evidence == "tmux-command-failed"`, no `exit_evidence`.
-- `test_missing_session_stderr_uses_pane_gone_behavior` (L5R2) — stderr
-  `can't find session: ar-gone` classifies `pane-gone` and marks `exited`.
-- `test_alive_again_probe_clears_false_liveness_exit` — three spaced command failures exit-mark the
-  row (`exit_evidence == "tmux-command-failed"`), then an alive probe on a later sweep self-heals
-  it to `running` with failures cleared and `exit_evidence` gone.
-- `test_fast_tick_respects_sweep_rate_limit` — with a 30s interval, three `refresh()` calls one
-  second apart make exactly ONE host probe (the dashboard's 1s cadence cannot imply 1s probing).
-- `test_overlapping_sweep_returns_current_catalog_without_second_probe` — a real second thread
-  parks inside the host probe (via the `entered`/`release` events); the concurrent `refresh()`
-  returns the current catalog with NO second probe (`calls == 1`), then the parked sweep completes
-  without error.
-- `test_landed_rows_do_not_add_per_row_sweep_probe_or_catalog_reads` (HFX2-L11 round-2 F1 fix) —
-  a `_CountingCatalog` (subclasses `TerminalCatalog`, counts `_read()` calls) is seeded with N
-  `status="landed"` rows plus one `running` row, then swept; run at N=5 and N=500 the result is
-  byte-identical: exactly one host probe call, one pane capture (the running row only), and
-  exactly 3 catalog `_read()` calls, regardless of how many landed rows exist. This pins
-  `refresh()`'s `_observe_catalog_entry` short-circuit for `status=="landed"` (returns
-  `TerminalLivenessObservation(entry=entry, alive=True)` without calling
-  `observe_terminal_liveness`) as a genuinely flat-cost skip, not just a probe-count reduction —
-  closing the round-1 BLOCK where landed seats were silently enrolled into the sweeper's
-  per-cycle O(N) subprocess / O(N^2) catalog-read cost as they accumulated by design (the 3rd
-  CS-6-class catch on this master after L7/L9).
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Uses `unittest` and inserts `mcp/src` on `sys.path` (the suite-wide worktree pin idiom), matching
-the surrounding MCP test suite. Fake clock + fake/mocked hosts keep every case sleepless and
-tmux-free.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-No FastAPI routes, WebSockets, or real tmux here — the app wiring is covered by
-`test_terminal_ws.py`, the probe's real-subprocess integration by `test_terminal.py`, and pure
-catalog JSON semantics by `test_terminal_catalog.py`. This file pins hysteresis, evidence
-classification, self-heal, and sweep cadence/overlap only.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
-| The liveness transition copiers retain success-side healing and thresholded failure behavior. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:148-148; mcp/src/agents_remember/serving/terminal_catalog.py:152-152 |
-| The catalog records each probe through the success/failure transition copiers. | "def record_liveness_probe("; "updated = entry.with_liveness_success()"; "updated = entry.with_liveness_failure("; "pane_gone_failure_threshold=hysteresis.pane_gone_failure_threshold" | mcp/src/agents_remember/serving/terminal_catalog.py:131-131; mcp/src/agents_remember/serving/terminal_catalog.py:148-148; mcp/src/agents_remember/serving/terminal_catalog.py:152-152; mcp/src/agents_remember/serving/terminal_catalog.py:157-157 |
-| The production observer caller drives the catalog probe on alive and failed paths. | "def observe_terminal_liveness("; "if session is not None and session.is_alive: updated = catalog.record_liveness_probe(entry.id"; "if tmux.exists: updated = catalog.record_liveness_probe(entry.id"; "updated = catalog.record_liveness_probe( entry.id"; "return TerminalLivenessObservation(entry=updated or entry" | mcp/src/agents_remember/serving/terminal_liveness.py:327-327; mcp/src/agents_remember/serving/terminal_liveness.py:343-344; mcp/src/agents_remember/serving/terminal_liveness.py:353-354; mcp/src/agents_remember/serving/terminal_liveness.py:362-363; mcp/src/agents_remember/serving/terminal_liveness.py:369-369 |
-| The production stderr-aware probe classifier the `_TmuxSubprocessProbeHost` cases exercise for real. | `_tmux_missing_session_stderr`; `tmux_probe_session` | mcp/src/agents_remember/serving/terminal_tmux.py:149-176; mcp/src/agents_remember/serving/terminal_tmux.py:179-181 |
-| The catalog JSON/storage unit tests this file deliberately does not duplicate. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
-
-## 260718-CHATS-L5I Current Delta
-
-Liveness regressions now pin the one-second starting-row path and multi-read disconnect hysteresis separately from definitive tmux exit handling.
-
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No relevant documentation was found after
-checking the configured source inventory.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external documentation claim applies to this repository-owned forcing proof. | N/A | N/A |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Transient failure storm leaves sessions running until window elapsed | `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` | mcp/tests/test_terminal_liveness.py:184-196 |
 
 ## Cross-Repo References
 
-Cross-repository reads are disabled by the resolved settings, and this unit makes no external
-boundary claim.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | N/A | N/A |
-
-## PDLS Reconciliation
-
-Terminal liveness assertions now use durable worker/generation evidence and retain process-sensitive retry semantics.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
   above after source and requirement review. Verification remains closeout-owned.

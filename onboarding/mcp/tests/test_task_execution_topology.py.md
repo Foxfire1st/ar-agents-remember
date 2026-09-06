@@ -5,108 +5,74 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `3e276f2b2052b641afbee180a472259f21b500df` |
 | lastVerifiedCommitDate | 2026-09-02T14:46:34+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests/overview.md](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Force the persisted execution-nature and sprint activity-on-node graph contract through schema,
-cross-document topology, task-doc graph bootstrap/authoring, deterministic rendering, observer
-projection, and atomic rollback behavior, including the L04 mutation-classified publication scope:
-an unchanged document batch resolves no projection scope even when an unrelated malformed task
-exists.
+Provides shared topology fixtures only: canonical repository/task references, a minimal runtime configuration and a typed master-document constructor. No test functions remain in this module. The former full topology/publication/observer assertions are historical; retained segment suites consume these helpers without turning helper imports into executed protection.
 
 ## Code Commentary
 
 ### Logic
 
-The schema cases reject duplicate nodes and edges, unknown endpoints, self edges, blank reasons,
-cycles, and invalid master/sprint field placement. The topology cases build minimal synthetic task
-roots, prove legacy state remains migration-required (the refusal names the
-`author_execution_graph` bootstrap), reject unknown, duplicate, and drifted command
-membership, exercise preview and apply, and inject a mid-batch write failure to prove rollback. The
-suite also forces multi-parent DAG release, malformed bootstrap envelopes, missing and wrong-kind
-bootstrap targets, unresolved masters, non-sprint use, and override identity confinement. A
-poisoned second-read regression proves wave derivation validates and returns one pinned sprint
-snapshot, and the out-of-root case asserts the actual `task.json` and `task.md` publication targets.
-The rollback proof compares every canonical JSON/Markdown task publication, permits the persistent
-coordination lock, and separately proves that neither queue state nor a pending WAL was published.
-The suite also directly imports the extracted queue-scope owner so targeted gate derivation keeps
-the new application module attached to this existing behavioral topology suite.
-After `SprintExecutionNode` equality became structural and node-to-node only, topology assertions
-that mean `which master does this node address?` compare explicit `node.ref` values. This is a
-mechanical consumer migration: wave derivation, validation, publication, and projection behavior
-are unchanged.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-L04 renamed the unrelated-malformed-task case to
-`test_unchanged_documents_have_no_scope_despite_unrelated_malformed_task` and asserts an empty
-scope: the classifier sees no field delta for the unchanged documents, so no projection refresh is
-selected even though an unrelated malformed task is also being written in the same batch.
+### Conventions
+
+The test-shaped filename is retained for imports by other suites. Helper availability is not
+a passing test, and the module has no collected test definitions of its own.
 
 ### Invariants And Boundaries
 
-- Tests construct only disposable coordination roots; unpublished candidate code never writes the
-  deployed coordinator.
-- The suite asserts behavior through public task-document and projection boundaries instead of
-  duplicating the topology algorithm.
-- Graph bootstrap must update the sprint and all commanded masters together or leave every file
-  unchanged.
-- Node identity and master-reference identity are distinct: this suite uses `.ref` explicitly for
-  master-facing comparisons and does not depend on node-to-`TaskDocumentRef` equality aliases.
-- Scope selection is classifier-driven: an unchanged or evidence/audit-only document batch selects
-  no projection scope.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Graph schema cases force the closed structural contract. | `ExecutionGraphSchemaTests` | mcp/tests/test_task_execution_topology.py:116-217 |
-| Bootstrap and cross-document cases force exact membership, projection, and rollback. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:217-944 |
-| Inventory cases force branch-backed atomic classification, empty-tree counts, and branch-enumeration refusal. | `test_inventory_enumerates_sprints_and_proposes_branch_backed_nature` | mcp/tests/test_task_execution_topology.py:229-253 |
-| Cross-root publication failure restores canonical task documents and leaves no queue state or pending WAL. | `test_bootstrap_refuses_non_exact_membership_and_rolls_back_cross_root_failure` | mcp/tests/test_task_execution_topology.py:882-931 |
-| The production policy under test lives in the application topology module. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:194-266 |
-| The L11 segment-graph schema/projection/placement cases split out under the file-size rail. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-253 |
-| The L11 incremental authoring forcing suite (which also owns the graph-less bootstrap forcing). | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
-| Schema-wave assertions compare explicit node references after graph construction. | `test_graph_derives_stable_waves_without_persisting_positions` | mcp/tests/test_task_execution_topology.py:116-151 |
-| Bootstrap, topology, projection, and pinned-read wave assertions project `node.ref` before comparison. | `test_bootstrap_previews_then_atomically_publishes_graph_natures_render_and_projection`; `test_execution_waves_validates_and_returns_one_pinned_sprint_snapshot` | mcp/tests/test_task_execution_topology.py:721-803; mcp/tests/test_task_execution_topology.py:838-862 |
-| The production node model defines structural node equality/hash and exposes the addressed document explicitly as `.ref`. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-275 |
-| Unchanged documents publish no projection scope despite an unrelated malformed task in the batch. | `test_unchanged_documents_have_no_scope_despite_unrelated_malformed_task` | mcp/tests/test_task_execution_topology.py:361-387 |
-
-## 260815-DAG-L9 Inventory Forcing
-
-Three new cases force `inventory_execution_topology`: the branch-backed atomic classification
-(`ar/<slug>` present → atomic, absent → organizational), the zero-count empty task tree, and
-the refusal when `run_git branch` enumeration fails.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_graph_derives_stable_waves_without_persisting_positions`, `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`, `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`, `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master`. The L2 additions prove structural/task publication serialization without a global queue/lifecycle authoring lock and keep public control/gate identity task-addressed.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current test source exercises `test_graph_derives_stable_waves_without_persisting_positions`, `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`, `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`, `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master`. | `test_graph_derives_stable_waves_without_persisting_positions`; `test_graph_releases_a_multi_parent_successor_only_after_every_predecessor`; `test_graph_refuses_duplicates_unknown_endpoints_self_edges_blank_reasons_and_cycles`; `test_execution_fields_are_master_only_and_split_sprint_from_commanded_master` | mcp/tests/test_task_execution_topology.py:117-124; mcp/tests/test_task_execution_topology.py:126-151; mcp/tests/test_task_execution_topology.py:153-199; mcp/tests/test_task_execution_topology.py:201-217 |
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies to this repository-local forcing suite.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared helper _config | `_config` | mcp/tests/test_task_execution_topology.py:20-28 |
+| Shared helper _master | `_master` | mcp/tests/test_task_execution_topology.py:31-52 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is exercised.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the L04 case rename and

@@ -39,7 +39,7 @@ register MCP tools or runtime behavior.
 | --- | --- | --- |
 | CRAP-Calculator lives in this package. | `crap_score` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:89-92 |
 | The source quality suite wrapper lives in this package. | "def quality_steps(" | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
-| The changed-lines coverage floor lives in this package. | `DEFAULT_DIFF_COVERAGE_FLOOR` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:31-31 |
+| Changed-line coverage is diagnostic; its calculator reports affected lines and branch outcomes. | "def measure(" | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:289-317 |
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

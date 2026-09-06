@@ -5,84 +5,67 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_crap_calculator.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview      | `overview.md`                              |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Unit coverage for `agents_remember_test_support.code_quality.crap_calculator`: the CRAP formula, the
-join of Radon function complexity with Coverage.py data, file rollups, and table/JSON CLI
-rendering.
+CRAP diagnostic arithmetic and branch-measured function scoring.
 
-## CRAP Consumes Branch Coverage (260731-EFA-L2)
+## Code Commentary
 
-The reader was changed to consume **branch** coverage, not statement coverage.
-`crap = cc**2 * (1 - coverage)**3 + cc` is defined over branch coverage, and the coverage
-term is the only thing a test can move. The calculator reads the `executed_branches` /
-`missing_branches` fields Coverage.py emits under `[tool.coverage.run] branch = true`, and
-**refuses** a report produced without them. Arcs are `[source_line, destination_line]`
-pairs attributed to a function by their *source* line.
+### Logic
 
-The tests that pin this:
+The formula uses a coverage ratio; the fixture joins Radon complexity with Coverage.py executable-line and branch information. A partially covered branchy function receives a higher score than a fully covered simple function. Reports without branch measurement refuse instead of fabricating a ratio.
 
-- `test_a_partially_taken_branch_lowers_the_score_a_statement_reader_calls_perfect` — the
-  defect the change removes, in one function. Every statement of `branchy` runs, so a
-  statement-only reader scores it 1.0 and reports the bare complexity; the untaken false
-  arm is invisible to it.
-- `test_a_function_without_branches_is_scored_by_the_same_division` — the zero-branch case
-  takes no special path, no metric switch, and no division by zero.
-- `test_a_report_without_branch_measurement_is_refused` — **no silent fallback.**
-  Statement-only input fails loudly rather than scoring low. This is the property that
-  makes the whole gate honest: a coverage run misconfigured without `branch = true` cannot
-  produce flattering CRAP numbers.
-- `test_a_malformed_branch_arc_raises_rather_than_being_dropped`.
-- `test_well_formed_arcs_survive_including_the_negative_exit_endpoint` — Coverage.py encodes
-  "this branch leaves the function" as a negative destination line; it is a real arc, not
-  a parse error.
+### Conventions
 
-`branch_report()` is the module's fixture helper: a Coverage.py JSON report that declares
-branch measurement, as the reader requires.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-## Threshold
+### Invariants And Boundaries
 
-`DEFAULT_CRAP_THRESHOLD` is **20.0** (was 30.0). The value was chosen against the measured
-branch-coverage distribution of `mcp/src/agents_remember` on 2026-07-31 under the full
-suite; the reasoning, including why 30.0 was a weak gate under either metric and the
-Radon-vs-Coverage.py disagreement about what a branch is, is recorded in the module header
-of `crap_calculator.py`. All 46 offenders under the new threshold were cleared — 41 by
-being tested, 5 by being split. There is no exemption file beside the threshold;
-`test_code_quality_check.py::CrapThresholdEnforcementTests` asserts that.
+These tests validate measurement, not a coverage percentage floor or blocking CRAP threshold. CLI rendering and historical rollup matrices are not retained cases here.
 
-`coverage_clearing(complexity, threshold)` inverts the formula so the gate can tell an
-offender the branch coverage that would clear it, and returns `None` when no coverage can
-— the "split this instead" case.
+### Todos
 
-## Invariants And Boundaries
+No file-local implementation change is requested by this reconciliation.
 
-- These tests do not run pytest-cov; they feed synthetic coverage JSON directly into the
-  calculator.
-- The fixture stays temporary and does not require repository-wide coverage data.
-- A report without branch fields is an error, never zero-coverage and never full coverage.
-- Function-level scoring is the primary contract; file rollups and rendering are covered as
-  derived behaviour.
-- Missing coverage *file* (as opposed to missing branch measurement) still counts as zero
-  coverage.
+## Docs References
 
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| CRAP-Calculator owns the formula, branch-arc attribution, Radon integration, the clearing-coverage inversion, and both renderings. | "class FunctionScore" | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:63-63 |
-| The wrapper side: threshold enforcement, per-offender failure lines, and the no-exemption-file assertion. | `CodeQualityCheckTests` | mcp/tests/test_code_quality_check.py:38-165 |
-| `[tool.coverage.run] branch = true` — without it the reader refuses. | "[tool.ruff]" | pyproject.toml:1-1 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Crap score formula uses coverage ratio. | `test_crap_score_formula_uses_coverage_ratio` | mcp/tests/test_crap_calculator.py:16-18 |
+| Calculates function scores from radon and coverage json. | `test_calculates_function_scores_from_radon_and_coverage_json` | mcp/tests/test_crap_calculator.py:20-43 |
+| A report without branch measurement is refused. | `test_a_report_without_branch_measurement_is_refused` | mcp/tests/test_crap_calculator.py:45-67 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

@@ -60,7 +60,7 @@ These source owners establish the mechanics, caller policy, and regression bound
 | Capability probing, complete transaction exclusion, and current-thread hold inspection. | `_verify_lock_capability`; `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:58-84; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
 | Control-plane target authorization precedes primitive entry; capability errors are translated. | `exclusive_access`; `require_lock_held` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:363-381 |
 | The host registry supplies its own policy and domain refusal. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
-| Regression proves process/thread exclusion, nested exception release, and ineffective-lock refusal. | `test_registry_nested_exception_retains_then_releases_thread_and_process_exclusion`; `test_registry_refuses_ineffective_flock_before_state_and_can_recover` | mcp/tests/test_dagger_registry_lock.py:170-187; mcp/tests/test_dagger_registry_lock.py:190-204 |
+
 
 ## Cross-Repo References
 

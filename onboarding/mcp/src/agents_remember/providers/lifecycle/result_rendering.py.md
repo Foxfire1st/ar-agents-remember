@@ -39,7 +39,7 @@ payloads, and routes dry-run versus live command rendering.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The lifecycle CLI delegates result display to this module. | `render_cli_result` | mcp/src/agents_remember/providers/lifecycle/cli.py:333-341 |
-| Provider lifecycle tests verify native captured output streaming. | `ProviderLifecycleRenderTests` | mcp/tests/test_provider_lifecycle.py:20-97 |
+
 
 ## Update History
 

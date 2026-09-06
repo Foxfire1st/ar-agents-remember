@@ -5,76 +5,75 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_spawn_agent_session.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-This suite covers the trusted low-level hosted-session spawn primitive with fake hosts, runner logs,
-and task topology. It proves spawn/binding behavior without granting model-facing access to the
-runtime-id operation.
+Exercises the internal spawn primitive with a fake terminal host and real temporary catalog/task lineage. It creates a bound but explicitly unbriefed seat, preserves existing ownership on seat-taken refusal, and rejects forged structural parent provenance before host creation. Public dispatch remains responsible for the separate durable briefing transaction; no readiness or submitted-brief claim is fabricated.
 
 ## Code Commentary
 
-The `call_spawn` shim constructs the typed internal seat, provenance, retired-input, and override
-objects used by `spawn_agent_session_payload`. Successful harness spawn requires a real canonical
-task-document reference and role, binds the seat, and makes no brief-readiness claim. Task content
-and submit requests are refused at this primitive because the public `dispatch_agent` transaction
-owns exact-pinned brief delivery. The refusal points callers to that one public transaction and
-does not expose the old multi-step readiness, inbox-message, or adapter-delivery recipe.
+### Logic
 
-The suite also covers seat conflict without takeover, missing/invalid task documents before spawn,
-settings-owned harness/model/effort resolution, plain-terminal separation, log-confirmed session
-commands, and stored private provenance. No test turns the primitive into an advertised agent tool.
-260821-ARSPAWN-L1 extends `_SPAWNED_BY_FIELDS` with the caller-kind field and adds
-`test_spawn_records_caller_kind_provenance`, which runs the REAL primitive with a substituted host
-and asserts the payload carries `spawnedByKind` ("ambient") plus the catalog caller-kind row — the
-provenance the public `dispatch_agent` sets by caller kind.
-Reviewer forcing supplies both settings-owned launch selection and the exact manager parent pair,
-while the stale-super matrix confirms lineage refusal wins before a missing reviewer-parent or
-launch-selection error and before host creation.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-## Invariants And Boundaries
+### Conventions
 
-- Harness spawn requires canonical task-document identity and a role-compatible seat.
-- A live document+role occupant is never silently replaced.
-- Spawn does not deliver task content or claim readiness.
-- Caller-supplied spend/launch overrides fail before side effects.
-- Tests use fakes and temporary roots; no real tmux, daemon, or sleep is involved.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+
+### Invariants And Boundaries
+
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No external domain source governs this repository-local test contract.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite exercises the internal typed spawn composition. | `call_spawn` | mcp/tests/test_spawn_agent_session.py:89-109 |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| A successful spawn binds a seat without delivering a brief or claiming readiness. | `test_spawns_bound_seat_without_brief_or_readiness_claim` | mcp/tests/test_spawn_agent_session.py:318-339 |
-| The spawn payload and catalog row carry caller-kind provenance. | `test_spawn_records_caller_kind_provenance` | mcp/tests/test_spawn_agent_session.py:555-561 |
-| Canonical task-document identity is persisted and missing documents refuse before spawn. | `test_spawn_persists_canonical_task_document_reference`; `test_spawn_rejects_missing_task_document_before_spawning` | mcp/tests/test_spawn_agent_session.py:383-389; mcp/tests/test_spawn_agent_session.py:402-409 |
-| Context and submit inputs are rejected at the spawn primitive. | `test_context_including_empty_string_refuses_before_every_spawn_side_effect`; `test_submit_true_refuses_before_spawn_even_without_context` | mcp/tests/test_spawn_agent_session.py:449-470; mcp/tests/test_spawn_agent_session.py:472-476 |
-| Occupied structural seats refuse without takeover. | `test_seat_taken_is_surfaced_never_overridden` | mcp/tests/test_spawn_agent_session.py:484-518 |
+| Spawns bound seat without brief or readiness claim | `test_spawns_bound_seat_without_brief_or_readiness_claim` | mcp/tests/test_spawn_agent_session.py:311-332 |
+| Seat taken is surfaced never overridden | `test_seat_taken_is_surfaced_never_overridden` | mcp/tests/test_spawn_agent_session.py:334-368 |
+| Spawn refuses forged structural parent before host creation | `test_spawn_refuses_forged_structural_parent_before_host_creation` | mcp/tests/test_spawn_agent_session.py:370-381 |
 
-## L23 Pre-Host Spawn Refusal
+## Cross-Repo References
 
-Spawn fixtures now use a current contract chain, and the dedicated stale-super
-case advances the real repository before requesting each leaf role: worker, reviewer, and curator.
-Every role receives the public `source-lineage-stale` projection while host creation and catalog
-insertion remain untouched. This is the control-plane race closure behind the manager's pre-curator
-status check: dispatch re-proves lineage rather than trusting a brief-carried snapshot.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-31T12:00+02:00 — A005 repair aligned reviewer fixtures with mandatory explicit parent
   provenance and settings ownership while preserving stale-lineage as the first actionable refusal.

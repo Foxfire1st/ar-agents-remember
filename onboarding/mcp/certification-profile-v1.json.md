@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/certification-profile-v1.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:03:51+00:00 |
+| lastUpdated | 2026-09-06T21:51:32+00:00 |
 | lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
@@ -34,7 +34,7 @@ The Dagger emission/export owners retain real files and exact output captures on
 
 ### Conventions
 
-Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The current declaration binds profile digest `da307cd8d609068479ca24c9c0d4c4cadfb6f04f4e215ee5f0170916a7131117`, selector configuration digest `5a6c02980b9428702808d770c2961d55b73c51990509f84b584a0daaa1c39309`, and runtime digest `c3a5108ddf6c1fc519cf6f52bf570bc956c4ac31a045a543e2e05a2ef4383b63`.
+Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The reduced test population changed selector configuration and the profile identity. Coverage and production CRAP observations are diagnostic under current repository policy; profile digests are not metric pass claims. The current declaration binds profile digest `5096c06a017e237a6a3f3cb6b9e1c703e2304d44831716cbfaf898699f9bfb1d`, selector configuration digest `e6fe17146ba4ac8ee68c3d94fc076f1de4d69c61f05080e405d12a2eef3fdc72`, and runtime digest `1ea0d21043dcc358b6f18de7a0eddaf27418122f95412b479bb066ae0bec299a`.
 
 ### Invariants And Boundaries
 
@@ -42,11 +42,11 @@ Treat the JSON as canonical profile data. Refresh profile, runtime and selector 
 - Every required artifact needs actual producer bytes; declarations alone do not certify execution.
 - Required capture bytes remain stable report-relative references, independently of physical generation identity.
 - Local Gate-4 non-applicability is not terminal master Gate-4 certification.
-- L30 publication support does not compose R05/R16/R07/R08 into the ordinary lifecycle.
+- Declaration changes do not certify themselves; current lifecycle composition must be established from runtime owners and execution evidence.
 
 ### Todos
 
-No remaining producer gap is recorded for the three L30 artifacts. Ordinary lifecycle and final-memory composition remain owned by their separate production recovery leaves.
+No remaining producer gap is recorded for the three L30 artifacts. The profile declaration does not itself prove runtime composition or final-memory acceptance. Those facts require their canonical execution evidence.
 
 ## Docs References
 
@@ -58,18 +58,16 @@ No external Domain Documentation source is configured for this repository. This 
 
 ## Repo-Internal References
 
+The exact source declarations below establish the current behavior; this inventory is not execution evidence.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exact canonical profile digest is declared. | "profileDigest" | mcp/certification-profile-v1.json:182-182 |
-| Closeout and local selections carry explicit gate applicability. | "selections" | mcp/certification-profile-v1.json:3117-3616 |
-| Selectors bind the exact configuration owner digest. | "selectors" | mcp/certification-profile-v1.json:3617-3667 |
-| The Dagger adapter and result decoder are explicit profile contracts. | "executorAdapters"; "resultDecoders" | mcp/certification-profile-v1.json:35-57; mcp/certification-profile-v1.json:3032-3115 |
-| The finite publication inventory declares actual report paths and byte bounds. | "publishedArtifacts" | mcp/certification-profile-v1.json:184-679 |
-| The profile declares bounded reconstruction and generated source/input ownership. | "environments"; "generatedInputs" | mcp/certification-profile-v1.json:2-34; mcp/certification-profile-v1.json:58-181 |
-| Ambient source applicability retains explicit evidence and teardown depends on it conditionally. | "sourceApplicability"; "conditionalPrerequisites" | mcp/certification-profile-v1.json:767-805; mcp/certification-profile-v1.json:2934-2939 |
-| Real rail files and exact captures are retained without mutating the execution handle. | `attach_rail_terminal_bindings` | .dagger/src/agents_remember_quality/rail_emission.py:71-107 |
-| Teardown verifies started evidence or proves admitted zero-start with no summary. | `_verify_teardown`; `_write_unstarted_teardown` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:253-263; mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:266-276 |
-| The report branch persists retained bytes before validating/exporting the final payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
+| Bounded dependency reconstruction environments | `environments` | mcp/certification-profile-v1.json:2-34 |
+| Pinned Dagger execution adapter and actual runtime digest | `executorAdapters` | mcp/certification-profile-v1.json:35-57 |
+| Current canonical profile digest | `profileDigest` | mcp/certification-profile-v1.json:182-182 |
+| 54 report paths including 32 rail-evidence captures | `publishedArtifacts` | mcp/certification-profile-v1.json:184-679 |
+| Full/targeted/local selections and explicit applicability | `selections` | mcp/certification-profile-v1.json:3117-3616 |
+| Current source-owned selector configuration digest | `selectors` | mcp/certification-profile-v1.json:3617-3667 |
 
 ## Cross-Repo References
 
@@ -80,6 +78,8 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-09-06T15:03:51+00:00 — Verified the curated profile card at actual commit c69d5171187fa1957025e393270db9f5a864ab14: exact profile/selector/runtime pins, 54 publications including 32 captures, conditional ambient/teardown behavior and active references. Preserved all earlier history; declarations remain distinct from executed certification evidence.
 

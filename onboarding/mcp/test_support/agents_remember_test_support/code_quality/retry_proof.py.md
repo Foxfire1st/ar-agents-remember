@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:38:37+00:00 |
+| lastUpdated | 2026-09-06T21:35:26+00:00 |
 | lastVerifiedCommitHash | `db57101a9001ede8c681ff9de4eb0147d8b636bc` |
 | lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
 | governingOverview | `overview.md` |
@@ -17,7 +17,7 @@
 ## Purpose
 
 Owns fail-closed reuse of a passed pytest/branch-coverage proof inside the real nonce-attested
-Dagger quality route after a later coverage-derived rail refuses. Proof lives in the locked
+Dagger quality route after a later coverage-artifact/report operation fails. Proof lives in the locked
 `ar-quality-retry-v3` Dagger cache volume, never in the source checkout. Ordinary CI execution does
 not disable planning. L19 bound the immutable repository selector identity into the proof so a
 changed selection can never reuse stale coverage.
@@ -28,7 +28,7 @@ changed selection can never reuse stale coverage.
 
 `prepare` requires a typed Dagger admission capability and an absolute cache root supplied by the
 quality container. A compatibility key binds the complete tracked-file snapshot, resolved diff
-base, product measurement scope and thresholds, Python/platform and coverage/pytest tool versions,
+base, product measurement scope and diagnostic report settings, Python/platform and coverage/pytest tool versions,
 invocation-environment digest, selected population, exact evidence-lane digest/trigger/population,
 and (L19) the exact immutable selection digest. The manifest and both coverage artifacts have
 SHA-256 integrity checks. Tool-version capture records an unavailable distribution explicitly as
@@ -66,7 +66,10 @@ reached by following the link. Global input, incomplete ownership, population or
 drift, lane changes, missing contexts, corrupt artifacts, and unsupported selection all print a
 stable cache-miss or disabled reason and run fresh inside the same admitted Dagger graph.
 
-Only a fresh full pytest pass followed by a later rail failure publishes a new proof. A passing
+The compatibility key no longer includes a coverage-floor field; the CRAP review threshold and
+report size remain explicit inputs. Metric findings alone are successful reports and do not
+create a retry loop. Only a fresh full pytest pass followed by a later actual rail failure
+publishes a new proof. A passing
 wrapper removes it. A failed delta keeps the original full proof rather than chaining a filtered
 aggregate.
 
@@ -105,19 +108,15 @@ No external domain contract governs this repository-local verification cache.
 
 ## Repo-Internal References
 
+The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper prepares, consumes, merges, and finalizes retry plans around pytest and later coverage-derived rails. | `execute_quality_rails`; `_pytest_result_failures`; `_merge_retry_coverage` | mcp/test_support/agents_remember_test_support/code_quality/check.py:201-250; mcp/test_support/agents_remember_test_support/code_quality/check.py:526-565 |
-| Planning requires Dagger admission, an absolute cache root, the exact lane population, and the exact selection digest. | `prepare`; `_disabled_reason`; `_cache_dir` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:205-248; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:357-384 |
-| Retained and fresh delta coverage are isolated, merged explicitly, and published as an atomic data/JSON pair. | `prepare_artifacts`; "delta coverage can merge only after a passing delta pytest run"; "report.json_report(outfile=str(json_temp))"; "atomic_replace(merged_temp, destination_path)" | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:148-175; mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:58-101 |
-| Compatibility binds tooling, candidate/selection settings, and evidence-lane identity; schema bump 5 adds the selection digest. | `_compatibility_key`; `SCHEMA_VERSION` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:440-461; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:57-57 |
-| A changed selection identity misses the cache and runs fresh; the manifest counter-check names it. | `_reuse_plan`; `_manifest_findings` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:262-281; mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:506-530 |
-| Incomplete ownership reports every unresolved input and runs the admitted population fresh. | `_retry_impact` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:322-339 |
-| The production container mounts the locked cache and supplies the retry root to the quality route. | `_bind_candidate_attempt`; `RETRY_CACHE_ROOT` | .dagger/src/agents_remember_quality/main.py:49-49; .dagger/src/agents_remember_quality/main.py:224-263 |
-| The Dagger retry evidence entry point delegates a fresh run followed by exact reuse under the same candidate context. | "async def retry_evidence(" | .dagger/src/agents_remember_quality/main.py:910-950 |
-| The retry-matrix entry point delegates the controlled mutation/lane/context scenario run. | "async def retry_matrix_evidence(" | .dagger/src/agents_remember_quality/main.py:952-983 |
-| The retry matrix explicitly includes dependency-family, lane/context, corrupt-proof, and disabled-retry cases. | "_SCENARIOS = (" | .dagger/src/agents_remember_quality/retry_evidence_route.py:376-388 |
-| Delta retries rebuild canonical collection evidence and execute only explicit dependency-owned paths. | `_pytest_step`; `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287; mcp/test_support/agents_remember_test_support/testing/retry_selection.py:62-79 |
+| Admission and exact retry selection | `prepare` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:211-235 |
+| Current snapshot/config/tool identity without diff floor | `_compatibility_key` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:439-459 |
+| Complete dependency ownership required for delta | `_retry_impact` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:321-337 |
+| Manifest identity and artifact mismatch detection | `_manifest_findings` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:504-549 |
+| Retained/fresh evidence and proof publication lifecycle | `RetryPlan` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:119-208 |
 
 ## Cross-Repo References
 
@@ -130,6 +129,8 @@ cache across attempts. A diagnostic runner cannot publish or restore this proof,
 diagnostic candidate digest is not a certifying reuse key.
 
 ## Update History
+
+- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
 
 - 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the real Dagger retry and matrix delegates and corrected their moved source ranges; retained unchanged-source verification provenance.
 

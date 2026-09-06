@@ -60,7 +60,6 @@ No external documentation owns the repository cadence taxonomy.
 | The eight lanes define authority, fidelity, lifetime, and triggers. | `EVIDENCE_LANES` | mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py:19-116 |
 | Registry validation and collection routing are fail-closed. | `validate_lane_registry`; `category_for_item` | mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py:132-225 |
 | The manifest loader proves complete, non-conflicting test-file coverage before collection. | `load_lane_manifest` | mcp/test_support/agents_remember_test_support/testing/lane_manifest.py:58-127 |
-| Focused tests force explicit declarations, omissions, conflicts, provider gates, and cadence expressions. | `test_every_category_has_one_lane_and_diagnostic_evidence_is_non_accepting` | mcp/tests/test_evidence_lanes.py:61-74 |
 
 ## Cross-Repo References
 

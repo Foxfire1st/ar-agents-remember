@@ -51,6 +51,14 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
+### CCR private preparation boundary
+
+Terminal archive refuses any operation retaining private preparation without an explicit retention disposition (`terminal-archive-operation-preparation-retained`). This check precedes ordinary pending-mutation checks: a terminal-looking status or absence of a Git mutation does not authorize deletion of named private outputs.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `_require_resolved_mutations` boundary implements the preparation contract above. | "def _require_resolved_mutations" | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:595-609 |
+
 ## Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
@@ -89,6 +97,9 @@ canonical intent-bound successor replaced them. Part of the landed L25 candidate
 260831-CCR-L18 made `_require_archivable_operation` (line 531) consume the projection-owned worker-exit observation: it calls `project_worker_exit(record)` (from `worker/state.py`) once and passes that observed snapshot to `_require_absent_worker_authority` / `_require_resolved_worker_termination`, so the archive proof checks the same coherent worker observation the public projection shows instead of re-deriving worker authority twice from raw record cells. Archive admissibility semantics (absent worker binding and resolved termination before destructive cleanup) are unchanged.
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the terminal-archive worker guards switching to the shared `project_worker_exit` observation. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 

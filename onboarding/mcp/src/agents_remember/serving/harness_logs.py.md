@@ -5,7 +5,7 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/harness_logs.py`       |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T13:03+02:00                                  |
+| lastUpdated            | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                                           |
@@ -22,6 +22,8 @@ unique delivery id in a real user-message record, and reuses that exact path for
 Claude local-command checks.
 
 ## Code Commentary
+
+Dispatch evidence depends on the record kind as well as the delivery id and cwd. Claude meta records and local-command wrappers are excluded; Codex accepts only user-role response items or user-message events. An unregistered harness has no generic reader and yields no acceptance. An incomplete final append may be ignored, but malformed completed/interior JSON invalidates the read. cit:([`_records`; `_claude_user_text`; `_codex_user_text`; `_user_messages`], mcp/src/agents_remember/serving/harness_logs.py:127-146; mcp/src/agents_remember/serving/harness_logs.py:169-184; mcp/src/agents_remember/serving/harness_logs.py:187-205; mcp/src/agents_remember/serving/harness_logs.py:214-219).
 
 ### Logic
 
@@ -71,7 +73,7 @@ is defined by the real harness records and regression fixtures inspected for L15
 | --- | --- | --- |
 | The parser binds recent cwd-matching logs and distinguishes user messages from Claude command evidence. | `HarnessSessionLog` | mcp/src/agents_remember/serving/harness_logs.py:39-120 |
 | The injector supplies the unique message id or command text and chooses calibrated acceptance windows. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
-| Real-shape fixtures cover Claude message/command success and error, Codex cwd binding, and partial final appends. | `test_claude_log_binding_and_command_evidence` | mcp/tests/test_harness_logs.py:15-64 |
+
 
 ## Cross-Repo References
 
@@ -102,6 +104,8 @@ is stated once, where it is decided.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 - 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 4 citation findings (3/3 anchored and sourced; the no-source documentation row was normalized; scoped citation check clean).
 - 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_claude_user_text` / `_codex_user_text` readers and the exclusion rules they carry.
 - 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

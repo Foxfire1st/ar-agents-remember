@@ -81,7 +81,7 @@ suite are the authority.
 | Existing generation evidence is loaded, repaired, and classified before retirement. | `reconcile_dispatch_evidence`; `_load_dispatch_evidence`; `_dispatch_evidence_outcome` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:202-220; mcp/src/agents_remember/application/structural/dispatch_transaction.py:223-247; mcp/src/agents_remember/application/structural/dispatch_transaction.py:250-293 |
 | Contradictory evidence produces the stable typed reconciliation refusal. | `_reconciliation_refusal` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:296-309 |
 | Reviewer reconciliation refuses a current generation owned by a different structural parent. | `_structural_parent_conflict` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:121-162 |
-| Concurrent, retry, compaction, and replacement behavior is forced end to end. | `StructuralSeatReplacementTests` | mcp/tests/test_structural_seat_replacement.py:63-540 |
+| Serialized dispatch has one transaction entry point; no end-to-end concurrency pass is inferred from source inspection. | `execute_serialized_dispatch` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:96-119 |
 
 ## Cross-Repo References
 

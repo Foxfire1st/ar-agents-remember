@@ -95,9 +95,9 @@ drift producer, the observer projection tick, and worktree cleanup.
 | The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes. | `ContractSnapshot`, `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:37-49; mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | The projection-input module exposes the `read` and refresh entries. | "def read(", "def _refresh_tasks(", "def _refresh_drift(" | mcp/src/agents_remember/serving/projections/projection_inputs.py:224-224; mcp/src/agents_remember/serving/projections/projection_inputs.py:278-278; mcp/src/agents_remember/serving/projections/projection_inputs.py:367-367 |
 | The projection-store module exposes the `project_and_write` entry. | "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
-| PTS-L2 tests pin prune-key parity with and without the shared snapshot. | `ContractSnapshotSharedPassTests`, `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:590-858 |
+
 | Cleanup binds the `cleanup_result`. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:611-656 |
-| Tests cover shared drift-snapshot path usage by reader/producer suites and projection-time pruning of orphaned worktree snapshots (the dry-run/exact cleanup-removal coverage now lives with the worktree cleanup tests). | `DriftSnapshotReaderTests`, `DriftSnapshotProducerTests`, `test_project_and_write_prunes_orphaned_worktree_drift_snapshots`, `_write_snapshot` | mcp/tests/test_observer_projection_ledger.py:210-284; mcp/tests/test_observer_projection_ledger.py:419-457; mcp/tests/test_observer_projection_ledger.py:459-476; mcp/tests/test_observer_projection_readers.py:156-202 |
+
 
 ## Cross-Repo References
 

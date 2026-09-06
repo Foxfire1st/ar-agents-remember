@@ -5,105 +5,71 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_config.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_config.py` verifies MCP authority settings parsing and derived runtime
-paths, including (L12) that generated CGC roots carry the per-repo managed
-cgcignorePatterns for agents-remember, and (L13) the gateDelegation
-boot-sourcing rules: `OrchestrationSettingsTests` drives `load_config` with an
-optional authority `orchestration` block AND an optional global agentic file
-(`<coordinationRoot>/system/settings.json`) — the global file sources the
-policy warning-free, an authority-only value is honored as the legacy fallback
-WITH the migration `UserWarning`, a shadowed authority value warns as IGNORED
-while the global value wins, `loops`/`roles`/`concurrency` in the authority
-file fail loud naming the new home, gate-policy semantic errors (human-pinned)
-surface as `ConfigError` from either file, and a malformed global file fails
-boot naming the file. `test_legacy_memory_settings_includes_key_is_tolerated_and_ignored`
-replaces the old escape-boundary test: the removed dead plumbing means a
-leftover `memorySettingsIncludes` key parses fine and `RepositoryScope` no
-longer exposes the field.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`) adds two repository-scope tests:
-`test_loads_explicit_repository_certification_profile_reference` (a relative
-`certificationProfile` parses into `RepositoryScope.certification_profile`) and
-`test_repository_certification_profile_reference_fails_closed` (absolute, drive,
-backslash, traversal, dot, and trailing-slash references all raise ConfigError).
+Runtime authority settings, repository identity and path-containment tests.
 
 ## Code Commentary
 
 ### Logic
 
-The tests create temporary MCP settings files and assert that config loading
-rejects relative or missing paths, rejects coordinator `system/settings.json`,
-rejects MCP settings inside the coordinator root, derives allowed repo/provider
-ids, derives the central `logs/mcp` transcript root and `logs/providers`
-provider log roots, infers `.codex/skills` from a `.codex/mcp` registration
-path, honors explicit `harnessSkillRoot`, keeps
-contract paths inside the coordinator, rejects memory settings includes outside
-repo boundaries, and rejects provider path fields that should be server-derived.
-The authority-settings test also verifies generated `grepai-memory` lifecycle
-settings stay Docker-owned, including Docker mode, shared network, runner image
-and container, Postgres backend root, and Ollama embedder backend. It also
-checks that generated `codegraphcontext-code` backend settings include the
-shared CGC Docker network. New cases cover `timeoutCaps` parsing:
-`providerSetupSeconds=0` means unlimited, the legacy `providerSeconds` key is
-rejected with a `ConfigError` carrying the "renamed to providerSetupSeconds"
-message, and an unknown `timeoutCaps` key is rejected with an "unsupported
-timeout cap" `ConfigError`. `DashboardSettingsTests` (260703 L2) covers the
-optional `dashboard` object: absent → defaults off (autoStart False, port 8765),
-happy parse, unknown-key rejection (`autostart` typo), non-bool `autoStart`
-rejection, invalid ports (bool/0/65536/string), and non-object shapes.
-`ProviderDegradationSettingsTests` (260707-HFX-L7) covers the optional `providerDegradation`
-object: absent → the conservative enabled/failsafe-armed defaults
-(`memoryDegradedRatio=0.80`, `memoryCriticalRatio=0.92`); a full explicit-value parse round-trips
-all 15 keys; an unknown key (`memoryDegradedRato` typo) raises `ConfigError` naming it; a
-non-object shape (a list) raises `ConfigError`; and four representative bad-type cases
-(non-bool `enabled`, an out-of-range ratio, a zero sample count, a bool where an int is required)
-each raise `ConfigError`.
-`OrchestrationSettingsTests` (260703-L4) covers `orchestration.gateDelegation`:
-defaults to all-human, named manager leaf-gate policy, per-kind
-reviewer-verdict requirements, and fail-loud rejection for human-pinned
-`push-approval` or unsupported `agent-question` delegation. `RetirementSettingsTests`
-(260707-HFX2-L11, 8 tests) covers `parse_retirement_settings`: defaults are both `True` when the
-`retirement` key is absent, explicit `autoLandOnIntegration`/`autoLandOnFinalize`
-`False`/`False` parses through, legacy `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases
-parse into the new fields for compatibility, an unknown key (`autoRetireOnLaunch`) is rejected with
-an "unsupported retirement setting" `ConfigError`, non-bool values for either current or legacy key
-shape are rejected with a "must be a boolean" `ConfigError`, and a non-object `retirement` value (a
-list) is rejected with a "retirement settings must be an object" `ConfigError`.
+Real temporary Git aliases cannot give two repository IDs or external memory the same Git common directory. Configuration must live outside coordination. The positive authority fixture checks derived provider paths and runtime settings; malformed certification-profile paths, escaped contract paths and globally delegated human-pinned gates refuse.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-These tests protect the MCP authority boundary: settings live outside the
-coordinator, path-rich provider settings are not duplicated, caller-provided
-include paths cannot escape configured repo/memory roots, and derived provider
-lifecycle settings remain server-owned instead of host-specific user setup.
+These cases establish configuration authority, not provider startup. Historical migration-warning and broad settings matrices are no longer present.
 
-## Repo-Internal References
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tested loader lives in MCP config. | `load_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:149-157 |
-| Generated lifecycle settings define the Docker-owned GrepAI and CodeGraphContext stacks consumed by provider lifecycle code. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
-| The `providerDegradation` parser under test (260707-HFX-L7). | `parse_provider_degradation_settings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:58-128 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## Series-Contract Notes
+## Repo-Internal References
 
-Config/schema tests now assert the public tool surface includes `parent_task` and `leaf_id` where task-name based leaf resolution is supported.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-As of the 260703-L8 seam ruling the orchestration settings tests prove the parse path consumes requireReviewerVerdictAtSeams (the delegated handover rule comes back verdict-bound; non-seam rules untouched).
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Two repository ids cannot share one git common dir. | `test_two_repository_ids_cannot_share_one_git_common_dir` | mcp/tests/test_config.py:47-60 |
+| External memory cannot alias another configured code repo. | `test_external_memory_cannot_alias_another_configured_code_repo` | mcp/tests/test_config.py:62-78 |
+| Config must not live inside coordination root. | `test_config_must_not_live_inside_coordination_root` | mcp/tests/test_config.py:80-87 |
+| Loads authority settings. | `test_loads_authority_settings` | mcp/tests/test_config.py:89-217 |
+| Repository certification profile reference fails closed. | `test_repository_certification_profile_reference_fails_closed` | mcp/tests/test_config.py:219-239 |
+| Repository contract path cannot escape coordination root. | `test_repository_contract_path_cannot_escape_coordination_root` | mcp/tests/test_config.py:241-252 |
+| Human pinned kind in global file fails boot. | `test_human_pinned_kind_in_global_file_fails_boot` | mcp/tests/test_config.py:283-289 |
 
-## 260815-DAG-L4 Integration-Authority Forcing
+## Cross-Repo References
 
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certificationProfile parse and fail-closed tests in config tests.
 
 

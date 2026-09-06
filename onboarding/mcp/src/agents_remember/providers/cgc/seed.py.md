@@ -138,9 +138,11 @@ No external Domain Documentation source is configured for this memory repo.
 | The GrepAI seed applies the same benchmark-scope hermetic guard. | "benchmark grepai-memory is hermetic; seeding/cloning is disabled" | mcp/src/agents_remember/providers/grepai/seed.py:153-153 |
 | Worktree setup constructs CGC seed options through the provider setup request. | "cgc_seed=CgcSeedOptions(" | mcp/src/agents_remember/providers/provider_setup.py:137-137 |
 | The post-watcher catch-up stage consuming the stashed divergence. | "def _seed_catchup_results(" | mcp/src/agents_remember/providers/provider_setup.py:250-250 |
-| Index-lifecycle tests pin relatable/unrelatable divergence and the proceed/stash/refuse mismatch paths. | "def test_relatable_heads_report_the_changed_files(self) -> None:"; "def test_unrelatable_heads_return_none(self) -> None:"; "def test_relatable_divergence_proceeds_and_stashes_the_delta(self) -> None:"; "def test_unrelatable_heads_still_refuse(self) -> None:" | mcp/tests/test_provider_index_lifecycle.py:62-62; mcp/tests/test_provider_index_lifecycle.py:75-75; mcp/tests/test_provider_index_lifecycle.py:92-92; mcp/tests/test_provider_index_lifecycle.py:121-121 |
-| `run_git`, the one runner both git calls here use: `GIT_REPOSITORY_SELECTOR_ENV` + `git_environment` strip the selectors, and `GIT_LOCAL_TIMEOUT_SECONDS` is the default bound `git_head_or_none` inherits. | "GIT_REPOSITORY_SELECTOR_ENV = ("; "GIT_LOCAL_TIMEOUT_SECONDS = 300"; "def git_environment() -> dict[str" | mcp/src/agents_remember/kernel/git_command.py:34-34; mcp/src/agents_remember/kernel/git_command.py:71-71; mcp/src/agents_remember/kernel/git_command.py:94-94 |
-| `DecoyRepositoryTests` proves a set `GIT_DIR` cannot make a runner call answer from another repository, and `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` stops a private copy from reappearing here. | "class DecoyRepositoryTests(unittest.TestCase):"; "class SingleRunnerTests(unittest.TestCase):"; "def test_only_the_kernel_module_defines_a_git_runner(self) -> None:" | mcp/tests/test_git_command.py:168-168; mcp/tests/test_git_command.py:510-510; mcp/tests/test_git_command.py:565-565 |
+
+| The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
+| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:124-130 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
+
 
 ## Update History
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

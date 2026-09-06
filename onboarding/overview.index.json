@@ -85,7 +85,6 @@
     "scripts/harness/shared/session-start-directive.md",
     "scripts/harness/shared/workspace-directive.md",
     "scripts/install-python-runtime.sh",
-    "scripts/run-gated-integration.py",
     "scripts/sync-dashboard.py",
     "scripts/sync-harness.py",
     "scripts/sync-projection-types.py",
@@ -97,8 +96,8 @@
     "skills/w-02-light-task-workflow/workflow.md"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 2169,
-    "fileSidecars": 29,
+    "sourceFilesInScope": 1746,
+    "fileSidecars": 28,
     "childRoutes": 11
   },
   "routingTerms": [
@@ -118,13 +117,11 @@
     "e2e",
     "e2e_harness",
     "examples",
-    "gated",
     "git",
     "harness",
     "hook",
     "ignore",
     "install",
-    "integration",
     "json",
     "lifecycles",
     "light",
@@ -145,7 +142,6 @@
     "requirement",
     "requirements",
     "revs",
-    "run",
     "runtime",
     "scripts",
     "session",
@@ -170,7 +166,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "CCR's current implementation map begins at the [certification overview](mcp/src/agents_remember/certification/overview.md), [worktree modules overview](mcp/src/agents_remember/worktrees/modules/overview.md), and [memory quality overview](mcp/src/agents_remember/memory_quality/overview.md). They distinguish the implemented R11/R22 bridge and per-rail emission from still-unwired R05/R16/R07/R08 production contracts; library presence and green process exits alone do not establish complete certification. CLIVE separates current-contract admission and durable lifecycle recovery from scheduling....",
+    "summary": "Use [MCP package](mcp/overview.md) for composed services, [memory quality](mcp/src/agents_remember/memory_quality/overview.md) for preparation/final checks and [worktrees](mcp/src/agents_remember/worktrees/overview.md) for contract-owned lifecycle and protected refs. The retained [test route](mcp/tests/overview.md) describes present assertions and distinguishes helper-only files from suites. Exact source/pair identity, durable owner journals and original physical publications govern acceptance; a historical test name does not.",
     "candidateHints": [
       "dev-skills",
       "mcp",
@@ -232,8 +228,6 @@
       "workspace-directive",
       "install-python-runtime.sh",
       "install-python-runtime",
-      "run-gated-integration.py",
-      "run-gated-integration",
       "sync-dashboard.py",
       "sync-dashboard",
       "sync-harness.py",
@@ -245,7 +239,9 @@
       "sync-skills.py",
       "sync-skills",
       "master-template.md",
-      "master-template"
+      "master-template",
+      "requirement-packet-template.md",
+      "requirement-packet-template"
     ]
   },
   "fallback": {

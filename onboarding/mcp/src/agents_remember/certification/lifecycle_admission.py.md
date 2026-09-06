@@ -87,7 +87,6 @@ boundary contracts without fallback behavior.
 | Candidate authority and worktree shape are mandatory, with typed refusals. | `_require_candidate_authority` | mcp/src/agents_remember/certification/lifecycle_admission.py:150-181 |
 | The lifecycle candidate and the R11/R22 plan must name identical repository and code-tree authority. | `_require_candidate_alignment` | mcp/src/agents_remember/certification/lifecycle_admission.py:184-208 |
 | Prior-red disposition binds the exact failed/blocked catalog and exact changed inputs. | `_compile_prior_red_disposition`; `_require_prior_catalog_authority`; `_require_relevant_change` | mcp/src/agents_remember/certification/lifecycle_admission.py:211-272; mcp/src/agents_remember/certification/lifecycle_admission.py:275-308; mcp/src/agents_remember/certification/lifecycle_admission.py:369-405 |
-| The R05 suite forces admission freeze, invalid authority, currentness, and prior-red edges. | `test_admission_freezes_all_authorities_without_running_or_mutating`; `test_prior_red_requires_every_root_and_allows_blocked_dependant_to_cite_repair` | mcp/tests/test_l5_quality_and_recovery_edges.py:515-556; mcp/tests/test_l5_quality_and_recovery_edges.py:594-729 |
 
 ## Cross-Repo References
 
@@ -98,6 +97,9 @@ No cross-repository implementation boundary is owned here.
 | Repository-specific rail declarations enter through repository profiles outside this contract. | — | — |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose (absolute ar-coordination task-artifact paths are not repo-relative citations). Verification remains pinned to the pre-commit source history until closeout.
 

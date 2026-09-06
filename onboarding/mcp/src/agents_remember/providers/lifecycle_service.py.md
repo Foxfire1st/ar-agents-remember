@@ -59,7 +59,7 @@ structured `ok: false` payloads for MCP callers.
 | --- | --- | --- |
 | MCP provider tool application entry points call this service layer. | ["from agents_remember.providers import lifecycle_service"] | mcp/src/agents_remember/application/provider_tools.py:21-21 |
 | CLI/operator implementation functions remain behind the lifecycle facade. | `_EXPORT_MODULES`, `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24; mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
-| Tests verify service calls do not route through `lifecycle.main()`. | `test_typed_cgc_payloads_build_fixed_native_commands` | mcp/tests/test_tools.py:767-847 |
+
 
 ## Update History
 

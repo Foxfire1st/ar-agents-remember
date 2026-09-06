@@ -83,7 +83,7 @@ helpers.
 | Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, `MemoryCandidatePairIdentity` | mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py:48-144 |
 | Code candidate tree comes from the closeout future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py:25-54 |
 | Intent identity and topology fingerprint come from R02/R01 owners. | `task_intent_identity`, `candidate_task_topology_fingerprint` | mcp/src/agents_remember/tasks/task_intent.py:180-212; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:190-211 |
-| The typed refusal vocabulary (`task-base-unavailable`, `git-change-unclassified`, ...) is exercised by the scope candidate tests. | `test_missing_canonical_task_baseline_refuses_before_current_identity_is_derived`; `test_unclassified_git_status_and_candidate_tree_helper_fail_closed` | mcp/tests/test_memory_incremental_scope_candidate.py:91-127; mcp/tests/test_memory_incremental_scope_candidate_edges.py:455-474 |
+| Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. | `observe_scope_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-99 |
 
 ## Update History
 

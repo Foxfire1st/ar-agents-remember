@@ -22,7 +22,7 @@ Owns typed lifecycle metadata and validation for durable test recordings, fixtur
 
 ### Logic
 
-It loads the lifecycle catalog and validates its 34 governed artifacts. Governance covers every
+It loads the lifecycle catalog and validates its currently declared governed artifacts. Governance covers every
 non-test Python support module below the configured test roots, durable data/configuration inputs,
 policy manifests, task/date-bound proof artifacts, and any non-Python file at or above the
 configured large-fixture threshold. `evidence_governance.py` owns this discovery predicate so the

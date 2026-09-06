@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/serialize.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastUpdated            | 2026-09-06T22:15:27+00:00 |
 | lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
 | lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                              |
@@ -21,6 +21,8 @@ contexts.
 
 ## Code Commentary
 
+`cross_repo_entry_to_dict` always emits repo, expectedBranch, includeCode and includeMemory. State, reason, code and memory are emitted only when truthy; unset cross-repository optionals are omitted rather than null. This differs from context path fields, whose absent values use empty strings. `path_to_string` resolves filesystem paths before formatting them. cit:([`path_to_string`, `cross_repo_entry_to_dict`], mcp/src/agents_remember/kernel/coordination_context/serialize.py:15-16; mcp/src/agents_remember/kernel/coordination_context/serialize.py:42-57).
+
 ### Logic
 
 The module converts `CoordinationContext`, storage rules, and cross-repo
@@ -29,8 +31,7 @@ emits the legacy tab-separated text format used by the CLI.
 
 ### Invariants And Boundaries
 
-- Serialization does not resolve paths or mutate context; it formats already
-  resolved model instances.
+- Serialization does not mutate the context; path formatting resolves paths through `path_to_string`.
 - Empty optional paths serialize as empty strings in JSON output, preserving the
   old resolver contract.
 
@@ -58,6 +59,8 @@ No cross-repository evidence is needed for this formatter.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-06T22:15:27+00:00 — Preserved actual asset/context semantics from retired test onboarding; verification pins unchanged.
 
 - 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: anchored the CLI and application consumers of the formatter, including the packet builder's formatter call.
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.

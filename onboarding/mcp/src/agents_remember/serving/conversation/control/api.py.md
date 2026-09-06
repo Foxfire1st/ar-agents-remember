@@ -58,9 +58,9 @@ Most routes declare the model `_dump` already serialized (`InterruptOperation`,
   (`CapabilityRefusedError` and `OperationRejectedError` both carry `http_status = 422`).
 
 Nothing validates at runtime: every handler returns a `JSONResponse`, so FastAPI never reaches
-`serialize_response`. `mcp/tests/test_serving_response_conformance.py` drives each route and
-validates the real body — and it validates in **alias form only** (`by_name=False`), which is
-what pins these bodies to camelCase rather than merely to the right field set.
+`serialize_response`. The former route-conformance suite was retired. CamelCase response
+contracts remain declared, but the declarations alone do not establish current runtime validation
+or a present test pass.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current
 source behavior above; verification metadata stays pinned to the pre-commit source history until
@@ -130,10 +130,10 @@ foundation suite pins the exact seventeen routes.
 | Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). |"class ConversationTelemetry"|mcp/src/agents_remember/models/conversations/telemetry.py:70-70|
 | The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | `conversation_policy` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101 |
 | The two L0 request dependencies every handler consumes. | `__all__` | mcp/src/agents_remember/serving/conversation/dependencies.py:41-41 |
-| The foundation regression pins the exact seventeen owned routes (GET-only on policy/telemetry/queue/pending). | `control_paths` | mcp/tests/test_conversation_foundation.py:65-69 |
+
 | The shared `CONTROL_RESPONSES` table plus the two outcome tables and the three route-assembled models these routes declare. | `CONTROL_RESPONSES`; `INTERRUPT_OUTCOME_RESPONSES`; `WITHDRAW_OUTCOME_RESPONSES`; `StagedAttachments`; `ConversationSubmitted` | mcp/src/agents_remember/serving/conversation/response_contract.py:63-67; mcp/src/agents_remember/serving/conversation/response_contract.py:70-84; mcp/src/agents_remember/serving/conversation/response_contract.py:101-114; mcp/src/agents_remember/serving/conversation/response_contract.py:146-159; mcp/src/agents_remember/serving/conversation/response_contract.py:166-179 |
 | The two 422-carrying control errors that force `/conversation/submit`'s 422 to union the shared refusal with the success model. | `CapabilityRefusedError`; `OperationRejectedError` | mcp/src/agents_remember/serving/conversation/control/service.py:123-127; mcp/src/agents_remember/serving/conversation/control/service.py:130-134 |
-| The suite that enforces the declarations, drives all seventeen routes, and validates in alias form only (`by_name=False`) so camelCase is pinned. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
+
 
 ## Cross-Repo References
 

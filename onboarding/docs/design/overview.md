@@ -5,7 +5,7 @@
 | repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
-| lastUpdated            | 2026-09-05T07:10+00:00 |
+| lastUpdated            | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../overview.md`                         |
@@ -139,7 +139,15 @@ still-valid content is carried by `python-evidence-system.md`, `python-pytest-bo
 `python-test-evidence.md`; deletion prevents an obsolete diagnostic-first contract from competing
 with the accepted authority model.
 
+
+## Integrated IAS Recovery Contract
+
+`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and budgets 1,000 unit / 150 integration collected parametrized cases. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 - 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current CCR selector/retry contract, broadened design route purpose, and marked the FEUI upstream-absence account historical. Verification records current source claims, not execution or acceptance.
 

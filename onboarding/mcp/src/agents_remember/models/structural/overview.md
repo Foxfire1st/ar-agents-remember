@@ -74,8 +74,8 @@ into plane-internal exact operations.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Machine doctrine tests scan public instructions for forbidden control-plane address cognition. | `test_agent_doctrine_contains_no_control_plane_address_instructions` | mcp/tests/test_agent_doctrine_plane_identity.py:74-81 |
-| Structural tool tests reject ambiguity and exercise relationship operations. | `StructuralAgentToolTests` | mcp/tests/test_structural_agent_tools.py:134-241 |
+| Current dispatch caller resolution owns the structural boundary; removed doctrine/relationship tests provide no current execution evidence. | `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:403-442 |
+| Current dispatch caller resolution owns the structural boundary; removed doctrine/relationship tests provide no current execution evidence. | `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:403-442 |
 
 ## Cross-Repo References
 

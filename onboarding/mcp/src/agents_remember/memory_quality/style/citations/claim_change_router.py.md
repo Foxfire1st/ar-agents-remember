@@ -39,6 +39,18 @@ Module-level surface:
 - `_under` (function, lines 329-334)
 - `_git_error` (function, lines 337-339)
 
+This router can skip semantic history only after proving an exact local path unchanged across
+its verified object history, HEAD membership, and current working state. Dirty or untracked paths,
+paths absent from HEAD (including ignored untracked evidence), and changed history require semantic
+comparison; Git census failures remain errors. Code and memory each have a distinct repository
+comparison cache, memory history resolves through the code-to-memory mapping, and dependency
+citations stay partitioned for their own history owner. The shortcut never grants a semantic
+no-impact judgment from a missing or unreadable observation.
+
+cit:([`RepositoryChanges`], mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py:69-169)
+cit:([`ClaimChangeRouter`], mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py:172-237)
+cit:([`partition_citations`], mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py:240-251)
+
 ### Conventions
 
 Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.

@@ -5,74 +5,79 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_structural_limits.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Tests for the function, class-surface, and directory structural caps.
+Checks structural detectors on small source trees: wide class surfaces and sibling-module methods retain their measured count, properties/setters and overloads count once, all function offenders are reported, crowded directories fail, and an existing declared directory deviation affects exactly its named directory. This documents unchanged structural policy; it does not create a CRAP-score exception mechanism.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
-
-- `declared_deviations` (function, lines 66-67)
-- `deviation` (function, lines 70-79) — A complete deviation for a fixture package, so no test builds a half-formed one.
-- `write_package` (function, lines 82-91) — A throwaway package shaped like this one, from ``{relative path: source}``.
-- `function_of_length` (function, lines 94-97) — A function whose measured length is exactly ``body_lines`` + 1.
-- `class_with_public_methods` (function, lines 100-104)
-- `relocated_parser` (function, lines 107-130) — A state machine and a sibling module of free functions that drive its cursor.
-- `FunctionLengthTests` (class, lines 133-148) — No function in the package may exceed the measured cap.
-- `ClassSurfaceTests` (class, lines 151-179) — A class's public surface is its declared, non-underscore method names.
-- `RelocationTests` (class, lines 182-276) — Moving a method to the next file does not remove it from the class's surface.
-- `DirectorySizeTests` (class, lines 279-294) — A directory holds a bounded number of modules, or the contract says why not.
-- `DeclaredDeviationTests` (class, lines 297-351) — Keep the sequencing register bounded, owned, scoped, and non-stale.
-- `DeviationDeclarationTests` (class, lines 354-491) — A deviation with no owner cannot be honoured -- that is what an allowlist is.
-- `KnownGoodConstructTests` (class, lines 494-877) — Constructs this repository contains that the checks must never flag.
-- `ProbeTests` (class, lines 880-1024) — Each check, shown rejecting a deliberate violation (R16).
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `declared_deviations` (lines 66-67). | `declared_deviations` | mcp/tests/test_structural_limits.py:66-67 |
-| Defines the function `deviation` (lines 70-79) — A complete deviation for a fixture package, so no test builds a half-formed one.. | `deviation` | mcp/tests/test_structural_limits.py:70-79 |
-| Defines the function `write_package` (lines 82-91) — A throwaway package shaped like this one, from ``{relative path: source}``.. | `write_package` | mcp/tests/test_structural_limits.py:82-91 |
-| Defines the function `function_of_length` (lines 94-97) — A function whose measured length is exactly ``body_lines`` + 1.. | `function_of_length` | mcp/tests/test_structural_limits.py:94-97 |
-| Defines the function `class_with_public_methods` (lines 100-104). | `class_with_public_methods` | mcp/tests/test_structural_limits.py:100-104 |
-| Defines the function `relocated_parser` (lines 107-130) — A state machine and a sibling module of free functions that drive its cursor.. | `relocated_parser` | mcp/tests/test_structural_limits.py:107-130 |
-| Defines the class `FunctionLengthTests` (lines 133-148) — No function in the package may exceed the measured cap.. | `FunctionLengthTests` | mcp/tests/test_structural_limits.py:133-148 |
-| Defines the class `ClassSurfaceTests` (lines 151-179) — A class's public surface is its declared, non-underscore method names.. | `ClassSurfaceTests` | mcp/tests/test_structural_limits.py:151-179 |
-| Defines the class `RelocationTests` (lines 182-276) — Moving a method to the next file does not remove it from the class's surface.. | `RelocationTests` | mcp/tests/test_structural_limits.py:182-276 |
-| Defines the class `DirectorySizeTests` (lines 279-294) — A directory holds a bounded number of modules, or the contract says why not.. | `DirectorySizeTests` | mcp/tests/test_structural_limits.py:279-294 |
-| Defines the class `DeclaredDeviationTests` (lines 297-351) — Keep the sequencing register bounded, owned, scoped, and non-stale.. | `DeclaredDeviationTests` | mcp/tests/test_structural_limits.py:297-351 |
-| Defines the class `DeviationDeclarationTests` (lines 354-491) — A deviation with no owner cannot be honoured -- that is what an allowlist is.. | `DeviationDeclarationTests` | mcp/tests/test_structural_limits.py:354-491 |
-| Defines the class `KnownGoodConstructTests` (lines 494-877) — Constructs this repository contains that the checks must never flag.. | `KnownGoodConstructTests` | mcp/tests/test_structural_limits.py:494-877 |
-| Defines the class `ProbeTests` (lines 880-1024) — Each check, shown rejecting a deliberate violation (R16).. | `ProbeTests` | mcp/tests/test_structural_limits.py:880-1024 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| A wide class is reported with its measured surface | `test_a_wide_class_is_reported_with_its_measured_surface` | mcp/tests/test_structural_limits.py:132-143 |
+| Moving methods into a sibling module does not lower the count | `test_moving_methods_into_a_sibling_module_does_not_lower_the_count` | mcp/tests/test_structural_limits.py:157-166 |
+| A property and its setter count once | `test_a_property_and_its_setter_count_once` | mcp/tests/test_structural_limits.py:194-208 |
+| Typing overloads count once | `test_typing_overloads_count_once` | mcp/tests/test_structural_limits.py:210-225 |
+| The function length check reports every offender not the first | `test_the_function_length_check_reports_every_offender_not_the_first` | mcp/tests/test_structural_limits.py:236-259 |
+| The directory check rejects a crowded directory | `test_the_directory_check_rejects_a_crowded_directory` | mcp/tests/test_structural_limits.py:261-278 |
+| A declared deviation silences exactly the directory it names | `test_a_declared_deviation_silences_exactly_the_directory_it_names` | mcp/tests/test_structural_limits.py:280-293 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-28T06:40+02:00 — No content impact: moved the structural-limit verification import
   into `agents_remember_test_support`; limit and deviation assertions remain unchanged.

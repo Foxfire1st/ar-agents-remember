@@ -157,12 +157,12 @@ unknown/reconcile contract without a second submission.
 | --- | --- | --- |
 | The private server dispatches advertise/set/submit/reconcile against one bridge identity. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
 | Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
-| Client tests pin pre-first-byte versus post-first-byte ambiguity and unknown setter/submission mapping. | `HarnessControlClientRetrySafetyTests` | mcp/tests/test_harness_control_client.py:149-319 |
-| A regression test pins that a refused control socket yields the honest note AND unlinks the stale socket (never a raw errno). | `test_refused_control_socket_yields_honest_note_and_unlinks_stale_socket` | mcp/tests/test_harness_control_client.py:150-180 |
-| Real socket and durable-inbox regressions prove lost responses converge by same-id reconciliation without native resend. | `test_outer_socket_lost_receipt_reconciles_retained_known_truth`, `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` | mcp/tests/test_harness_control_ipc.py:183-222; mcp/tests/test_harness_control_ipc.py:224-294 |
-| Contract tests pin the strict page/native-page/provenance validators, cross-domain typed rejection, and epoch-continuity failure exercised through this client. | `EvidenceIpcTests` | mcp/tests/test_harness_control_evidence_ipc.py:48-337 |
+
+| Connect refusal reports honest unavailability and best-effort removes the stale socket; it does not establish process death. | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:520-537 |
+
+
 | The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
-| Contract tests pin the strict interrupt/timeline/recovery validators, the cross-domain cursor rejection, and the epoch-flip typed failure through this client. | `ClientValidationTests` | mcp/tests/test_harness_control_plane_recovery.py:107-207 |
+
 
 ## Cross-Repo References
 

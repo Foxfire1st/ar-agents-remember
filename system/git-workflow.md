@@ -92,30 +92,26 @@ The full orchestration doctrine lives in
 
 ## Commit and push quality gates
 
-Agents Remember acceptance is Dagger-only and has one owner at each lifecycle altitude:
+Certification remains lifecycle-owned and Dagger-only; ordinary host pytest and targeted Vitest
+provide development feedback and do not mint certificates. Local pre-commit/pre-push checks remain
+deterministic non-test checks. Preserve their lint, formatting, typing and structural policy.
 
-- **Local pre-commit** — `.githooks/pre-commit` runs deterministic non-test checks against staged
-  content. It does not spend acceptance.
-- **Leaf closeout** — `worktree_closeout_apply` stages the exact candidate and runs Dagger
-  `mode=targeted` exactly once with the recorded leaf base before creating the leaf code commit.
-- **Leaf integration** — lands the certified leaf commit without rerunning acceptance.
-- **Series/master closeout** — requires clean already-landed code and runs no acceptance.
-- **Master integration** — `worktree_integrate` runs Dagger `mode=full` exactly once with the
-  recorded super base before integrating the master into super.
-- **Local pre-push** — `.githooks/pre-push` may repeat deterministic non-test checks and record ref
-  provenance. It never runs acceptance.
-- **Pull request** — `.github/workflows/quality-checks.yml` always runs its deterministic non-test
-  check for the PR. Ordinary branch pushes do not launch a duplicate GitHub workflow.
-- **Tag/publish** — the tag workflow proves the commit landed on `main`, builds, and publishes. It
-  does not rerun acceptance.
+For an atomic master, implement and integrate leaves with focused behavioral evidence. Full suites
+and whole-candidate review occur at master completion. Do not restore historical per-leaf full-suite
+or independent-review loops, and do not rerun acceptance merely for an ordinary push or publication.
+The existing shared Dagger route owns exact candidate, profile, runtime and report authority;
+a host result, missing attestation, missing mandatory diff base or failed report cannot replace it.
 
-Host pytest, Playwright, and changed-lines acceptance invocations refuse. Candidate A's direct
-Python wrapper was deleted and has no compatibility route. Direct
-targeted Vitest unit/component loops are allowed as non-certifying diagnostics; they do not spend or
-replace acceptance. There is no host or direct-Docker acceptance fallback. Missing Dagger
-attestation, a missing mandatory diff base, removal of the self-owned quality adapter, or a non-zero Dagger
-result refuses before commit or integration. See [`tools.md`](tools.md) for the exact executor,
-arguments, evidence, retry contract, and Vitest diagnostic boundary.
+The executable selected-case budgets are **1000 unit /150 integration**, counting parametrized
+items. Consolidate overlap first, protect distinct behavior, and justify any budget increase with
+its protection, case count, support size and runtime tradeoff. Coverage percentages are diagnostic;
+production CRAP 20 is a review trigger, resolved by simpler code, a meaningful behavioral test or
+concise justified acceptance. No percentage floor, ratchet or score exception system is required.
+Actual test failures and artifact integrity failures remain failures.
+
+Pull-request deterministic checks and existing tag reachability/build/publication boundaries remain
+unchanged. See [tools.md](tools.md) and current source `AGENTS.md` for development and certification
+boundaries. The old Python wrapper remains deleted; direct pytest does not require a replacement.
 
 ---
 
@@ -192,3 +188,7 @@ the `gh` CLI; use `--draft` first to review before publishing:
 ```text
 gh release create mcp-vX.Y.Z --target main --title "<thematic title>" --notes-file <notes.md> --draft
 ```
+
+## Testing Policy Reconciliation
+
+- 2026-09-06T21:35:26+00:00 — Replaced stale host-pytest prohibition and per-leaf acceptance-loop guidance with current IAS bounded diagnostic development policy and master-end full-suite/review ownership. Commit, publication and ledger authority remain unchanged.

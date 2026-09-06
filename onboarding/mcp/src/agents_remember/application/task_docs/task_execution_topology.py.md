@@ -107,7 +107,7 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 | A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). | `_require_move_does_not_retarget_edge` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:638-659 |
 | The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). | `_require_draft_node_kinds` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:683-710 |
 | The edit preflight fires only for edits that emit topology schema bytes (L15-R4). | `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:864-878 |
-| The forcing suite proves authoring, bootstrap, rollback, render, projection, and refusal behavior. | `ExecutionTopologyTests` | mcp/tests/test_task_execution_topology.py:217-944 |
+
 | The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
 | Preview and apply both route graph cardinality/title preparation through the central application owner. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:201-284 |
 | The central owner provides the zero/one assertion and exact in-memory join. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |

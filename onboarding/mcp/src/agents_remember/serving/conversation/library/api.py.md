@@ -116,13 +116,13 @@ models these handlers serialize.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| List/read routes return wire pages, narrow scope, and map every refusal class to its exact status. | `test_list_route_returns_wire_page_and_authorizes_scope`, `test_read_route_returns_historical_page` | mcp/tests/test_conversation_library_api.py:358-371; mcp/tests/test_conversation_library_api.py:449-458 |
-| Open/status/reconcile routes map outcomes to 201/202/409/422/503 and fail closed off loopback. | `test_open_created_replays_and_focuses_only_proven_identity`, `test_open_maps_stale_digest_unknown_request_and_timeout`, `test_open_launch_failure_and_identity_mismatch_statuses` | mcp/tests/test_conversation_library_api.py:557-592; mcp/tests/test_conversation_library_api.py:594-647; mcp/tests/test_conversation_library_api.py:649-704 |
-| The foundation suite pins exactly the five owned library routes inside the child router. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+
+
+
 | The L0 request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`, `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The eight-member `outcome` `Literal` that `_OPEN_STATUS_BY_OUTCOME` must stay total over. | ["class OpenConversationOperation(WireModel):"] | mcp/src/agents_remember/models/conversations/opening.py:16-16 |
 | The `LIBRARY_RESPONSES` and `OPEN_OUTCOME_RESPONSES` tables these routes declare, and the dict-merge rule that makes the outcome table union in each refusal model. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
-| The suite that drives all five routes, validates the real bodies, and asserts the status-map/`Literal` set equality. | `test_the_library_and_open_bodies_conform`, `test_the_open_status_map_is_total_over_the_declared_outcomes` | mcp/tests/test_serving_response_conformance_live.py:224-293; mcp/tests/test_serving_response_conformance_live.py:533-541 |
+
 
 ## Cross-Repo References
 

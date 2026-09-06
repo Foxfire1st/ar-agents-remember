@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/check.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
+| lastUpdated | 2026-09-06T21:35:26+00:00 |
 | lastVerifiedCommitHash | `c87d61cf3ed2fa467cb3e16bbdd5271c92c80c28` |
 | lastVerifiedCommitDate | 2026-09-04T14:53:25+02:00 |
 | governingOverview | `overview.md` |
@@ -38,7 +38,7 @@ Derived repository scope and the recorded diff base are inputs; callers cannot s
 
 - No host or diagnostic fallback can create acceptance evidence.
 - The staged candidate is the intended quality input; unrelated untracked files are not silently included.
-- Fresh pytest/coverage evidence is finalized before CRAP and changed-line scoring.
+- Fresh pytest/coverage evidence is finalized before diagnostic CRAP and changed-line reporting. Coverage percentages and CRAP scores do not fail delivery; missing/malformed artifacts and execution failures still do.
 - Incomplete ownership and invalid admission refuse instead of inventing a selection.
 - Clear stale artifacts before execution; never report old coverage as current.
 - Create the short temporary root before allocating beneath it.
@@ -57,16 +57,15 @@ No external Domain Documentation source is configured for this repository. This 
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Admission, progress, stale-artifact removal and execution transaction | `run_quality_check`; `execute_quality_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:168-270 |
-| Finalized coverage before scoring | `complete_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:273-315 |
-| Ordered checks and causal continuation | `run_fixed_checks` | mcp/test_support/agents_remember_test_support/code_quality/check.py:415-512 |
-| Coverage retry merge and evidence reporting | `_merge_retry_coverage`; `report_cached_pytest`; `report_pytest_result` | mcp/test_support/agents_remember_test_support/code_quality/check.py:570-647 |
-| Retry eligibility and immutable selection binding | `prepare_retry_plan` | mcp/test_support/agents_remember_test_support/code_quality/check.py:661-707 |
-| Derived configuration, Dagger admission and short temporary-root creation | `config_from_args`; `main`; `QUALITY_TEMP_ROOT` | mcp/test_support/agents_remember_test_support/code_quality/check.py:758-870 |
+| Admission and execution transaction | `run_quality_check` | mcp/test_support/agents_remember_test_support/code_quality/check.py:168-218 |
+| Finalize current evidence before diagnostic reporting | `complete_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:273-315 |
+| Ordered enforcing checks and causal continuation | `run_fixed_checks` | mcp/test_support/agents_remember_test_support/code_quality/check.py:415-512 |
+| Exact retry inputs without a coverage-floor field | `prepare_retry_plan` | mcp/test_support/agents_remember_test_support/code_quality/check.py:661-706 |
+| Dagger admission and short temporary-root initialization | `main` | mcp/test_support/agents_remember_test_support/code_quality/check.py:822-867 |
 
 ## Cross-Repo References
 
@@ -77,6 +76,8 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
 
 - 2026-09-05T06:14:14+00:00 — Reconciled execution/retry invariants and recorded the actual short-temporary-root creation fix, preserving the selection and stale-evidence lessons.
 

@@ -5,93 +5,86 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_read_ar_files.py`                  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-02T01:05+02:00                             |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`         |
 | lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_read_ar_files.py` is the slice-07 test suite for the `read_ar_files` tool:
-it pins the ranged-read helper, the application entry point's onboarding/status semantics and
-path-confinement boundary, the auto-attached front-door dedup, the served-ledger
-durability, and the facts-only `read.packet`.
+Checks paired source reading: exact ranges and full bytes, binary omission, traversal and symlink confinement, first-read overview attachment, unchanged-onboarding deduplication, changed/refresh reservation, compact-marker reset and committed-source payload reading. It does not claim the removed broad served-ledger durability or facts-packet suites remain here.
 
 ## Code Commentary
 
 ### Logic
 
-Five `unittest.TestCase` classes, plus fixture helpers that write a real
-`overview.index.json`, real sidecar markdown, and real overviews (the route-index
-and storage machinery are consumed, not re-implemented):
-
-- `RangedReadTests` unit-tests `filesystem.read_text_range`: full read via
-  `read_text`, an inclusive `[start, end]` slice, a single-line range, `end`
-  clamped to EOF, `start` beyond EOF → empty, and an inverted range → empty.
-- `ApplicationStatusTests` drives a directly-constructed `CoordinationContext`
-  (`_context` seam) per storage mode to isolate status: `found` when the sidecar
-  is present and covered; `missing` (no probe) when in-scope but uncovered;
-  out-of-scope at the nearest index deferring to a more-general index without a
-  probe; the no-index fallback to a mirror-path probe (found vs missing);
-  `disabled`; `inline` → `unsupported`; `external` treated as sidecar;
-  `not_requested` when `onboarding: false`. It also pins source independence — an
-  exact range slice, a full read that is **not** truncated (a >4 KB file returned
-  byte-for-byte), an absent file and a binary file both omitting `source` — and
-  the input-validation rejections (inverted range, zero `endLine`). The
-  path-confinement boundary gets its own block: a `../` escape, an absolute path,
-  a symlinked file escaping the repo, a symlinked directory escaping via a child
-  path, and a mid-path `..` that climbs out are each rejected with `AuthorityError`
-  (resolution happens before the check, so it is the real path, not a literal
-  token, that is judged).
-- `FrontDoorDedupTests` installs an ambient lifecycle over a temp `EventStore` and
-  pins the per-lifecycle dedup: the first read attaches the repo overview + the
-  governing route chain; a second unchanged read omits both; a changed repo
-  overview is re-served while the unchanged route overviews stay deduped;
-  `refresh=true` forces a re-serve; and writing the `compact-reset.json` marker
-  re-serves and consumes the marker exactly once.
-- `ServedLedgerAndEventTests` pins the on-disk ledger and the event: a read writes
-  the `served_key("repository_overview", "overview.md", <hash>)` into the
-  lifecycle's `served.jsonl`; the emitted `read.packet` is `observed`, carries
-  `data.repoId == REPO` (slice 07b — the read's repo) plus per-file
-  `{path, lines, status, bytes}` and *nothing else* (the assertion checks the exact
-  per-file key set and that the serialized event contains no source/onboarding
-  content), records `"full"` for a full read, and projects out a stray smuggled
-  `source`/`onboarding` key — proving the privacy invariant is structural in
-  `emit_read_packet`, not caller-dependent.
-- `FiveFileCapAndPayloadTests` runs end-to-end through the real resolver + the
-  `read_ar_files_payload` builder + the token choke point: six files are rejected,
-  five accepted (with `tokens` / `tokenCountExact` stamped by the choke point), and
-  committed source is read back verbatim.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Fixtures build a real `McpRuntimeConfig` (via `test_config.settings_payload`) whose
-coordination root anchors `observer_root` and the reset marker, and reset the
-ambient singleton (`reset_ambient`) in setUp/tearDown for isolation. The
-helper-written sidecars and overviews exercise the route-index chain and
-`meaningful_body` extraction (the test asserts the seeded `## Update History` is
-stripped from the served body).
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The route-index and storage machinery are consumed, not re-implemented — the
-  fixtures write real index/sidecar/overview files.
-- The `read.packet` privacy guarantee is asserted structurally: no content key may
-  appear in the serialized event regardless of what the caller passes.
-- Source presence is asserted independent of onboarding status.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point under test. | `read_ar_files_tool` | mcp/src/agents_remember/application/read_files.py:77-133 |
-| The payload builder driven end-to-end. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| The net-new ranged reader unit-tested here. | `read_text_range` | mcp/src/agents_remember/kernel/filesystem.py:44-62 |
-| The served-ledger store asserted on disk. | "self._root / \"lifecycles\" / lifecycle_id / \"served.jsonl\"" | mcp/src/agents_remember/observer/served_store.py:90-90 |
-| The ambient lifecycle whose `emit_read_packet` + served set are exercised. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
-| Shared config/settings test helpers. | "\"coordinationRoot\": str(coordination_root)" | mcp/tests/test_config.py:37-37 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Range request returns exact slice | `test_range_request_returns_exact_slice` | mcp/tests/test_read_ar_files.py:176-181 |
+| Full read is not truncated | `test_full_read_is_not_truncated` | mcp/tests/test_read_ar_files.py:183-190 |
+| Binary source is omitted | `test_binary_source_is_omitted` | mcp/tests/test_read_ar_files.py:192-194 |
+| Path confinement rejects escape | `test_path_confinement_rejects_escape` | mcp/tests/test_read_ar_files.py:196-198 |
+| Symlink file escape rejected | `test_symlink_file_escape_rejected` | mcp/tests/test_read_ar_files.py:200-208 |
+| Symlink dir escape rejected | `test_symlink_dir_escape_rejected` | mcp/tests/test_read_ar_files.py:210-219 |
+| First read attaches overview and route chain | `test_first_read_attaches_overview_and_route_chain` | mcp/tests/test_read_ar_files.py:260-266 |
+| Second read dedups unchanged pieces | `test_second_read_dedups_unchanged_pieces` | mcp/tests/test_read_ar_files.py:268-272 |
+| Changed overview is reserved | `test_changed_overview_is_reserved` | mcp/tests/test_read_ar_files.py:274-281 |
+| Refresh forces reserve | `test_refresh_forces_reserve` | mcp/tests/test_read_ar_files.py:283-287 |
+| Compact marker resets served | `test_compact_marker_resets_served` | mcp/tests/test_read_ar_files.py:289-297 |
+| Payload reads committed source | `test_payload_reads_committed_source` | mcp/tests/test_read_ar_files.py:323-325 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T22:41:21+00:00: Generated citation repair: "\"coordinationRoot\": str(coordination_root)" repointed to mcp/tests/test_config.py:31-31. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

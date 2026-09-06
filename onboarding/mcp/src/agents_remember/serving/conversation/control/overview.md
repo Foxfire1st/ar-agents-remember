@@ -228,12 +228,12 @@ foundation and four+installed suites pin the slice.
 | Pi settlement reads the preserved terminal identity through its stop-reason reader. | `_pi_stop_reason` | mcp/src/agents_remember/serving/conversation/control/operations.py:484-511 |
 | `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | `capabilities_for` is the active capability-view entry. | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
-| The foundation pin asserts exactly the seventeen owned control routes. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
-| `CodexInterruptTests` covers codex interrupt and operation behavior. | `CodexInterruptTests` | mcp/tests/test_conversation_control_operations.py:40-192 |
+
+
 | `QueueProjectionTests` covers queue projection behavior. | `QueueProjectionTests` | mcp/tests/test_conversation_control_queue.py:51-208 |
-| `PolicyTelemetryTests` covers policy and telemetry behavior. | `PolicyTelemetryTests` | mcp/tests/test_conversation_control_attachments.py:572-650 |
+
 | `ControlApiTests` covers the real-wire control routes. | `ControlApiTests` | mcp/tests/test_conversation_control_api.py:26-378 |
-| `CodexInstalledControlApiTests` provides the installed control proof. | `CodexInstalledControlApiTests` | mcp/tests/test_conversation_control_installed.py:195-484 |
+
 
 ## Cross-Repo References
 
@@ -384,9 +384,8 @@ import-cycle reason (see `../overview.md`).
 
 **What is and is not enforced.** Every handler here returns a `JSONResponse` it built itself, so
 FastAPI validates none of these declarations at runtime — undoing them would fail no request.
-`mcp/tests/test_serving_response_conformance.py` is the enforcement: it drives the real routes and
-validates the returned body against the model declared for the status that came back. Its ledger is
-honest about the reach: the 404 (no such seat) is driven on all seventeen, the 403 on one, and every
+The former route-conformance suite was retired; declarations alone do not establish a current
+validation pass. Its historical evidence recorded the following reach: the 404 (no such seat) is driven on all seventeen, the 403 on one, and every
 reachable success shape off a live bridge — while the typed-bridge-failure legs (400/409/422/503 on
 most routes) stay declared-and-undriven with a reason, because the bridge fixture models the harness
 edge rather than a stale epoch or a socket that dies mid-write.

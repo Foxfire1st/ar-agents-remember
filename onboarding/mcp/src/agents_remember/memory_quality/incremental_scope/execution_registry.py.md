@@ -67,7 +67,7 @@ closure; the execution-registry digest makes that true.
 | The single execution policy binds the range-resolution checker to its validator/runtime/owner. | `_EXECUTION_POLICIES` | mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py:11-18 |
 | The registry refuses incomplete or stale populations relative to the checker scope registry. | `checker_execution_registry` | mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py:21-34 |
 | The planner binds the registry version into every affected plan. | `checker_execution_registry_version` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:97; mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:115 |
-| Population-refusal is proven by the focused suites. | `test_r07_execution_registry_refuses_incomplete_population` | mcp/tests/test_memory_incremental_scope_model_edges.py:1094-1099 |
+| The execution registry owns the declared checker population, independently of deleted test fixtures. | `checker_execution_registry` | mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py:21-34 |
 
 ## Cross-Repo References
 

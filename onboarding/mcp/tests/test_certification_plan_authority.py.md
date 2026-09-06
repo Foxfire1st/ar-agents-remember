@@ -5,74 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_certification_plan_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:11+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
 | lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Proves that canonical registry compilation is the sole plan authority and that registry work
-measurement rejects hostile scale before expensive allocation while accepting the exact boundary.
+Certification plan publication authority and hostile allocation refusal.
 
 ## Code Commentary
 
 ### Logic
 
-The suite forges deleted, inserted, substituted, and candidate-mismatched plan catalogs and
-requires result publication to refuse them. It measures linear/shared/dense artifact graphs,
-zero-query behavior, exact storage peaks, deterministic wave scaling, exact-cap admission, digest
-reuse after exact deduplication, and headroom against a measured portable repository baseline.
+Rebuilt plans with deleted, inserted or substituted rails are rejected despite their internal reconstruction. A different external candidate identity also refuses. A 512 by 128 artifact-query product exceeds the work budget before reachability-query allocation.
 
 ### Conventions
 
-The suite imports permanent builders from `certification_registry_test_support.py`; its local
-helpers only reconstruct deliberate plan forgeries and passing observations.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Recomputed digests do not authorize a plan whose semantic catalog differs from compilation.
-- Candidate identity is part of result-publication authority.
-- Hostile query products refuse before query storage allocation.
-- Unconsumed output declarations follow the zero-query path.
-- Exact-cap and cap-plus-one cases make the shared work boundary falsifiable.
+Recomputing a digest does not authorize a foreign semantic catalog. The retained hostile-product test is not a full exact-cap or scaling-headroom census.
 
 ### Todos
 
-Keep performance assertions deterministic and tied to measured operation/storage counts rather
-than machine-specific wall time alone.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Forged plan catalogs and candidate drift are rejected at terminal publication. | `test_result_publication_refuses_deleted_inserted_and_substituted_plan_catalogs`; `test_result_publication_binds_the_external_candidate_identity` | mcp/tests/test_certification_plan_authority.py:92-156 |
-| Artifact reachability has explicit linear, shared, hostile-product, and zero-query evidence. | `test_many_distinct_artifact_producers_have_linear_operations_and_storage`; `test_zero_query_unconsumed_output_skips_every_producer_catalog` | mcp/tests/test_certification_plan_authority.py:157-297 |
-| Exact graph storage peaks and execution-wave scaling are censused. | `test_exact_self_query_and_dense_graph_peaks_are_fully_censused`; `test_wave_compilation_scales_for_chain_and_broad_catalogs` | mcp/tests/test_certification_plan_authority.py:298-358 |
-| Exact work-budget admission and measured scale headroom are asserted. | `test_registry_work_budget_accepts_exact_cap_and_refuses_cap_plus_one`; `test_budget_has_measured_repository_scale_headroom` | mcp/tests/test_certification_plan_authority.py:365-438 |
+| Result publication refuses deleted inserted and substituted plan catalogs. | `test_result_publication_refuses_deleted_inserted_and_substituted_plan_catalogs` | mcp/tests/test_certification_plan_authority.py:77-117 |
+| Result publication binds the external candidate identity. | `test_result_publication_binds_the_external_candidate_identity` | mcp/tests/test_certification_plan_authority.py:120-139 |
+| Hostile artifact query product refuses before query allocation. | `test_hostile_artifact_query_product_refuses_before_query_allocation` | mcp/tests/test_certification_plan_authority.py:142-162 |
 
 ## Cross-Repo References
 
-No external repository suite is invoked; portability is demonstrated with generic generated
-registries.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite consumes only the generic support artifact and certification contracts. | `certification_registry_test_support` | mcp/tests/test_certification_plan_authority.py:8-52 |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-01T03:11+02:00 — Created for plan-authority, pre-allocation boundedness, and scaling
   evidence. Verification remains closeout-owned until the source candidate is committed.

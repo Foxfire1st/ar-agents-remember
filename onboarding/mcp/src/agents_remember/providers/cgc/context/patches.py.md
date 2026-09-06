@@ -40,7 +40,7 @@ managed patch application path belongs to the Docker runner image build.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Docker runner patch assets and patch-helper tests use these marker-based text transformations without requiring host CGC installation. | "def apply_cgc_timer_pop_patch("; "def test_patch_script_carries_the_timer_pop_operation(self) -> None:" | mcp/src/agents_remember/providers/cgc/context/patches.py:44-44; mcp/tests/test_context_providers.py:619-619 |
+| The marker-based timer cleanup patch is owned here; no removed patch-helper test coverage is asserted. | `apply_cgc_timer_pop_patch` | mcp/src/agents_remember/providers/cgc/context/patches.py:44-65 |
 
 ## Update History
 

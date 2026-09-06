@@ -5,79 +5,76 @@
 | repository             | agents-remember                                   |
 | path                   | `mcp/tests/test_sprint_role_seats.py`             |
 | doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-08-31T04:59+02:00                            |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`        |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                     |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-This suite is the end-to-end regression boundary for sprint-local named command seats. It composes
-the real spawn application path, terminal catalog, binding policy, signal routing, and inbox owner
-resolution to prove two concurrent sprints cannot share or steal architect/orchestrator/manager
-identity.
+Checks structural seat lookup stays within the exact sprint/repository and role altitude. Duplicate current occupants refuse, altitude mismatch refuses before occupant lookup, and reviewer parentage is exact at each review seam. These tests do not authorize agents to choose or impersonate another role.
 
 ## Code Commentary
 
 ### Logic
 
-The fixture creates two repositories/sprints and a detected hosted harness. The matrix proves
-successful architect and descendant orchestrator binding, required/conflicting-scope refusals,
-invalid/partial input handling, write-once reopen behavior, exact-sprint architect custody, and
-rebind of an old manager only to the live orchestrator in that row's sprint. Refusal cases assert
-that no terminal host is ensured, keeping the test non-vacuous at the side-effect boundary.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-All named seat ids encode their test sprint for readability, but assertions use persisted
-`spawn_repo`/`spawn_sprint` and routed owner ids rather than labels. The suite reuses the production
-spawn test harness instead of duplicating a second fake catalog/open path.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Two simultaneous sprints retain distinct named command-seat provenance and custody.
-- Named roles cannot be spawned globally or rebound across a sprint boundary.
-- Existing valid provenance survives reopen and conflict attempts.
-- Routing assertions exercise the existing `derive_architect_owner` and `derive_row_owner`
-  functions; this suite does not define a parallel owner resolver.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-No known follow-up is required.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No external domain documentation is needed; the suite verifies repository-owned runtime behavior.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found after checking the configured source registry, which contains no Domain Documentation entries. | n/a | n/a |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
-The test source provides executable proof across the binding and routing seams.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sprint roles share one sprint document while remaining distinct role seats; identical roles on different repository sprints never cross. | `test_sprint_roles_share_document_but_remain_distinct_role_seats`; `test_same_role_on_different_sprints_never_crosses_repository_scope` | mcp/tests/test_sprint_role_seats.py:140-167 |
-| Structural authorization includes the architect plan reviewer, orchestrator super reviewer, and manager leaf/master reviewers at their exact documents. | `test_architect_children_are_only_its_sprint_coordination_roles`; `test_orchestrator_owns_sprint_specialist_and_one_manager_per_direct_master`; `test_manager_owns_only_leaf_roles_inside_its_master` | mcp/tests/test_sprint_role_seats.py:181-194; mcp/tests/test_sprint_role_seats.py:196-208; mcp/tests/test_sprint_role_seats.py:210-220 |
-| Replacing a role changes only the current occupant; the document-and-role seat identity remains stable. | `test_replacement_changes_only_the_current_occupant` | mcp/tests/test_sprint_role_seats.py:217-225 |
-| Duplicate current occupants and role-altitude mismatches fail closed before any arbitrary selection. | `test_duplicate_current_occupants_fail_closed`; `test_role_altitude_mismatch_fails_before_any_occupant_lookup` | mcp/tests/test_sprint_role_seats.py:227-232; mcp/tests/test_sprint_role_seats.py:234-236 |
-| Reviewer parent resolution covers all four seams and refuses unstamped master/sprint generations. | `test_reviewer_parent_is_exact_for_each_review_seam`; `test_higher_reviewer_without_plane_stamped_parent_fails_closed` | mcp/tests/test_sprint_role_seats.py:238-255; mcp/tests/test_sprint_role_seats.py:257-263 |
+| Same role on different sprints never crosses repository scope | `test_same_role_on_different_sprints_never_crosses_repository_scope` | mcp/tests/test_sprint_role_seats.py:141-160 |
+| Duplicate current occupants fail closed | `test_duplicate_current_occupants_fail_closed` | mcp/tests/test_sprint_role_seats.py:162-167 |
+| Role altitude mismatch fails before any occupant lookup | `test_role_altitude_mismatch_fails_before_any_occupant_lookup` | mcp/tests/test_sprint_role_seats.py:169-171 |
+| Reviewer parent is exact for each review seam | `test_reviewer_parent_is_exact_for_each_review_seam` | mcp/tests/test_sprint_role_seats.py:173-190 |
 
 ## Cross-Repo References
 
-No cross-repository boundary is owned by this suite.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: expanded sprint-seat and
   child-authorization forcing to the four reviewer contexts and pinned the fail-closed higher-level

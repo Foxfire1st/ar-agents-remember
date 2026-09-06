@@ -5,74 +5,72 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
 | lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Provides the focused concurrency and lifecycle proof for `HarnessSubmissionAuthority`, including
-the pop-back linearization point that end-to-end FEUI-L5 required.
+Bridge-owned submission ordering, withdrawal and idempotency races.
 
 ## Code Commentary
 
 ### Logic
 
-The suite races withdrawal against dispatch, keeps status/withdraw responsive during slow adapter
-work, and proves completion-before-receipt dominance for prompts and setters. It exercises full-ref
-dedupe under id reuse, strict timeline ordering, payload/source conflicts, bounded duplicate tables,
-certified preflight busy versus impossible safe retry after a possible first byte, epoch mismatch,
-raw-free disclosure, and invalid operation references. These tests are the regression pins for the
-architectural gap surfaced when Alt+Up first put queue, adapter, and UI behavior under one end-to-end
-interaction. The shared `_authority(...)` fixture builds the system under test from two parameter
-objects — `BridgeSnapshotPort(clock, snapshot, set_snapshot, publish)` for the bridge seam and
-`SubmissionLimits(timeline, ledger, dispatch_grace_seconds)` for the bounds — with `bridge_epoch`
-still a direct keyword.
+A slow operation leaves status and queued withdrawal responsive. Dispatch claim and withdrawal have an explicit winner; withdrawal during preflight prevents a native write. Early completion is buffered until the exact head can release. Same IDs replay but changed source/payload conflict. Certified pre-send busy requeues locally; epoch/source scope refuse and a pinned full ledger declines new room.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Concurrency tests synchronize at authority/adapter seams rather than relying on sleeps alone.
-- A successful withdraw proves the operation never claimed adapter dispatch; losing the race keeps
-  truthful non-withdrawable state.
-- Early exact terminal evidence may dominate unknown, but stale/partial/id-only completion cannot.
-- Bounds never evict live, active, or unknown rows.
+No vendor queue or resend substitutes for bridge authority. Capacity refusal preserves records that cannot safely be dropped.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Slow-adapter responsiveness and dispatch/withdraw races. | `test_dispatch_claim_wins_atomic_withdrawal_race` | mcp/tests/test_harness_submission_authority.py:307-321 |
-| Early completion, full-ref reuse, ordering, conflicts, bounds, epoch, and privacy. | `test_completion_before_receipt_is_buffered_and_releases_exact_head` | mcp/tests/test_harness_submission_authority.py:351-379 |
-| The system under test defines the sole timeline and lifecycle lock. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
+| Slow active operation does not block status or queued withdrawal. | `test_slow_active_operation_does_not_block_status_or_queued_withdrawal` | mcp/tests/test_harness_submission_authority.py:231-262 |
+| Dispatch claim wins atomic withdrawal race. | `test_dispatch_claim_wins_atomic_withdrawal_race` | mcp/tests/test_harness_submission_authority.py:264-278 |
+| Withdrawal during preflight wins before dispatch claim. | `test_withdrawal_during_preflight_wins_before_dispatch_claim` | mcp/tests/test_harness_submission_authority.py:280-306 |
+| Completion before receipt is buffered and releases exact head. | `test_completion_before_receipt_is_buffered_and_releases_exact_head` | mcp/tests/test_harness_submission_authority.py:308-336 |
+| Same id is idempotent but source or payload change conflicts. | `test_same_id_is_idempotent_but_source_or_payload_change_conflicts` | mcp/tests/test_harness_submission_authority.py:338-353 |
+| Certified pre send busy requeues without vendor queue or resend. | `test_certified_pre_send_busy_requeues_without_vendor_queue_or_resend` | mcp/tests/test_harness_submission_authority.py:355-369 |
+| Epoch and public source scope fail closed. | `test_epoch_and_public_source_scope_fail_closed` | mcp/tests/test_harness_submission_authority.py:371-397 |
+| A ledger with nothing droppable refuses room rather than forgetting a row. | `test_a_ledger_with_nothing_droppable_refuses_room_rather_than_forgetting_a_row` | mcp/tests/test_harness_submission_authority.py:432-449 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| This is a repository-local authority suite. | — | — |
-
-## 260718-CHATS-L5I Current Delta
-
-Submission-authority tests now pin the bounded dispatch-acceptance grace: a delayed healthy echo becomes an honest queued receipt and only later authoritative lifecycle evidence settles it.
-
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

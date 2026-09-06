@@ -53,7 +53,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Hostile tests pin withdrawal/recovery products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
+| Withdrawal projection validates allowed phase/outcome/recovery products and coherent recovery expiry. | `WithdrawalOperationProjection` | mcp/src/agents_remember/models/conversations/withdrawals.py:74-120 |
 
 ## Cross-Repo References
 

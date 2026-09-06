@@ -44,7 +44,7 @@ so the forced series/door identity includes the exact intent digest.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:61-90; mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:346-373; mcp/tests/integration_branch_authority_test_support.py:643-697 |
-| Claimed atomic-leaf doors bind the contract's canonical task intent. | `_claimed_atomic_leaf_door`; `contract_task_intent` | mcp/tests/integration_branch_authority_test_support.py:511-563; mcp/tests/integration_branch_authority_test_support.py:560-560 |
+| Claimed atomic-leaf doors bind the canonical contract task intent after task and series setup. | "def _claimed_atomic_leaf_door(" | mcp/tests/integration_branch_authority_test_support.py:522-588 |
 | Additional atomic leaf landings attach the door only after task-document/master writes. | `_record_additional_atomic_leaf_landing` | mcp/tests/integration_branch_authority_test_support.py:427-508 |
 
 ## Documentation References
@@ -59,7 +59,7 @@ The current forcing seams include the module forcing surface. The L2 additions f
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises the module forcing surface. | `_authority_fixture`; `_complete_atomic_master`; `_record_atomic_leaf_landing`; `_land_two_external_atomic_leaves`; `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:376-389; mcp/tests/integration_branch_authority_test_support.py:392-420; mcp/tests/integration_branch_authority_test_support.py:575-627; mcp/tests/integration_branch_authority_test_support.py:643-697 |
+| The authority fixture constructs configured disposable repositories and task documents. | "def _authority_fixture(" | mcp/tests/integration_branch_authority_test_support.py:189-348 |
 
 ## Current Contract — 260821 CLIVE Final
 

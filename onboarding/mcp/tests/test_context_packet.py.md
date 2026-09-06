@@ -5,70 +5,67 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_context_packet.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_context_packet.py` verifies the package context-packet application entry point and CLI
-against configured repository fixtures.
+Allowed-repository context packet and freshness reporting tests.
 
 ## Code Commentary
 
 ### Logic
 
-The tests build temporary code and external-memory repositories, load MCP
-settings, and assert that context packets report repo, memory, compact provider
-summary, worktree, and drift state. Coverage includes successful
-external-memory packets, V2 field placement, provider current-state file path
-reporting without embedded raw status, optional drift summaries, unknown repo
-rejection before filesystem resolution, non-Git repo error reporting, active
-worktree contract reporting without worktree raw status, and CLI JSON output.
-Skipped-provider regression coverage goes through `context_packet_payload(...)`
-so the test exercises the public MCP payload wrapper's second validation pass,
-not just the direct application entry point call.
-The `taskRoot` expectation is built with `Path.as_posix()` because the packet
-emits posix paths on every host (including Windows, where `str(Path)` would use
-backslashes).
+The packet exposes versioned nested repo/memory/worktree/provider facts, publishes provider diagnostics without raw state, and leaves drift unchecked unless requested. Unknown repository IDs refuse before filesystem resolution. A real remote-branch fixture reports code lag and exact ledger mapping.
 
-Freshness coverage (issue #54): default packets keep
-`freshness == {"status": "not-checked"}`; `include_freshness=true` on the
-remote-less fixture reports `code.state == "no-upstream"` with no memory block
-(fixture memory root is not a git repo) and no `ledgerMapsCodeHead` (no
-`memory.md`); a bare-origin + second-clone fixture proves `code.state ==
-"behind"` with the behind count and `ledgerMapsCodeHead` true via a
-`create_initial_ledger`-written `memory.md` mapping the code HEAD; a ledger
-mapping a different commit proves `ledgerMapsCodeHead` false.
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-The context packet is a read-oriented bootstrap surface. It should report
-provider and worktree facts from configured MCP state, but provider raw status
-and full worktree manager payloads belong outside `ContextPacketV2`. The V2
-contract keeps path rules under `memory.storage.pathRules` and points provider
-detail consumers at `provider_diagnostics`.
+Unavailable providers do not become fabricated healthy state. The retained tests do not prove every optional packet field or inline-memory variant.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The context packet application entry point builds the tested payload. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
-| `ContextPacketV2` defines the compact public response contract. | `ContextPacketV2` | mcp/src/agents_remember/models/context_packet.py:114-124 |
-| Shared MCP config fixture helpers provide the settings payload and JSON writer used by this suite. | `settings_payload`; `write_json` | mcp/tests/test_config.py:27-29; mcp/tests/test_config.py:32-49 |
-
-## 260821-CLIVE-L2 Addressable Contract Fixture
-
-The context-packet fixture now publishes the lifecycle-operation locator and immutable manifest
-after writing the contract. Status lookup is therefore tested through the normal enclosure-root
-address chain rather than by treating the task-side contract path as durable lifecycle state.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The configured contract is made addressable before the context packet reads status. | `test_reports_active_worktree_contract` | mcp/tests/test_context_packet.py:145-193 |
+| Builds packet from allowed repo. | `test_builds_packet_from_allowed_repo` | mcp/tests/test_context_packet.py:27-63 |
+| Rejects unknown repo before filesystem resolution. | `test_rejects_unknown_repo_before_filesystem_resolution` | mcp/tests/test_context_packet.py:65-71 |
+| Freshness reports behind code branch and ledger mapping. | `test_freshness_reports_behind_code_branch_and_ledger_mapping` | mcp/tests/test_context_packet.py:73-107 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

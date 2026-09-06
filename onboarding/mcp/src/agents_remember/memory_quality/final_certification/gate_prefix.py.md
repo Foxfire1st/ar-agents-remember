@@ -16,9 +16,9 @@
 
 ## Purpose
 
-Exact green Gate 1-4 prerequisite adapter for the final Gate-5 certification (CCR-R08). No full
-memory scan or coherence publication may start before the exact candidate's Gate 1-4
-certificates are green and current: this adapter re-observes the R21 certificate chain and
+Exact green Gate 1-4 prerequisite adapter for final Gate-5 certification (CCR-R08). Within
+that certifying transaction, the memory scan and coherence publication require the exact candidate's
+green current Gate 1-4 certificates: this adapter re-observes the R21 certificate chain and
 reuse plan for one exact code candidate and refuses any stale, incomplete, or invalidated
 prefix with a typed `FinalCertificationError`.
 
@@ -42,6 +42,12 @@ Module-level surface:
 - `_refusal_summary` (lines 122-126) - projects one stable refusal code from an R21
   exception's findings for the observed payload.
 
+The ordinary full contract-scoped quality controller calls `final_catalog_readiness` without this
+prefix proof and does not claim finalization eligibility. The prefix guard applies when producing
+final certification; it is not a prerequisite for reading quality findings to repair memory.
+
+cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:444-480)
+
 ### Conventions
 
 `plan_certificate_reuse` is the single R21 authority deciding reuse; this adapter never
@@ -49,8 +55,9 @@ re-decides reuse policy, it only enforces the exact memory-only start shape.
 
 ### Invariants And Boundaries
 
-- Any earlier-gate invalidation, including a code change, refuses before any memory scan or
-  coherence publication.
+- Any earlier-gate invalidation, including a code change, refuses the final certifying scan or
+  coherence publication in this transaction. It does not prohibit interactive preparatory memory
+  quality: the application controller has a separate non-certifying readiness projection.
 - The proof carries a `certificateReusePlanDigest` so the certification result stays bound
   to the exact reuse decision.
 

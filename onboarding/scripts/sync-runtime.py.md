@@ -5,7 +5,7 @@
 | repository             | agents-remember             |
 | path                   | `scripts/sync-runtime.py`      |
 | doc_type               | `file-level-onboarding`        |
-| lastUpdated            | 2026-06-10T00:40+02:00         |
+| lastUpdated            | 2026-09-06T22:07:53+00:00 |
 | lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`             |
 | lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
 | governingOverview      | `../overview.md`                              |
@@ -40,6 +40,8 @@ runs the same check. `--list-targets` prints the explicit source-to-target
 mapping.
 
 ### Conventions
+
+`replace_tree` removes stale staging/retired leftovers, completes the new copy, then renames the old target aside and the staged tree into place before removing the retired tree. A copy failure before the first rename leaves the live target intact. The two renames are separate operations; this description does not claim an atomic directory exchange.
 
 Ignore only local/generated filesystem noise: `.DS_Store`, cache directories,
 `__pycache__`, and `.pyc` files. Runtime asset targets are MCP package-data
@@ -82,6 +84,8 @@ No sibling repository evidence is needed for this helper.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-06T22:07:53+00:00 — Reconciled copy-before-rename preservation against current replace_tree and retired sync test knowledge. Historical entries and verification pins remain unchanged.
 - 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
 
 - 2026-06-10T00:40+02:00 — `sync_target` now uses crash-safe `replace_tree` (copy to `<target>.ar-sync-new`, rename live target aside, swap in, then remove the old tree; stale staging/retired leftovers are cleaned on re-run), and `extended_length()` applies the Windows `\\?\` prefix so syncs and `--check` walks work past 260-char paths even with `LongPathsEnabled=0`. Replaces the delete-then-copy that gutted `package_data` when a long-path crash hit mid-delete (2026-06-09 incident).

@@ -29,26 +29,20 @@ proves cancellation.
 
 ## Consumers
 
-The shape is referenced by the interrupt-settlement arms of
-`test_conversation_active_service.py` and `test_conversation_active_projectors.py`
-(probe-locked 2.1.217, `terminal_reason: aborted_streaming`), and the same version id
-appears in the installed capability evidence (`claude-2.1.217-installed-20260722`) used by
-`test_conversation_control_operations.py`.
+This file retains a versioned wire example with `terminal_reason: aborted_streaming`. The former interrupt-settlement test families no longer provide a direct reference to this file in the retained source; the recording alone establishes its payload, not current executable coverage.
 
 ## Invariants And Boundaries
 
 - Observed vendor evidence for Claude 2.1.217, recorded under its version directory.
   A recording, never a hand-maintained policy file.
-- The error-shaped `result` must stay error-shaped: the classification fallback in
-  `test_conversation_control_projector_edges.py::ClaudeResultSettlementFallbackTests`
-  depends on an unstamped error result **not** being read generously as an interrupt.
+- The error-shaped `result` must stay error-shaped: its abort marker and error fields are distinct data. This fixture does not establish that an arbitrary unstamped error result should be classified as cancellation.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The interrupt-settlement arms that assert against this shape. | `ClaudeEngineTests`; `ClaudeMapperTests` | mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_service.py:544-836 |
-| The fallback classification that must not upgrade an unstamped error result. | `ClaudeResultSettlementFallbackTests` | mcp/tests/test_conversation_control_projector_edges.py:75-142 |
+| The assistant frame records interrupted streaming. | "aborted" | mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl:2-2 |
+| The terminal error result records the abort reason; it is not a successful completion. | "aborted_streaming" | mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl:4-4 |
 
 ## Update History
 

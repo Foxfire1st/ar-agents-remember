@@ -22,7 +22,7 @@ Derives the legacy closeout recovery-commit projection and generation-retention 
 
 ### Logic
 
-Commit-proven evidence is reduced into the code, memory-content, and ledger commit tuple. The evidence model already guarantees that `commit-proven` carries a commit, so projection narrows that typed fact instead of duplicating an impossible-state guard. Reported recovery cells may agree with the projection but cannot contradict or replace it. `closeout_generation_retained` returns true only when durable mutation evidence exists or an exact canonical finalization publication proves the completed closeout edge.
+Commit-proven evidence is reduced into the code, memory-content, and ledger commit tuple. The evidence model already guarantees that `commit-proven` carries a commit, so projection narrows that typed fact instead of duplicating an impossible-state guard. Reported recovery cells may agree with the projection but cannot contradict or replace it. `closeout_generation_retained` retains private preparation, legacy migration, mutation recovery or exact canonical finalization evidence; none of those categories can be inferred from arbitrary recovery cells.
 
 Finalization proof is deliberately narrow: the contract hash must be present with closeout and approval claimed, complete recovery commits where external memory requires them, and a legal terminal status/phase/result. This preserves a no-op or verified-existing generation through publication without inventing a Git mutation.
 
@@ -37,6 +37,15 @@ Finalization proof is deliberately narrow: the contract hash must be present wit
 ### Todos
 
 L2 owns public recovery and revision behavior; L1 only establishes the evidence boundary.
+
+### CCR private preparation boundary
+
+`closeout_recovery_phase` returns `recovering-private-preparation` for a retained preparation with no claimed approval, irreversible boundary, mutation-recovery requirement, legacy migration or finalized contract proof. Claimed recovery uses `recovering-after-claim`, or `contract-finalization` while waiting. Preparation retains the current generation without manufacturing a consumed approval.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `closeout_generation_retained` boundary implements the preparation contract above. | "def closeout_generation_retained" | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:94-109 |
+| The current `closeout_recovery_phase` boundary implements the preparation contract above. | "def closeout_recovery_phase" | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:112-130 |
 
 ## Docs References
 
@@ -65,6 +74,9 @@ The current source seams include `derive_closeout_recovery_commits`, `require_cl
 | The current module exposes `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained` at this ownership boundary. | `derive_closeout_recovery_commits`; `require_closeout_recovery_projection`; `closeout_generation_retained` | mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:28-49; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:83-91; mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py:94-105 |
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

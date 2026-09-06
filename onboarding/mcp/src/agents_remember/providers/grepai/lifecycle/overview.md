@@ -63,10 +63,13 @@ service ports (`5432` and `11434`) used inside the Docker network.
 
 ## Repo-Internal References
 
+Settings-backed native commands use the Docker run-command owner. Current source: `grepai_docker_run_command` (mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:107-147).
+
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The parent lifecycle facade imports the GrepAI package facade. | `_EXPORT_MODULES` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24 |
-| Provider lifecycle tests cover Docker-only GrepAI install, run, and watcher behavior. | `test_grepai_settings_backed_run_uses_docker_without_host_binary`; `test_grepai_direct_run_does_not_special_case_native_watcher_commands`; `test_grepai_runner_image_build_no_cache_inserts_flag_in_dry_run` | mcp/tests/test_provider_lifecycle_parser_1.py:109-143; mcp/tests/test_provider_lifecycle_parser_2.py:18-46; mcp/tests/test_provider_lifecycle_parser_2.py:346-358 |
+
 
 ## 260731-EFA-L2 — The Vocabulary Of A Stack Start
 

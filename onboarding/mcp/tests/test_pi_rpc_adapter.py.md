@@ -5,145 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_pi_rpc_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
 | lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Fake-transport and protocol conformance coverage for the native Pi RPC adapter, including dynamic
-installed/authenticated model advertisement, bounded model/thinking mutation with correlated
-readback, model-gated thinking levels, launch preservation, session behavior, reconnect
-reconciliation, and strict transport framing.
+Pi RPC framing/model contracts and shared fake transport.
 
 ## Code Commentary
 
 ### Logic
 
-Protocol tests pin LF-only JSON framing, malformed/overlong refusal, native launch preservation, and
-the fixture-owned RPC surface. Async adapter tests cover handshake/state, source-specific busy
-queueing, retry/compaction/settlement, extension UI, disconnect before/after acknowledgement,
-session-identity reconnect, cursor reconciliation without resend, and loud malformed transport
-failure.
-
-ACPUI-L1 extends the fake transport with a native `get_available_models` catalog and a full
-`get_state.model` containing a deliberately secret-shaped header. Parser tests prove provider-
-qualified model identities, duplicate bare model ids across providers, per-model thinking menus,
-the non-reasoning `off` boundary, empty authenticated catalogs, and loud malformed thinking maps.
-Discovery calls only `get_state` and `get_available_models`, sends no prompt, skips entry history,
-and always stops its transient RPC process. Failed startup/discovery catalog validation stops the
-process and resets adapter state so a later start can succeed. Started advertisement retains the
-selected model and thinking level, while normalized handshake state strips provider headers.
-
-ACPUI-L3 extends the fake transport with real-shaped `set_model` and `set_thinking_level` responses,
-vendor failures, silent thinking clamps, controllable hangs, and post-mutation catalog changes.
-Setter tests prove that model keys split only once into the exact `provider/model-id` pair, unknown
-models surface the vendor `Model not found` error as `unsupported`, and malformed unqualified keys
-cause no write. Thinking values come only from the selected model's dynamic menu. Pi's silent clamp
-is reported as `echo-verified` with different requested and effective values after correlated
-`get_state` plus refreshed `get_available_models`; no notification is treated as acceptance.
-
-One finite configurable budget covers the mutation response, state readback, and catalog refresh.
-Hanging at any of those three stages returns `unknown` without an effective value, and an unresolved
-mutation retains the authority blocker rather than allowing a later set to pass behind it. State or
-refreshed-catalog evidence that reports an unadvertised clamp/model is incoherent: the result remains
-`unknown`, the prior coherent capability snapshot stays advertised, and no false promotion occurs.
-Switching to a non-reasoning model also re-gates thinking to `off` so an old model's effort token is
-immediately unsupported.
+The fake transport and launch/operation builders support adapter consumers. Three retained protocol cases preserve Unicode line separators under LF framing, accept CRLF, refuse malformed or overlong frames and retain provider-qualified model identity with model-gated thinking options.
 
 ### Conventions
 
-The module uses `unittest` with deterministic request ids, fixed clocks, provider-qualified fixture
-models, and a transport sequence for retry/reconnect ownership. The capability recording remains
-protocol evidence only; runtime catalogs come from the fake native request in these tests.
-
-### The Capability Recording Guard (260731-EFA-L2)
-
-`test_capability_fixture_documents_the_smoke_baseline` is the **offline** half of the
-capability anti-drift contract. It imports `PI_RPC_VERSION` from `test_pi_rpc_real_smoke.py`
-and reads `FIXTURES / f"{PI_RPC_VERSION}-capabilities.json"` — never a literal filename —
-then asserts:
-
-- `fixture["package"] == PI_RPC_PACKAGE` and `fixture["version"] == PI_RPC_VERSION`;
-- the recorded `dialogMethods` / `fireAndForgetMethods` equal the adapter's
-  `PI_RPC_DIALOG_METHODS` / `PI_RPC_FIRE_AND_FORGET_METHODS`;
-- `sorted(FIXTURES.glob("*-capabilities.json"))` is **exactly** the one file for the pinned
-  version, because "a second capability recording leaves no rule about which one is
-  authoritative".
-
-Why this test and not the smoke test: re-recording lives behind
-`@pytest.mark.ar_run_pi_rpc_smoke`, which needs npm and a network and can stay unrun. This
-one runs in the ordinary suite, so bumping the pin without re-recording fails immediately
-with `FileNotFoundError` on the version-addressed path. Keeping the superseded recording
-beside the new one also fails here. The 0.80.6 file was therefore renamed to 0.80.7, not
-copied.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Enumeration is token-free and uses only Pi RPC `get_state` plus `get_available_models`; no prompt
-  or composer paste is allowed.
-- Model identity is `provider/id`, and effort/thinking options remain nested under each model.
-- Full provider model objects may contain credential-bearing headers; normalized state retains only
-  safe identity fields and must not expose headers.
-- Catalog/state disagreement and malformed thinking maps fail loudly; failed transient or started
-  processes are stopped rather than leaked.
-- Setter acceptance requires a correlated success response, `get_state`, and catalog-coherent
-  readback; events alone never prove the effect.
-- Thinking clamps remain `echo-verified` only when the effective value is present in the selected
-  model's refreshed dynamic menu; requested and effective values remain distinct.
-- Mutation, state readback, and catalog refresh share one finite transaction budget. Timeout or
-  incoherent evidence returns `unknown` without promotion; an unresolved mutation holds the
-  authority blocker until explicitly resolved.
-- Model identity remains exact `provider/model-id`, including model ids containing `/`; malformed or
-  vendor-unknown values are unsupported rather than guessed.
-- `pi_rpc_launch` adds only `--mode rpc`, preserves existing model/thinking flags and environment,
-  and rejects the wrong harness id or a conflicting mode.
+Historical adapter launch, setter and reconnect scenarios no longer run in this file. Protocol fixtures are not an installed Pi conformance run or a static fallback model catalog.
 
 ### Todos
 
-None known for this leaf.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation category is configured for this repository, so no live documentation
-source was available for this test-file curation pass.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-The test module and native Pi modules directly prove catalog parsing, process ownership, and safe
-normalized advertisement.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fake transport supplies reasoning/non-reasoning models, returns them from `get_available_models`, places a secret-shaped header in state, and emulates mutation responses, clamps, hangs, and catalog drift. | `_FakePiTransport` | mcp/tests/test_pi_rpc_adapter.py:47-292 |
-| `pi_rpc_launch` preserves the launch while adding RPC mode without changing other argv, cwd, settings, or environment. | `pi_rpc_launch` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:135-151 |
-| Adapter startup, transient discovery, cleanup, cached advertisement, and catalog/state validation are owned by the native Pi adapter. | `PiRpcAdapter`; `start`; `discover`; `advertise`; `_current_capabilities` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
-| The adapter delegates both setters to one configuration transaction object with a configurable finite timeout. | `PiRpcAdapter`; `set_model`; `set_effort` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768 |
-| Configuration validates provider/model identity and the selected model's dynamic effort vocabulary, serializes mutations, and commits only coherent state plus catalog readback. | `set_model`; `set_effort`; `_provider_model` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:70-103; mcp/src/agents_remember/serving/pi_rpc_configuration.py:196-202; mcp/src/agents_remember/serving/pi_rpc_configuration.py:105-153 |
-| The whole mutation/readback transaction is bounded; timeout, disconnect, or incoherent catalog evidence returns unknown without an effective value. | `_transaction` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:155-193 |
+| Lf only decoder preserves unicode separators and accepts crlf. | `test_lf_only_decoder_preserves_unicode_separators_and_accepts_crlf` | mcp/tests/test_pi_rpc_adapter.py:418-423 |
+| Malformed and overlong frames refuse loudly. | `test_malformed_and_overlong_frames_refuse_loudly` | mcp/tests/test_pi_rpc_adapter.py:425-431 |
+| Available models preserve provider identity and model gated thinking. | `test_available_models_preserve_provider_identity_and_model_gated_thinking` | mcp/tests/test_pi_rpc_adapter.py:433-469 |
 
 ## Cross-Repo References
 
-No sibling repository or external transport implementation is required for these native Pi tests.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-
-## 260715-FEUI-L5 Submission Authority Delta
-
-Pi tests now cover guarded model/effort readback, timeout/unknown blocker resolution, zero candidate
-bytes on stale idle, absence of a native queue/steer flag, activity-token settlement, exact
-interaction completion, certified disconnect before dispatch, and no resend after acknowledgement.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

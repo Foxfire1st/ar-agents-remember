@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T21:35:26+00:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
@@ -24,7 +24,12 @@ Owns the source-derived test-consumer graph shared by targeted selection, retry 
 
 DependencyOwnershipGraph builds repository dependency facts, observed imports/literal consumers and independently checked evidence-catalog declarations. resolve retains every unresolved input and returns complete=false instead of silently expanding an incomplete graph. Parse failures, ambiguous modules and invalid lifecycle catalogs produce explicit unresolved reasons.
 
-Changed tests own themselves; deleted tests leave the population. Shared support must have observed consumers. Repository-owned non-Python inputs, including the certification profile, may declare exact consumers only when the observed set matches exactly. The profile consumer set includes bridge, record-seam, retained-evidence and producer-publication tests. The ambient runner has exactly sixteen pytest consumers: its direct readers plus the transitive consumers of the shared profile fixture that models runner output. Both declarations must equal independently observed consumers; they do not prove themselves or globally invalidate the suite.
+Changed tests own themselves; deleted tests leave the population. Repository-owned non-Python
+inputs declare exact consumers only when the independently observed set matches. The reduced
+suite's declarations enumerate retained consumers rather than old suite counts. An explicitly
+declared empty set is distinct from an absent declaration: only observed-empty equality emits
+`verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
+empty declarations cannot hide an actual consumer.
 
 Global inputs and conftest roots deliberately invalidate the full population and are separately recorded. Otherwise observed import/literal relationships are preferred; filename matching remains a labeled heuristic. ownership_configuration_digest binds the versioned global inputs, declarations, irrelevant roots/suffixes and dashboard test patterns, so selection authority changes are visible.
 
@@ -54,18 +59,13 @@ No external Domain Documentation source is configured. These are repository-owne
 
 ## Repo-Internal References
 
-These source owners establish the current behavior and the stated fixture boundaries.
+The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Global pytest configuration inputs remain explicit. | `GLOBAL_TEST_INPUTS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:24-29 |
-| The ambient runner declares the complete sixteen-consumer pytest closure. | `test_ambient_role_runner_has_exact_pytest_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:202-236 |
-| Incomplete ownership retains typed unresolved inputs without broadening. | `resolve` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:325-343 |
-| Only proved global inputs deliberately select the full population. | `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:345-377 |
-| Repository declarations are compared with observed ownership before acceptance. | `_repository_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:409-441 |
-| Shared-support declarations must equal observed consumers; deleted tests leave the population. | `_test_tree_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:443-479 |
-| Import and literal-source consumers compose with distinct reasons. | `_observed_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:517-533 |
-| The digest binds globals, declarations and dashboard classification policy. | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:617-638 |
+| Observed and declared ownership, exact-empty distinction and refusals | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:223-517 |
+| Transitive importer closure | `transitive_importers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:520-540 |
+| Digest binds declarations and classification authority | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:591-612 |
 
 ## Cross-Repo References
 
@@ -77,6 +77,8 @@ No separate cross-repository protocol is established by this file. In-tree fixtu
 
 
 ## Update History
+
+- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

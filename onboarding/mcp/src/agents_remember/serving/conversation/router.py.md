@@ -60,8 +60,8 @@ No Domain Documentation source is configured for this internal FastAPI compositi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The three child routers reserve disjoint route prefixes and are behavior-empty at this gate. | `test_exactly_two_conversation_ports_exist` | mcp/tests/test_conversation_foundation.py:22-29 |
-| The foundation topology pins the exact one-call registration carrying the runtime. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+| The root installs one runtime before mounting the owned child routes; endpoint behavior belongs to child modules. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
+
 | Harness-control route registration constructs the runtime and mounts this root exactly once. | `register_harness_control_routes` | mcp/src/agents_remember/serving/harness_control_api.py:182-217 |
 | The install-once and fail-closed retrieval semantics the seam delegates to. | `install_conversation_runtime`, `conversation_runtime_from_app` | mcp/src/agents_remember/serving/conversation/runtime.py:81-87; mcp/src/agents_remember/serving/conversation/runtime.py:90-101 |
 

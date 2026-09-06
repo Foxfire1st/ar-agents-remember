@@ -71,7 +71,7 @@ path is a task artifact and is recorded as prose here (not a repo-relative citat
 | Candidate identity is derived from the Git index and verified against the admitted invocation. | `_candidate_identity`; `_verify_admitted_identity` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:167-177; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:396-409 |
 | Input decisions map to typed select/global-invalidate/irrelevant/unresolved reason rows. | `_scope_reasons`; `_unresolved_reason`; `_dashboard_invalidators` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:218-254; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:305-311; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:328-340 |
 | Output confinement keeps published results inside the candidate or admitted scratch root. | `_confined_output` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:351-377 |
-| The v2 result contract this provider emits. | `RepositorySelectionResult`; `build_repository_selection_result` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:89-130; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:203-241 |
+| The provider serializes the canonical v2 selector result through the shared constructor. | "def build_repository_selection_result(" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:199-237 |
 
 ## Cross-Repo References
 

@@ -26,33 +26,36 @@ the package service behind the `c-11-memory-carryover-from-branch` skill and MCP
 The service compares base, source, and official code/memory states; classifies file-sidecar, route-
 overview, memory-only-doc, and entity-catalog candidates; and applies only proven or explicitly
 selected changes. It preserves the existing exact-landed-commit, review-required, ledger mapping,
-entity fingerprint validation, guarded route-index refresh, and ff-only memory-main advance rules.
+entity fingerprint validation, and guarded route-index refresh. Writes and commits belong to the
+ordinary recovery leaf; integrating that leaf is a separate lifecycle operation.
 
 **Three frozen parameter objects (260731-EFA-L2)** carry the comparison frame and the ledger handle
 that were previously spread across long keyword lists:
 
-- **`CarryoverRefs(code_repository_root, official_ref, source_ref, old_base, official_memory,
+- **`CarryoverRefs(code_repository_root, official_ref, source_ref, old_base, target_memory,
   source_memory)`** — the two states of the world a carryover compares and the base they diverged
   from. Every candidate builder judges one path against exactly this pair of sides, and the pair is
   **constant for a whole plan**, so it is built once in `build_plan_for_request` and passed down.
   That is the point: candidates from two different plans can no longer be assembled against
   mismatched refs. `candidate_for_path(refs, source_path, *, replace_existing)` and
   `memory_only_doc_candidates(refs, *, existing)` both take it.
-- **`MemoryOnlyDoc(branch_doc, official_file, rel, source_path)`** — one onboarding doc that changed
-  only in branch memory: the branch copy, its official counterpart, its path relative to the
+- **`MemoryOnlyDoc(branch_doc, target_file, rel, source_path)`** — one onboarding doc that changed
+  only in branch memory: the branch copy, its target counterpart, its path relative to the
   onboarding root, and the source path it documents. `_memory_only_evidence(refs, doc, mem_base)`
   takes the refs frame plus one of these.
-- **`OfficialLedger(ledger, path, memory_root, commit_message)`** — the official ledger as carryover
+- **`TargetLedger(ledger, path, memory_root, commit_message)`** — the recovery-leaf ledger as carryover
   writes it. A ledger without its file path and its memory tree cannot be persisted, so they are
-  one handle. `_nothing_to_carry_result(plan, official_ledger, *, cleaned_note, carried,
+  one handle. `_nothing_to_carry_result(plan, target_ledger, *, cleaned_note, carried,
   official_head)` takes it.
 
-MX-FIX-4 adds a write-authority preflight at the start of apply. Immediately after plan creation and
-cleanliness proof, `required_official_storage(official_memory)` must return effective official-
-memory `StorageSettings`. Missing, invalid, unsupported, or semantically empty authority raises
-`AuthorityError` before ledger, onboarding, route-index, commit, or branch mutation. The validated
-settings object is reused by `_refresh_official_route_indexes()` so the write and derived-index
-steps cannot disagree about path-rule authority.
+Apply first proves configured repository identity and the exact open ordinary external-memory leaf.
+Both its code base and code HEAD must equal the selected official tip, with a clean code checkout.
+After the plan and clean target-memory check, `required_target_storage(target_memory)` resolves
+explicit effective settings before any content or ledger mutation. The same settings feed
+`_refresh_target_route_indexes`; source-memory defaults cannot grant target write authority.
+
+cit:([`_require_carryover_authority`], mcp/src/agents_remember/memory/carryover.py:856-892)
+cit:([`_apply_carryover_for_request`], mcp/src/agents_remember/memory/carryover.py:759-853)
 
 **Git now runs through the one owner (260731-EFA-L3).** This module no longer carries a local
 `subprocess.run` adapter. It imports `run_git` from `agents_remember.kernel.git_command` and keeps
@@ -79,7 +82,7 @@ runner's `timeout=GIT_LOCAL_TIMEOUT_SECONDS` (300s) default, `encoding="utf-8"` 
 
 CLI and MCP surfaces remain adapters around `CarryoverRequest`, `build_plan_for_request()`, and
 `apply_carryover_for_request()`. Derived indexes are regenerated, never copied. Parser-default
-settings may support read/topology discovery, but only explicit effective official settings may
+settings may support read/topology discovery, but only explicit effective target settings may
 authorize mutation.
 
 ### Invariants And Boundaries
@@ -87,16 +90,17 @@ authorize mutation.
 - Only proven evidence tiers auto-carry; every source-branch commit touching a path must be an
   ancestor of the official ref for `exact-landed-commit`.
 - Review-required paths must be selected explicitly.
-- Official-memory storage/path-rule authority is established once before all mutation and reused
-  for index refresh. Source-worktree settings cannot substitute for official settings.
-- Authority refusal is exact zero mutation: official HEAD, Git status, non-Git bytes, source bytes,
+- Target recovery-leaf storage/path-rule authority is established once before all mutation and reused
+  for index refresh. Source-worktree settings cannot substitute for target settings.
+- Authority refusal is exact zero mutation: target HEAD, Git status, non-Git bytes, source bytes,
   route-index presence, and ledger state remain unchanged.
 - Git children use scrubbed repository-selection environment and never inherit the MCP stdio pipe.
   Both guarantees are the single `kernel.git_command.run_git`'s, not a module-local copy's: it always
   passes `env=git_environment()`, and `stdin=subprocess.DEVNULL` unless a caller supplies
   `input_text`. This module must not grow a second runner.
 - Post-merge head mapping runs only when no auto-carry or review-required candidate remains.
-- Memory `main` advances ff-only and is never forced across divergence.
+- Apply commits only in the exact recovery-leaf memory checkout. It does not advance memory `main`
+  or the selected integration branch; normal leaf integration owns publication.
 
 ### Todos
 
@@ -104,8 +108,8 @@ None known for the MX-FIX-4 carryover boundary.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository. The service and full-apply test
-matrix define the current write-authority contract.
+No Domain Documentation source is configured for this repository. The service and raw target-settings preflight
+define the current write-authority contract; deleted tests provide no current coverage claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -117,7 +121,6 @@ matrix define the current write-authority contract.
 | --- | --- | --- |
 | Target JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 | Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-197 |
-| Full-apply tests pin missing/unsupported refusal, retention/repopulation acceptance, target-over-source selection, and exact zero mutation. | `test_missing_official_settings_refuses_before_any_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_markdown_unsupported_rule_lists_refuse_before_mutation`; `test_target_settings_override_conflicting_source_settings` | mcp/tests/test_carryover_apply_1.py:113-126; mcp/tests/test_carryover_apply_2.py:216-332; mcp/tests/test_carryover_apply_2.py:334-389; mcp/tests/test_carryover_apply_2.py:605-630 |
 | Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
 | The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 

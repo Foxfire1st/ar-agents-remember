@@ -95,7 +95,7 @@ modules.
 | The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
 | The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | `WorktreeContract`; `load_contract`; `ContractError` | mcp/src/agents_remember/worktrees/worktree_contract.py:90-91; mcp/src/agents_remember/worktrees/worktree_contract.py:229-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-469 |
-| The test asserting the extraction (files.py re-exports `FileScope`/`_resolve_within`). | `test_scope_module_exposes_resolver_and_runner` | mcp/tests/test_serving_changeset.py:791-797 |
+
 
 ## 260718-CHATS-L5I Current Delta
 

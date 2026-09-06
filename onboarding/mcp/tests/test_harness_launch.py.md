@@ -5,103 +5,68 @@
 | repository             | agents-remember                    |
 | path                   | `mcp/tests/test_harness_launch.py` |
 | doc_type               | `file-level-onboarding`            |
-| lastUpdated            | 2026-07-21T11:30+02:00             |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash |                                    `7bf564a663bb61f12844dee39538dd09a1633cdb`|
 | lastVerifiedCommitDate |                                    2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                      |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-This file is the focused contract suite for ACPUI-L2's settings-resolved native launch layer. It
-proves complete selection resolution, token-free dynamic model/effort validation, Pi's exact
-provider-qualified identity rule, honest effective-launch echo checks, native launch-knob
-application, and refusal of duplicate adapter-owned selectors before a vendor process can start.
+Harness-specific launch vocabulary and exact model identity.
 
 ## Code Commentary
 
 ### Logic
 
-`_selection` and `_snapshot` build one small normalized selection/catalog fixture. The first group
-round-trips `ResolvedLaunch`, refuses missing model or effort, accepts a unique resolved Claude
-model, rejects unknown/model-gated values, requires Pi's exact `provider/model` catalog key, and
-checks model/effort echoes with the harness-specific effort-echo requirement.
-
-The second group applies `LaunchKnobs` to a base `LaunchSpec`. It proves adapter arguments are
-inserted without losing fixed argv or environment, then enumerates every installed Codex model and
-`-c`/`--config` spelling owned by the adapter. Those spellings refuse as duplicate authority while
-unrelated config and sandbox arguments pass unchanged.
-
-The 260718-CHATS-L5F group (R2) pins effective-launch acceptance on resolved-model identity, not the
-catalog key. `test_effective_launch_accepts_alias_collapsed_onto_default_resolved_model` is the
-opus[1m] regression pin: when the requested alias and the harness-reported key resolve to the SAME
-underlying model, `verify_effective_launch` accepts (via `_resolves_to_same_model`) instead of
-refusing a natively-succeeding launch; `test_effective_launch_still_refuses_a_genuinely_different_model`
-holds the strict direction (a genuinely different or absent resolved model still fails); and
-`test_select_current_model_prefers_requested_alias_over_default_collapse` proves
-`_select_current_model(requested_key=…)` returns the requested alias rather than collapsing onto the
-is-default row when several rows share one `resolved_model`. The codex exact-key and pi exact-key
-guards are unchanged.
+Pi accepts only the full provider-qualified catalog key. Effective launch refuses a different model. Applying native knobs preserves fixed argv/environment and rejects duplicate selector authority; a parameterized harness population carries the selected model and effort through each native vocabulary.
 
 ### Conventions
 
-Keep this suite protocol-neutral and synchronous. Vendor discovery framing belongs in each adapter
-test; this file tests the normalized launch policy with immutable capability and launch objects.
-Parameterized CLI grammar tables are intentional executable documentation of the accepted Codex
-parser forms.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Settings-resolved native launches require both model and effort.
-- Effort is validated under the selected model; there is no global effort list.
-- Pi accepts only the exact provider-qualified dynamic catalog key.
-- Effective-launch acceptance is by resolved-model identity: an alias whose `resolved_model` matches
-  the reported key's is accepted, a genuinely different/absent resolved model still refuses, and the
-  requested alias wins over a default collapse when rows share one `resolved_model` (260718-CHATS-L5F R2).
-- Duplicate adapter-owned argv or config authority refuses before launch preparation proceeds.
-- Echo verification never invents evidence when a protocol cannot report effort.
-- No test in this file submits a prompt, starts a turn, or uses composer paste.
+Catalog identity owns selection; an ambiguous model suffix is not a substitute. These cases do not start vendor processes or prove every historical catalog-validation edge.
 
 ### Todos
 
-No file-local todos. Mid-session set acceptance belongs to ACPUI-L3, and serving request exposure
-belongs to ACPUI-L4.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-The resolved source registry has no Domain Documentation entries, so no live documentation source
-was available for this repository-owned launch contract. The code and tests below provide the
-direct evidence.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No Domain Documentation source is configured for this repository. | n/a | n/a |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-The production module defines the exact policy exercised here, while the hosted runner establishes
-the ordering and persistence boundary covered by its sibling tests.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `ResolvedLaunch` is complete and JSON-safe; dynamic validation is model-gated and Pi requires an exact provider-qualified key. | `ResolvedLaunch` | mcp/src/agents_remember/serving/harness_launch.py:17-54 |
-| Effective echo verification is honest, and launch-knob application refuses duplicate adapter-owned argv/config keys. | `verify_effective_launch`, `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:122-148; mcp/src/agents_remember/serving/harness_launch.py:173-206 |
-| Codex config parsing covers separated, equals-attached, and short-attached forms. | ["--config/-c"] | mcp/src/agents_remember/serving/harness_launch.py:212-212 |
-| The sibling runner suite verifies discovery/application ordering and persistent failed launch evidence. | `test_dynamic_discovery_precedes_native_launch_knob_application`, `test_adapter_start_mismatch_is_persistent_failed_rejected_evidence` | mcp/tests/test_harness_control_runner.py:190-220; mcp/tests/test_harness_control_runner.py:402-450 |
+| Pi requires the exact provider qualified catalog key. | `test_pi_requires_the_exact_provider_qualified_catalog_key` | mcp/tests/test_harness_launch.py:40-71 |
+| Effective launch still refuses a genuinely different model. | `test_effective_launch_still_refuses_a_genuinely_different_model` | mcp/tests/test_harness_launch.py:108-116 |
+| Apply launch knobs preserves fixed argv and refuses duplicate authority. | `test_apply_launch_knobs_preserves_fixed_argv_and_refuses_duplicate_authority` | mcp/tests/test_harness_launch.py:119-154 |
+| Every harness carries a clean selection into its own launch vocabulary. | `test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary` | mcp/tests/test_harness_launch.py:178-185 |
 
 ## Cross-Repo References
 
-No sibling repository participates in this own-adapter policy test; installed vendor CLIs are
-covered through adapter and live-matrix evidence rather than a cross-repository code dependency.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

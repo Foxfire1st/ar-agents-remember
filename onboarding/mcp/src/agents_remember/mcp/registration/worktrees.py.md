@@ -82,13 +82,14 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The public sync declaration exposes typed memory choice and contract-addressed continue/cancel with retained-conflict help. | `worktree_sync` | mcp/src/agents_remember/mcp/registration/worktrees.py:233-259 |
-| The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:43-53; mcp/src/agents_remember/mcp/tools/worktree.py:74-83; mcp/src/agents_remember/mcp/tools/worktree.py:86-95; mcp/src/agents_remember/mcp/tools/worktree.py:56-71 |
+| The start payload forwards task identity, bases and execution configuration to the application owner. | "def worktree_start_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:51-61 |
+| The attach payload forwards the requested worktree attachment to the application owner. | "def worktree_attach_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:84-93 |
+| The status payload reads status through the application owner. | "def worktree_status_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:96-105 |
+| The sync payload forwards the synchronization request to the application owner. | "def worktree_sync_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:64-81 |
 | The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-29 |
 | The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. | `TaskBases` | mcp/src/agents_remember/application/worktree_tool_requests.py:32-47 |
 | The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. | `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:50-56 |
 | `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
-| The three-way split is proved through live registration. | `test_worktree_start_splits_identity_bases_and_execution` | mcp/tests/test_mcp_registration_wiring_tests_1.py:728-771 |
-| The light-task default is proved through live registration. | `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_2.py:84-101 |
 
 ## Cross-Repo References
 

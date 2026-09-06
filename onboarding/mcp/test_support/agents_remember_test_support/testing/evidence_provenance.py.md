@@ -53,7 +53,6 @@ No external domain documentation governs this repository-owned evidence schema.
 | --- | --- | --- |
 | Candidate and machine facts form one content-bound provenance payload. | `capture_provenance` | mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py:23-43 |
 | The CLI refuses without Dagger admission before publication. | `main` | mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py:46-58 |
-| Cadence and representative measurement consume the shared payload. | `run_cadence_evidence`; `measure_representative_routes` | mcp/test_support/agents_remember_test_support/testing/cadence_runner.py:54-136; mcp/test_support/agents_remember_test_support/testing/route_measurement.py:120-151 |
 
 ## Cross-Repo References
 

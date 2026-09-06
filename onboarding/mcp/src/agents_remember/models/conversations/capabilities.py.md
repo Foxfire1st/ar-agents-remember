@@ -52,7 +52,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fixture evidence never enables capabilities. | `test_installed_runtime_fixtures_are_allowlisted_evidence_not_enablement` | mcp/tests/test_conversation_foundation.py:163-188 |
+| Capability state requires coherent evidence; supported/partial states require runtime-fixture evidence and version metadata alone does not demote capability. | `FeatureCapability` | mcp/src/agents_remember/models/conversations/capabilities.py:18-39 |
 
 ## Cross-Repo References
 

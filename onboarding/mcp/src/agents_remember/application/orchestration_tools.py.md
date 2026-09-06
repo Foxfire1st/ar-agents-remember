@@ -31,6 +31,14 @@ Module-level surface:
 - `nudge_manager` (function, lines 130-149) — Compose the flat nudge request into target and subject decisions.
 - `_log_nudge_event` (function, lines 152-170)
 
+A nudge is recorded and its observed system event is appended before delivery is considered.
+If the rate-limit owner returns `rate-limited`, this application returns that status immediately
+and does not create a second operator-inbox post. Both sent and rate-limited outcomes retain the
+durable event with state, reason, target, subject, and artifact attribution.
+
+cit:([`orchestration_nudge_manager_tool`], mcp/src/agents_remember/application/orchestration_tools.py:58-129)
+cit:([`_log_nudge_event`], mcp/src/agents_remember/application/orchestration_tools.py:154-172)
+
 ### Conventions
 
 Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.

@@ -5,404 +5,68 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection.py`          |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                    |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_observer_projection.py` covers the observer projection read side (slice 3a):
-the pure fold and its determinism, the inferred layer, append-only corrections,
-precomputed action availability, workspace tree assembly, the atomic projection
-write, and the structural surface readers. L11 adds abandon-terminality coverage:
-an abandoned-enclosure lifecycle projects `abandoned`, and abandoned/reopened
-enclosures synthesize no paused persistent lifecycle.
-
-### 260712-TRH-L7 landing snapshot integration
-
-The projection tests now exercise projected status receiving immutable landing facts rather than invoking remote landing probes during the recurring read.
+Event attribution and enclosure-reference builders for projection consumers.
 
 ## Code Commentary
 
-### 260707-HFX2-L13 Summary Contract Assertions
-
-Snapshot-reader assertions now expect task and series broadcast nodes to omit objective, sections,
-and decisions while preserving structural summary fields. Full-body behavior is exercised in the
-dedicated CS-6 projection suite through `read_task_document_body`.
-
 ### Logic
 
-`FoldTests` assert the seed from `lifecycle.started`, the phase/block/resume walk,
-ask retention, the task-28 `awaiting-developer` fold
-(`test_awaiting_developer_then_resume`: `lifecycle.awaiting-developer` projects
-state `awaiting-developer` with the `summary` on the `ask` carrier
-(`ask == {"summary": …}`), and a following `lifecycle.resumed` clears it back to
-`running` with `ask is None`), token aggregation, promotion to persistent, ended
-outcomes, and the empty-log guard. `DeterminismTests` assert the same log + same `now` reduce to an
-identical projection. `InferredLayerTests` assert fresh→running,
-stale→`paused` (`inferred`), fleeting+dormant→`abandoned` (`inferred`), persistent
-dormancy never auto-abandons, and a terminal state survives staleness.
-`CorrectionTests` assert a `correction.recorded` overrides state and a malformed
-one is ignored. `ActionAvailabilityTests` assert `resume` (blocked-only) and the
-enclosure `integrate`/`cleanup` rules + `disabledReason`s. `WorkspaceTests` assert
-tree assembly, metric counts, and `generatedAt`, plus (task 33) `project_workspace`'s
-`active_worktree_groups` passthrough: a group set passed as
-`structure=WorkspaceStructure(..., active_worktree_groups=[...])` is stored sorted on
-`WorkspaceProjection.activeWorktreeGroups` (the Topology's active scope), and the field defaults to an
-empty list when that `WorkspaceStructure` field is left out. `StoreIOTests` assert log
-enumeration and the atomic round-trip (no `.tmp` left). `SnapshotReaderTests`
-assert provider snapshot parsing with `snapshotStaleSeconds`, enclosure reading
-from a real contract, the absent-surface empties, and `project_and_write`
-end-to-end. The L10 regression (`test_resolves_leaf_doc_lifecycle_from_doc_id_case_insensitively`)
-seeds the real series shape — lowercase enclosure leaf id, uppercase doc id, numbered doc slug
-matching neither, no lifecycleId/enclosures[] on the doc — and asserts `read_task_documents` still
-attaches the enclosure's lifecycle.
-
-#### 260731-EFA-L4 — the lifecycle-state vocabulary suites
-
-Five classes added between `TokenSeriesTests` and `StalenessHistogramTests`. They exist for a set
-difference, not a typo: `Metrics` bucketed **three** states by hand while `State` declared **six**,
-so an `awaiting-developer` lifecycle counted towards `lifecycleCount` and `totalTokens` and towards
-nothing else — the rollup could not show a lifecycle that had handed the turn back.
-
-- **cit:([`MetricsBucketVocabularyTests`], mcp/tests/test_observer_projection_metrics.py:128-233)** — the coverage half. `live_states()` re-derives
-  the live set as `STATES` minus `TERMINAL_STATES` rather than reading `projection.ACTIVE_STATES`
-  (which *is* the live half verbatim), **so the measurement is not taken with the same instrument
-  it is checking**, and a seventh state fails here.
-  `test_the_vocabulary_scan_found_the_states` pins that the derivation found something, so a scan
-  matching nothing cannot satisfy everything below it. `test_every_live_state_has_a_metrics_bucket`
-  and `test_the_metrics_buckets_are_exactly_the_live_states` hold the two directions —
-  `lifecycleCount` excluded by name as the all-states total, the one `*Count` field that is
-  deliberately not per-state. `test_every_live_state_is_actually_counted` drives one real lifecycle
-  per live state through `project_workspace` and requires every bucket to read `1` and the total to
-  equal the number of live states — the fields existing is not the same as the reducer filling
-  them. `test_an_awaiting_developer_lifecycle_is_no_longer_uncountable` pins the reported symptom.
-  The `_log(state)` helper derives its event kind from the state (`lifecycle.<state>`) rather than
-  from a fourth table keyed by it.
-- **cit:([`StatePartitionTests`], mcp/tests/test_observer_projection_metrics.py:236-300)** — deriving the bucket set as "the vocabulary minus
-  `TERMINAL_STATES`" only moves the hand-written list one level down unless `TERMINAL_STATES` is
-  itself tied to the vocabulary. It is: `State` is **composed** from the two halves. These hold
-  `check_state_partition` to totality and disjointness (`ACTIVE_STATES == LIVE_STATES` verbatim)
-  and drive its three refusals — a state filed on neither side ("neither live nor terminal"), on
-  both, and a filed state missing from the vocabulary — against **synthetic** `Literal`
-  vocabularies, so the guard is exercised without the real declaration having to be wrong.
-- **cit:([`TerminalityIsStructuralTests`], mcp/tests/test_observer_projection_metrics.py:303-420)** — totality stops a state escaping
-  classification; it cannot stop one being classified **wrongly**, and a mis-filed state is the
-  same defect wearing the fix. So terminality gets an observable definition and is checked against
-  the fold in both directions: a terminal state is one the log reaches **only** through
-  `lifecycle.ended` (`coerce_end_outcome(state) == state`), and a live state is one some event kind
-  declares outright (`f"lifecycle.{state}" in _KIND_UPDATES`). `seeded_state()` asks the fold what a
-  bare `lifecycle.started` projects into rather than naming it. `test_is_terminal_reads_the_same_partition`
-  keeps `LifecycleState.is_terminal` and the projection from disagreeing, and
-  `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` holds the **write** side to the
-  same set — `AmbientLifecycle.end` validates against `TERMINAL_STATES` and converts through
-  `coerce_end_outcome`, so a terminal state the reducer can project but no session can write fails
-  here whatever the write side is spelled in.
-- **cit:([`StateVocabularyReaderTests`], mcp/tests/test_observer_projection_metrics.py:423-458)** — `vocabulary_names` must read every legal
-  declaration form. `get_args` alone is only correct for a **flat** `Literal`; on the union form
-  (`Literal[...] | ReviewState`, a plausible way to fold a second vocabulary in) it returns
-  `Literal` objects, and the first consumer to call `.split` on one dies with `AttributeError` at
-  import of `agents_remember.observer` — the whole package goes down and the traceback names none
-  of this. These pin the reading, the flattening of an alias composition, the by-name refusals
-  (non-string member, empty declaration), and that the real declarations read as plain `str`.
-- **cit:([`StateCountFieldTests`], mcp/tests/test_observer_projection_metrics.py:461-516)** — the state → bucket-field naming rule, held one-to-one
-  and identical to the client's. `test_a_capital_in_the_tail_survives` records why Python moved:
-  `dashboard/src/types/projection.ts` derives the names with `Capitalize<Camel<Tail>>`, which
-  upper-cases the first character and leaves the rest alone, while Python used `str.capitalize`,
-  which lower-cases the tail — so the two copies of one rule disagreed on `awaiting-DEVELOPER`.
-  TypeScript's is the rule expressible on both sides. `test_two_states_sharing_a_bucket_are_refused_rather_than_merged`
-  is the reviewer's case: `awaiting-Developer` beside `awaiting-developer` produced three
-  lifecycles, `awaitingDeveloperCount: 1`, and a **green** vocabulary suite, because the coverage
-  tests compare per-state values that both resolve to the merged field and therefore agree with
-  themselves. `state_count_fields` refuses to be built instead, and
-  `test_a_merged_bucket_would_have_under_counted_the_rollup` shows the number the dashboard would
-  have read.
-
-Slice 3b adds: `TokenSeriesTests` (cumulative fuel gauge from `tool.completed`; **260703-L15**
-extends the suite with the served bound — `_tool_log(count)` builds token-bearing logs, a series
-at exactly `TOKEN_SERIES_MAX` is untouched, and a 3000-call series decimates to the bound with
-the newest `TOKEN_SERIES_RECENT` cumulative values exact, the first sample kept, the sequence
-still monotonic, and the final cumulative equal to the full fold's),
-`StalenessHistogramTests` (age bucketing), `AnalyticsAssemblyTests` (bounded
-stalest leaderboard, `project_workspace` wiring analytics + histogram, and 3a
-callers getting empty analytics), the seven reader suites
-(`DriftSnapshotReaderTests`, `SidecarStalenessReaderTests`,
-`SetupSummaryReaderTests`, `SetupProgressReaderTests`, `RouteCoverageReaderTests`,
-`ToolReportsReaderTests`, `LedgerReaderTests`), `DriftSnapshotProducerTests` (a
-git-backed round trip — the producer writes a snapshot a reader then parses), and
-`ProjectAndWriteAnalyticsTests` (analytics populated end-to-end with a configured
-repository). Slice 3c adds `TaskDocumentsReaderTests` (the `read_task_documents`
-reader, its optional lifecycle binding, projection of active docs without lifecycle keys, master docs
-as concrete task documents, archive exclusion, and inclusion in `build_analytics` and
-`project_and_write`; L14 adds `test_exposes_orchestrates_on_the_task_doc_node` — a master with
-`orchestrates` projects the list onto `TaskDocNode.orchestrates`, a doc without the field projects
-`[]`).
-
-Slice 05 (5b) adds `AttentionQueueTests`: the server-computed attention queue — alarms
-ranked above warnings, the blocked-gate item carrying its lifecycle cross-ref + ask
-detail, the inferred stale-session and dormant-fleeting items, the
-provider-down / actionable-drift / failed-setup branches, and an empty queue for a calm tree.
-Task 29 extends the drift branch so actionable-drift rows carry `actionable-drift:<repo>:<branch>` ids,
-provenance detail from `memoryRoot`/`reportPath`, and `checkedAt` as `signalTs`.
-
-Slice 05 (5c) extends `WorkspaceTests` (a worktree-backed enclosure with no event log now
-synthesizes a paused persistent lifecycle) and adds
-`test_persistent_synthesis_skips_enclosure_with_event_lifecycle` (no duplicate when an event-backed
-lifecycle already exists), the Task 25 live-row cleanup cases (`test_stale_persistent_lifecycle_without_enclosure_is_removed`,
-`test_terminal_persistent_lifecycle_without_enclosure_is_removed`, `test_reowned_enclosure_removes_old_event_lifecycle`,
-`test_fleeting_lifecycle_does_not_need_enclosure`, `test_fresh_promotion_window_without_enclosure_is_kept`,
-`test_fresh_blocked_promotion_window_without_enclosure_is_kept`, and
-`test_legacy_blank_lifecycle_enclosure_keeps_event_lifecycle`), plus
-`test_dormant_persistent_worktree_stays_out_of_the_attention_queue` (the attention-gate);
-`SnapshotReaderTests` gains `test_read_providers_includes_per_worktree_stacks`
-(surface 4 — the workspace stack plus each worktree's CGC/GrepAI bound to worktree/repo/role, a
-malformed stack skipped).
-
-Task 12 S2 extends `SnapshotReaderTests` with repo-scoped workspace provider cases:
-`test_read_providers_projects_cgc_repo_watchers` pins CGC `resources.watchers` rows, and
-`test_read_providers_projects_grepai_target_repos` pins GrepAI `targetRepos`. GrepAI only stays
-aggregate when that current-state target evidence is absent.
-
-Slice 5e adds `EngineProcessTests`: the enclosure-centered process map from `build_engine_processes`
-— a successful external bootstrap (observed fact-states, complete boot edges, code-before-memory
-engines), provider-setup running, failed setup (independent code engine + the failed phase line),
-missing-status degradation, disabled-memory (no memory lane), sync-needed (behind-official → blocked +
-the sync edge), the worktree-group-basename join, action reuse, determinism, and `project_workspace`
-wiring (`analytics.engineProcesses`, version 2) — plus the §5.4 start-progress synthesis (a pre-contract
-blocked start) and the `start_progress` write/read/clear round-trip. Slice 5f S6 (§9) adds the
-attention-parity cases: a pre-contract blocked start raises a `blocked-start` `warn` item
-(id/severity/detail), `project_workspace` threads it into the queue, and a happy-path beat is
-observable as a synthesized node but raises no alarm. Slice 5h adds the additive-field mapping cases:
-`landing`/`integrationStrategy` default empty/`None`, and a fact carrying a `status["landing"]` list +
-a recorded `integration_strategy` maps onto `EngineProcessNode.landing`/`integrationStrategy`. The 5h
-ledger popover adds the windowing tests: `LedgerReaderTests` gains `_ledger_window` (newest `LEDGER_WINDOW`
-rows + the full total; missing/`None` → `([], 0)`) and a `read_ledger` row-windowing case, and
-`EngineProcessTests` asserts `ledger_rows`/`ledger_row_count` pass through `build_engine_processes` onto
-`EngineProcessNode.ledgerRows`/`ledgerRowCount` (default-empty + carried). The `_facts` helper gained
-`ledger_rows`/`ledger_row_count` params. Slice 05l P1 (Gap B) adds
-`EngineProcessTests.test_disposed_worktrees_drop_from_engine_processes`: a `cleanup: "pending"` fact
-stays (1 node) while `cleanup: "completed"` and `cleanup: "abandoned"` facts drop (`[]`) — pinning
-that a disposed enclosure leaves the active engine-room set so the frontend animates the removal, and
-that `cleanup-pending` keeps its live node. Slice 05m adds
-`EngineProcessTests.test_carryover_done_at_surfaces_on_the_node` (a fact whose `status` carries
-`carryoverDoneAt` maps it onto `EngineProcessNode.carryoverDoneAt` — 5k renders it) and
-`test_carryover_done_at_defaults_to_none` (absent → `None`). **Tier 2** adds `LedgerCommitMetaTests` (real `git init` repos):
-`_git_commit_meta` batches a single probe mapping each commit → (committer ISO date, subject), drops a bogus
-SHA with no HEAD fallback, and returns `{}` for a non-repo / empty input; `_ledger_window` and `read_ledger`
-enrich each served row when the commits are local and leave the message/date fields `None` (the row still
-served by its hash) when they are not.
-
-**260731-EFA-L3** adds one case to that class:
-cit:([`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`], mcp/tests/test_observer_projection_ledger.py:171-197). It is the
-only test in this suite that patches git rather than running it: `mock.patch.object(snapshots,
-"run_git", side_effect=subprocess.TimeoutExpired(cmd=["git", "log"], timeout=300))` over a real
-two-commit repo with a written ledger. `TimeoutExpired` is a `SubprocessError` and a `SubprocessError`
-is **not** an `OSError`, so when `snapshots._git_commit_meta` moved onto a runner that has a timeout,
-its `except OSError` stopped covering the failure the timeout produces — the raise would have escaped
-through `_enrich_ledger_rows` and taken down the projection tick. The case drives **both** entry points
-inside one patch — `_ledger_window(...)` (worktree coupler) and `read_ledger(repo, code_root=repo)`
-(official coupler) — and asserts the honest degrade rather than the absence of a crash: `total` still
-equals the full ledger row count, `rows[0].codeCommit` still carries the hash, and `codeSubject` /
-`memoryDate` / `node.rows[0].codeSubject` are all `None`, i.e. the enrichment is dropped and never
-faked. Asserting the `LedgerNode` builder separately is deliberate — the two windowing sites call
-`_git_commit_meta` through different paths, so one guard covering only one of them would pass a
-single-entry-point test.
-Task 31 extends this area with configured-only versus live worktree provider assertions: `read_providers`
-can use mocked Docker inspect data to mark a worktree stack ready, while `build_engine_processes` emits
-missing code/memory provider placeholders and missing facts when a worktree expects providers but no
-runtime facts match. It also covers `_inspect_result_map` directly so Docker inspect parsing handles
-valid arrays, slash-prefixed names, non-dict entries, empty names, invalid JSON, non-list JSON, and
-non-string input without leaving the new provider-runtime parser uncovered.
-Task 29 adds `WorktreeProviderAdmissionTests`, active-group filters, direct-reader compatibility, and projection hot-path coverage:
-active build lifecycles admit worktree provider/setup files, parked or terminal enclosures and
-close/integration phases do not page provider alarms, non-terminal close-phase enclosures can still feed
-Engine Room status, unfiltered provider reads still include worktree stacks for diagnostics, inactive
-provider/setup/engine-process files are skipped when filters are supplied, and `project_and_write`
-reuses the TTL-gated repo-surface cache so provider-state refreshes are not hidden behind repeated git
-surface probes.
-
-**L5 (260628_operations-integration)** adds the durable-state retention regressions.
-`WorktreeProviderAdmissionTests.test_active_group_survives_a_pruned_lifecycle_log` pins the Engine Room
-fix: a `cleanup:"pending"` enclosure with **no** lifecycle log (the log was pruned for inactivity) is
-still returned by both `active_enclosure_worktree_groups` and `admitted_worktree_groups` — admission
-keys on the durable enclosure, not the prunable log. The new `SeriesRetentionTests` cover
-`series_retained_lifecycle_ids`: a live master protects every leaf including archived siblings while a
-second live master is independently protected
-(`test_live_master_protects_every_leaf_including_archived_siblings`); a fully-archived master with no
-readable contract timestamp is released (`..._without_readable_timestamp_is_released`); an archived
-master is retained inside the one-week grace and released past it (using `os.utime` on a real contract
-file — `test_archived_master_is_retained_within_grace_then_released_after`); and an enclosure with no
-`taskName` is never series-protected (`..._is_not_series_protected`).
-
-Slice 3c **reopened (R1)** adds the series-master cases to `TaskDocumentsReaderTests`:
-`test_read_series_documents_projects_master` (a mixed-status master → a `SeriesNode` with
-`doneCount`/`totalCount` over the declared `subTasks[]` + the full render), `..._skips_leaf_docs` (a leaf
-is not a series — the disjoint partition), `test_declared_subtask_status_is_authoritative_over_leaf_steps`
-(a subtask marked `Completed` counts done even with an open leaf step), the missing-dir empty, and
-`test_build_analytics_includes_series` (the additive `Analytics.series` wiring). Task 17 extends this
-area with `TaskDocNode.createdAt`, `SeriesNode.objective`, and
-`test_read_series_documents_orders_subtasks_by_leaf_creation`, which writes master rows in misleading
-filename/number order plus sibling leaf docs and asserts the projected rows are oldest-first by leaf
-`createdAt`. Task 21 adds a workspace-level series token rollup regression: linked leaf task documents
-with lifecycle token totals sum into `Analytics.series[].seriesTokenTotal`, while a missing sibling row
-contributes zero.
-
-Slice 6c adds `GateProjectionTests` (a durable open gate materializes onto
-`LifecycleProjection.gate` with its decision verbs; a decided gate is not attached; the
-latest open gate wins; an open gate raises a `gate-open` attention item; no gates leaves
-both clean) and `GateReaderTests` (`snapshots.read_gates` folds lifecycle + workspace gate
-logs; a missing root reads empty).
-
-Task 28 adds the NOTIFY-AND-CONTINUE attention cases:
-`test_awaiting_developer_yields_one_info_item` (an `awaiting-developer` lifecycle yields
-exactly one `info` attention item carrying the summary as its `detail` — no
-double-emission), `test_blocked_with_open_gate_dedups_to_gate_open` (a `blocked` lifecycle
-that ALSO has a durable open gate yields ONE lifecycle-lane item — the `gate-open` — and no
-`blocked-gate`; the gate-open/blocked-gate dedup), and
-`test_bare_block_without_gate_still_yields_blocked_gate` (PARK-not-delete: a bare `block()`
-with no `GateRecord` still raises a `blocked-gate`).
-`AttentionDismissalTests` pins lifecycle-scoped acknowledgement behavior: awaiting/blocked/stale/dormant
-and gate-open rows suppress only when the acknowledgement record matches the lifecycle, newer turn-end
-signals re-surface the item, and non-lifecycle provider alarms are not suppressible by orphaned
-acknowledgement rows. Task 29 extends this suite so targetless actionable-drift acknowledgements suppress
-only until a newer drift snapshot appears. `SnapshotReaderTests` adds an end-to-end `project_and_write` assertion that a
-completed lifecycle's attention acknowledgement is pruned
-cit:([`test_project_and_write_prunes_completed_lifecycle_attention_acknowledgement`], mcp/tests/test_observer_projection_snapshot.py:556-590).
-
-Since 260731-EFA-L5 (R5) that assertion is about **emptiness, not absence**. It used to end
-`assertFalse(dismissals.log_path().exists())`; the unlink that made it true is the defect the leaf
-removed. `AttentionDismissalStore` rewrote to empty by unlinking, so a concurrent dismisser
-holding an `"a"`-mode handle wrote into an inode with no remaining links and its record vanished
-with the file — no torn line, no exception, nothing for the caller to notice, and it is where the
-measured **31.45%** dismissal loss came from. The three assertions that replaced it are strictly
-stronger than the one they replace: `dismissals.read() == []`, `log_path().is_file()`, and
-`log_path().read_bytes() == b""`. Zero bytes read back is proof the row physically left; a missing
-file only proved something removed the file.
-
-Current `TaskDocumentsReaderTests` assert the Operations projection contract. `read_task_documents`
-takes `enclosures=` for optional lifecycle binding, but projects active JSON-primary light/subTask and
-master documents even when no lifecycle binding exists. `test_projects_docs_without_lifecycle_and_skips_non_task_json`,
-`test_master_without_a_lifecycle_projects_as_task_document`, `test_master_stays_on_series_surface`,
-`test_nested_masters_stay_on_series_surface`, and `test_archived_task_documents_are_not_projected` pin
-the active-doc-first behavior, master dual-surface behavior, and archive/delete disappearance boundary.
-`test_leaf_contract_alone_is_not_a_task_document` proves an active
-`enclosures/<leaf-id>/series-contract.md` is enclosure state only and does not project into
-`analytics.taskDocuments`. Creation-order coverage deliberately uses stored sub-task numbers that do not
-match desired display order, so the test pins structured timestamps rather than string-prefix parsing.
-Task 17 live-data numbering coverage also pins `TaskDocNode.id` in the projection schema/fixture path,
-so clients can label authored leaves from the child task id instead of parent fallback labels.
+Attribution keeps producer and evidence altitude together; EnclosureRef couples contract path and repository identity. _event and _started build self-contained observer events for projection tests. No projection test methods remain in this module.
 
 ### Conventions
 
-Inserts `mcp/src` on `sys.path` (the suite idiom). `_event`/`_started`/`_enclosure`
-build fixtures; fixed `T0`/`FRESH`/`STALE`/`DORMANT` datetimes make the staleness
-windows deterministic; a local `McpRuntimeConfig` factory + `current_state_path`
-back the snapshot/store tests, and `default_contract`/`write_contract` produce a
-real contract for `read_enclosures`.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-`_event` takes provenance as `by=<Attribution>` and the promotion target as
-`enclosure=EnclosureRef(path, repo_id)` rather than as loose `trust`/`actor`/`enclosure`/`repo_id`
-keywords. The four provenance pairs the suite uses are named module constants —
-`DECLARED_BY_MODEL` (the `_event` default), `OBSERVED_BY_MODEL`, `OBSERVED_BY_SYSTEM`, and
-`INFERRED_BY_SYSTEM` — so a case cannot quietly invent a fifth trust/actor combination, and
-`EnclosureRef` keeps the contract path and its repo id together because a promotion carries both
-or neither. The production entry points are likewise driven through their parameter objects:
-`project_workspace(logs, structure=WorkspaceStructure(enclosures, providers,
-active_worktree_groups), now=..., given=AnalyticalInputs(...))`,
-`build_analytics(AnalyticalInputs(...))`, `build_attention_queue(lifecycles, providers,
-AnalyticalInputs(...))`, `create_gate(kind, gate_id=..., now=..., anchor=GateAnchor(lifecycle_id))`
-with `decide_gate(gate, GateVerdict(...), now=...)`, `default_contract(ContractTask(...),
-leaf=LeafIdentity(...), code=RepoBranchPlan(...), memory=RepoBranchPlan(...))`, and
-`write_start_progress(root, StartingEnclosure(...), StartBeat(...))`.
+### Invariants And Boundaries
 
-The 260731-EFA-L4 vocabulary suites add two local conventions. First, every derived set is derived
-with a *different* instrument from the one under test — `live_states()` subtracts
-`TERMINAL_STATES` from `STATES` rather than reading `ACTIVE_STATES`, and `seeded_state()` asks the
-fold rather than naming `running` — so no assertion can agree with itself. Second, the partition
-and reader guards are driven against **synthetic** `Literal` vocabularies declared as class
-attributes cit:([`StatePartitionTests`], mcp/tests/test_observer_projection_metrics.py:236-300) (`LIVE` / `TERMINAL`) plus inline `Literal[...]`
-arguments, so a refusal is exercised without the shipped declaration having to be wrong; only
-`test_the_real_partition_is_total_and_disjoint` and
-`test_the_real_bucket_fields_are_distinct` assert against the live vocabulary. `typing.Literal` is
-imported for exactly that. The `EngineProcessTests` contract fixtures ask for
-`workflow_kind="light-task"`; the bare `"light"` they used is no longer a member of `WorkflowKind`.
+Declared model claims and observed system measurements must remain distinguishable. Historical folding, abandonment and landing-snapshot matrices are not current tests here.
 
-Git is exercised for real, not mocked, everywhere except one case: the suite imports the module
-object cit:(["from agents_remember.serving.projections import snapshots"], mcp/tests/test_worktree_and_observer_helpers.py:29-29) purely so
-`LedgerCommitMetaTests.test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-can patch `snapshots.run_git` cit:(["test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick", "with mock.patch.object", "TimeoutExpired(cmd="], mcp/tests/test_observer_projection_ledger.py:182-182; mcp/tests/test_observer_projection_ledger.py:193-193; mcp/tests/test_observer_projection_ledger.py:195-195) — a wedged git cannot be produced with a real repository. Patching the
-module attribute rather than `kernel.git_command.run_git` is what makes the test see the binding
-`snapshots.py` actually resolves at call time, so a future re-import from a different module fails it.
+### Todos
 
-The 3b suites write fixture files (drift
-snapshots, sidecars, setup/progress JSON, route indexes, tool reports, ledgers)
-into tmp roots; `DriftSnapshotProducerTests` uses a real `git init -b` + empty
-commit with a `SimpleNamespace` context. Drift snapshot fixtures and the producer
-round-trip now use the shared `drift_snapshot_path` helper, and
-`ProjectAndWriteAnalyticsTests.test_project_and_write_prunes_orphaned_worktree_drift_snapshots`
-proves projection-time pruning keeps configured repo snapshots and active
-worktree snapshots while deleting a valid snapshot for a deleted worktree.
+No file-local implementation change is requested by this reconciliation.
 
-## Repo-Internal References
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection schema asserted against, including `TaskDocNode.id`, optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:739-812; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:825-851 |
-| The structural readers under test project all active task docs, populate master objective, leaf creation-order metadata, and task `id`/`createdAt`. | "def read_task_documents("; "def read_series_documents("; "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:69-69; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:212-212; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:260-260; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:296-296; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:528-528 |
-| The task-document reader tests assert lifecycle `createdAt`, unbound docs, master docs, and archive exclusion. | `TaskDocumentsReaderTests` | mcp/tests/test_observer_projection_taskdocs.py:25-513 |
-| The creation-order regression writes sibling leaf task docs and expects rows sorted oldest-first by leaf `createdAt`. | `test_read_series_documents_orders_subtasks_by_leaf_creation` | mcp/tests/test_observer_projection_taskdocs.py:632-690 |
-| The series-token regression joins master rows to sibling leaf task docs and sums bound lifecycle token totals. | `test_series_token_total_sums_linked_leaf_lifecycles` | mcp/tests/test_observer_projection.py:608-681 |
-| The fold + inferred layer + action availability under test. | `project_lifecycle`; `_project_inferred`; `_lifecycle_actions`; `enclosure_actions`; `_integrate_action`; `_cleanup_action` | mcp/src/agents_remember/observer/reducer.py:120-147; mcp/src/agents_remember/observer/reducer.py:431-445; mcp/src/agents_remember/observer/reducer.py:451-460; mcp/src/agents_remember/observer/reducer.py:463-464; mcp/src/agents_remember/observer/reducer.py:467-481; mcp/src/agents_remember/observer/reducer.py:484-498 |
-| The provider-node helper under test for CGC repo watcher expansion, GrepAI `targetRepos`, and aggregate fallback when target evidence is absent. | `workspace_provider_nodes`; `_cgc_repo_provider_nodes`; `_target_repo_provider_nodes`; `_target_repo_ids` | mcp/src/agents_remember/observer/provider_nodes.py:16-39; mcp/src/agents_remember/observer/provider_nodes.py:83-98; mcp/src/agents_remember/observer/provider_nodes.py:139-150; mcp/src/agents_remember/observer/provider_nodes.py:174-185 |
-| The active-enclosure admission helper under test for strict provider groups and broader Engine Room groups. | `admitted_worktree_groups`; `active_enclosure_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45; mcp/src/agents_remember/observer/worktree_provider_admission.py:48-73 |
-| The admission resilience (missing-log survives) + series-retention helpers under test. | `test_active_group_survives_a_pruned_lifecycle_log`; `SeriesRetentionTests` | mcp/tests/test_observer_projection.py:227-242; mcp/tests/test_observer_projection.py:245-301 |
-| The `series_retained_lifecycle_ids` / `_series_is_retired` / `_contract_finalized_at` derivation the L5 cases pin. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
-| Snapshot readers accept active worktree groups so stale worktree provider/setup/engine facts are skipped before the reducer. | `read_providers`; `_worktree_providers`; "def read_engine_process_facts("; "def read_setup_progress_nodes(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots.py:165-183; mcp/src/agents_remember/serving/projections/snapshots.py:200-260; mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:188-188; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240 |
-| Actionable drift rows expose repo/branch ids, drift provenance detail, and `checkedAt` signal timestamps. | `test_drift_and_failed_setup_surface` | mcp/tests/test_observer_projection_attention.py:167-200 |
-| Targetless actionable-drift dismissal suppresses only the current snapshot occurrence. | `test_dismiss_suppresses_actionable_drift_until_newer_snapshot` | mcp/tests/test_observer_projection_attention.py:341-380 |
-| The projection-store log reader, projection writer, and tick orchestrator under test. | `read_lifecycle_logs`; `write_projection`; `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:111-153; mcp/src/agents_remember/serving/projections/projection_store.py:156-162; mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
-| Current `_write_json` owns JSON serialization and delegates atomic publication to the kernel's `atomic_write_text`; the removed `_atomic_write_json` name is not a live symbol. | `_write_json`; "def atomic_write_text" | mcp/src/agents_remember/kernel/atomic_write.py:73-73; mcp/src/agents_remember/serving/projections/projection_store.py:359-366 |
-| Projection reads active admission sets once and caches repo surfaces on a short TTL. | "REPO_SURFACE_REFRESH_TTL_SECONDS = 120.0"; `read_lifecycle_logs`; `_gather_repo_surfaces_cached`; "def _repo_surface_cache_key(" | mcp/src/agents_remember/serving/projections/projection_store.py:69-69; mcp/src/agents_remember/serving/projections/projection_store.py:113-155; mcp/src/agents_remember/serving/projections/projection_store.py:335-346; mcp/src/agents_remember/serving/projections/projection_store.py:349-349 |
-| Task-29 tests cover admission, inactive runtime filters, repo-surface caching, and the engine-process active-group gate. | `WorktreeProviderAdmissionTests`; `test_read_providers_ignores_unadmitted_worktree_stacks`; `test_active_group_filter_skips_parked_progress`; `test_repo_surface_cache_reuses_recent_repo_reads`; `test_reader_skips_inactive_engine_process_groups_when_filtered` | mcp/tests/test_observer_projection.py:134-242; mcp/tests/test_observer_projection_engine.py:469-498; mcp/tests/test_observer_projection_ledger.py:384-405; mcp/tests/test_observer_projection_readers.py:316-330; mcp/tests/test_observer_projection_snapshot.py:303-329 |
-| The drift-snapshot producer exercised by the round-trip test. | `run_drift_summary`; `_write_drift_snapshot` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:109-148 |
-| The shared drift-snapshot path/pruning helper used by fixtures and projection pruning coverage. | `drift_snapshot_path`; `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24; mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
-| The shared drift-snapshot dir/schema the fixtures use. | `DRIFT_SNAPSHOT_SCHEMA`; `drift_snapshot_dir` | mcp/src/agents_remember/serving/projections/paths.py:26-26; mcp/src/agents_remember/serving/projections/paths.py:39-41 |
-| The lifecycle-state vocabulary under test: the composed `State`, its two halves, the partition guard, the declaration reader, and the end-outcome coercion the terminality tests drive. | `vocabulary_names`; `check_state_partition`; `STATES`; `LIVE_STATES`; `TERMINAL_STATES`; `DEFAULT_END_OUTCOME`; `coerce_end_outcome` | mcp/src/agents_remember/observer/lifecycle_state.py:42-57; mcp/src/agents_remember/observer/lifecycle_state.py:74-99; mcp/src/agents_remember/observer/lifecycle_state.py:102-108; mcp/src/agents_remember/observer/lifecycle_state.py:112-112; mcp/src/agents_remember/observer/lifecycle_state.py:118-127 |
-| The metrics buckets and the state→field naming rule the coverage suites hold to the vocabulary. | `ACTIVE_STATES`; `state_count_field`; `state_count_fields`; `STATE_COUNT_FIELDS`; `Metrics` | mcp/src/agents_remember/observer/projection.py:242-242; mcp/src/agents_remember/observer/projection.py:245-260; mcp/src/agents_remember/observer/projection.py:263-285; mcp/src/agents_remember/observer/projection.py:288-288; mcp/src/agents_remember/observer/projection.py:293-319 |
-| The event-kind table `TerminalityIsStructuralTests` reads to decide which states a running session can declare about itself, and the rollup that fills the buckets. | `_KIND_UPDATES`; "def _metrics(" | mcp/src/agents_remember/observer/reducer.py:395-404; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27 |
-| The write side held to the same terminal set — `end` validates against `TERMINAL_STATES` and converts through `coerce_end_outcome`. | `end` | mcp/src/agents_remember/observer/ambient.py:243-274 |
-| The TypeScript mirror of the naming rule, which is why Python moved off `str.capitalize`: the field names are derived type-level with `Capitalize<Camel<Tail>>`. | `stateCountField` | dashboard/src/types/projection.ts:444-448 |
-| The sibling suite that pins the structure of the ambient end signal's vocabulary, which this file pins the behaviour of. | `EndSignalVocabularyTests` | mcp/tests/test_observer_ambient.py:157-185 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## Series-Contract Notes
+## Repo-Internal References
 
-Observer projection coverage now distinguishes root series contracts from live leaf enclosure contracts,
-validates new leaf identity fields, proves archives/enclosure folders are excluded from task JSON scans,
-and verifies that a leaf contract itself is not a readable lifecycle task document. 260703-L11 extends
-`SnapshotReaderTests` with worktree-existence coverage: a shared external-memory contract factory
-(`_existence_contract`) backs `test_read_enclosures_stat_worktree_existence` (flags flip False→True as
-the code/memory directories appear on disk, no contract rewrite) and
-`test_read_enclosures_reopened_is_reset_awaiting_restart_not_archived` (a `cleanup=reopened` contract
-still projects — it is NOT archived — but with both flags False until `worktree_start` recreates the
-directories).
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-## 260718-CHATS-L5I Current Delta
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Attribution. | `Attribution` | mcp/tests/test_observer_projection.py:25-35 |
+| Enclosureref. | `EnclosureRef` | mcp/tests/test_observer_projection.py:42-50 |
+| Event. | `_event` | mcp/tests/test_observer_projection.py:53-72 |
+| Started. | `_started` | mcp/tests/test_observer_projection.py:75-80 |
 
-Projection tests now pin the shared per-tick parse/cache path and repository-surface refresh cadence, ensuring the performance change does not change projection truth.
+## Cross-Repo References
 
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-## 260727-CHATS-IM-L2 Current Delta
-
-The provider-reader patch target follows its new `projection_inputs` ownership. The test still
-asserts the same projection output and uncached volatile-provider behavior.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `stateCountField` repointed to dashboard/src/types/projection.ts:444-448. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.

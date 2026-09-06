@@ -127,7 +127,6 @@ rejection, and close-phase Engine Room visibility.
 | A non-retired master series retains all its leaf lifecycle ids; retirement requires every leaf archived AND the one-week grace past the last finalized contract mtime. | `series_retained_lifecycle_ids`; `_series_is_retired`; `_contract_finalized_at` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101; mcp/src/agents_remember/observer/worktree_provider_admission.py:104-118; mcp/src/agents_remember/observer/worktree_provider_admission.py:121-127 |
 | The projection store reads enclosures first, then passes `series_retained_lifecycle_ids(...)` as the retention `protected_lifecycle_ids`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | Retention honors that protection set, exempting protected logs from inactivity pruning. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| Tests pin a live group surviving a pruned log, and series retention across live/archived/grace/no-taskname cases. | `test_active_group_survives_a_pruned_lifecycle_log`; `SeriesRetentionTests` | mcp/tests/test_observer_projection.py:227-242; mcp/tests/test_observer_projection.py:245-301 |
 
 ## Cross-Repo References
 

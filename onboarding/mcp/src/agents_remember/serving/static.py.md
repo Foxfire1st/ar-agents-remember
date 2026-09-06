@@ -97,9 +97,9 @@ no entries); static-serving behavior is proven by repository source and tests.
 | The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | "def mount_static" | mcp/src/agents_remember/serving/static.py:112-112 |
 | The release build step places the tree this module resolves; it refuses to place a stale one. | "def sync" | scripts/sync-dashboard.py:138-138 |
 | The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:304-304 |
-| Both halves of the contract are pinned deterministically, without reading the repository's own bundle. | `test_missing_bundle_does_not_turn_a_method_error_into_an_outage` | mcp/tests/test_static.py:120-136 |
-| The end-to-end app test covers the served bundle through `create_app`. | `test_root_serves_dashboard_bundle` | mcp/tests/test_serving.py:545-562 |
-| The end-to-end app test covers the missing-bundle diagnosis through `create_app`. | `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:564-577 |
+
+
+
 
 ## Cross-Repo References
 

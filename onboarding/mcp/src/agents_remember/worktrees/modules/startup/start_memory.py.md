@@ -24,6 +24,8 @@ Own external-memory admission and preparation during worktree start.
 
 The module settles the source memory branch, creates or reuses the memory worktree, synchronizes safe mtimes, detects divergence, and loads ledger/mapping state before start can publish a contract.
 
+Mtime reuse skips `.git`, non-files, target-only files and known divergent paths; dry-run writes nothing. Missing source files are counted without failing the sync. Source-computable divergence keeps changed files fresh for indexing; an uncomputable divergence is explicitly reported by the current implementation. See `mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:79-134`.
+
 ### Invariants And Boundaries
 
 - External-memory state is resolved before ledger authority is consumed.
@@ -52,5 +54,11 @@ No configured domain-documentation source applies to this repository-internal ro
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
+
+- 2026-09-06T22:00:40+00:00 — Preserved concrete mtime reuse boundaries from the retired test card against current source; previous verification pins remain unchanged.
+
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.

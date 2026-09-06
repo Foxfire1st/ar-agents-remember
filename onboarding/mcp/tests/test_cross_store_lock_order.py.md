@@ -5,92 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Forcing regressions for the cross-store lock order (260731-EFA-L16): the 2026-08-05 production
-incident where the liveness sweep held the `TerminalCatalog` batch lock across the
-hosted-interaction synchronizer's operator-inbox/gate lock acquisitions while the supervisor
-sweep held the inbox lock across a catalog read — an ABBA cycle that then parked the uvicorn
-event loop on the catalog RLock and stopped the serving daemon from accepting (killed twice in
-one day, py-spy-verified).
+Cross-store sweep concurrency and event-loop responsiveness.
 
 ## Code Commentary
 
 ### Logic
 
-`_SharedStores` builds the daemon's real sharing shape in a temp dir — ONE `TerminalCatalog`
-instance and ONE operator-inbox log per process, plus the real `HostedInteractionSynchronizer`
-and a `AgentNotifierContext` over the supporting stores — with a `_FakeHost` seam (every session
-probes alive, nothing is owned) and a `counting_observe` wrapper that keeps every pass honest:
-each test asserts the synchronizer actually ran, so no pass is vacuous. The pins:
-
-1. the synchronizer's gate/inbox mutex acquisitions never execute while the calling thread holds
-   `catalog.batch()` — a flagging batch wrapper plus a checking `file_lock.thread_mutex_for`
-   record every violation, driven on the full sweep AND on the starting fast path
-   (`_refresh_starting_rows`, whose cheap exits — nothing starting, busy sweep lock, starting
-   rate limit — are pinned beside it);
-2. `TerminalCatalogLivenessSweeper.refresh` and `run_agent_notifier_sweep` run concurrently on
-   threads against the shared stores and both finish — rendezvous wrappers park the liveness
-   sweep INSIDE its catalog batch and the supervisor INSIDE its inbox transaction, release both
-   at once, and daemon threads with join timeouts are the deadlock detector, so against the
-   pre-fix tree this test fails by timeout ("the ABBA is live") without hanging the suite;
-3. a probe whose `sync_collector` is `None` (the direct callers outside a batch — WS attach,
-   paste) keeps the legacy inline synchronizer call, driven both through a direct
-   `observe_terminal_liveness` call and through `_observe_catalog_entry` without a collector;
-4. `ConversationControlService.resolve_entry` runs its blocking catalog read in a worker
-   thread, proven by a `resolve_running_entry` spy that records the executing thread;
-5. the active side's `_projector_for` resolution is offloaded the same way;
-6. the terminal-image handler runs both its `catalog.get` and its `_write_paste_image` disk
-   write in worker threads, with the 200 response proving both paths were actually exercised.
+Two actual sweep paths share a catalog and inbox under a controlled rendezvous and must both finish without failures or lost observation. Separate async cases verify control entry resolution and terminal-image catalog/write work run on worker threads.
 
 ### Conventions
 
-The tests target lock placement and thread placement, not sweep or synchronizer behavior; the
-quarantine contract, the fold→resolve→compact inbox transaction, and the wire shapes are
-deliberately out of scope here. The mutex spy targets the shared kernel owner used by every durable-store acquisition, so the placement assertion still observes the real lock after extraction.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- One store's lock is never held while another store's lock is acquired (the cross-store
-  lock-order doctrine these tests enforce).
-- No route body executes a catalog lock acquisition on the event-loop thread.
-- The pre-fix tree must FAIL the rendezvous test by deadlock timeout — a green run against the
-  pristine base would mean the reproduction is broken, not that the defect is absent.
+The motivating ABBA incident involved catalog-to-inbox versus inbox-to-catalog nesting. Daemon-thread watchdogs bound the failure; no fake immediate-success lock substitutes for the shared-store race.
 
 ### Todos
 
-None known.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured.
-
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The liveness sweep path driven on one thread (batch lock holder). | `TerminalCatalogLivenessSweeper` | mcp/src/agents_remember/serving/terminal_liveness.py:121-280 |
-| The supervisor sweep path driven on the other thread (inbox lock holder). | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:95-182 |
-| The synchronizer whose store I/O is pinned outside the catalog batch. | `HostedInteractionSynchronizer` | mcp/src/agents_remember/serving/hosted_interactions.py:52-266 |
-| The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
-| The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
-| The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:664-664 |
-| The actual kernel mutex observed by the placement spy and the durable-store cross-resource order. | `thread_mutex_for`; `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/kernel/file_lock.py:87-114 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Liveness sweep and agent notifier sweep do not abba deadlock. | `test_liveness_sweep_and_agent_notifier_sweep_do_not_abba_deadlock` | mcp/tests/test_cross_store_lock_order.py:202-287 |
+| Control resolve entry runs off the event loop. | `test_control_resolve_entry_runs_off_the_event_loop` | mcp/tests/test_cross_store_lock_order.py:289-310 |
+| Terminal image response offloads catalog read and write. | `test_terminal_image_response_offloads_catalog_read_and_write` | mcp/tests/test_cross_store_lock_order.py:312-347 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository references found.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

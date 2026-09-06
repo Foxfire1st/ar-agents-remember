@@ -12,6 +12,7 @@
   "coveredFiles": [
     "mcp/test_support/agents_remember_test_support/code_quality/__init__.py",
     "mcp/test_support/agents_remember_test_support/code_quality/application_boundary.py",
+    "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py",
     "mcp/test_support/agents_remember_test_support/code_quality/causal_continuation.py",
     "mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py",
     "mcp/test_support/agents_remember_test_support/code_quality/check.py",
@@ -39,8 +40,8 @@
     "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 27,
-    "fileSidecars": 27,
+    "sourceFilesInScope": 28,
+    "fileSidecars": 28,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -50,6 +51,8 @@
     "application_boundary",
     "boundary",
     "calculator",
+    "catalog",
+    "catalog_selection",
     "causal",
     "causal_continuation",
     "causal_preflight",
@@ -118,11 +121,12 @@
     "wire_contract"
   ],
   "hotPath": {
-    "summary": "`profile_selection.py` publishes the immutable repository-owned selector result; `profile_rails.py` rederives that exact scope, compares path populations in canonical POSIX-string order without dropping duplicates, and executes the selected Python rails; its teardown adapter publishes hash-bound proof from the actual clean-room reports. `check.py` executes and interprets the shared rail machinery; `quality_plan.py` owns their typed configuration, progress state, and deterministic command plan. `scope.py` proves complete product/verification package authority. `dependency_ownership.py` consu...",
+    "summary": "`quality_plan.py` owns typed configuration and command planning; `check.py` executes/interprets the rails. `profile_selection.py` publishes the selected population and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `retry_proof.py`, `retry_coverage.py` and child-environment helpers preserve admitted retry inputs without leaking outer retry/progress controls into candidate tests.",
     "candidateHints": [
       "mcp/test_support/agents_remember_test_support/code_quality",
       "mcp/test_support/agents_remember_test_support/code_quality/__init__.py",
       "mcp/test_support/agents_remember_test_support/code_quality/application_boundary.py",
+      "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py",
       "mcp/test_support/agents_remember_test_support/code_quality/causal_continuation.py",
       "mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py",
       "mcp/test_support/agents_remember_test_support/code_quality/check.py",
@@ -142,14 +146,15 @@
       "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py",
       "mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py",
       "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py",
-      "mcp/test_support/agents_remember_test_support/code_quality/scope.py",
-      "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+      "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
       "application_boundary.py",
       "application_boundary",
+      "catalog_selection.py",
+      "catalog_selection",
       "causal_continuation.py",
       "causal_continuation",
       "causal_preflight.py",
@@ -191,9 +196,7 @@
       "scope.py",
       "scope",
       "scope_reporting.py",
-      "scope_reporting",
-      "single_owner.py",
-      "single_owner"
+      "scope_reporting"
     ]
   },
   "fallback": {

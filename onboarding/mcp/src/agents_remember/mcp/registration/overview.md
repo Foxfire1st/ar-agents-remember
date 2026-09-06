@@ -68,16 +68,9 @@ There is no ratchet, baseline, grandfather list or burn-down behind it — the
 developer ruled all four forbidden — and no `noqa` anywhere holds an argument-count finding down.
 
 **Do not turn either shape into a habit.** Flatness remains the default; a model parameter requires
-an explicitly approved public nested contract, as memory quality now has. The carve-out is held shut by
-`mcp/tests/test_code_quality_check.py::ToolSignatureExemptionTests`, which:
-
-- asserts `PLR0913` is selected and neither globally ignored nor softened by a `max-args` override;
-- asserts the exempted-pattern set equals exactly `{"mcp/src/agents_remember/mcp/registration/*.py"}`
-  — a second exemption anywhere, or a widened pattern, fails;
-- walks the AST of every file the pyproject pattern actually matches and fails if any function in
-  them is anything but a `@server.tool()` declaration or the registrar that hosts them;
-- runs Ruff over the tracked tree with `--ignore-noqa --select PLR0913` and requires exit 0, so a
-  line-level suppression cannot hide a finding the gate would otherwise see.
+an explicitly approved public nested contract, as memory quality now has. The configured exemption is scoped to the registration path. Removed signature-exemption
+tests do not provide current enforcement; the public schema boundary remains the reason
+for keeping registration declarations separate from implementation.
 
 ## Layout
 
@@ -146,7 +139,7 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
   `PLR0913` exemption and the reason nobody may "tidy" these functions.
 - Keep bodies to packing + one forwarded call. Any ordinary logic added under this path fails
   `ToolSignatureExemptionTests::test_every_function_in_the_exempted_path_is_a_published_tool_declaration`.
-- Do not add a second `PLR0913` exemption or widen the existing pattern; both fail the same suite.
+- Keep the registration exemption scoped to published declarations; helpers belong in their implementation owners.
 - A new tool means editing one family module and appending to `PUBLIC_TOOLS`, the response-model
   registry, and `docs/reference/mcp-tools.md`; a new family means a new module plus one entry in
   `TOOL_REGISTRARS`.
@@ -166,9 +159,6 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| The AST suite that holds the exemption to published tool declarations only. | `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` | mcp/tests/test_code_quality_tool_signature_exemption.py:60-70 |
-| What each declaration hands its payload builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
-| The advertised-name and docstring-presence checks against a live server. | `test_every_public_tool_has_a_description` | mcp/tests/test_tools.py:162-176 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
 ## Historical 260731-EFA-L17 Change

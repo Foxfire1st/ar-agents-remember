@@ -92,7 +92,7 @@ code and refresh the new sidecars to the real code commit hash.
 | --- | --- | --- |
 | Drift helpers provide sidecar path construction and inline block parsing. | "def classify_source" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py:163-163 |
 | Resolver helpers provide storage/path-rule decisions. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-129 |
-| Tests cover untracked, staged, staged-then-removed, excluded, and renamed file cases. | `MissingOnboardingTests` | mcp/tests/test_missing_onboarding.py:22-176 |
+| The checker owns source/onboarding absence classification; deleted case inventories are not current coverage evidence. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
 | The kernel filesystem helper handles long-path sidecar and source probes. | "def absolute_path" | mcp/src/agents_remember/kernel/filesystem.py:10-10 |
 | `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:94-145 |
 

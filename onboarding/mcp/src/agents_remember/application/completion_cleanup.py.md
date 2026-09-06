@@ -75,7 +75,7 @@ tests pin edge wiring separately from cleanup failure containment.
 | --- | --- | --- |
 | The completion owner resolves task truth, folds report evidence, and applies the configured close/land policy. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-72 |
 | Candidate selection includes every non-terminated role occupant bound to the canonical task document. | `_completion_candidates` | mcp/src/agents_remember/application/completion_cleanup.py:115-124 |
-| Focused tests prove contract, retirement-race, per-seat failure, and opt-out landing containment. | `CompletionCleanupContainmentTests` | mcp/tests/test_completion_cleanup.py:47-169 |
+| Cleanup is subordinate to successful completion; contract failures cannot rewrite the completed edge. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-71 |
 
 ## Cross-Repo References
 

@@ -92,7 +92,7 @@ snapshot grammar defines the multiplexed tuple this module serializes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical status authority this module now delegates to (classification plus single seat projection rule). | `snapshot_seat_turn_state` | mcp/src/agents_remember/serving/conversation/active/status.py:205-223 |
-| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | `test_projection_across_control_activity_product` | mcp/tests/test_conversation_active_status.py:188-200 |
+
 | `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:32-32 |
 | The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | `control_snapshot_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:35-57 |
 | `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | `AdapterSnapshot`, `pending_interaction_json` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/control_wire.py:305-316 |

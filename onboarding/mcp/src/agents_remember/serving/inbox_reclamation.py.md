@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-12T17:40+02:00 |
+| lastUpdated | 2026-09-06T22:11:05+00:00 |
 | lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
 | lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview | `overview.md` |
@@ -32,8 +32,7 @@ indeterminate command failure keeps them. `snapshot_tmux_session_names` treats a
 
 **260713-TES-L2 landed-row exclusion.** `_eligible` cit:([`_eligible`], mcp/src/agents_remember/serving/inbox_reclamation.py:137-146) additionally excludes
 `state_signal_landed(entry)` rows: a landed state-signal is terminal on the relay path and must
-never be reclaimed as confirmed-gone, even though its row state stays `pending` until the L4
-schema migration.
+never be reclaimed as confirmed-gone. Current landed rows carry terminal `state="landed"`; the old pending/by-rule description belongs to the earlier migration stage.
 
 ### Conventions
 
@@ -81,6 +80,8 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-06T22:11:05+00:00 — Confirmed exact-subject positive-gone retention and corrected pre-L4 landed-row wording; verification pins unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

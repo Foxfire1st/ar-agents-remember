@@ -16,14 +16,14 @@
 
 ## Purpose
 
-`carryover_authority.py` proves that the official memory repository contains explicit, supported,
+`carryover_authority.py` proves that the target recovery-leaf memory repository contains explicit, supported,
 and semantically effective onboarding storage/path-rule authority before carryover may mutate it.
 
 ## Code Commentary
 
 ### Logic
 
-`required_official_storage()` prefers the JSON settings sibling when present and otherwise scans
+`required_target_storage()` prefers the JSON settings sibling when present and otherwise scans
 Markdown. It validates the raw authority surface before accepting typed `StorageSettings`, because
 the general parser's wildcard/default behavior is suitable for read/topology discovery but cannot
 grant write permission. JSON preflight mirrors parser selection rules, including `onboarding:null`,
@@ -43,8 +43,8 @@ does not fork into a second settings language.
 ### Conventions
 
 Raw scanning answers one narrow question: whether explicit effective authority exists. The typed
-parser remains responsible for constructing `StorageSettings`. JSON and Markdown paths are kept
-behaviorally equivalent through paired full-apply tests and parser comparisons.
+parser remains responsible for constructing `StorageSettings`. JSON and Markdown raw preflights follow the same typed parser authority rules; retired full-apply
+tests are historical evidence rather than current coverage.
 
 ### Invariants And Boundaries
 
@@ -53,8 +53,8 @@ behaviorally equivalent through paired full-apply tests and parser comparisons.
 - A parser-created wildcard cannot convert an empty raw member into write authority.
 - Repeated Markdown keys use final parser state: retained explicit contributions and later
   repopulation remain valid; final empty resets remain invalid.
-- JSON sibling precedence and official-over-source selection are fixed authority rules.
-- Validation occurs before any carryover mutation. This guard protects official-memory authority
+- JSON sibling precedence and target-over-source selection are fixed authority rules.
+- Validation occurs before any carryover mutation. This guard protects target-memory authority
   and parser equivalence; it is not a permissive fallback or speculative defense layer.
 
 ### Todos
@@ -64,7 +64,7 @@ None known for the MX-FIX-4 official-settings authority boundary.
 ## Docs References
 
 No Domain Documentation source is configured for this repository. Current authority semantics are
-grounded in the package settings parser, this raw preflight, and paired tests.
+grounded in the package settings parser, this raw preflight, and its current apply consumer.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -76,11 +76,10 @@ grounded in the package settings parser, this raw preflight, and paired tests.
 | --- | --- | --- |
 | The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority. | `_apply_carryover_for_request`, `_refresh_target_route_indexes` | mcp/src/agents_remember/memory/carryover.py:636-670; mcp/src/agents_remember/memory/carryover.py:759-852 |
 | The raw preflight exposes the required target storage authority. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Full-apply JSON/Markdown tests cover missing, invalid, empty/reset, unsupported, retained, repopulated, fallback, and target-over-source cases. | `test_missing_official_settings_refuses_before_any_mutation`; `test_semantically_empty_json_authority_refuses_before_any_mutation`; `test_markdown_reset_lists_remove_final_rule_contribution_before_mutation`; `test_markdown_parser_retained_and_repopulated_contributions_remain_authoritative`; `test_unsupported_json_storage_labels_refuse_before_any_mutation`; `test_unsupported_markdown_storage_labels_refuse_before_any_mutation`; `test_target_settings_override_conflicting_source_settings` | mcp/tests/test_carryover_apply_1.py:98-175; mcp/tests/test_carryover_apply_2.py:88-179; mcp/tests/test_carryover_apply_2.py:216-332; mcp/tests/test_carryover_apply_2.py:496-535; mcp/tests/test_carryover_apply_2.py:569-630 |
 
 ## Cross-Repo References
 
-The module reads official external-memory settings while running from the code package, but no
+The module reads target recovery-leaf external-memory settings while running from the code package, but no
 sibling repository provides implementation authority.
 
 | Finding | Anchor | Source |

@@ -5,7 +5,7 @@
 | repository             | agents-remember             |
 | path                   | `scripts/sync-skills.py`       |
 | doc_type               | `file-level-onboarding`        |
-| lastUpdated            | 2026-06-10T00:40+02:00         |
+| lastUpdated            | 2026-09-06T22:07:53+00:00 |
 | lastVerifiedCommitHash |                               `a84add4c9422b18a26f1748dedaed16194994ded`|
 | lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
 | governingOverview      | `../overview.md`                              |
@@ -33,12 +33,14 @@ The script resolves the repository root from its own path, treats root
 
 It computes SHA-256 digests for every non-ignored file under the canonical tree
 and each target, then reports missing, extra, and changed files. In normal mode
-it removes each target skill folder and copies the canonical tree into place,
+it copies the complete canonical tree to a sibling staging directory before renaming the live target aside and renaming staging into place,
 then immediately runs the same check mode. With `--check`, it only verifies
 targets and exits non-zero when any target differs. With `--list-targets`, it
 prints the canonical source and all target paths.
 
 ### Conventions
+
+`replace_tree` removes stale staging/retired leftovers, completes the new copy, then renames the old target aside and the staged tree into place before removing the retired tree. A copy failure before the first rename leaves the live target intact. The two renames are separate operations; this description does not claim an atomic directory exchange.
 
 Ignore only local/generated filesystem noise: `.DS_Store`, cache directories,
 `__pycache__`, and `.pyc` files. Keep targets explicit so new harness packages
@@ -84,6 +86,8 @@ No sibling repository evidence is needed for this helper.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-06T22:07:53+00:00 — Reconciled copy-before-rename preservation against current replace_tree and retired sync test knowledge. Historical entries and verification pins remain unchanged.
 
 - 2026-08-03T03:20:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 4 Repo-Internal table citations with exact canonical-target, check, sync, and root-instruction anchors. Verification metadata remains unchanged for closeout.
 

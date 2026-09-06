@@ -5,7 +5,7 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
+| lastUpdated            | 2026-09-06T22:11:05+00:00 |
 | lastVerifiedCommitHash |                                                                   `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
 | lastVerifiedCommitDate |                                                                   2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                                     |
@@ -21,7 +21,9 @@ delivery metadata.
 
 ## Code Commentary
 
-### 260731-EFA-L5 The Declared Compaction-Owner Exception
+Current persistence owns strict terminal-dominant folding, lock-held transitions, ordered validated transition batches, mailbox reads, consumption and retention. Delivery, renewal and expiry payload semantics live in operator_inbox_transitions.py; they are not additional methods on this store. `transition_many` folds once, applies duplicate ids against prior batch results, validates all updated rows and appends under one lock. `reconcile_and_compact` resolves only still-pending ids, preserves a consume/terminal winner and reports persisted folded-id removal counts. Task-bound worker/reviewer/curator turn reports are protected until their execution evidence is registered. A correlated landed acknowledgement is terminal too; model consume is not the only possible end of redelivery. cit:([`transition_many`, `_unregistered_execution_report_ids`, `reconcile_and_compact`], mcp/src/agents_remember/controlplane/operator_inbox_store.py:54-67; mcp/src/agents_remember/controlplane/operator_inbox_store.py:117-150; mcp/src/agents_remember/controlplane/operator_inbox_store.py:300-350).
+
+### 260731-EFA-L5 The Declared Compaction-Owner Exception (historical milestone)
 
 This is the **only one of the six control-plane stores with `compaction_owner=None`**, and it is
 the leaf's declared exception rather than an oversight. Every other log was given a single
@@ -47,7 +49,7 @@ this store's 0.00 percent and the 9.20 percent floor of the other five appear at
 nowhere else. The claim that survives without any of them is the structural one: this is the only
 store that held a lock at the base commit, and it is the only one that lost nothing.
 
-### 260731-EFA-L5 What Changed Here
+### 260731-EFA-L5 What Changed Here (historical milestone)
 
 The store's hand-rolled I/O was replaced by the shared contract, with no change to its concurrency
 semantics:
@@ -77,7 +79,7 @@ coordination root with `UnsafeLockFilesystemError` instead of silently degrading
 up the validated `schemaVersion` (unknown major rejected, unknown minor accepted) while keeping its
 own `extra="allow"` forward-compatibility allowlist.
 
-### 260712-TRH-L5 Same-Lock Confirmed-Gone Reconciliation
+### 260712-TRH-L5 Same-Lock Confirmed-Gone Reconciliation (historical milestone)
 
 `reconcile_and_compact` owns one authoritative inbox transaction: it reads and folds the
 append-only log once, invokes the bounded resolver while the POSIX lock is held, appends
@@ -92,7 +94,7 @@ consumes that snapshot): holding this lock across another store's read was one h
 2026-08-05 ABBA deadlock. The exclusive lock is now intentionally held only across the remaining
 tmux evidence, with a worst-case 5-second tmux timeout.
 
-### 260707-HFX2-L20 Consume And Delivery Race
+### 260707-HFX2-L20 Consume And Delivery Race (historical milestone)
 
 `current()` now projects the append-only log through the shared terminal-dominant fold. Public
 consume retains its consumed snapshot instead of immediately deleting the id, so an in-flight
@@ -109,7 +111,7 @@ Three frozen objects define this store's mutating calls, plus one shared helper:
   One receipt per attempt; the fields are never sourced independently.
 - **`DeliveryAttempt(delivery_state, delivered_to_session=None, detail=None,
   adapter=AdapterReceipt())`** — one attempt to put a pending row in front of its addressee.
-  `delivered` is not terminal (pasted != perceived); only a consume ends the schedule.
+  a delivered transport state alone is not terminal; correlated acknowledgement can land the row, and all non-pending terminals end the schedule.
 - **`InboxRenewal(response=None, subject=InboxSubject(), readdress_to=None)`** — what a re-firing
   condition refreshes on the row it already has. **Passing `readdress_to` IS the readdress** —
   the former `readdress: bool` flag beside three loose `owner_*` values is gone, so there is no
@@ -121,14 +123,14 @@ Three frozen objects define this store's mutating calls, plus one shared helper:
 
 `InboxOwner` and `InboxSubject` are imported from `operator_inbox_records.py`.
 
-### 260707-HFX2-L17 Pair-Preserving Renewal
+### 260707-HFX2-L17 Pair-Preserving Renewal (historical milestone)
 
 `renew` can refresh `seatRole` with `leafKey` and subject identity (all three now on
 `InboxRenewal.subject`) when one coalesced supervisor condition re-fires. Pair identity therefore
 survives readdressing to a replacement manager and prevents same-text findings for different roles
 from becoming one row.
 
-### 260707-HFX2-L14 Transition And Readdress Mutations
+### 260707-HFX2-L14 Transition And Readdress Mutations (historical milestone)
 
 `advance_rung` atomically stamps `ts`, `rung`, `escalatedAt`, and `rungTransitionAt`, so every
 successful transition resets both the ordinary dwell and redundant minimum-floor anchors. `renew`
@@ -138,10 +140,12 @@ Normal renewal does not touch either rung anchor.
 
 ### Logic
 
+The older method signatures and transition descriptions below are historical API context; the current persistence/transition split and terminal acknowledgement semantics are stated at the start of Code Commentary. They do not authorize restoring removed leaf-address fields or escalation behavior.
+
 `OperatorInboxStore(observer_root)` writes one workspace log:
 `workspace/operator-inbox.jsonl`. `append(record)` creates the parent directory
 and appends a strict JSON snapshot. `read()` validates each JSONL row back into
-`OperatorInboxEntry`, and `current()` folds by entry id, last snapshot wins.
+`OperatorInboxEntry`, and `current()` folds by entry id with terminal snapshots dominating stale pending ones.
 
 `list_pending(lifecycle_id, agent_id, recipient_role)` requires at least one
 mailbox key, then returns pending entries matching every supplied key. That means
@@ -161,8 +165,7 @@ snapshot until normal compaction so concurrent stale delivery writes cannot eras
 260707-HFX2-L1 (R1/R3 ack semantics + redelivery): `record_delivery(...)` now
 bumps `attemptCount`, stamps `lastAttemptAt`, and schedules a durable
 `nextAttemptAt` (via `inbox_backoff.next_attempt_at`) on EVERY attempt,
-including a confirmed `delivered` paste -- consume is the only call that stops
-the schedule, because `delivered` is never terminal (pasted != perceived).
+including a transport-delivered attempt; current correlated boundary acceptance can land the row and terminate redelivery independently of consume.
 `list_redeliverable(now=..., rate_limit_seconds=...)` selects pending rows past
 their backoff window and clear of the per-target rate limit
 (`inbox_backoff.redeliverable`) -- the pure selection L2's sweep drives
@@ -253,7 +256,7 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | None. | N/A | N/A |
 
-### 260713-PHA-L5 Inbox-Rooted Adapter Evidence
+### 260713-PHA-L5 Inbox-Rooted Adapter Evidence (historical milestone)
 
 The store records accepted, queued, rejected, unsupported, ambiguous, and terminal-completion
 adapter evidence against an existing durable row. None of these transitions call `consume`.
@@ -267,6 +270,9 @@ not authorize deletion; it fails closed. This is one retention seam, not a secon
 compatibility path.
 
 ## Update History
+
+- 2026-09-06T22:11:05+00:00 — Preserved current source-verified notifier/reclamation semantics from retired test cards; historical claims are not active coverage and verification pins are unchanged.
+
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented durable task registration before inbox execution-report reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

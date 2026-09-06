@@ -5,7 +5,7 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-30T17:08:05+02:00 |
+| lastUpdated            | 2026-09-06T22:15:27+00:00 |
 | lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
 | lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                            |
@@ -77,9 +77,11 @@ The docstrings are the model-visible contract and carry the semantics that are n
 | Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
-| What each declaration hands its builder, proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
+
+- 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
+
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: routed serving identity through the
   application gateway and typed the registrar against `ServingBuildPayload`. Verification remains

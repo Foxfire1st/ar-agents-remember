@@ -87,7 +87,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | `provider_watchers_payload` | mcp/src/agents_remember/mcp/tools/providers.py:73-87 |
 | `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54 |
-| Unit tests verify per-node success/failure behaviour, `json` always-dropped, secret redaction, and recursive step trimming. | `SummarizeCommandLogsTests` | mcp/tests/test_log_capture.py:31-104 |
+
 
 ## Update History
 

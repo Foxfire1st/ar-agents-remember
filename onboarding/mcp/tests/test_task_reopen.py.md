@@ -5,104 +5,74 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
 | lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
-| governingOverview      | `overview.md`                              |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[tests/overview.md](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_task_reopen.py` covers the L11 reopen semantics in isolation: the `task_reopen`
-resets, the task-domain leaf-doc lookup/restamp helpers, the
-worktree-start recreate path for reopened contracts, and the abandon-side ambient
-lifecycle end. The small refusal-only guard class is split into `test_task_reopen_guards.py`.
+Checks reopen resets the exact contract, leaf document and parent row to planning while preserving the leaf identity and recording the decision. An injected contract-publication failure rolls back document and landing changes. Deleted guard/start/abandon companion suites are not claimed as current tests here.
 
 ## Code Commentary
 
 ### Logic
 
-`_completed_leaf_contract` hand-builds a fully landed leaf enclosure (closeout,
-integration, and cleanup all completed, worktrees absent) under a temp coordination
-root; `_leaf_doc`/`_master_doc` author the matching task documents through the real
-store and are also reused by the split guard suite. `ReopenResetTests` prove the happy path
-(contract fields reset, `cleanup: reopened`,
-leaf id unchanged, doc back to `planning` with the audit decision, master index row
-flipped), the dry-run writes-nothing contract, and the doc-less leaf case.
-`LeafDocLookupTests` cover the case-insensitive id/enclosure-ref/stem joins and the
-overwrite-idempotent restamp. `AbandonAmbientLifecycleTests` installs a real
-`AmbientLifecycle` over an `EventStore` and proves `_end_ambient_lifecycle_if_anchored`
-ends only the anchored lifecycle (owner-written `lifecycle.ended` tail).
-`StartAfterReopenTests` run the real `start_result` against an initialized git repo:
-a `cleanup: reopened` contract recreates fresh with the new lifecycle and restamps the
-doc's `lifecycleId`, while a live contract still attaches unchanged. HFX-L4 pins legacy
-stem-shaped contract loading by expecting a reopened legacy enclosure to load with the canonical
-task doc id when the task tree proves the mapping.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
+
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The reopen tests exercise the module API directly (`reopen_task(contract_path)`),
-  not the MCP transport; the representative-payload conformance for the `task_reopen`
-  tool lives in `test_tool_response_conformance.py`.
-- The start tests create the memory-repo skeleton dirs because coordination context
-  resolution requires them even with memory disabled.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:169-265 |
-| The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
-| The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh start path publishes its restamp through task-first mutation and projection invalidation. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
-| Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
-| The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
-| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:1026-1035 |
-
-## L23 Reopen Lineage Regression
-
-The reopen fixture now builds a real organizational sprint-super-to-leaf lineage with no
-series contract. Advancing super proves reopen returns a blocked strict projection before
-changing either the enclosure contract or leaf document; ordinary start-after-reopen coverage
-continues on the same organizational master topology.
-
-## 260815-DAG-L3 Restamp Publisher Contract
-
-Leaf lifecycle restamp tests now inject the ordinary task-doc publisher explicitly. The assertions
-for changed, unchanged, blocked, same-lifecycle, missing-doc, and exact identity behavior remain,
-while the production start path can route the same planned write through queue governance.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260821-CLIVE-L2 Start Publication Seam
-
-The reopened-start test now patches `publish_new_lifecycle_operation_location` on the start owner,
-not the lower contract writer. The assertion boundary therefore follows the canonical bootstrap
-sequence: task/contract preparation may occur, but lifecycle state becomes discoverable only when
-the enclosure-root locator and immutable manifest are published.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start-after-reopen forcing intercepts the lifecycle-location publication owner. | `test_false_terminal_leaf_blocks_absent_and_reopened_starts_before_any_effect` | mcp/tests/test_task_reopen.py:698-821 |
+| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:25-66 |
+| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:68-92 |
 
-## Current Contract — 260821 CLIVE Final
+## Cross-Repo References
 
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-Forces completed-leaf reopen, exact task reset, predecessor transition, ambient lifecycle retirement, and subsequent start behavior.
-
-### Current Invariants
-
-- Reopen is an explicit task/contract transition and preserves historical evidence.
-- Projection effects follow task publication; queue state never freezes the reopen write.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-26T10:44:52+02:00 — No behavior change: common reopen contract/memory fixtures moved to `task_reopen_test_support`; reopen publication and authority assertions are unchanged.
 

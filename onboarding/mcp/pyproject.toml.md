@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-29T16:12+02:00 |
+| lastUpdated | 2026-09-07T00:34+02:00 |
 | lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
 | lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
@@ -49,7 +49,7 @@ Ruff is an exact 0.16.1 pin shared with the checkout requirements, so a worktree
 environment enforce the same stable rule set instead of interpreting the same configuration under
 different Ruff releases.
 The xdist range is deliberately bounded to major version 3 because root pytest `addopts` owns
-`-n=auto`; the dependency supplies that executor while the root configuration governs raw and
+`-n=4`; the dependency supplies that executor while the root configuration governs raw and
 wrapped pytest uniformly.
 
 Two console scripts are declared: the umbrella `agents-remember`
@@ -140,10 +140,10 @@ the source rather than being repeated here; it is the same string
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper uses pytest, pytest-cov, Radon, Ruff, and CRAP-Calculator during development checks. | "Ruff, Ruff format, file size, Pyright, pytest, CRAP, and changed-lines coverage enforce."; "def quality_steps("; `run_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:3-3; mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168; mcp/test_support/agents_remember_test_support/code_quality/check.py:368-392 |
-| The development extra supplies pytest-xdist for the root configuration's mandatory automatic worker selection. | "pytest-xdist>=3,<4"; "-n=auto" | mcp/pyproject.toml:62-62; pyproject.toml:133-133 |
+| The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
+| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:136-136 |
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:22-23 |
-| CRAP-Calculator imports Radon at runtime for development scoring, so Radon belongs in the development dependency group. | `crap_score`, "radon.complexity" | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:89-92; mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:234-234 |
+| Production complexity scoring loads Radon and refuses when its development dependency is unavailable. | `complexity_blocks` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:221-228 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
 | MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
@@ -155,7 +155,11 @@ the source rather than being repeated here; it is the same string
 | The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file. | "py313" | pyproject.toml:4-4 |
 | Package metadata directly bounds the interpreter line and declares its Python classifier. | "requires-python = \">=3.13,<3.14\""; "Programming Language :: Python :: 3.13" | mcp/pyproject.toml:10-18 |
 
+
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 - 2026-08-29T16:12+02:00 — Migrated package authority from the former 3.11 floor and three-minor
   classifier set to the single supported Python 3.13 line, bounded at `<3.14`, and aligned Ruff,
   Dagger, CI, release, and the managed exact 3.13.15 source build. Verification remains

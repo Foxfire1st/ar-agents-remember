@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/native_helpers/conversation_library/package.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T10:55+02:00 |
+| lastUpdated | 2026-09-07T00:31+02:00 |
 | lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
 | lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
@@ -54,7 +54,6 @@ No Domain Documentation source is configured; the manifest and lock are the dire
 | --- | --- | --- |
 | The lock root repeats the same exact direct dependency and development-tool pins. | `lockfileVersion` | mcp/native_helpers/conversation_library/package-lock.json:4-4 |
 | Protocol constants must match the manifest's two runtime dependencies. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
-| The foundation suite asserts the private flag and exact package/lock dependency tuple. | `test_helper_package_and_lock_select_only_the_exact_repository_dependencies` | mcp/tests/test_conversation_foundation.py:125-136 |
 
 ## Cross-Repo References
 
@@ -65,6 +64,8 @@ No neighboring workspace repository is involved.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

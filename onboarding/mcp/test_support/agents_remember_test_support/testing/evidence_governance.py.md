@@ -57,7 +57,6 @@ No external domain documentation governs this repository-owned predicate.
 | --- | --- | --- |
 | Discovery combines support, durable suffix, policy, task/date, and configured-size authority while excluding the lifecycle catalog policy input. | `governed_artifact_paths`; `LIFECYCLE_CATALOG_PATH` | mcp/test_support/agents_remember_test_support/testing/evidence_governance.py:11-52 |
 | The lifecycle validator consumes this exact predicate. | `_validate_catalog_coverage` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:553-571 |
-| Focused forcing proves an unknown suffix crosses governance only at the configured threshold and the catalog remains excluded even below its byte size. | `test_configured_size_threshold_governs_unknown_fixture_suffixes` | mcp/tests/test_evidence_lifecycle.py:185-209 |
 
 ## Cross-Repo References
 

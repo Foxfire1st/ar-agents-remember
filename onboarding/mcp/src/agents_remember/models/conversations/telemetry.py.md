@@ -34,6 +34,16 @@ telemetry, runtime-fixture evidence, and fingerprint behaviours named by its top
 - `RuntimeFixtureEvidence`
 - `operation_fingerprint`
 
+`RuntimeFixtureEvidence` records a runtime observation with its runtime version, capture time,
+production seam, and declared `allowlist-v1` redaction policy. Its `enables_capabilities` field is
+literally false: a recording, version pin, or fixture count cannot enable a runtime capability.
+Each observation retains an explicit reason and distinguishes `observed`, `partial`, `unavailable`,
+and `not-exercised`; unavailable operations must not be rewritten as successful observations.
+The model validates these evidence fields, not whether arbitrary captured text was actually redacted.
+
+cit:([`RuntimeFixtureObservation`], mcp/src/agents_remember/models/conversations/telemetry.py:80-84)
+cit:([`RuntimeFixtureEvidence`], mcp/src/agents_remember/models/conversations/telemetry.py:87-97)
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/models/conversations/telemetry.py`.

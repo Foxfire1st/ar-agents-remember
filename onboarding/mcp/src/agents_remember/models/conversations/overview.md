@@ -26,9 +26,9 @@ Start with `__init__.py` (the curated `__all__` export surface) and `primitives.
 opaque tokens). `evidence.py` and `control_wire.py` are the shared harness-control contracts;
 `status.py`/`capabilities.py` are the evidence-bound status/capability authorities; `content.py`
 owns `ConversationItem` and the sub-agent grammar. The migration-only zero-drift snapshot is
-retired: stable architecture requirements live in
-`mcp/tests/test_conversation_model_architecture.py`, while serialization and contract behavior stay
-with their owning focused suites. Do not recreate a task/date snapshot of implementation shape.
+retired. The later architecture and contract suites were also retired in the d3610903
+reduction; no current test enforcement is claimed here. The source owners listed below remain
+the type and serialization authorities. Do not recreate a task/date snapshot of implementation shape.
 
 ## What Belongs Here
 
@@ -101,8 +101,8 @@ with their owning focused suites. Do not recreate a task/date snapshot of implem
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Stable post-migration architecture is checked without snapshotting implementation shape. | `test_removed_conversation_model_modules_have_no_compatibility_shims`; `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:26-29; mcp/tests/test_conversation_model_architecture.py:47-56 |
-| Hostile contract tests pin the grammar products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
+| Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. | `WithdrawalOperationProjection` | mcp/src/agents_remember/models/conversations/withdrawals.py:74-120 |
+| Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. | `WithdrawalOperationProjection` | mcp/src/agents_remember/models/conversations/withdrawals.py:74-120 |
 | The canonical ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
 
 ## Cross-Repo References

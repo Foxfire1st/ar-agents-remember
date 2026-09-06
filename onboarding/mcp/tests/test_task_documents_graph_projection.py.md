@@ -5,58 +5,74 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_documents_graph_projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T13:43+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                    |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests/overview.md](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Force the task-documents projection wiring for the render-ready graph view (260815-DAG-L12
-R4): `read_task_documents` now projects `TaskDocNode.executionGraphView` for a sprint whose
-master documents exist, and `_master_docs_by_ref` builds the title/status/nature join table
-from the bounded payload window.
+Checks rendered graph projection joins actual master documents to segment titles, wave/predecessor facts and frontier state. Duplicate local leaf numbers keep master-qualified titles rather than colliding in a flat lookup. Projection is display data, not independent execution authority.
 
 ## Code Commentary
 
 ### Logic
 
-`TaskDocumentsGraphViewProjectionTests` writes real task documents into a disposable
-coordination root and reads them through the public `read_task_documents`: a sprint doc
-with a graph carries the render-ready `executionGraphView` (nodes with joined master/leaf
-titles, wave indexes, mechanical frontier states, natures, predecessors); the segmented
-master scenario projects titles and predecessor reasons across waves; and
-`_master_docs_by_ref` skips invalid master payloads and non-master documents while indexing
-valid masters by their `TaskDocumentRef`. Non-sprint docs project `None` (backward
-compatible). The duplicate-local-number regression places `L1` under both master A and master B,
-then proves A's segment retains A's title through the public reader instead of taking whichever
-flat `L1` title was encountered last.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
+
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Tests construct only disposable coordination roots.
-- The projection is exercised through the public reader, not the internal builder.
-- Leaf-title ownership remains qualified by `(TaskDocumentRef, leaf id)` from persisted join
-  through the served graph view; local row numbers are not sprint-wide title identifiers.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection wiring suite includes the duplicate-local-number owner-preservation regression. | `TaskDocumentsGraphViewProjectionTests`; `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:34-268; mcp/tests/test_task_documents_graph_projection.py:195-246 |
-| The reader that now carries the graph view. | `read_task_documents` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:63-101 |
-| The master join-table builder under test. | `_master_docs_by_ref` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:370-396 |
-| The served field on the task-document node. | `executionGraphView` | mcp/src/agents_remember/observer/projection.py:801-801 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Segmented master scenario projects titles and predecessors | `test_segmented_master_scenario_projects_titles_and_predecessors` | mcp/tests/test_task_documents_graph_projection.py:62-144 |
+| Duplicate local leaf numbers keep master qualified titles | `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:146-197 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this file.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: added the public-reader proof that duplicate local
   leaf numbers retain their owning master's qualified title through the served projection.

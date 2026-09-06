@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `AGENTS.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastUpdated | 2026-09-06T21:48:32+00:00 |
 | lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
 | lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `overview.md`                              |
@@ -16,233 +16,55 @@
 
 ## Purpose
 
-`AGENTS.md` is the repo-root operating contract for agents working on the
-`agents-remember` source checkout. It now explicitly distinguishes this
-source package from the installed coordination runtime and tells agents who
-arrive through a workspace-level pointer to follow the installed
-`ar-coordination/AGENTS.md` instead when they are working on a sibling
-repository. It also points store, queue, append-only-log, and loop-over-store
-changes at the resolved memory layer's stability/reclamation coding doctrine
-before implementation.
+The source-checkout operating contract routes repository work through the resolved coordination runtime, task lifecycle, memory and canonical source assets.
 
 ## Code Commentary
 
 ### Logic
 
-The current launcher contract is sprint-local rather than global. For ordinary role-shaped work, a
-developer-opened free chat resolves the durable sprint and first leaf, compiles the canonical
-architect brief, and calls `dispatch_agent` once on the sprint document with role `architect`.
-An explicit developer-declared task-seat takeover instead targets the named role on that role's
-canonical task document. Absence of plane identity
-selects ambient target-document/role-altitude authority; the exact brief is durable before the
-launcher hands over. The hosted architect then uses the same public tool under plane identity and
-direct-child scope. A plane refusal never falls back to ambient, and neither caller handles the
-internal session primitive or a runtime occupant id. The dashboard and notifier can host concurrent
-sprints without cross-sprint custody, routing, or wake ownership.
+The opening distinguishes this source package from the installed runtime and sends sibling-repository work to installed coordinator instructions. Sessions follow role briefs or the developer-facing lifecycle; approved durable task documents own code changes. Explicit session authorization determines which workflow actions are already approved.
 
-The file starts by declaring that `agents-remember` is source package code,
-not the live runtime after installation. It gives a fallback handoff for the
-case where a workspace root includes this file while the actual target is a
-sibling repository, then scopes normal resolver input for this checkout to
-`code_repository_name = agents-remember`.
+Memory context and provider configuration are resolved before relying on onboarding. The file names semantic, relationship and intent retrieval strategies and the resolved memory layer's settings, tools, sources and coding guidelines. Root skills, runtime assets and harness templates are canonical; their sync scripts refresh generated package and starter copies.
 
-A `Start Here — Route By Role` section now sits where Task Format Routing used
-to: sessions route by role through the `l-01-agent-lifecycles` skill — a spawned
-agent (the `AR_SPAWN_ROLE` env var, or a role brief as first message) follows
-its brief as its session start, while a developer-facing session is free chat.
-Research stays inline; role-shaped work is handed to a separately hosted,
-sprint-bound **architect** through the canonical one-call dispatch transaction.
-The architect runs the request → trust-checkpoint → reframe-research → decide → build → close
-phase axis. The job type is a lens during reframe-research, and the build
-decision at `decide` has two shapes — a research-only exit (no worktree, no task
-file) or a durable `w-02-light-task-workflow` skill task; chat is never a build
-route, so small code work takes the minimal artifact and larger work escalates
-to a master + light sub-task series. The `tasks/AGENTS.md` collaboration
-doctrine applies in the architect lifecycle's reframe-research phase.
-The HFX-L6 role split keeps spawned roles on their briefs while making the
-sprint-bound architect the developer-facing owner after launcher handoff; the
-launcher itself is not a global role seat and the backend orchestrator is never
-the normal developer-facing lifecycle.
-The memory section also carries a `Memory Retrieval Strategies` list — Semantics
-(GrepAI), Relationship (cgc), and Intent (onboarding plus bounded source
-confirmation) — that points to the same `c-04-retrieval-strategy-router` skill router.
-
-The build-mode decision is the only task-format call; the former standalone
-chat workflow is retired, and the chat build itself is retired with the
-lifecycle convergence — every code change lives under an approved task
-document. The memory section
-keeps the `c-08-ar-coordination-context-resolver` skill, `context_packet` MCP tool, then `c-02-memory-quality-control` skill memory quality control gate and
-points agents at the resolved memory layer's settings, tools, sources, and
-optional coding guidelines rather than pretending the source checkout has active
-root-level `system/` settings. Provider authority is stated directly as MCP
-settings.
-
-The source-layout section now records root `skills/` as the canonical skill
-source tree and `scripts/sync-skills.py` as the repo helper that copies canonical
-skills into the MCP package-data tree and every harness starter package. It also
-records root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as
-canonical runtime asset folders and routes their MCP package-data refresh
-through `scripts/sync-runtime.py`. It also records `scripts/harness/` as the single
-source for the eight self-hosted harness starter packages (`.claude/`, `.codex/`,
-`.cursor/`, `.github-vscode/` with `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/`,
-`.agents/`), refreshed with `python3 scripts/sync-harness.py`, and points at that
-directory's `README.md` for which differences between harnesses are genuine requirements
-and which files the generator does not manage. The MCP package-data skill and runtime
-asset trees and the harness starter trees are explicitly generated, so agents should edit
-root canonical folders first and run the relevant sync helper instead of editing
-generated copies by hand — each generated harness file says so in a header comment, while
-files a starter package owns alone (`.codex/config.toml`, `.cursor/hooks.json`) are edited
-in place. The boundaries section keeps root instructions scoped to source-checkout
-work, keeps installed coordinator instructions under `runtime/agents-md-files/`,
-repeats the "edit root skills" rule, and adds the matching
-runtime-asset and harness sync boundaries.
-
-### Code Quality Instructions — Current Acceptance Boundary
-
-The source now routes Python investigation and acceptance through the pinned Dagger module. Leaf
-closeout owns one targeted acceptance run and master
-integration owns one full run; other lifecycle and publication steps do not rerun it. The
-exported `clean-quality-results.json` is the single authoritative result, while host hooks
-and GitHub pull requests stay deterministic non-test rails.
-
-Host Python, Playwright, and the changed-lines coverage CLI have no supported execution path.
-Candidate A's direct Python wrapper was deleted and has no compatibility replacement. Direct
-targeted Vitest unit/component runs are the deliberate exception:
-they are supported as fast diagnostics, but never create acceptance, changed-lines coverage,
-or lifecycle evidence. CRAP plus changed-lines coverage score only the Dagger run's
-branch-coverage artifact.
-
-A dedicated paragraph is the leaf's own correction of a policy it briefly held:
-`C901` plus `PLR0911`/`PLR0912`/`PLR0915` are **enforced by ruff like every other rule**,
-with no baseline. It records that arming them surfaced 67 offenders, that those were parked
-in `quality/complexity-baseline.txt` behind a shrink-only ratchet for exactly one day before
-the developer overruled it, that all 67 were refactored instead, and that **the file, the
-module that read it and the gate step that ran it are deleted**. It then tells agents how to
-clear a finding — extract a cohesive helper: a dispatch table for an if/elif ladder, a
-guard-clause prologue split from the body, a parse step separated from a decide step — and
-how never to: `# noqa`, a per-file ignore, or widening a limit in `pyproject.toml`.
-
-A separate sentence states the policy in general: **"Nothing in this gate is exempt from
-anything. There is no baseline, ratchet, allowlist or grandfather file anywhere in it, and
-none may be added: a finding is fixed, never recorded."** CRAP gets the same treatment —
-`cc**2 * (1 - branch_coverage)**3 + cc` against the branch data Coverage.py emits under
-`[tool.coverage.run] branch = true`, with the reader refusing a statement-only report, and
-the threshold as the whole policy.
-
-A second paragraph is the leaf's correction of this file's own prior claim:
-**"Radon does not enforce anything."** `radon cc` and `radon mi` exit 0 whatever they
-find — the file cites `radon cc mcp/src/agents_remember -s -n B --order SCORE` reporting
-141 blocks at grade C or worse and still exiting 0 — so no Radon invocation can fail a
-gate. Radon is a report for refactor scouting, and it remains load-bearing in exactly one
-place that is not a gate: `code_quality/crap_calculator.py` imports
-`radon.complexity.cc_visit` for the complexity term of the CRAP score. The section closes
-by telling agents to record Radon rows in the code-quality report template as
-`reported`, never as `passed`.
-
-HFX2-L8's stability/reclamation cross-reference survives unchanged: before adding or
-editing any store, loop-over-a-store, queue, or append-only log, agents must read the
-memory layer's `system/coding-guidelines.md` "Stability, Bounded Resources, and
-Reclamation" section. This is a doctrine read requirement, not a new gate or runtime
-behavior.
+Ordinary Python development uses the isolated unit population with four workers. Integration and combined populations are explicit selections. Only lifecycle-owned Dagger execution produces certifying evidence, preserving genuine process identity, disposable state, credential isolation and exact candidate publication. New cases must protect distinct consequential behavior; collected parametrized budgets cannot silently grow. Coverage is diagnostic only. Production CRAP20 is a review trigger, not a blocker or reason to add private-branch tests. Lint, formatting, typing, structural rules, test failures and diagnostic-tool errors remain enforcing.
 
 ### Conventions
 
-Workflow names remain stable contracts. C-* skills are core support skills, and
-W-* skills are task workflows. Active runtime and memory settings are always
-resolved through `c-08-ar-coordination-context-resolver` skill; provider readiness is checked through MCP when that
-server and providers are configured; source templates and example defaults are
-not treated as the user's live runtime configuration.
+Edit canonical asset sources before generated copies. Read stability and reclamation doctrine before changing stores, queues, append-only logs or loops over stores. Report Radon as reported, never passed. Quality reporting must preserve untracked files.
 
 ### Invariants And Boundaries
 
-This file should not be used as the installed coordinator entrypoint. Installed
-coordinator instructions belong in `runtime/agents-md-files/` as package-owned
-templates and in the live `ar-coordination/` tree after runtime installation.
-User-specific behavior and repo policy belong in the resolved memory layer.
-Worktree, closeout, integration, push, cleanup, and protected-branch movement
-remain approval-gated. Implementation approval and commit approval are separate
-gates; agents must stop after checks or closeout dry-runs until the developer
-explicitly approves real commits or lifecycle mutations. The workflow-before-code
-warning now says this explicitly: do not randomly commit — use the `c-12-closeout` skill closeout
-procedure (`direct_closeout_preview`/`apply`) instead.
+Source instructions do not replace installed coordinator entrypoints or grant protected-ref authority. Coverage floors, score-exception registries and ratchets are not current policy. Historical Dagger-only development and per-leaf acceptance descriptions do not govern this baseline; master-end full verification/review follows the active task policy.
 
 ### Todos
 
-Refresh verification metadata after this `AGENTS.md` source update is committed.
+No new source-local obligation is introduced by this reconciliation.
 
-### Docs References
-
-No external domain documentation is needed to prove this repository-local agent
-contract.
+## Docs References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found; same-repository workflow files are the direct evidence. | n/a | n/a |
+| No configured external domain documentation applies. | N/A | N/A |
 
 ## Repo-Internal References
 
-The active repo behavior depends on the source-checkout scope, installed-runtime
-handoff, workflow routing, resolver gate, and source-layout boundaries in this
-file.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The file identifies `agents-remember` as the source package and points sibling-repo work to the installed `ar-coordination/AGENTS.md`. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-215 |
-| The repo routes sessions by role through `l-01-agent-lifecycles`: spawned agents follow their briefs, while free chat compiles one architect brief and calls `dispatch_agent` once on the sprint document before handoff. | `## Start Here — Route By Role` | AGENTS.md:16-28 |
-| Memory rules require `c-08-ar-coordination-context-resolver` skill, then a configured-provider readiness check, then `c-02-memory-quality-control` skill memory quality control, and route agents to the resolved memory layer, including `system/tools.md` for repo-specific code quality checks, instead of a root-level source checkout `system/` folder. | `## Memory And Onboarding` | AGENTS.md:49-98 |
-| Boundaries state that implementation approval is not commit approval; agents must stop after checks or closeout dry-runs before real commits, closeout apply, integration, push, or cleanup. | `## Boundaries` | AGENTS.md:125-145 |
-| Source-layout and boundary notes make root `skills/` canonical, identify `scripts/sync-skills.py` as the helper that refreshes generated MCP/harness skill copies, and keep installed coordinator instructions separate from user-owned memory and runtime configuration. | `## Source Layout` | AGENTS.md:99-124 |
-| Source-layout and boundary notes make root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` canonical runtime asset folders, identify `scripts/sync-runtime.py` as the helper that refreshes generated MCP package-data copies, and tell agents not to edit generated runtime asset copies directly. | `## Source Layout` | AGENTS.md:99-124 |
-| Code-quality routing reserves Python investigation and acceptance for the pinned Dagger module, names the one targeted/full cadence, records Candidate A's wrapper retirement, and permits direct targeted Vitest only as non-certifying diagnostic feedback. | `## Code Quality Instructions` | AGENTS.md:146-215 |
-| The same section derives Python scope from the index, names enforcing/reporting rails, forbids baselines and exemptions, and routes exact commands plus stability doctrine through the resolved memory layer. | `## Code Quality Instructions` | AGENTS.md:146-215 |
-| Source-layout and boundary notes make `scripts/harness/` the single source for the eight self-hosted harness starter packages, route their refresh through `scripts/sync-harness.py`, and separate generated starter files from the per-harness files a starter package owns alone. | `## Source Layout` | AGENTS.md:99-124 |
-| The gate command this file names, with the enforcing/report split it describes. | `run_quality_check` | mcp/test_support/agents_remember_test_support/code_quality/check.py:148-198 |
-| The changed-lines step named by the current acceptance boundary. | `run_diff_coverage` | mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py:121-170 |
-| The report template this file says must record Radon rows as `reported`. | `## Tool Results` | system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
+| Source scope and role routing. | `## Start Here — Route By Role` | AGENTS.md:1-47 |
+| Resolved memory and retrieval strategy. | `## Memory And Onboarding` | AGENTS.md:51-97 |
+| Canonical sources and generated-copy boundaries. | `## Source Layout` | AGENTS.md:99-149 |
+| Current testing, diagnostic and enforcing policy. | `## Code Quality Instructions` | AGENTS.md:150-206 |
 
 ## Cross-Repo References
 
-The workspace root may include this file as a pointer, but this file now
-delegates sibling-repository work to the installed runtime instructions.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No sibling repository citation is required; the cross-repo behavior is a handoff instruction in this file. | n/a | n/a |
-
-## L23 Final Candidate Disposition
-
-The source instructions make the pinned Dagger graph the sole acceptance authority. Python,
-Playwright, changed-lines coverage, and direct-wrapper execution require its matching nonce and
-in-container attestation. Direct targeted Vitest is supported diagnostic feedback only and cannot
-satisfy leaf closeout, master integration, changed-lines coverage, or lifecycle evidence.
-
-## R39 Acceptance Cadence
-
-The source instructions now make lifecycle altitude the sole acceptance owner: targeted Dagger
-runs once at leaf closeout and full Dagger runs once at master integration. Leaf integration,
-push, pull request, tag, and publish do not rerun acceptance; pull requests retain deterministic
-non-test checks only. Python, Playwright, changed-lines coverage, and the direct wrapper refuse
-outside the matching nonce-attested Dagger graph; targeted direct Vitest remains diagnostic-only.
-
-## 260824-PDLS — Python Evidence Rule
-
-The root operating contract now makes the pinned Dagger graph the only supported Python execution
-environment for investigation and acceptance. Candidate A's host command, sealed manifest, static
-closure analyzer, and self-proof were removed after exact-candidate measurement showed that the
-route was slower than the equivalent warm Dagger micro-route while carrying substantial extra
-maintenance surface. Direct targeted Vitest remains supported diagnostic feedback; Python has no
-host compatibility or fallback path.
-
-## 2026-08-26 Python Evidence-System Doctrine Reconciliation
-
-The repository instruction now requires agents changing test evidence, fixtures, support,
-selection, retry, cadence, or causal reporting to read
-`docs/design/python-evidence-system.md`. That design document is the governing contract for the
-separation between internal canonical product truth, independent external conformance, scheduled
-stress/cadence evidence, and lifecycle-eligible durable evidence. The instruction prevents a
-locally convenient test or report from silently becoming acceptance authority.
+| Installed runtime handoff is declared by the source above; no separate cross-repo implementation is claimed. | N/A | N/A |
 
 ## Update History
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `## Code Quality Instructions` repointed to AGENTS.md:150-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-06T21:48:32+00:00 — Reconciled current IAS testing and configuration policy against source; removed obsolete active coverage, host-refusal and deleted-test claims. Existing verification pins and all prior history remain unchanged.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 reconciled the root routing contract to one public
   `dispatch_agent` call, separated ordinary architect bootstrap from explicit named-role takeover,

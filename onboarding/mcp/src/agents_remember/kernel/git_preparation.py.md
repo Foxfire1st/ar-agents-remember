@@ -22,11 +22,11 @@ Private Git preparation capability and physical output proof.
 
 ### Logic
 
-The sealed binding names the logical repository/ref and expected old commit separately from the preparation parent, admitted tree and journal-named private root. Its live authorization callback governs create, materialize and commit actions through the sole Git runner. Physical proof checks exact tracked membership, modes and bytes; this module does not publish logical task refs or grant lifecycle approval.
+The sealed binding names the logical repository/ref and expected old commit separately from the preparation parent, admitted tree and journal-named private root. Its live authorization callback governs create, materialize and commit actions through the sole Git runner. Physical proof reads no-follow file bytes and modes, checks directory stability, and refuses extra or missing entries, submodules and checkout transformations that alter admitted blobs; this module does not publish logical task refs or grant lifecycle approval.
 
 ### Conventions
 
-Use the named source owners directly. This card describes the current uncommitted implementation; commit-based verification remains pending.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
 
 ### Invariants And Boundaries
 

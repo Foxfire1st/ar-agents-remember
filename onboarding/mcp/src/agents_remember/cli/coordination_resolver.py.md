@@ -17,7 +17,7 @@
 
 ## Purpose
 
-`cli.py` owns command-line argument parsing for the package-local `c-08-ar-coordination-context-resolver` skill resolver
+`coordination_resolver.py` owns command-line argument parsing for the package-local `c-08-ar-coordination-context-resolver` skill resolver
 entrypoint.
 
 ## Code Commentary
@@ -29,12 +29,14 @@ entrypoint.
 `context_to_dict()` or tab-separated text through `print_text()`.
 
 The CLI flags are unchanged, but since 260731-EFA-L2 `main()` **packs them into the resolver's two
-parameter objects** rather than passing nine keywords: `--topology` / `--coordination-root` /
+parameter objects**, nested in one `CoordinationRequest` with `WorktreeContractReader`, rather than passing nine keywords: `--topology` / `--coordination-root` /
 `--settings-path` / `--onboarding-root` become a `CoordinationHints`, and `--contract-path` /
 `--task-name` / `--parent-task` / `--leaf-id` / `--worktree-name` become an `EnclosureSelector`.
 `code_repository_name`, `workspace_root` and `code_repository_root` are still passed directly.
 This file is where the flag-to-bundle mapping is defined; a new resolver input needs a flag here
 and a field on the matching bundle in `models.py`.
+
+The package CLI shares `context_to_dict` with the resolver serialization owner, including external, internal and contract-backed fields (`contract_path`, `worktree_group`, `code_worktree`). Task lookup excludes archive roots; `--parent-task` disambiguates nested active roots and `--leaf-id` selects the exact enclosure. These are resolver decisions, not a CLI-side search implementation. See `mcp/src/agents_remember/cli/coordination_resolver.py:59-109` and `mcp/src/agents_remember/kernel/coordination_context/serialize.py:88-90`.
 
 ### Invariants And Boundaries
 
@@ -69,6 +71,9 @@ No cross-repository evidence is needed for this CLI adapter.
 The CLI mirrors the resolver API by accepting `--parent-task` and `--leaf-id`; `--contract-path` now means an explicit `series-contract.md` path rather than the retired task-root `contract.md`.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved current production semantics from retired resolver/task-intent test documentation and reconciled actual API composition. Verification pins remain unchanged; source inspection only.
+
 
 - 2026-08-03T02:41:30+02:00 — W3-B01 curator: curated 1 Repo-Internal table citation with the current resolver identifier and source path. Verification metadata remains unchanged for closeout.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):

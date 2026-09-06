@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_projection_member_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
 | lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
@@ -16,62 +16,59 @@
 
 ## Purpose
 
-Proves candidate-local closeout readiness helpers.
+Candidate-document and semantic-topology fixtures for closeout consumers.
 
 ## Code Commentary
 
 ### Logic
 
-The cases cover task blockers, door reasons, candidate-local activation waits, DAG dependency order,
-bounded reasons, and fingerprints. The graph-less case explicitly proves dependency ordering does
-not invent a first-master or live-contract lane owner. The expanded v2 matrix pins the exact
-canonical projection, excludes every present non-structural current/nested field, proves applicable
-node/edge/ref changes alter identity, and preserves explicit atomic-sequential mode.
+Builders create a segmented predecessor/master/successor graph, a richly populated leaf document, resolved document tuples and a semantic graph index. Observational fields and task intent coexist in the candidate fixture so consumers can vary them independently.
 
 ### Conventions
 
-Tests execute production owners and use shared builders only for canonical setup. Scenario-specific
-differences remain in the test so fixtures do not become a parallel implementation.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- The suite preserves loud negative cases and exact identity/refusal assertions; it does not obtain
-  green through a fallback, allowlist, or weakened production threshold.
-- Dagger owns certifying execution. Any direct execution remains bounded diagnostic evidence only.
-- Activation arrives as an independent waiting input; no `atomic-series-lane-owned-by` fallback is
-  reconstructed by member helpers.
-- Fingerprint assertions address only structural v2 topology; delivery state cannot leak into them.
+No test methods remain here. Building an index or sample routeReview is fixture setup, not proof of current readiness or an independent review.
 
 ### Todos
 
-None recorded.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `_value` | mcp/tests/test_closeout_projection_member_helpers.py:1-560 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-The test file is direct evidence for the production boundary named above.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Existing member readiness and dependency cases remain explicit. | `test_admission_and_activation_waiting_reasons_are_explicit`; `test_dependency_order_falls_back_or_uses_the_exact_graph_node` | mcp/tests/test_closeout_projection_member_helpers.py:46-103 |
-| The v2 projection matrix pins exact shape, non-structural exclusion, relevant graph identity, refs, and atomic mode. | `test_semantic_topology_exact_v2_shape_and_canonical_ordering`; `test_every_present_nonstructural_current_and_nested_field_is_excluded`; `test_graph_node_order_leaf_placement_and_relevant_endpoints_change_identity`; `test_ref_repository_and_path_components_change_identity`; `test_atomic_sequential_is_an_explicit_v2_variant_with_effective_atomic_nature` | mcp/tests/test_closeout_projection_member_helpers.py:434-560 |
+| Ref. | `_ref` | mcp/tests/test_closeout_projection_member_helpers.py:23-24 |
+| Graph. | `_graph` | mcp/tests/test_closeout_projection_member_helpers.py:35-57 |
+| Candidate document. | `_candidate_document` | mcp/tests/test_closeout_projection_member_helpers.py:60-139 |
+| Documents. | `_documents` | mcp/tests/test_closeout_projection_member_helpers.py:142-223 |
+| Semantic index. | `_semantic_index` | mcp/tests/test_closeout_projection_member_helpers.py:226-237 |
+| Bound sprint. | `_bound_sprint` | mcp/tests/test_closeout_projection_member_helpers.py:240-247 |
 
 ## Cross-Repo References
 
-No cross-repository source is allowed by the resolved settings.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_value` | mcp/tests/test_closeout_projection_member_helpers.py:1-560 |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: expanded the helper regression card to the
   exact `semantic-topology/v2` shape, structural field boundary, candidate-applicable graph facts,

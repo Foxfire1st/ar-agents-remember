@@ -5,7 +5,7 @@
 | repository             | agents-remember                                                      |
 | path                   | `mcp/src/agents_remember/serving/conversation/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                              |
-| lastUpdated            | 2026-08-01T08:18+02:00                                               |
+| lastUpdated            | 2026-09-06T21:54:05+00:00 |
 | lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                           |
 | lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                        |
@@ -58,7 +58,7 @@ cit:([`OPEN_OUTCOME_RESPONSES`], mcp/src/agents_remember/serving/conversation/re
 outcome. `operations.interrupt_http_status` picks 200/202/422/503 off the operation's own
 `acknowledgement`/`settlement`, so three of those statuses carry an `InterruptOperation` and not
 a refusal body — declaring them as refusals, which the shared table alone would have done, was
-wrong, and the conformance suite caught it on the real 422.
+wrong. The historical conformance suite caught this on a real 422; that suite was removed in IAS testing cleanup and is not current execution evidence.
 
 **Every outcome table unions in the refusal model the shared table declares for the same
 status**, and that is the load-bearing detail: routes spread these tables as
@@ -119,7 +119,7 @@ it reuses are owned by the parent contract module.
 | The cursor refusals `CONVERSATION_RESPONSES` adds for the active routes. | `_map_typed_error`; `_resume_cursor` | mcp/src/agents_remember/serving/conversation/active/api.py:77-99; mcp/src/agents_remember/serving/conversation/active/api.py:111-123 |
 | The library error table `LIBRARY_RESPONSES` transcribes and the total outcome map `OPEN_OUTCOME_RESPONSES` pairs with. | `_error_response`; `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:271-286 |
 | The status pickers whose non-200 answers carry the operation body rather than a refusal. | `interrupt_http_status` | mcp/src/agents_remember/serving/conversation/control/operations.py:552-561 |
-| The suite that drove the real 422 and caught the interrupt table declaring a refusal where an operation body is emitted. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
+| Current production declaration; the removed broad suite supplies no current execution proof. | `INTERRUPT_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:146-159 |
 
 ## Cross-Repo References
 
@@ -130,7 +130,11 @@ conversation routes emit.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+
 ## Update History
+
+- 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
+
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

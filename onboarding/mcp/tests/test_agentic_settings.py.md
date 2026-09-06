@@ -5,212 +5,75 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_agentic_settings.py`       |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview      | `overview.md`                               |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_agentic_settings.py` covers the two-layer agentic settings loader
-(`kernel/agentic_settings.py`, 260703-L13): merge precedence, the fail-loud
-unknown-key discipline, absent-file defaults, and the typed models — plus, since
-260703-L16, the free-form role knobs (`FreeFormRoleKnobTests`), the per-level
-overrides (`RolesPerLevelTests`), the harness-definition family
-(`HarnessesFamilyTests`), the agent-notifier sweep's own knob family (since 260707-HFX2-L2,
-now the supervisor cases inside `TypedModelTests`), and — since 260707-HFX2-L4 — the escalation ladder's own knob family
-(`EscalationSettingsTests`).
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`) cuts the quality-gate settings tests over: the
-`quality_gate.executor` field assertions were replaced by `assertFalse(hasattr(settings.quality_gate,
-"executor"))`, and the old `dagger`-only executor acceptance tests became
-`test_executor_authority_is_not_accepted_in_agentic_settings` -- an `executor` key now fails
-loud as an unknown key.
+Two-layer agentic settings merge and authority-boundary tests.
 
 ## Code Commentary
 
-L23 proves `local` is the quality-executor default, `dagger` parses explicitly, and unknown executor values fail loudly.
-
-### 260714-ACPUI-L2 Native Registry Regression
-
-The changed harness-family cases prove that partial overrides of built-in native rows preserve
-identity and command customization without resurrecting a static model/effort mapping. In
-particular, Claude no longer inherits a static `--effort` vocabulary and Codex no longer inherits
-the previous non-empty dynamic-effort placeholder. Dynamic, model-gated validation belongs to the
-native adapter launch path; settings-defined non-native mappings remain covered separately.
-
-### Settings-defined effort-policy regression coverage
-
-The harness-family tests exercise the real settings loader in both directions: a settings-defined
-`effortFlagValues` declaration remains enumerated and rejects an out-of-menu value, while a partial
-built-in native argv override preserves the absence of static model/effort policy. This prevents
-the merge path from bypassing an explicit custom vocabulary or recreating a retired builtin one.
-
 ### Logic
 
-**260707-HFX2-L15 coverage.** The harness-family tests pin the redelivery default of one and prove
-that replacing the Codex builtin's effort flag clears its builtin `--config` value template,
-preserving the normal two-argument custom-flag contract.
-
-L13 review follow-up adds `test_local_gate_delegation_is_refused_global_layer_only` (L13R-2): a repo-local gateDelegation raises AgenticSettingsError naming the local file.
-
-Seven test classes, each writing real settings files into a temp coordination
-root / repo root (no mocking — the loader's file I/O is the unit under test):
-
-- `MergePrecedenceTests` — global-only, local-only, local-leaf-overrides-global
-  (proving leaf-key granularity: the overridden sibling and untouched family
-  survive), arrays REPLACE never concatenate (direct `merge_settings` check),
-  absent-files → the full documented default posture (all-human gates, L12 loop
-  defaults, empty roles, uncapped concurrency, no spawn preference, empty
-  `sources`), and the optional `repo_root` argument.
-- `FailLoudTests` — an unknown `orchestration.*` key raises
-  `AgenticSettingsError` NAMING the offending file (asserted for both the
-  global and the local layer), unknown TOP-LEVEL families are
-  tolerated-not-parsed (the gate-amendment reservation: a `contextProviders`
-  top-level key coexists while a typo'd `orchestration.*` key still fails),
-  malformed JSON and non-object roots fail loud with the path, and per-family
-  unknown-key refusals (gateDelegation, loop defaults, role names,
-  concurrency caps). **260703-L18 (finding 6):** a JSON `null` at a known family
-  key refuses loudly — one test walks concurrency/roles/loops/spawn/rolesPerLevel/
-  harnesses in the repo-local layer (proving no silent global wipe), a second
-  proves the global layer refuses too.
-- `TypedModelTests` — the full L12 loop schema round-trips (defaults,
-  perLevel, perMaster), partial perLevel keeps the other level defaults,
-  maxRounds/concurrency positive-integer validation (bools rejected),
-  complexity scale validation, role knobs with empty-knob defaults via
-  `role_knobs()`, harness values validated against the registry ids (the
-  documented-but-wrong `claude-code` id is the regression case), and
-  gateDelegation parsing in its new home (named policy, at-seams binding,
-  human-pinned and unsupported-kind refusals as `AgenticSettingsError`).
-  **260707-HFX-L7** adds a flat `system-specialist` role-knob entry
-  (`{"harness": "claude", "model": "fable"}`) to the settings fixture and asserts
-  `settings.roles["system-specialist"] == RoleKnobs(harness="claude", model="fable")`, pinning
-  the ninth `KNOWN_ROLES` member's flat role-knob parsing.
-- `FreeFormRoleKnobTests` cit:([`FreeFormRoleKnobTests`], mcp/tests/test_agentic_settings.py:555-636) (260703-L16) — launchArgs/promptKeywords/sessionCommands
-  parse ADDITIVELY into `RoleKnobs` tuples (old files unchanged, empty-tuple
-  defaults), effort stays a FREE string at load (the developer's `ultracode`
-  file boots; per-harness vocabulary is dispatch-time), and shape violations
-  (non-list, empty member, non-string member) fail loud naming the knob. **PR #100 review
-  (Codex P2):** an EMPTY list refuses with omit-to-inherit guidance — covered flat
-  (`launchArgs: []`) and as a per-level override (`sessionCommands: []`, which would silently
-  inherit the flat default through the field-wise `or` merge).
-- `RolesPerLevelTests` (L16, the developer's reviewer-economics fixture) —
-  a level override deep-merges over the flat default (harness inherited,
-  model/effort replaced per level: sonnet/high leaf → opus/xhigh master →
-  fable/ultracode portfolio), the default level is leaf, an absent family
-  changes nothing, unknown level keys and unknown roles inside a level fail
-  loud, `architect` and `curator` are accepted and deep-merged inside a level
-  (HFX-L6/L6R3), and free-form lists REPLACE (never concatenate) per level.
-- `HarnessesFamilyTests` (L16 registry openness) — an absent family means the
-  builtin registry; a new id ADDS a harness (command⇄argv derivation, name
-  defaulting, `defined_in="settings"`, builtin order preserved + new ids
-  appended); a builtin override replaces declared fields and keeps the rest
-  (claude keeps its knob mapping and `defined_in="registry"`); a new id with
-  neither command nor argv, unknown entry keys, and unpaired delivery-vehicle
-  fields (effortFlag without values, session values without their command)
-  all fail loud; roles/spawn references accept settings-defined ids; a LOCAL
-  layer may reference/partially override a GLOBAL entry (per-file validation
-  is shape-only, cross-references bind on the merged block); and a reference
-  to an id known nowhere fails naming the harnesses.md manual. **260703-L18
-  (finding 4):** the `effortSessionCommand` template is validated post-merge —
-  the three bad shapes (`/set {mode}={value}`, `{}`, an unmatched brace) refuse
-  naming the harness, the builtin-override-supplying-only-the-command path is
-  validated, and a `{value}`-only template is accepted.
-- Supervisor-family tests cit:([`test_agent_notifier_knobs_parse`], mcp/tests/test_agentic_settings.py:426-445) (260707-HFX2-L2, R1/R5; the `SupervisorFamilyTests` class is now folded into `TypedModelTests`) — an absent `orchestration.agentNotifier` block
-  yields the documented defaults (`enabled=True`, `interval_seconds=10.0`,
-  `stale_cutoff_seconds=60.0`, `redeliver_rate_limit_seconds=None`,
-  `signal_cooldown_seconds=900.0`, `redeliver_budget=250`);
-  a full block parses every knob (`enabled=False`, `intervalSeconds=5`, `staleCutoffSeconds=30`,
-  `redeliverRateLimitSeconds=900`, `signalCooldownSeconds=1200`, `redeliverBudget=75`);
-  `enabled` rejects a non-boolean (`"yes"`) naming `supervisor.enabled`; `intervalSeconds` rejects a
-  non-positive value naming `intervalSeconds`; `redeliverRateLimitSeconds` and
-  `signalCooldownSeconds` both reject `899` as below the 900-second floor; and an unknown key
-  (`sweepSeconds`) fails loud naming itself against `KNOWN_AGENT_NOTIFIER_FIELDS`.
-- `EscalationSettingsTests` (260707-HFX2-L4, R1) — an absent `orchestration.escalation` block
-  yields the documented defaults (`sla_for("nudge") == 300.0`, `rung_dwell(1) == 300.0`,
-  `rung_dwell(2) == 900.0`, `nudge_rate_limit_seconds == 900`, `respawn_after_rung == 2`); a full
-  block parses `slaSeconds`/`rungSeconds`/`nudgeRateLimitSeconds`/`respawnAfterRung`, with an
-  unconfigured `message_kind` still falling back to its own documented default alongside the
-  configured ones; an unknown `slaSeconds` key, a non-positive `slaSeconds` value, an out-of-range
-  `rungSeconds` key, an out-of-range `respawnAfterRung`, and an unknown top-level `escalation` key
-  all fail loud naming the offending path.
-- `SeedTests` — `default_agentic_settings_seed()` round-trips through the
-  loader to the SAME posture an absent file yields, except
-  `gate_delegation_configured` is True (the seed explicitly claims the key's
-  home for the boot-snapshot consumer).
+Local leaf overrides preserve global siblings; arrays replace and absent files expose defaults. Retained refusals name malformed settings paths, reject local gate delegation, human-pinned delegation and executor authority in agentic settings. Role overrides inherit flat defaults; harness references resolve against the effective merged registry.
 
 ### Conventions
 
-Standard suite conventions: `MCP_SRC` path bootstrap, `unittest`, tempfile
-roots per test class. The file-writing helper `write_settings` goes through
-`agentic_settings_path` so the layout under test is the real one.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- No test touches the real coordination root; everything is temp-rooted.
-- Boot-flow integration (gateDelegation legacy fallback + warnings) lives in
-  `test_config.py`; spawn resolution lives in `test_spawn_agent_session.py` —
-  this file owns the loader only.
+Executor selection is not an agentic-settings option. The remaining tests do not establish the removed unknown-key, free-form knob or effort-policy matrices.
 
 ### Todos
 
-No known follow-up in this file.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The documented merge/fail-loud/default semantics these tests pin. | `## Agentic Settings (global + repo-local)` | docs/reference/settings-json.md:258-526 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader under test. | `load_agentic_settings` | mcp/src/agents_remember/kernel/agentic_settings.py:209-244 |
-| The harness registry bounding harness-id validation. | `find_harness` | mcp/src/agents_remember/serving/harnesses.py:61-70 |
-| Supervisor-family tests pin the `signalCooldownSeconds` default/full-block parse and sub-900 floor refusals. | `test_agent_notifier_knobs_parse`; `test_agent_notifier_signal_cooldown_must_be_at_least_15_minutes` | mcp/tests/test_agentic_settings.py:426-445; mcp/tests/test_agentic_settings.py:463-465 |
+| Local leaf overrides global leaf and siblings survive. | `test_local_leaf_overrides_global_leaf_and_siblings_survive` | mcp/tests/test_agentic_settings.py:51-86 |
+| Arrays replace never concatenate. | `test_arrays_replace_never_concatenate` | mcp/tests/test_agentic_settings.py:88-94 |
+| Absent files mean documented defaults. | `test_absent_files_mean_documented_defaults` | mcp/tests/test_agentic_settings.py:96-116 |
+| Local gate delegation is refused global layer only. | `test_local_gate_delegation_is_refused_global_layer_only` | mcp/tests/test_agentic_settings.py:131-146 |
+| Malformed json fails loud with path. | `test_malformed_json_fails_loud_with_path` | mcp/tests/test_agentic_settings.py:148-157 |
+| Human pinned gate kind cannot be delegated. | `test_human_pinned_gate_kind_cannot_be_delegated` | mcp/tests/test_agentic_settings.py:173-175 |
+| Level override deep merges over the flat default. | `test_level_override_deep_merges_over_the_flat_default` | mcp/tests/test_agentic_settings.py:205-221 |
+| New id adds a harness with defaults derived. | `test_new_id_adds_a_harness_with_defaults_derived` | mcp/tests/test_agentic_settings.py:248-256 |
+| Cross layer reference and partial override merge. | `test_cross_layer_reference_and_partial_override_merge` | mcp/tests/test_agentic_settings.py:258-271 |
+| Reference to an id known nowhere fails naming the manual. | `test_reference_to_an_id_known_nowhere_fails_naming_the_manual` | mcp/tests/test_agentic_settings.py:273-275 |
+| Executor authority is not accepted in agentic settings. | `test_executor_authority_is_not_accepted_in_agentic_settings` | mcp/tests/test_agentic_settings.py:290-298 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Loader-local behavior only. | - | - |
-
-### 260731-EFA-L17 — Quality-Gate Settings Family
-
-`QualityGateSettingsTests` pins the
-`orchestration.qualityGate` family: the host-managed `None` default when absent,
-parsing and overriding `memoryCapBytes`, the empty-block default, the fail-loud unknown-key
-refusal (`memoryCapMegabytes` names the offending file), and the
-positive-integer requirement (`0` refused). `MergePrecedenceTests` and
-`SeedTests` also assert the quality-gate default survives merge and seed paths.
-
-## 260713-TES-L5 Current Delta — Escalation Settings Refused Loud
-
-`EscalationSettingsTests` becomes `RetiredEscalationSettingsTests`: the whole
-`orchestration.escalation` family (and `respawnAfterRung`) fails loud as an unknown key, and
-loaded `AgenticSettings` has no `escalation` attribute. The SLA/rung-parse coverage is gone
-with the family.
-
-## L23 Final Candidate Disposition
-
-The settings regression now pins Dagger as the only accepted quality executor and rejects legacy
-local/fallback values. Optional resource policy remains graph configuration, not runner selection.
-
-## R39 Settings Policy Proof
-
-The settings tests now describe the optional cap as Dagger-inner/container policy and require all
-non-Dagger executors to refuse as forbidden host test execution. No host-managed quality executor
-remains configurable.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-field removal assertions in agentic settings tests.
 
 

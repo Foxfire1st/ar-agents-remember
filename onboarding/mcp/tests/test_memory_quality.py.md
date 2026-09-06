@@ -5,64 +5,66 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T14:19+02:00                     |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
 | lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_memory_quality.py` verifies the memory quality runner, entity-catalog alignment,
-the update-history style checker, and the MCP payload path for `memory_quality_check`.
+Entity inventory/fingerprint alignment and memory fixture builders.
 
 ## Code Commentary
 
 ### Logic
 
-The tests create temporary onboarding fixtures, validate clean newest-first
-history, assert findings for out-of-order and missing-timestamp bullets, verify
-the package runner defaults to style-only without drift context, and verify the
-MCP payload can run style-only or drift-plus-style with a clean fixture. The
-history-order fixer tests prove the dedicated fixer reorders timestamped bullet
-blocks and skips sections with missing timestamps. Entity-catalog fixtures prove that orphaned
-fingerprint rows and inventory entries without a fingerprint are enforcing findings, an aligned
-one-to-one catalog passes the default style run, and the alignment check is the first pre-metadata
-closeout check. The shape suite also exercises missing inventory/fingerprint sections, duplicate
-fingerprint rows, and the line-locator fallback used for malformed catalog placement evidence.
+The two retained tests reject a fingerprint without an inventory entity and accept exactly one fingerprint per inventory member. Alignment remains first in the before-metadata-refresh check ordering. Helpers write actual onboarding/entity fixtures and initialize clean memory repositories.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Memory quality checks should return structured `ok`, `checks`,
-  `findingCount`, and `findings` fields.
-- `memory_quality_check` should include drift integrity by default when invoked
-  through the MCP payload layer.
-- Style-only invocation should remain available for targeted checks.
-- The dedicated history-order fixer should be tested separately from the
-  checker so `memory_quality_check` stays diagnostic.
+This source does not retain the historical full runner/style/MCP payload matrix. The ordering assertion establishes check registration, not a prohibition on authorized pre-gate memory preparation.
 
-## Repo-Internal References
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tested package runner lives in `memory_quality.check`. | `run_memory_quality_check` | mcp/src/agents_remember/memory_quality/check.py:86-113 |
-| The tested payload builder lives in `mcp.tools.memory`. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
-| The tested style checker lives in `history_order.py`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
-| The tested style fixer lives in `history_order_fix.py`. | `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py:28-50 |
-| The tested catalog checker owns inventory/fingerprint structural alignment. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## Current Payload Wrapper Coverage
+## Repo-Internal References
 
-`test_start_and_poll_payload_builders_wrap_the_async_envelopes` passes strict
-`MemoryQualityStartRequest` and `MemoryQualityPollRequest` instances into the payload adapters and
-proves the controller envelopes survive `_tool_payload` validation. The adapters are mocked at the
-controller seam, not through the removed application-memory wrapper functions.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-## 260821-DAGQC-L2 Typed Sync Calls
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Entity catalog alignment rejects orphaned fingerprint before code rails. | `test_entity_catalog_alignment_rejects_orphaned_fingerprint_before_code_rails` | mcp/tests/test_memory_quality.py:89-107 |
+| Entity catalog alignment accepts one fingerprint per inventory entry. | `test_entity_catalog_alignment_accepts_one_fingerprint_per_inventory_entry` | mcp/tests/test_memory_quality.py:109-119 |
 
-Quality behavior assertions now enter through `MemoryQualitySyncRequest(mode="sync", ...)`, keeping
-the quality engine coverage while proving the controller's explicit public execution contract.
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: updated quality tool calls to the explicit typed sync request while preserving the underlying quality assertions. Verification metadata remains pinned until architect-owned closeout.
 

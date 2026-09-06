@@ -5,85 +5,73 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
 | lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Precision and recall for citation resolution over memory documents (260731-EFA-L6).
+Citation range, anchor and source-path resolution contracts.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
-
-- `document` (function, lines 74-76)
-- `numbered` (function, lines 79-80)
-- `Tree` (class, lines 83-111) — A memory repository and the code repository it documents, both on disk.
-- `TreeCase` (class, lines 114-126)
-- `FalsePositiveFixtures` (class, lines 129-244) — Every mode the module docstring enumerates, on a construct that exists in the tree.
-- `TableFormatTests` (class, lines 247-299) — The superseded shape fails, and the message names the whole migration.
-- `SourceGrammarTests` (class, lines 302-367) — `path:start-end` in plain text, and what is reported instead.
-- `AnchorGrammarTests` (class, lines 370-449) — The three anchor kinds, each matched by the rule its kind implies.
-- `BoundsTests` (class, lines 452-504) — A range past the end of the file its own citation names.
-- `AnchorPresenceTests` (class, lines 507-550) — The anchor half, and the hard facts a finding owes the curator.
-- `PairingTests` (class, lines 553-578) — Half a citation. Neither half means anything alone.
-- `ResolutionTests` (class, lines 581-605) — Two roots, tried in one order.
-- `BiteTests` (class, lines 608-647) — L6-R16: every code this check can emit has a probe that provokes it.
-- `ProseGrammarTests` (class, lines 650-756) — `cit:([anchors], path:start-end)` in running text, sharing every table rule.
-- `MisplacedSerialisationTests` (class, lines 759-813) — A `cit:` in a table cell is the wrong serialisation, and silence there is the defect.
-- `SupersededProseTests` (class, lines 816-860) — The spelling `cit:` replaces, and the leaf shorthand it must not swallow.
-- `ProseScannerTests` (class, lines 863-885) — The block builder and the bracket walker, which nothing else exercises directly.
-- `DeletedClassTests` (class, lines 888-918) — L6-R13: the two classes R27 made unrepresentable are gone, not dormant.
-- `StyleSurfaceTests` (class, lines 921-978) — How the check reaches the gate, and what it says when it cannot resolve.
-- `OrderingTests` (class, lines 981-1000)
+Whole identifier boundaries reject longer-name false matches while valid names and pooled ranges pass. Prose citations share table range/anchor errors, fenced examples are ignored and misplaced prose serialization in table cells is reported. Parent traversal is malformed; absent code-root context reports no-code-repository-root rather than a silent pass.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+The resolver must preserve valid pooled claims while refusing escaped or unsupported sources. This is repository-owned resolution evidence, not an external documentation authority.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `document` (lines 74-76). | `document` | mcp/tests/test_memory_citation_resolution.py:74-76 |
-| Defines the function `numbered` (lines 79-80). | `numbered` | mcp/tests/test_memory_citation_resolution.py:79-80 |
-| Defines the class `Tree` (lines 83-111) — A memory repository and the code repository it documents, both on disk.. | `Tree` | mcp/tests/test_memory_citation_resolution.py:83-111 |
-| Defines the class `TreeCase` (lines 114-126). | `TreeCase` | mcp/tests/test_memory_citation_resolution.py:114-126 |
-| Defines the class `FalsePositiveFixtures` (lines 129-244) — Every mode the module docstring enumerates, on a construct that exists in the tree.. | `FalsePositiveFixtures` | mcp/tests/test_memory_citation_resolution.py:129-244 |
-| Defines the class `TableFormatTests` (lines 247-299) — The superseded shape fails, and the message names the whole migration.. | `TableFormatTests` | mcp/tests/test_memory_citation_resolution.py:247-299 |
-| Defines the class `SourceGrammarTests` (lines 302-367) — `path:start-end` in plain text, and what is reported instead.. | `SourceGrammarTests` | mcp/tests/test_memory_citation_resolution.py:302-367 |
-| Defines the class `AnchorGrammarTests` (lines 370-449) — The three anchor kinds, each matched by the rule its kind implies.. | `AnchorGrammarTests` | mcp/tests/test_memory_citation_resolution.py:370-449 |
-| Defines the class `BoundsTests` (lines 452-504) — A range past the end of the file its own citation names.. | `BoundsTests` | mcp/tests/test_memory_citation_resolution.py:452-504 |
-| Defines the class `AnchorPresenceTests` (lines 507-550) — The anchor half, and the hard facts a finding owes the curator.. | `AnchorPresenceTests` | mcp/tests/test_memory_citation_resolution.py:507-550 |
-| Defines the class `PairingTests` (lines 553-578) — Half a citation. Neither half means anything alone.. | `PairingTests` | mcp/tests/test_memory_citation_resolution.py:553-578 |
-| Defines the class `ResolutionTests` (lines 581-605) — Two roots, tried in one order.. | `ResolutionTests` | mcp/tests/test_memory_citation_resolution.py:581-605 |
-| Defines the class `BiteTests` (lines 608-647) — L6-R16: every code this check can emit has a probe that provokes it.. | `BiteTests` | mcp/tests/test_memory_citation_resolution.py:608-647 |
-| Defines the class `ProseGrammarTests` (lines 650-756) — `cit:([anchors], path:start-end)` in running text, sharing every table rule.. | `ProseGrammarTests` | mcp/tests/test_memory_citation_resolution.py:650-756 |
-| Defines the class `MisplacedSerialisationTests` (lines 759-813) — A `cit:` in a table cell is the wrong serialisation, and silence there is the defect.. | `MisplacedSerialisationTests` | mcp/tests/test_memory_citation_resolution.py:759-813 |
-| Defines the class `SupersededProseTests` (lines 816-860) — The spelling `cit:` replaces, and the leaf shorthand it must not swallow.. | `SupersededProseTests` | mcp/tests/test_memory_citation_resolution.py:816-860 |
-| Defines the class `ProseScannerTests` (lines 863-885) — The block builder and the bracket walker, which nothing else exercises directly.. | `ProseScannerTests` | mcp/tests/test_memory_citation_resolution.py:863-885 |
-| Defines the class `DeletedClassTests` (lines 888-918) — L6-R13: the two classes R27 made unrepresentable are gone, not dormant.. | `DeletedClassTests` | mcp/tests/test_memory_citation_resolution.py:888-918 |
-| Defines the class `StyleSurfaceTests` (lines 921-978) — How the check reaches the gate, and what it says when it cannot resolve.. | `StyleSurfaceTests` | mcp/tests/test_memory_citation_resolution.py:921-978 |
-| Defines the class `OrderingTests` (lines 981-1000). | `OrderingTests` | mcp/tests/test_memory_citation_resolution.py:981-1000 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| 1 a word boundary is not satisfied by a longer identifier. | `test_1_a_word_boundary_is_not_satisfied_by_a_longer_identifier` | mcp/tests/test_memory_citation_resolution.py:112-123 |
+| 1b the same names pass when the range really holds them. | `test_1b_the_same_names_pass_when_the_range_really_holds_them` | mcp/tests/test_memory_citation_resolution.py:125-131 |
+| 4 two ranges one anchor are pooled not paired. | `test_4_two_ranges_one_anchor_are_pooled_not_paired` | mcp/tests/test_memory_citation_resolution.py:133-142 |
+| A well formed citation resolves and passes. | `test_a_well_formed_citation_resolves_and_passes` | mcp/tests/test_memory_citation_resolution.py:153-160 |
+| An out of bounds prose range fails with the shared code. | `test_an_out_of_bounds_prose_range_fails_with_the_shared_code` | mcp/tests/test_memory_citation_resolution.py:162-166 |
+| An absent prose anchor fails with the shared code. | `test_an_absent_prose_anchor_fails_with_the_shared_code` | mcp/tests/test_memory_citation_resolution.py:168-170 |
+| A citation inside a fence is not scanned. | `test_a_citation_inside_a_fence_is_not_scanned` | mcp/tests/test_memory_citation_resolution.py:172-175 |
+| A cit written into a finding cell is reported. | `test_a_cit_written_into_a_finding_cell_is_reported` | mcp/tests/test_memory_citation_resolution.py:181-192 |
+| A parent step can no longer reach a file at a shallower depth. | `test_a_parent_step_can_no_longer_reach_a_file_at_a_shallower_depth` | mcp/tests/test_memory_citation_resolution.py:198-205 |
+| Without a code root the result says so instead of passing quietly. | `test_without_a_code_root_the_result_says_so_instead_of_passing_quietly` | mcp/tests/test_memory_citation_resolution.py:211-218 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

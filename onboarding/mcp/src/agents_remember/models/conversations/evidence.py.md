@@ -59,7 +59,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The harness-control evidence suite pins the shared evidence substrate. | `EvidenceBufferTests` | mcp/tests/test_harness_control_evidence.py:366-366 |
+| The shared evidence implementation owns bounded payload clipping; deleted evidence suites provide no current coverage claim. | `clip_evidence_payload` | mcp/src/agents_remember/models/conversations/evidence.py:301-353 |
 
 ## Cross-Repo References
 

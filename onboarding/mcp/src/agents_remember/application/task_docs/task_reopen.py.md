@@ -48,7 +48,7 @@ against a `WorktreeCommandResponse` subclass in the tool-response registry.
 | The reopen application entry point and its ambient-lifecycle handoff. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
 | The enclosure-contract reset this delegates to. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:212-289 |
 | The facade re-export keeping the old import path working. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
-| The focused reopen application suites. | `ReopenResetTests`; `ReopenPublicationAuthorityTests`; `ReopenGuardTests` | mcp/tests/test_task_reopen.py:59-378; mcp/tests/test_task_reopen_authority.py:100-282; mcp/tests/test_task_reopen_guards.py:19-92 |
+| The application entry point delegates reopen through its current worktree owner; deleted suites provide no current execution evidence. | `task_reopen_tool` | mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41 |
 
 ## Update History
 

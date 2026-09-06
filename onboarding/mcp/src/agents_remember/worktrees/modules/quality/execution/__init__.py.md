@@ -47,7 +47,7 @@ None recorded for this file's bounded responsibility.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package marker documents its scope and contains no executable initialization. | `"Selected certification suffix authority and retained report transport."` | mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py:1-1 |
+| The package marker documents its scope and contains no executable initialization. | "Selected certification suffix authority and retained report transport." | mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py:1-1 |
 
 ## Cross-Repo References
 

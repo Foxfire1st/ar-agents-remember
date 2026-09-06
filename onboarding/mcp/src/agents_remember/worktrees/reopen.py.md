@@ -74,9 +74,8 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 - **A contract's vocabulary cells are moved through `ContractCells` /
   `amend_contract`, never as `dataclasses.replace` keywords.** `replace` is
   `**changes: Any` in typeshed, so a `replace` keyword is an unchecked write to a
-  `Literal` field. `test_wire_vocabulary_exhaustiveness` enforces this as a rule
-  across the package (`test_no_contract_cell_is_written_through_dataclasses_replace`),
-  which is what stops a later edit from routing around the typed writer. The
+  `Literal` field. The removed vocabulary-exhaustiveness tests are historical; the
+  typed contract writer remains the production boundary. The
   `replace` call that survives here is legitimate: it carries only free-form
   string/bool provenance fields, none of them a vocabulary cell.
 - The tool mutates only coordination state: the enclosure contract, task docs, and the frozen
@@ -96,7 +95,6 @@ The reopen ledger-mapping proof now supplies the exact memory source commit.
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
 | The wire model that reports `cleanup` and accepts `reopened` through `CleanupStatus`. | `WorktreeSummary` | mcp/src/agents_remember/models/worktree.py:148-198 |
-| `test_no_contract_cell_is_written_through_dataclasses.replace` and `test_every_writable_cleanup_value_validates_at_the_wire_boundary` pin both halves of this. | `test_no_contract_cell_is_written_through_dataclasses_replace`; `test_every_writable_cleanup_value_validates_at_the_wire_boundary` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:302-306; mcp/tests/test_wire_vocabulary_exhaustiveness.py:669-677 |
 
 ## 260718-CHATS-L5I Current Delta
 

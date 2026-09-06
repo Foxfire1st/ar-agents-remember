@@ -75,7 +75,7 @@ history-order checkers.
 | The checker population is derived from the memory-quality package check catalog. | `AVAILABLE_CHECKS`, `DRIFT_CHECK_NAME` | mcp/src/agents_remember/memory_quality/check.py:31-77 |
 | The one incremental checker is citation range resolution, whose selected-document mode makes it the only executably incremental policy. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64 |
 | The manifest binds `checkerRegistryVersion` into every compiled scope. | `checker_registry_version` | mcp/src/agents_remember/memory_quality/incremental_scope/compiler.py:136-158 |
-| Missing/invalid policy combinations are refused by the registry tests in the compiler/lane suites. | `test_every_current_checker_has_one_executable_or_full_only_policy`; `test_empty_or_unknown_checker_population_is_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:267-274; mcp/tests/test_memory_incremental_scope_compiler.py:289-300 |
+
 
 ## Update History
 

@@ -5,140 +5,71 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dispatch_agent_ambient.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T10:56+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
 | lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-The ambient caller-mode test cohort for `dispatch_agent`: proves that a caller with NO
-plane-injected hosted identity (`AR_HOSTED_SESSION_ID` absent) spawns on a canonical task document
-in ambient mode, that refusals stay intact, that provenance distinguishes ambient from plane, that
-rollback fires only when the just-created generation is positively proven unbriefed, and that the
-ambient brief post carries no plane sender. It also owns the plane-side rollback and fail-closed
-identity/role refusal cohort at this caller-mode boundary. The suite was extracted verbatim from
-`test_structural_agent_tools.py` by the
-260821-ARSPAWN-L1 file-size fix (that suite had crossed the 1,200-line rail); the shared fixtures
-came with it. Fix round 3 added a real-path cohort: direct `resolve_ambient_caller` unit tests, a
-real spawn+brief success through the production primitive with a substituted host, a real rollback,
-and the rollback failure-branch seams. Fix round 4 wired the real-path cohort to a real
-settings-owned architect launch selection and asserted the terminated-row listing after rollback.
-ARSPAWN-L2 additionally proves that a successful brief binds its durable receipt to the exact
-catalog generation and that observer-log failure remains secondary after catalog retirement has
-already fenced a failed spawn. The rollback test now injects failure at the actual
-`OperatorInboxStore.append` persistence boundary, avoiding an obsolete filesystem-layout assumption.
-The ARSPAWN-L5 closeout quality repair moved the final three plane-dispatch tests here unchanged:
-private unbriefed-child rollback, stale plane identity refusal without ambient downgrade, and
-unauthorized structural child-role refusal. This keeps all caller-mode dispatch failure evidence
-together while returning `test_structural_agent_tools.py` below the 1,200-line hard limit.
+Ambient versus hosted dispatch identity, role and rollback contracts.
 
 ## Code Commentary
 
-The module keeps the `MCP_SRC` sys.path pin idiom used by the sibling structural suites so the
-worktree package under test is importable regardless of the installed runtime.
+### Logic
 
-The module-level fixtures are copied verbatim from `test_structural_agent_tools.py`: `_config`
-(33) builds an isolated `McpRuntimeConfig` over a temporary root, `_task_doc` (43) constructs
-minimal `TaskDocument` rows, `_write_topology` (57) materializes a real sprint/master/leaf task tree
-(organizational sprint graph + atomic master + leaf), and `_seat` (111) builds a harness catalog
-row for the plane-provenance and rollback cases. The real-path cohort adds three fixtures of its
-own: `_detected` (137) stubs harness detection, `_write_architect_settings` (141) writes a
-settings-owned architect launch selection (`orchestration.roles.architect` → claude /
-claude-fable-5 / max) to the temp root's `system/settings.json` so the real spawn resolves
-settings-owned knobs, and `_FakeHost` (163) records spawns and terminations without ever owning a
-real tmux session.
+Unknown task and role-altitude mismatch refuse before spawn. Missing or broken hosted identity cannot downgrade into ambient dispatch. The real spawn primitive with a host double records an ambient architect and durable brief; persistence failure retires the newly created child through system closure. Unauthorized structural children refuse.
 
-`DispatchAgentAmbientTests` (194) drives `dispatch_agent_tool` directly. The original six
-mock-based tests (moved verbatim from the structural suite):
+### Conventions
 
-- Ambient spawn on the canonical document without hosted env (203) — asserts `status=dispatched`,
-  the `AR_SPAWN_ROLE` env, and `SpawnedBy.caller_kind == "ambient"` with no spawning session.
-- Unknown task reference refuses BEFORE any spawn (237) — `task-document-not-found`, spawn not
-  called.
-- Role-altitude mismatch refuses BEFORE any spawn (256) — `seat-role-altitude-mismatch`, spawn not
-  called; the ambient branch still validates role altitude via `topology.validate_role`.
-- Plane dispatch keeps structural caller provenance (273) — with `AR_HOSTED_SESSION_ID` present,
-  the structural path runs and records `caller_kind == "plane"` with the caller session.
-- Ambient persistence-failure rollback (309) — when the exact initial brief cannot persist and the
-  catalog positively identifies the matching ambient generation as still unbriefed, the
-  just-spawned child is retired as a SYSTEM closure (`retire_entry` with edge
-  `ambient-dispatch-rollback`) and `session_retire_tool` is never called.
-- Ambient brief post without a plane sender (346) — the inbox poster carries no sender id/role and
-  the dispatch-brief row stays exact-pinned to the spawned session.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-The fix-round-3 real-path cohort (8 tests):
+### Invariants And Boundaries
 
-- `resolve_ambient_caller` unit tests (383, 387): plane identity present returns `None`; no plane
-  identity returns `AmbientCaller` — pinning the ambient-first branch decider directly.
-- Real spawn + brief success (394): the REAL spawn primitive and brief post run with the
-  `_FakeHost` substituted host and the `_write_architect_settings`-backed settings (no
-  primitive/brief mocks), proving the ambient path end to end.
-- Real rollback (421): brief persistence failure retires the just-spawned child through
-  `retire_entry` as a system closure; the assertion reads the catalog with
-  `include_terminated=True` and requires exactly one row left, `status="terminated"`, matching the
-  fake host's terminated list — the terminated-row listing after rollback.
-- Recovery failure-branch seams (449, 473, 498, 528): a missing child row or already-terminated row
-  leaves durable brief state unknown and refuses reconciliation without retiring anything;
-  retirement raising or racing (`retire_entry` returning `None`) reports the narrower rollback
-  failure after the matching unbriefed generation was positively identified.
+Only a proven unbriefed child is eligible for rollback. Host doubles create no real tmux session, and fixture launch settings do not override real authority.
 
-The plane caller-mode cohort (3 tests) proves that failed exact-brief persistence retires the
-private child through `dispatch-rollback`, a stale hosted identity cannot downgrade into ambient
-dispatch, and an architect cannot dispatch an unauthorized `system-specialist` child. Each
-fail-closed case asserts that the spawn primitive is not called.
+### Todos
 
-## Invariants And Boundaries
-
-- Tests use fakes, a substituted host, and temporary roots only; no real tmux, daemon, or hosted
-  session is involved.
-- Ambient spawns assert `caller_kind="ambient"` and no spawning session; the plane case asserts
-  `caller_kind="plane"` with the caller session — the provenance distinction L1-R6 requires.
-- Refusal paths assert `spawn.assert_not_called()` so a fail-open regression cannot pass silently.
-- Role-without-hosted-id and hosted-id-without-role each produce `ambient-seat-incomplete` before
-  spawn; neither half-identity may enter ambient dispatch.
-- The rollback case asserts `session_retire_tool.assert_not_called()` — ambient rollback must stay a
-  system closure, never an authority-gated actor retire.
-- The real-path cohort keeps the same temporary-root confinement while exercising the production
-  primitive through the substituted host and a settings-owned architect launch selection.
-- Missing, terminated, mismatched, or otherwise ambiguous catalog evidence never authorizes
-  cleanup; only a faithfully attributed current generation with positive no-brief evidence may be
-  retired by rollback.
-- Durable catalog retirement is the rollback authority; a later observer-log failure cannot revive
-  the generation.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No external domain source governs this repository-local test contract.
-
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite materializes the same real task topology the structural suite uses. | `_write_topology` | mcp/tests/test_dispatch_agent_ambient.py:57-110 |
-| The ambient caller-mode cohort (original six + real-path and receipt/recovery evidence). | `DispatchAgentAmbientTests` | mcp/tests/test_dispatch_agent_ambient.py:194-597 |
-| The real-path fixtures: harness detection stub, settings-owned architect launch selection, and the recording fake host. | `_detected`; `_write_architect_settings`; `_FakeHost` | mcp/tests/test_dispatch_agent_ambient.py:137-140; mcp/tests/test_dispatch_agent_ambient.py:141-162; mcp/tests/test_dispatch_agent_ambient.py:163-193 |
-| Ambient spawn without hosted env records `caller_kind="ambient"` with no session. | `test_ambient_dispatch_spawns_on_the_canonical_document_without_hosted_env` | mcp/tests/test_dispatch_agent_ambient.py:203-236 |
-| Unknown ref and altitude-mismatch refusals fire before any spawn. | `test_ambient_dispatch_refuses_unknown_task_reference_before_spawn`; `test_ambient_dispatch_refuses_role_altitude_mismatch_before_spawn` | mcp/tests/test_dispatch_agent_ambient.py:237-255; mcp/tests/test_dispatch_agent_ambient.py:256-272 |
-| The plane structural path keeps `caller_kind="plane"` provenance. | `test_plane_dispatch_keeps_structural_caller_provenance` | mcp/tests/test_dispatch_agent_ambient.py:273-308 |
-| Brief-persistence failure retires a positively identified unbriefed child as a system closure. | `test_ambient_dispatch_persistence_failure_retires_the_unbriefed_child` | mcp/tests/test_dispatch_agent_ambient.py:309-345 |
-| The ambient brief post carries no plane sender and binds its durable receipt. | `test_ambient_dispatch_persists_the_brief_without_a_plane_sender` | mcp/tests/test_dispatch_agent_ambient.py:346-382 |
-| `resolve_ambient_caller` is unit-tested both ways (plane-present → None; ambient). | `test_resolve_ambient_caller_returns_none_when_plane_identity_is_present`; `test_resolve_ambient_caller_returns_ambient_without_plane_identity` | mcp/tests/test_dispatch_agent_ambient.py:383-386; mcp/tests/test_dispatch_agent_ambient.py:387-393 |
-| The real spawn+brief path runs through the production primitive with a substituted host and settings-owned knobs. | `test_ambient_dispatch_runs_the_real_spawn_and_persists_the_brief` | mcp/tests/test_dispatch_agent_ambient.py:442-467 |
-| Real rollback forces the actual inbox append seam, asserts the terminated-row listing, and keeps observer failure secondary after durable retirement. | `test_ambient_dispatch_rolls_back_via_system_closure_when_brief_persistence_fails`; `test_ambient_dispatch_rollback_preserves_an_observer_log_failure_as_secondary` | mcp/tests/test_dispatch_agent_ambient.py:469-498; mcp/tests/test_dispatch_agent_ambient.py:609-647 |
-| Missing or already-terminal catalog evidence refuses reconciliation; rollback failures are reported only after positive unbriefed-generation proof. | `test_ambient_dispatch_refuses_rollback_when_the_child_row_is_missing`; `test_ambient_dispatch_refuses_rollback_when_the_child_is_already_terminated`; `test_ambient_dispatch_rollback_reports_when_retirement_raises`; `test_ambient_dispatch_rollback_reports_when_retirement_races` | mcp/tests/test_dispatch_agent_ambient.py:500-522; mcp/tests/test_dispatch_agent_ambient.py:524-547; mcp/tests/test_dispatch_agent_ambient.py:549-577; mcp/tests/test_dispatch_agent_ambient.py:579-607 |
-| Plane exact-brief failure retires the private unbriefed child through structural transaction authority. | `test_plane_dispatch_persistence_failure_retires_the_unbriefed_child_privately` | mcp/tests/test_dispatch_agent_ambient.py:649-702 |
-| Broken plane identity and unauthorized child roles refuse before spawn without ambient downgrade. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading`; `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_dispatch_agent_ambient.py:704-721; mcp/tests/test_dispatch_agent_ambient.py:723-744 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Ambient dispatch refuses unknown task reference before spawn. | `test_ambient_dispatch_refuses_unknown_task_reference_before_spawn` | mcp/tests/test_dispatch_agent_ambient.py:206-223 |
+| Ambient dispatch refuses role altitude mismatch before spawn. | `test_ambient_dispatch_refuses_role_altitude_mismatch_before_spawn` | mcp/tests/test_dispatch_agent_ambient.py:225-240 |
+| Role without hosted identity never falls back to ambient dispatch. | `test_role_without_hosted_identity_never_falls_back_to_ambient_dispatch` | mcp/tests/test_dispatch_agent_ambient.py:242-266 |
+| Ambient dispatch runs the real spawn and persists the brief. | `test_ambient_dispatch_runs_the_real_spawn_and_persists_the_brief` | mcp/tests/test_dispatch_agent_ambient.py:268-293 |
+| Ambient dispatch rolls back via system closure when brief persistence fails. | `test_ambient_dispatch_rolls_back_via_system_closure_when_brief_persistence_fails` | mcp/tests/test_dispatch_agent_ambient.py:295-324 |
+| Plane dispatch refuses broken plane identity without downgrading. | `test_plane_dispatch_refuses_broken_plane_identity_without_downgrading` | mcp/tests/test_dispatch_agent_ambient.py:326-343 |
+| Plane dispatch refuses an unauthorized child role. | `test_plane_dispatch_refuses_an_unauthorized_child_role` | mcp/tests/test_dispatch_agent_ambient.py:345-366 |
 
 ## Cross-Repo References
 
-No cross-repository boundary participates in this suite.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-31T10:56+02:00 — 260821-ARSPAWN-L5 closeout quality repair: received the unchanged
   three-test plane dispatch rollback/refusal cohort from `test_structural_agent_tools.py`; this

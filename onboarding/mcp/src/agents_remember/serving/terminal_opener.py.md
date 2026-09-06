@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/terminal_opener.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastUpdated | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
@@ -20,6 +20,8 @@ Opens or reuses hosted occupants and persists their structural task-document-and
 launch mechanics remain plane-owned behind structural dispatch.
 
 ## Code Commentary
+
+The catalog batch spans the complete read, liveness probe, ensure and upsert transaction. A live row returns through `_live_open_result` before any spawn path; its launch provenance cannot be rewritten by reopen. A dead replacement builds a new catalog entry with fresh process control metadata instead of retaining the departed process's session observations. Role/altitude and occupied-seat refusals occur before `host.ensure`. Dashboard and structural dispatch share this opener. cit:([`open_terminal_session`; `_open_terminal_transaction`; `_opened_catalog_entry`], mcp/src/agents_remember/serving/terminal_opener.py:742-795; mcp/src/agents_remember/serving/terminal_opener.py:619-708; mcp/src/agents_remember/serving/terminal_opener.py:525-590).
 
 ### Logic
 
@@ -89,6 +91,8 @@ unavailable lineage returns a typed `OpenTerminalResult` with detail and the
 strict projection; non-structural terminals retain their existing path.
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 - 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair removed the opener-local binding and
   reviewer-parent implementation; the opener now consumes the single `task_binding` authority and
   retains only result translation. Verification remains closeout-owned.

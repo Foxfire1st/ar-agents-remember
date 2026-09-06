@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `scripts/install-python-runtime.sh` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-07T00:34+02:00 |
 | lastVerifiedCommitHash | `eb05a872780112640359232063168639d20fa87b`|
 | lastVerifiedCommitDate | 2026-09-03T06:19:25+02:00|
 | governingOverview | `../overview.md` |
@@ -92,7 +92,6 @@ certification-infrastructure unblocker, and the 2026-09-03T06:20:00+02:00 decisi
 | The official archive is checksum-bound in the canonical contract, downloaded securely, and verified before and after caching. | "https://www.python.org/ftp/python/3.13.15/Python-3.13.15.tar.xz"; "curl --fail --location --proto '=https' --tlsv1.2"; "cached source digest mismatch" | scripts/python-runtime-contract.env:8-9; scripts/install-python-runtime.sh:82-102 |
 | The builder is validated against the pinned commit and the approved source URL/digest before publication. | `validate_builder`; "builder commit mismatch"; "builder definition does not bind the approved source and digest" | scripts/install-python-runtime.sh:107-123 |
 | Staged clone, atomic no-clobber publication, concurrent-winner adoption, and staging cleanup implement the deterministic bootstrap. | `require_reusable_builder`; "mv -T --no-clobber"; `builder_staging` | scripts/install-python-runtime.sh:125-161 |
-| The hermetic contract suite pins this behavior. | `test_runtime_builder_is_fully_cloned_atomically_published_and_reused`; `test_existing_foreign_builder_is_refused_and_preserved`; `test_foreign_builder_publication_race_fails_closed` | mcp/tests/test_python_runtime_contract.py:203-235; mcp/tests/test_python_runtime_contract.py:254-269; mcp/tests/test_python_runtime_contract.py:294-316 |
 
 ## Cross-Repo References
 
@@ -102,7 +101,11 @@ The pinned python-build repository is a build tool input, not a runtime authorit
 | --- | --- | --- |
 | The builder checkout must equal the contract's exact commit and bind the same source URL/digest. | `validate_builder`; "builder commit mismatch"; "builder definition does not bind the approved source and digest" | scripts/install-python-runtime.sh:107-123 |
 
+
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the validated staged builder flow — `validate_builder`/`require_reusable_builder`, full `--no-checkout` clone into a unique staging directory, atomic `mv -T --no-clobber` publication, concurrent-winner adoption, and self-only staging cleanup — replacing the previous inline blobless clone; refreshed line citations for the whole script. Verification metadata rebased from `60e429d1` to the bootstrap repair owning commit.
 

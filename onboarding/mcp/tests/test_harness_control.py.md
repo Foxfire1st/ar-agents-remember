@@ -16,176 +16,38 @@
 
 ## Purpose
 
-Fake-adapter conformance suite for the protocol-neutral harness control contract, serialized
-model/effort setters, reliable whole-message submission, retained reconciliation, terminal surface,
-durable-inbox convergence, and the exact-session private IPC boundary.
+Reusable deterministic fake adapters and private IPC server seams for harness-control checks.
 
 ## Code Commentary
 
 ### Logic
 
-The suite drives exact identity and capability handshakes, normalized snapshots/events, immediate
-and queued acceptance, blocked/settling/completion states, disconnect ambiguity, reconciliation
-without resend, bounded retention, draft custody, and graceful/forced shutdown. IPC scenarios cover
-private endpoint permissions, exact identity, malformed requests, and peer loss after accepted
-dispatch without losing the preserved vendor correlation.
+The fake records launches, submissions, setters, responses and reconciliation requests. It advertises an intentionally empty capability snapshot, can emit snapshots/events, and settles an answered multiplexed interaction from the pending tuple. Completion events carry the original submission operation.
 
-The deterministic fake adapter also implements the normalized `advertise()` method. It returns an
-empty `CapabilitySnapshot`, allowing the shared bridge conformance suite to continue satisfying the
-expanded `HarnessProtocolAdapter` boundary without pretending that this generic fake owns a vendor
-catalog. Vendor-specific discovery and catalog assertions remain in the Claude, Codex, and Pi test
-modules.
-
-The fake implements explicit model/effort methods and records every launch, setter, and prompt
-operation. The scenarios prove one shared FIFO control queue from launch through a setter into
-the following prompt; cancelling a caller while a setter is executing does not terminate that
-queue when the adapter later completes. A truth-table test rejects mismatched requested values,
-illegal acceptance tokens, `echo-verified` without an effective value, accepted results marked
-not-ok, and unknown/unsupported results that falsely claim an effect. Each rejected result leaves
-the runner usable for the next prompt. The unregistered adapter remains explicitly unsupported for
-both setters.
-
-**260731-EFA-L8 (round 11): queued acceptance is deterministic by construction.** The fake
-adapter gates submissions behind `release_submit` / `release_set` asyncio events, so a prompt
-submitted while the setter is still held receives its `queued` receipt BEFORE the release — the
-queue state is constructed by ordering, never by timing heuristics. The rewrite removed
-receive-before-release races: a held submission is returned only after the test releases it, and
-`queued` is asserted while the gate is still closed.
-
-The suite also drives the real local socket and daemon route composition. Duplicate
-request ids are idempotency keys: a retained duplicate returns the first receipt, and a duplicate
-arriving while the first submit is pending waits for that same result; neither path replaces the
-first payload or calls the adapter twice. Reconciliation maps retained immediate/queued receipts to
-accepted, rejected to rejected, and unsupported to unsupported without invoking native
-reconciliation; only genuinely unknown evidence delegates to the adapter. The registration call
-shape is followed: `register_harness_control_routes` now takes one `ConversationRuntime` whose
-`ConversationScope(workspace_root=..., coordination_root=...)` is the immutable scope, alongside
-the harness registry, catalog, `TerminalHost`, liveness clock/config, a `HarnessCapabilityCatalog`,
-and a `LocalOperatorAuthorizationResolver.for_workspace(...)` authorization.
-
-The exact-session IPC cases advertise the normalized snapshot and pass through honest queued and
-unsupported setter results; prompts travel through `submit_control_prompt(entry, text,
-ControlSubmission(source=..., request_id=..., expected_bridge_epoch=...))`, so source, id, and
-epoch are one submission descriptor rather than three loose keywords. A deliberately dropped outer
-response proves the caller keeps the same
-request id as unknown, then recovers the bridge-retained vendor correlation without resend. The
-same loss is driven through `deliver_inbox_entry`, whose call shape is now an
-`InboxDeliveryLog(store=..., entry=...)` plus a `sessions=HostedSessionRuntime(catalog=..., host=...)`
-and the paster: the durable bus moves from unknown to delivered /
-accepted with one adapter call and no paste fallback. The entry it delivers is minted by
-`create_operator_inbox_entry` from `InboxMessage`, `InboxRouting`/`InboxAddress`, and `InboxPoster`
-parameter objects. A concurrent public duplicate test reaches
-the HTTP route, Unix socket, bridge queue, and adapter, proving identical responses and one native
-submission end to end.
-
-Multiplexed sub-agent approval authority cases (R6) round out the suite.
-cit:([`test_subagent_pending_interaction_responds_without_parent_operation`], mcp/tests/test_harness_control_conformance_1.py:437-491) proves an agent
-entry riding the plural `pending_interactions` tuple owns no parent operation, so the
-active-operation guard must not strand it: the response routes to the adapter with no operation
-attached, the answered entry settles out of the plural tuple, and an unknown interaction id is
-still refused (`HarnessInteractionNotPendingError`) without reaching the adapter. The fake
-adapter's `respond` now settles the answered multiplexed entry out of `pending_interactions` too.
-cit:([`test_parent_thread_tuple_entry_gets_the_operation_guard`], mcp/tests/test_harness_control_conformance_1.py:493-551) pins the entry-thread
-parent rule: a concurrent PARENT pending riding the plural tuple (the adapter's per-thread
-pending map makes that normal traffic) gets the active-operation guard exactly like the singular
-slot — answering it operation-free is refused — while the agent tuple entry still answers without
-one. cit:([`test_multiplexed_pending_interactions_serialize_through_every_surface`], mcp/tests/test_harness_control_conformance_1.py:553-612) round-trips the
-plural pending tuple through every wire: `snapshot_json` carries both the singular
-`pendingInteraction` (back-compat) and the additive `pendingInteractions`; the control client
-parses the additive field back and defaults a pre-multiplexing bridge (key absent) to the empty tuple; the
-catalog projection and `TerminalCatalogEntry` JSON round-trip carry
-`controlPendingInteractions`; and an empty multiplex never writes the additive key.
-
-### Conventions
-
-The module uses `unittest.IsolatedAsyncioTestCase`, fixed timestamps and identities, bounded fake
-queues, and deterministic adapter events. Bounds are set through one `BridgeLimits` object —
-`HarnessControlBridge(identity, adapter, limits=BridgeLimits(queue=..., submission=...,
-subscriber_queue=..., transcript=...))` — so the subscriber-coalescing, eviction, unsupported-ledger,
-and transcript-reclamation cases each clamp exactly the dimension they probe. The terminal host is
-constructed as `TerminalHost(TerminalHostSeams(tmux_probe=...))`. Assertions favor whole protocol
-outcomes and loud error messages over transport timing heuristics.
+Blocking submit and setter adapters use explicit asyncio events to hold and release work. The observed server exposes connection completion through a finally-set event. The dropped-response server dispatches the first actual submit, closes its socket before returning the receipt, and delegates subsequent connections normally. Fixed identity, launch and catalog builders keep exact-session inputs consistent.
 
 ### Invariants And Boundaries
 
-- The fake adapter proves the common protocol contract without registering a production driver.
-- Its empty capability advertisement is a structural test double only; it must not be interpreted
-  as a static default catalog or capability-discovery fallback.
-- Launch, model/effort setters, and prompts share one ordered command queue; setter completion or
-  caller cancellation cannot bypass or poison later work.
-- `echo-verified` requires `ok` plus an effective value; `immediate` and `queued` cannot claim one;
-  `unknown` and `unsupported` cannot claim acceptance or effect; no sixth acceptance token is valid.
-- An adapter without registered native setter support returns `unsupported`, never a simulated set.
-- Tests assert bounded-time loud failure rather than allowing stranded awaits.
-- Accepted-dispatch IPC peer loss contains only the documented broken-pipe/reset paths; identity,
-  protocol, validation, dispatch, and unrelated failures remain loud.
-- Ambiguous sends remain reconcilable and are never blindly retried; draft-preservation tests keep
-  surface ownership and whole-message ordering explicit.
-- A caller request id identifies one authoritative payload and one retained result. Pending and
-  completed duplicates cannot replace the text or create a second adapter call.
-- Known receipt reconciliation is local and correlation-preserving; adapter reconciliation is
-  reserved for a bridge-retained `unknown` outcome.
-- Exact-session advertise and setters travel through the private identity-checked endpoint, and
-  durable-bus recovery must converge without invoking terminal paste.
-- Multiplexed sub-agent approvals answer through the authority without a parent operation; the
-  singular parent pending slot stays back-compatible, the plural tuple is additive on every wire,
-  and an empty multiplex never serializes the additive key (R6). Parent-ness follows the entry's
-  own thread: a concurrent parent pending riding the tuple gets the active-operation guard exactly
-  like the singular slot.
-
-### Todos
-
-None.
-
-## Docs References
-
-No Domain Documentation category is configured for this repository, so no live documentation
-source was available for this test-file curation pass.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source was available to cite. | — | — |
+This retained module defines support objects and builders; it contains no collected test functions. Its former family-wide coverage narrative is historical. Helper availability is not evidence that a removed scenario still runs.
 
 ## Repo-Internal References
 
-The test module directly proves the fake-adapter bridge contract; the adapter protocol defines the
-advertisement and setter methods it now satisfies.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The fake adapter implements startup, snapshots, an intentionally empty normalized advertisement, prompt submission, reconciliation observation, and explicit setter results. | `_FakeAdapter` | mcp/tests/test_harness_control.py:113-287 |
-| Shared ordering and cancellation coverage proves launch, setter, and following prompt execute in one FIFO queue that survives a cancelled waiter. | `test_capability_setters_share_launch_set_prompt_queue_order`; `test_cancelled_setter_late_completion_does_not_kill_command_queue` | mcp/tests/test_harness_control_conformance_1.py:65-90; mcp/tests/test_harness_control_conformance_1.py:92-123 |
-| The invalid-result matrix rejects dishonest evidence and arbitrary acceptance strings without poisoning the runner; unregistered adapters remain explicitly unsupported. | `test_bad_set_result_installs_resolvable_unknown_blocker_without_poisoning`; `test_unregistered_adapter_setters_remain_explicitly_unsupported` | mcp/tests/test_harness_control_conformance_1.py:125-166; mcp/tests/test_harness_control_conformance_1.py:168-173 |
-| Pending and retained duplicate ids return the first result and preserve the first payload with one adapter submission; known receipts reconcile locally without a native reconcile call. | `test_duplicate_request_id_returns_retained_result_without_resubmission`; `test_dispatching_duplicate_returns_unknown_without_resubmission`; `test_known_receipts_reconcile_without_native_reconciliation` | mcp/tests/test_harness_control_conformance_2.py:68-100; mcp/tests/test_harness_control_conformance_2.py:102-134; mcp/tests/test_harness_control_conformance_2.py:136-174 |
-| Exact-session IPC advertises and returns honest queued/unsupported setter acceptance through the blocking client. | `test_exact_session_ipc_advertises_and_returns_set_acceptance` | mcp/tests/test_harness_control_ipc.py:148-181 |
-| Outer response loss returns unknown, then retained reconciliation restores accepted state and vendor correlation with one adapter call. | `test_outer_socket_lost_receipt_reconciles_retained_known_truth` | mcp/tests/test_harness_control_ipc.py:183-222 |
-| Durable-inbox redelivery converges from unknown to delivered/accepted through reconcile, makes one adapter submission, and never invokes paste. | `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` | mcp/tests/test_harness_control_ipc.py:224-294 |
-| The public concurrent duplicate case crosses HTTP and real Unix-socket IPC, returns identical correlated responses, and invokes the adapter once. | `test_public_duplicate_returns_retained_result_with_one_adapter_call` | mcp/tests/test_harness_control_ipc.py:296-394 |
-| Private endpoint permission, identity, peer-loss, and malformed-request cases preserve exact-session ownership and loud failure. | `test_peer_timeout_after_submit_preserves_reconciliation_result`; `test_private_endpoint_exact_identity_and_submission`; `test_malformed_ipc_request_is_rejected_without_control_fallback` | mcp/tests/test_harness_control_ipc.py:678-733; mcp/tests/test_harness_control_ipc.py:735-771; mcp/tests/test_harness_control_ipc.py:773-793 |
-| `HarnessProtocolAdapter` requires cached advertisement and model/effort setters alongside startup, snapshot, submit, reconciliation, and shutdown. | `HarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59 |
-| The submission authority behind the queue treats request ids as idempotency keys, refuses a second source/payload under the same id, and converts known receipts into reconciliation truth before considering the native port. | `_pre_admission_receipt_locked`; `reconcile` | mcp/src/agents_remember/serving/harness_submission_authority.py:217-243; mcp/src/agents_remember/serving/harness_submission_authority.py:358-404 |
-| Exact-identity IPC dispatches advertise and setters separately from submit/reconcile while retaining private internal serializers. | `HarnessControlServer`; `_dispatch`; `_advertise`; `_set_model`; `_set_effort`; `_submit`; `_reconcile` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
+| The fake supplies cached state, recording and deterministic events. | "class _FakeAdapter" | mcp/tests/test_harness_control.py:52-229 |
+| Explicit submission hold/release and injected error. | "class _BlockingSubmitAdapter" | mcp/tests/test_harness_control.py:232-246 |
+| Explicit setter hold/release returns queued acceptance. | "class _BlockingSetAdapter" | mcp/tests/test_harness_control.py:249-267 |
+| Connection completion is observable even when dispatch fails. | "class _ObservedHarnessControlServer" | mcp/tests/test_harness_control.py:270-285 |
+| A real first dispatch loses only its outer response. | "class _DropFirstSubmitResponseServer" | mcp/tests/test_harness_control.py:288-309 |
+| The catalog builder derives identity fields from the supplied control identity. | "def _catalog_entry(" | mcp/tests/test_harness_control.py:338-351 |
+
+## Docs References
+
+No external documentation is needed for these source-owned helper facts.
 
 ## Cross-Repo References
 
-No sibling repository is required to prove this protocol-neutral test suite.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Submission Authority Delta
-
-The common control suite now treats one `HarnessSubmissionAuthority` as the prompt/setter timeline.
-It covers ordered terminal outcomes, unknown-setter blockers, no-resend idempotency/reconciliation,
-bounded ambiguity, private status/withdraw, IPC and outer-response loss, durable-source interaction,
-and duplicate raw-free projection. Earlier second-runner queue semantics are historical only.
-
-## Structured Interaction Surface Delta
-
-Harness-control coverage now includes the expanded structured interaction/control surface while preserving exact epoch, request, and transport failure boundaries.
-
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+No separate cross-repository authority is established by this helper module.
 
 ## Update History
 

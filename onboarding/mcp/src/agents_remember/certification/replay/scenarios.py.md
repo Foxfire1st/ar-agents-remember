@@ -48,17 +48,19 @@ No Domain Documentation source is configured for this memory root. The governing
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Every mandatory acceptance scenario is projected over measured evidence only, green/red/not-applicable. | `REPLAY_ACCEPTANCE_SCENARIOS`; `evaluate_all_replay_scenarios` | mcp/src/agents_remember/certification/replay/scenarios.py:34-174; mcp/src/agents_remember/certification/replay/scenarios.py:188-192 |
+| The replay scenario catalog records each required scenario and its expected views. | "REPLAY_ACCEPTANCE_SCENARIOS: tuple[ReplayScenarioExpectation, ...] = (" | mcp/src/agents_remember/certification/replay/scenarios.py:32-172 |
+| Every mandatory replay scenario is evaluated against measured evidence in declared order. | "def evaluate_all_replay_scenarios" | mcp/src/agents_remember/certification/replay/scenarios.py:186-190 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Scenarios consume the measured evidence envelope and rail placement vocabulary. | `ReplayScenarioEvidence`; `RunMeasurement`; `ReplayRailPlacement`; `ReplayProfileSnapshot` | mcp/src/agents_remember/certification/replay/models.py:362-385; mcp/src/agents_remember/certification/replay/models.py:255-286; mcp/src/agents_remember/certification/replay/models.py:313-340; mcp/src/agents_remember/certification/replay/models.py:350-359 |
-| Findings reuse the shared typed certification finding contract. | `CertificationContractFinding`; `RailIdentity` | mcp/src/agents_remember/certification/models.py:59-65; mcp/src/agents_remember/certification/models.py:169-172 |
+| Certification contract findings carry typed refusal details. | "class CertificationContractFinding" | mcp/src/agents_remember/certification/models.py:146-149 |
+| Rail identity binds an exact gate and rail identifier. | "class RailIdentity" | mcp/src/agents_remember/models/certification/base.py:36-42 |
 | Unknown scenario ids raise the shared certification contract error. | `CertificationContractError` | mcp/src/agents_remember/errors.py:22-31 |
 | The comparison builder evaluates all scenarios over measured evidence. | `evaluate_all_replay_scenarios` | mcp/src/agents_remember/certification/replay/compare.py:72-96 |
-| The public subpackage facade re-exports the scenario surface. | `__all__`; `REPLAY_ACCEPTANCE_SCENARIOS`; `evaluate_all_replay_scenarios`; `evaluate_replay_scenario` | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |
+| The facade exports replay scenarios and their evaluators alongside shared replay contracts. | "__all__ = [" | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |
 
 ## Cross-Repo References
 

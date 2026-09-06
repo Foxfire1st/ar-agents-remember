@@ -74,23 +74,23 @@
       "AR_QUALITY_PROGRESS_REPORT",
       "passed: true",
       "totals",
-      "AR_DASHBOARD_DIFF_COVERAGE_FLOOR",
       "coverage.total",
       "system/sources.md",
       "measureDiffCoverage",
       "include",
       "setupFiles",
+      "245057ab16e19afdaabd5c188c9576b22e0c0870",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "cf5ef50",
       "dashboard/scripts/require-dagger-test-environment.mjs",
       "dashboard/scripts/check-diff-coverage.mjs",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T07",
+      "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T06",
-      "governingOverview"
+      "T06"
     ]
   },
   "fallback": {

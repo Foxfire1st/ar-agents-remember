@@ -5,71 +5,80 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_single_owner_primitives.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Tests for git, atomic-publish, and task-document writer fitness functions.
+Uses small Python input programs to exercise single-writer detectors. It follows import aliases and constant program names, reads the program word from shell command strings, distinguishes gh from git, recognizes module and direct-import calls, and avoids confusing dataclasses.replace or unrelated names with the protected writer. It is detector behavior, not a repeated repository census.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
-
-`TaskDocumentWriterCensusTests` plants every supported spelling of the new cross-root
-`write_task_doc_batch` call—direct/renamed import, module alias, and relative import—and requires
-the census to report the canonical API name. These join the existing writer cases without weakening
-the false-positive boundary for re-exports or unrelated local names.
-
-- `_git` (function, lines 26-31) — What the git rule reports for ``source``, as ``line [form]`` strings.
-- `_replace` (function, lines 34-39) — What the atomic-write rule reports for ``source``.
-- `_task_writers` (function, lines 42-47) — What the task-document writer census reports for one module.
-- `SingleOwnerPrimitiveTests` (class, lines 50-114) — The armed checks run in the ordinary suite, so they run wherever it does.
-- `GitSweepReachTests` (class, lines 118-206) — Every bypass the git rule claims to catch, planted and required to be caught.
-- `GitSweepFalsePositiveTests` (class, lines 210-293) — Known-good constructs the package really contains. None of these may be reported.
-- `ReplaceSweepReachTests` (class, lines 297-316) — Every way to reach the replace syscall, planted and required to be caught.
-- `ReplaceSweepFalsePositiveTests` (class, lines 320-350) — The 83 near neighbours measured in the package. None of these may be reported.
-- `TaskDocumentWriterCensusTests` (class, lines 353-396) — The production-writer census follows the import forms a new caller can use.
-- `OffenderReportTests` (class, lines 400-421) — L6-R15: the message names every offender and the fix, or the check is unusable.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_git` (lines 26-31) — What the git rule reports for ``source``, as ``line [form]`` strings.. | `_git` | mcp/tests/test_single_owner_primitives.py:26-31 |
-| Defines the function `_replace` (lines 34-39) — What the atomic-write rule reports for ``source``.. | `_replace` | mcp/tests/test_single_owner_primitives.py:34-39 |
-| Defines the function `_task_writers` (lines 42-47) — What the task-document writer census reports for one module.. | `_task_writers` | mcp/tests/test_single_owner_primitives.py:42-47 |
-| Defines the class `SingleOwnerPrimitiveTests` (lines 50-114) — The armed checks run in the ordinary suite, so they run wherever it does.. | `SingleOwnerPrimitiveTests` | mcp/tests/test_single_owner_primitives.py:50-114 |
-| Defines the class `GitSweepReachTests` (lines 118-206) — Every bypass the git rule claims to catch, planted and required to be caught.. | `GitSweepReachTests` | mcp/tests/test_single_owner_primitives.py:118-206 |
-| Defines the class `GitSweepFalsePositiveTests` (lines 210-293) — Known-good constructs the package really contains. None of these may be reported.. | `GitSweepFalsePositiveTests` | mcp/tests/test_single_owner_primitives.py:210-293 |
-| Defines the class `ReplaceSweepReachTests` (lines 297-316) — Every way to reach the replace syscall, planted and required to be caught.. | `ReplaceSweepReachTests` | mcp/tests/test_single_owner_primitives.py:297-316 |
-| Defines the class `ReplaceSweepFalsePositiveTests` (lines 320-350) — The 83 near neighbours measured in the package. None of these may be reported.. | `ReplaceSweepFalsePositiveTests` | mcp/tests/test_single_owner_primitives.py:320-350 |
-| Defines the class `TaskDocumentWriterCensusTests` (lines 353-396) — The production-writer census follows the import forms a new caller can use.. | `TaskDocumentWriterCensusTests` | mcp/tests/test_single_owner_primitives.py:353-396 |
-| Defines the class `OffenderReportTests` (lines 400-421) — L6-R15: the message names every offender and the fix, or the check is unusable.. | `OffenderReportTests` | mcp/tests/test_single_owner_primitives.py:400-421 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| An import alias is followed to the name it binds | `test_an_import_alias_is_followed_to_the_name_it_binds` | mcp/tests/test_single_owner_primitives.py:47-49 |
+| A program name hidden behind a constant is resolved | `test_a_program_name_hidden_behind_a_constant_is_resolved` | mcp/tests/test_single_owner_primitives.py:51-57 |
+| A shell command string is read down to its program word | `test_a_shell_command_string_is_read_down_to_its_program_word` | mcp/tests/test_single_owner_primitives.py:59-61 |
+| Gh is not git | `test_gh_is_not_git` | mcp/tests/test_single_owner_primitives.py:68-79 |
+| The module attribute form is caught | `test_the_module_attribute_form_is_caught` | mcp/tests/test_single_owner_primitives.py:86-87 |
+| A bare replace from dataclasses is not the one from os | `test_a_bare_replace_from_dataclasses_is_not_the_one_from_os` | mcp/tests/test_single_owner_primitives.py:94-98 |
+| Direct imports and aliases are caught | `test_direct_imports_and_aliases_are_caught` | mcp/tests/test_single_owner_primitives.py:104-123 |
+| Reexport without a call and unrelated local names are not callers | `test_reexport_without_a_call_and_unrelated_local_names_are_not_callers` | mcp/tests/test_single_owner_primitives.py:125-129 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-28T06:40+02:00 — No content impact: moved the single-owner verification import into
   `agents_remember_test_support`; the primitive ownership census remains unchanged.

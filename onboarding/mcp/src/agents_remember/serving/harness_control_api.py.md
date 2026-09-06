@@ -64,8 +64,8 @@ declares it unmodified.
 
 None of this validates at runtime — every handler here returns a `JSONResponse` built by `_ok`
 or a failure responder, and FastAPI applies `response_model` only to values it serializes
-itself. The declarations are the contract; `mcp/tests/test_serving_response_conformance.py`
-drives each route and validates the real body against them under `extra="forbid"`. In
+itself. The declarations remain the contract. The former route-conformance suite was retired;
+no present route-validation pass is implied by those declarations. In
 particular, `PublicReceiptWire` / `PublicReconciliationWire` now *declare* the raw-free public
 shape the Invariants below already required — an adapter-private `raw` key reaching the wire is
 a conformance failure, not just a review finding.
@@ -170,12 +170,12 @@ boundaries rather than duplicating their policy.
 | The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:234-234 |
 | The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals. | "SESSION_CONTROL_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1113-1120 |
 | The submit-specific pre-dispatch refusal carries retry-safe and stage evidence for zero socket-byte delivery. | "class PreDispatchFailureRefusal(" | mcp/src/agents_remember/serving/response_contract.py:162-168 |
-| The suite that enforces the declarations by driving every route and validating the real body. | `test_harness_control_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:265-407 |
-| Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | `test_pre_session_capabilities_freeze_envelope_and_refresh` | mcp/tests/test_serving_harness_control_api.py:129-147 |
+
+
 | The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
 | The immutable runtime authority and scope types this registration constructs. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
 | The server-resolved local-operator resolver bound into the runtime. | `LocalOperatorAuthorizationResolver` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
-| The foundation suite pins this file as the sole global conversation registration seam. | `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:110-122 |
+
 
 ## Cross-Repo References
 

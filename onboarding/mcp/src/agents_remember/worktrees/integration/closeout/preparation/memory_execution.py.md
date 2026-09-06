@@ -26,7 +26,7 @@ The candidate is derived from the current handoff, fresh physical code view and 
 
 ### Conventions
 
-Use the named source owners directly. This card describes the current uncommitted implementation; commit-based verification remains pending.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
 
 ### Invariants And Boundaries
 

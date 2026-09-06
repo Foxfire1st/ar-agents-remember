@@ -5,111 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T15:20+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
 | lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Behavioral test suite for the L16 direct-execution machinery (L16-R6/R7/R8/R9): the direct
-landing operation (`worktrees/direct_landing.py`) and the branch-addressed route-review binding
-(`application/task_doc_route_review.py`). Drives real scratch git repos, series contracts, and a
-real external-memory checkout + ledger.
+Existing-code direct landing with memory content and ledger publication.
 
 ## Code Commentary
 
 ### Logic
 
-`_scratch_config` builds a policy-enabled `McpRuntimeConfig`; `_series_fixture` creates a code
-repo + series contract (+ memory repo) fixture. `DirectLandingTests` prove the policy gate, leaf
-contract refusal, code-commit-verification-then-ledger landing, the moved-candidate pre-commit
-refusal, and the intent-note requirement. `DirectLandingBranchTests` covers the branch-addressed
-refusal branches: blank code commit, contract changed under the lock (TOCTOU), unresolvable commit
-tree, preview with internal memory (omitted messages become typed not-applicable), preview refusing external memory without
-authority paths, invalid ledger, apply with internal memory, missing memory paths, memory branch
-mismatch, idempotent re-land with a matching memory commit, conflicting ledger mapping refusal, and
-unreachable ledger commit refusal. `BranchAddressedRouteReviewTests` prove the branch-addressed
-`record_route_review` stamp equals the series branch HEAD tree, its policy gate, the missing
-binding recovery dialect, the blank-leaf-id naming, `branch_addressed` only for
-`record_route_review`, the bound-form success, and the closeout declare refusal naming the direct
-landing alternative.
+A foreign requested code commit refuses before dereference. Preview reports would-land without changing any file. Apply verifies the current series HEAD, creates separate memory-content and ledger commits and records the exact code/memory mapping.
 
 ### Conventions
 
-Uses the same scratch-repo harness as `test_seat_independent_execution.py` and the worktree test
-family; assertions target the exact typed statuses, not message substrings.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Every refusal path is asserted by its typed `status`; idempotent re-land and the ledger-conflict
-  branch are covered (no coverage note remains open for this suite).
-- Internal-memory preview omits memory/ledger messages and exposes both legs as typed
-  not-applicable. Non-preview direct landing then refuses the currently unsupported internal-memory
-  mutation before memory/ledger Git; it does not synthesize messages.
-- Tests never mutate a real coordination root.
+The local wrapper exercises below the independently owned scheduling fence. This case does not imply route-review acceptance, creation of a new code commit or permission to bypass production admission.
 
 ### Todos
 
-None recorded.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The direct landing policy gate and leaf refusal. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts` | mcp/tests/test_direct_landing.py:189-210; mcp/tests/test_direct_landing.py:212-232 |
-| Code-commit verification then ledger/memory commit. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:195-265 |
-| Pre-commit gate refuses a moved candidate tree. | `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:315-339 |
-| Internal-memory preview accepts omitted N/A messages; apply refuses the unsupported mutation boundary. | `test_preview_with_internal_memory_reports_mode`; `test_apply_with_internal_memory_is_refused` | mcp/tests/test_direct_landing.py:482-504; mcp/tests/test_direct_landing.py:573-593 |
-| Exact-current re-land is idempotent, while a historical same-code mapping is superseded by a recovered memory-only change without losing history. | `test_reland_with_matching_memory_commit_is_idempotent`; `test_historical_mapping_is_superseded_by_recovered_memory_only_change` | mcp/tests/test_direct_landing.py:648-683; mcp/tests/test_direct_landing_operation_recovery.py:728-753 |
-| Branch-addressed route-review stamp equals branch HEAD tree. | `test_record_route_review_branch_addressed_stamps_branch_head` | mcp/tests/test_direct_landing.py:786-824 |
-| The operation under test. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
+| Direct landing verifies code commit then ledger. | `test_direct_landing_verifies_code_commit_then_ledger` | mcp/tests/test_direct_landing.py:164-243 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies.
-
-## 260821-CLIVE-L1 Direct-Landing Migration
-
-External-memory landing calls that reach enabled message validation provide explicit memory and
-ledger messages required by the shared direct-landing input contract. Internal-memory preview/apply cases omit those
-messages because both legs are typed not-applicable; preview returns that plan, while apply refuses
-the unsupported mutation boundary before Git. The suite's route-review and landing behavior
-remains, but any former “atomic” characterization is retired: the lock serializes the two
-sequential external-memory commits and does not supply rollback or crash recovery.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. The L2 additions force the root-journal generation, ordered memory/ledger mutation evidence, configured-contract reread, crash reconciliation, and same-generation recovery. Older statements that durable recovery is absent are superseded.
-
-### Reconciled Source Evidence
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_direct_landing_is_policy_gated`, `test_direct_landing_refuses_leaf_contracts`, `test_direct_landing_verifies_code_commit_then_ledger`, `test_direct_landing_precommit_gate_refuses_moved_candidate`. | `test_direct_landing_is_policy_gated`; `test_direct_landing_refuses_leaf_contracts`; `test_direct_landing_verifies_code_commit_then_ledger`; `test_direct_landing_precommit_gate_refuses_moved_candidate` | mcp/tests/test_direct_landing.py:189-210; mcp/tests/test_direct_landing.py:212-232; mcp/tests/test_direct_landing.py:234-313; mcp/tests/test_direct_landing.py:315-339 |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
-## 260821-DAGQC-L2 Closed Result Model Proof
-
-Direct-landing preview and landed cases now pass through the strict response model and prove their
-top-level states remain `would-land` and `landed`; journal progress is not accepted as a substitute
-outcome.
-
-
-## PDLS Reconciliation
-
-Direct-landing public tests now assert the attached durable lifecycle projection and explicit recovery route.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-26T15:20+02:00 — Replaced the obsolete conflicting-mapping refusal claim with the
   current ledger-history contract: exact-current re-land is idempotent, while a historical

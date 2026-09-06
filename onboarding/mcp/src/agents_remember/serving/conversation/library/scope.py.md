@@ -66,9 +66,9 @@ route regression is pinned at the ASGI layer.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical scope defaults to the root, narrows inside it, and rejects traversal/symlink/cross-scope escapes. | `test_canonical_scope_defaults_to_root`, `test_canonical_scope_narrows_inside_root`, `test_canonical_scope_rejects_traversal_symlink_and_cross_scope` | mcp/tests/test_conversation_library_cursor.py:137-141; mcp/tests/test_conversation_library_cursor.py:144-150; mcp/tests/test_conversation_library_cursor.py:153-171 |
-| A null-byte cwd maps to the typed 403 scope refusal on the production route. | `test_list_route_maps_null_byte_cwd_to_typed_refusal` | mcp/tests/test_conversation_library_api.py:387-396 |
-| The query digest binds harness, scope, and sort into every minted scope. | `test_query_digest_binds_harness_scope_and_sort` | mcp/tests/test_conversation_library_cursor.py:131-134 |
+| Canonical library scope confines the requested path and refuses invalid or escaping input. | `canonical_library_scope` | mcp/src/agents_remember/serving/conversation/library/scope.py:30-71 |
+| Canonical library scope confines the requested path and refuses invalid or escaping input. | `canonical_library_scope` | mcp/src/agents_remember/serving/conversation/library/scope.py:30-71 |
+| The query digest binds harness, canonical scope and sort. | `query_digest` | mcp/src/agents_remember/serving/conversation/library/scope.py:74-87 |
 
 ## Cross-Repo References
 

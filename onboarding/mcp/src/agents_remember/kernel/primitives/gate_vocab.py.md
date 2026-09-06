@@ -50,7 +50,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Structural gate models import the producer-owned vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/structural/gates.py:15-20 |
-| Vocabulary edge coverage rides the structural-coverage suite. | `test_gate_vocabulary_errors` | mcp/tests/test_leaf_structural_coverage.py:198-198 |
+| Gate kind coercion is the production vocabulary boundary. | `coerce_gate_kind` | mcp/src/agents_remember/kernel/primitives/gate_vocab.py:45-49 |
 
 ## Cross-Repo References
 

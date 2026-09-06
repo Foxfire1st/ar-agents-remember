@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:58:25+00:00 |
+| lastUpdated | 2026-09-06T21:46:26+00:00 |
 | lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
@@ -21,6 +21,8 @@ Recognizes the selected generation's physically proven code commit while preserv
 ## Code Commentary
 
 ### Logic
+
+`_require_original_code_proof` validates the retained mutation journal and the current physical commit before comparison. `_require_original_prestate` requires both accepted and pre-command snapshots to match the original staged candidate. The outer owner then permits only the exact code-output authority movement.
 
 A successful code commit changes the checkout HEAD and its leaf lineage tip without changing the certified candidate tree. `require_retained_output_currentness` accepts that change only for retained same-generation recovery with a `commit-proven` code mutation, complete accepted/before/observed snapshots, the matching recovery commit, exact repository and original expected output tree.
 
@@ -52,7 +54,7 @@ The configured Domain Documentation registry has no entries. The source below es
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The complete proof and closed authority comparison recognize only the selected code output. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:24-108 |
+| The complete proof and closed authority comparison recognize only the selected code output. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:28-77 |
 
 ## Cross-Repo References
 
@@ -63,5 +65,7 @@ No cross-repository implementation or external protocol is owned here.
 | --- | --- | --- |
 | No separately configured cross-repository source is used for this card. | — | — |
 ## Update History
+
+- 2026-09-06T21:46:26+00:00 — Reconciled landed IAS helper ownership and current production composition; refreshed source anchors while preserving verification pins and historical evidence. No certification or delivery is asserted.
 
 - 2026-09-06T14:58:25+00:00 — Created after full source review at `c69d5171187fa1957025e393270db9f5a864ab14`. Records current implementation and remaining composition boundaries; source verification is not gate execution, delivery or acceptance.

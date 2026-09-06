@@ -5,149 +5,77 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-30T17:08:05+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
 | lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
-| governingOverview      | `overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_tools.py` verifies public MCP tool payloads, server registration, and
-application-to-service behavior.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. These cases establish payload behavior with controlled configuration, not a full server-registration or live-provider suite.
 
 ## Code Commentary
 
-L23 adds `citation_fix` to the asserted public MCP tool set, preventing guarded citation repair from disappearing from registration.
+### Logic
 
-The test suite covers core server payloads, FastMCP server construction,
-context-packet delegation, runtime install payload authority, public tool
-surface expectations (which no longer list `direct_closeout_preview`/`apply`
-after the issue #62 worktree-only removal), skills install behavior, route
-index refresh, memory quality exposure, provider status and watcher
-current-state reporting, typed GrepAI and CodeGraphContext command
-construction, worktree tool behavior, and Codex benchmark execution policy
-reporting.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-ARSPAWN-L4 makes the core `server_info` fixture explicit: it supplies a fixed
-`ServingBuildPayload` derived from a fixed `ServingBuild` and asserts the complete serialized
-candidate identity beside the exact `PUBLIC_TOOLS` list. The builder no longer derives candidate
-identity from a version string or request-time probe.
+### Conventions
 
-After the response-contract wiring, tests also protect that modeled payloads
-carry populated token metadata — `test_ping_payload` asserts a real `tokens`
-count (> 0), `tokenizer == "tiktoken:o200k_base"`, and `tokenCountExact is True`
-since the S6 token-counter wiring — and that service-backed MCP tools do not
-expose legacy command-capture wrapper fields such as raw `argv`, `stdout`,
-`stderr`, or parsed `payload` wrappers. The `test_ping_payload` version check no
-longer pins a literal string; it asserts `payload["version"] == SERVER_VERSION`
-(imported from `agents_remember.mcp`) so the test tracks the package version
-instead of a hardcoded release number.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
-The typed CGC assertions keep the old generic `cgc_query` name absent and
-verify fixed command construction for symbol search, callers, callees,
-dependencies (`analyze deps <module>`), and complexity. GrepAI assertions keep workspace/project
-selection tied to MCP configuration and keep trace action validation explicit.
-A regression case configures an uppercase repo id (`Cobalt`) and asserts that
-`grepai_search` emits `--project cobalt` and accepts the id in any casing, so the
-tool's `--project` matches the watcher's `stable_provider_id`-normalized project.
+### Invariants And Boundaries
 
-This file no longer carries the Docker-mode provider-runner-integrity
-regressions (the three `test_provider_integrity_ignores_*` cases and their
-`check_provider_runner_integrity` / `manifest_path_for_config` imports were
-removed); that integrity coverage now lives elsewhere.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-Payload tests track the act-by-default `dry_run` contract: the `skills_install`,
-`route_index_refresh`, and `memory_init` payload tests assert apply-by-default
-(`dryRun` is false), while the typed CGC and GrepAI command-construction tests pass
-`scope=DRY_RUN_SCOPE` per call (the module-level `ProviderQueryScope(dry_run=True)`)
-because the planned provider command is only exposed in the preview path.
+### Todos
 
-Provider and application entry point payload builders are addressed through parameter objects rather
-than loose keywords: GrepAI search/trace take a `GrepaiSearchQuery` / `GrepaiTraceQuery`
-plus an optional `repos=GrepaiRepoScope(...)` and `scope=ProviderQueryScope(...)`,
-`memory_carryover_plan_payload` takes a `CarryoverSelection`, and
-`codex_benchmark_run_payload` takes a `CodexBenchmarkRun`. The validation cases still
-assert the same messages (`unknown repo_ids`, `repo_ids is required`, `trace_action`,
-`depth`) — only the argument spelling moved.
+No additional implementation scope is opened by this memory reconciliation.
 
-Newer cases assert that every public tool registers a human-facing description,
-and that `runtime_install_payload` exposes a `no_cache` parameter defaulting to
-`False` and forwards `no_cache=True` into the `RuntimeInstallRequest`.
+## Docs References
 
-Task 10 extends `test_phase_04_tools_are_reported` with the three
-`operator_inbox_*` tools so the external-chat inbox surface is pinned in
-`PUBLIC_TOOLS`; `test_every_public_tool_has_a_description` also covers their
-FastMCP docstrings through the server tool list.
-
-Task 25 changes the public-tool surface expectation: `lifecycle_gate` is included
-as the unified gate junction, while `lifecycle_block`, `gate_create`, `gate_wait`,
-and `gate_response_wait` are explicitly asserted absent from `PUBLIC_TOOLS`.
-
-L9 extends that public-tool surface expectation with `attach_terminal_session_to_leaf`, the agent-facing
-tool for moving an existing hosted terminal/chat session between durable leaves through the dashboard
-catalog. L2 extends it further with `spawn_agent_session`, the agent-facing session-dispatch tool, so the
-expected `PUBLIC_TOOLS` subset pins both terminal-catalog tools.
-
-The Codex benchmark policy coverage now treats `"default"`/`"omitted"` as the
-fixed (no-sandbox-argument) reporting and asserts the explicit
-`danger-full-access` request separately. `test_codex_benchmark_tools_refuse_when_disabled`
-adds a guard case: when `benchmarksEnabled` is `False`, both
-`codex_benchmark_run_payload` and `codex_benchmark_prepare_payload` return
-`ok is False` with the matching `operation` and a `disabled` error.
-
-## Invariants And Boundaries
-
-- Public MCP tools should remain typed and package-owned.
-- Payload tests should protect stable domain payloads and model defaults, not
-  command-capture implementation artifacts.
-- Real MCP stdio integration remains gated behind
-  `AGENTS_REMEMBER_REAL_MCP_CONFIG` so normal unit runs stay hermetic; `RealMcpIntegrationTests`
-  also carries `@pytest.mark.agents_remember_real_mcp_config` so the environment-gated class can be
-  selected or deselected by marker under the strict-markers pytest config.
-- The real-MCP GrepAI assertion derives its expected `--workspace` from the same
-  `grepai_workspace(load_config(...))` call the server uses, never a literal workspace name: once
-  provider instances became scoped, `scoped_name` appends the instance id, so a hardcoded name is
-  no longer anyone's workspace and would make the (rarely run) integration check vacuous.
-- Provider lifecycle MCP tests should keep provider operations on typed service
-  functions instead of CLI `main(argv)` wrappers.
-
-## Repo-Internal References
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public tool metadata and payload builders live in the `mcp/tools/` package (split by domain behind a facade `__init__.py`). | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
-| Public response model registry validates payload shapes. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
-| Server registration lives in `server.py`. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| Application-layer modules convert public MCP payloads into service calls. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
-| Provider current-state reporting lives in the current-state module and is exposed by provider watcher status payloads. | `build_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36 |
-| The agent-facing control surface exposes only structural dispatch, parent/child messaging, lifecycle gates, and role-relative administration. | "test_agent_control_surface_exposes_only_structural_addresses" | mcp/tests/test_tools.py:156-221 |
-| Exact-session administrative tools, including inbox rows, task attachment, raw spawn, retire, and rename, are explicitly absent from the public agent roster. | "for retired in (" | mcp/tests/test_tools.py:438-438 |
+| No external domain claim is required. | N/A | N/A |
 
-## 260712-TRH-L4 Final Candidate
+## Repo-Internal References
 
-This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
-## 260718-CHATS-L5I Incremental Commit-Gate Delta
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:50-59 |
+| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:61-106 |
+| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:108-143 |
+| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:145-155 |
+| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:157-185 |
 
-The closeout-description regression loads the real MCP server and asserts both public tools name
-mandatory CRAP enforcement. Preview must say it runs before the code commit; apply must say it runs
-before any code mutation and that approval precedes apply.
+## Cross-Repo References
 
-## L23 Runtime Package Review
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-The suite imports `RuntimeInstallRequest` from `application.runtime.install`, matching the runtime
-package extraction. Runtime-install payload and tool-adapter assertions are unchanged.
-
-## 260815-DAG-L3 Public Tool Presence
-
-The public tool census now requires `closeout_queue`, preventing registration/export drift from
-silently removing the scheduler surface while its implementation remains in the package.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: the unit fixture now passes the strict
   payload expected by the transport-thin builder. Verification remains closeout-owned.

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/actions.test.ts`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
+| lastUpdated | 2026-09-07T00:34+02:00 |
 | lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
 | lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview | `overview.md` |
@@ -49,7 +49,6 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Client under test. | "export type GateDecisionStatus" | dashboard/src/data/actions.ts:7-7 |
-| Serving tests cover the backend action route. | `AppTests` | mcp/tests/test_serving.py:480-554 |
 | Targetless actionable drift dismissal omits `target` while still carrying `itemId` and `kind`. | "distinguishes stale gates from missing open gates" | dashboard/src/data/actions.test.ts:51-64 |
 
 ## Cross-Repo References
@@ -61,7 +60,11 @@ cross-repository implementation source that governs its behavior.
 | --- | --- | --- |
 | No applicable cross-repository source was found. | — | — |
 
+
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

@@ -5,67 +5,66 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_author_execution_graph.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
 | lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests/overview.md](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Force the incremental `author_execution_graph` operation (260815-DAG-L11 R5/R6/R8): typed
-structural mutation batches over a sprint's executionGraph with judgment provenance,
-partition refusals, dry-run preview, and atomic publication — since 260815-DAG-L13 including the
-graph-less bootstrap seam (the first `add_node` batch creates the graph, reported as
-`bootstrapped: true`). Split from
-`test_task_execution_topology.py` under the file-size rail; fixtures and shared helpers are
-imported from it.
+Incremental execution-graph authoring through the public task-document operation.
 
 ## Code Commentary
 
 ### Logic
 
-`ExecutionGraphAuthoringTests` builds a migrated segmented sprint, then forces: the
-non-orchestration refusal; the graph-less bootstrap (first `add_node` batch creates the graph,
-final validation requires exact `orchestrates` membership and an explicit nature for every
-commanded master, with `set_nature` in the same batch covering a nature-less document); judgment provenance (missing `judgmentId` on a
-judgment-bearing mutation, a missing Judgment Register section as a typed refusal naming the
-section, unknown register rows, non-strategist/orchestrator authors, malformed registers, and
-lump-only batches needing no register); dry-run previews that write nothing followed by apply
-publication; batch atomicity leaving every document untouched on failure; unknown/incomplete
-partition refusals; segment-on-atomic and uncommanded `set_nature` refusals; `set_nature` master
-rewrite; remove-node in-use/ambiguity/unknown-leaf handling; edge endpoint resolution errors
-(blank reason, self, duplicate, unknown) plus the remove-edge happy path; `move_leaf` moving,
-placing an unplaced leaf, and refusing emptied or unknown-target segments; numbering hints
-reported and never refusing; and registration/documentation of the operation.
+The retained successful batch replaces a master node with two segments and adds a provenance-bearing edge. Dry run preserves the entire document snapshot; apply persists typed nodes, derived waves and rendered navigation. A duplicate-node batch refuses atomically without changing any document.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Tests construct only disposable coordination roots; unpublished candidate code never writes the
-  deployed coordinator.
-- The suite asserts behavior through the public `task_doc` application entry point instead of
-  duplicating the authoring algorithm.
+Disposable coordination roots isolate publication. Do not attribute the removed graph-bootstrap, role-validation or edge-error matrix to these two cases.
 
-## Repo-Internal References
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The authoring forcing suite. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982 |
-| The production operation under test. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
-| Fixtures and shared helpers are imported from the topology suite. | `_config`; `_master`; `_graph` | mcp/tests/test_task_execution_topology.py:51-99 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## 260815-DAG-L15 Gate-Repair Judgment Provenance
+## Repo-Internal References
 
-The gate-repair round updated `test_judgment_provenance_is_enforced`: a judgmentless `add_edge`
-now asserts the typed `task-execution-graph-judgment-required` refusal (the F5 behavior —
-judgmentId optional at parse, statically-required typed refusal) instead of the old raw pydantic
-wrap "invalid execution-graph authoring". The judgment-unknown and judgment-author-refused
-assertions are unchanged.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Dry run previews and writes nothing then apply publishes. | `test_dry_run_previews_and_writes_nothing_then_apply_publishes` | mcp/tests/test_author_execution_graph.py:130-191 |
+| Batch atomicity leaves everything untouched on failure. | `test_batch_atomicity_leaves_everything_untouched_on_failure` | mcp/tests/test_author_execution_graph.py:193-215 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
 

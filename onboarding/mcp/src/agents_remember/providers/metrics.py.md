@@ -233,12 +233,12 @@ each docker call.
 | `run_command` / `docker_command` seams the sampler runs through. | `timeout_command_result` | mcp/src/agents_remember/providers/lifecycle/command_runner.py:58-74 |
 | The serving daemon's lifespan runs the 30s sampling loop into this store. | "async def _metrics_loop(config: McpRuntimeConfig" | mcp/src/agents_remember/serving/_app_lifespan.py:73-73 |
 | `provider_status_packet` attaches `read_current()` to the status packet. | `provider_status_packet` | mcp/src/agents_remember/providers/status.py:53-87 |
-| Containment tests pin the parsers, the sampler paths (incl. dockerless), and the store's torn-line tolerance. | `MetricsTests` | mcp/tests/test_provider_containment.py:318-450 |
+
 | The seed catch-up stage records index-state rows through `_record_index_state`. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
 | `ar-durable-store/1.0` itself: `exclusive_access`, `append_line`, `rewrite_lines`, `SCHEMA_VERSION`, `schema_version_supported` and the `StoreOwnership` record `PROVIDER_METRICS_OWNERSHIP` instantiates. Cited by symbol: this file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | `DURABLE_STORE_CONTRACT` | mcp/src/agents_remember/controlplane/durable_store.py:43-43 |
 | The MCP-side appender that makes this a two-process store (`_record_index_state`). | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
-| The durability suite for this store and its sibling: R10 no-record-lost under real processes, R14 the harness proven able to fail against a `git archive` of the base commit, R8 the tolerant-read policy, R2 the ownership decisions as assertions. Its docstring is also where the base-commit figures are explicitly disclaimed as unreproducible. | `ProviderStoreDurabilityTests`, `ProviderReadPolicyTests`, `ProviderOwnershipTests`, `ProviderReclaimShapeTests` | mcp/tests/test_provider_store_durability.py:280-351; mcp/tests/test_provider_store_durability.py:391-571; mcp/tests/test_provider_store_durability.py:630-723; mcp/tests/test_provider_store_durability.py:726-801 |
+
 
 ## Update History
 

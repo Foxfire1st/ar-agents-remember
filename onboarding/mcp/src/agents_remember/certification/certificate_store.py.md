@@ -58,8 +58,10 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Publish/load are digest-addressed with collision and readback checks. | `_publish`; `_load`; `exact_path` | mcp/src/agents_remember/certification/certificate_store.py:97-124; mcp/src/agents_remember/certification/certificate_store.py:126-153; mcp/src/agents_remember/certification/certificate_store.py:85-95 |
-| Capacity is bounded and reclamation-owned. | `_require_capacity`; `_capacity_error` | mcp/src/agents_remember/certification/certificate_store.py:155-181; mcp/src/agents_remember/certification/certificate_store.py:225-234 |
-| Canonical bytes and per-kind digests are the storage truth. | `_canonical_bytes`; `_object_digest` | mcp/src/agents_remember/certification/certificate_store.py:184-188; mcp/src/agents_remember/certification/certificate_store.py:191-198 |
+| The store checks bounded capacity before accepting another object. | "def _require_capacity" | mcp/src/agents_remember/certification/certificate_store.py:228-254 |
+| Capacity refusal exposes the store policy and reclamation boundary. | "def _capacity_error" | mcp/src/agents_remember/certification/certificate_store.py:322-331 |
+| Stored object bytes use canonical serialization. | "def _canonical_bytes" | mcp/src/agents_remember/certification/certificate_store.py:257-261 |
+| The store resolves the object digest by certificate object kind. | "def _object_digest" | mcp/src/agents_remember/certification/certificate_store.py:276-295 |
 | Only safe readable regular files are accepted. | `_read_regular_file` | mcp/src/agents_remember/certification/certificate_store.py:201-222 |
 
 ## Cross-Repo References

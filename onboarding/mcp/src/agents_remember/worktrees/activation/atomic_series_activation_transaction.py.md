@@ -36,6 +36,14 @@ incomplete, failed, moved-again, or memory-skipped pass remains reconciling with
 `worktree_sync` guidance. Only when reloaded contract bases equal current admitted source tips does
 the selector advance to `active`.
 
+Admission refusals retain the exact contract path and any explicit `memory_sync_choice` and
+`resolution_action` in executable `worktree_sync` retry arguments. A successful sync pass whose
+source pair moved again still returns blocked implementation admission. These are current source
+rules; the deleted transition suite supplies no current execution evidence.
+
+cit:([`_admission_refusal`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:204-234)
+cit:([`_sync_selected_atomic_series_under_authority`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201)
+
 ### Conventions
 
 Expected store, contract, filesystem, and validation failures are translated once at this boundary
@@ -67,7 +75,6 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- |
 | Selector publication and exact continuation/cancellation ownership live in the activation authority. | `publish_atomic_series_selection`; `require_selected_atomic_series`; `require_atomic_series_cancellation_owner` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:190-249; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:252-273; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:276-295 |
 | The sync driver admits, resumes, continues, cancels, or recovers one exact journal generation. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100 |
-| Focused transition tests pin invalid-input order, moved-again behavior, cancel release, active admission, and dry-run. | `test_invalid_input_refuses_before_selection_or_sync`; `test_completed_pass_with_source_moved_again_remains_reconciling`; `test_explicit_cancel_releases_exact_selection_to_vacant`; `test_only_exact_current_pair_publishes_active`; `test_dry_run_never_publishes_activation` | mcp/tests/test_atomic_series_activation_transaction.py:66-82; mcp/tests/test_atomic_series_activation_transaction.py:85-110; mcp/tests/test_atomic_series_activation_transaction.py:113-145; mcp/tests/test_atomic_series_activation_transaction.py:181-215; mcp/tests/test_atomic_series_activation_transaction.py:294-313 |
 
 ## Cross-Repo References
 

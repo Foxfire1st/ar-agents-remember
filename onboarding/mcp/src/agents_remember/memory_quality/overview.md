@@ -220,10 +220,9 @@ surface, clearing with no commit; an anchor that is absent, ambiguous, or lands 
 cited range stays hard (`citation_provenance_invalid` / `citation_claim_reopened`). This is
 what lets a leaf's new-file rows resolve pre-commit instead of failing provenance: regenerated
 ranges point at the new content and the curator's review is the report-only relay.
-Coverage lives in `mcp/tests/test_l6_diff_coverage_claim_reopen.py`
-(`TestLocalChangesNewFile`, lines 143-186) and
-`mcp/tests/test_memory_citation_change_detection.py` (the `test_a_new_source_*` arms in
-`CodeProvenanceTests`, plus the `ChangeRoutingTests` untracked/ignored-local-path assertion).
+Current per-citation routing is owned by `classify_citation` (mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py:254-273).
+The former new-file regression suites were retired; this source contract is not a claim
+of present test coverage.
 
 ## L9 Closeout Repair — Entity Structure Fails Before Code Rails
 

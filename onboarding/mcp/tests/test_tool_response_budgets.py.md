@@ -5,56 +5,77 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_tool_response_budgets.py`  |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T09:00+02:00                     |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `../overview.md`                           |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Tests overview](overview.md)
 
 ## Purpose
 
-Tests the response token budgets: the `tool_reports` file/prune/redaction
-helper and the compact payload builders (`runtime_install`,
-`provider_diagnostics`, `provider_watchers`, and since 2.5.2 the carryover
-plan/apply pair).
+Checks tool-report creation, secret redaction, count/age pruning and full carryover-record preservation. The durable report holds detail while the response can remain compact. The old broad MCP payload/token-ceiling matrix is not retained in this file.
 
 ## Code Commentary
 
 ### Logic
 
-Report tests verify write/read round-trip, unconditional `PASSWORD=***`
-redaction in report files, keep-last-5 pruning, and the 7-day age cutoff
-(via `os.utime`-backdated files). Budget tests feed deliberately fat inputs
-(repeated 200-line command transcripts, compose blobs) through each compact
-builder and assert the serialized inline payload stays under
-`INLINE_BUDGET_CHARS` (4,000 chars ≈ 1k tokens) while the structure keeps
-outcomes (`phases`, per-provider results, counts) and the `reportPath`.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-The carryover cases (2.5.2, GitHub #52) feed a 100-candidate plan and a
-30-candidate apply with `carried` duplicating every record: they assert the
-inline payload drops `candidates`/`carried`, keeps action facts inline
-(commits, intent note, per-decision path lists), caps oversized groups at 25
-paths plus a `(+N more in report)` marker while smaller groups stay fully
-enumerated, and that the report file retains all records round-trip.
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- `INLINE_BUDGET_CHARS` is the regression line for response flooding: raising
-  it needs a reason, not a convenience.
-- The compact builders must stay pure (dict in → dict out) so these tests
-  never need Docker or a server.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The report helper under test. | `write_tool_report` | mcp/src/agents_remember/kernel/primitives/tool_reports.py:30-50 |
-| The compact builders under test. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_carryover_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/memory.py:185-206; mcp/src/agents_remember/mcp/tools/providers.py:55-70 |
+| No external domain claim is required. | N/A | N/A |
 
-## 260815-DAG-L4 Integration-Authority Forcing
+## Repo-Internal References
 
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Write creates report and returns path | `test_write_creates_report_and_returns_path` | mcp/tests/test_tool_response_budgets.py:54-60 |
+| Secrets are redacted in reports | `test_secrets_are_redacted_in_reports` | mcp/tests/test_tool_response_budgets.py:62-69 |
+| Prune keeps last five | `test_prune_keeps_last_five` | mcp/tests/test_tool_response_budgets.py:71-83 |
+| Prune drops reports older than max age | `test_prune_drops_reports_older_than_max_age` | mcp/tests/test_tool_response_budgets.py:85-96 |
+| Carryover report retains full records | `test_carryover_report_retains_full_records` | mcp/tests/test_tool_response_budgets.py:100-113 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

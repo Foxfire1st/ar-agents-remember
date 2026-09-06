@@ -5,85 +5,69 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_citation_fix.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-L6-R27/R28: what ``--fix`` repairs, what it refuses, and where it is allowed to write.
+On-disk code/memory tree and assertion helpers for citation-fixer consumers.
 
 ## Code Commentary
 
 ### Logic
 
-The local `Tree` and `TreeCase` fixtures drive the real fixer over temporary code/memory files. `PureMoveTests`, `ReflowTests`, `NoSimilarityMatchingTests`, `DeletionAndAmbiguityTests`, `MultiAnchorRangeTests`, `AnchorKindTests`, `SourcePreservationTests` and `UnresolvableOnlyClaimTests` protect exact resolution, complete evidence preservation, range repair and deterministic refusal. `_frozen_no_discovery` makes forbidden scans/rebuilds explicit in reused lease scenarios.
-
-`ReflowTests.test_a_dry_run_reports_the_rewrite_and_writes_nothing` checks the prospective replacement and exact unchanged document bytes while requiring `documentsWritten == 0`. Repeat repair is a no-op, and source-cell padding survives.
-
-Document-scope, duplicate and pooled-normalization suites live in `test_memory_citation_fix_scopes.py`. Source-index/extents, write guards and CLI suites live in `test_memory_citation_fix_operations.py`. They are related evidence owners, not classes defined by this file.
+Tree creates temporary source and onboarding files and invokes scoped check/fix boundaries. TreeCase provides repaired/declined/clean assertions. The frozen no-discovery helper supports explicit scoped source acquisition. There are no retained repair-class or write-guard tests in this file.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+Historical pure-move/rename/deletion/ambiguity prose describes earlier tests, not current standalone protection. Helpers must not manufacture semantic similarity approval.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured. This card describes the repository's own implementation and forcing contracts without an external documentation claim.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-Current file ownership and the preserved related scope/operation contracts are explicit below.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pure moves follow the same exact-name symbol into its new file. | `PureMoveTests` | mcp/tests/test_memory_citation_fix.py:168-226 |
-| Range repair, actual zero-write previews, repeat no-ops and source-cell padding are forced. | `ReflowTests` | mcp/tests/test_memory_citation_fix.py:229-295 |
-| Absent anchors never acquire similarity guesses. | `NoSimilarityMatchingTests` | mcp/tests/test_memory_citation_fix.py:298-330 |
-| Deleted or ambiguous anchors produce actionable refusals. | `DeletionAndAmbiguityTests` | mcp/tests/test_memory_citation_fix.py:333-412 |
-| Multiple anchors produce their evidence union rather than an invented broad span. | `MultiAnchorRangeTests` | mcp/tests/test_memory_citation_fix.py:415-460 |
-| AST, Markdown and literal anchors preserve their distinct extent rules. | `AnchorKindTests` | mcp/tests/test_memory_citation_fix.py:463-510 |
-| Unrelated source evidence remains intact. | `SourcePreservationTests` | mcp/tests/test_memory_citation_fix.py:513-549 |
-| External dependency evidence does not become a permanent local failure. | `UnresolvableOnlyClaimTests` | mcp/tests/test_memory_citation_fix.py:552-612 |
-| Preview reports the proposed source change but zero completed document writes. | `test_a_dry_run_reports_the_rewrite_and_writes_nothing` | mcp/tests/test_memory_citation_fix.py:270-279 |
-| The related `DocumentScopeTests` group is owned by this companion module. | `DocumentScopeTests` | mcp/tests/test_memory_citation_fix_scopes.py:17-128 |
-| The related `CoreOperationScopeTests` group is owned by this companion module. | `CoreOperationScopeTests` | mcp/tests/test_memory_citation_fix_scopes.py:131-256 |
-| The related `DuplicateCitationTests` group is owned by this companion module. | `DuplicateCitationTests` | mcp/tests/test_memory_citation_fix_scopes.py:259-325 |
-| The related `ScopedNormalisationTests` group is owned by this companion module. | `ScopedNormalisationTests` | mcp/tests/test_memory_citation_fix_scopes.py:328-470 |
-| The related `ProseSerialisationTests` group is owned by this companion module. | `ProseSerialisationTests` | mcp/tests/test_memory_citation_fix_scopes.py:473-533 |
-| The related `TreeShapeTests` group is owned by this companion module. | `TreeShapeTests` | mcp/tests/test_memory_citation_fix_scopes.py:536-566 |
-| The related `FindingEnrichmentTests` group is owned by this companion module. | `FindingEnrichmentTests` | mcp/tests/test_memory_citation_fix_scopes.py:569-603 |
-| The related `SymbolIndexTests` group is owned by this companion module. | `SymbolIndexTests` | mcp/tests/test_memory_citation_fix_operations.py:72-165 |
-| The related `ExtentTests` group is owned by this companion module. | `ExtentTests` | mcp/tests/test_memory_citation_fix_operations.py:168-270 |
-| The related `WriteGuardTests` group is owned by this companion module. | `WriteGuardTests` | mcp/tests/test_memory_citation_fix_operations.py:273-567 |
-| The related `CommandLineTests` group is owned by this companion module. | `CommandLineTests` | mcp/tests/test_memory_citation_fix_operations.py:570-858 |
+| Frozen no discovery. | `_frozen_no_discovery` | mcp/tests/test_memory_citation_fix.py:59-92 |
+| Document. | `document` | mcp/tests/test_memory_citation_fix.py:95-97 |
+| Filler. | `filler` | mcp/tests/test_memory_citation_fix.py:100-101 |
+| Tree. | `Tree` | mcp/tests/test_memory_citation_fix.py:104-145 |
+| Treecase. | `TreeCase` | mcp/tests/test_memory_citation_fix.py:148-164 |
 
 ## Cross-Repo References
 
-This file introduces no separate cross-repository protocol. Local temporary code/memory roots and their application write-scope contract remain distinct from a cross-repository authority.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No new cross-repository protocol. | N/A | N/A |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Corrected dry-run write accounting and reconciled the pre-existing split-test inventory with its actual source owners while preserving the related behavioral routes. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
 

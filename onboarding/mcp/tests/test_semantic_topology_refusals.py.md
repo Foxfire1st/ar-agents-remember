@@ -5,61 +5,74 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_semantic_topology_refusals.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
 | lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Forces the semantic-topology boundary to fail closed for incomplete, ambiguous, malformed,
-split-authority, unclassified-schema, unsupported-version, and queue-adapter error cases.
+Forces exact typed failures for missing, ambiguous and malformed semantic-topology facts, plus duplicate-node refusal during whole-graph admission. Status and detail assertions matter: no permissive fallback or invented authority substitutes for the missing structural input.
 
 ## Code Commentary
 
 ### Logic
 
-The matrix covers missing graph/index/placement and malformed facts; duplicate-node whole-graph
-admission; every composite parent binding near miss; shared lifecycle/topology identity ownership;
-future nested schema and version refusal; and preservation of exact typed status/detail through the
-queue adapter.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-- Refusal cases use canonical production fixtures and change one invalid fact at a time.
-- Assertions preserve exact typed status and detail across task-domain and queue boundaries.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- No fallback projection or partial identity is accepted.
-- Queue translation preserves domain status and detail exactly.
-- These are ordinary refusal regressions, not durable task evidence.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No configured external source is needed for these repository-owned regressions.
-
-## Repo-Internal References
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing, ambiguous, malformed, and duplicate graph facts refuse before a fingerprint. | "Exact typed refusals for semantic-topology/v2 derivation." | mcp/tests/test_semantic_topology_refusals.py:1-1; mcp/tests/test_semantic_topology_refusals.py:99-201 |
-| Composite leaf-binding near misses and split authorities are exhaustively rejected. | "Exact typed refusals for semantic-topology/v2 derivation." | mcp/tests/test_semantic_topology_refusals.py:1-1; mcp/tests/test_semantic_topology_refusals.py:203-251 |
-| Schema/version and queue error translation remain typed and exact. | `test_semantic_topology_refuses_unclassified_nested_schema_and_unsupported_version`; `test_queue_adapter_preserves_exact_typed_refusal_status_and_detail` | mcp/tests/test_semantic_topology_refusals.py:253-306 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Semantic topology refuses exact missing ambiguous and malformed facts | `test_semantic_topology_refuses_exact_missing_ambiguous_and_malformed_facts` | mcp/tests/test_semantic_topology_refusals.py:91-149 |
+| Semantic topology refuses duplicate node during whole graph admission | `test_semantic_topology_refuses_duplicate_node_during_whole_graph_admission` | mcp/tests/test_semantic_topology_refusals.py:152-162 |
 
 ## Cross-Repo References
 
-None.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-09-01T03:58+02:00 — Checklist follow-up: re-read both new refusal cohorts against their
   exact working-tree ranges; commit verification remains closeout-owned.

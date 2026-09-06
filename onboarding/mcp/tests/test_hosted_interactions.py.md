@@ -5,62 +5,69 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_hosted_interactions.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T10:13+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
-[tests overview](overview.md)
+
+[Test suite overview](overview.md)
 
 ## Purpose
-Proves pending adapter interactions become durable gates, responses use the exact interaction id,
-disappearance expires the matching open gate, and protocol-owned null-requestId/vendor-correlation
-completion projects onto the same accepted row while inbox consumption remains pending. The exact
-2.1.207, 0.144.3, and 0.80.7 values are fixture/smoke evidence only; production behavior is based
-on consumed structured fields.
 
-The direct-request completion case covers both an initially `accepted` row and an honestly
-`queued` row. In both cases the terminal transcript's exact `requestId` promotes the same durable
-row to `completed` without consuming it; the separate null-request-id cases retain their strict,
-accepted-row-only vendor-correlation boundary.
+Durable hosted interactions and bounded delivery retry.
 
 ## Code Commentary
+
+### Logic
+
+Pending adapter questions become exact durable gates. A successful response applies the gate. Pre-write failure retains the decision for bounded retry then reopens after exhaustion; post-write uncertainty reopens with failure evidence and does not answer again. Ambiguous null-request-ID vendor correlation leaves inbox rows accepted rather than falsely completed.
+
 ### Conventions
 
-Gate decisions are taken through the parameter-object form: `decide_gate(gate,
-GateVerdict(decision="approve", by="developer", via="dashboard", note=...), now=NOW)` — including
-the shared `_decided_gate` helper and the structured multi-question case, where the serialized
-answer map rides in `GateVerdict.note`. Inbox fixture rows are minted with
-`create_operator_inbox_entry(InboxMessage(...), entry_id=…, now=…,
-routing=InboxRouting(address=InboxAddress(...)), poster=InboxPoster(...))` before the
-`model_copy(update=...)` that stamps the delivered/adapter evidence each completion case needs.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
-These tests pin the acceptance-versus-consumption boundary and prevent diagnostic pane state from
-becoming an action trigger. Missing, non-text, unmatched, and ambiguous correlation evidence fails
-loudly. Completion records adapter metadata without consuming the row, and terminal state is
-`idle` / `immediate` without a queued replacement; `settling` / `queued` requires an actual one.
-R9 remains limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`; R10 remains
-queued and unimplemented.
+
+Not-sent and unknown delivery have different retry rights. Developer decision attribution is preserved in failure evidence when an interaction is handed back.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
-No relevant external/domain documentation was configured.
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
-- [hosted_interactions.py](../src/agents_remember/serving/hosted_interactions.py)
-- [test_operator_inbox.py](test_operator_inbox.py)
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Pending interaction round trips through durable gate. | `test_pending_interaction_round_trips_through_durable_gate` | mcp/tests/test_hosted_interactions.py:70-91 |
+| Failed respond reopens the gate instead of silently swallowing. | `test_failed_respond_reopens_the_gate_instead_of_silently_swallowing` | mcp/tests/test_hosted_interactions.py:94-128 |
+| Pre write failure keeps the decision and retries until the budget runs out. | `test_pre_write_failure_keeps_the_decision_and_retries_until_the_budget_runs_out` | mcp/tests/test_hosted_interactions.py:150-200 |
+| Post write failure hands the decision back without re answering. | `test_post_write_failure_hands_the_decision_back_without_re_answering` | mcp/tests/test_hosted_interactions.py:203-226 |
+| Null request id completion rejects ambiguous vendor correlation. | `test_null_request_id_completion_rejects_ambiguous_vendor_correlation` | mcp/tests/test_hosted_interactions.py:229-279 |
 
 ## Cross-Repo References
-No meaningful cross-repo references.
 
-## 260718-CHATS-L5I Current Delta
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-Hosted-interaction tests now cover serialized multi-question answers and failure reopening with adapter-decision evidence, preventing a failed delivery from silently consuming an operator decision.
-
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: extended direct request-id
   completion proof to initially queued inbox rows while preserving strict null-id correlation.

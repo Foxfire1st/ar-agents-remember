@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/execution.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastUpdated            | 2026-09-07T00:25+02:00 |
 | lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
 | lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
@@ -58,13 +58,14 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.execution import *" | mcp/src/agents_remember/benchmarks/runner.py:17-17 |
 | The benchmark MCP registration writes the `.codex/config.toml` whose `mcp_servers` table these overrides read. | `benchmark_agents_config_text` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:131-151 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `test_codex_command_forwards_benchmark_mcp_config` | mcp/tests/test_worktree_support_benchmark.py:441-495 |
 
 ## Cross-Repo References
 
 No configured sibling repository is required for this module.
 
 ## Update History
+
+- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 6 citation findings and cut one false
   paragraph. `allowed_provider_ids` rides `BenchmarkPreparation` into `prepare_case`; the stale

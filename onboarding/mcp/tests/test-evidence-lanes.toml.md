@@ -5,76 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastUpdated | 2026-09-06T21:51:32+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Classifies Python test files into explicit evidence lanes and records deliberate overrides. The manifest makes verification intent reviewable and prevents missing or conflicting classifications from silently acquiring a default evidence class.
+Classifies 177 retained test-shaped modules into explicit evidence categories. Current file membership is 96 unit-regression, 2 public-contract, 52 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
 
 ## Code Commentary
 
 ### Logic
 
-The file lists unit-regression, architecture-fitness and integration populations. Accumulated CCR additions include bridge/record/memory-rail and emission-binding contracts, replay and telemetry suites, final-Codex suites, and lifecycle status-wait tests. The bridge, record, memory-rail and rail-binding suites are unit-regression entries; final-Codex executor/diff-coverage and status-wait suites are integration entries.
+Paths are explicit and unique. The root conftest reads integration/stress membership once to avoid
+integration imports in default unit runs and marks selected integration items. Other categories
+retain their classification meaning without requiring separate copies or historical edge suites.
+A test-shaped helper module may remain listed for dependency classification even when it contains
+no test functions; importability is not a passing test.
 
-The retained gate-evidence and rail-publication suites are explicitly `unit-regression`. Their temporary Git and SDK-contract fixtures exercise repository owners but do not claim a whole live executor run. `test_dagger_registry_lock.py` is explicitly `integration` because it tests the shared lock protocol across actual processes and threads.
-
-These lane labels describe evidence classification. They do not prove that a test invokes a real external executor or production closeout composition. In particular, a synthetic green certificate fixture can be unit-regression coverage while leaving the actual producer path unverified. Consumer ownership and the evidence lifecycle are separately governed.
-
-`test_citation_document_transaction.py` is explicitly in the integration lane beside the existing deterministic-projection suite. It exercises the real fixer, source index, document transaction and atomic writer over temporary files, with controlled interleavings and replace failure. That classification does not establish whole closeout acceptance or a memory-file mutex.
-
-### Conventions
-
-Keep paths explicit and unique, and use a reasoned override for an intentional exception. A new test file needs a current classification; changing a label does not substitute for improving its behavioral evidence.
+`test_dagger_registry_lock.py` and actual document/publication/durability boundaries are integration
+members. The new diagnostic quality and selected-case-budget tests are unit-regression members.
+The executable case budgets live in pyproject/conftest, not in this list. Coverage percentages are
+diagnostic and cannot require restoring deleted entries.
 
 ### Invariants And Boundaries
 
-- No unknown, duplicate or conflicting lane registration should pass admission silently.
-- Evidence class and real integration fidelity must be judged separately.
-- Preserve architecture-fitness and integration obligations while optimizing selected populations.
-- This manifest does not lower changed-line coverage requirements or authorize host execution.
-
-### Todos
-
-Retain the distinction between contract fixtures and real producer/consumer integration when evaluating suite quality.
+- Unknown, duplicate or conflicting file classification must not silently acquire authority.
+- Evidence class is separate from whether a test invokes a real external producer.
+- Current source membership governs; old final-Codex executor/status-wait/deleted-edge lists do not.
+- Host development pytest is supported; only explicit certification requires Dagger admission.
+- Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
 
 ## Docs References
 
-No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+No external Domain Documentation source is configured; these are repository-owned implementation facts.
 
 ## Repo-Internal References
 
-These source owners establish the current behavior and the stated fixture boundaries.
+The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained certificate evidence has an explicit unit-regression registration. | "\"mcp/tests/test_gate_certification_evidence.py\"" | mcp/tests/test-evidence-lanes.toml:80-80 |
-| Producer publication and exact byte export have an explicit unit-regression registration. | "\"mcp/tests/test_rail_evidence_publication.py\"" | mcp/tests/test-evidence-lanes.toml:156-156 |
-| The real-process/thread registry lock suite is classified as integration. | "\"mcp/tests/test_dagger_registry_lock.py\"" | mcp/tests/test-evidence-lanes.toml:301-301 |
-| Final Codex executor integration remains classified separately. | "\"mcp/tests/test_final_codex_executor.py\"" | mcp/tests/test-evidence-lanes.toml:306-306 |
-| Lifecycle status-wait integration obligations remain present. | "\"mcp/tests/test_lifecycle_status_wait_outcomes.py\"" | mcp/tests/test-evidence-lanes.toml:378-378 |
-| The actual document-publication suite is explicitly integration evidence. | "mcp/tests/test_citation_document_transaction.py" | mcp/tests/test-evidence-lanes.toml:252-252 |
+| Retained unit-regression membership | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-102 |
+| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:107-160 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:161-176 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:177-191 |
+| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:192-195 |
 
 ## Cross-Repo References
 
-No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
+No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Recorded the real transaction suite integration membership and shifted only exact affected lane citations; classification remains distinct from acceptance. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
 

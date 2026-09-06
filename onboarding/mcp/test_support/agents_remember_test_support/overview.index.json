@@ -25,7 +25,7 @@
     "mcp/test_support/agents_remember_test_support/pytest_certifying_bootstrap.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 52,
+    "sourceFilesInScope": 50,
     "fileSidecars": 2,
     "childRoutes": 2
   },
@@ -49,7 +49,7 @@
     "testing"
   ],
   "hotPath": {
-    "summary": "- [code_quality/overview.md](code_quality/overview.md) governs static rails, product behavioral scoring, targeted selection, retry proof, and causal preflight. - [testing/overview.md](testing/overview.md) governs admission, pytest composition, explicit lanes, lifecycle metadata, cadence, and non-accepting Dagger route evidence. - `pytest_certifying_bootstrap.py` is the one certifying pytest plugin root; `__init__.py` exports no convenience facade. The CCR profile path adds `code_quality/profile_selection.py` for immutable repository-owned selection and `code_quality/profile_rails.py` for th...",
+    "summary": "- [code_quality/overview.md](code_quality/overview.md) governs static rails, product behavioral diagnostics, targeted selection and retry proof. - [testing/overview.md](testing/overview.md) governs admission, pytest composition, explicit lanes, lifecycle metadata and non-accepting diagnostic evidence. - `pytest_certifying_bootstrap.py` is the one certifying pytest plugin root; `__init__.py` exports no convenience facade. The CCR profile path adds `code_quality/profile_selection.py` for immutable repository-owned selection and `code_quality/profile_rails.py` for the actual Python rail adapte...",
     "candidateHints": [
       "mcp/test_support/agents_remember_test_support",
       "mcp/test_support/agents_remember_test_support/code_quality",
@@ -88,6 +88,9 @@
       "_paths",
       "docs/design/python-evidence-system.md",
       "docs/design/python-test-evidence.md",
+      "catalog_selection.py",
+      "245057ab16e19afdaabd5c188c9576b22e0c0870",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "6e4ab81f6ae52bce35003377bb3aec7877554ed7",
       "ea35964985f30080488270e71ac81657ac40682b",
       "code_quality/",
@@ -97,15 +100,12 @@
       "test_support",
       "doc_type",
       "lastUpdated",
-      "T04",
+      "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T06",
       "governingOverview",
-      "MCP",
-      "agents_remember",
-      "L30",
-      "C10"
+      "MCP"
     ]
   },
   "fallback": {

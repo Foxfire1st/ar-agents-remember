@@ -5,40 +5,69 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_harness_control_ipc.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`                                        |
 | lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
-| governingOverview      | `overview.md`                                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_harness_control_ipc.py`'s source module; covers the behaviours named by its test classes.
+Private harness IPC identity, lifecycle and receipt-loss contracts.
 
 ## Code Commentary
 
-- `HarnessControlIpcTests`
-- The duplicate-submit synchronization case waits up to five seconds for both the first submit to
-  enter the adapter and the duplicate request to return. The adapter remains explicitly blocked
-  until the duplicate result is observed, so the larger test-only margin removes loaded-xdist
-  scheduling sensitivity without weakening the single-flight assertion.
+### Logic
 
-## Invariants And Boundaries
+Actual private sockets expose status and queued withdrawal with restrictive directory/socket permissions. Lost outer receipt reconciles retained truth with one adapter submit; a public duplicate also preserves the original payload and one write. Exact endpoint identity and malformed-request refusals remain enforced.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_harness_control_ipc.py`.
-- IPC duplicate-submit semantics remain deterministic: the duplicate must be rejected before the
-  held first submit is released; the five-second value is only an outer failure timeout.
+### Conventions
 
-## Repo-Internal References
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+
+### Invariants And Boundaries
+
+IPC ambiguity does not authorize resend or a control fallback. Native adapter behavior is doubled while the local socket and public routing paths are real.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Private lifecycle status and withdraw round trip. | `test_private_lifecycle_status_and_withdraw_round_trip` | mcp/tests/test_harness_control_ipc.py:63-130 |
+| Outer socket lost receipt reconciles retained known truth. | `test_outer_socket_lost_receipt_reconciles_retained_known_truth` | mcp/tests/test_harness_control_ipc.py:132-171 |
+| Public duplicate returns retained result with one adapter call. | `test_public_duplicate_returns_retained_result_with_one_adapter_call` | mcp/tests/test_harness_control_ipc.py:173-272 |
+| Private endpoint exact identity and submission. | `test_private_endpoint_exact_identity_and_submission` | mcp/tests/test_harness_control_ipc.py:276-312 |
+| Malformed ipc request is rejected without control fallback. | `test_malformed_ipc_request_is_rejected_without_control_fallback` | mcp/tests/test_harness_control_ipc.py:314-334 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`       |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-29T17:23+02:00                                             |
+| lastUpdated            | 2026-09-06T21:59:04+00:00 |
 | lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
 | lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                                      |
@@ -51,8 +51,7 @@ not ladder-resolved AND not rate-limited.
 
 `_REDELIVERABLE_DELIVERY_STATES` includes `delivered` deliberately — R1's central claim is that
 `delivered` is never terminal (pasted != perceived), so a delivered-but-unacked row still
-schedules and remains redeliverable; only `consume` (an inbox `state` transition, not a
-`deliveryState` one) stops it.
+schedules and remains redeliverable; a correlated adapter acceptance writes `landed`; any non-pending state, including legacy consumed and ladder-resolved rows, is excluded by `is_due`.
 
 ### Invariants And Boundaries
 
@@ -97,6 +96,8 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:59:04+00:00 — Confirmed clamp, floor and composed redelivery predicates against source; corrected retired model-consume wording. Removed test coverage is not claimed. Verification pins unchanged.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `redeliverable` and confirmed that inbox backoff and ordering behavior remain as documented. Verification remains closeout-owned.
 

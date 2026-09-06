@@ -5,14 +5,14 @@
 | repository | agents-remember |
 | path | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:35:26+00:00 |
 | lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
 | lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
 | governingOverview | overview.md |
 
 ## Governing Overview
 
-[mcp overview](../../../overview.md)
+[Quality support overview](overview.md)
 
 ## Purpose
 
@@ -29,7 +29,7 @@ module is not a second quality entrypoint and cannot publish acceptance evidence
 ### Typed inputs and progress
 
 CheckConfig is the complete immutable input to a wrapper run: candidate root, derived GateScope,
-opaque Dagger admission capability, scoring thresholds, target base/scope, evidence paths, and
+opaque Dagger admission capability, diagnostic CRAP review threshold, target base/scope, evidence paths, and
 progress state. L19 added the optional `selection_digest` field (the immutable repository
 selector-result digest) so the retry/execution layers can bind and revalidate the exact selection
 identity. Step encodes the enforcement distinction structurally: report_note is absent for an
@@ -71,7 +71,7 @@ policy.
 
 - This module constructs plans; it does not spawn subprocesses or decide final success.
 - Scope policy is delegated, not copied.
-- CheckConfig is immutable after construction.
+- CheckConfig is immutable after construction and has no `diff_floor` field.
 - Every pytest plan requires Dagger admission.
 - Enforcing versus report-only behavior is carried by Step, not inferred from names.
 - Targeted populations are diff-derived; there is no arbitrary caller file list.
@@ -86,18 +86,22 @@ None. This behavior is repository-owned.
 
 ## Repo-Internal References
 
+The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Progress is one atomic current-state record. | `QualityProgress` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:57-96 |
-| The complete wrapper input is immutable and now carries the selection digest. | `CheckConfig`; `selection_digest` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-121 |
-| The ordered rail plan is pure construction. | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
-| Pytest command construction enforces Dagger admission. | `_pytest_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287 |
+| Immutable inputs and no coverage-floor setting | `CheckConfig` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-120 |
+| Ordered fixed checks and pytest plan | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
+| Admitted exact selection and coverage arguments | `_pytest_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287 |
+| Atomic mutable progress distinct from evidence authority | `QualityProgress` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:57-96 |
 
 ## Cross-Repo References
 
 None.
 
 ## Update History
+
+- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 addition of the

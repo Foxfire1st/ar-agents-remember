@@ -5,67 +5,72 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_checkout_coordination_isolation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Pin the L19 mixed-version inbox incident's prevention boundary: unpublished linked-
-worktree code receives a disposable leaf coordinator, cannot escape it through a live
-config or direct durable-log target, and leaves regular MCP and explicit pytest behavior
-intact.
+Checkout-local coordination isolation at configuration and store boundaries.
 
 ## Code Commentary
 
 ### Logic
 
-The suite builds repository-shaped temporary primary and linked checkouts without
-depending on the real task enclosure. It proves checkout discovery follows the supplied
-package source, skips incomplete nested repository shapes, and leaves installed packages
-unmodified; invalid/live authority content is never read in linked CLI mode; the
-synthetic config binds the candidate checkout and disables providers, dashboard autostart,
-benchmarks, and automatic retirement; and an incident-shaped inbox row lands only under
-`provider-runtime/dev-ar-coordination`.
+Loaded source identifies the linked checkout regardless of cwd. Its effective configuration uses the dummy coordination root, disables live providers and services, and writes an incident-shaped inbox only there. Escape writes refuse before parent or lock creation; the admitted report path remains writable.
 
-The escape regressions call the actual shared durable-store primitives. The lock-path
-case enters the returned context manager directly, asserts that entry raises, and proves
-refusal happens before either the target parent or sibling lockfile exists; the rewrite
-case proves a manually constructed live target cannot bypass config routing. The
-operational-artifact case writes a real self-overwriting closeout report through those
-same primitives under the exact enclosure `reports/` root, then proves no sibling
-`operator-inbox.jsonl` appeared. The positive report target therefore does not widen
-coordination authority.
-Separate cases pin primary-checkout refusal, trusted MCP authority loading, and explicit
-test-mode temporary writes. Trusted-config cases retain fail-loud invalid/non-object JSON
-parsing while linked checkout mode deliberately ignores the supplied authority file.
-The lifecycle-operation case declares the detached-worker mode before config loading,
-then proves live authority is retained while the daemon-role slot remains empty.
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Tests patch the package-source anchor and contain the process declaration with the
-  suite's owned-global preservation helper; no environment switch exists in production.
-- The incident-shaped row is intentionally candidate-only and lives in a temporary dummy
-  coordinator. No test writes the real coordinator.
-- Enclosure reports are operational artifacts, not coordination rows; the positive
-  report-write regression is paired with an explicit absent sibling inbox assertion.
-- Trusted-mode coverage asserts preservation, not a compatibility fallback.
-- Lifecycle-operation coverage is deliberately narrower than daemon trust: it proves
-  live task-operation authority and simultaneously proves no MCP/dashboard writer role.
+The rewrite guard also rejects manually constructed live targets. Primary undeclared access fails closed, while explicit temporary test mode retains legitimate temporary writes.
 
-## 260815-DAG-L3 Writer-Role Projection
+### Todos
 
-The lifecycle-operation isolation case now also proves `declared_process_role()` returns the
-explicit detached writer role while the daemon-role view remains empty, preserving the distinction
-between execution/store writer identity and MCP/dashboard daemon ownership.
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Linked checkout is derived from loaded source not cwd. | `test_linked_checkout_is_derived_from_loaded_source_not_cwd` | mcp/tests/test_checkout_coordination_isolation.py:73-85 |
+| Checkout config ignores live authority and uses only dummy root. | `test_checkout_config_ignores_live_authority_and_uses_only_dummy_root` | mcp/tests/test_checkout_coordination_isolation.py:87-106 |
+| Incident shaped inbox write lands only in leaf dummy root. | `test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root` | mcp/tests/test_checkout_coordination_isolation.py:110-126 |
+| Store guard refuses escape before creating lock or parent. | `test_store_guard_refuses_escape_before_creating_lock_or_parent` | mcp/tests/test_checkout_coordination_isolation.py:130-140 |
+| Enclosure report write is allowed without opening coordination escape. | `test_enclosure_report_write_is_allowed_without_opening_coordination_escape` | mcp/tests/test_checkout_coordination_isolation.py:142-151 |
+| Rewrite guard refuses a manually constructed live target. | `test_rewrite_guard_refuses_a_manually_constructed_live_target` | mcp/tests/test_checkout_coordination_isolation.py:153-161 |
+| Primary checkout undeclared config access fails closed. | `test_primary_checkout_undeclared_config_access_fails_closed` | mcp/tests/test_checkout_coordination_isolation.py:163-170 |
+| Explicit test mode preserves temporary store writes. | `test_explicit_test_mode_preserves_temporary_store_writes` | mcp/tests/test_checkout_coordination_isolation.py:172-180 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-24T21:23+02:00 — No content impact: the owned-state context manager moved from the test
   tree to `agents_remember_test_support.testing.global_state`; checkout-isolation behavior is unchanged.

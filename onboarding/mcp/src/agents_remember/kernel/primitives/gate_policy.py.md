@@ -54,7 +54,7 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The decision-role vocabulary is declared here in kernel. | `DecisionRole` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:17-17 |
-| Policy vocabulary edges are covered by the structural-coverage suite. | `test_gate_vocabulary_errors` | mcp/tests/test_leaf_structural_coverage.py:198-198 |
+| Decision-role coercion is owned by the current policy primitive. | `coerce_decision_role` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:69-72 |
 
 ## Cross-Repo References
 

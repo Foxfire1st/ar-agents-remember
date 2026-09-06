@@ -88,7 +88,7 @@ None recorded.
 | Serialization preserves the complete accepted snapshot. | `published_manifest_payload` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:107-128 |
 | Generation and dependency records are derived from exact bound input fields. | `quality_generation_digest`; `_parse_dependencies`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:263-270; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:231-249; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:320-368 |
 | Manifest file keys are canonical safe relative paths. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:371-379 |
-| Recovery rechecks candidate/profile/plan before evidence reuse. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399 |
+| Render an exact journal selection after full original-object and artifact readback. | "def render_selected_code_certification" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:364-395 |
 
 ## Cross-Repo References
 

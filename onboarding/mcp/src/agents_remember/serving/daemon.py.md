@@ -99,7 +99,7 @@ protocol.
 | The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. | `DashboardSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95 |
 | The MCP boot seam calling `maybe_autostart_dashboard`. | `maybe_autostart_dashboard` | mcp/src/agents_remember/serving/daemon.py:336-356 |
 | The version comparator (`SERVER_VERSION`, kernel-owned since L9). | "agents-remember-mcp" | mcp/src/agents_remember/kernel/primitives/version.py:18-18 |
-| Unit tests: state round-trip, probes, stop escalation, ensure matrix, autostart, CLI dispatch. | `StateFileTests`; `ProbeTests`; `StopTests`; `EnsureTests`; `AutostartTests`; `CliDaemonDispatchTests` | mcp/tests/test_dashboard_daemon.py:53-90; mcp/tests/test_dashboard_daemon.py:93-125; mcp/tests/test_dashboard_daemon.py:141-181; mcp/tests/test_dashboard_daemon.py:241-364; mcp/tests/test_dashboard_daemon.py:367-404; mcp/tests/test_dashboard_daemon.py:421-503 |
+
 
 ## 260731-EFA-L2 Current Delta
 

@@ -5,271 +5,66 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_code_quality_check.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview      | `overview.md`                              |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_code_quality_check.py` verifies the fixed source quality suite wrapper.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`): the Dagger-wrapper inventory proof was replaced by a
-repository-profile proof -- the test now asserts the generated Dagger module no longer contains
-`quality_wrapper_command` and that `mcp/certification-profile-v1.json` declares the
-`python-suite` rail instead.
+Sample repository and shared constants for quality-selection consumers.
 
 ## Code Commentary
 
 ### Logic
 
-The tests import `agents_remember_test_support.code_quality.check` from `mcp/src` and use a
-fake command runner to avoid launching Ruff, Pyright, Radon, or pytest subprocesses
-during unit tests. The fake runner records command composition and writes a
-synthetic coverage JSON report for the pytest step so the real
-CRAP-Calculator path still executes. The runner now also receives the subprocess
-environment, and one test asserts the wrapper puts this checkout's source import
-root first on `PYTHONPATH` while preserving any pre-existing `PYTHONPATH` entry.
-The command-composition test also asserts Pyright receives `--pythonpath` with
-the active interpreter, which lets linked worktrees reuse the primary checkout
-virtualenv without losing third-party import resolution.
-L22 adds direct regressions that targeted configuration preserves the repository file-size arm and
-that both development dependency entry points carry the same exact Ruff version.
+write_sample_repository creates an uncommitted temporary Git fixture with product ownership for pkg, an empty verification owner list, pytest discovery, lint/type/coverage settings and representative source/test/script files. run_git is the bounded command helper. No quality tests remain in this file.
 
-### L23 Enclosure Progress-Report Configuration
+### Conventions
 
-The targeted-configuration regression now also defines every report-related CLI seam explicitly,
-sets `AR_QUALITY_PROGRESS_REPORT`, and proves `config_from_args` derives the enclosure-owned
-`progress_report` path while retaining the repository file-size arm. This pins the environment
-fallback branch that clean and local quality executors share: a caller may omit the CLI report
-argument, but the configured enclosure report must still reach the resulting quality configuration.
-The same regression then supplies an explicit `args.progress_report` while the environment remains
-set and proves that explicit path wins. Together the two calls pin both sides of the precedence
-boundary—CLI selection first, environment only when the CLI seam is absent—without adding a second
-configuration owner.
-
-### Repository-Gate Ownership After The Dagger-Only Split
-
-The repository contract tests now prove that hooks and GitHub PR validation are deterministic
-non-test rails: neither contains the Python quality wrapper, host pytest, frontend tests, or the
-GitHub Dagger action. Pre-commit delegates to `fast`; pre-push delegates to `targeted`, whose body
-repeats deterministic checks and states that leaf closeout owns targeted Dagger acceptance. The
-manual `full` host tier refuses. The Dagger module remains the only file that invokes the accepting
-Python wrapper.
-
-### Radon Is A Report, Not A Gate (260731-EFA-L2)
-
-`RadonIsAReportNotAGateTests` is the class that holds the leaf's central claim in place.
-
-- `test_radon_steps_are_declared_reports_and_the_rest_enforce` — exactly `radon-cc` and
-  `radon-mi` carry a `report_note`; every other step is enforcing.
-- `test_report_section_header_says_it_cannot_fail` — the printed section header for a
-  report step contains the note, so the wrapper's own output never presents a Radon run
-  as something that passed.
-- `test_help_text_does_not_present_radon_as_enforcement` — the CLI description lists the
-  enforcing steps and says Radon cannot fail the gate.
-- `test_a_report_step_that_breaks_still_fails_the_gate` — a non-zero exit from a report
-  step **does** fail the wrapper, reported as the tool breaking rather than as a finding.
-  A tool that exits 0 on every finding can only exit non-zero when it is broken.
-
-### Every Enforcing Step Can Fail (260731-EFA-L2)
-
-`EveryEnforcingStepCanFailTests` holds the two steps this leaf added, and the complexity
-rules **at full strength**. Both were configured-but-unenforced before the leaf: the
-formatter ran in no gate at all, and `max-complexity = 10` was set while `C901` was
-unselected. Arming them produced 67 complexity offenders, which were first parked behind a
-shrink-only baseline and then — on the developer's correction — refactored outright.
-
-- `test_the_ruff_step_routes_no_rule_away_from_itself` — the `ruff` step passes **no**
-  `--extend-ignore` and no `--select`; it lints exactly what `pyproject.toml` selects.
-- `test_the_complexity_rules_are_selected_and_nothing_ignores_them` — `C901`, `PLR0911`,
-  `PLR0912`, `PLR0915` are selected and unignored.
-- `test_ruff_rejects_an_over_complex_function_at_this_repository_configuration` — a real
-  Ruff run, at this repository's real `--config`, rejects a function that trips all four
-  rules at once (60 branches, 61 returns, 121 statements, cyclomatic complexity 61).
-- `test_no_suppression_directive_in_the_tree_holds_a_complexity_rule_down` — no
-  `noqa`/per-file-ignore anywhere in the tree may hold one of those codes down.
-- `test_ruff_format_is_checked_over_the_whole_derived_scope`.
-- `test_the_complexity_baseline_and_its_gate_step_are_gone` — **the ratchet is forbidden,
-  not merely absent.** `quality/complexity-baseline.txt`, the
-  `code_quality/complexity_baseline.py` module, its test module and its wrapper step were
-  all built during this leaf and then deleted when the developer ruled that ratchets,
-  baselines, grandfather lists and burn-down schedules are all forbidden. This test is what
-  stops them coming back.
-
-### PLR0913's One Exemption Moved To Its Owning Suite
-
-`ToolSignatureExemptionTests` now lives in
-`test_code_quality_tool_signature_exemption.py`. `PLR0913` is armed, and 163 parameter objects were
-introduced so 274 of 293 long signatures could be fixed by extraction. The 19 that remain
-are `@server.tool()` declarations under `mcp/src/agents_remember/mcp/registration/`, where
-FastMCP derives the tool's **published JSON input schema** from the Python signature —
-collapsing the parameter list into an object is a breaking wire change, not a refactor.
-
-The per-file-ignore covers only that directory, and this class is what holds it shut:
-
-- `test_plr0913_is_armed_and_nothing_globally_ignores_it`.
-- `test_the_registration_modules_are_the_only_path_exempt_from_plr0913` — a second exempt
-  path fails.
-- `test_every_function_in_the_exempted_path_is_a_published_tool_declaration` — an **AST**
-  walk over every file the pattern really resolves to (read from `pyproject.toml`, not
-  from a path written in the test, so a widened pattern drags its new files into the walk
-  instead of escaping it). Only `@server.tool()` declarations and the thin
-  `register_*_tools(server, config)` registrars are allowed; the decorator is matched on
-  the syntax tree, not on its spelling.
-- `test_no_suppression_directive_in_the_tree_holds_an_argument_count_finding_down`.
-- `test_ruff_rejects_a_seven_parameter_function_at_this_repository_configuration`.
-
-### CRAP Has A Threshold, Not An Exemption List (260731-EFA-L2)
-
-`CrapThresholdEnforcementTests`:
-
-- `test_a_failing_gate_names_every_offender_not_only_the_reported_top`.
-- `test_an_offender_is_told_the_branch_coverage_that_would_clear_it` and
-  `test_the_clearing_coverage_inverts_the_crap_formula` — `crap = cc**2 * (1-cov)**3 + cc`
-  inverts exactly, so the gate reports the coverage that would clear a function rather
-  than only its score.
-- `test_an_offender_that_no_test_can_clear_is_told_to_split_instead` — above a certain
-  complexity, 100% coverage still fails; the gate says "split" rather than "test harder".
-- `test_no_repository_gate_carries_a_crap_exemption_file`.
-
-### Scope Is Derived, Not Written Down (260731-EFA-L2)
-
-`GateScopeDerivationTests`:
-
-- `test_module_declares_no_hand_written_scope_constant` — the retired
-  `DEFAULT_SOURCE_PATHS` / `DEFAULT_TEST_PATHS` shape cannot come back.
-- `test_scope_derived_from_this_checkout_reaches_the_whole_tree`.
-- `test_a_script_outside_every_package_reaches_ruff_and_pyright` — the specific hole the
-  leaf closed: a file that is in no importable package still reaches both rails.
-- `test_scope_is_the_index_so_an_unadded_file_is_not_yet_part_of_the_tree` — `git ls-files`
-  reads the index, which is exactly the content the pre-commit tier certifies.
-- `test_top_level_packages_ignores_nested_packages`.
-- `test_missing_testpaths_is_an_error_rather_than_a_default`,
-  `test_a_project_with_no_pyproject_at_all_cannot_derive_where_the_suite_lives`,
-  `test_a_pytest_table_that_is_not_a_table_reads_as_absent_rather_than_crashing`,
-  `test_a_repository_tracking_no_python_is_refused_instead_of_scoped_to_nothing`,
-  `test_python_that_belongs_to_no_package_leaves_coverage_nothing_to_measure` and
-  `test_scope_failure_exits_non_zero_with_an_explanation` — a gate that cannot work out
-  its scope refuses rather than certifying nothing.
-- `test_a_derivable_scope_runs_the_gate_and_main_reports_its_verdict` — `main` owns no
-  verdict of its own: it derives scope from the project root on the command line, then
-  hands back whatever the gate decided, carrying the threshold and diff base through.
-
-The sample projects these tests build are **real git repositories**, deliberately: every
-rail of the wrapper reads the tree through git (`derive_scope` from `git ls-files`, the
-changed-lines coverage floor from `git diff` against the merge base), so a sample project
-that is not a repository would exercise nothing.
-
-### Pytest Configuration Is Asserted, Not Assumed (260731-EFA-L2)
-
-`PytestConfigurationTests` reads the real `[tool.pytest.ini_options]` and pins the
-strictness switches, `python_classes` covering the `*Tests` house convention, and
-`filterwarnings` erroring by default. Two of its tests are ratchets rather than checks:
-
-- `test_the_warning_ignore_list_is_capped` asserts an **exact count of 5** ignores, not a
-  ceiling. Paying one off forces the number down in the same commit, and adding one is a
-  visible edit to a test.
-- `test_registered_markers_and_the_suite_environment_gates_agree` scans the suite for
-  `AR_*` / `AGENTS_REMEMBER_*` environment gates and reconciles them against the
-  registered markers **in both directions**, so neither list can drift ahead of the other.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Tests verify command order and fixed module selection without shelling out,
-  including that Pyright receives the derived scope and the active interpreter path.
-- Fixed check failures make the wrapper return nonzero.
-- Missing coverage JSON makes the CRAP step fail.
-- CRAP threshold hits fail the default wrapper, and the parser exposes no
-  report-only or strict opt-in mode — and now no path arguments either.
-- Repository-gate fixtures prove the shared tiered hook body and CI both invoke
-  the same default wrapper command, and separately that each hook is wired to
-  its intended tier (`pre-commit` → `fast`, `pre-push` → `full`). The wrapper
-  itself runs in the full tier and in CI; the fast tier runs the generated-copy
-  checks (skills, runtime assets, **harness trees**) plus Ruff,
-  `ruff format --check`, and Pyright. The full tier is the only one that carries
-  pytest, CRAP and the changed-lines coverage floor, because the floor needs a diff base.
-- The wrapper threads an environment to the runner whose `PYTHONPATH` leads with
-  this checkout's source import root, so the gate measures the current checkout.
-- **Exactly two steps are reports** and both are Radon; every other step enforces.
-- The `ruff` step routes **no** rule away from itself. There is no second complexity step
-  and no baseline for one to hold against.
-- **No ratchet, baseline, grandfather list or burn-down schedule may be reintroduced.**
-  `test_the_complexity_baseline_and_its_gate_step_are_gone` enforces this.
-- The only exemption anywhere in the gate is the `PLR0913` per-file-ignore over the MCP
-  registration directory, and an AST test proves every function it reaches is a published
-  `@server.tool()` declaration or its registrar.
-- Scope assertions read the real repository through `derive_scope`; there is no fixture
-  that could let a narrowed scope pass.
-- The warning-ignore cap is an exact count, so the list can only shrink.
+The filename does not establish complexity or coverage enforcement. Fixture configuration supports consuming tests and must not restore removed percentage gates.
 
-## Repo-Internal References
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source quality wrapper: enforcing steps, two declared Radon reports, and scope derived from `git ls-files` plus pytest `testpaths`. | "def quality_steps("; "def derive_scope("; "def pytest_testpaths(" | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168; mcp/test_support/agents_remember_test_support/code_quality/scope.py:180-189; mcp/test_support/agents_remember_test_support/code_quality/scope.py:417-440 |
-| The changed-lines coverage floor the full tier carries, and its own behavioural suite. | "DEFAULT_DIFF_COVERAGE_FLOOR = 100.0"; "Score the changed lines, or report why there is nothing to score."; "def test_a_diff_below_the_floor_fails_the_wrapper(self) -> None:"; "def test_the_floor_runs_inside_the_wrapper_rather_than_beside_it(self) -> None:" | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:31-31; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:295-295; mcp/tests/test_diff_coverage.py:588-588; mcp/tests/test_diff_coverage.py:647-647 |
-| CRAP-Calculator owns the function scoring used by the wrapper, and keeps Radon load-bearing. | `complexity_blocks`, `calculate_scores` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:232-239; mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:294-305 |
-| The `@server.tool()` declarations the one `PLR0913` per-file-ignore covers, walked by AST. | `register_core_tools`; `test_every_function_in_the_exempted_path_is_a_published_tool_declaration`; "mcp/src/agents_remember/mcp/registration/*.py" | mcp/src/agents_remember/mcp/registration/core.py:21-25; mcp/tests/test_code_quality_tool_signature_exemption.py:60-70; pyproject.toml:24-38 |
-| The complexity-selection and branch-coverage settings this suite reads. | "\"C901\", # Enforce [tool.ruff.lint.mccabe] max-complexity."; "branch = true" | pyproject.toml:17-17; pyproject.toml:71-71 |
-| The pytest configuration this suite reads. | `testpaths` | pyproject.toml:128-128 |
-| An independent recomputation that the wrapper's real argument vectors reach every tracked file. | `test_every_tracked_python_file_is_linted_and_type_checked`; `test_python_product_coverage_and_test_execution_reach_their_owners` | mcp/tests/test_gate_scope.py:157-178; mcp/tests/test_gate_scope.py:180-202 |
-| The shared tiered hook body scanned by the parity test; the full tier invokes the wrapper. | "dashboard_checks() {" | .githooks/_gate.sh:120-291 |
-| CI defines a workflow for pull requests. | "pull_request" | .github/workflows/quality-checks.yml:7-7 |
-| The targeted configuration regression pins both environment fallback and explicit-argument precedence for the enclosure progress report. | `test_targeted_config_keeps_the_repository_file_size_arm`, "self.assertEqual(explicit_config.progress_report, explicit_progress_report)" | mcp/tests/test_code_quality_check.py:80-136 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-### 260731-EFA-L17 — The Pre-Push Tier Is Targeted
+## Repo-Internal References
 
-`test_repository_gates_use_default_strict_wrapper` still walks every gate file
-for a wrapper reach and no CRAP opt-out, but the hook tier assertions now expect
-`{"pre-commit": "fast", "pre-push": "targeted"}`
-(`test_git_hooks_delegate_to_the_shared_tiered_gate`), and
-`test_the_pre_push_tier_runs_the_targeted_contract` (lines 156-166) asserts
-`_gate.sh` delegates to `code_quality.check --targeted` while `full` remains a
-manual tier only.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-## L23 Native Temp Regression
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Run git. | `run_git` | mcp/tests/test_code_quality_check.py:21-27 |
+| Write sample repository. | `write_sample_repository` | mcp/tests/test_code_quality_check.py:30-62 |
 
-The CLI boundary tests now assert both ordinary and memory-capped runs pass the
-constant short native scratch root to environment sanitization, independently
-of durable progress-report placement.
+## Cross-Repo References
 
-## R39 Direct-Wrapper And Workflow Proofs
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-Repository workflow assertions require exactly the pull-request deterministic check and the
-tag-only publish workflow, forbid pytest/wrapper/Dagger acceptance in GitHub Actions, and retain
-Dagger as the sole production acceptance owner. Accepted wrapper tests explicitly patch the guard.
-The missing/mismatched-attestation and native-temp entry-boundary tests moved intact in R42 to
-`test_code_quality_environment_guard.py`, whose sidecar now owns that behavior.
-
-## 260821-DAGQC-L4 Repository-Policy Wording
-
-The repository-policy and pre-push assertions now require the hook to say that acceptance is
-Dagger-only, while retaining the explicit host full-suite refusal and the absence of wrapper,
-pytest, or frontend-test execution in hooks and GitHub workflows. This does not expand the suite's
-ownership into direct targeted Vitest diagnostics: those are supported unit/component feedback
-only and never acceptance, changed-lines coverage, or lifecycle evidence.
-
-## 260824-PDLS Admission Boundary
-
-Quality configurations in this suite now receive `QUALITY_TEST_ADMISSION`, the capability already
-validated by root certifying bootstrap. The tests do not construct or bypass admission. This file
-also proves stale phase output is cleared and the route-neutral phase-report destination is wired
-into the pytest step.
-
-## Evidence-Lifecycle Rail
-
-The fixed quality command now runs `agents_remember_test_support.testing.evidence_lifecycle` as an enforcing
-step before pytest. The suite pins both command order and rail classification: lifecycle-evidence
-validation is neither an optional Radon-style report nor an out-of-band check. Adding the step
-shifts the pytest command index, which the wrapper assertion tracks explicitly.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the wrapper-inventory-to-profile proof replacement in code quality check tests.
 
 

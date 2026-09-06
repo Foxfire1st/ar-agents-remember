@@ -44,10 +44,8 @@ self.dirty else None` — because the tri-state must not leak: proven-clean (`Fa
 unprovable (`None`) both drop out, so the wire never fabricates a "clean" fact. Absence is not a
 pristine claim.
 
-**No bytes moved.** `test_serving.py`'s `_build_wire(build)` helper cit:(["return build.payload().model_dump("], mcp/tests/test_serving.py:93-93) is the one place
-the tests express "the stamp exactly as the state body carries it"
-(`build.payload().model_dump(mode="json", exclude_none=True)`), and every assertion that used to
-call `build.payload()` directly now goes through it against the same expected dicts.
+The current `payload` method returns the declared serving-build model (mcp/src/agents_remember/serving/build_info.py:59-73).
+The earlier test helper was retired; no present test execution is inferred from this serializer contract.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current
 source behavior above; verification metadata stays pinned to the pre-commit source history until
@@ -176,9 +174,11 @@ is proven by repository source and tests.
 | The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:933-933 |
 | The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text(" | scripts/sync-dashboard.py:147-147; scripts/sync-dashboard.py:157-157 |
 | The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:108-109 |
-| `test_resolves_commit_in_a_git_checkout` asserts `dashboardBuild` present-or-omitted rather than indexing it unconditionally, through the shared `_build_wire` helper that names the wire form. | `test_resolves_commit_in_a_git_checkout`; "return build.payload().model_dump(" | mcp/tests/test_serving.py:93-93; mcp/tests/test_serving_cli.py:46-61 |
-| The one runner both probes call: `GIT_REPOSITORY_SELECTOR_ENV` (the `GIT_DIR` family stripped by `git_environment`) and `run_git` itself (`safe.directory`, stdin `DEVNULL`, caller-supplied `timeout`). | "GIT_REPOSITORY_SELECTOR_ENV = ("; "def git_environment() ->"; "def run_git(" | mcp/src/agents_remember/kernel/git_command.py:34-34; mcp/src/agents_remember/kernel/git_command.py:94-94; mcp/src/agents_remember/kernel/git_command.py:103-103 |
-| `DecoyRepositoryTests` sets the selectors against a decoy repository and proves reads and writes still answer from the real one; `SingleRunnerTests.test_only_the_kernel_module_defines_a_git_runner` keeps this module from growing a private copy again. | `test_reads_answer_from_the_real_repository_not_the_decoy`; `test_only_the_kernel_module_defines_a_git_runner` | mcp/tests/test_git_command.py:197-215; mcp/tests/test_git_command.py:565-582 |
+| The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. | `payload` | mcp/src/agents_remember/serving/build_info.py:59-73 |
+| The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
+| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:124-130 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
+
 
 ## Cross-Repo References
 

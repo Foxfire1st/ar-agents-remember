@@ -5,86 +5,75 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_doc_structural_publication_l2.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:48+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Forces exact JSON/Markdown source-set and compare-and-swap behavior for L2 structural task-document
-publication.
+Checks exact JSON and Markdown source-set binding for structural task publication. Drift on either representation refuses an attach; a completed detach permits a later exact absence-bound create without changing unrelated membership. The test fixtures preserve compare-and-swap authority rather than trusting a rendered title.
 
 ## Code Commentary
 
 ### Logic
 
-Seven L2-owned tests force the exact accepted source set and paired JSON/Markdown CAS. Attach
-refuses independent JSON or Markdown drift in the selected master without publishing any protected
-document. Detach binds the selected missing master's exact absence without promoting the unrelated
-sprint into a create transaction, refuses one-sided JSON or Markdown appearance, and permits a
-later create only after the exact absence-bound detach publishes. Master synchronization likewise
-refuses independent JSON or Markdown drift while preserving the selected leaf and paired master
-documents.
-
-The removed create-first winner-order case required task publication to proceed through the
-pre-L3 queue freeze. It is intentionally not part of this L2 source. L3 owns task unlocking,
-post-publication queue invalidation/rebuild, and the associated winner-order acceptance tests.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Each helper induces drift or publication ordering at the real `TaskDocPublication` /
-`TaskDocPublicationTransaction` seam. Assertions compare selected and affected JSON/Markdown
-pairs byte-for-byte on refusal instead of treating queue topology as an accepted task source.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Only selected task-document JSON/Markdown pairs belong to the structural publication CAS source
-  set; topology discovery cannot silently widen it.
-- Exact missing-file absence is a source fact, so one-sided JSON or Markdown appearance must refuse
-  publication without overwriting the concurrent writer.
-- L2 does not use these tests to approve the current queue freeze or to claim the L3 task-first
-  invalidation/rebuild contract has landed.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None recorded.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies to these repository-internal forcing tests.
-
-## Repo-Internal References
-
-The test source is the direct evidence for the regression contract.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Attach refuses independent selected-master JSON or Markdown drift and leaves every protected selected/affected document unchanged. | `TaskDocStructuralPublicationL2Tests` | mcp/tests/test_task_doc_structural_publication_l2.py:29-92 |
-| Detach binds exact selected-master absence, excludes the unrelated sprint from the later create source set, and refuses independent missing-master JSON or Markdown appearance. | `TaskDocDetachAbsencePublicationL2Tests` | mcp/tests/test_task_doc_structural_publication_l2.py:95-198 |
-| Master synchronization refuses independent JSON or Markdown drift and preserves the selected leaf plus paired master documents. | `TaskDocMasterSyncPublicationL2Tests` | mcp/tests/test_task_doc_structural_publication_l2.py:201-256 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Attach refuses json side drift across selected master batch | `test_attach_refuses_json_side_drift_across_selected_master_batch` | mcp/tests/test_task_doc_structural_publication_l2.py:85-86 |
+| Attach refuses markdown side drift across selected master batch | `test_attach_refuses_markdown_side_drift_across_selected_master_batch` | mcp/tests/test_task_doc_structural_publication_l2.py:88-89 |
+| Detach first allows later exact absence bound create | `test_detach_first_allows_later_exact_absence_bound_create` | mcp/tests/test_task_doc_structural_publication_l2.py:124-157 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is owned by this test file.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Forces exact JSON/Markdown source CAS for structural task writers, detach absence, and master synchronization.
-
-### Current Invariants
-
-- Structural mutation publishes task truth from the selected source set without a second queue-owned read.
-- Appearance, disappearance, or drift of any bound source refuses without partial publication.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
 

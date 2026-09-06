@@ -105,11 +105,14 @@ against the exact candidate checkout so the profile bytes admitted are the candi
 | Confined one-file resolution with symlink and escape refusal. | `resolve_repository_profile_path`; `_reject_symlink_components` | mcp/src/agents_remember/certification/repository_profiles/authority.py:94-171; mcp/src/agents_remember/certification/repository_profiles/authority.py:173-196 |
 | 8 MiB budget and eager JSON parse for the admitted bytes. | `_read_profile_bytes` | mcp/src/agents_remember/certification/repository_profiles/authority.py:198-231 |
 | Settings parsing binds one canonical relative path per repository. | `_optional_repository_profile_reference` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:341-368 |
-| The quality gate admits the same profile per exact candidate checkout. | `_admitted_selection`; `_admit_prepared_profile` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:236-250; mcp/src/agents_remember/worktrees/modules/quality/gate.py:579-593 |
-| Path-authority regressions cover missing/ambiguous/escape/symlink/malformed/digest/repository-identity refusals. | `test_exact_repository_relative_authority_loads_one_file`; `test_invalid_authority_refuses_before_read`; `test_symlink_escape_is_refused`; `test_malformed_and_digest_mismatch_are_typed`; `test_repository_identity_mismatch_is_refused` | mcp/tests/test_repository_profile_authority.py:25-107 |
+| The gate admits the repository profile selection from its declared authority. | "def _admitted_selection" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:548-562 |
+| The sandbox admits the profile execution against its prepared candidate tree. | "def _admit_prepared_profile" | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66 |
 
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
 

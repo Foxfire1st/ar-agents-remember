@@ -82,10 +82,6 @@ ledger and commits memory and is gated on clean drift unless `accept_drift=true`
 | The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:308-314 |
 | The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:321-338 |
 | The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:341-346 |
-| Baseline branch packing and drift gating are proved by `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift`. | `test_memory_baseline_adopt_groups_the_two_branches_and_gates_on_drift` | mcp/tests/test_mcp_registration_wiring_tests_1.py:498-514 |
-| Carryover selection packing is proved by `test_memory_carryover_plan_packs_the_selection`. | `test_memory_carryover_plan_packs_the_selection` | mcp/tests/test_mcp_registration_wiring_tests_1.py:516-542 |
-| Apply intent and default-message packing is proved by `test_memory_carryover_apply_carries_the_intent_note_and_default_messages`. | `test_memory_carryover_apply_carries_the_intent_note_and_default_messages` | mcp/tests/test_mcp_registration_wiring_tests_1.py:544-566 |
-| Registration dispatch and schema are forced through the live FastMCP boundary. | `test_memory_quality_check_runs_every_check_when_none_are_named`; `test_memory_quality_check_start_mode_starts_a_background_run`; `test_memory_quality_check_run_id_polls_the_run`; `test_memory_quality_poll_rejects_explicit_start_fields_before_dispatch`; `test_memory_quality_tool_schema_exposes_the_three_request_modes` | mcp/tests/test_mcp_registration_wiring_tests_1.py:315-329; mcp/tests/test_mcp_registration_wiring_tests_1.py:331-344; mcp/tests/test_mcp_registration_wiring_tests_1.py:346-371; mcp/tests/test_mcp_registration_wiring_tests_1.py:401-424; mcp/tests/test_mcp_registration_wiring_tests_1.py:426-432 |
 
 ## 260815-DAG-L3 Curator Attestation Registration
 

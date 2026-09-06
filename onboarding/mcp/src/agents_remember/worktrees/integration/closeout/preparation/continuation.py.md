@@ -26,7 +26,7 @@ PreparedCloseoutContinuation uses the registered prepared-memory producer. run_m
 
 ### Conventions
 
-Import the owning module directly. Current uncommitted implementation has no commit-based verification stamp.
+Import the owning module directly. The source is landed in `245057ab16e19afdaabd5c188c9576b22e0c0870` and byte-identical at the recovery code candidate. Its behavior has been re-read; verification metadata remains owned by canonical carryover.
 
 ### Invariants And Boundaries
 

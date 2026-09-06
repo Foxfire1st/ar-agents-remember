@@ -5,71 +5,70 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_gate_certificate_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | 6f10c24d72db6171c0d434b307e6806996e2f11d |
 | lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-The forcing suite for the content-addressed gate-certificate contract (CCR-R21@v2): admission
-freezes, five-gate certificate issuance, dependency-aware invalidation/reuse, exact artifact
-binding between Gate 2 and Gate 3, the content-addressed store, and finalization authority.
+Content-addressed five-gate certificate and finalization authority contracts.
 
 ## Code Commentary
 
 ### Logic
 
-`_Scenario` builds a canonical registry/profile/plan/admission tower; `_certify_through`
-issues a complete Gate 1-5 certificate set. The cases prove the certificate digest binds exact
-semantics but not provenance; inventories refuse duplicates; the five-gate chain separates suite
-artifacts from finalization authority; red/partial/diagnostic/combined results never publish
-certificates; the normative invalidation matrix is exhaustive; reuse is dependency-aware and
-refuses forged or stale identity; profile mismatch and unproven runtime changes fail closed; the
-content store is exact/atomic/bounded with no historical lookup; forged noncanonical envelopes
-refuse; admission refuses conflicts/misalignment/unproven candidates; publication refuses stale
-dependencies and incomplete authority; input-change/reuse shapes fail closed; and store capacity
-corruption refuses.
+The chain separates Gate-2 artifacts from Gate-3 manifests and binds Gate-5 memory inputs and four predecessors. Red, partial, diagnostic or combined results refuse certification. Reuse follows dependencies: memory changes rerun Gate 5, unchanged inputs start none and image changes restart Gate 4. The store enforces exact bounded atomic bytes and admission rejects conflicting semantic inputs.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Only a complete green certifying result publishes a certificate; diagnostics never promote.
-- Gate 3 accepts only the exact green Gate-2 certificate and verified artifacts.
-- Journal/review/approval metadata never perturbs Gate 1-4 identities.
-- Unchanged recovery begins with zero gate starts; the store is never queried by newest-success.
-- Exact finding codes are asserted on every refusal.
+Certificates require original authority rather than a historical search or recomputed matching label. Finalization currentness is separate from merely holding a five-certificate chain.
 
 ### Todos
 
-None recorded.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies; CCR-R21@v2 is the governing packet.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The R21 packet requires the full invalidation matrix, artifact verification, and store/authority refusal fixtures. | "Expected Verification Evidence" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:126-135 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Admission and certificate issuance bind exact semantics, not provenance. | `test_admission_and_gate_certificates_bind_exact_semantics_not_provenance` | mcp/tests/test_gate_certificate_authority.py:324-355 |
-| The five-gate chain separates suite artifacts and finalization authority; red/diagnostic results never publish. | `test_five_gate_chain_separates_suite_artifacts_and_finalization_authority`; `test_red_partial_diagnostic_and_combined_results_never_publish_certificates` | mcp/tests/test_gate_certificate_authority.py:390-433; mcp/tests/test_gate_certificate_authority.py:435-479 |
-| The normative matrix and dependency-aware reuse are forced. | `test_normative_invalidation_matrix`; `test_reuse_is_dependency_aware_and_refuses_forged_or_stale_identity` | mcp/tests/test_gate_certificate_authority.py:481-506; mcp/tests/test_gate_certificate_authority.py:508-565 |
-| The content store is exact, atomic, bounded, and has no historical lookup. | `test_content_store_is_exact_atomic_bounded_and_has_no_historical_lookup`; `test_content_store_refuses_publication_and_capacity_corruption` | mcp/tests/test_gate_certificate_authority.py:591-638; mcp/tests/test_gate_certificate_authority.py:964-1020 |
-| Forged envelopes, stale dependencies, and incomplete authority refuse with finding codes. | `test_certificate_models_refuse_forged_noncanonical_envelopes`; `test_certificate_publication_refuses_stale_dependencies_and_incomplete_authority` | mcp/tests/test_gate_certificate_authority.py:640-719; mcp/tests/test_gate_certificate_authority.py:793-885 |
+| Five gate chain separates suite artifacts and finalization authority. | `test_five_gate_chain_separates_suite_artifacts_and_finalization_authority` | mcp/tests/test_gate_certificate_authority.py:319-361 |
+| Red partial diagnostic and combined results never publish certificates. | `test_red_partial_diagnostic_and_combined_results_never_publish_certificates` | mcp/tests/test_gate_certificate_authority.py:364-407 |
+| Reuse is dependency aware and refuses forged or stale identity. | `test_reuse_is_dependency_aware_and_refuses_forged_or_stale_identity` | mcp/tests/test_gate_certificate_authority.py:410-466 |
+| Profile mismatch and unproven runtime change fail closed. | `test_profile_mismatch_and_unproven_runtime_change_fail_closed` | mcp/tests/test_gate_certificate_authority.py:469-490 |
+| Content store is exact atomic bounded and has no historical lookup. | `test_content_store_is_exact_atomic_bounded_and_has_no_historical_lookup` | mcp/tests/test_gate_certificate_authority.py:493-542 |
+| Admission refuses conflicts misalignment and unproven candidate. | `test_admission_refuses_conflicts_misalignment_and_unproven_candidate` | mcp/tests/test_gate_certificate_authority.py:545-614 |
 
 ## Cross-Repo References
 
-None; the suite is repository-local and exercises production certificate owners.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): created the card for the new

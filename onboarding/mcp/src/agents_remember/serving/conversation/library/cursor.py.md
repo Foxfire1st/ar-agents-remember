@@ -72,8 +72,8 @@ rejection; the contract module owns the branded token types this authority mints
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| List/read cursors round-trip and reject tampering and wrong-purpose use. | `test_list_cursor_round_trip_and_tamper_rejection`, `test_read_cursor_round_trip_and_wrong_purpose_rejection` | mcp/tests/test_conversation_library_cursor.py:37-50; mcp/tests/test_conversation_library_cursor.py:53-66 |
-| Conversation keys and resume targets round-trip and reject garbage/foreign signatures. | `test_conversation_key_round_trip_and_garbage_rejection`, `test_resume_target_round_trip_and_garbage_rejection` | mcp/tests/test_conversation_library_cursor.py:77-90; mcp/tests/test_conversation_library_cursor.py:93-110 |
+| The cursor authority signs and validates purpose-bound list/read coordinates and native identities. | `LibraryCursorAuthority` | mcp/src/agents_remember/serving/conversation/library/cursor.py:64-299 |
+| The cursor authority signs and validates purpose-bound list/read coordinates and native identities. | `LibraryCursorAuthority` | mcp/src/agents_remember/serving/conversation/library/cursor.py:64-299 |
 | Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | `identity_digest`, `catalog_generation` | mcp/src/agents_remember/serving/conversation/library/cursor.py:72-87; mcp/src/agents_remember/serving/conversation/library/cursor.py:89-98 |
 | The purpose-branded token types and binding models are declared in the parent contract. | "class LibraryCursorBinding(WireModel):", "class LibraryKeyBinding(WireModel):" | mcp/src/agents_remember/models/conversations/cursors.py:54-54; mcp/src/agents_remember/models/conversations/cursors.py:61-61 |
 

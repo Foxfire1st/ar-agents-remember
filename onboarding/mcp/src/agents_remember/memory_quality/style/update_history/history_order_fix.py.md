@@ -47,7 +47,7 @@ without writing them.
 | --- | --- | --- |
 | The diagnostic checker provides the timestamp and section parsing helpers. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
 | The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally. | `rel` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:58-64 |
-| Tests cover successful reordering and skipped missing-timestamp sections. | `test_history_order_fix_reorders_update_history_entries`, `test_history_order_fix_skips_missing_timestamp` | mcp/tests/test_memory_quality.py:249-273; mcp/tests/test_memory_quality.py:275-298 |
+
 
 ## Update History
 

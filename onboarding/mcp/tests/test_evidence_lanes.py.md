@@ -5,74 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_evidence_lanes.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP test overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Forces every pytest node into one explicit evidence category, validates the executable lane
-registry, and rejects missing, duplicate, conflicting, or silently inferred classifications.
+Evidence-lane registry completeness and uniqueness validation.
 
 ## Code Commentary
 
 ### Logic
 
-The suite verifies exhaustive one-to-one category registration and the non-accepting diagnostic
-contract, checks trigger-to-marker expressions, loads the checked-in lane manifest to classify
-representative unit/integration/provider nodes, and forces loud refusal for conflicting markers,
-ad-hoc checked-in markers, or an unknown file. Plugin hooks must register all markers and attach
-the category plus lane digest to every collected item.
+The retained test removes a required category, duplicates a category and reuses a marker; each malformed registry raises the specific UsageError. Small item/config and manifest fixtures remain available to consumers.
 
 ### Conventions
 
-Synthetic items expose only the pytest surface used by the plugin. Representative node paths come
-from the real repository manifest so a drift between registry and checked-in classification fails
-this test.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- No unmarked test silently defaults to unit or any other lane.
-- Each evidence category and marker is unique.
-- Stress stays out of affected runs; diagnostic execution requires its explicit route.
-- Provider conformance is classified from the checked-in manifest, not guessed from a runtime
-  opt-in marker.
+This single registry test does not enumerate every collected node or prove the historical classification matrix. Missing authority is a refusal rather than an implicit default lane.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured; lane semantics are repository-owned.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external documentation is required for the explicit lane registry. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry is exhaustive and diagnostic evidence is explicitly non-accepting. | `test_every_category_has_one_lane_and_diagnostic_evidence_is_non_accepting`; `test_incomplete_or_ambiguous_registry_is_refused` | mcp/tests/test_evidence_lanes.py:61-84 |
-| Trigger expressions keep stress, provider, migration, release, and diagnostic ownership distinct. | `test_cadence_expressions_keep_stress_out_of_affected_runs` | mcp/tests/test_evidence_lanes.py:86-93 |
-| Real manifest classification is exact and unknown or conflicting classifications fail loudly. | `test_item_category_is_exact_and_provider_gates_are_provider_evidence` | mcp/tests/test_evidence_lanes.py:95-143 |
-| Plugin hooks register the lane markers and publish category/digest properties. | `test_plugin_registers_the_registry_and_reports_category_on_each_item` | mcp/tests/test_evidence_lanes.py:145-162 |
+| Incomplete or ambiguous registry is refused. | `test_incomplete_or_ambiguous_registry_is_refused` | mcp/tests/test_evidence_lanes.py:66-74 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary applies.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Classification is wholly repository-local. | — | — |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-28T06:28+02:00 — PDLS wave 005 curator: created the missing sidecar for exhaustive,
   explicit, fail-loud evidence-lane classification.

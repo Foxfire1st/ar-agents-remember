@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastUpdated | 2026-09-06T21:56+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `../overview.md` |
@@ -16,90 +16,62 @@
 
 ## What This Area Is
 
-The Dagger-executed Python quality producer. It owns broad static checks, product-only behavioral
-scoring, source-derived test selection, persistent retry proof, causal prerequisite reporting, and
-machine-readable quality artifacts. Being shipped in the source distribution does not make this
-operational product behavior; its owner and consumers are repository verification.
+Repository verification infrastructure for quality planning, exact test selection, Dagger-produced evidence, diagnostic scoring, causal failure reporting and retry reuse. Shipping it alongside source does not make it operational product behavior. Static checks include product and verification inputs; production coverage and CRAP measurement exclude tests and support.
 
 ## Hot Path Summary
 
-`profile_selection.py` publishes the immutable repository-owned selector result;
-`profile_rails.py` rederives that exact scope, compares path populations in canonical POSIX-string order without dropping duplicates, and executes the selected Python rails; its teardown adapter publishes hash-bound proof from the actual clean-room reports.
-`check.py` executes and interprets the shared rail machinery; `quality_plan.py` owns their typed configuration,
-progress state, and deterministic command plan. `scope.py` proves complete
-product/verification package authority.
-`dependency_ownership.py` consumes source-derived imports, recursive pytest plugins, and literal
-artifact readers. `retry_proof.py` owns Dagger-cache identity/lifecycle, `retry_coverage.py` owns
-retained/fresh Coverage.py composition, and `quality_subprocess_environment.py` owns the child-rail
-environment boundary. `causal_preflight.py` binds failed contracts to exact dependent nodes;
-`causal_continuation.py` rejects missing or contradictory reports into an unsuppressed run
-of the already selected population; it does not broaden unknown ownership.
+`quality_plan.py` owns typed configuration and command planning; `check.py` executes/interprets the rails. `profile_selection.py` publishes the selected population and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `retry_proof.py`, `retry_coverage.py` and child-environment helpers preserve admitted retry inputs without leaking outer retry/progress controls into candidate tests.
 
 ## Operating Model
 
-Targeted selection and retry share one immutable source fact graph. Lifecycle declarations are
-validated against observed consumers; they never make themselves complete. Missing, ambiguous, dynamic, stale, or contradictory ownership retains explicit unresolved
-inputs; targeted `CheckConfig` construction refuses before tests run. Full mode and proven
-global invalidators remain explicit scope decisions, not recovery from unknown ownership. Retry proof persists only in the locked `ar-quality-retry-v3` Dagger cache and
-binds the exact lane population, environment digest, tools, immutable selection digest, candidate snapshot, and
-coverage artifacts. Delta coverage keeps retained and fresh databases separate until a passing
-pytest result is explicitly merged and atomically republished for all downstream scorers. An
-all-contexts-affected delta carries an explicit known-empty retained state; an unexpected missing
-retained database still fails closed.
+Targeted scope is derived from source and declared consumers, never guessed from unknown ownership. Missing, ambiguous, dynamic, stale or contradictory ownership remains explicit and refuses targeted admission instead of widening to a full suite. A full population is an explicit selection. Compare canonical POSIX-string populations while preserving duplicate detection; a differently ordered `Path` list is not a new authority.
 
-Non-Python product inputs that cannot participate in the import graph use narrow repository-owned
-consumer declarations only when independently observed literal reads match exactly. This lets the
-Codex starter configuration select its two real contract consumers and the root layer contract
-select its five architecture/structural consumers without treating every unrelated test as
-affected. The ambient runner has sixteen exact pytest consumers because the profile fixture and its importers observe its output contract; this ownership remains distinct from the lifecycle policy file's explicit global invalidation. Any declaration/source mismatch marks the selector incomplete and names the reason.
+Coverage and CRAP reports describe the selected production inputs. Their findings are diagnostic, while a broken report tool remains a failure. Retry data may be reused only under its exact admitted candidate, environment, tools, selected population and published artifact identity. Fresh and retained coverage databases remain separate until the owning successful execution merges/publishes them; missing expected artifacts cannot masquerade as known-empty proof.
+
+Causal reports distinguish a proved dependent node from an independent same-file node. Missing causal evidence cannot invent safe suppression or broaden unowned selection. Declared report paths and source applicability govern teardown evidence; a skipped clean-room scenario is explicitly non-applicable, not successful execution. Persisted physical producer bytes, export bindings and immutable report generations are distinct from synthetic test payloads.
 
 ## Local Invariants And Traps
 
-- Unknown ownership cannot produce `complete=True`.
-- Cache rejection names the exact reason and starts fresh; it is not a silent route fallback.
-- Only a fresh full pytest pass followed by a later quality failure may publish reusable proof.
-- Candidate-test subprocesses inherit semantic admission/invocation settings but never the outer
-  wrapper's retry-cache or progress-report controls.
-- Retained proof is never handed to pytest-cov/xdist as an append target.
-- Known-empty retained proof is explicit and cannot mask a missing expected artifact.
-- Causal suppression is exact-node and non-accepting; unproven and same-file independent nodes run.
-- Static rails cover product and verification packages; behavioral scores cover product authority
-  only.
-- Plan construction and execution remain separate owners behind the stable `check` facade.
-- Projection generation accepts the canonical Python 3.13 Pydantic shape for named literal
-  vocabularies: a local enum definition plus local `$ref`. Every other referenced vocabulary shape
-  still fails closed.
-- A non-Python consumer declaration never self-proves and cannot silently narrow targeted scope.
-
-Full mode compares the same selector and executable population using canonical path strings; component-wise `Path` ordering is not selector authority. Missing, extra or duplicate paths still refuse before pytest.
-
-The profile rail writes Coverage.py and pytest event/phase artifacts through the declared reports directory. Its `verify-teardown` adapter now requires a proof destination and publishes `teardown-proof/v1` from exact summary and replication bytes after every listed report proves `L5-C10` passed. A skipped scenario has explicit not-applicable proof. The clean-room producer owns the two-replication population; the adapter validates every listed report. Dagger emission and export own persisted binary rail logs and the stable file publications consumed by the host certificate evidence owner. The previously absent Gate-4 artifacts are current declared outputs, with producer and retention forcing in the test route.
+Do not reconstruct the deleted host diagnostic analyzer/manifest machinery to permit ordinary pytest: that development loop already exists. Do not add percentage floors, a CRAP exception registry or source-pinning tests to satisfy historical claims. Do not silently grow case budgets or move unit bloat under integration markers. Profile planning, execution and certifying publication stay separate owners.
 
 ## File-Level Onboarding Map
 
-All Python files in this route have one adjacent sidecar. The generated index is the exhaustive
-source/sidecar map after refresh.
+Use the generated adjacent route index for existing source/sidecar membership after its owner refreshes it. This overview does not promise one card for a deleted source file or maintain a parallel static inventory.
 
+## Historical Context
+
+The original PDLS/CCR entries explain exact-scope, retry and publication repairs. Their historical exact consumer counts and old coverage enforcement are not current policy. Current source and the diagnostic policy below govern; history is retained for provenance.
+## Development And Certification Policy
+
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+
+Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
+
+Only genuine Dagger admission and the existing lifecycle owners can issue immutable candidate-bound certifying evidence. A host pytest pass, copied report, green helper result or use of Dagger alone is insufficient. Reuse the existing shared engine and preserve process identity, disposable state, credential isolation, exact candidate and publication ownership. Full-suite execution and whole-master independent review belong to the master aggregation boundary under the current execution policy; this overview does not impose either on every leaf. Focused development evidence remains useful without pretending to be final acceptance.
 ## Repo-Internal References
 
-These source owners establish the current behavior and the stated fixture boundaries.
+These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact repository declarations are cross-checked against observed consumers. | `_repository_consumers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:409-441 |
-| Proved globals remain separate from unresolved ownership. | `_resolved_impact` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:345-377 |
-| Teardown validates exact checkpoint observations and hashes real report bytes. | `_verify_teardown` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:246-297 |
-| The adapter writes the declared proof artifact. | `_write_teardown_proof` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:300-310 |
-| The adjacent suite carries real verifier bytes through retained publication. | `test_real_teardown_producer_bytes_reach_the_emitted_binding_and_export` | mcp/tests/test_rail_evidence_publication.py:288-353 |
-| Canonical POSIX-string sorting preserves duplicates for exact membership validation. | `_paths` | mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:124-127 |
-| The unchanged full population succeeds; missing, extra and duplicate executable members refuse. | `test_full_python_rail_uses_canonical_selector_order_and_still_refuses_scope_drift` | mcp/tests/test_repository_certification_profiles.py:930-968 |
+| Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
+| Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
+| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:444-480 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/memory_quality/prepared_certification.py:396-437 |
+| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
-## Docs And Boundary References
+| Exact profile scope and suite execution. | `_require_exact_scope`; `_paths`; `_run_python_suite`; L92-L214 | [Profile rails](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:92-214) |
+| Plan composition and typed command steps. | `CheckConfig`; `Step`; `quality_steps`; L100-L168 | [Quality plan](mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-168) |
+| Teardown proof from source applicability and exact result bytes. | `_verify_teardown`; `_verify_started_teardown`; `_write_teardown_proof`; L253-L359 | [Teardown owner](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:253-359) |
 
-The canonical overview is `docs/design/python-evidence-system.md`; retry and direct-route details
-are in `docs/design/python-test-evidence.md` and the PDLS evidence reports.
+## Docs And Cross-Repo References
+
+No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+
+- 2026-09-06T21:56+00:00 — Reconciled the governing route against IAS d3610903 and retained source/card evidence. Replaced obsolete host-test prohibitions, coverage floors and deleted-suite claims with the current preparation/development/certification boundaries. Existing history and verification pins remain preserved; this is semantic memory preparation, not acceptance.
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Added canonical string scope ordering and exact population guards, refreshed the shifted teardown owner ranges, and retained the actual L32/C97 teardown contract; no later L33 source-applicability behavior is imported.
 

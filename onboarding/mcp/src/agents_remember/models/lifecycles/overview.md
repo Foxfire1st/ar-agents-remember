@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -170,7 +170,15 @@ envelope. These revisions have different purposes and must not be substituted fo
 
 The L34 private-output vocabulary is owned by [preparation.py](preparation.py.md), [preparation_state.py](preparation_state.py.md) and [prepared_memory.py](prepared_memory.py.md). Intent and raw-output identity, append-only command evidence and physical/logical execution views remain separate. None of these models makes a private commit a published mutation.
 
+
+## Integrated IAS Recovery Contract
+
+`preparation_state.py` separates output-command validation and command-terminal observation into focused helpers. An output still requires its original observed commit command; command history cannot be removed or restarted, and late terminal observation requires the original worker authority. The model remains a validator of selected journal facts, not a producer of Git proof.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 ### 2026-09-06T17:13:06+00:00 — L34 implementation memory
 

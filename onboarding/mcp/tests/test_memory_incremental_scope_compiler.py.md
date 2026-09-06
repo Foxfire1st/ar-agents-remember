@@ -5,89 +5,72 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_incremental_scope_compiler.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
 | lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Proves the content-addressed incremental scope compilation surfaces: the R06 scope
-compiler/owners fail-closed edges (dependency completeness, digest stability, checker-population
-completeness, source-index and R01/R02 authority, canonical paths, manifest self-verification) and,
-since CCR-R07@v3, the affected-closure planning, execution, subresult reuse, and aggregate edges
-that keep the closure exact and never promote incremental success.
+Exact incremental memory dependency closure and non-accepting reuse.
 
 ## Code Commentary
 
 ### Logic
 
-The R06 layer (lines 231-610) directly exercises the observer and compiler helpers: direct,
-transitive, and reverse-only dependency closure completeness; stable manifest digests across
-repeated observation; every current checker having one executable or full-only policy; full-only
-checkers staying pending; empty or unknown checker populations, missing edge classes, stale source
-indexes, and missing or ambiguous R01/R02 authority all being `scope-unproven`; and added-root /
-missing-endpoint / terminated-reverse-closure shapes.
-
-The R07 layer (lines 869-1187) proves the affected closure end to end: the plan executes only
-incremental documents and keeps the six full-only checks pending (line 869); the aggregate never
-promotes incremental success (line 896); a hard finding stays failed and a malformed result
-refuses (line 920); a blocked unit preserves its code and blocks the aggregate (line 964); an
-unchanged interruption reuses exact passes without executing (line 1004); a memory change reuses
-only units with identical dependency inputs (line 1026); incomplete scope, code repair, and
-candidate motion refuse with typed closures (line 1077); the executor registry and post-plan
-candidate are revalidated (line 1108); conflicting prior-result authority is never guessed (line
-1133); and the plan/aggregate models refuse rebound identity (line 1158).
+R06 includes direct, transitive and reverse-only dependencies and leaves full-only checks pending. Stale indexes, adjacent candidates and missing or ambiguous authority refuse. R07 publishes every member, preserves typed blocked results and never promotes incremental success. Unchanged interrupted work reuses exact passes; changed memory reuses only units with identical dependency inputs.
 
 ### Conventions
 
-Every refusal is asserted as a typed `ScopeUnprovenError`/`GateFiveClosureRefusedError` or a
-model `ValueError`, never as generic text matching.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Incremental proof cannot set `closeoutReady`/acceptance; the suite asserts the hard
-  `False`/pending-final-full shapes.
-- Reuse is exact-result-identity only; a unit cannot be both reused and executed.
-- The focused suites assert the same registry and scope authorities the planner uses.
+Incremental memoryReady is not closeoutReady or acceptanceEligible. Full-final obligations remain explicit; no silent full fallback repairs unproven scope.
 
 ### Todos
 
-R08 final full certification remains out of scope for this suite.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root. The governing task artifacts
-close the informational gap for the enforced behaviors: the CCR-R07@v3 requirement packet
-(Required Behavior, Exclusions And Forbidden Overreach) fixes the affected-closure contract
-to execute only the closure, retain unchanged subresults, allow no implicit full-scan fallback,
-and never let incremental proof replace full certification. The closing L07 leaf task step
-(S2 - Implement only CCR-R07) recorded the final selected Python suite passing 120 tests with
-focused affected coverage.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| R06 scope compile/owner edges: closure completeness, registry completeness, full-only visibility, R01/R02 authority, and canonical roots. | `test_direct_transitive_and_reverse_only_dependencies_are_complete`; `test_every_current_checker_has_one_executable_or_full_only_policy`; `test_missing_or_ambiguous_r01_r02_authority_is_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:231-251; mcp/tests/test_memory_incremental_scope_compiler.py:267-274; mcp/tests/test_memory_incremental_scope_compiler.py:377-390 |
-| The R07 plan executes only incremental documents and keeps full-only checks pending. | `test_r07_plan_executes_only_incremental_documents_and_keeps_six_final_checks_pending`; `test_r07_execution_publishes_every_member_and_never_promotes_incremental_success` | mcp/tests/test_memory_incremental_scope_compiler.py:869-895; mcp/tests/test_memory_incremental_scope_compiler.py:896-919 |
-| Interruption and memory-change reuse are exact-identity scoped. | `test_r07_unchanged_interruption_reuses_exact_passes_without_executing`; `test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs` | mcp/tests/test_memory_incremental_scope_compiler.py:1004-1025; mcp/tests/test_memory_incremental_scope_compiler.py:1026-1076 |
-| Typed refusals cover incomplete scope, code repair, motion, registry, and conflicting authority. | `test_r07_incomplete_scope_code_repair_and_candidate_motion_refuse_typed`; `test_r07_executor_registry_and_post_plan_candidate_are_revalidated`; `test_r07_conflicting_prior_result_authority_is_not_guessed` | mcp/tests/test_memory_incremental_scope_compiler.py:1077-1107; mcp/tests/test_memory_incremental_scope_compiler.py:1108-1132; mcp/tests/test_memory_incremental_scope_compiler.py:1133-1157 |
-| The suite consumes the real scope planner, executor, registry, and store owners. | `compile_affected_closure_plan`; `execute_affected_closure`; `ContentAddressedSubresultStore` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:183-250; mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:31-119 |
+| Direct transitive and reverse only dependencies are complete. | `test_direct_transitive_and_reverse_only_dependencies_are_complete` | mcp/tests/test_memory_incremental_scope_compiler.py:226-244 |
+| Full only checker remains pending without silent full fallback. | `test_full_only_checker_remains_pending_without_silent_full_fallback` | mcp/tests/test_memory_incremental_scope_compiler.py:247-257 |
+| Stale index and adjacent candidate snapshot are scope unproven. | `test_stale_index_and_adjacent_candidate_snapshot_are_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:260-284 |
+| Missing or ambiguous r01 r02 authority is scope unproven. | `test_missing_or_ambiguous_r01_r02_authority_is_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:313-324 |
+| R07 execution publishes every member and never promotes incremental success. | `test_r07_execution_publishes_every_member_and_never_promotes_incremental_success` | mcp/tests/test_memory_incremental_scope_compiler.py:570-591 |
+| R07 blocked unit preserves code and blocks aggregate. | `test_r07_blocked_unit_preserves_code_and_blocks_aggregate` | mcp/tests/test_memory_incremental_scope_compiler.py:594-631 |
+| R07 unchanged interruption reuses exact passes without executing. | `test_r07_unchanged_interruption_reuses_exact_passes_without_executing` | mcp/tests/test_memory_incremental_scope_compiler.py:634-653 |
+| R07 memory change reuses only units with identical dependency inputs. | `test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs` | mcp/tests/test_memory_incremental_scope_compiler.py:656-689 |
 
 ## Cross-Repo References
 
-No cross-repository implementation boundary is exercised.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite drives only repository-owned owners. | — | — |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Refreshed the incoming affected-execution range; unchanged test source retains its verification stamp.
 

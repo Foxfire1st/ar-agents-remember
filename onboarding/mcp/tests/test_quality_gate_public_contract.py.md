@@ -5,82 +5,76 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_gate_public_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:11:59+00:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Tests selected immutable quality-result rendering, strict public quality paths, and lossless closeout-readiness projections with separate fixture scopes for publication and wire compilation.
+Checks lossless public closeout readiness and immutable quality evidence. The retained cases preserve finalization authority through projection, keep diagnostic results non-certifying even when their rails match, reject stale certificates and invalid profiles, and refuse changed decoder bytes under the same identifier.
 
 ## Code Commentary
 
 ### Logic
 
-The selected-code fixture runs the real integration journal and publication owners over an injected executor. Pointer rotation replaces its current report pointer with another real fixture generation; rendering the supplied original selection must return the same result and original immutable decoder path without changing that pointer. A decoder definition changed under the same generation identity must refuse. Recovery does not rediscover authority through the current pointer or mint a replacement certificate.
-
-The response-model test preserves both the mutable enclosure `reportPath` and immutable `publishedResultPath` through final tool-response validation and generated schema, while rejecting an undeclared quality-result field.
-
-The readiness family separately constructs canonical registry, plans, admissions, Gate 1–5 manifests, certificates and finalization authority from typed compiler fixtures. It requires identical projection bytes on every declared surface and retains report-only failures and planned non-applicability. Stale certificates, invalid profiles and pre-admission states remain non-green; mixed revisions, contradictory lifecycle states, missing rail catalogs, a running gate after a red barrier, generic terminal replacement and diagnostic promotion refuse.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-The selected-publication tests use actual temporary Git, stored original references and filesystem report generations with injected execution. The readiness fixtures use synthetic candidate and evidence identities and compiler-generated objects: they establish schema and projection behavior, not actual memory checks, Gate-5 execution or installed finalization authority. The public response-model dictionary is wire-shape input only.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Selected rendering retains one original publication even when the current pointer names another generation.
-- Same-generation decoder drift cannot alter selected publication semantics.
-- Public response validation preserves both path meanings and rejects extra vocabulary.
-- Readiness surfaces retain exact revision, gate, rail and certificate states; diagnostic results cannot become certification authority.
-- Compiler-only finalization fixtures do not prove lifecycle completion or production Gate-5 success.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None recorded.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies to these repository-internal forcing tests.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Decoder byte drift under an unchanged generation refuses selected rendering. | `test_recovery_refuses_same_id_decoder_byte_drift` | mcp/tests/test_quality_gate_public_contract.py:81-100 |
-| Pointer rotation cannot replace the supplied original generation or alter its result. | `test_recovery_uses_one_manifest_generation_when_the_pointer_rotates` | mcp/tests/test_quality_gate_public_contract.py:102-117 |
-| Strict response models retain both quality paths and reject unmodeled fields. | `test_public_worktree_response_models_and_retains_both_quality_paths` | mcp/tests/test_quality_gate_public_contract.py:119-163 |
-| Typed compiler fixtures create the readiness chain and finalization input; they do not execute rails. | `_readiness_scenario` | mcp/tests/test_quality_gate_public_contract.py:424-469 |
-| All readiness surfaces serialize the same complete projection. | `test_closeout_readiness_is_lossless_on_every_surface` | mcp/tests/test_quality_gate_public_contract.py:505-519 |
-| Matching diagnostic rails retain their distinct plan and non-certifying role. | `test_diagnostic_readiness_stays_non_certifying_with_matching_rails` | mcp/tests/test_quality_gate_public_contract.py:522-542 |
-| Stale certificates and invalid profile state remain non-green. | `test_stale_certificates_and_invalid_profile_remain_non_green` | mcp/tests/test_quality_gate_public_contract.py:545-584 |
-| Missing admission and contradictory lifecycle authority refuse. | `test_admission_authority_and_lifecycle_contradictions_fail_closed` | mcp/tests/test_quality_gate_public_contract.py:587-647 |
-| Red barriers, generic terminal replacement and mixed revisions refuse. | `test_red_gate_generic_replacement_and_mixed_revision_fail_closed` | mcp/tests/test_quality_gate_public_contract.py:650-699 |
-| Incomplete rail catalogs and diagnostic promotion refuse. | `test_catalog_and_diagnostic_promotion_fail_closed` | mcp/tests/test_quality_gate_public_contract.py:702-722 |
-| Invalid transitions and translated skipped state are rejected. | `test_readiness_states_and_transitions_refuse_translation` | mcp/tests/test_quality_gate_public_contract.py:725-739 |
+| Closeout readiness is lossless on every surface | `test_closeout_readiness_is_lossless_on_every_surface` | mcp/tests/test_quality_gate_public_contract.py:430-444 |
+| Diagnostic readiness stays non certifying with matching rails | `test_diagnostic_readiness_stays_non_certifying_with_matching_rails` | mcp/tests/test_quality_gate_public_contract.py:447-467 |
+| Stale certificates and invalid profile remain non green | `test_stale_certificates_and_invalid_profile_remain_non_green` | mcp/tests/test_quality_gate_public_contract.py:470-509 |
+| Recovery refuses same id decoder byte drift | `test_recovery_refuses_same_id_decoder_byte_drift` | mcp/tests/test_quality_gate_public_contract.py:73-92 |
 
 ## Cross-Repo References
 
-The sample repository and selected-code repositories are isolated test fixtures; this file defines no separate cross-repository protocol.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-## 260824-PDLS Snapshot Evidence Proof
-
-The current recovery regression uses the supplied frozen run and original typed terminal publications. It preserves their verified decoder path through pointer rotation; readiness compiler fixtures and response dictionaries cannot substitute for those selected originals.
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-09-06T15:11:59+00:00 — L33 pending candidate curation: Re-read the prepared source, documented supplied original publication rendering and pointer independence, and restored the readiness family with an explicit compiler-fixture boundary and current anchors. Verification names the real prepared source commit c69d5171187fa1957025e393270db9f5a864ab14; this entry does not claim CCR acceptance.
 

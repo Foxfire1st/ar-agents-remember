@@ -56,7 +56,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Hostile contract tests pin identity/provenance authority products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
+| Authorization identity is a declared shared wire model; deleted hostile-test fixtures are not current proof. | `AuthorizationBinding` | mcp/src/agents_remember/models/conversations/identity.py:56-58 |
 
 ## Cross-Repo References
 

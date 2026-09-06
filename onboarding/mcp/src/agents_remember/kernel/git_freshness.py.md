@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/git_freshness.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
+| lastUpdated            | 2026-09-06T22:01:41+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                         |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -24,6 +24,8 @@ checkpoint) and intended for the `worktree_start` stale-base preflight and
 series.
 
 ## Code Commentary
+
+The removed bare-origin test card adds no independent production rule: the source still handles no-branch/no-upstream, fetch errors, stale comparison counts, and current/ahead/behind/diverged outcomes explicitly. Source: mcp/src/agents_remember/kernel/git_freshness.py:115-160.
 
 ### Logic
 
@@ -78,11 +80,7 @@ carry the reasoning:
 | `rev-list --left-right --count <local>...<other>` | `ahead_behind` | `GIT_LOCAL_TIMEOUT_SECONDS` (300) — walks history; how much depends on how far the refs drifted |
 | `fetch <remote>` | `fetch_remote` | its own caller-supplied `timeout`, defaulting to `DEFAULT_FETCH_TIMEOUT = 30` — the one network call here |
 
-`git_facts.py` classes its own probes the same way, and
-`test_git_command.py::TimeoutClassTests::test_branch_freshness_classes_each_of_its_commands_by_what_it_does`,
-cit:([`test_branch_freshness_classes_each_of_its_commands_by_what_it_does`], mcp/tests/test_git_command.py:723-745)
-asserts this table per command, so a call site that drops back to the
-default fails the suite rather than quietly loosening to 300s.
+`git_facts.py` classes its probes the same way. These explicit source arguments preserve the command-specific timeout boundary; the former timeout census test is no longer retained.
 
 ### Invariants And Boundaries
 
@@ -94,8 +92,7 @@ default fails the suite rather than quietly loosening to 300s.
   here and nowhere else; a copy at the wire boundary would only be measured
   against this module when a real repository produced it.
 - cit:([`VALID_FRESHNESS_STATES`], mcp/src/agents_remember/kernel/git_freshness.py:41-41) is derived by `get_args`, never listed
-  separately, and the exhaustiveness suite asserts produced == declared in both
-  directions.
+  separately. The removed vocabulary census is not current execution evidence.
 - Errors degrade to data (`state` + `error`), never exceptions escaping to the
   caller — packet assembly must not fail because a remote is unreachable.
 - `state="unknown"` (failed fetch) must never be treated as `behind` by
@@ -131,13 +128,13 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The one git runner, used for every command here including the fetch: `run_git` takes a per-call `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`. The three bands this file selects from — `GIT_LOCAL_TIMEOUT_SECONDS` / `GIT_REMOTE_TIMEOUT_SECONDS` / `GIT_METADATA_TIMEOUT_SECONDS` — and why the metadata band exists, are in the timeout-class block; the signature and body are in `run_git`. | `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS`, `GIT_REMOTE_TIMEOUT_SECONDS`, `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-73; mcp/src/agents_remember/kernel/git_command.py:94-145 |
-| The per-command bounds are pinned by test, not by convention: `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` patches `run_git` with a recorder whose `timeout` is a **required** keyword, so a call site that omits it fails the recorder instead of silently recording the default. `TimeoutClassTests` owns the assertions. | `TimeoutClassTests`, `test_branch_freshness_classes_each_of_its_commands_by_what_it_does` | mcp/tests/test_git_command.py:613-723 |
+| The local default bound is 300 seconds. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:92-92 |
+| The ordinary remote bound is 120 seconds. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:93-93 |
+| The metadata bound is 30 seconds. | `GIT_METADATA_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:94-94 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:133-184 |
 | Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. | `RepoState`, `VALID_REPO_STATES`, `read_git_facts` | mcp/src/agents_remember/kernel/git_facts.py:22-22; mcp/src/agents_remember/kernel/git_facts.py:26-26; mcp/src/agents_remember/kernel/git_facts.py:40-45 |
 | The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. | "state: FreshnessState" | mcp/src/agents_remember/models/context_packet.py:98-98 |
 | The context packet application entry point is the first consumer (`_freshness_packet`). | `_freshness_packet` | mcp/src/agents_remember/application/context_packet.py:105-132 |
-| `test_every_freshness_state_the_git_reader_writes_validates` asserts produced == `VALID_FRESHNESS_STATES`; `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` walks a real degrade across the boundary. | `test_every_freshness_state_the_git_reader_writes_validates`, `test_a_directory_that_is_not_a_repo_crosses_the_freshness_wire` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:767-776; mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:538-543 |
-| Kernel unit tests cover all states against local bare-origin fixtures. | `GitFreshnessTests` | mcp/tests/test_git_freshness.py:20-104 |
 
 ## Cross-Repo References
 
@@ -148,6 +145,8 @@ No meaningful cross-repo references found.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-06T22:01:41+00:00 — Reconciled retired test evidence against current owning source; retained production invariants and verification pins without claiming removed suite protection.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-03T02:32:19+02:00 — Curator W3-B02 resolved all 31 manifest findings: converted 19 legacy prose line citations, repaired 12 Repo-Internal anchor/source findings, and normalized 4 explanatory timeout-table references. Preserved the source-freeze and verification metadata.

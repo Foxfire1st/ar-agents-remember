@@ -73,7 +73,7 @@ registration or provider launch.
 | Shared coordination-confinement guard used for benchmark root overrides. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
 | The live-authority reload behind `_live_provider_ids` (containment R1). | `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:137-144 |
 | The workspace-side filter that consumes `allowed_provider_ids`. | `filter_benchmark_provider_ids` | mcp/src/agents_remember/benchmarks/runner_modules/workspace.py:205-238 |
-| Containment tests pin the manifest filter and the fail-closed-None + env-escape contract. | `BenchmarkProviderFilterTests` | mcp/tests/test_provider_containment.py:209-273 |
+
 
 ## Update History
 

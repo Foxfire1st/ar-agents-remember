@@ -5,62 +5,66 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_code_quality_check_scope.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview      | `overview.md`                                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_code_quality_check_scope.py` pins repository-derived gate scope, fixed command vectors, and
-the root pytest configuration inherited by raw and wrapped test runs.
+Explicit product/verification package ownership tests.
 
 ## Code Commentary
 
-L23 lets whole-tree scope expectations include the Dagger package when present, while preserving MCP coverage and test roots.
+### Logic
 
-- `GateScopeDerivationTests`
-- `PytestConfigurationTests`
-- `PytestConfigurationTests` asserts root `addopts` contains `-n=auto` alongside the strictness
-  switches; the derived-scope command test remains focused on coverage arguments.
+A newly importable support package refuses until assigned a product or verification owner. Declaring it verification preserves lint/type inclusion while excluding it from product coverage paths. Overlapping and stale ownership declarations refuse.
 
-## Invariants And Boundaries
+### Conventions
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_code_quality_check_scope.py`.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-## Repo-Internal References
+### Invariants And Boundaries
+
+Coverage paths describe measurement scope, not a percentage requirement. No fallback ownership broadening is allowed for unowned packages.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
-| The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:280-280 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## 260824-PDLS Admission Boundary
+## Repo-Internal References
 
-Constructed quality configurations now carry the already-validated `QUALITY_TEST_ADMISSION`.
-Scope derivation semantics are unchanged; the new field proves even direct unit construction cannot
-reach pytest planning without certifying admission.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-## 2026-08-26 Product-Only Coverage Scope
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| New importable package requires explicit product or verification owner. | `test_new_importable_package_requires_explicit_product_or_verification_owner` | mcp/tests/test_code_quality_check_scope.py:15-40 |
+| Package authority rejects overlap and stale declarations. | `test_package_authority_rejects_overlap_and_stale_declarations` | mcp/tests/test_code_quality_check_scope.py:42-71 |
 
-The derived quality scope now separates product measurement from test execution: product package
-paths populate `coverage_paths`, while test paths remain in `test_paths` and are executed without
-being offered as Coverage.py targets. The regression assertions pin that split both for this
-repository and for synthetic package/test repositories.
+## Cross-Repo References
 
-## 2026-08-28 Explicit Package Authority
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-Scope derivation now starts from declared product and verification package roots. Every discovered
-importable package must belong to exactly one side; overlap, stale declarations, new undeclared
-packages, and an empty operational product set fail loudly. Verification packages remain in
-lint/type scope while only product roots feed coverage and CRAP. The Dagger implementation package
-is no longer conditionally inserted into product coverage.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-28T06:28+02:00 — PDLS wave 005 curator: documented exhaustive product-versus-verification
   package ownership and the overlap/stale/undeclared/empty-product refusal cases.

@@ -5,70 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_library_cursor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
 | lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Contract tests for the 260718-CHATS-L2 library cursor/key authority and the canonical scope
-authority: signed-token round-trips, tamper and wrong-purpose rejection, digest semantics, and
-the narrow-only scope resolution rules.
+Conversation-library cursor purpose and canonical scope authority.
 
 ## Code Commentary
 
 ### Logic
 
-Twelve tests cover: list and read cursor round-trips with tamper and wrong-purpose rejection;
-foreign-signature conversation keys; conversation key and resume target round-trips with
-garbage rejection; identity-digest stability plus scope/vendor sensitivity; content-derived
-positive catalog generations; the harness+scope+sort query digest binding; canonical scope
-defaulting to the workspace root, narrowing inside it, and rejecting traversal/symlink/
-cross-scope escapes; and the shared page-limit clamp.
+List and read tokens round-trip their exact purpose, scope and continuation position. Tampered tokens and wrong-purpose reuse refuse. Canonical scope rejects traversal, symlink escape and cross-scope widening.
 
 ### Conventions
 
-Plain pytest functions with `tmp_path` filesystem fixtures; the authorities under test are
-constructed directly (no ASGI layer) so the token and scope contracts are probed in isolation.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- A token that verifies under the wrong purpose, prefix, scope, or signature must fail closed.
-- Scope resolution must never clamp or guess an escaping cwd into an allowed one.
+A signed continuation is not permission to widen its bound project scope. Retained tests exercise repository-owned token contracts rather than an external conversation provider.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured. The repository sources are direct evidence.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The cursor authority under test: mint/verify for cursors, keys, and resume targets plus digests and generations. | `LibraryCursorAuthority`; `identity_digest`; `catalog_generation`; `mint_list_cursor`; `verify_list_cursor`; `mint_read_cursor`; `verify_read_cursor`; `mint_conversation_key`; `verify_conversation_key`; `mint_resume_target`; `verify_resume_target` | mcp/src/agents_remember/serving/conversation/library/cursor.py:62-297; mcp/src/agents_remember/serving/conversation/library/cursor.py:72-87; mcp/src/agents_remember/serving/conversation/library/cursor.py:89-98; mcp/src/agents_remember/serving/conversation/library/cursor.py:102-115; mcp/src/agents_remember/serving/conversation/library/cursor.py:117-130; mcp/src/agents_remember/serving/conversation/library/cursor.py:132-138; mcp/src/agents_remember/serving/conversation/library/cursor.py:140-146; mcp/src/agents_remember/serving/conversation/library/cursor.py:150-170; mcp/src/agents_remember/serving/conversation/library/cursor.py:172-186; mcp/src/agents_remember/serving/conversation/library/cursor.py:190-211; mcp/src/agents_remember/serving/conversation/library/cursor.py:213-228 |
-| The canonical scope, query digest, and limit clamp under test. | `canonical_library_scope`; `query_digest`; `clamp_limit` | mcp/src/agents_remember/serving/conversation/library/scope.py:30-71; mcp/src/agents_remember/serving/conversation/library/scope.py:74-87; mcp/src/agents_remember/serving/conversation/library/scope.py:90-97 |
+| List cursor round trip and tamper rejection. | `test_list_cursor_round_trip_and_tamper_rejection` | mcp/tests/test_conversation_library_cursor.py:32-45 |
+| Read cursor round trip and wrong purpose rejection. | `test_read_cursor_round_trip_and_wrong_purpose_rejection` | mcp/tests/test_conversation_library_cursor.py:48-61 |
+| Canonical scope rejects traversal symlink and cross scope. | `test_canonical_scope_rejects_traversal_symlink_and_cross_scope` | mcp/tests/test_conversation_library_cursor.py:64-82 |
 
 ## Cross-Repo References
 
-No neighboring repository participates in this contract suite.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

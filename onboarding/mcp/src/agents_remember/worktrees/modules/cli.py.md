@@ -42,9 +42,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The CLI module exposes the public main entry point for `python -m` execution. | "def main" | mcp/src/agents_remember/worktrees/modules/cli.py:192-199 |
-| MCP application entry points bypass CLI parsing and call result-returning functions directly. | `worktree_start_tool`; `worktree_attach_tool`; `worktree_status_tool`; `worktree_integrate_tool`; `worktree_cleanup_tool` | mcp/src/agents_remember/application/worktree_tools.py:125-222; mcp/src/agents_remember/application/worktree_tools.py:287-296; mcp/src/agents_remember/application/worktree_tools.py:299-322; mcp/src/agents_remember/application/worktree_tools.py:621-702; mcp/src/agents_remember/application/worktree_tools.py:979-995 |
+| MCP startup enters the result-returning application owner without CLI parsing. | "def worktree_start_tool" | mcp/src/agents_remember/application/worktree_tools.py:123-220 |
+| MCP attachment enters the result-returning application owner without CLI parsing. | "def worktree_attach_tool" | mcp/src/agents_remember/application/worktree_tools.py:285-294 |
+| MCP status enters the result-returning application owner without CLI parsing. | "def worktree_status_tool" | mcp/src/agents_remember/application/worktree_tools.py:297-320 |
+| Start or observe the exact contract-addressed integration operation. | "def worktree_integrate_tool" | mcp/src/agents_remember/application/worktree_tools.py:479-564 |
+| MCP cleanup enters the result-returning application owner without CLI parsing. | "def worktree_cleanup_tool" | mcp/src/agents_remember/application/worktree_tools.py:834-850 |
 | The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
-| The CLI seam regression drives `main(["heal-leaf-ids", ...])` end to end. | `test_heal_cli_command_is_the_on_demand_seam` | mcp/tests/test_leaf_ref_resolution.py:419-433 |
 
 ## Series-Contract Notes
 
@@ -69,6 +72,9 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 | The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | `parse_json_stdout`; `command_status`; `command_attach` | mcp/src/agents_remember/worktrees/modules/cli.py:30-37; mcp/src/agents_remember/worktrees/modules/cli.py:40-43; mcp/src/agents_remember/worktrees/modules/cli.py:46-49 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout corrected-call model package relocation; CLI normalization and command routing are unchanged.
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.

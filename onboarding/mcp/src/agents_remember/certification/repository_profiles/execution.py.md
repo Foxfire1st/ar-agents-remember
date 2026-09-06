@@ -86,14 +86,13 @@ repository owns the concrete selections and applicability.
 against the exact sandboxed candidate. `_write_sandbox_manifest` serializes the admitted profile
 source digest, full plan, executor/decoder definitions, runtime-authority snapshot, and published
 artifact definitions; the profile and plan identity therefore remain tied to that sandbox.
-`_quality_evidence_fixture.py` and `test_worktree_support.publish_passing_closeout_quality`
-reuse the same admission to fabricate passing evidence for tests.
+
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | One-call selection/plan/executor/decoder/artifact admission for an exact candidate. | `admit_repository_profile_execution` | mcp/src/agents_remember/certification/repository_profiles/execution.py:38-76 |
-| The clean executor admits the sandbox tree and serializes the execution with its frozen runtime authority into the admission manifest. | `_admit_prepared_profile`; `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:236-250; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:384-417 |
-| Fixtures admit a profile execution to publish passing gate evidence. | `publish_passing_quality_gate` | mcp/tests/_quality_evidence_fixture.py:47-86 |
+| The sandbox admits the profile execution against its prepared candidate tree. | "def _admit_prepared_profile" | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66 |
+| The sandbox manifest records profile execution and frozen runtime authority. | "def _write_sandbox_manifest" | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
 
 ## Cross-Repo References
 
