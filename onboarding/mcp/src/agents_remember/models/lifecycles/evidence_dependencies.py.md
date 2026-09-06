@@ -90,9 +90,11 @@ matrix in the evidence-dependency test suite fixes the contract.
 | The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/ledger/admission/scheduling provenance records. | `closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:161-202 |
 | Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | `lifecycle_operation_dependencies` | mcp/src/agents_remember/models/lifecycles/operation.py:428-484 |
 | Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `_require_current_dependencies` | mcp/src/agents_remember/worktrees/route_review.py:65-122; mcp/src/agents_remember/worktrees/route_review.py:229-273 |
-| Policy registry shape, refusal statuses, and graph-cycle guard are fixed by focused tests. | `test_every_record_type_has_one_versioned_policy`; `test_missing_extra_wrong_type_and_duplicate_dependencies_fail_closed`; `test_supplied_record_closure_refuses_cycles_without_scanning_for_external_roots` | mcp/tests/test_evidence_dependencies.py:88-158; mcp/tests/test_evidence_dependencies.py:159-201; mcp/tests/test_evidence_dependencies.py:202-242 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `quality-report/v2` policy change - `admission` became an optional dependency kind so a published report binds the shared-Dagger-authority snapshot digest when present and stays valid without one.
 

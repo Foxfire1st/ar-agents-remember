@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-06T14:48:58+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../../../../overview.md`                  |
@@ -205,7 +205,7 @@ never changes it). `lifecycles/finalize.py`'s `LifecycleFinalizeTaskResponse` ca
   `terminal.py` below) — one declaration is the invariant; a particular module owning it is
   not.
 - **Nothing on this route declares a status a producer cannot emit, or omits one it can.**
-  `mcp/tests/test_wire_vocabulary_exhaustiveness.py` measures produced-vs-declared in both
+  The historical wire-vocabulary suite measured produced-vs-declared in both
   directions and is the suite to extend when a new status appears.
 - **Nothing on this route may reach the network while the package is importing.**
   `tokens.py` builds `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` at module
@@ -247,7 +247,6 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-135 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
-| Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:649-659; mcp/tests/test_wire_vocabulary_exhaustiveness.py:705-720; mcp/tests/test_wire_vocabulary_exhaustiveness.py:755-765 |
 | The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:23-28 |
 | The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:29-54 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
@@ -526,7 +525,15 @@ projection. It introduces no public worker PID or private operation key.
 | The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:259-278 |
 | Public response registration uses the dedicated wait response. | "\"worktree_status_wait\": WorktreeStatusWaitResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
 
+
+## Integrated IAS Recovery Contract
+
+The changed lifecycle preparation model retains original command ownership and append-only terminal observations through focused validation helpers. Runtime composition and physical Git proof remain outside models. The retained `test_wire_vocabulary_exhaustiveness.py` is now support code without collected test functions; its historical census and deleted cases must not be read as current exhaustive protection.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 - 2026-09-06T14:48:58+00:00 — Added the nearest certification wire route from source at `c69d5171187fa1957025e393270db9f5a864ab14`; the remaining model domains are outside this bounded routing update. Prior verification stamps and all earlier history are preserved.
 

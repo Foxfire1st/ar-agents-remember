@@ -95,7 +95,6 @@ read/stat/metadata failure families still escape.
 | Wired before any write in graph authoring. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
 | Wired into ordinary topology-emitting edits. | `enforce_execution_topology_edit`; `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:762-813; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:828-842 |
 | Wired into sprint attach/detach through the linkage wrapper. | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:85-91 |
-| The forcing suite covers the model-field refusal, the below-floor refusal, the editable/source pass, and every `_is_editable_install` branch. | `ServingFloorTests`; `EditableInstallDetectionTests` | mcp/tests/test_serving_preflight.py:26-238 |
 
 ## Cross-Repo References
 
@@ -115,6 +114,9 @@ editable/source-tree handling, release floor, and dev/post/local treatment—rem
 makes the public check total for expected environment failures without hiding programmer defects.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: centralized explicit distribution read/stat/iteration/version translations and single-snapshot version policy under the typed serving-build error. Verification metadata remains pinned until architect-owned closeout.
 

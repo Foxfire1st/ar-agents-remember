@@ -90,9 +90,6 @@ architecture tests are the authoritative evidence for this internal grammar.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The curated export surface lists every public conversation-wire name. | `__all__` | mcp/src/agents_remember/models/conversations/__init__.py:211-384 |
-| Every current conversation model rebuilds with resolved forward references. | `test_conversation_models_have_resolved_forward_references` | mcp/tests/test_conversation_model_architecture.py:47-56 |
-| Removed monolith paths receive no forwarding shim. | `test_removed_conversation_model_modules_have_no_compatibility_shims` | mcp/tests/test_conversation_model_architecture.py:26-29 |
-| Hostile contract tests still pin cursor/provenance/status/capability products. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
 | The canonical conversation read/control ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
 | The response-contract declarations that make these models the routes' stated contract. | `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:89-101 |
 
@@ -105,6 +102,9 @@ No cross-repository implementation governs these contracts.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-29T17:23+02:00 — Removed the implementation-only telemetry type parameter `T` from the curated package exports after `MetricEvidence` adopted Python 3.13 lexical type parameters. No conversation-domain contract was removed; verification remains closeout-owned.
 

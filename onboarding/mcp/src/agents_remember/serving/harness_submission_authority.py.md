@@ -211,10 +211,10 @@ repository-owned.
 | The status serializer produces the raw-free submission batch. | `submission_status_batch_json` | mcp/src/agents_remember/serving/harness_control_models.py:274-278 |
 | The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:998-1002 |
 | The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:1032-1041 |
-| Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | `HarnessSubmissionAuthorityTests`; `SubmissionLedgerTests` | mcp/tests/test_harness_submission_authority.py:230-755; mcp/tests/test_harness_submission_authority.py:758-926 |
-| The evidence contract suite exercises provenance end-to-end through bridge → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 unique-id bound. | `test_submission_provenance_all_sources_epoch_and_bounds` | mcp/tests/test_harness_control_evidence_ipc.py:229-312 |
-| The control-plane contract suite exercises the timeline enumeration (all sources/kinds, paged union, eviction floor, 256-record budget edge), the asset channel (capability gate, digest conflict/dedupe, receipt `assetIds`), and the first-vs-replay recovery through this authority. | `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; "class WithdrawalRecoveryTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_plane_assets.py:249-483; mcp/tests/test_harness_control_plane_channels.py:52-318; mcp/tests/test_harness_control_plane_channels.py:321-481; mcp/tests/test_harness_control_plane_recovery.py:32-32 |
-| The common conformance suite pins the multiplexed respond: respond-without-parent-operation for agent entries, the entry-thread operation guard for concurrent parent tuple entries, and the plural pending serialization round-trips. | `test_subagent_pending_interaction_responds_without_parent_operation`; `test_parent_thread_tuple_entry_gets_the_operation_guard`; `test_multiplexed_pending_interactions_serialize_through_every_surface` | mcp/tests/test_harness_control_conformance_1.py:437-491; mcp/tests/test_harness_control_conformance_1.py:493-551; mcp/tests/test_harness_control_conformance_1.py:553-612 |
+
+
+
+
 
 ## Cross-Repo References
 

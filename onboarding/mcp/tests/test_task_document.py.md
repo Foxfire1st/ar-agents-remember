@@ -5,111 +5,81 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_document.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
 | lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
-| governingOverview      | `../overview.md`                           |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/overview.md](../overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Tests for the JSON-primary task-document layer (slice 3c): the schema, renderer,
-store, the `task_doc` application entry point (master + subTask leaf authoring; `light` is load-compat only),
-and tool registration.
+Checks JSON-primary task rendering and persistence: progress counts parent and child obligations, current-step selection is deterministic, light/master golden projections and extension fields retain content, pipes/newlines/fences render correctly, and writes round-trip without temporary residue. A later batch failure removes newly published earlier files. Historical application and tool-registration assertions are not all present here.
 
 ## Code Commentary
 
 ### Logic
 
-- `SchemaTests` — `model_dump`/`model_validate` round-trip equality, the `schema`
-  alias, `extra="forbid"` rejection, the `step_total`/`step_done`/`current_step`
-  leaf-counting logic, a master round-trip, and the kind guards (master ⇒ no
-  steps/lifecycleId; light/subTask ⇒ no subTasks + freeform-only `sections`, R4), plus the **R3**
-  `codeExamplesNote` cases (round-trip + `exclude_none` omission, master-forbids,
-  note-requires-empty-`codeExamples`), the **R4** extension round-trip
-  (`statusNote`/`headerNotes`/freeform `sections`), and the `orchestrates` cases
-  (master round-trip, master-only rejection on a leaf, `[]` default on docs without the field).
-- `RenderTests` — a byte-exact golden for a small light doc, determinism, the
-  `(Sub-task <id>)` title + `**Master:**` line, checkbox + substep-note rendering, the **R2**
-  outcome-on-the-checkbox + bare-step-heading-only case, decision-cell pipe/newline escaping,
-  empty-section placeholders, the **R3** `codeExamplesNote`-renders-on-empty case (note in
-  place of the "none needed" default), and code-fence blank-line preservation. **R4:** the `statusNote`
-  suffix + `headerNotes` lines render, a leaf's freeform `sections` render after References, and a
-  real-sub-task fixture round-trips content-complete.
-- `MasterRenderTests` — a byte-exact golden master (header + ordered sections, the
-  `subTasks` list with ✅/🔨/⬜ markers incl. the `3c` number, and the Shared Decisions
-  table), determinism, the status→marker map, the empty-subtasks placeholder,
-  verbatim preservation of bespoke multi-paragraph prose (the S4 acceptance), and the
-  `**Orchestrates:**` header line (renders backticked names when set; absent field ⇒ no line).
-- `StoreTests` — `doc_stem` light-vs-subtask (and master → `task`), and a write→read
-  round-trip that leaves no `.tmp` file.
-- `ApplicationTests` — `create` (+ duplicate refusal), `set_status`, `set_field`
-  (incl. `codeExamplesNote`/`statusNote`, and the `orchestrates` cases: set on a master —
-  persisted + rendered — and rejected on a leaf via the schema backstop), `set_step`
-  insert-then-update (no duplication),
-  `append_decision`, non-mutating
-  `get`, contract `lifecycle_id` pickup, `contract_path` resolution, the error
-  paths, and the **R5** dry-run cases (`create` renders without writing either file; a mutating
-  `dry_run` leaves both files byte-identical; `wouldLose`/`diff` flag on-disk content the render drops).
-  It also covers full-document `replace`: structural arrays/decisions are rewritten, dry-run leaves
-  both files untouched, and slug/kind path changes are rejected. Task 21 adds leaf-to-master sync
-  coverage: leaf creation inserts the parent master row, updates preserve manually-authored master
-  `scope`, step status changes derive the master row status, and dry-run returns a master sync preview
-  without mutating the parent file. Master/leaf-only authoring is covered too: `create`/`replace`
-  refuse an explicit `kind="light"`, and a bare `create` defaults to `master` with no contract and to
-  `subTask` under a leaf contract.
-  The shared `_config` fixture builds a real `McpRuntimeConfig` with a committed configured
-  repository, `refs/remotes/origin/main`, and symbolic `origin/HEAD`. Task-document publication
-  therefore exercises the same exact repository/default-branch authority as production rather
-  than bypassing it with a partial namespace.
-- `MasterApplicationTests` — master `create` (writes `task.json`, no `lifecycleId`
-  even with a contract present), `set_subtask` insert-then-update by number,
-  `set_section` upsert by heading, `set_step` rejected on a master,
-  `set_subtask` rejected on a non-master, `set_section` now allowed on a leaf (freeform-only, R4),
-  the argument-error paths, and the `remove_subtask` CRUD-delete cases (deletes the leaf doc + master
-  row, `keep_file` retains the doc, dry-run reports `wouldDeleteFiles` without deleting, absent number
-  raises, non-master rejected). The response-conformance regression:
-  `test_remove_subtask_response_validates_on_both_paths` validates the `remove_subtask` result against
-  `TaskDocResponse` (`extra="forbid"`) on the delete-with-files AND `keep_file` paths (and the dry-run
-  preview) — the regression proving the destructive success no longer surfaces a false tool error.
-- `RegistrationTests` — `task_doc` is in `PUBLIC_TOOLS` + the registry, and the
-  payload builder returns a token-stamped payload that validates against
-  `TaskDocResponse` (ambient reset first).
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
+
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The golden + determinism tests are the regression line for the renderer's
-  byte-stability contract.
-- Conformance of the `task_doc` payload also lives in
-  `test_tool_response_conformance.py` (its representative-payload net).
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test imports and exercises the task-document APIs used by this suite. | "from agents_remember.application.task_docs.task_doc_tools import (" | mcp/tests/test_task_document.py:24-24 |
-| The application entry point under test. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
-| The path-change rejection test invokes the replace operation and expects TaskDocError. | `test_replace_rejects_document_path_change` | mcp/tests/test_task_document_application_1.py:465-479 |
-| Leaf creation inserts the parent master row. | `test_leaf_create_syncs_parent_master_row` | mcp/tests/test_task_document_application_1.py:26-39 |
-| Master sync preserves manually-authored scope. | `test_leaf_updates_preserve_manual_master_scope` | mcp/tests/test_task_document_application_1.py:41-58 |
-| Master row status is derived from leaf state. | `test_leaf_step_progress_derives_master_row_status` | mcp/tests/test_task_document_application_1.py:80-93 |
-| Dry-run returns the parent master sync preview. | `test_leaf_dry_run_includes_master_sync_preview_without_writing` | mcp/tests/test_task_document_application_1.py:219-232 |
-| The conformance net that also covers `task_doc`. | `task_doc` | mcp/tests/test_tool_response_conformance.py:822-822 |
+| No external domain claim is required. | N/A | N/A |
 
-## Series-Contract Notes
+## Repo-Internal References
 
-Task-document tests cover the `seriesContractPath`/`enclosures[]` linkage fields and observer binding from a leaf doc's enclosure path to its lifecycle.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
-## Parent-master integrity delta
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Progress counts every declared parent and child | `test_progress_counts_every_declared_parent_and_child` | mcp/tests/test_task_document.py:124-144 |
+| Current step prefers active then first unfinished then none | `test_current_step_prefers_active_then_first_unfinished_then_none` | mcp/tests/test_task_document.py:146-157 |
+| Golden small light doc | `test_golden_small_light_doc` | mcp/tests/test_task_document.py:161-236 |
+| Decision cell escapes pipe and newline | `test_decision_cell_escapes_pipe_and_newline` | mcp/tests/test_task_document.py:238-242 |
+| Code example fence preserves blank lines | `test_code_example_fence_preserves_blank_lines` | mcp/tests/test_task_document.py:244-259 |
+| Real subtask extensions round trip content complete | `test_real_subtask_extensions_round_trip_content_complete` | mcp/tests/test_task_document.py:261-288 |
+| Golden master | `test_golden_master` | mcp/tests/test_task_document.py:292-360 |
+| Write then read roundtrips and leaves no tmp | `test_write_then_read_roundtrips_and_leaves_no_tmp` | mcp/tests/test_task_document.py:367-375 |
+| Batch failure removes new files published before later document | `test_batch_failure_removes_new_files_published_before_later_document` | mcp/tests/test_task_document.py:377-398 |
 
-- An **unreadable parent master refuses the leaf edit rather than dropping the row**: a leaf whose
-  parent cannot be read must not be silently orphaned.
-- A master ref naming a **sibling leaf** is refused **by kind**, not by id shape.
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Replaced four unrelated semantic citations with the actual parent-master behavior tests; unchanged test source retains its verification stamp.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `task_doc` repointed to mcp/tests/test_tool_response_conformance.py:822-822. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.

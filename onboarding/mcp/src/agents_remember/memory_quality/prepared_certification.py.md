@@ -22,11 +22,11 @@ Real memory certification against a proved private code view.
 
 ### Logic
 
-The adapter preserves canonical logical scope roots while final HEAD-based checks read the proved physical code output. It reopens task authority and curator coherence, executes the actual affected closure and complete memory checks, and records missing onboarding and route-index drift in final certification. Publication retains original selected code artifacts, emits the actual final catalog and selects the original Gate-5 result/certificate through the lifecycle owner. Red evidence remains selected and raises a typed failure; the adapter does not manufacture curator judgments or repair findings. observe rechecks current inputs without publishing a replacement terminal.
+The adapter preserves canonical logical scope roots while final HEAD-based checks read the proved physical code output. It reopens task authority and curator coherence, executes the actual affected closure and complete memory checks, and records missing onboarding and route-index drift in final certification. Publication retains original selected code artifacts, emits the actual final catalog and selects the original Gate-5 result/certificate through the lifecycle owner. Red evidence remains selected and raises a typed failure; the adapter does not manufacture curator judgments or repair findings. `observe` invokes the same actual affected-closure and full memory checks through `_run`, but publishes no replacement terminal; it is not a cheap identity-only lookup.
 
 ### Conventions
 
-Use the named source owners directly. This card describes the current uncommitted implementation; commit-based verification remains pending.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
 
 ### Invariants And Boundaries
 

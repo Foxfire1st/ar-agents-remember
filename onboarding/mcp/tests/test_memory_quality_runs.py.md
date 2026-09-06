@@ -5,87 +5,68 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_quality_runs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
 | lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Focused forcing suite for the bounded typed run registry and the single memory-quality controller.
+Bounded memory-quality run state and pair-currentness refusal.
 
 ## Code Commentary
 
 ### Logic
 
-`MemoryQualityRunRegistryTests` proves completed/failed/unknown snapshots, same-identity reuse before
-capacity refusal, unique-work refusal without thread launch, expired/oldest terminal pruning,
-launch-failure rollback, wrong-repository nondisclosure, and concurrent hard-cap admission at
-multiple patched capacities. `MemoryQualityControllerTests` proves check and path normalization,
-every result-affecting identity field, leaf curator-publication identity, typed capacity guidance,
-identical wrong-repository/unknown poll shape, and unknown-check refusal before scope or registry
-work.
+Registry cases retain completed/failed outcomes, unknown-run absence, launch rollback and repository-scoped polling privacy. A controller case changes the code/memory pair while deriving evidence and requires scope-refused with no curator publication.
 
-Under CCR-R03@v1 the curator-publication controller case mocks the exact candidate-tree capture
-(`_curator_candidate_inputs`) so the checklist write path is exercised with stable code/memory
-candidate trees while the other seams stay real
-cit:([`_curator_candidate_inputs`], mcp/tests/test_memory_quality_runs.py:462-472).
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Each test clears the process-local registry; retained state never crosses a case.
-- Capacity assertions inspect admitted live records and launched callables, not timing-based peak
-  guesses.
-- Controller tests mock the slow execution/scope seams narrowly while exercising real identity and
-  admission logic.
-- Wrong-repository polling is compared structurally with unknown polling to prevent disclosure.
-- Curator-publication identity now includes the exact candidate trees captured around the scan.
+A scan result cannot publish against a moved pair. Registry state is operational polling data, not a semantic acceptance certificate.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies; the forcing set is repository-owned.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external authority governs the run registry contract. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Direct registry forcing set. | `MemoryQualityRunRegistryTests` | mcp/tests/test_memory_quality_runs.py:41-190 |
-| Canonical controller/identity forcing set. | `MemoryQualityControllerTests` | mcp/tests/test_memory_quality_runs.py:195-405 |
-| Registry contract under test. | `QualityRunIdentity`; `start_quality_run`; `poll_quality_run`; `_prune_terminal_locked` | mcp/src/agents_remember/application/memory_quality/runs.py:27-161 |
-| Controller contract under test. | `MemoryQualityExecution`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:72-89; mcp/src/agents_remember/application/memory_quality/controller.py:111-143; mcp/src/agents_remember/application/memory_quality/controller.py:146-208 |
-| R03 candidate-tree capture mock in the curator-publication case. | `_curator_candidate_inputs` | mcp/tests/test_memory_quality_runs.py:462-472 |
+| Start poll completed failed and unknown. | `test_start_poll_completed_failed_and_unknown` | mcp/tests/test_memory_quality_runs.py:70-85 |
+| Launch failure rolls back the admitted slot. | `test_launch_failure_rolls_back_the_admitted_slot` | mcp/tests/test_memory_quality_runs.py:87-93 |
+| Wrong repository poll never discloses any run state. | `test_wrong_repository_poll_never_discloses_any_run_state` | mcp/tests/test_memory_quality_runs.py:95-107 |
+| Pair change during derived evidence refuses before curator publication. | `test_pair_change_during_derived_evidence_refuses_before_curator_publication` | mcp/tests/test_memory_quality_runs.py:144-199 |
 
 ## Cross-Repo References
 
-No cross-repo boundary applies to this forcing suite.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## 260821-DAGQC-L2 Registry And Controller Forcing Set
-
-The suite now forces complete typed identity, same-identity reuse before capacity checks, hard live
-capacity, terminal-only pruning, thread-launch rollback, detached snapshots, wrong-repository
-nondisclosure, explicit capacity guidance, and canonical resolved-scope/check/detail/publication
-identity. These tests replace the former string-key/advisory-bounded assertions.
-
-## MCAR-L03 Async Pair Forcing
-
-Controller cases now prove the full pair participates in run identity, start responses expose it,
-candidate poll requires the original contract path and revalidates the pair, pair races during
-derived checklist evidence block the final publication write, and asynchronous scope refusal is
-not rewritten as completion.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller-under-test row (48-144 to exact spans) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
 

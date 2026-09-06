@@ -5,87 +5,75 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T08:50+02:00                     |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                         |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                 |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Covers the resumable, contract-addressed `worktree_sync` transaction over real code and ledgered
-external-memory repositories, for ordinary leaf worktrees and operation-owned atomic-series
-temporary worktrees.
+Exercises real code/external-memory synchronization: a pure fast-forward advances both sides and contract, a code merge conflict stays recoverable and can continue, and a nonregular journal is renamed/quarantined without following it. Recovery uses the exact contract and ledger pair, not an inferred ambient checkout.
 
 ## Code Commentary
 
 ### Logic
 
-`SyncFixture` builds real code and ledgered memory repos with live work branches and a stable
-enclosure-root journal; `SeriesSyncFixture` builds canonical series refs and verifies `.sync/code`
-and `.sync/memory` temporary worktrees are used then removed with all operation authority refs.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-The matrix proves current-pair no-op, consistent-pair/ledger admission, dry-run byte preservation,
-atomic base/log advance, code and chosen-memory merge plans, and explicit memory choice. A genuine
-conflict is retained with `MERGE_HEAD`, agent-owned file/worktree guidance, and no held integration
-lock; a staged resolution continues the same generation and produces the exact two-parent commit.
-Cancel preview is read-only, real cancel restores pinned pre-sync heads, and repeat cancel is
-idempotent. Terminal continue preview does not garbage-collect leftover refs.
+### Conventions
 
-Failure/recovery tests prove invalid input refuses before journal/ref admission; malformed and
-identity-invalid journals with no refs archive exact raw bytes and become quarantined terminal
-evidence; a nonregular journal entry is renamed opaquely without following its symlink; partial refs
-restore every complete side and return exact manual-repair facts for the incomplete side. Skip-memory
-records a completed skip plan while leaving the memory base unchanged; chosen memory merge preserves
-one ledger mapping after continuation.
-
-The fixture's `ref_value` helper delegates exact ref observation to production `read_ref`; the test
-therefore shares the validated-ref/missing-ref contract instead of reimplementing a looser
-`rev-parse` interpretation beside the production API.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-Real git subprocess fixtures establish `refs/remotes/origin/main` plus symbolic `origin/HEAD` as
-the exact repository-default authority, then exercise `sync_result` via `WorktreeArgs` directly
-(the application/payload layers are covered by the conformance suite's representative
-`worktree_sync` payload).
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-- Conflicts remain agent-resolvable; the suite must never reintroduce abort-on-conflict assertions.
-- Contract path plus stable journal/refs address recovery; no public operation id or queue row is
-  accepted as authority.
-- Preview cannot fetch, mutate journals, selectors, temporary worktrees, Git refs, or cleanup
-  terminal residue.
-- Recovery preserves exact raw/opaque evidence and fails into bounded manual repair when authority
-  is incomplete rather than guessing.
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public sync facade validates, previews, refreshes, rereads under authority, and delegates by contract kind. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:27-100 |
-| Durable resume/continue/cancel routing is owned by the transaction driver. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:38-371 |
-| Journal/ref/temp-worktree cancellation and recovery are separated from routing. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal`; `cleanup_terminal_residue` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:156-289 |
-| Stable no-follow journal observation and quarantine records live at the enclosure root. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:158-411 |
+| Pure fast forward sync advances both sides and contract | `test_pure_fast_forward_sync_advances_both_sides_and_contract` | mcp/tests/test_worktree_sync.py:117-137 |
+| Code merge conflict is retained and can continue | `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:139-174 |
+| Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:176-195 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies beyond the explicit code/external-memory Git
-fixtures exercised by this suite.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-26T08:50+02:00 — Rebound the recovery/cancellation reference to the frozen focused
   function names and range.

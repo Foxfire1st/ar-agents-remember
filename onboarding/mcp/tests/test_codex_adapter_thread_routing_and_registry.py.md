@@ -5,75 +5,67 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/tests/test_codex_adapter_thread_routing_and_registry.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-31T15:32+02:00                                       |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
 | lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-What the Codex adapter does with frames **it did not initiate**, and with **partial collab
-shapes**. Three seams meet here, and each decides something the seat cannot recover from if
-it is wrong.
+Codex seat policy and thread-identity routing tests.
 
-## The Three Seams
+## Code Commentary
 
-**`turn/start` params decide what the vendor is told about policies it would otherwise
-keep.** `test_turn_start_sends_only_the_policies_the_seat_configured`: an unset policy is
-**omitted entirely**; sending `null` would tell the server to clear what the thread was
-started with. A configured mapping rides as plain JSON data.
+### Logic
 
-**`turn/started` and `thread/settings/updated` decide whether a frame is the *seat's* state
-or a sub-agent's evidence** — the same wire shape means opposite things depending on its
-`threadId`.
+Unset policies are omitted from turn/start; configured sandbox mappings become copied JSON data. An unsolicited turn/started on the seat thread makes it busy and blocks preflight. A sub-agent settings frame crosses as raw evidence without changing the seat, while identical drift on the seat thread fails the bridge.
 
-- `test_a_turn_the_seat_did_not_dispatch_still_makes_it_busy` — the human at the terminal
-  can start a turn the bridge never wrote, and a resumed thread can already be mid-turn. The
-  seat has to read as running from that notification **alone**.
-- `test_a_sub_agents_settings_frame_is_evidence_not_the_seats_settings` — routed by thread,
-  a sub-agent's frame crosses as raw evidence and the seat keeps the selection it
-  deliberately made; the same frame on the seat's own thread is authoritative.
+### Conventions
 
-**Collab items arrive partially populated in the wild**, so each field must bind on its own
-without the missing ones discarding what is already known.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-- `test_sub_agent_activity_binds_only_the_facets_it_carries` — the vendor's own struct
-  requires all four fields, so anything short of that is a shape this adapter must **survive
-  rather than trust**. Losing a bound `agentPath` because a later frame omitted it would
-  rename a live agent.
-- `test_collab_tool_call_registers_only_well_formed_receivers_and_states` —
-  `receiverThreadIds` is *who the call is addressed to*, which is why it may create a
-  registry entry. `agentsStates` is a *claim about* threads, so a status for a thread this
-  connection has never seen may only update, never create.
+### Invariants And Boundaries
 
-## Method
+Thread identity, not payload shape, determines settings authority. The removed partial-collab registry tests must not be described as current coverage here.
 
-`anyio`-driven (`pytest.mark.anyio`). `settled_evidence` waits for the raw-evidence event a
-collab item produces before asserting: collab items have no transcript projection, so every
-one crosses as exactly one `codex-notification`, and waiting for it is what makes the
-registry assertions a statement about a **settled** frame rather than a race.
+### Todos
 
-## Invariants And Boundaries
+No file-local implementation change is requested by this reconciliation.
 
-- Thread identity is the routing key. Never treat a frame's shape as evidence of whose state
-  it describes.
-- Partial vendor payloads enrich the registry; they never erase it.
-- Registry creation is allowed only from an addressing field, never from a reported state.
-- An unset policy is omitted from `turn/start`, never sent as `null`.
+## Docs References
 
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Codex app-server adapter, its thread demux and agent registry. | "class CodexAppServerAdapter:"; "self._threads = CodexThreadRegistry(" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115; mcp/src/agents_remember/serving/codex_app_server_threads.py:69-300 |
-| The demux suite this module extends. | "test_spawned_subagent_traffic_never_fails_the_bridge" | mcp/tests/test_codex_adapter_thread_demux.py:118-158 |
-| The sub-agent projector whose roster these registry bindings feed. | "class CodexAgentEngineTests1(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_conversation_projector_codex_agents_engine_1.py:97-97 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Turn start sends only the policies the seat configured. | `test_turn_start_sends_only_the_policies_the_seat_configured` | mcp/tests/test_codex_adapter_thread_routing_and_registry.py:58-108 |
+| A turn the seat did not dispatch still makes it busy. | `test_a_turn_the_seat_did_not_dispatch_still_makes_it_busy` | mcp/tests/test_codex_adapter_thread_routing_and_registry.py:112-143 |
+| A sub agents settings frame is evidence not the seats settings. | `test_a_sub_agents_settings_frame_is_evidence_not_the_seats_settings` | mcp/tests/test_codex_adapter_thread_routing_and_registry.py:147-197 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

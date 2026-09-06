@@ -51,6 +51,19 @@ while quality was running cit:([`_curator_candidate_inputs`, `_require_same_cura
 The checklist writer receives `code_candidate_tree` and `memory_candidate_tree` so the attestation
 can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:318-360; mcp/src/agents_remember/application/memory_quality/controller.py:363-441).
 
+Interactive quality execution resolves the exact scope before scanning and revalidates it after
+the scan and before publication. A full leaf run joins its checklist with the same
+`require_current_curator_coherence` validator used by closeout: unfinished memory repairs retain
+`closeoutReady=false`; missing or stale coherence cannot become combined-ready. The deterministic
+full catalog is a readiness projection, not final certification: this interactive route has no
+Gate 1–4 certificate prefix or affected-closure plan and explicitly reports those missing
+authorities. This permits preparatory memory work without claiming final acceptance.
+
+cit:([`_resolve_execution`], mcp/src/agents_remember/application/memory_quality/controller.py:295-315)
+cit:([`_execute_memory_quality`], mcp/src/agents_remember/application/memory_quality/controller.py:318-360)
+cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:545-572)
+cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:444-480)
+
 ### Invariants And Boundaries
 
 - Public callers choose exactly one request mode; no flat legacy overload or inferred wait mode is

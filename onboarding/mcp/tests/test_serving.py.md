@@ -5,313 +5,74 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_serving.py`                      |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-05T22:25+00:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview      | `overview.md`                              |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_serving.py` covers the dashboard serving layer (slice 04, commits 4a + 4b): the pure
-per-entity projection diff, the shared projector's prime/current/subscribe fan-out, the SSE
-event sequence (atomic current snapshot, failed-prime recovery snapshot, then deltas), explicit
-subscriber cleanup, the FastAPI app endpoints via `TestClient`, the raw event
-channel's byte-offset tail + cursor resume + heartbeat filtering + inactivity-based fresh-connect retention, sim-mode load/replay/determinism, the POST action
-skeleton, the trusted dashboard external-inbox endpoint, the shipped static-bundle resolver, and the
-umbrella `agents-remember dashboard` CLI.
-
-### 260712-TRH-L7 refresher shutdown regression
-
-Serving tests cover the real app lifespan with a dead landing refresher, asserting the failure is logged and `TerminalHost.shutdown()` still runs exactly once. Projector tests also pin startup, cancellation, and network-free tick integration.
+Protects two dashboard-serving behaviors: a subscription cannot lose a projection interleaved with its initial snapshot, and HTTP ETag revalidation returns 304 until content changes. The broad historical SSE, simulation, actions and CLI inventory was removed; this card makes no current coverage claim for those paths.
 
 ## Code Commentary
 
-### FEUI-L9R Reviewed Candidate Delta
-
-Serving regressions now pin three runtime-truth boundaries. Static HTML carries `no-cache`, and the
-build payload carries the packaged `dashboardBuild` fingerprint *when a build was placed* (see the
-`BuildInfoTests` note below — since 260731-EFA-L1 that stamp is present-or-omitted, never
-fabricated). Raw-event tests cover lifecycle and
-workspace mid-record realignment, malformed JSON and invalid UTF-8 advancing without retry, every
-non-object JSON family advancing without emission, beyond-EOF settling, successor streaming, exact
-cursor progression, and ready-after-valid-object ordering.
-
-### MX-FIX-1 Atomic Folded-State Stream Regressions
-
-Three async regressions pin the repaired authority boundary without timing luck. The handoff case
-pauses after the initial snapshot while the subscriber queue is already registered, publishes a
-lifecycle mutation before the next read, and requires that exact delta plus zero subscribers after
-closure. The failed-prime case registers a waiting stream while no projection exists, publishes the
-first successful state, requires one build-decorated snapshot at id `1`, republishes the identical
-state without a duplicate, then requires the next ordinary lifecycle delta at id `2`. The
-cancellation case cancels a waiting no-snapshot stream and requires immediate queue removal.
-
 ### Logic
 
-L15 review follow-up (L15R-1): a reflection guard partitions every projection-model `*Seconds` field into VOLATILE_AGE_FIELDS or a curated content allow-list (`ttlSeconds`) — a new now-relative field that skips the volatile set (and its client mirror) now fails loudly instead of silently re-degrading the SSE diff.
-
-`DeltaTests` assert `diff_projection`: the empty first tick, no-delta-on-unchanged, per-kind
-upserts/changes/removals (lifecycle/provider/enclosure), whole-block `metrics`/`analytics`
-events, and deterministic sorted removals. Task 33 extends this: the `_projection` test helper gained an
-`active_worktree_groups` param, and two new cases cover the `activeWorktreeGroups` whole-value delta — a
-changed set emits a single `DeltaEvent("activeWorktreeGroups", {"activeWorktreeGroups": [...]})`
-(the wrapped marker the client unwraps), and an unchanged set emits nothing. **260703-L15 (the
-change gate)** adds four cases: a volatile-only lifecycle change (`staleSeconds` via `model_copy`)
-emits nothing; a volatile-only analytics change (a task doc's `ageSeconds`) emits nothing; a real
-change emits the full current node WITH its fresh ages riding along; and the precomputed
-`previous_state`/`current_state` call form produces byte-identical deltas to the pure two-argument
-form. `ProjectorTests` (async) assert `prime()` sets the
-latest projection — pinning `latest.version == 2` (slice 5e bumped the projection schema version
-from 1 to 2) — `subscribe()` receives a broadcast, and Task 31 proves an injected provider refresher
-runs before projection. `StreamEventsTests` (async) assert
-`stream_events` emits an `event:snapshot` then a per-entity delta, and (L15 S3) that the snapshot
-carries the injected `servingBuild` payload when a `ServingBuild` is passed. MX-FIX-1 adds forced
-handoff publication, failed-prime recovery/non-duplication/later-delta, and cancellation-cleanup
-cases; each asserts the subscriber set directly so generator ownership cannot regress silently.
-`AppTests` use `TestClient`
-(lifespan-triggered prime) for `/api/state` (asserting `body["version"] == 2`, the same bumped
-schema version) and for `/` in **both** of its states, since 260731-EFA-L1 took the cockpit bundle
-out of version control. `test_root_serves_dashboard_bundle` supplies its own stand-in bundle and
-patches `serving.static.dashboard_static_dir` — it used to read the committed bundle straight out
-of the repository, which now gives different verdicts before and after a frontend build — and
-asserts only what is stable across rebuilds: the SPA mount point, the app title, and
-`Cache-Control: no-cache`. `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` patches the
-resolver to `None` and requires the server to still boot, `/` to answer 503 naming the remedy with
-`Cache-Control: no-store`, and `/api/state` to keep answering 200 behind the greedy mount.
-`StaticTests.test_static_dir_resolves_only_a_real_built_bundle` keeps the honest half of the old
-assertion — when resolution succeeds it must point at a real build (`index.html` plus `assets/`) —
-and **skips** when this checkout has no build, because "never `None`" encoded the removed contract
-that a 28 MB generated tree lives in git. The deterministic `None` half lives in `test_static.py`.
-
-**`StateEtagTests` (260703-L15 S1)** drive the `/api/state` change gate end-to-end via
-`TestClient` over a mocked `project_and_write` returning a held projection (a `held[0]` closure the
-test swaps mid-run, `interval=0.02` so the real tick loop publishes; since 260712-PTS-L3 the app
-disables the change-driven watcher because this world changes only through the mocked
-`project_and_write`, which no filesystem watcher can observe — the tick loop must stay
-interval-paced, exactly the live contract for watcher-invisible changes whose bound is the
-heartbeat instead. **Since 260731-EFA-L2 that is expressed through parameter objects, not
-keywords:** the cadence travels as `ProjectionCadence(interval=…)`, the watcher/landing switches as
-`LiveProjectionInputs`, the projector's refreshers as `ProjectionRefreshers(...)`, and the four
-substituted long-lived objects as one `ServingCollaborators` — the bare `watch_changes=False`
-keyword no longer exists): 200 carries a weak
-`ETag: W/"…"` + `Cache-Control: no-cache`; `If-None-Match` with that tag → 304 with the SAME tag
-and an EMPTY body; swapping in a volatile-only change (staleSeconds) keeps returning 304 with the
-same tag after several ticks; swapping in a real change (tokens) makes a deadline-polled
-`_get_until` see 200 with a NEW tag and the fresh body. Plus the `servingBuild` presence on the
-state body and the pure `_if_none_match_matches` table (weak/strong forms, comma lists, `*`,
-mismatch, None). **`BuildInfoTests`** pin `resolve_serving_build`: in this checkout the commit
-short-hash resolves and rides the wire form; anchored at a non-git tmp dir the commit is `None` and
-OMITTED (never faked); the shape is camelCase (`bootedAt`). The
-`dashboardBuild` assertion is now **present-or-omitted**, not an unconditional index: that only
-held while the fingerprint sidecar was committed alongside the bundle, and both are now generated
-at release time. **Since 260731-EFA-L4 `ServingBuild.payload()` returns the declared
-`ServingBuildPayload` model rather than a dict**, so every one of these assertions goes through the
-module-level helper cit:([`_build_wire`], mcp/tests/test_serving.py:84-92), which is
-`build.payload().model_dump(mode="json", exclude_none=True)`. That `exclude_none=True` is where the
-honest-unknown rule is applied — absent, never null, never a fabricated "clean" — and it is applied
-identically by `serving.served_state.served_state_tail`, so what these tests compare against is the
-stamp exactly as the state body carries it. `StreamEventsTests.test_snapshot_carries_the_serving_build_stamp`
-uses the same helper for the SSE snapshot's `servingBuild` key. The same class pins the dirty probe's tri-state
-(`test_dirty_probe_is_tri_state_and_fails_open`: proven-dirty `True`, proven-clean `False`, and an
-unprovable probe — raising or non-zero — failing OPEN to `None`) and its end-to-end consequence
-(`test_status_failure_does_not_assert_a_pristine_tree`: `rev-parse` succeeds, `status` raises, so
-the hash rides the wire while `dirty` stays `None` and is omitted). **Since 260731-EFA-L3 both mock
-the package's one git runner, `agents_remember.serving.build_info.run_git`, not
-`…build_info.subprocess.run`** — the module no longer spawns git itself, so that is where the seam
-is; the substituted `fake_run` correspondingly takes `(repo, arguments, **kwargs)` and branches on
-`arguments[:1] == ["rev-parse"]` rather than on a leading `"git"` argv element. What the tests prove
-is unchanged. `CliTests`/`CliRunTests` assert the umbrella parser, the `dashboard`
-flags, and `run()` (uvicorn/create_app mocked: launch + ConfigError + dispatch). Task 26 added
-`--reload`: `CliRunTests._args` is now a `**overrides` builder seeding `reload: False`, and three
-tests cover the dev path — `test_run_reload_launches_the_dev_factory` asserts `--reload` hands
-uvicorn the import-string factory `agents_remember.cli.dashboard:_dev_app` with `factory=True`,
-`reload=True`, and that `create_app` is NOT pre-built in this branch;
-`test_run_reload_with_sim_is_rejected` asserts `--reload` + `--sim` → exit 1; and
-`test_dev_app_factory_builds_from_env` calls `_dev_app()` directly, asserting it reads
-`_DEV_CONFIG_ENV`/`_DEV_INTERVAL_ENV` and threads them through `load_config`/`create_app`
-(`interval=2.5`). `import os` was added to support the `mock.patch.dict(os.environ, ...)` in that
-last test.
-
-The 4b additions:
-
-- `RawEventTests` assert the pure tail (`serving.events`): cursor base64 round-trip + garbage →
-  empty, new-lines-then-nothing, resume-from-cursor skips consumed, an unterminated trailing line
-  waits for its newline, and multi-source ordering (lifecycles sorted, `workspace` last). Task 29
-  extends the same suite so cursorless fresh connections use `initial_event_offsets`. Task 34 reworks
-  retention onto **inactivity** and adds the heartbeat-filter + bounded-chunk coverage:
-  `test_read_new_events_skips_heartbeats` (heartbeat lines advance the offset but are never emitted and
-  not re-read on resume), `test_read_new_events_limit_bounds_batch` (`limit` returns the next bounded
-  chunk), `test_dormant_promoted_lifecycle_pruned_without_terminal_event` (an enclosure-backed lifecycle
-  that went quiet with NO `lifecycle.ended` is still pruned — a *recent heartbeat does not save it*),
-  `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`,
-  `test_active_lifecycle_with_recent_activity_not_pruned`, and
-  `test_initial_offsets_bound_active_replay_to_recent_window` (an active log with history older than the
-  1h replay window replays only the recent row, not from byte zero). **L5** adds
-  `test_protected_lifecycle_log_survives_inactivity`: a dormant, enclosure-backed log passed in
-  `protected_lifecycle_ids` is exempt from pruning (it stays even though its last real activity is past
-  the TTL), and dropping the protection then prunes it — proving the dormancy precondition held and that
-  a live master series' history is what the protection set preserves.
-  `StreamRawEventsTests` (async) assert `stream_raw_events` emits the backlog as `event` records,
-  single-encoded (the SSE `data` is the parsed object, not the double-encoded JSON string), then emits a
-  one-shot `ready` marker after backlog delivery; `test_stream_does_not_emit_heartbeats` proves the stream
-  filters `lifecycle.heartbeat` and yields only the real `tool.completed`; and a malformed `Last-Event-ID`
-  falls back to retained fresh offsets rather than replaying stale workspace history.
-- `SimFixtureTests` assert `load_fixture` (sorted, missing → empty), `parse_sim_speed` (paused /
-  number / errors), and `ReplayClock` (paused frozen, running advances). `SimReplayTests` assert
-  `build_sim` overrides the root to a fresh dir (empty fixture → `SimError`), the progressive
-  `ReplayFeeder`, that replay drives state transitions (running → blocked, tokens accrue), and
-  byte-identical determinism across two independent sims.
-- `ActionTests` assert the pure `evaluate_action` (202 + attribution, 409 disabled-with-reason,
-  409 unknown-action, 404 unknown-target, enclosure target). `ActionEndpointTests` assert
-  `POST /api/actions/{action}` via `TestClient` (404 unknown target, 422 unknown actor).
-  `CliSimTests` assert the sim flags parse and the sim `run` path (clock + feeder passed,
-  bad-speed and empty-fixture → exit 1).
-
-The 6b addition: `ActionGateTests` covers the gate-decision path — the pure `evaluate_action`
-emits a `GateDecisionIntent` for a gate-decision verb (and `None` for a transition), and
-`POST /api/actions/approve` via `TestClient` records a developer/dashboard decision on a
-pre-seeded open gate (asserting `decidedBy="developer"` + the store state) and returns
-`409 no-open-gate` when none exists. Task 19 extends the same class so gate intents carry targeted
-`gateId` and `note`, reject without a reason returns `400`, `/api/actions/reject` stores the
-`decisionNote`, and a stale targeted gate id returns `409 stale-gate` without deciding either open
-gate. Task 10 extends the same test class with
-`POST /api/operator-inbox`: a successful request writes one pending `OperatorInboxStore` entry with
-the lifecycle, agent, gate, ask, response, and developer/dashboard attribution; a request with no
-lifecycle or agent key returns `400 bad-address`.
-Task 23/24 adds serving coverage for the operator-inbox dismiss endpoint:
-`POST /api/operator-inbox/{entry_id}/dismiss` deletes the pending entry and is used by the dashboard
-`check chat` warning dismissal path.
-Task 24 reopened extends gate-action coverage so pure evaluation allows only `cancel` with `gateId`
-to omit a target, and `/api/actions/cancel` can delete a workspace-shaped gate by id.
-Task 28 S5.2 adds `ActionDismissTests`: pure `dismiss` evaluation requires an `itemId` and lifecycle
-scope for non-gate rows, `AttentionDismissalStore` upserts one current row, compacts legacy duplicate
-rows, and prunes non-live lifecycle rows, `/api/actions/dismiss` records lifecycle
-acknowledgements, and `gate-open` dismiss consumes the gate by cancellation/deletion without appending an
-acknowledgement marker. Task 29 extends the same suite for actionable drift: pure evaluation allows
-targetless actionable-drift dismissals, the store keeps actionable-drift current acknowledgements across
-lifecycle pruning, and `/api/actions/dismiss` records a targetless acknowledgement row.
-
-**Since 260731-EFA-L5 (R5), "prunes to nothing" is asserted as an EMPTY FILE, never a missing
-one.** cit:([`test_attention_store_upserts_and_prunes_lifecycle_rows`], mcp/tests/test_serving_actions.py:355-388) ended
-`assertFalse(store.log_path().exists())`; that unlink is the defect the leaf removed. `dismiss` is
-a whole-file read-modify-write reached from the dashboard's HTTP dismiss route, so a concurrent
-dismisser holding a handle across the unlink wrote into an inode with no remaining links and the
-dismissal vanished with the file — no error, no torn line. The proof that the prune happened is
-unweakened and now reads as emptiness: `store.read() == []`, `log_path().is_file()`, and
-`log_path().read_bytes() == b""`, against the one row that was demonstrably there a moment
-earlier.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Third-party imports (`fastapi.testclient`) precede the `sys.path.insert(mcp/src)`; package
-imports follow it (the suite idiom). An empty-`coordination_root` `McpRuntimeConfig` factory makes
-`project_and_write` produce a valid empty projection in a tmp dir; the sim fixture lives at
-`mcp/tests/fixtures/sim/logs/observer/...`. Async suites use `unittest.IsolatedAsyncioTestCase`,
-and CLI launch tests patch `uvicorn.run` + `cli.dashboard.create_app`/`load_config` so no server
-is actually started. Both CLI `run()` fixtures (`CliRunTests._args`, `CliSimTests._args`) build the
-`argparse.Namespace` with every flag `run()` reads, including `reload: False`, (260703 L2) the
-daemon-era keys `daemon`/`status`/`stop`: False + `no_access_log`: False, and (260712-PTS-L3)
-`heartbeat: None` — `CliTests` also asserts the parsed `namespace.heartbeat` defaults to `None` —
-so the fixtures stay
-in lock-step with `dashboard.run()` reading those attrs; a missing attr would raise instead of
-exercising the branch. Daemon dispatch itself is covered in `test_dashboard_daemon.py`, not here.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-The suite requires poison records to advance without emission, accepted events to remain objects,
-HTML-only revalidation, and absent build evidence to stay omitted rather than fabricated.
-
-For the folded-state stream, publication must be observed either in the already-captured snapshot
-or in the already-registered queue. First recovery must be one full build-decorated snapshot;
-identical recovery emits nothing; later content changes use normal deltas; closing or cancelling a
-consumer must leave no subscriber queue behind.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-No task-independent technical debt was identified during FEUI-L9R review.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No relevant documentation was found after checking the configured sources; the regression claims
-are proven by repository source and the test suite itself.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local test module. | — | — |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The pure diff under test. | `diff_projection` | mcp/src/agents_remember/serving/delta.py:102-145 |
-| The `WorkspaceProjection` whose `version` field the tests pin (now `2` after slice 5e). | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
-| The projector under test owns atomic subscribe/snapshot activation, first-recovery publication, publish-before-notify ordering, and cleanup. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
-| The app consumes one projector iterator, decorates every snapshot with the serve-time tail, preserves SSE framing, and closes the subscription through `contextlib.aclosing`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:116-116 |
-| The forced MX-FIX-1 regressions pin the handoff mutation, failed-prime recovery, identical-state silence, later delta, and cancellation cleanup. | `StreamEventsTests` | mcp/tests/test_serving.py:379-477 |
-| The raw event tail under test. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
-| The inactivity-based raw event retention helper under test. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| The raw retention regressions: dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, workspace TTL, invalid cursor fallback, and no global cap. | `RawEventTests` | mcp/tests/test_serving_raw_events.py:23-389 |
-| Task 34 retention/heartbeat/limit coverage in `RawEventTests`: heartbeat skipping, limit batches, dormant pruning without a terminal event, active-not-pruned, and bounded active replay. | `RawEventTests` | mcp/tests/test_serving_raw_events.py:23-389 |
-| L5 retention exemption: a protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving_raw_events.py:334-357 |
-| The `protected_lifecycle_ids` parameter under test, and the series-retention set it carries. | `prune_expired_lifecycle_event_logs`; `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| Raw stream tests assert the one-shot `ready` event after backlog delivery and that heartbeats are not streamed. | `StreamRawEventsTests` | mcp/tests/test_serving_raw_events.py:392-498 |
-| The sim load/replay under test. | `ReplayFeeder`; `ReplayClock`; `build_sim` | mcp/src/agents_remember/serving/sim.py:72-84; mcp/src/agents_remember/serving/sim.py:87-106; mcp/src/agents_remember/serving/sim.py:137-148 |
-| The action evaluation under test. | `evaluate_action` | mcp/src/agents_remember/serving/actions.py:149-167 |
-| The gate write-path the `/api/actions` gate verbs drive (slice 6b). | `gate_create_payload`; `gate_decide_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-54; mcp/src/agents_remember/mcp/tools/gates.py:92-109 |
-| The operator inbox store asserted by the dashboard `/api/operator-inbox` endpoint tests. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
-| The compact attention acknowledgement store asserted by `ActionDismissTests`; `dismiss` is a whole-file read-modify-write and `prune_lifecycles` now empties the log through the contract's rewrite instead of unlinking it. | `dismiss`; `prune_lifecycles`; `_replace` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
-| The rewrite that makes "emptied" true for every control-plane log at once: an empty record set is written as an empty file, never removed. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
-| The prune-to-emptiness assertion this leaf rewrote, and the loss it used to hide. | `test_attention_store_upserts_and_prunes_lifecycle_rows` | mcp/tests/test_serving_actions.py:355-388 |
-| Actionable-drift dismiss tests cover targetless pure evaluation, store retention, and API persistence. | `ActionDismissTests` | mcp/tests/test_serving_actions.py:271-513 |
-| The CLI dispatcher + dashboard adapter under test. | `main` | mcp/src/agents_remember/cli/__main__.py:31-33 |
-| The dashboard `run()` + `--reload` dev path + `_dev_app` factory under test. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:52-81 |
-| `BuildInfoTests`' dirty-probe cases and the seam they patch (`agents_remember.serving.build_info.run_git`). | `BuildInfoTests` | mcp/tests/test_serving_cli.py:36-181 |
-| The probes under test: `_git_short_head` / `_git_worktree_dirty` call `run_git` with `timeout=_PROBE_TIMEOUT_SECONDS`, which is why the seam moved. | `_git_short_head`; `_git_worktree_dirty` | mcp/src/agents_remember/serving/build_info.py:91-101; mcp/src/agents_remember/serving/build_info.py:104-118 |
+| Snapshot subscription cannot lose an interleaved projection | `test_snapshot_subscription_cannot_lose_an_interleaved_projection` | mcp/tests/test_serving.py:103-123 |
+| Etag 304 cycle then new etag on content change | `test_etag_304_cycle_then_new_etag_on_content_change` | mcp/tests/test_serving.py:165-194 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository implementation source governs this repository-local test module.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | — | — |
-
-## 260718-CHATS-L5I Current Delta
-
-Serving tests now cover projection-body reuse, gzip for ordinary JSON, deliberately uncompressed SSE streaming, and the opt-in heap/allocator lifecycle hooks.
-
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
-
-## 260727-CHATS-IM-L2 Current Delta
-
-Four deliberate `project_and_write` doubles accept the additional optional projection inputs. They
-continue returning the held projection, so ETag, body-cache, gzip, and SSE tests exercise their
-original behavior rather than projection internals. Since 260731-EFA-L2 those inputs arrive as
-parameter objects rather than as separate keywords; the doubles' behaviour is unchanged.
-
-## 260731-EFA-L2 Delta — action-gate target resolution
-
-Two arms of `evaluate_action`: an action naming **neither a lifecycle nor a gate** is
-`missing-target`, and a dismiss scoped to nothing is `missing-lifecycle`. The distinction is the
-point — both are 400s, and the code tells the caller which half of the address is absent. (The
-recorder's own gate-id-only arm lives in `test_serving_app_routes.py::GateDecisionHelperTests`.)
-
-## L23 Projector Cancellation Regression
-
-The asynchronous serving suite blocks an in-flight thread tick, cancels the
-projector, and proves cancellation does not complete until the real tick has
-finished. A complementary case makes that released tick raise, requires the
-shutdown-drain error log, and still retains `CancelledError` as the
-caller-visible result. Together they pin both success and failure arms of the
-cleanup-race fix without converting late worker-thread failure into the public
-cancellation result.
-
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
 

@@ -95,7 +95,7 @@ persists through `seat_turn_truth`.
 | The per-vendor projector registry the lift reuses. | `projector_for` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:122-123 |
 | The bounded evidence-page and native-page read seams. | `read_control_evidence`; `read_control_native_page` | mcp/src/agents_remember/serving/harness_control_client.py:351-371; mcp/src/agents_remember/serving/harness_control_client.py:375-407 |
 | The catalog row fields this module reads and the liveness sweep that calls it (read-before-projection). | "class TerminalCatalogEntry:"; `_observe_alive` | mcp/src/agents_remember/models/terminal_catalog.py:68-72; mcp/src/agents_remember/serving/terminal_liveness.py:343-426 |
-| The forcing regression suite for projection, pi paging, origin resolution, and cursor no-loss semantics. | `LatestTerminalEvidenceTests`; `ReadEntryTerminalEvidenceTests`; `OriginResolutionTests` | mcp/tests/test_terminal_evidence_projection.py:179-281; mcp/tests/test_terminal_evidence_projection.py:284-470; mcp/tests/test_terminal_evidence_projection.py:619-640 |
+
 
 ## Cross-Repo References
 

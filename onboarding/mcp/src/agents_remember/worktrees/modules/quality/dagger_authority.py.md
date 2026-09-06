@@ -100,7 +100,6 @@ The declaration, registry and frozen continuation are production owners. The foc
 | Host-local registry root configuration. | `default_registry_root` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:940-945 |
 | One physical lock protocol, actual thread/process exclusion and capability probe. | `lock_path_for`; `exclusive_file_lock`; `_verify_lock_capability` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:58-84 |
 | Typed lock and authority refusal surfaces. | `LockCapabilityError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:22-23; mcp/src/agents_remember/errors.py:56-67 |
-| Regression preserves undeclared coordinator containment and zero-owner transitions. | `test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused`; `test_undeclared_registry_preserves_transition_barrier_and_exact_owner_release` | mcp/tests/test_dagger_registry_lock.py:90-115; mcp/tests/test_dagger_registry_lock.py:118-137 |
 
 ## Cross-Repo References
 

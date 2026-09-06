@@ -83,7 +83,6 @@ matrix are the authoritative evidence.
 | --- | --- | --- |
 | The renderer consumes exactly one snapshot and separates repository membership from eligibility. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| Focused tests cover ignored/generated paths, symlink/sparse/deletion/gitlink behavior, selectors, typed failures, non-UTF-8 names, and byte convergence. | `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes`, `test_git_timeout_and_os_errors_use_typed_domain_errors`, `test_non_utf8_git_path_preserves_record_identity`, `test_regular_checkout_and_linked_worktree_produce_identical_indexes` | mcp/tests/test_route_index.py:258-327; mcp/tests/test_route_index.py:675-737; mcp/tests/test_route_index.py:768-820; mcp/tests/test_route_index.py:822-889 |
 
 ## Cross-Repo References
 
@@ -95,6 +94,9 @@ external implementation dependency.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-02T21:05:20+02:00 — 260731-EFA-L6 curator W2-B10: repaired 10 citation findings (3 reference rows and 3 prose pointers); scoped recheck clean.
 

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/native_helpers/conversation_library/src/pi.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
+| lastUpdated | 2026-09-07T00:31+02:00 |
 | lastVerifiedCommitHash |  `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
 | lastVerifiedCommitDate |  2026-08-05T12:41:24+02:00|
 | governingOverview | `../overview.md` |
@@ -73,7 +73,6 @@ live gate and the real open.
 | --- | --- | --- |
 | The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | `serveJsonLines`, `buildHandshake`, `pageByOffset`, `windowByOrdinal`, `signatureOf`, `failureFor`, `raiseHelperError` | mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:150-178; mcp/native_helpers/conversation_library/src/protocol.ts:181-188; mcp/native_helpers/conversation_library/src/protocol.ts:239-241; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286; mcp/native_helpers/conversation_library/src/protocol.ts:306-325 |
 | The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/pi.py:72-320 |
-| The installed suite proves the live Pi gate, the list/read/resolve round-trip, and the real end-to-end open through this helper. | `test_live_helper_gate_supports_pi_history`, `test_live_list_read_resolve`, `PiOpenEndToEndTests` | mcp/tests/test_conversation_library_installed.py:217-231; mcp/tests/test_conversation_library_installed.py:233-263; mcp/tests/test_conversation_library_installed.py:284-413 |
 
 ## Cross-Repo References
 
@@ -86,6 +85,8 @@ participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.
 - 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that drifted

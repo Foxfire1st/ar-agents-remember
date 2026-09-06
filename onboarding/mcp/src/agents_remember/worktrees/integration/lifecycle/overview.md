@@ -91,7 +91,7 @@ recovered legacy operation or planning certificate reuse.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Store validation and transition construction distinguish durable-write and meaningful-state revisions. | "expected_meaningful = current.meaningfulRevision + int(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:317-322; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:373-393 |
+| Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. | "def _validate_identity_and_evidence_transition" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:319-395 |
 | The exact-generation observer returns bounded change/timeout outcomes. | "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:105-146 |
 
 ## Update History

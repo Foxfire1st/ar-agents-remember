@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/analysis.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00                     |
+| lastUpdated            | 2026-09-07T00:25+02:00 |
 | lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`
 | lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
@@ -19,6 +19,8 @@
 JSONL and run-output analysis helpers for benchmark results.
 
 ## Code Commentary
+
+`range_text` filters numeric int/float observations, returns `n/a` for no numeric data, emits a single value when bounds coincide, otherwise formats `low - high`. It only formats the selected metric column. cit:([`range_text`], mcp/src/agents_remember/benchmarks/runner_modules/analysis.py:131-139).
 
 ### Logic
 
@@ -39,13 +41,16 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.analysis import *" | mcp/src/agents_remember/benchmarks/runner.py:11-11 |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `WorktreeSupportTests`, "test_benchmark_provider_ids_follow_selected_variants" | mcp/tests/test_worktree_support.py:979-1054; mcp/tests/test_worktree_support_benchmark.py:117-117 |
 
 ## Cross-Repo References
 
 No configured sibling repository is required for this module.
 
 ## Update History
+
+- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
+
+- 2026-09-06T22:16:30+00:00 — Preserved metric-range formatting semantics from retired test onboarding; verification pins unchanged.
 
 - 2026-08-04T18:25+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the test-slice ranges — the
   `WorktreeSupportTests` class extent had overshot into the next class (573-3049 → 573-3093) and

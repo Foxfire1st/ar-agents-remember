@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/docker_runtime.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:30+02:00|
+| lastUpdated            | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
 | lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
@@ -20,6 +20,8 @@
 GrepAI lifecycle modules.
 
 ## Code Commentary
+
+Container inspection returns no snapshot for a nonzero inspect command, malformed JSON, or an empty/non-list payload; a missing Docker executable remains a typed provider error. Missing state yields explicit missing/unknown fields instead of a healthy container. Timestamp parsing truncates fractional seconds to microseconds, normalizes UTC, and treats zero/invalid timestamps as unknown; uptime cannot be negative. cit:([`docker_command`; `docker_inspect_container`; `docker_container_state_summary`; `parse_docker_timestamp`], mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:18-22; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:25-37; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:47-67; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:84-107).
 
 ### Logic
 
@@ -49,6 +51,8 @@ seconds, and health status.
 | GrepAI backend, embedder, and runner lifecycles use Docker inspection, container-state summaries, and network helpers. | "def docker_wait_for_postgres", "def grepai_embedder_health", "class GrepaiStackResults" | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:51-51; mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:137-137; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:340-340 |
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
   exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

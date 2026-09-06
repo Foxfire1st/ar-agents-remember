@@ -799,10 +799,9 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   (strict/frozen/camel-aliased, `populate_by_name`) and the declared model classes covering every route's
   success and refusal shapes, plus three shared `responses=` tables — `SCOPED_READ_RESPONSES`
   (the files/notes/change-set family), `SESSION_CONTROL_RESPONSES` (every `harness_control_api`
-  route) and `ACTION_RESPONSES`. Declared here and enforced in
-  `mcp/tests/test_serving_response_conformance.py`, because FastAPI validates only the two routes
+  route) and `ACTION_RESPONSES`. Declared here; the former response-conformance suite was retired. FastAPI validates only the two routes
   that return a bare `dict`; see the 260731-EFA-L4 route impact for the exact boundary. Deliberately
-  free of any `serving.conversation` import so the response-contract module can load independently of conversation composition. The requirement additions declare packet/list/content responses; returning a Response object still requires the existing conformance enforcement rather than relying on FastAPI serialization.
+  free of any `serving.conversation` import so the response-contract module can load independently of conversation composition. The requirement additions declare packet/list/content responses; returning a Response object bypasses automatic response-model serialization; the declaration alone does not prove conformance.
 
 ## L23 Structural Host Boundary
 

@@ -72,8 +72,11 @@ No configured Domain Documentation source applies; CCR-R19@v2 is the governing p
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical result and its digest-verified contract. | `RepositorySelectionResult`; `repository_selection_result_digest` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:89-130; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:189-200 |
-| Provider inputs are normalized into the immutable result at construction. | `RepositorySelectionDraft`; `build_repository_selection_result` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:25-40; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:203-241 |
-| Population/completion/output-reason invariants are enforced at validation. | `_verify_population`; `_verify_completion`; `_verify_output_reasons` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:133-137; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:140-150; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:175-186 |
+| Typed provider inputs normalized into one immutable selector result. | "class RepositorySelectionDraft" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:22-36 |
+| Normalize and content-address one provider result. | "def build_repository_selection_result" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:199-237 |
+| Selector population validation checks the declared universe against its selected and excluded members. | "def _verify_population" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:129-133 |
+| Selector completion validation enforces the declared completion state. | "def _verify_completion" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:136-146 |
+| Selector output validation requires consistent output reasons. | "def _verify_output_reasons" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:171-182 |
 
 ## Cross-Repo References
 

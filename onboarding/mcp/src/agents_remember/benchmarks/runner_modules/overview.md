@@ -77,7 +77,6 @@ No external Domain Documentation source is configured for this memory repo.
 | The public facade re-exports this package for existing callers. | "def prepare_repo" | mcp/src/agents_remember/benchmarks/runner.py:28-28 |
 | MCP application entry points call the benchmark service entry points through the facade. | `skills_install_tool` | mcp/src/agents_remember/application/runtime/skills.py:11-28 |
 | The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary. | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/grepai/seed.py:30-35 |
-| Focused benchmark tests exercise facade compatibility, provider setup, MCP registration, Codex execution policy, repository prep, and skill exposure behavior. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support_benchmark.py:32-665 |
 
 ## Cross-Repo References
 

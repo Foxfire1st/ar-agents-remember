@@ -115,7 +115,6 @@ No Domain Documentation sources are configured for this repository-internal rend
 | The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
 | Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:310-328; mcp/src/agents_remember/tasks/render.py:331-345; mcp/src/agents_remember/tasks/render.py:348-363; mcp/src/agents_remember/tasks/render.py:366-382 |
 | The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
-| Focused proof forces sanitizer-equivalent labels, independent edge roles, repeat render, and title-only changes. | `ExecutionGraphMermaidRenderTests` | mcp/tests/test_execution_graph_render.py:57-291 |
 | The typed requirement/question renderers and the review task-intent line. | `_requirement_lines`; `_question_lines`; `_route_review_lines` | mcp/src/agents_remember/tasks/render.py:399-407; mcp/src/agents_remember/tasks/render.py:409-417; mcp/src/agents_remember/tasks/render.py:492-512 |
 
 
@@ -138,6 +137,9 @@ and renders typed approved-packet refs / acceptance obligations in their section
 and one-way; markdown never becomes authority.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the task-document renderer now renders `ApprovedRequirementPacketRef` and

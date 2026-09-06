@@ -51,7 +51,6 @@ No external/domain documentation is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The kernel resolver declares the port this adapter implements. | "class ContractReaderPort" | mcp/src/agents_remember/kernel/coordination_context/models.py:108-108 |
-| Reader-failure degradation is pinned by the structural-coverage suite. | `test_resolver_missing_reader_and_contract_edges` | mcp/tests/test_leaf_structural_coverage.py:245-275 |
 
 ## Cross-Repo References
 

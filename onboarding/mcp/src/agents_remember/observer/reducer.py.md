@@ -386,12 +386,14 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 | `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. | "def _is_dismissed(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:79-79 |
 | The whole-vocabulary tuple `_STATES` is built from, the `coerce_end_outcome` `_ended_updates` routes through, and the partition that decides which states get a bucket. | `STATES`; `coerce_end_outcome` | mcp/src/agents_remember/observer/lifecycle_state.py:102-104; mcp/src/agents_remember/observer/lifecycle_state.py:118-127 |
 | `STATE_COUNT_FIELDS` — the state → `Metrics` bucket map `_metrics` expands, and the `extra="forbid"` model that makes a missing bucket raise. | `STATE_COUNT_FIELDS`; `Metrics` | mcp/src/agents_remember/observer/projection.py:273-273; mcp/src/agents_remember/observer/projection.py:282-282; mcp/src/agents_remember/observer/projection.py:287-313 |
-| The `awaiting-developer` gap and the vocabulary-driven counting are pinned by test. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection_metrics.py:128-233 |
 | The design: the reducer, inferred trust, corrections (§2.1, §2.5). | "### 2.1 Envelope"; `### 2.5 The observer and its projections` | docs/design/observable-lifecycle.md:136-136; docs/design/observable-lifecycle.md:241-251 |
 
 As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks generic lifecycle vocabulary ("the lifecycle phase") rather than naming the retired session-job skill; the inference logic itself is unchanged.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 

@@ -62,7 +62,9 @@ No configured Domain Documentation source applies; validation is repository-neut
 | The aggregate validator returns every independent finding. | `validate_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/validation.py:57-126 |
 | Selector duplicates and identity placeholders refuse before execution. | `_validate_selector`; `_validate_selector_command` | mcp/src/agents_remember/certification/repository_profiles/validation.py:663-672; mcp/src/agents_remember/certification/repository_profiles/validation.py:675-706 |
 | Command placeholders must be complete, declared, and list-atomic. | `_validate_command_placeholders` | mcp/src/agents_remember/certification/repository_profiles/validation.py:709-750 |
-| Gate-lineage and dependency findings enforce exact rails, artifacts, and clean-room rules. | `_validate_rail`; `_validate_artifact_dependencies`; `_validate_gate_semantics` | mcp/src/agents_remember/certification/repository_profiles/validation.py:471-490; mcp/src/agents_remember/certification/repository_profiles/validation.py:598-639; mcp/src/agents_remember/certification/repository_profiles/validation.py:642-660 |
+| Rail validation checks the declared rail contract and ownership constraints. | "def _validate_rail" | mcp/src/agents_remember/certification/repository_profiles/validation.py:491-510 |
+| Artifact dependencies must name valid producing rails and artifacts. | "def _validate_artifact_dependencies" | mcp/src/agents_remember/certification/repository_profiles/validation.py:621-662 |
+| Gate semantic validation checks the applicable gate contract. | "def _validate_gate_semantics" | mcp/src/agents_remember/certification/repository_profiles/validation.py:665-683 |
 
 ## Cross-Repo References
 

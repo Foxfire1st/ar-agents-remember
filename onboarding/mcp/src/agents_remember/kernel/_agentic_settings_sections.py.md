@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:59:04+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview      | `../../../overview.md`                                          |
@@ -20,6 +20,8 @@
 escalation, spawn, and the quality gate (260731-EFA-L17).
 
 ## Code Commentary
+
+`_parse_expectations` preserves omitted SLA defaults and overrides only explicitly named kinds. Unknown block fields/kinds, booleans, nonnumbers and nonpositive seconds refuse. This preserves configuration meaning documented by the retired expectation test card without claiming that test remains active. Source: mcp/src/agents_remember/kernel/_agentic_settings_sections.py:260-285.
 
 L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
@@ -74,6 +76,8 @@ execution, not a lower-authority diagnostic option. The optional cap is a contai
 policy.
 
 ## Update History
+
+- 2026-09-06T21:59:04+00:00 — Preserved source-verified expectation semantics from retired test onboarding; verification pins unchanged.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-key removal from the quality-gate section parser -- the old dagger-only acceptance branch was deleted and `executor` now fails loud as an unknown key; memoryCapBytes-only parsing remains.
 
 

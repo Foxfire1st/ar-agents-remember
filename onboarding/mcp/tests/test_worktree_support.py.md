@@ -5,7 +5,7 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-04T10:05+02:00 |
+| lastUpdated | 2026-09-07T00:28+02:00 |
 | lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
 | lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
 | governingOverview      | `overview.md`                                            |
@@ -16,254 +16,34 @@
 
 ## Purpose
 
-This unittest file validates the first worktree-support helper slice.
-
-L23 makes the shared external-memory leaf fixtures structurally truthful. `_series_parent_fixture`
-creates real code and memory master branches/worktrees from the super branches, writes the parent
-series contract, and returns that master identity. Committed-range and closed leaf fixtures branch
-from those master worktrees and record `parent_contract_path`; open closeout fixtures likewise
-attach a parent contract. Integration and closeout tests therefore exercise the actual
-super→master→leaf chain rather than a leaf that only names `main`.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`): `test_worktree_support` becomes the profile-aware
-fixture hub. It defines `TEST_CERTIFICATION_PROFILE_REFERENCE` and
-`install_fixture_profile` (writes a fixture-owned profile from the checked-in
-`mcp/certification-profile-v1.json` with repository identity and recomputed digest), installs
-the profile into every external-contract fixture repository, adds
-`publish_passing_closeout_quality` (profile-admitted passing evidence), extends
-`closeout_args` with `certification_profile`, and adds `publish_code_quality` control to
-`run_authorized_closeout_mechanics` so closeout mechanics tests exercise the profile gate.
-
-
-CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`): `publish_passing_closeout_quality` now passes
-`clean_quality_executor.ReportBindings(attestation=..., runtime_authority_digest=None)` when it
-publishes the passing closeout evidence, matching the executor publication signature cutover.
+Shared temporary Git, external-memory, task-lineage and closeout-component fixtures for retained worktree tests. The current module has no collected `test_*` methods; `WorktreeSupportTests` supplies helper methods to consumers.
 
 ## Code Commentary
 
 ### Logic
 
-The tests cover memory ledger roundtrip/prepend behavior, branchless canonical ledger output, legacy branch-metadata ledger parsing without branch-metadata blocking, malformed ledger metadata, invalid ledger top-row detection, repo-specific `c-08-ar-coordination-context-resolver` skill `task_root` output without a task name, installed-runtime coordination-root defaults, source-checkout `.env` and `.env.example` ignore behavior, dirty external-memory start blocking, compatible external-memory start reporting, internal memory start reporting, worktree contract roundtrip with wrapper task roots and legacy task-root candidates, direct contract-path status loading, closeout commit-preview with typed MCP next hints, approval-note, onboarding metadata refresh, route overview/index refresh, memory quality gating before memory commits, missing-onboarding blocking behavior, memory-worktree settings during closeout planning, long Windows path changed-file and sidecar detection, internal resolver defaults to `ar-memory` plus `temp`, drift report path placement under `temp_root` including redirection away from durable memory repos, deterministic overview/entity drift checks including entity inventory coverage, `c-09-git-worktree-manager` skill integration fast-forward/replay/conflict behavior, non-fast-forward integration refusal at `_merge_integrated_commits` without advancing the code branch, `c-09-git-worktree-manager` skill cleanup happy path/idempotence/blocking behavior, legacy cross-repo string rejection, v2 code-only inclusion, v2 memory inclusion with matching checkout branches and ledger commit metadata, `c-10-adopt-memory-baseline` skill adoption status/block/adopt behavior, `c-11-memory-carryover-from-branch` skill memory carryover plan/apply behavior including earlier-only-landed same-path commits staying `same-path-changed`/`review-required` rather than exact-landed, and benchmark runner portability coverage for non-string/unsafe manifest path guards, Windows-safe generated tree removal, stale directory symlink cleanup, Windows Codex shim resolution, cached benchmark repository reuse, missing-commit fetch behavior, force-clone behavior, copy-only skill exposure, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped benchmark provider selection, generated benchmark provider settings with central provider log paths, workspace-local `.codex` benchmark MCP registration, and temp-file provider setup handoff.
+`open_external_contract_fixture` creates real temporary code and memory repositories, a selected fixture profile, a ledger baseline, task lineage and an external-memory contract. Variant fixtures add committed ranges, closed or integrated state. File, overview and entity helpers create controlled onboarding inputs; their existence is not a coverage claim.
 
-**260703-L18 (finding 7 / friction F-R)** adds the missing-ledger-mapping recovery coverage via a
-`_unmapped_external_contract` helper (a code base commit the ledger never recorded, real tmp code +
-memory repos): `test_missing_mapping_block_advertises_only_consumable_choices` proves the block names
-ONLY executable choices (`reconciliation`, `disabled-memory`; `custom` removed) and that passing each
-does something other than return the identical block, and
-`test_reconciliation_records_the_mapping_and_starts_the_worktree` proves `memory_choice="reconciliation"`
-maps the unmapped code base to the ledger's memory content tip, writes + commits a `Ledger sync` in the
-memory SOURCE repo (header advance + newest-first row, content tip unchanged), and proceeds to a real
-started memory worktree. **PR #100 review (Codex P1)** adds
-`test_reconciliation_refuses_when_memory_repo_is_on_another_branch`: with the official memory repo
-checkout moved to another branch, reconciliation raises `LedgerError` naming both branches and
-commits nothing to the wrong branch.
-
-`RequireUpdatedSidecarContentTests` covers the four-case closeout content gate:
-in a temporary memory Git repo with a committed sidecar,
-`require_updated_sidecar_content` raises for an unchanged sidecar, a
-metadata-only edit, a history-only edit without the no-impact marker, and a
-body edit without a new Update History entry; it passes (returning the attested
-source paths) for a history-only edit carrying a `No content impact:` entry,
-passes with empty attestations for a body+history update and for a new
-untracked sidecar, and is a no-op when the plan has no required sidecars. The
-issue #83 additions prove the `memory_verified_commit` baseline: a sidecar
-body+history update committed in the memory repo before closeout passes, a
-sidecar unchanged since the verified commit still blocks, and a new sidecar
-committed after the verified baseline passes like an untracked one.
-
-The issue #83 committed-range coverage drives full closeouts through
-`committed_range_external_contract_fixture` (work-branch commits with a
-baseline sidecar plus an un-onboarded `raw.txt`): preview reports the bounded
-`changed_code_paths`/`changed_code_paths_committed` shapes, the non-blocking
-`unonboarded` bucket, and the `stale` body-gate finding for the transported
-onboarded path; apply with an updated sidecar stamps metadata to the existing
-HEAD without creating a code commit, surfaces `unonboarded_changed_paths`, and
-maps the ledger to that HEAD; apply with a stale sidecar still blocks. A second
-closeout after `closed_external_contract_fixture` excludes the first closeout's
-paths via the contract `code_commit` pointer, a merged-in moved `main` with an
-advanced `code_base_commit` is excluded entirely (sync-transport intersection),
-`test_committed_changed_paths_intersects_base_and_verified` proves the git
-helper directly (including deletion filtering), and the bulk-commit test proves
-`PATH_SAMPLE_LIMIT` count+sample bounding.
-
-Task 30 extends the closeout/integration coverage with
-`integrated_external_contract_fixture`, which performs a real closeout and
-ff-only integration before reusing the leaf. The re-closeout regression proves
-that preview reports `integration_reopen.would_reopen`, apply clears the stale
-integrated commit fields and returns the contract to `integration-pending`, and
-the normal ff-only integration path then lands the new code and memory ledger
-commits. The paired no-op regression proves a clean re-closeout after
-integration reports no reopen, preserves completed integration fields, keeps the
-recorded closeout commits unchanged, and does not move the code or memory source
-branches.
-
-The worktree-name resolution slice (MCP 2.9.3) adds
-`test_resolver_resolves_contract_by_worktree_name`,
-`test_resolver_returns_empty_for_unknown_worktree_name`,
-`test_resolver_prefers_task_name_over_worktree_name`, and
-`test_find_worktree_contract_matches_group_or_returns_none`, built on
-`_external_memory_skeleton` / `_write_task_contract` helpers and importing
-`worktree_group_for`. They prove
-`resolve_coordination_context(…, selector=EnclosureSelector(worktree_name=…))`
-populates contract-derived fields from the matching worktree group, returns a
-blank context for an unknown worktree name, lets an explicit `task_name` win over
-a competing `worktree_name`, and that `find_worktree_contract` matches by group
-or returns `None`. The post-landing cleanup (task 260628_post-landing-cleanup)
-adds `test_find_worktree_contract_skips_archived_contract`, proving a
-group-matching contract moved under `0_archive/` is not resurrected.
-
-`seed_memory_ledger` is the shared external-memory source initializer for the atomic-series test
-world. It maps one exact code commit to the memory repository's current content commit, writes the
-canonical initial ledger, commits it, and returns that new memory tip. Callers use it when a
-successful paired-source path is under test; refusal fixtures remain free to construct invalid
-pairs deliberately.
-
-HFX-L4R2 adds end-to-end default light-task start coverage: a standalone `kind: light` task doc can
-start with default `workflow_kind` and no explicit `leaf_id`, persisting the task doc id into the leaf
-contract, while a wrong default ref refuses with `leaf-ref-not-found` and reports the doc-id candidate.
-The memory-base regression target now imports the public `start_contract.memory_base_for_source` helper.
-
-MX-FIX-4 updates the initialized external-memory fixture to write and commit explicit supported
-`system/settings.json` onboarding storage/path-rule authority beside the ledger. Closeout and
-carryover tests therefore exercise the production write-authority contract rather than relying on
-parser defaults that are valid only for read/topology discovery.
-
-`RequireUpdatedRouteOverviewContentTests` covers the route-overview body gate:
-with committed root and `src/app` overviews, the nearest-governing overview of
-a changed path fails when stale or when its body update lacks a history entry,
-passes via a `No route impact:` marked entry (returned as attested) or a
-body+history update, the ancestor/root overview is reported as
-`stamped_without_body_review` instead of failing, the root overview gates when
-it is itself the nearest governor, and an empty plan is a no-op. The seven
-direct-closeout end-to-end tests and their `direct_external_memory_fixture`
-were removed with the direct-closeout surface (issue #62); the gate behavior
-itself stays covered by these dedicated test classes, and the coverage the
-direct tests carried moved to worktree-closeout equivalents:
-`test_closeout_blocks_memory_commit_when_memory_quality_fails` (mocked failing
-`run_memory_quality_check` blocks the memory commit with the formatted-findings
-message) and `test_closeout_refreshes_entity_fingerprint_after_code_commit`
-(seeded entity catalog row recomputed into `entities.md` after the worktree
-code commit, before the memory commit).
-
-### Conventions
-
-The test imports helper modules directly from the MCP package path and uses only Python standard-library `unittest` and temporary directories. Drift-specific helpers build minimal route overview and entity catalog fixtures for deterministic `c-02-memory-quality-control` skill coverage, including realistic `Entity Inventory` headings paired with fingerprint rows. Benchmark runner portability tests import the package-local `agents_remember.benchmarks.runner` module from `mcp/src`.
-External-memory fixtures that permit mutation must provision explicit supported storage settings;
-settings-free fixtures are reserved for cases whose contract is refusal.
-
-Call shapes across the suite are parameter-object based: contracts are built as
-`default_contract(ContractTask(...), leaf=LeafIdentity(...), code=RepoBranchPlan(...),
-memory=RepoBranchPlan(...))`; resolver cases pass `hints=CoordinationHints(topology=…,
-coordination_root=…)` and `selector=EnclosureSelector(task_name=…, leaf_id=…, worktree_name=…)`;
-`_merge_integrated_commits` takes one `IntegratedCommits(code=…, memory_content=…, ledger=…)`; and
-the benchmark helpers take a `BenchmarkWorkspace`, with `run_one` taking `BenchmarkRun` plus
-`BenchmarkTask`. The codex run-metadata case patches `benchmark_runner.subprocess.run` to a plain
-successful `CompletedProcess`, so the child writes nothing to the JSONL and only the metadata the
-runner writes around the run is under test.
+`closeout_publication_facts` uses the actual pair, route-review, attestation and memory-check owners and stages the fixture candidate. It labels the code-quality result `component-fixture` with `acceptanceClaim=False`. `run_authorized_closeout_mechanics` exercises the publication component using those facts; it does not certify the selected lifecycle operation or execute its gates.
 
 ### Invariants And Boundaries
 
-These tests are focused smoke coverage, not exhaustive `c-09-git-worktree-manager` skill lifecycle integration tests. The `c-09-git-worktree-manager` skill coverage uses real temporary Git repos and worktrees, checks dirty-memory start blocking, checks closeout preview before approval, checks typed next hints instead of `next_command`, checks approval-note enforcement and recording, checks closeout metadata refresh to the new code commit before memory commit, checks route overview/index refresh before memory commit, checks memory quality failure blocks the memory commit and ledger update, checks entity fingerprint refresh planning and post-code-commit rewriting into `entities.md` before the memory commit, checks missing onboarding blocking before code commit, checks memory-worktree settings override source-memory settings during preview planning, checks long Windows paths in changed-file and sidecar existence probes, checks fast-forward integration, checks replay integration after parallel non-overlapping source changes, checks conflict blocking before source branches move, checks `_merge_integrated_commits` raises "not a fast-forward" before advancing the code branch so there is no half-integrated state, and checks cleanup after successful integration. The `c-02-memory-quality-control` skill drift additions use temporary repos to prove clean and changed route-local overviews, clean and changed entity fingerprints, missing entity evidence paths, missing fingerprint tables, inventory entries without fingerprint rows, and orphaned fingerprint rows. The `c-10-adopt-memory-baseline` skill coverage uses temporary code and memory repos, writes minimal verified onboarding, captures command output when exercising the CLI-style entry point, checks that adoption drift reports stay out of task folders, and checks that adoption writes `memory.md` plus the bootstrap `.gitkeep`. The `c-11-memory-carryover-from-branch` skill coverage uses temporary code and memory repos to prove landed source branch code carries new onboarding into official memory, same-path but different official changes remain review-required, a single earlier landed same-path commit stays `same-path-changed`/`review-required` instead of being treated as `exact-landed-commit` when a later same-path commit never landed, and unlanded source branch memory is rejected. Benchmark runner portability coverage intentionally stays at helper level so it can validate Windows-safe behavior, copy-only skill exposure, Codex `PATH` resolution, benchmark-only execution metadata, default-sandbox omission, variant-scoped provider setup, generated provider settings including `logs/providers/...` provider log paths, workspace-local `.codex` MCP registration, and local Git repository preparation semantics without network clones or benchmark token spend.
-
-Initialized-memory success fixtures must carry explicit write authority; a settings omission must be
-tested as a refusal, never silently repaired by the fixture or production code.
-
-Shared external-memory success fixtures must also carry a canonical ledger mapping for the exact
-admitted code tip; the helper centralizes that invariant without granting test-only production
-authority.
-
-### Todos
-
-Add fuller Git fixture tests for compatible external-memory start. Refresh verification metadata after the benchmark checkout cache tests are committed.
-
-### Docs References
-
-No external documentation is needed for this standard-library test.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+- Fixture-created commits and mappings belong to temporary repositories.
+- A writer-component fixture must not be reported as full closeout or gate acceptance.
+- Consumer tests determine actual protection. Removed slice matrices and their historical outcomes are not current executable coverage.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared external-memory initializer commits one canonical ledger mapping for the admitted code tip. | `seed_memory_ledger` | mcp/tests/test_worktree_support.py:206-218 |
-| The file-level onboarding helper creates minimal onboarding fixtures for adoption and carryover checks. | `write_file_onboarding` | mcp/tests/test_worktree_support.py:289-312 |
-| The common integration fixture creates real code and memory worktrees, closes a contract with code, memory content, and ledger commits, then reuses that fixture across integration tests. | `closed_external_contract_fixture` | mcp/tests/test_worktree_support.py:787-870 |
-| The resolver regression test proves `c-08-ar-coordination-context-resolver` skill returns `ar-coordination/tasks/<repo>` when no task name is supplied. | `test_resolver_returns_repo_task_root_without_task_name` | mcp/tests/test_worktree_support_tests_1.py:415-435 |
-| External-memory start blocks dirty source memory repos before worktree creation. | `test_start_blocks_dirty_external_memory_source` | mcp/tests/test_worktree_support_tests_1.py:724-763 |
-| Worktree contract tests check wrapper task roots without `-ar`, worktree groups with `-ar`, current-plus-legacy task-root candidates, and direct contract-path status loading. | `test_worktree_contract_roundtrip` | mcp/tests/test_worktree_support_tests_1.py:925-995 |
-| Closeout tests cover dry-run preview without approval, metadata refresh plan output, real closeout blocking without an approval note, approval-note persistence, onboarding metadata refresh to the new code commit, and missing onboarding blocking; the closeout **preview** path still reports `commit-approval-pending` / `request_commit_approval` (closeout owns the commit gate). | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/guidance.py:39-39 |
-| `test_status_reports_integration_pending_for_dirty_closed_contract` (slice 09) pins the corrected `status_payload` behavior: a closed-out contract reports its honest lifecycle position (`integration-pending` / `request_integration_decision`) even when the worktree is dirty — `git status` no longer fabricates `commit-approval-pending`. | `test_status_reports_integration_pending_for_dirty_closed_contract` | mcp/tests/test_worktree_support_tests_2.py:668-681 |
-| New closeout regression tests cover memory-worktree settings during planning and long Windows paths in changed-file and sidecar probes. | `test_closeout_plan_uses_memory_worktree_settings`; `test_changed_worktree_paths_includes_long_files`; `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1112-1142; mcp/tests/test_worktree_support_tests_1.py:1143-1157; mcp/tests/test_worktree_support_tests_1.py:1175-1192 |
-| The initialized-memory helper writes supported explicit storage settings so closeout/carryover success paths possess real write authority. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:443-473 |
-| Direct legacy integration callers cannot fast-forward or classify source movement, and cleanup blocks before completed integration. | `test_direct_integrate_cannot_fast_forward_code_or_memory`; `test_cleanup_blocks_before_integration_completed`; `test_direct_integrate_cannot_classify_parallel_non_overlapping_changes`; `test_direct_integrate_cannot_classify_parallel_conflicting_changes` | mcp/tests/test_worktree_support_tests_2.py:682-718; mcp/tests/test_worktree_support_tests_2.py:719-726; mcp/tests/test_worktree_support_tests_2.py:727-771; mcp/tests/test_worktree_support_tests_2.py:772-808 |
-| The remaining non-fast-forward case proves refs stay unchanged. | `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_3.py:955-1007 |
-| Resolver and drift-report path tests check `code_repository_name`, `temp_root`, default report placement under `temp/drift-reports`, relative report resolution, parent-directory escape fallback, absolute-path containment, and explicit memory-root report redirection back to temp. | `test_drift_report_paths_use_temp_root` | mcp/tests/test_worktree_support_tests_3.py:199-242 |
-| Deterministic `c-02-memory-quality-control` skill drift tests build route overview and entity catalog fixtures, then cover clean route scopes, changed route scopes, clean fingerprints, changed fingerprints, missing evidence paths, missing fingerprint tables, missing fingerprint rows, and orphaned fingerprint rows. | `test_drift_detects_clean_route_local_overview`; `test_drift_detects_changed_route_local_overview_scope`; `test_drift_detects_clean_entity_fingerprint`; `test_drift_detects_entity_fingerprint_change`; `test_drift_detects_missing_entity_evidence_path`; `test_drift_detects_entity_inventory_without_fingerprint_table`; `test_drift_detects_entity_inventory_entry_missing_fingerprint`; `test_drift_detects_orphaned_entity_fingerprint_row` | mcp/tests/test_worktree_support_tests_3.py:244-262; mcp/tests/test_worktree_support_tests_3.py:264-282; mcp/tests/test_worktree_support_tests_3.py:284-307; mcp/tests/test_worktree_support_tests_3.py:309-334; mcp/tests/test_worktree_support_tests_3.py:336-357; mcp/tests/test_worktree_support_tests_3.py:359-383; mcp/tests/test_worktree_support_tests_3.py:385-410; mcp/tests/test_worktree_support_tests_3.py:412-440 |
-| Resolver tests cover arbitrary installed runtime roots and prove source-checkout `.env` and `.env.example` do not override coordination-root selection. | `test_resolver_uses_installed_runtime_root_as_coordination_root`; `test_resolver_ignores_dot_env_override_for_coordination_root`; `test_resolver_ignores_dot_env_example_at_runtime` | mcp/tests/test_worktree_support_tests_2.py:868-890; mcp/tests/test_worktree_support_tests_2.py:891-913; mcp/tests/test_worktree_support_tests_2.py:914-937 |
-| `c-10-adopt-memory-baseline` skill tests cover ready status without a ledger, resolver arguments, drift report placement, drift blocking without explicit acceptance, and initial ledger creation with docs `.gitkeep`. | `test_adopt_memory_baseline_status_ready_without_ledger`; `test_adopt_memory_baseline_blocks_drift_without_acceptance`; `test_adopt_memory_baseline_creates_initial_ledger` | mcp/tests/test_worktree_support_tests_3.py:500-543; mcp/tests/test_worktree_support_tests_3.py:545-568; mcp/tests/test_worktree_support_tests_3.py:570-600 |
-| `c-11-memory-carryover-from-branch` tests cover landed-branch auto-carry, same-path ambiguity, unmapped official heads, earlier-only-landed changes, and rejected unlanded branch memory. | `test_memory_carryover_applies_landed_branch_onboarding`; `test_memory_carryover_requires_review_for_same_path_ambiguity`; `test_memory_carryover_maps_unmapped_official_head_when_nothing_to_carry`; `test_memory_carryover_requires_review_when_only_earlier_path_commit_landed`; `test_memory_carryover_rejects_branch_memory_when_code_did_not_land` | mcp/tests/test_worktree_support_tests_3.py:701-761; mcp/tests/test_worktree_support_tests_3.py:763-817; mcp/tests/test_worktree_support_tests_3.py:819-875; mcp/tests/test_worktree_support_tests_3.py:877-921; mcp/tests/test_worktree_support_tests_3.py:923-953 |
-| Benchmark runner portability tests cover manifest path containment, non-string path rejection, manifest path component validation, read-only generated tree removal, stale directory symlink removal without deleting the target, Windows `.cmd` shim selection for `codex`, Codex `PATH` resolution and benchmark-only execution metadata, default-sandbox omission, variant-scoped provider selection, generated provider settings without coordinator `system/settings.json` and with central provider log paths, workspace-local `.codex` benchmark MCP registration, temporary provider setup settings handoff, cached repository reuse without clone or fetch, changed-pinned-commit fetching, force-clone cache discard, and copy-only benchmark skill exposure without the deleted shell installer. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support_benchmark.py:36-669 |
-
-## Cross-Repo References
-
-No sibling repository evidence is needed for the test itself.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Series-Contract Notes
-
-Worktree support coverage includes the master-start path that creates a root integration contract plus a
-leaf enclosure contract, and keeps closeout/onboarding/status tests aligned with leaf contract paths.
-HFX-L4 updates that path so a legacy-shaped leaf ref (`15_leaf`) resolves through the task tree and the
-new contract persists the canonical doc id (`15`) under the canonical leaf enclosure path. It also covers
-the L3 memory-base regression: `memory_base_for_source` records the memory base from the source-branch
-tip, not the repo HEAD when the memory repo is checked out on an unrelated branch.
-
-## L23 Shared Current-Lineage Fixture
-
-`write_current_task_lineage` creates a real Git repository, master series
-contract, and leaf enclosure whose branches form a current super-to-master-to-
-leaf chain. Structural suites reuse it so unrelated tests satisfy admission
-without mocking the source-lineage fact source.
-
-The central external-closeout fixture now also writes a task-derived parent series contract and
-links the leaf through `parent_contract_path`, so ordinary closeout tests exercise the same
-transitive admission shape as production rather than passing through an identity-free fixture.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260821-CLIVE-L1 Canonical Test Inputs
-
-Shared `closeout_args` now builds normalized effective input and journal progress support for tests that legitimately enter apply. Contract fixtures publish through the canonical serializer. This helper does not create a raw-input bypass; boundary tests use dedicated invalid-input fixtures.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `git`, `init_repo`, `write_current_task_lineage`, `write_file_onboarding`. The L2 additions force public worktree consumers through closed configured-contract admission, mutation-owner reread, journal recovery, and fail-closed destructive cleanup.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current test source exercises `git`, `init_repo`, `seed_memory_ledger`, `write_current_task_lineage`, and `write_file_onboarding`. | `git`; `init_repo`; `seed_memory_ledger`; `write_current_task_lineage`; `write_file_onboarding` | mcp/tests/test_worktree_support.py:147-160; mcp/tests/test_worktree_support.py:161-183; mcp/tests/test_worktree_support.py:206-218; mcp/tests/test_worktree_support.py:219-288; mcp/tests/test_worktree_support.py:289-312 |
-
-## MCAR-L02 Complete External-Closeout Fixture Authority
-
-`write_passing_route_review` still authors the exact leaf review record, but an external-memory
-leaf now also receives the complete master/sprint task lineage and a canonical structured
-coherence generation through `curator_coherence_test_support`. Low-level closeout tests therefore
-exercise the same required topology and shared validator as production. They no longer fail before
-their intended seam merely because the older fixture created only a leaf document, and they do not
-gain a test-only bypass or a Markdown authority.
+| External-memory fixture supplies real isolated Git repositories and current contract inputs. | `open_external_contract_fixture` | mcp/tests/test_worktree_support.py:420-508 |
+| Publication facts retain an explicit non-acceptance component-fixture result. | `closeout_publication_facts` | mcp/tests/test_worktree_support.py:831-882 |
+| Writer mechanics call the publication component without claiming gate acceptance. | `run_authorized_closeout_mechanics` | mcp/tests/test_worktree_support.py:885-896 |
+| The base class provides helper methods rather than collected test cases. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
 
 ## Update History
+
+- 2026-09-07T00:28+02:00 — Reconciled this retained helper module to its actual fixture role; removed obsolete sliced-suite coverage prescriptions while preserving historical entries and verification pins.
 
 - 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `ReportBindings` publication cutover in the shared closeout-quality fixture helper.
 

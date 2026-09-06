@@ -5,48 +5,67 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_agent_notifier_ladder.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T06:48+02:00                                            |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
 | lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Regression suite for notifier escalation, replacement, expiry, and bounded sweep behavior under plane-owned seat identity.
+Task-topology builders shared by notifier consumers.
 
 ## Code Commentary
 
 ### Logic
 
-The tests prove dead-upstream detection from structural provenance; durable dispatch rows do not rebind; manager replacement preserves the worker through canonical task-document/role routing; grace expiry reaches the architect mailbox; landed seats remain terminal; repeated sweeps, cooldowns, budgets, and restart reconciliation reach bounded fixed points.
+_write_topology writes a sprint, one master and sixty real leaf documents beneath the supplied temporary root. _task_doc validates model inputs and _leaf_ref returns exact document references. No ladder-walk tests remain in this file.
 
 ### Conventions
 
-Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-Notifier actions must use durable task/role evidence, never a guessed occupant address; duplicate findings cannot duplicate rebind, delivery, or expiry effects.
+The historical ladder filename does not establish escalation behavior or authorize restoring retired ladder tests.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local regression contract.
-
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `DeadUpstreamPredicateTests` | mcp/tests/test_agent_notifier_ladder.py:121-121 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Task doc. | `_task_doc` | mcp/tests/test_agent_notifier_ladder.py:14-25 |
+| Write topology. | `_write_topology` | mcp/tests/test_agent_notifier_ladder.py:28-71 |
+| Leaf ref. | `_leaf_ref` | mcp/tests/test_agent_notifier_ladder.py:74-75 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this test module.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_agent_notifier_ladder.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged ladder-demolition and agent-notifier assertions; the existing test card remains accurate. Verification metadata remains pinned until closeout.

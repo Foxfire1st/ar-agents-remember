@@ -5,75 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T03:37+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `../overview.md` |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Exercises the repository-global surface census, exact operation authority, alias/default refusal, CAS and rollback, conflict handoff, crash recovery, and bootstrap WAL.
+Protected integration ref ownership and external-pair crash recovery.
 
 ## Code Commentary
 
-The broad production-bound matrix covers code and external memory, linked worktrees, missing/corrupt authority, duplicate workers, and hard-crash recovery without substituting ambient checkout facts. Shared configured-repository and closed-leaf builders live in `integration_branch_authority_test_support.py` so this file remains focused on assertions.
+### Logic
 
-## Invariants And Boundaries
+Branch aliases, nested checkouts and memory names cannot bypass protected-ref refusal. If code CAS succeeds while a competing memory update wins, recovery preserves that raced memory ref and reports the torn pair. A code-only crash with unchanged expected memory completes the exact memory ref on retry.
 
-- The suite exercises production owners rather than copying their state-transition logic.
-- Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
-- Crash/retry cases retain exact durable identity and expected-old facts.
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+
+### Invariants And Boundaries
+
+A torn pair is not permission to clobber concurrent memory work. The retained three cases do not prove the historical bootstrap-WAL or broad surface census.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `IntegrationBranchAuthorityTests` | mcp/tests/test_integration_branch_authority.py:86-1157 |
-
-## Documentation References
-
-No configured domain-documentation or cross-repository source applies to this file.
-
-## 260821-CLIVE-L1 Contract Publication Migration
-
-The affected authority case now writes its contract through the canonical publication helper used by closeout identity. Branch-authority semantics are unchanged; the relationship update ensures the fixture hashes and publishes the same normalized contract representation.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_source_write_and_operation_authority_cover_exact_refusal_edges`, `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`, `test_resolves_default_super_and_every_active_series_on_both_repositories`, `test_active_atomic_task_stays_protected_without_or_after_its_series_contract`. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
-
-### Reconciled Source Evidence
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_source_write_and_operation_authority_cover_exact_refusal_edges`, `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`, `test_resolves_default_super_and_every_active_series_on_both_repositories`, `test_active_atomic_task_stays_protected_without_or_after_its_series_contract`. | `test_source_write_and_operation_authority_cover_exact_refusal_edges`; `test_live_leaf_collision_census_covers_terminal_and_removed_source_edges`; `test_resolves_default_super_and_every_active_series_on_both_repositories`; `test_active_atomic_task_stays_protected_without_or_after_its_series_contract` | mcp/tests/test_integration_branch_authority.py:89-146; mcp/tests/test_integration_branch_authority.py:148-217; mcp/tests/test_integration_branch_authority.py:219-237; mcp/tests/test_integration_branch_authority.py:239-252 |
+| Branch alias nested checkout and memory name cannot bypass refusal. | `test_branch_alias_nested_checkout_and_memory_name_cannot_bypass_refusal` | mcp/tests/test_integration_branch_authority.py:50-74 |
+| External pair cas retains torn pair without clobbering memory race. | `test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race` | mcp/tests/test_integration_branch_authority.py:76-166 |
+| External code only crash completes the exact memory ref on retry. | `test_external_code_only_crash_completes_the_exact_memory_ref_on_retry` | mcp/tests/test_integration_branch_authority.py:168-213 |
 
-## Current Contract — 260821 CLIVE Final
+## Cross-Repo References
 
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-Forces the canonical protected integration-ref owner, repository confinement, base-pair checks, capability issuance, and same-target mutation serialization.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
-### Current Invariants
-
-- Only the integration authority may move protected refs.
-- Queue state and caller-supplied repository paths do not grant ref authority.
-- `require_sync_worktree` admits canonical series authority for the journaled selecting sync path,
-  while direct unjournaled integration remains refused.
-
-
-## PDLS Reconciliation
-
-Integration authority tests now exercise delegated topology-collision and deleted-owner repair owners through the unchanged public policy boundary.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-26T03:37+02:00 — Updated the exact authority edge: canonical series sync is admitted,
   but direct unjournaled protected-ref integration remains refused. Verification remains

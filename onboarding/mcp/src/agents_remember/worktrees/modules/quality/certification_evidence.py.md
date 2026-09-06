@@ -59,9 +59,13 @@ No external Domain Documentation source is configured for this repository.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The exact selected journal is bounded and validates certificate rows. | `read_gate_records`; `validate_gate_records` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:31-56; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:59-81 |
-| Canonical selected objects bind publication authority and retention pins. | `verify_selected_publications`; `protected_certificate_generations`; `_verify_publication_authority` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:99-114; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:84-96; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:142-173 |
-| Equal certificates retain their original fully matched execution publication. | `publication_binding`; `_execution_authority` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:117-139; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:176-186 |
-| Every emitted evidence/artifact reference is reopened against the selected snapshot. | `verify_result_evidence`; `_verify_reference` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:189-203; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:206-217 |
+| Cross-bind selections to their exact stored objects before publishing or pruning. | "def verify_selected_publications" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124 |
+| Selected certificates pin exact generations until journal replacement or cleanup. | "def protected_certificate_generations" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
+| Publication verification checks certificate, result and publication identity together. | "def verify_publication_authority" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:152-183 |
+| Retain the original selected generation for a semantically identical certificate. | "def publication_binding" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149 |
+| Execution identity excludes physical generation, report bytes and audit provenance. | "def _execution_authority" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:268-278 |
+| Open every emitted binding through its one accepted immutable generation. | "def verify_result_evidence" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:281-295 |
+| Published artifact references are opened through their accepted snapshot. | "def _verify_reference" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:298-309 |
 
 ## Cross-Repo References
 

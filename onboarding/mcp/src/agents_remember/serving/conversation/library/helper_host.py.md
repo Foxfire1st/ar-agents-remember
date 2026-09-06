@@ -78,8 +78,8 @@ real helper end-to-end including its malformed-request refusals.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The helper package defines a versioned JSONL serve loop, typed failure vocabulary, and paging primitives. | `PROTOCOL_VERSION`; `HelperFailure`; `serveJsonLines`; `pageByOffset`; `windowByOrdinal` | mcp/native_helpers/conversation_library/src/protocol.ts:13-13; mcp/native_helpers/conversation_library/src/protocol.ts:86-92; mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286 |
-| The installed suite proves the helper handshake plus malformed-request rejection on the real process seam. | `test_live_helper_gate_supports_pi_history`; `test_helper_protocol_rejects_malformed_requests` | mcp/tests/test_conversation_library_installed.py:234-248; mcp/tests/test_conversation_library_installed.py:285-301 |
-| The Python foundation suite forbids incidental module resolution in the helper sources this host spawns. | `test_helper_runtime_source_has_no_incidental_module_resolution` | mcp/tests/test_conversation_foundation.py:139-160 |
+| Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the helper handshake plus malformed-request rejection on the real process seam. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
+
 
 ## Cross-Repo References
 

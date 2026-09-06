@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/setting_values.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
+| lastUpdated            | 2026-09-06T22:15:27+00:00 |
 | lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
 | lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview      | `overview.md`                              |
@@ -21,6 +21,8 @@ mapping, list, boolean, and `crossRepo.allow` values; scalar normalization itsel
 is owned by that imported helper.
 
 ## Code Commentary
+
+For an individual crossRepo.allow entry, malformed repo/expectedBranch or boolean values become an excluded entry plus an indexed explanation. Bad booleans retain the conservative includeCode=True/includeMemory=False defaults with the exclusion reason. This total-entry behavior does not make the outer settings parser total: a non-array allow value still raises. cit:([`parse_cross_repo_allow`, `parsed_cross_repo_allow_entry`, `cross_repo_entry_booleans`], mcp/src/agents_remember/kernel/coordination_context/setting_values.py:44-58; mcp/src/agents_remember/kernel/coordination_context/setting_values.py:86-120).
 
 ### Logic
 
@@ -59,6 +61,8 @@ No cross-repository evidence is needed for format-neutral value parsing.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-06T22:15:27+00:00 — Preserved actual asset/context semantics from retired test onboarding; verification pins unchanged.
 
 - 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: narrowed ownership to the module's
   format-specific parsing and anchored its JSON and cross-repo consumers.

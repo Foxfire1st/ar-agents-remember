@@ -65,8 +65,7 @@ scope; this file implements an internal projection rollup.
 | --- | --- | --- |
 | The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:1140-1140 |
 | The reducer module defines `build_analytics` for analytics enrichment. | "def build_analytics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129 |
-| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:856-856 |
-| The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:681-681 |
+| SeriesNode exposes the served seriesTokenTotal field, defaulting to zero. | "seriesTokenTotal: int = 0" | mcp/src/agents_remember/observer/projection.py:856-856 |
 
 ## Cross-Repo References
 

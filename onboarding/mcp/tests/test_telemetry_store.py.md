@@ -5,80 +5,80 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_telemetry_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb` |
 | lastVerifiedCommitDate | 2026-09-04T12:20:39+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-The durability and content-addressing verification suite for the CCR-R16@v3 durable telemetry
-journal store (leaf 260831-CCR-L16). Its twenty-two unit-regression tests force
-`certification/telemetry/store.py` - append/read/replay round trips on temporary directories, the
-monotonic revision rule, CAS collisions, digest tamper refusal, revision-chain gap and
-predecessor-chain refusal, closeout/diagnostic envelope separation, read-only replay, capacity
-limits, canonical-byte verification, and hostile path/address refusals.
+Checks telemetry journal append/read, monotonic revisions, digest tampering, missing revisions and predecessor-chain failures. Replay is read-only instrumentation, same-revision different-byte append refuses, and byte capacity remains enforced. Eight retained functions replace the prior twenty-two-test claim without declaring instrumentation to be certification authority.
 
 ## Code Commentary
 
 ### Logic
 
-Tests run against a temporary store root with a small `TelemetryStorePolicy`.
-`test_append_and_read_round_trip_preserves_exact_events` (`test_telemetry_store.py:101-116`) verifies
-the basic round trip; `test_append_enforces_monotonic_event_revision` and
-`test_tampered_journal_entry_is_refused` (`test_telemetry_store.py:117-136`) pin revision and digest
-rules; `test_separate_closeout_and_diagnostic_envelopes` (`test_telemetry_store.py:137-146`) verifies
-envelope separation; `test_read_refuses_journal_gap` (`test_telemetry_store.py:147-157`) and
-`test_replay_is_read_only_instrumentation` (`test_telemetry_store.py:178-189`) pin chain and replay
-semantics; `test_capacity_limit_is_enforced` (`test_telemetry_store.py:212-230`) verifies byte
-budget enforcement; and the CAS pair (`test_append_cas_identical_bytes_returns_existing_path` and
-`test_append_cas_collision_refuses_different_bytes_at_same_revision`,
-`test_telemetry_store.py:247-278`) verifies the append is an exact CAS publication.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-The suite exercises the real filesystem store on `tmp_path`; no mocks replace atomic writes, digests,
-or capacity checks.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Every append/read/replay test asserts exact store semantics, never fallback behavior.
-- Tampered, non-canonical, or broken-chain entries are refused.
-- The module is registered as explicit `unit-regression` evidence.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None recorded.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root; the governing documentary
-artifact is the CCR-R16@v3 requirement packet, whose normative requirement makes the durable
-journal the reconstruction authority. Task artifact paths are not repo-relative citations, so
-this fact is recorded as prose here.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Round trips, monotonic revisions, envelope separation, and read-only replay are pinned. | `test_append_and_read_round_trip_preserves_exact_events`; `test_separate_closeout_and_diagnostic_envelopes`; `test_replay_is_read_only_instrumentation` | mcp/tests/test_telemetry_store.py:101-146; mcp/tests/test_telemetry_store.py:178-189 |
-| Tampered entries, journal gaps, non-canonical bytes, and hostile addresses are refused. | `test_tampered_journal_entry_is_refused`; `test_read_refuses_journal_gap`; `test_entry_path_rejects_unsupported_envelope_kind` | mcp/tests/test_telemetry_store.py:127-157; mcp/tests/test_telemetry_store.py:295-301 |
-| CAS publication and capacity limits are enforced on the real store. | `test_append_cas_identical_bytes_returns_existing_path`; `test_append_cas_collision_refuses_different_bytes_at_same_revision`; `test_capacity_limit_is_enforced` | mcp/tests/test_telemetry_store.py:247-278; mcp/tests/test_telemetry_store.py:212-230 |
-| The suite exercises the production journal store and its policy models. | `DurableTelemetryStore`; `TelemetryStorePolicy`; `TelemetryJournalEntry` | mcp/src/agents_remember/certification/telemetry/store.py:81-316; mcp/src/agents_remember/certification/telemetry/store.py:41-49; mcp/src/agents_remember/certification/telemetry/store.py:50-64 |
+| Append and read round trip preserves exact events | `test_append_and_read_round_trip_preserves_exact_events` | mcp/tests/test_telemetry_store.py:73-86 |
+| Append enforces monotonic event revision | `test_append_enforces_monotonic_event_revision` | mcp/tests/test_telemetry_store.py:89-96 |
+| Tampered journal entry is refused | `test_tampered_journal_entry_is_refused` | mcp/tests/test_telemetry_store.py:99-106 |
+| Read refuses journal gap | `test_read_refuses_journal_gap` | mcp/tests/test_telemetry_store.py:109-117 |
+| Read refuses broken predecessor chain | `test_read_refuses_broken_predecessor_chain` | mcp/tests/test_telemetry_store.py:120-137 |
+| Replay is read only instrumentation | `test_replay_is_read_only_instrumentation` | mcp/tests/test_telemetry_store.py:140-149 |
+| Append cas collision refuses different bytes at same revision | `test_append_cas_collision_refuses_different_bytes_at_same_revision` | mcp/tests/test_telemetry_store.py:152-168 |
+| Append enforces byte capacity limit | `test_append_enforces_byte_capacity_limit` | mcp/tests/test_telemetry_store.py:171-185 |
 
 ## Cross-Repo References
 
-No cross-repository evidence is required.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite is repository-local and exercises production certification telemetry store behavior on a temporary root. | `test_append_and_read_round_trip_preserves_exact_events` | mcp/tests/test_telemetry_store.py:101-116 |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5: created for the CCR-R16@v3 durable journal
   store suite (leaf 260831-CCR-L16, certified commit

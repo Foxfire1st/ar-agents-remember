@@ -369,12 +369,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:979-1054 |
-| Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:34-554 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:131-209 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:29-38; mcp/src/agents_remember/models/worktree.py:174-174 |
-| The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:566-674 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
@@ -592,12 +590,7 @@ reset-and-stage step and the gate as four entries where it listed one; and the p
 the index it is handed and says nothing about how it came to look that way, so its failure
 message claims only that nothing was committed, **not** that the staging was undone.
 
-Pinned by `mcp/tests/test_worktree_closeout_quality_gate.py`:
-`CloseoutGateSeesCreatedFilesTests` (a created file's lint error fails the gate; the gate's
-scope is the commit's content), `TaskWorktreePreconditionTests` (the repository's own checkout
-is refused before anything is staged; a series contract's `code_worktree` is exactly that
-checkout), `ConflictedIndexTests::test_the_reset_runs_after_the_conflict_check_not_before_it`,
-and `RetryStagesWhatAFirstRunWouldTests::test_a_retry_commits_the_tree_a_first_run_would`.
+Historical staging tests exercised created-file scope, task-worktree refusal, conflict-before-reset ordering, and retry equivalence. Those named tests were removed; the production staged-quality owner remains the source of these boundaries.
 
 ## Historical 260731-EFA-L5 Spending An Approval Is One Step Now, And One Consumer Still Does Not Spend It
 
@@ -632,8 +625,7 @@ shapes were reproduced. A two-phase `claimed` state was considered and rejected:
 same write at the same late position with the same failure modes, so it would need a reaper that
 re-opens the window on a timer.
 
-`mcp/tests/test_gate_replay_window.py` pins both halves: the gate is already `applied` by the time
-`commit_if_dirty` runs, and a gate failure leaves it `approved`.
+Historical replay-window tests exercised approval consumption before commit and refusal before consumption. That suite was removed; this paragraph records the earlier design history and is not current test evidence.
 
 ### `integrate.py`: an open decision, deliberately left open
 
@@ -901,7 +893,7 @@ Selected closeout admission, original-reference readback and code-suffix executi
 | Returned terminals are recorded and selected before recording/process refusal propagation. | `run_strict_code_quality_gate`; `record_terminal_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361; mcp/src/agents_remember/worktrees/modules/quality/certification_run.py:47-70 |
 | Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:279-297; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:367-444 |
 | Gate-record publication bindings retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
-| All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/main.py:513-584 |
+| All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/profile_execution.py:215-292 |
 | Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:26-63; .dagger/src/agents_remember_quality/rail_emission.py:66-100; .dagger/src/agents_remember_quality/rail_emission.py:103-117 |
 | Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:87-91; .dagger/src/agents_remember_quality/rail_bindings.py:115-144 |
 | The report branch persists retained bytes and exports the authoritative payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
@@ -926,6 +918,9 @@ The selected code contract and original report transport have a local [execution
 | The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
 
 ## Update History
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `LifecycleFinalizeTests` repointed to mcp/tests/test_lifecycle_finalize.py:28-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `_execute_gate_rails` repointed to .dagger/src/agents_remember_quality/profile_execution.py:215-292. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T15:15:01+00:00 — Added the missing selected-terminal and execution-package routes from actual source at `c69d5171187fa1957025e393270db9f5a864ab14`; corrected the bounded green-only recording and uncomposed-admission claims. Preserved the broad verification stamps and complete prior history; this route update is not gate or acceptance evidence.
 

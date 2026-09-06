@@ -56,8 +56,8 @@
 | Isolated GrepAI settings define the target roots and workflow-local backend names used by clone operations. | `isolated_grepai_settings` | mcp/src/agents_remember/providers/grepai/isolated.py:36-74 |
 | GrepAI setup calls clone before refresh when seed options are present. | `prepare_enabled_provider` | mcp/src/agents_remember/providers/grepai/setup.py:56-71 |
 | Provider setup threads source/target settings into GrepAI seed options for worktrees (benchmarks pass none). | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/provider_setup.py:105-112 |
-| Tests cover dry-run clone planning, benchmark-style target settings, and the benchmark-scope clone guard. | `test_prepare_announces_phases_in_order_with_seed_fallback`, `BenchmarkSeedGuardTests`, `test_grepai_clone_refuses_benchmark_scoped_target` | mcp/tests/test_provider_setup.py:65-147; mcp/tests/test_provider_setup.py:902-938 |
-| Watchdog complete/stall/progress-reset/exit-code behavior and the no-total-cap contract are unit-tested. | `StallWatchdogTests`, `GrepaiCloneStallTests`, `test_clone_has_no_total_time_cap` | mcp/tests/test_seed_timeouts.py:42-103; mcp/tests/test_seed_timeouts.py:106-144 |
+
+
 
 ## Update History
 

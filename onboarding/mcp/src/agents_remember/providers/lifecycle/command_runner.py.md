@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/lifecycle/command_runner.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
+| lastUpdated            | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `overview.md`                              |
@@ -20,6 +20,8 @@
 commands.
 
 ## Code Commentary
+
+Absent explicit input routes stdin to DEVNULL; provided text uses subprocess input. Only `allow_timeout=True` turns TimeoutExpired into a timed-out result, preserving partial stdout/stderr and decoding byte output as UTF-8 with replacement. Otherwise the timeout exception remains visible. The nonpositive timeout sentinel is passed as an unlimited wait. cit:([`run_command`; `timeout_command_result`; `timeout_stream_text`], mcp/src/agents_remember/providers/lifecycle/command_runner.py:15-55; mcp/src/agents_remember/providers/lifecycle/command_runner.py:58-74; mcp/src/agents_remember/providers/lifecycle/command_runner.py:77-80).
 
 ### 260731-EFA-L2 The `env` Parameter Was Removed
 
@@ -55,6 +57,8 @@ wall-clock cap, while setup/control commands still pass a real timeout.
 | Runtime environment defaults come from the lifecycle environment module. | `subprocess_env` | mcp/src/agents_remember/providers/lifecycle/runtime_environment.py:17-23 |
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 
 - 2026-08-04T18:44+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the single malformed row —
   bound to `subprocess_env` (runtime_environment.py:10-29), the env-default provider this module

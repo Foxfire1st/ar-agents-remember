@@ -5,73 +5,74 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_doc_graph_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
 | lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Force the current zero/one graph-bearing publication-batch contract and prove that unsupported
-two-graph input refuses before task bytes, the supplied publisher, or projection publication can
-change.
+Checks that task publication accepts zero or one graph-bearing document in a batch. Two graph documents refuse before either document bytes, the supplied publisher, or projection publication can change. Exact snapshot comparisons make the no-partial-write boundary observable.
 
 ## Code Commentary
 
 ### Logic
 
-`TaskDocGraphPublicationTests` builds graph-bearing task documents with real edges and colliding
-local leaf numbers. It accepts plain/one-graph batches, checks the qualified title result, then
-forces both input orders through the central owner and ordinary task publication. Sentinel JSON and
-Markdown bytes remain identical; the injected publisher and `publish_task_fact_mutation` are not
-called.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-The suite targets the compact application owner directly and crosses the ordinary publication seam
-only for the validate-before-mutate proof.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Two or more graph documents always produce the same typed cardinality refusal regardless of
-  input order.
-- The fixture uses real edges; it does not add an unrelated zero-edge proof obligation.
-- The tests do not establish multi-graph compatibility or split-retry behavior.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation sources are configured for this repository-internal forcing suite.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
-The test suite and the application owner are the direct evidence.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The suite proves supported zero/one shape, pre-publication no-effect refusal, and order independence. | `TaskDocGraphPublicationTests` | mcp/tests/test_task_doc_graph_publication.py:93-160 |
-| The owner under test defines the typed cardinality and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
+| Plain or single graph document is the supported batch shape | `test_plain_or_single_graph_document_is_the_supported_batch_shape` | mcp/tests/test_task_doc_graph_publication.py:101-110 |
+| Two graph documents refuse before task or projection publication | `test_two_graph_documents_refuse_before_task_or_projection_publication` | mcp/tests/test_task_doc_graph_publication.py:112-140 |
 
 ## Cross-Repo References
 
-No cross-repository boundary is exercised by this suite.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository references were found. | n/a | n/a |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-24T13:43+02:00 — Created for DAGQC L1: focused zero/one/two graph-publication
   cardinality and no-effect forcing. Verification remains closeout-owned because the test source

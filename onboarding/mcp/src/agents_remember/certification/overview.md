@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:50:51+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../../../overview.md` |
@@ -200,25 +200,30 @@ Gate 1 and after a green result through `quality/gate.py`. That caller currently
 rails only for `agents-remember`; the generic bridge itself has no repository-specific inventory.
 The record seam now requires the exact admitted candidate/profile/full plan/selection and physically reopens every nested evidence/artifact against the complete immutable report snapshot before publication. Selected certificate rows retain that snapshot and pin the actual generation; canonical store loads retain original semantic objects and provenance. Returned certification refusals propagate through the green caller. This repairs L30 evidence retention, while ordinary failed runs still raise before the record seam and therefore do not establish a complete R11 result population for every terminal outcome.
 
-`lifecycle_admission.py` and `lifecycle_recovery.py` define R05 admission, finalization and recovery
-contracts, but the inspected production tree has no caller of `compile_lifecycle_admission`,
-`compile_lifecycle_finalization`, or `authorize_finalization_leg` outside that library. Similarly,
-the ordinary closeout path does not call the R16 closeout event builders or instantiate
-`DurableTelemetryStore`; optional diagnostic/final-Codex controllers retain their separate event
-handling. R07 affected-closure and R08 final-memory certification likewise remain library-only in the
-ordinary memory controller, which invokes readiness with no affected-closure plan digest.
-Existing lifecycle journal recovery must not be described as integrated R05 certificate
-recovery. Reconsider these gaps when the host owners actually call the APIs and verify their
-required input/result identities.
+`lifecycle_admission.py` and `lifecycle_recovery.py` supply the typed contracts consumed by
+closeout `certification/admission.py`, `selection.py` and `recovery.py`. Admission and recovery
+are now production-composed; the application installs the prepared memory/finalization continuation.
+Library availability or default binding alone is not execution or acceptance evidence.
+The focused closeout and preparation routes describe selected certificate readback and physical publication.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. | "def compile_certification_lane("; "def _project_repository_rail(rail: CompiledRail) -> RailDefinition:"; "def _require_applicable_repository_gates(plan: RepositoryProfilePlan) -> None:" | mcp/src/agents_remember/certification/certification_lane.py:79-121; mcp/src/agents_remember/certification/certification_lane.py:187-245 |
 | The production seam resolves the exact profile, binds memory rails and persists admission. | "def prepare_certification_records(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:165-200 |
-| The gate freezes admission before execution and invokes the record adapter after a green result. | "def run_strict_code_quality_gate("; "def _freeze_certification_records(target, *, plan, candidate_tree) -> None:"; "def _record_certification_generation(target, *, plan, candidate_tree, manifest) -> None:" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-323; mcp/src/agents_remember/worktrees/modules/quality/gate.py:464-507 |
+| The ordinary quality gate runs the admitted candidate through its certification executor. | "def run_strict_code_quality_gate" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361 |
+| The quality gate freezes certification records before execution. | "def _freeze_certification_records" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:462-476 |
+| Persist complete actual terminal catalogs, including red and interrupted gates. | "def record_published_generation" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:232-276 |
 | Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. | "def compile_certification_recovery_record("; "def compile_lifecycle_finalization("; "def validate_lifecycle_finalization_currentness("; "def authorize_finalization_leg(" | mcp/src/agents_remember/certification/lifecycle_recovery.py:53-160 |
 
+
+## Integrated IAS Recovery Contract
+
+Repository-profile validation now factors environment producer/reconstruction artifact checks into `_validate_environment_artifacts`; semantic planning factors adapter inputs into `_compile_adapter_inputs`. The original exact Gate-1 producer, later publication bounds, deterministic semantic-input ordering and duplicate-identity refusal remain. These helper extractions do not change profile authority or create a new acceptance path.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 - 2026-09-06T14:50:35+00:00 — Added the frozen-run and source-applicability route boundaries and links after reading their actual C69 source. Broader route verification remains pending; preserved prior verification metadata and all history.
 

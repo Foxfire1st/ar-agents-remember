@@ -5,48 +5,79 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_task_document_master.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
 | lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
-| governingOverview      | `overview.md`                                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_task_document_master.py`'s source module; covers the behaviours named by its test classes.
+Checks master task authoring without creating a lifecycle, numbered subtask insertion/update, exact leaf readiness at completion, and refusal to erase or change unresolved row identity/multiplicity. Completed rows are revalidated against their leaf; removal deletes a ready leaf and row but leaves all bytes untouched on unresolved refusal.
 
 ## Code Commentary
 
-- `MasterApplicationTests`, including the master-altitude lifecycle-id regression that calls the
-  real document builder with a series contract and proves leaf lifecycle identity is not inherited,
-  and the sprint-get regression proving `task_doc.get` on a sprint carries declared `linkageFacts`
-  in the identity payload.
-- `TerminalLeafResolutionTests`
-- `RegistrationTests`
+### Logic
 
-## Invariants And Boundaries
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_task_document_master.py`.
+### Conventions
 
-## Repo-Internal References
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+
+### Invariants And Boundaries
+
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| No external domain claim is required. | N/A | N/A |
 
-## 260815-DAG Master Full-Gate Repair
+## Repo-Internal References
 
-The 260815-DAG master full-gate repair moved the task-doc imports under
-`application/task_docs/` (`task_doc_tools`, `task_doc_tools_module`) and added
-`test_get_on_a_sprint_carries_declared_linkage_facts` to `MasterApplicationTests`: the new
-regression proves `task_doc.get` on a sprint appends `linkageFacts` to the identity payload and
-that the `extra=forbid` `TaskDocResponse` envelope declares it (a `ValidationError` before the
-repair).
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Create master writes task json without lifecycle | `test_create_master_writes_task_json_without_lifecycle` | mcp/tests/test_task_document_master.py:55-59 |
+| Set subtask inserts then updates by number | `test_set_subtask_inserts_then_updates_by_number` | mcp/tests/test_task_document_master.py:61-73 |
+| Set subtask completed refuses unready or missing exact leaf | `test_set_subtask_completed_refuses_unready_or_missing_exact_leaf` | mcp/tests/test_task_document_master.py:75-88 |
+| Replace cannot erase or change unresolved row identity or multiplicity | `test_replace_cannot_erase_or_change_unresolved_row_identity_or_multiplicity` | mcp/tests/test_task_document_master.py:90-141 |
+| Master completion revalidates pending leaf behind completed row | `test_master_completion_revalidates_pending_leaf_behind_completed_row` | mcp/tests/test_task_document_master.py:143-168 |
+| Remove subtask deletes leaf doc and row | `test_remove_subtask_deletes_leaf_doc_and_row` | mcp/tests/test_task_document_master.py:189-201 |
+| Remove subtask refuses unresolved row without touching any file | `test_remove_subtask_refuses_unresolved_row_without_touching_any_file` | mcp/tests/test_task_document_master.py:203-219 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints the public tool response registry to its moved `models.tools` package. Verified at code commit `1d446724`.
 

@@ -87,7 +87,7 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Projection write edge consumes this retained input state. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | The serialized worker maps watcher wakes to refresh kinds. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
-| Domain invalidation regressions. | `test_heartbeat_and_lifecycle_changes_skip_unrelated_heavy_readers`; `test_task_refresh_replaces_and_reclaims_retained_rows_at_two_sizes` | mcp/tests/test_projection_domain_invalidation.py:143-220; mcp/tests/test_projection_domain_invalidation.py:222-265 |
+
 
 ## Cross-Repo References
 

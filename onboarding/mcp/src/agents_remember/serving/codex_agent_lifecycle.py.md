@@ -51,7 +51,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Adapter registry applies the shared ordering. | "thread/status/changed params" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:704-704 |
-| Lifecycle vocabulary regression. | `test_completed_turn_status_uses_roster_vocabulary` | mcp/tests/test_codex_agent_lifecycle.py:7-21 |
+
 
 ## Cross-Repo References
 

@@ -83,7 +83,6 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public-contract test accepts legal gate/certificate transitions and rejects failed-to-passed translation. | `test_readiness_states_and_transitions_refuse_translation` | mcp/tests/test_quality_gate_public_contract.py:818-831 |
 
 ## Update History
 

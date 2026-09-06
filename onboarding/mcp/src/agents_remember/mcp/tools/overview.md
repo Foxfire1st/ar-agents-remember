@@ -262,10 +262,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| What each declaration hands its builder, proved through a live FastMCP instance. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 | Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:113-134 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
-| Conformance test validates every builder routes through `_tool_payload`. | `ToolResponseConformanceTests` | mcp/tests/test_tool_response_conformance.py:958-1093 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
 | The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
@@ -319,13 +317,7 @@ available. `_tool_payload` now reads:
 `next_step.py`'s `next_step_for` returns `NextStep | None` rather than a dumped dict, for the
 same reason: serialization belongs to the one `model_dump`.
 
-Why this was not caught: `test_tool_response_conformance.py` captures a representative payload
-per tool and re-validates it, which is exactly the mutation point — but its fixtures were a
-workspace whose supervisor had NEVER ticked, a state in which the banner is deliberately
-silent, so the suite only ever validated the shape the choke point cannot break. The suite now
-ticks the heartbeat into the past (`_stale_supervisor`) and asserts that the captures actually
-contain both injections, so a fixture that quietly stops producing them fails there instead of
-hollowing out every assertion below it.
+Historical coverage gap: the former response-conformance fixture used a workspace whose supervisor had never ticked, leaving the banner silent. Its subsequent stale-heartbeat fixture exercised both payload injections. Those tests have since been removed; this remains design history explaining why validation must consider the final injected payload, not a claim of retained coverage.
 
 ## Historical 260731-EFA-L5 — Gate-Log Reclamation Before The Application Move
 

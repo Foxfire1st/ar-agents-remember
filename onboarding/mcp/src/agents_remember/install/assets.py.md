@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/install/assets.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T15:20+02:00                     |
+| lastUpdated            | 2026-09-06T22:15:27+00:00 |
 | lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                      |
 | lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -22,6 +22,8 @@ source root instead of making normal execution depend on a source checkout
 layout.
 
 ## Code Commentary
+
+`long_path` returns the input unchanged outside Windows, preserves an existing extended prefix, and translates UNC paths to the extended UNC form. With resolution disabled it only makes relative paths absolute. `copy_traversable_tree` requires a directory root, recursively creates directories and copies file bytes; extraction lifetime stays with packaged_source_root. cit:([`long_path`, `copy_traversable_tree`], mcp/src/agents_remember/install/assets.py:17-32; mcp/src/agents_remember/install/assets.py:50-62).
 
 ### Logic
 
@@ -54,6 +56,8 @@ a relative path against the current working directory before applying the prefix
 | Benchmark tooling resolves packaged benchmark cases through the same package-data root. | `benchmark_root_context`; `packaged_source_root` | mcp/src/agents_remember/benchmarks/runner_modules/roots.py:10-17 |
 
 ## Update History
+
+- 2026-09-06T22:15:27+00:00 — Preserved actual asset/context semantics from retired test onboarding; verification pins unchanged.
 
 - 2026-08-11T15:20+02:00 — Re-anchored runtime asset selection to the exact application entry
   point, explicit-source branch, and packaged-source branch.

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
+| lastUpdated | 2026-09-06T22:00:40+00:00 |
 | lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
 | lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
@@ -41,7 +41,7 @@ The ledger leg follows sequentially: an existing exact mapping is reused; otherw
 - Recovery facts must agree with mutation evidence and ledger ancestry.
 - Refresh may consume only the no-impact identities already accepted during reversible closeout
   admission; it cannot invent, widen, or silently omit them.
-- A crash between the two commits is journal-recoverable for worktree closeout; direct landing durability remains deferred.
+- A crash between the two commits is journal-recoverable. Direct landing has its own journaled owner in `integration/direct_landing/direct_landing_execution.py`: it reconciles the accepted generation, resumes memory then ledger, checks ancestry, and records typed recovery requirements after ambiguous failure. This module does not own that direct-landing execution.
 
 ### Todos
 
@@ -74,6 +74,9 @@ The current source seams include `external_closeout_commits`. Closeout uses clos
 | The current module exposes `external_closeout_commits` at this ownership boundary. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Corrected current journal recovery semantics against production source while preserving previous verification pins. Source inspection only.
+
 
 - 2026-08-29T18:29+02:00 — Added `ExternalCloseoutEvidence` so post-commit memory refresh consumes
   the same validated coherence decisions as reversible closeout admission.

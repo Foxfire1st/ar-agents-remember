@@ -63,7 +63,9 @@ No Domain Documentation source is configured for this memory root. The approved 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The vocabulary reuses the certification-domain frozen-model base, candidate identity, gate identity, manifest, and evidence contracts. | `FrozenContractModel`; `CandidateIdentity`; `GateResultManifest` | mcp/src/agents_remember/certification/models.py:46-67; mcp/src/agents_remember/certification/models.py:52-58; mcp/src/agents_remember/certification/models.py:457-501 |
+| Closed immutable base for registry, plan, and result records. | "class FrozenContractModel" | mcp/src/agents_remember/models/certification/base.py:30-33 |
+| Repository-neutral exact identity for the candidate a plan certifies. | "class CandidateIdentity" | mcp/src/agents_remember/certification/models.py:38-42 |
+| The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. | "class GateResultManifest" | mcp/src/agents_remember/certification/models.py:434-456 |
 | Content digests follow the shared certification digest helper. | `content_digest` | mcp/src/agents_remember/certification/digests.py:1-22 |
 | The public package facade re-exports every model here. | `__all__`; `DiagnosticRunManifest`; `DiagnosticRunResult`; `DiagnosticAttemptRecord` | mcp/src/agents_remember/certification/diagnostics/__init__.py:11-25; mcp/src/agents_remember/certification/diagnostics/__init__.py:43-67 |
 | The durable store serializes and revalidates these records on every read and write. | `_read_manifest`; `_update`; `_canonical_bytes` | mcp/src/agents_remember/certification/diagnostics/store.py:228-264; mcp/src/agents_remember/certification/diagnostics/store.py:414-420 |

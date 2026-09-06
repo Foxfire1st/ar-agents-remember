@@ -5,85 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
 | lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
-| governingOverview | `../overview.md` |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[governing overview](../overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Forces pre-CAS ref races, direct recovery capability routing, protected-checkout refusal states,
-post-CAS untracked-file refusal, and idempotent external-pair retry after one checkout was already
-refreshed.
+Protected-ref transaction recovery after checkout-refresh refusal.
 
 ## Code Commentary
 
-The suite verifies exact named refs remain authoritative while checkout repair accepts only clean
-old or already-new state. Recovery tests cover both code and memory sides plus invalid-side,
-wrong-tip, untracked, unrelated-change, wrong-HEAD, and durable pre-crash evidence branches.
+### Logic
 
-Ledger cases prove that unchanged code may acquire a newer memory state: the transaction accepts
-exactly one new prefix mapping, retains the older same-code row, and still refuses missing mappings,
-dropped source history, unreachable memory content, or more than one new prefix row.
+The retained real-Git case injects an untracked file after ref CAS. Checkout refresh refuses while preserving both the new protected ref and concurrent file. Once the obstruction is resolved, retry refreshes the exact intended checkout rather than repeating arbitrary mutations.
 
-## Invariants And Boundaries
+### Conventions
 
-- The suite exercises production owners rather than copying their state-transition logic.
-- Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
-- Crash/retry cases retain exact durable identity and expected-old facts.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+
+### Invariants And Boundaries
+
+Ref publication and checkout materialization are distinct stages. Recovery must retain user files and prove the original transaction identity.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The focused suite owns this L4 authority boundary. | `IntegrationRefTransactionTests` | mcp/tests/test_integration_ref_transaction.py:56-1021 |
-
-## Documentation References
-
-No configured domain-documentation or cross-repository source applies to this file.
-
-## 260815-DAG Master Full-Gate Repair
-
-Imports re-point to the restructured `worktrees/integration/` package (`integration_ref_transaction`,
-`lifecycle_operations`, `lifecycle_operation_store`). The suite gained two negative proofs for
-`require_integrated_ledger_mapping`: a foreign code commit with no landed ledger mapping refuses
-with the exact requirement, and a forged ledger commit whose ancestry excludes the landed memory
-content refuses as unreachable.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, and `test_integrated_ledger_accepts_newest_settings_only_mapping_history`. They force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, organizational disposition/repair, and valid newest-first ledger history without queue-owned lifecycle evidence.
-
-### Reconciled Source Evidence
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_prepare_ref_move_refuses_code_and_memory_tip_races`, `test_code_cas_race_and_unreadable_ledger_refuse`, `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`, and `test_integrated_ledger_accepts_newest_settings_only_mapping_history`. | `test_prepare_ref_move_refuses_code_and_memory_tip_races`; `test_code_cas_race_and_unreadable_ledger_refuse`; `test_prepared_move_refuses_mapped_content_outside_the_exact_memory_source`; `test_integrated_ledger_accepts_newest_settings_only_mapping_history` | mcp/tests/test_integration_ref_transaction.py:110-158; mcp/tests/test_integration_ref_transaction.py:160-215; mcp/tests/test_integration_ref_transaction.py:217-289; mcp/tests/test_integration_ref_transaction.py:291-331 |
+| Post cas untracked file refuses checkout refresh and recovers exactly. | `test_post_cas_untracked_file_refuses_checkout_refresh_and_recovers_exactly` | mcp/tests/test_integration_ref_transaction.py:94-176 |
 
-## Current Contract — 260821 CLIVE Final
+## Cross-Repo References
 
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-Forces crash cuts around the protected named-ref transaction, intent publication, compare-and-swap, evidence recording, and idempotent recovery.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
-### Current Invariants
-
-- Mutation intent is durable before the irreversible edge.
-- Restart reconciles exact live refs and reuses proven output once.
-
-
-## PDLS Reconciliation
-
-Ref-transaction assertions now retain exact candidate and commit evidence across the current recovery classification.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-08-26T14:32+02:00 — Replaced the duplicate-code refusal regression with the required
   settings-only memory-history proof while retaining missing/unreachable/dropped-history and
   multi-prefix refusals. Verification remains closeout-owned.

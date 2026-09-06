@@ -47,6 +47,16 @@ record and the organizational-repair decision; when neither a pending repair nor
 kind, generation, candidate tree, error, and reports directory, and only falls back to the generic
 guard when no typed result was produced.
 
+The process entrypoint parses contract address, operation kind, and worker lease, then declares
+the lifecycle process before constructing and binding services. The worker derives its journal from
+that contract; a cancelled or completed record returns without replaying the operation. Failure
+publication goes through the durable store and typed terminal result, not a worker-authored queue
+release or repair. This preserves the journal as the recovery authority.
+
+cit:([`main`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:530-538)
+cit:([`run_worker`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:486-519)
+cit:([`fail`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:288-315)
+
 ### Conventions
 
 Typed records and refusal payloads remain owned at the narrowest stable boundary. Callers consume
@@ -64,6 +74,14 @@ the public function or model instead of re-deriving its lower-level state machin
 ### Todos
 
 None recorded.
+
+### CCR private preparation boundary
+
+The worker projects retained private preparation separately from consumed approval. Starting the retained generation uses `closeout_recovery_phase`; failure preserves `input-required` with `recovering-private-preparation` and directs inspection of the exact private output. Preparation alone does not justify an after-claim or contract-finalization label. Once approval/publication evidence exists, the ordinary claimed recovery phase applies.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `terminal_operation_record` boundary implements the preparation contract above. | "def terminal_operation_record" | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:388-460 |
 
 ## Docs References
 
@@ -93,6 +111,9 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:1-527 |
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-09-04T17:15+02:00 - 260831-CCR-L20 Gate-5 memory pass (code commit `ce7f10b5`):
   recorded CCR-R20 typed terminal rail-failure propagation in `OperationRuntime.fail` -

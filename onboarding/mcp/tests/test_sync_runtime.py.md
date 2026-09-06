@@ -5,77 +5,74 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_sync_runtime.py`           |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-08T11:53+02:00                     |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`                         |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview.md](../overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-This test module verifies the repository-local `scripts/sync-runtime.py` helper.
-It covers stale-copy diff reporting, target replacement behavior, ignored cache
-directories, and the invariant that default runtime asset targets write only to
-MCP package data rather than harness starter packages.
+Checks sync-runtime target replacement removes stale files and excludes cache directories. The default target roster is confined to MCP package data rather than harness starter directories. It is an actual temporary-tree copy test, not proof that installed runtime projections have just been refreshed.
 
 ## Code Commentary
 
 ### Logic
 
-The module loads `scripts/sync-runtime.py` through `importlib.util` because the
-script filename contains a hyphen. The first test builds temporary source and
-target trees and verifies that `diff_target` reports one missing file, one extra
-file, and one changed file. The second test verifies `sync_target` removes stale
-target files, copies source content, ignores `__pycache__`, and leaves the
-target in sync. The third test inspects the script's default `TARGETS` and
-asserts they are exactly `agents-md-files`, `benchmarks`, `providers`, and
-`system`, with target paths under `mcp/src/agents_remember/package_data/` and
-not under harness starter package folders.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-The tests use temporary directories for copy/diff behavior and do not mutate the
-real repository package-data tree.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The runtime sync helper remains package-data-only.
-- Cache directories and `.pyc` files are ignored during sync.
-- Stale generated targets are detected by digest comparison.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-No open file-local todos.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No external documentation is needed for this repository-local test.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests load `scripts/sync-runtime.py` from the repository root despite its hyphenated filename. | `load_sync_runtime` | mcp/tests/test_sync_runtime.py:13-20 |
-| The diff test verifies missing, extra, and changed file reporting. | `test_diff_reports_missing_extra_and_changed_files` | mcp/tests/test_sync_runtime.py:24-45 |
-| The sync test verifies target replacement and cache-directory ignore behavior. | `test_sync_target_replaces_target_with_source_tree` | mcp/tests/test_sync_runtime.py:47-70 |
-| The target-boundary test verifies default targets are package-data-only and exclude harness starter package folders. | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:72-84 |
+| Sync target replaces target with source tree | `test_sync_target_replaces_target_with_source_tree` | mcp/tests/test_sync_runtime.py:24-47 |
+| Default targets only write to mcp package data | `test_default_targets_only_write_to_mcp_package_data` | mcp/tests/test_sync_runtime.py:49-61 |
 
 ## Cross-Repo References
 
-No sibling repository evidence is needed for this test module.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-04T18:43+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 4 citation rows with exact anchors (`load_sync_runtime` + `SCRIPT_PATH` extent and the three named test functions) and ledger-verified ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
 

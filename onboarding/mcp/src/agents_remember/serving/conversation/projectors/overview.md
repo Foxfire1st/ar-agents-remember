@@ -179,8 +179,8 @@ fixtures record which shapes are gate-observed. The mapper suite pins every gram
 | The engine consumes the mapper channel flags and converts `UnmappableShape` into preserved unknown-vendor evidence. | "or not self._mapper.uses_native_pages"; "if self._mapper.uses_transcript_echo:"; "or self._mapper.eager_native_continuation" | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:107-108; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:147-147; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-75 |
 | The store converges the split tool items these mappers emit. | "def apply_item(self"; "def _union_blocks(" | mcp/src/agents_remember/serving/conversation/active/store.py:165-249; mcp/src/agents_remember/serving/conversation/active/store.py:470-482 |
 | The evidence/native frame products the mappers parse. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
-| The runtime fixtures record the observed (never enabling) shapes per harness. | "active-projector/items-events"; "substrate-evidence/native-page-thread-read" | mcp/tests/fixtures/conversation_runtime/codex-0.144.5.json:34-62 |
-| The mapper suite pins identity, blocks, tools, provenance, and preservation for all three. | `CodexMapperTests`; `ClaudeMapperTests`; `PiMapperTests` | mcp/tests/test_conversation_active_projectors.py:84-404; mcp/tests/test_conversation_active_projectors.py:407-710; mcp/tests/test_conversation_active_projectors.py:713-901 |
+| Historical evidence (retired with the d3610903 suite reduction): The runtime fixtures recorded the observed (never enabling) shapes per harness. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
+
 
 ## Cross-Repo References
 
@@ -300,7 +300,7 @@ filled in**. Nothing is guessed; absent evidence stays absent.
 
 ## 260731-EFA-L7 — Codex Projector Facade And R16
 
-`projectors/codex.py` (1,223 → 704) is now a facade over `_codex_collab.py` (collab/roster/agent-thread/turn-completed mapping), with the full surface pinned by `mcp/tests/test_facade_surface.py`. The silent-notification set gained `turn/diff/updated` exactly (R16): it routes to the non-transcript state and mints zero unknown-vendor items, while genuinely unknown vendor methods still produce addressable unknown-vendor evidence; pinned by `test_conversation_projector_codex_agents_engine_1.py`/`_2.py`.
+`projectors/codex.py` (1,223 → 704) is now a facade over `_codex_collab.py` (collab/roster/agent-thread/turn-completed mapping), with exports historically pinned by the facade suite, since retired. The silent-notification set gained `turn/diff/updated` exactly (R16): it routes to the non-transcript state and mints zero unknown-vendor items, while genuinely unknown vendor methods still produce addressable unknown-vendor evidence; historically exercised by the projector engine suites, since retired.
 
 ## 260731-EFA-L9 Route Impact — Contract Imports Moved
 

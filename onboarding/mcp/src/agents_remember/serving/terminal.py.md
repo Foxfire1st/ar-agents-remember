@@ -151,7 +151,7 @@ so a fake spawner can back a session with any process object.
 - **No subprocess inherits the MCP stdio pipe (GitHub #49).** Under the stdio transport the parent's
   stdin is the JSON-RPC protocol pipe, so every spawn must redirect stdin: the three default tmux
   `subprocess.run` helpers pass `stdin=subprocess.DEVNULL`, and the `_spawn_pty` child is wired to the
-  PTY slave (`stdin=stdout=stderr=slave_fd`). Enforced by `mcp/tests/test_subprocess_hygiene.py`.
+  PTY slave (`stdin=stdout=stderr=slave_fd`). This is the current process-I/O contract; the former hygiene suite was retired.
 - **Backend-only.** No FastAPI import here — `app.py` wires the WebSocket endpoint over
   this host in 6d-2; the xterm.js viewport is 6e.
 
@@ -181,7 +181,7 @@ is proven by repository source and tests.
 | The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | "async def _serve_terminal_websocket("; "def _register_terminal_session_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_terminal_routes.py:86-86; mcp/src/agents_remember/serving/_app_terminal_routes.py:130-130 |
 | Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and "class TerminalCatalogEntry:" persists and reads those entries. | "class TerminalCatalogEntry:"; "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:44-474; mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
 | The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:619-708 |
-| The terminal host registry behavior is exercised by the dedicated registry test class. | `TerminalHostRegistryTests` | mcp/tests/test_terminal.py:300-466 |
+
 | The optional real-tmux integration is exercised by the dedicated integration test class. | `TerminalHostTmuxIntegrationTests` | mcp/tests/test_terminal.py:792-844 |
 
 ## 260712-TRH-L4 Final Candidate

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T12:08+02:00 |
+| lastUpdated | 2026-09-07T00:34+02:00 |
 | lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
 | lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
 | governingOverview | `overview.md` |
@@ -65,7 +65,6 @@ reviewer criteria catalog and the cited catching leaves are the authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical criterion file's standing/candidate structure, mirrored into the packaged runtime copies. | `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*` | skills/l-01-agent-lifecycles/criteria/code-seam.md:70-84 |
-| The quiescence executable counterpart (absent-developer fixed-point probe). | `test_unacked_backlog_reaches_a_fixed_point_with_absent_developer` | mcp/tests/test_agent_notifier_ladder.py:691-750 |
 
 ## Cross-Repo References
 
@@ -75,7 +74,11 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | Same-repository reviewer doctrine only. | — | — |
 
+
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: created this sidecar and recorded the
   coalescing-invariant wording change (`rung` → `attempt`; the timed escalation ladder is

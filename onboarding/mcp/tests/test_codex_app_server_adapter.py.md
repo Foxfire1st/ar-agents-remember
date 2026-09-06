@@ -5,175 +5,81 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_app_server_adapter.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Fake-transport conformance tests for the native Codex app-server adapter. The suite proves the
-hosted control lifecycle, dynamic token-free advertisement, and ordered mid-thread model/effort
-switching used by the normalized harness capability contract.
+Fake Codex transport, pinned protocol fixture and async event helpers.
 
 ## Code Commentary
 
-### 260714-ACPUI-L3 Ordered Mid-Thread Selection
-
-Setter tests distinguish desired state from effective state on the existing Codex thread. A valid
-model or effort change returns `queued` without an effective value, rebases effort to the new
-model's dynamic default when needed, and becomes effective only when a subsequent `turn/start`
-carrying that exact selection is accepted. The same transport and thread id remain in use; no
-resume or reconnect implements the switch.
-
-Ordering cases pin the selection epoch at prompt acceptance. A busy prompt accepted before a
-setter keeps the old model/effort even if it starts later, while a prompt accepted after the setter
-carries the new pair. Pending settings force a fresh turn instead of steering the active turn.
-`inProgress` and `completed` turn-start statuses promote the carried selection; `failed` and
-`interrupted` reject the prompt and leave desired state pending. Reversing desired model and effort
-back to their current effective values clears the fresh-turn blocker rather than manufacturing more
-queued work.
-
-Validation remains catalog-owned: unknown models and effort values outside the desired model's
-dynamic menu are `unsupported` without another RPC. Matching deliberate settings notifications
-may promote state, a notification echoing the still-effective pair leaves the pending selection
-alone, and unrelated external settings drift fails loudly. Idempotent setters return `immediate`
-without inventing effective-value evidence.
-
-### 260714-ACPUI-L2 Codex Initial Configuration
-
-The adapter tests now pin both settings-resolved and roleless initial configuration. A configured
-session sends model at `thread/start` and includes both `model` and
-`model_reasoning_effort` in its configuration, retaining the same pair on resume. A roleless
-session selects the single visible advertised default model and that model's own default effort
-after token-free discovery, ignoring any need for a reconnect or a TUI launch override. Assertions
-inspect the exact request and effective echo; no turn is submitted by this setup coverage.
-
 ### Logic
 
-The deterministic transport records requests, notifications, responses, and shutdown modes while
-the pinned app-server fixture supplies structured initialize, model-list, thread, turn, approval,
-and elicitation frames. Existing scenarios cover startup/resume identity, exact reasoning-effort
-acceptance, busy steer/queue policy, structured interactions, terminal mapping, reconnect without
-resend, and strict correlation.
-
-The ACPUI-L1 additions assert that a started adapter returns its retained model catalog without
-issuing another request, including display text, descriptions, the current model, and the current
-effort. A separate discovery scenario pages through `model/list` with `includeHidden: true`, retains
-hidden models and their model-specific effort menus, leaves current selections unset before a
-thread exists, and proves discovery never calls `thread/*` or `turn/*`. A repeated pagination cursor
-fails loudly and still forces the transient app-server process to stop.
-
-The experimental server-request case (`test_unknown_server_request_is_declined_while_experimental_history_stays_enabled`)
-pins the remediation contract: an unknown/experimental request METHOD is still
-DECLINED (`respond_error` -32601 — no experimental API is ever enabled), but the failure contract
-deliberately changed: the method is vendor traffic that degrades to preserved raw evidence on any
-thread, so the bridge stays `ready` with nothing left outstanding instead of marking `failed`
-(multiplexed seats make new request types routine). The deeper method-first matrix (unknown vs
-known-malformed vs boolean-rpc-id) lives in `test_codex_adapter_thread_demux.py`.
+FakeCodexTransport records requests and deep-copies queued results and incoming frames; BlockingTurnStartTransport exposes the before-write and response window. Builders create launch/request identities and prime startup. make_adapter accepts the production settings value, and event helpers wait for specific frames or verify already-settled notifications are inert.
 
 ### Conventions
 
-Tests use `pytest` with the AnyIO asyncio backend. `FakeCodexTransport` deep-copies protocol values
-so fixture mutation and adapter behavior remain deterministic. The pinned `0.144.3` fixture is
-schema evidence for the tests, not a production version enum or fallback catalog.
-
-`make_adapter(transport, settings=TEST_SETTINGS)` takes one `CodexAppServerSettings` value rather
-than a parallel keyword list: the module-level `TEST_SETTINGS` (xhigh effort, `gpt-5.6-sol`,
-ephemeral) is the baseline every test starts from, and a case that needs a different resume thread,
-approval policy, sandbox, config map, or submission limit varies exactly that field with
-`dataclasses.replace(TEST_SETTINGS, ...)`. Three shared helpers keep the correlation cases honest:
-`drain_events()` empties the adapter queue and returns the sequence number to compare against,
-`assert_notification_is_inert()` emits an already-settled notification and proves the sequence did
-not move from that known-empty queue, and `next_event_of_kind()` awaits the next event of a given
-kind while skipping the ones emitted on the way there.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Catalog discovery is protocol-only and prompt-free; it initializes app-server and reads every
-  `model/list` page without opening a thread or turn.
-- `advertise()` is a cached read after startup and must not spend another transport request.
-- Hidden installed models remain represented in the full normalized catalog, with effort options
-  nested under the model that advertised them.
-- Repeated pagination cursors and absent or unconfirmed effort fail loudly; no static default model
-  or effort menu is substituted.
-- Setter acceptance is honest: desired changes are queued without an effective value, and only an
-  accepted turn carrying the captured selection can promote that pair.
-- Prompt selection is captured when the prompt enters the adapter; a later setter cannot
-  retroactively change an already accepted busy-queue item.
-- Failed or interrupted turn starts preserve pending desired state, while reversing desired state
-  to the effective pair clears the fresh-turn blocker.
-- Mid-thread switching never reconnects, resumes, or pastes; it uses `turn/start` overrides on the
-  same thread and transport.
-- Existing reconnect coverage requires `resend: false`, and the tests do not register a production
-  driver or exercise pane/log readiness.
-- An experimental request type is declined, never enabled — and the decline is a degrade (bridge
-  stays `ready`), not a bridge failure.
+This support-only module contains no retained conformance test methods. The pinned protocol JSON is fixture data, not a production version selector or static fallback catalog.
 
 ### Todos
 
-None known for this leaf.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation category is configured for this repository, so no live documentation
-source was available for this test-file curation pass.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured Domain Documentation source was available to cite. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-The test module and native Codex implementation directly prove the catalog-retention and
-thread-free discovery contract.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The started-adapter test verifies cached advertisement, retained descriptions, current model/effort, and the exact initialize/model-list/thread-start request sequence after startup. | `test_handshake_uses_stable_protocol_and_exposes_effort_menu` | mcp/tests/test_codex_app_server_adapter_basic.py:282-339 |
-| Discovery retains a paginated hidden model, sends only initialize/model-list requests, opens no thread or turn, and rejects a repeated cursor while stopping the process. | `test_discover_retains_paginated_hidden_catalog_without_opening_a_thread`; `test_discover_rejects_repeated_model_cursor_without_opening_a_thread` | mcp/tests/test_codex_app_server_adapter_basic.py:462-508; mcp/tests/test_codex_app_server_adapter_basic.py:511-526 |
-| Model and effort changes remain queued until one same-thread turn accepts their exact override, with no reconnect or resume. | `test_set_model_and_effort_stay_pending_until_same_thread_turn_accepts` | mcp/tests/test_codex_app_server_adapter_turns.py:78-114 |
-| Turn statuses promote only `inProgress`/`completed`; failed/interrupted starts reject and retain the fresh-turn requirement. | `test_turn_start_promotes_only_successful_submission_status`; `test_turn_acceptance_blocking_and_terminal_mapping` | mcp/tests/test_codex_app_server_adapter_turns.py:23-57; mcp/tests/test_codex_app_server_adapter_turns.py:117-156 |
-| Busy-queue prompts preserve their acceptance-time selection epoch, and reversing pending settings back to effective clears the blocker. | `test_busy_second_submit_certifies_zero_bytes_without_steer_or_adapter_queue`; `test_reversing_pending_codex_settings_clears_fresh_turn_blocker` | mcp/tests/test_codex_app_server_adapter_correlation.py:231-257; mcp/tests/test_codex_app_server_adapter_turns.py:60-75 |
-| Unknown model/model-local effort values cause no RPC; pending settings force a fresh turn rather than steer; deliberate notification matching and external-drift rejection stay distinct. | `test_codex_set_rejects_unadvertised_model_and_model_local_effort_without_rpc`; `test_pending_codex_settings_force_fresh_turn_instead_of_steering_active_turn`; `test_settings_notification_promotes_only_deliberate_match_and_keeps_drift_guard` | mcp/tests/test_codex_app_server_adapter_correlation.py:260-282; mcp/tests/test_codex_app_server_adapter_correlation.py:285-306; mcp/tests/test_codex_app_server_adapter_correlation.py:309-360 |
-| Idempotent setters return immediate without falsely claiming an effective echo. | `test_idempotent_codex_set_is_immediate_without_invented_effective_evidence` | mcp/tests/test_codex_app_server_adapter_reconnect.py:27-40 |
-| The experimental-request case pins the decline-not-fail remediation contract. | `test_unknown_server_request_is_declined_while_experimental_history_stays_enabled` | mcp/tests/test_codex_app_server_adapter_reconnect.py:166-203 |
-| The shared `TEST_SETTINGS` baseline and the `drain_events`/`assert_notification_is_inert`/`next_event_of_kind` helpers every correlation case reuses. | `TEST_SETTINGS`; `drain_events`; `assert_notification_is_inert`; `next_event_of_kind` | mcp/tests/test_codex_app_server_adapter.py:231-235; mcp/tests/test_codex_app_server_adapter.py:261-268; mcp/tests/test_codex_app_server_adapter.py:271-280; mcp/tests/test_codex_app_server_adapter.py:283-288 |
-| The adapter validates the native Codex harness id and delegates transient discovery and cached advertisement to its session. | `CodexAppServerAdapter`; `start`; `discover` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
-| Session discovery performs initialize plus paged model-list only and always stops its transient transport; started advertisement requires a retained catalog. | `CodexAppServerSession`; `discover`; `_read_models` | mcp/src/agents_remember/serving/codex_app_server_session.py:102-458 |
-| Adapter setters update desired state, return queued or immediate honestly, and never make a setter RPC. | "async def set_model("; "async def set_effort("; "rebase_detail = self._session.set_desired_model(model_key)"; "self._session.set_desired_effort(effort)" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:209-209; mcp/src/agents_remember/serving/codex_app_server_adapter.py:215-215; mcp/src/agents_remember/serving/codex_app_server_adapter.py:242-242; mcp/src/agents_remember/serving/codex_app_server_adapter.py:248-248; mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253 |
-| Each accepted prompt reserves its desired model/effort snapshot; pending settings force a fresh turn and remain attached to that evidence while queued. | `submit`; `_start_turn`; `preflight_operation` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:275-283; mcp/src/agents_remember/serving/codex_app_server_adapter.py:285-310; mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-530 |
-| Turn-start overrides carry the captured selection and promote it only after a non-failed/non-interrupted status. | "async def _start_turn("; "return await self._accept_started_turn("; "self._session.accept_settings_selection(model=evidence.model" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-484; mcp/src/agents_remember/serving/codex_app_server_adapter.py:526-526; mcp/src/agents_remember/serving/codex_app_server_adapter.py:599-599; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283 |
-| Session state validates dynamic model-local effort, separates desired from effective state, promotes only an accepted selection, and guards settings notifications against unrelated drift. | `set_desired_model`; `set_desired_effort`; `accept_settings_selection`; `accept_settings_update` | mcp/src/agents_remember/serving/codex_app_server_session.py:226-245; mcp/src/agents_remember/serving/codex_app_server_session.py:247-253; mcp/src/agents_remember/serving/codex_app_server_session.py:265-283; mcp/src/agents_remember/serving/codex_app_server_session.py:285-303 |
-| The fixture path remains an explicit test baseline rather than a runtime catalog source. | `fixture`; `TEST_SETTINGS` | mcp/tests/test_codex_app_server_adapter.py:142-143; mcp/tests/test_codex_app_server_adapter.py:233-237 |
+| Fakecodextransport. | `FakeCodexTransport` | mcp/tests/test_codex_app_server_adapter.py:47-110 |
+| Blockingturnstarttransport. | `BlockingTurnStartTransport` | mcp/tests/test_codex_app_server_adapter.py:113-139 |
+| Fixture. | `fixture` | mcp/tests/test_codex_app_server_adapter.py:142-143 |
+| Fixture object. | `fixture_object` | mcp/tests/test_codex_app_server_adapter.py:146-152 |
+| Fixture list. | `fixture_list` | mcp/tests/test_codex_app_server_adapter.py:155-161 |
+| Add model. | `add_model` | mcp/tests/test_codex_app_server_adapter.py:164-184 |
+| Identity. | `identity` | mcp/tests/test_codex_app_server_adapter.py:187-192 |
+| Launch. | `launch` | mcp/tests/test_codex_app_server_adapter.py:195-202 |
+| Request. | `request` | mcp/tests/test_codex_app_server_adapter.py:205-217 |
+| Prime start. | `prime_start` | mcp/tests/test_codex_app_server_adapter.py:220-230 |
+| Make adapter. | `make_adapter` | mcp/tests/test_codex_app_server_adapter.py:247-255 |
+| Settle. | `settle` | mcp/tests/test_codex_app_server_adapter.py:258-260 |
+| Drain events. | `drain_events` | mcp/tests/test_codex_app_server_adapter.py:263-270 |
+| Assert notification is inert. | `assert_notification_is_inert` | mcp/tests/test_codex_app_server_adapter.py:273-282 |
+| Next event of kind. | `next_event_of_kind` | mcp/tests/test_codex_app_server_adapter.py:285-290 |
+| Turn start result. | `turn_start_result` | mcp/tests/test_codex_app_server_adapter.py:293-298 |
+| Turn completed notification. | `turn_completed_notification` | mcp/tests/test_codex_app_server_adapter.py:301-304 |
 
 ## Cross-Repo References
 
-The earlier coordination-repo review remains useful historical evidence for the pre-ACPUI Codex
-protocol contract; it does not replace the current source tests.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-
-## 260715-FEUI-L5 Submission Authority Delta
-
-The suite now proves Codex has no vendor queue/steer path: settings and prompts bind full operation
-refs to fresh turns, terminal evidence promotes exactly once, early completion is retained, rejected
-guards clean pending state, and stale/duplicate/reused turn ids cannot release a successor. Both
-synchronous and async correlation maps are bounded.
-
-## 260727-CHATS-IM-L2 Experimental Capability Delta
-
-The unknown server-request regression now distinguishes two independent facts: experimental history
-is enabled at initialization, while an unrelated unsupported server-to-client request is still
-declined/degraded. It does not infer that any history method exists or that experimental server
-requests are accepted; the dedicated history-reader tests own runtime method probing.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 

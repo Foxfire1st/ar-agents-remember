@@ -78,8 +78,8 @@ newest-result search.
 | Reuse selects only byte-identical passing units by exact result identity. | `plan_affected_subresult_reuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:133-180 |
 | Closure execution revalidates candidate and executor, then publishes the complete aggregate. | `execute_affected_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:183-250 |
 | Evidence shape is canonicalized and proven before a unit result can be published. | `_unit_result`; `_canonical_evidence`; `_checker_observation` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:253-422 |
-| The focused suites prove execution, reuse, and typed refusal edges. | `test_r07_unchanged_interruption_reuses_exact_passes_without_executing`; `test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs`; `test_r07_range_executor_uses_one_planned_document_and_exact_live_index` | mcp/tests/test_memory_incremental_scope_compiler.py:1004-1025; mcp/tests/test_memory_incremental_scope_compiler.py:1026-1076; mcp/tests/test_memory_incremental_scope_model_edges.py:431-471 |
-| The actual range checker composes with the real Git candidate census; a wrong tree refuses before checker execution. | `test_r07_real_range_checker_uses_only_the_candidate_source_population`; `test_r07_range_executor_refuses_another_candidate_before_checker_start` | mcp/tests/test_memory_incremental_scope_model_edges.py:512-568; mcp/tests/test_memory_incremental_scope_model_edges.py:571-594 |
+| The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. | `_validate_context` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:94-130 |
+| The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. | `_validate_context` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:94-130 |
 
 ## Cross-Repo References
 

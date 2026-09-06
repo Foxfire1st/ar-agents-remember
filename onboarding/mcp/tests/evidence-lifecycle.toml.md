@@ -5,148 +5,65 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-06T21:51:32+00:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-This TOML file is the enforced lifecycle registry for durable Python test evidence, shared support,
-fixtures, and their stable executable replacement contracts. Shared-support rows bind exact source-derived consumers and distinguish in-process contract fixtures from the independent clean-room recording generator.
+Declares the current 42 shared-support/fixture artifacts and four executable replacement contracts. The catalog preserves authority, fidelity, lifetime and exact source-observed consumers for the reduced suite; deleted artifacts and their old consumer populations are no longer active declarations.
 
 ## Code Commentary
 
 ### Logic
 
-Contract rows bind an owner to an executable evidence node. Artifact rows state authority,
-category, fidelity, cadence, provenance, lifetime, permanence/expiry rationale, replacement
-contract, and exact source-observed consumers. The public lifecycle validator rejects missing,
-stale, contradictory, unowned, or consumer-incomplete rows.
+Contract rows bind a production owner to a retained executable evidence node. Artifact rows state
+category, authority, fidelity, cadence, provenance, permanence/expiry rationale, replacement
+contract and consumers. The public validator checks observed consumers against declarations;
+keeping a stale consumer merely because an older suite used it is not valid ownership.
 
-### Conventions
-
-Keep artifact fidelity, cadence and permanence rationale independent of test lane labels. A fixture that writes real retained bytes remains synthetic producer evidence.
+The store harness now points to retained provider process-race evidence. Generic synthetic evidence
+uses the retained dependency-ownership test as its replacement node. Shared profile/certification
+support retains exact consumers without claiming that synthetic fixture bytes are installed-executor
+proof. `large_fixture_bytes=25000` controls discovery of unknown non-source suffixes; the catalog
+is a policy input excluded from its own artifact population.
 
 ### Invariants And Boundaries
 
-- The registry is fail-closed: missing, stale, contradictory, unowned, or consumer-incomplete rows are rejected by the public lifecycle validator.
-- Catalog rows name exact source-observed consumers; ownership is never reduced to direct importers.
-- The catalog is policy input to operational discovery, never its own artifact population.
-
-### Todos
-
-None recorded.
-
-## Current PDLS Delta
-
-The `repository-ruff-policy-evidence` contract and `_ruff_repository_evidence.py` artifact register
-the shared Ruff boundary created by the quality-test split, including every direct importer in the
-quality-check, quality-scope, file-size, and tool-signature suites. `_quality_admission.py` now lists
-the new tool-signature suite as an exact consumer. `large_fixture_bytes` is an operational discovery
-threshold for unknown non-source suffixes, not dormant metadata. The catalog is the policy input to
-that discovery and is intentionally excluded from its own artifact population, avoiding a recursive
-requirement to catalog itself when it crosses the configured size.
-
-The curator-coherence lifecycle suite imports the shared closeout-input test composition root, so
-`test_curator_coherence.py` is an exact consumer of `closeout_input_test_support.py`. Keeping that
-edge explicit lets source-derived ownership detect later additions and removals instead of silently
-accepting a stale hand-maintained consumer set.
-
-`curator_coherence_test_support.py` is registered as internal canonical shared support with the
-complete source-derived transitive consumer set created by `test_worktree_support.py`. Its
-replacement node exercises the public single-authority publication and historical-Markdown
-non-authority contract. The row makes the helper's local-composition fidelity, affected cadence,
-permanent lifetime, and production-publication boundary explicit; exact ownership is not reduced
-to the three files that import it directly.
-
-## Gate Publication And Retention Support
-
-`gate_certification_test_support.py` is the permanent in-process composition root for exactly `test_gate_certification_records.py` and `test_gate_certification_evidence.py`. Its replacement node proves reuse of the original generation and provenance. The new publication suite also joins the source-derived consumer sets of the profile helper and its Node fixture manifests.
-
-The ambient runner retains `exact-source` ownership by its three direct source consumers: the graph suite, the shared profile helper and the publication suite. The selector separately derives the complete sixteen-test pytest closure from those facts. The lifecycle catalog itself remains an explicit global pytest input; this broader policy invalidation is distinct from runner ownership.
+- Missing, stale, contradictory or consumer-incomplete declarations refuse.
+- Fidelity and permanence are independent of evidence-lane labels.
+- Exact source-observed ownership includes transitive consumers where declared; no old count is authoritative.
+- The catalog remains a global pytest policy input; that is distinct from broadening an individual helper’s ownership.
+- Removing unused scaffolding does not authorize unowned new evidence or a second fixture catalog.
 
 ## Docs References
 
-No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+No external Domain Documentation source is configured; these are repository-owned implementation facts.
 
 ## Repo-Internal References
 
-These source owners establish the current behavior and the stated fixture boundaries.
+The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lifecycle inventory registers repository_profile_test_support.py under its source path. | "path = \"mcp/tests/repository_profile_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1144-1144 |
-| The lifecycle inventory registers run.py under its source path. | "path = \"scripts/e2e_harness/run.py\"" | mcp/tests/evidence-lifecycle.toml:1394-1394 |
-| The lifecycle inventory registers gate_certification_test_support.py under its source path. | "path = \"mcp/tests/gate_certification_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1512-1512 |
-| Changes to this lifecycle policy are deliberately global pytest invalidators. | `GLOBAL_TEST_INPUTS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:24-29 |
+| Catalog schema and large-fixture discovery threshold | `schema_version` | mcp/tests/evidence-lifecycle.toml:1-2 |
+| Four retained executable replacement contracts | `contract` | mcp/tests/evidence-lifecycle.toml:4-22 |
+| Actual process-race support and two consumers | "_store_durability.py" | mcp/tests/evidence-lifecycle.toml:44-61 |
+| Retained registry fixture ownership | "certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:488-507 |
+| Profile support and current consumer declarations | "repository_profile_test_support.py" | mcp/tests/evidence-lifecycle.toml:508-546 |
 
 ## Cross-Repo References
 
-No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-## L21 Gate-Certificate Consumer Delta
-
-L21 added `mcp/tests/test_gate_certificate_authority.py` as an exact consumer of the
-certification shared-support and closeout-input rows whose builders the certificate forcing suite
-imports (the same executable-node consumer sets used by the certification and quality-gate
-suites). The catalog rows name that edge explicitly so the evidence-lifecycle validator can
-distinguish an intentional shared dependency from an incomplete ownership declaration.
-
-## MCAR-L03 Exact Pair Consumer Delta
-
-`test_memory_candidate_pair.py` exercises closeout admission and canonical curator-coherence
-publication through the same shared test composition roots as the existing lifecycle suites. It is
-therefore an exact source-derived consumer of both `closeout_input_test_support.py` and
-`curator_coherence_test_support.py`. The two catalog rows name that edge explicitly so the
-evidence-lifecycle validator can distinguish an intentional shared dependency from an incomplete
-ownership declaration.
-
-## ARSPAWN-L4 Public-Surface Consumer Delta
-
-`test_public_surface_conformance.py` imports the shared runtime-settings builders from
-`test_config.py`. That module reaches the closeout and curator-coherence fixture roots through
-`test_worktree_support.py`, so the source-derived ownership graph classifies the public-surface
-suite as an exact transitive consumer of both `closeout_input_test_support.py` and
-`curator_coherence_test_support.py`. The two catalog rows now declare those exact edges; no helper
-was copied and no direct-import exception was added.
-
-## ARSPAWN-L5 Ambient-Reviewer Consumer Delta
-
-`test_dispatch_agent_ambient_reviewer.py` imports the shared ambient-dispatch topology builder,
-whose test composition reaches both the closeout-input and curator-coherence fixture roots. The
-source-derived ownership graph therefore classifies the reviewer suite as an exact transitive
-consumer of `closeout_input_test_support.py` and `curator_coherence_test_support.py`; both catalog
-rows declare that edge explicitly.
-
-## Certification Registry Support Ownership
-
-`certification_registry_test_support.py` is permanent internal-canonical shared support for the
-generic certification registry contract. It owns portable registry/result builders and bounded
-graph families used by exactly the plan-authority, rail-registry, contract-model edge,
-reachability edge, and registry-validation edge suites. The catalog gives it affected cadence,
-in-process public-contract fidelity, a concrete replacement node, and an exact five-consumer set;
-it does not broaden to the full Python population or smuggle an Agents Remember repository profile
-into shared support.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lifecycle inventory registers certification_registry_test_support.py under its source path. | "path = \"mcp/tests/certification_registry_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1122-1122 |
-
+No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

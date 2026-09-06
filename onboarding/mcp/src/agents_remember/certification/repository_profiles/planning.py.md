@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/certification/repository_profiles/planning.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:39:50+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `../overview.md` |
@@ -43,7 +43,7 @@ invented or modified.
 
 `_compile_semantic_inputs` / `_semantic_node` / `_selector_consuming_gates` build and digest
 the deterministic semantic input catalog, keyed by (kind, id) with a duplicate check, so plan
-identity covers every input the rails consume.
+identity covers every input the rails consume. `_compile_adapter_inputs` supplies the selected executor, consumed result decoders, and this gate's publication policies; `_compile_semantic_inputs` retains the duplicate-identity check and canonical sorting after combining those nodes with rail and selector inputs.
 
 ## Invariants And Boundaries
 
@@ -76,19 +76,21 @@ Freeze").
 ## Repo-Internal References
 
 `gate.py` and `clean_executor.py` consume planning through the execution admission
-(`admit_repository_profile_execution`) and recovery (`recover_strict_code_quality_gate`
-recompiles the expected plan digest before reusing a published generation). The generic
+(`admit_repository_profile_execution`). Recovery renders the exact journal-selected certification through `render_selected_code_certification`, which reopens the frozen run and checks current candidate identity before validating original terminal evidence. The generic
 registry/rail/wave primitives come from `certification/models.py` and `certification/__init__.py`
 (the earlier R11 foundation), and graph validation from `repository_profiles/validation.py`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact one-selection resolution with typed missing/ambiguous findings. | `resolve_repository_profile_selection` | mcp/src/agents_remember/certification/repository_profiles/planning.py:40-69 |
-| Full profile validation + per-gate plan + wave + semantic-input compilation into one digest-bound plan. | `compile_repository_profile_plan`; `_compile_gate_plan` | mcp/src/agents_remember/certification/repository_profiles/planning.py:71-118; mcp/src/agents_remember/certification/repository_profiles/planning.py:148-197 |
-| Plan admission refuses bytes that differ from the sole canonical compilation. | `admit_repository_profile_plan` | mcp/src/agents_remember/certification/repository_profiles/planning.py:120-146 |
-| Recovery recompiles the expected plan digest for a candidate before reuse. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:279-343 |
+| Exact one-selection resolution with typed missing/ambiguous findings. | `resolve_repository_profile_selection` | mcp/src/agents_remember/certification/repository_profiles/planning.py:55-83 |
+| Compile exact Gates 1-4 without claiming the framework-owned Gate 5. | "def compile_repository_profile_plan" | mcp/src/agents_remember/certification/repository_profiles/planning.py:86-167 |
+| Gate compilation binds applicable rails, artifacts and semantic inputs. | "def _compile_gate_plan" | mcp/src/agents_remember/certification/repository_profiles/planning.py:199-269 |
+| Plan admission refuses bytes that differ from the sole canonical compilation. | `admit_repository_profile_plan` | mcp/src/agents_remember/certification/repository_profiles/planning.py:170-196 |
+| Render an exact journal selection after full original-object and artifact readback. | "def render_selected_code_certification" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:364-395 |
 
 ## Update History
+
+- 2026-09-06T21:39:50+00:00 — Reconciled the landed validation/helper extraction against IAS d3610903; retained ownership and refusal semantics and refreshed same-file evidence ranges. Verification stamps and final acceptance were not advanced.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
 

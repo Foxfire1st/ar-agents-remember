@@ -5,116 +5,74 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_integrate_quality_gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Integration-seam suite for leaf closeout-proof reuse versus master/full code-quality altitude.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`): integration quality-gate tests forward the profile
-reference into the full gate -- previews/runs pass `profile_reference` and target
-construction, `integration_contract` gains the profile, and altitude tests cover
-profile-admission refusals on the master full gate.
+Checks that leaf integration reuses closeout acceptance without launching another quality run, and that source movement after quality refuses before memory or merge mutation. Master-end full validation remains lifecycle-owned; the old complete altitude/profile matrix is not all retained in this file.
 
 ## Code Commentary
 
 ### Logic
 
-Leaf integration returns the explicit `certified-at-leaf-closeout` result without calling the
-quality decider or executor. Series integration builds the `QualityGateTarget` and uses the full
-gate, host-managed when no explicit cap is configured. Dry-run reports without executing and a
-master refusal prevents merge. Source-tip cases distinguish unchanged from moved tips, prove a move after
-quality blocks before memory replay, and prove the second post-memory recheck blocks immediately
-before merge. The memory replay unit matrix pins existing scratch-branch refusal, checkout failure,
-rebase conflict, and successful content/ledger rewrite so those legacy helper branches remain
-covered without restoring integration-time replay for stale leaf ancestry.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-Acceptance ownership is contract-kind based: leaf integration never reruns targeted acceptance,
-while master integration owns full acceptance and carries the worktree group. No
-integration mutation occurs after a failed quality gate or either post-quality source movement
-check. A stale leaf must sync before integration; replay helpers do not bypass that admission gate.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local regression contract.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `integration_contract` | mcp/tests/test_worktree_integrate_quality_gate.py:61-186 |
+| Leaf integration reuses closeout acceptance without running a gate | `test_leaf_integration_reuses_closeout_acceptance_without_running_a_gate` | mcp/tests/test_worktree_integrate_quality_gate.py:199-216 |
+| Source movement after quality refuses before memory or merge | `test_source_movement_after_quality_refuses_before_memory_or_merge` | mcp/tests/test_worktree_integrate_quality_gate.py:218-251 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this test module.
-
-## L23 Final Candidate Disposition
-
-Integration forcing proves leaf no-rerun versus full master Dagger altitude, mandatory task-derived
-diff base, complete pre/post-quality lineage rechecks, pinned source tips, and failure atomicity
-before any source ref moves.
-
-## R39 Integration Forcing Evidence
-
-The integration suite now proves leaf integration reuses closeout acceptance without invoking a
-gate, while master integration owns full acceptance and blocks before merge on a missing
-self-owned wrapper or failed Dagger result. Leaf mode cannot be requested from the integration
-gate selector.
-
-## R43 Self Versus Consumer Wrapper Policy
-
-The altitude suite now proves both arms at master integration: Agents Remember without its
-self-owned wrapper blocks before merge, while a consumer repository without an opted-in wrapper
-reports `wrapper-unavailable` and remains non-blocking. The full gate still runs once when present.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_git_fixture_helper_surfaces_command_failures`, `test_external_recovery_proves_the_exact_task_memory_head`, `test_completed_integration_recovery_must_match_exactly`, `test_integrate_result_refuses_completed_contract_without_durable_recovery`. The L2 additions force public worktree consumers through closed configured-contract admission, mutation-owner reread, journal recovery, and fail-closed destructive cleanup.
-
-### Reconciled Source Evidence
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_git_fixture_helper_surfaces_command_failures`, `test_external_recovery_proves_the_exact_task_memory_head`, `test_completed_integration_recovery_must_match_exactly`, `test_integrate_result_refuses_completed_contract_without_durable_recovery`. | `test_git_fixture_helper_surfaces_command_failures`; `test_external_recovery_proves_the_exact_task_memory_head`; `test_completed_integration_recovery_must_match_exactly`; `test_integrate_result_refuses_completed_contract_without_durable_recovery` | mcp/tests/test_worktree_integrate_quality_gate.py:239-241; mcp/tests/test_worktree_integrate_quality_gate.py:243-264; mcp/tests/test_worktree_integrate_quality_gate.py:266-314; mcp/tests/test_worktree_integrate_quality_gate.py:316-336 |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Forces altitude-aware integration quality admission, certification, dry-run behavior, external-memory recovery, and protected integration execution.
-
-### Current Invariants
-
-- The quality result is journaled certification evidence, not a queue field.
-- Dry-run is pure; apply revalidates exact inputs and protected refs before the irreversible edge.
-
-
-## PDLS Reconciliation
-
-Integration quality-gate forcing now reports exact certification identity mismatch while preserving the no-host-fallback rule.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding in integration quality gate tests.
 
 

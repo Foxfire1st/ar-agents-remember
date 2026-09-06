@@ -58,10 +58,14 @@ tools share.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `worktree_attach_tool` / `worktree_status_tool` take a `TaskRef` and resolve it through `_task_ref_namespace`. | `worktree_attach_tool`; `worktree_status_tool`; `_task_ref_namespace` | mcp/src/agents_remember/application/worktree_tools.py:286-295; mcp/src/agents_remember/application/worktree_tools.py:298-321; mcp/src/agents_remember/application/worktree_tools.py:473-486 |
+| Attach consumes the supplied TaskRef. | `worktree_attach_tool` | mcp/src/agents_remember/application/worktree_tools.py:285-294 |
+| Status consumes the supplied TaskRef. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:297-320 |
+| The facade projects TaskRef locators into the resolver namespace. | `_task_ref_namespace` | mcp/src/agents_remember/application/worktree_tools.py:323-336 |
 | `resolve_context_tool` takes a `TaskRef`. | `resolve_context_tool` | mcp/src/agents_remember/application/coordination_tools.py:20-50 |
-| The three tool declarations expose `TaskRef` arguments. | `resolve_context_tool`; `worktree_attach_tool`; `worktree_status_tool` | mcp/src/agents_remember/application/coordination_tools.py:24-59; mcp/src/agents_remember/application/worktree_tools.py:281-291; mcp/src/agents_remember/application/worktree_tools.py:291-316 |
-| The locator packing is asserted against a live server. | `test_resolve_context_packs_the_locators_into_a_task_ref` | mcp/tests/test_mcp_registration_wiring_tests_1.py:95-120 |
+| Context resolution accepts the common task locators. | `resolve_context_tool` | mcp/src/agents_remember/application/coordination_tools.py:24-59 |
+| Attach accepts the common task reference. | `worktree_attach_tool` | mcp/src/agents_remember/application/worktree_tools.py:285-294 |
+| Status accepts the common task reference. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:297-320 |
+| The frozen task reference carries repo and optional task/contract/leaf/parent locators; precedence remains resolver-owned. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
 
 ## Update History
 

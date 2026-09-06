@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T13:51:59+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -162,7 +162,15 @@ does not create a second authority route, queue-owned lifecycle evidence, or a c
 
 260831-CCR-L18 updated `terminal_enclosure_archive.py` so `_require_archivable_operation` consumes the projection-owned `project_worker_exit(record)` observation for the absent-worker/resolved-termination archive guards. File-level detail lives in that sidecar.
 
+
+## Integrated IAS Recovery Contract
+
+The closeout child now resumes retained prepared C/M/L publication before original-head admission. The default application service bundle installs `PreparedCloseoutContinuation`; the service boundary remains explicit and selected journal/certificate identities still govern execution. Protected-source integration, root-journal ownership and Dagger certification boundaries are unchanged by the helper extractions.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 - 2026-09-06T13:51:59+00:00 — L33 candidate curation: Added journal-selected original certification and suffix-execution ownership; refreshed cited existing lifecycle owner extents while retaining source-pair, publication and recovery boundaries. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
 

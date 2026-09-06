@@ -66,7 +66,8 @@ No Domain Documentation source is configured for this memory root. CCR-R14@v3 re
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. | `admit_dagger_authority`; `AuthorityRegistry`; `release_dagger_authority` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:933-987; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-600; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:1115-1130 |
-| Gate-1..3 green manifests come from the shared certifying result-manifest contracts. | `compile_gate_result_manifest`; `GateResultManifest` | mcp/src/agents_remember/certification/results.py:63-111; mcp/src/agents_remember/certification/models.py:457-479 |
+| Validate a complete terminal catalog and publish one immutable gate disposition. | "def compile_gate_result_manifest" | mcp/src/agents_remember/certification/results.py:63-111 |
+| The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. | "class GateResultManifest" | mcp/src/agents_remember/certification/models.py:434-456 |
 | The durable final-codex store owns reservation, running, publish, and the CAS chain. | `FinalCodexManifestStore` | mcp/src/agents_remember/certification/final_codex/store.py:62-274 |
 | The lane projection gates certificate readiness for the run. | `project_final_codex_lane` | mcp/src/agents_remember/certification/final_codex/projection.py:88-113 |
 | The certification facade imports final-lane contracts and projections; the concrete run-control entry point belongs to the higher worktree quality module. | "from agents_remember.certification.final_codex import ("; "class FinalCodexExecutionEngine:" | mcp/src/agents_remember/certification/__init__.py:38-67; mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:179-195 |

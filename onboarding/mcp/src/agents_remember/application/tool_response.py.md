@@ -28,6 +28,15 @@ Module-level surface:
 - `_attach_lifecycle_tail` (function, lines 34-44)
 - `complete_tool_response` (function, lines 47-61) — Validate, enrich, count, and observe one application result.
 
+The registered response model is selected and validated before final output. Lifecycle hints
+and notifier banners are attached as model fields through the finalizer’s enrichment callback,
+then token counting and serialization cover the complete emitted response. Explicit producer
+recovery guidance takes precedence; cross-task guidance is omitted. Observer tool completion
+receives that same finalized payload rather than an independently reconstructed response.
+
+cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:84-98)
+cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_response.py:65-81)
+
 ### Conventions
 
 Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.

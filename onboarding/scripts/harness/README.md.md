@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/harness/README.md`                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
+| lastUpdated            | 2026-09-07T00:31+02:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../overview.md`                        |
@@ -86,9 +86,10 @@ the hook fires for unrelated sessions and must scope itself); and the payload en
 | The generator whose `HARNESSES` table encodes this classification. | `HARNESSES` | scripts/sync-harness.py:202-408 |
 | The two fragment libraries this file inventories. | `render_settings`; `hook_specific_output` | scripts/harness/render_starter.py:108-115; scripts/harness/session_start_hook.py:28-34 |
 | The verbatim and composed bodies. | "exec python3"; "Join-Path" | scripts/harness/shared/render-starter.ps1:4-4; scripts/harness/shared/render-starter.sh:5-5 |
-| The suite check that makes the classification enforceable rather than descriptive. | `test_every_generated_harness_file_matches_its_source` | mcp/tests/test_sync_harness.py:40-51 |
 
 ## Update History
+
+- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
 
 - 2026-08-03T03:10:23+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact anchors and current source paths; fixer generated all final ranges.
 - 2026-07-31T06:30+02:00 — 260731-EFA-L2 created this classification alongside the

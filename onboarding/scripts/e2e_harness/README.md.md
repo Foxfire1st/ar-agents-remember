@@ -32,6 +32,14 @@ limits scripting to deterministic model-side function choices.
 It names the dynamic `TMUX_TMPDIR` forwarding contract and server-scoped `exit-empty` setting that
 make the clean-room process boundary truthful.
 
+The committed Codex production registration forwards `AR_HOSTED_SESSION_ID` and `AR_SPAWN_ROLE`
+into its MCP subprocess while launching `uvx --refresh-package agents-remember-mcp
+agents-remember-mcp@latest` (`.codex/config.toml:1-10`). This released-package launch does not
+identify a source candidate. The separate candidate runtime exposes its actual source digest,
+interpreter and package root through `serving/build_info.py`; a package version alone cannot
+establish that candidate identity. This distinction does not assert that the deleted public-surface
+conformance suite still runs or supplies coverage.
+
 ### Conventions
 
 Version pins and security choices are stated together with their scope. Fixture-only authority is

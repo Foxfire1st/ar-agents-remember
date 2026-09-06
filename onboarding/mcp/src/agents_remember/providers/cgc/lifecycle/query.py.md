@@ -53,7 +53,7 @@ Linux runner on Windows hosts.
 | CGC status checks are provided by the installation module. | "def cgc_status" | mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:317-317 |
 | `cgc_backend_status` (backend-only readiness) is provided by the backend module. | `cgc_backend_status` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:194-237 |
 | Docker command construction is provided by the runner module. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
-| Provider lifecycle tests cover visualizer rejection, dry-run visualize command construction, and bounded `cgc run`; the `cgc run` test now stubs `cgc_backend_status`. | `test_run_rejects_visualizer_server` | mcp/tests/test_provider_lifecycle_parser_2.py:156-182 |
+
 
 ## Update History
 - 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.

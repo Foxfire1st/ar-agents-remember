@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/types/projection.ts`              |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastUpdated | 2026-09-06T21:51:23+00:00 |
 | lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
 | lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `../overview.md`                                 |
@@ -23,6 +23,8 @@ it also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` 
 digest) and attaches it optionally to the lifecycle operation projection.
 
 ## Code Commentary
+
+The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.ts:352-352.
 
 ### Logic
 
@@ -143,6 +145,8 @@ dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-ch
 returns on snapshots.
 
 ## Update History
+
+- 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
 
 - 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
 

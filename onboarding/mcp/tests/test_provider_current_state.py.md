@@ -5,116 +5,77 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_provider_current_state.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:51+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
 | lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
-| governingOverview      | `../overview.md`                           |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/overview.md](../overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_provider_current_state.py` protects the MCP provider current-state
-contract: provider status should show what is true now, not only what happened
-during the last setup attempt.
+Checks that provider status describes current runtime truth rather than setup history. Fixtures distinguish per-repository CGC degradation, GrepAI restart recovery without a workspace, disabled providers excluded from aggregate readiness, and a restarting watcher that is not ready.
 
 ## Code Commentary
 
 ### Logic
 
-The test module uses synthetic settings and synthetic watcher status payloads.
-It verifies Docker container state normalization, the current-state file path,
-ready and degraded aggregate state, per-provider resource shape, GrepAI target
-repo persistence, disabled provider aggregation, GrepAI no-workspace degradation,
-GrepAI no-workspace restart/rebind recovery guidance, workflow-local instance paths for benchmarks,
-and integration through `provider_status_packet()` plus
-`provider_diagnostics_packet()`.
-
-`ready_status_payload()` builds a small GrepAI plus CGC status packet with
-running container-state summaries, one CGC repo watcher, a healthy GrepAI
-`workspaceStatus`, and known uptime seconds. Individual tests mutate that fixture
-to prove degradation and disabled provider behavior without starting real
-providers. `test_current_state_reports_grepai_no_workspace_as_degraded` drops the
-watcher's searchable workspace and asserts GrepAI reports `degraded` with
-`indexingState: noWorkspace`, degrading the aggregate state.
-`test_provider_status_reports_restart_recovery_for_grepai_no_workspace` then
-mocks the same no-workspace status through the provider-status surface and
-asserts both compact status and diagnostics return the
-`provider_watchers(action='restart')` recovery action.
-
-Readiness coverage from the 2.5.0/2.5.1 cycles pins the content-gated `ok`
-contract: an `empty` CGC graph degrades the repo target, the provider, the
-aggregate, and the global packet `ok` (with `partial` when other providers
-remain ready), and yields a per-repo CGC restart recovery action; the
-`indexing` transient stays ready at every level and instead feeds the compact
-summary's `indexing` busy-target list. A `restarting` (crash-looping) watcher
-container is not ready and degrades provider and global `ok`, and GrepAI
-`initialScan` log markers map to `indexing`/`indexed`/`unknown` without
-degrading readiness.
-
-`test_provider_status_summarizes_structured_cgc_last_refresh` pins the structured
-CGC `lastRefresh` projection: when a watcher reports `lastRefresh` as a
-`{returncode, durationSeconds, updatedAt}` object, the compact provider status
-flattens it to `"<updatedAt> returncode=<n> durationSeconds=<s>"` rather than
-leaking the raw dict.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-- Keep these tests side-effect free; do not require Docker, GrepAI, CGC, or
-  network access.
-- Use temporary directories for generated settings and status files.
-- Mock watcher status when testing provider-status integration so the test
-  focuses on current-state projection.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Current state must not include setup history such as `lastSetup`.
-- Disabled configured providers must not make the aggregate status fail.
-- Worktree and benchmark provider scopes must write status under their own
-  instance path.
-- Provider status must persist current state and return the current-state file
-  path in compact status; the full current-state payload belongs in diagnostics.
-- GrepAI current state must persist configured target repos so read-side provider
-  projection does not have to infer memory-root ownership from names.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No external documentation is needed for these standard-library unit tests.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The Docker summary regression asserts container state, running flag, health, and integer uptime. | `test_docker_container_state_summary_reports_uptime` | mcp/tests/test_provider_current_state.py:27-42 |
-| The current-truth regression writes current state, asserts `ready`, excludes `lastSetup`, checks the central status path, and verifies GrepAI watcher/resource fields plus `targetRepos`. | `test_current_state_is_current_truth_not_setup_history` | mcp/tests/test_provider_current_state.py:44-87 |
-| The CGC degradation regression mutates one repo watcher to down and expects aggregate degraded state plus per-repo watcher/container details. | `test_current_state_reports_per_repo_cgc_degradation` | mcp/tests/test_provider_current_state.py:89-118 |
-| The disabled-provider regression proves disabled GrepAI is reported as disabled without poisoning aggregate readiness. | `test_current_state_ignores_disabled_providers_for_aggregate_readiness` | mcp/tests/test_provider_current_state.py:170-189 |
-| The GrepAI no-workspace regression drops the watcher's searchable workspace and expects GrepAI `degraded` with `indexingState: noWorkspace` plus a degraded aggregate. | `test_current_state_reports_grepai_no_workspace_as_degraded` | mcp/tests/test_provider_current_state.py:120-140 |
-| Provider status and diagnostics both expose restart/rebind recovery guidance when the current projected GrepAI state is `noWorkspace`. | `noWorkspace` | mcp/tests/test_provider_current_state.py:129-155 |
-| The workflow-local instance regression verifies benchmark scope/id paths under `logs/providers/status/benchmark/<instance>/current.json`. | `test_current_state_uses_workflow_local_instance_path` | mcp/tests/test_provider_current_state.py:191-220 |
-| The provider-status integration regression mocks watcher status and asserts `provider_status_packet()` writes current state and returns the file path while `provider_diagnostics_packet()` returns the full current-state payload. | `test_provider_status_packet_writes_current_state` | mcp/tests/test_provider_current_state.py:222-243 |
-| Current-state projection and persistence are implemented in the provider current-state module. | `build_current_provider_state`; `write_current_provider_state` | mcp/src/agents_remember/providers/current_state.py:16-36; mcp/src/agents_remember/providers/current_state.py:39-49 |
-| The structured-`lastRefresh` regression mutates a CGC watcher's `lastRefresh` to a `{returncode, durationSeconds, updatedAt}` object and asserts the projected watcher `lastRefresh` is the flattened summary string. | `test_provider_status_summarizes_structured_cgc_last_refresh` | mcp/tests/test_provider_current_state.py:324-356 |
+| Current state is current truth not setup history | `test_current_state_is_current_truth_not_setup_history` | mcp/tests/test_provider_current_state.py:24-67 |
+| Current state reports per repo cgc degradation | `test_current_state_reports_per_repo_cgc_degradation` | mcp/tests/test_provider_current_state.py:69-98 |
+| Provider status reports restart recovery for grepai no workspace | `test_provider_status_reports_restart_recovery_for_grepai_no_workspace` | mcp/tests/test_provider_current_state.py:100-126 |
+| Current state ignores disabled providers for aggregate readiness | `test_current_state_ignores_disabled_providers_for_aggregate_readiness` | mcp/tests/test_provider_current_state.py:128-147 |
+| Restarting watcher is not ready | `test_restarting_watcher_is_not_ready` | mcp/tests/test_provider_current_state.py:149-171 |
 
 ## Cross-Repo References
 
-No sibling repository evidence is needed for these tests.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the test only repoints the tool response registry to its moved `models.tools` package. Verified at code commit `1d446724`.
 

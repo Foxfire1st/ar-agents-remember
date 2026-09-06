@@ -81,7 +81,7 @@ and exact subresult reuse without fallback.
 | Planning observes live candidate authority and validates the R06 scope against the current checker registry. | `compile_affected_closure_plan`; `_validate_scope`; `_validate_scope_registry` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:133-183 |
 | R21 admits the exact Gate 1-4 prefix and requires a memory-only Gate-5 start. | `_admit_gate_certificates` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:196-236 |
 | One unit per incremental document/checker is compiled with a transitive reverse dependency closure. | `_compile_units`; `_unit`; `_dependency_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:239-331 |
-| Planning-edge refusals are proven by the focused suites. | `test_r07_planning_refuses_stale_scope_registry_edges_and_gate_prefix`; `test_r07_planning_closure_targets_are_complete_and_canonical` | mcp/tests/test_memory_incremental_scope_model_edges.py:942-1047; mcp/tests/test_memory_incremental_scope_model_edges.py:1050-1091 |
+| Affected planning remains production-owned; deleted fixture coverage does not constitute current admission evidence. | `compile_affected_closure_plan` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130 |
 
 ## Cross-Repo References
 

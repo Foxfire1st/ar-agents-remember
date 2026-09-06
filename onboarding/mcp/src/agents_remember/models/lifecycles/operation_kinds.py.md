@@ -38,6 +38,14 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 
 None recorded.
 
+### CCR private preparation boundary
+
+`recovering-private-preparation` is a distinct lifecycle operation phase for retained private work before approval consumption. Callers must not translate it into `recovering-after-claim`.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `LifecycleOperationPhase` boundary implements the preparation contract above. | "LifecycleOperationPhase = Literal[" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:15-40 |
+
 ## Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
@@ -68,6 +76,9 @@ redeclaring it across layers.
 The state matrix in `models/lifecycles/operation_projection.py` consumes these status/phase literals directly, and its import-time exhaustiveness check (`validate_state_matrix_is_exhaustive`) fails if either vocabulary grows without a matching matrix update. No I/O or scheduling authority lives here.
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the move of `LifecycleOperationStatus` / `LifecycleOperationPhase` into this centralized vocabulary module and their consumption by the new projection state matrix. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 

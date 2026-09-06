@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-20T04:42+02:00 |
+| lastUpdated            | 2026-09-07T00:34+02:00 |
 | lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
 | lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../overview.md`                              |
@@ -41,8 +41,7 @@ implements both update and check modes cit:([`check`, `main`], scripts/sync-proj
 The fixture contract documents that `snapshot.json` is the independent hand-authored sample while
 schema generation closes producer fields and vocabulary a sample can miss
 The sample introduces no served field missing from the mirror. cit:(["has no served field the mirror is missing"], dashboard/src/test/contract.test.ts:457-459); The sample covers declared structural paths except explicit residue. cit:(["reaches every declared path except the named residue"], dashboard/src/test/contract.test.ts:473-477); Every sampled registered vocabulary value must be legal. cit:(["carries only values the mirror's vocabulary declares, at every registered path"], dashboard/src/test/contract.test.ts:497-506); The contract keeps master and series sub-task row fields distinct. cit:(["keeps the master and series sub-task row models distinct"], dashboard/src/test/contract.test.ts:606-636).
-The Python drift suite executes the same generator in `--check` mode and rejects stale generated
-files cit:([`test_documented_check_command_runs_with_its_exact_checkout_environment`, `test_committed_generated_files_are_current`], mcp/tests/test_projection_types_codegen.py:247-271; mcp/tests/test_projection_types_codegen.py:273-278).
+The generator’s explicit `--check` command remains available. The former Python drift-test module was retired; it is not current acceptance evidence.
 
 The chain, as drawn in the source:
 
@@ -162,7 +161,6 @@ does not.
 | The sample covers declared structural paths except explicit residue. | "reaches every declared path except the named residue" | dashboard/src/test/contract.test.ts:473-477 |
 | Every sampled registered vocabulary value must be legal. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:497-506 |
 | The contract keeps master and series sub-task row fields distinct. | "keeps the master and series sub-task row models distinct" | dashboard/src/test/contract.test.ts:606-636 |
-| The Python drift test rejects stale committed generated files. | `test_committed_generated_files_are_current` | mcp/tests/test_projection_types_codegen.py:271-276 |
 | How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted. | "HOW THE DEFAULTS STAY HONEST"; "annotated with the mirror type"; "a required field the server adds fails to compile"; "Only the REQUIRED fields are carried"; "staleSeconds"; "silently change what an attention-queue test is measuring"; `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:15-20; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
 | `demandServed` and the eight served anchors it demands the snapshot keep. | `demandServed`; `SERVED_LIFECYCLE`; `SERVED_ENCLOSURE`; `SERVED_PROVIDER`; `SERVED_TASK_DOC`; `SERVED_ENGINE_PROCESS`; `SERVED_PICKUP`; `SERVED_ATTENTION`; `SERVED_GATE` | dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91 |
 | The eight bases, each annotated with a generated mirror type and filled from `SERVED`. | `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
@@ -194,7 +192,11 @@ No cross-repository boundary. The wire this file builds against is a Python↔Ty
 | --- | --- | --- |
 | The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
+
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 
 - 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Replaced the repeated JSON-key anchor with the unique builder statement and a contextual top-level snapshot anchor; retained both sample-selection and snapshot evidence. This scoped repair does not promote the card's verification stamp or certify a gate.
 

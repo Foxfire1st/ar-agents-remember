@@ -5,7 +5,7 @@
 | repository             | agents-remember                                        |
 | path                   | `mcp/src/agents_remember/serving/inbox_delivery.py`    |
 | doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastUpdated | 2026-09-06T22:06:54+00:00 |
 | lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
 | lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                          |
@@ -20,6 +20,8 @@ Delivers one persisted inbox row through the hosted adapter and records correlat
 re-resolves ordinary structural addresses to the current occupant immediately before delivery.
 
 ## Code Commentary
+
+The availability gate is enforced by `messageKind`: every state-signal waits for a turn boundary even if the caller did not request boundary gating. A correlated adapter acceptance at that boundary may land the row; queued acknowledgement alone cannot. Redelivery of an already-correlated request reconciles its existing identity without sending the message again. cit:([`_delivery_refusal`; `_redelivery`; `_record_receipt`], mcp/src/agents_remember/serving/inbox_delivery.py:113-168; mcp/src/agents_remember/serving/inbox_delivery.py:232-255; mcp/src/agents_remember/serving/inbox_delivery.py:265-291).
 
 ### Logic
 
@@ -63,6 +65,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
 
 - 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
 

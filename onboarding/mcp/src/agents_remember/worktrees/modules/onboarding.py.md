@@ -179,14 +179,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 ## Repo-Internal References
 
+Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:816-836). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:983-996). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-166); the subsequent ledger records that actual content commit. These contracts are source-backed; the removed support slices are not current test evidence.
+
+
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. | `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:222-280 |
 | Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. | "def build_route_indexes("; "def route_index_source_snapshot(" | mcp/src/agents_remember/kernel/route_index.py:184-230; mcp/src/agents_remember/kernel/route_index_census.py:41-63 |
-| Long sidecar paths remain discoverable by the refresh plan. | `test_onboarding_refresh_plan_detects_long_sidecar_paths` | mcp/tests/test_worktree_support_tests_1.py:1175-1192 |
-| Closeout mechanics stamp onboarding to the resulting code commit and link it in the ledger. | `test_closeout_refreshes_onboarding_metadata_to_new_code_commit` | mcp/tests/test_worktree_support_tests_2.py:91-137 |
-| Missing onboarding blocks closeout and leaves the worktree dirty and closeout incomplete. | `test_closeout_blocks_missing_onboarding_for_changed_source` | mcp/tests/test_worktree_support_tests_2.py:139-160 |
-| Entity fingerprints are recomputed after code changes and included in the memory content commit. | `test_closeout_refreshes_entity_fingerprint_after_code_commit` | mcp/tests/test_worktree_support_tests_2.py:616-674 |
 
 ## Cross-Repo References
 

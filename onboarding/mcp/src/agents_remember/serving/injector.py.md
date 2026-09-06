@@ -71,7 +71,7 @@ No relevant external documentation applies to this local delivery module.
 | `get_adapter` supplies every per-harness signature (`blocked_reason`, `turn_started`) this module reads. | `HarnessAdapter` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
 | `TerminalPaster.paste` is the transport `deliver` calls exactly once per invocation; its own capture-verify/idempotent-retry loop is UNCHANGED by this leaf. | `TerminalPaster` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
 | `deliver_inbox_entry` builds a `DeliveryRow` (`envelope=False`) and calls `deliver` — the inbox-row half of the ONE path (dispatch/nudge/redelivery/signal-emit, all via `agent_notifier.py`). | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
-| Outcome-mapping unit tests (all four `DeliveryOutcome` branches) plus an end-to-end injection test against a scripted in-memory tmux pane (R5). | `test_message_is_acked_from_bound_log_and_returns_provenance` | mcp/tests/test_injector.py:63-74 |
+
 
 ## Cross-Repo References
 

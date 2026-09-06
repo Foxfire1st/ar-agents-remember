@@ -65,7 +65,11 @@ No Domain Documentation source is configured for this memory root. The governing
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The vocabulary reuses the certification-domain frozen-model base, gate/rail identity, findings, and semantic text. | `FrozenContractModel`; `GateId`; `RailIdentity`; `CertificationContractFinding`; `SemanticText` | mcp/src/agents_remember/certification/models.py:13-13; mcp/src/agents_remember/certification/models.py:42-49; mcp/src/agents_remember/certification/models.py:59-65; mcp/src/agents_remember/certification/models.py:169-172 |
+| Certification contracts share the closed immutable model base. | "class FrozenContractModel" | mcp/src/agents_remember/models/certification/base.py:30-33 |
+| Semantic text is nonblank and unpadded. | "SemanticText = Annotated[str, AfterValidator(_require_semantic_text)]" | mcp/src/agents_remember/models/certification/base.py:27-27 |
+| Gate identity is the closed literal vocabulary 1 through 5. | "GateId = Literal[1, 2, 3, 4, 5]" | mcp/src/agents_remember/models/certification/base.py:9-9 |
+| Rail identity combines its declared id and version. | "class RailIdentity" | mcp/src/agents_remember/models/certification/base.py:36-42 |
+| Certification refusals use the shared typed finding contract. | "class CertificationContractFinding" | mcp/src/agents_remember/certification/models.py:146-149 |
 | Span categories alias the R16 telemetry span vocabulary; catalogs reuse the telemetry rail records. | `TelemetrySpanKind`; `CatalogRailRecord`; `CatalogCounts`; `MeasuredSpanCategory` | mcp/src/agents_remember/certification/telemetry/models.py:70-80; mcp/src/agents_remember/certification/telemetry/models.py:294-314; mcp/src/agents_remember/certification/replay/models.py:26-32 |
 | Content digests follow the shared certification digest helper. | `content_digest` | mcp/src/agents_remember/certification/digests.py:12-22 |
 | The public subpackage facade re-exports the full vocabulary. | `__all__`; `ReplayFreeze`; `ReplayPopulation`; `SpanReduction`; `RunMeasurement`; `ReplayScenarioExpectation` | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |

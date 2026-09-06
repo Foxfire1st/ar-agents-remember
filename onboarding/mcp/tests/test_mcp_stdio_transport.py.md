@@ -42,7 +42,6 @@ has a real auto-carry candidate. A `ping` test proves the harness itself.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The fixed subprocess boundary used by carryover. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The package-wide stdin guard that prevents reintroduction. | `test_every_subprocess_call_site_handles_stdin` | mcp/tests/test_subprocess_hygiene.py:44-66 |
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 

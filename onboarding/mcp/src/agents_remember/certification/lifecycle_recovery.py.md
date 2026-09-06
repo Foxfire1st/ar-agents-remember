@@ -76,7 +76,6 @@ movement precedes a write.
 | The recovery record journals the exact R21 reuse decision. | `compile_certification_recovery_record` | mcp/src/agents_remember/certification/lifecycle_recovery.py:53-81 |
 | Finalization revalidates the exact admitted candidate and journal, then binds the unfinished leg. | `compile_lifecycle_finalization`; `_require_finalization_alignment` | mcp/src/agents_remember/certification/lifecycle_recovery.py:84-109; mcp/src/agents_remember/certification/lifecycle_recovery.py:162-220 |
 | Currentness reread and exact-leg authorization gate every publication write. | `validate_lifecycle_finalization_currentness`; `authorize_finalization_leg` | mcp/src/agents_remember/certification/lifecycle_recovery.py:112-133; mcp/src/agents_remember/certification/lifecycle_recovery.py:136-159 |
-| The R05 suite proves recovery journaling and zero-start partial finalization. | `test_recovery_journals_r21_reuse_for_code_memory_and_unchanged_interruption`; `test_partial_finalization_resumes_exact_leg_with_zero_gate_starts` | mcp/tests/test_l5_quality_and_recovery_edges.py:796-833; mcp/tests/test_l5_quality_and_recovery_edges.py:834-918 |
 
 ## Cross-Repo References
 
@@ -87,6 +86,9 @@ No cross-repository implementation boundary is owned here.
 | Gate certificate and invalidation contracts are imported from the R21 owners. | `GateCertificate`; `GateFiveSemanticInputs`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:152-176; mcp/src/agents_remember/certification/certificate_models.py:221-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-164 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose. Verification remains pinned to the pre-commit source history until closeout.
 

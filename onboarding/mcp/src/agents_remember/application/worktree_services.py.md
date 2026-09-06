@@ -41,6 +41,14 @@ Keep imports of providers and memory_quality at this composition boundary. Workt
 
 The rail-definition adapter is implemented; the complete R07/R08 production execution path remains a separate integration obligation.
 
+### CCR private preparation boundary
+
+The default application bundle installs `PreparedCloseoutContinuation` and `PreparedMemoryCertificationAdapter` explicitly. This supplies production memory/finalization composition through the existing service ports; binding the adapters neither bypasses certification nor establishes a successful execution.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `build_default_worktree_services` boundary implements the preparation contract above. | "def build_default_worktree_services" | mcp/src/agents_remember/application/worktree_services.py:199-207 |
+
 ## Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
@@ -57,7 +65,9 @@ The cited source establishes the current contracts and boundaries described abov
 | --- | --- | --- |
 | Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:25-129 |
 | Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:132-174 |
-| Citation guard, complete default bundle and binding | `CitationGuardAdapter`; `build_default_worktree_services`; `bind_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:177-208 |
+| The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:184-196 |
+| The default bundle composes the declared worktree services. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:199-207 |
+| The canonical binding owner installs the explicit service bundle. | `bind_worktree_services` | mcp/src/agents_remember/worktrees/services.py:181-184 |
 
 ## Cross-Repo References
 
@@ -68,6 +78,9 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-09-05T06:14:14+00:00 — Extended the preserved dependency-composition account with the Gate-5 rail port and its non-execution boundary.
 

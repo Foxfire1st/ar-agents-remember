@@ -22,11 +22,11 @@ Expected-old publication capability and exact prepared commit proof.
 
 ### Logic
 
-Publication has a separate sealed capability from private preparation. The binding names the operation, generation, logical branch, expected old commit and exact prepared commit/tree. Raw commit validation binds object bytes and ancestry. Observations distinguish old, new and existing states; publication authority, cancellation and journal selection remain caller responsibilities.
+Publication has a separate sealed capability from private preparation. The binding names the operation, generation, logical branch, expected old commit and exact prepared commit/tree. Raw commit validation recomputes the complete object identity and requires the exact prepared tree; a new prepared commit must have the sole expected-old parent. Observations distinguish old, new and existing states; publication authority, cancellation and journal selection remain caller responsibilities.
 
 ### Conventions
 
-Use the named source owners directly. This card describes the current uncommitted implementation; commit-based verification remains pending.
+Use the named source owners directly. This source was introduced in landed commit `245057ab16e19afdaabd5c188c9576b22e0c0870` and remains byte-identical at the recovery code candidate. Its behavior was re-read against that source during memory recovery; the existing metadata owner still owns the pending verification stamp.
 
 ### Invariants And Boundaries
 

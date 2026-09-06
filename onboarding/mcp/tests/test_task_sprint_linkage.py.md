@@ -5,105 +5,75 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_sprint_linkage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:59+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Behavioral test suite for the L14 sprint↔master linkage contract
-(`application/task_sprint_linkage.py`): the atomic `attach_master`/`detach_master` operations, the
-read-only `linkage_report` surface, and `validate_completed_master_row` for typed rows. Since
-260815-DAG-L16 the suite's `task_doc` calls pass `call=TaskDocCall(dry_run=...)` instead of the
-bare `dry_run` argument (signature-compat with the L16 `TaskDocCall` refactor); suite purpose is
-unchanged.
+Provides a shared temporary task-linkage fixture and canonical attach/detach/report helpers; no test methods remain. It writes typed master/sprint documents and snapshots their bytes for consuming structural-publication tests. The historical attach/render/registration acceptance inventory in its docstring is not the current executed population.
 
 ## Code Commentary
 
 ### Logic
 
-`SprintLinkageTests` and `SprintLinkageEdgeTests` drive `task_doc_tool` through the real
-application boundary over scratch task roots: attach writes the typed `masterRef` row, the
-`orchestrates` slug, and (on a graphed sprint) the lump graph node as one validated atomic batch;
-detach removes them, refusing while any edge touches the node and never deleting files;
-`linkage_report` surfaces seat-doc rows, slug-only membership, row/membership mismatches, and
-uncommanded masters as facts. The helpers `_attach`/`_detach`/`_linkage` build the
-`TaskDocTarget`/`TaskDocEdit` objects and dispatch through the `task_doc_tool` application entry
-point, passing the `TaskDocCall` call object since the L16 signature-compat change.
-After a helper publishes changed task bytes, the suite rebuilds `TaskDocumentTopology` before the
-next linkage query. This makes each assertion read the new task generation and prevents a fixture's
-previously resolved topology view from hiding publication or invalidation defects.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Same scratch-task-root harness as the task-document and execution-topology suites; assertions
-target typed statuses and document state, not message substrings.
+The test-shaped filename is retained for imports by other suites. Helper availability is not
+a passing test, and the module has no collected test definitions of its own.
 
 ### Invariants And Boundaries
 
-- Tests construct only disposable coordination roots; never a real deployed coordinator.
-- Suite purpose is L14 linkage forcing; the L16 delta is the call-shape signature only.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None recorded.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The linkage forcing suite. | `SprintLinkageTests`; `SprintLinkageEdgeTests` | mcp/tests/test_task_sprint_linkage.py:101-794; mcp/tests/test_task_sprint_linkage.py:797-1163 |
-| The production module under test. | `SprintLinkageRequest`; `_AttachMasterPayload`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:106-115; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:143-167; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:177-186 |
-| The call-shape the suite now passes (L16). | `TaskDocCall` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:37-45 |
+| Shared helper _judgment_register | `_judgment_register` | mcp/tests/test_task_sprint_linkage.py:53-54 |
+| Shared helper _judgment_row | `_judgment_row` | mcp/tests/test_task_sprint_linkage.py:57-61 |
+| Shared helper _register_section | `_register_section` | mcp/tests/test_task_sprint_linkage.py:64-69 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies.
-
-## 260815-DAG-L15 F8 Fact Vocabulary And Serving-Build Preflight
-
-`test_report_does_not_flag_a_sprint_as_uncommanded_master` proves an orchestrates-bearing sprint
-doc is excluded from `uncommanded-master`, while a genuinely commanded-but-rowless master still
-surfaces as `membership-without-row`. `test_report_seat_row_edge_shapes` moved to the F8 vocabulary:
-rows whose seat doc is absent or carries no master reference now report `seat-doc-row-unresolved`
-(expected kinds ["seat-doc-row-unresolved", "seat-doc-row", "seat-doc-row-unresolved"]) instead of a
-master-less `seat-doc-row`. `test_attach_wraps_a_serving_build_preflight_refusal` proves attach wraps
-the `TopologyServingBuildError` as a `TaskDocError` (`serving-build-unsupported`) refusal.
-
-## 260821-CLIVE-L2 Current Regression Contract
-
-The current forcing seams include `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. The L2 additions prove structural/task publication serialization without a global queue/lifecycle authoring lock and keep public control/gate identity task-addressed.
-
-### Reconciled Source Evidence
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises `test_attach_writes_all_four_artifacts_atomically`, `test_attach_judgment_refusals_write_nothing`, `test_attach_existing_nature_needs_no_nature_payload`, `test_attach_target_and_uniqueness_refusals`. | `test_attach_writes_all_four_artifacts_atomically`; `test_attach_judgment_refusals_write_nothing`; `test_attach_existing_nature_needs_no_nature_payload`; `test_attach_target_and_uniqueness_refusals` | mcp/tests/test_task_sprint_linkage.py:196-224; mcp/tests/test_task_sprint_linkage.py:226-247; mcp/tests/test_task_sprint_linkage.py:249-254; mcp/tests/test_task_sprint_linkage.py:295-327 |
-
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Forces typed sprint-to-master attach, detach, reparent, judgment, route review, graph, and multi-artifact publication behavior.
-
-### Current Invariants
-
-- Linkage writes are task-authoring operations and publish when intrinsically valid.
-- The before/after sprint-scope union drives projection invalidation and rebuild after task truth.
-- Sprint-seat schema forcing permits reviewer as the shared plan/super review address while still
-  rejecting leaf-only worker as a sprint seat.
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added explicit sprint-seat
   schema forcing for the polymorphic reviewer. Verification remains closeout-owned.

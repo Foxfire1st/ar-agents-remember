@@ -26,7 +26,7 @@ Owns repository-profile admission and the lifecycle-facing quality gate boundary
 
 `run_strict_code_quality_gate` captures the staged tree, freezes certification admission before `run_clean_quality`, writes the completed test report, rejects failed or uncertified output, then rechecks both the evidence tree and current staged tree. The index is supplied by the caller: this module neither stages nor undoes staging. The recorded task diff base determines the measured change set.
 
-`recover_strict_code_quality_gate` requires matching attestation, tree, profile, plan, selection, adapter and decoder, then validates the published generation and certifying evidence before recording it. Its public report remains the stable developer-facing transcript; the immutable published result path is separate.
+`render_selected_code_certification` reopens the selected frozen run, requires its candidate tree and repository to match the current target, validates the selected original terminal publications, and requires certifying evidence before rendering success. It does not synthesize a replacement execution. The public report and immutable published evidence retain separate paths.
 
 The record helper reopens the published decoder artifact and delegates its gate catalog. A nonempty returned refusal list now raises before the caller returns quality success, including exact-generation recovery. The ordinary red-run branch still raises before that helper, so typed result publication for every terminal outcome is not established by this seam. An absent catalog also does not independently prove a complete certificate population.
 
@@ -60,8 +60,10 @@ No external Domain Documentation source is configured for this repository. This 
 | --- | --- | --- |
 | Required profile authority governs execution and preview. | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:125-139; mcp/src/agents_remember/worktrees/modules/quality/gate.py:142-185 |
 | Admission precedes Dagger and the exact staged tree is rechecked. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-324 |
-| Recovery requires the exact published generation and evidence. | `recover_strict_code_quality_gate`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399; mcp/src/agents_remember/worktrees/modules/quality/gate.py:402-448 |
-| Host diagnostics refuse and certificate-record refusals propagate. | `run_local_quality_diagnostic`; `_record_certification_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:451-461; mcp/src/agents_remember/worktrees/modules/quality/gate.py:478-507 |
+| Recovery reads the selected frozen run and original terminal publications, checks exact current candidate identity, and requires certifying evidence. | "def render_selected_code_certification" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:364-395 |
+| Successful certification renders the exact evidence and manifest into the typed quality result. | "def _strict_quality_success_payload" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:405-446 |
+| Host diagnostic entry refuses certification execution through this owner. | "def run_local_quality_diagnostic" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:449-459 |
+| Persist complete actual terminal catalogs, including red and interrupted gates. | "def record_published_generation" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:232-276 |
 
 ## Cross-Repo References
 

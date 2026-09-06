@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `scripts/bootstrap-mcp-venv.sh` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:10+02:00 |
+| lastUpdated | 2026-09-07T00:00+02:00 |
 | lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
 | lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `../overview.md` |
@@ -42,6 +42,8 @@ the venv and locked packages but cannot substitute a managed interpreter.
 - uv may install packages but may not select `python-build-standalone` or system Python.
 - The runtime, venv, backups, and compiled artifacts remain outside Git.
 
+The Git hook selects a complete checkout-local `mcp/.venv`, or the primary clone’s shared `mcp/.venv`. Before selection it probes the pinned runtime capabilities and imports both quality tools and scope reporting. An incomplete environment stops with the bootstrap repair command; repository-root venvs and system Python are not alternate hook environments.
+
 ### Todos
 
 None recorded.
@@ -63,6 +65,8 @@ own this bootstrap.
 | Existing environments require explicit replacement and are restored after a failed recreation. | "restore_previous() {" | scripts/bootstrap-mcp-venv.sh:53-81 |
 | uv is pinned to the exact interpreter and lock, followed by runtime and dependency proof. | "--no-managed-python"; "uv pip check" | scripts/bootstrap-mcp-venv.sh:83-103 |
 
+| Hook environment selection probes runtime and quality imports before using local or shared MCP venv. | "dev_python_ready() {"; "local_py="; "shared_py=" | .githooks/_gate.sh:53-80 |
+
 ## Cross-Repo References
 
 No meaningful cross-repository implementation source governs this script.
@@ -72,6 +76,8 @@ No meaningful cross-repository implementation source governs this script.
 | All durable inputs are carried by this repository's runtime contract and uv lock. | — | — |
 
 ## Update History
+
+- 2026-09-07T00:00+02:00 — Preserved the current hook caller contract while retiring obsolete scope-reporting test documentation; verification pins unchanged.
 
 - 2026-08-29T16:10+02:00 — Created for deterministic project-owned Python 3.13.15 bootstrap,
   rollback, and locked-venv adoption. Verification remains closeout-owned.

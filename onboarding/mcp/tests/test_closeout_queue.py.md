@@ -5,114 +5,72 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_closeout_queue.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Exercises the closeout queue's model, authority, ordering, evidence, transition, durability,
-capacity, projection-cost, and sprint-publication contracts against real task and Git fixtures.
-The small model and split-evidence ownership checks live in `test_closeout_queue_models.py` so this
-behavior suite remains below the repository hard size limit.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`) updates `QueueFixture` to install a fixture
-certification profile into the code repository (`install_fixture_profile`) and sets
-`repositories.<repo>.certificationProfile` in the settings payload, so queue-driven closeout
-fixtures exercise the same profile authority as production.
+Disposable task, door and projection fixture shared by lifecycle tests.
 
 ## Code Commentary
 
 ### Logic
 
-`QueueFixture` constructs canonical sprint/master/leaf task documents, contracts, curator artifacts,
-register rows, repositories, and ledger facts. Tests cover categorical grading and deterministic
-ties, internal/disabled memory, request bounds, authority refusal, predecessor/blocker logistics,
-candidate/evidence drift, lifecycle ownership, WAL retry receipts, state bounds, linear fleet work,
-cross-sprint refusal, and completion/reopen locking.
-
-The fixture now independently configures master A and master B as atomic, always uses canonical
-leaf-B identity, and derives each contract's source branch from that master's own atomic flag. This
-lets projection tests represent two simultaneous live series contracts without encoding an
-exclusive lane in shared setup.
+QueueFixture creates real code and optional external-memory repositories, task topology, contracts and shared priority/judgment data. Its helpers declare doors and construct the source/projection conditions required by consumers. The file contains no retained standalone queue tests.
 
 ### Conventions
 
-The suite manipulates the public service and durable store with production-shaped artifacts; exact
-failure states are asserted rather than inferred from source strings.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Judgment and logistics tests remain separate.
-- Negative cases mutate one candidate fact at a time.
-- Scaling tests compare two fleet sizes and enforce explicit caps.
-- Live-series multiplicity is fixture input, not a queue conflict or ownership shortcut.
+Synthetic upstream curator evidence in the convenience declaration is fixture-only; producer-backed memory tests call the real door owner with actual coherence instead. No helper declaration grants production acceptance.
 
 ### Todos
 
-None recorded.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No configured Domain Documentation source applies.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public request vocabulary exposes projection-only status and invalidation actions, not a selector. | `test_queue_request_has_projection_only_actions` | mcp/tests/test_closeout_queue.py:571-579 |
-| Waiting membership appears only after closeout-door publication; an empty queue does not invent candidates. | `test_door_publication_is_the_only_fixture_membership_source` | mcp/tests/test_closeout_queue.py:581-587 |
+| Master. | `_master` | mcp/tests/test_closeout_queue.py:76-102 |
+| Leaf. | `_leaf` | mcp/tests/test_closeout_queue.py:105-150 |
+| Judgment row. | `_judgment_row` | mcp/tests/test_closeout_queue.py:153-158 |
+| Priority row. | `_priority_row` | mcp/tests/test_closeout_queue.py:161-162 |
+| Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:165-166 |
+| Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:169-170 |
+| Grade. | `_grade` | mcp/tests/test_closeout_queue.py:173-177 |
+| Queuefixture. | `QueueFixture` | mcp/tests/test_closeout_queue.py:180-564 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository reference applies.
-
-## 260815-DAG-L4 Integration-Authority Forcing
-
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## Frozen Current Regression Contract
-
-The current forcing seams are `test_queue_request_has_projection_only_actions` and
-`test_door_publication_is_the_only_fixture_membership_source`. They prove the projection-only
-request vocabulary and door-derived waiting membership; no selector, lifecycle, commit-evidence,
-compatibility-reader, or task-authoring lock behavior is assigned to the queue.
-
-### Reconciled Source Evidence
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current test source exercises the projection-only request and door-membership cases. | `CloseoutProjectionSurfaceTests` | mcp/tests/test_closeout_queue.py:570-587 |
-
-## Current Contract — 260821 CLIVE Final
-
-This is the current source-backed contract for this test card. It supersedes any earlier
-queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
-
-Provides the shared L3 task/door/projection fixture plus projection-only smoke tests for current closeout scheduling.
-
-### Current Invariants
-
-- Projection membership derives from current task truth and waiting door generations.
-- The fixture does not preserve claimed lifecycle, blocker, or commit evidence in queue rows.
-
-## MCAR-L02 Structured Fixture Authority
-
-The shared `write_curator_evidence` helper publishes a real structured coherence authority after
-writing the exact quality attestation. Candidate fixtures create agent judgments with explicit
-task evidence and invoke prepare/publish through production owners, so queue tests no longer obtain
-readiness from a hand-authored curator Markdown file alone. Door declaration now republishes once
-after priority/task input changes and again after the door mutation. The production validator thus
-sees the exact current topology on both sides of the mutation instead of a fixture-created stale
-authority.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the fixture profile installation and certificationProfile settings in queue fixtures.
 
 

@@ -49,7 +49,7 @@ No external documentation is needed for this project settings parser.
 | --- | --- | --- |
 | Settings selection prefers this JSON parser before Markdown fallback. | `parse_coordination_settings` | mcp/src/agents_remember/kernel/coordination_context/settings.py:50-72 |
 | The example settings file demonstrates the JSON coordination-root storage shape. | "coordinationRoot" | examples/mcp/settings.example.json:3-3 |
-| Resolver parity tests cover JSON settings output shape. | `test_external_memory_resolution_reports_expected_context` | mcp/tests/test_resolver_parity.py:57-74 |
+| JSON settings parsing composes current typed storage, path-rule and cross-repository settings. | `parse_json_settings` | mcp/src/agents_remember/kernel/coordination_context/json_settings.py:25-40 |
 
 ## Cross-Repo References
 

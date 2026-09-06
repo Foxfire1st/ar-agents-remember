@@ -5,62 +5,84 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_final_codex_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:45+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `54ff803a05209e06f732f2de1f90e2a71a069e08` |
 | lastVerifiedCommitDate | 2026-09-04T22:31:30+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Standalone CCR-R14 leaf builders and model contract tests (leaf 260831-CCR-L14, code commit 54ff803a). This module owns the leaf scenario-registry and record builders the other final-codex test modules share, plus the closed two-fresh model/invariant contract tests. Fully standalone: it imports only the package under test and stdlib/pytest, and every case runs in-process with no Dagger or external service.
+Shared final-Codex scenario, run-record and authority builders.
 
 ## Code Commentary
 
 ### Logic
 
-Builders: `scenario_registry` (lines 168-193) canonicalizes the leaf scenario rail registry; `certifying_plan` (lines 195-202) compiles the certifying plan; `green_gates` (lines 256-260) and `manifest_for` (lines 203-255) build the green Gate-1..3 result manifests; `plan_record` (lines 316-340), `attempt_record` (lines 341-368), `fresh_identities` (lines 312-315), `environment_binding` (lines 369-375), `authority_binding` (lines 376-400), `teardown_record` (lines 401-425), `make_draft` (lines 426-467), `make_store` (lines 468-479), `publish_run` (lines 480-494), and `finalize_result` (lines 495-508) compose the two-fresh fixtures; the fake Dagger inspector (`FakeInspector`, lines 513-543) and `engine_environ` (lines 545-559) back the executor tests; `store_codes` (lines 509-512) extracts refusal codes. `FinalCodexModelTests` (lines 619-725) covers the structural certifying literals and retry-zero (lines 620-630), distinct-fresh-identity enforcement (631-635), self-verified plan/digest records, manifest-required pass/fail, no-manifest aborted/hard failures, green-only-when-both-pass (673-687), no-compensation (688-699), shared-authority enforcement (700-714), and draft digest self-verification (715-725).
+Helpers compile synthetic rail/scenario registries and manifests, create exact repetition identities and plan/attempt/environment records, then publish drafts through the run store. FakeInspector and engine_environ provide declared test authority without a real engine.
 
 ### Conventions
 
-All refusals assert typed `CertificationContractError` codes; every digest-carrying record verifies its own content digest.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Exactly two fresh distinct certifying repetitions with retryCount zero.
-- One passing repetition never compensates the other.
-- Pass/fail carry the complete certifying Gate-4 manifest; aborted/hard-failure never do.
+No model-contract tests remain in this file. A helper-generated green run or fake inspection is fixture input, not proof of fresh production executions.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this memory root. CCR-R14@v3 (approved packet, leaf 14_final-real-codex-certification) requires the closed two-fresh model semantics; task artifact paths are not repo-relative citations, so clauses are recorded as prose.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The two-fresh no-compensation and structural literal contracts are enforced at the model layer. | `FinalCodexModelTests` | mcp/tests/test_final_codex_models.py:619-725 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exercises the closed final-codex model contracts. | `FinalCodexRunManifest`; `FinalCodexRepetitionResult` | mcp/src/agents_remember/certification/final_codex/models.py:333-373; mcp/src/agents_remember/certification/final_codex/models.py:376-413 |
-| The leaf builders are shared by every other final-codex test module. | `scenario_registry`; `attempt_record`; `make_draft` | mcp/tests/test_final_codex_models.py:168-193; mcp/tests/test_final_codex_models.py:341-368; mcp/tests/test_final_codex_models.py:426-467 |
+| Railspec. | `RailSpec` | mcp/tests/test_final_codex_models.py:96-99 |
+| Identity. | `identity` | mcp/tests/test_final_codex_models.py:102-103 |
+| Rail. | `rail` | mcp/tests/test_final_codex_models.py:106-157 |
+| Scenario registry. | `scenario_registry` | mcp/tests/test_final_codex_models.py:160-184 |
+| Certifying plan. | `certifying_plan` | mcp/tests/test_final_codex_models.py:187-192 |
+| Manifest for. | `manifest_for` | mcp/tests/test_final_codex_models.py:195-245 |
+| Scenario failure. | `scenario_failure` | mcp/tests/test_final_codex_models.py:248-273 |
+| Gate4 manifest. | `gate4_manifest` | mcp/tests/test_final_codex_models.py:276-282 |
+| Repetition identity. | `repetition_identity` | mcp/tests/test_final_codex_models.py:285-296 |
+| Fresh identities. | `fresh_identities` | mcp/tests/test_final_codex_models.py:299-300 |
+| Plan record. | `plan_record` | mcp/tests/test_final_codex_models.py:303-325 |
+| Attempt record. | `attempt_record` | mcp/tests/test_final_codex_models.py:328-353 |
+| Environment binding. | `environment_binding` | mcp/tests/test_final_codex_models.py:356-360 |
+| Authority binding. | `authority_binding` | mcp/tests/test_final_codex_models.py:363-385 |
+| Teardown record. | `teardown_record` | mcp/tests/test_final_codex_models.py:388-410 |
+| Make draft. | `make_draft` | mcp/tests/test_final_codex_models.py:413-452 |
+| Make store. | `make_store` | mcp/tests/test_final_codex_models.py:455-464 |
+| Publish run. | `publish_run` | mcp/tests/test_final_codex_models.py:467-479 |
+| Store codes. | `store_codes` | mcp/tests/test_final_codex_models.py:482-483 |
+| Fakeinspector. | `FakeInspector` | mcp/tests/test_final_codex_models.py:486-515 |
+| Engine environ. | `engine_environ` | mcp/tests/test_final_codex_models.py:518-530 |
 
 ## Cross-Repo References
 
-No cross-repository evidence is required.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Every case is in-process and repository-neutral. | - | - |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass: created this card for the new standalone CCR-R14 builder/model-contract suite delivered in code commit 54ff803a; anchors and ranges derived from the current worktree source and pinned to that commit (tree aff2e268968397ab8db042a782652957a3600dda).

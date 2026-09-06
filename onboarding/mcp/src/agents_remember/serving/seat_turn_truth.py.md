@@ -84,7 +84,7 @@ called by the liveness sweep and the interrupt route and the state-signal action
 | The interrupt route stamping developer provenance after an accepted interrupt. | `conversation_interrupt` | mcp/src/agents_remember/serving/conversation/control/api.py:151-187 |
 | The state-signal/non-reaction action markers. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:421-480; mcp/src/agents_remember/serving/_agent_notifier_actions.py:542-599 |
 | The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:483-539 |
-| The regression suite covering the write helpers. | `SeatTurnTruthTests` | mcp/tests/test_terminal_evidence_projection.py:643-744 |
+
 
 ## Cross-Repo References
 

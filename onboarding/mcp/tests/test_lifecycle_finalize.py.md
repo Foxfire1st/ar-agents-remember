@@ -5,65 +5,66 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_lifecycle_finalize.py`     |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
 | lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Focused regression tests for the `lifecycle_finalize_task` worktree operation
-and response-model registration.
+Lifecycle finalization of a leaf and immediate parent row.
 
 ## Code Commentary
 
-The fixture creates temporary Git repositories and disabled-memory worktree
-contracts so the finalizer's Git ancestry proof runs against real commits. It
-also creates JSON-primary task documents through `write_task_doc`, allowing the
-tests to assert that finalization writes both JSON and rendered markdown through
-the production task document service.
+### Logic
 
-Covered behavior:
+Finalization marks the leaf Completed and its parent subtask row Completed, records the finalization decision and leaves the master inProgress. Failure while publishing the second document rolls back the leaf, parent and their rendered files to exact previous bytes.
 
-- a finalized task updates the leaf document to `Completed`, updates only the
-  immediate parent subtask row to `Completed`, and leaves the parent/master task
-  status unchanged
-- missing closeout/integration data or a landed commit absent from the target
-  branch returns `not-finalizable-yet` blockers
-- cleanup failures return `cleanup-blocked` and do not mutate task documents
-- dry-run returns `would-finalize` and `would-update` without mutating documents
-- `PUBLIC_TOOL_RESPONSE_MODELS` registers `lifecycle_finalize_task` to
-  `LifecycleFinalizeTaskResponse`
+### Conventions
 
-The local `_payload` helper casts `WorktreeCommandResult.payload` for test
-assertions only; runtime payloads remain typed as `dict[str, object]`.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+
+### Invariants And Boundaries
+
+Child completion does not automatically complete the master. Document publication is atomic across the affected pair and is not a replacement for lifecycle acceptance.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this memory repo.
-
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Finalizer behavior under test lives here. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:28-94 |
-| Task document read/write behavior used by the fixture lives here. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:677-896 |
-| Git fixture helpers come from the existing worktree support tests. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:979-1054 |
-| Public response model registry is checked for the finalizer entry. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
-## L23 Lifecycle Model Package Review
+## Repo-Internal References
 
-The suite imports `LifecycleFinalizeTaskResponse` from `models.lifecycles.finalize`, its new package
-owner. Finalization payload, registry, task-document, and blocker assertions are unchanged.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Finalized updates leaf and immediate parent row. | `test_finalized_updates_leaf_and_immediate_parent_row` | mcp/tests/test_lifecycle_finalize.py:125-146 |
+| Second document publish failure rolls back leaf and parent. | `test_second_document_publish_failure_rolls_back_leaf_and_parent` | mcp/tests/test_lifecycle_finalize.py:148-176 |
 
-## PDLS Reconciliation
+## Cross-Repo References
 
-Finalize tests now assert bounded projection invalidation/rebuild effects alongside the existing lifecycle response.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
+
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: widened the
   WorktreeSupportTests citation to the class range it actually occupies (979-1054).

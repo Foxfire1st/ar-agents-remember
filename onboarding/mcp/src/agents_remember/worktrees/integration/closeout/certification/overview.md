@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/certification/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:58:25+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -28,7 +28,7 @@ Read `observation.py` and `admission.py` for actual candidate admission, `select
 2. Initial selection publishes/reopens original authority, admission and recovery records. The existing store/coordinator atomically binds the initial state before claimed-door publication and worker launch.
 3. Execution reopens explicit original references and current authority. Complete lower green gates may be reused; red catalogs require an explicit corrective successor. Interrupted uncertified terminal replacement retains its original history.
 4. The admitted recovery decision selects the code suffix. Real returned terminals are selected through currentness checks and journal CAS, with complete publication generations protected from pruning.
-5. Gate-5 reuse requires current canonical memory input. Finalization-only reuse checks memory again immediately before handoff. The default production continuation remains unbound; separate protocol/fixture composition does not install it.
+5. Gate-5 reuse requires current canonical memory input. Finalization-only reuse checks memory again immediately before handoff. The default application bundle installs `PreparedCloseoutContinuation`; selected certificates and physical readback remain required.
 
 ## Local Invariants And Traps
 
@@ -61,12 +61,20 @@ Read `observation.py` and `admission.py` for actual candidate admission, `select
 | Journal selection reopens the complete original graph before its live-owner CAS. | `require_selected_certification`; `select_certification_state` | mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:105-109; mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py:445-463 |
 | Execution admits only the selected suffix and current memory/finalization boundary. | `execute_selected_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:279-332 |
 | Retained output permits only the selected physically proven code commit. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:24-108 |
-| The ordinary service construction leaves production continuation unbound. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:197-203 |
+| The ordinary service construction installs the prepared closeout continuation. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:199-206 |
 
 ## Docs And Cross-Repo References
 
 The configured Domain Documentation registry has no entries. The adjacent closeout, lifecycle and quality owners supply the same-repository authority boundaries; this package defines no external protocol.
 
+
+## Integrated IAS Recovery Contract
+
+Execution first resumes an already claimed prepared publication, before attempting original-head admission. Otherwise `_refresh_selected_recovery` reobserves canonical memory inputs before choosing reusable certificates. Selection still binds the exact candidate, profile, plan and prior-red disposition. Retained code-output reuse separately proves both original prestates and the current physical commit; helper extraction does not weaken those comparisons.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 - 2026-09-06T14:58:25+00:00 — Created the nearest route after full source review at `c69d5171187fa1957025e393270db9f5a864ab14`. Reused the parent route's separation of door/task, coherence and journal ownership while distinguishing implemented selected admission/execution from the unbound production continuation. Source verification is not gate or acceptance evidence.

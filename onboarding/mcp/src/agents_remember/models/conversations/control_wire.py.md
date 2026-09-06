@@ -63,7 +63,7 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The conversation package remains the shared wire owner and control-facade imports are prohibited. | `test_conversation_wire_types_are_not_imported_through_the_control_facade` | mcp/tests/test_conversation_model_architecture.py:31-44 |
+| Conversation control identity is declared in this shared wire owner. The deleted architecture suite no longer enforces import direction. | `ControlIdentity` | mcp/src/agents_remember/models/conversations/control_wire.py:59-79 |
 
 ## Cross-Repo References
 

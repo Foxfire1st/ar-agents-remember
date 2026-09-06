@@ -66,7 +66,6 @@ contract rather than forwarding native arguments.
 | --- | --- | --- |
 | The payload builders these forward to. | `grepai_search_payload`; `cgc_symbol_search_payload` | mcp/src/agents_remember/mcp/tools/providers.py:129-139; mcp/src/agents_remember/mcp/tools/providers.py:155-165 |
 | `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:108-108; mcp/src/agents_remember/application/provider_tools.py:123-123; mcp/src/agents_remember/application/provider_tools.py:142-142; mcp/src/agents_remember/application/provider_tools.py:151-151 |
-| Query/scope splitting proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
 
 ## Update History
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

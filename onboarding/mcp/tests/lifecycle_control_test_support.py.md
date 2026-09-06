@@ -66,7 +66,7 @@ The test file is direct evidence for the production boundary named above.
 | --- | --- | --- |
 | The selected scenarios and assertions implement this test unit's forcing proof. | `FIXTURE_GRADE_JUDGMENT` | mcp/tests/lifecycle_control_test_support.py:1-234 |
 | Completed-disposition task authority is built through the store and a fixed-now route review. | `publish_completed_disposition_task_authority`; `build_route_review` | mcp/tests/lifecycle_control_test_support.py:39-103; mcp/tests/lifecycle_control_test_support.py:87-93 |
-| The typed candidate ref derived for the leaf document. | `document_ref` | mcp/tests/lifecycle_control_test_support.py:85-86 |
+| Completed task authority derives the typed candidate reference inside the store-backed publication. | "def publish_completed_disposition_task_authority(" | mcp/tests/lifecycle_control_test_support.py:39-198 |
 
 ## Cross-Repo References
 

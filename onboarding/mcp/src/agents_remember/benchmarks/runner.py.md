@@ -53,7 +53,6 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | MCP benchmark tools import the facade as `benchmark_runner`. | "def skills_install_tool" | mcp/src/agents_remember/application/runtime/skills.py:13-13 |
-| Benchmark portability tests patch facade-level compatibility attributes. | `BenchmarkRunnerPortabilityTests` | mcp/tests/test_worktree_support_benchmark.py:32-665 |
 
 ## Cross-Repo References
 

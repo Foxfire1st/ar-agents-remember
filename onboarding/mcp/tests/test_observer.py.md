@@ -5,46 +5,67 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer.py`                     |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T11:15+02:00                           |
+| lastUpdated | 2026-09-06T21:46+00:00 |
 | lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
 | lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `../overview.md`                              |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_observer.py` covers the observer write-side substrate (slice 2a): ULID
-minting, the `ar-observer-event/v1` envelope, and the append-only `EventStore`.
+Observer append routing and exact event round-trip.
 
 ## Code Commentary
 
 ### Logic
 
-`UlidTests` assert a minted id is 26 Crockford chars, that a larger `now_ms`
-sorts lexicographically after a smaller one, and that 2,000 ids in one
-millisecond are unique. `EventEnvelopeTests` assert camelCase wire keys
-(`schema`/`lifecycleId`/`repoId`), a dump→`model_validate_json` round-trip,
-omission of `None` optionals, Literal rejection of bad `trust`/`actor`, and that
-`extra="forbid"` rejects unknown fields. `EventStoreTests` assert per-lifecycle
-vs workspace path routing, a store round-trip where a self-contained
-`lifecycle.started` replays from its log alone, and that reading an absent log is
-empty.
+Lifecycle-bound events append to their lifecycle log and lifecycleless events append to the workspace log. Reading the store returns the two emitted events with the original started event intact.
 
 ### Conventions
 
-The module inserts `mcp/src` on `sys.path` (the test-suite idiom) before
-importing `agents_remember.observer`. `EventStore` is exercised against a
-`tempfile.TemporaryDirectory`. Events are constructed with camelCase field names
-(`lifecycleId=`), matching the envelope.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-## Repo-Internal References
+### Invariants And Boundaries
+
+No retained standalone ULID or full envelope-validation matrix remains. Events are observations and claims whose authority is interpreted by consumers, not granted by append success.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The envelope under test. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
-| The id mint under test. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
-| The store under test. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Append routes per lifecycle. | `test_append_routes_per_lifecycle` | mcp/tests/test_observer.py:49-51 |
+| Workspace log for lifecycleless events. | `test_workspace_log_for_lifecycleless_events` | mcp/tests/test_observer.py:53-55 |
+| Round trip through store. | `test_round_trip_through_store` | mcp/tests/test_observer.py:57-72 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
 

@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `scripts/harness/render_starter.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
+| lastUpdated            | 2026-09-07T00:31+02:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
 | governingOverview      | `../../overview.md`                        |
@@ -82,9 +82,10 @@ byte-identical in every generated file.
 | The generator that slices, orders, and assembles these fragments. | `generated_files`, `render_starter_program` | scripts/sync-harness.py:522-548; scripts/sync-harness.py:576-621 |
 | The classification of which fragments are genuinely per-harness and why. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
 | The hook fragment library with the same contract. | `hook_specific_output`, `emit` | scripts/harness/session_start_hook.py:28-34; scripts/harness/session_start_hook.py:57-59 |
-| Tests that every declared fragment exists, every harness carries the shared body, and each generated program parses with one entry point. | `test_every_declared_fragment_exists_in_its_library`, `test_every_starter_carries_the_shared_body`, `test_generated_programs_parse_and_have_an_entry_point` | mcp/tests/test_sync_harness.py:57-65; mcp/tests/test_sync_harness.py:67-73; mcp/tests/test_sync_harness.py:75-87 |
 
 ## Update History
+
+- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
 
 - 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal generator, README, hook-library, and sync-test references; final scoped result 0 (checker-clean).
 

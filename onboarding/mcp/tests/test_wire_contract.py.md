@@ -5,63 +5,77 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_wire_contract.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Tests for the post-``model_dump`` mutation fitness function.
+Uses small Python programs to test the modeled wire-mutation detector. Dump-returning callees taint callers, assignment and copied dictionaries remain detectable, sanctioned model updates before dumping are accepted, and read-only use is not mutation. The source programs are detector input, not a repeated repository-wide census.
 
 ## Code Commentary
 
-#
+### Logic
 
-- 260731-EFA-L7 (trace delta): the wire-contract suite keeps its assertions; helpers carrying R10 pragmas were reconciled with the split families.
-## Logic
-
-Module-level surface:
-
-- `_wire` (function, lines 27-39) — What the rule reports for a single-module ``source``, as ``line [form]`` strings.
-- `PostDumpMutationTests` (class, lines 42-63) — The armed check. It runs in the ordinary suite, so it runs wherever the suite does.
-- `FunctionBoundaryTests` (class, lines 66-152) — Detect dump-derived values returned across a function boundary.
-- `WireSweepReachTests` (class, lines 155-247) — Every mutation and laundering form the rule claims to catch.
-- `WireSweepFalsePositiveTests` (class, lines 250-317) — Known-good constructs the package really contains. None of these may be reported.
-- `SanctionedOwnerTests` (class, lines 320-388) — The one permitted serve-time tail builder -- an owner, not an exception entry.
-- `OffenderReportTests` (class, lines 391-410) — L6-R15: the message names every offender and the fix, or the check is unusable.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_wire` (lines 27-39) — What the rule reports for a single-module ``source``, as ``line [form]`` strings.. | `_wire` | mcp/tests/test_wire_contract.py:27-39 |
-| Defines the class `PostDumpMutationTests` (lines 42-63) — The armed check. It runs in the ordinary suite, so it runs wherever the suite does.. | `PostDumpMutationTests` | mcp/tests/test_wire_contract.py:42-63 |
-| Defines the class `FunctionBoundaryTests` (lines 66-152) — Detect dump-derived values returned across a function boundary.. | `FunctionBoundaryTests` | mcp/tests/test_wire_contract.py:66-152 |
-| Defines the class `WireSweepReachTests` (lines 155-247) — Every mutation and laundering form the rule claims to catch.. | `WireSweepReachTests` | mcp/tests/test_wire_contract.py:155-247 |
-| Defines the class `WireSweepFalsePositiveTests` (lines 250-317) — Known-good constructs the package really contains. None of these may be reported.. | `WireSweepFalsePositiveTests` | mcp/tests/test_wire_contract.py:250-317 |
-| Defines the class `SanctionedOwnerTests` (lines 320-388) — The one permitted serve-time tail builder -- an owner, not an exception entry.. | `SanctionedOwnerTests` | mcp/tests/test_wire_contract.py:320-388 |
-| Defines the class `OffenderReportTests` (lines 391-410) — L6-R15: the message names every offender and the fix, or the check is unusable.. | `OffenderReportTests` | mcp/tests/test_wire_contract.py:391-410 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| A function returning a dump makes its callers taint sources | `test_a_function_returning_a_dump_makes_its_callers_taint_sources` | mcp/tests/test_wire_contract.py:39-49 |
+| A plain key assignment is caught | `test_a_plain_key_assignment_is_caught` | mcp/tests/test_wire_contract.py:55-57 |
+| A copy does not launder the dump | `test_a_copy_does_not_launder_the_dump` | mcp/tests/test_wire_contract.py:59-63 |
+| Setting fields on the model before the dump is the sanctioned pattern | `test_setting_fields_on_the_model_before_the_dump_is_the_sanctioned_pattern` | mcp/tests/test_wire_contract.py:69-78 |
+| Reading a dumped dict is not mutating it | `test_reading_a_dumped_dict_is_not_mutating_it` | mcp/tests/test_wire_contract.py:80-89 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-28T06:40+02:00 — No content impact: moved the wire-contract verification import into
   `agents_remember_test_support`; the wire-boundary assertions remain unchanged.

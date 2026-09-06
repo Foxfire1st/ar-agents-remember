@@ -77,7 +77,6 @@ The production helpers and focused recovery suite are the direct evidence for th
 | Finalization recovery proves exact clean heads, the ledger mapping, and memory ancestry without replaying mutation. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:61-76 |
 | Code recovery receives typed intent, proves clean HEAD and the accepted tree, then journals the code cell. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:170-226 |
 | External recovery receives the same intent, reconciles the exact memory and ledger edge, then journals the full tuple. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
-| The regression suite exercises the extracted proof owner directly for mismatch and reachability refusals. | `test_recovery_rejects_code_and_contract_memory_mismatches`; `test_recovery_rejects_unproven_memory_commits` | mcp/tests/test_worktree_closeout_recovery.py:309-342; mcp/tests/test_worktree_closeout_recovery.py:344-383 |
 
 ## Cross-Repo References
 
@@ -108,6 +107,9 @@ The current source seams include `MemoryCloseoutOutcome`, `prove_closeout_recove
 | The current module exposes `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`, `accepted_code_commit` at this ownership boundary. | `MemoryCloseoutOutcome`; `prove_closeout_recovery_commits`; `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:48-58; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:61-76; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:170-226 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-26T14:32+02:00 — Corrected closeout retry semantics for settings-only memory changes:
   exact current edges are reused, while a different historical same-code mapping causes a new

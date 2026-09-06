@@ -71,7 +71,7 @@ newest-result search.
 | The store publishes and loads exact SHA-256-addressed unit results. | `ContentAddressedSubresultStore`; `publish`; `load` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:31-119 |
 | Capacity and object-safety boundaries are enforced with typed refusals. | `_require_capacity`; `_read_regular_file` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:94-119; mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:129-143 |
 | Atomic writes come from the kernel-owned writer. | `atomic_write_bytes` | mcp/src/agents_remember/kernel/atomic_write.py:51-72 |
-| Store edges are proven by the focused suites. | `test_r07_subresult_store_is_exact_atomic_bounded_and_has_no_latest_lookup`; `test_r07_subresult_store_refuses_collision_readback_and_wrong_address`; `test_r07_subresult_store_refuses_nonregular_or_unreadable_objects` | mcp/tests/test_memory_incremental_scope_model_edges.py:385-415; mcp/tests/test_memory_incremental_scope_model_edges.py:1102-1137; mcp/tests/test_memory_incremental_scope_model_edges.py:1140-1154 |
+| The content-addressed store owns exact publish/load addressing and capacity checks; its source contract is the authority. | `ContentAddressedSubresultStore` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:31-119 |
 
 ## Cross-Repo References
 

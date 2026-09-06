@@ -5,112 +5,75 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_static.py`                 |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview      | `overview.md`                              |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-This module pins the static surface in **both** of its legitimate states: a built cockpit bundle,
-and an honest absence.
-
-It exists because the bundle left version control (master decision OQ6, 2026-07-31, leaf
-260731-EFA-L1). "No bundle" became a normal state for a source checkout rather than a broken
-install, and the assertions that used to prove serving worked read the committed bundle straight
-out of the repository — which now gives different verdicts before and after a frontend build. Every
-test here supplies its own stand-in tree and **never reads the repository's own bundle**, so the
-suite is deterministic in a fresh clone, in CI, and after `npm run build` alike.
+Serves controlled built-bundle and missing-bundle worlds. Entry HTML revalidates while assets retain their own cache policy; missing output returns 503 with the actual build command and no-store, while the API remains usable. A source checkout without a built bundle is an explicit supported state, not evidence of an installed UI.
 
 ## Code Commentary
 
 ### Logic
 
-`_bundle(root)` is the fixture: a minimal stand-in for what `dashboard/dist` puts on disk — an
-`index.html` with the SPA mount point plus one content-hashed asset.
-
-`DashboardStaticDirTests` patches `agents_remember.serving.static.resources.files` to a temp root
-and covers the resolver's two answers. The absent case is the load-bearing one:
-`importlib.resources` hands back a path that does not exist without complaint, so the test asserts
-`dashboard_static_dir()` converts that into `None` rather than raising or returning a phantom path.
-
-`MountedBundleTests._app(static_dir)` builds a FastAPI app with a `GET /api/state` route registered
-**before** `mount_static`, then patches `dashboard_static_dir` to the supplied value. Passing a
-directory exercises the served path; passing `None` exercises the absent path. What each test pins:
-
-- **Served bundle** — entry HTML returns 200 with `Cache-Control: no-cache`, while the hashed asset
-  keeps `StaticFiles`' own caching (explicitly *not* `no-cache`), so the revalidation rule is
-  proven to apply to HTML only.
-- **Missing bundle** — 503 (unavailable, not "not found"), `text/plain`, `Cache-Control: no-store`,
-  and a body containing `BUILD_COMMAND`; the module constant is itself asserted to contain
-  `npm --prefix dashboard run build`, so the remedy cannot silently become something else.
-- **Named location** — patching `_bundle_location` proves the body reports where the bundle was
-  expected, why it is missing ("not committed to the repository"), and what still works (`/api`).
-- **No fabricated cockpit** — the 503 body contains neither the SPA mount point nor any HTML, so a
-  placeholder cockpit cannot be reintroduced without failing here.
-- **API untouched** — `GET /api/state` still returns 200 behind the greedy mount.
-- **Method parity (regression)** — for `post`/`put`/`delete`/`patch` on `/api/state`, the
-  missing-bundle app and the built-bundle app must return the **same** status, and that status must
-  be 405. This is the regression that caught the mount at `/` outranking an API route which matched
-  the path but not the method: answering 503 there contradicted the body's own "the API is
-  unaffected" and made API method semantics depend on whether a build happened to be present.
-- **Greedy coverage** — a deep cockpit route (`/sessions/L1/inspector`) also answers 503, so the
-  set of paths that would have been served is exactly the set that now explains itself.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Determinism over realism: the suite patches the two seams (`resources.files` and
-`dashboard_static_dir`) instead of arranging real package data. `test_serving.py` owns the
-`create_app`-level version of the same two states; this module owns the deterministic unit-level
-proof, which is why `test_serving.py::StaticTests` may skip when no build is present and this
-module never does.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- No test may read the repository's real `package_data/dashboard`; a build must not change any
-  verdict here.
-- The absent state is asserted as `None` from the resolver and `503` from the mount — never as an
-  exception, a 404, or a fabricated page.
-- The absent-bundle mount's non-GET/HEAD behavior is asserted **by comparison** with the real
-  `StaticFiles` mount, not against a hard-coded expectation, so the two can never diverge silently.
-- `BUILD_COMMAND` is asserted as content of the response *and* as content of itself, so the remedy
-  named to operators stays a real command.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-No task-independent follow-up is recorded for this module.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-The resolved Domain Documentation registry (`system/sources.md`) has no entries. This
-repository-local serving contract is documented from source and this executable regression.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation found after checking the configured sources. | n/a | n/a |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The resolver's `None`-vs-directory contract and the two mount branches under test. | `dashboard_static_dir`; `mount_static` | mcp/src/agents_remember/serving/static.py:104-109; mcp/src/agents_remember/serving/static.py:112-129 |
-| The 503 body, `no-store` header, and GET/HEAD-only method contract under test. | `MissingDashboardBundle`; `BUILD_COMMAND` | mcp/src/agents_remember/serving/static.py:35-38; mcp/src/agents_remember/serving/static.py:53-91 |
-| The app-level counterpart covering both states through `create_app`. | `test_root_serves_dashboard_bundle`; `test_root_diagnoses_a_missing_bundle_instead_of_a_bare_404` | mcp/tests/test_serving.py:545-562; mcp/tests/test_serving.py:564-577 |
-| The release build step that produces the bundle these tests stand in for. | `sync`; `replace_tree` | scripts/sync-dashboard.py:120-135; scripts/sync-dashboard.py:138-159 |
+| Built bundle is served with revalidated html | `test_built_bundle_is_served_with_revalidated_html` | mcp/tests/test_static.py:50-59 |
+| Missing bundle answers 503 with the build command | `test_missing_bundle_answers_503_with_the_build_command` | mcp/tests/test_static.py:61-68 |
+| Missing bundle leaves the api alone | `test_missing_bundle_leaves_the_api_alone` | mcp/tests/test_static.py:70-72 |
 
 ## Cross-Repo References
 
-No sibling repository evidence is needed for this test module.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 4 citation rows to the static resolver, missing-bundle surface, app tests, and release sync; scoped citation fixing regenerated the source ranges.
 

@@ -185,9 +185,9 @@ provider stack is POSIX-hosted anyway.
 | CGC seed orchestration and bundle rewriting now live outside the facade. | `cgc_seed_bundle`, `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
 | Shared settings and command helpers live in the setup common module. | `run_command`, `LifecycleCommand`, `run_lifecycle` | mcp/src/agents_remember/providers/setup_common.py:109-146; mcp/src/agents_remember/providers/setup_common.py:159-172; mcp/src/agents_remember/providers/setup_common.py:175-218 |
 | Setup payload summaries and failed-phase compaction live in the setup reporting module. | `finalize_setup_payload` | mcp/src/agents_remember/providers/setup_reporting.py:45-66 |
-| Containment tests pin the fleet setup lock's contention timeout and uncontended no-op. | `FleetSetupLockTests` | mcp/tests/test_provider_containment.py:276-315 |
+
 | The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
-| Index-lifecycle tests pin the catch-up touch/stale/no-op paths and the metrics row. | `test_clean_delta_to_ready_watcher_is_caught_up`, `test_watcher_not_ready_means_no_touch_and_honest_staleness`, `test_no_divergence_or_dry_run_is_a_noop` | mcp/tests/test_provider_index_lifecycle.py:192-207; mcp/tests/test_provider_index_lifecycle.py:209-233; mcp/tests/test_provider_index_lifecycle.py:277-289 |
+
 
 ## Update History
 

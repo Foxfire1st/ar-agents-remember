@@ -86,8 +86,8 @@ reader. Focused tests pin every probe, continuation, cycle, fallback, and capaci
 | --- | --- | --- |
 | The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect. | `CodexAppServerAdapter` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
 | The protocol defines the separate 128 MiB emergency payload fuse before decoding. | `CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:27-27 |
-| Unit regressions cover items-first/turns fallback, linear one-shot walks, cycle termination, exact fallback, aggregate legacy refusal, eviction, and typed IPC survival. | `test_bounded_items_are_probed_and_opaque_cursor_consumes_each_source_page_once`; `test_turns_list_is_used_when_bounded_items_method_is_unavailable`; `test_turns_full_continuation_requests_and_decodes_each_source_turn_once`; `test_two_cursor_cycle_terminates_typed_without_re_requesting_a_source_page`; `test_legacy_whole_thread_read_requires_both_bounded_methods_to_be_unavailable`; `test_legacy_complete_response_aggregate_over_ceiling_is_typed`; `test_evicted_legacy_continuation_expires_without_refetch`; `test_native_history_limit_outcome_survives_both_control_ipc_clients` | mcp/tests/test_codex_native_history.py:134-166; mcp/tests/test_codex_native_history.py:169-202; mcp/tests/test_codex_native_history.py:205-252; mcp/tests/test_codex_native_history.py:350-384; mcp/tests/test_codex_native_history.py:387-419; mcp/tests/test_codex_native_history.py:422-451; mcp/tests/test_codex_native_history.py:487-531; mcp/tests/test_codex_native_history.py:572-589 |
-| The production regression crosses measured-size stdio, runtime probe, adapter, Unix IPC, and selected-child projection. | `test_measured_history_crosses_transport_probe_ipc_and_selected_projection` | mcp/tests/test_codex_history_production_path.py:281-365 |
+
+
 
 ## Cross-Repo References
 

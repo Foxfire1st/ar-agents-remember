@@ -64,6 +64,15 @@ All models forbid extra fields. The input union is discriminated by `kind`; publ
 
 None.
 
+### CCR private preparation boundary
+
+Preparation is meaningful operation state and belongs only to the exact closeout operation key/generation with certification authority. Cancellation evidence must bind every selected preparation intent digest as well as prove this generation’s worker exit. Retained private work is separate from approval consumption and published mutation evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `_require_altitude_authority` boundary implements the preparation contract above. | "def _require_altitude_authority" | mcp/src/agents_remember/models/lifecycles/operation.py:594-635 |
+| The current `_require_cancellation_evidence` boundary implements the preparation contract above. | "def _require_cancellation_evidence" | mcp/src/agents_remember/models/lifecycles/operation.py:910-928 |
+
 ## Docs References
 
 No external Domain Documentation source is configured for these internal wire models.
@@ -176,6 +185,9 @@ The operation record separately retains private preparation state. Original comm
 | `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | `mcp/src/agents_remember/models/lifecycles/operation.py:989-1024` |
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 ### 2026-09-06T17:13:06+00:00 — L34 implementation memory
 

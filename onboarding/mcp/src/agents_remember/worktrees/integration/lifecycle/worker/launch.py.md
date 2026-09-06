@@ -38,6 +38,14 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
+### CCR private preparation boundary
+
+A failed worker launch preserves a closeout generation with retained private preparation as `input-required` and uses the exact recovery phase. Its next action is recovery, not replacement/retry of a fresh generation; the private-preparation phase does not imply consumed approval.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `launch_or_fail` boundary implements the preparation contract above. | "def launch_or_fail" | mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py:26-83 |
+
 ## Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
@@ -55,6 +63,9 @@ The source file is the direct evidence for this file-specific ownership boundary
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
 

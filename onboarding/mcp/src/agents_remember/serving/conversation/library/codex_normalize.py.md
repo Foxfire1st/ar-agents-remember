@@ -68,7 +68,7 @@ on fake native payloads; the shared primitives module owns the capping/extractio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Codex reads normalize items with ordinals, windows, roles, blocks, and provenance through the strict contract validators. | `CodexLibraryTests` | mcp/tests/test_conversation_library_ports.py:221-410 |
+| Native Codex thread turns are flattened into chronological ConversationItem ordinals by the normalization owner. | `conversation_items_from_thread` | mcp/src/agents_remember/serving/conversation/library/codex_normalize.py:42-61 |
 | Shared capping, provenance, and text-extraction primitives this parser builds on. | `capped_text`, `native_provenance`, `text_content_parts` | mcp/src/agents_remember/serving/conversation/library/normalize_common.py:18-23; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:26-31; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:51-56 |
 | The normalized item/block/provenance grammar this parser targets. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/models/conversations/content.py:160-160 |
 

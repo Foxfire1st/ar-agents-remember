@@ -5,102 +5,72 @@
 | repository | agents-remember |
 | path | `mcp/tests/conftest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastUpdated | 2026-09-06T21:51:32+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP test overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Defines only the certifying pytest composition: pin the candidate checkout, require Dagger
-admission, activate the reusable hermetic environment, declare the test process, then load the
-certifying-only plugin, which in turn loads the shared route-neutral plugin. Ordinary raw host
-pytest refuses. Candidate A's former direct entrypoint was deleted, so no supported Python route
-avoids this certifying composition from the host.
+Composes ordinary isolated pytest and an explicit Dagger-only certification option. Default host unit/integration development is supported without pretending to be a lifecycle worker, MCP process or certifying executor.
 
 ## Code Commentary
 
 ### Logic
 
-Before the first production import, the module derives `REPOSITORY_ROOT` and puts that candidate's
-`mcp/src` first on `sys.path`. Because this happens before any `agents_remember` import, an
-editable-install path cannot make the certifying process validate one checkout and collect another.
+The candidate’s source and test-support roots are placed first on `sys.path`. Existing hermetic
+bootstrap installs the actual pytest-process environment. A disposable HOME/XDG/CODEX tree and
+isolated Git configuration prevent fixture subprocesses from inheriting the developer’s setup;
+live opt-ins, spawn identity and credential variables are scrubbed before tests import product code.
 
-`prepare_certifying_pytest_bootstrap` translates admission/bootstrap failures into
-`pytest.UsageError` before plugin loading or collection. The resulting `CERTIFYING_BOOTSTRAP`
-contains the private admission capability and candidate process. `activate_current_pytest_environment`
-scrubs Git repository selectors and installs the disposable Git identity plus candidate
-`PYTHONPATH` in the current process; its lease records the prior values for exact restoration.
-`begin_pytest_process` declares test mode before the plugins are imported.
+The lane manifest is read once into an integration-file set. Default `not integration` collection
+skips those files before importing them; collected integration members receive their marker.
+`pytest_collection_finish` counts selected parametrized items directly and raises UsageError for
+invalid or exceeded budgets. Pyproject supplies the operative 1000 unit/150 integration values;
+the parser’s standalone integration fallback is 100, so it must not be mistaken for repository policy.
 
-The root `pytest_plugins` tuple loads
-`agents_remember_test_support.testing.pytest_certifying_bootstrap`. That certifying-only plugin binds worktree
-services and declares `agents_remember_test_support.testing.pytest_bootstrap` as its own plugin. The shared
-plugin then owns:
-
-- route-neutral cache isolation;
-- deterministic random-order hooks;
-- per-test owned-state restoration and leak failure; and
-- test-process cleanup.
-
-At unconfigure, root composition closes the environment lease and restores the caller's exact
-prior values. Shared-plugin cleanup ends test-process state; certifying fixtures reset bound
-worktree services.
-
-### Conventions
-
-Root conftest is composition, not an implementation bucket. Admission lives in
-`testing.dagger_admission`; candidate isolation in `testing.hermetic_bootstrap`; shared hooks in
-`testing.pytest_bootstrap`; service fixtures in `testing.pytest_certifying_bootstrap`; and owned
-state/randomization in their own testing modules.
+`--certify` explicitly requests genuine Dagger admission and then imports the certifying service
+plugin. Ordinary integration tests bind/reset worktree services through their fixture; units request
+that fixture only when necessary. Shared bootstrap owns test-state restoration. Unconfigure restores
+the prior environment and removes the disposable tree.
 
 ### Invariants And Boundaries
 
-- Candidate path pinning precedes every production import.
-- Dagger admission precedes candidate planning, plugin loading, collection, execution, and artifact
-  publication.
-- Missing/malformed/mismatched admission is a certifying refusal, never a diagnostic route selector.
-- No host Python diagnostic route or compatibility import bypasses this conftest.
-- Git repository selectors and developer identity do not leak into fixture subprocesses.
-- Environment and owned globals restore on every pytest exit path.
-- No compatibility import of `code_quality.dagger_environment`, `_global_state`, or `_random_order`
-  remains.
-
-### Todos
-
-None.
+- Direct host pytest is development feedback; it does not mint a certificate.
+- Missing Dagger authority refuses `--certify`; no fake capability or role identity is supplied.
+- Budget enforcement counts the selected population without a nested collection or source census.
+- Unit collection avoids unnecessary application composition and integration imports.
+- Explicit environment/global restoration and cleanup remain mandatory.
 
 ## Docs References
 
-Repository-local design is explained in `docs/design/python-pytest-bootstrap.md`; no external domain
-documentation defines this boundary.
+No external Domain Documentation source is configured; these are repository-owned implementation facts.
 
 ## Repo-Internal References
 
+The exact source declarations below establish the current behavior; this inventory is not execution evidence.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Candidate pinning precedes the first production import. | `REPOSITORY_ROOT`; `MCP_SRC` | mcp/tests/conftest.py:13-14 |
-| Certifying composition translates failures before plugin loading. | `prepare_certifying_pytest_bootstrap`; `CERTIFYING_BOOTSTRAP` | mcp/tests/conftest.py:34-40; mcp/tests/conftest.py:43-43 |
-| Only the certifying service plugin is loaded from root composition. | `pytest_plugins` | mcp/tests/conftest.py:53-53 |
-| Current-process environment is restored at unconfigure. | `pytest_unconfigure` | mcp/tests/conftest.py:54-56 |
-| Shared hooks own order, cache, state restoration, and process cleanup. | `reject_owned_global_state_leaks`; `pytest_collection_modifyitems`; `pytest_unconfigure` | mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:22-24; mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:41-44; mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:60-70 |
+| Candidate paths and disposable scrubbed environment | `REPOSITORY_ROOT` | mcp/tests/conftest.py:15-68 |
+| Budget config and explicit certification option | `pytest_addoption` | mcp/tests/conftest.py:72-81 |
+| Single lane read and genuine certification admission | `pytest_configure` | mcp/tests/conftest.py:84-107 |
+| Skip integration imports for default units | `pytest_ignore_collect` | mcp/tests/conftest.py:110-117 |
+| Selected item budgets and explicit tradeoff refusal | `pytest_collection_finish` | mcp/tests/conftest.py:127-138 |
+| Explicit bind/reset application composition | `worktree_services` | mcp/tests/conftest.py:151-163 |
+| Restore environment and remove temporary root | `pytest_unconfigure` | mcp/tests/conftest.py:166-170 |
 
 ## Cross-Repo References
 
-No sibling repository supplies or overrides pytest admission/bootstrap.
+No separate cross-repository authority is established by this file.
 
-
-## PDLS Reconciliation
-
-The certifying plugin path now targets the root `agents_remember_test_support.pytest_certifying_bootstrap`, avoiding execution of the testing package initializer before admission/bootstrap composition.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
 ## Update History
+
+- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-08-28T11:32+02:00 — No content impact: shortened a stale explanatory comment; collection,
   lane classification, and Dagger admission behavior are unchanged.

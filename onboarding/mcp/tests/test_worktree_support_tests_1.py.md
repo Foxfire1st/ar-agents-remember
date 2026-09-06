@@ -5,72 +5,73 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_worktree_support_tests_1.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview      | `overview.md`                                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_worktree_support_tests_1.py`'s source module; covers the behaviours named by its test classes.
-
-
-CCR-R22@v1 (L22, commit `685f83c44055`): the closeout-mechanics fixture now builds args via
-`closeout_args(contract, dry_run=True)` (which carries `certification_profile`) instead of a
-bare Namespace.
+Exercises master start and abandon while preserving the parent series. Its fixture uses actual task/worktree setup and compares the parent after cleanup; the card no longer attributes unrelated split-family closeout tests to this one retained method.
 
 ## Code Commentary
 
-- `WorktreeSupport1`
+### Logic
 
-## Invariants And Boundaries
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_worktree_support_tests_1.py`.
-- Canonical ledger round-trip/history forcing now lives in the dedicated
-  `mcp/tests/test_memory_ledger.py` unit; this legacy support split no longer duplicates it.
+### Conventions
 
-## Repo-Internal References
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+
+### Invariants And Boundaries
+
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| No external domain claim is required. | N/A | N/A |
 
-## L23 No Standalone Build Regression
+## Repo-Internal References
 
-The former standalone-light-task case now asserts fail-closed behavior when no
-master lineage exists: return code 2, blocked state, projected lineage evidence,
-and no leaf enclosure created. Tiny work still uses a leaf under a master.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
-## L23 Final Candidate Disposition
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Master start and abandon preserve parent series | `test_master_start_and_abandon_preserve_parent_series` | mcp/tests/test_worktree_support_tests_1.py:23-148 |
 
-This support split exercises canonical start/status and durable-operation observation. Repeated calls
-address the task and observe the accepted operation; they do not select a private job or process.
+## Cross-Repo References
 
-## 260815-DAG-L4 Integration-Authority Forcing
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
-
-## 260821-CLIVE-L1 Support Fixture Migration
-
-Affected worktree-support cases now consume the shared normalized closeout arguments. Their lifecycle behavior remains unchanged; the migration removes test-only blank message defaults below validation.
-
-
-## PDLS Reconciliation
-
-The first worktree support suite was updated for the current enclosure, journal, projection, and recovery shapes while retaining its public scenarios.
-
-The test continues to exercise production-owned behavior. No diagnostic result is treated as
-certifying evidence and no fallback or threshold exception was introduced.
-## MCAR-L03 Preview Pair
-
-The real dry-run closeout preview now asserts the reported pair names the exact contract, code
-worktree, and memory worktree while preserving the non-mutating commit plan.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the closeout_args switch in worktree support tests 1.
 
 

@@ -206,7 +206,7 @@ and the ambient lifecycle / phase definitions.
 | `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
 | `amb.current` — the live `LifecycleState` resolved at the edge. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
 | `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). | `LifecycleState`; "LiveState = Literal["; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:20-20; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
-| Engine tests. | `test_tool_payload_attaches_next_step_and_lifecycle_start_emits_rundown`, `test_advertised_token_count_covers_the_attached_next_step` | mcp/tests/test_next_step.py:298-303; mcp/tests/test_next_step.py:305-317 |
+| The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
 
 As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly
 (`l-01-agent-lifecycles` `roles/architect.md`); the rundown's flow semantics are unchanged — the

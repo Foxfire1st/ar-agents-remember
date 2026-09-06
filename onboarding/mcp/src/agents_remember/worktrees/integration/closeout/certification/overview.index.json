@@ -76,6 +76,7 @@
       "route-local-overview",
       "c69d5171187fa1957025e393270db9f5a864ab14",
       "/overview.md",
+      "PreparedCloseoutContinuation",
       "prepare_closeout_certification",
       "initial_certification_state",
       "validate_selected_currentness",
@@ -86,6 +87,9 @@
       "execute_selected_closeout",
       "require_retained_output_currentness",
       "build_default_worktree_services",
+      "_refresh_selected_recovery",
+      "245057ab16e19afdaabd5c188c9576b22e0c0870",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py",
@@ -96,13 +100,11 @@
       "agents_remember",
       "doc_type",
       "lastUpdated",
-      "T14",
+      "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T16",
-      "governingOverview",
-      "init__",
-      "worktree_services"
+      "governingOverview"
     ]
   },
   "fallback": {

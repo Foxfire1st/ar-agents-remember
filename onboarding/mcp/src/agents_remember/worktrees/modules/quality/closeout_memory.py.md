@@ -77,7 +77,8 @@ No external Domain Documentation source is configured for this repository-local 
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
 | Closeout invokes memory preflight only after the required code gate is green; the helper checks the accepted memory pair and attaches its curator evidence. | `_closeout_quality_preflight`; `_memory_quality_before_refresh` | mcp/src/agents_remember/worktrees/modules/closeout.py:800-839; mcp/src/agents_remember/worktrees/modules/closeout.py:648-665 |
 | The sole external-phase owner runs memory refresh and returns its combined gate result. | "def external_closeout_commits("; "memory_quality = combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-112; mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-160 |
-| The injected bundle exposes the memory-quality protocol and its check-group vocabulary; the separate optional certification-memory-rails port does not replace this adapter's run_check path. | `MemoryQualityPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:100-116; mcp/src/agents_remember/worktrees/services.py:119-124 |
+| The memory-quality port declares drift context, check groups and quality execution. | "class MemoryQualityPort" | mcp/src/agents_remember/worktrees/services.py:111-128 |
+| The injected service bundle keeps memory quality and certification continuation as distinct ports. | "class WorktreeServices" | mcp/src/agents_remember/worktrees/services.py:145-151 |
 
 ## Cross-Repo References
 

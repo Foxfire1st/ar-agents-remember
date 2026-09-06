@@ -38,6 +38,17 @@ Module-level surface:
 - `_reverse_serving_violations` (function, lines 178-214)
 - `application_boundary_violations` (function, lines 217-228) — Return every MCP transport bypass and reverse serving edge in stable source order.
 
+MCP transport modules must enter the application layer instead of importing higher domain owners
+directly. The layer declaration also supplies the permitted lower packages. The reverse check
+prevents serving modules from importing application or MCP transport. Static absolute and relative
+imports are inspected throughout the AST, including TYPE_CHECKING blocks; dynamic imports are
+outside this static check. Missing or empty required source trees refuse instead of making the
+check vacuously pass.
+
+cit:([`_permitted`], mcp/test_support/agents_remember_test_support/code_quality/application_boundary.py:110-114)
+cit:([`_transport_violations`], mcp/test_support/agents_remember_test_support/code_quality/application_boundary.py:150-175)
+cit:([`_reverse_serving_violations`], mcp/test_support/agents_remember_test_support/code_quality/application_boundary.py:178-214)
+
 ### Conventions
 
 Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.

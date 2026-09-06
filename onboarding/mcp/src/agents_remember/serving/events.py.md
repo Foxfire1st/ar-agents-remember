@@ -144,7 +144,7 @@ claims are proven by repository source and tests.
 | The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
 | `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
-| Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | `RawEventTests` | mcp/tests/test_serving_raw_events.py:23-389 |
+
 
 ## Cross-Repo References
 

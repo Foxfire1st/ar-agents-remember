@@ -5,102 +5,77 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-09T06:48+02:00|
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                    |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                            |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-The multi-tick relay simulation suite for 260713-TES-L2: incident-#1 proof (a worker finishes
-without posting an inbox row and its manager still receives the done signal), busy-manager
-boundary hold with exactly one landing (including past the escalation SLA and backoff floor),
-origin attribution, owner rebinding, idle-flap re-arm, non-reaction residue, dedupe, and
-boundary drain.
+Simulates multiple relay ticks to preserve the finished-worker signal even without an inbox row, revalidate topology and landed episodes before non-reaction actions, hold a busy manager at the boundary then land once, rebind a replaced owner, and avoid done signals for killed or hung seats. Injected delivery and clock boundaries make these relay assertions deterministic.
 
 ## Code Commentary
 
 ### Logic
 
-L6 makes the completed/interrupted and non-reaction matrices role-neutral across manager-owned
-subordinates and adds evaluate→mutate→act races. Reparent, leaf/master movement, working re-entry,
-termination, terminal-evidence replacement, retargeted/consumed landed rows, malformed values, and
-missing truth must all return `skipped` with no row or marker. The final residual regression mutates
-`adapterAcceptedAt` to a valid ISO string without timezone; it proves the action rejects it without
-raising or aborting the sweep.
-
-`StateSignalRelayTests` cit:([`StateSignalRelayTests`], mcp/tests/test_state_signal_relay.py:127-742) drives `run_agent_notifier_sweep` over fake catalog/inbox
-seams across simulated ticks:
-
-- `test_incident_1_finished_worker_without_inbox_row_still_signals_manager` cit:([`test_incident_1_finished_worker_without_inbox_row_still_signals_manager`], mcp/tests/test_state_signal_relay.py:281-304):
-  catalog row only (`turn-ended`/`completed`/`terminal_evidence_id=turn-9`), one sweep emits
-  exactly one durable `state-signal` to the owning manager; re-projection emits none.
-- `test_busy_manager_holds_at_boundary_then_lands_exactly_once` cit:([`test_busy_manager_holds_at_boundary_then_lands_exactly_once`], mcp/tests/test_state_signal_relay.py:616-682): a working manager
-  holds on the durable schedule; t+301s and t+901s (the F1 regression ticks) still produce zero
-  adapter submissions and rung 0; the boundary then drains and lands exactly once.
-- Origin cases cit:([`test_interrupted_signal_carries_developer_origin`, `test_interrupted_signal_with_unknown_origin`], mcp/tests/test_state_signal_relay.py:684-698; mcp/tests/test_state_signal_relay.py:700-712): developer-stamped vs unknown; dedupe per seat+turn cit:([`test_dedupe_keys_per_seat_and_turn`], mcp/tests/test_state_signal_relay.py:306-318);
-  owner rebinding after manager replacement cit:([`test_owner_rebinding_after_manager_replacement`], mcp/tests/test_state_signal_relay.py:714-731) — the fixture keeps the
-  replacement manager `turn_state="working"` since 260713-TES-L3 so the test isolates the L2
-  rebinding behavior it owns (a turn-ended manager + idle worker would additionally fire the
-  new compound-idle fact); idle flap re-arm cit:([`test_idle_flap_rearms_for_a_new_turn`], mcp/tests/test_state_signal_relay.py:733-772);
-  non-reaction residue + dedupe cit:([`test_non_reaction_residue_relays_distinct_fact`, `test_non_reaction_dedupe_marker_suppresses_repeat`], mcp/tests/test_state_signal_relay.py:774-815; mcp/tests/test_state_signal_relay.py:817-858) — the landed-row
-  fixtures now carry the formal `state="landed"` (N13/N16); no done signal for killed/hung/failed/unknown cit:([`test_no_done_signal_for_killed_or_hung_seats`], mcp/tests/test_state_signal_relay.py:860-878); re-fire renews the same row cit:([`test_repeat_fire_renews_the_same_row`], mcp/tests/test_state_signal_relay.py:894-913); scope exclusions cit:([`test_non_reaction_ignores_young_and_malformed_rows`], mcp/tests/test_state_signal_relay.py:915-957); boundary drain skip/fresh-boundary rules and ordinary-row drain cit:([`test_boundary_drain_skips_rows_without_a_fresh_boundary`, `test_boundary_drain_pushes_other_pending_rows_for_the_seat`], mcp/tests/test_state_signal_relay.py:959-1052; mcp/tests/test_state_signal_relay.py:1054-1110); no-sweep store-fold post cit:([`test_post_owner_signal_without_sweep_reads_the_store_fold`], mcp/tests/test_state_signal_relay.py:1112-1131).
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Simulation harness style: one `_ctx()` per test, injected clocks, `sweep.remember` folds kept
-consistent with the store so re-projection behaves like production.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Exactly one durable row per seat+turn; re-fire renews, never duplicates.
-- A boundary-held signal must not climb the ladder or hit the wire while its manager is
-  running (F1).
-- Non-reaction facts cover worker→manager and, since 260713-TES-L3, manager→orchestrator —
-  one per landed-row episode (this suite's residue cases are worker-scope; the manager-scope
-  cases live in `test_compound_idle_relay.py`).
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation entries are configured in the resolved `system/sources.md`.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external/domain document defines these relays; the suite is the incident-#1 proof. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:127-742 |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
-The suite exercises `serving/state_signals.py`, `serving/_agent_notifier_actions.py`,
-`serving/_agent_notifier_evaluation.py`, and `controlplane/operator_inbox_records.py`.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The predicates under test. | `evaluate_state_signal_findings`; `evaluate_non_reaction_findings`; `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:198-206; mcp/src/agents_remember/serving/state_signals.py:285-304; mcp/src/agents_remember/serving/state_signals.py:439-481 |
-| The actions under test. | `_emit_state_signal`; `_emit_non_reaction`; `_drain_boundary` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:452-514; mcp/src/agents_remember/serving/_agent_notifier_actions.py:584-655; mcp/src/agents_remember/serving/_agent_notifier_actions.py:658-667 |
-| Landed terminality the suite asserts stays unreachable mid-turn. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:28-36 |
+| Incident 1 finished worker without inbox row still signals manager | `test_incident_1_finished_worker_without_inbox_row_still_signals_manager` | mcp/tests/test_state_signal_relay.py:259-282 |
+| Non reaction action revalidates current topology and landed episode | `test_non_reaction_action_revalidates_current_topology_and_landed_episode` | mcp/tests/test_state_signal_relay.py:284-344 |
+| Busy manager holds at boundary then lands exactly once | `test_busy_manager_holds_at_boundary_then_lands_exactly_once` | mcp/tests/test_state_signal_relay.py:346-412 |
+| Owner rebinding after manager replacement | `test_owner_rebinding_after_manager_replacement` | mcp/tests/test_state_signal_relay.py:414-431 |
+| No done signal for killed or hung seats | `test_no_done_signal_for_killed_or_hung_seats` | mcp/tests/test_state_signal_relay.py:433-451 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repo boundary participates in this suite. | — | — |
-
-## 260713-TES-L5 Current Delta — Nudge Store Gone From Harness
-
-`StateSignalRelayTests` drops `OrchestrationNudgeStore` from the sweep context; the relay
-fixtures and formal `state="landed"` assertions are unchanged.
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 semantic re-read: retained the state-signal, non-reaction, and
   boundary-drain predicate claim after verifying each current implementation contains ambiguity

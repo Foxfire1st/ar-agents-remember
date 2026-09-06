@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/_quality_admission.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:23+02:00 |
+| lastUpdated | 2026-09-06T21:51:23+00:00 |
 | lastVerifiedCommitHash | `b99501852bcfa5f499a25e7183063751f6133a28` |
 | lastVerifiedCommitDate | 2026-08-24T21:21:58+02:00 |
 | governingOverview | `overview.md` |
@@ -16,25 +16,24 @@
 
 ## Purpose
 
-Exposes the already-validated certifying admission capability from root conftest to Dagger-suite
-tests that exercise quality planning APIs directly.
+Provides modeled admission input for quality-plan tests using injected runners.
 
 ## Code Commentary
 
-`QUALITY_TEST_ADMISSION` aliases `CERTIFYING_BOOTSTRAP.admission`; it does not fabricate a token or
-re-run admission. Imports therefore fail before collection outside the certifying route.
+The helper creates a temporary nonce file and calls `require_dagger_admission` with an explicit local environment mapping and attestation path. `QUALITY_TEST_ADMISSION` is a modeled input to these tests. It does not import a global certifying bootstrap, modify the process environment, or change the real Dagger attestation path.
 
 ## Invariants And Boundaries
 
-- This helper is Dagger-suite-only and cannot authorize host diagnostics.
-- Tests pass the real capability into APIs whose type contract requires it.
+Real delivery obtains its capability through the executor handshake. This fixture does not declare a daemon identity or certify host test execution. Its temporary file is cleaned after constructing the input.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The helper only aliases the conftest composition. | `QUALITY_TEST_ADMISSION` | mcp/tests/_quality_admission.py:5-5 |
+| Explicit modeled input with no process-environment mutation. | `QUALITY_TEST_ADMISSION` | mcp/tests/_quality_admission.py:1-21 |
 
 ## Update History
+
+- 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
 
 - 2026-08-24T21:23+02:00 — Created for 260824-PDLS.

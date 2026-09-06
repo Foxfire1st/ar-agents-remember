@@ -43,6 +43,14 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
+### CCR private preparation boundary
+
+Cancellation of retained private preparation first reopens the contract and verifies the preparation’s unchanged logical refs. Those per-intent facts are returned even when no Git mutation evidence exists, and are combined with mutation reconciliation when it does. Absence of published Git mutation is not enough to discard private preparation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current `_cancellable_closeout_facts` boundary implements the preparation contract above. | "def _cancellable_closeout_facts" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py:126-189 |
+
 ## Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
@@ -60,6 +68,9 @@ The source file is the direct evidence for this file-specific ownership boundary
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+
+- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+
 
 - 2026-08-29T10:09+02:00 — Separated protected Git output identity from staged/repaired candidate
   identity so an output-free failed gate can be cancelled without discarding its successor; retained

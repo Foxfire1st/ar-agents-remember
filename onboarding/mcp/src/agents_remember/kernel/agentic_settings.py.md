@@ -50,7 +50,7 @@ the parser never derives a model/effort paste command from them.
 
 #
 
-- 260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the full base surface (public + private patch targets) is re-exported and pinned by `mcp/tests/test_facade_surface.py`.
+- 260731-EFA-L7 (historical trace): settings responsibilities were split into sibling modules and the then-existing facade suite pinned exports. That suite has since been retired. The current loader is `load_agentic_settings`; this historical record does not establish current export coverage.
 
 ### 260731-EFA-L17/L24 — Optional Quality-Gate Memory Cap
 

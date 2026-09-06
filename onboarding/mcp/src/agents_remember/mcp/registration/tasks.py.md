@@ -96,7 +96,6 @@ recreates everything.
 | The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:19-30; mcp/src/agents_remember/mcp/tools/task_doc.py:33-46 |
 | The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
 | `FinalizeTaskDocs`. | "class FinalizeTaskDocs:" | mcp/src/agents_remember/application/worktree_tool_requests.py:120-120 |
-| Target/edit splitting and the unset-edit read proved through a live server. | `test_task_doc_splits_the_document_target_from_the_edit`, `test_task_doc_leaves_every_edit_slot_unset_for_a_read` | mcp/tests/test_mcp_registration_wiring_tests_2.py:257-294; mcp/tests/test_mcp_registration_wiring_tests_2.py:296-307 |
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
 

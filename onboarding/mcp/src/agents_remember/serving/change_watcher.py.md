@@ -178,7 +178,7 @@ the CLI/daemon own the `--heartbeat` knob's plumbing.
 | Projector wiring and fail-open watcher completion retain actual ownership. | `ProjectionRefreshers`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:262-273 |
 | The live-input model selects actual watcher participation. | `LiveProjectionInputs` | mcp/src/agents_remember/serving/_app_common.py:394-416 |
 | Dashboard reload entry carries the pacing configuration. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:64-94 |
-| Focused root/filter/domain/pacer and real-backend coverage. | `ProjectionInputRootsTests`; `InputEventFilterTests`; `ProjectionDomainMappingTests`; `ChangePacerDeadlineTests`; `AdaptiveProjectorTests`; `RealWatchfilesIntegrationTests` | mcp/tests/test_change_watcher.py:50-97; mcp/tests/test_change_watcher.py:100-141; mcp/tests/test_change_watcher.py:144-172; mcp/tests/test_change_watcher.py:175-223; mcp/tests/test_change_watcher.py:254-441; mcp/tests/test_change_watcher.py:444-485 |
+
 | Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
 | Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
 | Runtime dependency is explicitly version bounded. | "watchfiles>=1.1,<2" | mcp/pyproject.toml:28-28 |

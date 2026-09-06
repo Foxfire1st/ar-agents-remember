@@ -88,7 +88,7 @@ No external documentation is needed for this package-local resolver flow.
 | --- | --- | --- |
 | Data models and missing-memory errors are defined separately. | `CoordinationHints` | mcp/src/agents_remember/kernel/coordination_context/models.py:93-106 |
 | Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules. | `# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules` | onboarding/mcp/src/agents_remember/kernel/coordination_context/overview.md:1-131 |
-| Resolver parity and worktree support tests cover the output contract and worktree-aware path behavior. | `test_parent_task_disambiguates_nested_task_roots`, `test_resolver_prefers_task_name_over_worktree_name` | mcp/tests/test_resolver_parity.py:155-210; mcp/tests/test_worktree_support_tests_1.py:498-525 |
+| Context construction owns resolved task/worktree/memory roots and ledger selection. | `build_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-328 |
 
 ## Cross-Repo References
 

@@ -5,7 +5,7 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_actions.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-25T23:19+02:00 |
+| lastUpdated | 2026-09-06T22:11:05+00:00 |
 | lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
 | lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                          |
@@ -20,6 +20,8 @@ Applies one evaluated agent-notifier finding through durable inbox transitions, 
 rebinding, shared delivery, and observer evidence.
 
 ## Code Commentary
+
+Expiry batching first requires a source id and a still-pending row. Rebind expiry resolves the current structural owner and refuses a missing task address; a changed owner returns to ordinary re-evaluation rather than expiring the stale recipient. Seat/routing ambiguity is caught per finding before transition batching, so unrelated expiries and their ordered results continue. The ordinary pending-TTL expiry retains its own direct terminal transition. cit:([`act_on_findings`, `_prepare_known_expiry`, `_prepare_pending_expiry`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:722-849).
 
 L23 batches independent inbox expiry transitions through one durable `transition_many` write while preserving per-finding order, event emission, readdressing, and skip results.
 
@@ -69,6 +71,9 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-06T22:11:05+00:00 — Preserved current source-verified notifier/reclamation semantics from retired test cards; historical claims are not active coverage and verification pins are unchanged.
+
 
 - 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
 

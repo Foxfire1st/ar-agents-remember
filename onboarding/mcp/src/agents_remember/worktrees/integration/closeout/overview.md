@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -89,7 +89,15 @@ fallback.
 
 [Preparation](preparation/overview.md) now owns selected private C/M/L creation, genuine existing-output reuse, physical code views and prepared-memory result currentness. [preparation_selection.py](preparation_selection.py.md) retains original objects and command outcomes through canonical journal CAS. Final memory evidence comes from the registered prepared-memory producer; private output selection alone is not ref publication or approval.
 
+
+## Integrated IAS Recovery Contract
+
+Preparation selection requires the exact four original code certificates and, for memory legs, the selected fifth certificate. Prepared finalization recovery is attempted before fresh original-head admission so the original generation can finish C/M/L publication after its owned refs advance. This is recovery of retained outputs, not permission to rerun commands or certify a changed candidate.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 ### 2026-09-06T17:13:06+00:00 — L34 implementation memory
 

@@ -72,13 +72,15 @@ No Domain Documentation sources are configured for this repository-internal join
 | The disk-backed join tolerates missing or invalid master documents and delegates to the same owner. | `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
 | Mermaid and observer consumers use the qualified key. | `_mermaid_segment_lines` | mcp/src/agents_remember/tasks/render.py:331-345 |
 | Projection maps every leaf title through `(node.ref, leaf_id)`. | `_node_view` | mcp/src/agents_remember/observer/projection_graph.py:188-225 |
-| Focused proof uses legal same-numbered rows and verifies the missing-owner raw-label boundary. | `ExecutionGraphTitlesReadTests` | mcp/tests/test_execution_graph_render.py:294-395 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-24T13:43+02:00 — DAGQC L1: leaf-title identity changed from a flat local number to
   `(owning TaskDocumentRef, local leaf id)` across both consumers; the missing-qualified-key raw

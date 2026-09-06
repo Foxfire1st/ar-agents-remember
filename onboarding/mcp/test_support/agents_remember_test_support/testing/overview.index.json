@@ -15,7 +15,6 @@
     "mcp/test_support/agents_remember_test_support/testing/candidate_snapshot.py",
     "mcp/test_support/agents_remember_test_support/testing/causal_dependency.py",
     "mcp/test_support/agents_remember_test_support/testing/causal_failures.py",
-    "mcp/test_support/agents_remember_test_support/testing/causal_route_evidence.py",
     "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py",
     "mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py",
     "mcp/test_support/agents_remember_test_support/testing/dagger_admission.py",
@@ -30,13 +29,11 @@
     "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py",
     "mcp/test_support/agents_remember_test_support/testing/pytest_phase_reporter.py",
     "mcp/test_support/agents_remember_test_support/testing/random_order.py",
-    "mcp/test_support/agents_remember_test_support/testing/retry_route_evidence.py",
-    "mcp/test_support/agents_remember_test_support/testing/retry_selection.py",
-    "mcp/test_support/agents_remember_test_support/testing/route_measurement.py"
+    "mcp/test_support/agents_remember_test_support/testing/retry_selection.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 23,
-    "fileSidecars": 23,
+    "sourceFilesInScope": 20,
+    "fileSidecars": 20,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -51,7 +48,6 @@
     "causal",
     "causal_dependency",
     "causal_failures",
-    "causal_route_evidence",
     "certifying",
     "certifying_bootstrap",
     "consumer",
@@ -81,7 +77,6 @@
     "lifecycle",
     "manifest",
     "mcp",
-    "measurement",
     "order",
     "phase",
     "provenance",
@@ -93,10 +88,7 @@
     "remember",
     "reporter",
     "retry",
-    "retry_route_evidence",
     "retry_selection",
-    "route",
-    "route_measurement",
     "runner",
     "selection",
     "snapshot",
@@ -115,7 +107,6 @@
       "mcp/test_support/agents_remember_test_support/testing/candidate_snapshot.py",
       "mcp/test_support/agents_remember_test_support/testing/causal_dependency.py",
       "mcp/test_support/agents_remember_test_support/testing/causal_failures.py",
-      "mcp/test_support/agents_remember_test_support/testing/causal_route_evidence.py",
       "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py",
       "mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py",
       "mcp/test_support/agents_remember_test_support/testing/dagger_admission.py",
@@ -130,9 +121,7 @@
       "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py",
       "mcp/test_support/agents_remember_test_support/testing/pytest_phase_reporter.py",
       "mcp/test_support/agents_remember_test_support/testing/random_order.py",
-      "mcp/test_support/agents_remember_test_support/testing/retry_route_evidence.py",
-      "mcp/test_support/agents_remember_test_support/testing/retry_selection.py",
-      "mcp/test_support/agents_remember_test_support/testing/route_measurement.py"
+      "mcp/test_support/agents_remember_test_support/testing/retry_selection.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -145,8 +134,6 @@
       "causal_dependency",
       "causal_failures.py",
       "causal_failures",
-      "causal_route_evidence.py",
-      "causal_route_evidence",
       "certifying_bootstrap.py",
       "certifying_bootstrap",
       "consumer_inventory.py",
@@ -175,14 +162,16 @@
       "pytest_phase_reporter",
       "random_order.py",
       "random_order",
-      "retry_route_evidence.py",
-      "retry_route_evidence",
       "retry_selection.py",
       "retry_selection",
-      "route_measurement.py",
-      "route_measurement",
       "mcp/test_support/agents_remember_test_support/testing",
-      "route-local-overview"
+      "route-local-overview",
+      "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
+      "/overview.md",
+      "route_measurement.py",
+      "causal_route_evidence.py",
+      "pytest_plugins",
+      "pytest SKIPPED"
     ]
   },
   "fallback": {

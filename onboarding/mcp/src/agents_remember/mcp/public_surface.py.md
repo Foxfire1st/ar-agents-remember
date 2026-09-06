@@ -58,7 +58,6 @@ other spend controls cannot be silently ignored or routed around the settings-ow
 | --- | --- | --- |
 | The validator reconciles every public authority and returns content-addressed evidence. | `validate_public_surface`; `validate_dispatch_advertisement`; `PublicSurfaceEvidence` | mcp/src/agents_remember/mcp/public_surface.py:54-60; mcp/src/agents_remember/mcp/public_surface.py:198-240 |
 | Dispatch input ownership is one closed four-field vocabulary. | `DISPATCH_AGENT_INPUT_FIELDS`; `_validate_dispatch_schema` | mcp/src/agents_remember/mcp/public_surface.py:25-25; mcp/src/agents_remember/mcp/public_surface.py:146-149 |
-| The real-server acceptance enters through public FastMCP APIs. | `test_live_registration_matches_every_public_authority_in_order` | mcp/tests/test_public_surface_conformance.py:233-239 |
 
 ## Update History
 

@@ -187,7 +187,7 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar. | "def main(argv:"; "def create_server(config: McpRuntimeConfig) -> Any:" | mcp/src/agents_remember/mcp/server.py:58-58; mcp/src/agents_remember/mcp/server.py:77-77 |
-| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | `McpConfigTests` | mcp/tests/test_config.py:73-438 |
+| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | `McpConfigTests` | mcp/tests/test_config.py:46-252 |
 | `DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port. | `DashboardSettings`; `maybe_autostart_dashboard`; `_autostart` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95; mcp/src/agents_remember/serving/daemon.py:338-358; mcp/src/agents_remember/serving/daemon.py:361-366 |
 | Gate delegation policy validation lives in controlplane. | `make_gate_policy`; `apply_seam_verdict_requirement` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:75-107; mcp/src/agents_remember/kernel/primitives/gate_policy.py:130-149 |
 | The dedicated `providerDegradation` parser validates the authority block and constructs typed settings. | `parse_provider_degradation_settings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:58-128 |
@@ -200,8 +200,11 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
 | Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
 | Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615 |
-| Containment tests pin the authority reload fail-closed semantics and the launch gate refusal/armed paths. | `ReloadProviderAuthorityTests`; `WorktreeStartVetoTests`; `QueryFunnelGateTests`; `RuntimeRebindDerivationTests`; `BenchmarkProviderFilterTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:124-177; mcp/tests/test_provider_containment.py:180-196; mcp/tests/test_provider_containment.py:199-206; mcp/tests/test_provider_containment.py:209-273 |
-| `RetirementSettings` defines the two default-on toggles; worktree integration and lifecycle finalization each consult the corresponding `config.retirement` flag before calling `auto_complete_seats`. | "class RetirementSettings:"; "def worktree_integrate_tool("; "def lifecycle_finalize_task_tool("; "def auto_complete_seats(" | mcp/src/agents_remember/application/completion_cleanup.py:29-73; mcp/src/agents_remember/application/worktree_tools.py:626-713; mcp/src/agents_remember/application/worktree_tools.py:1036-1069; mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-124 |
+
+| Retirement settings declare the two default-on cleanup toggles. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121 |
+| Integration consults its retirement setting at the completed edge. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:479-564 |
+| Finalization consults its retirement setting at the completed edge. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:891-922 |
+| Seat cleanup remains subordinate to successful completion. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-71 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
 
@@ -210,6 +213,7 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `McpConfigTests` repointed to mcp/tests/test_config.py:46-252. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional RepositoryScope.certification_profile field and its canonical-relative-path parser (_optional_repository_profile_reference) wiring the repository-owned certification profile into runtime config.
 
 

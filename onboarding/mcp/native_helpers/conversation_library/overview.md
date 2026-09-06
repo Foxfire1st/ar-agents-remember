@@ -7,7 +7,7 @@
 | sourceRoute | `mcp/native_helpers/conversation_library/` |
 | onboardingRoute | `mcp/native_helpers/conversation_library/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../overview.md) |
-| lastUpdated | 2026-07-26T15:45+02:00 |
+| lastUpdated | 2026-09-07T00:31+02:00 |
 | lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
 | lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 
@@ -163,9 +163,7 @@ resolution source.
 | --- | --- | --- |
 | The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
 | The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. | "the exact locked helper versions are protocol constants" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17 |
-| The Python foundation suite forbids incidental resolution and verifies package/lock pins plus the exact helper source set. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:24-24 |
 | The Python host and Claude/Pi ports drive these entries on the production seam. | "class ConversationLibraryHelperHost" | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-91 |
-| The installed-runtime suite proves the Pi gate/round-trip and the real Pi open through these helpers, and pins the Claude gate on the live list CONTRACT — asserting the reason is never a version-mismatch demotion. | `CodexInstalledTests` | mcp/tests/test_conversation_library_installed.py:103-186 |
 
 ## Cross-Repo References
 
@@ -222,6 +220,8 @@ installed-runtime suite on machines with the harnesses to prove the production s
   installed-runtime gate).
 
 ## Update History
+
+- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
   anchors and fixer-generated ranges; exact non-fixing check returns zero findings.

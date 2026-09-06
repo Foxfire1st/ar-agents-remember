@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T13:51:59+00:00 |
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../../../overview.md` |
@@ -39,7 +39,7 @@ write-free, and no retry, fallback reader, compatibility route, or second lock n
 
 ## L30 Quality Publication Boundary
 
-The child `modules/quality` route retains actual rail evidence and immutable selected certificate generations. Its host Dagger registry uses the neutral kernel file lock while checkout durable stores preserve their coordination guard. L33 composes journal-selected admission, original certificate readback and suffix execution through the existing lifecycle owners. Gate-5 observation/execution and finalization remain explicit continuation capabilities; the default application bundle leaves that continuation unbound. See [the modules overview](modules/overview.md) for read/export/prune owners and [the integration overview](integration/overview.md) for operation-selected execution.
+The child `modules/quality` route retains actual rail evidence and immutable selected certificate generations. Its host Dagger registry uses the neutral kernel file lock while checkout durable stores preserve their coordination guard. L33 composes journal-selected admission, original certificate readback and suffix execution through the existing lifecycle owners. Gate-5 observation/execution and finalization remain explicit continuation capabilities; the default application bundle installs `PreparedCloseoutContinuation`. See [the modules overview](modules/overview.md) for read/export/prune owners and [the integration overview](integration/overview.md) for operation-selected execution.
 
 `services.py` is the downward service boundary for provider, citation and memory work. Its canonical task-observation method and separate memory/finalization continuation avoid imports from worktrees into higher-level memory implementations. Read [the service card](services.py.md) for explicit binding and absent-capability behavior.
 
@@ -215,8 +215,8 @@ semantic versus observational edits before deriving affected queue scopes.
 without importing memory quality upward. The quality and integration routes now compose frozen
 admission, journal-selected original certificates and R21 suffix execution.
 `CertificationContinuationPort` separates current memory observation, Gate-5 execution and
-finalization; it does not install those production owners. The default application bundle leaves
-that continuation unbound, so an incomplete downstream composition refuses instead of completing.
+finalization. The default application bundle installs `PreparedCloseoutContinuation`; an incomplete
+custom composition without the required capability still refuses instead of completing.
 Child overviews retain the precise execution and publication boundaries.
 
 ## Needs Verification
@@ -258,7 +258,15 @@ topology therefore require the same composite facts: exact parent row number and
 direct-child JSON ref, repository/directory, child id, and stem. Stem-only or split identities fail
 with typed status/detail; no worktree-local fallback remains.
 
+
+## Integrated IAS Recovery Contract
+
+The default application bundle installs `PreparedCloseoutContinuation`, composing the memory-certification producer and prepared finalizer through the existing downward port. The closeout child owns resumption of selected private outputs and original C/M/L publication. Source-pair selection, synchronization, ledger authority and coordinator isolation are unchanged; an absent capability in an incomplete custom composition still refuses.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
 
 - 2026-09-06T13:51:59+00:00 — L33 candidate curation: Routed canonical task observation and selected certification through the existing service/integration owners; distinguished implemented admission/execution from absent default continuation. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
 

@@ -5,53 +5,67 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_cgc_watch_guard.py`        |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-09T23:55+02:00                     |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
 | lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../overview.md`                           |
+| governingOverview | `overview.md` |
+
+## Governing Overview
+
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Tests the CGC watcher entrypoint guard Docker asset
-(`package_data/runtime/providers/docker/codegraphcontext/watch_guard.py`):
-the wait-for-genuine-PONG loop, the read-only File-count probe, the
-poisoned-graph clearing threshold, and the always-exec-cgc contract.
+CGC watcher guard behavior through a stub Redis module.
 
 ## Code Commentary
 
 ### Logic
 
-The guard imports `redis` at module level, which is only installed inside the
-runner image, so the test injects a stub `redis` module into `sys.modules`
-before loading the asset by file path with `importlib`. Tests then drive
-`wait_for_ready` (PONG, loading-then-ready, deadline give-up),
-`indexed_file_count` (count parsing, empty-key → None, other response errors
-re-raised, unparseable replies → None), `clear_poisoned_graph` (delete at
-count 0, keep at/above threshold, skip absent graphs), and `main` (graph
-check then `os.execvp("cgc", ...)`; exec happens even when the backend never
-becomes ready or no graph name is set).
+The host loader injects Redis exception stubs before importing the runner asset. Retained cases bound readiness waiting, preserve an already indexed graph, and verify main reaches the cgc watch exec boundary after graph checks.
+
+### Conventions
+
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Loading the asset by file path also gives the package_data copy real
-  coverage, which is what keeps the guard's CRAP scores under the CI
-  threshold; removing these tests reintroduces a `--fail-on-crap-threshold`
-  failure.
-- The stub redis module must mirror the exception hierarchy the guard
-  catches (`RedisError`, `BusyLoadingError`, `ResponseError`).
-- Every `main` test must assert `execvp` is called — the guard's contract is
-  that no failure path blocks the watcher.
+No live Redis or CGC backend is started. The retained graph case proves preservation, not every historical poisoned-graph deletion path.
 
-## Repo-Internal References
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The tests resolve the packaged watch guard through `GUARD_PATH`. | `GUARD_PATH` | mcp/tests/test_cgc_watch_guard.py:17-27 |
-| The packaged watch guard defines its executable `main`. | `main` | mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py:88-106 |
-| The provider Dockerfile copies the guard to `/usr/local/bin/cgc-watch-guard.py`. | "cgc-watch-guard.py" | providers/docker/codegraphcontext/Dockerfile:16-16 |
-| The watcher Compose template sets the guard as the watcher entrypoint. | `entrypoint` | providers/compose/codegraphcontext.watcher.yaml.tmpl:25-25 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Wait for ready gives up after deadline. | `test_wait_for_ready_gives_up_after_deadline` | mcp/tests/test_cgc_watch_guard.py:67-70 |
+| Clear poisoned graph keeps indexed graph. | `test_clear_poisoned_graph_keeps_indexed_graph` | mcp/tests/test_cgc_watch_guard.py:72-79 |
+| Main checks graph then execs cgc. | `test_main_checks_graph_then_execs_cgc` | mcp/tests/test_cgc_watch_guard.py:81-92 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: split test-path resolution, packaged entrypoint, Dockerfile copy, and Compose entrypoint so each whole claim has one owner.
 

@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `docs/reference/harnesses.md`           |
 | doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-08-31T04:59+02:00                  |
+| lastUpdated            | 2026-09-07T00:34+02:00 |
 | lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
 | lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../../overview.md`                     |
@@ -117,7 +117,6 @@ references below use source evidence rather than treating this prose as runtime 
 | Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message. | `parse_control_initialization`, `parse_system_initialization`, `list_models_request` | mcp/src/agents_remember/serving/claude_stream_protocol.py:156-161; mcp/src/agents_remember/serving/claude_stream_protocol.py:219-232; mcp/src/agents_remember/serving/claude_stream_protocol.py:235-263 |
 | Startup orders correlated initialize/bootstrap before a separate correlated dynamic catalog request. | `negotiate_claude_startup`, `negotiate_claude_catalog` | mcp/src/agents_remember/serving/claude_stream_startup.py:59-81; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111 |
 | Catalog parsing preserves native model keys and nests each effort menu under its owning model row. | `parse_list_models_response`, `_parse_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75 |
-| Spawn regressions pin settings-only spend authority and pre-side-effect override refusal. | `test_level_override_deep_merges_harness_inherited`, `test_legacy_model_effort_args_are_refused_instead_of_beating_settings`, `test_spend_env_keys_are_refused_instead_of_overriding_settings` | mcp/tests/test_spawn_agent_session_settings.py:279-295; mcp/tests/test_spawn_agent_session_settings.py:327-336; mcp/tests/test_spawn_agent_session_settings.py:362-378 |
 
 ## Cross-Repo References
 
@@ -128,7 +127,11 @@ that initialize carried account/catalog data.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented
   target-document-derived dispatch level for the polymorphic reviewer and removed stale public
   caller-supplied role-env/level language. Verification remains closeout-owned.

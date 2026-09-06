@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/roots.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-26T02:26+02:00                     |
+| lastUpdated            | 2026-09-07T00:25+02:00 |
 | lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
 | lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
 | governingOverview      | `overview.md`                              |
@@ -38,13 +38,14 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.roots import *" | mcp/src/agents_remember/benchmarks/runner.py:23-23 |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | "package contains the focused implementation modules behind" | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:15-15 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. |"from agents_remember.benchmarks import runner as benchmark_runner"|mcp/tests/test_worktree_support_benchmark.py:13-13|
 
 ## Cross-Repo References
 
 No configured sibling repository is required for this module.
 
 ## Update History
+
+- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
 
 - 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 3 citation rows: the facade star-import (benchmarks/runner.py L23), the route-local overview card (onboarding runner_modules/overview.md L13-L18), and the worktree test slices (test_worktree_support.py L22 + L3097-L3121). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
 

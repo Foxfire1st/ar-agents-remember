@@ -231,8 +231,8 @@ composition and authorization contract suites.
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:28-28 |
 | `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:244-244; mcp/src/agents_remember/serving/harness_control_api.py:186-186 |
 | The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:89-89 |
-| The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:24-24 |
-| The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | `_NoSessionHost` | mcp/tests/test_conversation_runtime_composition.py:42-47 |
+
+
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | "test_loopback_peers_resolve" | mcp/tests/test_conversation_authorization.py:130-130 |
 
 ## Cross-Repo References

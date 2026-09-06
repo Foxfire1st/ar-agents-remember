@@ -5,79 +5,67 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_conversation_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
 | lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Production-route tests for the conversation control API (R7). Every test drives the real composition
-on one loop — bridge + IPC server on a real user-private socket, a real catalog row, the L0
-`register_conversation_routes` composition, and HTTP over a real uvicorn wire — with the structural
-fake adapter as the only double at the harness edge.
+Conversation HTTP interrupt and attachment lifecycle integration.
 
 ## Code Commentary
 
 ### Logic
 
-cit:([`ControlApiTests`], mcp/tests/test_conversation_control_api.py:26-378) exercises the seventeen registered routes over the real wire: the O4
-typed-error mapping per route family, remote-peer 403, epoch guards, multipart attachment staging,
-read-only policy 405s on PATCH/PUT/DELETE, the queue-truth privacy + withdrawal flow end-to-end, and
-cit:([`test_no_paste_pty_or_native_queue_substitution_in_control_modules`], mcp/tests/test_conversation_control_api.py:355-378), the source scan proving
-no PTY Esc / paste / native-queue substitution anywhere in the control modules. The terminal-wire
-arm submits through `submit_control_prompt(entry, body, ControlSubmission(source="terminal",
-request_id=…))` — one parameter object, not loose keywords.
+A real HTTP/bridge/IPC fixture drives interrupt acceptance, pending settlement, idempotent replay and final interrupted status with one native write. Remote authorization refuses with typed 403. Attachment staging, submit, status and reconcile preserve receipt metadata and missing requests return 404.
 
 ### Conventions
 
-This is the only L3 suite that crosses a real HTTP wire; the routes resolve their service through the
-unmodified `conversation_control_service` path (the harness seeds the `NOW`-anchored instance into the
-memo, so the wire is time-consistent without touching this file). The source scan is a
-topology/absence assertion, intentional for a leaf that establishes what does NOT exist.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Every routine refusal lands on its precise HTTP status over the real wire — no raw 500.
-- Non-loopback peers fail 403; every wire verifies the expected bridge epoch.
-- Policy/telemetry/queue/pending are GET-only; policy mutation verbs return 405.
-- No paste/PTY/native-queue substitution exists in the control modules (source-scanned).
+The adapter is a harness-edge double. No retained source-scan or complete policy/telemetry response matrix is asserted by these three cases.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured; the route contract is repository-owned.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
-The suite drives the registered routes and their O4 mapping over the real wire and shared topology.
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The seventeen registered routes and the O4 typed-error mapping under test. | `conversation_telemetry` | mcp/src/agents_remember/serving/conversation/control/api.py:736-759 |
-| The shared fake-topology harness (real bridge/IPC/authority/L0 composition). | `ControlHarness` | mcp/tests/_control_plane.py:318-401 |
-| The foundation pin that independently asserts the exact seventeen routes. | `control_paths` | mcp/tests/test_conversation_foundation.py:65-69 |
+| Interrupt ack settle replay and single write. | `test_interrupt_ack_settle_replay_and_single_write` | mcp/tests/test_conversation_control_api.py:88-120 |
+| Remote peer fails closed typed 403. | `test_remote_peer_fails_closed_typed_403` | mcp/tests/test_conversation_control_api.py:122-131 |
+| Attachment stage submit status reconcile. | `test_attachment_stage_submit_status_reconcile` | mcp/tests/test_conversation_control_api.py:137-193 |
 
 ## Cross-Repo References
 
-No meaningful cross-repo references found.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the switch from adapter convenience methods to shared raw event-replay helpers; HTTP interrupt and settlement assertions are unchanged.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

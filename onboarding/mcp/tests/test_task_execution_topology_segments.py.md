@@ -5,68 +5,79 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_task_execution_topology_segments.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests/overview.md](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Force the 260815-DAG-L11 leaf-segment graph contract: segment schema rules, endpoint grammar,
-projection lifting, and pure derived-placement/numbering facts. Split from
-`test_task_execution_topology.py` under the file-size rail; fixtures and shared helpers are
-imported from it.
+Checks segment uniqueness, mutual exclusion of whole-master and segment nodes, endpoint addressing by a leaf sample and cycle refusal. It also checks derived placement of unassigned leaves, orchestrates membership and wave projection, and refusal of segments on atomic masters with the offending node identified.
 
 ## Code Commentary
 
 ### Logic
 
-`ExecutionGraphSegmentSchemaTests` proves legacy bare-ref nodes parse as lumps and re-serialize
-byte-identically, constructor lifting without cross-type equality, segment shape rules (non-empty
-unique leaf ids, no leafIds on a lump), sprint-wide leaf uniqueness, lump/segment mutual exclusion per master, segment-sampling
-edge endpoints and their resolution refusals (unplaced leaf, ambiguous bare ref), duplicate
-equivalent addressing, segment-spanning cycle refusal, and judgmentId/leafId blank trimming.
-Its equality regression proves nodes compare and hash structurally only against nodes: both
-comparison directions with `TaskDocumentRef` are false, mixed set/dict insertion is order-stable,
-equal lumps deduplicate, and different segment membership remains distinct.
-`ExecutionGraphProjectionLiftTests` proves the served projection models accept bare refs and dicts
-and lift them uniformly. `DerivedLeafPlacementTests` proves unplaced leafs derive into the latest
-unblocked segment (latest by wave, then declaration order), the all-blocked flagged fallback, no
-placement for lump masters, unknown-leaf facts, and numbering inversions reported as hints that
-never refuse. `ExecutionTopologySegmentValidationTests` proves cross-document validation over
-segmented graphs: membership against `master_refs()`, node-derived waves, the segment-on-atomic
-typed refusal, and live-plan leaf-placement reporting.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-`leafs_a=None` selects the fixture's default leaf set, while an explicit empty list remains empty;
-fixture truthiness cannot silently replace a deliberately empty topology. After rewriting task
-documents, tests construct a new `TaskDocumentTopology` before querying placement so assertions
-observe the published generation rather than a previously resolved in-memory view.
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Tests construct only disposable coordination roots; unpublished candidate code never writes the
-  deployed coordinator.
-- The suite asserts the persisted schema and topology behavior through public models instead of
-  duplicating the validation internals.
-- Legacy bare-ref JSON roundtrip is a wire-format contract, not permission for runtime
-  node-to-reference equality; callers must use the explicit `.ref` field.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Segment schema, endpoint grammar, explicit-ref lifting, and structural equality/hash forcing. | `ExecutionGraphSegmentSchemaTests` | mcp/tests/test_task_execution_topology_segments.py:41-281 |
-| Served projection lifting forcing. | `ExecutionGraphProjectionLiftTests` | mcp/tests/test_task_execution_topology_segments.py:284-305 |
-| Derived placement and numbering-hint forcing. | `DerivedLeafPlacementTests` | mcp/tests/test_task_execution_topology_segments.py:280-413 |
-| Cross-document segmented topology validation forcing. | `ExecutionTopologySegmentValidationTests` | mcp/tests/test_task_execution_topology_segments.py:415-503 |
-| The production schema under test. | `SprintExecutionNode`; `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:191-402 |
-| The focused equality regression covers both operand directions plus mixed set/dict behavior. | `test_nodes_compare_structurally_without_cross_type_aliases` | mcp/tests/test_task_execution_topology_segments.py:237-265 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Leaf ids are unique sprint wide | `test_leaf_ids_are_unique_sprint_wide` | mcp/tests/test_task_execution_topology_segments.py:40-49 |
+| Lump and segment appearances of one master are mutually exclusive | `test_lump_and_segment_appearances_of_one_master_are_mutually_exclusive` | mcp/tests/test_task_execution_topology_segments.py:51-55 |
+| Edge endpoints address segments by leaf sample | `test_edge_endpoints_address_segments_by_leaf_sample` | mcp/tests/test_task_execution_topology_segments.py:57-85 |
+| Cycle through segments is refused | `test_cycle_through_segments_is_refused` | mcp/tests/test_task_execution_topology_segments.py:87-105 |
+| Unplaced leaf derives to the latest unblocked segment | `test_unplaced_leaf_derives_to_the_latest_unblocked_segment` | mcp/tests/test_task_execution_topology_segments.py:128-149 |
+| Segmented membership matches orchestrates and waves run over nodes | `test_segmented_membership_matches_orchestrates_and_waves_run_over_nodes` | mcp/tests/test_task_execution_topology_segments.py:205-213 |
+| Segment on atomic master is refused citing the node | `test_segment_on_atomic_master_is_refused_citing_the_node` | mcp/tests/test_task_execution_topology_segments.py:215-221 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-26T10:44:52+02:00 — Preserved explicit empty leaf fixtures and rebuilt topology after task mutation so placement assertions cannot reuse stale resolved documents.
 

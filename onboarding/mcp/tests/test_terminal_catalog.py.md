@@ -5,59 +5,77 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-31T04:59+02:00 |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
 | lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
 | lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Durability, concurrency, lifecycle-state, and structural-seat suite for the terminal catalog.
+Checks terminal catalog durability: landed state stays landed, dispatch-brief receipts are idempotent and reject replacement, torn extra data refuses without erasure, concurrent upserts preserve rows, and cross-instance termination cannot be resurrected. Temporary catalog instances exercise durable state rather than a pure in-memory substitute.
 
 ## Code Commentary
 
 ### Logic
 
-The suite pins `TaskDocumentRef` round-trip/omission/legacy absence, required role validation,
-dispatch binding fields and receipt round-trip, idempotent single-receipt binding through
-`DispatchBriefReceiptStore`,
-`active_for_task` role scoping, staged-replacement promotion, landing/termination behavior, atomic
-writes, and cross-instance conflict composition.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-A live seat is unique by canonical task document plus role; terminal and chat roles may share a
-document; exited/terminated/landed rows do not remain active owners; one generation binds one
-dispatch receipt and refuses a different second receipt; a promoted staged row clears its
-replacement ref; legacy rows without task identity stay unbound. Cross-address receipt clearing is
-owned by the seat-succession forcing suite, not inferred from this unit.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local regression contract.
-
-## Repo-Internal References
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `_entry` | mcp/tests/test_terminal_catalog.py:29-49 |
-| Dispatch receipts return missing-row absence, round-trip idempotently, and reject a different second binding. | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:236-251 |
-| Canonical promotion clears the staged-replacement marker. | `test_task_binding_promotes_a_staged_replacement_to_the_canonical_seat` | mcp/tests/test_terminal_catalog.py:251-262 |
-| Reviewer parent document+role round-trip, survive same-address rebinding, and clear on a task-address move. | `test_dispatch_binding_fields_round_trip`; `test_task_rebinding_drops_a_reviewer_parent_that_belongs_to_the_old_address` | mcp/tests/test_terminal_catalog.py:208-239; mcp/tests/test_terminal_catalog.py:267-286 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Landed state round trips and is not reanimated | `test_landed_state_round_trips_and_is_not_reanimated` | mcp/tests/test_terminal_catalog.py:59-85 |
+| Dispatch brief receipts are idempotent and refuse a second receipt | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:87-103 |
+| Read refuses torn extra data without erasing evidence | `test_read_refuses_torn_extra_data_without_erasing_evidence` | mcp/tests/test_terminal_catalog.py:105-112 |
+| Concurrent upserts do not lose or corrupt rows | `test_concurrent_upserts_do_not_lose_or_corrupt_rows` | mcp/tests/test_terminal_catalog.py:114-137 |
+| Cross instance termination is sticky and never resurrected | `test_cross_instance_termination_is_sticky_and_never_resurrected` | mcp/tests/test_terminal_catalog.py:139-162 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this test module.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
 
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added reviewer parent
   serialization and address-bound lifetime forcing. Verification remains closeout-owned.

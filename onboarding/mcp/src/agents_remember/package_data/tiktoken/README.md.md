@@ -42,26 +42,15 @@ under the SHA-1 of its source URL, so `sha1(url) = fb374d419588a4632f3f557e76b4b
 only name a cache hit can have. The indented block at L18-L20 records the URL, that name, and the
 content hash `sha256(file) = 446a9538cb6c348e3516120d7c08b09f57c36495e2acfffe59a5bf8b0cfb1a2d`,
 which is the value tiktoken itself names in `tiktoken_ext/openai_public.py::o200k_base` — so the
-shipped file is byte-identical to the download it replaces and token counts are unchanged
-(cit:([`test_the_shipped_file_is_the_one_tiktoken_asks_for`], mcp/tests/test_cold_start.py:222-244)).
+shipped file is intended to be byte-identical to the download it replaces and preserve token counts.
 
-**What holds it shut** (cit:([`test_the_shipped_file_is_the_one_tiktoken_asks_for`, `test_the_gitattributes_entry_names_the_shipped_file`, `CorruptVendoredVocabularyTests`], mcp/tests/test_cold_start.py:222-244; mcp/tests/test_cold_start.py:246-259; mcp/tests/test_cold_start.py:334-417)). `mcp/tests/test_cold_start.py` re-derives the URL's SHA-1 and the
-expected SHA-256 from the installed tiktoken and fails if either stops matching the shipped file, so
-a version bump that moves the URL is caught. It corrupts *copies* of this file in a temporary
-directory — CRLF-mangled, truncated to half its bytes, one byte flipped — and requires the refusal
-each time, **never touching the file here**. And it fails if the `.gitattributes` entry stops naming
-the file that is actually shipped.
+**Runtime integrity.** `_verify_vendored_vocabulary` refuses a missing or corrupt bundled vocabulary before the cache is primed; its computed SHA-256 must equal `VENDORED_VOCABULARY_SHA256` (cit:(["def _verify_vendored_vocabulary"], mcp/src/agents_remember/models/tokens.py:70-106)). The former installed-library hash and corruption tests are historical, not current coverage.
 
 **How to refresh it** (cit:([`## Refreshing it`], mcp/src/agents_remember/package_data/tiktoken/README.md:42-67)). A short `python -` snippet fetches the URL tiktoken names, writes
 it under `sha1(url)`, and prints the SHA-256 to compare. The README then states the two obligations
 that are easy to miss: the new digest also replaces **`VENDORED_VOCABULARY_SHA256` in
 `models/tokens.py`** (cit:([`VENDORED_VOCABULARY_SHA256`], mcp/src/agents_remember/models/tokens.py:47-47)), and the `-text` entry in the repository's `.gitattributes` must be
-renamed to match the new file name (cit:([`test_the_gitattributes_entry_names_the_shipped_file`], mcp/tests/test_cold_start.py:246-259)). Neither can be forgotten silently:
-`test_the_shipped_file_is_the_one_tiktoken_asks_for` re-derives the digest from tiktoken and
-compares it to the constant, and `test_the_gitattributes_entry_names_the_shipped_file` stays red
-until the entry is renamed. That entry is what stops a `core.autocrlf=true` checkout from rewriting
-the line endings of a file whose bytes are its identity — which now leaves that clone, and only that
-clone, unable to start the server at all.
+renamed to match the new file name. The exact shipped path has Git text conversion disabled (cit:(["mcp/src/agents_remember/package_data/tiktoken/fb374d419588a4632f3f557e76b4b70aebbca790 -text"], .gitattributes:13-13)). This protects the content-addressed bytes from checkout line-ending conversion; removed tests no longer enforce refresh consistency.
 
 **Why this one is committed** (cit:(["/mcp/src/agents_remember/package_data/dashboard/"], .gitignore:26-26), cit:(["this file is committed"], mcp/src/agents_remember/package_data/tiktoken/README.md:64-67)). Unlike the cockpit bundle in `package_data/dashboard/`,
 which is git-ignored and rebuilt on every release, this is third-party data addressed by its own
@@ -116,12 +105,11 @@ test that re-derives its two hashes.
 | `DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope. | `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:205-205 |
 | The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed. | "-text" | .gitattributes:12-13 |
 | The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:23-23; mcp/pyproject.toml:84-84 |
-| The test that re-derives both hashes from the installed tiktoken and additionally asserts `VENDORED_VOCABULARY_SHA256` equals the one tiktoken asks for, so a moved URL cannot silently fall back to the network and the loader's copy of the digest cannot become a second source of truth. | "test_the_shipped_file_is_the_one_tiktoken_asks_for" | mcp/tests/test_cold_start.py:222-244 |
-| The test that pins the `.gitattributes` `-text` entry to the file actually shipped — the enforcement behind this README's refresh instruction. | "test_the_gitattributes_entry_names_the_shipped_file" | mcp/tests/test_cold_start.py:246-259 |
-| The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:334-417 |
+| The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. | `CorruptVendoredVocabularyTests` | mcp/tests/test_cold_start.py:208-281 |
 | The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. | "this file is committed"; "/mcp/src/agents_remember/package_data/dashboard/" | .gitignore:26-26; mcp/src/agents_remember/package_data/tiktoken/README.md:64-64 |
 
 ## Update History
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `CorruptVendoredVocabularyTests` repointed to mcp/tests/test_cold_start.py:208-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the hash/provenance paragraph through local verifier evidence, narrowed the module-scope row, and regenerated both final ranges with the scoped fixer.

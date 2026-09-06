@@ -88,7 +88,6 @@ publication.
 | The exact-candidate observation is the admission boundary's owner-produced input. | `ExactCandidateObservation` | mcp/src/agents_remember/certification/lifecycle_models.py:48-81 |
 | Prior-red corrective and recovery records bind digests to semantic envelopes. | `RedCatalogDisposition`; `PriorRedDispositionManifest`; `CertificationRecoveryRecord` | mcp/src/agents_remember/models/certification/corrective.py:41-70; mcp/src/agents_remember/certification/lifecycle_models.py:105-117; mcp/src/agents_remember/certification/lifecycle_models.py:158-170 |
 | The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge. | `FinalizationJournalState`; `LifecycleFinalizationSemanticEnvelope` | mcp/src/agents_remember/certification/lifecycle_models.py:217-252; mcp/src/agents_remember/certification/lifecycle_models.py:255-270 |
-| Model-edge proofs cover the exact-candidate, leg, disposition, and journal refusal shapes. | `test_exact_candidate_rejects_contradictory_conflict_shapes`; `test_finalization_leg_rejects_state_shape_mismatches`; `test_red_disposition_and_journal_reject_noncanonical_shapes` | mcp/tests/test_certification_contract_model_edges.py:240-267; mcp/tests/test_certification_contract_model_edges.py:282-295; mcp/tests/test_certification_contract_model_edges.py:298-354 |
 | Certificate identities and creation provenance are imported from the R21 certificate owners. | `GateCertificateIdentity`; `CreationProvenance` | mcp/src/agents_remember/certification/certificate_models.py:100-102; mcp/src/agents_remember/certification/certificate_models.py:77-82 |
 
 ## Cross-Repo References
@@ -100,6 +99,9 @@ No cross-repository implementation boundary is owned here.
 | No cross-repository implementation is referenced. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-09-06T15:02:26+00:00 — Reviewed the complete card and current source at c69d5171187fa1957025e393270db9f5a864ab14; corrected identity/observation ownership claims, retained the moved model semantics, and regenerated each active source range from its unique current construct. All prior history is preserved.
 

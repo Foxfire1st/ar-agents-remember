@@ -5,55 +5,69 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_atomic_write.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
 | lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-The one atomic publish: what it guarantees, and the guarantees the copies disagreed about.
+Atomic file publication, interruption cleanup and directory durability tests.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
-
-- `_leftovers` (function, lines 27-28)
-- `AtomicWriteTests` (class, lines 31-99)
-- `AtomicWriteFailureTests` (class, lines 102-129)
-- `DirectoryFsyncTests` (class, lines 132-160)
-- `AtomicReplaceTests` (class, lines 163-196)
+Readers see the old complete destination until replacement; successful writes publish exact bytes without temp leftovers. Failed replacement and KeyboardInterrupt remove private temporary files. The helper fsyncs both file and directory, and cross-directory replacement flushes destination and source directories.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+Cancellation includes BaseException paths. Cross-directory durability matters for asset-spool promotion; a successful rename alone is not the asserted durability guarantee.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
-## Repo-Internal References
+## Docs References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the function `_leftovers` (lines 27-28). | `_leftovers` | mcp/tests/test_atomic_write.py:27-28 |
-| Defines the class `AtomicWriteTests` (lines 31-99). | `AtomicWriteTests` | mcp/tests/test_atomic_write.py:31-99 |
-| Defines the class `AtomicWriteFailureTests` (lines 102-129). | `AtomicWriteFailureTests` | mcp/tests/test_atomic_write.py:102-129 |
-| Defines the class `DirectoryFsyncTests` (lines 132-160). | `DirectoryFsyncTests` | mcp/tests/test_atomic_write.py:132-160 |
-| Defines the class `AtomicReplaceTests` (lines 163-196). | `AtomicReplaceTests` | mcp/tests/test_atomic_write.py:163-196 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| It publishes the exact bytes and leaves no temp behind. | `test_it_publishes_the_exact_bytes_and_leaves_no_temp_behind` | mcp/tests/test_atomic_write.py:32-38 |
+| A reader never sees a partial file because the temp is private. | `test_a_reader_never_sees_a_partial_file_because_the_temp_is_private` | mcp/tests/test_atomic_write.py:40-57 |
+| A failed replace removes the temp and leaves the destination alone. | `test_a_failed_replace_removes_the_temp_and_leaves_the_destination_alone` | mcp/tests/test_atomic_write.py:61-73 |
+| Cancellation between write and replace also removes the temp. | `test_cancellation_between_write_and_replace_also_removes_the_temp` | mcp/tests/test_atomic_write.py:75-87 |
+| The directory entry is flushed so a completed rename survives. | `test_the_directory_entry_is_flushed_so_a_completed_rename_survives` | mcp/tests/test_atomic_write.py:91-97 |
+| A cross directory rename flushes both. | `test_a_cross_directory_rename_flushes_both` | mcp/tests/test_atomic_write.py:101-112 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

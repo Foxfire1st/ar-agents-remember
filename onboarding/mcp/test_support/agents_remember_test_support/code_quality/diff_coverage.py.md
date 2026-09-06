@@ -5,67 +5,29 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T12:10:34+02:00 |
+| lastUpdated | 2026-09-06T21:35:26+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../../../overview.md)
+[Quality support overview](overview.md)
 
 ## Purpose
 
-`diff_coverage.py` is **the binding coverage gate**. It scores the lines this change
-touched against the coverage JSON `pytest` has already written, and fails the wrapper
-when any of them never ran. It is the last enforcing step of
-`python -m agents_remember_test_support.code_quality.check`, added by 260731-EFA-L2 (requirement
-L2-R7). Before it, no coverage number in this repository could fail anything except CRAP.
-
-It measures nothing itself. `check.py` runs pytest once with `--cov-report=json`, CRAP
-reads that report, and this module reads the same report — so the aggregate, CRAP and the
-diff floor are three readings of one measurement rather than three runs that can disagree.
+Reports changed statements and branch arcs from the existing Coverage.py JSON. The same
+measurement feeds aggregate coverage, CRAP and the changed-line report; this module does not run
+pytest. Coverage percentages are diagnostic, with no delivery floor or required extra tests.
 
 ## Code Commentary
 
-### Why The Floor Is 100%, And Why No Lower Number Was Available
+### Diagnostic Policy
 
-This is the fact most likely to be argued with later, so the derivation is recorded in the
-module docstring and repeated here.
-
-- **The aggregate cannot be the gate.** 88k lines of tests against 44,697 measured
-  statements means a large share of the package executes simply by being imported. On
-  2026-07-31 the suite reported **87.16%** (90.17% statements, 76.52% branches) over 434
-  files. One newly added, entirely untested 20-line function moves that by **0.04
-  percentage points** — below the resolution of any threshold anyone would set, and below
-  the run-to-run wobble of a suite that starts subprocesses. An aggregate pin is satisfied
-  by import-time execution and cannot see a single change, which is the only thing a
-  pre-merge gate is for.
-- **A floor below 100% is a per-change budget for untested code, and the budget grows
-  with the change.** At floor `X`, a change of `N` units may carry `floor((1 - X) * N)`
-  uncovered ones. Measured on this repository: of the last 40 commits on `main`, 31 touch
-  `mcp/src/agents_remember` — p25 46 added source lines, median 234, p75 532, max 10,549.
-  Against the median 234 units the budget is **23 uncovered units at 90%**, 11 at 95%, 4
-  at 98%. The median function here is about **9 statements** (44,697 statements across
-  4,672 scored functions), so **90% lets an entire untested function land inside an
-  average change**, and 95% lets one land inside any change past 180 units — above the
-  observed median. Only 100% means the same thing for a 3-line change and a 300-line one.
-- **The lower bound rules the popular numbers out without any budget argument.** A floor
-  at or below the tree's own aggregate (87.16%) passes any change that is merely average,
-  so the tree can never improve and drifts down as the code grows. That disqualifies 80
-  and 85 outright.
-- **What arming it cost is stated rather than hidden.** Against this branch's merge base
-  on 2026-07-31: 5,302 changed measurable units, 4,899 covered — 92.40% — leaving 403
-  uncovered across 71 files. The floor was **not** set to 93% to make that green. 172 of
-  the 403 are lines whose exact text also appears among the diff's removed lines (code
-  relocated by the parameter-object and complexity refactors and by the whole-tree
-  `ruff format` in `00e8379`); 231 are new content. **The gate does not subtract the
-  relocated ones** — a carve-out for "lines that moved" is an exemption list with a
-  different name, and a change that moves uncovered code into a new home owns it on
-  arrival. All 403 were cleared; the leaf's final run reported 5498/5498 = 100.00%.
-
-`DEFAULT_DIFF_COVERAGE_FLOOR = 100.0`. `--diff-floor` exists on the wrapper's parser and
-is what the failure probes use to prove the arithmetic; it is not an operational dial.
+`render` prints the resolved base, state, numerator/denominator, uncovered lines and untaken
+branches. `DEFAULT_DIFF_COVERAGE_FLOOR` and `--diff-floor` no longer exist. A measured zero-percent
+result remains useful evidence and does not fail delivery. Missing or malformed reports and Git
+execution errors remain failures; this change does not turn absent evidence into a pass.
 
 ### The Unit Being Counted
 
@@ -88,7 +50,7 @@ inherited: a coverage report produced without `[tool.coverage.run] branch = true
 
 A gate that silently picks its own comparison point can be made to certify nothing by
 picking the wrong one, so `BaseResolution` carries both the revision and *how it was
-chosen*, and `render` prints both on every run next to the verdict.
+chosen*, and `render` prints both on every run in the diagnostic output.
 
 `resolve_base` tries, in order (`candidate_sources`), taking the **merge base** with the
 first that resolves:
@@ -104,14 +66,14 @@ first that resolves:
 When nothing resolves — an orphan branch, a first commit, a clone with no remote and no
 `main` — the base becomes git's **empty tree** (`EMPTY_TREE`,
 `4b825dc642cb6eb9a060e54bf8d69288fbee4904`), so every tracked line is a changed line and
-the floor applies to all of it. That is deliberately the strict reading of "nothing to
+the report describes all of it. That is deliberately the strict reading of "nothing to
 compare against"; it is **not** a fourth state and it is not a skip.
 
 ### Four Reported States, None Of Which Pass Silently
 
-| State | Meaning | Floor applies |
+| State | Meaning | Reporting |
 | --- | --- | --- |
-| `measured` | Changed Python lines sit inside the measured packages. | yes — and every uncovered line and untaken arc is **named** |
+| `measured` | Changed Python lines sit inside the measured packages. | every uncovered line and untaken arc is **named** |
 | `no-changed-lines` | The diff against the base is empty. | no; says so |
 | `no-python-changes` | Files changed, none of them Python. | no; says so |
 | `no-measurable-changes` | Python changed, but no changed line is inside a measured package (tests, `scripts/`, provider images). | no; the files and their changed-line counts are listed |
@@ -126,10 +88,8 @@ file nobody prints is indistinguishable from a covered one.
 `render` prints `uncovered line <path>:<n>` and `untaken branch <path>:<src> -> <dst>` for
 every finding, with `describe_destination` rendering Coverage.py's negative destination as
 `exit`. The percentage alone trains people to add any test until the number moves; the list
-says which line has never run, which is the only actionable form. The report also states
-outright that there is no exemption list — each finding is cleared by a test that reaches
-it, or by deleting the code.
-
+says which line has never run, which is the only actionable form. These observations support behavioral judgment; an uncovered unit does not itself require a new
+test or deletion of the source.
 ### Diff Parsing
 
 `changed_python_lines` runs `git diff --unified=0 --no-color --no-ext-diff
@@ -139,8 +99,8 @@ numbers index the same content the coverage report describes.
 
 `parse_unified_diff` is split out from the git call on purpose: its two guards (a `+++`
 header that is not `+++ b/<path>`, and a `@@` line the `HUNK` pattern does not match) are
-reachable only from malformed input, and `mcp/tests/test_diff_coverage.py` drives them
-directly. A guard no test can reach is a guard nobody can show is right.
+malformed-input refusals. Their presence is an implementation fact, not a claim that the
+retired parser edge suite remains in the current test population.
 
 ### Every Git Call Goes Through `_git`, On The Package's One Runner
 
@@ -184,57 +144,34 @@ Three facts are packed into that helper.
 `stderr`. `revision_exists` and `merge_base` still read `returncode` directly, because a missing
 revision and an unresolvable merge base are **answers, not failures** — converting those would turn
 every ordinary negative into a gate crash, which is what
-`test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` pins.
+the current wrapper return-code handling preserves.
 
 ## Invariants And Boundaries
 
-- **The floor is 100% and lowering it is a policy change, not a tuning change.** Anything
-  below it is a budget for untested code that grows with the size of the change; anything
-  at or below 87.16% passes a merely average change.
-- This module **scores** an existing coverage report. It never runs pytest and never
-  measures coverage itself.
-- It inherits `crap_calculator`'s refusal of a statement-only report. Turning
-  `[tool.coverage.run] branch` off breaks this step loudly rather than softening it.
-- There is no exemption list, no ignore file, and no carve-out for relocated lines. A
-  moved uncovered line is owned by the change that moved it.
-- The base used is printed on every run, always, including on success.
-- No merge base means the empty tree, i.e. the whole tree — never a skip.
-- Only the `measured` state can fail. The other three report and pass, and each says which
-  of them it is.
-- It lives **inside** the wrapper rather than beside it, so it reaches the pre-push hook,
-  closeout and CI through the one command they already run. A separate invocation is a
-  gate somebody has to remember, which is the same as not having one.
-- Every git call goes through `_git`, and therefore through `kernel.git_command.run_git`. Do not
-  spawn `git` in this module: it runs from the `pre-push` hook where `GIT_DIR` is exported, and an
-  unstripped selector points the diff at another repository.
-  `test_git_command.py::SingleRunnerTests` fails the build if a second runner appears.
-- `-c core.quotePath=false` must stay on every call this module makes. It is what keeps
-  `parse_unified_diff` able to see non-ASCII paths; losing it degrades the gate to silence rather
-  than to an error.
-- A git failure is a `DiffScopeError`, never an empty diff. An empty diff means `no-changed-lines`,
-  which passes — so a failure that returned one would be a silent pass.
-- **The three wrappers must agree on which failures are this gate's error.** The
-  `OSError` / `subprocess.SubprocessError` conversion belongs to `_git`. Moving it back up into
-  `run_git` alone lets a wedged git (`TimeoutExpired`, from the runner's 300s bound) or a missing
-  `project_root` (`FileNotFoundError`, from the runner's `cwd=`) escape `revision_exists` and
-  `merge_base` untyped. `test_diff_coverage.py::BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error`
-  fails if any of the three stops converting.
+- Percentage observations cannot fail delivery; report execution and integrity errors can.
+- Statement-plus-arc accounting and the branch-measurement requirement remain unchanged.
+- The base is always reported; an absent merge base uses the empty tree rather than a silent skip.
+- All Git calls use `_git` and the canonical runner, preserving selector sanitization, bounded
+  calls and `core.quotePath=false` for non-ASCII paths.
+- Git startup/timeouts become `DiffScopeError`. A negative revision lookup remains an answer;
+  a failed diff is never represented as an empty successful diff.
+- Unmeasured files are visible and are not described as covered.
 
 ## Repo-Internal References
 
+The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wrapper's `run_diff_coverage` step, the `--diff-base`/`--diff-floor` flags, and the single pytest coverage run this module reads. | "def run_diff_coverage(" | mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py:121-170 |
-| `load_coverage_by_path`, `FileCoverage`, and the refusal of a report without branch data, all reused here. | `load_coverage_by_path`; `FileCoverage` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:41-59; mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:113-132 |
-| Unit tests for base resolution order, the four states, the malformed-diff guards, and the named-findings report. `BaseResolutionTests::test_the_three_git_wrappers_agree_on_which_failures_are_this_gate_s_error` drives all three wrappers against a missing root and against a patched `git_command.run_git` raising `TimeoutExpired`; `::test_a_git_that_ran_and_said_no_is_still_an_answer_not_an_error` keeps a missing revision and an absent merge base as `False` / `None`. | `BaseResolutionTests` | mcp/tests/test_diff_coverage.py:81-254; mcp/tests/test_diff_coverage.py:221-255 |
-| `[tool.coverage.run] branch = true`, without which this step refuses to score. | "branch = true" | pyproject.toml:71-71 |
-| Diff-base candidate ordering accepts explicit `AR_GATE_DIFF_BASE` before derived Git candidates. | `candidate_sources` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:115-142 |
-| Lifecycle-owned Dagger calls receive an explicit task-derived diff base; GitHub PR validation does not run this coverage rail. | "Both modes require the exact Git comparison commit" | CONTRIBUTING.md:88-88 |
-| The contributor-facing statement of the floor and why it is 100%. | `### The coverage floor is on your diff, not on the tree` | CONTRIBUTING.md:127-157 |
-| `run_git` — the runner `_git` calls — strips `GIT_REPOSITORY_SELECTOR_ENV`, keeps stdin on `DEVNULL`, and bounds every call with the local/remote/metadata timeout classes. | `run_git`; `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| `QualityGateGitTests` points `GIT_DIR` at a decoy repository and proves `diff_coverage.run_git` still reads the repository it was handed, and that a non-repository and an unrunnable git both surface as `DiffScopeError`. | `QualityGateGitTests` | mcp/tests/test_git_command.py:391-453 |
+| Canonical runner and typed startup/timeout failures | `_git` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:80-90 |
+| Explicit and inferred comparison-base resolution | `resolve_base` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:145-173 |
+| Changed statements and source-line branch arcs | `tally_file` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:258-281 |
+| Measured/nonmeasurable states | `measure` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:289-317 |
+| All findings remain diagnostic without a floor | `render` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:344-375 |
 
 ## Update History
+
+- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
 - 2026-08-28T12:10:34+02:00 — Corrected the complete case-insensitive identity contract:
   both the normalized coverage index and the changed-path lookup are now case-folded. The first
   final Dagger gate exposed the asymmetric lookup as `no-changed-lines` in the focused regression.

@@ -16,202 +16,38 @@
 
 ## Purpose
 
-Fake-transport conformance coverage for the native Claude stream-JSON adapter, including structured
-startup, token-free and MCP-isolated model catalog discovery, same-session model/effort setters with
-terminal evidence, correlated delivery, interactions, reconciliation, limits, shutdown, and
-terminal normalization.
+Reusable Claude stream-json fake transport, fixture replay and adapter-operation builders.
 
 ## Code Commentary
 
-### Sub-Agent Text Forwarding Floor
-
-The fail-closed `--forward-subagent-text` version floor is covered by the launch and
-forwarding cases listed in Repo-Internal References.
-The fake transport records launch argv and replays startup frames on the second start; the mapper-tier
-floor verdicts live in `test_conversation_projector_claude_agents.py`.
-
-Those cases prove the argv contract but not the transport lifecycle it assumes: `_FakeClaudeTransport`
-accepts a second `start` on the same object, so the at-floor case passed while the production
-transport would have refused its own re-launch (260727-CHATS-IM-L4).
-`ClaudeProductionTransportRelaunchTests` closes that gap by driving the real adapter with
-`transport_factory=ClaudeSubprocessTransport` against a local stream-json stub that reports 2.1.220
-and appends each launch argv to a log file. It asserts exactly two launches with the flag only on the
-second, `control` = `ready`, and a selectable model whose effort options are advertised — the
-dashboard's model/effort surface. The stub is a local interpreter script, so the case stays
-credential-free while still exercising real process ownership.
-
-### Discovery Isolation And Live Closure
-
-Claude catalog discovery stays token-free while the transient probe is kept from starting
-unrelated MCP servers inherited through the caller's native argv. The discovery-only regression
-table covers the selector grammar accepted by the observed Claude Code 2.1.210 install: one
-separate config, variadic and repeated separate configs, equals-attached configs, the exact strict
-flag, and the first `--` end-of-options separator. It requires all accepted selectors before the
-separator to be replaced by exactly one strict empty config. Unrelated options retain their order,
-an equals-attached config never consumes a following positional, and the entire post-`--` suffix
-remains byte-for-byte intact. The test deliberately does not invent rejected boolean or negated
-strict spellings.
-
-This isolation is scoped to `discover()`. A separate normal-start case requires existing caller MCP
-selectors to survive byte-for-byte, so ordinary settings-owned sessions continue to load their
-installed MCP configuration. The original fake discovery case still proves the synthetic bootstrap
-has zero turns and zero cost, uses one strict empty config, and force-stops the transient transport.
-
-Live evidence closes the relationship between those fake pins and the native process:
-a two-marker A/B made normal startup create both configured markers while discovery created
-neither, returned the same model-gated catalog at zero turns/cost, and cleaned up. The independent
-reviewer then reproduced an adversarial marker collision against the corrected candidate; its
-marker stayed absent and the same five observed model keys returned. Those row counts and keys are
-live installation/auth observations, not production enums or expectations encoded by this suite.
-
-### Same-Session Setter Evidence
-
-The same-session scenarios drive `/model` and `/effort` as structured Claude session commands through the
-native stream transport. A set becomes `echo-verified` only after the replayed user frame matches
-the retained correlation, session id, and exact canonical command body and a following terminal
-result echoes an allowed effective label. Model changes immediately re-gate effort against the
-new model's dynamic menu; an unavailable effort is `unsupported` without another write. A
-completed command with no effective echo is only `immediate` and does not promote advertised
-state, while a failed native command is `unsupported`.
-
-Fable behavior is deliberately native-result-driven. A provider-qualified model whose key does not
-contain `fable` can return `noninteractive_set_blocked` and map to `unsupported` with launch-flag
-guidance. Conversely, an advertised alias literally named `fable` can echo a Sonnet terminal label
-and succeed. This proves there is no key/prefix heuristic. Exact terminal-label tests also reject
-prefix impostors and arbitrary `(default)` strings; allowed aliases are derived from the dynamic
-catalog row and matching resolved-model identities.
-
-Timeout and cancellation cases retain only enough abandoned command state to neutralize late
-replay/result frames before a clean retry. A later setter is not sent while an abandoned command
-has not terminated, completed duplicate replay is ignored, strict correlation/body/session
-mismatches fail loudly, and a duplicate retained correlation is never written a second time.
-
-### Effective-Launch Mismatch
-
-The Claude suite can inject an expected `ResolvedLaunch` and now proves the fail-loud acceptance
-boundary. When `system/init` echoes a different effective model, the adapter force-closes its
-transport and propagates `HarnessControlError` so the runner can persist
-`control=failed`/`acceptance=rejected` with exact bridge evidence. Genuine protocol negotiation
-incompatibility remains the distinct `unsupported` result covered by the adjacent test.
-
 ### Logic
 
-Pinned stream-JSON fixtures and a deterministic transport drive initialize, synthetic bootstrap,
-catalog, turn, interaction, replay, failure, and result frames. Existing cases cover launch
-preservation, discovery-only MCP isolation, compatible structured version negotiation, prompt
-correlation, busy ordering, durable interaction responses, supported commands, ambiguous
-disconnect reconciliation, bounded history, and safe terminal failure metadata.
+The fake transport queues incoming frames, records writes and launch arguments, invokes the before-write callback before recording a frame, and exposes controlled disconnect/stop. A scripted relaunch drains the stop sentinel and replays the configured startup frames.
 
-The fixture baseline tracks the live-confirmed `2.1.210` shape with catalog-specific
-coverage. Discovery performs only the synthetic `shouldQuery: false` bootstrap plus the
-`list_models` control request, asserts zero turns and zero cost, and always stops the transient
-process. Started advertisement is cached, selects the current model, keeps effort levels nested per
-model, leaves current effort unknown instead of inventing it, and preserves disabled models as
-non-selectable catalog rows. Current initialization is accepted without stale `models` or `account`
-fields, while duplicate model keys or a rejected `list_models` response make the adapter
-unsupported and fail advertisement loudly without a fallback.
-
-### Conventions
-
-The module uses `unittest.IsolatedAsyncioTestCase`, fixed UUIDs/timestamps, and JSONL fixtures under
-the exact observed version directory. Selector cases are table-driven by grammar shape rather than
-captured model names. Fake writes and argv are inspected structurally; secrets placed in the launch
-environment must never appear in handshake evidence.
+Adapter construction injects the transport, fixed clock and correlation sequence. Replay helpers preserve the session while transforming slash-command text to its structured command echo. Setter helpers create a fresh operation reference and preflight it before invoking the adapter. Bounded activity/snapshot waits fail after twenty scheduler yields. The embedded stub speaker supports initialize/model-list responses and emits a deterministic init/result sequence.
 
 ### Invariants And Boundaries
 
-- Enumeration is token-free: the bootstrap is synthetic and non-querying, and the fixture proves
-  zero turns and zero cost before `list_models` completes.
-- Discovery removes every installed-grammar MCP selector before the first `--`, inserts one strict
-  empty config, preserves unrelated argv and the complete positional suffix, and always stops the
-  transient transport.
-- Normal session startup must preserve caller MCP selectors byte-for-byte; discovery isolation is
-  never applied to the real settings-owned session path.
-- The adapter uses Claude's native control request; no ACP transport, composer paste, static enum,
-  or Toad host is involved.
-- Effort options remain model-gated, and current effort remains absent when Claude does not report
-  it.
-- Malformed, duplicate, contradictory, or rejected catalog evidence fails loudly; there is no
-  hardcoded production fallback.
-- Model/effort promotion requires same-session exact replay correlation plus terminal effective
-  echo; completion without that echo never becomes `echo-verified`.
-- Claude's native `noninteractive_set_blocked` result determines unsupported switching. Model keys,
-  aliases, or provider prefixes are never used to guess a Fable refusal before sending.
-- Dynamic model terminal aliases match exactly; prefix collisions and unrelated default labels do
-  not promote capability state.
-- Timed-out/cancelled command frames are neutralized without stealing a later setter result or
-  writing a duplicate retained correlation.
-- `--forward-subagent-text` is fail-closed: emitted only behind a probed >= 2.1.220 install via a
-  probe-launch-then-relaunch flow; below-floor or unparseable versions run exactly one flagless
-  launch with an honest `unverified` note (fix-round finding 8).
-- The fake transport is restart-tolerant and therefore cannot witness process ownership; any claim
-  about the probe re-launch actually launching belongs to the real-transport case, not the fake tier.
-- Fixture versions are test evidence rather than a production pin, and credentials/model output
-  remain excluded from retained startup evidence.
-
-### Todos
-
-None.
-
-## Docs References
-
-No Domain Documentation category is configured for this repository, so no live documentation
-source was available for this test-file curation pass.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
+This retained module defines support objects and builders; it contains no collected test functions. Its former family-wide coverage narrative is historical. Helper availability is not evidence that a removed scenario still runs.
 
 ## Repo-Internal References
 
-The tests and native Claude adapter modules directly prove the startup, parsing, and cached
-advertisement contract.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Token-free discovery uses one non-querying synthetic user frame, records zero turns/cost, inserts one strict empty config, selects the current model, and stops the transient transport. | `test_discover_uses_only_token_free_bootstrap_and_list_models` | mcp/tests/test_harness_control_claude_stream_1.py:33-53 |
-| Discovery replaces separate, variadic/repeated, and equals-attached MCP selectors; preserves unrelated argv and the full post-`--` suffix; and leaves exactly one strict empty config before the separator. | `test_discover_replaces_all_installed_mcp_selector_spellings` | mcp/tests/test_harness_control_claude_stream_1.py:55-167 |
-| Normal startup preserves caller MCP selectors byte-for-byte, proving isolation is discovery-only. | `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude_stream_1.py:169-189 |
-| Startup preserves native launch settings, issues `list_models`, caches the selected catalog, gates efforts by model, leaves current effort unknown, and marks disabled rows non-selectable. | `test_launch_preserves_arguments_environment_and_requires_structured_init` | mcp/tests/test_harness_control_claude_stream_1.py:191-246 |
-| Forwarding at or above the supported version floor relaunches with `--forward-subagent-text`. | `test_forward_subagent_text_relaunches_with_the_flag_at_or_above_the_floor` | mcp/tests/test_harness_control_claude_stream_1.py:248-273 |
-| An unparseable version keeps `--forward-subagent-text` fail-closed. | `test_forward_subagent_text_stays_fail_closed_on_an_unparseable_version` | mcp/tests/test_harness_control_claude_stream_1.py:275-290 |
-| Current initialization omits stale model/account fields, while duplicate or rejected catalog evidence yields unsupported/loud failure with no fallback. | `test_current_initialize_without_models_or_account_is_accepted`; `test_malformed_or_rejected_list_models_fails_loud_without_fallback` | mcp/tests/test_harness_control_claude_stream_1.py:292-308; mcp/tests/test_harness_control_claude_stream_1.py:310-342 |
-| Same-session model/effort setters require native replay plus terminal echo, update the model gate only on evidence, and refuse effort unavailable for the selected model without a write. | `test_model_and_effort_set_require_terminal_echo_and_update_model_gate` | mcp/tests/test_harness_control_claude_stream_2.py:66-118 |
-| Native failure and non-echo completion remain unsupported/immediate without promotion; provider-qualified Fable refusal and a successful alias named `fable` prove there is no name heuristic. | `test_terminal_refusal_or_non_echo_never_promotes_claude_capability`; `test_native_noninteractive_set_blocked_refusal_maps_without_alias_guessing` | mcp/tests/test_harness_control_claude_stream_2.py:120-142; mcp/tests/test_harness_control_claude_stream_2.py:144-209 |
-| Exact dynamic terminal aliases reject prefix impostors and arbitrary default labels. | `test_model_terminal_labels_are_exact_dynamic_aliases_not_prefixes` | mcp/tests/test_harness_control_claude_stream_2.py:211-294 |
-| Repeated late replay of an expired set restores one turn rather than one turn per replay. | `test_repeated_late_replay_of_an_expired_set_restores_one_turn_not_two` | mcp/tests/test_harness_control_claude_stream_2.py:330-371 |
-| The Claude catalog parser validates the native response, exact unique model keys, model-specific effort consistency, disabled state, and current-model membership. | `parse_list_models_response`; `_parse_model`; `_require_unique_model_keys`; "def _select_current_model" | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75; mcp/src/agents_remember/serving/claude_stream_capabilities.py:78-83; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
-| The adapter negotiates startup then catalog before readiness, isolates only transient discovery, force-stops that probe, and retains cached advertisement for started sessions. | `start`; `discover`; `advertise` | mcp/src/agents_remember/serving/harness_control_claude.py:283-318; mcp/src/agents_remember/serving/harness_control_claude.py:327-341; mcp/src/agents_remember/serving/harness_control_claude.py:343-350 |
-| The discovery argv builder removes only accepted pre-separator MCP selector spellings, preserves unrelated arguments/suffixes, and adds one strict empty set; the ordinary stream argv builder stays separate. | `build_claude_discovery_argv`; `build_claude_stream_argv` | mcp/src/agents_remember/serving/claude_stream_protocol.py:88-113; mcp/src/agents_remember/serving/claude_stream_protocol.py:116-145 |
-| Native startup frames define the exact `list_models` control request and a synthetic non-querying bootstrap. | `list_models`; `bootstrap_message`; "\"shouldQuery\": False" | mcp/src/agents_remember/serving/claude_stream_protocol.py:162-162; mcp/src/agents_remember/serving/claude_stream_protocol.py:208-218 |
-| Claude setters validate the dynamic catalog/model gate, send structured commands, promote only echo-verified results, and derive exact model terminal aliases from the selected catalog row. | `set_model`; `set_effort`; `_submit_set_command`; `_model_terminal_results` | mcp/src/agents_remember/serving/harness_control_claude.py:352-376; mcp/src/agents_remember/serving/harness_control_claude.py:402-442; mcp/src/agents_remember/serving/harness_control_claude.py:686-707; mcp/src/agents_remember/serving/harness_control_claude.py:378-400 |
-| State submission retains canonical command replay text, waits for a terminal result, and marks timed-out commands abandoned. | `submit`; `wait_terminal`; `abandon_submission` | mcp/src/agents_remember/serving/claude_stream_state.py:163-211; mcp/src/agents_remember/serving/claude_stream_state.py:225-241; mcp/src/agents_remember/serving/claude_stream_state.py:243-251 |
-| Replayed-user handling requires exact retained correlation, session, and body; completed abandoned replays are ignored rather than requeued. | `_handle_replayed_user`; `_handle_abandoned_replay`; `_require_faithful_replay` | mcp/src/agents_remember/serving/claude_stream_state.py:624-670; mcp/src/agents_remember/serving/claude_stream_state.py:672-718; mcp/src/agents_remember/serving/claude_stream_state.py:720-738 |
+| Fake stream ownership, relaunch frames and write ordering. | "class _FakeClaudeTransport" | mcp/tests/test_harness_control_claude.py:47-118 |
+| Adapter dependencies are injected explicitly. | "def _adapter(" | mcp/tests/test_harness_control_claude.py:152-167 |
+| Slash-command replay preserves the command/arguments representation. | "def _replay(" | mcp/tests/test_harness_control_claude.py:182-204 |
+| Operation identity is unique within the helper sequence. | "def _operation(" | mcp/tests/test_harness_control_claude.py:240-247 |
+| Model setters preflight the operation before invocation. | "def _set_model(" | mcp/tests/test_harness_control_claude.py:250-253 |
+| Activity waits have a bounded failure path. | "def _wait_for_activity(" | mcp/tests/test_harness_control_claude.py:266-273 |
+
+## Docs References
+
+No external documentation is needed for these source-owned helper facts.
 
 ## Cross-Repo References
 
-The live and reviewer artifacts corroborate the fake selector grammar with real process
-side-effect markers. Their five-row result is a captured install/auth observation, not a test enum.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Submission Authority Delta
-
-Claude hosted-control tests now prove sole-operation authority across prompt/interaction/setter
-traffic, exact terminal completion, late/cancel/duplicate immunity, and bounded retained history.
-Unknown setter evidence remains the shared blocker until exact resolution.
-
-## Native Interrupt Acceptance Delta
-
-Claude control regressions now pin native interrupt request acceptance and the corresponding typed failure/detail paths without mistaking acknowledgement for turn settlement.
-
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
-
-## 260731-EFA-L2 Delta — repeated late replay
-
-`test_repeated_late_replay_of_an_expired_set_restores_one_turn_not_two`: replaying an expired set
-more than once restores **one** turn, not one per replay. Replay is idempotent per set, so a
-duplicated late frame cannot inflate the transcript.
+No separate cross-repository authority is established by this helper module.
 
 ## Update History
 

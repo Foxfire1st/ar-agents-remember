@@ -63,7 +63,9 @@ The protocols establish the downward dependency boundary; the application suppli
 | Registry population and task/memory observations have distinct service ports. | `CertificationMemoryRailsPort`; `MemoryQualityPort` | mcp/src/agents_remember/worktrees/services.py:96-105; mcp/src/agents_remember/worktrees/services.py:108-125 |
 | Current memory authority, Gate 5, and finalization are separate continuation methods. | `CertificationContinuationPort` | mcp/src/agents_remember/worktrees/services.py:128-138 |
 | The bundle exposes optional capabilities; provider setup inputs stay opaque. | `WorktreeServices`; `ProviderSetupRequestSpec` | mcp/src/agents_remember/worktrees/services.py:142-147; mcp/src/agents_remember/worktrees/services.py:151-167 |
-| Binding, reset, and missing-bundle refusal remain process-local and explicit. | `bind_worktree_services`; `reset_worktree_services`; `worktree_services` | mcp/src/agents_remember/worktrees/services.py:177-180; mcp/src/agents_remember/worktrees/services.py:183-186; mcp/src/agents_remember/worktrees/services.py:189-194 |
+| Bind the composition-provided services for this process. | "def bind_worktree_services" | mcp/src/agents_remember/worktrees/services.py:181-184 |
+| Clear the bound services (tests and process teardown). | "def reset_worktree_services" | mcp/src/agents_remember/worktrees/services.py:187-190 |
+| Reading unbound worktree services refuses instead of constructing ambient owners. | "def worktree_services" | mcp/src/agents_remember/worktrees/services.py:193-198 |
 | The default application bundle supplies rails but does not bind a continuation. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:197-203 |
 | Selected execution observes memory before reuse and refuses an absent continuation. | `execute_selected_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py:279-332 |
 
@@ -84,7 +86,7 @@ Prepared-memory certification is an explicit typed service alongside the continu
 | `TerminalGuard` owns the corresponding behavior described above. | `TerminalGuard` | `mcp/src/agents_remember/worktrees/services.py:32-42` |
 | `CitationGuardPort` owns the corresponding behavior described above. | `CitationGuardPort` | `mcp/src/agents_remember/worktrees/services.py:45-51` |
 | `WorktreeServicesUnboundError` owns the corresponding behavior described above. | `WorktreeServicesUnboundError` | `mcp/src/agents_remember/worktrees/services.py:177-178` |
-| `bind_worktree_services` owns the corresponding behavior described above. | `bind_worktree_services` | `mcp/src/agents_remember/worktrees/services.py:181-184` |
+| Bind the composition-provided services for this process. | "def bind_worktree_services" | mcp/src/agents_remember/worktrees/services.py:181-184 |
 | `reset_worktree_services` owns the corresponding behavior described above. | `reset_worktree_services` | `mcp/src/agents_remember/worktrees/services.py:187-190` |
 | `worktree_services` owns the corresponding behavior described above. | `worktree_services` | `mcp/src/agents_remember/worktrees/services.py:193-198` |
 

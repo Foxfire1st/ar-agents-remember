@@ -5,7 +5,7 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/scripts/check-diff-coverage.mjs`                 |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T13:51:26+02:00                                  |
+| lastUpdated | 2026-09-06T21:51:32+00:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                  |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                               |
@@ -16,10 +16,7 @@
 
 ## Purpose
 
-The dashboard per-diff coverage floor (260731-EFA-L8 R7), mirroring the Python
-changed-lines gate. It scores every changed line the v8 report records as an
-executable statement against the Vitest run and fails when the covered share is
-below the floor (default 90%).
+Reports diagnostic changed-line dashboard coverage from the existing v8 artifact. Changed executable statement lines contribute to the denominator; positive execution contributes to the numerator. Missing lines remain visible, but no mandatory percentage or 90% floor can fail delivery. The CLI retains its Dagger admission and missing/malformed artifact failures.
 
 ## Code Commentary
 
@@ -66,12 +63,15 @@ configured for this file.
 
 ## Repo-Internal References
 
+The exact source declarations below establish the current behavior; this inventory is not execution evidence.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executable-statement scoring helpers. | `executableStatementLines`; `coveredStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:15-23; dashboard/scripts/check-diff-coverage.mjs:26-37; dashboard/scripts/check-diff-coverage.mjs:44-77 |
-| The Dagger admission check is the first operation of the direct CLI runner, while pure scoring helpers stay importable. | `requireDaggerTestEnvironment`; `function main()`; direct-file guard | dashboard/scripts/check-diff-coverage.mjs:12-12; dashboard/scripts/check-diff-coverage.mjs:79-80; dashboard/scripts/check-diff-coverage.mjs:213-220 |
-| The Python-parity base resolution remains inside the guarded runner. | "const resolveBase = () => {" | dashboard/scripts/check-diff-coverage.mjs:107-132 |
-| The contract suite pins both direct-CLI refusal and pure accounting. | "the direct changed-lines CLI refuses before reading Git or coverage" | dashboard/scripts/check-diff-coverage.test.mjs:15-27 |
+| Executable statement-line accounting | `executableStatementLines` | dashboard/scripts/check-diff-coverage.mjs:14-22 |
+| Covered statement ranges | `coveredStatementLines` | dashboard/scripts/check-diff-coverage.mjs:25-36 |
+| Production filtering and changed-line tally | `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:43-76 |
+| Dagger admission and comparison-base selection | `main` | dashboard/scripts/check-diff-coverage.mjs:78-132 |
+| Required coverage artifact and diagnostic result without a floor | `coverage` | dashboard/scripts/check-diff-coverage.mjs:172-204 |
 
 ## Cross-Repo References
 
@@ -82,6 +82,8 @@ No cross-repository implementation source governs this file.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: documented the direct-main-only
   Dagger guard. Pure scoring imports remain available to diagnostic Vitest; direct changed-lines

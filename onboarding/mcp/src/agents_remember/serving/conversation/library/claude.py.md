@@ -105,10 +105,10 @@ locked helper implements the native seam, including the on-disk `subagents/` enu
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Claude list rows and paging, read block/role/provenance mapping, and argv resume minting on fake helper boundaries. | `ClaudeLibraryTests` | mcp/tests/test_conversation_library_ports.py:465-573 |
-| A range-absurd but type-valid `lastModified` fails as a typed store error. | `ClaudeLibraryTests` | mcp/tests/test_conversation_library_ports.py:465-573 |
-| Sub-agent grouping with meta identity, helper-without-evidence and empty-catalog unavailability notes, nested spawnDepth naming, agent read routing, agent resume fail-closed, and agent-row shape failures. | `ClaudeLibraryAgentTests` | mcp/tests/test_conversation_library_agents.py:471-648 |
-| The installed suite proves the Claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. | `test_installed_claude_library_gates_on_contract_not_version` | mcp/tests/test_conversation_library_installed.py:591-617 |
+| The Claude library owns helper-backed list/read and exact native resume-target construction. | `ClaudeConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/claude.py:88-432 |
+| Out-of-range native timestamps raise LibraryStoreError even when their value has an integer type. | `_iso_from_millis` | mcp/src/agents_remember/serving/conversation/library/claude.py:620-627 |
+| Claude sub-agent rows derive identity and title from native helper metadata. | `_agent_row` | mcp/src/agents_remember/serving/conversation/library/claude.py:386-432 |
+| Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the Claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 | The locked helper defines the session-listing call. | "listSessions({" | mcp/native_helpers/conversation_library/src/claude.ts:83-83 |
 | The locked helper defines the session-messages call. | "getSessionMessages(" | mcp/native_helpers/conversation_library/src/claude.ts:377-377 |
 | The locked helper defines the session-info call. | "getSessionInfo(" | mcp/native_helpers/conversation_library/src/claude.ts:426-426 |

@@ -34,6 +34,17 @@ authority, and code-base commit. There is deliberately no leaf-to-official fallb
 `MemoryScopeIdentity` contains only frozen, result-affecting authority facts. `MemoryScope` pairs
 that identity with the resolved `Path` and coordination objects required to execute the check.
 
+Acceptance-oriented quality calls use `resolve_memory_candidate_scope`: configured admission
+still validates repository/enclosure authority, then the canonical pair resolver validates the
+exact live code and memory checkouts. A repeated revalidation must reproduce the same pair; moved
+identity returns the exact contract-addressed sync route before another scan or publication. The
+leaf code base is temporary comparison provenance only. Bare configured-repository calls neither
+inherit that leaf provenance nor silently replace an invalid requested leaf.
+
+cit:([`resolve_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:134-157)
+cit:([`revalidate_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:160-193)
+cit:([`_leaf_scope`], mcp/src/agents_remember/application/memory_scope.py:196-234)
+
 ### Invariants And Boundaries
 
 - `repo_id` and `contract_path` must resolve through configured authority; callers never provide

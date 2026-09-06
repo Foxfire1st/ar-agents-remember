@@ -26,7 +26,7 @@ This module marks the preparation package. Consumers import the owning modules d
 
 ### Conventions
 
-Use the named source owners directly. This card describes the current uncommitted implementation; commit-based verification remains pending.
+Use the named source owners directly. This package marker is present in landed IAS source; verification metadata remains closeout-owned.
 
 ### Invariants And Boundaries
 
@@ -46,7 +46,7 @@ No source-local TODO is asserted here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Package purpose and import behavior. | module docstring | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/__init__.py:1-1` |
+| Package purpose and import behavior. | "Lifecycle-owned private preparation and exact protected-output publication." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/__init__.py:1-1 |
 
 ## Cross-Repo References
 
@@ -55,6 +55,9 @@ No source-local TODO is asserted here.
 | No cross-repository source is needed for this card. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-07 — Reconciled the package marker’s landed-source status; retained prior verification pins.
+
 
 ### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
 

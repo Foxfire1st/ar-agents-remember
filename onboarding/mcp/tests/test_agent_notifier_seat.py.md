@@ -5,48 +5,68 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_agent_notifier_seat.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T06:48+02:00                                            |
+| lastUpdated | 2026-09-06T21:38+00:00 |
 | lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                                        |
 | lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                          |
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Regression suite for seat-liveness findings and one notifier sweep over canonical task-document/role seats.
+Notifier sweep integration for durable signals, redelivery and heartbeat state.
 
 ## Code Commentary
 
 ### Logic
 
-The suite covers stale/degraded/unbound predicates, heartbeat progress, routable-owner refusal, backlog budgets, redelivery floors, coalescing, expiry, and restart behavior. Coalescing distinguishes roles on the same task document and routes unresolved dead seats to the architect boundary.
+Four retained scenarios seed inbox and stale-seat facts, constrain one-attempt redelivery budgeting, renew one signal row after cooldown, and keep a restarted sweep from retrying before the 900-second floor. The seeded legacy seats have no protocol endpoint, so both delivery actions remain unconfirmed while heartbeat and observer facts persist.
 
 ### Conventions
 
-Test-only evidence uses deterministic fakes/fixtures and exercises the public or owning internal seam directly.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-Diagnostics are not actionable findings; live or declared replacement evidence suppresses false inactivity; one sweep remains bounded and idempotent.
+Use temporary stores and real cooldown persistence. Signal renewal preserves row identity; unconfirmed delivery must not be described as successful paste or full predicate-family coverage.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local regression contract.
-
-## Repo-Internal References
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `SeatLivenessPredicateTests` | mcp/tests/test_agent_notifier_seat.py:38-38 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Seeded drift produces expected actions and ticks heartbeat. | `test_seeded_drift_produces_expected_actions_and_ticks_heartbeat` | mcp/tests/test_agent_notifier_seat.py:71-140 |
+| Redeliver budget limits attempts and heartbeat reports backlog. | `test_redeliver_budget_limits_attempts_and_heartbeat_reports_backlog` | mcp/tests/test_agent_notifier_seat.py:142-168 |
+| Repeated seat liveness sweeps coalesce into one signal row. | `test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row` | mcp/tests/test_agent_notifier_seat.py:170-207 |
+| Pending backlog does not burst redeliver before floor after restart. | `test_pending_backlog_does_not_burst_redeliver_before_floor_after_restart` | mcp/tests/test_agent_notifier_seat.py:209-233 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this test module.
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_agent_notifier_seat.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the nudge-store removal and the

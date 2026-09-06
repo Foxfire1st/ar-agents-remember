@@ -69,8 +69,8 @@ reserved `workspace` source starts at the first row inside the workspace TTL. Cu
 resumes stay owned by `serving.events.decode_cursor`.
 
 `prune_expired_lifecycle_event_logs(root, *, now, protected_lifecycle_ids=frozenset())`
-physically unlinks `lifecycles/<id>/events.jsonl` for **any** dormant log (inactivity past
-its TTL) — not only terminal ones — and attempts to remove the now-empty lifecycle directory.
+physically removes the lifecycle directory for **any** dormant, unprotected log
+(inactivity past its TTL), including its event log and sidecars, not only terminal ones.
 `protected_lifecycle_ids` is an exemption set checked *before* dormancy: a log whose id is in
 the set is skipped no matter how long it has been inactive. The dashboard passes the lifecycle
 ids of every leaf in a not-yet-retired master series (from
@@ -129,10 +129,8 @@ This file implements repository-local dashboard retention policy.
 
 ## Repo-Internal References
 
-The serving layer calls this policy before raw event replay; the focused serving
-tests pin dormant pruning without a terminal event, heartbeat-skipping activity
-reads, bounded active-window replay, and no global cap across parallel active
-lifecycles.
+The serving layer calls this policy before raw event replay. The production owners below
+define dormant pruning, heartbeat-skipping activity reads and bounded active replay.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -141,10 +139,8 @@ lifecycles.
 | Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. | `protected_lifecycle_ids`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
-| A protected dormant log survives inactivity and is pruned only once protection is dropped. | `test_protected_lifecycle_log_survives_inactivity` | mcp/tests/test_serving_raw_events.py:334-357 |
 | `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | `_first_retained_offset` | mcp/src/agents_remember/observer/event_retention.py:210-223 |
 | The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | "async def stream_raw_events("; "offsets = await asyncio.to_thread(initial_event_offsets, root, now=now)"; "await asyncio.to_thread(prune_expired_lifecycle_event_logs, root, now=now)" | mcp/src/agents_remember/serving/events.py:232-277 |
-| Raw-event tests cover dormant pruning without a terminal event, heartbeat skipping, bounded active replay, limit batches, and uncapped parallel active history. | `test_fresh_connection_does_not_cap_parallel_active_lifecycle_history`; `test_read_new_events_skips_heartbeats`; `test_read_new_events_limit_bounds_batch`; `test_dormant_promoted_lifecycle_pruned_without_terminal_event`; `test_dormant_fleeting_lifecycle_pruned_without_terminal_event`; `test_protected_lifecycle_log_survives_inactivity`; `test_initial_offsets_bound_active_replay_to_recent_window` | mcp/tests/test_serving_raw_events.py:236-262; mcp/tests/test_serving_raw_events.py:264-280; mcp/tests/test_serving_raw_events.py:282-295; mcp/tests/test_serving_raw_events.py:297-318; mcp/tests/test_serving_raw_events.py:320-332; mcp/tests/test_serving_raw_events.py:334-357; mcp/tests/test_serving_raw_events.py:374-389 |
 
 ## Cross-Repo References
 

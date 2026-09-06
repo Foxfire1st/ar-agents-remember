@@ -38,7 +38,7 @@ the draft for reconciliation. Pane content remains a readable projection, not au
 | --- | --- | --- |
 | Draft and transcript models. | `UncommittedDraft` | mcp/src/agents_remember/serving/harness_control_models.py:110-119 |
 | Shared queue owner. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
-| R11 scenarios. | `test_ambiguous_draft_submission_retains_human_text` | mcp/tests/test_harness_control_conformance_1.py:230-244 |
+
 
 ## Update History
 

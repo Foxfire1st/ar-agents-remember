@@ -67,6 +67,8 @@
       "# Cockpit Dashboard \u2014 Workflow Scenario Catalog",
       "# Session cockpit upstream register and Chats decision brief",
       "# Session cockpit closeout evidence",
+      "245057ab16e19afdaabd5c188c9576b22e0c0870",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "ladder-resolved",
       "orient",
       "engine-room/overview.md",
@@ -79,14 +81,12 @@
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T07",
+      "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
       "T06",
       "governingOverview",
-      "TES",
-      "TTL",
-      "HFX2"
+      "TES"
     ]
   },
   "fallback": {
