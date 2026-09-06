@@ -6,8 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/code_quality/check.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `c87d61cf3ed2fa467cb3e16bbdd5271c92c80c28` |
-| lastVerifiedCommitDate | 2026-09-04T14:53:25+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

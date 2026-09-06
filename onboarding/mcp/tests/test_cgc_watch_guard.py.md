@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_cgc_watch_guard.py`        |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

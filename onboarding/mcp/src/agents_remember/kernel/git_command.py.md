@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview

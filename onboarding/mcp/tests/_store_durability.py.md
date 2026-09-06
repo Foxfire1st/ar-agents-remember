@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/_store_durability.py`      |
 | doc_type               | `file-level-onboarding`               |
 | lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview      | `overview.md`                         |
 
 ## Governing Overview

@@ -6,8 +6,8 @@
 | path | `dashboard/src/types/projection.schema.json` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:51:23+00:00 |
-| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
-| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

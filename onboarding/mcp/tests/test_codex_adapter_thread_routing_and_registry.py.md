@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_codex_adapter_thread_routing_and_registry.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                   |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`                   |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

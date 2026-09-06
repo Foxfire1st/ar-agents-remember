@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T17:15:00+02:00 |
-| lastVerifiedCommitHash | `ce7f10b565f82bc41421d60ba914ee1d0abf61c4` |
-| lastVerifiedCommitDate | 2026-09-04T17:04:29+02:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview

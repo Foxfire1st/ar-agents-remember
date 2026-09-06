@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_doc_graph_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash |  `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate |  2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
