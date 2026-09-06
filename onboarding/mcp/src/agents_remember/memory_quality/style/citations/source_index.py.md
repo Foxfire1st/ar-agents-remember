@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/style/citations/source_index.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastUpdated | 2026-09-06T02:22:00+02:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -16,60 +16,29 @@
 
 ## Purpose
 
-Persistent source acquisition for repository-wide citation anchor lookup.
+Acquire and lease a persistent citation source index while keeping ordinary filesystem freshness checks and explicit Git-candidate selection distinct.
 
 ## Code Commentary
 
 ### Logic
 
-Module-level surface:
+`open_repository_index` validates the current generation under a shared lock, upgrades to the existing exclusive publisher lock when needed, and returns a shared-lock `RepositoryIndex` lease. Ordinary acquisition enumerates the eligible filesystem population and stats its files; changed identities cause content checks, a metadata-only manifest refresh when bytes match, or a rebuilt generation when content differs.
 
-- `SourceIndexError` (class, lines 98-99) — The requested source snapshot cannot be indexed safely.
-- `SourceTreeChangedError` (class, lines 102-103) — The code tree changed while an index generation was being built.
-- `IndexMetrics` (class, lines 114-128) — Observable acquisition work for cold, warm, and metadata-refresh paths.
-- `CachePaths` (class, lines 135-143)
-- `PublicationBoundary` (class, lines 147-150)
-- `RepositoryIndex` (class, lines 157-231) — A shared-lock lease on one complete immutable source snapshot.
-- `cache_root` (function, lines 234-240) — One fixed-slot cache root shared by every application schema generation.
-- `cache_paths` (function, lines 243-277)
-- `validate_expected_snapshot` (function, lines 280-285) — Reject every spelling except the canonical lowercase SHA-256 generation id.
-- `validate_operation_scope` (function, lines 288-314) — Validate document/generation authority before an operation performs any work.
-- `open_repository_index` (function, lines 317-384) — Open a source index through the default safe path or an explicit frozen lease.
-- `build_repository_index` (function, lines 387-394) — Explicit frozen-wave prebuild; a current generation is reused rather than rebuilt.
-- `_open_expected_generation` (function, lines 397-435) — Lease one prevalidated generation without source-tree or full-manifest work.
-- `_repository_index` (function, lines 438-453)
-- `_open_shared_lock` (function, lines 456-462)
-- `code_files` (function, lines 465-467) — The source files the citation resolver considers, in current candidate order.
-- `_current_generation` (function, lines 470-497)
-- `_open_database` (function, lines 500-510)
-- `_ready_generation` (function, lines 513-520)
-- `_validate` (function, lines 523-559)
-- `_build_and_publish` (function, lines 562-570)
-- `_build_once` (function, lines 573-649)
-- `_validate_temporary_database` (function, lines 652-664) — Run the expensive SQLite and application checks before publication is possible.
-- `_publish_generation` (function, lines 667-692) — Publish SQLite and manifest while the absent/last readiness marker is authority.
-- `_tree_state` (function, lines 695-728)
-- `_stable_read` (function, lines 731-742)
-- `_check_source_bounds` (function, lines 745-763)
-- `_snapshot_id` (function, lines 766-773)
-- `_identities` (function, lines 776-777)
-- `_refreshed_manifest` (function, lines 780-792)
-- `_cache_bytes` (function, lines 795-800)
-- `_reclaim_temps` (function, lines 803-807) — A dead publisher leaves at most one temp; the next exclusive publisher removes it.
-- `_reclaim_legacy_cache_roots` (function, lines 810-839) — Remove version-named predecessors before this process can publish or query.
-- `_reclaim_legacy_root` (function, lines 842-864)
-- `_remove_cache_tree` (function, lines 867-874)
-- `_exclusive_lock_with_timeout` (function, lines 877-888)
-- `_reclamation_time_remaining` (function, lines 891-895)
-- `_under` (function, lines 898-900)
+When `Trees` carries a candidate tree, `_tree_state` delegates population and working-byte proof to its `GitSourceCandidate`. Ordinary traversal remains Git-independent and retains eligible dirty, untracked, and ignored files; it excludes its declared directories/suffixes and VCS marker files, including a linked checkout's `.git` file.
+
+An explicit `expected_snapshot` opens only the existing matching generation. It reads bounded readiness and database metadata, verifies roots and candidate selection, and performs no source census, manifest deserialization, rebuild, or fallback. This path requires the caller to keep the source wave frozen after an integrity-checked build.
+
+Builds apply the shared source bounds, read stable content, populate and validate a temporary database, reobserve source identities, and publish database/manifest/readiness through the existing publication protocol. The content snapshot hashes indexed paths and content hashes; candidate-tree identity is carried and checked separately. `RepositoryIndex.candidate_tree` exposes that selection to downstream consumers.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+`source_index_state` owns source identities, manifests, readiness, errors, and input limits; `source_index_database` owns storage and anchor queries. Unmanaged caches use four fixed slots selected by the code/memory roots. Managed namespace authority remains with `source_index_cache`; candidate trees do not allocate additional cache roots.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+- Readiness, manifest, database, and requested roots/candidate selection must agree before a generation is used; equal indexed content does not waive a different candidate-tree identity.
+- A shared index lease protects immutable index publication, not source files. An expected snapshot is an explicit frozen-wave assertion.
+- Input limits are checked before build-time file-body reads. Candidate Git hashing enforces the same limits in its own owner; it is separate from the Python source-read telemetry recorded here.
 
 ### Todos
 
@@ -77,41 +46,20 @@ None.
 
 ## Repo-Internal References
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Defines the class `SourceIndexError` (lines 98-99) — The requested source snapshot cannot be indexed safely.. | `SourceIndexError` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:98-99 |
-| Defines the class `SourceTreeChangedError` (lines 102-103) — The code tree changed while an index generation was being built.. | `SourceTreeChangedError` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:102-103 |
-| Defines the class `IndexMetrics` (lines 114-128) — Observable acquisition work for cold, warm, and metadata-refresh paths.. | `IndexMetrics` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:114-128 |
-| Defines the class `CachePaths` (lines 135-143). | `CachePaths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:135-143 |
-| Defines the class `PublicationBoundary` (lines 147-150). | `PublicationBoundary` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:147-150 |
-| Defines the class `RepositoryIndex` (lines 157-231) — A shared-lock lease on one complete immutable source snapshot.. | `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:157-231 |
-| Defines the function `cache_root` (lines 234-240) — One fixed-slot cache root shared by every application schema generation.. | `cache_root` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:234-240 |
-| Defines the function `cache_paths` (lines 243-277). | `cache_paths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:243-277 |
-| Defines the function `validate_expected_snapshot` (lines 280-285) — Reject every spelling except the canonical lowercase SHA-256 generation id.. | `validate_expected_snapshot` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:280-285 |
-| Defines the function `validate_operation_scope` (lines 288-314) — Validate document/generation authority before an operation performs any work.. | `validate_operation_scope` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:288-314 |
-| Defines the function `open_repository_index` (lines 317-384) — Open a source index through the default safe path or an explicit frozen lease.. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:317-384 |
-| Defines the function `build_repository_index` (lines 387-394) — Explicit frozen-wave prebuild; a current generation is reused rather than rebuilt.. | `build_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:387-394 |
-| Defines the function `_open_expected_generation` (lines 397-435) — Lease one prevalidated generation without source-tree or full-manifest work.. | `_open_expected_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:397-435 |
-| Defines the function `_repository_index` (lines 438-453). | `_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:438-453 |
-| Defines the function `_open_shared_lock` (lines 456-462). | `_open_shared_lock` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:456-462 |
-| Defines the function `code_files` (lines 465-467) — The source files the citation resolver considers, in current candidate order.. | `code_files` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:465-467 |
-| Defines the function `_current_generation` (lines 470-497). | `_current_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:470-497 |
-| Defines the function `_open_database` (lines 500-510). | `_open_database` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:500-510 |
-| Defines the function `_ready_generation` (lines 513-520). | `_ready_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:513-520 |
-| Defines the function `_validate` (lines 523-559). | `_validate` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:523-559 |
-| Defines the function `_build_and_publish` (lines 562-570). | `_build_and_publish` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:562-570 |
-| Defines the function `_build_once` (lines 573-649). | `_build_once` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:573-649 |
-| Defines the function `_validate_temporary_database` (lines 652-664) — Run the expensive SQLite and application checks before publication is possible.. | `_validate_temporary_database` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:652-664 |
-| Defines the function `_publish_generation` (lines 667-692) — Publish SQLite and manifest while the absent/last readiness marker is authority.. | `_publish_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:667-692 |
-| Defines the function `_tree_state` (lines 695-728). | `_tree_state` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:695-728 |
-| Defines the function `_stable_read` (lines 731-742). | `_stable_read` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:731-742 |
-| Defines the function `_check_source_bounds` (lines 745-763). | `_check_source_bounds` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:745-763 |
-| Defines the function `_snapshot_id` (lines 766-773). | `_snapshot_id` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:766-773 |
-| Defines the function `_identities` (lines 776-777). | `_identities` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:776-777 |
-| Defines the function `_refreshed_manifest` (lines 780-792). | `_refreshed_manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:780-792 |
+| A generation is leased with query telemetry and its candidate selection. | `RepositoryIndex` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:156-237 |
+| Managed authority or root-keyed fixed slots select cache storage. | `cache_paths` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:249-283 |
+| Default acquisition validates, refreshes, or rebuilds under the existing locks. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:323-390 |
+| Frozen acquisition uses bounded published metadata and refuses an unavailable expected snapshot. | `_open_expected_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:403-442 |
+| Readiness must match both roots and the exact candidate selection. | `_ready_generation` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:522-532 |
+| Changed source identities drive content and metadata refresh decisions. | `_validate` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:535-572 |
+| A bounded, validated temporary database is tied to repeated source observations before publication. | `_build_once` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:586-664 |
+| Candidate census and ordinary filesystem traversal retain separate selection semantics. | `_tree_state` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:710-755 |
+| Snapshot identity hashes indexed paths and content hashes. | `_snapshot_id` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:772-779 |
 
 ## Update History
+
+- 2026-09-06T02:22:00+02:00 — L30 recovery source review: Documented candidate census acquisition and frozen-generation identity checks while preserving ordinary filesystem freshness, fixed cache slots, and publication ownership. Verified against prepared code commit `97e8ed2e1fae21756c3ad995c30613d4fbfcc503`; source review does not claim Gate-5 execution or recovery acceptance.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

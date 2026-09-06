@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-05T07:14+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -310,7 +310,29 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 | The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:444-480 |
 | Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
 
+## Exact Git Candidate Source-Index Composition
+
+Citation `Trees` selects an explicit Git candidate tree when R06/R07 require immutable candidate
+membership. The source index binds that selection separately from the content snapshot: schema-9
+manifest/readiness and SQLite metadata distinguish a Git candidate from ordinary filesystem
+selection. Candidate census includes eligible tracked build/ignored paths, excludes Git metadata
+and refuses unavailable, unsafe or byte-mismatched candidate members. Ordinary filesystem use
+continues to observe eligible dirty and untracked files under its existing traversal policy.
+
+R06 checks the candidate-bound lease, ready record, manifest, census and member content. R07
+validates the lease against its exact unit tree before running the selected-document range checker
+with the same explicit tree. These owners are usable by the recovery verifier; their library
+composition does not close the production execution gap recorded above or replace full Gate 5.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The index opens either the explicit candidate selection or the ordinary filesystem policy. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:323-390 |
+| R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:347-397 |
+| R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
+
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Added the exact Git-candidate index and R06/R07 composition boundary at 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; retained the unresolved production-caller and deterministic-repair limits.
 
 - 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected drift vocabulary ownership, historical Markdown coherence authority, final certification producer claims, and explicit R10 write defects. Verification records source review, not execution or acceptance.
 

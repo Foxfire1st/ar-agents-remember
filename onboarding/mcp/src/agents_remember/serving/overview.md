@@ -5,14 +5,14 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T07:27+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
-| governingOverview      | `../../../../overview.md`                         |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../../overview.md)
+[mcp/overview.md](../../../overview.md)
 
 ## ARSPAWN-L5 A005 Shared Task-Binding Admission
 
@@ -315,6 +315,10 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+Serving composes the dashboard application, hosted-session control, projections and notifier. Start at `app.py` for route/lifespan composition, `projector.py` for atomic snapshots and cancellation draining, and `change_watcher.py` for change-or-heartbeat pacing. Watcher lockfile exclusion derives from `kernel.file_lock.lock_path_for` and filters every watched directory; moving this import does not alter suffix, debounce or wake behavior. The host registry and coordinator retain separate policies above that shared kernel mechanism.
+
+## Serving Operating Context
 
 For the active conversation serving, start at
 `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then
@@ -768,7 +772,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   table lives in its docstring), `is_projection_input_event` (drops `*.tmp`, dotfiles, the
   projection's own outputs, workspace non-input churn, and — since 260731-EFA-L5 — **every
   control-plane lockfile by suffix in every watched directory**, through
-  `_DURABLE_LOG_LOCK_SUFFIX`, which is *derived* from `controlplane.durable_store.lock_path_for`
+  `_DURABLE_LOG_LOCK_SUFFIX`, which is *derived* from `kernel.file_lock.lock_path_for`
   rather than spelled out: the old literal `operator-inbox.lock` had stopped matching once the
   lock naming moved to `operator-inbox.jsonl.lock`, and a workspace-scoped basename list could
   never have covered the per-lifecycle `gates.jsonl.lock` at all. These are the busiest writes in
@@ -877,7 +881,22 @@ single-segment master + canonical task-document reference and serves the confine
 from 61 to 63 HTTP routes; composition adds one `register_requirements_routes(app, config)`
 call in `create_app` after the notes routes and before the static mount.
 
+
+## Shared Lock Owner References
+
+The watcher keeps one naming dependency on the actual lock owner; it does not acquire coordinator authority or change projection input scope.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared naming primitive appends the same physical lock suffix. | `lock_path_for` | mcp/src/agents_remember/kernel/file_lock.py:36-38 |
+| Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
+
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:28+02:00 — Updated watcher naming ownership to kernel.file_lock, retained filtering and pacing behavior, restored the nearest MCP overview backlink, and made hot-path routing concise without dropping the retained operating account.
+
 
 
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/tests/test_provider_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -292,7 +292,7 @@ below are the code each claim is about.
 | --- | --- | --- |
 | The metrics store under test: the tolerant per-row read and its escalation clause, the reclaim that holds one lock across stat + tail + rewrite and drops rows by age only, the two appends that make the pairing two-process, the lock-free tail read, and the ownership declaration. | `_parse_row`; `compact`; `record`; `record_index_state`; `read_recent`; `PROVIDER_METRICS_OWNERSHIP` | mcp/src/agents_remember/providers/metrics.py:65-83; mcp/src/agents_remember/providers/metrics.py:302-341; mcp/src/agents_remember/providers/metrics.py:191-228; mcp/src/agents_remember/providers/metrics.py:254-267; mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:343-360 |
 | The degradation store under test: the single-writer ownership declaration whose `check_declared_writer` can actually fire, the count-based reclaim under one held lock, the stamped append, and the state document that is deliberately unversioned. | `PROVIDER_DEGRADATION_OWNERSHIP`; `write_state`; `append_event`; `compact_events` | mcp/src/agents_remember/providers/degradation.py:84-103; mcp/src/agents_remember/providers/degradation.py:233-253; mcp/src/agents_remember/providers/degradation.py:190-215; mcp/src/agents_remember/providers/degradation.py:217-231 |
-| The contract both stores were moved onto: the unconditional per-log lock, the never-unlinking rewrite, the version policy the reads implement, and the role declaration the ownership tests drive. | `exclusive_access`; `append_line`; `rewrite_lines`; `SCHEMA_VERSION`; `schema_version_supported`; `StoreOwnership`; `declare_process_role`; `CompactionOwnerError` | mcp/src/agents_remember/controlplane/durable_store.py:46-46; mcp/src/agents_remember/controlplane/durable_store.py:66-67; mcp/src/agents_remember/controlplane/durable_store.py:77-85; mcp/src/agents_remember/controlplane/durable_store.py:93-133; mcp/src/agents_remember/controlplane/durable_store.py:227-248; mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:477-488; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| Both provider stores use the same durable-store contract: checkout-authorized kernel locking, fsynced append, atomic never-unlinking rewrite, schema-version policy and advisory declared-role ownership. | `exclusive_access`; `append_line`; `rewrite_lines`; `SCHEMA_VERSION`; `schema_version_supported`; `StoreOwnership`; `declare_process_role`; `CompactionOwnerError` | mcp/src/agents_remember/controlplane/durable_store.py:320-360; mcp/src/agents_remember/controlplane/durable_store.py:391-402; mcp/src/agents_remember/controlplane/durable_store.py:421-428; mcp/src/agents_remember/controlplane/durable_store.py:46-46; mcp/src/agents_remember/controlplane/durable_store.py:232-253; mcp/src/agents_remember/controlplane/durable_store.py:99-138; mcp/src/agents_remember/controlplane/durable_store.py:79-88; mcp/src/agents_remember/controlplane/durable_store.py:68-69 |
 | The two-process pairing asserted by `ProviderOwnershipTests`, as it actually runs: the dashboard loop that samples, records, evaluates degradation and then compacts. It is also the metrics reclaim's one call site, and it reaches it as `await asyncio.to_thread(metrics_store.compact)` — a reference rather than a call, which is why `provider_reclaim_call_sites` counts references. | "async def _metrics_loop(config: McpRuntimeConfig" | mcp/src/agents_remember/serving/_app_lifespan.py:73-73 |
 | The other half of that pairing: the MCP process's provider-setup thread appending index-lifecycle rows into the same log. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | The consumer that makes the metrics log's tolerant read structurally safe: the whole state machine is re-derived from a rolling window of live samples and nothing is consumed. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
@@ -318,6 +318,8 @@ stress owns schedule-sensitive load and the historical control that deliberately
 known-bad tree.
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 claim re-review against C97: reconciled current durable-store/kernel locking ownership and exact source evidence. The test or harness source bytes match the prior verified source; verification advances for the reopened claim review.
 
 - 2026-08-26T10:44:52+02:00 — Classified provider durability proofs into explicit integration and stress evidence lanes; the underlying loss, exception, and sensitivity assertions are unchanged.
 

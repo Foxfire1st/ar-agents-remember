@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_dependency_ownership_ast_helpers.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `db57101a9001ede8c681ff9de4eb0147d8b636bc` |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -31,6 +31,8 @@ The Codex starter-config case proves its narrow non-Python declaration against t
 observed literal readers and resolves exactly the public-surface and starter-renderer tests. The
 root layer-contract case independently proves the composed path identity resolves exactly the five
 architecture and structural-policy readers.
+
+The ambient-runner regression now requires exactly sixteen observed pytest consumers, no unresolved inputs, no global invalidation and attributed declared-consumer reasons. This includes the shared profile fixture closure; a narrow singleton and an unjustified whole-suite expansion both fail.
 
 L19 changed the incomplete-ownership assertion vocabulary: `impact.fresh_rerun_reason` is gone and
 the tests now assert `impact.unresolved_inputs` (including the `import-graph-invalid` detail) and an
@@ -57,31 +59,42 @@ None recorded.
 
 ## Docs References
 
-The configured Domain Documentation registry is empty. No external documentation claim is made.
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned test contract. | `test_file_imports_includes_python_and_declared_pytest_plugins` | mcp/tests/test_dependency_ownership_ast_helpers.py:1-194 |
+| No configured external domain source. | N/A | N/A |
 
 ## Repo-Internal References
 
-The test file is direct evidence for the production boundary named above.
+These source owners establish the current behavior and the stated fixture boundaries.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Static imports, recursive plugin closure, dynamic-declaration refusal, path-loaded owners, and dotted literal consumers are all forced here. | `test_file_imports_includes_python_and_declared_pytest_plugins`; `test_nested_pytest_plugin_edges_reach_the_complete_test_population`; `test_dynamic_nested_plugin_declaration_refuses_complete_ownership`; `test_imported_support_reaches_a_test_that_loads_its_owner_by_literal_path`; `test_exact_dotted_module_literal_is_an_observable_test_consumer` | mcp/tests/test_dependency_ownership_ast_helpers.py:20-180 |
-| The root layer contract resolves completely to the exact five source-observed consumers. | `test_layers_contract_has_exact_observed_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:202-222 |
-| Incomplete ownership is asserted as typed unresolved inputs with a non-expanded population. | `test_dynamic_nested_plugin_declaration_refuses_complete_ownership` | mcp/tests/test_dependency_ownership_ast_helpers.py:97-121 |
+| Static imports and declared pytest plugins are source evidence. | `test_file_imports_includes_python_and_declared_pytest_plugins` | mcp/tests/test_dependency_ownership_ast_helpers.py:21-50 |
+| Only supported static assignment forms are accepted. | `test_pytest_plugin_ast_helpers_accept_only_assignment_string_values` | mcp/tests/test_dependency_ownership_ast_helpers.py:53-78 |
+| Nested plugin ownership reaches the declared population. | `test_nested_pytest_plugin_edges_reach_the_complete_test_population` | mcp/tests/test_dependency_ownership_ast_helpers.py:81-102 |
+| Dynamic plugin declarations retain typed incomplete ownership. | `test_dynamic_nested_plugin_declaration_refuses_complete_ownership` | mcp/tests/test_dependency_ownership_ast_helpers.py:105-121 |
+| Literal path loading composes with imported support. | `test_imported_support_reaches_a_test_that_loads_its_owner_by_literal_path` | mcp/tests/test_dependency_ownership_ast_helpers.py:124-152 |
+| Dotted module literals contribute attributed ownership. | `test_exact_dotted_module_literal_is_an_observable_test_consumer` | mcp/tests/test_dependency_ownership_ast_helpers.py:155-179 |
+| Starter configuration has exactly its observed readers. | `test_codex_starter_config_has_exact_observed_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:182-199 |
+| The ambient runner selects exactly sixteen tests with no global invalidation. | `test_ambient_role_runner_has_exact_pytest_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:202-236 |
+| The layer contract selects exactly five source-observed readers. | `test_layers_contract_has_exact_observed_consumers` | mcp/tests/test_dependency_ownership_ast_helpers.py:239-259 |
 
 ## Cross-Repo References
 
-No cross-repository source is allowed by the resolved settings.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `test_file_imports_includes_python_and_declared_pytest_plugins` | mcp/tests/test_dependency_ownership_ast_helpers.py:1-194 |
+| No cross-repository evidence is required. | N/A | N/A |
+
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Recorded the exact sixteen-consumer runner regression and explicit no-global-invalidation assertions; repaired shifted layer-contract citation and reference buckets.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 ownership-vocabulary

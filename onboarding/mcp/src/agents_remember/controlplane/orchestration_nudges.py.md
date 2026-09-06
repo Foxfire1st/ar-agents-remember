@@ -5,7 +5,7 @@
 | repository             | agents-remember                                                   |
 | path                   | `mcp/src/agents_remember/controlplane/orchestration_nudges.py`    |
 | doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-08-01T18:30+02:00 |
+| lastUpdated | 2026-09-05T22:25+00:00 |
 | lastVerifiedCommitHash |                                                                   `7bf564a663bb61f12844dee39538dd09a1633cdb`|
 | lastVerifiedCommitDate |                                                                   2026-08-10T12:28:42+02:00|
 | governingOverview      | `overview.md`                                                     |
@@ -109,9 +109,13 @@ does the read, the filter and the rewrite inside that one hold.
 | The public nudge tool records these rows and emits the manager inbox message. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
 | Nudge events are written into the observer workspace event log. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. | `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:143-153 |
-| `ORCHESTRATION_NUDGE_OWNERSHIP` at L315-L325 names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. | `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210 |
+| `ORCHESTRATION_NUDGE_OWNERSHIP` names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. | `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:206-216 |
+
 
 ## Update History
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f10c24d72db6171c0d434b307e6806996e2f11d` |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,9 +17,7 @@
 ## Purpose
 
 This TOML file is the enforced lifecycle registry for durable Python test evidence, shared support,
-fixtures, and their stable executable replacement contracts. L21 registered the new
-gate-certificate authority suite as an exact consumer of the certification shared-support rows it
-exercises.
+fixtures, and their stable executable replacement contracts. Shared-support rows bind exact source-derived consumers and distinguish in-process contract fixtures from the independent clean-room recording generator.
 
 ## Code Commentary
 
@@ -30,11 +28,19 @@ category, fidelity, cadence, provenance, lifetime, permanence/expiry rationale, 
 contract, and exact source-observed consumers. The public lifecycle validator rejects missing,
 stale, contradictory, unowned, or consumer-incomplete rows.
 
+### Conventions
+
+Keep artifact fidelity, cadence and permanence rationale independent of test lane labels. A fixture that writes real retained bytes remains synthetic producer evidence.
+
 ### Invariants And Boundaries
 
 - The registry is fail-closed: missing, stale, contradictory, unowned, or consumer-incomplete rows are rejected by the public lifecycle validator.
 - Catalog rows name exact source-observed consumers; ownership is never reduced to direct importers.
 - The catalog is policy input to operational discovery, never its own artifact population.
+
+### Todos
+
+None recorded.
 
 ## Current PDLS Delta
 
@@ -58,19 +64,38 @@ non-authority contract. The row makes the helper's local-composition fidelity, a
 permanent lifetime, and production-publication boundary explicit; exact ownership is not reduced
 to the three files that import it directly.
 
+## Gate Publication And Retention Support
+
+`gate_certification_test_support.py` is the permanent in-process composition root for exactly `test_gate_certification_records.py` and `test_gate_certification_evidence.py`. Its replacement node proves reuse of the original generation and provenance. The new publication suite also joins the source-derived consumer sets of the profile helper and its Node fixture manifests.
+
+The ambient runner retains `exact-source` ownership by its three direct source consumers: the graph suite, the shared profile helper and the publication suite. The selector separately derives the complete sixteen-test pytest closure from those facts. The lifecycle catalog itself remains an explicit global pytest input; this broader policy invalidation is distinct from runner ownership.
+
 ## Docs References
 
-No configured Domain Documentation source applies; this is the enforced lifecycle registry for repository-local test evidence.
-
-## Repo-Internal References
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| L21 registered the gate-certificate suite as an exact consumer of the shared certification and closeout-input rows. | "mcp/tests/test_gate_certificate_authority.py" | mcp/tests/evidence-lifecycle.toml:1157-1225 |
+| No configured external domain source. | N/A | N/A |
+
+## Repo-Internal References
+
+These source owners establish the current behavior and the stated fixture boundaries.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The lifecycle inventory registers repository_profile_test_support.py under its source path. | "path = \"mcp/tests/repository_profile_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1144-1144 |
+| The lifecycle inventory registers run.py under its source path. | "path = \"scripts/e2e_harness/run.py\"" | mcp/tests/evidence-lifecycle.toml:1394-1394 |
+| The lifecycle inventory registers gate_certification_test_support.py under its source path. | "path = \"mcp/tests/gate_certification_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1512-1512 |
+| Changes to this lifecycle policy are deliberately global pytest invalidators. | `GLOBAL_TEST_INPUTS` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:24-29 |
 
 ## Cross-Repo References
 
-No cross-repository evidence is required.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repository evidence is required. | N/A | N/A |
 
 ## L21 Gate-Certificate Consumer Delta
 
@@ -118,9 +143,14 @@ into shared support.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The permanent shared-support artifact has exact ownership, replacement, and five-consumer declarations. | "mcp/tests/certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:1113-1133 |
+| The lifecycle inventory registers certification_registry_test_support.py under its source path. | "path = \"mcp/tests/certification_registry_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1122-1122 |
+
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Registered the extracted gate fixture and publication-suite consumers in durable memory; reconciled exact-source runner ownership with the distinct pytest closure.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): recorded the L21 registration of

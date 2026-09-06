@@ -5,7 +5,7 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_diff_coverage.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T12:21:21+02:00 |
+| lastUpdated | 2026-09-05T22:25+00:00 |
 | lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
 | lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview      | `overview.md`                              |
@@ -115,7 +115,7 @@ uncovered changed lines**.
 | --- | --- | --- |
 | The module under test: base resolution, changed-line collection, and the measurement. | `resolve_base`; `changed_python_lines`; `measure` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:145-173; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:176-197; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:289-317 |
 | The wrapper that runs the floor as a step and exposes its two flags. | `run_diff_coverage`; "--diff-base"; "--diff-floor" | mcp/test_support/agents_remember_test_support/code_quality/check.py:99-99; mcp/test_support/agents_remember_test_support/code_quality/check_cli.py:64-64; mcp/test_support/agents_remember_test_support/code_quality/check_cli.py:73-73 |
-| The lifecycle-owned Dagger executor that carries the accepted candidate and diff base into the quality graph. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:112-193 |
+| The lifecycle-owned Dagger executor that carries the accepted candidate and diff base into the quality graph. | `run_clean_quality` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:146-233 |
 | The runner `diff_coverage._git` delegates to, and the source of the 300s `GIT_LOCAL_TIMEOUT_SECONDS` bound and the `cwd=` the wrapper-agreement test exercises. | `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:71-71 |
 | The other side of the same seam: `QualityGateGitTests` proves a non-repository and an unrunnable git both reach `DiffScopeError` through `diff_coverage.run_git`, and points `GIT_DIR` at a decoy to prove the gate reads the repository it was handed. | `QualityGateGitTests` | mcp/tests/test_git_command.py:439-507 |
 
@@ -124,7 +124,11 @@ uncovered changed lines**.
 Wrapper-integration configurations now receive the real test-session admission capability. Diff
 coverage scoring is unchanged; diagnostic evidence cannot reach its measurement input.
 
+
 ## Update History
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 
 - 2026-08-28T12:21:21+02:00 — Made the mixed-case identity proof independent of filesystem
   case behavior: the real repository mutates its existing lowercase path while the coverage

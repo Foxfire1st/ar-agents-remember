@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_cross_store_lock_order.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -34,7 +34,7 @@ probes alive, nothing is owned) and a `counting_observe` wrapper that keeps ever
 each test asserts the synchronizer actually ran, so no pass is vacuous. The pins:
 
 1. the synchronizer's gate/inbox mutex acquisitions never execute while the calling thread holds
-   `catalog.batch()` — a flagging batch wrapper plus a checking `durable_store.thread_mutex_for`
+   `catalog.batch()` — a flagging batch wrapper plus a checking `file_lock.thread_mutex_for`
    record every violation, driven on the full sweep AND on the starting fast path
    (`_refresh_starting_rows`, whose cheap exits — nothing starting, busy sweep lock, starting
    rate limit — are pinned beside it);
@@ -56,8 +56,7 @@ each test asserts the synchronizer actually ran, so no pass is vacuous. The pins
 
 The tests target lock placement and thread placement, not sweep or synchronizer behavior; the
 quarantine contract, the fold→resolve→compact inbox transaction, and the wire shapes are
-deliberately out of scope here. Verification metadata stays blank until closeout stamps the L16
-commit.
+deliberately out of scope here. The mutex spy targets the shared kernel owner used by every durable-store acquisition, so the placement assertion still observes the real lock after extraction.
 
 ### Invariants And Boundaries
 
@@ -85,13 +84,18 @@ No Domain Documentation source is configured.
 | The offloaded control choke point. | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
 | The offloaded active-side resolution. | `_projector_for` | mcp/src/agents_remember/serving/conversation/active/service.py:160-177 |
 | The offloaded image handler. | "async def _terminal_image_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:664-664 |
-| The intra-store lock contract the cross-store doctrine extends. | `thread_mutex_for` | mcp/src/agents_remember/controlplane/durable_store.py:344-358 |
+| The actual kernel mutex observed by the placement spy and the durable-store cross-resource order. | `thread_mutex_for`; `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/kernel/file_lock.py:87-114 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:28+02:00 — Moved lock-placement documentation and references to the real kernel mutex patched by both full-sweep and starting-path tests; retained the non-vacuous ABBA and event-loop placement guarantees.
+
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

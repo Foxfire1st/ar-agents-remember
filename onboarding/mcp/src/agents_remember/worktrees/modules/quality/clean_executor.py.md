@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T10:05+02:00 |
-| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
-| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -60,9 +60,12 @@ generation manifest, decodes the authoritative terminal result through the decla
 published artifacts (no unexpected names/directories/irregular entries, size limits enforced for
 each declared artifact), requires pass-only required publications, computes the generation digest
 from candidate tree + profile identity + files + dependencies, stages and validates the generation,
-prunes stale generations (protecting the prior live generation), removes the legacy report
+prunes stale generations (protecting the prior live generation and every exact generation selected by a validated certificate journal), removes the legacy report
 projection, and only then writes the manifest. Publication and recovery share the strict
 `published_manifest.py` v3 reader.
+
+The existing report reader and historical pruner now live in `report_publication_paths.py`.
+`certification_evidence.protected_certificate_generations` validates selected rows against the existing content-addressed store before supplying their exact retention pins. Malformed selected authority or missing/irregular selected generation roots refuse publication before pruning or pointer replacement. Nested report bytes are reopened when a certificate is recorded or reused; obtaining pruning pins does not repeat that byte verification.
 
 Helper boundaries: `published_report_path_from_manifest`, `published_generation_root`,
 `published_quality_attestation`, `certifying_evidence_from_published_manifest`, and
@@ -86,11 +89,10 @@ diff base, export root, and optional memory cap.
 - Candidate Git identity must match before and after publication (`gate.py` re-verifies the
   write-tree); sandbox materialization preserves the exact staged overlay.
 - Reports are atomically replaced as one immutable generation, never accumulated per run; the
-  manifest is schema `3.0` with profile identity fields (see `published_manifest.py`).
+  manifest is schema `3.1` with profile identity and runtime authority fields (see `published_manifest.py`).
 - Only declared published artifacts may be exported; unexpected names/directories/irregular
   entries and oversized artifacts fail closed.
-- A passed pipeline is required to publish a manifest; `gate.py` refuses a pass with no published
-  manifest.
+- A completed export may publish a failed pipeline generation for diagnostics; only a passed decoded pipeline mints certifying evidence, and `gate.py` refuses a pass without a published manifest.
 - Recovery callers pass one immutable manifest snapshot through every artifact lookup; a pointer
   rotation cannot mix generations.
 - Every Dagger launch crosses the shared authority boundary: the admitted snapshot digest is bound
@@ -104,35 +106,28 @@ None.
 
 ## Docs References
 
-The executor contract is CCR-R22@v1's repository-owned adapter boundary: the MCP must execute
-only the exact admitted profile bytes through the declared sandbox adapter, and an executor that
-was valid at admission but unavailable at execution produces a typed executor prerequisite
-failure owned by the affected gate.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP executes only the exact admitted bytes through the declared sandbox adapter; configuration cannot inject host execution outside the admitted executor boundary. | `_resolve_executor` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:999-1002 |
-| An executor valid at admission but unavailable at execution produces a typed executor prerequisite failure owned by the affected gate. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:1003-1030 |
+| Only the admitted executable is resolved for the profile adapter. | `_resolve_executor`; `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:965-966; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:253-284 |
+| An unavailable admitted executor produces a typed prerequisite failure. | `_executor_prerequisite_failure` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:969-996 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executor prepares the exact candidate sandbox, admits the profile execution, runs the declared adapter, and publishes the certified generation. | `run_clean_quality`; `_prepare_sandbox`; `_admit_prepared_profile`; `_write_sandbox_manifest`; `_publish_executor_outcome` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:140-229; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:334-377; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:230-246; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:378-413; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:281-333 |
-| Profile-bound publication: inventory validated against declared artifacts, generation digest binds candidate + profile identity, atomic pointer advance. | `_publish_reports`; `_validated_export_inventory`; `_generation_digest`; `_profile_identity` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:450-543; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:544-567; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:605-622; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:623-634 |
-| Manifest/artifact/evidence helpers consume one strict snapshot. | `published_report_path_from_manifest`; `certifying_evidence_from_published_manifest`; `require_published_quality_evidence` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:713-733; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:763-796; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:797-811 |
-| The strict gate admits the same profile and enforces candidate identity around the run. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:193-293 |
-| The generic decoder replaces the deleted hardcoded result-inventory validator. | `_validate_artifact_references` | mcp/src/agents_remember/certification/repository_profiles/adapters.py:138-160 |
+| The executor admits authority, materializes the candidate and executes the profile adapter. | `run_clean_quality`; `_prepare_sandbox`; `_admit_prepared_profile`; `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:146-233; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:340-381; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:236-250; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:384-417 |
+| Exported decoder bytes determine the pipeline result and whether certifying evidence exists. | `_publish_executor_outcome`; `_exported_pipeline_exit` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:287-337; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:424-437 |
+| Publication validates inventory and selected-generation protection before the atomic pointer move. | `_publish_reports`; `_validated_export_inventory`; `_generation_digest` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:456-550; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:553-574; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:614-629 |
+| Snapshot-bound evidence helpers require an actually passed result. | `certifying_evidence_from_published_manifest`; `require_published_quality_evidence` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:751-782; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:785-797 |
+| The single report reader and pruner implementation live in the path owner. | `published_report_path_from_manifest`; `_prune_report_generations` | mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:86-116; mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py:119-138 |
 
 ## Cross-Repo References
 
-The only external boundary is the pinned Dagger container/tool runtime resolved through the
-profile-declared executable; for a consuming repository that executable is that repository's own
-declared adapter.
+The external execution boundary is the profile-declared Dagger runtime; its declaration is resolved through the native platform boundary. This file does not define a separate cross-repository protocol.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The declared executable is resolved through the native platform boundary, then run by the Dagger adapter. | `_resolve_executor`; `_executor_command`; `_stream_dagger` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:999-1002; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:247-280; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:895-954 |
+| The exact admitted executor and frozen authority determine the launch command. | `_executor_command` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:253-284 |
 
 ## 260821-DAGQC-L2 And 260824-PDLS Historical Notes
 
@@ -141,6 +136,10 @@ in force but are now profile-bound: the manifest schema advanced to `3.0` with p
 fields, and evidence is minted only from a digest-verified passed generation.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:19+00:00 — L30 source review at `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Preserved selected certificate generations during publication, moved the shared reader/pruner ownership, corrected failed-generation versus certifying-evidence wording and refreshed source extents.
 
 - 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the authority-bound executor cutover - `run_clean_quality` admits or reuses the host-level shared Dagger authority, writes the snapshot into the sandbox manifest, launches through the deterministic authority environment, releases the exact owner on terminalization, and publishes schema-v3.1 manifests carrying `runtimeAuthorityDigest`; re-anchored reference ranges to the current 1030-line layout.
 

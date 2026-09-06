@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `8f670ceecd75323600c873d40c47c4a1cc946ab3` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:24+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -23,6 +23,8 @@ Classifies Python test files into explicit evidence lanes and records deliberate
 ### Logic
 
 The file lists unit-regression, architecture-fitness and integration populations. Accumulated CCR additions include bridge/record/memory-rail and emission-binding contracts, replay and telemetry suites, final-Codex suites, and lifecycle status-wait tests. The bridge, record, memory-rail and rail-binding suites are unit-regression entries; final-Codex executor/diff-coverage and status-wait suites are integration entries.
+
+The retained gate-evidence and rail-publication suites are explicitly `unit-regression`. Their temporary Git and SDK-contract fixtures exercise repository owners but do not claim a whole live executor run. `test_dagger_registry_lock.py` is explicitly `integration` because it tests the shared lock protocol across actual processes and threads.
 
 These lane labels describe evidence classification. They do not prove that a test invokes a real external executor or production closeout composition. In particular, a synthetic green certificate fixture can be unit-regression coverage while leaving the actual producer path unverified. Consumer ownership and the evidence lifecycle are separately governed.
 
@@ -43,33 +45,38 @@ Retain the distinction between contract fixtures and real producer/consumer inte
 
 ## Docs References
 
-No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+| No configured external domain source. | N/A | N/A |
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
+These source owners establish the current behavior and the stated fixture boundaries.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Explicit unit-regression registrations including certification contracts | "unit-regression"; "mcp/tests/test_certification_lane_bridge.py"; "mcp/tests/test_gate_certification_records.py"; "mcp/tests/test_gate_five_memory_rails.py" | mcp/tests/test-evidence-lanes.toml:1-82 |
-| Rail-binding and replay unit entries | "mcp/tests/test_rail_bindings.py" | mcp/tests/test-evidence-lanes.toml:149-163 |
-| Final-Codex integration registrations | "mcp/tests/test_final_codex_executor.py" | mcp/tests/test-evidence-lanes.toml:292-304 |
-| Lifecycle status-wait integration entries | "mcp/tests/test_lifecycle_status_wait_outcomes.py"; "mcp/tests/test_lifecycle_status_wait_registration.py"; "mcp/tests/test_lifecycle_status_wait_store.py" | mcp/tests/test-evidence-lanes.toml:366-379 |
-| Deliberate override rows | "stress-durability"; "architecture-fitness"; "provider-conformance" | mcp/tests/test-evidence-lanes.toml:595-637 |
+| Retained certificate evidence has an explicit unit-regression registration. | "\"mcp/tests/test_gate_certification_evidence.py\"" | mcp/tests/test-evidence-lanes.toml:80-80 |
+| Producer publication and exact byte export have an explicit unit-regression registration. | "\"mcp/tests/test_rail_evidence_publication.py\"" | mcp/tests/test-evidence-lanes.toml:156-156 |
+| The real-process/thread registry lock suite is classified as integration. | "\"mcp/tests/test_dagger_registry_lock.py\"" | mcp/tests/test-evidence-lanes.toml:300-300 |
+| Final Codex executor integration remains classified separately. | "\"mcp/tests/test_final_codex_executor.py\"" | mcp/tests/test-evidence-lanes.toml:305-305 |
+| Lifecycle status-wait integration obligations remain present. | "\"mcp/tests/test_lifecycle_status_wait_outcomes.py\"" | mcp/tests/test-evidence-lanes.toml:377-377 |
 
 ## Cross-Repo References
 
-No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
+| No cross-repository evidence is required. | N/A | N/A |
+
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Added current retained-evidence, producer-publication and registry-lock lane assignments with explicit distinctions between classification and execution fidelity.
 
 - 2026-09-05T06:14:14+00:00 — Reconciled all accumulated CCR lane additions and clarified that lane membership does not itself prove real production integration.
 

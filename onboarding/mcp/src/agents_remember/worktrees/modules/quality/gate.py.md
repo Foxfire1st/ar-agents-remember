@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/gate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `668d710bf2a9898fb706614163462ff346d986b7` |
-| lastVerifiedCommitDate | 2026-09-05T02:45:47+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -28,7 +28,7 @@ Owns repository-profile admission and the lifecycle-facing quality gate boundary
 
 `recover_strict_code_quality_gate` requires matching attestation, tree, profile, plan, selection, adapter and decoder, then validates the published generation and certifying evidence before recording it. Its public report remains the stable developer-facing transcript; the immutable published result path is separate.
 
-The record helper reopens the published decoder artifact and delegates its gate catalog. Its returned refusal list is currently ignored: the outer success payload describes Dagger quality success, not a guarantee that every R21 certificate was minted. The ordinary red-run branch raises before that record helper, so typed result publication for every terminal outcome is not established by this seam.
+The record helper reopens the published decoder artifact and delegates its gate catalog. A nonempty returned refusal list now raises before the caller returns quality success, including exact-generation recovery. The ordinary red-run branch still raises before that helper, so typed result publication for every terminal outcome is not established by this seam. An absent catalog also does not independently prove a complete certificate population.
 
 ### Conventions
 
@@ -44,7 +44,7 @@ Only the pinned Dagger path supplies acceptance evidence. A symbolic command in 
 
 ### Todos
 
-Certificate refusal propagation and complete red/interrupted R21 record integration are not complete here. The typed lifecycle, telemetry and Gate-5 executors are not wired by this helper.
+Complete red/interrupted R21 record integration remains pending. The typed lifecycle, telemetry and Gate-5 executors are not wired by this helper.
 
 ## Docs References
 
@@ -56,14 +56,12 @@ No external Domain Documentation source is configured for this repository. This 
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Required profile admission and preview | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:125-185 |
-| Pre-run freeze, durable report and exact-tree recheck | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-324 |
-| Exact published-generation recovery and quality success payload | `recover_strict_code_quality_gate`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-448 |
-| Host refusal and record helper whose result is not propagated | `run_local_quality_diagnostic`; `_record_certification_generation`; `record_published_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:451-505 |
+| Required profile authority governs execution and preview. | `requires_strict_code_quality`; `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:125-139; mcp/src/agents_remember/worktrees/modules/quality/gate.py:142-185 |
+| Admission precedes Dagger and the exact staged tree is rechecked. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-324 |
+| Recovery requires the exact published generation and evidence. | `recover_strict_code_quality_gate`; `_strict_quality_success_payload` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399; mcp/src/agents_remember/worktrees/modules/quality/gate.py:402-448 |
+| Host diagnostics refuse and certificate-record refusals propagate. | `run_local_quality_diagnostic`; `_record_certification_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:451-461; mcp/src/agents_remember/worktrees/modules/quality/gate.py:478-507 |
 
 ## Cross-Repo References
 
@@ -74,6 +72,10 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:19+00:00 — L30 source review at `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Propagated actual record refusals on fresh and recovered green generations; retained the explicit ordinary red-run publication gap.
 
 - 2026-09-05T06:14:14+00:00 — Updated the accumulated profile gate to document admission freeze, successful-generation recording, and the remaining gap between quality success and certificate-chain completeness.
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                       |
 | path                   | `mcp/tests/_store_durability.py`      |
 | doc_type               | `file-level-onboarding`               |
-| lastUpdated            | 2026-08-13T12:53+02:00 |
-| lastVerifiedCommitHash |                                       `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-06T00:42:13+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `overview.md`                         |
 
 ## Governing Overview
@@ -324,8 +324,8 @@ consume it.
 | `dismiss` is a whole-file read-modify-write with no append handle, which is why `AttentionAdapter` sets `appends_in_place = False`; `prune_lifecycles` is its reclaim. | `dismiss`; `prune_lifecycles` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:102-111 |
 | The expectation-row reclaim the adapter calls with an explicit retention window. | `compact`; `_compact_locked` | mcp/src/agents_remember/controlplane/expectation_rows.py:296-307; mcp/src/agents_remember/controlplane/expectation_rows.py:309-335 |
 | The nudge store has no `compact`, so `replace_records` is the declared rewrite entry point and the read-filter half belongs to the caller — which is why the adapter holds the lock across all three steps. | `read`; `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:50-60; mcp/src/agents_remember/controlplane/orchestration_nudges.py:143-153 |
-| The lock and ownership constant the nudge adapter imports locally so the harness still runs against a tree that predates them. | `exclusive_access`; `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:200-210; mcp/src/agents_remember/controlplane/durable_store.py:350-405 |
-| The rewrite `parked_rewrite` parks inside: it commits through `os.replace` and never unlinks, and its temp name is pid-scoped — which is why the hook covers `os.replace` and not `Path.write_text` alone. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The nudge adapter locally imports current locking and ownership so the same harness can measure the archived base tree. Current durable-store acquisition retains checkout authorization and delegates mutex/flock exclusion to the kernel. | `_reclaim_lock`; `exclusive_access`; `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/tests/_store_durability.py:379-400; mcp/src/agents_remember/controlplane/durable_store.py:320-360; mcp/src/agents_remember/controlplane/durable_store.py:206-216 |
+| The rewrite delegates to the shared atomic writer while holding the store lock; an empty record set replaces the destination with an empty file. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | The inbox reclaim the `OperatorInboxAdapter` drives — the one store of the six that already took a lock at the base commit, and therefore the lone survivor at 0.00%. | `compact`; `append` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:84-88; mcp/src/agents_remember/controlplane/operator_inbox_store.py:273-298 |
 | The cooldown reclaim the `AgentNotifierSignalAdapter` drives with an explicit retention window. | "def append("; "def compact(" | mcp/src/agents_remember/controlplane/agent_notifier_signals.py:108-119; mcp/src/agents_remember/controlplane/agent_notifier_signals.py:162-213 |
 | The first provider store measured by the same instrument. Its log sits under `<root>/logs/observer/providers`, not `<root>/workspace`, which is one half of why the harness work directory cannot be a child of `root`. | `record_index_state`; `record`; `compact`; `read_recent` | mcp/src/agents_remember/providers/metrics.py:254-267; mcp/src/agents_remember/providers/metrics.py:269-283; mcp/src/agents_remember/providers/metrics.py:302-341; mcp/src/agents_remember/providers/metrics.py:343-360 |
@@ -343,7 +343,13 @@ standard library, and pins itself to one `mcp/src` inside this repository.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | — | — |
 
+
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 claim re-review against C97: reconciled current durable-store/kernel locking ownership and exact source evidence. The test or harness source bytes match the prior verified source; verification advances for the reopened claim review.
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 
 - 2026-08-13T12:53+02:00 — No content impact: the stabilized test-root form reads the already
   imported package from `sys.modules["agents_remember"].__file__` instead of adding either a bare

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
-| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,24 +49,25 @@ The candidate-construction proof now requires the checksum-bound source-build st
 workspace materialization, requires the canonical runtime to create the venv, and requires frozen
 uv synchronization before any attempt-specific cache input. A broad container image or version
 label cannot stand in for the runtime provenance contract. The 2026-09-03 bootstrap repair sharpened
-`test_candidate_setup_precedes_every_attempt_specific_cache_input` (now at line 484): the test
+`test_candidate_setup_precedes_every_attempt_specific_cache_input`: the test
 finds the installer exec (needle `install-python-runtime.sh`) and a distinct runtime-directory
 symlink exec whose needle is the quoted cpython symlink target carrying the `AR_PYTHON_VERSION`
 variable (in the Dagger graph text), asserts the installer node is `bash -euc` with `exec bash`
 and no `ln -s`, asserts the link node contains no installer invocation, and requires the exact
-order installer < link < workspace source < uv sync < late per-attempt environment
-(`test_agents_remember_quality.py:499-545`).
+order installer < link < workspace source < uv sync < late per-attempt environment.
 
 
 CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) reworks the suite around the cost-ordered five-gate
 execution and the shared runtime authority: the module-level fake Dagger objects drive the portable
-`_execute_gate_rails` profile execution, `runtime_authority_manifest` (lines 114-122) binds the
+`_execute_gate_rails` profile execution, `runtime_authority_manifest` binds the
 admitted `dagger-runtime-authority/v1` digest into execution manifests (`_require_plan_authority`
 refuses a missing or mismatched digest), `test_dagger_quality_red_gate_one_still_terminalizes_every_gate_one_sibling`
 (lines 956-1027) proves exhaustive same-gate terminalization with zero later-gate starts, gate-four
-applicability and real-Codex-rail facts are pinned (lines 403-477), a rail runtime outside the
-admitted adapter image is refused (lines 782-841), and full-mode selection uses the explicit diff
-base without targeted flags (lines 919-955).
+applicability and real-Codex-rail facts are pinned, a rail runtime outside the
+admitted adapter image is refused, and full-mode selection uses the explicit diff
+base without targeted flags.
+
+The full-mode browser command must run through `env PLAYWRIGHT_JSON_OUTPUT_FILE=/reports/dashboard-e2e-result.json npm run e2e -- --fail-on-flaky-tests --reporter=line,json`. The graph test checks this complete persisted-result contract while preserving the explicit diff base and absence of targeted flags.
 
 ### Conventions
 
@@ -102,35 +103,39 @@ None.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this test contract. The governing task
-artifacts are recorded as prose here (task artifact paths are not repo-relative citations, so
-the authoritative evidence is the suite itself): the root-owned repair proves distinct, ordered
-installer and link exec nodes and proves installer failure cannot be masked; the
-2026-09-03T06:20:00+02:00 master decision landed this root-owned repair external to L09/L12.
+No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured external domain source. | N/A | N/A |
 
 ## Repo-Internal References
 
+These source owners establish the current behavior and the stated fixture boundaries.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Graph-contract tests derive Dagger manifest and source paths from the repository root. | "DAGGER_MANIFEST ="; "DAGGER_SOURCE_ROOT =" | mcp/tests/test_agents_remember_quality.py:43-46 |
-| The dynamic loader imports the package from that .dagger/src root after clearing prior module entries. | "def load_dagger_module(" | mcp/tests/test_agents_remember_quality.py:66-72 |
-| Fixture tmux commands drop inherited TMUX and use the fixture socket root for every subprocess. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root` | mcp/tests/test_agents_remember_quality.py:258-287 |
-| The candidate MCP configuration inherits only the declared hosted-role and fixture tmux namespace variables. | `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:290-309 |
-| Focused discovery evidence preserves structured success through the exact current Codex envelope and rejects arbitrary prefixes. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:312-324 |
-| The bootstrap repair proves distinct, ordered installer and runtime-link exec nodes. | `test_candidate_setup_precedes_every_attempt_specific_cache_input` | mcp/tests/test_agents_remember_quality.py:327-400 |
-| The module contract test checks the pinned Dagger engine, parseable class, public functions, and disabled default function caching. | `test_agents_remember_quality_module_is_pinned_and_parseable` | mcp/tests/test_agents_remember_quality.py:167-191 |
-| Missing/mismatched attestation and host bootstrap admission are refused. | `test_python_suite_refuses_missing_or_mismatched_dagger_attestation` | mcp/tests/test_agents_remember_quality.py:478-505 |
-| The report contract keeps one profile-declared authoritative result artifact. | `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result` | mcp/tests/test_agents_remember_quality.py:520-529 |
-| Fake graph construction checks the exact targeted profile commands, order, and published result metadata. | `test_dagger_quality_executes_the_exact_targeted_profile_plan` | mcp/tests/test_agents_remember_quality.py:591-673 |
+| The Dagger loader uses only the explicit source root. | `load_dagger_module` | mcp/tests/test_agents_remember_quality.py:66-72 |
+| Fixture tmux subprocesses stay in their isolated socket namespace. | `test_ambient_role_chat_tmux_commands_use_only_the_fixture_socket_root` | mcp/tests/test_agents_remember_quality.py:258-287 |
+| Candidate MCP children receive the declared tmux namespace. | `test_ambient_role_chat_candidate_mcp_inherits_fixture_tmux_namespace` | mcp/tests/test_agents_remember_quality.py:290-309 |
+| Only canonical structured discovery results establish success. | `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` | mcp/tests/test_agents_remember_quality.py:313-324 |
+| The runtime installer, link, source, dependencies and attempt-specific cache inputs are ordered. | `test_candidate_setup_precedes_every_attempt_specific_cache_input` | mcp/tests/test_agents_remember_quality.py:327-400 |
+| The public Dagger module contract remains pinned and parseable. | `test_agents_remember_quality_module_is_pinned_and_parseable` | mcp/tests/test_agents_remember_quality.py:167-191 |
+| Missing or mismatched Dagger admission refuses. | `test_python_suite_refuses_missing_or_mismatched_dagger_attestation` | mcp/tests/test_agents_remember_quality.py:478-505 |
+| One profile-declared terminal result remains authoritative. | `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result` | mcp/tests/test_agents_remember_quality.py:520-529 |
+| Targeted execution follows the admitted profile commands and metadata. | `test_dagger_quality_executes_the_exact_targeted_profile_plan` | mcp/tests/test_agents_remember_quality.py:591-673 |
+| Full execution requires the complete JSON browser reporting command. | `test_dagger_quality_full_uses_explicit_diff_base_without_targeted_flags` | mcp/tests/test_agents_remember_quality.py:919-962 |
+| A red first gate terminalizes its siblings and prevents later starts. | `test_dagger_quality_red_gate_one_still_terminalizes_every_gate_one_sibling` | mcp/tests/test_agents_remember_quality.py:965-1011 |
+| The graph fixture records files, commands and environment without external transport. | `FakeContainer` | mcp/tests/repository_profile_test_support.py:579-729 |
+| The fake client is a same-repository contract fixture. | `FakeDag` | mcp/tests/repository_profile_test_support.py:806-814 |
 
 ## Cross-Repo References
 
-No sibling-repository boundary is exercised.
+No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared fake container records commands, files, environment, and graph operations without external transport. | "class FakeContainer:" | mcp/tests/repository_profile_test_support.py:566-668 |
-| The shared fake Dagger client supplies that one recording container and named cache volumes. | "class FakeDag:" | mcp/tests/repository_profile_test_support.py:745-753 |
+| No cross-repository evidence is required. | N/A | N/A |
 
 ## R39 Guard Wiring Proof
 
@@ -166,7 +171,12 @@ retry-proof cache or bind the attestation nonce, report paths, and other per-att
 `test_candidate_setup_precedes_every_attempt_specific_cache_input` structurally rejects a graph
 that lets a fresh nonce or report destination invalidate the expensive shared candidate base.
 
+
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Reconciled the full-mode browser command to its persisted JSON result contract and refreshed current graph-test and shared-fixture reference anchors.
 
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 4 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated source-path constants from module loading. Selected the two current namespace tests rather than former line ranges. Split four tests and qualified graph execution as fake graph construction, not a live Dagger run. Repointed moved fake definitions to their actual shared support owner. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` repointed to mcp/tests/test_agents_remember_quality.py:312-324. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.

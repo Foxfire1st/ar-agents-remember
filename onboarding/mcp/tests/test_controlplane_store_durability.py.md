@@ -5,9 +5,9 @@
 | repository             | agents-remember                                    |
 | path                   | `mcp/tests/test_controlplane_store_durability.py`  |
 | doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash |                                                    `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |                                                    2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-06T00:42:13+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -237,11 +237,11 @@ shared instrument; the rows below are the code each claim is about.
 | The projection fold asserted to survive a torn line — and which, since this leaf, no longer rewrites anything on the tick. | "def read_gates(coordination_root: Path, *, now: datetime" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107 |
 | The expectation-row projection wrapper, which this leaf moved onto the per-row tolerant read; its comment records that the surrounding `suppress(OSError, ValueError)` used to swallow one torn line by discarding every deadline, and is no longer load-bearing for a malformed row. | "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197 |
 | The per-row tolerant expectation reads that wrapper now folds, and the strict `read` the L2 overdue sweep keeps. | `read`; `read_for_projection`; `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:177-189; mcp/src/agents_remember/controlplane/expectation_rows.py:191-209; mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
-| The unconditional lock and the never-unlinking rewrite that take the measured loss to zero, plus the schema-version validator that gives both read policies their behaviour with no version branch. | `exclusive_access`; `rewrite_lines`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:251-274; mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The shared contract keeps per-log locking unconditional after checkout authorization, delegates exclusion to the kernel and atomically rewrites even an empty log. DurableRecord retains major-version validation underlying the strict and tolerant read policies. | `exclusive_access`; `rewrite_lines`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:320-360; mcp/src/agents_remember/controlplane/durable_store.py:421-428; mcp/src/agents_remember/controlplane/durable_store.py:256-279 |
 | Why the gate log is the one that matters: `apply_gate` is the appended snapshot and `evaluate_gate`'s `applied` branch is what refuses a second consume of one approval. | `apply_gate`; `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:59-101; mcp/src/agents_remember/controlplane/records.py:185-194 |
 | The refusal branch a dropped `applied` record would silently remove. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
 | The replay-specific companion suite: same defect, asserted at the level of one human approval rather than of six record types. | `GateReplayWindowTests` | mcp/tests/test_gate_replay_window.py:176-324 |
-| The in-process axis of the same contract — threads, re-entrancy, the unsafe-filesystem refusal and failed-rewrite cleanup — which this file's `multiprocessing` harness deliberately cannot see. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:167-365; mcp/tests/test_durable_store_contract.py:368-431; mcp/tests/test_durable_store_contract.py:650-728 |
+| The sibling suite covers thread exclusion, re-entrancy, unsafe-filesystem refusal and failed-rewrite cleanup. Unsafe-lock injection targets kernel.file_lock, requires a durable-store error before the body or log write, and then proves recovery once locking works. | `InProcessExclusivityTests`; `UnsafeLockFilesystemTests`; `FailedRewriteTests` | mcp/tests/test_durable_store_contract.py:166-363; mcp/tests/test_durable_store_contract.py:367-429; mcp/tests/test_durable_store_contract.py:649-726 |
 
 ## Cross-Repo References
 
@@ -253,6 +253,8 @@ inside `agents-remember`.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-06T00:42:13+00:00 — Gate-5 claim re-review against C97: reconciled current durable-store/kernel locking ownership and exact source evidence. The test or harness source bytes match the prior verified source; verification advances for the reopened claim review.
 
 - 2026-08-26T10:44:52+02:00 — Reconciled the durability suite with explicit integration/stress evidence lanes and moved vacuous-measurement assertions to the focused `test_durability_measurement.py` owner.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

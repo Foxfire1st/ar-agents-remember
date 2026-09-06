@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/certification_records.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `668d710bf2a9898fb706614163462ff346d986b7` |
-| lastVerifiedCommitDate | 2026-09-05T02:45:47+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,28 +22,30 @@ Connects the profile-backed quality gate to R21 admission, terminal result manif
 
 ### Logic
 
-prepare_certification_records currently supports only repository id agents-remember. It loads the exact profile, compiles the repository plan against the supplied candidate tree, obtains memory rails through the bound service port, and persists admission under the enclosure's certification-records directory before execution.
+`prepare_certification_records` currently registers memory rails only for repository id `agents-remember`. It loads the exact profile, compiles the repository plan against the supplied candidate tree, obtains memory rails through the bound service port, and persists admission under the enclosure's certification-records directory before execution.
 
-record_published_generation checks candidate-tree equality, reads the payload's gate catalog and processes entries in catalog order while accumulating predecessor certificates. Missing gate catalogs produce admission-only/empty gate records. Non-green dispositions remain terminal records. A green entry must contain every planned rail with recognized status and actual evidence/artifact bindings; missing evidence, unplanned gates and invalid manifests are journaled as typed refusals.
+`record_published_generation` first requires equality of candidate tree, profile digest, full repository plan digest and selection. It processes the decoder's gate catalog in order with the accumulated predecessor certificates. A missing catalog produces an empty selection journal. Non-green catalog entries retain terminal status without a result manifest at this branch; green entries must contain every planned rail and valid observed evidence/artifact bindings.
 
-Valid result manifests are stored content-addressably. Only green manifests produce certificates bound to the admission and predecessor chain. The current journal is atomically replaced; load_execution_records returns None for absent, malformed or wrong-schema admission data. Admission publication has explicit content-address-collision handling; this should not be confused with independent proof of an unchanged whole run.
+Before storing a result, `_publish_gate_result` reopens every nested evidence and artifact through the exact immutable publication. Green results produce content-addressed certificates and a journal row containing the complete accepted publication snapshot. `publication_binding` preserves a previously selected generation for a semantically identical certificate. A publication-binding mismatch preserves the existing selection journal and returns a typed refusal; other invalid outcomes are journaled. `journal_gate_records` validates the bounded population and cross-binds selected rows to real store objects before atomic replacement.
+
+Reusing admission or certificate identities reopens the original object through the canonical store, retaining its genuine provenance. It does not suppress an arbitrary collision error: malformed objects, invalid semantic digests and wrong content addresses still refuse. `load_execution_records` returns `None` for absent, unreadable or wrong-schema admission data; callers must separately establish exact currentness.
 
 ### Conventions
 
-Keep memory-domain imports behind CertificationMemoryRailsPort. Executor data is the observation source; never fabricate bindings to satisfy a declared artifact.
+Keep memory-domain imports behind `CertificationMemoryRailsPort`. Executor bytes and canonical object loaders supply observations; never fabricate bindings or creation provenance.
 
 ### Invariants And Boundaries
 
-- Candidate tree must match the published generation.
-- Green pipeline disposition does not excuse missing rail artifacts or evidence.
-- Non-green/invalid gates publish no reusable certificate.
-- The gate.py caller currently discards the returned refused list; outer quality success can coexist with missing certificates.
+- Published candidate, profile, full plan and selection must match admission before any gate recording.
+- Green disposition does not excuse missing or changed evidence bytes.
+- Invalid/non-green outcomes publish no reusable certificate; the ordinary gate caller now propagates returned certification refusals.
+- Selected certificate rows retain complete immutable publication identities, and only the canonical store validates existing semantic objects.
 - This module does not call typed lifecycle admission/finalization, durable telemetry or the final Gate-5 executor.
-- Ordinary failed runs do not reach this helper through the current gate.py success path.
+- Ordinary failed runs still raise before this helper in `gate.py`; complete red/interrupted result publication remains a production composition obligation.
 
 ### Todos
 
-Three Gate-4 required artifacts lack production bindings in the inspected source. Complete refusal propagation and all-terminal-outcome production integration remain unresolved.
+Complete typed lifecycle composition and all-terminal-outcome publication in their owning recovery leaves. L30 supplies retained report evidence and refusal propagation; it does not establish those later protocols.
 
 ## Docs References
 
@@ -55,14 +57,13 @@ No external Domain Documentation source is configured for this repository. This 
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Repository guard, admission freeze and catalog recording | `prepare_certification_records`; `record_published_generation` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:156-242 |
-| Atomic journals and green-only manifest/certificate publication | `load_execution_records`; `journal_gate_records`; `_record_gate` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:245-338 |
-| Payload-bound rail observations and required service port | `_terminal_results`; `_bound_memory_rails` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:357-451 |
-| Admission persistence and collision handling | `_persist_admission`; `_is_content_address_collision` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:474-496 |
+| Admission freezes the exact repository lane and preserves original stored provenance. | `prepare_certification_records`; `_persist_admission` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:165-200; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:535-549 |
+| Published candidate and complete profile plan must agree before recording. | `_require_publication_admission`; `record_published_generation` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:256-274; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:209-253 |
+| The selected journal is bounded and validated before atomic replacement. | `journal_gate_records` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:289-308 |
+| Result and certificate publication reopens nested evidence and original objects. | `_record_gate`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:311-339; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:342-394 |
+| Rail observations and the memory catalog come from their declared owners. | `_terminal_results`; `_bound_memory_rails` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:413-463; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:493-507 |
 
 ## Cross-Repo References
 
@@ -73,5 +74,9 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:19+00:00 — L30 source review at `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Recorded exact publication retention, canonical object reopening, and propagated refusals; preserved the remaining red-run and lifecycle integration boundaries.
 
 - 2026-09-05T06:14:14+00:00 — Created the exact production record-consumer account, including refusal journaling and unresolved composition/propagation boundaries.

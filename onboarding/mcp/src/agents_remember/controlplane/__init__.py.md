@@ -5,10 +5,14 @@
 | repository             | agents-remember                                       |
 | path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
 | doc_type               | `file-level-onboarding`                               |
-| lastUpdated            | 2026-08-01T18:30+02:00                                |
+| lastUpdated | 2026-09-06T00:28+02:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`            |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                         |
+
+## Governing Overview
+
+[Control-plane overview](overview.md)
 
 ## Purpose
 
@@ -17,12 +21,13 @@ and the external-chat operator inbox records/store.
 
 ## Code Commentary
 
+### Logic
+
 Re-exports `GATE_RECORD_SCHEMA`, `DECISION_STATES`, the `GateKind` / `GateState`
 / `DecidedVia` Literals, `GateEvidenceRef`, `GateRecord`, `create_gate`,
 `decide_gate`, and (slice 6b) `apply_gate` from `records`; `GateStore` from
-`store`; the L4 `DecisionRole`, `GatePolicy`, `GatePolicyRule`,
-`DEFAULT_GATE_POLICY`, `make_gate_policy`, and `named_gate_policy` from
-`gate_policy`; and (slice 6b/L4) `GateGuard`, `CloseoutGuard`,
+`store`; `GatePolicy`, `GatePolicyRule`, and `DEFAULT_GATE_POLICY` from
+`kernel.primitives.gate_policy`; and (slice 6b/L4) `GateGuard`, `CloseoutGuard`,
 `evaluate_gate`, and `evaluate_closeout_gate` from `enforcement`.
 
 Task 10 adds the operator inbox exports: `OPERATOR_INBOX_RECORD_SCHEMA`,
@@ -40,9 +45,7 @@ base `DurableRecord`; the ownership value object `StoreOwnership`; and the proce
 `declare_process_role` / `declared_process_role`. All are in `__all__`.
 
 What is deliberately **not** exported is the I/O itself — `exclusive_access`, `require_lock_held`,
-`append_line`, `rewrite_lines`, `read_log_text`, `thread_mutex_for`, `lock_path_for` and the six
-per-store `*_OWNERSHIP` constants stay module-private to the package's own stores, which import
-them from `durable_store` directly. The facade exports what a *caller outside the package* legitimately
+`append_line`, `rewrite_lines`, `read_log_text` and the six per-store `*_OWNERSHIP` constants remain direct durable-store imports. The mechanical `thread_mutex_for` and `lock_path_for` functions now belong to `kernel.file_lock`; they are neither defined by `durable_store` nor exported by this facade. The facade exports what a *caller outside the package* legitimately
 needs (declare which process I am, catch a contract violation, subclass the record base), not the
 primitives that would let an outside caller write one of these logs by hand.
 
@@ -51,7 +54,11 @@ unconditional per-log lock with no store exempt and no flag that turns it off, `
 an unknown major rejected and an unknown minor accepted, and two deliberate read policies — and
 directs anyone changing how these stores touch disk to read `durable_store.py` first.
 
-## Invariants And Boundaries
+### Conventions
+
+Keep the import list and `__all__` explicit; package exports remain distinct from internal I/O ownership.
+
+### Invariants And Boundaries
 
 - Pure export facade — no behavior. The `gate_*` MCP tools live in
   `mcp/tools/gates.py`, and the `operator_inbox_*` MCP tools live in
@@ -60,6 +67,18 @@ directs anyone changing how these stores touch disk to read `durable_store.py` f
   `rewrite_lines` to `__all__` would make it possible to write a control-plane log from outside
   this package without going through the store that owns it, which is exactly the shape the leaf
   removed.
+
+### Todos
+
+None identified in this bounded export review.
+
+## Docs References
+
+No external Domain Documentation source is configured.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation source. | N/A | N/A |
 
 ## Repo-Internal References
 
@@ -70,10 +89,22 @@ directs anyone changing how these stores touch disk to read `durable_store.py` f
 | The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:105-105 |
 | The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
 | The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:70-70 |
-| The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L71-L106. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:71-106 |
+| The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:73-108 |
 | The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
 
+
+## Cross-Repo References
+
+No cross-repository implementation dependency is exported here.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repository evidence is required. | N/A | N/A |
+
 ## Update History
+
+- 2026-09-06T00:28+02:00 — Corrected stale facade commentary after kernel lock extraction and reconciled the current explicit gate-policy exports. The source file is unchanged; its genuine prior verification stamp is preserved.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `__init__.py` with plane-owned seat identity, routing, and enforcement boundaries.

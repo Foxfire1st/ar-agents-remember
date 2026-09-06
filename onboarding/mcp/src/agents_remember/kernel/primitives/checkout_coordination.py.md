@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastUpdated | 2026-09-06T00:28+02:00 |
 | lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
 | lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview | `overview.md` |
@@ -56,6 +56,12 @@ and a manual runtime-config construction cannot bypass the normal synthetic conf
 route. This is not a second coordinator or a live-state fallback: no coordination
 authority is copied into or resolved from `reports/`.
 
+The host Dagger registry is a separate resource owner. Its lock mechanics use `kernel.file_lock` directly and its admission policy lives in `AuthorityRegistry`; this checkout policy does not gain a host-registry path exception or a fabricated trusted execution mode.
+
+### Conventions
+
+Resolve the imported package location and actual execution declaration; caller cwd and ambient role-like values are not authority.
+
 ### Invariants And Boundaries
 
 - Detection follows the imported package checkout, never `cwd`, a CLI flag, or an
@@ -73,15 +79,40 @@ authority is copied into or resolved from `reports/`.
 - This protects supported Agents Remember paths from accidental writes. Arbitrary
   hostile Python or shell filesystem access remains outside an in-process policy.
 
+### Todos
+
+None identified in this bounded containment review.
+
+## Docs References
+
+No external Domain Documentation source is configured.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No configured domain documentation source. | N/A | N/A |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Runtime config selects the synthetic leaf config before reading the supplied authority file. | `checkout_cli_location`; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:718-718; mcp/src/agents_remember/kernel/primitives/runtime_config.py:727-755 |
-| Durable-store lock, append, and rewrite paths all enforce this target policy. | "path = _checked_lock_path_for(log_path)"; "def _prepare_append_target(log_path: Path) -> None:"; "def _require_rewrite_access(log_path: Path, store: str) -> None:" | mcp/src/agents_remember/controlplane/durable_store.py:429-429; mcp/src/agents_remember/controlplane/durable_store.py:524-524; mcp/src/agents_remember/controlplane/durable_store.py:529-529 |
+| Runtime config asks this checkout policy before selecting the synthetic leaf configuration. | "checkout_coordination.checkout_cli_location()"; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:748-748; mcp/src/agents_remember/kernel/primitives/runtime_config.py:771-800 |
+| Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. | `exclusive_access`; `_prepare_append_target`; `_require_rewrite_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:431-433; mcp/src/agents_remember/controlplane/durable_store.py:436-438 |
 | MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | `main`; `begin_pytest_process` | mcp/src/agents_remember/mcp/server.py:77-99; mcp/test_support/agents_remember_test_support/testing/global_state.py:61-66 |
 
+
+## Cross-Repo References
+
+No separate cross-repository implementation dependency governs this policy.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No cross-repository evidence is required. | N/A | N/A |
+
+
 ## Update History
+
+- 2026-09-06T00:28+02:00 — Reopened the actual guarded durable-store entry points and recorded host registry ownership as a separate policy composition. No guard change or role declaration was made; preserved the unchanged source stamp.
+
 
 - 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the explicit `lifecycle-operation` execution mode for the plane-owned detached task worker. It may use live coordination to claim/finalize its durable operation but receives no MCP/dashboard daemon writer role; ordinary checkout CLI isolation is unchanged. The owner reports 46 focused tests across the two affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/certification/repository_profiles/adapters.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T07:08:26+00:00 |
+| lastUpdated | 2026-09-05T22:25+00:00 |
 | lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
 | lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
 | governingOverview | `../overview.md` |
@@ -100,11 +100,15 @@ artifact. The old hardcoded result inventory it replaces was deleted in
 | The generic executor/decoder protocol and the concrete Dagger + JSON implementations. | `RepositoryExecutorAdapter`; `RepositoryResultDecoder`; `DaggerModuleExecutorAdapter`; `JsonExitStatusDecoder` | mcp/src/agents_remember/certification/repository_profiles/adapters.py:43-58; mcp/src/agents_remember/certification/repository_profiles/adapters.py:60-97; mcp/src/agents_remember/certification/repository_profiles/adapters.py:99-133 |
 | The profile report command selects the admitted executor and renders it through DaggerModuleExecutorAdapter. | "def _profile_report_command(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:594-618 |
 | The success payload uses the shared gate-command renderer and reports the admitted profile identity. | "def _strict_quality_success_payload(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:402-448 |
-| The clean executor runs the admitted adapter against the exact candidate. | "def run_clean_quality("; "def _executor_command(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:140-228; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:247-278 |
-| The clean executor publishes the exported result and obtains its exit status through the configured JSON decoder. | "def _publish_executor_outcome("; "def _exported_pipeline_exit(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:281-331; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:418-431 |
+| The clean executor runs the admitted adapter against the exact candidate. | "def run_clean_quality("; "def _executor_command(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:146-233; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:253-284 |
+| The clean executor publishes the exported result and obtains its exit status through the configured JSON decoder. | "def _publish_executor_outcome("; "def _exported_pipeline_exit(" | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:287-337; mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:424-437 |
 | Recovery verifies the published candidate/profile/result authority and decodes through the same JSON result decoder. | "def recover_strict_code_quality_gate(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399 |
 
+
 ## Update History
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 
 - 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Split execution, terminal decoding and recovery into current unique owner definitions; refreshed moved ranges and retained the shared-adapter claim after reading the changed executor/recovery bodies. This scoped repair does not promote the card's verification stamp or certify a gate.
 

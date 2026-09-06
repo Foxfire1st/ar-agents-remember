@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
 | lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
 | lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
 | governingOverview | `../overview.md` |
@@ -78,8 +78,8 @@ caller-declared completeness.
 | --- | --- | --- |
 | The plan binds one unit per incremental document/checker and the exact Gate 1-4 prefix. | `AffectedClosurePlan`; `AffectedUnitPlan` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py:117-246; mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py:44-90 |
 | Results and reuse are terminal, partitioned, and aggregate blocked > fail > pass. | `AffectedClosureResult`; `SubresultReusePlan` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py:332-405; mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py:303-329 |
-| The planner compiles these models; the executor consumes them. | `compile_affected_closure_plan`; `execute_affected_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:171-238 |
-| Model-edge proofs cover plan/result/reuse refusal shapes. | `test_r07_closure_plan_model_refuses_incomplete_or_rebound_populations`; `test_r07_result_and_reuse_models_refuse_inconsistent_exact_state`; `test_r07_aggregate_model_refuses_incomplete_or_inconsistent_result` | mcp/tests/test_memory_incremental_scope_model_edges.py:660-730; mcp/tests/test_memory_incremental_scope_model_edges.py:741-785; mcp/tests/test_memory_incremental_scope_model_edges.py:786-843 |
+| The planner compiles these models; the executor consumes them. | `compile_affected_closure_plan`; `execute_affected_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:183-250 |
+| Model-edge proofs cover plan/result/reuse refusal shapes. | `test_r07_closure_plan_model_refuses_incomplete_or_rebound_populations`; `test_r07_result_and_reuse_models_refuse_inconsistent_exact_state`; `test_r07_aggregate_model_refuses_incomplete_or_inconsistent_result` | mcp/tests/test_memory_incremental_scope_model_edges.py:758-817; mcp/tests/test_memory_incremental_scope_model_edges.py:839-881; mcp/tests/test_memory_incremental_scope_model_edges.py:884-933 |
 
 ## Cross-Repo References
 
@@ -90,6 +90,8 @@ No cross-repository implementation boundary is owned here.
 | Gate certificate identities come from the R21 certificate owners inside the same repository. | `GateCertificateIdentity` | mcp/src/agents_remember/certification/certificate_models.py:102-106 |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming references and schema ownership against the reviewed candidate; unchanged source retains its genuine verification stamp.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
 

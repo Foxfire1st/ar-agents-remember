@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/providers/degradation.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-06T00:38:37+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -261,7 +261,7 @@ documentation, so it is cited as a repo-internal reference below rather than her
 | `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). | `ProviderDegradationSettings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:36-55 |
 | `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. |"async def _metrics_loop"|mcp/src/agents_remember/serving/_app_lifespan.py:73-73|
 | Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. | `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`; `test_critical_transition_records_event_inbox_and_failsafe_once`; `test_critical_stop_failure_still_records_event_inbox_and_state` | mcp/tests/test_provider_degradation.py:99-159; mcp/tests/test_provider_degradation.py:239-330; mcp/tests/test_provider_degradation.py:332-363 |
-| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim. | `exclusive_access`; `append_line`; `rewrite_lines`; `read_log_text`; "SCHEMA_VERSION ="; `schema_version_supported`; `StoreOwnership` | mcp/src/agents_remember/controlplane/durable_store.py:46-46; mcp/src/agents_remember/controlplane/durable_store.py:98-138; mcp/src/agents_remember/controlplane/durable_store.py:232-253; mcp/src/agents_remember/controlplane/durable_store.py:393-448; mcp/src/agents_remember/controlplane/durable_store.py:472-476; mcp/src/agents_remember/controlplane/durable_store.py:479-490; mcp/src/agents_remember/controlplane/durable_store.py:509-516 |
+| `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim. | `exclusive_access`; `append_line`; `rewrite_lines`; `read_log_text`; "SCHEMA_VERSION ="; `schema_version_supported`; `StoreOwnership` | mcp/src/agents_remember/controlplane/durable_store.py:46-46; mcp/src/agents_remember/controlplane/durable_store.py:99-138; mcp/src/agents_remember/controlplane/durable_store.py:232-253; mcp/src/agents_remember/controlplane/durable_store.py:320-360; mcp/src/agents_remember/controlplane/durable_store.py:384-388; mcp/src/agents_remember/controlplane/durable_store.py:391-402; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | The sibling provider store put on the same contract in the same change. | "class ProviderMetricsStore" | mcp/src/agents_remember/providers/metrics.py:231-231 |
 | The shared durability suite whose docstring disclaims the base-commit percentages as unreproducible. | `ProviderStoreDurabilityTests` | mcp/tests/test_provider_store_durability.py:280-351 |
 | The attention-dismissal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused "one writer" as a reason not to lock. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
@@ -275,7 +275,24 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | This protocol is providers-only this iteration; Sentry integration is a future detection source in a separate task (`260703_spotlight-dev-observability`), not yet a cross-repo/cross-system boundary this module touches. | n/a | n/a |
 
+
+## Current Durable-Store Lock Composition
+
+The provider store continues to use the same durable append/rewrite contract. Its exclusion
+owner validates the checkout target before shared kernel locking and maps lock-capability
+failures into the existing durable error family. This source verification does not change the
+provider thresholds, hysteresis or failsafe behavior.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Store exclusion keeps checkout coordination ahead of the shared kernel primitive. | `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360 |
+
 ## Update History
+
+- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the provider durable-store dependency claim and verified unchanged source bytes against their prior verified commit; recorded the current guarded kernel-lock composition and genuinely verified at C97.
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

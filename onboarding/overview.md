@@ -5,19 +5,23 @@
 | repository | agents-remember |
 | doc_type | `repo-overview` |
 | sourceRoute | . |
-| lastUpdated | 2026-09-05T07:40+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 
 > **Status:** active baseline
 
-## CCR cumulative integration boundary at ea359649
+## Current CCR recovery boundary
 
-The repository has a production R22-profile → R11-registry → frozen R21-plan bridge. Host gate success/recovery can publish certificate metadata against that real authority. This does not establish complete master finalization: R05 admission/finalization, R16 durable telemetry, and R07/R08 incremental/final memory certification remain library primitives without the required production construction paths. Existing Gate-5 checker catalogs are not evidence that R08 final certification runs.
+The repository has a production R22-profile → R11-registry → frozen R21-plan bridge. L30 now retains actual rail captures and producer artifacts, reopens every nested certificate binding against the exact immutable generation, preserves selected generations during publication, and propagates certificate-record refusals on fresh/recovered green runs. Browser, provider and teardown artifact producers are connected. Detailed ownership is under `worktrees/modules` and the repository profile card.
 
-R21 rail metadata currently refers to log locations that the producer does not persist, and some Gate-4 artifacts lack producers. A green metadata certificate is therefore not proof that referenced evidence bytes exist. R10 citation fixing also retains a known safety defect: a projection-declined edit may remain in the staged write set, and cached document bytes are not revalidated at publication. These are verified source defects recorded in recovery leaves, not repaired behavior or accepted closeout evidence.
+This does not establish complete master finalization: ordinary R05 admission/finalization, R16 durable telemetry, and R07/R08 incremental/final memory certification still lack their required production composition. Ordinary failed quality runs also raise before the R21 record adapter. Existing Gate-5 checker catalogs do not prove those protocols execute.
 
-Task intent binds exact normative requirement text, acceptance obligations and referenced packet identities. Semantic/readiness mutations invalidate dependent evidence; observational progress does not. Current overviews under `certification`, `memory_quality`, `tasks`, `worktrees/modules`, and `mcp/tests` carry the detailed owners and source evidence. This source review neither runs the suite nor certifies the aggregate candidate.
+R10 citation fixing retains the known L32 safety defect at this code commit: a projection-declined edit may remain in the staged write set, and cached document bytes are not revalidated at publication. L32 is a separate candidate, not integrated behavior.
+
+The host Dagger registry now uses `kernel/file_lock.py` for neutral file exclusion. Checkout durable stores retain their coordination guard before invoking that same kernel mechanism; host registry access neither impersonates a lifecycle process nor relaxes checkout isolation.
+
+Task intent binds exact normative requirement text, acceptance obligations and referenced packet identities. Semantic/readiness mutations invalidate dependent evidence; observational progress does not. Source review and the current leaf's gates do not constitute aggregate recovery acceptance.
 
 ## Python Quality Execution Boundary
 
@@ -1270,6 +1274,10 @@ guidance is in `system/tools.md`. Host pytest, direct coverage, and the quality 
 prohibited, with no compatibility fallback.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Reconciled actual L30 publication and lock ownership while preserving L32 and production lifecycle obligations; unchanged route knowledge remains preserved.
 
 - 2026-09-05T07:40+00:00 — L31 cumulative source review at ea35964985f30080488270e71ac81657ac40682b: reconciled current profile, intent, publication, dispatch and provider contracts; preserved prior frontend/lifecycle milestones as history; recorded R10/R21 and unconstructed certification consumers. Verification records source review, not execution or acceptance.
 

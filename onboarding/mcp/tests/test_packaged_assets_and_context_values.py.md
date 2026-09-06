@@ -5,7 +5,7 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/tests/test_packaged_assets_and_context_values.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-01T14:20+02:00                                  |
+| lastUpdated | 2026-09-05T22:25+00:00 |
 | lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`              |
 | lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
 | governingOverview      | `overview.md`                                           |
@@ -80,11 +80,15 @@ against the raw bytes: `log_path(None).is_file()`, `read_bytes() == b""`, `read(
 | CrossRepo parsing excludes malformed entries with an explanation instead of raising. | `parsed_cross_repo_allow_entry` | mcp/src/agents_remember/kernel/coordination_context/setting_values.py:86-103 |
 | Gate storage supplies the strict read and compaction path under test. | `GateStore` | mcp/src/agents_remember/controlplane/store.py:96-325 |
 | Gate compaction uses the store rewrite seam. | `_replace` | mcp/src/agents_remember/controlplane/store.py:328-337 |
-| The shared rewrite never unlinks an empty destination. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The shared rewrite never unlinks an empty destination. | `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | The suite that measures what the unlink was costing, across all six control-plane logs and against the leaf's base commit. | `test_no_record_is_lost_when_a_compaction_empties_and_unlinks_the_log` | mcp/tests/test_controlplane_store_durability.py:140-153 |
 | The provider lifecycle entry points the fan-out drives. | `run_grepai_lifecycle`, `run_cgc_lifecycle` | mcp/src/agents_remember/providers/lifecycle_service.py:50-94; mcp/src/agents_remember/providers/lifecycle_service.py:97-137 |
 
+
 ## Update History
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.

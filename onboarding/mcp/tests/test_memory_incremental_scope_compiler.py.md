@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_memory_incremental_scope_compiler.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
 | lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
 | lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
 | governingOverview | `overview.md` |
@@ -77,7 +77,7 @@ focused affected coverage.
 | The R07 plan executes only incremental documents and keeps full-only checks pending. | `test_r07_plan_executes_only_incremental_documents_and_keeps_six_final_checks_pending`; `test_r07_execution_publishes_every_member_and_never_promotes_incremental_success` | mcp/tests/test_memory_incremental_scope_compiler.py:869-895; mcp/tests/test_memory_incremental_scope_compiler.py:896-919 |
 | Interruption and memory-change reuse are exact-identity scoped. | `test_r07_unchanged_interruption_reuses_exact_passes_without_executing`; `test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs` | mcp/tests/test_memory_incremental_scope_compiler.py:1004-1025; mcp/tests/test_memory_incremental_scope_compiler.py:1026-1076 |
 | Typed refusals cover incomplete scope, code repair, motion, registry, and conflicting authority. | `test_r07_incomplete_scope_code_repair_and_candidate_motion_refuse_typed`; `test_r07_executor_registry_and_post_plan_candidate_are_revalidated`; `test_r07_conflicting_prior_result_authority_is_not_guessed` | mcp/tests/test_memory_incremental_scope_compiler.py:1077-1107; mcp/tests/test_memory_incremental_scope_compiler.py:1108-1132; mcp/tests/test_memory_incremental_scope_compiler.py:1133-1157 |
-| The suite consumes the real scope planner, executor, registry, and store owners. | `compile_affected_closure_plan`; `execute_affected_closure`; `ContentAddressedSubresultStore` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:171-238; mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:31-119 |
+| The suite consumes the real scope planner, executor, registry, and store owners. | `compile_affected_closure_plan`; `execute_affected_closure`; `ContentAddressedSubresultStore` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130; mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:183-250; mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:31-119 |
 
 ## Cross-Repo References
 
@@ -88,5 +88,7 @@ No cross-repository implementation boundary is exercised.
 | The suite drives only repository-owned owners. | — | — |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Refreshed the incoming affected-execution range; unchanged test source retains its verification stamp.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card covering the R06 scope-compile edges and the R07 affected-closure plan/execute/reuse/aggregate edges added by this commit; no prior sidecar existed.

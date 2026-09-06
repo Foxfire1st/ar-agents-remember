@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/certification-profile-v1.json` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `8f670ceecd75323600c873d40c47c4a1cc946ab3` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:24+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,26 +22,29 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 ### Logic
 
-The closeout-full, closeout-targeted and local-targeted selections declare their gate populations explicitly. Each rail binds identity, prerequisites, evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed authorities; they cannot be copied from another source revision.
+`closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
-The current artifact inventory includes the dashboard suite-result file produced after the ordinary Vitest suite. Optional publication of a file in `publishedArtifacts` and a rail's `requiredOnPass` artifact requirement are different contracts. A rail cannot mint a green certificate merely because the overall export completed.
+The publication inventory is finite: 51 declared paths, including 32 stable `rail-evidence/` capture paths. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
 
-Three Gate-4 rails declare `dashboard-e2e-result`, `provider-integration-result` and `teardown-proof`. The inspected executor mapping has no producer binding for these three artifacts. Their declaration therefore remains an unsatisfied production obligation, even if the underlying browser/provider/teardown commands return success. Python coverage artifacts also require an actual coverage-producing scope.
+Dashboard browser execution writes the Playwright JSON result at the explicitly configured report path with both line and JSON reporters. Provider integration writes the actual pytest phase report to `provider-integration-result.json`. The teardown rail requests a proof artifact from the report verifier, which checks the existing clean-room summary and both successful `L5-C10` checkpoint records before writing `teardown-proof.json`. Dashboard coverage retains its existing Vitest producer location and receives the stable exported name `dashboard-coverage.json`.
+
+The Dagger emission/export owners retain real files and exact output captures on a separate report branch. The profile declares those paths and their bounds; the host validates the full published snapshot and nested evidence before certificates can reference them. These concrete producers close the earlier three Gate-4 mapping gaps.
 
 ### Conventions
 
-Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes; never hand-author replacement digest values to pass admission.
+Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The inspected candidate binds profile digest `8a3385ad68a89ebdc1e6ffc64296ad7a2eb7039cd5ba20384790150a60ec498b`, selector configuration digest `c140e8eb3623b81676de126c5d3cf07698c18a3a1519cc464622c7ec2ec8eaaf`, and runtime digest `f45228d2bf00df9e4d0894e0cf3b8f4c977f00e5b46931245ba4343f68b205d4`.
 
 ### Invariants And Boundaries
 
-- The profile may choose concrete repository rails, not redefine gate order or Gate-5 ownership.
-- Every required artifact must be backed by observed producer bytes.
-- An artifact publication allowance does not prove its producer exists.
+- The profile chooses concrete repository rails, never gate order or Gate-5 ownership.
+- Every required artifact needs actual producer bytes; declarations alone do not certify execution.
+- Required capture bytes remain stable report-relative references, independently of physical generation identity.
 - Local Gate-4 non-applicability is not terminal master Gate-4 certification.
+- L30 publication support does not compose R05/R16/R07/R08 into the ordinary lifecycle.
 
 ### Todos
 
-Implement the three missing Gate-4 result producers and their executor bindings before claiming a complete green certificate chain.
+No remaining producer gap is recorded for the three L30 artifacts. Ordinary lifecycle and final-memory composition remain owned by their separate production recovery leaves.
 
 ## Docs References
 
@@ -53,16 +56,15 @@ No external Domain Documentation source is configured for this repository. This 
 
 ## Repo-Internal References
 
-The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical repository profile identity | "profileDigest"; "agents-remember-certification" | mcp/certification-profile-v1.json:1-15 |
-| Required dashboard browser result | "dashboard-e2e-result" | mcp/certification-profile-v1.json:779-801 |
-| Required provider integration result | "provider-integration-result" | mcp/certification-profile-v1.json:1803-1825 |
-| Required teardown proof | "teardown-proof" | mcp/certification-profile-v1.json:2681-2703 |
-| Selector, executor and decoder contracts | "selectors"; "executorAdapters"; "resultDecoders" | mcp/certification-profile-v1.json:2728-2885 |
-| Dashboard suite artifact publication allowance | "dashboard-suite-result.json" | mcp/certification-profile-v1.json:2968-2981 |
+| The exact canonical profile digest is declared. | "profileDigest" | mcp/certification-profile-v1.json:6-6 |
+| Closeout and local selections carry explicit gate applicability. | "selections" | mcp/certification-profile-v1.json:7-506 |
+| Selectors bind the exact configuration owner digest. | "selectors" | mcp/certification-profile-v1.json:2736-2786 |
+| The Dagger adapter and result decoder are explicit profile contracts. | "executorAdapters" | mcp/certification-profile-v1.json:2787-2809 |
+| The finite publication inventory declares actual report paths and byte bounds. | "publishedArtifacts" | mcp/certification-profile-v1.json:2894-3360 |
+| Real rail files and exact captures are retained without mutating the execution handle. | `attach_rail_terminal_bindings` | .dagger/src/agents_remember_quality/rail_emission.py:66-100 |
+| The report branch persists retained bytes before validating/exporting the final payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
 
 ## Cross-Repo References
 
@@ -73,6 +75,10 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:20+00:00 — L30 source review: reconciled the real browser/provider/teardown producers, finite byte-capture publications and exact owner-derived digest pins; retained local applicability and later lifecycle boundaries.
 
 - 2026-09-05T06:14:14+00:00 — Reconciled selector/runtime profile evolution and documented the unsatisfied required Gate-4 producer contracts without treating declarations as proof.
 

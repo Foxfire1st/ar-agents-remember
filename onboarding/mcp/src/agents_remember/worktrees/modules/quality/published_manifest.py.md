@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
-| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
+| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
+| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,9 +29,9 @@ generation cannot be replayed under a different profile identity or authority.
 ### Logic
 
 `load_published_quality_manifest` reads `quality-report-set.json` exactly once and validates it
-as schema `3.1`. The root must be an object with only `schemaVersion`, `generation`,
+through the public `parse_published_quality_manifest` owner as schema `3.1`. The root must be an object with only `schemaVersion`, `generation`,
 `candidateTree`, `profileDigest`, `profilePlanDigest`, `profileSelectionId`,
-`executorAdapterId`, `resultDecoder`, `files`, and optional `attestation`/`dependencies`/`runtimeAuthorityDigest` (`_parse_runtime_authority_digest`, lines 259-267, accepts only a 64-hex digest when present).
+`executorAdapterId`, `resultDecoder`, `files`, and optional `attestation`/`dependencies`/`runtimeAuthorityDigest` (`_parse_runtime_authority_digest` accepts only a 64-hex digest when present).
 Digest fields must be lowercase 64-hex strings; selection/executor ids must be nonblank;
 `resultDecoder` is parsed through `JsonExitStatusDecoderDefinition.model_validate` and must name
 a published file. File records contain exactly `sha256` and a non-negative integer `size`;
@@ -41,12 +41,14 @@ selects a declared artifact without constructing an unverified path.
 `quality_generation_digest(fields)` computes the generation id over exactly the declared field set
 (`_GENERATION_DIGEST_FIELDS`) with sorted compact JSON; any other field set is refused. The parser
 recomputes the expected generation from the parsed bound fields and refuses drift
-(`generation id does not match its bound fields`). `quality_report_dependencies` (lines 296-346) declares the exact candidate, execution (rail-plan over the profile identity), report
+(`generation id does not match its bound fields`). `quality_report_dependencies` declares the exact candidate, execution (rail-plan over the profile identity), report
 bytes, and - when the manifest carries `runtimeAuthorityDigest` - one `shared-dagger-authority` admission edge consumed by
 consumers, accepting only the exact profile-identity field set. `_parse_dependencies` re-derives
 and compares the expected dependency record exactly as the evidence-dependency validator requires.
 
-Each manifest key is also a strict POSIX relative report path. Empty, absolute, backslash-bearing,
+`published_manifest_payload` serializes the complete accepted snapshot, including dependencies and optional attestation/runtime authority, for retention in selected certificate rows. The same public parser reads that snapshot; the current pointer reader does not own a second schema or a compatibility parser.
+
+Each manifest file key is also a strict POSIX relative report path. Empty, absolute, backslash-bearing,
 non-normalized, or dot-segment paths are rejected before a `PublishedQualityFile` is constructed.
 Nested evidence is addressable, but a manifest can never escape the immutable generation root or
 smuggle an alternate path spelling.
@@ -73,25 +75,20 @@ None recorded.
 
 ## Docs References
 
-CCR-R22@v1 requires each gate certificate to name the exact admitted profile and its gate-specific
-plan digest, and a profile or referenced-input change to invalidate only the declared certificate
-dependency closure. The manifest v3 field set is this requirement's durable record in the quality
-publication path.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The published quality manifest binds the exact admitted profile and the overall profile-plan digest; this record is distinct from a per-gate certificate. | "class PublishedQualityManifest:" | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:83-104 |
-| A profile or referenced-input change invalidates only the declared certificate dependency closure. | `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:261-302 |
+| The immutable quality manifest retains profile identity separately from gate certificates. | `PublishedQualityManifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:84-104 |
+| Report dependencies bind actual candidate, profile plan, bytes and optional runtime authority. | `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:320-368 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The loader reads the sole manifest pointer and returns one strict schema-3.1 snapshot with profile identity and optional runtime authority digest. | `load_published_quality_manifest`; `_parse_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:107-116; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:117-193 |
-| Generation and dependency digests require the exact bound field sets; a present runtime authority digest participates in both. | `quality_generation_digest`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:239-248; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:296-346 |
-| Manifest file keys are safe canonical relative paths before they become evidence records. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:347-357 |
-| Recovery recompiles the expected candidate/profile plan, checks exact identities, and decodes the retained result before reuse. | "def recover_strict_code_quality_gate(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399 |
-| The test-results report renders the profile and runtime-authority digests from its report record. | "def _write_test_results_report(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:508-561 |
+| Pointer loading and retained-payload parsing use one strict schema-3.1 owner. | `load_published_quality_manifest`; `parse_published_quality_manifest` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:131-138; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:141-215 |
+| Serialization preserves the complete accepted snapshot. | `published_manifest_payload` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:107-128 |
+| Generation and dependency records are derived from exact bound input fields. | `quality_generation_digest`; `_parse_dependencies`; `quality_report_dependencies` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:263-270; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:231-249; mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:320-368 |
+| Manifest file keys are canonical safe relative paths. | `is_safe_relative_report_path` | mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py:371-379 |
+| Recovery rechecks candidate/profile/plan before evidence reuse. | `recover_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:327-399 |
 
 ## Cross-Repo References
 
@@ -106,6 +103,10 @@ commit) advanced it to schema `3.1` with the optional shared-Dagger-authority di
 no-compatibility-reader discipline.
 
 ## Update History
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:19+00:00 — L30 source review at `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Exposed the sole strict parser and complete snapshot serializer for certificate-selected generations; preserved schema-3.1 and dependency invariants.
 
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 2 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Corrected the category error: the cited field belongs to the published quality manifest, not a gate certificate. Separated recovery admission from report rendering and selected the current function bodies. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 

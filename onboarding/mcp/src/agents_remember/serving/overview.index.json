@@ -219,7 +219,7 @@
     "harness_control_bridge"
   ],
   "hotPath": {
-    "summary": "For the active conversation serving, start at `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor), `conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics), `conversation/active/store.py` (idempotence, tool block union), `conversation/active/cursor.py` (signed cursor authority), and `conversation/active/status.py` (the canonical classification orchestration shares). The per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`...",
+    "summary": "Serving composes the dashboard application, hosted-session control, projections and notifier. Start at `app.py` for route/lifespan composition, `projector.py` for atomic snapshots and cancellation draining, and `change_watcher.py` for change-or-heartbeat pacing. Watcher lockfile exclusion derives from `kernel.file_lock.lock_path_for` and filters every watched directory; moving this import does not alter suffix, debounce or wake behavior. The host registry and coordinator retain separate policies above that shared kernel mechanism.",
     "candidateHints": [
       "mcp/src/agents_remember/serving",
       "mcp/src/agents_remember/serving/conversation",

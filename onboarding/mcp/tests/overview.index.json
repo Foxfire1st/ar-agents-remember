@@ -59,6 +59,7 @@
     "mcp/tests/fixtures/repository_profiles/rust/tests/service.rs",
     "mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs",
     "mcp/tests/fixtures/sim/logs/observer/lifecycles/sim-replay-lifecycle/events.jsonl",
+    "mcp/tests/gate_certification_test_support.py",
     "mcp/tests/integration_branch_authority_test_support.py",
     "mcp/tests/lifecycle_control_test_support.py",
     "mcp/tests/lifecycle_enclosure_test_support.py",
@@ -207,6 +208,7 @@
     "mcp/tests/test_cross_store_lock_order.py",
     "mcp/tests/test_curator_coherence.py",
     "mcp/tests/test_curator_coherence_edges.py",
+    "mcp/tests/test_dagger_registry_lock.py",
     "mcp/tests/test_dagger_runtime_authority.py",
     "mcp/tests/test_dashboard_daemon.py",
     "mcp/tests/test_dependency_ownership_ast_helpers.py",
@@ -255,6 +257,7 @@
     "mcp/tests/test_fitness_marker.py",
     "mcp/tests/test_future_code_candidate.py",
     "mcp/tests/test_gate_certificate_authority.py",
+    "mcp/tests/test_gate_certification_evidence.py",
     "mcp/tests/test_gate_certification_records.py",
     "mcp/tests/test_gate_five_memory_rails.py",
     "mcp/tests/test_gate_replay_window.py",
@@ -484,6 +487,7 @@
     "mcp/tests/test_quality_subprocess_environment.py",
     "mcp/tests/test_queue_and_quality_helper_invariants.py",
     "mcp/tests/test_rail_bindings.py",
+    "mcp/tests/test_rail_evidence_publication.py",
     "mcp/tests/test_random_order.py",
     "mcp/tests/test_read_ar_files.py",
     "mcp/tests/test_register_scaffold.py",
@@ -638,8 +642,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 608,
-    "fileSidecars": 626,
+    "sourceFilesInScope": 612,
+    "fileSidecars": 630,
     "childRoutes": 0
   },
   "routingTerms": [
