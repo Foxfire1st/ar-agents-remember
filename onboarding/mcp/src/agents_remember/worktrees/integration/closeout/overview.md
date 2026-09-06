@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:58:25+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
 | lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview | `../overview.md` |
@@ -41,12 +41,11 @@ refuses current use and names republishing, rather than accepting topology alone
 `task_intent_legacy_census.py` separately counts current legacy containers before decoder
 removal. Historical generations remain audit evidence. These existing door/journal owners
 are distinct from the selected certification graph: admission and code-suffix execution are now
-composed under `certification/`, while the default production memory/finalization continuation
-remains unbound.
+composed under `certification/`; prepared-memory and finalization execution are separate registered continuation responsibilities.
 
 ## Selected Certification Route
 
-[The selected certification overview](certification/overview.md) follows actual frozen admission, explicit predecessor/publication readback, journal CAS and suffix execution. It also explains retained red evidence, current Gate-5 observations and the narrowly proven code-output recovery comparison. These responsibilities extend the existing door/coherence/journal separation; they do not make queue state own certification or establish an installed memory/finalization continuation.
+[The selected certification overview](certification/overview.md) follows actual frozen admission, explicit predecessor/publication readback, journal CAS and suffix execution. It also explains retained red evidence, current Gate-5 observations and the narrowly proven code-output recovery comparison. These responsibilities extend the existing door/coherence/journal separation; they do not make queue state own certification or themselves establish memory/finalization execution.
 
 ## Local Invariants And Traps
 
@@ -86,7 +85,15 @@ pair model. Preview/normal closeout obtain it from current coherence; initial ap
 re-prove it from the same exact contract so stale pre-commit evidence is never treated as a repo-id
 fallback.
 
+## L34 Preparation Ownership
+
+[Preparation](preparation/overview.md) now owns selected private C/M/L creation, genuine existing-output reuse, physical code views and prepared-memory result currentness. [preparation_selection.py](preparation_selection.py.md) retains original objects and command outcomes through canonical journal CAS. Final memory evidence comes from the registered prepared-memory producer; private output selection alone is not ref publication or approval.
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T14:58:25+00:00 — Added the selected certification child route from source at `c69d5171187fa1957025e393270db9f5a864ab14` and corrected the obsolete all-unwired claim. Preserved all earlier history and the broader route verification stamps; other closeout owners are outside this bounded update.
 

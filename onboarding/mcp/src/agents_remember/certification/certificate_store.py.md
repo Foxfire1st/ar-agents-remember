@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/certification/certificate_store.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | 6f10c24d72db6171c0d434b307e6806996e2f11d |
 | lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
 | governingOverview | `overview.md` |
@@ -66,7 +66,24 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 
 None; this is the repository-neutral content-addressed store.
 
+## L34 Current Implementation
+
+The closed store dispatch now also owns preparation-intent and prepared-output objects. Generic typed publish/load and exact reference readback preserve canonical bytes, original provenance, existing locking and capacity bounds; there is no separate preparation store.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `CertificateStorePolicy` owns the corresponding behavior described above. | `CertificateStorePolicy` | `mcp/src/agents_remember/certification/certificate_store.py:84-90` |
+| `ContentAddressedCertificateStore` owns the corresponding behavior described above. | `ContentAddressedCertificateStore` | `mcp/src/agents_remember/certification/certificate_store.py:93-254` |
+| `_object_digest` owns the corresponding behavior described above. | `_object_digest` | `mcp/src/agents_remember/certification/certificate_store.py:276-295` |
+| `_read_regular_file` owns the corresponding behavior described above. | `_read_regular_file` | `mcp/src/agents_remember/certification/certificate_store.py:298-319` |
+| `_capacity_error` owns the corresponding behavior described above. | `_capacity_error` | `mcp/src/agents_remember/certification/certificate_store.py:322-331` |
+| `_raise` owns the corresponding behavior described above. | `_raise` | `mcp/src/agents_remember/certification/certificate_store.py:334-336` |
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): created the card for the new

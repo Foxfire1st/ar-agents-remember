@@ -28,12 +28,15 @@
     "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
     "mcp/src/agents_remember/models/lifecycles/operation_wait.py",
     "mcp/src/agents_remember/models/lifecycles/policy.py",
+    "mcp/src/agents_remember/models/lifecycles/preparation.py",
+    "mcp/src/agents_remember/models/lifecycles/preparation_state.py",
+    "mcp/src/agents_remember/models/lifecycles/prepared_memory.py",
     "mcp/src/agents_remember/models/lifecycles/responses.py",
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 20,
-    "fileSidecars": 20,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -72,11 +75,16 @@
     "operation_projection",
     "operation_wait",
     "policy",
+    "preparation",
+    "preparation_state",
+    "prepared",
+    "prepared_memory",
     "projection",
     "remember",
     "response",
     "responses",
     "src",
+    "state",
     "termination",
     "wait"
   ],
@@ -102,6 +110,9 @@
       "mcp/src/agents_remember/models/lifecycles/operation_projection.py",
       "mcp/src/agents_remember/models/lifecycles/operation_wait.py",
       "mcp/src/agents_remember/models/lifecycles/policy.py",
+      "mcp/src/agents_remember/models/lifecycles/preparation.py",
+      "mcp/src/agents_remember/models/lifecycles/preparation_state.py",
+      "mcp/src/agents_remember/models/lifecycles/prepared_memory.py",
       "mcp/src/agents_remember/models/lifecycles/responses.py",
       "mcp/src/agents_remember/models/lifecycles/termination.py"
     ],
@@ -142,18 +153,18 @@
       "operation_wait",
       "policy.py",
       "policy",
+      "preparation.py",
+      "preparation",
+      "preparation_state.py",
+      "preparation_state",
+      "prepared_memory.py",
+      "prepared_memory",
       "responses.py",
       "responses",
       "termination.py",
       "termination",
       "mcp/src/agents_remember/models/lifecycles/",
-      "route-local-overview",
-      "ea35964985f30080488270e71ac81657ac40682b",
-      "/overview.md",
-      "__init__.py.md",
-      "responses.py.md",
-      "finalize.py.md",
-      "operation.py.md"
+      "route-local-overview"
     ]
   },
   "fallback": {

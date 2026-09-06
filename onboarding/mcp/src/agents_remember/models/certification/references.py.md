@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/certification/references.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:03:08+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
@@ -61,7 +61,20 @@ No cross-repository implementation boundary is owned here.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No separately configured cross-repository source is used for this card. | — | — |
+
+## L34 Current Implementation
+
+The closed reference vocabulary includes preparation-intent and prepared-output. A reference binds semantic digest, exact canonical content hash and size; possession of a reference does not select a lifecycle output.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `CertificateObjectReference` owns the corresponding behavior described above. | `CertificateObjectReference` | `mcp/src/agents_remember/models/certification/references.py:26-41` |
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T15:03:08+00:00 — Added explicit not-applicable Docs/Cross-Repo reference rows required by the file-card template; source claims, verification stamps and all earlier history are unchanged.
 
