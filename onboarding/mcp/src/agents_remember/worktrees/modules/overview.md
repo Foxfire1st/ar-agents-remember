@@ -890,7 +890,7 @@ Selected closeout admission, original-reference readback and code-suffix executi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Returned terminals are recorded and selected before recording/process refusal propagation. | `run_strict_code_quality_gate`; `record_terminal_generation` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361; mcp/src/agents_remember/worktrees/modules/quality/certification_run.py:47-70 |
+| Returned terminals are recorded and selected before recording/process refusal propagation. | "def run_strict_code_quality_gate("; "def record_terminal_generation(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361; mcp/src/agents_remember/worktrees/modules/quality/certification_run.py:47-70 |
 | Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:279-297; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:367-444 |
 | Gate-record publication bindings retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
 | All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/profile_execution.py:215-292 |
@@ -898,7 +898,7 @@ Selected closeout admission, original-reference readback and code-suffix executi
 | Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:87-91; .dagger/src/agents_remember_quality/rail_bindings.py:115-144 |
 | The report branch persists retained bytes and exports the authoritative payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
 | Required files are checked on the actual publication branch. | `_verify_required_profile_publications` | .dagger/src/agents_remember_quality/engine_helpers.py:128-166 |
-| Execution progress separately retains publication bytes and file handles. | `QualityProgress` | .dagger/src/agents_remember_quality/profile_results.py:19-32 |
+| Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. | "class QualityProgress" | .dagger/src/agents_remember_quality/profile_results.py:19-34 |
 
 ## Selected Quality Execution Routes
 
@@ -913,7 +913,7 @@ The selected code contract and original report transport have a local [execution
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The selected code transport recomputes R21 reuse and admits only a code gate start. | `CodeCertificationExecution` | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:42-100 |
+| Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4. | "class CodeCertificationExecution" | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:42-100 |
 | Retained transport membership and byte limits come from frozen producer declarations. | `retained_report_inventory`; `snapshot_retained_reports` | mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:37-77; mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:80-109 |
 | The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
 

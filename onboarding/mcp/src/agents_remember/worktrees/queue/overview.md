@@ -121,6 +121,10 @@ identity algorithm. Graph-backed rebuild resolves and compares the authored grap
 the sole immutable bound graph into the sprint context, and reuses its indexes for every candidate.
 Graphless atomic-sequential mode remains explicit and valid.
 
+## Current Landed Composition
+
+The transitional `closeout_staged_quality.py` helper separates `prepare_staged_code` from fresh gate execution. Its returned tree and hook outcome feed certification admission after strict hooks settle; this helper location does not give scheduling projection state any certification or mutation authority.
+
 ## Update History
 
 - 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added canonical task intent as a source-currentness input and qualified classified task invalidation. Verification records current source claims, not execution or acceptance.

@@ -186,7 +186,7 @@ The operation record separately retains private preparation state. Original comm
 
 ## Update History
 
-- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins.
+- 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
 
 
 ### 2026-09-06T17:13:06+00:00 — L34 implementation memory

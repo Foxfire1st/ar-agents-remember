@@ -16,41 +16,9 @@ Owns worktree closeout preview/apply behavior.
 
 ## Code Commentary
 
-Closeout validates source branch positions and explicit commit approval. When a code commit would
-be created **in any repository whose checkout carries the wrapper**, it stages the task worktree and
-then runs the configured pre-commit hook once, restages any hook edits, and runs the leaf
-change-set-scoped quality contract exactly once (`--targeted` — changed files +
-reverse-import closure + derived test subset, mandatory CRAP over the changed modules) over
-exactly that, before any code, memory, ledger, contract, or applied-gate mutation. The full
-wrapper is NOT a leaf gate: it runs once per master at the master integration gate with
-host-managed RAM/swap by default. After the wrapper's pytest-final subprocess, closeout commits exactly the
-certified index with hooks bypassed; it neither reruns the fast hook nor restages the working
-tree. Only after that gate passes does it claim the
-`closeout-approval` gate (260731-EFA-L5 — the `applied` mutation now sits here, one statement above
-the first commit, rather than at the end), commit code, refresh
-onboarding metadata, route overview metadata, generated route indexes, and
-entity fingerprints to the new code commit, run `memory_quality_check`, commit
-memory content, update the external memory ledger, and return the closeout
-payload. Series/master closeout is recertification only: it bypasses targeted Dagger, requires a
-clean code checkout, records the already-landed HEAD, and cannot create an unreviewed master code
-commit. The master integration owns the one full acceptance.
-The pre-code citation phase is isolated in `_memory_quality_before_refresh`: external-memory
-contracts obtain the configured preflight checks and run them against the unstamped base commit,
-while other memory modes return an empty result. The actual phase runner, bounded failure
-formatting, and two-phase result composition now live in `closeout_memory_quality.py`; this
-behavior-preserving extraction keeps the closeout coordinator below the repository's 1,200-line
-structural rail without weakening the gate. Since CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) the closeout gates run in Gate-5 order inside
-`_closeout_quality_preflight`: the Dagger-backed code-quality gate (the profile Gates 1-4 rails) runs
-first, a red verdict raises before anything else starts, and the memory-quality pre-refresh
-(`_memory_quality_before_refresh`, leaf external-memory contracts only) is neither started nor prefetched
-before that gate is green or not required. The post-refresh pass,
-external memory commit, and ledger commit are now owned solely by
-`closeout_external.external_closeout_commits`; no compatibility copy remains in this coordinator.
-Closeout is worktree-only: the former direct-closeout functions
-(`validate_direct_external_context`, `direct_closeout_preview_payload`,
-`direct_closeout_result`) were removed with the direct tool surface (issue #62).
-Worktree closeout uses the code worktree as the source of truth for drift and
-fingerprint checks after the worktree code commit exists.
+A non-dry-run leaf entry refuses with `selected-closeout-operation-required` and zero gate starts unless it enters through the journal-selected certification operation. Preview and recording-only series behavior remain here. The selected lifecycle composition owns private code preparation, final memory certification and exact publication.
+
+The existing publication helper receives already checked input, worklist, quality, route review and approval facts. It revalidates contract and candidate before claiming approval. Targeted code checks remain leaf-scoped; full-suite acceptance belongs to master integration. Coverage is diagnostic and production CRAP20 is a review trigger, not a mandatory changed-code floor.
 
 Closeout admission now combines the immediate source-head check with the full task-derived
 transitive lineage projection. That source state is checked once at preflight and again after the

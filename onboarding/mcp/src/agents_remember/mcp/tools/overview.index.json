@@ -86,7 +86,7 @@
     "worktree"
   ],
   "hotPath": {
-    "summary": "Payload builders now cover task-addressed operation controls, enclosure adoption, legacy inspect/migrate/archive, and fail-closed cleanup/abandon responses without private ids. ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and complete values travel through the same opener to runner-side dynamic model-gated validation. Spawn env and response fields preserve provenance, while normalized model/effort never joins...",
+    "summary": "The worktree closeout payload forwards typed corrective catalog dispositions unchanged. Validation and recovery stay in the application/lifecycle owners, not this transport layer. Payload builders now cover task-addressed operation controls, enclosure adoption, legacy inspect/migrate/archive, and fail-closed cleanup/abandon responses without private ids. ACPUI-L2/L4 keep `terminal.py` as the settings-owned role dispatch builder while the daemon request layer owns optional roleless selection. Complete role settings become `ResolvedLaunch`; missing model/effort refuses before tmux, and comple...",
     "candidateHints": [
       "mcp/src/agents_remember/mcp/tools",
       "mcp/src/agents_remember/mcp/tools/__init__.py",

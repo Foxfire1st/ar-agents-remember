@@ -59,7 +59,7 @@
     "sse"
   ],
   "hotPath": {
-    "summary": "Start with `run.py` for candidate/run ownership, `scenario.py` for checkpoints L5-C01 through L5-C08, `codex_driver.py` for the real Codex boundary, and `responses_server.py` for deterministic tool discovery and calls. `dispatch_sentinels.py` owns the controlled malformed-advertisement proofs. `selection.py` owns when this expensive proof applies.",
+    "summary": "Start with `run.py` for candidate/run ownership, `scenario.py` for checkpoints L5-C01 through L5-C08, `codex_driver.py` for the real Codex boundary, and `responses_server.py` for deterministic tool discovery and calls. `dispatch_sentinels.py` owns the controlled malformed-advertisement proofs. `selection.py` validates the profile-owned applicability decision before a replication starts.",
     "candidateHints": [
       "scripts/e2e_harness",
       "scripts/e2e_harness/README.md",

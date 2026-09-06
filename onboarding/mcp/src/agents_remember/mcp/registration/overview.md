@@ -96,6 +96,8 @@ Twelve registrars, 64 advertised tools — the same ordered names
 
 ## Hot Path Summary
 
+The closeout registrar accepts typed corrective catalog dispositions and forwards them to the existing application owner; registration creates no alternative approval or retry authority.
+
 Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private.
 
 A tool body usually packs flat MCP arguments into the parameter objects the payload builder and its

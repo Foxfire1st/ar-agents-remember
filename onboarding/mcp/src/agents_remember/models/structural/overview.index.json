@@ -63,8 +63,7 @@
       "TaskDocumentRef",
       "serving/structural_seats.py",
       "application/structural/",
-      "test_agent_doctrine_contains_no_control_plane_address_instructions",
-      "StructuralAgentToolTests",
+      "_resolve_dispatch_caller",
       "models/structural/__init__.py",
       "__init__.py.md",
       "models/structural/agent.py",
@@ -77,8 +76,7 @@
       "DeclaredCaller",
       "models/gates.py",
       "/overview.md",
-      "mcp/tests/test_agent_doctrine_plane_identity.py",
-      "mcp/tests/test_structural_agent_tools.py",
+      "mcp/src/agents_remember/application/structural/agent_tools.py",
       "doc_type",
       "sourceRoute",
       "agents_remember",
@@ -92,9 +90,11 @@
       "DTOs",
       "structural_seats",
       "API",
-      "test_agent_doctrine_plane_identity",
-      "test_structural_agent_tools",
-      "init__"
+      "resolve_dispatch_caller",
+      "agent_tools",
+      "init__",
+      "T06",
+      "T09"
     ]
   },
   "fallback": {

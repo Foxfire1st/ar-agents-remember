@@ -16,11 +16,11 @@
 
 ## Purpose
 
-Builds real repository, contract, task-topology, atomic blocker, closed-leaf, and exact-series preview fixtures reused by the split authority test suites.
+Builds repository, contract, task-topology, atomic blocker, closed-leaf and exact-series preview fixtures for retained integration-authority tests. This support module is not itself collected test coverage.
 
 ## Code Commentary
 
-Shared fixture construction uses production task documents, queue state, contracts, Git refs, and external-memory ledger commits so the main and edge suites do not counterfeit authority or depend on one another. Closed external-memory leaf fixtures materialize the contract-required `onboarding/` root before closeout, ensuring conflict and integration tests reach their intended branch-authority seam instead of failing earlier on an invalid memory-candidate shape.
+Shared fixture construction uses production task documents, queue state, contracts, Git refs and external-memory ledger commits. `_authority_fixture` installs the selected certification profile. `_publish_completed_closeout_fixture` admits leaves through the selected lifecycle input owner before publishing component fixture state; an explicit final-source override models integration targets after admission. Closed external-memory leaf fixtures materialize the contract-required `onboarding/` root before closeout, ensuring conflict and integration tests reach their intended branch-authority seam instead of failing earlier on an invalid memory-candidate shape.
 
 Since 260831-CCR (commit `99dc249b`) the atomic-leaf authority fixtures bind canonical task intent:
 `_record_additional_atomic_leaf_landing` reorders the work so the claimed closeout door is only
@@ -31,7 +31,7 @@ so the forced series/door identity includes the exact intent digest.
 
 ## Invariants And Boundaries
 
-- The suite exercises production owners rather than copying their state-transition logic.
+- Consumers exercise production owners; helper construction alone makes no acceptance or coverage claim.
 - External-memory fixtures must satisfy the same minimum candidate shape as a real leaf, including
   the onboarding root required by exact code-memory pairing.
 - Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
@@ -88,6 +88,8 @@ now bind the canonical task-intent digest so authority tests exercise the produc
 rule instead of counterfeiting a pre-intent door.
 
 ## Update History
+
+- 2026-09-06T23:08:28+00:00 — Reconciled retained source behavior and fixture limitations for IAS recovery; prior verification pins retained.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   claimed atomic-leaf door fixtures now stamp `taskIntent=contract_task_intent(...)` and the

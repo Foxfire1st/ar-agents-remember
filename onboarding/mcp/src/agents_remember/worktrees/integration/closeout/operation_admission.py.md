@@ -97,6 +97,10 @@ task intent into the durable candidate identity and refuses absent/mismatched in
 stale/unavailable reason and `retire-and-republish` route. Part of the landed L25 candidate
 `99dc249b`.
 
+## Current Landed Composition
+
+The immutable operation input includes the supplied typed corrective dispositions. Existing-generation reuse accepts the door publication only when the canonical door classifier says `published`; a matching door identifier alone is insufficient. Exact accepted input equality and recovery identity remain required.
+
 ## Update History
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): named the `task_intent` field anchor instead of the dotted attribute span.

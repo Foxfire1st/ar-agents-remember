@@ -74,7 +74,7 @@
       "profile_rails",
       "mcp/test_support/agents_remember_test_support",
       "route-local-overview",
-      "b34f4a59562b76a3e2413027468e0f699117b36f",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "/../overview.md",
       "mcp/src/agents_remember",
       "profile_rails.py",
@@ -90,12 +90,11 @@
       "docs/design/python-test-evidence.md",
       "catalog_selection.py",
       "245057ab16e19afdaabd5c188c9576b22e0c0870",
-      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
+      "b34f4a59562b76a3e2413027468e0f699117b36f",
       "6e4ab81f6ae52bce35003377bb3aec7877554ed7",
       "ea35964985f30080488270e71ac81657ac40682b",
       "code_quality/",
       "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py",
-      "mcp/tests/test_repository_certification_profiles.py",
       "sourceRoute",
       "test_support",
       "doc_type",
@@ -103,9 +102,10 @@
       "T21",
       "lastVerifiedCommitHash",
       "lastVerifiedCommitDate",
-      "T06",
+      "T22",
       "governingOverview",
-      "MCP"
+      "MCP",
+      "agents_remember"
     ]
   },
   "fallback": {

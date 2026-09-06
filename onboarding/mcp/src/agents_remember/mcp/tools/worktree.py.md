@@ -20,6 +20,8 @@ Worktree lifecycle payload builders.
 
 ## Code Commentary
 
+`worktree_closeout_apply_payload` forwards the keyword-only `corrective_dispositions` tuple of `RedCatalogDisposition` unchanged to the application entry point. The adapter does not decide whether a failed catalog item may be corrected or accepted.
+
 L23 types integration strategy at the payload edge and adds task-addressed lifecycle-operation cancellation with explicit intent and dry-run forwarding.
 
 ### Logic

@@ -22,13 +22,13 @@ Owns repository-profile admission and the lifecycle-facing quality gate boundary
 
 ### Logic
 
-`QualityGateTarget` binds checkout, enclosure, repository id and configured profile reference; `QualityGatePlan` carries targeted/full mode and an optional memory cap. A code commit requires one admitted profile. Missing profile authority refuses instead of providing the former wrapper-unavailable opt-out.
+`QualityGateTarget` binds checkout, enclosure, repository id and configured profile reference; `QualityGatePlan` carries targeted/full mode, an optional memory cap and optional exact selected certification. A code commit requires one admitted profile. Missing profile authority refuses instead of providing the former wrapper-unavailable opt-out.
 
 `run_strict_code_quality_gate` captures the staged tree, freezes certification admission before `run_clean_quality`, writes the completed test report, rejects failed or uncertified output, then rechecks both the evidence tree and current staged tree. The index is supplied by the caller: this module neither stages nor undoes staging. The recorded task diff base determines the measured change set.
 
 `render_selected_code_certification` reopens the selected frozen run, requires its candidate tree and repository to match the current target, validates the selected original terminal publications, and requires certifying evidence before rendering success. It does not synthesize a replacement execution. The public report and immutable published evidence retain separate paths.
 
-The record helper reopens the published decoder artifact and delegates its gate catalog. A nonempty returned refusal list now raises before the caller returns quality success, including exact-generation recovery. The ordinary red-run branch still raises before that helper, so typed result publication for every terminal outcome is not established by this seam. An absent catalog also does not independently prove a complete certificate population.
+The record helper reopens the published decoder artifact and delegates its gate catalog. A nonempty returned refusal list now raises before the caller returns quality success, including exact-generation recovery. Every available published manifest is recorded, and selected callbacks retain its actual terminals before nonzero execution failure is raised. A zero exit without a manifest refuses. The recorded generation must satisfy its complete evidence contract before success.
 
 ### Conventions
 
@@ -44,7 +44,7 @@ Only the pinned Dagger path supplies acceptance evidence. A symbolic command in 
 
 ### Todos
 
-Complete red/interrupted R21 record integration remains pending. The typed lifecycle, telemetry and Gate-5 executors are not wired by this helper.
+No red/interrupted-record integration remains pending at this seam. Gate-5 memory execution remains owned by the separate lifecycle continuation; this code runner does not manufacture it.
 
 ## Docs References
 

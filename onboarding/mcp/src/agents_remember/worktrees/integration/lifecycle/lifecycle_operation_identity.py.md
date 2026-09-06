@@ -43,6 +43,10 @@ No configured domain-documentation or cross-repository source applies to this fi
 
 Closeout identity hashes normalized durable input and candidate provenance. Finalization identity now hashes the exact UTF-8 value returned by `contract_publication_text`, the same normalize/validate/serialize owner used by the writer and organizational reset. A no-op or verified-existing closeout can therefore retain its generation through exact publication without fabricated Git evidence.
 
+## Current Landed Composition
+
+`operation_key` is owned here: SHA-256 over the canonical resolved contract path, operation kind and fingerprint separated by NUL bytes. Callers import this identity directly; the coordinator no longer owns its implementation.
+
 ## Update History
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
