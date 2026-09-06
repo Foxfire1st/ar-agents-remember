@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview      | `../../../overview.md`                     |
@@ -336,7 +336,15 @@ composition does not close the production execution gap recorded above or replac
 | R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:347-397 |
 | R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
 
+## L34 Preparation Ownership
+
+[prepared_certification.py](prepared_certification.py.md) composes the actual affected closure, full memory checks, missing-onboarding/index observations and curator coherence against a proved private code view. Its original result/catalog publication is selected through the existing lifecycle owner; red results remain evidence and cannot authorize M/L output preparation.
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Documented the accepted-edit transaction route, exact observed-conflict boundary, CRLF, dry-run counts and nullable scoped recheck at source-reviewed private C b34f4a59; retained all separate Gate-5 readiness/execution limits.
 

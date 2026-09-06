@@ -57,7 +57,7 @@
     "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 100,
+    "sourceFilesInScope": 115,
     "fileSidecars": 29,
     "childRoutes": 3
   },

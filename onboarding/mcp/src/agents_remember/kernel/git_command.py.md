@@ -5,7 +5,7 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-08-31T20:30+02:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
 | lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
 | governingOverview      | `../../../overview.md`                                   |
@@ -114,7 +114,24 @@ The current source seams include `IsolatedGitState`, `git_environment`, `run_git
 | --- | --- | --- |
 | The current module exposes `IsolatedGitState`, `git_environment`, `run_git` at this ownership boundary. | `IsolatedGitState`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-91; mcp/src/agents_remember/kernel/git_command.py:94-100; mcp/src/agents_remember/kernel/git_command.py:103-154 |
 
+## L34 Current Implementation
+
+Binary configuration, commit, blob and tree readers preserve exact bytes. Private preparation uses the named sealed capability and journal-bound create/materialize/commit plan. Closeout publication performs an exact expected-old update-ref once, retaining command evidence and reopening physical/ref state; already-new and existing observations do not repeat the write. These functions retain the sole Git-spawn and repository-environment scrub boundary.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `GitCommandPlan` owns the corresponding behavior described above. | `GitCommandPlan` | `mcp/src/agents_remember/kernel/git_command.py:99-104` |
+| `_GitRun` owns the corresponding behavior described above. | `_GitRun` | `mcp/src/agents_remember/kernel/git_command.py:108-112` |
+| `admit_git_closeout_publication` owns the corresponding behavior described above. | `admit_git_closeout_publication` | `mcp/src/agents_remember/kernel/git_command.py:646-656` |
+| `inspect_git_closeout_publication` owns the corresponding behavior described above. | `inspect_git_closeout_publication` | `mcp/src/agents_remember/kernel/git_command.py:659-669` |
+| `closeout_publication_command` owns the corresponding behavior described above. | `closeout_publication_command` | `mcp/src/agents_remember/kernel/git_command.py:672-680` |
+| `publish_git_closeout_ref` owns the corresponding behavior described above. | `publish_git_closeout_ref` | `mcp/src/agents_remember/kernel/git_command.py:683-706` |
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-08-31T20:30+02:00 — No content impact: corrected the source-file verification citation
   from the retired `mcp/tests/code_quality/` location to the current

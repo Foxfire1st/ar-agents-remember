@@ -51,6 +51,7 @@
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/unclaimed_entities.py",
+    "mcp/src/agents_remember/memory_quality/prepared_certification.py",
     "mcp/src/agents_remember/memory_quality/style/__init__.py",
     "mcp/src/agents_remember/memory_quality/style/changed_lines.py",
     "mcp/src/agents_remember/memory_quality/style/citations/__init__.py",
@@ -91,8 +92,8 @@
     "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 75,
-    "fileSidecars": 73,
+    "sourceFilesInScope": 76,
+    "fileSidecars": 74,
     "childRoutes": 1
   },
   "routingTerms": [

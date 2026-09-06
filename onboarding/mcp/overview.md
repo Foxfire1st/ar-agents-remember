@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-06T14:11:47+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview      | `../overview.md`                           |
@@ -1118,7 +1118,15 @@ exist and refuses symlinks — including in-root aliases — unlike the symlink-
 | Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
 | Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
 
+## L34 Preparation Ownership
+
+The kernel's [private preparation capability](src/agents_remember/kernel/git_preparation.py.md) and [closeout publication capability](src/agents_remember/kernel/git_closeout_publication.py.md) are distinct. Both use the singular Git command owner; preparation creates named private objects while publication binds exact expected-old logical refs. See the [preparation route](src/agents_remember/worktrees/integration/closeout/preparation/overview.md) for journal and memory execution composition.
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T14:11:47+00:00 — Candidate curation review correction: Removed stale L32 private-output/delivery status from durable prose and described the current selected-terminal and unbound continuation boundaries. Historical entries and verification stamps are preserved.
 

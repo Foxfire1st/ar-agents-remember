@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:55:31+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
@@ -162,7 +162,24 @@ and comparison helpers `meaningful_state_payload` and
 `meaningful_state_changed` give the store, adapters, and waiters one shared
 rule, so a waiter compares this field and never `recordRevision`.
 
+## L34 Current Implementation
+
+The operation record separately retains private preparation state. Original command/output evidence remains distinct from published mutation, approval and certification selection; it cannot be rewritten into a new command or combined with a fabricated publication claim.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `LifecycleOperationRecoveryCommits` owns the corresponding behavior described above. | `LifecycleOperationRecoveryCommits` | `mcp/src/agents_remember/models/lifecycles/operation.py:65-72` |
+| `OrganizationalTaskPublicationIntent` owns the corresponding behavior described above. | `OrganizationalTaskPublicationIntent` | `mcp/src/agents_remember/models/lifecycles/operation.py:75-105` |
+| `_require_cancellation_evidence` owns the corresponding behavior described above. | `_require_cancellation_evidence` | `mcp/src/agents_remember/models/lifecycles/operation.py:910-928` |
+| `_require_organizational_repair_evidence` owns the corresponding behavior described above. | `_require_organizational_repair_evidence` | `mcp/src/agents_remember/models/lifecycles/operation.py:931-955` |
+| `_require_integration_publication` owns the corresponding behavior described above. | `_require_integration_publication` | `mcp/src/agents_remember/models/lifecycles/operation.py:958-986` |
+| `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | `mcp/src/agents_remember/models/lifecycles/operation.py:989-1024` |
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T14:55:31+00:00 — Completed source verification against actual commit c69d5171187fa1957025e393270db9f5a864ab14 after rechecking equality with the independently reviewed candidate source. Preserved the curated body, all citations and earlier history; certification remains pending.
 

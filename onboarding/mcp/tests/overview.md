@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T15:08:14+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
 | lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
 | governingOverview | `../overview.md` |
@@ -1733,7 +1733,15 @@ not establish that the R05 finalization or R07/R08 certification APIs gained pro
 | Observed remove/rename preserves explicit failure and an unavailable postcheck. | `test_scoped_disappearance_preserves_the_conflict_payload_without_a_fictitious_recheck` | mcp/tests/test_citation_document_transaction.py:313-358 |
 | Actual full selector/configuration preserve exact membership while sharing canonical string order. | `test_full_python_rail_uses_canonical_selector_order_and_still_refuses_scope_drift` | mcp/tests/test_repository_certification_profiles.py:930-968 |
 
+## L34 Preparation Ownership
+
+[test_lifecycle_preparation_selection.py](test_lifecycle_preparation_selection.py.md) covers original private command selection and recovery-phase projection through actual lifecycle fixtures. [test_git_closeout_publication.py](test_git_closeout_publication.py.md) covers real temporary Git expected-old publication and failure readback. Their lane registration and source coverage are implementation facts; no new execution or acceptance claim is made here.
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T15:08:14+00:00 — Added the current selected-certification/refusal source routes and their precise fixture/model boundaries; corrected stale pending-candidate wording where present. Preserved broader prior verification stamps and all earlier history.
 

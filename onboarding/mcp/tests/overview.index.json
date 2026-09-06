@@ -270,6 +270,7 @@
     "mcp/tests/test_gate_scope.py",
     "mcp/tests/test_gated_integration_runner.py",
     "mcp/tests/test_generation_coherent_lifecycle_projection.py",
+    "mcp/tests/test_git_closeout_publication.py",
     "mcp/tests/test_git_command.py",
     "mcp/tests/test_git_freshness.py",
     "mcp/tests/test_global_state_isolation.py",
@@ -384,6 +385,7 @@
     "mcp/tests/test_lifecycle_operation_store_invariants.py",
     "mcp/tests/test_lifecycle_operation_worker_entrypoint.py",
     "mcp/tests/test_lifecycle_operations.py",
+    "mcp/tests/test_lifecycle_preparation_selection.py",
     "mcp/tests/test_lifecycle_reconciliation_concurrency_l2.py",
     "mcp/tests/test_lifecycle_resume_invariant_owner_l2.py",
     "mcp/tests/test_lifecycle_status_wait_outcomes.py",
@@ -648,8 +650,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 627,
-    "fileSidecars": 636,
+    "sourceFilesInScope": 629,
+    "fileSidecars": 638,
     "childRoutes": 0
   },
   "routingTerms": [

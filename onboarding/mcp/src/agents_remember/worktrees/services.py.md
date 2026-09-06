@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/services.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:55:31+00:00 |
+| lastUpdated | 2026-09-06T17:13:06+00:00 |
 | lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
 | lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
 | governingOverview | `overview.md` |
@@ -75,7 +75,26 @@ No separate cross-repository protocol is established by this file. The configure
 | --- | --- | --- |
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
+## L34 Current Implementation
+
+Prepared-memory certification is an explicit typed service alongside the continuation port. Requests carry the actual physical code view and logical memory pair; returned semantic inputs and original references are revalidated by the current lifecycle owner.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `TerminalGuard` owns the corresponding behavior described above. | `TerminalGuard` | `mcp/src/agents_remember/worktrees/services.py:32-42` |
+| `CitationGuardPort` owns the corresponding behavior described above. | `CitationGuardPort` | `mcp/src/agents_remember/worktrees/services.py:45-51` |
+| `WorktreeServicesUnboundError` owns the corresponding behavior described above. | `WorktreeServicesUnboundError` | `mcp/src/agents_remember/worktrees/services.py:177-178` |
+| `bind_worktree_services` owns the corresponding behavior described above. | `bind_worktree_services` | `mcp/src/agents_remember/worktrees/services.py:181-184` |
+| `reset_worktree_services` owns the corresponding behavior described above. | `reset_worktree_services` | `mcp/src/agents_remember/worktrees/services.py:187-190` |
+| `worktree_services` owns the corresponding behavior described above. | `worktree_services` | `mcp/src/agents_remember/worktrees/services.py:193-198` |
+
+The application composition currently installs `PreparedCloseoutContinuation` and `PreparedMemoryCertificationAdapter` in `application/worktree_services.py`. Missing-port refusal remains part of the service contract; installed binding itself does not certify an execution.
+
 ## Update History
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
 
 - 2026-09-06T14:55:31+00:00 — Completed source verification against actual commit c69d5171187fa1957025e393270db9f5a864ab14 after rechecking equality with the independently reviewed candidate source. Preserved the curated body, all citations and earlier history; certification remains pending.
 

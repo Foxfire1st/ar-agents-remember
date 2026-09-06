@@ -147,9 +147,11 @@
     "mcp/src/agents_remember/kernel/coordination_context_resolver.py",
     "mcp/src/agents_remember/kernel/file_lock.py",
     "mcp/src/agents_remember/kernel/filesystem.py",
+    "mcp/src/agents_remember/kernel/git_closeout_publication.py",
     "mcp/src/agents_remember/kernel/git_command.py",
     "mcp/src/agents_remember/kernel/git_facts.py",
     "mcp/src/agents_remember/kernel/git_freshness.py",
+    "mcp/src/agents_remember/kernel/git_preparation.py",
     "mcp/src/agents_remember/kernel/harnesses.py",
     "mcp/src/agents_remember/kernel/memory_init.py",
     "mcp/src/agents_remember/kernel/memory_ledger.py",
@@ -272,8 +274,8 @@
     "mcp/src/agents_remember/providers/watcher_service.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 1685,
-    "fileSidecars": 154,
+    "sourceFilesInScope": 1708,
+    "fileSidecars": 156,
     "childRoutes": 21
   },
   "routingTerms": [
