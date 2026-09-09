@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/task_resolver.py`     |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash |                                                         `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate |                                                         2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash |                                                         `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |                                                         2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../overview.md`                                  |
 
 ## Governing Overview

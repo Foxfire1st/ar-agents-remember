@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T01:48+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
+| lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
 | governingOverview | `../overview.md` |
 
 ## Governing Overview

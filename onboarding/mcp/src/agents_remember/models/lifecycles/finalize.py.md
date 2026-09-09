@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/lifecycles/finalize.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview

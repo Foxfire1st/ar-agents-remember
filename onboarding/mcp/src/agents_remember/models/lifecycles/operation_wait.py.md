@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation_wait.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
