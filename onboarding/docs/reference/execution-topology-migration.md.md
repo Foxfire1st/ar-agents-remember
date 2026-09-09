@@ -6,8 +6,8 @@
 | path | `docs/reference/execution-topology-migration.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `docs/reference/overview.md` |
 
 ## Governing Overview
