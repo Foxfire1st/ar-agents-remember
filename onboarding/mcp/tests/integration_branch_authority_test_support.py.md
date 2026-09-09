@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_branch_authority_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -88,6 +88,9 @@ now bind the canonical task-intent digest so authority tests exercise the produc
 rule instead of counterfeiting a pre-intent door.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=a5aabfbfd3259e1f38bf772c6dd51717ccd2cfe3b5e53a585b5659c8ce0708ba; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T23:08:28+00:00 — Reconciled retained source behavior and fixture limitations for IAS recovery; prior verification pins retained.
 

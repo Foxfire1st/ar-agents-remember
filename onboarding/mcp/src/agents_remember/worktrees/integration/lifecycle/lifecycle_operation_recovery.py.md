@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -72,6 +72,9 @@ reads, and routes ambiguous classifier states to developer decision. The retired
 bypass and synthetic recovery paths are absent.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=38b67c894c615f391651758978bce7d4f890b7512e7e3671e9c5ef423bca8491; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-08-28T14:18+02:00 — Corrected the recovery boundary and source citations: typed direct
   errors are translated for tools, while invariant-breaking runtime errors remain loud.

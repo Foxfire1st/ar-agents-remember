@@ -8,8 +8,8 @@
 | onboardingRoute | `onboarding/scripts/e2e_harness/overview.md` |
 | parentOverview | [Repository overview](../../overview.md) |
 | lastUpdated | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 
 ## What This Area Is
 
@@ -185,6 +185,8 @@ execution owned by the lifecycle Dagger gate.
 None.
 
 ## Update History
+
+- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `scripts/e2e_harness`, so no route/member/prose/invariant change is required. route-member-count=13; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
 - 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Documented external temporary candidate-index ownership and preserved twice-fresh no-retry scenario semantics. Verification records source review, not execution or acceptance.
 

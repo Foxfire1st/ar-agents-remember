@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-26T18:32+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-08T19:29:21+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -110,6 +110,21 @@ generation. Organizational semantics still exist only under an authored executio
 graph-less master uses atomic semantics. Terminal series artifacts are replaceable stale artifacts,
 not evidence that another master owns a global lane.
 
+CCR-R25 gives persisted master-edge failures a typed admission path. `_existing_master_series_contract`
+now raises `MasterSeriesContractAdmissionError` with a stable status plus expected/observed task,
+repository, memory, and branch edges for unreadable, wrong-kind, or mismatched contracts. Both the
+dry-run preflight and the locked apply preflight convert that error through the shared atomic-series
+admission projection. Before protected-branch surface calculation, `_build_start_contract` performs
+the same read-only edge check so a persisted mismatch cannot escape as an unstructured
+`RuntimeError`; the response advertises the exact `worktree_status` address and leaves repair to
+the existing recovery authority.
+
+CQ04 closes the reread gap after upstream refresh: `ensure_master_series_contract` catches only the
+known `MasterSeriesContractAdmissionError` from its authoritative second contract read and routes
+that typed edge or parser refusal through the existing admission projection. `_build_start_contract`
+performs the same read-only preflight before protected-branch calculation, preserving the concrete
+observed evidence and contract-bound status action without rewriting the persisted contract.
+
 ### Invariants And Boundaries
 
 - `start.py` is now only the orchestration caller for contract construction; leaf-ref policy lives in
@@ -135,6 +150,8 @@ not evidence that another master owns a global lane.
 - Apply-time bootstrap preflight and bootstrap publication use the same per-master store lock; the
   unlocked planning-only dry run never writes lock or lifecycle state.
 - Integration authority and the per-master bootstrap store lock do not nest with another store lock.
+- Master-edge admission reports observed evidence without rewriting the persisted contract or
+  bypassing source-pair activation.
 
 ## Docs References
 
@@ -147,13 +164,16 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Master bootstrap separates durable contract creation from disposable source-pair selection, refreshes before integration authority, and reconciles before returning. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:221-288 |
-| Selection and exact sync-before-exposure are owned by the focused activation transaction. | `activate_atomic_series_contract`; `sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:113-136 |
+| Master bootstrap separates durable contract creation from disposable source-pair selection, refreshes before integration authority, and reconciles before returning. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:216-311 |
+| The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. | `MasterSeriesContractAdmissionError` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:67-77 |
+| The start preflight projects a persisted master-edge refusal before protected-surface calculation. | `_existing_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:944-988 |
+| The start builder performs the pre-protected-surface admission check and returns its refusal result. | `_build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:991-1066 |
+| Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:57-104; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:106-124; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:137-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:167-229 |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
 | The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:482-493 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:484-484; mcp/src/agents_remember/worktrees/modules/start.py:487-487; mcp/src/agents_remember/worktrees/modules/start.py:490-490; mcp/src/agents_remember/worktrees/modules/start.py:493-493 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:493-493; mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:491-491; mcp/src/agents_remember/worktrees/modules/start.py:494-494; mcp/src/agents_remember/worktrees/modules/start.py:497-497; mcp/src/agents_remember/worktrees/modules/start.py:500-500 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:500-500; mcp/src/agents_remember/worktrees/modules/start.py:627-689 |
 | `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:160-177; mcp/src/agents_remember/worktrees/worktree_contract.py:793-848 |
 
 ## Cross-Repo References
@@ -179,9 +199,16 @@ The current source seams include `memory_base_for_source`, `memory_mode_for_repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `memory_base_for_source`, `memory_mode_for_repository`, `MasterSeriesContractSpec` at this ownership boundary. | `memory_base_for_source`; `memory_mode_for_repository`; `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:127-136; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:196-203; mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:206-218 |
+| The current module exposes the source-branch memory base helper at this ownership boundary. | `memory_base_for_source` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:132-141 |
+| The startup admission module owns memory-mode selection for a code/memory pair. | `memory_mode_for_repository` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:80-87 |
+| The current module defines the strict master-series contract specification. | `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:201-213 |
 
 ## Update History
+- 2026-09-08T19:29:21+02:00 — Repaired the inherited claim-reopen citation by rereading the current activation transaction: fetch/re-read authority, reconciling transition, exact sync, source-pair completeness, and active publication now point to their current behavioral ranges. Verification pins remain unchanged; no acceptance claim.
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation reconciled the authoritative second master-contract read, typed parser/edge refusal, and pre-protected-surface admission seam. Source remains uncommitted; verification remains closeout-owned with no acceptance claim.
+- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation split the moved admission symbols and rebound the master-series builder, memory helpers, and contract specification to their current owners and ranges. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: regenerated start-result and contract-admission seam coordinates after the frozen additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded typed master-edge admission evidence and the pre-protected-surface refusal seam. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-08-26T18:32+02:00 — Bound apply-time bootstrap preflight to the existing per-master journal
   mutex, closing the contract/journal handoff race that could reject a concurrent winner's protected

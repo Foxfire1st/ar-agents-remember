@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_worktree_support.py` |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-07T00:28+02:00 |
-| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
-| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -42,6 +42,9 @@ Shared temporary Git, external-memory, task-lineage and closeout-component fixtu
 | The base class provides helper methods rather than collected test cases. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=1883113cfcb16de05b95330b0c1e8a5b504882b5165e0700a4879197ead55038; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-07T00:28+02:00 — Reconciled this retained helper module to its actual fixture role; removed obsolete sliced-suite coverage prescriptions while preserving historical entries and verification pins.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -171,6 +171,9 @@ mismatched evidence refuses deletion. Shared grade/admission request types come 
 closeout-source model.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=ae77428650fdcc422422a1323a9aed533d4bfbf787961cff35f2a561d7ff7f13; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
 

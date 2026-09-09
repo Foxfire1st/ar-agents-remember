@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -102,6 +102,9 @@ stale/unavailable reason and `retire-and-republish` route. Part of the landed L2
 The immutable operation input includes the supplied typed corrective dispositions. Existing-generation reuse accepts the door publication only when the canonical door classifier says `published`; a matching door identifier alone is insufficient. Exact accepted input equality and recovery identity remain required.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=3df722ca9b22167bf059068105a0de4468d1624744fd1999f25f75eec678b33e; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): named the `task_intent` field anchor instead of the dotted attribute span.
 

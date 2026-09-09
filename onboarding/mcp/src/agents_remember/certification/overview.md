@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/certification` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -208,7 +208,7 @@ The focused closeout and preparation routes describe selected certificate readba
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. | "def compile_certification_lane("; "def _project_repository_rail(rail: CompiledRail) -> RailDefinition:"; "def _require_applicable_repository_gates(plan: RepositoryProfilePlan) -> None:" | mcp/src/agents_remember/certification/certification_lane.py:79-121; mcp/src/agents_remember/certification/certification_lane.py:187-245 |
+| The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. | "def compile_certification_lane("; "def _project_repository_rail(rail: CompiledRail) -> RailDefinition:" | mcp/src/agents_remember/certification/certification_lane.py:87-128; mcp/src/agents_remember/certification/certification_lane.py:197-223 |
 | The production seam resolves the exact profile, binds memory rails and persists admission. | "def prepare_certification_records(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:165-200 |
 | The ordinary quality gate runs the admitted candidate through its certification executor. | "def run_strict_code_quality_gate" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361 |
 | The quality gate freezes certification records before execution. | "def _freeze_certification_records" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:462-476 |
@@ -221,6 +221,7 @@ The focused closeout and preparation routes describe selected certificate readba
 Repository-profile validation now factors environment producer/reconstruction artifact checks into `_validate_environment_artifacts`; semantic planning factors adapter inputs into `_compile_adapter_inputs`. The original exact Gate-1 producer, later publication bounds, deterministic semantic-input ordering and duplicate-identity refusal remain. These helper extractions do not change profile authority or create a new acceptance path.
 
 ## Update History
+- 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read the bridge claim against `compile_certification_lane` and `_project_repository_rail`; removed the deleted `_require_applicable_repository_gates` anchor while retaining the supported behavior statement. Verification metadata remains pinned pending final pair composition.
 
 - 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
 

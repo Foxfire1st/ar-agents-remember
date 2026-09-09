@@ -74,7 +74,7 @@
       "profile_rails",
       "mcp/test_support/agents_remember_test_support",
       "route-local-overview",
-      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
+      "602143bd1d48226f4d53b83ff7c5002a695dcdff",
       "/../overview.md",
       "mcp/src/agents_remember",
       "profile_rails.py",
@@ -89,7 +89,9 @@
       "docs/design/python-evidence-system.md",
       "docs/design/python-test-evidence.md",
       "catalog_selection.py",
+      "4c6b7bc2362bc03d50fc7a0643f34b591b805d45",
       "245057ab16e19afdaabd5c188c9576b22e0c0870",
+      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
       "b34f4a59562b76a3e2413027468e0f699117b36f",
       "6e4ab81f6ae52bce35003377bb3aec7877554ed7",
       "ea35964985f30080488270e71ac81657ac40682b",
@@ -101,11 +103,9 @@
       "lastUpdated",
       "T21",
       "lastVerifiedCommitHash",
+      "bd1d48226f4d53b83ff7c5002a695dcdff",
       "lastVerifiedCommitDate",
-      "T22",
-      "governingOverview",
-      "MCP",
-      "agents_remember"
+      "T00"
     ]
   },
   "fallback": {

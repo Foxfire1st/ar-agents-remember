@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
-| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -267,7 +267,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Ledger updates use the kernel memory ledger parser and renderer. | `parse_ledger_text`, `ledger_to_text`, `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
-| Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:466-499; mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/worktrees/modules/onboarding.py:617-663; mcp/src/agents_remember/worktrees/modules/onboarding.py:983-995 |
+| Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. | `refresh_onboarding_metadata`, `refresh_route_overview_metadata_for_context`, `refresh_route_indexes_for_context`, `refresh_entity_fingerprints_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:466-499; mcp/src/agents_remember/worktrees/modules/onboarding.py:511-519; mcp/src/agents_remember/worktrees/modules/onboarding.py:617-663; mcp/src/agents_remember/worktrees/modules/onboarding.py:983-995 |
 | The focused ledger test covers newest-first rendering, prepend behavior, and retained same-code history. | `test_roundtrip_preserves_newest_same_code_history` | mcp/tests/test_memory_ledger.py:13-28 |
 | Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
 | The pure closeout-gate policy this module enforces (slice 6b). | `GateGuard`, `evaluate_gate`, `evaluate_closeout_gate` | mcp/src/agents_remember/controlplane/enforcement.py:42-53; mcp/src/agents_remember/controlplane/enforcement.py:59-107; mcp/src/agents_remember/controlplane/enforcement.py:110-116 |
@@ -276,7 +276,7 @@ No external Domain Documentation source is configured for this memory repo.
 | `CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix. | `CONSUMED_APPROVAL_GATE_KINDS` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54 |
 | The strict source-quality adapter decides applicability, executes the current worktree wrapper under the selected mode/executor, and fails before mutation. | `code_quality_gate_preview`; `requires_strict_code_quality`; `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:124-192; mcp/src/agents_remember/worktrees/modules/quality/gate.py:122-136; mcp/src/agents_remember/worktrees/modules/quality/gate.py:207-272 |
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:24-29 |
-| Closeout imports the extracted staged-quality owner under its local alias. | "gate_staged_code as _gate_staged_code," | mcp/src/agents_remember/worktrees/modules/closeout.py:103-105 |
+| Closeout imports the extracted staged-quality owner under its local alias. | "gate_staged_code as _gate_staged_code," | mcp/src/agents_remember/worktrees/modules/closeout.py:106-106 |
 | The reversible preflight invokes staged quality against the accepted candidate and refuses a red result before memory preflight. | "def _closeout_quality_preflight(" | mcp/src/agents_remember/worktrees/modules/closeout.py:800-839 |
 | The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-139 |
 | The closeout code-quality gate runs before the external-memory pre-refresh; a red code gate raises (Gate-5 order), and the helper module owns phase execution/combination. | "def _closeout_quality_preflight("; "def _memory_quality_before_refresh("; "def run_memory_quality_phase(" | mcp/src/agents_remember/worktrees/modules/closeout.py:800-841; mcp/src/agents_remember/worktrees/modules/closeout.py:648-668; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-33 |
@@ -386,6 +386,8 @@ stale after commits; it never re-resolves from repository id. The pair policy li
 closeout pairing module rather than adding another resolver to this orchestration module.
 
 ## Update History
+- 2026-09-08T14:45:44+00:00: CCR-L24 preparation rebound `refresh_route_indexes_for_context` to its current definition while preserving the other refresh-helper citations. Verification metadata remains pinned pending final pair composition.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: "gate_staged_code as _gate_staged_code," repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:106-106. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: "def gate_staged_code(" repointed to mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-139. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.

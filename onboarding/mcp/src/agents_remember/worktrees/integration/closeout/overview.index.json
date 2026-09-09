@@ -36,6 +36,7 @@
     "mcp/src/agents_remember/worktrees/integration/closeout/ledger_recovery.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py",
+    "mcp/src/agents_remember/worktrees/integration/closeout/memory_census_scope.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py",
     "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py",
@@ -43,8 +44,8 @@
     "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 41,
-    "fileSidecars": 20,
+    "sourceFilesInScope": 42,
+    "fileSidecars": 21,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -86,6 +87,7 @@
     "memory",
     "memory_candidate_pair",
     "memory_candidate_pairing",
+    "memory_census_scope",
     "operation",
     "operation_admission",
     "pair",
@@ -99,6 +101,7 @@
     "remember",
     "render",
     "reopen",
+    "scope",
     "selection",
     "source",
     "src",
@@ -128,6 +131,7 @@
       "mcp/src/agents_remember/worktrees/integration/closeout/ledger_recovery.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py",
+      "mcp/src/agents_remember/worktrees/integration/closeout/memory_census_scope.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py",
       "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py",
@@ -165,6 +169,8 @@
       "memory_candidate_pair",
       "memory_candidate_pairing.py",
       "memory_candidate_pairing",
+      "memory_census_scope.py",
+      "memory_census_scope",
       "operation_admission.py",
       "operation_admission",
       "preparation_selection.py",
@@ -179,10 +185,8 @@
       "preparation",
       "mcp/src/agents_remember/worktrees/integration/closeout",
       "route-local-overview",
-      "d36109038b3f2b500c138f9dc1ea9c9f9a247489",
-      "/overview.md",
-      "taskIntent",
-      "certification/"
+      "602143bd1d48226f4d53b83ff7c5002a695dcdff",
+      "/overview.md"
     ]
   },
   "fallback": {

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/repository_profiles/models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -90,6 +90,9 @@ No configured Domain Documentation source applies; this is the repository-neutra
 None; this is the repository-neutral profile schema authority.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=c92d69d615553de1c1c79a204c525e443cdb6679d414020f299ebd56438e2810; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
 

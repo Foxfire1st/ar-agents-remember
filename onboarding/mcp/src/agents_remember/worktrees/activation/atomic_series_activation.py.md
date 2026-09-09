@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-08T18:54:49+02:00 |
+| lastVerifiedCommitHash |  `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate |  2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,21 @@ master but do not remove its contract or terminalize its task. Exact continuatio
 checks bind the selected or last-released record to the same master and contract path.
 `activation_waiting_reason` projects only unselected, paused-by, or reconciling reasons.
 
+CCR-R25 adds a pure public admission projection beside that authority. `AtomicSeriesActivationError`
+retains its observation plus expected/observed edge facts. `AtomicSeriesAdmissionRequest` and
+`atomic_series_admission_projection` combine the request, exact source pair, observed activation
+record, foreign blocker, wait/corrective-action classification, retry precondition, and a
+contract-bound read-only `worktree_status` action. `atomic_series_status_projection` exposes the
+same source-grounded observation to series status. These functions only project evidence; selector
+publication, release, repair, and source synchronization remain owned by the existing transaction.
+
+CQ01 bounds malformed-authority diagnostics at the public boundary. `bounded_activation_detail`
+keeps the original prefix and a visible truncation suffix within 8192 characters; both
+`AtomicSeriesActivationObservation.source_fact` and `atomic_series_status_projection` apply it to
+unreadable selector detail. The bound preserves the parser error and leaves selector bytes
+unchanged, so status and downstream admission can retain actionable evidence without crossing the
+response-size contract.
+
 ### Conventions
 
 The `StoreOwnership` declaration names MCP as the sole writer. Source identity uses Git common-dir
@@ -57,6 +72,10 @@ platform supplies it, so a post-`lstat` symlink swap cannot silently redirect th
 - Normal observation has no fallback to queue rows, contract census order, task prose, or ambient Git.
 - Corrupt authority is preserved before an explicit selecting repair replaces it.
 - Nonregular authority is quarantined as an opaque entry; its target/content is never adopted.
+- Admission and status projections never infer a live process from `active` or `reconciling`, and
+  they never repair a vacant, unreadable, or foreign selection.
+- Public unreadable-detail projections remain bounded while preserving a concrete parser-error
+  prefix and explicit truncation marker.
 
 ### Todos
 
@@ -77,6 +96,9 @@ No Domain Documentation source is configured for this memory root.
 | Strict Pydantic records define the selector state and archive evidence consumed here. | `AtomicSeriesSourceRef`; `AtomicSeriesSourcePair`; `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-30; mcp/src/agents_remember/models/structural/atomic_series_activation.py:33-39; mcp/src/agents_remember/models/structural/atomic_series_activation.py:42-54; mcp/src/agents_remember/models/structural/atomic_series_activation.py:57-72 |
 | The selecting transaction moves reconciling to active only after exact sync. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:82-100 |
 | Queue projection translates this authority only into source facts and waiting reasons. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:30-53 |
+| The pure public admission projection retains source-pair observations and contract-bound recovery facts without mutation. | `atomic_series_admission_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:37-89 |
+| Public activation diagnostics are bounded before they cross status or admission response boundaries. | `bounded_activation_detail`; `AtomicSeriesActivationObservation.source_fact` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:62-69; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:116-128 |
+| The status facade retains the same activation observation without mutation and bounds unreadable detail. | `atomic_series_status_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-512 |
 | Focused forcing covers absence, replacement, source-pair isolation, exact release, and corrupt bytes. | `AtomicSeriesActivationTests` | mcp/tests/test_atomic_series_activation.py:96-137 |
 
 ## Cross-Repo References
@@ -87,6 +109,10 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation reconciled the bounded unreadable-detail projection through the observation source fact and status facade. The parser-error prefix and truncation marker remain source-grounded, selector bytes remain read-only, and verification metadata stays closeout-owned; no acceptance claim.
+- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation split the admission and status citations after the public admission projection moved into its dedicated module. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the pure admission and status projections, retained activation observations, and no-live-process inference boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `AtomicSeriesActivationTests` repointed to mcp/tests/test_atomic_series_activation.py:96-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation of selector observation, publication,

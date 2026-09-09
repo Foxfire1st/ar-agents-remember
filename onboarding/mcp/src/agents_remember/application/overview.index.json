@@ -42,6 +42,7 @@
     "mcp/src/agents_remember/application/gate_tools.py",
     "mcp/src/agents_remember/application/hosted_readiness.py",
     "mcp/src/agents_remember/application/memory_quality/__init__.py",
+    "mcp/src/agents_remember/application/memory_quality/census.py",
     "mcp/src/agents_remember/application/memory_quality/controller.py",
     "mcp/src/agents_remember/application/memory_quality/runs.py",
     "mcp/src/agents_remember/application/memory_scope.py",
@@ -61,8 +62,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 65,
-    "fileSidecars": 28,
+    "sourceFilesInScope": 66,
+    "fileSidecars": 29,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -71,6 +72,7 @@
     "application",
     "benchmark",
     "benchmark_tools",
+    "census",
     "cleanup",
     "closeout",
     "closeout_door",
@@ -163,13 +165,13 @@
       "mcp/src/agents_remember/application/hosted_readiness.py",
       "mcp/src/agents_remember/application/memory_quality",
       "mcp/src/agents_remember/application/memory_quality/__init__.py",
+      "mcp/src/agents_remember/application/memory_quality/census.py",
       "mcp/src/agents_remember/application/memory_quality/controller.py",
       "mcp/src/agents_remember/application/memory_quality/runs.py",
       "mcp/src/agents_remember/application/memory_scope.py",
       "mcp/src/agents_remember/application/memory_tools.py",
       "mcp/src/agents_remember/application/next_step.py",
-      "mcp/src/agents_remember/application/operator_inbox_tools.py",
-      "mcp/src/agents_remember/application/orchestration_tools.py"
+      "mcp/src/agents_remember/application/operator_inbox_tools.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -192,6 +194,8 @@
       "gate_tools",
       "hosted_readiness.py",
       "hosted_readiness",
+      "census.py",
+      "census",
       "controller.py",
       "controller",
       "runs.py",
@@ -217,9 +221,7 @@
       "terminal_tools.py",
       "terminal_tools",
       "tool_response.py",
-      "tool_response",
-      "worktree_services.py",
-      "worktree_services"
+      "tool_response"
     ]
   },
   "fallback": {

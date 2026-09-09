@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
 | doc_type               | `file-level-onboarding`                                    |
 | lastUpdated            | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`                 |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`                 |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                                              |
 
 ## Governing Overview
@@ -115,6 +115,9 @@ polls to repeat the original contract path. It does not imply that repository id
 acceptance pair.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4345d17994bf47dcf3f795becd6e45481f2076058bb07d50090ad9ec2aa6101c; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-08-29T21:46+02:00 — MCAR-L03: documented exact candidate polling and diagnostic-only
   repository scope in the public tool description. Verification remains closeout-owned.

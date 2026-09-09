@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/planning.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T03:11+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a`|
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -74,6 +74,9 @@ embedded here.
 | Planning selects generic profile-applicable declarations from the canonical registry. | `_selected_gate_definitions` | mcp/src/agents_remember/certification/planning.py:125-134 |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=f477c26880176315a7d75684b7de0ff371e36664a1b4df65daa291ed7f98b2c1; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-01T03:11+02:00 — Created for exact registry-owned certification plan authority.
   Verification remains closeout-owned until the source candidate is committed.

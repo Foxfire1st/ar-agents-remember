@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -80,6 +80,9 @@ No cross-repository implementation protocol is defined here.
 Non-certifying terminal rows bind their result to an exact stored `FrozenCertificationRun`. The verifier compares registry, certification/gate plan, candidate, profile altitude, repository plan and publication identity before retaining the terminal generation. A terminal row cannot substitute for a certificate; its frozen-run reference is type-checked by the canonical object store.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4345a49f3f957d68983b31d625622b21568e3c90dad68783448701bb213d790e; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/repository_profiles/execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T22:25+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -112,6 +112,9 @@ No cross-repository implementation boundary is owned by this profile-selection a
 
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4e67b32f1acb1ccf3009976fe6c25f40e09ec6fec67b41f23d4f1342853a81df; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
 

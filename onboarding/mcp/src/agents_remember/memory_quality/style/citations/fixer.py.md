@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/fixer.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T04:32:25+00:00 |
-| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
-| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ The fixer composes existing source authority with the document publication owner
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Malformed source segments exclude the whole claim instead of deleting evidence. | `candidates` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:209-244 |
+| Malformed source segments exclude the whole claim instead of deleting evidence. | "def candidates(" | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:211-244 |
 | Only accepted per-document transactions await publication. | `Staging` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:247-252 |
 | One validated scope and source-index lease cover planning, publication and postcheck. | `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:255-307 |
 | Projection refusal returns before an Edit enters staging. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
@@ -82,6 +82,11 @@ This file introduces no separate cross-repository protocol. Local temporary code
 | No new cross-repository protocol. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced the generic local-variable anchor with the exact candidate collector declaration and current body range. Source hashes: mcp/src/agents_remember/memory_quality/style/citations/fixer.py=db1b9921b32325b4b7ab7f39969296dc154b004bea6a3b4eb55ad917b9f5a682; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=db1b9921b32325b4b7ab7f39969296dc154b004bea6a3b4eb55ad917b9f5a682; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Documented admission before staging, per-document conflict isolation, actual write accounting, preview digest semantics and explicit unavailable postcheck after scoped disappearance. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
 

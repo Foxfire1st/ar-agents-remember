@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/telemetry/projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T12:30:00+02:00 |
-| lastVerifiedCommitHash | `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb` |
-| lastVerifiedCommitDate | 2026-09-04T12:20:39+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -83,6 +83,9 @@ citations, so this fact is recorded as prose here.
 No cross-repository implementation boundary is owned here.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=9b0f4b347b2ae0abbcc188ae669accb74c905e0bb62014ab074be430f45035c8; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5: created for the CCR-R16@v3 durable
   reconstruction projection (leaf 260831-CCR-L16, certified commit

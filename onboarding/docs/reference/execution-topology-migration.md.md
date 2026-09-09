@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `docs/reference/execution-topology-migration.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-08T16:45:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `docs/reference/overview.md` |
 
 ## Governing Overview
@@ -75,8 +75,8 @@ No Domain Documentation source is configured for this memory root.
 | The read-only inventory the guide documents. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:917-979 |
 | The graph-authoring batch (and graph-less bootstrap) the guide documents. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
 | Fail-closed validation of a sprint's commanded membership and natures. | `validate_execution_topology` | mcp/src/agents_remember/tasks/document_refs.py:300-350 |
-| Exact source-pair activation is the single runtime selection authority and archives malformed snapshots before replacement. | `observe_atomic_series`; `publish_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:170-187; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:190-249 |
-| Queue waiting reasons observe activation without owning its lifecycle. | `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:298-311 |
+| Exact source-pair activation is the single runtime selection authority and archives malformed snapshots before replacement. | `observe_atomic_series`; `publish_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:216-276 |
+| Queue waiting reasons observe activation without owning its lifecycle. | `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:338-351 |
 
 ## Cross-Repo References
 
@@ -86,6 +86,8 @@ No meaningful cross-repository reference applies to this repository-owned operat
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the operator-guide activation citations to the current observer, publisher, and waiting-reason definitions; no guide-content change or acceptance claim.
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-08-26T08:45+02:00 — Restored the canonical Docs/Cross-Repo reference section shape after
   reconciling this changed guide.

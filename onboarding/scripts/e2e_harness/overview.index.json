@@ -108,7 +108,7 @@
       "route-local-overview",
       "scripts/e2e_harness",
       "onboarding/scripts/e2e_harness/overview.md",
-      "ea35964985f30080488270e71ac81657ac40682b",
+      "602143bd1d48226f4d53b83ff7c5002a695dcdff",
       "scripts/e2e_harness/README.md",
       "scripts/e2e_harness/*.py",
       "mcp/src/agents_remember/",

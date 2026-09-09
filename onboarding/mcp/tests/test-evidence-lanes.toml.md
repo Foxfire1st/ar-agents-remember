@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-08T16:05:21+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Classifies 177 retained test-shaped modules into explicit evidence categories. Current file membership is 96 unit-regression, 2 public-contract, 52 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
+Classifies 179 retained test-shaped modules into explicit evidence categories. Current file membership is 96 unit-regression, 2 public-contract, 54 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
 
 ## Code Commentary
 
@@ -28,7 +28,8 @@ retain their classification meaning without requiring separate copies or histori
 A test-shaped helper module may remain listed for dependency classification even when it contains
 no test functions; importability is not a passing test.
 
-`test_dagger_registry_lock.py` and actual document/publication/durability boundaries are integration
+`test_dagger_registry_lock.py`, the registered activation/admission proof, the registered
+route-review transport proof, and actual document/publication/durability boundaries are integration
 members. The new diagnostic quality and selected-case-budget tests are unit-regression members.
 The executable case budgets live in pyproject/conftest, not in this list. Coverage percentages are
 diagnostic and cannot require restoring deleted entries.
@@ -56,12 +57,15 @@ The exact source declarations below establish the current behavior; this invento
 | Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:161-176 |
 | Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:177-191 |
 | Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:192-195 |
+| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:107-110; mcp/tests/test-evidence-lanes.toml:154-158 |
 
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the two registered public integration modules and reconciled the manifest population to 179 files (54 integration). Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 

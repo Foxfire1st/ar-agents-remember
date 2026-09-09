@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastUpdated | 2026-09-08T16:45:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -183,16 +183,27 @@ provider timeout is `config.timeout_caps["providerSetupSeconds"]` (default
 `DEFAULT_PROVIDER_SETUP_SECONDS`, 1800) instead of the docker-control 120 —
 the documented setup cap now actually governs the worktree flow.
 
+## CCR-R25 Route-Review Refusal Projection
+
+The start/admission seam and direct closeout seam now translate the existing typed
+`RouteReviewError` through the shared `route_review_refusal_fields`/`route_review_refusal_projection`
+owner. An exact configured contract adds the contract-bound `task_doc` operation and arguments;
+the required `review` payload remains caller-supplied in `nextRequiredArgs` and is never invented.
+Certification refusals use the same projector when a `routeReview` finding is present, preserving
+all original findings and gate-start facts. The catches remain narrow (`RouteReviewError` and
+`CertificationContractError`); no broad fallback or task-document mutation occurs in this adapter.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:293-316 |
 | Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:339-356 |
 | Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
 | Worktree service behavior is owned by the worktree manager and modules. | "from agents_remember.worktrees.modules.finalize import FinalizeArgs" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:31-37 |
-| Worktree response models define the public tool envelopes and context summary. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:148-198; mcp/src/agents_remember/models/worktree.py:201-228 |
+| Worktree response models define the public tool envelopes and context summary, including activation/admission fields. | `WorktreeSummary`, `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:219-307 |
+| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | "def route_review_refusal_fields("; "def _worktree_closeout(" | mcp/src/agents_remember/worktrees/route_review.py:148-155; mcp/src/agents_remember/application/worktree_tools.py:971-1033 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:123-123; mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189 |
+| The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:128-128; mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189 |
 
 | `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
 | Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority` | mcp/src/agents_remember/serving/retire_policy.py:34-65 |
@@ -264,6 +275,9 @@ revalidates independently before mutation.
 Status now delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
 
 ## Update History
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: narrowed the route-review refusal anchors to their current unique definitions and repointed the shifted start-tool coordinate. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the narrow route-review refusal projection at start/admission and direct closeout, with exact-contract task guidance and no mutation. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `worktree_sync_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:339-356. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:"; "def worktree_start_tool(" repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189; mcp/src/agents_remember/application/worktree_tools.py:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile plumbing into WorktreeArgs from the repository scope (require_repo) across integrate/closeout/namespace helpers -- profile authority now travels with the typed args instead of a settings executor.

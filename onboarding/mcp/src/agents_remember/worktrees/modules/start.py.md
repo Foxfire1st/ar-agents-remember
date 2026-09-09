@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-08T17:47:39+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -71,6 +71,12 @@ to be. `start.py` imports **both** builders: `status_result` still goes through 
 now returns the `WorktreeStatusPayload` `TypedDict`, and `WorktreeCommandResult.payload` is a plain
 `dict[str, object]`, which a `TypedDict` is not assignable to; the `dict(...)` is that widening,
 performed as a shallow copy.
+
+CCR-R25 keeps the status entry point read-only while adding the series activation fact: when the
+loaded contract is a series, `status_result` attaches `atomic_series_status_projection`; leaves
+remain on the ordinary worktree status payload. Attach and start continue to delegate activation
+and source synchronization to the selecting transaction, so this facade does not publish, repair,
+or infer a live process from selector state.
 
 `_contract_after_memory_start`'s disabled-memory branch now writes `memory_mode` through the typed
 record: `amend_contract(replace(contract, memory_repo_path=None, …, memory_state="disabled"),
@@ -231,6 +237,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:163-200 |
+| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:139-169; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-512 |
 | The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201 |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:58-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
@@ -286,7 +293,7 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:92-101; mcp/src/agents_remember/worktrees/modules/start.py:104-105; mcp/src/agents_remember/worktrees/modules/start.py:108-133 |
+| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:95-104; mcp/src/agents_remember/worktrees/modules/start.py:107-108; mcp/src/agents_remember/worktrees/modules/start.py:111-136 |
 
 ## 260821-CLIVE Start Reservation And Task-CAS Boundary
 
@@ -300,6 +307,11 @@ the same reservation; conflicts name task-authority or recovery actions. A succe
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the status facade's activation projection citation to its current bounded-detail definition; status remains read-only and no acceptance claim is made.
+- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound the status projection citation to its current definition after the admission projection split. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: narrowed the start-module public seam coordinates to the current definitions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded series activation evidence on read-only status and preserved the existing attach/start transaction boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

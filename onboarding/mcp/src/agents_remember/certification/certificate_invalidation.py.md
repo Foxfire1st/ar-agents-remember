@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/certificate_invalidation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | 6f10c24d72db6171c0d434b307e6806996e2f11d |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -56,7 +56,7 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The R21 packet's normative invalidation matrix governs every change row. | "Normative Invalidation Matrix"; "Failure And Recovery" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:61-107 |
+| Certificate input changes are classified and their downstream invalidation closure is computed before reuse. | "def classify_certificate_invalidation("; "def _identity_drift_closure(" | mcp/src/agents_remember/certification/certificate_invalidation.py:89-121; mcp/src/agents_remember/certification/certificate_invalidation.py:184-198 |
 
 ## Repo-Internal References
 
@@ -72,6 +72,11 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 None; this is the repository-neutral invalidation engine.
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced the unsupported task-packet citation with the current invalidation classifier and identity-closure implementation anchors. Source hashes: mcp/src/agents_remember/certification/certificate_invalidation.py=dd5fdeef954efc5d2a6958de29285a4c8f2214e65a200b9fc2197fbfd8e1246d; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=dd5fdeef954efc5d2a6958de29285a4c8f2214e65a200b9fc2197fbfd8e1246d; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): created the card for the new

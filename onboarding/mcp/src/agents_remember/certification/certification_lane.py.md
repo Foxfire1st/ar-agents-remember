@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/certification_lane.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `668d710bf2a9898fb706614163462ff346d986b7` |
-| lastVerifiedCommitDate | 2026-09-05T02:45:47+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ The cited source establishes the current contracts and boundaries described abov
 | Lane identity and five-gate compilation | `CertificationLane`; `compile_certification_lane` | mcp/src/agents_remember/certification/certification_lane.py:57-121 |
 | Currentness recompilation/refusal | `admit_certification_lane` | mcp/src/agents_remember/certification/certification_lane.py:124-153 |
 | Registry construction preserves rail contracts | `_compile_registry_contribution`; `_project_repository_rail` | mcp/src/agents_remember/certification/certification_lane.py:156-212 |
-| Applicability and memory-rail validation | `_require_applicable_repository_gates`; `_require_memory_rails`; `_refuse` | mcp/src/agents_remember/certification/certification_lane.py:215-250 |
+| Applicability and memory-rail validation | `_compile_registry_contribution`; `_project_not_applicable_gate`; `_require_memory_rails`; `_refuse` | mcp/src/agents_remember/certification/certification_lane.py:163-194; mcp/src/agents_remember/certification/certification_lane.py:225-269; mcp/src/agents_remember/certification/certification_lane.py:272-290; mcp/src/agents_remember/certification/certification_lane.py:293-295 |
 
 ## Cross-Repo References
 
@@ -70,5 +70,6 @@ No separate cross-repository protocol is established by this file. The configure
 | No cross-repository evidence is required for these file-local claims. | N/A | N/A |
 
 ## Update History
+- 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read the applicability and memory-rail claim. The deleted `_require_applicable_repository_gates` was replaced by the current applicability projection helpers; `_require_memory_rails` and `_refuse` remain current. Verification metadata remains pinned pending final pair composition.
 
 - 2026-09-05T06:14:14+00:00 — Created a source-bound account of the production authority bridge, its exact projection and the limits of its completeness checks.

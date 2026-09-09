@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-08T18:54:49+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -30,8 +30,11 @@ keeping a stale consumer merely because an older suite used it is not valid owne
 The store harness now points to retained provider process-race evidence. Generic synthetic evidence
 uses the retained dependency-ownership test as its replacement node. Shared profile/certification
 support retains exact consumers without claiming that synthetic fixture bytes are installed-executor
-proof. `large_fixture_bytes=25000` controls discovery of unknown non-source suffixes; the catalog
-is a policy input excluded from its own artifact population.
+proof. The closeout-input and curator-coherence support rows now declare the registered activation
+admission fixture and the route-review transport fixture as exact consumers; the current validator
+result is a registry consistency check, not execution or acceptance evidence. `large_fixture_bytes=25000`
+controls discovery of unknown non-source suffixes; the catalog is a policy input excluded from its
+own artifact population.
 
 ### Invariants And Boundaries
 
@@ -52,10 +55,12 @@ The exact source declarations below establish the current behavior; this invento
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Catalog schema and large-fixture discovery threshold | `schema_version` | mcp/tests/evidence-lifecycle.toml:1-2 |
-| Four retained executable replacement contracts | `contract` | mcp/tests/evidence-lifecycle.toml:4-22 |
-| Actual process-race support and two consumers | "_store_durability.py" | mcp/tests/evidence-lifecycle.toml:44-61 |
-| Retained registry fixture ownership | "certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:488-507 |
-| Profile support and current consumer declarations | "repository_profile_test_support.py" | mcp/tests/evidence-lifecycle.toml:508-546 |
+| Durable-store replacement contract declares its exact process-race evidence node. | "mcp/tests/test_provider_store_durability.py::ProviderStoreDurabilityTests::test_no_record_is_lost_when_an_append_races_a_compaction" | mcp/tests/evidence-lifecycle.toml:4-7 |
+| Actual process-race support and two consumers | "mcp/tests/_store_durability.py" | mcp/tests/evidence-lifecycle.toml:44-61 |
+| Retained registry fixture ownership and current consumer declarations | "mcp/tests/certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:493-510 |
+| Profile support and current consumer declarations | "repository-certification-profile-test-port" | mcp/tests/evidence-lifecycle.toml:512-548 |
+| Closeout-input support declares the activation/admission and route-review registered consumers. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:286-334 |
+| Curator-coherence support declares the activation/admission and route-review registered consumers. | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:336-384 |
 
 ## Cross-Repo References
 
@@ -63,6 +68,7 @@ No separate cross-repository authority is established by this file.
 
 ## Update History
 
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ02 preparation recorded the exact two R25/R26 consumers added to both shared support rows. Registry SHA `15bea1c01f402c382dad1667dec601313bb8aabfc511bb8cedac66076287606a1` and validator PASS42 are preserved as source/diagnostic evidence only; the source is uncommitted and no acceptance claim is made.
 - 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.

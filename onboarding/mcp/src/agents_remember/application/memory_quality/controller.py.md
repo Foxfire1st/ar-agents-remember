@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T01:48+02:00 |
-| lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
-| lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -47,7 +47,7 @@ Under CCR-R03@v1 curator-report publication is bound to the exact working-tree c
 and after the primary scan, and again immediately before the checklist write, the controller
 captures both candidate trees with `worktree_candidate_tree` (through scratch indexes outside the
 repositories) and refuses `memory-quality-candidate-changed` if the code or memory candidate moved
-while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:490-509; mcp/src/agents_remember/application/memory_quality/controller.py:512-542).
+while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:545-564; mcp/src/agents_remember/application/memory_quality/controller.py:567-597).
 The checklist writer receives `code_candidate_tree` and `memory_candidate_tree` so the attestation
 can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:318-360; mcp/src/agents_remember/application/memory_quality/controller.py:363-441).
 
@@ -61,8 +61,8 @@ authorities. This permits preparatory memory work without claiming final accepta
 
 cit:([`_resolve_execution`], mcp/src/agents_remember/application/memory_quality/controller.py:295-315)
 cit:([`_execute_memory_quality`], mcp/src/agents_remember/application/memory_quality/controller.py:318-360)
-cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:545-572)
-cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:444-480)
+cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:600-627)
+cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:499-535)
 
 ### Invariants And Boundaries
 
@@ -91,7 +91,7 @@ No configured Domain Documentation source applies; the controller contract is re
 | The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:72-89 |
 | Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:98-108; mcp/src/agents_remember/application/memory_quality/controller.py:111-143; mcp/src/agents_remember/application/memory_quality/controller.py:146-208 |
 | Full leaf checks compose and atomically publish the curator checklist. | `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:318-360; mcp/src/agents_remember/application/memory_quality/controller.py:363-441 |
-| R03 candidate-tree freezing and change refusal around curator publication. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:490-509; mcp/src/agents_remember/application/memory_quality/controller.py:512-542 |
+| R03 candidate-tree freezing and change refusal around curator publication. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:545-564; mcp/src/agents_remember/application/memory_quality/controller.py:567-597 |
 
 ## Cross-Repo References
 
@@ -134,6 +134,9 @@ exact code/memory pair identity and never claims certification eligibility; the 
 executor compares it with the attested final catalog.
 
 ## Update History
+- 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `_attach_final_full_catalog`, `_curator_candidate_inputs`, and `_require_same_curator_candidate` against the current L38-composed code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-627. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-535. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: recorded the CCR-R08
   final full catalog projection seam (`_attach_final_full_catalog`/`_catalog_checks`, package-owned

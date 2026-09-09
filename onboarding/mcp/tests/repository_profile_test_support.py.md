@@ -6,8 +6,8 @@
 | path | `mcp/tests/repository_profile_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T14:56:02+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -114,6 +114,9 @@ No separate cross-repository protocol is established by this file. In-tree fixtu
 
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=a0695f1e33ca8602cf492333cbec93ce2d365e854373ee515cb5556fc7784dc2; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T14:56:02+00:00 — Bound the reviewed card body and active citations to actual source commit c69d5171187fa1957025e393270db9f5a864ab14 after checking source-byte equality. Preserved prior history; this verifies memory claims and does not assert additional test execution.
 

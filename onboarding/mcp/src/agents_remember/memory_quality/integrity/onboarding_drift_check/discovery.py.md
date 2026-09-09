@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:30+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `../../../../../overview.md`               |
 
 ## Purpose
@@ -36,10 +36,15 @@ relativizes a path against the onboarding root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `sidecar.py` and `entities.py` parse metadata and relativize paths through these helpers. | `classify_sidecar_onboarding_units`, `parse_table_metadata`, `normalize_rel_path`, `parse_entity_fingerprint_rows`, `classify_entity_catalog` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:17-32; mcp/src/agents_remember/kernel/coordination_context/paths.py:38-39; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:84-113; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:313-386 |
+| Sidecar and entity discovery classify metadata, normalize paths, and parse entity evidence through these helpers. | "def classify_sidecar_onboarding_units("; "def parse_table_metadata("; "def normalize_rel_path("; "def parse_entity_fingerprint_rows("; "def classify_entity_catalog(" | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:17-32; mcp/src/agents_remember/kernel/coordination_context/paths.py:38-39; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:84-113; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:428-501 |
 | Path normalization is provided by the kernel resolver. | `normalize_rel_path` | mcp/src/agents_remember/kernel/coordination_context/paths.py:38-39 |
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced generic helper-name anchors with exact function declarations and corrected the moved entity-catalog range. Source hashes: mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py=6b7733a85aa58e754a6469947fc5e8739063a569b72a4a244302e7f23dca29d9, mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py=9b11bf82618fadf00a7fa33f2259583ba8cdc55359d65dc1f92d893744da644d, mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py=3b56c2cb89d06c6341e91be8db983ff1d3fcbb0198912226e1c6bdcd7a0cfae3, mcp/src/agents_remember/kernel/coordination_context/paths.py=818f2afe43d94978de6561534ac2523b535914dbd857411199636674b5f7e1a2; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=6b7733a85aa58e754a6469947fc5e8739063a569b72a4a244302e7f23dca29d9; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-08-03T03:59:59+02:00 — Curated 4 citation claims (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
 

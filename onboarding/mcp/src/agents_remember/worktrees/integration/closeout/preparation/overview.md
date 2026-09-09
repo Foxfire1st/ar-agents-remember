@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -52,6 +52,8 @@ Code intent selection precedes private execution. Exact raw outputs remain selec
 M/L preparation reobserves the selected memory result, actual policy and original intent. A retained output is physically re-proven instead of created again. Finalization journals each original publication prestate once, reobserves proven refs, and recognizes that ledger publication advances the shared memory ref beyond intermediate M. `resume_prepared_closeout` requires the same running worker/generation, selected C/M/L outputs and retained ledger bytes before finishing publication; finalized-contract readback returns the original closed result.
 
 ## Update History
+
+- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration/closeout/preparation`, so no route/member/prose/invariant change is required. route-member-count=14; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
 - 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
 
