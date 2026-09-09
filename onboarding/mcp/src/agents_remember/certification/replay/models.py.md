@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/replay/models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T22:23+02:00 |
-| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
-| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -70,10 +70,10 @@ No Domain Documentation source is configured for this memory root. The governing
 | Gate identity is the closed literal vocabulary 1 through 5. | "GateId = Literal[1, 2, 3, 4, 5]" | mcp/src/agents_remember/models/certification/base.py:9-9 |
 | Rail identity combines its declared id and version. | "class RailIdentity" | mcp/src/agents_remember/models/certification/base.py:36-42 |
 | Certification refusals use the shared typed finding contract. | "class CertificationContractFinding" | mcp/src/agents_remember/certification/models.py:146-149 |
-| Span categories alias the R16 telemetry span vocabulary; catalogs reuse the telemetry rail records. | `TelemetrySpanKind`; `CatalogRailRecord`; `CatalogCounts`; `MeasuredSpanCategory` | mcp/src/agents_remember/certification/telemetry/models.py:70-80; mcp/src/agents_remember/certification/telemetry/models.py:294-314; mcp/src/agents_remember/certification/replay/models.py:26-32 |
+| Span categories alias the R16 telemetry vocabulary, and replay catalogs reuse the telemetry rail records and counts. | "class CatalogCounts(FrozenContractModel)"; "class CatalogRailRecord(FrozenContractModel)"; "MeasuredSpanCategory = TelemetrySpanKind" | mcp/src/agents_remember/certification/telemetry/models.py:296-307; mcp/src/agents_remember/certification/telemetry/models.py:310-317; mcp/src/agents_remember/certification/replay/models.py:20-32 |
 | Content digests follow the shared certification digest helper. | `content_digest` | mcp/src/agents_remember/certification/digests.py:12-22 |
 | The public subpackage facade re-exports the full vocabulary. | `__all__`; `ReplayFreeze`; `ReplayPopulation`; `SpanReduction`; `RunMeasurement`; `ReplayScenarioExpectation` | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |
-| The freeze owner consumes the population rows and change records defined here. | `PopulationGeneration`; `ReplayFreezeInputChange` | mcp/src/agents_remember/certification/replay/freeze.py:26-30; mcp/src/agents_remember/certification/replay/freeze.py:93-116; mcp/src/agents_remember/certification/replay/freeze.py:160-173 |
+| The freeze owner consumes the population rows and change records defined here. | "class PopulationGeneration(FrozenContractModel)"; "class ReplayFreezeInputChange(FrozenContractModel)" | mcp/src/agents_remember/certification/replay/models.py:115-132; mcp/src/agents_remember/certification/replay/models.py:178-193 |
 
 ## Cross-Repo References
 
@@ -84,6 +84,13 @@ No cross-repository implementation boundary is owned here.
 | The vocabulary stays repository-neutral; profiles enter by snapshot only. | - | - |
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: repointed the freeze-owner claim to the unique population and change-record declarations in this model source. Source hashes: mcp/src/agents_remember/certification/replay/models.py=d03eb308bc966d86d9463fde0674f96b9574bf8ee305f9f32d736152b8ebf22b; verification metadata remains unchanged.
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced ambiguous type-use anchors with exact catalog declarations and the replay alias assignment. Source hashes: mcp/src/agents_remember/certification/replay/models.py=d03eb308bc966d86d9463fde0674f96b9574bf8ee305f9f32d736152b8ebf22b, mcp/src/agents_remember/certification/telemetry/models.py=482cc098f1f2cae2165a6beb91e524251af79a7c1bfc31071f63a928da255cf6; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (CatalogCounts/MeasuredSpanCategory→20-32; freeze imports→22-26; ReplayFreezeInputChange use→74-79). Preserved claim prose; source-sha256=d03eb308bc966d86d9463fde0674f96b9574bf8ee305f9f32d736152b8ebf22b; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

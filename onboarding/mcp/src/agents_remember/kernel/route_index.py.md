@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/route_index.py`           |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-08-11T14:40+02:00                                   |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`               |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`               |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `../../../overview.md`                                   |
 
 ## Governing Overview
@@ -80,7 +80,7 @@ package source and deterministic production-path tests.
 | --- | --- | --- |
 | The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. | "def route_index_source_snapshot(", "def _tracked_source_candidates(", "def _untracked_source_candidates(" | mcp/src/agents_remember/kernel/route_index_census.py:41-41; mcp/src/agents_remember/kernel/route_index_census.py:83-83; mcp/src/agents_remember/kernel/route_index_census.py:126-126 |
 | MCP refresh supplies resolved repository and storage authority. | "def route_index_refresh_tool(" | mcp/src/agents_remember/application/memory_tools.py:254-254 |
-| Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:502-502; mcp/src/agents_remember/worktrees/modules/onboarding.py:513-513 |
+| Closeout preview/apply expose route-index refresh planning entry points. | "def refresh_route_indexes_for_context(", "def route_index_refresh_plan_for_context(" | mcp/src/agents_remember/worktrees/modules/onboarding.py:511-519; mcp/src/agents_remember/worktrees/modules/onboarding.py:522-530 |
 
 ## Cross-Repo References
 
@@ -92,6 +92,7 @@ inside this package.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+- 2026-09-08T14:45:44+00:00: CCR-L24 preparation rebound both route-index planning entry points to their current onboarding-module definitions. Verification metadata remains pinned pending final pair composition.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

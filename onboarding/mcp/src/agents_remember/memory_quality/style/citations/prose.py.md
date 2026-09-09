@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/prose.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -65,7 +65,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `blocks` (lines 90-108) — Prose paragraphs: unfenced, outside any table, split at blank lines.. | `blocks` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:90-108 |
 | Defines the function `misplaced_in_tables` (lines 111-131) — A ``cit:`` written into a table cell -- the wrong serialisation, one report per row.. | `misplaced_in_tables` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:111-131 |
 | Defines the class `Parts` (lines 134-144) — Where a ``cit:`` body's two halves are, as offsets into that body.. | `Parts` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:134-144 |
-| Defines the function `parts` (lines 147-160) — ``[anchors], sources`` split into offsets, or ``None`` when it is not that shape.. | `parts` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:147-160 |
+| Defines the function `parts` (lines 149-162) — ``[anchors], sources`` split into offsets, or ``None`` when it is not that shape.. | "def parts(" | mcp/src/agents_remember/memory_quality/style/citations/prose.py:149-162 |
 | Defines the function `parse_citation` (lines 163-176) — ``[anchors], sources`` into a claim, or ``None`` when it is not that shape.. | `parse_citation` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:163-176 |
 | Defines the function `scan_block` (lines 179-206) — Every ``cit:`` in one block, and the extent each one covers.. | `scan_block` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:179-206 |
 | Defines the function `record` (lines 209-217). | `record` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:209-217 |
@@ -75,6 +75,11 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `scan` (lines 258-271) — Every citation one document's prose holds, current spelling and superseded.. | `scan` | mcp/src/agents_remember/memory_quality/style/citations/prose.py:258-271 |
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced the generic function-use anchor with the exact definition and corrected its behavior range. Source hashes: mcp/src/agents_remember/memory_quality/style/citations/prose.py=71eb6bfc23c467e79a4a22d38a1c95d8c9ee85c54af659bfa3c7aa68353919a1; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=71eb6bfc23c467e79a4a22d38a1c95d8c9ee85c54af659bfa3c7aa68353919a1; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-08-05T03:49+02:00 — 260731-EFA-L6 C1 closeout pass: aligned five class ranges with the scoped fixer's generated decorator-inclusive extents and reworded the `scan_bare` Logic bullet out of the superseded prose-citation spelling; verification metadata unchanged.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

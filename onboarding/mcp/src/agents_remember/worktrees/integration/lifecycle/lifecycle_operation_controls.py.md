@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T10:05+02:00|
-| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
-| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -75,6 +75,9 @@ control classification, and public responses therefore share one exhaustive acti
 260831-CCR-L18 routed the control-layer projection rewrites through the envelope binders: `_preview_completed_supersede` now returns `bind_projection_result(operation_projection(record, contract=contract), {...})` for the `would-supersede` dry-run preview, and `_revise_closeout` uses `bind_projection_result` with a `LifecycleRecommendedAction` (`apply-closeout-successor` → `worktree_closeout_apply`) plus guidance instead of mutating a `model_copy` projection. Every rewritten control projection therefore rebinds its component digests to the exact journal revision through the sole validator.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=9da7ac9d20c873b7eb2783f3fed4366f4f6f6e8d2fd6dc5f37636f0f44a6c22b; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the supersede-preview and closeout-revision rewrites moving to `bind_projection_result` with a typed `LifecycleRecommendedAction`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 

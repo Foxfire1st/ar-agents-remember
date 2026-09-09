@@ -53,6 +53,7 @@
     "mcp/src/agents_remember/worktrees/modules/start.py",
     "mcp/src/agents_remember/worktrees/modules/startup/__init__.py",
     "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py",
+    "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py",
     "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py",
     "mcp/src/agents_remember/worktrees/modules/startup/start_memory.py",
     "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py",
@@ -61,13 +62,14 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 47,
-    "fileSidecars": 43,
+    "sourceFilesInScope": 48,
+    "fileSidecars": 44,
     "childRoutes": 1
   },
   "routingTerms": [
     "abandon",
     "acceptance",
+    "admission",
     "agents",
     "agents_remember",
     "args",
@@ -114,6 +116,8 @@
     "leaf",
     "leaf_ref_start",
     "manifest",
+    "master",
+    "master_series_admission",
     "mcp",
     "memory",
     "models",
@@ -138,14 +142,11 @@
     "results",
     "reuse",
     "run",
+    "series",
     "src",
     "start",
     "start_contract",
-    "start_memory",
-    "start_provider_preflight",
-    "start_result",
-    "startup",
-    "sync"
+    "start_memory"
   ],
   "hotPath": {
     "summary": "Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists. Quality execution, lifecycle gating, closeout memory checks, and immutable published-manifest reads now live under `modules/quality/`. The package is a behavior-preserving ownership/size split: the clean executor remains the sole Dagger report publisher, the gate remains the lifecycle consumer, closeout memory remains phase composition, and the strict manifest rea...",

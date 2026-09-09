@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-06T15:15:01+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastUpdated | 2026-09-08T19:16:43+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -38,6 +38,24 @@ winner, then misclassify the now-retired journal as an orphaned branch. Dry-run 
 and write-free. This is synchronization around the canonical journal/contract authorities, not a
 retry, fallback reader, compatibility path, or second lock namespace.
 
+## CCR-R25 Public Start And Status Evidence
+
+`start.py` adds the read-only series activation fact to status results while leaving selection and
+source synchronization in the focused activation transaction. `startup/start_contract.py` now
+turns persisted master task/repository/branch edge mismatches into typed expected/observed
+admission evidence before protected-branch surface calculation, exposing the exact status address
+for recovery. `startup/master_series_admission.py` owns the edge comparison and refusal payload
+projection, while `worktrees/activation/atomic_series_admission.py` remains the shared pure
+diagnostic boundary. Neither path repairs contracts or selector bytes, and logical selection state
+is not presented as proof of a live process.
+
+CQ04 also preserves the concrete parser reason when the authoritative master-contract reread finds
+an unreadable contract after upstream refresh; the typed refusal remains read-only and is returned
+before protected-surface calculation. The same refusal projector bounds both top-level and nested
+observed parser detail when malformed input expands the reason beyond the public response limit.
+CQ01 bounds the activation diagnostic detail used by status and admission, and CQ02 records the
+registered consumer ownership in the evidence catalog.
+
 ## Purpose
 
 The `worktrees/modules` package contains the extracted implementation modules
@@ -47,7 +65,7 @@ cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` enters through the task-doc application route and executes `worktrees/reopen.py`; this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
-The committed L2 layout groups the start-contract, provider-preflight, leaf-ref, and result helpers
+The committed L2 layout groups the start-contract, master-series admission, provider-preflight, leaf-ref, and result helpers
 under `startup/`; `start.py` remains the coordinating mutation entrypoint.
 
 ## Current Profile, Publication And Lifecycle Ownership
@@ -371,8 +389,9 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:502-510; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:29-38; mcp/src/agents_remember/models/worktree.py:174-174 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:511-519; mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-44; mcp/src/agents_remember/models/worktree.py:242-242 |
+| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
@@ -918,6 +937,13 @@ The selected code contract and original report transport have a local [execution
 | The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
 
 ## Update History
+- 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound startup admission ranges and recorded bounded oversized parser-detail evidence. This remains source-grounded preparation; verification and acceptance remain closeout-owned.
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01/CQ02/CQ04 preparation reconciled bounded activation diagnostics, authoritative master-contract reread evidence, and registered support-consumer ownership. These are source-grounded preparation updates only; verification and acceptance remain closeout-owned.
+- 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added the `master_series_admission.py` startup owner and its shared admission-projection boundary to the route explanation. The source remains uncommitted; verification metadata remains closeout-owned.
+- 2026-09-08T17:36:08+02:00 — CCR-L24 inherited citation reconciliation: repointed the route-index refresh anchor to the current L38 onboarding source range while preserving the L38 route overview and worktree-phase authorship. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed route-index and worktree-phase anchors after the frozen source shifts. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented typed master-edge startup refusals and read-only series status activation evidence. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `LifecycleFinalizeTests` repointed to mcp/tests/test_lifecycle_finalize.py:28-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `_execute_gate_rails` repointed to .dagger/src/agents_remember_quality/profile_execution.py:215-292. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
-| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -134,6 +134,9 @@ The module now imports `LifecycleStatusWaitRequest` /
 standard `_tool_payload` envelope for the public `worktree_status_wait` tool.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=b2a91233ad8b0711876374fe62d6dd92c829fffa1b0e268c60fd8e35fb43199c; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` export for the new public wait tool.
 - 2026-08-26T08:45+02:00 — Restored canonical Docs/Repo/Cross-Repo reference sections for the

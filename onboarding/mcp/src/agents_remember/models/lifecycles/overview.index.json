@@ -22,6 +22,7 @@
     "mcp/src/agents_remember/models/lifecycles/integration_certification.py",
     "mcp/src/agents_remember/models/lifecycles/legacy.py",
     "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
+    "mcp/src/agents_remember/models/lifecycles/memory_census.py",
     "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
     "mcp/src/agents_remember/models/lifecycles/operation.py",
     "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
@@ -35,14 +36,15 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 23,
-    "fileSidecars": 23,
+    "sourceFilesInScope": 24,
+    "fileSidecars": 24,
     "childRoutes": 0
   },
   "routingTerms": [
     "agents",
     "agents_remember",
     "candidate",
+    "census",
     "certification",
     "coherence",
     "curator",
@@ -67,6 +69,7 @@
     "mcp",
     "memory",
     "memory_candidate",
+    "memory_census",
     "models",
     "mutation",
     "mutation_evidence",
@@ -104,6 +107,7 @@
       "mcp/src/agents_remember/models/lifecycles/integration_certification.py",
       "mcp/src/agents_remember/models/lifecycles/legacy.py",
       "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
+      "mcp/src/agents_remember/models/lifecycles/memory_census.py",
       "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
       "mcp/src/agents_remember/models/lifecycles/operation.py",
       "mcp/src/agents_remember/models/lifecycles/operation_kinds.py",
@@ -113,8 +117,7 @@
       "mcp/src/agents_remember/models/lifecycles/preparation.py",
       "mcp/src/agents_remember/models/lifecycles/preparation_state.py",
       "mcp/src/agents_remember/models/lifecycles/prepared_memory.py",
-      "mcp/src/agents_remember/models/lifecycles/responses.py",
-      "mcp/src/agents_remember/models/lifecycles/termination.py"
+      "mcp/src/agents_remember/models/lifecycles/responses.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -141,6 +144,8 @@
       "legacy",
       "memory_candidate.py",
       "memory_candidate",
+      "memory_census.py",
+      "memory_census",
       "mutation_evidence.py",
       "mutation_evidence",
       "operation.py",
@@ -162,9 +167,7 @@
       "responses.py",
       "responses",
       "termination.py",
-      "termination",
-      "mcp/src/agents_remember/models/lifecycles/",
-      "route-local-overview"
+      "termination"
     ]
   },
   "fallback": {

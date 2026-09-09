@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/cli.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5` |
-| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-08T16:45:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -46,7 +46,7 @@ No external Domain Documentation source is configured for this memory repo.
 | MCP attachment enters the result-returning application owner without CLI parsing. | "def worktree_attach_tool" | mcp/src/agents_remember/application/worktree_tools.py:285-294 |
 | MCP status enters the result-returning application owner without CLI parsing. | "def worktree_status_tool" | mcp/src/agents_remember/application/worktree_tools.py:297-320 |
 | Start or observe the exact contract-addressed integration operation. | "def worktree_integrate_tool" | mcp/src/agents_remember/application/worktree_tools.py:479-564 |
-| MCP cleanup enters the result-returning application owner without CLI parsing. | "def worktree_cleanup_tool" | mcp/src/agents_remember/application/worktree_tools.py:834-850 |
+| MCP cleanup enters the result-returning application owner without CLI parsing. | "def worktree_cleanup_tool" | mcp/src/agents_remember/application/worktree_tools.py:855-871 |
 | The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
 
 ## Series-Contract Notes
@@ -72,6 +72,7 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 | The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary. | `parse_json_stdout`; `command_status`; `command_attach` | mcp/src/agents_remember/worktrees/modules/cli.py:30-37; mcp/src/agents_remember/worktrees/modules/cli.py:40-43; mcp/src/agents_remember/worktrees/modules/cli.py:46-49 |
 
 ## Update History
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/diagnostics/models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T17:50+02:00 |
-| lastVerifiedCommitHash | `4ba18bb23ba90e201bb37341d61c0efc64161fcf` |
-| lastVerifiedCommitDate | 2026-09-04T17:23:11+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured for this memory root. The approved 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The lane may run at most one real-Codex replication as non-certifying evidence after R12 Gates 1-3 are green, and no diagnostic evidence can satisfy or promote into R14. | `DiagnosticRunResult`; `acceptanceEligible` | mcp/src/agents_remember/certification/diagnostics/models.py:295-344; mcp/src/agents_remember/certification/diagnostics/models.py:320-321 |
+| The lane may run at most one real-Codex replication as non-certifying evidence after R12 Gates 1-3 are green, and no diagnostic evidence can satisfy or promote into R14. | `DiagnosticRunResult` | mcp/src/agents_remember/certification/diagnostics/models.py:295-344; mcp/src/agents_remember/certification/diagnostics/models.py:320-321 |
 
 ## Repo-Internal References
 
@@ -67,7 +67,7 @@ No Domain Documentation source is configured for this memory root. The approved 
 | Repository-neutral exact identity for the candidate a plan certifies. | "class CandidateIdentity" | mcp/src/agents_remember/certification/models.py:38-42 |
 | The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. | "class GateResultManifest" | mcp/src/agents_remember/certification/models.py:434-456 |
 | Content digests follow the shared certification digest helper. | `content_digest` | mcp/src/agents_remember/certification/digests.py:1-22 |
-| The public package facade re-exports every model here. | `__all__`; `DiagnosticRunManifest`; `DiagnosticRunResult`; `DiagnosticAttemptRecord` | mcp/src/agents_remember/certification/diagnostics/__init__.py:11-25; mcp/src/agents_remember/certification/diagnostics/__init__.py:43-67 |
+| The public package facade re-exports every model here. | `__all__`; `DiagnosticRunManifest`; `DiagnosticRunResult`; `DiagnosticAttemptRecord` | mcp/src/agents_remember/certification/diagnostics/__init__.py:43-67 |
 | The durable store serializes and revalidates these records on every read and write. | `_read_manifest`; `_update`; `_canonical_bytes` | mcp/src/agents_remember/certification/diagnostics/store.py:228-264; mcp/src/agents_remember/certification/diagnostics/store.py:414-420 |
 | The run controller builds attempt records, drafts, and runtime bindings from these models. | `_attempt_record`; `_draft` | mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:434-516 |
 
@@ -80,6 +80,13 @@ No cross-repository implementation boundary is owned here.
 | The R12 runtime-authority snapshot is the only host identity a diagnostic result binds. | `DiagnosticRuntimeAuthorityBinding` | mcp/src/agents_remember/certification/diagnostics/models.py:109-132 |
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: removed the duplicate field anchor while retaining the result model and its acceptance-eligibility range. Source hashes: mcp/src/agents_remember/certification/diagnostics/models.py=289d13f2fde6611ea440c93f4c5f379a098592888ea020bb56a18cd9ec1e0d7f; verification metadata remains unchanged.
+
+- 2026-09-09T02:43:28+02:00 — CCR-L38 bounded inherited citation repair: removed the repeated exact source from the facade re-export claim while retaining its one source range; source-sha256=e9237aa1355813bc2317eafe5613596daa466475ed504465bad3994ac3467e78; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (diagnostics __all__→43-67). Preserved claim prose; source-sha256=289d13f2fde6611ea440c93f4c5f379a098592888ea020bb56a18cd9ec1e0d7f; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

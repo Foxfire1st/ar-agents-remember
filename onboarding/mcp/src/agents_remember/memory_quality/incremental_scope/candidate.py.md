@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `1ad9d51f743c5b17de51cc46d8b29e004736022d` |
-| lastVerifiedCommitDate | 2026-09-02T06:25:51+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -86,5 +86,8 @@ helpers.
 | Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. | `observe_scope_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-99 |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=bb14594e277a8bc3ba7a0c8937f85adb359aa250a6a7cbd9793600d0bee68048; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 1ad9d51f743c5b17de51cc46d8b29e004736022d (CCR-R06@v2/L26): created the card for the new candidate-observation module of the R06v2 successor leaf; no prior sidecar existed.

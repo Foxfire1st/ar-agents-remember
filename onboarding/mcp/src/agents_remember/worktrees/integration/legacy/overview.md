@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/legacy` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -47,6 +47,8 @@ public-result, and schema modules remain explicit siblings of the two main entry
 No configured external source applies. Schema/current-operation owners are same-repository.
 
 ## Update History
+
+- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration/legacy`, so no route/member/prose/invariant change is required. route-member-count=7; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
 - 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Documented canonical task intent on schema-1 closeout migration and explicit sibling ownership. Verification records current source claims, not execution or acceptance.
 

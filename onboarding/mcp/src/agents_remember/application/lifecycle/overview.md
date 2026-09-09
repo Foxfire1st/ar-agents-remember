@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T15:08:14+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-08T16:05:21+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,11 @@ Use `lifecycle_status_wait.py` for bounded read-only change waits, `direct_landi
 ## Complete Admission Refusals
 
 [`certification_refusal.py`](certification_refusal.py.md) renders all typed admission findings, including nested byte evidence, for public adapters. Its zero-start refusal shape reports the admission boundary; the renderer itself does not observe processes or alter journal state.
+
+CCR-R25 also promotes a typed `routeReview` finding through the shared route-review refusal
+projection, preserving the complete certification finding list while adding exact status and
+contract-bound next-step guidance when a contract is available. The lifecycle adapter remains a
+projection boundary; it does not record a review or mutate task state.
 
 ## Operating Model
 
@@ -81,6 +86,8 @@ R16 telemetry production callers.
 | The observer validates the cursor, polls the exact generation, and returns change or timeout. | "def validate_wait_cursor(after_revision: int)"; "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:87-146 |
 
 ## Update History
+
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded route-review refusal promotion in the lifecycle certification adapter and preserved its no-mutation boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-09-06T15:08:14+00:00 — Added the current selected-certification/refusal source routes and their precise fixture/model boundaries; corrected stale pending-candidate wording where present. Preserved broader prior verification stamps and all earlier history.
 

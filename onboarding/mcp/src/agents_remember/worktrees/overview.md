@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-08T16:05:21+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -36,6 +36,15 @@ same existing per-master bootstrap mutex on apply. A concurrent starter therefor
 live journal or the published contract across that handoff; it cannot read before publication,
 wait behind the winner, then treat the retired journal as an orphan. Dry-run remains unlocked and
 write-free, and no retry, fallback reader, compatibility route, or second lock namespace is added.
+
+## CCR-R25 Actionable Refusal Surface
+
+The route-review owner now supplies one pure projection for observed review refusals. Application
+start/admission and direct closeout reuse it to preserve the concrete status, expected/observed
+facts, and exact contract-bound task-document address; the caller supplies any review payload. The
+projection does not alter route altitude, create review records, or weaken candidate currentness.
+The activation owner likewise exposes source-pair observations and bounded admission evidence while
+leaving selector and sync mutation in their existing transaction owners.
 
 ## L30 Quality Publication Boundary
 
@@ -154,7 +163,7 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 | --- | --- | --- |
 | Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:108-125; mcp/src/agents_remember/worktrees/services.py:128-138; mcp/src/agents_remember/worktrees/services.py:142-147 |
 | The activation record is a strict source-pair fingerprinted snapshot with explicit selection states. | `AtomicSeriesSourceRef`; `AtomicSeriesSourcePair`; `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-30; mcp/src/agents_remember/models/structural/atomic_series_activation.py:33-39; mcp/src/agents_remember/models/structural/atomic_series_activation.py:42-54; mcp/src/agents_remember/models/structural/atomic_series_activation.py:57-72 |
-| Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:105-127; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:170-187 |
+| Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:131-153; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214 |
 | Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:82-100 |
 | The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295; mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
 | The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100; mcp/src/agents_remember/worktrees/sync_transaction.py:424-450 |
@@ -264,6 +273,8 @@ with typed status/detail; no worktree-local fallback remains.
 The default application bundle installs `PreparedCloseoutContinuation`, composing the memory-certification producer and prepared finalizer through the existing downward port. The closeout child owns resumption of selected private outputs and original C/M/L publication. Source-pair selection, synchronization, ledger authority and coordinator isolation are unchanged; an absent capability in an incomplete custom composition still refuses.
 
 ## Update History
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the worktrees overview's activation observer citations to current source ranges; source-pair ownership is unchanged and no acceptance claim is made.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the route-review refusal projection and activation/admission observation boundaries under the worktrees route. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
 

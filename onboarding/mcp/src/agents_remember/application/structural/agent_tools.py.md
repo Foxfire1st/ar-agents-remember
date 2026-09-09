@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-08T17:47:39+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -99,7 +99,7 @@ No Domain Documentation source is configured; repository tests and the approved 
 | --- | --- | --- |
 | Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient). | `dispatch_agent_tool`; `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:338-487 |
 | Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. | `_implementation_series_admission_refusal`; `_dispatch_owning_master` | mcp/src/agents_remember/application/structural/agent_tools.py:624-674; mcp/src/agents_remember/application/structural/agent_tools.py:677-693 |
-| The shared series bootstrap owner binds durable contract identity to source-pair reconciliation-before-exposure. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:221-288 |
+| The shared series bootstrap owner binds durable contract identity to source-pair reconciliation-before-exposure. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:216-311 |
 | Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:828-833 |
 | Dispatch caller resolution belongs to this current application entry point; removed fixtures do not establish live routing coverage. | `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:403-442 |
 | Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient). | `_retire_unbriefed_child` | mcp/src/agents_remember/application/structural/agent_tools.py:217-265 |
@@ -130,6 +130,9 @@ composed through `DispatchBriefReceiptStore`, keeping dispatch commit evidence s
 general terminal lifecycle surface while reusing the same atomic catalog storage boundary.
 
 ## Update History
+
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation rebound the shared bootstrap citation to the full typed reread/refusal seam; dispatch ownership is unchanged and no acceptance claim is made.
+- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound the shared bootstrap citation to the current `ensure_master_series_contract` definition. Verification metadata remains closeout-owned; no acceptance claim.
 
 - 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair delegates seat serialization and
   transaction execution to `dispatch_transaction.execute_serialized_dispatch`, returning

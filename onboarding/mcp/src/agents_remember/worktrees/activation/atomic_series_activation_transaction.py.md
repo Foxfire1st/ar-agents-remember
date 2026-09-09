@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T08:20+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
+| lastUpdated | 2026-09-08T16:24:06+02:00 |
+| lastVerifiedCommitHash |  `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate |  2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,6 +41,14 @@ Admission refusals retain the exact contract path and any explicit `memory_sync_
 source pair moved again still returns blocked implementation admission. These are current source
 rules; the deleted transition suite supplies no current execution evidence.
 
+CCR-R25 routes expected activation failures through `_AdmissionRefusalRequest` and the shared
+`atomic_series_admission_projection`. The refusal path reuses an error's retained observation when
+available, otherwise performs a bounded read-only observation, then emits the exact source-pair
+fingerprint, named foreign blocker, `wait` versus `corrective-action`, retry precondition, and
+status action. This changes the public explanation only; selector publication, source sync,
+continuation/cancellation ownership, and the reconciling-to-active transition remain in the same
+transaction.
+
 cit:([`_admission_refusal`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:204-234)
 cit:([`_sync_selected_atomic_series_under_authority`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201)
 
@@ -56,6 +64,8 @@ into `WorktreeCommandResult`. Fetch is evidence only; local tips are pinned afte
 - `skip-memory` cannot activate an external-memory source pair that is still incomplete.
 - Dry-run does not publish activation.
 - Continue/cancel cannot address another selected master.
+- Admission output preserves observed evidence and does not infer a live process or repair selector
+  bytes while translating a refusal.
 
 ### Todos
 
@@ -73,7 +83,8 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Selector publication and exact continuation/cancellation ownership live in the activation authority. | `publish_atomic_series_selection`; `require_selected_atomic_series`; `require_atomic_series_cancellation_owner` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:190-249; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:252-273; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:276-295 |
+| Selector publication and exact continuation/cancellation ownership live in the activation authority. | `publish_atomic_series_selection`; `require_selected_atomic_series`; `require_atomic_series_cancellation_owner` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:216-276; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:278-306; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:309-335 |
+| The transaction translates expected activation errors through the shared structured admission projection. | `_AdmissionRefusalRequest`; `_admission_refusal` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:45-53; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:229-294 |
 | The sync driver admits, resumes, continues, cancels, or recovers one exact journal generation. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100 |
 
 ## Cross-Repo References
@@ -84,6 +95,9 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound transaction citations to the current selector publication and continuation/cancellation definitions; transaction ownership is unchanged and no acceptance claim is made.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed selector publication and continuation/cancellation definitions after the frozen activation additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented refusal projection, retained observations, and the unchanged selector/sync transaction boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation of reconciling, selected sync,
   continue/cancel, and active exposure states.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/certificate_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | 6f10c24d72db6171c0d434b307e6806996e2f11d |
-| lastVerifiedCommitDate | 2026-09-02T18:10:52+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The R21 packet requires exact predecessor edges, artifact binding, and finalization currentness validation. | "Required Behavior"; "Gate Dependency Graph" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:39-91 |
+| The certificate authority enforces exact predecessor edges, consumed-artifact binding, and finalization currentness. | "def validate_certificate_chain("; "def _bind_consumed_artifacts("; "def validate_finalization_currentness(" | mcp/src/agents_remember/certification/certificate_authority.py:113-132; mcp/src/agents_remember/certification/certificate_authority.py:301-335; mcp/src/agents_remember/certification/certificate_authority.py:176-193 |
 
 ## Repo-Internal References
 
@@ -78,6 +78,11 @@ No configured Domain Documentation source applies; CCR-R21@v2 is the governing p
 None; this is the repository-neutral certificate issuance owner.
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced the unsupported task-packet citation with behavior-bearing implementation anchors for chain, artifact, and finalization validation. Source hashes: mcp/src/agents_remember/certification/certificate_authority.py=349728f041cffc0a402022c986fd0c973aa00b1bbaa03b9cbb8ae48adece9bac; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=349728f041cffc0a402022c986fd0c973aa00b1bbaa03b9cbb8ae48adece9bac; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   6f10c24d72db6171c0d434b307e6806996e2f11d (CCR-R21@v2/L21): created the card for the new gate

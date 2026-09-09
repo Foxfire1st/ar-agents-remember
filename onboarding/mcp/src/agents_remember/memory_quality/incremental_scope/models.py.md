@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `1ad9d51f743c5b17de51cc46d8b29e004736022d` |
-| lastVerifiedCommitDate | 2026-09-02T06:25:51+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -95,6 +95,9 @@ values are produced/validated by the sibling scope modules.
 | Git change status and path shape are validated by the current typed model. | `GitPathChange` | mcp/src/agents_remember/memory_quality/incremental_scope/models.py:42-79 |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=81ef52149f22756a9ed4313f73ce380ea7f9eadf98f0128b810ad7358511e4a2; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
 

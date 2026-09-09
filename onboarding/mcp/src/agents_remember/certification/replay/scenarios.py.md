@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/replay/scenarios.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T22:23+02:00 |
-| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
-| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,9 @@ No cross-repository implementation boundary is owned here.
 | Acceptance projection stays repository-neutral over the measured evidence envelope. | - | - |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=49921a3a09bd43ba330b05cebd819f498834f23402d754b95a3c144f3d9335d7; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Corrected the shared RailIdentity description to its actual id/version fields; preserved prior history and pins.
 

@@ -6,8 +6,8 @@
 | path | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | overview.md |
 
 ## Governing Overview
@@ -100,6 +100,9 @@ The source owners below establish these file-local behaviors; this read does not
 None.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=9d25eb6a978c75e82fbabee17a0501b98b3a71cacaa32106e5630cee22cc42ce; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
 

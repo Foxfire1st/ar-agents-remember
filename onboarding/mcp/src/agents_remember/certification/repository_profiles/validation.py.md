@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/repository_profiles/validation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -70,7 +70,7 @@ No configured Domain Documentation source applies; validation is repository-neut
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The aggregate validator returns every independent finding. | `validate_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/validation.py:57-126 |
-| Selector duplicates and identity placeholders refuse before execution. | `_validate_selector`; `_validate_selector_command` | mcp/src/agents_remember/certification/repository_profiles/validation.py:663-672; mcp/src/agents_remember/certification/repository_profiles/validation.py:675-706 |
+| Selector duplicates and identity placeholders refuse before execution. | `_validate_selector`; `_validate_selector_command` | mcp/src/agents_remember/certification/repository_profiles/validation.py:686-686; mcp/src/agents_remember/certification/repository_profiles/validation.py:675-706 |
 | Command placeholders must be complete, declared, and list-atomic. | `_validate_command_placeholders` | mcp/src/agents_remember/certification/repository_profiles/validation.py:709-750 |
 | Rail validation checks the declared rail contract and ownership constraints. | "def _validate_rail(" | mcp/src/agents_remember/certification/repository_profiles/validation.py:491-510 |
 | Artifact dependencies must name valid producing rails and artifacts. | "def _validate_artifact_dependencies" | mcp/src/agents_remember/certification/repository_profiles/validation.py:621-662 |
@@ -81,6 +81,9 @@ No configured Domain Documentation source applies; validation is repository-neut
 None; this is the repository-neutral validation authority.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (_validate_selector→686). Preserved claim prose; source-sha256=146e55e9cfb9fad02c75775796f69c05608d53a91e296fd55fbbfeb207b9fd88; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
 

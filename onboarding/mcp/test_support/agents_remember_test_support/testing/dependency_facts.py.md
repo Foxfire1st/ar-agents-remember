@@ -6,8 +6,8 @@
 | path | `mcp/test_support/agents_remember_test_support/testing/dependency_facts.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,6 +57,9 @@ recursive and dynamic plugin behavior.
 No cross-repository boundary applies.
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=8f1d25adc6b250abccecdcef16df5209126ade4a78e06c44072c09059b816548; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-08-28T10:03:40+02:00 — Removed the retired direct-diagnostic consumer from the current
   dependency-fact ownership description; selection, retry, lifecycle, and causal consumers remain.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/replay/measure.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T22:23+02:00 |
-| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
-| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -57,7 +57,7 @@ No Domain Documentation source is configured for this memory root. The governing
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer consumes the R16 telemetry event vocabulary and catalog payloads. | `TelemetryEvent`; `GateCatalogCompletePayload`; `GatePassPayload` | mcp/src/agents_remember/certification/telemetry/models.py:444-475; mcp/src/agents_remember/certification/telemetry/models.py:499-513; mcp/src/agents_remember/certification/telemetry/models.py:673-850 |
+| The reducer consumes the R16 telemetry event vocabulary and catalog payloads. | `TelemetryEvent`; `GateCatalogCompletePayload`; `GatePassPayload` | mcp/src/agents_remember/certification/telemetry/models.py:675-852; mcp/src/agents_remember/certification/telemetry/models.py:446-477; mcp/src/agents_remember/certification/telemetry/models.py:673-850 |
 | The reducer produces the measured vocabulary records defined in the replay models module. | `RunMeasurement`; `GateRunMeasurement`; `ReplayLegIdentity` | mcp/src/agents_remember/certification/replay/models.py:255-286; mcp/src/agents_remember/certification/replay/models.py:196-252 |
 | The span reduction is delegated to the deterministic span analyzer. | `analyze_span_categories` | mcp/src/agents_remember/certification/replay/spans.py:39-72 |
 | Refusal raises the shared certification contract error. | `CertificationContractError` | mcp/src/agents_remember/errors.py:22-31 |
@@ -72,6 +72,9 @@ No cross-repository implementation boundary is owned here.
 | Measurement stays repository-neutral and consumes only the shared telemetry vocabulary. | - | - |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (TelemetryEvent→675-852; GateCatalogCompletePayload→446-477). Preserved claim prose; source-sha256=be99e464f9cf9eacc8e6a13dd17baa1eeea5ad800f721469e0cdd8248d8d31ed; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
 

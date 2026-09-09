@@ -14,15 +14,17 @@
     "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py",
     "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py",
     "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py",
-    "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+    "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py",
+    "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 5,
-    "fileSidecars": 5,
+    "sourceFilesInScope": 6,
+    "fileSidecars": 6,
     "childRoutes": 0
   },
   "routingTerms": [
     "activation",
+    "admission",
     "agents",
     "agents_remember",
     "atomic",
@@ -30,6 +32,7 @@
     "atomic_series_activation_release",
     "atomic_series_activation_terminal",
     "atomic_series_activation_transaction",
+    "atomic_series_admission",
     "init",
     "init__",
     "mcp",
@@ -42,14 +45,15 @@
     "worktrees"
   ],
   "hotPath": {
-    "summary": "`atomic_series_activation.py` derives normalized source identity, strictly observes one fingerprint-addressed record, archives corrupt authority, and publishes replace-in-place `reconciling|active` state. `atomic_series_activation_transaction.py` connects selection to the root-level resumable sync transaction: select reconciling, reconcile exact sources, then expose active. `atomic_series_activation_release.py` owns exact durable vacancy, and the terminal bridge ensures cleanup releases the selected contract before deleting its naming authority while preserving a newer selection.",
+    "summary": "`atomic_series_activation.py` derives normalized source identity, strictly observes one fingerprint-addressed record, archives corrupt authority, and publishes replace-in-place `reconciling|active` state. `atomic_series_activation_transaction.py` connects selection to the root-level resumable sync transaction: select reconciling, reconcile exact sources, then expose active. `atomic_series_admission.py` projects requested identity, source-pair observation, foreign blockers, retry preconditions, and read-only status actions without mutation. `atomic_series_activation_release.py` owns exact du...",
     "candidateHints": [
       "mcp/src/agents_remember/worktrees/activation",
       "mcp/src/agents_remember/worktrees/activation/__init__.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py",
-      "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+      "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py",
+      "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -62,10 +66,12 @@
       "atomic_series_activation_terminal",
       "atomic_series_activation_transaction.py",
       "atomic_series_activation_transaction",
+      "atomic_series_admission.py",
+      "atomic_series_admission",
       "reconciling|active",
       "mcp/src/agents_remember/worktrees/activation",
       "route-local-overview",
-      "ae8c47ce897b04380ebcb80f750d77ed4dc9f37d",
+      "602143bd1d48226f4d53b83ff7c5002a695dcdff",
       "/overview.md",
       "reconciling",
       "active",
@@ -75,6 +81,8 @@
       "__init__.py.md",
       "activation/atomic_series_activation.py",
       "atomic_series_activation.py.md",
+      "activation/atomic_series_admission.py",
+      "atomic_series_admission.py.md",
       "activation/atomic_series_activation_release.py",
       "atomic_series_activation_release.py.md",
       "activation/atomic_series_activation_terminal.py",
@@ -85,19 +93,17 @@
       "publish_atomic_series_selection",
       "activation_waiting_reason",
       "activate_atomic_series_contract",
+      "atomic_series_admission_projection",
       "mcp/src/agents_remember/worktrees/activation/__init__.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py",
+      "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py",
       "agents_remember",
       "sourceRoute",
       "doc_type",
       "lastUpdated",
-      "T08",
-      "lastVerifiedCommitHash",
-      "lastVerifiedCommitDate",
-      "governingOverview",
-      "init__",
-      "T06"
+      "T19",
+      "lastVerifiedCommitHash"
     ]
   },
   "fallback": {

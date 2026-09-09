@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/repository_profiles/selection_results.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -65,13 +65,13 @@ No configured Domain Documentation source applies; CCR-R19@v2 is the governing p
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The R19 packet requires a complete, versioned, repository-owned selection authority, exact population modes, and typed ownership failure with no safe-full fallback. | "Normative Requirement"; "Required Behavior"; "Failure And Recovery" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R19-v2-exact-test-selection-ownership.md:11-49 |
+| Repository selection produces one immutable result and validates the declared population and completion state before publication. | "class RepositorySelectionResult("; "def _verify_population("; "def _verify_completion(" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:85-126; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:129-146 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical result and its digest-verified contract. | `RepositorySelectionResult`; `repository_selection_result_digest` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:89-130; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:189-200 |
+| The canonical result and its digest-verified contract. | `RepositorySelectionResult`; `repository_selection_result_digest` | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:85-126; mcp/src/agents_remember/certification/repository_profiles/selection_results.py:185-196 |
 | Typed provider inputs normalized into one immutable selector result. | "class RepositorySelectionDraft" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:22-36 |
 | Normalize and content-address one provider result. | "def build_repository_selection_result" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:199-237 |
 | Selector population validation checks the declared universe against its selected and excluded members. | "def _verify_population" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:129-133 |
@@ -83,6 +83,11 @@ No configured Domain Documentation source applies; CCR-R19@v2 is the governing p
 None; this is the generic selector-result contract inside agents-remember.
 
 ## Update History
+
+- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced the unsupported task-packet citation with exact result, population, and completion validation anchors. Source hashes: mcp/src/agents_remember/certification/repository_profiles/selection_results.py=9d1a5180e610830636b4e96e2ac794fd8013dd51c65d08893dadc0c44b3ccd20; verification metadata remains unchanged.
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (RepositorySelectionResult→85-126; repository_selection_result_digest→185-196). Preserved claim prose; source-sha256=9d1a5180e610830636b4e96e2ac794fd8013dd51c65d08893dadc0c44b3ccd20; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card for the newly added

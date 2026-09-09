@@ -119,12 +119,14 @@
       "closeout_staged_quality",
       "mcp/src/agents_remember/worktrees/queue",
       "route-local-overview",
-      "ea35964985f30080488270e71ac81657ac40682b",
+      "602143bd1d48226f4d53b83ff7c5002a695dcdff",
       "/overview.md",
       "semantic-topology/v2",
       "taskIntent",
       "QueueBinding",
       "prepare_staged_code",
+      "4c6b7bc2362bc03d50fc7a0643f34b591b805d45",
+      "ea35964985f30080488270e71ac81657ac40682b",
       "closeout_queue_state.py",
       "1d446724d099517f6f52d596b47827ae2391a2a4",
       "4241908c",
@@ -134,9 +136,7 @@
       "agents_remember",
       "sourceRoute",
       "doc_type",
-      "lastUpdated",
-      "T07",
-      "lastVerifiedCommitHash"
+      "lastUpdated"
     ]
   },
   "fallback": {

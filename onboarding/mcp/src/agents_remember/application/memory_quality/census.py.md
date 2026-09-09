@@ -13,4 +13,5 @@ Memory census module for complete affected-memory census in the closeout pipelin
 - Integrates with curator checklist and quality gates
 
 ## Update History
-- 2026-09-08: Initial creation for MCAR L04
+- 2026-09-08T14:45:44+00:00 — CCR-L24 preparation normalized the inherited date-only history bullet to an offset-bearing ISO timestamp while preserving its date and text.
+- 2026-09-08T00:00:00+00:00 — Initial creation for MCAR L04

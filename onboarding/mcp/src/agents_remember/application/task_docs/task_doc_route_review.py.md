@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_route_review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00 |
+| lastUpdated | 2026-09-08T16:45:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -91,8 +91,8 @@ No configured Domain Documentation source applies.
 | The legacy positional recorder passing the resolved leaf document. | `_record_route_review` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:90-136 |
 | Exact-binding refusal with the L16-R9 recovery dialect. | `_require_route_review_binding` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:157-196 |
 | The route-review authority rule (create/replace cannot author or change evidence). | `_enforce_route_review_authority` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:199-218 |
-| The stamping owner it delegates to; now takes the resolved candidate document. | `build_route_review` | mcp/src/agents_remember/worktrees/route_review.py:56-90 |
-| The typed candidate ref derived from the selected path. | `document_ref` | mcp/src/agents_remember/worktrees/route_review.py:198-211 |
+| The stamping owner it delegates to; now takes the resolved candidate document. | `build_route_review` | mcp/src/agents_remember/worktrees/route_review.py:181-236 |
+| The typed candidate ref derived from the selected path. | `document_ref` | mcp/src/agents_remember/worktrees/route_review.py:314-327 |
 | The facade that dispatches into this module. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 
 ## Cross-Repo References
@@ -108,6 +108,7 @@ missing/stale refuses. The application seam itself performs no review and owns n
 semantics. Part of the landed L25 candidate `99dc249b`.
 
 ## Update History
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   both recorders now build the exact `ResolvedTaskDocument` (`document_ref(contract,

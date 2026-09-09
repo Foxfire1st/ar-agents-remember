@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/readiness_models.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T13:30+02:00 |
-| lastVerifiedCommitHash | `cb906188` |
-| lastVerifiedCommitDate | 2026-09-03T18:04:11+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ leaf task.
 | --- | --- | --- |
 | The closed surface catalog drives dispatch in the readiness compiler. | `READINESS_SURFACES` | mcp/src/agents_remember/certification/readiness_models.py:76-86 |
 | The readiness input model fixes exactly five gate observations and the admission/finalization authorities. | `CloseoutReadinessInput` | mcp/src/agents_remember/certification/readiness_models.py:167-181 |
-| Compilation consumes these observation models and emits these projections. | `CloseoutReadinessProjection`; `GateReadinessObservation` | mcp/src/agents_remember/certification/readiness_models.py:132-158; mcp/src/agents_remember/certification/readiness_models.py:229-249 |
+| Compilation consumes these observation models and emits these projections. | `CloseoutReadinessProjection`; `GateReadinessObservation` | mcp/src/agents_remember/certification/readiness_models.py:231-251; mcp/src/agents_remember/certification/readiness_models.py:134-160 |
 | The projection digest self-verification rejects tampered outputs. | `_verify_digest` | mcp/src/agents_remember/certification/readiness_models.py:244-249 |
 | The transition-rule shape is consumed by the canonical same-generation transition table. | `ReadinessTransitionRule` | mcp/src/agents_remember/certification/readiness_transitions.py:14-113 |
 | The certification facade imports and re-exports the readiness observations and projection models. | `readiness_models` | mcp/src/agents_remember/certification/__init__.py:88-88 |
@@ -99,6 +99,9 @@ No cross-repository implementation boundary is owned here.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (GateReadinessObservation→134-160; CloseoutReadinessProjection→231-251). Preserved claim prose; source-sha256=d0ddfc86600e10a1e98c211aad40aec3fd20fd5e92fa22c897167649f54bdce6; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

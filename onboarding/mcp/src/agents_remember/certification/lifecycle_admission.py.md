@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/lifecycle_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3`|
-| lastVerifiedCommitDate | 2026-09-03T00:47:35+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -97,6 +97,9 @@ No cross-repository implementation boundary is owned here.
 | Repository-specific rail declarations enter through repository profiles outside this contract. | — | — |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4374a06385fba89f1b6f2c187d0659b612f9944da826599ab78f79a0beb55787; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

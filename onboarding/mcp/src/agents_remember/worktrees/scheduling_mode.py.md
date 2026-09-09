@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/scheduling_mode.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:25+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -74,13 +74,14 @@ repository-internal.
 | Membership derivation under either mode. | `commanded_sprint_masters` | mcp/src/agents_remember/worktrees/scheduling_mode.py:75-90 |
 | The single effective-nature resolution every consumer shares. | `effective_execution_nature` | mcp/src/agents_remember/worktrees/scheduling_mode.py:93-116 |
 | Terminal series artifacts under organizational masters degrade to a reported fact. | `stale_series_artifact_fact` | mcp/src/agents_remember/worktrees/scheduling_mode.py:119-153 |
-| Source-pair selection is a separate strict authority with vacant/reconciling/active states. | `AtomicSeriesActivationObservation`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:68-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:170-187 |
+| Source-pair selection is a separate strict authority with vacant/reconciling/active states. | `AtomicSeriesActivationObservation`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:92-128; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 ## Update History
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the scheduling/activation citations to the current observation dataclass and strict reader; scheduling ownership is unchanged and no acceptance claim is made.
 
 - 2026-08-26T08:25+02:00 — Rebound `stale_series_artifact_fact` to its frozen source range; the
   scheduling/activation ownership split is unchanged.

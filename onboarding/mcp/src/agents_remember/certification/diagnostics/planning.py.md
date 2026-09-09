@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/diagnostics/planning.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T07:08:26+00:00 |
-| lastVerifiedCommitHash | `4ba18bb23ba90e201bb37341d61c0efc64161fcf` |
-| lastVerifiedCommitDate | 2026-09-04T17:23:11+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,9 @@ No cross-repository implementation boundary is owned here.
 | The altitude rules stay repository-neutral and rely only on registry/profile/certifying-plan inputs. | `compile_diagnostic_plan` | mcp/src/agents_remember/certification/diagnostics/planning.py:30-96 |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=d152934f922c32f9de76dd1f3ec5923f21388bea293ccb82bca9508044d1219f; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Split the two-facade claim into exact import and export constructs in one source file per row; public planning-helper ownership unchanged. This scoped repair does not promote the card's verification stamp or certify a gate.
 

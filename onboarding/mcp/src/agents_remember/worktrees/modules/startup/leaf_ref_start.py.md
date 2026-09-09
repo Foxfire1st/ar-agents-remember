@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py` |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-08T17:47:39+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -69,10 +69,13 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "def resolve_leaf_ref(" | mcp/src/agents_remember/models/terminal.py:19-19; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39; mcp/src/agents_remember/worktrees/leaf_refs.py:88-88 |
-| Start contract builder that calls these helpers. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:934-954 |
+| Start contract builder that calls these helpers. | `build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:834-854 |
 | `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. | `ContractError`, `_task_vocabulary`, `ContractCells` | mcp/src/agents_remember/worktrees/worktree_contract.py:90-91; mcp/src/agents_remember/worktrees/worktree_contract.py:160-177; mcp/src/agents_remember/worktrees/worktree_contract.py:180-195 |
 
 ## Update History
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation rebound the public start-contract wrapper citation to its current definition; leaf-ref ownership is unchanged and no acceptance claim is made.
+- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound `build_start_contract` to its current public wrapper after the startup module moved. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

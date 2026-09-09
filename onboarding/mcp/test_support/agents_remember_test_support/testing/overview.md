@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -75,6 +75,8 @@ It must be rebuilt from current source, never copied from a retired route census
 | Retry execution retains exact explicit affected modules. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:63-79 |
 
 ## Update History
+
+- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/test_support/agents_remember_test_support/testing`, so no route/member/prose/invariant change is required. route-member-count=20; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 
 - 2026-08-28T10:03:40+02:00 — Added the complete observed failure-family ownership split and the
   measured three-symptom causal repair protocol to the route hot path.
