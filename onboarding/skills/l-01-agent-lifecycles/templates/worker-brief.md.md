@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -79,7 +79,7 @@ No external Domain Documentation source governs this worker template.
 | --- | --- | --- |
 | The brief binds the exact owned requirement revision and evidence classes. | "## Owned primary requirement (exactly one stable-ID + version)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:69-102 |
 | The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff. | "## Owned primary requirement (exactly one stable-ID + version)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:69-102 |
-| Repository-defined checks and artifact lifecycle remain separate obligations. | "## Checks (green before you report)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:141-164 |
+| Repository-defined checks and artifact lifecycle remain separate obligations. | "## Targeted checks (before you report)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:142-164 |
 | The final report requires envelopes, checks, curator inputs, and continuity state. | "## Turn report (mandatory, last act)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:173-201 |
 
 ## Cross-Repo References

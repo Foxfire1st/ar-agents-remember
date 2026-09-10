@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/master_review_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:10+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -58,7 +58,7 @@ No relevant domain documentation was configured for this repository-internal int
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Typed master-review refusal projection. | `master_route_review_block`; `master_route_review_refusal` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:53-95 |
-| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:719-760; mcp/src/agents_remember/worktrees/modules/integrate.py:1013-1031; mcp/src/agents_remember/worktrees/series_closeout.py:62-85 |
+| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:694-734; mcp/src/agents_remember/worktrees/modules/integrate.py:968-1033; mcp/src/agents_remember/worktrees/series_closeout.py:61-80 |
 
 ## Cross-Repo References
 

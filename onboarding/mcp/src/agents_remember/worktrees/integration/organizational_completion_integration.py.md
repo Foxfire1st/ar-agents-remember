@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -41,10 +41,10 @@ Protected-ref publication and recovery never consume or depend on a projection r
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Boundary preview refuses final/non-final task-source drift before protected publication. | `preview_integration_boundary` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:52-101 |
-| Dry-run reads the exact final-leaf decision. | `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:81-84 |
-| Publication intent pins the exact organizational scope before claim transfer. | `prepare_integration_publication_intent` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:87-140 |
-| Durable quality certification is reread from the integration journal. | `recorded_organizational_quality_certification` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:196-211 |
-| Claim transfer records the exact candidate and integration publication intent before protected publication. | `transfer_integration_claim` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:143-193 |
+| Dry-run reads the exact final-leaf decision. | `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:80-83 |
+| Publication intent pins the exact organizational scope before claim transfer. | `prepare_integration_publication_intent` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:86-133 |
+| Publication source identity is re-proved from the integration journal: a completed, active, retained source whose proven door equals the contract, with the finalized closeout contract digest required for a closeout operation. | `source_operation_matches`; `source_journal_sha256` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:189-211; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:212-218 |
+| Claim transfer records the exact candidate and integration publication intent before protected publication. | `transfer_integration_claim` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:136-186 |
 
 ## Documentation References
 
@@ -65,7 +65,7 @@ The current source seams include `IntegrationBoundaryFacts`, `preview_integratio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion` at this ownership boundary. | `IntegrationBoundaryFacts`; `preview_integration_boundary`; `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:35-41; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:44-78; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:81-84 |
+| The current module exposes `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion` at this ownership boundary. | `IntegrationBoundaryFacts`; `preview_integration_boundary`; `preview_organizational_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:35-42; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:43-79; mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:80-85 |
 
 ## 260821-CLIVE Source-Journal Transfer
 
@@ -76,6 +76,11 @@ requires the finalized contract digest. Projection rows are never consumed, and 
 must remain exact.
 
 ## Update History
+- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the journal re-read row: `recorded_organizational_quality_certification` no longer exists, so the row now cites the current `source_operation_matches` / `source_journal_sha256` publication-source proof. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `preview_organizational_completion` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:80-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `prepare_integration_publication_intent` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:86-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `transfer_integration_claim` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py:136-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout recovery-projection package relocation; door/source-journal transfer and queue-independent completion are unchanged.

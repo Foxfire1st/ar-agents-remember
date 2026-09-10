@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T07:08:26+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -70,8 +70,8 @@ any commit, with missing/invalid profile authority refusing as certification-pro
 | --- | --- | --- |
 | Linked-worktree and conflict refusals precede any index rewrite. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:24-40; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:43-55 |
 | The staged gate proves the accepted tree around reset, staging, hook execution, and the targeted profile call. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-141 |
-| Closeout imports this owner under the established private call name. | "from agents_remember.worktrees.queue.closeout_staged_quality import (" | mcp/src/agents_remember/worktrees/modules/closeout.py:103-105 |
-| The strict closeout preflight passes the profile-built target, code diff base and candidate tree to this owner before any external-memory preflight. | "def _closeout_quality_preflight(" | mcp/src/agents_remember/worktrees/modules/closeout.py:791-830 |
+| Closeout no longer imports this owner: the staged-quality gate lives only in its own module, and the transaction-only closeout imports no code-quality gate. | "def gate_staged_code("; "from agents_remember.worktrees.queue.closeout_preview import (" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165; mcp/src/agents_remember/worktrees/modules/closeout.py:65-69 |
+| The strict closeout preflight no longer exists in the closeout transaction; `gate_staged_code` remains the exact-staged-candidate owner and is reached by its own callers. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
 | The strict gate admits the same target/profile and certifies the index. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-324 |
 
 ## Cross-Repo References
@@ -89,6 +89,8 @@ candidate binding cannot authorize the commit.
 `prepare_staged_code` now separates strict-hook settlement and exact candidate materialization from certification admission. It returns the actual `PreparedStagedCode(candidate_tree, pre_commit_hook_ran)` so the lifecycle can freeze admission after hooks settle. `gate_staged_code` composes that preparer with a fresh targeted gate; retained selected execution is owned elsewhere.
 
 ## Update History
+
+- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the two closeout-import rows: closeout no longer imports this owner, and the strict closeout preflight it referenced was removed; `gate_staged_code` remains the exact-staged-candidate owner. Verification metadata remains closeout-owned.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=a48db00b5c945a91d8f702001a0ea1cd666ba607939466ab8e8228c603839b8d; verification metadata remains unchanged because commit-owned realization is pending.
 

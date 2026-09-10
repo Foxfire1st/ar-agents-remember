@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_preview.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -42,7 +42,7 @@ are an explicit developer request.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Proposed commit payloads separate leaf mutation from exact series recording. | `proposed_closeout_commits` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:9-69 |
-| Summary and ordering publish the same lifecycle altitude. | `closeout_summary`, `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:72-96; mcp/src/agents_remember/worktrees/queue/closeout_preview.py:99-125 |
+| Summary and ordering publish the same lifecycle altitude. | `closeout_summary`, `closeout_order` | mcp/src/agents_remember/worktrees/queue/closeout_preview.py:72-85; mcp/src/agents_remember/worktrees/queue/closeout_preview.py:86-106 |
 
 ## Documentation References
 

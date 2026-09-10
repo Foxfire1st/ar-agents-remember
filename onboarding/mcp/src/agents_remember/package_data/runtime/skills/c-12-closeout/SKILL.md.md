@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-10T06:03:57+00:00|
-| lastVerifiedCommitHash | `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0` |
-| lastVerifiedCommitDate | 2026-09-10T08:03:15+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -79,17 +79,17 @@ states visible.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Cleanup is an explicit agent follow-up after landing and before handoff, including manual Git landing. | `Closeout does not mark the task` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:211-219 |
-| `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-409 |
+| Cleanup is an explicit agent follow-up after landing and before handoff, including manual Git landing. | "Closeout does not mark the task" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:211-219 |
+| `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-307 |
 | `c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-130 |
-| Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate. | `## Approval Authority`; `## Explicit Durable Closeout Gates` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:57-160; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:176-188 |
-| `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:174-234 |
+| Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate. | `## Approval Authority`; `## Explicit Durable Closeout Gates` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:46-130; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:131-143 |
+| `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. | `## Preconditions` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:144-166 |
 | `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-329 |
-| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:332-332 |
+| Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. | "Closeout does not mark the task `Completed`" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:211-211 |
 | The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-122 |
-| The two staging refusals and why their order is load-bearing: not-a-task-worktree (`--git-dir` vs `--git-common-dir`) and unresolved merge conflicts both run **before** the reset, because `git reset` drops unmerged entries and `MERGE_HEAD` and would silently disarm the conflict check. | `MERGE_HEAD` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:412-412 |
-| Both memory-order lists restate step 4 as reset + stage + the leaf targeted contract over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:235-274 |
-| The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:275-315 |
+| The two staging refusals run before staging or ref movement: the code checkout must be the declared task worktree unless the declared route is a sanctioned branch-direct landing, and a worktree with unresolved merge conflicts (a merge, rebase, cherry-pick, or revert with unmerged entries) is refused so a blind stage cannot commit conflict markers. | "unresolved merge conflicts"; "unmerged entries" | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:104-106; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:261-266 |
+| Both memory-order lists restate step 4 as reset + stage + the leaf targeted contract over staged content before any commit, with the no-wrapper checkout committing as it always has. | `## External-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:167-189 |
+| The caller-side implementation of that contract: `_gate_staged_code` runs both refusals, then `git reset --mixed --quiet HEAD`, then `git add -A`, then the wrapper — and `requires_strict_code_quality` is what makes the whole step conditional on the wrapper being present. | `## Internal-Memory Order` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:190-220 |
 | `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. | `DEFAULT_CRAP_THRESHOLD` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:37-37 |
 
 ## Cross-Repo References
@@ -143,6 +143,13 @@ not require `directExecutionEnabled`; the existence of a root series contract al
 the direct route.
 
 ## Update History
+- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the staging-refusal row against the rewritten skill: the `MERGE_HEAD` rationale is gone and the refusals are now stated as not-the-declared-task-worktree plus unresolved merge conflicts. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `# c-12-closeout Closeout` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-307. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `## Preconditions` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:144-166. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `Completed`; "Closeout does not mark the task" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:211-211; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:211-211. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `## External-Memory Order` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:167-189. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `## Internal-Memory Order` repointed to mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:190-220. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-10T06:03:15+00:00 — Require the agent to preview and apply worktree cleanup after landing each enclosure, then finalize; cleanup refusals must remain visible in the handoff.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.

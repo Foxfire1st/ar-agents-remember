@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -75,8 +75,8 @@ No external Domain Documentation source is configured for this repository-local 
 | --- | --- | --- |
 | One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-53; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:17-30 |
 | The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| Closeout invokes memory preflight only after the required code gate is green; the helper checks the accepted memory pair and attaches its curator evidence. | `_closeout_quality_preflight`; `_memory_quality_before_refresh` | mcp/src/agents_remember/worktrees/modules/closeout.py:791-830; mcp/src/agents_remember/worktrees/modules/closeout.py:639-656 |
-| The sole external-phase owner runs memory refresh and returns its combined gate result. | "def external_closeout_commits("; "memory_quality = combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:61-112; mcp/src/agents_remember/worktrees/modules/closeout_external.py:132-160 |
+| The module owns both memory-quality phases as standalone callers: `run_memory_quality_phase` runs one declared check group and refuses with bounded evidence, and the closeout transaction no longer invokes a code gate or a memory preflight. | `run_memory_quality_phase`; `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-54; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
+| The external-memory commit owner runs the refresh and the memory/ledger commits; it no longer combines a memory-quality gate result. | "def external_closeout_commits("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:45-89; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
 | The memory-quality port declares drift context, check groups and quality execution. | "class MemoryQualityPort" | mcp/src/agents_remember/worktrees/services.py:111-128 |
 | The injected service bundle keeps memory quality and certification continuation as distinct ports. | "class WorktreeServices:" | mcp/src/agents_remember/worktrees/services.py:145-151 |
 
@@ -89,6 +89,8 @@ No cross-repository interface is owned by this internal closeout helper.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the two caller rows: this module owns the memory-quality phases standalone and the closeout transaction no longer invokes a code gate or a memory preflight. Verification metadata remains closeout-owned.
 
 - 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: narrowed the service-bundle reference
   to the unique `class WorktreeServices:` declaration; the distinct memory-quality and

@@ -6,8 +6,8 @@
 | path                   | `scripts/sync-harness.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -109,7 +109,7 @@ two.
 | Fragment library for the eight `render-starter.py` programs. | `render_settings` | scripts/harness/render_starter.py:108-115 |
 | Fragment library for the four session-start hook scripts. | `hook_specific_output` | scripts/harness/session_start_hook.py:28-34 |
 | The classification of genuine per-harness requirements versus drift, and the shared-source inventory. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
-| Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:190-190; .githooks/_gate.sh:242-242 |
+| Both hook tiers run `--check` beside the skill and runtime generated-copy checks. | "run_fast_checks() {"; "run_full_checks() {" | .githooks/_gate.sh:192-236; .githooks/_gate.sh:244-248 |
 | The sibling generators this one is modelled on. | `SkillTarget`; `RuntimeTarget` | scripts/sync-runtime.py:26-30; scripts/sync-skills.py:26-29 |
 | Repo instructions route harness edits through `scripts/harness/` and forbid editing generated starter files. | `## Source Layout`; `## Boundaries`; `## Repository Layout` | AGENTS.md:99-145; README.md:192-275 |
 

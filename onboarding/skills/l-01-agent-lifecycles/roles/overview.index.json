@@ -77,7 +77,7 @@
       "IAS",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "6f3e3fde75a1ca0202c9b07557cf86a7893e8532",
+      "6096941f41204c9a7d6ccb2b29f6b2e862ed56b4",
       "accepted",
       "rejected",
       "dispatch_agent",
@@ -95,15 +95,15 @@
       "scripts/sync-skills.py",
       "reviewMode=baseline",
       "reviewMode=fix-verification",
+      "4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0",
+      "skills/l-01-agent-lifecycles/roles/curator.md",
+      "### 4 \u2014 Repair Affected Onboarding, Then Publish",
       "task_doc.author_execution_graph",
       "migrate_execution_topology",
       "worktree_status.sourceLineage=current",
-      "skills/l-01-agent-lifecycles/roles/curator.md",
       "skills/l-01-agent-lifecycles/roles/manager.md",
       "skills/l-01-agent-lifecycles/roles/worker.md",
-      "skills/l-01-agent-lifecycles/SKILL.md",
-      "skills/l-01-agent-lifecycles/roles/reviewer.md",
-      "sourceRoute"
+      "skills/l-01-agent-lifecycles/SKILL.md"
     ]
   },
   "fallback": {
