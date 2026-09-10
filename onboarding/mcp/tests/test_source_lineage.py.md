@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
+| lastUpdated | 2026-09-10T15:06+02:00 |
 | lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
 | lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Builds real Git repositories and canonical sprint/master/leaf contracts to check transitive code and memory lineage. Parent movement blocks the leaf; start and attach recheck exact source tips; sibling worktrees of the same repository remain legitimate. The lineage chain comes from task authority rather than caller-invented identifiers.
+Builds real Git repositories and canonical sprint/master/leaf contracts to check transitive code and memory lineage. Parent movement blocks the leaf; start and attach recheck exact source tips; sibling worktrees of the same repository remain legitimate. The lineage chain comes from task authority rather than caller-invented identifiers. `CloseoutSourceLineageHealTests` extends the same fixture to the closeout boundary, where a settleable stale break is now carried, an unprovable one escalates, a `dry_run` mutates nothing, and a retained sync conflict hands back both worktrees with their duties.
 
 ## Code Commentary
 
@@ -25,6 +25,11 @@ Builds real Git repositories and canonical sprint/master/leaf contracts to check
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
+
+The closeout-boundary class covers both halves of the change: the plain fast-forward, the leaf that
+owns its own commit, the unprovable-escalation and retained-conflict paths, the read-only preview,
+and the parked-candidate cases (uncommitted carry and retained reapply conflict) whose transaction
+detail is pinned in `test_sync_parked_candidate.py`.
 
 ### Conventions
 
@@ -58,12 +63,21 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Leaf identity proves code and memory transitively | `test_leaf_identity_proves_code_and_memory_transitively` | mcp/tests/test_source_lineage.py:48-65 |
-| Organizational super move blocks the leaf boundary | `test_organizational_super_move_blocks_the_leaf_boundary` | mcp/tests/test_source_lineage.py:67-81 |
-| Start rechecks exact source tips before start effects | `test_start_rechecks_exact_source_tips_before_start_effects` | mcp/tests/test_source_lineage.py:83-114 |
-| Attach refuses before stale task context is resumed | `test_attach_refuses_before_stale_task_context_is_resumed` | mcp/tests/test_source_lineage.py:117-130 |
-| Parent and leaf paths may be sibling worktrees of one repository | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:132-152 |
-| Lifecycle boundary requires the full transitive chain | `test_lifecycle_boundary_requires_the_full_transitive_chain` | mcp/tests/test_source_lineage.py:154-166 |
+| Leaf identity proves code and memory transitively | `test_leaf_identity_proves_code_and_memory_transitively` | mcp/tests/test_source_lineage.py:57-74 |
+| Organizational super move blocks the leaf boundary | `test_organizational_super_move_blocks_the_leaf_boundary` | mcp/tests/test_source_lineage.py:76-90 |
+| Start rechecks exact source tips before start effects | `test_start_rechecks_exact_source_tips_before_start_effects` | mcp/tests/test_source_lineage.py:92-125 |
+| Attach refuses before stale task context is resumed | `test_attach_refuses_before_stale_task_context_is_resumed` | mcp/tests/test_source_lineage.py:126-139 |
+| Parent and leaf paths may be sibling worktrees of one repository | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:141-161 |
+| Lifecycle boundary requires the full transitive chain | `test_lifecycle_boundary_requires_the_full_transitive_chain` | mcp/tests/test_source_lineage.py:163-175 |
+| The closeout-boundary class proves the self-healing source-lineage guard. | `CloseoutSourceLineageHealTests` | mcp/tests/test_source_lineage.py:178-184 |
+| A plain fast-forward break is carried by the closeout boundary. | `test_closeout_boundary_heals_a_plain_fast_forward_break` | mcp/tests/test_source_lineage.py:186-202 |
+| A `dry_run` closeout refuses with the preview duty and moves nothing. | `test_closeout_preview_refuses_without_moving_the_break` | mcp/tests/test_source_lineage.py:204-220 |
+| A leaf that owns its own commit is carried (merge, not refusal). | `test_closeout_boundary_carries_a_leaf_that_owns_its_own_commit` | mcp/tests/test_source_lineage.py:222-243 |
+| An unprovable break escalates to the human developer. | `test_unprovable_lineage_escalates_to_the_human_developer` | mcp/tests/test_source_lineage.py:245-263 |
+| A retained sync conflict hands back both worktrees and their duties. | `test_retained_sync_conflict_hands_back_both_worktrees_and_their_duties` | mcp/tests/test_source_lineage.py:265-297 |
+| A dirty (uncommitted) candidate is parked, carried, and returned by the closeout boundary. | `test_closeout_boundary_carries_an_uncommitted_candidate` | mcp/tests/test_source_lineage.py:299-319 |
+| A parked-candidate reapply conflict surfaces as `source-lineage-sync-conflict` with the candidate recoverable. | `test_closeout_boundary_retains_a_parked_candidate_conflict` | mcp/tests/test_source_lineage.py:321-346 |
+| The moved-source integration guidance routes through the sync. | `test_source_moved_integration_guidance_routes_through_the_sync` | mcp/tests/test_source_lineage.py:348-375 |
 
 ## Cross-Repo References
 
@@ -74,6 +88,8 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-10T15:06+02:00 — Closeout-heal curation: recorded the `CloseoutSourceLineageHealTests` class and its eight cases (fast-forward carry, read-only preview, leaf-owns-its-commit carry, unprovable escalation, retained-conflict handback, uncommitted-candidate carry, retained parked-candidate conflict, moved-source integration guidance) and re-derived every retained method range against the current working tree. Verification remains closeout-owned.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
