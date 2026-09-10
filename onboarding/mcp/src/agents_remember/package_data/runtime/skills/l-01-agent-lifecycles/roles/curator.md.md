@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -62,7 +62,7 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged curator contains the same current seat definition and three-way responsibility. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| The synchronized check loop requires complete curator-actionable repair before structured authority publication. | "### 4 — Iterate The Checklist, Then Publish" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
+| The synchronized check loop requires complete curator-actionable repair before structured authority publication. | "### 4 — Repair Affected Onboarding, Then Publish" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | The canonical source is the doctrine owner. | "# Lifecycle — Curator" | skills/l-01-agent-lifecycles/roles/curator.md:1-47 |
 | MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |

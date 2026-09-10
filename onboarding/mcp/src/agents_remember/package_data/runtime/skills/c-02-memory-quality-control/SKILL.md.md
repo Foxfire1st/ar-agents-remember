@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-29T08:52+02:00                     |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -76,7 +76,7 @@ integration gate.
 | The quality-control phase table distinguishes task-start drift, curator intake, pre-commit coverage, closeout validation, and targeted style repair. | "## Quality Control Phases" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:30-38 |
 | Task-start quality control preserves the gradual-adoption boundary for historical files without onboarding and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | "Run Task-Start Drift Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:71-107 |
 | Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding. | "Run Pre-Code-Commit Missing-Onboarding Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:164-180 |
-| Explicitly requested memory-quality work reports the requested scope and uses focused style fixers only after reported findings. | "Run Full Memory Quality Only On Explicit Developer Request"; "Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:205-205; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:221-221 |
+| Explicitly requested memory-quality work reports the requested scope and uses focused style fixers only after reported findings. | "### 7. Run Full Memory Quality Only On Explicit Developer Request"; "### 8. Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:205-218; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:219-231 |
 
 | Scoped curator calls provide named diagnostics; complete memory-quality evidence remains explicit developer-requested work. | "Curator Scoped Onboarding Checks"; "Run Full Memory Quality Only On Explicit Developer Request" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:182-205 |
 

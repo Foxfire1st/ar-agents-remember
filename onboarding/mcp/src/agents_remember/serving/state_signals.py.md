@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -29,8 +29,11 @@ manager structurally through the shared incumbent/staged-heir selector. Compound
 projected from the same running-manager snapshot consumed by the canonical selector, so each
 non-ambiguous document necessarily has a primary or staged-replacement claimant; no synthetic
 missing-occupant fallback is part of that path. Observer sweeps suppress a finding for an ambiguous
-seat rather than choosing a generation or aborting unrelated seats. Inbox delivery/landing remains owned by the
-shared durable message path.
+occupant fallback is part of that path. Observer sweeps suppress a finding for an ambiguous or
+malformed task-document route rather than choosing a generation or aborting unrelated seats.
+`TaskDocumentRefError` is therefore a per-subject fence at state-signal finding evaluation;
+action-time owner derivation remains a separate revalidation boundary. Inbox delivery/landing
+remains owned by the shared durable message path.
 
 Reviewer subjects are polymorphic: leaf and master reviewers route to their manager, while sprint
 reviewers route to the architect or orchestrator stamped on that generation. The non-reaction
@@ -48,6 +51,8 @@ Task hierarchy determines ownership; runtime ids only correlate observed episode
 - Spawn ancestry does not establish manager/subordinate membership.
 - A subordinate lookup with no current manager fails closed; an ambiguous canonical manager seat is
   locally suppressed.
+- A missing or ambiguous task-document parent raises a typed refusal that suppresses only that
+  subject; later sweeps can retry after topology recovers.
 - Compound-idle manager documents come from the same immutable running snapshot used for selection,
   which guarantees a claimant after ambiguity is excluded.
 - Findings arise from terminal/turn evidence, not model artifact judgment.
@@ -70,7 +75,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:159-173 |
-| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous seats. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:198-206 |
+| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous or malformed subjects. | `evaluate_state_signal_findings`; `_safe_state_signal_finding` | mcp/src/agents_remember/serving/state_signals.py:198-218 |
 | Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:240-343 |
 | Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. | `_notifier_subject_owner_id` | mcp/src/agents_remember/serving/state_signals.py:396-413 |
 
@@ -79,6 +84,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: recorded the typed task-document refusal fence in state-signal evaluation, preserving local suppression and later retry while leaving canonical seat selection and delivery ownership unchanged.
 
 - 2026-08-31T04:59+02:00 — Tightened notifier ownership to the same bounded migration rule as
   structural routing: unstamped leaf reviewers retain their historical manager; higher reviewers

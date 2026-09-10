@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`                                    |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`                                    |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Simulates multiple relay ticks to preserve the finished-worker signal even without an inbox row, revalidate topology and landed episodes before non-reaction actions, hold a busy manager at the boundary then land once, rebind a replaced owner, and avoid done signals for killed or hung seats. Injected delivery and clock boundaries make these relay assertions deterministic.
+Simulates multiple relay ticks to preserve the finished-worker signal even without an inbox row, revalidate topology and landed episodes before non-reaction actions, hold a busy manager at the boundary then land once, rebind a replaced owner, route a master-bound reviewer to the current manager, fence malformed or ambiguous topology per subject, and avoid done signals for killed or hung seats. Injected delivery and clock boundaries make these relay assertions deterministic.
 
 ## Code Commentary
 
@@ -25,6 +25,11 @@ Simulates multiple relay ticks to preserve the finished-worker signal even witho
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
+
+The current structural-routing cases exercise action-time replacement, missing/ambiguous parent
+topology isolation, owner disappearance after finding revalidation, and action-time refusal without
+publishing a row or source marker. These cases protect the R08 refusal and retry boundary while
+leaving delivery/recovery and canonical seat selection to their owning modules.
 
 ### Conventions
 
@@ -62,7 +67,11 @@ to removed methods are superseded by this current inventory.
 | Non reaction action revalidates current topology and landed episode | `test_non_reaction_action_revalidates_current_topology_and_landed_episode` | mcp/tests/test_state_signal_relay.py:284-344 |
 | Busy manager holds at boundary then lands exactly once | `test_busy_manager_holds_at_boundary_then_lands_exactly_once` | mcp/tests/test_state_signal_relay.py:346-412 |
 | Owner rebinding after manager replacement | `test_owner_rebinding_after_manager_replacement` | mcp/tests/test_state_signal_relay.py:414-431 |
-| No done signal for killed or hung seats | `test_no_done_signal_for_killed_or_hung_seats` | mcp/tests/test_state_signal_relay.py:433-451 |
+| Master-bound reviewer reaches the current manager after replacement | `test_master_exit_reviewer_signal_reaches_current_manager` | mcp/tests/test_state_signal_relay.py:437-465 |
+| Missing or ambiguous parent topology fences one subject while preserving an unrelated finding | `test_topology_refusal_fences_one_subject_and_keeps_unrelated_finding` | mcp/tests/test_state_signal_relay.py:467-496 |
+| Owner disappearance after finding revalidation leaves the source eligible and unmarked | `test_owner_disappearance_after_revalidation_keeps_source_eligible` | mcp/tests/test_state_signal_relay.py:498-535 |
+| Action-time topology refusal fences the subject without a marker | `test_action_topology_refusal_fences_subject_without_marker` | mcp/tests/test_state_signal_relay.py:537-554 |
+| No done signal for killed or hung seats | `test_no_done_signal_for_killed_or_hung_seats` | mcp/tests/test_state_signal_relay.py:556-574 |
 
 ## Cross-Repo References
 
@@ -73,6 +82,8 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: reconciled the retained relay test account with the current R08 replacement, topology-refusal, owner-disappearance, and no-marker cases. The card records scenario ownership and source anchors without claiming execution or acceptance.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 

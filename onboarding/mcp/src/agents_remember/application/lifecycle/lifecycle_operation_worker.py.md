@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T17:15:00+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -65,9 +65,9 @@ that contract; a cancelled or completed record returns without replaying the ope
 publication goes through the durable store and typed terminal result, not a worker-authored queue
 release or repair. This preserves the journal as the recovery authority.
 
-cit:([`main`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:530-538)
-cit:([`run_worker`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:486-519)
-cit:([`fail`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:288-315)
+cit:([`main`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:488-496)
+cit:([`run_worker`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:444-477)
+cit:([`fail`], mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:257-284)
 
 ### Conventions
 
@@ -93,7 +93,7 @@ The worker projects retained private preparation separately from consumed approv
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `terminal_operation_record` boundary implements the preparation contract above. | "def terminal_operation_record" | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:388-460 |
+| The current `terminal_operation_record` boundary implements the preparation contract above. | "def terminal_operation_record" | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:346-346 |
 
 ## Docs References
 
@@ -101,7 +101,7 @@ The configured Domain Documentation registry is empty. No external documentation
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:1-527 |
+| No external domain source is required to establish this repository-owned implementation. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:65-65 |
 
 ## Repo-Internal References
 
@@ -109,9 +109,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:1-527 |
-| Profile resolution at execution and forwarding into closeout/integration common args. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:312-361 |
-| `OperationRuntime.fail` routes an unclassified outer failure through the typed terminal rail-failure envelope when a durable record exists. | `fail`; `terminal_worker_failure_result` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:282-309; mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:288-295 |
+| The module's concrete API, control flow, and validation boundary are implemented here. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:65-65 |
+| Profile resolution at execution and forwarding into closeout/integration common args. | `execute_operation` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:287-330 |
+| `OperationRuntime.fail` routes an unclassified outer failure through the typed terminal rail-failure envelope when a durable record exists. | `fail`; `terminal_worker_failure_result` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:257-284 |
 
 ## Cross-Repo References
 
@@ -120,9 +120,17 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:1-527 |
+| No meaningful cross-repository reference applies. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:65-65 |
 
 ## Update History
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "def terminal_operation_record" repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:346-346. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `HEARTBEAT_SECONDS` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `HEARTBEAT_SECONDS` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `execute_operation` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:287-330. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `HEARTBEAT_SECONDS` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `main` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:488-496. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `run_worker` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:444-477. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `fail` repointed to mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:257-284. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,7 @@ request.
 | Candidate and protected-ref safety | `test_git_command.py`, `test_integration_branch_authority.py`, `test_integration_ref_transaction.py` | Real Git identity, private commits, hooks, race preservation and exact recovery. |
 | Registry/certificate semantics | `test_certification_rail_registry.py`, `test_gate_certificate_authority.py` | Typed plan/result contracts and dependency-aware reuse, not a live producer claim. |
 | Memory preparation and repair | `test_memory_quality_runs.py`, `test_citation_document_transaction.py`, `test_memory_citation_fix_scopes.py` | Exact-pair revalidation, document isolation, conflict refusal and preserved evidence. |
+| State-signal structural routing | `test_state_signal_relay.py` | Action-time current-manager replacement, per-subject topology refusal, and no-row/no-marker behavior while an owner is absent. |
 | Incremental memory scope | `test_memory_incremental_scope_compiler.py` | Dependency-complete work and exact reuse remain non-accepting with final-full pending. |
 | Native submission and IPC | `test_harness_submission_authority.py`, `test_harness_control_ipc.py` | One request authority, idempotence, withdrawal races and ambiguous receipt reconciliation. |
 | Conversation projection and assets | `test_conversation_active_service.py`, `test_conversation_control_attachments.py` | Ordering, honest pagination, one-use assets and unknown-outcome retention. |
@@ -107,6 +108,10 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-09-08T16:17:10+02:00 — CCR-L38 source-grounded preparation: recorded the two frozen registered admission/route-review checks and reconciled the retained test-lane counts from 177 to 179 files. This records candidate behavior and preparation evidence only; formal review and acceptance remain with closeout/aggregation owners.
+
+- 2026-09-08T14:38:13+02:00 — 260831-LOCR-L08 curator: independently re-read the existing final-catalog and prepared-memory adapter references against current source; retained both claims and corrected their source ranges.
+
+- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: added the retained state-signal structural-routing test surface to the route map, covering current-manager replacement and local refusal/retry boundaries without claiming execution evidence.
 
 - 2026-09-06T21:56+00:00 — Reconciled the governing route against IAS d3610903 and retained source/card evidence. Replaced obsolete host-test prohibitions, coverage floors and deleted-suite claims with the current preparation/development/certification boundaries. Existing history and verification pins remain preserved; this is semantic memory preparation, not acceptance.
 

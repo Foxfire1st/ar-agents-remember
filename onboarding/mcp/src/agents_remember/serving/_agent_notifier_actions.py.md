@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/_agent_notifier_actions.py`                                        |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-06T22:11:05+00:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -25,13 +25,15 @@ Expiry batching first requires a source id and a still-pending row. Rebind expir
 
 L23 batches independent inbox expiry transitions through one durable `transition_many` write while preserving per-finding order, event emission, readdressing, and skip results.
 
+State-signal emission revalidates the current finding, derives its structural owner at action time from the subject's current task-document binding, and refuses a role/document-only address when no current occupant has an agent id. The source remains eligible for a later sweep in that case. `TaskDocumentRefError` is contained at both ordinary action and expiry-preparation boundaries so malformed topology fences only that subject. cit:([`_emit_state_signal`, `act_on_finding`, `act_on_findings`], mcp/src/agents_remember/serving/_agent_notifier_actions.py:455-523; mcp/src/agents_remember/serving/_agent_notifier_actions.py:698-716; mcp/src/agents_remember/serving/_agent_notifier_actions.py:728-747).
+
 ### Logic
 
 `_rebind_due` rewrites a pending row's structural address/owner to the current qualified occupant
 before delivery. Expiry and unresolved paths write explicit terminal snapshots. State-signal,
 compound-idle, and non-reaction actions use the same structural routing and shared whole-message
 delivery; boundary drain records adapter acknowledgement.
-`act_on_finding` contains typed occupancy/routing failure to the one finding as a skipped result.
+`act_on_finding` contains typed occupancy/routing/task-document failure to the one finding as a skipped result.
 `act_on_findings` applies the same containment before expiry batching, so an ambiguous expiry
 mailbox cannot abort preparation or prevent unrelated expiry transitions and the sweep heartbeat.
 
@@ -62,15 +64,17 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Due rebinding updates and redelivers the current structural owner. | `_rebind_due` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:177-221 |
-| State-signal action uses the durable structural message path. | `_emit_state_signal` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:452-515 |
-| Ordinary action-time structural failures become a skipped result for that finding only. | `act_on_finding` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:692-710 |
-| Expiry preparation contains an ambiguous or malformed route before batching other valid transitions. | `act_on_findings` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:722-755 |
+| State-signal action revalidates and posts through the current structural owner, refusing an address without a current occupant. | `_emit_state_signal` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:455-523 |
+| Ordinary action-time structural and task-document failures become a skipped result for that finding only. | `act_on_finding` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:698-716 |
+| Expiry preparation contains an ambiguous or malformed route before batching other valid transitions. | `act_on_findings` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:728-747 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: reconciled state-signal action-time structural-owner derivation, no-current-occupant publication refusal, and per-subject `TaskDocumentRefError` fencing with the current source. Existing delivery, persistence ordering, and replacement semantics remain the shared boundary.
 
 - 2026-09-06T22:11:05+00:00 — Preserved current source-verified notifier/reclamation semantics from retired test cards; historical claims are not active coverage and verification pins are unchanged.
 

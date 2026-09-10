@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -168,6 +168,12 @@ strict catalog/control-plane readers; no dual-schema compatibility reader remain
 predicate helpers consume the existing `TaskHierarchy` protocol, while production constructs the
 filesystem-backed `TaskDocumentTopology`; this preserves one hierarchy authority without forcing
 callers to depend on its concrete implementation.
+
+State-signal actions revalidate the subject's current task-document binding and derive the structural
+owner immediately before posting. A role/document address without a current occupant is left
+eligible for a later sweep and cannot create a durable row or emitted marker; a typed task-document
+refusal fences only that subject so unrelated findings continue. The canonical structural owner and
+shared delivery path remain the authorities for replacement, ambiguity, and boundary handling.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
@@ -891,6 +897,8 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+
+- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

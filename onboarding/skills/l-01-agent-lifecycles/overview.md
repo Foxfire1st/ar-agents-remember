@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -136,7 +136,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 | --- | --- | --- |
 | Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:473-473; skills/l-01-agent-lifecycles/SKILL.md:422-422; skills/l-01-agent-lifecycles/SKILL.md:466-466 |
 | The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
 | The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:295-295 |
@@ -176,6 +176,8 @@ No lifecycle topology or authority changed. The curator brief now demonstrates t
 discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
 
 ## Update History
+- 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
+
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

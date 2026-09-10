@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -117,7 +117,7 @@ Workers provide targeted checks and curators provide scoped onboarding checks wi
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:146-213 |
+| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "# Lifecycle — Curator"; "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
 | The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
@@ -177,6 +177,8 @@ document applicable targeted checks before handoff. Task-document authority and 
 review limit remain in force.
 
 ## Update History
+- 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
+
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current review-phase,

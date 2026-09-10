@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ envelope. These revisions have different purposes and must not be substituted fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:338-432; mcp/src/agents_remember/models/lifecycles/operation.py:518-544; mcp/src/agents_remember/models/lifecycles/operation.py:547-550; mcp/src/agents_remember/models/lifecycles/operation.py:563-569 |
+| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:343-439; mcp/src/agents_remember/models/lifecycles/operation.py:525-553; mcp/src/agents_remember/models/lifecycles/operation.py:556-559; mcp/src/agents_remember/models/lifecycles/operation.py:562-568 |
 | The public envelope carries the wait cursor beside versioned identity and component bindings. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
 
 ## L34 Preparation Ownership

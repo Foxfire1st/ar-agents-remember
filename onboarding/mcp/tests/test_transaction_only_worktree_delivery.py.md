@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_transaction_only_worktree_delivery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T07:24:09+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -46,9 +46,9 @@ creates no merge commit or merge-hook path.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public closeout delivers code, memory, and ledger while acceptance helpers are forbidden. | `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py |
-| Public integration publishes the prepared pair without acceptance helpers and without configured hooks. | `test_public_integration_merges_prepared_pair_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py |
-| Source movement refuses before protected pair publication. | `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py |
+| Public closeout delivers code, memory, and ledger while acceptance helpers are forbidden. | `test_public_closeout_commits_code_memory_and_ledger_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:216-292 |
+| Public integration publishes the prepared pair without acceptance helpers and without configured hooks. | `test_public_integration_merges_prepared_pair_without_acceptance_tools` | mcp/tests/test_transaction_only_worktree_delivery.py:293-337 |
+| Source movement refuses before protected pair publication. | `test_public_integration_ref_movement_refuses_before_pair_merge` | mcp/tests/test_transaction_only_worktree_delivery.py:338-388 |
 
 ## Update History
 
