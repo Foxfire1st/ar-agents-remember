@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/activation` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash |  `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate |  2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,13 @@ selection, release, and synchronization remain the existing transaction owners.
 - Commit-derived verification metadata awaits governed closeout; route membership and claims are
   reconciled to the frozen candidate, and generated indexes are refreshed in this curator pass.
 
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
 ## Update History
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound the shared admission route after oversized parser-detail projection was bounded; selector ownership remains unchanged and no acceptance claim is made.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound selector route citations after bounded activation diagnostics landed; route ownership and mutation boundaries remain unchanged, with no acceptance claim.
 - 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added `atomic_series_admission.py` to the activation route map and recorded its pure admission-projection boundary. The source remains uncommitted; verification metadata remains closeout-owned.

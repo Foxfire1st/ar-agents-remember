@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated            | 2026-08-31T20:30+02:00 |
-| lastVerifiedCommitHash | `205c0b664e7dbf6efd07c2c811d0d8295aa07c91` |
-| lastVerifiedCommitDate | 2026-08-31T20:38:14+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../overview.md`             |
 
 ## Governing Overview
@@ -76,9 +76,10 @@ developer approval; the packet names the repo, build mode, branch policy,
 source branch, work branch/worktree name, memory mode, landing path, and risks.
 
 The worktree closeout section is deliberately a routing section, not a parallel
-closeout doctrine. It sends the approval gate, missing-onboarding check, code
-commit, onboarding/entity refresh, memory quality gate, memory content commit,
-ledger update, and ledger commit to `c-12-closeout` skill. For worktree-backed tasks, `c-09-git-worktree-manager` skill
+closeout doctrine. It sends the applicable authority and concrete code, memory-content,
+and ledger transaction inputs to `c-12-closeout` skill. Quality, test, memory-quality,
+certification, and review evidence may be attached when explicitly requested, but no such
+operation is an automatic closeout or integration prerequisite. For worktree-backed tasks, `c-09-git-worktree-manager` skill
 contributes the task `contract.md` used by `worktree_closeout_preview` and
 `worktree_closeout_apply`; after closeout, `c-09-git-worktree-manager` skill resumes ownership for
 integration and cleanup. Since L8 cycle 6 the Integration section also names the
@@ -209,6 +210,11 @@ Memory-merge validation preserves exact parent rows; older same-code rows remain
 Source claims are reconciled to the frozen synchronized copy. Verification remains closeout-owned
 until the real code commit exists.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+Current contract: closeout and integration are Git transactions over the authorized code, memory-content, and ledger legs, with preview, conflict, and ref safeguards. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Targeted checks, certification, full quality, full tests, full memory quality, and independent review are contextual evidence or explicit operations; they are not automatic c-09 prerequisites.
+
 ### Docs References
 
 No external documentation is needed for this repository-local skill.
@@ -223,11 +229,11 @@ No external documentation is needed for this repository-local skill.
 | --- | --- | --- |
 | `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. | `# c-09-git-worktree-manager Git Worktree Manager` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:6-316 |
 | `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-372 |
-| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:203-203 |
-| The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:129-129 |
+| The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. | "The recorded leaf" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:204-204 |
+| The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. | "The Worktree Intent Gate must name:" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:130-130 |
 | Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. | `## Pre-Worktree Intake` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:103-162 |
 | Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority. | `## Integration`; `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376; mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
-| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:365-365 |
+| Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`. | "Before previewing integration" | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:373-373 |
 | Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout. | `## Integration` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:330-376 |
 | Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval. | `## Lifecycle Finalization And Cleanup` | mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:377-456 |
 
@@ -291,6 +297,10 @@ source, and an already-journaled no-door operation remains recoverable only as t
 generation.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "The recorded leaf" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:204-204. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "The Worktree Intent Gate must name:" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Before previewing integration" repointed to mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:373-373. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-31T20:30+02:00 — 260831-DER: synchronized the direct-execution boundary. Ordinary
   series/master integration never requires `directExecutionEnabled`; only an explicitly selected

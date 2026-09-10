@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T10:05+02:00|
-| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
-| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,7 +87,12 @@ cancellation route.
 
 260831-CCR-L18 added an explicit `termination-required` branch in `legal_operation_controls` (line 98): a record whose status is `termination-required` projects exactly one `cancel` control (“Complete exact same-generation cancellation.”) instead of falling into the generic worker-exit-unproven retry path. The state matrix reserves that cell for `cancel` only, and the exit-proven cancelled state keeps its same-generation cancel behavior unchanged.
 
+## CCR-L42 current candidate
+
+Public controls now use `resume` for a closeout successor: recovery-required closeouts offer resume, failed or input-required closeouts expose resume before cancel when eligible, and cancelled closeouts expose resume. Non-closeout recovery and direct-landing successor semantics remain independent; no revise alias is introduced.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Public controls now use `resume` for a closeout successor: recovery-required closeouts offer resume, failed or input-required closeouts expose resume before cancel when eligible, and cancelled closeouts expose resume. Non-closeout recovery and direct-landing successor semantics remain independent; no revise alias is introduced.
 
 - 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the explicit `termination-required` → exact same-generation cancel control cell. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
 

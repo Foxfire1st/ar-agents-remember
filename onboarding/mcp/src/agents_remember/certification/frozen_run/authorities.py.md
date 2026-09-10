@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/frozen_run/authorities.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T14:47:06+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,6 +66,11 @@ No cross-repository implementation boundary is owned by this file.
 | --- | --- | --- |
 | No cross-repository reference is required. | N/A | N/A |
 
+## CCR-L42 current candidate
+
+CandidateAuthorityEnvelope now optionally carries `admittedMemoryTree`. The field is omitted when absent so retained legacy authority bytes and digests stay stable; fresh certification observations bind the closeout door's admitted memory candidate tree.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: CandidateAuthorityEnvelope now optionally carries `admittedMemoryTree`. The field is omitted when absent so retained legacy authority bytes and digests stay stable; fresh certification observations bind the closeout door's admitted memory candidate tree.
 
 - 2026-09-06T14:47:06+00:00 — Created from the actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented retained authority and its validation boundaries. This source verification does not assert gate execution or CCR acceptance.

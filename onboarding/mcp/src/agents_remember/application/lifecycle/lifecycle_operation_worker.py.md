@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T17:15:00+02:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -29,6 +29,18 @@ failure through the typed terminal rail-failure envelope
 (`terminal_worker_failure_result` from `terminal_rail_failure.py`) whenever the durable
 record exists and no organizational-repair or ledger-recovery pending payload applies, so an
 available typed rail result is journaled instead of collapsing to the generic worker guard.
+
+## CCR-R12@v5 Current Transaction Boundary
+
+At code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`, the detached worker executes the
+normal closeout and integration transactions through the existing typed owners. It carries
+explicit approval, candidate/source identity, gate-policy snapshots, leases, and compare-and-swap
+ref safety, but it does not invoke strict code quality, memory quality, selected certification,
+curator coherence, or independent review as a normal-operation prerequisite. Closeout delegates
+the staged code, external-memory, and ledger transaction to the existing commit/recovery owners;
+integration transfers a prepared code-memory pair through the existing ref publication path.
+Full suites remain an explicit developer request. Retained certification vocabulary in shared
+models is not evidence that the normal worker selected or executed a certification gate.
 
 ## Code Commentary
 
@@ -111,6 +123,7 @@ protocol claim.
 | No meaningful cross-repository reference applies. | `HEARTBEAT_SECONDS` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:1-527 |
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
 

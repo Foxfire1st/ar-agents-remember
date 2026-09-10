@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T17:47:39+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,8 @@ review altitude. For a plane-owned reviewer dispatch, the caller's canonical doc
 passed as the child generation's structural parent and supplied to the dispatch transaction as the
 expected parent. Ambient dispatch may create ordinary task roles, but cannot invent the missing
 owner of a polymorphic reviewer manifestation.
+
+`CCR-L42` parity validation is external to these dispatch operations: the current candidate retains the structural dispatch behavior documented above while curator preparation and closeout independently check this sidecar and its governing route through the shared memory-refresh validator.
 
 ### Conventions
 
@@ -130,6 +132,7 @@ composed through `DispatchBriefReceiptStore`, keeping dispatch commit evidence s
 general terminal lifecycle surface while reusing the same atomic catalog storage boundary.
 
 ## Update History
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No content impact: this source behavior and source-to-card meaning remain unchanged while the shared sidecar and route body validators run independently. No acceptance claim is made.
 
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation rebound the shared bootstrap citation to the full typed reread/refusal seam; dispatch ownership is unchanged and no acceptance claim is made.
 - 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound the shared bootstrap citation to the current `ensure_master_series_contract` definition. Verification metadata remains closeout-owned; no acceptance claim.

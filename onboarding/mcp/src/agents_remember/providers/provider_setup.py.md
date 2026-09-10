@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -179,7 +179,7 @@ provider stack is POSIX-hosted anyway.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:925-962; mcp/src/agents_remember/worktrees/modules/start.py:1075-1107 |
+| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:988-1025; mcp/src/agents_remember/worktrees/modules/start.py:1138-1170 |
 | Benchmark preparation calls package-local provider setup instead of a source script. | `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Provider lifecycle calls are captured through package-local command capture. | `run_package_main` | mcp/src/agents_remember/kernel/primitives/command_capture.py:12-39 |
 | CGC seed orchestration and bundle rewriting now live outside the facade. | `cgc_seed_bundle`, `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
@@ -190,6 +190,8 @@ provider stack is POSIX-hosted anyway.
 
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 22 citations (citation_anchor_missing=10, citation_prose_not_in_cit_form=0, citation_source_malformed=12); final scoped citation check clean.
 - 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no

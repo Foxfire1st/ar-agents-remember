@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/memory_scope.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T07:05+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,6 +33,11 @@ authority, and code-base commit. There is deliberately no leaf-to-official fallb
 
 `MemoryScopeIdentity` contains only frozen, result-affecting authority facts. `MemoryScope` pairs
 that identity with the resolved `Path` and coordination objects required to execute the check.
+Acceptance-oriented scope may also retain a selected prepared code view and its history commits: the
+prepared physical root is used only for quality reads when it matches the future candidate tree,
+while the retained predecessor commits anchor current-candidate provenance; a mismatched prepared
+tree yields to current logical candidate bytes, and an incomplete selected output becomes a typed
+refusal (`memory_scope.py:172-274`, `_resolve_prepared_code_source`:322-361).
 
 Acceptance-oriented quality calls use `resolve_memory_candidate_scope`: configured admission
 still validates repository/enclosure authority, then the canonical pair resolver validates the
@@ -41,9 +46,9 @@ identity returns the exact contract-addressed sync route before another scan or 
 leaf code base is temporary comparison provenance only. Bare configured-repository calls neither
 inherit that leaf provenance nor silently replace an invalid requested leaf.
 
-cit:([`resolve_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:134-157)
-cit:([`revalidate_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:160-193)
-cit:([`_leaf_scope`], mcp/src/agents_remember/application/memory_scope.py:196-234)
+cit:([`resolve_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:172-204)
+cit:([`revalidate_memory_candidate_scope`], mcp/src/agents_remember/application/memory_scope.py:207-274)
+cit:([`_leaf_scope`], mcp/src/agents_remember/application/memory_scope.py:277-319)
 
 ### Invariants And Boundaries
 
@@ -52,6 +57,8 @@ cit:([`_leaf_scope`], mcp/src/agents_remember/application/memory_scope.py:196-23
 - Leaf scope is all-or-nothing: missing, removed, disabled, or cross-repository memory is a loud
   refusal, not an implicit official-memory check.
 - The identity records resolved roots and temporary provenance before a background run is admitted.
+- Prepared code is selected from the retained closeout output only when its candidate tree matches;
+a stale prepared tree can preserve history context without replacing current logical candidate bytes.
 - The code-base commit is comparison provenance only; this module never writes verification stamps.
 
 ### Todos
@@ -66,9 +73,11 @@ No configured Domain Documentation source applies; the authority contract is rep
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Frozen scope identity includes authority and both resolved trees. | `MemoryScopeIdentity` | mcp/src/agents_remember/application/memory_scope.py:37-46 |
-| Official scope resolves configured repository and onboarding authority. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:51-88 |
-| Leaf scope rejects cross-repository, non-leaf, missing-memory, and removed-worktree cases without fallback. | `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:91-143 |
+| Frozen scope identity includes authority and both resolved trees. | `MemoryScopeIdentity` | mcp/src/agents_remember/application/memory_scope.py:60-68 |
+| Official scope resolves configured repository and onboarding authority. | `resolve_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:105-142 |
+| Leaf scope rejects cross-repository, non-leaf, missing-memory, and removed-worktree cases without fallback. | `resolve_leaf_memory_scope` | mcp/src/agents_remember/application/memory_scope.py:145-169 |
+
+| Acceptance scope retains a proved prepared code view and predecessor-history anchors without replacing current candidate identity. | `_resolve_prepared_code_source`; `resolve_memory_candidate_scope` | mcp/src/agents_remember/application/memory_scope.py:172-204; mcp/src/agents_remember/application/memory_scope.py:322-361 |
 
 ## Cross-Repo References
 
@@ -94,6 +103,14 @@ caller does not reconstruct missing values or silently substitute another failur
 An invalid projector result is therefore an implementation defect that remains loud.
 
 ## Update History
+- 2026-09-10T03:45:55+02:00 — CCR-L42 final predecessor-history curation: reconciled current source behavior, retained-history provenance, and exact citation extents; verification metadata remains closeout-owned.
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented selected prepared-source reads and retained history anchoring while preserving current candidate identity; verification metadata remains closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `MemoryScopeIdentity` repointed to mcp/src/agents_remember/application/memory_scope.py:53-62. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_memory_scope` repointed to mcp/src/agents_remember/application/memory_scope.py:98-135. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_memory_candidate_scope` repointed to mcp/src/agents_remember/application/memory_scope.py:165-193. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `revalidate_memory_candidate_scope` repointed to mcp/src/agents_remember/application/memory_scope.py:196-258. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `_leaf_scope` repointed to mcp/src/agents_remember/application/memory_scope.py:261-301. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-30T07:05+02:00 — MCAR-L03 A008: removed caller-owned fallback reconstruction from
   configured refusal translation. The canonical projector is now the single schema authority.

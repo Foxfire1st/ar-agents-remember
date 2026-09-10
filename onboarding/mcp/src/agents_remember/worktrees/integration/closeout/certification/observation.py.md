@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T14:58:25+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,6 +71,11 @@ No cross-repository implementation or external protocol is owned here.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No separately configured cross-repository source is used for this card. | — | — |
+## CCR-L42 current candidate
+
+Certification observation now binds `admittedMemoryTree` from the closeout door's memory candidate tree and omits it when no tree is admitted, preserving legacy authority projections while recording the fresh memory-tree owner.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Certification observation now binds `admittedMemoryTree` from the closeout door's memory candidate tree and omits it when no tree is admitted, preserving legacy authority projections while recording the fresh memory-tree owner.
 
 - 2026-09-06T14:58:25+00:00 — Created after full source review at `c69d5171187fa1957025e393270db9f5a864ab14`. Records current implementation and remaining composition boundaries; source verification is not gate execution, delivery or acceptance.

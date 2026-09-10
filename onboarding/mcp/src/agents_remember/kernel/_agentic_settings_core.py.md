@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -78,7 +78,12 @@ The quality-gate executor remains closed to Dagger. An omitted memory cap means 
 container runtime owns RAM and swap; an explicit cap reaches the graph inner wrapper. No host
 systemd or address-space fallback is part of lifecycle acceptance.
 
+## CCR-L42 current candidate
+
+The review budget now has one `MAX_REVIEW_ROUNDS = 3` authority constant, and the seeded loop default uses it so a settings value cannot silently authorize a fourth review.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The review budget now has one `MAX_REVIEW_ROUNDS = 3` authority constant, and the seeded loop default uses it so a settings value cannot silently authorize a fourth review.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): removed the executor-era claims -- QualityExecutor deleted, KNOWN_QUALITY_GATE_FIELDS narrowed to memoryCapBytes, QualityGateSettings carries only the memory cap; executor identity moved into the repository certification profile.
 
 

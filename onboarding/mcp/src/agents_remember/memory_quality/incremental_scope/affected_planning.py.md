@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
-| lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,9 @@ manifest digest, complete current checker registry with full-only dispositions,
 (`_admit_gate_certificates`, lines 196-236: prefix order, code-candidate match, reuse of exactly
 those identities with `firstGateToRun == 5` and `invalidatedGates == (5,)`), compiles one
 `AffectedUnitPlan` per incremental document-by-checker pair with the reverse dependency closure
-(`_compile_units`/`_unit`/`_dependency_closure`, lines 239-331), builds the member population
+(`_compile_units`/`_unit`/`_dependency_closure`, lines 239-331) excludes historical Git-tree
+members from executable document units while retaining them in the member population and
+dependency graph, then builds the member population
 (`_compile_members`, lines 334-348), keeps pending full-only dispositions visible, unions the
 affected coherence subrecords from the R21 changes, and refuses if the candidate moved during
 planning (`candidate-moved-during-affected-planning`, line 124-129). All refusals are typed
@@ -83,15 +85,23 @@ and exact subresult reuse without fallback.
 | One unit per incremental document/checker is compiled with a transitive reverse dependency closure. | `_compile_units`; `_unit`; `_dependency_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:239-331 |
 | Affected planning remains production-owned; deleted fixture coverage does not constitute current admission evidence. | `compile_affected_closure_plan` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:65-130 |
 
+| Historical Git-tree members remain in attention while `_compile_units` excludes them from execution. | `_compile_units` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:239-270 |
+
 ## Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate certificate and reuse contracts come from the R21 owners inside this repository. | `GateCertificate`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:221-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-164 |
+| Gate certificate and reuse contracts come from the R21 owners inside this repository. | "class GateCertificate(FrozenContractModel):"; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:219-236; mcp/src/agents_remember/certification/certificate_invalidation.py:128-175 |
 
 ## Update History
+
+- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: replaced the ambiguous certificate
+  type-name anchor with the unique class declaration and re-anchored the reuse planner to its
+  current function range; planning semantics and verification metadata remain unchanged.
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented the planner boundary between historical attention nodes and current executable units; verification metadata remains closeout-owned.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming references and schema ownership against the reviewed candidate; unchanged source retains its genuine verification stamp.
 

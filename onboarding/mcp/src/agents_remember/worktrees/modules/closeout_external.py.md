@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T22:00:40+00:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,19 +18,28 @@
 
 Owns the external-memory and ledger phase of journaled worktree closeout after code acceptance. It refreshes governed memory, proves or creates the memory-content commit, then proves or creates the ledger commit using the immutable normalized messages.
 
+## CCR-R12@v5 Current External Transaction Boundary
+
+`external_closeout_commits` performs the mechanical closeout leg after code acceptance. It refreshes
+existing onboarding metadata, route-overview metadata, entity fingerprints, and generated route
+indexes through the raw refresh helpers, then commits memory content and the ledger mapping in
+sequence. It does not run memory quality, curator coherence, strict code quality, or selected
+certification in the normal transaction. Both created commits use the existing staged-index helper
+with `--no-verify`, so configured pre-commit hooks are not invoked by these transaction commits;
+the focused transaction test proves this boundary. A crash between the two commits remains
+journal-recoverable.
+
 ## Code Commentary
 
 ### Logic
 
 For ordinary external-memory leaves, `external_closeout_commits` receives the already validated
-`EffectiveCloseoutInput` and one `ExternalCloseoutEvidence` value containing the reversible
-memory-quality result plus the exact validated coherence no-impact projection. It first resumes any
-proven output, then refreshes onboarding metadata, entity fingerprints, route overview metadata,
-and generated route indexes and reruns memory quality. The same typed values are passed through the
-refresh, memory, ledger, and resume boundaries; no helper rereads optional transport or reparses a
-curator report. If content is dirty it begins memory mutation evidence and commits with the
-effective memory message. If content is already mapped or clean, it proves reachability and
-reports a verified-existing outcome instead of fabricating mutation evidence.
+`EffectiveCloseoutInput` and the accepted code change. It first resumes any proven output, then
+refreshes onboarding metadata, entity fingerprints, route overview metadata, and generated route
+indexes. No helper reruns memory quality or reparses a curator report on this path. If content is
+dirty it stages and commits with the effective memory message; if content is already mapped or
+clean, it proves reachability and reports a verified-existing outcome instead of fabricating
+mutation evidence.
 
 The ledger leg follows sequentially: an existing exact mapping is reused; otherwise the function announces ledger intent, writes and stages `memory.md`, binds the expected tree, commits with the explicit ledger message, and proves the commit. There is no generated ledger subject or `or` fallback. Series closeout remains its exact named-ref flow.
 
@@ -74,6 +83,7 @@ The current source seams include `external_closeout_commits`. Closeout uses clos
 | The current module exposes `external_closeout_commits` at this ownership boundary. | `external_closeout_commits` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96 |
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-06T22:00:40+00:00 — Corrected current journal recovery semantics against production source while preserving previous verification pins. Source inspection only.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T16:24:06+02:00 |
-| lastVerifiedCommitHash |  `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate |  2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,12 @@ No cross-repository source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 
+## CCR-L42 current candidate
+
+Atomic-series admission refusals now preserve the full source detail directly in retry arguments and public summary/detail; the former bounded-detail truncation wrapper is gone, while activation ownership and retry routing remain unchanged.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Atomic-series admission refusals now preserve the full source detail directly in retry arguments and public summary/detail; the former bounded-detail truncation wrapper is gone, while activation ownership and retry routing remain unchanged.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound transaction citations to the current selector publication and continuation/cancellation definitions; transaction ownership is unchanged and no acceptance claim is made.
 - 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed selector publication and continuation/cancellation definitions after the frozen activation additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented refusal projection, retained observations, and the unchanged selector/sync transaction boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.

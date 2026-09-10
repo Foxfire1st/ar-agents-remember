@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-08T17:47:39+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -237,13 +237,13 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:163-200 |
-| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/modules/start.py:139-169; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-512 |
+| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502; mcp/src/agents_remember/worktrees/modules/start.py:136-163 |
 | The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201 |
 | Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
 | Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:58-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:60-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:465-467 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:468-470 |
 | `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
 
 ## Cross-Repo References
@@ -293,7 +293,7 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:95-104; mcp/src/agents_remember/worktrees/modules/start.py:107-108; mcp/src/agents_remember/worktrees/modules/start.py:111-136 |
+| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:92-101; mcp/src/agents_remember/worktrees/modules/start.py:104-105; mcp/src/agents_remember/worktrees/modules/start.py:111-136 |
 
 ## 260821-CLIVE Start Reservation And Task-CAS Boundary
 
@@ -307,6 +307,9 @@ the same reservation; conflicts name task-authority or recovery actions. A succe
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `status_result`; "def atomic_series_status_projection(" repointed to mcp/src/agents_remember/worktrees/modules/start.py:136-163; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the status facade's activation projection citation to its current bounded-detail definition; status remains read-only and no acceptance claim is made.
 - 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound the status projection citation to its current definition after the admission projection split. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.

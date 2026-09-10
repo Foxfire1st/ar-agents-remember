@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -116,6 +116,11 @@ the `c-10-adopt-memory-baseline` skill, and context resolution to the `c-08-ar-c
 
 No open file-local todos.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+Repository certification profiles and quality operations are optional explicit setup requests. Their absence does not block routine closeout or integration; this installer only reports configured setup and delegates any requested certification or memory/bootstrap work to its owning workflow.
+
 ## Docs References
 
 Harness-native setup details now live in the install guides and starter packages.
@@ -145,6 +150,7 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new Stage 3 (Repository Certification Profile) and the renumbered Stage 4/5/6 in the packaged install-and-onboard skill.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the settings interview with the sole

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T05:20+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -54,13 +54,19 @@ Catalog files live beside the templates under `criteria/` and are bound per revi
 
 ### Invariants And Boundaries
 
-The standing list MUST run every time the catalog binds; amendments land only through the
+When a plan review is explicitly requested, the standing list runs and reports each criterion; the
+catalog does not create a routine closeout or integration gate. Amendments land only through the
 promotion ratchet on the loop owner's (the orchestrator's) acceptance.
 
 ### Todos
 
 PR-4 retains topological checks for explicit graphs. PR-7 is a candidate criterion, not an
 immediate mechanization TODO.
+
+
+## CCR-R12@v5 Review Scope
+
+This criteria catalog supplies evidence only when the corresponding review is explicitly requested. It does not create a closeout or integration prerequisite; routine handoff uses the worker and curator targeted/scoped check records and preserves any failed or not-run state.
 
 ### Docs References
 
@@ -133,7 +139,13 @@ Runtime activation serialization is not dependency evidence. PR-4 must reject a 
 the selector's one-exposed-master property into a false full-integration edge or implies that a
 paused master was terminalized.
 
+## CCR-L42 current candidate
+
+The plan-review criteria now apply exploratory and promotion duties only to a baseline review. Fix-verification uses the sealed plan issue IDs and cannot recensus the plan, add a criterion, or broaden an issue.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The plan-review criteria now apply exploratory and promotion duties only to a baseline review. Fix-verification uses the sealed plan issue IDs and cannot recensus the plan, add a criterion, or broaden an issue.
 
 - 2026-08-26T05:20+02:00 — Corrected generated PR-4 onboarding: graph-less selection is a
   source-pair activation boundary, not a full-integration dependency. Final ranges remain

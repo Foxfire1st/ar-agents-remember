@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,14 @@
 ## Purpose
 
 Seals an atomic block only after every canonical leaf forms one exact journaled code-and-memory landing chain, then records the named series refs without ambient workbench commits.
+
+## CCR-R12@v5 Current Series Boundary
+
+Series closeout and integration remain recording/publication operations over already landed leaf
+transactions. They re-prove canonical membership, exact code/memory ancestry, named-ref identity,
+and authority before recording the pair; they do not create a normal leaf code/memory/ledger
+transaction or invoke strict code quality, memory quality, selected certification, curator
+coherence, or independent review. Full suites are an explicit developer request.
 
 ## Code Commentary
 
@@ -50,7 +58,7 @@ master/leaf/door re-proof and no projection row is completion authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Closeout re-proves canonical completion without the landing lock; integration repeats it under the narrow protected-landing lock. | `publish_closeout_under_authority`, `publish_series_integration_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:41-58; mcp/src/agents_remember/worktrees/series_closeout.py:61-78 |
-| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:81-82; mcp/src/agents_remember/worktrees/series_closeout.py:110-144 |
+| The complete leaf set and exact pair chain are proved before sealing. | `_require_every_atomic_leaf_landed`, `_require_exact_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:88-89; mcp/src/agents_remember/worktrees/series_closeout.py:110-144 |
 | Each leaf enclosure, code edge, and memory edge is bound exactly. | `_atomic_leaf_documents`, `_require_atomic_leaf_landed`, `_atomic_leaf_code_matches`, `_atomic_leaf_memory_matches` | mcp/src/agents_remember/worktrees/series_closeout.py:180-218; mcp/src/agents_remember/worktrees/series_closeout.py:221-250; mcp/src/agents_remember/worktrees/series_closeout.py:253-294; mcp/src/agents_remember/worktrees/series_closeout.py:297-324 |
 | Atomic-master completion resolves the effective nature under the atomic-sequential default. | `_require_atomic_master_complete` | mcp/src/agents_remember/worktrees/series_closeout.py:333-361 |
 | Exact series closeout rejects workbench changes and records the named memory pair. | `refuse_series_workbench_commit`, `exact_series_memory_closeout` | mcp/src/agents_remember/worktrees/series_closeout.py:364-380; mcp/src/agents_remember/worktrees/series_closeout.py:383-415 |
@@ -68,6 +76,9 @@ publication. Door candidate/sprint identities participate in the landed-leaf pro
 projection absence is irrelevant to atomic completion truth.
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for closeout and integration publication callbacks and confirmed that series authority remains as documented. Verification remains closeout-owned.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `3e276f2b2052b641afbee180a472259f21b500df` |
-| lastVerifiedCommitDate | 2026-09-02T14:46:34+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,12 +63,15 @@ None recorded.
 ## Docs References
 
 No configured Domain Documentation source applies; this is repository-internal task authority.
-The governing CCR-R04@v1 packet supplies the invalidation-classification semantics the scope
-union consumes.
+The governing CCR-R04@v1 packet is the task authority for the invalidation-classification
+semantics here:
+`ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R04-v1-mutation-classified-projection-invalidation.md`.
+It is an authority link, not a resolved dependency-version source; current behavior is
+evidenced by the repository-owned references below.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| R04 requires optimistic refresh only for semantic topology/intent/completion changes and zero task-driven queue refresh for evidence/audit-only edits. | "Required Behavior"; "Examples" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R04-v1-mutation-classified-projection-invalidation.md:25-86 |
+| R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union. | "def classify_task_document_mutation("; `resolve_projection_scope_union` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
 
 ## Repo-Internal References
 
@@ -76,7 +79,7 @@ union consumes.
 | --- | --- | --- |
 | The public resolver classifies each change and returns a deterministic old/new sprint union. | `TaskDocScopeChange`; `resolve_projection_scope_union` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:21-35; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
 | Leaf scope is derived through the canonical parent master with the full batch override set. | `_leaf_projection_scopes` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:93-121 |
-| The schema-owned classifier decides whether a delta invalidates projections. | `classify_task_document_mutation`; `TaskDocumentMutationClassification.invalidates_projection` | mcp/src/agents_remember/tasks/document_field_effects.py:317-330; mcp/src/agents_remember/tasks/document_field_effects.py:86-95 |
+| The schema-owned classifier decides whether a delta invalidates projections. | `classify_task_document_mutation`; `TaskDocumentMutationClassification.invalidates_projection` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/tasks/document_field_effects.py:86-95 |
 
 ## Cross-Repo References
 
@@ -107,6 +110,8 @@ completion-readiness) enters the union. Acceptance-evidence and operational-audi
 task truth with no task-driven queue refresh, matching CCR-R04@v1.
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the L04 classifier gate —

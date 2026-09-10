@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `1ad9d51f743c5b17de51cc46d8b29e004736022d` |
-| lastVerifiedCommitDate | 2026-09-02T06:25:51+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -72,7 +72,7 @@ history-order checkers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The checker population is derived from the memory-quality package check catalog. | `AVAILABLE_CHECKS`, `DRIFT_CHECK_NAME` | mcp/src/agents_remember/memory_quality/check.py:31-77 |
+| The checker population is derived from the memory-quality package check catalog. | `AVAILABLE_CHECKS`, `DRIFT_CHECK_NAME` | mcp/src/agents_remember/memory_quality/check.py:31-79 |
 | The one incremental checker is citation range resolution, whose selected-document mode makes it the only executably incremental policy. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64 |
 | The manifest binds `checkerRegistryVersion` into every compiled scope. | `checker_registry_version` | mcp/src/agents_remember/memory_quality/incremental_scope/compiler.py:136-158 |
 

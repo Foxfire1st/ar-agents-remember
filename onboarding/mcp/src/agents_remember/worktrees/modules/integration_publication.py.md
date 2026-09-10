@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/integration_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,11 +18,22 @@
 
 Carries typed preflight state from integration planning into the irreversible publication step.
 
+## CCR-R12@v5 Current Transaction Boundary
+
+`IntegratePreview` and `IntegrationPublication` carry the source-pair, completion, handover, and
+ref-safety facts that publication must recheck. They do not carry a planned normal-operation
+quality gate or certification result. Integration applies the prepared pair with the existing
+authority and compare-and-swap/ref-publication controls; full suites remain an explicit developer
+request.
+
 ## Code Commentary
 
 ### Logic
 
-`IntegratePreview` holds the evaluated seam guard, optional handover warning, and the planned altitude-routed quality gate. `IntegrationPublication` bundles every preflight fact the protected publication must re-verify: the contract, worktree args, locked args, integration sources, integrated commits, the preflight organizational-completion presence, the quality gate, and the handover warning.
+`IntegratePreview` holds the evaluated seam guard and optional handover warning. `IntegrationPublication`
+bundles every preflight fact the protected publication must re-verify: the contract, worktree args,
+locked args, integration sources, integrated commits, the preflight organizational-completion
+presence, and the handover warning.
 
 ### Invariants And Boundaries
 
@@ -51,6 +62,7 @@ The current source seams include `IntegratePreview`, `IntegrationPublication`, `
 | The current module exposes `IntegratePreview`, `IntegrationPublication`, `protected_integration_decision` at this ownership boundary. | `IntegratePreview`; `IntegrationPublication`; `protected_integration_decision` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:29-35; mcp/src/agents_remember/worktrees/modules/integration_publication.py:38-49; mcp/src/agents_remember/worktrees/modules/integration_publication.py:52-60 |
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 

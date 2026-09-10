@@ -6,8 +6,8 @@
 | path | `mcp/tests/closeout_fixture_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T14:56:02+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,16 @@
 ## Purpose
 
 Provides waiting-door, publicly selected-operation, pending-memory, and writer-component fixtures for closeout boundary tests. The separate entry points preserve which authority is real in each scenario: scheduling alone, actual public journal selection, or concrete code/memory/ledger writer behavior.
+
+## CCR-R12@v5 Current Fixture Boundary
+
+The fixture helpers support the transaction-only closeout/integration tests by constructing real
+code, external-memory, ledger, contract, and lifecycle state while keeping acceptance tools out of
+the public apply path. They can patch downstream writers to force a component boundary, but fixture
+selection, review/quality helpers, and pending-memory doubles do not grant normal closeout
+certification authority. The focused transaction test uses these real writers to prove code,
+memory, and ledger delivery and to prove that configured failing pre-commit hooks are not invoked
+by the transaction commit helpers.
 
 ## Code Commentary
 
@@ -87,6 +97,7 @@ The CLIVE waiting-door behavior remains the contract of `selected_fixture`: it d
 - `selected_fixture` creates waiting-door source state for the requested memory mode without granting claim, operation, commit or certification authority.
 - Helpers that start selected lifecycle work use the canonical admission/store owners; component writer helpers do not claim that authority or accepted Gate-5 execution.
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-06T14:56:02+00:00 — Bound the reviewed card body and active citations to actual source commit c69d5171187fa1957025e393270db9f5a864ab14 after checking source-byte equality. Preserved prior history; this verifies memory claims and does not assert additional test execution.
 

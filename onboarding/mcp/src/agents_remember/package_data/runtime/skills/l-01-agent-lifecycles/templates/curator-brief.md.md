@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T08:52+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -32,10 +32,10 @@ runtime address. It requires three-way reconciliation before writing, routes cur
 proper sidecar/overview/entity home, keeps evidence and semantic history distinct, and leaves
 forward-learning observations as report capture candidates unless already ruled and proven.
 
-As the final intake action, the curator must run the full contract-scoped memory-quality call and
-open its one enclosure-local checklist. It repairs every enforced curator-actionable row, applies
-only the stale route indexes named there, and reruns the same full call until the zeroable count is
-clear; dirty-source/commit-derived residuals remain separate before `git diff --check`.
+As the final intake action, the curator runs the affected onboarding checks and records their exact
+scope and passed, failed, blocked, or not-run state. It repairs in-scope content findings and keeps
+dirty-source or commit-derived residuals separate before scoped diff checks; a full memory-quality
+operation is explicit and is not a closeout or integration gate.
 The leaf base is temporary comparison provenance only; real verification stamps and fingerprints
 remain closeout-owned.
 
@@ -44,7 +44,8 @@ remain closeout-owned.
 - Treat canonical `skills/` as the sole template owner and keep this file byte-identical through
   `scripts/sync-skills.py`.
 - Fill every placeholder from durable leaf evidence; never infer change-set or authority from chat.
-- Report completion only after the required curator worklist is empty.
+- Report completion with the affected scoped checks and any failed, blocked, or not-run result visible;
+  a full memory-quality worklist is outside routine closeout/integration.
 - Describe packaged behavior only as synchronized canonical behavior.
 
 ## Invariants And Boundaries
@@ -61,6 +62,11 @@ projection and requires `state=current` for every applicable super-to-master and
 code/external-memory edge. That projection is evidence, not caller-supplied commit authority;
 `dispatch_agent` repeats the task-derived proof and refuses before process creation if lineage
 moves between preflight and dispatch.
+
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
 ## Repo-Internal References
 
@@ -91,7 +97,13 @@ bounded coherence publication tool, and spells out prepare/judge/publish/validat
 `-v2` or other hand-versioned reports, requires explicit evidence roots and digests, and asks for
 the stable authority, generation, projection, snapshot, candidate, and validation results.
 
+## CCR-L42 current candidate
+
+The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
 
 - 2026-08-29T08:52+02:00 — Added the exact structured coherence publication contract to curator
   dispatch. Verification remains closeout-owned.

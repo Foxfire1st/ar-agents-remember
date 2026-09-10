@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -21,6 +21,17 @@ This route retains a small behavior-oriented verification population plus shared
 ## Hot Path Summary
 
 Start with the distinct failure or user operation, then locate its retained owner. Checkout isolation, Dagger registry locking, private Git preparation, protected-ref recovery, durable-store races, submission authority and native framing each retain concrete behavioral protection. Compiler/certificate fixtures establish library contracts; they are not live Dagger, Codex or final-memory execution evidence. Preparation checks can guide memory repair before certification without becoming Gate 5.
+
+## CCR-R12@v5 Transaction-Only Delivery Route
+
+`test_transaction_only_worktree_delivery.py` is the focused behavioral route for normal public
+closeout and integration. It proves code, external-memory, and ledger delivery; paired integration
+publication; source-movement refusal; and non-invocation of configured failing pre-commit hooks
+through the transaction commit helpers. The route patches quality, certification, and curator
+helpers to fail if called, so it distinguishes transaction behavior from optional preparation.
+Normal closeout/integration do not require strict code quality, memory quality, selected
+certification, curator coherence, or independent review; full suites are only an explicit developer
+request.
 
 ## Retained Behavioral Routes
 
@@ -36,6 +47,7 @@ Start with the distinct failure or user operation, then locate its retained owne
 | Conversation projection and assets | `test_conversation_active_service.py`, `test_conversation_control_attachments.py` | Ordering, honest pagination, one-use assets and unknown-outcome retention. |
 | Protocol framing | `test_codex_native_history.py`, `test_pi_rpc_process.py` | Bounded paging/correlation and real fixture subprocess behavior. |
 | L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate; preparation evidence only. |
+| CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, and configured-hook non-invocation; focused behavior evidence only. |
 
 ## Fixture Roles And Claims
 
@@ -80,8 +92,8 @@ These current source and policy ranges establish the development/certification d
 | Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
 | Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
 | Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:499-535 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/memory_quality/prepared_certification.py:479-542 |
+| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
+| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 
 ## Docs And Cross-Repo References
@@ -89,6 +101,8 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ02 preparation recorded the current shared-support consumer declarations and registry/validator identity as non-certifying source evidence; no acceptance claim is made.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 

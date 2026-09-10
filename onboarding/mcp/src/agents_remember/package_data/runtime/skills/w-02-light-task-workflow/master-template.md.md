@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -41,12 +41,18 @@ the hand-rolled master this very lifecycle-reshape series used (`260601_l01-life
 
 A master series runs in one shared worktree (never one per sub-task). Only the master records the
 version bump and release; sub-tasks never bump. `lifecycle_finalize_task` proves the landed edge and
-performs terminal cleanup/task-document reconciliation after integration. Each slice is test-verified before its commit. Decision
+performs terminal cleanup/task-document reconciliation after integration. Each slice reports its relevant targeted checks, including any
+failed or not-run result, before its commit transaction. Decision
 logs are append-only in both the master and the sub-task files.
 
 ### Todos
 
 No current todo is recorded for this template.
+
+
+## CCR-R12@v5 Light-Task Boundary
+
+A light-task handoff records relevant targeted checks and honest failed or not-run results before the authorized Git transaction. Its commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside closeout/integration remains unchanged. Full quality, full tests, full memory quality, certification, and review remain explicit operations and are not automatic closeout or integration prerequisites.
 
 ### Docs References
 
@@ -100,6 +106,7 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
   canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain

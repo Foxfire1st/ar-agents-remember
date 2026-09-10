@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -120,7 +120,7 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Completed organizational proof binds original selected references through the operation owner. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
 | Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
-| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:40-47; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:113-127; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:157-227 |
+| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:40-47; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:128-128; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:157-227 |
 | Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
 | Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:95-102; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:122-162; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:165-203 |
 | Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:583-593; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:662-694 |
@@ -167,7 +167,19 @@ does not create a second authority route, queue-owned lifecycle evidence, or a c
 
 The closeout child now resumes retained prepared C/M/L publication before original-head admission. The default application service bundle installs `PreparedCloseoutContinuation`; the service boundary remains explicit and selected journal/certificate identities still govern execution. Protected-source integration, root-journal ownership and Dagger certification boundaries are unchanged by the helper extractions.
 
+## CCR-R12@v5 Current Integration Boundary
+
+Normal integration validates the prepared code/external-memory pair, explicit handover approval,
+source identity, and compare-and-swap/ref safety before protected publication. It publishes the
+prepared pair through ref/tree movement and records the result without creating a merge commit or
+invoking a merge hook. It does not automatically run strict code quality, memory quality, selected
+certification, curator coherence, or independent review; full suites are an explicit developer
+request. Earlier selected-certificate wording describes retained historical/explicit evidence.
+
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration`, so no route/member/prose/invariant change is required. route-member-count=116; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 

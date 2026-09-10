@@ -66,6 +66,9 @@
     "mcp/tests/test_agentic_settings.py",
     "mcp/tests/test_agents_remember_quality.py",
     "mcp/tests/test_application_guards.py",
+    "mcp/tests/test_atomic_master_review_identity.py",
+    "mcp/tests/test_atomic_master_review_public.py",
+    "mcp/tests/test_atomic_master_review_scope.py",
     "mcp/tests/test_atomic_series_activation.py",
     "mcp/tests/test_atomic_series_landing_l3.py",
     "mcp/tests/test_atomic_write.py",
@@ -194,6 +197,7 @@
     "mcp/tests/test_repository_certification_profiles.py",
     "mcp/tests/test_retry_coverage.py",
     "mcp/tests/test_retry_selection.py",
+    "mcp/tests/test_review_state.py",
     "mcp/tests/test_semantic_topology_refusals.py",
     "mcp/tests/test_serving.py",
     "mcp/tests/test_serving_files.py",
@@ -209,6 +213,7 @@
     "mcp/tests/test_suite_budget.py",
     "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_task_doc_graph_publication.py",
+    "mcp/tests/test_task_doc_review_public.py",
     "mcp/tests/test_task_doc_structural_publication_l2.py",
     "mcp/tests/test_task_document.py",
     "mcp/tests/test_task_document_application_1.py",
@@ -226,6 +231,7 @@
     "mcp/tests/test_terminal_paste.py",
     "mcp/tests/test_tool_response_budgets.py",
     "mcp/tests/test_tools.py",
+    "mcp/tests/test_transaction_only_worktree_delivery.py",
     "mcp/tests/test_wire_contract.py",
     "mcp/tests/test_wire_vocabulary_exhaustiveness.py",
     "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py",
@@ -239,8 +245,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 211,
-    "fileSidecars": 227,
+    "sourceFilesInScope": 217,
+    "fileSidecars": 233,
     "childRoutes": 0
   },
   "routingTerms": [

@@ -6,8 +6,8 @@
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
 | lastUpdated | 2026-09-05T07:10+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -249,7 +249,19 @@ cannot smuggle start-only fields. These newer DAGQC facts are additive to the CL
 
 `execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
 
+## CCR-L42 Review-Altitude Reference Update
+
+The settings reference now describes route review as applicable at its owning altitude. Atomic
+child leaves defer independent route review to the accumulated canonical master at
+master-to-parent integration; standalone and organizational leaves retain independent leaf
+review. Complexity and loop settings do not disable or move that atomic integration gate, and
+the route-review rule does not replace certifying evidence requirements.
+
 ## Update History
+
+- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current applicable-review
+  and atomic-integration semantics from `docs/reference/settings-json.md`. Source inspection only;
+  verification metadata remains closeout-owned.
 
 - 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled explicit repository-profile authority, fresh/recovery result paths, diagnostic Vitest boundary, and known fixer safety limitation. Verification records current source claims, not execution or acceptance.
 

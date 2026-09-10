@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/memory_census.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09 |
-| lastVerifiedCommitHash | `8133b6a9de2f787cb6c4527621a70123357aff31` |
-| lastVerifiedCommitDate | 2026-09-08T13:24:49+02:00 |
+| lastUpdated | 2026-09-09T18:57+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,18 +16,19 @@
 
 ## Purpose
 
-Builds the deterministic governed-memory census from the contract-owned exact Git scope. The census reads exact code and memory trees, classifies file sidecars, inline onboarding, route overviews, and entity rows, and emits a structural worklist without making semantic acceptance or final-certification decisions.
+Builds the deterministic governed-memory census from the contract-owned exact Git scope. The census reads exact code and memory trees, classifies file sidecars, inline onboarding, route overviews, and entity rows, and emits a structural worklist without making semantic acceptance or final-certification decisions. Current candidate metadata is authoritative for live mappings; historical metadata is retained only for removal context and cannot veto a valid current mapping.
 
 ## Code Commentary
 
 ### Logic
 
-`_Tree` reads exact Git members and metadata without silently normalizing paths. `_Census` records governed identities, presence, source paths, and reasons across sidecars, inline blocks, route overviews, edited documents, and entity rows. `build_memory_census` assembles the ordered result from the route-owned `MemoryCensusScope`.
+`_Tree` reads exact Git members and metadata without silently normalizing paths. `_Census.sidecars` validates current canonical mappings and carries a historical mapping forward only when its path is absent from the candidate tree. `_Census.edited_documents` treats current metadata as authoritative, blocks current missing metadata, and uses a historical-only document to retain an absent row without a removal blocker. `_Census.add` records the expected final presence and preserves pre-existing absent rows for curator accountability. `_Census` records governed identities, presence, source paths, and reasons across sidecars, inline blocks, route overviews, edited documents, and entity rows. `build_memory_census` assembles the ordered result from the route-owned `MemoryCensusScope`.
 
 ### Invariants And Boundaries
 
 - Exact Git tree membership and UTF-8 relative paths are validated before a row is emitted.
-- Missing pre-existing artifacts become structural blockers requiring canonical curator disposition.
+- Current missing or contradictory sidecar metadata remains a structural blocker; a stale historical association alone does not veto a valid current mapping.
+- Missing newly required artifacts remain structural blockers; pre-existing artifacts absent from the candidate remain census rows with `expectedFinalPresence=absent` for curator accountability.
 - The census is a derived preparation worklist; it does not publish semantic judgments, coherence, or certification.
 
 ### Todos
@@ -40,21 +41,27 @@ No configured Domain Documentation source applies; the repository source is the 
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The census module has no external domain dependency. | `build_memory_census` | mcp/src/agents_remember/memory_quality/memory_census.py:478-511 |
+| The census module has no external domain dependency. | `build_memory_census` | mcp/src/agents_remember/memory_quality/memory_census.py:501-534 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Exact Git members and metadata are read through the private tree reader. | `_Tree` | mcp/src/agents_remember/memory_quality/memory_census.py:45-125 |
-| Structural rows are accumulated for sidecars, inline onboarding, route overviews, and entities. | `sidecars`; `inline`; `overviews`; `entities` | mcp/src/agents_remember/memory_quality/memory_census.py:261-382; mcp/src/agents_remember/memory_quality/memory_census.py:422-475 |
-| The route-owned scope is converted into one ordered census result. | `build_memory_census` | mcp/src/agents_remember/memory_quality/memory_census.py:478-511 |
+| Current sidecar mappings are authoritative, while historical mappings survive only for paths removed from the candidate tree. | `sidecars` | mcp/src/agents_remember/memory_quality/memory_census.py:254-318 |
+| Edited current metadata is checked for missing or contradictory artifact type and mapping; historical-only documents retain an absent row without a removal blocker. | `edited_documents` | mcp/src/agents_remember/memory_quality/memory_census.py:395-443 |
+| Structural rows are accumulated for inline onboarding, route overviews, and entities. | `inline`; `overviews`; `entities` | mcp/src/agents_remember/memory_quality/memory_census.py:320-393; mcp/src/agents_remember/memory_quality/memory_census.py:445-498 |
+| The route-owned scope is converted into one ordered census result. | `build_memory_census` | mcp/src/agents_remember/memory_quality/memory_census.py:501-534 |
 
 ## Cross-Repo References
 
 None; this module consumes the resolved local code/memory pair only.
 
 ## Update History
+
+- 2026-09-09T23:45:19+02:00 — CCR-L42 census regression reconciliation: documented current-versus-historical metadata authority, preservation of pre-existing absent rows without a removal blocker, and the moved old/new row behavior. Verification metadata remains unchanged until closeout.
+
+- 2026-09-09T18:57:35+02:00 — CCR-L42 census repair: documented current-candidate metadata authority, historical-only removal context, and the current source ranges for sidecar and edited-document handling. Verification metadata remains unchanged until closeout.
 
 - 2026-09-09T02:44:55+02:00 — CCR-L38 bounded inherited citation repair: simplified the four anchors to resolvable method identifiers within the existing behavior-bearing ranges; source-sha256=2bbd75f359b0ab57e3c07ffd51253e93e9084a32905742a1a552fac0a14f52dd; verification metadata remains unchanged.
 

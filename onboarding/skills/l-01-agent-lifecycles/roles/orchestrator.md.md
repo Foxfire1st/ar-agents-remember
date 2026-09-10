@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -33,9 +33,9 @@ altitude paragraph also makes cheap-first ordering and content-addressed retry a
 exact reuse or selected-test-only delta is automatic, ambiguous deltas run fresh, conservative
 delta coverage falls back to one full selection, and CI never reuses local proof.
 
-The current altitude contract is stricter than that historical retry description: targeted Dagger
-runs exactly once when each leaf closes, leaf integration reruns nothing, and full Dagger runs once
-when the master integrates into super. GitHub PR validation is a separate non-test check.
+The current transaction contract consumes the workers' targeted and curators' scoped evidence while
+keeping closeout and integration as Git operations. Full quality, full tests, full memory quality,
+certification, and review are explicit requests; GitHub PR validation remains a separate policy check.
 
 ### Logic
 
@@ -58,6 +58,11 @@ review generations.
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
 outputs. Dispatch proof remains exact-session and fail-closed; plane refusal never becomes an
 ambient retry.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Docs References
 
@@ -118,6 +123,7 @@ decisions determine a resolution. Continue or cancel the contract-addressed oper
 advertised API; escalate only genuine semantic ambiguity through the architect.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the
   orchestrator-stamped sprint super reviewer and its separation from the architect plan-review

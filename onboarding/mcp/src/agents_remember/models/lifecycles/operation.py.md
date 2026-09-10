@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,16 @@
 ## Purpose
 
 This module defines the strict input, durable-record, and public-projection vocabularies for asynchronous closeout and integration. It separates private operation identity and recovery evidence from the task-addressed status exposed to agents.
+
+## CCR-R12@v5 Current Transaction Boundary
+
+Normal closeout/integration records carry the typed operation input, explicit approval and gate
+policy snapshot, candidate/source identity, progress, mutation evidence, and terminal result needed
+for a recoverable Git transaction. The retained `certification`, `integrationCertification`, and
+`qualityCertification` model vocabulary remains available for explicit or historical callers, but
+the normal worker does not select, execute, or require those fields for closeout or integration.
+Their presence in this strict schema must not be read as a normal closeout quality or certification
+gate.
 
 ## Code Commentary
 
@@ -70,7 +80,7 @@ Preparation is meaningful operation state and belongs only to the exact closeout
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current `_require_altitude_authority` boundary implements the preparation contract above. | "def _require_altitude_authority" | mcp/src/agents_remember/models/lifecycles/operation.py:594-635 |
+| The current `_require_altitude_authority` boundary implements the preparation contract above. | "def _require_altitude_authority(record: LifecycleOperationRecord)" | mcp/src/agents_remember/models/lifecycles/operation.py:598-650 |
 | The current `_require_cancellation_evidence` boundary implements the preparation contract above. | "def _require_cancellation_evidence" | mcp/src/agents_remember/models/lifecycles/operation.py:910-928 |
 
 ## Docs References
@@ -92,7 +102,7 @@ The operation model owns strict serialization and cross-field identity checks. T
 | Completed integration requires an exact original full code prefix and a matching result digest. | `IntegrationQualityCertification` | mcp/src/agents_remember/models/lifecycles/operation.py:205-242 |
 | Attestation, passing result, comparison base and memory policy are checked together. | `_require_quality_certification_attestation`; `_require_quality_certification_result`; `_require_quality_certification_memory` | mcp/src/agents_remember/models/lifecycles/operation.py:257-271; mcp/src/agents_remember/models/lifecycles/operation.py:274-286; mcp/src/agents_remember/models/lifecycles/operation.py:289-305 |
 | Completed proof must match the selected operation generation, references and integration code authority. | `_require_integration_certification_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:562-585 |
-| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:518-544; mcp/src/agents_remember/models/lifecycles/operation.py:547-550; mcp/src/agents_remember/models/lifecycles/operation.py:553-559 |
+| Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. | `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:518-544; mcp/src/agents_remember/models/lifecycles/operation.py:547-550; mcp/src/agents_remember/models/lifecycles/operation.py:563-569 |
 | The public projection intentionally omits private execution identifiers. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
 | The R03 dependency vocabulary is shared by these record types. | `EvidenceRecordType`; `EvidenceDependencies`; `build_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:21-30; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-237 |
 
@@ -185,6 +195,9 @@ The operation record separately retains private preparation state. Original comm
 | `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | `mcp/src/agents_remember/models/lifecycles/operation.py:989-1024` |
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
 

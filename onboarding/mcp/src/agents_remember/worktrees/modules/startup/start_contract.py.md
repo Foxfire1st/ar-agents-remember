@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-09-08T19:29:21+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -168,12 +168,12 @@ No Domain Documentation source is configured for this memory root.
 | The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. | `MasterSeriesContractAdmissionError` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:67-77 |
 | The start preflight projects a persisted master-edge refusal before protected-surface calculation. | `_existing_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:944-988 |
 | The start builder performs the pre-protected-surface admission check and returns its refusal result. | `_build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:991-1066 |
-| Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:57-104; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:106-124; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:137-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:167-229 |
+| Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:56-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:106-124; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:137-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:167-229 |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
 | The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:482-493 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:491-491; mcp/src/agents_remember/worktrees/modules/start.py:494-494; mcp/src/agents_remember/worktrees/modules/start.py:497-497; mcp/src/agents_remember/worktrees/modules/start.py:500-500 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:500-500; mcp/src/agents_remember/worktrees/modules/start.py:627-689 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:492-492; mcp/src/agents_remember/worktrees/modules/start.py:495-495; mcp/src/agents_remember/worktrees/modules/start.py:498-498; mcp/src/agents_remember/worktrees/modules/start.py:501-501 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:501-501; mcp/src/agents_remember/worktrees/modules/start.py:627-689 |
 | `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:160-177; mcp/src/agents_remember/worktrees/worktree_contract.py:793-848 |
 
 ## Cross-Repo References
@@ -204,6 +204,8 @@ The current source seams include `memory_base_for_source`, `memory_mode_for_repo
 | The current module defines the strict master-series contract specification. | `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:201-213 |
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-08T19:29:21+02:00 — Repaired the inherited claim-reopen citation by rereading the current activation transaction: fetch/re-read authority, reconciling transition, exact sync, source-pair completeness, and active publication now point to their current behavioral ranges. Verification pins remain unchanged; no acceptance claim.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation reconciled the authoritative second master-contract read, typed parser/edge refusal, and pre-protected-surface admission seam. Source remains uncommitted; verification remains closeout-owned with no acceptance claim.
 - 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation split the moved admission symbols and rebound the master-series builder, memory helpers, and contract specification to their current owners and ranges. Verification metadata remains closeout-owned; no acceptance claim.

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T17:15:00+02:00 |
-| lastVerifiedCommitHash | `ce7f10b565f82bc41421d60ba914ee1d0abf61c4` |
-| lastVerifiedCommitDate | 2026-09-04T17:04:29+02:00 |
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -77,7 +77,7 @@ CCR-R20 and the 260831-CCR-L20 delivery record are the governing artifacts.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external domain source is required for this repository-owned terminal envelope. | `TERMINAL_RAIL_FAILURE_SCHEMA_VERSION` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:56-56 |
+| No external domain source is required for this repository-owned terminal envelope. | `TERMINAL_RAIL_FAILURE_SCHEMA_VERSION` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:58-58 |
 
 ## Repo-Internal References
 
@@ -85,12 +85,12 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's concrete API, envelope contract, and bounded census are implemented here. | `terminal_worker_failure_result`; `__all__` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:1-951 |
+| The module's concrete API, envelope contract, and bounded census are implemented here. | `terminal_worker_failure_result`; `__all__` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:147-195; mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:1022-1029 |
 | A published candidate-matched rail report becomes a typed gate-result envelope with its full rail catalog. | `_gate_result_envelope` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:283-340 |
 | Missing, unreadable, or candidate-mismatched rail evidence becomes a typed unavailable envelope without fabricated outcomes. | `_unavailable_envelope` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:343-367 |
-| A worker crash before rail publication is censused, never collapsed to a generic exception. | `_worker_error_census`; `_unclassified_envelope` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:797-843; mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:370-396 |
-| The terminal identity and closed class mirror the CCR-R16 operation-terminal payload. | `telemetry_terminal_facts`; `worker_failure_result_class` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:904-951 |
-| `OperationRuntime.fail` routes an unclassified worker failure through the envelope when a durable record exists. | `terminal_worker_failure_result` | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:288-295 |
+| A worker crash before rail publication is censused, never collapsed to a generic exception. | `_worker_error_census`; `_unclassified_envelope` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:846-905; mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:370-396 |
+| The terminal identity and closed class mirror the CCR-R16 operation-terminal payload. | `telemetry_terminal_facts`; `worker_failure_result_class` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:966-990; mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:1009-1019 |
+| `OperationRuntime.fail` routes an unclassified worker failure through the envelope when a durable record exists. | "pending = terminal_worker_failure_result(" | mcp/src/agents_remember/application/lifecycle/lifecycle_operation_worker.py:288-295 |
 
 ## Cross-Repo References
 
@@ -99,9 +99,15 @@ protocol claim.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repository reference applies. | `TERMINAL_RAIL_FAILURE_SCHEMA_VERSION` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:56-56 |
+| No meaningful cross-repository reference applies. | `TERMINAL_RAIL_FAILURE_SCHEMA_VERSION` | mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:58-58 |
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `TERMINAL_RAIL_FAILURE_SCHEMA_VERSION` repointed to mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:57-57. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `terminal_worker_failure_result`; `__all__` repointed to mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:147-195; mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:1006-1013. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `telemetry_terminal_facts`; `worker_failure_result_class` repointed to mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:966-990; mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:993-1003. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `TERMINAL_RAIL_FAILURE_SCHEMA_VERSION` repointed to mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py:57-57. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-04T17:15+02:00 - 260831-CCR-L20 Gate-5 memory pass: created for CCR-R20 typed terminal
   rail-failure propagation at the detached worker boundary (code commit `ce7f10b5`): bounded

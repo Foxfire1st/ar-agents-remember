@@ -77,7 +77,7 @@
       "IAS",
       "skills/l-01-agent-lifecycles/roles",
       "route-local-overview",
-      "f2b7c648f540efb9d64ceea22e11e651cb5cc914",
+      "6f3e3fde75a1ca0202c9b07557cf86a7893e8532",
       "accepted",
       "rejected",
       "dispatch_agent",
@@ -93,6 +93,8 @@
       "roles/architect.md",
       "roles/reviewer.md",
       "scripts/sync-skills.py",
+      "reviewMode=baseline",
+      "reviewMode=fix-verification",
       "task_doc.author_execution_graph",
       "migrate_execution_topology",
       "worktree_status.sourceLineage=current",
@@ -101,9 +103,7 @@
       "skills/l-01-agent-lifecycles/roles/worker.md",
       "skills/l-01-agent-lifecycles/SKILL.md",
       "skills/l-01-agent-lifecycles/roles/reviewer.md",
-      "sourceRoute",
-      "doc_type",
-      "lastUpdated"
+      "sourceRoute"
     ]
   },
   "fallback": {

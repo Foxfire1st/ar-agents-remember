@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -19,6 +19,17 @@
 Owns integration of completed worktree task branches back into their source
 branches.
 
+## CCR-R12@v5 Current Transaction Boundary
+
+Normal integration validates the prepared code/external-memory pair, explicit handover approval,
+source identity, and compare-and-swap/ref safety before protected publication. It does not run
+strict code quality, memory quality, selected certification, curator coherence, or independent
+review as part of the transaction; full suites are only an explicit developer request. Publication
+uses the existing integration ref move (`update-ref`/tree publication through
+`merge_integrated_commits`) and records the resulting pair; it creates no merge commit and hence
+has no merge-hook path. Source movement refuses before protected refs move. The quality-altitude
+material below is historical pre-R12 context.
+
 ## Code Commentary
 
 The module validates closeout state, checks fast-forward eligibility, reports
@@ -26,7 +37,7 @@ blocked non-fast-forward cases, optionally replays code and memory content for
 reviewed parallel changes, merges integrated commits, verifies the memory
 ledger mapping, and updates integration fields in the contract.
 
-**Quality altitude ladder (260731-EFA-L17/L24/L23 reopen).** Integration owns acceptance only at
+**Historical pre-CCR-R12 quality altitude ladder (260731-EFA-L17/L24/L23 reopen).** Integration owned acceptance only at
 master altitude. A leaf integration returns `certified-at-leaf-closeout` and lands the exact
 closeout commit without calling the quality decider, settings loader, or Dagger executor again.
 `quality_gate_mode` refuses leaf use and returns `GATE_FULL` only for series/master contracts.
@@ -101,7 +112,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The wire vocabulary declares integration and cleanup states. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:33-34 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:183-206; mcp/src/agents_remember/worktrees/modules/integrate.py:434-466 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50; mcp/src/agents_remember/worktrees/modules/integrate.py:436-468 |
 | Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:97-108; mcp/src/agents_remember/worktrees/integration/integration_quality.py:111-134; mcp/src/agents_remember/worktrees/integration/integration_quality.py:137-196 |
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
@@ -152,7 +163,7 @@ reconcile or complete the same generation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | `handover_gate_guard`; `unmatched_handover_gate_warning`; `blocked_integration_payload` | mcp/src/agents_remember/worktrees/modules/integrate.py:137-163; mcp/src/agents_remember/worktrees/modules/integrate.py:166-202; mcp/src/agents_remember/worktrees/modules/integrate.py:205-228 |
+| The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | `handover_gate_guard`; `unmatched_handover_gate_warning`; "def blocked_integration_payload(" | mcp/src/agents_remember/worktrees/modules/integrate.py:143-170; mcp/src/agents_remember/worktrees/modules/integrate.py:172-209; mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50 |
 
 ## 260821-CLIVE Live Atomic Landing Authority
 
@@ -175,6 +186,9 @@ fallback, or compatibility reader was added.
 The integration quality call passes `args.integration_certification_owner` to `run_integration_quality_gate`; journal selection/reuse authority travels through this typed owner rather than an injected ad-hoc gate runner. The configured repository profile is still forwarded.
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated wire state vocabulary from the typed amendment record and helper. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.

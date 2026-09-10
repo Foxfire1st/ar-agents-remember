@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -52,6 +52,11 @@ cannot become packaged current intent.
 - Curator still writes onboarding only and communicates through structural parent messaging/report.
 - The synchronized curator cannot report completion with an enforced curator-actionable finding.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -82,7 +87,13 @@ disposition/rationale/evidence reference per tuple, publishes the separately ide
 revision and delivery attempt, optionally freezes a snapshot, and validates the sole live
 structured authority. Generated Markdown is returned as projection evidence only.
 
+## CCR-L42 current candidate
+
+Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only curator dispatch,
   explicit ambient takeover, and fixed structural-row ownership. Verification remains

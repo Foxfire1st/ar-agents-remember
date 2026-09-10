@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-05T07:22+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -275,7 +275,23 @@ PID and forwards the typed request to the payload builder; waiting grants no mut
 | --- | --- | --- |
 | The public wait registration declares read-only addressing, refusal behavior and typed request construction. | "def worktree_status_wait(" | mcp/src/agents_remember/mcp/registration/worktrees.py:202-232 |
 
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
+## CCR-R12@v5 Current Registration Boundary
+
+The closeout-family registration advertises transaction-only preview/apply/integration behavior.
+Public calls preserve explicit developer approval, candidate/source checks, and ref safety, then
+delegate code, external-memory, ledger, or prepared-pair publication to existing owners. The
+registered routes do not automatically invoke strict code quality, memory quality, selected
+certification, curator coherence, or independent review; full suites are an explicit developer
+request. The historical altitude-ladder section above remains context for the superseded contract.
+
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/mcp/registration`, so no route/member/prose/invariant change is required. route-member-count=13; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 

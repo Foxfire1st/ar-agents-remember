@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-06T14:48:58+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -94,7 +94,22 @@ recovered legacy operation or planning certificate reuse.
 | Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. | "def _validate_identity_and_evidence_transition" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:319-395 |
 | The exact-generation observer returns bounded change/timeout outcomes. | "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:105-146 |
 
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
+## CCR-R12@v5 Current Lifecycle Integration Boundary
+
+Lifecycle integration controls start, observe, cancel, resume, and recover task-addressed
+transactions under fresh leases and current provenance. They preserve explicit approval, candidate
+identity, source movement refusal, and ref safety while leaving strict code quality, memory quality,
+selected certification, curator coherence, and independent review outside normal execution. Full
+suites are an explicit developer request.
+
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
 - 2026-09-06T14:48:58+00:00 — Routed the extracted generation constructors and unchanged resume transition at `c69d5171187fa1957025e393270db9f5a864ab14`; other journal/projection contracts are not reverified by this routing update. Prior verification stamps and all earlier history are preserved.
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -41,7 +41,11 @@ payload through canonical JSON plus identity/status/finding-count shape checks (
 derives member results (`_member_results`, lines 425-450), aggregates status (blocked > fail >
 pass), and sets `incrementalMemoryReady` only when every unit passes.
 `_require_current_candidate` (`affected_execution.py:488-502`) refuses a candidate that moved
-after planning. Refusals are typed `GateFiveClosureRefusedError` (`_refuse`, lines 505-515).
+after planning. When a checker raises before publishing evidence, the executor now preserves
+the selected document, exception type, and exception detail in the typed
+`checker-execution-failed` refusal (`affected_execution.py:212-219`) instead of reducing the
+diagnostic to the exception type alone. Refusals are typed `GateFiveClosureRefusedError`
+(`_refuse`, lines 505-515).
 
 ### Conventions
 
@@ -74,12 +78,14 @@ newest-result search.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sole proven executor runs the selected-document citation-range checker on one planned unit. | `RangeResolutionAffectedExecutor`; `execute` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
+| The sole proven executor runs the selected-document citation-range checker on one planned unit. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
 | Reuse selects only byte-identical passing units by exact result identity. | `plan_affected_subresult_reuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:133-180 |
 | Closure execution revalidates candidate and executor, then publishes the complete aggregate. | `execute_affected_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:183-250 |
 | Evidence shape is canonicalized and proven before a unit result can be published. | `_unit_result`; `_canonical_evidence`; `_checker_observation` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:253-422 |
 | The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. | `_validate_context` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:94-130 |
 | The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. | `_validate_context` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:94-130 |
+
+| An unexpected checker exception is refused with its selected document and exception detail. | "checker-execution-failed" | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:212-219 |
 
 ## Cross-Repo References
 
@@ -90,6 +96,13 @@ No cross-repository implementation boundary is owned here.
 | The executor delegates to the same-repository citation range-resolution checker. | `range_resolution` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64 |
 
 ## Update History
+
+- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: narrowed the executor reference to
+  the unique `RangeResolutionAffectedExecutor` anchor; its `execute` method remains covered by
+  the source range without relying on an ambiguous historical method name. Verification metadata
+  remains closeout-owned.
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented the selected-unit and exception-detail diagnostics emitted before an affected result can publish; verification metadata remains closeout-owned.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Bound the selected-document executor to the exact Git candidate lease and recorded real checker composition and pre-execution refusal coverage; verified against 97e8ed2e1fae21756c3ad995c30613d4fbfcc503.
 

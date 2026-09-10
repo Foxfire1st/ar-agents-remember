@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -61,6 +61,11 @@ and plane authorization never falls back to ambient. An approved requirement pac
 rewritten in place. A worker/reviewer classification cannot become semantic authority. Role-table
 `dispatch` and `tools` rows are fixed authority/capability descriptions, not settings keys.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
 ## Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
@@ -110,6 +115,7 @@ rebuilt. A selector or queue cannot veto planning, and no valid task/master is d
 free a runtime selection.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented architect
   dispatch and retirement authority for the architect-stamped sprint plan reviewer, excluding the

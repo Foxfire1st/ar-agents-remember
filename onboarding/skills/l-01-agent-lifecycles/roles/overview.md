@@ -6,8 +6,8 @@
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -108,6 +108,11 @@ remain read/search helpers and never become AR role seats.
 - Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
 - No role may collapse per-requirement evidence into an aggregate completion claim.
 
+
+## CCR-R12@v5 Lifecycle Boundary
+
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code, memory-content, and ledger legs then move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -161,7 +166,22 @@ updated.
 No role authority changed. Curator doctrine now uses explicit sync/start/poll request objects and
 treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
 
+## CCR-L42 Review-Phase And Altitude Update
+
+The role files now distinguish a complete `reviewMode=baseline` from
+`reviewMode=fix-verification`: the first review seals the agreed scope and issue IDs, while a
+successor verifies only those outstanding IDs and cannot add routes, criteria, or new findings.
+The role chain also records that standalone and organizational leaves carry independent route
+review, atomic child leaves defer to the accumulated master integration review, and workers must
+document applicable targeted checks before handoff. Task-document authority and the three-round
+review limit remain in force.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current review-phase,
+  review-altitude, and worker-check obligations from the canonical role files. Source inspection
+  only; verification metadata remains closeout-owned.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the four reviewer
   contexts and plane-stamped parent ownership to the role map. Verification remains closeout-owned.

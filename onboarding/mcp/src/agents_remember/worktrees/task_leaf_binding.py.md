@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/task_leaf_binding.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,7 +51,12 @@ No configured domain-documentation source applies to this repository-internal ro
 
 No meaningful cross-repository boundary is owned by this file.
 
+## CCR-L42 current candidate
+
+Leaf binding now resolves the canonical parent row to one exact JSON task document, plans enclosure registration, and returns typed repair facts before closeout. Missing or mismatched bindings fail closed without sibling scans or compatibility fallbacks.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Leaf binding now resolves the canonical parent row to one exact JSON task document, plans enclosure registration, and returns typed repair facts before closeout. Missing or mismatched bindings fail closed without sibling scans or compatibility fallbacks.
 
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read the reopened child-source claim,
   documented delegation to the shared canonical leaf-binding owner, regenerated moved ranges, and

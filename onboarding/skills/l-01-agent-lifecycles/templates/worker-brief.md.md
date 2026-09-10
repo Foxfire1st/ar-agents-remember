@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -64,6 +64,11 @@ commit, lifecycle, gate, or task-document mutation authority.
 
 None.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ## Docs References
 
 No external Domain Documentation source governs this worker template.
@@ -72,10 +77,10 @@ No external Domain Documentation source governs this worker template.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The brief binds the exact owned requirement revision and evidence classes. | `## Owned primary requirement (exactly one stable-ID + version)` | skills/l-01-agent-lifecycles/templates/worker-brief.md:52-84 |
-| The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff. | `## Owned primary requirement (exactly one stable-ID + version)` | skills/l-01-agent-lifecycles/templates/worker-brief.md:52-84 |
-| Repository-defined checks and artifact lifecycle remain separate obligations. | `## Checks (green before you report)` | skills/l-01-agent-lifecycles/templates/worker-brief.md:114-128 |
-| The final report requires envelopes, checks, curator inputs, and continuity state. | `## Turn report (mandatory, last act)` | skills/l-01-agent-lifecycles/templates/worker-brief.md:146-151 |
+| The brief binds the exact owned requirement revision and evidence classes. | "## Owned primary requirement (exactly one stable-ID + version)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:69-102 |
+| The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff. | "## Owned primary requirement (exactly one stable-ID + version)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:69-102 |
+| Repository-defined checks and artifact lifecycle remain separate obligations. | "## Checks (green before you report)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:141-164 |
+| The final report requires envelopes, checks, curator inputs, and continuity state. | "## Turn report (mandatory, last act)" | skills/l-01-agent-lifecycles/templates/worker-brief.md:173-201 |
 
 ## Cross-Repo References
 
@@ -90,6 +95,9 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-08-28T14:18+02:00 — Reconciled the worker-brief citation with the final primary-requirement
   heading and committed PDLS ranges; the required acceptance envelope is unchanged.

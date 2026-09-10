@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -67,6 +67,11 @@ role, then synchronize.
 
 None recorded.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
 ## Docs References
 
 No Domain Documentation source is configured for this memory root.
@@ -79,7 +84,7 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `## Job P — Portfolio (streamline + plan)`; `## Job O — Orchestrate (execute the plan)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:183-259; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:260-486 |
-| The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; `## Topology Choice And Canonical executionGraph Adoption Payload` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:104-151 |
+| The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; "## Topology Choice And Canonical executionGraph Adoption Payload" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:127-168 |
 | Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
 
 ## Cross-Repo References
@@ -104,11 +109,9 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 
 ### 260731-EFA-L17 — Quality Altitude Ladder
 
-The orchestrator's quality altitude uses the pinned Dagger graph for Agents Remember acceptance.
-Leaf/focused work selects targeted mode; `worktree_integrate` selects full mode exactly once at
-master altitude. Both require the explicit task-derived diff base, and host pytest/wrapper runs
-are refused rather than accepted or used as fallback. `memory_quality_check` stays a per-leaf
-closeout gate; orchestrators do not run a separate full graph per leaf.
+The orchestrator consumes targeted worker checks and scoped curator checks. Full quality, full tests,
+full memory quality, certification, and review remain explicit operations; closeout and integration
+do not infer a quality gate or launch those tools automatically.
 
 ## 260815-DAG-L14 Doctrine Sync
 
@@ -120,9 +123,9 @@ never the three-write manual flow.
 
 ## L23 Final Candidate Disposition
 
-The orchestrator observes closeout and integration through canonical task status. Leaf acceptance is
-targeted Dagger; master acceptance is one full Dagger graph at master integration altitude, with no
-model-managed checklist or fallback runner.
+The orchestrator observes closeout and integration through canonical task status. The ordinary path
+publishes the authorized Git transaction; any explicit quality or review operation remains with its
+own lifecycle owner.
 
 ## R39 Generic Quality Altitude
 
@@ -186,6 +189,8 @@ contract-presence fallback exists. Technically derivable retained conflicts are 
 the advertised continue/cancel operation; only genuine semantic ambiguity returns to the architect.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: recorded the baseline/fix-verification review packet, atomic-child master-review boundary, and explicit three-round/developer-authorization rule in the synchronized runtime role card.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized the
   orchestrator-stamped super reviewer and its separation from the architect plan reviewer.

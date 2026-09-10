@@ -1,13 +1,13 @@
-# mcp/src/agents_remember/memory_quality/final_certification/models.py
+# mcp/src/agents_remember/certification/final_certification_models.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/final_certification/models.py` |
+| path | `mcp/src/agents_remember/certification/final_certification_models.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T01:48+02:00 |
-| lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
-| lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
+| lastUpdated | 2026-09-09T22:39:30+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -20,8 +20,8 @@ Closed typed contracts for the final full memory-coherence certification (CCR-R0
 Every model is frozen with `extra="forbid"`, so the catalog plan, the executed attestation,
 and the certification result are immutable and self-validating: digests must match content,
 statuses must match their findings, and only a green certification can be finalization
-eligible. The application and certification surfaces share these models through the package
-`__init__`.
+eligible. The application and memory-quality certification surfaces share these models through
+the lower-level `certification.final_certification_models` module and the package `__init__`.
 
 ## Code Commentary
 
@@ -31,9 +31,9 @@ Module-level surface:
 
 - Status vocabulary: `FinalItemStatus` (line 26, pass/fail/blocked/not-applicable) and
   `FinalCertificationState` (line 27, green/red/blocked).
-- `FinalCertificationModel` (class, lines 30-33) - closed immutable base
+- `FinalCertificationModel` (class, lines 30-34) - closed immutable base
   (`extra="forbid", frozen=True`).
-- `FinalCatalogItemIdentity` (class, lines 36-44) - one closed catalog member
+- `FinalCatalogItemIdentity` (class, lines 36-45) - one closed catalog member
   (`itemId` pattern, `version` semver, tuple `key`).
 - `FinalCatalogItemResult` (class, lines 47-65) - one typed result with content-addressed
   `subresultDigest`; the after-validator `_require_status_shape` (58-65) forces blocked
@@ -73,15 +73,17 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The status and state vocabularies. | `FinalItemStatus`; `FinalCertificationState` | mcp/src/agents_remember/memory_quality/final_certification/models.py:26-27 |
-| One closed final-catalog member with a canonical key. | `FinalCatalogItemIdentity` | mcp/src/agents_remember/memory_quality/final_certification/models.py:36-44 |
-| One typed Gate-5 result with content-addressed subresult and status shape guard. | `FinalCatalogItemResult` | mcp/src/agents_remember/memory_quality/final_certification/models.py:47-65 |
-| The deterministic complete plan with self-digest. | `FinalFullCatalogPlan` | mcp/src/agents_remember/memory_quality/final_certification/models.py:68-100 |
-| The executed attestation that must exhaust its planned population. | `FinalFullCatalogAttestation` | mcp/src/agents_remember/memory_quality/final_certification/models.py:103-140 |
-| The typed green/red/blocked certification over the exact pair. | `FinalCertificationResult` | mcp/src/agents_remember/memory_quality/final_certification/models.py:143-190 |
-| Shared uniqueness-and-canonical-order guard. | `_require_unique_canonical` | mcp/src/agents_remember/memory_quality/final_certification/models.py:193-196 |
+| The status and state vocabularies. | `FinalItemStatus`; `FinalCertificationState` | mcp/src/agents_remember/certification/final_certification_models.py:26-27 |
+| One closed final-catalog member with a canonical key. | `FinalCatalogItemIdentity` | mcp/src/agents_remember/certification/final_certification_models.py:36-45 |
+| One typed Gate-5 result with content-addressed subresult and status shape guard. | `FinalCatalogItemResult` | mcp/src/agents_remember/certification/final_certification_models.py:47-65 |
+| The deterministic complete plan with self-digest. | `FinalFullCatalogPlan` | mcp/src/agents_remember/certification/final_certification_models.py:68-100 |
+| The executed attestation that must exhaust its planned population. | `FinalFullCatalogAttestation` | mcp/src/agents_remember/certification/final_certification_models.py:103-140 |
+| The typed green/red/blocked certification over the exact pair. | `FinalCertificationResult` | mcp/src/agents_remember/certification/final_certification_models.py:143-190 |
+| Shared uniqueness-and-canonical-order guard. | `_require_unique_canonical` | mcp/src/agents_remember/certification/final_certification_models.py:193-196 |
 
 ## Update History
+
+- 2026-09-09T22:39:30+02:00 — CCR-L42 failed-Gate1 repair: preserved the behavior-identical final-certification models under `certification/final_certification_models.py`; refreshed this moved card's governing route and current source ranges. Verification remains closeout-owned; this entry does not assert acceptance.
 
 - 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: created this file-level
   onboarding card for the new CCR-R08 closed typed final-certification contract models module
