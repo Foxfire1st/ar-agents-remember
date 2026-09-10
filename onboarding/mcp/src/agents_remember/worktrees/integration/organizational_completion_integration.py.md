@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,13 @@ Protected-ref publication and recovery never consume or depend on a projection r
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## CCR-R12@v5 Current Publication Boundary
+
+Integration publication intent binds the prepared code and external-memory pair, source refs, and
+organizational completion evidence needed for atomic publication. It does not require or create a
+full-quality certification record for the normal route. The publication operation preserves source
+movement refusal and authority checks, then records the resulting pair.
+
 ## 260821-CLIVE-L2 Current Contract
 
 The current source seams include `IntegrationBoundaryFacts`, `preview_integration_boundary`, `preview_organizational_completion`. Organizational completion and repair are canonical integration-journal transitions with exact candidate, ref, quality, and cancellation evidence. The queue may schedule a door candidate but does not own failure repair or reopening lifecycle state.
@@ -69,6 +76,7 @@ requires the finalized contract digest. Projection rows are never consumed, and 
 must remain exact.
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout recovery-projection package relocation; door/source-journal transfer and queue-independent completion are unchanged.
 

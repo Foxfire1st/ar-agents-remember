@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -50,6 +50,11 @@ adoption. Edit the canonical template, then synchronize.
 ### Todos
 
 None recorded.
+
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
 ## Docs References
 
@@ -127,7 +132,13 @@ The generated template now asks the plan to record canonical tie-break order plu
 source-pair-selected implementation exposure at a time. It explicitly permits logical pause and
 later resume, so graph absence cannot be misread as full-integration dependency.
 
+## CCR-L42 current candidate
+
+The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
 
 - 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
   synchronized orchestration-task template card.

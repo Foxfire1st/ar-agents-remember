@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -49,6 +49,11 @@ and memory carry-over without re-derivation. Edit the canonical template, then s
 
 None recorded.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ## Repo-Internal References
 
 This bundle copy is the shape the manager job posts at master exit; it references the master-exit verdict artifact and feeds the orchestrator's C-11 integration.
@@ -86,6 +91,7 @@ candidate. Missing, stale, unresolvable, or candidate-mismatched evidence blocks
 summary prose cannot override it.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: replaced copied lineage/ledger-map implications
   with canonical candidate, code-ancestry, memory-ancestry, verdict, and per-leaf ledger/commit

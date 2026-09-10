@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -31,6 +31,11 @@ A verdict is **evidence, not a decision**: it states an explicit pass / pass-wit
 
 No TODO markers are present in this report template.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ### Docs References
 
 No external domain documentation applies to this repository-local report template.
@@ -46,10 +51,10 @@ This bundle copy is the shape the adversarial-reviewer job writes at each seam; 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Verdict Template (adversarial reviewer)` | skills/l-01-agent-lifecycles/templates/verdict.md:1-142 |
-| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | "as judge evidence"; `### MASTER-EXIT — Manager Before Orchestrator Handover` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:206-232; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:278-278 |
-| The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. | "# Adversarial Verdict — master-exit"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:157-157 |
-| The master-exit onboarding lens names a backing onboarding-coherency report. | "# Adversarial Verdict — master-exit"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:157-157 |
-| The frame defines the two seams and the evidence-not-decision doctrine (SKILL.md) and the block-decomposes-into-fix-leaves doctrine (the reviewer role). | "verdicts are evidence"; "A master-exit block without fix leaves is invalid" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:221-221; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:230-231 |
+| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | "as judge evidence"; `### MASTER-EXIT — Manager Before Orchestrator Handover` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:334-336; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:252-279 |
+| The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. | "# Adversarial Verdict — master-exit"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:235-235 |
+| The master-exit onboarding lens names a backing onboarding-coherency report. | "# Adversarial Verdict — master-exit"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:235-235 |
+| The frame defines the two seams and the evidence-not-decision doctrine (SKILL.md) and the block-decomposes-into-fix-leaves doctrine (the reviewer role). | "verdicts are evidence"; "A master-exit block without an applicable listed repair is invalid" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:221-221; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:275-279 |
 
 As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated master-handover-approval; serious issues escalate to the developer); super-exit = developer (human review concentrates at the super gate); the reviewer role file reference is roles/reviewer.md.
 
@@ -100,6 +105,11 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `# Impact-Analysis Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `# Onboarding-Coherency Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
   canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain

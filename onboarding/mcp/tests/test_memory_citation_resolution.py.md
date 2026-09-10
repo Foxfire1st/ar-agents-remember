@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_citation_resolution.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,17 +16,17 @@
 
 ## Purpose
 
-Citation range, anchor and source-path resolution contracts.
+Citation range, anchor and source-path resolution contracts, including canonical full/selected document validation and retained prepared-history provenance.
 
 ## Code Commentary
 
 ### Logic
 
-Whole identifier boundaries reject longer-name false matches while valid names and pooled ranges pass. Prose citations share table range/anchor errors, fenced examples are ignored and misplaced prose serialization in table cells is reported. Parent traversal is malformed; absent code-root context reports no-code-repository-root rather than a silent pass.
+Whole identifier boundaries reject longer-name false matches while valid names and pooled ranges pass. Prose citations share table range/anchor errors, fenced examples are ignored and misplaced prose serialization in table cells is reported. Parent traversal is malformed; absent code-root context reports no-code-repository-root rather than a silent pass. The style-surface regression covers both full and selected walks rejecting a symlinked outside document, while retained prepared provenance may anchor history for current bytes and rejects an unrelated history commit.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the current candidate source after the CCR-L42 citation-surface additions; historical entries below record earlier test populations and do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -59,7 +59,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 | A citation inside a fence is not scanned. | `test_a_citation_inside_a_fence_is_not_scanned` | mcp/tests/test_memory_citation_resolution.py:172-175 |
 | A cit written into a finding cell is reported. | `test_a_cit_written_into_a_finding_cell_is_reported` | mcp/tests/test_memory_citation_resolution.py:181-192 |
 | A parent step can no longer reach a file at a shallower depth. | `test_a_parent_step_can_no_longer_reach_a_file_at_a_shallower_depth` | mcp/tests/test_memory_citation_resolution.py:198-205 |
-| Without a code root the result says so instead of passing quietly. | `test_without_a_code_root_the_result_says_so_instead_of_passing_quietly` | mcp/tests/test_memory_citation_resolution.py:211-218 |
+| Without a code root the result says so instead of passing quietly. | `test_without_a_code_root_the_result_says_so_instead_of_passing_quietly` | mcp/tests/test_memory_citation_resolution.py:233-240 |
+
+| Full and selected walks share canonical document validation; retained prepared history is accepted only when it is an ancestor and unrelated history is refused. | `test_full_and_selected_walks_share_canonical_document_validation`; `test_retained_prepared_commit_accepts_current_tree_and_rejects_other_history` | mcp/tests/test_memory_citation_resolution.py:213-233; mcp/tests/test_memory_citation_resolution.py:245-332 |
 
 ## Cross-Repo References
 
@@ -70,6 +72,8 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: added the canonical-walk and retained-prepared-provenance regression coverage to the current test card; verification metadata remains closeout-owned.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

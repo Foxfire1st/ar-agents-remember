@@ -6,39 +6,35 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                            |
 | lastUpdated            | 2026-08-29T08:52+02:00                     |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
-This skill defines `c-02-memory-quality-control` skill as the memory quality control workflow. It keeps the
-task-start drift gate for onboarding trust, adds the pre-code-commit
-missing-onboarding pass for newly added source files, and describes the
-closeout memory quality gate that runs before the memory content commit.
+This skill defines `c-02-memory-quality-control` skill as on-demand memory-quality diagnostics and scoped
+onboarding checks. It keeps task-start drift evidence and routes missing-onboarding or targeted quality
+work to the owning curator; full memory quality remains an explicit developer-requested operation and
+is not a closeout or integration prerequisite.
 
 ## Code Commentary
 
 ### Logic
 
-The skill instructs agents to use `c-08-ar-coordination-context-resolver` skill/MCP context resolution, run `drift_check`
-as the task-start trust baseline, classify drift into clean-source update
-candidates versus dirty-source active work-in-progress, run
-`agents_remember.memory_quality.integrity.check_missing_onboarding` before a
-code commit when the task added source files, and run `memory_quality_check`
-after onboarding refresh and before the memory content commit. It keeps the
-drift classifier rules for file-level sidecars, route overviews, inline blocks,
-and repo entity catalog fingerprints. During a curator leaf pass, the full scoped quality call
-also replaces one enclosure-local checklist combining the repairable work, current-addition
-coverage, stale indexes, source-change candidates, and noteworthy evidence; the curator reruns it
-until the zeroable count clears.
+The skill instructs agents to resolve context through `c-08-ar-coordination-context-resolver` skill/MCP,
+use `drift_check` as task-start evidence, classify clean-source candidates versus dirty active work, and
+run `check_missing_onboarding` or named memory-quality checks only for an approved scoped diagnostic.
+Curators own affected onboarding content and report each check as passed, failed, blocked, or not-run.
+Subset calls remain diagnostic; a complete memory-quality operation, census, coherence publication, or
+certificate runs only on explicit developer request. Closeout and integration consume the prepared memory
+leg and do not invoke or require these operations.
 
 ### Conventions
 
-`c-02-memory-quality-control` skill reports and routes memory quality work; it does not rewrite onboarding
+`c-02-memory-quality-control` skill reports and routes memory-quality work; it does not rewrite onboarding
 prose. Task-start drift reports remain local coordination artifacts under
 `c-08-ar-coordination-context-resolver` skill's resolved `temp_root`. Closeout style checks do not run at task start.
 Mechanical style repair is done by targeted fixers only after
-`memory_quality_check` reports a finding.
+an explicit diagnostic reports a finding and the owning workflow accepts the repair.
 The curator checklist is the explicit temp-location exception: it lives under the leaf worktree
 enclosure's reserved `reports/` directory, outside both Git worktrees, and replaces its predecessor.
 
@@ -56,6 +52,11 @@ gates.
 
 Add tests for `c-02-memory-quality-control` skill against a migrated external memory repo once such a fixture exists.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+Current contract: memory-quality work is on-demand diagnostic and repair support. Task-start drift and curator scoped checks remain useful evidence, while full memory quality runs only after an explicit developer request. Closeout and integration consume the prepared Git inputs and do not invoke or require memory-quality, census, coherence, certification, or review operations.
+
 ### Docs References
 
 No external domain documentation applies to this repository-local maintenance skill.
@@ -66,16 +67,18 @@ No external domain documentation applies to this repository-local maintenance sk
 
 ## Repo-Internal References
 
-`c-02-memory-quality-control` skill is the memory quality control gate used before implementation, before code
-commit when new files exist, and before the memory content commit during
-closeout.
+`c-02-memory-quality-control` skill is the on-demand diagnostics route used for task-start drift, scoped
+missing-onboarding checks, and explicitly requested memory-quality evidence; it is not a closeout or
+integration gate.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The quality-control phase table distinguishes task-start drift, curator intake, pre-commit coverage, closeout validation, and targeted style repair. | "## Quality Control Phases" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:30-38 |
 | Task-start quality control preserves the gradual-adoption boundary for historical files without onboarding and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff. | "Run Task-Start Drift Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:71-107 |
 | Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding. | "Run Pre-Code-Commit Missing-Onboarding Control" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:164-180 |
-| Closeout quality control runs the full memory gate and uses focused style fixers only after reported findings. | "Run Closeout Memory Quality Control"; "Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:234-234; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:261-261 |
+| Explicitly requested memory-quality work reports the requested scope and uses focused style fixers only after reported findings. | "Run Full Memory Quality Only On Explicit Developer Request"; "Use Targeted Style Fixers Only After Findings" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:205-205; mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:221-221 |
+
+| Scoped curator calls provide named diagnostics; complete memory-quality evidence remains explicit developer-requested work. | "Curator Scoped Onboarding Checks"; "Run Full Memory Quality Only On Explicit Developer Request" | mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md:182-205 |
 
 ## Cross-Repo References
 
@@ -102,6 +105,9 @@ forbids hand-versioned reports or filename fallback. Same-input quality reruns p
 changed inputs intentionally stale the authority.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: recorded that curator intake must run the complete validation path and treats subset calls as diagnostics, not green evidence; verification metadata remains closeout-owned.
 
 - 2026-08-29T08:52+02:00 — MCAR-L02 A005: synchronized the structured coherence publication and
   combined-readiness workflow. Verification remains closeout-owned.

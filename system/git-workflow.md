@@ -34,10 +34,12 @@ A job changes the checkout via these steps:
 2. Cut **`feat/<slug>`** | **`fix/<slug>`** from the spear (`main`).
 3. **C-09 worktree on that branch — chat & task both** (task adds `task.md`; chat doesn't).
 4. Work in the worktree; **memory parks on the worktree memory branch.**
-5. **Commit gate (human + quality).** Nothing is committed before explicit developer commit
-   approval (`c-12-closeout` worktree preview first). After approval, leaf closeout runs the single
-   targeted Dagger acceptance over the exact staged candidate before any commit. Series/master
-   closeout requires clean already-landed code and runs no acceptance.
+5. **Commit transaction.** Nothing is committed before the applicable explicit developer or
+   accepted-series authority and the `c-12-closeout` worktree preview. Closeout then publishes the
+   authorized code, memory-content, and ledger Git legs with the existing conflict and ref-movement
+   safeguards. Its transaction-owned commit legs suppress automatic quality and test hooks; the
+   ordinary explicit Git hook policy outside closeout/integration remains unchanged. It does not
+   automatically run quality, test, memory-quality, curator-certification, or review tools.
 6. **Push gate (human — one question).** After commit approval, a single "push?" approval hands the
    tail to the agent. Merge is **no longer its own gate** — only timing.
 7. Agent owns the tail: **push the branch → `gh pr create` (target `main`) → checks green →
@@ -90,17 +92,17 @@ The full orchestration doctrine lives in
 
 ---
 
-## Commit and push quality gates
+## Development checks and optional quality operations
 
-Certification remains lifecycle-owned and Dagger-only; ordinary host pytest and targeted Vitest
-provide development feedback and do not mint certificates. Local pre-commit/pre-push checks remain
-deterministic non-test checks. Preserve their lint, formatting, typing and structural policy.
+Workers use relevant targeted checks and curators use scoped onboarding checks before handoff;
+failed or not-run checks remain explicit evidence. Ordinary host pytest and targeted Vitest provide
+diagnostic feedback. Local pre-commit/pre-push checks remain deterministic non-test checks.
+Certification remains lifecycle-owned and Dagger-only when explicitly requested.
 
-For an atomic master, implement and integrate leaves with focused behavioral evidence. Full suites
-and whole-candidate review occur at master completion. Do not restore historical per-leaf full-suite
-or independent-review loops, and do not rerun acceptance merely for an ordinary push or publication.
-The existing shared Dagger route owns exact candidate, profile, runtime and report authority;
-a host result, missing attestation, missing mandatory diff base or failed report cannot replace it.
+Full code-quality checks, full test suites, full memory quality, and independent review run only
+after an explicit developer request through their existing tools. Their absence does not block an
+otherwise authorized closeout or integration transaction. A requested Dagger operation still owns
+its exact candidate, profile, runtime, and report authority; a host result cannot replace it.
 
 The executable selected-case budgets are **1000 unit /150 integration**, counting parametrized
 items. Consolidate overlap first, protect distinct behavior, and justify any budget increase with
@@ -149,8 +151,8 @@ Use `Release MCP X.Y.Z: <one-line summary>` (version-first), matching existing r
 ### End-to-end release flow (PR-gated)
 
 1. On a `feat/`|`fix/` branch in the worktree, bump the version locations and close out the change
-   per `C-12-closeout`; the leaf closeout owns the one targeted Dagger run. Do not add a release-only
-   acceptance run.
+   per `C-12-closeout`; the closeout transaction does not add an automatic quality run. Run a
+   release quality operation only when the developer explicitly requests it.
 2. **Land it on `main` via PR** (the landing flow above) — `main` is PR-gated, so a release reaches
    `main` through the merged PR, not a direct push.
 3. **Tag the merged commit:** push the `mcp-vX.Y.Z` tag pointing at the merge commit on `main`;

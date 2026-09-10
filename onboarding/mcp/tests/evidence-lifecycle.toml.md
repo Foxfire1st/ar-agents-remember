@@ -6,8 +6,8 @@
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-09-08T18:54:49+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,12 @@ The exact source declarations below establish the current behavior; this invento
 
 No separate cross-repository authority is established by this file.
 
+## CCR-L42 current candidate
+
+The evidence registry now records the atomic-master review public and scope tests as exact consumers of existing shared support artifacts; the additions refine ownership accounting and do not claim test execution or certification.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The evidence registry now records the atomic-master review public and scope tests as exact consumers of existing shared support artifacts; the additions refine ownership accounting and do not claim test execution or certification.
 
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ02 preparation recorded the exact two R25/R26 consumers added to both shared support rows. Registry SHA `15bea1c01f402c382dad1667dec601313bb8aabfc511bb8cedac66076287606a1` and validator PASS42 are preserved as source/diagnostic evidence only; the source is uncommitted and no acceptance claim is made.
 - 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.

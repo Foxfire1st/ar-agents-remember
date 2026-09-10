@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:51+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -61,6 +61,11 @@ completed turn report and replaced by the exact authoritative journal anchor.
 
 None.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ## Docs References
 
 No external Domain Documentation source governs this report format.
@@ -69,9 +74,9 @@ No external Domain Documentation source governs this report format.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope. | `## Requirement Attempt Journal Records Appended For This Handoff` | skills/l-01-agent-lifecycles/templates/turn-report.md:56-132 |
-| Exact commands and outcomes have a first-class report section. | `## Checks` | skills/l-01-agent-lifecycles/templates/turn-report.md:142-147 |
-| Artifact lifecycle and task continuity are recorded separately. | `## Durable-Evidence Promotion Hold Point (separate concern)`; `## Respawn State (onboard a successor from this — no transcript needed)` | skills/l-01-agent-lifecycles/templates/turn-report.md:148-179; skills/l-01-agent-lifecycles/templates/turn-report.md:180-185 |
+| Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope. | "## Requirement Attempt Journal Records Appended For This Handoff" | skills/l-01-agent-lifecycles/templates/turn-report.md:65-119 |
+| Exact commands and outcomes have a first-class report section. | "## Checks" | skills/l-01-agent-lifecycles/templates/turn-report.md:159-171 |
+| Artifact lifecycle and task continuity are recorded separately. | "## Durable-Evidence Promotion Hold Point (separate concern)"; "## Respawn State (onboard a successor from this — no transcript needed)" | skills/l-01-agent-lifecycles/templates/turn-report.md:172-177; skills/l-01-agent-lifecycles/templates/turn-report.md:204-209 |
 
 ## Cross-Repo References
 
@@ -86,6 +91,9 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-08-28T11:51+02:00 — Made the one-primary envelope and removal of the transient worker-record
   scaffold explicit after authoritative journal append.

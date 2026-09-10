@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -54,7 +54,12 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 No meaningful cross-repository boundary is owned by this file.
 
+## CCR-L42 current candidate
+
+Lifecycle control errors now use `resume` for fresh closeout-successor inputs, including the code-commit message arguments, replacing the retired `revise` action name.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Lifecycle control errors now use `resume` for fresh closeout-successor inputs, including the code-commit message arguments, replacing the retired `revise` action name.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
 

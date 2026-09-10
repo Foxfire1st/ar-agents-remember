@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/tasks/document_field_effects.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash |  `3e276f2b2052b641afbee180a472259f21b500df`|
-| lastVerifiedCommitDate |  2026-09-02T14:46:34+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -72,12 +72,15 @@ None.
 ## Docs References
 
 No external Domain Documentation source is configured; the schema taxonomy and mutation
-classification are repository-owned. The governing CCR-R04@v1 packet names the classification
-and invalidation semantics this file implements.
+classification are repository-owned. The governing CCR-R04@v1 packet is the task authority for
+the classification and invalidation semantics this file implements:
+`ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R04-v1-mutation-classified-projection-invalidation.md`.
+It is an authority link, not a resolved dependency-version source; current behavior is
+evidenced by the repository-owned references below.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The R04 packet requires exhaustive mutation classification (topology/intent/completion/evidence/audit) and task-first publication with no queue authority. | "Required Behavior"; "Ownership And Authority" | ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R04-v1-mutation-classified-projection-invalidation.md:25-72 |
+| R04's exhaustive mutation taxonomy and task-first projection boundary are implemented by the closed effect map and canonical scope resolver. | `TASK_DOCUMENT_FIELD_EFFECTS`; "def classify_task_document_mutation("; `resolve_projection_scope_union` | mcp/src/agents_remember/tasks/document_field_effects.py:144-358; mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
 
 ## Repo-Internal References
 
@@ -85,16 +88,18 @@ and invalidation semantics this file implements.
 | --- | --- | --- |
 | The closed effect vocabulary and projector are declared together. | `TaskDocumentFieldEffect`; `TaskDocumentFieldEffectProjector` | mcp/src/agents_remember/tasks/document_field_effects.py:50-59; mcp/src/agents_remember/tasks/document_field_effects.py:101-122 |
 | The taxonomy explicitly covers the root and every nested persisted model, including evidence-dependency and task-intent contracts. | `TASK_DOCUMENT_FIELD_EFFECTS` | mcp/src/agents_remember/tasks/document_field_effects.py:140-303 |
-| The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. | `FIELD_EFFECT_MUTATION_CLASSES`; `classify_task_document_mutation`; `TaskDocumentMutationClassification` | mcp/src/agents_remember/tasks/document_field_effects.py:306-314; mcp/src/agents_remember/tasks/document_field_effects.py:317-330; mcp/src/agents_remember/tasks/document_field_effects.py:80-95 |
-| Missing or stale mutation mappings and unclassified models refuse before write. | `validate_task_document_mutation_classes`; `_changed_model_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:333-343; mcp/src/agents_remember/tasks/document_field_effects.py:346-366 |
-| Runtime schema discovery refuses missing, stale, or empty classifications. | `task_document_schema_models`; `validate_task_document_field_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:442-456; mcp/src/agents_remember/tasks/document_field_effects.py:459-474 |
-| Effect projection retains only fields classified for the requested plane. | `fields_with_effect`; `project_model_field_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:490-500; mcp/src/agents_remember/tasks/document_field_effects.py:503-514 |
+| The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. | `FIELD_EFFECT_MUTATION_CLASSES`; `classify_task_document_mutation`; `TaskDocumentMutationClassification` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/tasks/document_field_effects.py:334-342; mcp/src/agents_remember/tasks/document_field_effects.py:80-95 |
+| Missing or stale mutation mappings and unclassified models refuse before write. | `validate_task_document_mutation_classes`; `_changed_model_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:361-371; mcp/src/agents_remember/tasks/document_field_effects.py:374-394 |
+| Runtime schema discovery refuses missing, stale, or empty classifications. | `task_document_schema_models`; `validate_task_document_field_effects` | mcp/src/agents_remember/tasks/document_field_effects.py:442-456; mcp/src/agents_remember/tasks/document_field_effects.py:487-502 |
+| Effect projection retains only fields classified for the requested plane. | `fields_with_effect`; `project_model_field_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:518-528; mcp/src/agents_remember/tasks/document_field_effects.py:531-542 |
 
 ## Cross-Repo References
 
 None; this is the task-schema authority inside agents-remember.
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
   3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the mutation-classification

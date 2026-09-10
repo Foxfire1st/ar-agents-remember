@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/owners.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -36,8 +36,11 @@ manifest must each select the exact candidate Git tree; a policy or tree mismatc
 `source-index-stale` / `source-index-malformed` refusals
 cit:([`observe_source_index`], mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152).
 `observe_git_nodes` reads content addresses from the exact candidate/base trees plus every diff
-endpoint, refusing `git-node-missing` when no blob exists
-cit:([`observe_git_nodes`, `_tree_entries`], mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:155-181; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:335-344).
+endpoint, refusing `git-node-missing` when no blob exists. A path that exists only in the base tree
+is marked `historical Git tree member`; current-candidate paths retain the ordinary exact-member
+reason, so rename/deletion predecessors remain in attention without being presented as current
+documents
+cit:([`observe_git_nodes`, `_tree_entries`], mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:155-186; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:340-344).
 The five extractors map: coveredFiles to `memory:onboarding/<source>.md` sidecars; every indexed
 source to its complete governing overview chain; citation claims to their citing documents (with
 `citation-source-escape` refusal for resolution outside the roots); entity fingerprint evidence
@@ -88,7 +91,11 @@ grammar (`claim_reopen`), entity fingerprint parser, and Git helpers.
 | Citation claims and entity fingerprint rows come from existing style modules. | `claims_in`; `parse_entity_fingerprint_rows` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:205-221; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:84-115 |
 | Dependency observation composes the canonical owner extractors; deleted tests do not establish present coverage. | `observe_dependency_snapshot` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:59-97 |
 
+| A path absent from the candidate tree is retained as a historical Git-tree member for dependency attention. | `observe_git_nodes` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:155-186 |
+
 ## Update History
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: recorded the owner rule that deleted or renamed predecessor paths remain historical attention facts while candidate paths remain executable candidates; verification metadata remains closeout-owned.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Documented explicit Git-candidate source-index observation, census and citation composition; verified against actual code commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503.
 

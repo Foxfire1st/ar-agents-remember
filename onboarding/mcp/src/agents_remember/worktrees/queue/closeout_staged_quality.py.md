@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-05T07:08:26+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -71,7 +71,7 @@ any commit, with missing/invalid profile authority refusing as certification-pro
 | Linked-worktree and conflict refusals precede any index rewrite. | `_refuse_outside_a_linked_worktree`; `_refuse_conflicted_worktree` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:24-40; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:43-55 |
 | The staged gate proves the accepted tree around reset, staging, hook execution, and the targeted profile call. | `gate_staged_code` | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:81-141 |
 | Closeout imports this owner under the established private call name. | "from agents_remember.worktrees.queue.closeout_staged_quality import (" | mcp/src/agents_remember/worktrees/modules/closeout.py:103-105 |
-| The strict closeout preflight passes the profile-built target, code diff base and candidate tree to this owner before any external-memory preflight. | "def _closeout_quality_preflight(" | mcp/src/agents_remember/worktrees/modules/closeout.py:800-839 |
+| The strict closeout preflight passes the profile-built target, code diff base and candidate tree to this owner before any external-memory preflight. | "def _closeout_quality_preflight(" | mcp/src/agents_remember/worktrees/modules/closeout.py:791-830 |
 | The strict gate admits the same target/profile and certifies the index. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:243-324 |
 
 ## Cross-Repo References

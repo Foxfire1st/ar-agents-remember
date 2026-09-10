@@ -39,7 +39,9 @@
     "mcp/src/agents_remember/worktrees/leaf_refs.py",
     "mcp/src/agents_remember/worktrees/named_ref_memory.py",
     "mcp/src/agents_remember/worktrees/reopen.py",
+    "mcp/src/agents_remember/worktrees/review_history.py",
     "mcp/src/agents_remember/worktrees/route_review.py",
+    "mcp/src/agents_remember/worktrees/route_review_scope.py",
     "mcp/src/agents_remember/worktrees/scheduling_mode.py",
     "mcp/src/agents_remember/worktrees/series_closeout.py",
     "mcp/src/agents_remember/worktrees/services.py",
@@ -58,8 +60,8 @@
     "mcp/src/agents_remember/worktrees/worktree_contract.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 209,
-    "fileSidecars": 25,
+    "sourceFilesInScope": 212,
+    "fileSidecars": 27,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -78,6 +80,7 @@
     "fact",
     "git",
     "git_worktree_manager",
+    "history",
     "init",
     "init__",
     "input",
@@ -105,10 +108,13 @@
     "resolver",
     "results",
     "review",
+    "review_history",
     "route",
     "route_review",
+    "route_review_scope",
     "scheduling",
     "scheduling_mode",
+    "scope",
     "seal",
     "series",
     "series_closeout",
@@ -152,7 +158,9 @@
       "mcp/src/agents_remember/worktrees/leaf_refs.py",
       "mcp/src/agents_remember/worktrees/named_ref_memory.py",
       "mcp/src/agents_remember/worktrees/reopen.py",
+      "mcp/src/agents_remember/worktrees/review_history.py",
       "mcp/src/agents_remember/worktrees/route_review.py",
+      "mcp/src/agents_remember/worktrees/route_review_scope.py",
       "mcp/src/agents_remember/worktrees/scheduling_mode.py",
       "mcp/src/agents_remember/worktrees/series_closeout.py",
       "mcp/src/agents_remember/worktrees/services.py",
@@ -160,9 +168,7 @@
       "mcp/src/agents_remember/worktrees/start_progress.py",
       "mcp/src/agents_remember/worktrees/sync_source_refresh.py",
       "mcp/src/agents_remember/worktrees/sync_transaction.py",
-      "mcp/src/agents_remember/worktrees/sync_transaction_authority.py",
-      "mcp/src/agents_remember/worktrees/sync_transaction_git.py",
-      "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+      "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -181,8 +187,12 @@
       "named_ref_memory",
       "reopen.py",
       "reopen",
+      "review_history.py",
+      "review_history",
       "route_review.py",
       "route_review",
+      "route_review_scope.py",
+      "route_review_scope",
       "scheduling_mode.py",
       "scheduling_mode",
       "series_closeout.py",
@@ -208,11 +218,7 @@
       "sync_transaction_state.py",
       "sync_transaction_state",
       "task_fact_publication.py",
-      "task_fact_publication",
-      "task_leaf_binding.py",
-      "task_leaf_binding",
-      "task_resolver.py",
-      "task_resolver"
+      "task_fact_publication"
     ]
   },
   "fallback": {

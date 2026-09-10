@@ -6,8 +6,8 @@
 | sourceRoute            | `docs/design/`                              |
 | doc_type               | `route-local-overview`                      |
 | lastUpdated            | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
@@ -107,8 +107,8 @@ needed to establish the route model.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The engine-room design reference child route (living spec + prototype) governing the dashboard engine room. | `# docs/design/engine-room/ — Engine Room Design Reference Overview` | onboarding/docs/design/engine-room/overview.md:1-91 |
-| The dashboard engine-room renderer the engine-room design docs govern. | `# dashboard/src/panels/engine-room/ — Engine Room Process Map Overview` | onboarding/dashboard/src/panels/engine-room/overview.md:1-482 |
+| The engine-room design reference child route ([engine-room overview](engine-room/overview.md), living spec + prototype) governs the dashboard engine room. | — | — |
+| The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs. | — | — |
 | FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. | `# Cockpit Dashboard — Workflow Scenario Catalog` | docs/design/dashboard/scenario-catalog.md:1-166 |
 | The explicit upstream gaps and one-Chats cutover ruling. | `# Session cockpit upstream register and Chats decision brief` | docs/design/dashboard/session-cockpit-upstream-register.md:1-66 |
 | The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-154 |
@@ -144,7 +144,23 @@ with the accepted authority model.
 
 `python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and budgets 1,000 unit / 150 integration collected parametrized cases. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
 
+## CCR-L42 Review-Authority Route Update
+
+`python-test-evidence.md` now names `worktrees.route_review_scope.require_current_route_review` as
+the route-review owner. Review runs at the owning altitude: atomic child leaves defer to the
+accumulated canonical master review at master-to-parent integration, while standalone and
+organizational leaves retain their applicable independent route review. The evidence and
+certification model remains unchanged; this update records where the route review is owned.
+
 ## Update History
+
+- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: converted the two engine-room
+  cross-memory rows to direct navigation links. Their relationship remains documented without
+  inventing a ledger mapping or verification stamp for the historical private code identity.
+
+- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current route-review owner
+  and atomic-child review altitude from `docs/design/python-test-evidence.md`. Source inspection
+  only; verification metadata remains closeout-owned.
 
 - 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
 

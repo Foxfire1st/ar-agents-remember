@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -69,6 +69,11 @@ and cross-role invariants.
 ### Todos
 
 None recorded.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
 
 ## Docs References
 
@@ -169,7 +174,13 @@ This packaged projection preserves the canonical phase boundary: validate before
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
+## CCR-L42 current candidate
+
+The lifecycle doctrine now distinguishes baseline from fix-verification review, seals issue IDs, forbids outside-list review resets, and places atomic-child route review at canonical-master integration. Three rounds are the ordinary maximum; any extra round requires explicit developer authorization.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The lifecycle doctrine now distinguishes baseline from fix-verification review, seals issue IDs, forbids outside-list review resets, and places atomic-child route review at canonical-master integration. Three rounds are the ordinary maximum; any extra round requires explicit developer authorization.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized the
   malformed-role refusal and polymorphic reviewer parent contract into the packaged onboarding.

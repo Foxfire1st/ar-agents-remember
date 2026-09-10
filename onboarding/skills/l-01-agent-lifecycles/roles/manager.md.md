@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -29,9 +29,10 @@ brief; the manager never requests or stores an occupant id. The manager gathers 
 and reviewer verdict, then calls `worktree_status` for the canonical leaf and requires the complete
 task-derived `sourceLineage` projection to be current immediately before curator dispatch. It
 carries that projection in the curator brief; dispatch re-proves it before host creation. Only then
-does it gather the curator coherence report before closeout. It runs leaf-scoped targeted quality
-exactly once when closeout creates the leaf commit. Leaf integration lands that exact certified
-commit without a rerun. The full wrapper runs once at master integration altitude.
+does it gather the curator coherence report before closeout. It consumes the worker's targeted-check
+report and curator's scoped onboarding handoff before the closeout transaction. Closeout and
+integration do not launch or require full quality, full tests, full memory quality, certification, or
+review; any explicitly requested operation remains owned by its existing lifecycle workflow.
 
 The role table advertises this seat as a plane-hosted caller and an explicit ambient-takeover
 target. The orchestrator ordinarily creates it; once hosted, it dispatches only its direct
@@ -91,16 +92,21 @@ are curator blockers, not authority to write current onboarding intent.
 - A worker/reviewer pair must bind the same exact attempt and candidate; neither can rewrite the
   requirement or prior attempt record.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | One manager owns one canonical master and the complete leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
-| Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
+| Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "## Hosted Role Dispatch" | skills/l-01-agent-lifecycles/roles/manager.md:48-48 |
 | The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:94-272 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:318-318; skills/l-01-agent-lifecycles/roles/manager.md:346-346 |
-| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:363-363 |
-| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:103-103 |
+| Master exit and handover use durable verdict/packet evidence and structural ownership. | "### 3 — Master-exit seam"; "### 4 — Handover to the orchestrator" | skills/l-01-agent-lifecycles/roles/manager.md:361-361; skills/l-01-agent-lifecycles/roles/manager.md:389-389 |
+| Structural parent/child messages are the role's communication path. | "## Comms Protocol" | skills/l-01-agent-lifecycles/roles/manager.md:406-406 |
+| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "### 2 — Leaf dispatch loop (per leaf)" | skills/l-01-agent-lifecycles/roles/manager.md:108-108 |
 
 ## L23 Manager And Leaf Admission
 
@@ -128,9 +134,9 @@ for the orchestrator's recomputed-frontier release. Organizational leaves close 
 super source and land directly; atomic leaves close against the isolated master branch and expose
 nothing to super until the whole block is ready.
 
-At organizational master exit, review scope is the exact proposed final super candidate containing
-prior landed contributions plus the proposed final leaf. The full suite runs once against that
-candidate before the ref moves. Atomic master exit reviews and gates the isolated branch once.
+At organizational master exit, any review or full quality operation runs only when explicitly
+requested and uses the exact proposed candidate. The ordinary exit still consumes the prepared Git
+transaction and its authority/ref safeguards.
 
 ## 2026-08-27 Attempt Boundary Clarification
 
@@ -140,6 +146,12 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "## Hosted Role Dispatch" repointed to skills/l-01-agent-lifecycles/roles/manager.md:48-48. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "## Comms Protocol" repointed to skills/l-01-agent-lifecycles/roles/manager.md:406-406. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "### 2 — Leaf dispatch loop (per leaf)" repointed to skills/l-01-agent-lifecycles/roles/manager.md:108-108. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-31T12:00+02:00 — A005 normalized hosted-dispatch wording to the exact canonical leaf or
   master task document vocabulary consumed by the structural tool and synchronized projections.

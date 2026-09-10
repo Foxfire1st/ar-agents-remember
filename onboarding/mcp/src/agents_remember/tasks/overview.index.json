@@ -21,6 +21,7 @@
     "mcp/src/agents_remember/tasks/master_sync.py",
     "mcp/src/agents_remember/tasks/readiness.py",
     "mcp/src/agents_remember/tasks/render.py",
+    "mcp/src/agents_remember/tasks/route_review.py",
     "mcp/src/agents_remember/tasks/semantic_topology.py",
     "mcp/src/agents_remember/tasks/semantic_topology_graph.py",
     "mcp/src/agents_remember/tasks/semantic_topology_graph_binding.py",
@@ -29,8 +30,8 @@
     "mcp/src/agents_remember/tasks/task_intent.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 17,
-    "fileSidecars": 17,
+    "sourceFilesInScope": 18,
+    "fileSidecars": 18,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -61,6 +62,9 @@
     "refs",
     "remember",
     "render",
+    "review",
+    "route",
+    "route_review",
     "semantic",
     "semantic_topology",
     "semantic_topology_graph",
@@ -92,6 +96,7 @@
       "mcp/src/agents_remember/tasks/master_sync.py",
       "mcp/src/agents_remember/tasks/readiness.py",
       "mcp/src/agents_remember/tasks/render.py",
+      "mcp/src/agents_remember/tasks/route_review.py",
       "mcp/src/agents_remember/tasks/semantic_topology.py",
       "mcp/src/agents_remember/tasks/semantic_topology_graph.py",
       "mcp/src/agents_remember/tasks/semantic_topology_graph_binding.py",
@@ -122,6 +127,8 @@
       "readiness",
       "render.py",
       "render",
+      "route_review.py",
+      "route_review",
       "semantic_topology.py",
       "semantic_topology",
       "semantic_topology_graph.py",
@@ -142,12 +149,10 @@
       "task_doc_tools",
       "mcp/src/agents_remember/tasks/",
       "route-local-overview",
-      "ea35964985f30080488270e71ac81657ac40682b",
+      "6f3e3fde75a1ca0202c9b07557cf86a7893e8532",
       "/../../../overview.md",
       "organizational",
-      "author_execution_graph",
-      "commanded_masters",
-      "tasks/"
+      "author_execution_graph"
     ]
   },
   "fallback": {

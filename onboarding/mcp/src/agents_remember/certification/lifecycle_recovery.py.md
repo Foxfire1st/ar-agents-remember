@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/lifecycle_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3`|
-| lastVerifiedCommitDate | 2026-09-03T00:47:35+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -83,9 +83,15 @@ No cross-repository implementation boundary is owned here.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Gate certificate and invalidation contracts are imported from the R21 owners. | `GateCertificate`; `GateFiveSemanticInputs`; `plan_certificate_reuse` | mcp/src/agents_remember/certification/certificate_models.py:152-176; mcp/src/agents_remember/certification/certificate_models.py:221-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-164 |
+| Gate certificate and invalidation contracts are imported from the R21 owners. | "class GateFiveSemanticInputs(FrozenContractModel)"; "class GateCertificate(FrozenContractModel)"; "def plan_certificate_reuse(" | mcp/src/agents_remember/certification/certificate_models.py:150-176; mcp/src/agents_remember/certification/certificate_models.py:219-240; mcp/src/agents_remember/certification/certificate_invalidation.py:124-175 |
+
+## CCR-L42 current candidate
+
+Finalization and certificate-authority revalidation now accept the retained `GateCertificateIdentity` sequence and pass it through the finalization authority reread. Certificate reuse remains exact and zero-start; this adds retained certificate identity to the existing boundary.
 
 ## Update History
+- 2026-09-10T00:26:00+02:00 — CCR-L42 citation repair: replaced ambiguous imported type/function anchors with unique declaration literals and ranges covering the verified historical and current declarations. Claims and verification stamps remain unchanged; no acceptance claim.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Finalization and certificate-authority revalidation now accept the retained `GateCertificateIdentity` sequence and pass it through the finalization authority reread. Certificate reuse remains exact and zero-start; this adds retained certificate identity to the existing boundary.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

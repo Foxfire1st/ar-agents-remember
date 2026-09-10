@@ -50,6 +50,7 @@
     "mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py",
     "mcp/src/agents_remember/worktrees/integration/integration_topology_collisions.py",
     "mcp/src/agents_remember/worktrees/integration/integration_topology_repair.py",
+    "mcp/src/agents_remember/worktrees/integration/master_review_gate.py",
     "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
     "mcp/src/agents_remember/worktrees/integration/organizational_completion.py",
     "mcp/src/agents_remember/worktrees/integration/organizational_completion_integration.py",
@@ -57,8 +58,8 @@
     "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 116,
-    "fileSidecars": 29,
+    "sourceFilesInScope": 117,
+    "fileSidecars": 30,
     "childRoutes": 3
   },
   "routingTerms": [
@@ -91,6 +92,7 @@
     "evidence",
     "execution",
     "fence",
+    "gate",
     "handoff",
     "init",
     "init__",
@@ -112,6 +114,8 @@
     "landing",
     "legacy",
     "lifecycle",
+    "master",
+    "master_review_gate",
     "mcp",
     "mutation",
     "mutation_evidence",
@@ -128,6 +132,7 @@
     "repair",
     "repository",
     "resolution",
+    "review",
     "series",
     "src",
     "state",
@@ -214,8 +219,8 @@
       "integration_topology_collisions",
       "integration_topology_repair.py",
       "integration_topology_repair",
-      "mutation_evidence.py",
-      "mutation_evidence"
+      "master_review_gate.py",
+      "master_review_gate"
     ]
   },
   "fallback": {

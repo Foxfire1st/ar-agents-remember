@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/route_review.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -39,15 +39,15 @@ requires a passing record for the exact current tree, and rechecks its evidence 
 Under R03 `build_route_review` now stamps per-evidence-file SHA-256 digests
 (`_stamp_evidence_digests`), builds the `route-review/v1` dependency declaration (code tree,
 task intent, every evidence-bytes edge, validator), and computes `recordDigest` over the record's
-canonical JSON cit:([`build_route_review`, `_stamp_evidence_digests`], mcp/src/agents_remember/worktrees/route_review.py:181-236; mcp/src/agents_remember/worktrees/route_review.py:390-412).
+canonical JSON cit:([`build_route_review`, `_stamp_evidence_digests`], mcp/src/agents_remember/worktrees/route_review.py:294-349; mcp/src/agents_remember/worktrees/route_review.py:523-545).
 `_require_evidence_files` was replaced by digest-based currentness: `_evidence_file_sha256` names
 `route-review-evidence-outside-task` / `route-review-evidence-missing` / `route-review-evidence-stale`
 when evidence bytes change after publication
-cit:([`_evidence_file_sha256`], mcp/src/agents_remember/worktrees/route_review.py:425-445).
+cit:([`_evidence_file_sha256`], mcp/src/agents_remember/worktrees/route_review.py:558-578).
 `require_current_route_review_task_intent` and `_require_current_dependencies` refuse
 `route-review-task-intent-missing`, `evidence-dependencies-missing`, or
 `route-review-dependencies-stale` when the declared inputs no longer match the current record
-cit:([`require_current_route_review_task_intent`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/route_review.py:288-311; mcp/src/agents_remember/worktrees/route_review.py:345-387).
+cit:([`require_current_route_review_task_intent`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/route_review.py:421-444; mcp/src/agents_remember/worktrees/route_review.py:478-520).
 
 CCR-R25 adds `route_review_refusal_projection`, a pure explanation layer for an already-observed
 `RouteReviewError`. It classifies currentness and task-intent statuses as a
@@ -92,11 +92,11 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The plane stamps reviewer payloads with the exact candidate and validates task-local evidence. | `build_route_review`; `_require_evidence_files` | mcp/src/agents_remember/worktrees/route_review.py:181-236; mcp/src/agents_remember/worktrees/route_review.py:330-342 |
-| Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. | `require_current_route_review` | mcp/src/agents_remember/worktrees/route_review.py:239-285 |
-| The R03 evidence-digest stamping and dependency currentness seam. | `_stamp_evidence_digests`; `_require_current_dependencies`; `_evidence_file_sha256` | mcp/src/agents_remember/worktrees/route_review.py:390-412; mcp/src/agents_remember/worktrees/route_review.py:345-387; mcp/src/agents_remember/worktrees/route_review.py:425-445 |
-| CCR-R25 maps observed route-review refusals into bounded structured recovery guidance. | "def route_review_refusal_projection("; "def route_review_refusal_fields(" | mcp/src/agents_remember/worktrees/route_review.py:55-145; mcp/src/agents_remember/worktrees/route_review.py:148-155 |
-| The route-review record's content-addressed fields and self-digest validator. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/document.py:151-198 |
+| The plane stamps reviewer payloads with the exact candidate and validates task-local evidence. | `build_route_review`; `_require_evidence_files` | mcp/src/agents_remember/worktrees/route_review.py:294-349; mcp/src/agents_remember/worktrees/route_review.py:463-475 |
+| Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. | `require_current_route_review` | mcp/src/agents_remember/worktrees/route_review.py:352-399 |
+| The R03 evidence-digest stamping and dependency currentness seam. | `_stamp_evidence_digests`; `_require_current_dependencies`; `_evidence_file_sha256` | mcp/src/agents_remember/worktrees/route_review.py:523-545; mcp/src/agents_remember/worktrees/route_review.py:478-520; mcp/src/agents_remember/worktrees/route_review.py:558-578 |
+| CCR-R25 maps observed route-review refusals into bounded structured recovery guidance. | "def route_review_refusal_projection("; "def route_review_refusal_fields(" | mcp/src/agents_remember/worktrees/route_review.py:185-185; mcp/src/agents_remember/worktrees/route_review.py:255-255 |
+| The route-review record's content-addressed fields and self-digest validator. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-153 |
 
 ## Cross-Repo References
 
@@ -120,6 +120,10 @@ record; the closeout door fingerprints review provenance as `recordDigest` inste
 recomputed evidence tuple (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `require_current_route_review` repointed to mcp/src/agents_remember/worktrees/route_review.py:352-399. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `_evidence_file_sha256` repointed to mcp/src/agents_remember/worktrees/route_review.py:558-578. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 - 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: regenerated route-review currentness, digest and refusal-projector coordinates after the frozen additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented the pure route-review refusal projection, exact-contract task guidance, and unchanged review gate. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_request.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,12 @@ Authority-free request fields are validated before durable reads. Supersede requ
 admission together, while every other action forbids them. Commit messages remain revise-only.
 This exact action matrix prevents partial control requests from reaching journal or task mutation.
 
+## CCR-L42 current candidate
+
+Commit-message fields are accepted only for the `resume` successor request, replacing `revise`; every other lifecycle-control action refuses present commit-message fields.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Commit-message fields are accepted only for the `resume` successor request, replacing `revise`; every other lifecycle-control action refuses present commit-message fields.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: aligned public control request validation with supersede and revise authority. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

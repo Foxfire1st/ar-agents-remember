@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -38,10 +38,11 @@ overview dumping, and task-log repetition are rejected. Mechanical no-impact car
 Forward-looking incidents, opportunities, and hypotheses remain report capture candidates until an
 authorized workflow promotes them.
 
-Before reporting completion, the curator runs current-additions missing-onboarding and the full
-contract-scoped memory-quality worklist, repairs every enforced curator-actionable finding, and
-reruns both. Dirty-source drift and real-commit-derived stamps/fingerprints are reported separately;
-they never excuse an underlying content, citation, shape, history, entity, or index defect.
+Before reporting completion, the curator updates affected onboarding and runs scoped checks, recording
+passed, failed, blocked, and not-run results honestly. Dirty-source drift and real-commit-derived
+stamps/fingerprints are reported separately; they never excuse an underlying content, citation, shape,
+history, entity, or index defect. Full memory quality and certification remain explicit operations,
+not closeout or integration prerequisites.
 
 The role table classifies curator as target-only. Only the manager ordinarily dispatches this leaf
 seat through plane authority; an identity-free developer launcher may target it only for an
@@ -54,8 +55,8 @@ fallback, and its dispatch/tools rows are structural documentation rather than s
   before writing.
 - Use one-to-one sidecars and governing overview links; update entities only when a real entity changes.
 - Default bodies hold present intent and boundaries; Update History records concise semantic transitions.
-- Run missing-onboarding plus full leaf-scoped quality, repair every enforced finding, then run
-  indexes, drift classification, and diff checks before structured authority publication.
+- Run the scoped onboarding checks for affected docs, repair in-scope findings, and report any check
+  that is failed, blocked, or not-run before the prepared memory leg is handed off.
 - Leave real-commit hashes and entity fingerprints pending until governed closeout creates the commit.
 
 ## Invariants And Boundaries
@@ -69,6 +70,11 @@ fallback, and its dispatch/tools rows are structural documentation rather than s
 - Curator cannot publish completion authority while its required checks still name actionable work.
 - Runtime ids are private correlations; curator communication uses structural parent messaging and
   the durable report.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Repo-Internal References
 
@@ -88,6 +94,7 @@ followed by `mode: poll` carrying only repository and run id. Capacity refusal m
 retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified curator as target-only plus explicit
   ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept

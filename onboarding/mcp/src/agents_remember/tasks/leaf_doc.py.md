@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -63,7 +63,12 @@ an injected writer. Worktree start supplies the queue-governed task-fact publish
 restamping cannot bypass an active sprint lane or atomic blocker; standalone tests can inject the
 ordinary task-doc writer without duplicating policy.
 
+## CCR-L42 current candidate
+
+Leaf documents now include `LeafEnclosureRegistrationPlan` and exact parent-row registration planning. Missing or mismatched bindings produce typed task-document repair facts before closeout rather than sibling scans or path-name inference.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Leaf documents now include `LeafEnclosureRegistrationPlan` and exact parent-row registration planning. Missing or mismatched bindings produce typed task-document repair facts before closeout rather than sibling scans or path-name inference.
 
 
 - 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.

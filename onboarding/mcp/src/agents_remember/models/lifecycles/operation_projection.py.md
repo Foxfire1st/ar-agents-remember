@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/operation_projection.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,12 @@ None): adapters populate it from the exact durable record's meaningful revision 
 envelopes, so a status-change waiter compares the cursor it waited on against the cursor of the
 envelope it receives; unreadable journal refusals carry no record and omit the field.
 
+## CCR-L42 current candidate
+
+The public projection control matrix now exposes `resume` where successor continuation is legal, including input-required, failed, and cancelled closeout rows, replacing `revise` while preserving integrate and direct-landing choices.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The public projection control matrix now exposes `resume` where successor continuation is legal, including input-required, failed, and cancelled closeout rows, replacing `revise` while preserving integrate and direct-landing choices.
 
 - 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
 

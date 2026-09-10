@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-29T10:09+02:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -67,7 +67,12 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 No meaningful cross-repository boundary is owned by this file.
 
+## CCR-L42 current candidate
+
+The legacy-output recovery refusal now states that proven migrated output cannot be cancelled or resumed; the exact recovery path remains required before any successor action.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The legacy-output recovery refusal now states that proven migrated output cannot be cancelled or resumed; the exact recovery path remains required before any successor action.
 
 - 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
 

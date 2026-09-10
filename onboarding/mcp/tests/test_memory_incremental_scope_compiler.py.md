@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_memory_incremental_scope_compiler.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,17 +16,17 @@
 
 ## Purpose
 
-Exact incremental memory dependency closure and non-accepting reuse.
+Exact incremental memory dependency closure and non-accepting reuse, including historical Git-tree attention nodes and rename handling.
 
 ## Code Commentary
 
 ### Logic
 
-R06 includes direct, transitive and reverse-only dependencies and leaves full-only checks pending. Stale indexes, adjacent candidates and missing or ambiguous authority refuse. R07 publishes every member, preserves typed blocked results and never promotes incremental success. Unchanged interrupted work reuses exact passes; changed memory reuses only units with identical dependency inputs.
+R06 includes direct, transitive and reverse-only dependencies and leaves full-only checks pending. Stale indexes, adjacent candidates and missing or ambiguous authority refuse. R07 publishes every member, preserves typed blocked results and never promotes incremental success. Unchanged interrupted work reuses exact passes; changed memory reuses only units with identical dependency inputs. The current regressions keep historical Git-tree members in attention without execution and mark only the old side of a rename historical.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the current candidate source after the CCR-L42 historical-member and rename regressions; historical entries below record earlier test populations and do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -55,9 +55,11 @@ The retained source anchors below support the fixture roles and assertion bounda
 | Stale index and adjacent candidate snapshot are scope unproven. | `test_stale_index_and_adjacent_candidate_snapshot_are_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:260-284 |
 | Missing or ambiguous r01 r02 authority is scope unproven. | `test_missing_or_ambiguous_r01_r02_authority_is_scope_unproven` | mcp/tests/test_memory_incremental_scope_compiler.py:313-324 |
 | R07 execution publishes every member and never promotes incremental success. | `test_r07_execution_publishes_every_member_and_never_promotes_incremental_success` | mcp/tests/test_memory_incremental_scope_compiler.py:570-591 |
-| R07 blocked unit preserves code and blocks aggregate. | `test_r07_blocked_unit_preserves_code_and_blocks_aggregate` | mcp/tests/test_memory_incremental_scope_compiler.py:594-631 |
-| R07 unchanged interruption reuses exact passes without executing. | `test_r07_unchanged_interruption_reuses_exact_passes_without_executing` | mcp/tests/test_memory_incremental_scope_compiler.py:634-653 |
-| R07 memory change reuses only units with identical dependency inputs. | `test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs` | mcp/tests/test_memory_incremental_scope_compiler.py:656-689 |
+| R07 blocked unit preserves code and blocks aggregate. | `test_r07_blocked_unit_preserves_code_and_blocks_aggregate` | mcp/tests/test_memory_incremental_scope_compiler.py:663-700 |
+| R07 unchanged interruption reuses exact passes without executing. | `test_r07_unchanged_interruption_reuses_exact_passes_without_executing` | mcp/tests/test_memory_incremental_scope_compiler.py:703-722 |
+| R07 memory change reuses only units with identical dependency inputs. | `test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs` | mcp/tests/test_memory_incremental_scope_compiler.py:725-758 |
+
+| Historical Git-tree attention is excluded from execution, and rename observation marks only the old node historical. | `test_r07_historical_document_stays_in_attention_without_execution`; `test_git_rename_marks_only_the_old_node_as_historical` | mcp/tests/test_memory_incremental_scope_compiler.py:595-629; mcp/tests/test_memory_incremental_scope_compiler.py:631-661 |
 
 ## Cross-Repo References
 
@@ -68,6 +70,8 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: added the historical-member execution and rename-owner regression coverage to the current test card; verification metadata remains closeout-owned.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

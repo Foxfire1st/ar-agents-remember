@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-28T11:51+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -43,6 +43,11 @@ memory intent inputs for the curator, and synchronize only from the canonical te
 ### Todos
 
 None recorded.
+
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
 ## Cross-Repo Evidence
 
@@ -116,7 +121,13 @@ This packaged projection preserves the canonical phase boundary: validate before
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
+## CCR-L42 current candidate
+
+The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
 
 - 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
   authority wording; projection ownership and byte-identity rules remain unchanged.

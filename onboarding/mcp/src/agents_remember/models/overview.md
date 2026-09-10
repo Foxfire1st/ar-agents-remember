@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-08T16:24:06+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -537,7 +537,13 @@ projection. It introduces no public worker PID or private operation key.
 
 The changed lifecycle preparation model retains original command ownership and append-only terminal observations through focused validation helpers. Runtime composition and physical Git proof remain outside models. The retained `test_wire_vocabulary_exhaustiveness.py` is now support code without collected test functions; its historical census and deleted cases must not be read as current exhaustive protection.
 
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
 ## Update History
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed the worktree vocabulary and wait-response anchors after the frozen model additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
 
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the optional activation fact and bounded admission vocabulary added to worktree response models. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.

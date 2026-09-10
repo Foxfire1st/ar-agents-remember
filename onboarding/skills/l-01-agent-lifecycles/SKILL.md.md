@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -106,6 +106,11 @@ separate protocol events as delivery attempts.
 - Worker/reviewer attempt records are append-only and bind one exact candidate; summaries never
   substitute for them or invalidate accepted work.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
+
 ## Docs References
 
 No external domain source governs this repository-owned lifecycle doctrine.
@@ -122,11 +127,11 @@ No external domain source governs this repository-owned lifecycle doctrine.
 | The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
 | The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
 | Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:203-203 |
-| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:442-442; skills/l-01-agent-lifecycles/SKILL.md:449-449 |
+| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:466-466; skills/l-01-agent-lifecycles/SKILL.md:473-473 |
 | Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:269-269 |
-| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes." | skills/l-01-agent-lifecycles/SKILL.md:266-307 |
-| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:337-337 |
+| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:295-295 |
+| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes." | skills/l-01-agent-lifecycles/SKILL.md:320-320 |
+| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:361-361 |
 
 ## L23 Dispatch Admission
 
@@ -143,9 +148,12 @@ or the orchestrator builds it only after a sanctioned strategist skip; the archi
 the orchestrator adopts it. Organizational masters are logical ownership groups whose leaves use
 the direct super edge, while atomic masters retain the isolated super → master → leaf edge.
 
-The quality altitude follows those two natures without duplication: each leaf receives one
-change-set-scoped acceptance at closeout, and each completed organizational or atomic master
-receives one full check against the exact candidate before its super ref moves.
+The lifecycle records worker targeted checks and curator scoped onboarding checks before handoff.
+Closeout and integration then publish the authorized code, memory-content, and ledger Git
+transaction; full code quality, full tests, full memory quality, certification, and review are
+explicit developer-requested operations rather than automatic altitude gates. Transaction-owned
+commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside
+the transaction remains unchanged.
 
 ## 2026-08-27 Attempt Boundary Clarification
 
@@ -155,6 +163,12 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:295-295. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement revisions and delivery attempts are separate axes." repointed to skills/l-01-agent-lifecycles/SKILL.md:320-320. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/SKILL.md:361-361. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented fail-closed
   malformed hosted role identity and the plane-stamped polymorphic reviewer parent contract.

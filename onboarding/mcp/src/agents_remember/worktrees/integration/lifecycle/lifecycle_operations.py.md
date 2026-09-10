@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:48:58+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -35,7 +35,7 @@ Under CCR-R03@v1 the closeout claim record and the queued integrate record are b
 typed dependency declaration (`lifecycle_operation_dependencies`), and the lifecycle launch gate
 re-requires the current record's declared dependencies (`require_lifecycle_operation_dependencies`)
 before a worker is launched
-cit:(["def _prepare_closeout_claim(", "def queued_operation_record(", "def _recover_launch_and_project("], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:488-523; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:911-931).
+cit:(["def _prepare_closeout_claim(", "def queued_operation_record(", "def _recover_launch_and_project("], mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:488-523; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:960-960).
 
 Queued-record construction now lives in `generation/creation.py`; its candidate/task identity
 and integrate dependency binding are unchanged. Durable generation publication and launch remain
@@ -81,7 +81,7 @@ The source file is the direct evidence for this unit; its governing overview rec
 | --- | --- | --- |
 | The module's concrete API, control flow, and validation boundary are implemented here. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1123 |
 | Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. | `launch_detached_worker` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1002-1097 |
-| R03 dependency binding on claims and queued records plus launch re-requirement. | "def _prepare_closeout_claim("; "def queued_operation_record("; "def _recover_launch_and_project(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:488-523; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:911-931 |
+| R03 dependency binding on claims and queued records plus launch re-requirement. | "def _prepare_closeout_claim("; "def queued_operation_record("; "def _recover_launch_and_project(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:488-523; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:960-960 |
 
 ## Cross-Repo References
 
@@ -91,6 +91,14 @@ protocol claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repository reference applies. | `STALE_HEARTBEAT_SECONDS` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py:1-1118 |
+
+## CCR-R12@v5 Current Admission Boundary
+
+Closeout admission starts or observes the typed transaction after candidate, contract-door, and
+source checks; it does not build a selected certification or quality prerequisite for the normal
+route. Successor generations reuse explicit recovery authority and fresh provenance under a lease.
+Integration admission similarly preserves source-pair identity and ref safety while leaving any
+full-suite or certification work to an explicit developer request.
 
 ## 260831-CCR-R03 Dependency-Gated Launch
 
@@ -102,6 +110,9 @@ Closeout/integrate records now bind their declared inputs and launch refuses a s
 Leaf start freezes complete certification admission before initial journal publication. An unchanged candidate revalidates selected currentness and unchanged-retry admissibility; a new candidate prepares a new frozen admission. Initial certification selection is passed atomically into journal create/replace, and an existing leaf claim must retain selected certification. A queued claim recovered before any worker identity was installed can resume its original launch. Series closeout is recording-only: it revalidates series authority and refuses enabled code, memory or ledger commit legs. Integration authority snapshots and queued-record construction live in `generation/creation.py`.
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=5e164bf5b308e20659e4e07b61a4cad895b1ad4bcafcfa139bdb6c366c6ba4ec; verification metadata remains unchanged because commit-owned realization is pending.
 

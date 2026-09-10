@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_memory_quality.py`         |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-09T18:57+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,21 +16,21 @@
 
 ## Purpose
 
-Entity inventory/fingerprint alignment and memory fixture builders.
+Memory-census metadata authority, historical-row and moved-card handling, and entity-catalog alignment tests.
 
 ## Code Commentary
 
 ### Logic
 
-The two retained tests reject a fingerprint without an inventory entity and accept exactly one fingerprint per inventory member. Alignment remains first in the before-metadata-refresh check ordering. Helpers write actual onboarding/entity fixtures and initialize clean memory repositories.
+The first four tests exercise the census repair boundary: a valid current sidecar mapping is accepted despite absent or stale historical metadata, a repaired current mapping is not vetoed by an old association, a removed historical sidecar remains an absent census row without a removal blocker, and a move retains both the old absent row and the new present row. The two retained tests reject a fingerprint without an inventory entity and accept exactly one fingerprint per inventory member. Alignment remains first in the before-metadata-refresh check ordering. Helpers write exact onboarding/entity fixtures and initialize clean memory repositories.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+The retained entity assertions were present at IAS `d3610903`; the current candidate carries four census regression cases covering current metadata, historical rows, and moved old/new cards. Historical entries below record earlier test populations and do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-This source does not retain the historical full runner/style/MCP payload matrix. The ordering assertion establishes check registration, not a prohibition on authorized pre-gate memory preparation.
+Current census cases distinguish current candidate metadata from historical metadata: current missing or conflicting mappings remain blockers, while historical-only associations provide removal context, remain enumerable as absent rows, and do not veto a valid current mapping or require an extra removal declaration. The ordering assertion establishes check registration, not a prohibition on authorized pre-gate memory preparation.
 
 ### Todos
 
@@ -50,8 +50,12 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Entity catalog alignment rejects orphaned fingerprint before code rails. | `test_entity_catalog_alignment_rejects_orphaned_fingerprint_before_code_rails` | mcp/tests/test_memory_quality.py:89-107 |
-| Entity catalog alignment accepts one fingerprint per inventory entry. | `test_entity_catalog_alignment_accepts_one_fingerprint_per_inventory_entry` | mcp/tests/test_memory_quality.py:109-119 |
+| Current repaired metadata and historical removal behavior are covered by the census regression helper. | `test_census_accepts_repaired_current_onboarding_metadata` | mcp/tests/test_memory_quality.py:94-196 |
+| A repaired current mapping is accepted even when the historical card named an old source. | `test_census_repaired_old_association_does_not_veto_current_mapping` | mcp/tests/test_memory_quality.py:198-221 |
+| A removed historical card remains an absent row without a removal blocker. | `test_census_retains_historical_removal_row_without_mapping_validation` | mcp/tests/test_memory_quality.py:223-251 |
+| A moved card retains old and new census rows with absent and present final states. | `test_census_move_retains_old_and_new_rows` | mcp/tests/test_memory_quality.py:253-280 |
+| Entity catalog alignment rejects orphaned fingerprint before code rails. | `test_entity_catalog_alignment_rejects_orphaned_fingerprint_before_code_rails` | mcp/tests/test_memory_quality.py:282-300 |
+| Entity catalog alignment accepts one fingerprint per inventory entry. | `test_entity_catalog_alignment_accepts_one_fingerprint_per_inventory_entry` | mcp/tests/test_memory_quality.py:302-312 |
 
 ## Cross-Repo References
 
@@ -62,6 +66,10 @@ No cross-repository implementation evidence is required for these local test and
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-09T23:45:19+02:00 — CCR-L42 census regression reconciliation: documented the four current-versus-historical census cases, including absent historical rows without an extra removal declaration and moved old/new row preservation, and refreshed all current test ranges. Verification metadata remains unchanged until closeout.
+
+- 2026-09-09T18:57:35+02:00 — CCR-L42 census repair: documented the three current-versus-historical metadata regression cases and the two retained entity-catalog tests, and refreshed current source citations. Verification metadata remains unchanged until closeout.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

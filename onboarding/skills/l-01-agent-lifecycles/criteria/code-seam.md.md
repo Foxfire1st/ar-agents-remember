@@ -6,8 +6,8 @@
 | path | `skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,11 @@ defect class.
 
 None.
 
+
+## CCR-R12@v5 Review Scope
+
+This criteria catalog supplies evidence only when the corresponding review is explicitly requested. It does not create a closeout or integration prerequisite; routine handoff uses the worker and curator targeted/scoped check records and preserves any failed or not-run state.
+
 ## Docs References
 
 No relevant external documentation found after checking the resolved source registry; the
@@ -76,6 +81,7 @@ No meaningful cross-repo references found.
 
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
 

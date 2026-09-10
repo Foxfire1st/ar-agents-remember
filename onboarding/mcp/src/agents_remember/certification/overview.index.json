@@ -35,6 +35,7 @@
     "mcp/src/agents_remember/certification/diagnostics/projection.py",
     "mcp/src/agents_remember/certification/diagnostics/store.py",
     "mcp/src/agents_remember/certification/digests.py",
+    "mcp/src/agents_remember/certification/final_certification_models.py",
     "mcp/src/agents_remember/certification/final_codex/__init__.py",
     "mcp/src/agents_remember/certification/final_codex/certificate.py",
     "mcp/src/agents_remember/certification/final_codex/models.py",
@@ -78,8 +79,8 @@
     "mcp/src/agents_remember/certification/validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 64,
-    "fileSidecars": 55,
+    "sourceFilesInScope": 65,
+    "fileSidecars": 56,
     "childRoutes": 2
   },
   "routingTerms": [
@@ -105,6 +106,7 @@
     "environment_validation",
     "execution",
     "final",
+    "final_certification_models",
     "final_codex",
     "freeze",
     "frozen",
@@ -169,12 +171,12 @@
       "mcp/src/agents_remember/certification/diagnostics/projection.py",
       "mcp/src/agents_remember/certification/diagnostics/store.py",
       "mcp/src/agents_remember/certification/digests.py",
+      "mcp/src/agents_remember/certification/final_certification_models.py",
       "mcp/src/agents_remember/certification/final_codex",
       "mcp/src/agents_remember/certification/final_codex/__init__.py",
       "mcp/src/agents_remember/certification/final_codex/certificate.py",
       "mcp/src/agents_remember/certification/final_codex/models.py",
-      "mcp/src/agents_remember/certification/final_codex/planning.py",
-      "mcp/src/agents_remember/certification/final_codex/projection.py"
+      "mcp/src/agents_remember/certification/final_codex/planning.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -203,6 +205,8 @@
       "store",
       "digests.py",
       "digests",
+      "final_certification_models.py",
+      "final_certification_models",
       "certificate.py",
       "certificate",
       "lifecycle_admission.py",
@@ -222,9 +226,7 @@
       "compare.py",
       "compare",
       "freeze.py",
-      "freeze",
-      "measure.py",
-      "measure"
+      "freeze"
     ]
   },
   "fallback": {

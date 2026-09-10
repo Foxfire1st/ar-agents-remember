@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -95,7 +95,13 @@ Unstarted-task evidence and recovery routes now expose typed task facts without 
 from queue state. Task mutations remain legal; affected closeout projections are invalidated and
 rebuilt from current task truth instead of freezing authoring or carrying stale rows forward.
 
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
 ## Update History
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
 - 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Recorded field-classified invalidation, exact resolved task intent for route review, and dry-run scope preflight. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
 

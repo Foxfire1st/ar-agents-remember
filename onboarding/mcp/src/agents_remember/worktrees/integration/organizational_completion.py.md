@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,6 +54,14 @@ memory-only row for the same code is newer.
 
 No configured domain-documentation or cross-repository source applies to this file.
 
+## CCR-R12@v5 Current Completion Boundary
+
+Organizational completion now proves final-leaf landing and the paired code/external-memory source
+refs under their existing authority. The completion plan and publication checks do not require a
+durable full-quality or certification marker for normal transaction closeout/integration. Any
+retained completion or certification vocabulary is historical/explicit evidence, while the normal
+route records the resulting transaction and pair identity.
+
 ## 260821-CLIVE-L2 Current Contract
 
 The current source seams include `OrganizationalCompletionError`, `OrganizationalCompletionPublicationError`, `OrganizationalCompletionPublicationState`. Organizational completion and repair are canonical integration-journal transitions with exact candidate, ref, quality, and cancellation evidence. The queue may schedule a door candidate but does not own failure repair or reopening lifecycle state.
@@ -79,6 +87,7 @@ Sibling completion proof now separates code ancestry, memory identity/ancestry, 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-08-26T14:32+02:00 — Replaced global ledger-key uniqueness with the two required proofs:
   newest mapping for sibling current authority and exact-edge containment for final-history

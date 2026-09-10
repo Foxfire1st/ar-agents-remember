@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/certification/lifecycle_admission.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -96,7 +96,12 @@ No cross-repository implementation boundary is owned here.
 | --- | --- | --- |
 | Repository-specific rail declarations enter through repository profiles outside this contract. | — | — |
 
+## CCR-L42 current candidate
+
+Prior-red admission now retains exact prepared prior memory ownership and successor memory-tree identity. A prior-red changed input of kind `memory-tree` is compared against those exact digests and refuses when the retained owner is missing; code and other input-rail relevance remains exact.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Prior-red admission now retains exact prepared prior memory ownership and successor memory-tree identity. A prior-red changed input of kind `memory-tree` is compared against those exact digests and refuses when the retained owner is missing; code and other input-rail relevance remains exact.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4374a06385fba89f1b6f2c187d0659b612f9944da826599ab78f79a0beb55787; verification metadata remains unchanged because commit-owned realization is pending.
 

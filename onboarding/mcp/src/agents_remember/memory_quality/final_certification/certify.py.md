@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/final_certification/certify.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T07:12:23Z |
-| lastVerifiedCommitHash | `16d1a4d6d6f8e8572b4bca10b8a4a84485449604` |
-| lastVerifiedCommitDate | 2026-09-04T00:55:21+02:00 |
+| lastUpdated | 2026-09-09T22:39:30+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -32,12 +32,12 @@ package, so this assembly API alone does not establish an end-to-end Gate-5 exec
 
 Module-level surface:
 
-- `FinalCertificationEvidence` (class, lines 42-56) - every exact authority the final
+- `FinalCertificationEvidence` (class, lines 44-60) - every exact authority the final
   certification may read: admission, Gate 1-4 certificates, input changes, code/memory trees,
   pair identity, affected closure, validated coherence (or None), executed checks,
   missing-onboarding and stale-route-index counts, and the full-only rerun flag. Nothing is
   inferred.
-- `certify_final_full_memory_coherence` (lines 59-134) - result assembly: green-prefix proof
+- `certify_final_full_memory_coherence` (lines 62-137) - result assembly: green-prefix proof
   first (stale or invalid prefix refuses before any catalog work), current coherence required
   (`gate-five-coherence-blocked` when the supplied validated coherence is absent), coherence subrecords derived, exact plan
   compiled, attestation built from the executed catalog (affected-closure status derives from
@@ -67,12 +67,14 @@ None.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exact authority bundle the certification may read. | `FinalCertificationEvidence` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:42-56 |
-| Folds supplied executed checks and identities into a returned green/red/blocked result. | `certify_final_full_memory_coherence` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:59-134 |
-| Maps the caller's full-only rerun observation to pass or blocked for the affected-closure item. | `_affected_closure_status` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:137-141 |
-| The typed refusal helper. | `_refuse` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:144-145 |
+| The exact authority bundle the certification may read. | `FinalCertificationEvidence` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-60 |
+| Folds supplied executed checks and identities into a returned green/red/blocked result. | `certify_final_full_memory_coherence` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:62-137 |
+| Maps the caller's full-only rerun observation to pass or blocked for the affected-closure item. | `_affected_closure_status` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:140-144 |
+| The typed refusal helper. | `_refuse` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:147-149 |
 
 ## Update History
+
+- 2026-09-09T22:39:30+02:00 — CCR-L42 failed-Gate1 repair: refreshed current certification function extents after the behavior-identical typed-model move; verification remains closeout-owned.
 
 - 2026-09-05T07:12:23Z — CCR L31 independent-review correction: reread the complete module at
   ea359649 and distinguished actual result assembly from caller-owned check execution,

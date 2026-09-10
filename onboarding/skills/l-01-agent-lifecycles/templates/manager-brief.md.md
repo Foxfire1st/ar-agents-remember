@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:51+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
 
 ## Governing Overview
@@ -17,7 +17,7 @@
 ## Purpose
 
 This is the orchestrator-compiled, self-contained session start for a manager that owns one
-master. It transfers task topology, source-edge truth, quality altitude, closeout scheduling, and
+master. It transfers task topology, source-edge truth, targeted/scoped evidence, closeout scheduling, and
 the exact approved requirement revisions the manager must dispatch and close.
 
 ## Code Commentary
@@ -27,8 +27,8 @@ the exact approved requirement revisions the manager must dispatch and close.
 Before each worker dispatch, the manager receives one stable ID, exact version, matching approved
 canonical packet, corpus ruling, and expected evidence classes for every applicable requirement.
 The manager requires one worker acceptance block and one independent reviewer adjudication per
-revision. It separately preserves the durable-evidence promotion hold point, route review, curator
-handoff, and repository-defined quality boundaries.
+revision. It separately preserves the durable-evidence promotion hold point, optional requested
+review, curator handoff, and repository-defined transaction boundaries.
 
 The brief also requires the manager to compile the next review-handoff attempt identity without
 advancing it during dispatch or internal implementation/test/evidence reruns, validate the
@@ -67,6 +67,11 @@ rather than treating queue state as a task lock.
 
 None.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ## Docs References
 
 No external Domain Documentation source governs this dispatch template.
@@ -75,9 +80,9 @@ No external Domain Documentation source governs this dispatch template.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The source edge and every requirement revision are compiled before worker dispatch. | `## The source edge (plane-owned, load-bearing)`; `## Dispatch defaults` | skills/l-01-agent-lifecycles/templates/manager-brief.md:32-150 |
-| Master exit carries the full revision set and independent adjudications. | `## The exit` | skills/l-01-agent-lifecycles/templates/manager-brief.md:151-169 |
-| Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations. | `## Dispatch defaults` | skills/l-01-agent-lifecycles/templates/manager-brief.md:43-150 |
+| The source edge and every requirement revision are compiled before worker dispatch. | "## The source edge (plane-owned, load-bearing)"; "## Dispatch defaults" | skills/l-01-agent-lifecycles/templates/manager-brief.md:32-42; skills/l-01-agent-lifecycles/templates/manager-brief.md:61-175 |
+| Master exit carries the full revision set and independent adjudications. | "## The exit" | skills/l-01-agent-lifecycles/templates/manager-brief.md:176-194 |
+| Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations. | "## Dispatch defaults" | skills/l-01-agent-lifecycles/templates/manager-brief.md:61-175 |
 
 ## Cross-Repo References
 
@@ -92,6 +97,9 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-08-28T11:51+02:00 — Required the reviewer seat to be distinct from both the builder and
   plan author.

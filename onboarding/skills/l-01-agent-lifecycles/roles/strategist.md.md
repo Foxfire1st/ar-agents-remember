@@ -6,8 +6,8 @@
 | path | skills/l-01-agent-lifecycles/roles/strategist.md |
 | doc_type | file-level-onboarding |
 | lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
@@ -35,6 +35,11 @@ private control-plane steps, not a strategist-visible multi-call workflow.
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
 outputs. The strategist remains target-only, and dispatch proof remains exact-session and
 fail-closed.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Docs References
 
@@ -73,6 +78,7 @@ The strategist keeps planning truth upstream of runtime selection. Queue or sele
 inform current feasibility, but cannot veto task authoring or rewrite dependency judgment.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified strategist as target-only plus explicit
   ambient-takeover target, replaced stale public readiness sequencing, and kept structural

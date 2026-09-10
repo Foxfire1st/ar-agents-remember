@@ -42,16 +42,18 @@ opensrc fetch https://github.com/anomalyco/opentui        # GitHub
 ## Code Quality
 
 Ordinary Python development uses the repository's direct pytest unit and integration commands.
-Host runs provide diagnostic feedback; only the lifecycle-owned, exact-candidate Dagger route
-produces certification evidence. The old `scripts/test-python` wrapper remains deleted and should
-not be recreated. Targeted Vitest unit/component runs remain diagnostic feedback. Repository
-Playwright/browser acceptance remains Dagger-owned.
+Workers report relevant targeted checks, including failures and checks not run; host runs provide
+diagnostic feedback. The old `scripts/test-python` wrapper remains deleted and should not be
+recreated. Targeted Vitest unit/component runs remain diagnostic feedback. Repository
+Playwright/browser acceptance and Dagger certification remain available for an explicitly requested
+quality operation.
 
-For an atomic master, use focused behavioral checks during implementation; run the full suites
-and whole-candidate review at master completion, not once per leaf. Ordinary pushes, packaging
-and response retries do not justify repeated acceptance runs. When certification is required,
-use the current shared Dagger configuration and exact source/bundle/base contract; do not allocate
-another engine or substitute a host result for its certificate.
+Use focused behavioral checks during implementation and report their exact scope. Full code quality,
+full tests, full memory quality, and whole-candidate review run only after an explicit developer
+request. Closeout and integration are Git code/memory/ledger transactions and do not launch or
+require those operations. When a requested certification run is required, use the current shared
+Dagger configuration and exact source/bundle/base contract; do not allocate another engine or
+substitute a host result for its certificate.
 
 The selected collected-case budgets are **1000 unit /150 integration**, including parametrized
 cases. Consolidate overlap before adding a test; each added case must protect a distinct behavior,
@@ -63,12 +65,12 @@ review trigger: simplify code, add a meaningful behavioral test, or record conci
 acceptance. There is no mandatory coverage percentage, score exception registry, or ratchet.
 Lint, formatting, typing, structural rules, test failures and report integrity errors still enforce.
 
-The targeted graph covers changed files, reverse-import closure, the derived test subset,
-diagnostic coverage/CRAP over changed production modules, changed-line observations, and the configured file-size
-rail. The full graph covers the repository suite. A missing graph, missing mandatory diff base,
-invalid Dagger attestation, absent self-owned wrapper, or non-zero result refuses with no host or
-direct-Docker fallback. An explicit lifecycle memory cap is passed to the graph's inner wrapper;
-otherwise the container runtime owns RAM and swap.
+When explicitly requested, the targeted graph covers changed files, reverse-import closure, the
+derived test subset, diagnostic coverage/CRAP over changed production modules, changed-line
+observations, and the configured file-size rail. The full graph covers the repository suite. A
+requested quality run with a missing graph, missing mandatory diff base, invalid Dagger attestation,
+absent self-owned wrapper, or non-zero result refuses with no host or direct-Docker fallback.
+Closeout/integration do not invoke this graph by default.
 
 Every completed lifecycle acceptance run atomically replaces the enclosure's
 `reports/test-results.md` and exports `clean-quality-results.json` as the authoritative result.
@@ -85,18 +87,19 @@ which findings are in touched files, which are inherited/out of scope, and the
 decision for each in-scope issue. Do not summarize quality as only "tests
 passed" when the tools emitted complexity, coverage, or threshold findings.
 
-### Commit-Gate Enforcement
+### Transaction Boundary
 
 The local fast and targeted hook tiers run deterministic non-test checks only: generated-copy
-checks, Ruff, formatting, Pyright, dashboard code generation, lint, and typecheck. The manual full
-hook tier refuses and points to Dagger. Pull requests always run the deterministic non-test GitHub
-check; ordinary branch pushes do not launch a duplicate workflow. The tag-only publish workflow
-requires the tagged commit to be reachable from `origin/main`, then builds and publishes without
-rerunning acceptance.
+checks, Ruff, formatting, Pyright, dashboard code generation, lint, and typecheck. Pull requests
+run the deterministic non-test GitHub check; ordinary branch pushes do not launch a duplicate
+workflow. The tag-only publish workflow requires the tagged commit to be reachable from
+`origin/main`, then builds and publishes without rerunning an optional quality operation.
 
-Certification continues to use its existing lifecycle owner and exact candidate authority.
-Focused host results do not mint certificates. The full suite and whole-candidate review are
-master-end work; do not infer a new per-leaf full acceptance loop from historical hook wording.
+Closeout and integration use their existing transaction owners and exact source/destination/ref
+authority. Their transaction-owned commit legs also suppress automatic quality and test hooks; the
+ordinary explicit Git hook policy outside closeout/integration remains unchanged. They do not require
+certification, full suites, memory-quality checks, curator certification, or independent review. A
+developer-requested quality run remains lifecycle-owned; focused host results do not mint certificates.
 
 ---
 
@@ -165,7 +168,7 @@ For more information on radon usage use the official documentation: [Radon Docum
 
 Run ordinary host pytest for focused development feedback. The root configuration selects units
 by default, and `-m integration` selects the small integration population; `-m ""` selects both.
-The repository's certification wrapper still requires genuine Dagger admission and uses its
+An explicitly requested certification wrapper still requires genuine Dagger admission and uses its
 coverage artifacts as diagnostics. A direct host result cannot replace that authority.
 
 ---
@@ -186,8 +189,9 @@ become production CRAP inputs.
 - Run quality tools from the source repository root, not from the coordinator root.
 - Use focused pytest, targeted Vitest, Ruff, formatting, Pyright, Radon, dashboard codegen,
   lint and typecheck for implementation feedback. Preserve Dagger ownership of certification.
-- Run full suites and whole-candidate review at master completion. Necessary repairs use the
-  existing lifecycle operation and exact evidence rather than starting unrelated acceptance loops.
+- Run full suites, full memory quality, and whole-candidate review only after an explicit developer
+  request. Necessary repairs use the existing lifecycle operation and exact evidence rather than
+  starting unrelated acceptance loops.
 - Before refactoring complex Python, capture a baseline with Ruff, Pyright, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
@@ -198,8 +202,8 @@ become production CRAP inputs.
 - Prefer facade refactors: keep the current entrypoint stable, move the implementation behind it, and prove behavior with focused tests.
 - If a change worsens complexity or maintainability in touched code, call that out explicitly and explain why it is acceptable or what follow-up is needed.
 - Do not add defensive wrappers, fallbacks, or compatibility layers just to satisfy tools. Defensive code needs a concrete reason.
-- Record the lifecycle-owned Dagger result and any deterministic Ruff/Pyright/Radon feedback in the
-  final answer or task notes when code was changed.
+- Record targeted worker/curator checks and any explicitly requested lifecycle-owned quality result,
+  with failed or not-run checks called out, in the final answer or task notes when code was changed.
 
 ---
 
@@ -223,10 +227,10 @@ npm run typecheck    # tsc -b
 ```
 
 Direct targeted Vitest unit/component invocations are allowed from a host seat as diagnostic-only
-feedback. They do not certify the immutable candidate and do not authorize direct coverage or
-changed-lines scoring. Playwright, browser/integration, coverage, performance, broad `npm run test*`,
-`npm run e2e`, and `npm run perf:cockpit` suites remain inside the nonce-attested Dagger acceptance
-graph. Leaf closeout and master integration own the accepted Dagger invocations described above.
+feedback. They do not certify the immutable candidate. Playwright, browser/integration, coverage,
+performance, broad `npm run test*`, `npm run e2e`, and `npm run perf:cockpit` suites remain available
+through the explicitly requested quality route. Closeout and master integration own Git
+transactions and do not launch those suites automatically.
 
 **Never type-check the dashboard with `tsc --noEmit`.** It exits 0 without checking
 anything. `dashboard/tsconfig.json` is solution-style — `"files": []`, no `include`, and

@@ -6,8 +6,8 @@
 | path | `skills/w-02-light-task-workflow/workflow.md` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `onboarding/overview.md` |
 
 ## Governing Overview
@@ -62,6 +62,11 @@ any task, lifecycle, closeout, integration, or queue operation.
 
 None.
 
+
+## CCR-R12@v5 Light-Task Boundary
+
+A light-task handoff records relevant targeted checks and honest failed or not-run results before the authorized Git transaction. Its commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside closeout/integration remains unchanged. Full quality, full tests, full memory quality, certification, and review remain explicit operations and are not automatic closeout or integration prerequisites.
+
 ## Docs References
 
 No external Domain Documentation source governs this workflow.
@@ -89,6 +94,7 @@ non-attempt correction/void record without consuming the next attempt ID; after 
 independent reviewer rejection permits a successor.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
   card already describes one leaf-owned primary revision, adjacent contextual constraints, and

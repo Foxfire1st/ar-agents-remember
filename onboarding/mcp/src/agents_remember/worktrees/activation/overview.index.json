@@ -71,7 +71,7 @@
       "reconciling|active",
       "mcp/src/agents_remember/worktrees/activation",
       "route-local-overview",
-      "602143bd1d48226f4d53b83ff7c5002a695dcdff",
+      "6f3e3fde75a1ca0202c9b07557cf86a7893e8532",
       "/overview.md",
       "reconciling",
       "active",
@@ -94,16 +94,16 @@
       "activation_waiting_reason",
       "activate_atomic_series_contract",
       "atomic_series_admission_projection",
+      "worktrees/modules/onboarding.py::validate_memory_refresh_attestations",
       "mcp/src/agents_remember/worktrees/activation/__init__.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py",
       "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py",
+      "worktrees/modules/onboarding.py",
       "agents_remember",
       "sourceRoute",
       "doc_type",
-      "lastUpdated",
-      "T19",
-      "lastVerifiedCommitHash"
+      "lastUpdated"
     ]
   },
   "fallback": {

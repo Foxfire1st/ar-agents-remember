@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -163,7 +163,7 @@ envelope. These revisions have different purposes and must not be substituted fo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:338-432; mcp/src/agents_remember/models/lifecycles/operation.py:518-544; mcp/src/agents_remember/models/lifecycles/operation.py:547-550; mcp/src/agents_remember/models/lifecycles/operation.py:553-559 |
+| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:338-432; mcp/src/agents_remember/models/lifecycles/operation.py:518-544; mcp/src/agents_remember/models/lifecycles/operation.py:547-550; mcp/src/agents_remember/models/lifecycles/operation.py:563-569 |
 | The public envelope carries the wait cursor beside versioned identity and component bindings. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
 
 ## L34 Preparation Ownership
@@ -175,7 +175,18 @@ The L34 private-output vocabulary is owned by [preparation.py](preparation.py.md
 
 `preparation_state.py` separates output-command validation and command-terminal observation into focused helpers. An output still requires its original observed commit command; command history cannot be removed or restarted, and late terminal observation requires the original worker authority. The model remains a validator of selected journal facts, not a producer of Git proof.
 
+## CCR-R12@v5 Current Model Boundary
+
+The lifecycle model route records typed transaction inputs, explicit approval/gate-policy snapshots,
+candidate/source identity, mutation evidence, recovery facts, and terminal results. Retained
+certification and quality fields remain strict vocabulary for explicit or historical callers, but
+normal closeout/integration workers do not select, populate, or require them. Model presence is not
+normal transaction acceptance evidence.
+
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/models/lifecycles`, so no route/member/prose/invariant change is required. route-member-count=24; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_final_catalog_plan_attestation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -63,7 +63,12 @@ No cross-repository implementation evidence is required for these local test and
 | --- | --- | --- |
 | Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
+## CCR-L42 current candidate
+
+The final-catalog tests now import the moved `FinalFullCatalogPlan` model and cover shared-evidence subrecord deduplication plus conflicting shared-reference digest refusal. They remain fixture-level contract tests and do not independently certify closeout.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The final-catalog tests now import the moved `FinalFullCatalogPlan` model and cover shared-evidence subrecord deduplication plus conflicting shared-reference digest refusal. They remain fixture-level contract tests and do not independently certify closeout.
 
 - 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
 

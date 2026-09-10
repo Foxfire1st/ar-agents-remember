@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/onboarding_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-06T22:01:41+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`                                  |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`                                  |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -63,7 +63,7 @@ No external Domain Documentation source is configured for this memory repo.
 | The kernel module defines metadata-row rewriting plus Update History extraction and delta helpers. | `onboarding_metadata_row`; `update_history_section`; `new_history_lines` | mcp/src/agents_remember/kernel/onboarding_doc.py:24-30; mcp/src/agents_remember/kernel/onboarding_doc.py:176-182; mcp/src/agents_remember/kernel/onboarding_doc.py:185-188 |
 | The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module. | "from agents_remember.kernel.onboarding_doc import (" | mcp/src/agents_remember/worktrees/modules/onboarding.py:10-10 |
 | Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers. | `_overview_revision`; `_governing_overview_bucket`; `_route_overview_bucket`; `classify_sidecar_updates` | mcp/src/agents_remember/worktrees/modules/onboarding.py:262-287; mcp/src/agents_remember/worktrees/modules/onboarding.py:323-339; mcp/src/agents_remember/worktrees/modules/onboarding.py:342-372; mcp/src/agents_remember/worktrees/modules/onboarding.py:694-748 |
-| Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:457-488; mcp/src/agents_remember/worktrees/modules/onboarding.py:853-894 |
+| Route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`. | `refresh_route_overview_metadata_for_context`; `refresh_onboarding_metadata_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:457-488; mcp/src/agents_remember/worktrees/modules/onboarding.py:962-1007 |
 | The public worktree-manager facade imports and re-exports `onboarding_metadata_row`. | "from agents_remember.worktrees.modules.onboarding import (" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:66-66 |
 | Meaningful-body normalization strips verification fields and history. | `meaningful_body` | mcp/src/agents_remember/kernel/onboarding_doc.py:159-169 |
 | History extraction is section-aware. | `update_history_section` | mcp/src/agents_remember/kernel/onboarding_doc.py:176-182 |

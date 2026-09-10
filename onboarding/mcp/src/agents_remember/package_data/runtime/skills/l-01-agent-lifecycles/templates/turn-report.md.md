@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-28T11:51+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -35,6 +35,11 @@ ruling 2026-07-07, 260707-HFX2-L5). The **Respawn State** section must let a fre
 ### Todos
 
 No TODO markers are present in this report template.
+
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
 ### Docs References
 
@@ -83,7 +88,13 @@ This packaged projection preserves the canonical phase boundary: validate before
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
+## CCR-L42 current candidate
+
+The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
 
 - 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
   authority wording; projection ownership and byte-identity rules remain unchanged.

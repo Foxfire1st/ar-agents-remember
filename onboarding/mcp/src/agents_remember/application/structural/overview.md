@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## ARSPAWN-L5 A005 Serialized Dispatch Owner
 
@@ -211,7 +211,13 @@ or duplicate staged heirs, prefers one live incumbent, and promotes the one heir
 incumbent leaves. Message envelopes remain address-only and delivery re-resolves this selector,
 so planning and messaging remain valid while a seat is vacant or replaced.
 
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
 ## Update History
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
 - 2026-08-31T12:27+02:00 — A005 recorded the serialized dispatch owner extraction in this route
   overview: the lock plus transaction boundary moved into `dispatch_transaction` while the public

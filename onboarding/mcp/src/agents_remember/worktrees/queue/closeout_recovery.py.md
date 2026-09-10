@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,6 +24,15 @@ duplicate.
 It also owns the typed memory-closeout outcome and the exact proof used when contract finalization
 resumes after code, memory, and ledger commits already exist.
 
+## CCR-R12@v5 Current Recovery Boundary
+
+Recovery proves the accepted code tree, memory content, ledger mapping, and journaled mutation
+evidence for a transaction that already crossed a boundary. `accepted_code_commit` stages the
+accepted code and uses the existing verified-index commit helper without invoking repository hooks;
+external memory and ledger recovery use the same helper after their explicit staging steps. This
+module does not run strict code quality, memory quality, selected certification, curator coherence,
+or independent review, and it does not turn recovery into a new acceptance gate.
+
 ## Code Commentary
 
 ### Logic
@@ -34,8 +43,8 @@ exact recorded heads, the code-to-memory ledger row, and reachability of memory 
 returning that outcome without replaying a mutation.
 
 `accepted_code_commit` receives the already validated `EffectiveCloseoutInput` explicitly, then either proves the journaled code commit at clean task HEAD, adopts a clean
-post-claim HEAD during recovery, or creates a leaf commit through the already-selected strict or
-non-strict commit primitive. A series/master contract always requires a clean checkout and records
+post-claim HEAD during recovery, or stages the accepted leaf and creates a transaction commit through
+the verified-index commit primitive. A series/master contract always requires a clean checkout and records
 its already-landed HEAD; this recovery layer cannot create master code. It then proves the commit
 tree equals the immutable accepted candidate and journals the code cell before returning.
 `resume_external_commits` receives that same typed input rather than rereading optional args, requires a clean memory
@@ -107,6 +116,7 @@ The current source seams include `MemoryCloseoutOutcome`, `prove_closeout_recove
 | The current module exposes `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`, `accepted_code_commit` at this ownership boundary. | `MemoryCloseoutOutcome`; `prove_closeout_recovery_commits`; `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:48-58; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:61-76; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:170-226 |
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-06T21:59:04+00:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../overview.md`                                          |
 
 ## Governing Overview
@@ -75,7 +75,12 @@ The parser accepts only the Dagger executor and describes every other value as f
 execution, not a lower-authority diagnostic option. The optional cap is a container resource
 policy.
 
+## CCR-L42 current candidate
+
+Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
+
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
 
 - 2026-09-06T21:59:04+00:00 — Preserved source-verified expectation semantics from retired test onboarding; verification pins unchanged.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-key removal from the quality-gate section parser -- the old dagger-only acceptance branch was deleted and `executor` now fails loud as an unknown key; memoryCapBytes-only parsing remains.

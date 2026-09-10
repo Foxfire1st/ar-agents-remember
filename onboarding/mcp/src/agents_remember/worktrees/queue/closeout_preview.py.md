@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_preview.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da` |
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -17,6 +17,15 @@
 ## Purpose
 
 Builds response-only proposed commits, summaries, and ordering without mutating worktrees or protected refs.
+
+## CCR-R12@v5 Current Transaction Preview
+
+The preview describes the normal transaction sequence: validate candidate/source identity and
+explicit approval, commit code, perform raw onboarding/entity/route-index refresh, commit external
+memory content, update the ledger mapping, and finalize the contract. It does not advertise strict
+code quality, memory quality, selected certification, curator coherence, or independent review as
+an automatic step. Series previews remain recording-only for already landed named refs; full suites
+are an explicit developer request.
 
 ## Code Commentary
 
@@ -44,6 +53,7 @@ No configured domain-documentation or cross-repository source applies to this fi
 Preview now requires normalized `effectiveInput` and renders each leg's typed intent. It includes a `message` only for enabled legs and never generates a ledger subject. The same value is fingerprinted, journaled, rehydrated, recovered, and consumed by apply. This module describes proposed writes; it neither selects candidates nor owns lifecycle evidence.
 
 ## Update History
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
 
