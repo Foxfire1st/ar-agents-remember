@@ -211,6 +211,7 @@
     "mcp/tests/test_structural_dispatch_recovery.py",
     "mcp/tests/test_structural_limits.py",
     "mcp/tests/test_suite_budget.py",
+    "mcp/tests/test_sync_parked_candidate.py",
     "mcp/tests/test_sync_runtime.py",
     "mcp/tests/test_task_doc_graph_publication.py",
     "mcp/tests/test_task_doc_review_public.py",
@@ -245,8 +246,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 217,
-    "fileSidecars": 233,
+    "sourceFilesInScope": 218,
+    "fileSidecars": 234,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -286,6 +287,7 @@
     "budget",
     "budgets",
     "calculator",
+    "candidate",
     "cargo",
     "catalog",
     "causal",
@@ -328,8 +330,7 @@
     "crap",
     "cross",
     "curator",
-    "curator_coherence_test_support",
-    "current"
+    "curator_coherence_test_support"
   ],
   "hotPath": {
     "summary": "Start with the distinct failure or user operation, then locate its retained owner. Checkout isolation, Dagger registry locking, private Git preparation, protected-ref recovery, durable-store races, submission authority and native framing each retain concrete behavioral protection. Compiler/certificate fixtures establish library contracts; they are not live Dagger, Codex or final-memory execution evidence. Preparation checks can guide memory repair before certification without becoming Gate 5.",
