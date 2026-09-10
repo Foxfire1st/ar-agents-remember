@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T16:05:21+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `bb38d04e472439574f4eed7337f1639aac99f514` |
+| lastVerifiedCommitDate | 2026-09-10T11:50:15+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Classifies 179 retained test-shaped modules into explicit evidence categories. Current file membership is 96 unit-regression, 2 public-contract, 54 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
+Classifies 186 retained test-shaped modules into explicit evidence categories. Current file membership is 102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
 
 ## Code Commentary
 
@@ -30,7 +30,10 @@ no test functions; importability is not a passing test.
 
 `test_dagger_registry_lock.py`, the registered activation/admission proof, the registered
 route-review transport proof, and actual document/publication/durability boundaries are integration
-members. The new diagnostic quality and selected-case-budget tests are unit-regression members.
+members. The R28 `test_terminal_liveness_deferred_work.py` module is a unit-regression member: it is
+hermetic (temporary catalogs, in-process `unittest` classes, no `worktree_services` use) even though
+it exercises the real catalog/sweeper post-commit ordering and failure boundaries. The new diagnostic
+quality and selected-case-budget tests are unit-regression members.
 The executable case budgets live in pyproject/conftest, not in this list. Coverage percentages are
 diagnostic and cannot require restoring deleted entries.
 
@@ -52,21 +55,25 @@ The exact source declarations below establish the current behavior; this invento
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained unit-regression membership | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-102 |
-| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:107-160 |
-| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:161-176 |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:177-191 |
-| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:197-197 |
-| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:107-110; mcp/tests/test-evidence-lanes.toml:154-158 |
+| Retained unit-regression membership | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-108 |
+| Small actual integration file population, including the R28 deferred-work proof | `integration` | mcp/tests/test-evidence-lanes.toml:113-169 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:170-185 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:186-200 |
+| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:201-202; mcp/tests/test-evidence-lanes.toml:203-204 |
+| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:113-114; mcp/tests/test-evidence-lanes.toml:164-164 |
 
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.
 
 ## Update History
+
+- 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: re-derived the manifest population and every lane range against the current tree after the authorized repair of three missing CCR landing-debt registrations, all three created by code commit 8885939e but omitted from this manifest. All three take the `unit-regression` lane because the integration lane is capped at 150 collected cases and registering them as integration raised a full-suite collection above that cap; in unit-regression the collection succeeds and the previously unmarked modules keep their existing behaviour. This leaf's own `test_terminal_liveness_deferred_work.py` row was corrected the same way, from integration to `unit-regression`: the module is hermetic and registering it as integration took that lane to 155 against the same 150 cap. Current population is 186 modules: 102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance; stress-durability and migration empty. Supersedes the 183-module account in this leaf's first entry. Classification metadata only; focused results and certification remain closeout-owned.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the two registered public integration modules and reconciled the manifest population to 179 files (54 integration). Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
+
+- 2026-09-08T14:35+02:00 — 260831-LOCR-L28 curator: registered the new `test_terminal_liveness_deferred_work.py` integration proof and re-derived the manifest population and every lane range against the current tree (183 modules: 98 unit-regression, 2 public-contract, 56 integration, 14 architecture-fitness, 13 provider-conformance; stress-durability and migration empty). The lane remains classification metadata; focused results and certification remain closeout-owned.
 
 - 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
