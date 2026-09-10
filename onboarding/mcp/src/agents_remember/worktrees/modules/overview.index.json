@@ -23,6 +23,7 @@
     "mcp/src/agents_remember/worktrees/modules/cli.py",
     "mcp/src/agents_remember/worktrees/modules/closeout.py",
     "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+    "mcp/src/agents_remember/worktrees/modules/closeout_lineage.py",
     "mcp/src/agents_remember/worktrees/modules/context.py",
     "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
     "mcp/src/agents_remember/worktrees/modules/finalize.py",
@@ -62,8 +63,8 @@
     "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 48,
-    "fileSidecars": 44,
+    "sourceFilesInScope": 49,
+    "fileSidecars": 45,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -86,6 +87,7 @@
     "cli",
     "closeout",
     "closeout_external",
+    "closeout_lineage",
     "closeout_memory",
     "codex",
     "context",
@@ -115,6 +117,7 @@
     "landing",
     "leaf",
     "leaf_ref_start",
+    "lineage",
     "manifest",
     "master",
     "master_series_admission",
@@ -144,9 +147,7 @@
     "run",
     "series",
     "src",
-    "start",
-    "start_contract",
-    "start_memory"
+    "start"
   ],
   "hotPath": {
     "summary": "Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists. Quality execution, lifecycle gating, closeout memory checks, and immutable published-manifest reads now live under `modules/quality/`. The package is a behavior-preserving ownership/size split: the clean executor remains the sole Dagger report publisher, the gate remains the lifecycle consumer, closeout memory remains phase composition, and the strict manifest rea...",
@@ -160,6 +161,7 @@
       "mcp/src/agents_remember/worktrees/modules/cli.py",
       "mcp/src/agents_remember/worktrees/modules/closeout.py",
       "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+      "mcp/src/agents_remember/worktrees/modules/closeout_lineage.py",
       "mcp/src/agents_remember/worktrees/modules/context.py",
       "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
       "mcp/src/agents_remember/worktrees/modules/finalize.py",
@@ -173,8 +175,7 @@
       "mcp/src/agents_remember/worktrees/modules/models.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding.py",
       "mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py",
-      "mcp/src/agents_remember/worktrees/modules/quality",
-      "mcp/src/agents_remember/worktrees/modules/quality/__init__.py"
+      "mcp/src/agents_remember/worktrees/modules/quality"
     ],
     "anchorHints": [
       "__init__.py",
@@ -191,6 +192,8 @@
       "closeout",
       "closeout_external.py",
       "closeout_external",
+      "closeout_lineage.py",
+      "closeout_lineage",
       "context.py",
       "context",
       "contract_reader.py",
@@ -222,9 +225,7 @@
       "certification_records.py",
       "certification_records",
       "certification_reuse.py",
-      "certification_reuse",
-      "certification_run.py",
-      "certification_run"
+      "certification_reuse"
     ]
   },
   "fallback": {

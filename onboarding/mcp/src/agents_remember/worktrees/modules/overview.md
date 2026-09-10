@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-08T19:16:43+02:00 |
+| lastUpdated | 2026-09-10T15:06+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -97,8 +97,9 @@ output, and atomically replaces the enclosure's current reports; there is no loc
 runner. `code_quality_gate.py` plans targeted or full Dagger authority with an explicit diff base.
 `closeout_staged_quality.py` owns the linked/conflict refusals, accepted-tree rechecks, complete
 staging, reviewed hook, and targeted gate. `closeout.py` and `integrate.py` preserve approval and
-merge ordering while rechecking lineage after long quality work; integration remains failure-atomic
-before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
+merge ordering while rechecking lineage after long quality work; the closeout lineage boundary now
+self-heals a settleable stale break through the sync transaction, and integration remains
+failure-atomic before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
 `startup/start_result.py` separates result projection from start coordination, and the external
 `worktrees/closeout_recovery.py` reconciles post-claim code, memory, and ledger commits without
 replaying completed irreversible steps.
@@ -378,6 +379,21 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   migration sweep, never a per-read side effect, now that `load_contract` is walk-free and never
   normalizes.
 
+## Closeout Auto-Carry And Source-Moved Recovery Guidance
+
+`modules/closeout_lineage.heal_current_source_lineage` is the closeout-family guard clause: it
+carries a settleable stale transitive break (`behind > 0`, including a `diverged` edge, because a
+leaf owning its own commit is normal) through the existing journaled `worktree_sync` transaction,
+re-reads the reloaded contract, and re-proves immediate source heads. `dry_run` refuses with the
+preview duty without mutating; an unprovable projection escalates to the human developer; a retained
+sync conflict hands back both worktrees and their duties. `closeout.py` runs it at both entry points
+and threads the healed contract into candidate revalidation.
+
+The operator-facing recovery prompts moved with it: `integrate._blocked_non_ff_result` and
+`integration/integration_resolution_handoff.py` now route through `worktree_sync` plus a new
+targeted closeout rather than `--strategy replay`. `replay` itself remains supported and is the
+memory-carryover vehicle; only the guidance changed.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -389,9 +405,9 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:511-519; mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-44; mcp/src/agents_remember/models/worktree.py:242-242 |
-| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-374 |
+| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
 ## Historical 260731-EFA-L2 Lifecycle Parameter Objects
@@ -794,8 +810,8 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:317-380; mcp/src/agents_remember/worktrees/modules/closeout.py:1001-1089 |
-| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-699 |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:226-275; mcp/src/agents_remember/worktrees/modules/closeout.py:688-725 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-710 |
 | Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
@@ -910,7 +926,7 @@ Selected closeout admission, original-reference readback and code-suffix executi
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Returned terminals are recorded and selected before recording/process refusal propagation. | "def run_strict_code_quality_gate("; "def record_terminal_generation(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361; mcp/src/agents_remember/worktrees/modules/quality/certification_run.py:47-70 |
-| Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:279-297; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:367-444 |
+| Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:291-309; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:394-472 |
 | Gate-record publication bindings retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
 | All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/profile_execution.py:215-292 |
 | Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:26-63; .dagger/src/agents_remember_quality/rail_emission.py:66-100; .dagger/src/agents_remember_quality/rail_emission.py:103-117 |
@@ -934,7 +950,7 @@ The selected code contract and original report transport have a local [execution
 | --- | --- | --- |
 | Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4. | "class CodeCertificationExecution" | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:42-100 |
 | Retained transport membership and byte limits come from frozen producer declarations. | `retained_report_inventory`; `snapshot_retained_reports` | mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:37-77; mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:80-109 |
-| The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
+| The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:122-170 |
 
 ## CCR-L42 Refresh Validation Parity
 
@@ -953,6 +969,8 @@ review; full suites are an explicit developer request. The older quality-altitud
 historical context for pre-R12 behavior.
 
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
+- 2026-09-10T15:06+02:00 — Closeout auto-carry: recorded `modules/closeout_lineage.heal_current_source_lineage` as the self-healing closeout lineage guard and the rewording of the source-moved recovery guidance through `worktree_sync` plus a new targeted closeout. `replay` remains supported. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound startup admission ranges and recorded bounded oversized parser-detail evidence. This remains source-grounded preparation; verification and acceptance remain closeout-owned.

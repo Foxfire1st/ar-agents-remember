@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_authority.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastUpdated | 2026-09-10T15:06+02:00 |
 | lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
 | lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
@@ -52,6 +52,25 @@ error, not partial success.
 - Cleanup deletes refs only when they still equal the admitted commits.
 - This module does not infer authority from queue state or ambient checkout position.
 
+## Parked-Candidate Restore Authority
+
+The shared restore helpers live here so the driver, the recovery owner, and the read-only previews
+never re-implement the proof. `restore_parked_wip` returns one side's parked candidate to its
+worktree and journals the outcome: a clean reapply is proven restored before the stash entry is
+dropped and `wipState` becomes `restored`; a conflicted one becomes the retained
+`*-resolution-required` state with `wipState="restore-conflict"`, the exact `conflictFiles`, and the
+stash kept — and its third return value tells the caller not to advance that side.
+`restore_cancelled_wip` reapplies every still-parked candidate after the rollback restored the
+pinned pre-sync heads. `settle_resolved_parked_wip` closes a conflict the agent resolved in the
+worktree: it refuses while any unmerged path remains, then retires the stash entry without
+committing, so the resolved candidate stays uncommitted for the closeout that owns it.
+`require_parked_wip_settled` is the finalization safety net.
+
+`side_payload` gained one conditional `wip` block (`state`, `paths`, `pathCount`) for any side that
+parked something; sides that parked nothing emit no `wip` key, so an ordinary side's payload is
+unchanged. `resolution_phase` centralises the `code-resolution-required` /
+`memory-resolution-required` phase name both restore and merge callers use.
+
 ### Todos
 
 Authority and result-state claims are reconciled to the frozen source; verification metadata awaits
@@ -68,9 +87,11 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The journal models store every side identity and deterministic ref used here. | `SyncSideRecord`; `SyncOperationRecord`; `sync_side_refs` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:37-57; mcp/src/agents_remember/worktrees/sync_transaction_state.py:60-77; mcp/src/agents_remember/worktrees/sync_transaction_state.py:132-134 |
-| Exact ref, checkout, merge, and rollback proof is centralized in the Git module. | `create_pinned_ref`; `require_side_checkout`; `start_side_merge`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:38-47; mcp/src/agents_remember/worktrees/sync_transaction_git.py:79-85; mcp/src/agents_remember/worktrees/sync_transaction_git.py:135-173; mcp/src/agents_remember/worktrees/sync_transaction_git.py:251-279 |
-| The driver admits and advances only after this authority preflight succeeds. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100 |
+| The journal models store every side identity and deterministic ref used here. | `SyncSideRecord`; `SyncOperationRecord`; `sync_side_refs` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67; mcp/src/agents_remember/worktrees/sync_transaction_state.py:70-87; mcp/src/agents_remember/worktrees/sync_transaction_state.py:142-144 |
+| Exact ref, checkout, merge, and rollback proof is centralized in the Git module. | `create_pinned_ref`; `require_side_checkout`; `start_side_merge`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:38-47; mcp/src/agents_remember/worktrees/sync_transaction_git.py:79-85; mcp/src/agents_remember/worktrees/sync_transaction_git.py:253-293; mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-399 |
+| The driver admits and advances only after this authority preflight succeeds. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111 |
+| The shared parked-candidate restore helpers prove a clean reapply, retain a conflicted one, return the candidate after cancellation, and refuse finalization while one is parked. | `restore_parked_wip`; `restore_cancelled_wip`; `settle_resolved_parked_wip`; `require_parked_wip_settled` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:356-395; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:420-440; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450 |
+| The shared side payload emits the parked-candidate projection only for a side that parked one, and the resolution phase names are centralised. | `side_payload`; `resolution_phase` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:329-349; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:352-353 |
 
 ## Cross-Repo References
 
@@ -80,6 +101,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-10T15:06+02:00 — Parked-candidate restore authority: recorded the four shared restore helpers, the conditional `wip` side projection, and the centralised resolution phase names; re-derived every cited range against the current working tree. Verification remains closeout-owned.
 
 - 2026-08-26T14:32+02:00 — Corrected official source-pair admission to use newest-first current
   mapping authority while accepting retained same-code memory history. Verification remains

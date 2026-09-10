@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-08T16:05:21+02:00 |
+| lastUpdated | 2026-09-10T15:06+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../../overview.md` |
@@ -90,9 +90,11 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
    Other live series remain intact and merely project as paused.
 3. The sync transaction pins exact base, pre-sync, and source commits, journals admission below the
    enclosure root, and advances code then memory under repository integration authority.
-4. A genuine merge conflict is retained in the operation-owned worktree. The integration lock is
-   released while an agent resolves and stages it; a later exact contract-addressed `continue`
-   validates and commits it, while `cancel` restores all provably operation-owned heads.
+4. A dirty moving side's candidate is parked into the transaction before the carry and returned
+   after it (restore on the completed path, on resume, and on cancel); a genuine merge conflict is
+   retained in the operation-owned worktree. The integration lock is released while an agent
+   resolves and stages it; a later exact contract-addressed `continue` validates and commits it,
+   while `cancel` restores all provably operation-owned heads and returns the parked candidate.
 5. Finalization writes the new base pair and terminal journal before removing temporary worktrees
    and authority refs. If the official source moves again, the completed generation reports that
    fact and a new generation may be admitted.
@@ -104,6 +106,25 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
    `not-applicable`; it is not direct execution. Direct landing remains the policy-gated delivery
    route for an explicitly selected leaf without an enclosure, while fresh leaf integration still
    requires its exact claimed closeout source.
+
+## Parked Candidate And Closeout Auto-Carry
+
+The sync transaction now parks a dirty moving side's uncommitted candidate instead of refusing it.
+`sync_transaction._admit_participating_sides` runs the parkability preflight, returns the read-only
+preview for `dry_run`, and otherwise parks each dirty non-temporary, actually-moving side with
+`git stash push --include-untracked`; the stash identity, bounded path sample
+(`WIP_PATH_SAMPLE_LIMIT = 128`) and true path count are journaled in the same admission write. The
+candidate is restored on the completed path, on resume, and on cancel, and `finalize_sync` refuses
+while any side still parks its candidate. Kept refusals are a worktree whose index already has
+unmerged paths and an unprovable checkout; an unprovable restore keeps the stash and refuses with
+`sync-git-proof-failed`. See the child cards for the exact primitives.
+
+Supporting that, the closeout-family lineage guard self-heals a settleable stale break:
+`modules/closeout_lineage.heal_current_source_lineage` carries a `behind > 0` edge (a leaf that owns
+its own commit is normal) through this same sync transaction, refuses a `dry_run` without mutating,
+escalates an unprovable projection to the human developer, and hands back a retained sync conflict
+with both worktrees and their resolution duties. `replay` is untouched and remains the
+memory-carryover vehicle.
 
 ## Main Flows
 
@@ -161,13 +182,13 @@ The child `modules/quality` route retains actual rail evidence and immutable sel
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:108-125; mcp/src/agents_remember/worktrees/services.py:128-138; mcp/src/agents_remember/worktrees/services.py:142-147 |
+| Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-144; mcp/src/agents_remember/worktrees/services.py:145-154 |
 | The activation record is a strict source-pair fingerprinted snapshot with explicit selection states. | `AtomicSeriesSourceRef`; `AtomicSeriesSourcePair`; `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-30; mcp/src/agents_remember/models/structural/atomic_series_activation.py:33-39; mcp/src/agents_remember/models/structural/atomic_series_activation.py:42-54; mcp/src/agents_remember/models/structural/atomic_series_activation.py:57-72 |
 | Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:131-153; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214 |
-| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:82-100 |
-| The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:145-295; mcp/src/agents_remember/worktrees/sync_transaction_state.py:298-314 |
-| The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100; mcp/src/agents_remember/worktrees/sync_transaction.py:424-450 |
-| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:156-181; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:184-254; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:257-274 |
+| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:56-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:105-123 |
+| The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:308-324 |
+| The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570 |
+| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-264; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:267-284 |
 
 ## Cross-Repo References
 
@@ -287,6 +308,8 @@ quality, selected certification, curator coherence, independent review, and full
 automatic transaction steps; full suites require an explicit developer request.
 
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
+- 2026-09-10T15:06+02:00 — Closeout auto-carry and parked candidate: recorded that the sync transaction parks and returns a dirty moving side's candidate (park, journal, restore on completed/resume/cancel, finalize refusal), and that the closeout-family lineage guard self-heals a settleable stale break through that transaction. Re-derived the sync anchors against the current working tree. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the worktrees overview's activation observer citations to current source ranges; source-pair ownership is unchanged and no acceptance claim is made.

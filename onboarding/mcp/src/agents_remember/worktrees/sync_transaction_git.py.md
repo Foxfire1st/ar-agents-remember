@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_git.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastUpdated | 2026-09-10T15:06+02:00 |
 | lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
 | lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
 | governingOverview | `overview.md` |
@@ -56,6 +56,24 @@ than weakening the proof.
 - Automatic rollback refuses unrelated/later commits or dirty post-sync work.
 - Temporary worktree removal and ref deletion are evidence-checked, never best-effort deletion.
 
+## Parked-Candidate Git Primitives
+
+`worktree_dirty_paths` reads every dirty path the worktree holds, untracked included, from
+NUL-separated porcelain (`status --porcelain -z -uall`) — the only form that never quotes a path —
+and skips the second entry of a rename/copy pair. `park_worktree_wip` stashes the exact candidate
+with `--include-untracked` and refuses if the worktree is still dirty or no stash entry appeared.
+`apply_parked_wip` reapplies a recorded stash and classifies the result: a nonzero exit with no
+conflict is a hard proof error, never a silent skip.
+
+`prove_parked_wip_restored` is the restore proof. A parked path counts as restored when the
+worktree reports it dirty again, or when the carried result already holds exactly the parked
+content (`<stash>^{tree}:<path>` / `<stash>^3:<path>` equal to `<carried_head>:<path>`) — a clean
+reapply the moved source made identical. Anything else fails the proof, the stash is kept, and the
+transaction refuses with `sync-git-proof-failed`. `drop_parked_wip` drops exactly the recorded stash
+by matching its commit in a bounded `git stash list`, never another entry.
+`discard_conflicted_wip_reapply` is cancel-only: it clears a conflicted reapply (refusing if an
+active merge sits outside cancel authority) while the candidate itself stays safe in its stash.
+
 ### Todos
 
 Reconcile line ranges after Dagger fixes; verification remains empty for the uncommitted source.
@@ -71,9 +89,10 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Side records carry the exact repository, worktree, commits, refs, plan, and conflict set proven here. | `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:37-57 |
-| The driver records retained conflicts and delegates continue through these proof functions. | `_continue_resolution`; `continue_side_merge`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:424-450; mcp/src/agents_remember/worktrees/sync_transaction_git.py:201-225; mcp/src/agents_remember/worktrees/sync_transaction_git.py:228-249 |
-| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | `_recover_from_refs`; `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:306-364; mcp/src/agents_remember/worktrees/sync_transaction_git.py:282-290; mcp/src/agents_remember/worktrees/sync_transaction_git.py:251-279 |
+| Side records carry the exact repository, worktree, commits, refs, plan, and conflict set proven here. | `SyncSideRecord` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:41-67 |
+| The driver records retained conflicts and delegates continue through these proof functions. | `_continue_resolution`; `continue_side_merge`; `validate_staged_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:539-570; mcp/src/agents_remember/worktrees/sync_transaction_git.py:318-342; mcp/src/agents_remember/worktrees/sync_transaction_git.py:345-366 |
+| Recovery uses exact-created-head and rollback proof before restoring or finalizing. | `_recover_from_refs`; `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:316-374; mcp/src/agents_remember/worktrees/sync_transaction_git.py:400-408; mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-397 |
+| The parked-candidate Git primitives read exact dirty paths, park with untracked files, reapply with conflict classification, prove restoration, drop exactly the recorded stash, and clear a cancel-only conflicted reapply. | `worktree_dirty_paths`; `park_worktree_wip`; `apply_parked_wip`; `prove_parked_wip_restored`; `drop_parked_wip`; `discard_conflicted_wip_reapply` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:112-134; mcp/src/agents_remember/worktrees/sync_transaction_git.py:137-150; mcp/src/agents_remember/worktrees/sync_transaction_git.py:153-166; mcp/src/agents_remember/worktrees/sync_transaction_git.py:169-185; mcp/src/agents_remember/worktrees/sync_transaction_git.py:202-218; mcp/src/agents_remember/worktrees/sync_transaction_git.py:188-199 |
 
 ## Cross-Repo References
 
@@ -83,6 +102,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+
+- 2026-09-10T15:06+02:00 — Parked-candidate Git primitives: recorded `worktree_dirty_paths`, `park_worktree_wip`, `apply_parked_wip`, `prove_parked_wip_restored`, `drop_parked_wip`, and the cancel-only `discard_conflicted_wip_reapply`, including the restore proof's exact-content branch. Re-derived the retained proof anchors against the current working tree. Verification remains closeout-owned.
 
 - 2026-08-26T14:32+02:00 — Removed the unrequested per-code uniqueness rule from staged
   memory-merge validation. Exact parent-row preservation remains mandatory and same-code history is
