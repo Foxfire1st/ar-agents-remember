@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T16:05:21+02:00 |
-| lastVerifiedCommitHash | `bb38d04e472439574f4eed7337f1639aac99f514` |
-| lastVerifiedCommitDate | 2026-09-10T11:50:15+02:00|
+| lastUpdated | 2026-09-10T11:55:00+02:00 |
+| lastVerifiedCommitHash | `5ee86646b27fef04b98bbd94198abb2ee315638d` |
+| lastVerifiedCommitDate | 2026-09-10T12:52:31+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Classifies 186 retained test-shaped modules into explicit evidence categories. Current file membership is 102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
+Classifies 187 retained test-shaped modules into explicit evidence categories. Current file membership is 103 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. File counts are not collected-case counts.
 
 ## Code Commentary
 
@@ -33,7 +33,12 @@ route-review transport proof, and actual document/publication/durability boundar
 members. The R28 `test_terminal_liveness_deferred_work.py` module is a unit-regression member: it is
 hermetic (temporary catalogs, in-process `unittest` classes, no `worktree_services` use) even though
 it exercises the real catalog/sweeper post-commit ordering and failure boundaries. The new diagnostic
-quality and selected-case-budget tests are unit-regression members.
+quality, selected-case-budget and canonical terminal-evidence mapping tests are unit-regression members.
+Three pre-existing CCR modules (`test_review_state.py`, `test_task_doc_review_public.py`,
+`test_transaction_only_worktree_delivery.py`) were created by `8885939e` in the same change that
+edited this manifest, but their required rows were omitted; the missing `unit-regression` rows were
+restored so the manifest loads and no retained module stays unclassified. A full run previously
+collected all three unmarked, so `unit-regression` is their behaviour-preserving lane.
 The executable case budgets live in pyproject/conftest, not in this list. Coverage percentages are
 diagnostic and cannot require restoring deleted entries.
 
@@ -44,6 +49,7 @@ diagnostic and cannot require restoring deleted entries.
 - Current source membership governs; old final-Codex executor/status-wait/deleted-edge lists do not.
 - Host development pytest is supported; only explicit certification requires Dagger admission.
 - Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
+- Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` 150 (root `pyproject.toml`), enforced in `pytest_collection_finish`. `integration` sits at its 150-case cap, so a module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` refuses collection.
 
 ## Docs References
 
@@ -55,25 +61,31 @@ The exact source declarations below establish the current behavior; this invento
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained unit-regression membership | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-108 |
-| Small actual integration file population, including the R28 deferred-work proof | `integration` | mcp/tests/test-evidence-lanes.toml:113-169 |
-| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:170-185 |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:186-200 |
-| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:201-202; mcp/tests/test-evidence-lanes.toml:203-204 |
-| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:113-114; mcp/tests/test-evidence-lanes.toml:164-164 |
+| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-109 |
+| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:114-170 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:171-186 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:187-201 |
+| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:202-203; mcp/tests/test-evidence-lanes.toml:204-205 |
+| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:114-115; mcp/tests/test-evidence-lanes.toml:165-165 |
 
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.
 
 ## Update History
+- 2026-09-10T11:55:00+02:00 — Post-sync union curation for 260831-LOCR-L03: the landed LOCR master tip `bb38d04e` carried the sibling R28 registration and its own re-derivation of the authorized three-row CCR landing-debt repair, while this branch carried the L03 `test_terminal_evidence_mapping.py` row. Both rows are kept, sorted, and this card's population statement and all six lane citations were re-derived against the union to 187 declared modules (103 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance). The sibling's two-range empty-population citation for stress-durability/migration and its R28 attribution were retained, with the R28 attribution moved to the unit-regression row it actually belongs to. Supersedes the 186-module figures recorded below. Classification only; no execution, certification or acceptance claim.
+
+- 2026-09-10T11:25:00+02:00 — Authorized repair of a pre-existing manifest omission: `8885939e` created `test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py` in the same change that edited this manifest, but their required rows were omitted, so `load_lane_manifest` could not resolve them. The three rows were restored as `unit-regression` - their behaviour-preserving lane, since a full run had already collected them unmarked - and this card's population statement and all six lane citations were re-derived to 186 declared modules (102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance). Registering them as `integration` was rejected because that lane sits at its 150-case cap and collection fails. Classification only; no execution, certification or acceptance claim.
 
 - 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: re-derived the manifest population and every lane range against the current tree after the authorized repair of three missing CCR landing-debt registrations, all three created by code commit 8885939e but omitted from this manifest. All three take the `unit-regression` lane because the integration lane is capped at 150 collected cases and registering them as integration raised a full-suite collection above that cap; in unit-regression the collection succeeds and the previously unmarked modules keep their existing behaviour. This leaf's own `test_terminal_liveness_deferred_work.py` row was corrected the same way, from integration to `unit-regression`: the module is hermetic and registering it as integration took that lane to 155 against the same 150 cap. Current population is 186 modules: 102 unit-regression, 2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance; stress-durability and migration empty. Supersedes the 183-module account in this leaf's first entry. Classification metadata only; focused results and certification remain closeout-owned.
+
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the two registered public integration modules and reconciled the manifest population to 179 files (54 integration). Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
 - 2026-09-08T14:35+02:00 — 260831-LOCR-L28 curator: registered the new `test_terminal_liveness_deferred_work.py` integration proof and re-derived the manifest population and every lane range against the current tree (183 modules: 98 unit-regression, 2 public-contract, 56 integration, 14 architecture-fitness, 13 provider-conformance; stress-durability and migration empty). The lane remains classification metadata; focused results and certification remain closeout-owned.
+
+- 2026-09-08T14:30:38+02:00 — Added the canonical terminal-evidence mapping regression to the `unit-regression` inventory and reconciled the retained population to 183 modules (99 unit-regression, 55 integration) on the current base, re-deriving this card's lane citations after the new row shifted them. Lane membership controls selection/classification only; this candidate entry does not claim execution, certification or acceptance.
 
 - 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
 
