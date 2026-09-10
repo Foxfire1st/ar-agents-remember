@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-09T14:45+02:00|
+| lastUpdated | 2026-09-10T15:06+02:00|
 | lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
 | lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../overview.md` |
@@ -176,7 +176,18 @@ invoking a merge hook. It does not automatically run strict code quality, memory
 certification, curator coherence, or independent review; full suites are an explicit developer
 request. Earlier selected-certificate wording describes retained historical/explicit evidence.
 
+## Source-Moved Recovery Guidance
+
+The integration-resolution handoff's `summary` and `cancel_note` now route a moved
+source through `worktree_sync` for the owning contract — settling any retained code or memory
+conflict, re-running the targeted test utility after code resolutions — and then a new targeted
+closeout. The refusal sentence and protected-ref/door classification are unchanged, and `replay`
+remains the carryover vehicle rather than this route's prompt. See
+[`integration_resolution_handoff.py`](integration_resolution_handoff.py.md).
+
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
+- 2026-09-10T15:06+02:00 — Source-moved recovery guidance: the integration-resolution handoff now routes through `worktree_sync` plus a new targeted closeout, while the refusal sentence, door/protected-ref classification, and `replay` support are unchanged. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

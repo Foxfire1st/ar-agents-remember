@@ -57,7 +57,7 @@ No Domain Documentation source is configured for this memory root.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Selecting admission refreshes before acquiring integration authority and then re-reads the contract. | `activate_atomic_series_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79 |
-| The sync module consumes fetched evidence while pinning local sources under authority. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:72-100 |
+| The sync module consumes fetched evidence while pinning local sources under authority. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111 |
 
 ## Cross-Repo References
 
@@ -67,6 +67,7 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
 
 - 2026-08-26T08:20+02:00 — Final frozen reconciliation of bounded pre-lock source refresh call
   sites; no local selection or mutation authority is claimed.

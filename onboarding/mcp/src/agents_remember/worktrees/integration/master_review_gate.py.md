@@ -58,7 +58,7 @@ No relevant domain documentation was configured for this repository-internal int
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Typed master-review refusal projection. | `master_route_review_block`; `master_route_review_refusal` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:53-95 |
-| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:694-734; mcp/src/agents_remember/worktrees/modules/integrate.py:968-1033; mcp/src/agents_remember/worktrees/series_closeout.py:61-80 |
+| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:696-734; mcp/src/agents_remember/worktrees/modules/integrate.py:970-1033; mcp/src/agents_remember/worktrees/series_closeout.py:61-78 |
 
 ## Cross-Repo References
 
@@ -81,6 +81,7 @@ with this file's SHA-256 recorded as
 is retained as historical composition evidence and is not the active identity for this card.
 
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of the `closeout.py` / `integrate.py` anchors after the closeout auto-carry change shifted their lines; the cited symbols and claims are unchanged.
 
 - 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `dd51ab6200088274352370fc8830b1d05df291feb43f5a46f19ccd3b163efff4`, `3248` bytes, `102` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
 
