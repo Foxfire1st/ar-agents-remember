@@ -228,6 +228,7 @@
     "mcp/tests/test_terminal.py",
     "mcp/tests/test_terminal_catalog.py",
     "mcp/tests/test_terminal_liveness.py",
+    "mcp/tests/test_terminal_liveness_deferred_work.py",
     "mcp/tests/test_terminal_paste.py",
     "mcp/tests/test_tool_response_budgets.py",
     "mcp/tests/test_tools.py",
@@ -245,8 +246,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 217,
-    "fileSidecars": 233,
+    "sourceFilesInScope": 218,
+    "fileSidecars": 234,
     "childRoutes": 0
   },
   "routingTerms": [
