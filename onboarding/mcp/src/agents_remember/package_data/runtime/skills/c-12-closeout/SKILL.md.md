@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-10T06:03:57+00:00|
+| lastVerifiedCommitHash | `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0` |
+| lastVerifiedCommitDate | 2026-09-10T08:03:15+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -42,6 +42,12 @@ transaction inputs, unresolved conflicts, unauthorized authority, or unsafe ref 
 never pushes automatically. A requested review keeps the lifecycle sealed complete finding list
 and monotonic three-round rule.
 
+After the code and memory are landed, including any required PR/carryover tail, the agent
+must preview and apply `worktree_cleanup` for each finished enclosure before handoff. This
+also applies after an authorized manual Git landing. A refusal leaves cleanup explicitly pending
+with its concrete reason; `lifecycle_finalize_task` then verifies cleanup and completes the
+current task and its immediate parent row.
+
 ### Conventions
 
 - Preview before mutation and keep the preview/apply input immutable across retries.
@@ -55,7 +61,8 @@ and monotonic three-round rule.
 - Closeout is a Git transaction, not a quality, test, memory-quality, certification, or review gate.
 - The transaction does not create compatibility paths for missing certificates, reports, or suites.
 - Authority, task contract, conflict, and ref safeguards remain mandatory.
-- No automatic push, integration, lifecycle finalization, cleanup, or memory-root initialization.
+- The closeout tool does not integrate or clean up; the agent must continue through the
+  worktree-manager workflow and clean up each finished enclosure before handoff.
 - Verification metadata and generated indexes remain coordinated follow-up work after the source and
   memory bodies are prepared; this card does not fabricate a stamp.
 
@@ -72,6 +79,7 @@ states visible.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
+| Cleanup is an explicit agent follow-up after landing and before handoff, including manual Git landing. | `Closeout does not mark the task` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:211-219 |
 | `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. | `# c-12-closeout Closeout` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:6-409 |
 | `c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report. | `## Approval Authority` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:44-130 |
 | Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate. | `## Approval Authority`; `## Explicit Durable Closeout Gates` | mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:57-160; mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md:176-188 |
@@ -135,6 +143,8 @@ not require `directExecutionEnabled`; the existence of a root series contract al
 the direct route.
 
 ## Update History
+
+- 2026-09-10T06:03:15+00:00 — Require the agent to preview and apply worktree cleanup after landing each enclosure, then finalize; cleanup refusals must remain visible in the handoff.
 - 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
