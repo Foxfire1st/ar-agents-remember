@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/next_step.py`     |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -200,11 +200,11 @@ and the ambient lifecycle / phase definitions.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. | `_attach_lifecycle_tail`; `bound_next_step`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/mcp/tools/base.py:79-81 |
+| The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. | `_attach_lifecycle_tail`; `bound_next_step`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/mcp/tools/base.py:75-77 |
 | `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:47-63; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114 |
-| `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:216-226 |
-| `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285; mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
-| `amb.current` — the live `LifecycleState` resolved at the edge. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
+| `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:225-235 |
+| `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:228-283; mcp/src/agents_remember/worktrees/worktree_contract.py:434-464 |
+| `amb.current` — the live `LifecycleState` resolved at the edge. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:112-635 |
 | `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). | `LifecycleState`; "LiveState = Literal["; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:20-20; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
 | The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
 
@@ -226,6 +226,7 @@ No meaningful cross-repo references found.
 | The reviewed response-hint boundary is internal to this repository. | — | — |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `WorktreeContract`, `_attach_lifecycle_tail`, `_tool_payload`, `bound_next_step`, `load_contract` repointed to mcp/src/agents_remember/application/tool_response.py:30-50, mcp/src/agents_remember/application/tool_response.py:65-81, mcp/src/agents_remember/mcp/tools/base.py:75-77, mcp/src/agents_remember/worktrees/worktree_contract.py:228-283, mcp/src/agents_remember/worktrees/worktree_contract.py:434-464. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-05T08:27+02:00 — L31 native curator: Reviewed current response enrichment and documented explicit producer-hint precedence plus exact task-address binding; retained the model-before-serialization contract and refreshed the response-boundary evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
 

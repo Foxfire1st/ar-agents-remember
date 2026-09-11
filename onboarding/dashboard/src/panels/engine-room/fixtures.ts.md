@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-09-11T14:58+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -64,13 +64,14 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 | `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | `bootStages` | dashboard/src/panels/engine-room/fixtures.ts:275-417 |
 | `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) | "engine-retired" | dashboard/src/panels/engine-room/fixtures.ts:991-991 |
 | `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split | "engine-landing-pushed" | dashboard/src/panels/engine-room/fixtures.ts:1165-1165 |
-| The two cleanup-pending scenarios carry the automatic-cleanup next action. | "engine-cleanup-pending"; "engine-landing-merged" | dashboard/src/panels/engine-room/fixtures.ts:982-982; dashboard/src/panels/engine-room/fixtures.ts:1155-1155 |
+| The two cleanup-pending scenarios carry the automatic-cleanup next action. | "engine-cleanup-pending"; "Replayed onto moved main" | dashboard/src/panels/engine-room/fixtures.ts:955-955; dashboard/src/panels/engine-room/fixtures.ts:982-982; dashboard/src/panels/engine-room/fixtures.ts:1133-1155 |
 
 ## Series-Contract Notes
 
 Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<repo>/<task>/enclosures/<leaf-id>/series-contract.md`) in both `enclosure` and `sourceFiles`, and seed `leafId` from the fixture id by default. This keeps fixture source traces and rendered labels aligned with the backend resolver.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The claim named `"engine-landing-merged"` for the merged scenario, but that literal occurs twice in the file (the D4 scenario name at 1133 and a later comment at 1164), so the anchor picked out no exact target and the cited `retry_cleanup` lines held neither name. The anchor is now the merged scenario's unique summary literal `"Replayed onto moved main"` (1154), cited alongside the two scenario names and their `nextAction: "retry_cleanup"` lines; `engine-landing-merged` still carries `nextAction: "retry_cleanup"` at 1155, so the claim wording is unchanged.
 - 2026-09-11T14:58+02:00 — Automatic post-integration cleanup vocabulary at code commit `76ce662a`: `engine-cleanup-pending` and `engine-landing-merged` now carry `nextAction: "retry_cleanup"`, replacing the retired `request_cleanup_decision` literal. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

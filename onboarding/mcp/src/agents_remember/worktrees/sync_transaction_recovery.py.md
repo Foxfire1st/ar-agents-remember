@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash |  `7833df0b219bba560f67f6e1158c3f4f155e1ce6`|
-| lastVerifiedCommitDate |  2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,10 +81,10 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:349-369 |
+| The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:410-430 |
 | Ref reconstruction and contract/base constraints come from the sync authority module. | `side_record`; `require_record_contract` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:44-79; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:246-260 |
 | Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:369-397; mcp/src/agents_remember/worktrees/sync_transaction_git.py:400-408 |
-| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; `require_parked_wip_settled`; `restore_cancelled_wip` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-93; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417 |
+| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; "require_parked_wip_settled(record)"; "restore_cancelled_wip(store, record)" | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:57-93; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417 |
 
 ## Cross-Repo References
 
@@ -94,6 +94,8 @@ No cross-repository source is configured for this memory root.
 | --- | --- | --- |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The recovery row anchored `require_parked_wip_settled` and `restore_cancelled_wip` as bare symbols; each now resolves three times across the cited files (import and call in `sync_transaction_recovery.py`, definition in `sync_transaction_authority.py`), so the claim could not be compared with its provenance. Those two anchors are now the exact call texts `require_parked_wip_settled(record)` and `restore_cancelled_wip(store, record)`, each occurring once in the cited recovery extents; `finalize_sync`, `cancel_sync`, both cited extents, and the claim's wording are unchanged.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `_quarantined_sync_projection` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:410-430. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-10T15:06+02:00 — Parked-candidate recovery ownership: recorded `require_parked_wip_settled` in `finalize_sync` and the cancel path that clears a conflicted reapply, rolls back, and returns the parked candidate (or reports `sync-cancel-wip-restore-failed`). Re-derived the store/authority/Git anchors against the current working tree. Verification remains closeout-owned.
 

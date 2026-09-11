@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/startup/start_contract.py` |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -164,17 +164,17 @@ No Domain Documentation source is configured for this memory root.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Master bootstrap separates durable contract creation from disposable source-pair selection, refreshes before integration authority, and reconciles before returning. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:216-311 |
-| The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. | `MasterSeriesContractAdmissionError` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:67-77 |
-| The start preflight projects a persisted master-edge refusal before protected-surface calculation. | `_existing_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:944-988 |
-| The start builder performs the pre-protected-surface admission check and returns its refusal result. | `_build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:991-1066 |
-| Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:56-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:106-124; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:137-165; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:167-229 |
+| Master bootstrap separates durable contract creation from disposable source-pair selection, refreshes before integration authority, and reconciles before returning. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:215-307 |
+| The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. | `MasterSeriesContractAdmissionError` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:68-78 |
+| The start preflight projects a persisted master-edge refusal before protected-surface calculation. | `_existing_master_series_admission_refusal` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:940-984 |
+| The start builder performs the pre-protected-surface admission check and returns its refusal result. | `_build_start_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:987-1062 |
+| Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:134-161; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
 | Shared leaf-ref validation and candidate reporting. | `LeafRefResolutionError`; `resolve_leaf_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-66; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
 | Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. | `invalid_leaf_ref_result`; `invalid_contract_request_result` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:26-35; mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:38-53 |
-| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:482-493 |
-| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:492-492; mcp/src/agents_remember/worktrees/modules/start.py:495-495; mcp/src/agents_remember/worktrees/modules/start.py:498-498; mcp/src/agents_remember/worktrees/modules/start.py:501-501 |
-| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:501-501; mcp/src/agents_remember/worktrees/modules/start.py:627-689 |
-| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:160-177; mcp/src/agents_remember/worktrees/worktree_contract.py:793-848 |
+| The start operation returns through `start_result`. | `start_result` | mcp/src/agents_remember/worktrees/modules/start.py:544-555 |
+| `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. | "contract = build_start_contract(context"; "existing_result = _existing_contract_result(context"; "preflighted = _preflighted_contract(context"; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:546-546; mcp/src/agents_remember/worktrees/modules/start.py:549-549; mcp/src/agents_remember/worktrees/modules/start.py:552-552; mcp/src/agents_remember/worktrees/modules/start.py:555-555 |
+| The start operation creates its enclosure through `_create_start_enclosure`. | `_create_start_enclosure`; "return _create_start_enclosure(context" | mcp/src/agents_remember/worktrees/modules/start.py:555-555; mcp/src/agents_remember/worktrees/modules/start.py:686-718 |
+| `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. | `_task_vocabulary`; `validate_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:159-176; mcp/src/agents_remember/worktrees/worktree_contract.py:772-827 |
 
 ## Cross-Repo References
 
@@ -199,11 +199,16 @@ The current source seams include `memory_base_for_source`, `memory_mode_for_repo
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the source-branch memory base helper at this ownership boundary. | `memory_base_for_source` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:132-141 |
-| The startup admission module owns memory-mode selection for a code/memory pair. | `memory_mode_for_repository` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:80-87 |
-| The current module defines the strict master-series contract specification. | `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:201-213 |
+| The current module exposes the source-branch memory base helper at this ownership boundary. | `memory_base_for_source` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:131-140 |
+| The startup admission module owns memory-mode selection for a code/memory pair. | `memory_mode_for_repository` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:81-88 |
+| The current module defines the strict master-series contract specification. | `MasterSeriesContractSpec` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:200-212 |
 
 ## Update History
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `ensure_master_series_contract` repointed to mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:215-307. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_existing_master_series_admission_refusal` repointed to mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:940-984. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_build_start_contract` repointed to mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:987-1062. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `start_result` repointed to mcp/src/agents_remember/worktrees/modules/start.py:544-555. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `memory_base_for_source` repointed to mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:131-140. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-08T19:29:21+02:00 — Repaired the inherited claim-reopen citation by rereading the current activation transaction: fetch/re-read authority, reconciling transition, exact sync, source-pair completeness, and active publication now point to their current behavioral ranges. Verification pins remain unchanged; no acceptance claim.

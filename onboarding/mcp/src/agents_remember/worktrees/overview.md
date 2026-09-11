@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -182,11 +182,11 @@ memory-carryover vehicle.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-144; mcp/src/agents_remember/worktrees/services.py:145-154 |
+| Task observation and memory/finalization continuation use explicit service ports. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:111-128; mcp/src/agents_remember/worktrees/services.py:131-141; mcp/src/agents_remember/worktrees/services.py:144-151 |
 | The activation record is a strict source-pair fingerprinted snapshot with explicit selection states. | `AtomicSeriesSourceRef`; `AtomicSeriesSourcePair`; `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-30; mcp/src/agents_remember/models/structural/atomic_series_activation.py:33-39; mcp/src/agents_remember/models/structural/atomic_series_activation.py:42-54; mcp/src/agents_remember/models/structural/atomic_series_activation.py:57-72 |
-| Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:131-153; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-214 |
-| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:56-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:105-123 |
-| The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:308-324 |
+| Selection observation treats absence as vacant and validates the exact canonical series/source pair rather than inferring from task or queue state. | `atomic_series_source_pair`; `observe_atomic_series` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:131-153; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:196-213 |
+| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121 |
+| The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | The sync driver retains conflicts for continuation and exposes explicit cancellation. | `sync_contract_under_authority`; `_continue_resolution` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111; mcp/src/agents_remember/worktrees/sync_transaction.py:539-570 |
 | Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:160-191; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-264; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:267-284 |
 
@@ -308,7 +308,23 @@ publishes the prepared pair with ref/tree movement and no merge commit. Strict c
 quality, selected certification, curator coherence, independent review, and full suites are not
 automatic transaction steps; full suites require an explicit developer request.
 
+## Route Impact: Landing Record And Terminal Master State
+
+This route's public surface grew by one entry point and one re-export. `git_worktree_manager.py`
+re-exports `record_landing_result` from `modules/record_landing.py` and lists it in `__all__`, so the
+pull-request landing tool and the local `worktree_integrate` path reach the same writer in
+`modules/landing_record.py`; the terminal `integration` cell therefore has exactly one definition.
+`modules/start.py` gained the matching CLI adapter wiring. Retiring a series' integration branch now
+requires the master's own terminal task state through
+`integration/integration_branch_authority.py::_require_series_task_terminal`, with `worktree_cleanup`
+requiring `Completed` exactly and `worktree_abandon` accepting `Completed` or `abandoned`;
+`series_closeout.py` keeps its `!= "Completed"` test and names abandonment distinctly
+(`atomic-series-closeout-master-abandoned`) because closeout proves a completion fact and abandonment
+is reclaimed through `worktree_abandon`.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Route-impact curation for this route: recorded the new `record_landing_result` facade export and shared landed-integration writer, the terminal-task-state requirement for integration-branch retirement with its cleanup/abandon asymmetry, and the named abandoned-master closeout refusal. Content change, not a range repoint.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `activate_atomic_series_contract`, `observe_sync_operation`, `reconcile_selected_series_under_authority` repointed to mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121, mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100, mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repaired the exact-pair resolver reference, which now lives at `memory_quality/memory_candidate_pair.py` after commit `0b63d6fc` relocated it out of `closeout/`. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry and parked candidate: recorded that the sync transaction parks and returns a dirty moving side's candidate (park, journal, restore on completed/resume/cancel, finalize refusal), and that the closeout-family lineage guard self-heals a settleable stale break through that transaction. Re-derived the sync anchors against the current working tree. Verification metadata remains closeout-owned.

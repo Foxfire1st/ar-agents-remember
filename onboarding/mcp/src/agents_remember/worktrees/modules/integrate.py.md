@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T14:52+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -140,12 +140,12 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The wire vocabulary declares integration and cleanup states. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:33-34 |
-| The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
-| The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50; mcp/src/agents_remember/worktrees/modules/integrate.py:372-407 |
-| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; `run_automatic_cleanup` | mcp/src/agents_remember/worktrees/modules/integrate.py:372-407; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
+| The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
+| The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14; mcp/src/agents_remember/worktrees/modules/integrate.py:369-400 |
+| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; "cleanup = run_automatic_cleanup(updated)" | mcp/src/agents_remember/worktrees/modules/integrate.py:369-400; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
 | Historical/removed: leaf integration reused its closeout proof without calling a gate, and series/master integration alone ran the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. The cited `integration_quality.py` was deleted by the closeout-door cut (commit `fad9808e`). | — | — |
-| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:326-343 |
+| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:275-292 |
 
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
@@ -200,7 +200,7 @@ reconcile or complete the same generation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | `handover_gate_guard`; `unmatched_handover_gate_warning`; "def blocked_integration_payload(" | mcp/src/agents_remember/worktrees/modules/integrate.py:126-152; mcp/src/agents_remember/worktrees/modules/integrate.py:155-191; mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50 |
+| The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | `handover_gate_guard`; `unmatched_handover_gate_warning`; "def blocked_integration_payload(" | mcp/src/agents_remember/worktrees/modules/integrate.py:75-101; mcp/src/agents_remember/worktrees/modules/integrate.py:104-140; mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14 |
 
 ## 260821-CLIVE Live Atomic Landing Authority
 
@@ -238,6 +238,11 @@ and `prepared_integration_recovery` was dropped from the preflight results with 
 lost its `intent` field for the same reason.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The completed-integration row anchored the bare symbol `run_automatic_cleanup`, which now resolves three times across the two cited files (import and call in `integrate.py`, definition in `automatic_cleanup.py`), so the claim's provenance could not be compared. The anchor is now the exact call text `cleanup = run_automatic_cleanup(updated)` at `integrate.py` line 386, which occurs once in the cited sources; the claim's wording and both cited extents are unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "class ContractCells:" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def amend_contract(" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_integrated_result`; "def blocked_integration_payload(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:369-400; mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_blocked_non_ff_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:275-292. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T14:52+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: `_integrated_result` now calls `run_automatic_cleanup` on the successful path after writing `integration_status=completed`, reloads the contract so the payload reflects the post-cleanup cell, nests the cleanup report as a top-level `cleanup` key, and reports a cleanup refusal without failing the landing; a refused or partial integration cleans up nothing. Repointed the stale `_integrated_result` ranges (420-450 → 372-407). Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the evidence row citing the deleted `integration_quality.py` and recorded the module has no quality reference at all; corrected the L3 seam and CLIVE-L2 admission wording, which had this module binding a claimed closeout door and source journal into an integration intent — that module was deleted and no door claim is matched on this path; added the boundary-facts/publication-intent/claim-transfer removal section. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.

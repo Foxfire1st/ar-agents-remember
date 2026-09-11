@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -412,7 +412,25 @@ automatically runs strict code quality, memory quality, selected certification, 
 or independent review. Full suites remain an explicit developer request.
 
 
+## Pull-Request Landing Records Through The Same Writer
+
+A pull request lands code on the remote; it never moves refs locally, so `worktree_integrate` cannot
+express it. `worktree_tools.py::worktree_record_landing_tool` is the application entry point for that
+route. It admits the configured contract through the same refusal projector, builds a
+`git_worktree_manager.WorktreeArgs` carrying `landed_code_commit`, `landed_memory_content_commit` and
+`landed_ledger_commit`, and calls `git_worktree_manager.record_landing_result`. The point of the
+entry point is that it shares `worktree_integrate`'s one contract write
+(`worktrees/modules/landing_record.py`), so the terminal `integration` cell has exactly one
+definition regardless of how the code landed; a commit that is not reachable from a landing target is
+refused, so the cell cannot be set from a commit that landed nowhere.
+
+`worktree_tool_requests.py::LandedCommits` is the parameter object that route owns: `code` is the
+commit the PR landed on the protected branch, and the memory pair is optional because C-11 carryover
+may not have run yet when the landing is recorded — the cleanup guard checks carryover separately and
+refuses until it is done.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Pull-request landing curation: recorded the new `worktree_record_landing_tool` entry point and its `LandedCommits` parameter object, and why it shares the single landed-integration writer with `worktree_integrate` instead of writing the integration cell itself. Content change, not a range repoint.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: rewrote the "Durable Lifecycle Application Boundary" section from the deleted detached worker to the in-process synchronous route, removed the deleted legacy-repair and closeout-door adapters from the hot-path summary, and recorded the deletions of `application/closeout_door.py` and the `application/lifecycle/` worker, legacy-tool, enclosure-tool and status-wait entry points. Only cut-affected claims were reconciled; this route's other claims were not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.

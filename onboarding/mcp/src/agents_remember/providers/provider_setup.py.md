@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -179,7 +179,7 @@ provider stack is POSIX-hosted anyway.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:988-1025; mcp/src/agents_remember/worktrees/modules/start.py:1138-1170 |
+| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:1037-1074; mcp/src/agents_remember/worktrees/modules/start.py:1187-1219 |
 | Benchmark preparation calls package-local provider setup instead of a source script. | `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:547-555 |
 | Provider lifecycle calls are captured through package-local command capture. | `run_package_main` | mcp/src/agents_remember/kernel/primitives/command_capture.py:12-39 |
 | CGC seed orchestration and bundle rewriting now live outside the facade. | `cgc_seed_bundle`, `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
@@ -190,6 +190,7 @@ provider stack is POSIX-hosted anyway.
 
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_provider_setup_request`, `run_or_launch_provider_setup` repointed to mcp/src/agents_remember/worktrees/modules/start.py:1037-1074, mcp/src/agents_remember/worktrees/modules/start.py:1187-1219. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 

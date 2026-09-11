@@ -6,8 +6,8 @@
 | path                   | `mcp/pyproject.toml`                       |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -141,14 +141,14 @@ the source rather than being repeated here; it is the same string
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
-| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:136-136 |
+| Root pytest configuration selects four workers by default. | "-n=4" | pyproject.toml:145-145 |
 | Public response contracts depend on Pydantic and token accounting depends on tiktoken. | "pydantic>=2,<3", "tiktoken>=0.12,<1" | mcp/pyproject.toml:22-23 |
 | Production complexity scoring loads Radon and refuses when its development dependency is unavailable. | `complexity_blocks` | mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py:221-228 |
 | The MCP console entry point resolves through `agents_remember.mcp.__main__`. | "from .server import main" | mcp/src/agents_remember/mcp/__main__.py:5-5 |
 | MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
 | The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. | `## Quickstart`, `## Install And Run` | mcp/README.md:15-48; mcp/README.md:66-114 |
 | `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. | `runtime_install` | mcp/src/agents_remember/install/runtime.py:593-593 |
-| The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build"; "mcp/.venv/bin/python scripts/sync-dashboard.py"; ".venv/bin/python -m build"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:78-93; .github/workflows/publish-mcp-to-pypi.yml:98-135 |
+| The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. | "npm run build"; "mcp/.venv/bin/python scripts/sync-dashboard.py"; ".venv/bin/python -m build"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:82-82; .github/workflows/publish-mcp-to-pypi.yml:91-91; .github/workflows/publish-mcp-to-pypi.yml:95-95; .github/workflows/publish-mcp-to-pypi.yml:111-111 |
 | The placement step whose output this recursive glob picks up at build time. | "TARGET = REPO_ROOT", "def sync() -> int:" | scripts/sync-dashboard.py:38-38; scripts/sync-dashboard.py:138-138 |
 | Both generated dashboard paths are git-ignored, with the reason recorded inline. | "/mcp/src/agents_remember/package_data/dashboard/", "/mcp/src/agents_remember/package_data/dashboard.fingerprint" | .gitignore:26-27 |
 | An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. | "no built cockpit bundle in this installation", "No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s" | mcp/src/agents_remember/serving/static.py:73-73; mcp/src/agents_remember/serving/static.py:123-123 |
@@ -157,6 +157,8 @@ the source rather than being repeated here; it is the same string
 
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: ".venv/bin/python -m build", "agents_remember/package_data/dashboard.fingerprint", "mcp/.venv/bin/python scripts/sync-dashboard.py", "npm run build" repointed to .github/workflows/publish-mcp-to-pypi.yml:111-111, .github/workflows/publish-mcp-to-pypi.yml:82-82, .github/workflows/publish-mcp-to-pypi.yml:91-91, .github/workflows/publish-mcp-to-pypi.yml:95-95. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "-n=4" repointed to pyproject.toml:145-145. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
 

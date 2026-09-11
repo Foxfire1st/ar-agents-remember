@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_task_documents_graph_projection.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks rendered graph projection joins actual master documents to segment titles, wave/predecessor facts and frontier state. Duplicate local leaf numbers keep master-qualified titles rather than colliding in a flat lookup. Projection is display data, not independent execution authority.
+Checks rendered graph projection joins actual master documents to segment titles, wave/predecessor facts and frontier state. Duplicate local leaf numbers keep master-qualified titles rather than colliding in a flat lookup. An `abandoned` master reads `abandoned` and stops gating the segment that waited on it. Projection is display data, not independent execution authority.
 
 ## Code Commentary
 
@@ -58,8 +58,9 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Segmented master scenario projects titles and predecessors | `test_segmented_master_scenario_projects_titles_and_predecessors` | mcp/tests/test_task_documents_graph_projection.py:62-144 |
-| Duplicate local leaf numbers keep master qualified titles | `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:146-197 |
+| Segmented master scenario projects titles and predecessors | `_segmented_scenario`; `test_segmented_master_scenario_projects_titles_and_predecessors` | mcp/tests/test_task_documents_graph_projection.py:62-126; mcp/tests/test_task_documents_graph_projection.py:128-149 |
+| An abandoned master reads `abandoned` and no longer gates its successor, whose frontier becomes ready | `test_abandoned_master_reads_abandoned_and_stops_gating_its_successor` | mcp/tests/test_task_documents_graph_projection.py:151-166 |
+| Duplicate local leaf numbers keep master qualified titles | `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:168-219 |
 
 ## Cross-Repo References
 
@@ -71,6 +72,7 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 ## Update History
 
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: the segmented-scenario body was extracted into the `_segmented_scenario(atomic_status=...)` helper and `test_abandoned_master_reads_abandoned_and_stops_gating_its_successor` was added, proving an abandoned master reads `abandoned` and stops gating its successor. Rebound all three rows to their current extents and added the new test's row. Content change, not a range repoint.
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
 

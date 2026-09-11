@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_task_doc_review_public.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:10+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -32,9 +32,10 @@ and a repeated begin resumes the pending round without incrementing it. The firs
 seals findings A and B; later rounds can only shrink the remaining set through B and then an empty
 passing set.
 
-The refusal cases prove that recording without a pending begin is rejected, replacement cannot
-author or rewrite `reviewState`, and a successor cannot introduce a new finding after the baseline
-has been sealed. The cap case proves that the public route refuses the fourth ordinary round with
+The boundary cases prove that recording without a prior begin starts the baseline and still
+needs a verdict, replacement re-projects `reviewState` to round zero, and a successor cannot
+introduce a new finding after the baseline has been sealed. The cap case proves that the public
+route refuses the fourth ordinary round with
 the current count and limit, accepts a nonblank direct `developerApproval` plus positive
 `additionalRounds` only at exhaustion, carries the permission and cumulative allowance through
 rounds four and five, and leaves a pending replay unchanged. The source preserves the public error
@@ -50,13 +51,13 @@ run or issue an acceptance verdict.
 ### Invariants And Boundaries
 
 - Missing persisted state is an explicit zero projection with no pending round or findings.
-- A review round must begin before recording; a repeated begin is idempotent while pending.
+- Recording without a prior begin starts the baseline; a repeated begin is idempotent while pending.
 - The first finding list is sealed; successors may shrink remaining IDs but cannot add, duplicate,
   reintroduce, or leave unresolved findings while passing.
 - The ordinary public cap is three rounds; an exhaustion-only direct permission carries a positive
   cumulative allowance without resetting the round or sealed findings.
-- `create` and `replace` cannot author or directly modify the review state; explicit review
-  operations own that transition.
+- `create` authors no review state; `replace` can reset the projected state to round zero, and
+  the explicit review operations own the recorded transition.
 - The test owns only disposable task fixtures and makes no source, task, or control-plane edits.
 
 ### Todos
@@ -75,11 +76,11 @@ No relevant external documentation was configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Isolated public target, creation helper, and operation caller. | `_target`; `_create`; `_call` | mcp/tests/test_task_doc_review_public.py:17-52 |
-| Absent-state projection, begin replay, sealed baseline, shrink-only successors, and final pass. | `test_public_review_operations_seal_then_shrink_findings` | mcp/tests/test_task_doc_review_public.py:55-103 |
-| Begin-before-record requirement and replacement refusal. | `test_public_review_api_requires_begin_and_rejects_generic_state_reset` | mcp/tests/test_task_doc_review_public.py:105-128 |
-| New successor finding refusal after the baseline is sealed. | `test_successor_cannot_add_a_new_finding` | mcp/tests/test_task_doc_review_public.py:131-150 |
-| Public cap, exhaustion-only direct permission, cumulative rounds four/five, and pending replay. | `test_public_review_api_enforces_cap_and_carries_explicit_extra_rounds` | mcp/tests/test_task_doc_review_public.py:153-214 |
+| Isolated public target, creation helper, and operation caller. | `_target`; `_create`; `_call` | mcp/tests/test_task_doc_review_public.py:17-18; mcp/tests/test_task_doc_review_public.py:21-37; mcp/tests/test_task_doc_review_public.py:40-52 |
+| Absent-state projection, begin replay, sealed baseline, shrink-only successors, and final pass. | `test_public_review_operations_seal_then_shrink_findings` | mcp/tests/test_task_doc_review_public.py:55-102 |
+| Recording without a prior begin starts the baseline, and replacement can reset the projected state. | `test_public_review_api_records_without_begin_and_replace_can_set_state` | mcp/tests/test_task_doc_review_public.py:105-132 |
+| New successor finding refusal after the baseline is sealed. | `test_successor_cannot_add_a_new_finding` | mcp/tests/test_task_doc_review_public.py:135-154 |
+| Public cap, exhaustion-only direct permission, cumulative rounds four/five, and pending replay. | `test_public_review_api_enforces_cap_and_carries_explicit_extra_rounds` | mcp/tests/test_task_doc_review_public.py:157-218 |
 
 ## Cross-Repo References
 
@@ -104,6 +105,7 @@ behavior. No focused pass, landed commit identity, independent review, or accept
 verification metadata remains blank until governed closeout stamps a genuine code commit.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The row cited the deleted `test_public_review_api_requires_begin_and_rejects_generic_state_reset`, which asserted the opposite of the current contract. `test_public_review_api_records_without_begin_and_replace_can_set_state` now pins that recording without a prior begin starts the baseline, and that replacement resets the projected state to round zero; the Logic and Invariants prose were corrected to match.
 
 - 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `ec40e92a4b8b66cea3b73d71c00e641e7ffe45d6cef25c55beb0375567ee5308`, `6775` bytes, `214` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
 

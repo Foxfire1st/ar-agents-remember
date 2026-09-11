@@ -6,8 +6,8 @@
 | path | `mcp/tests/closeout_input_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -43,8 +43,8 @@ See task `260821-CLIVE-L1` L1-R1 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:90-136; mcp/tests/closeout_input_test_support.py:342-367 |
-| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:50-84; mcp/tests/closeout_input_test_support.py:395-417; mcp/tests/closeout_input_test_support.py:420-451; mcp/tests/closeout_input_test_support.py:454-466 |
+| Canonical admissions bind accepted input and candidate. | `start_closeout_operation`, `closeout_operation_input` | mcp/tests/closeout_input_test_support.py:97-141; mcp/tests/closeout_input_test_support.py:395-420 |
+| Evidence fixtures cover all durable states. | `MutationEvidenceRecorder`, `with_mutation_intent`, `with_commit_proven`, `with_reconciled_unchanged` | mcp/tests/closeout_input_test_support.py:64-94; mcp/tests/closeout_input_test_support.py:448-470; mcp/tests/closeout_input_test_support.py:473-504; mcp/tests/closeout_input_test_support.py:507-519 |
 
 ## Cross-Repo References
 
@@ -73,6 +73,7 @@ Builds explicit normalized closeout inputs and journal mutations for behavioral 
 - Fixture mutations preserve one operation generation and never synthesize fallback input.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `MutationEvidenceRecorder`, `closeout_operation_input`, `start_closeout_operation`, `with_commit_proven`, `with_mutation_intent`, `with_reconciled_unchanged` repointed to mcp/tests/closeout_input_test_support.py:395-420, mcp/tests/closeout_input_test_support.py:448-470, mcp/tests/closeout_input_test_support.py:473-504, mcp/tests/closeout_input_test_support.py:507-519, mcp/tests/closeout_input_test_support.py:64-94, mcp/tests/closeout_input_test_support.py:97-141. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile default in closeout_worktree_args.
 
 

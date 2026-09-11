@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/mutation_evidence.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T22:00:40+00:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,7 +33,7 @@ Direct execution and direct recovery consume `snapshot_is_clean` or
 
 ### Invariants And Boundaries
 
-- Non-preview worktree closeout requires journal-backed `operation_progress`; legacy synchronous CLI apply and generic-operation bypass fail closed.
+- Closeout mutation evidence validates the enabled leg against the contract repository; the former journal-backed `operation_progress` requirement is deleted, so an in-process closeout is no longer refused for lacking a detached worker.
 - Only repositories and legs enabled by the accepted effective input may mutate.
 - Evidence publication, not phase names or recovery cells, defines the mutation boundary.
 - Clean-snapshot truth is centralized here and compares exact Git identities, not a boolean caller
@@ -53,11 +53,11 @@ See task `260821-CLIVE-L1` L1-R4 through L1-R6.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Journal authority is mandatory for non-preview closeout. | `require_closeout_mutation_authority` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:64-67 |
-| One shared predicate defines exact clean state at current or expected HEAD. | `snapshot_is_clean`; `snapshot_is_clean_at_head` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:38-61 |
-| Intent precedes Git and is repository-bound. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:93-113 |
-| Commit proof verifies the exact transition. | `prove_git_commit` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:276-306 |
-| Restart classifies exact unchanged, exact output, and ambiguity separately. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:309-378 |
+| Journal authority is no longer a closeout precondition: `require_closeout_mutation_authority` is deleted, and `begin_git_mutation` validates only that the leg is enabled and the repository is inside contract authority through `_require_mutation_leg_authority`. | `_require_mutation_leg_authority`; `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:555-567; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:83-102 |
+| One shared predicate defines exact clean state at current or expected HEAD. | `snapshot_is_clean`; `snapshot_is_clean_at_head` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:37-39; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:42-57 |
+| Intent precedes Git and is repository-bound. | `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:83-102 |
+| Commit proof verifies the exact transition. | `prove_git_commit` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:263-292 |
+| Restart classifies exact unchanged, exact output, and ambiguity separately. | `reconcile_closeout_mutations` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:295-364 |
 
 ## Cross-Repo References
 
@@ -65,15 +65,20 @@ No meaningful cross-repository reference applies.
 
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation`. This closeout evidence owner remains intent-before-Git and exact-state reconciled. Direct landing is no longer excluded as “unjournaled”; it uses its own operation input and ledger intent while sharing the root-journal recovery architecture.
+The current source seams include `_require_mutation_leg_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation`. This closeout evidence owner remains intent-before-Git and exact-state reconciled. Direct landing is no longer excluded as “unjournaled”; it uses its own operation input and ledger intent while sharing the root-journal recovery architecture.
 
 ### Reconciled Source Evidence
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `require_closeout_mutation_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation` at this ownership boundary. | `require_closeout_mutation_authority`; `initial_closeout_mutation_evidence`; `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:64-67; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:70-90; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:93-113 |
+| The current module exposes `_require_mutation_leg_authority`, `initial_closeout_mutation_evidence`, `begin_git_mutation` at this ownership boundary. | `_require_mutation_leg_authority`; `initial_closeout_mutation_evidence`; `begin_git_mutation` | mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:555-567; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:60-80; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:83-102 |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Repaired two claims. The card claimed `require_closeout_mutation_authority` made journal authority mandatory for non-preview closeout and listed it as a current module seam; that gate (JOURNALED_CLOSEOUT_REQUIRED plus its five internal call sites, the `modules/closeout.py` call and the CLI refusal) is deleted, and the module now validates an enabled leg and its contract repository through `_require_mutation_leg_authority` (555-567), with `initial_closeout_mutation_evidence` (60-80) and `begin_git_mutation` (83-102) unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `snapshot_is_clean`; `snapshot_is_clean_at_head` repointed to mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:37-39; mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:42-57. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `begin_git_mutation` repointed to mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:83-102. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `prove_git_commit` repointed to mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:263-292. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `reconcile_closeout_mutations` repointed to mcp/src/agents_remember/worktrees/integration/mutation_evidence.py:295-364. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T22:00:40+00:00 — Corrected current journal recovery semantics against production source while preserving previous verification pins. Source inspection only.
 

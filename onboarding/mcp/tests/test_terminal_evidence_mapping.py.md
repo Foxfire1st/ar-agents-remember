@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_evidence_mapping.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T11:55:00+02:00 |
-| lastVerifiedCommitHash | `5ee86646b27fef04b98bbd94198abb2ee315638d` |
-| lastVerifiedCommitDate | 2026-09-10T12:52:31+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -66,7 +66,7 @@ mapping without changing production code.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The native lift skips `UnmappableShape`, ignores non-terminal mapper outputs, and retains the latest mapped projection. | `UnmappableShape` | mcp/src/agents_remember/serving/terminal_evidence.py:103-142 |
+| The native lift skips `UnmappableShape`, ignores non-terminal mapper outputs, and retains the latest mapped projection. | "except UnmappableShape:" | mcp/src/agents_remember/serving/terminal_evidence.py:146-184 |
 | A malformed or open frame makes no claim. | `test_unmappable_and_nonterminal_frames_make_no_terminal_claim` | mcp/tests/test_terminal_evidence_mapping.py:46-52 |
 | A later Pi stop frame remains canonical and identifiable after an unmappable frame. | `test_unmappable_frame_does_not_hide_later_canonical_terminal_frame` | mcp/tests/test_terminal_evidence_mapping.py:54-66 |
 | Pi `stop` maps to a completed terminal outcome through the registered projector. | `MappedTurnOutcome` | mcp/src/agents_remember/serving/conversation/projectors/pi.py:323-324 |
@@ -80,6 +80,7 @@ This test has no implementation boundary outside the agents-remember repository.
 | No meaningful cross-repository references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The claim anchored the native lift on the bare symbol `UnmappableShape`, which occurs twice in `terminal_evidence.py` (the projector import at 158 and the `except` clause at 170), so no exact target could be resolved, and it cited `103-142` — the sibling `latest_terminal_evidence` body at the verification stamp. The anchor is now the unique literal `"except UnmappableShape:"` and the source is the exact current extent of `latest_native_terminal_evidence`, `146-184`, which still carries the skip, the non-`MappedTurnOutcome` filtering and the retained latest projection; the claim wording is unchanged.
 
 - 2026-09-10T11:55:00+02:00 — Post-sync re-verification: `git diff 6096941f bb38d04e` touches only `mcp/tests/test-evidence-lanes.toml` and the newly landed `mcp/tests/test_terminal_liveness_deferred_work.py`, so every range cited below is unchanged between the two bases. The verification pin was advanced to the synced base `bb38d04e`. No acceptance or certification claim.
 - 2026-09-10T09:57:27+02:00 — Curator re-verified this card's cited terminal-lift and Pi-projector ranges against the synced code base `6096941f` and moved the verification pin from the pre-sync base `8133b6a9` to that base; the two focused no-claim cases and production mapping are unchanged. No acceptance or certification claim.

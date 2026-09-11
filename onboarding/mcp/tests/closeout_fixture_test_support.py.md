@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/closeout_fixture_test_support.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:56:02+00:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-11T23:05:00+00:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,40 +16,42 @@
 
 ## Purpose
 
-Provides waiting-door, publicly selected-operation, pending-memory, and writer-component fixtures for closeout boundary tests. The separate entry points preserve which authority is real in each scenario: scheduling alone, actual public journal selection, or concrete code/memory/ledger writer behavior.
+Provides the one waiting-door fixture the closeout boundary suites still consume. The module
+constructs a queued fixture for a requested memory mode and declares the master; it grants no
+operation, commit, admission, or certification authority.
 
-## CCR-R12@v5 Current Fixture Boundary
+## Current Fixture Boundary
 
-The fixture helpers support the transaction-only closeout/integration tests by constructing real
-code, external-memory, ledger, contract, and lifecycle state while keeping acceptance tools out of
-the public apply path. They can patch downstream writers to force a component boundary, but fixture
-selection, review/quality helpers, and pending-memory doubles do not grant normal closeout
-certification authority. The focused transaction test uses these real writers to prove code,
-memory, and ledger delivery and to prove that configured failing pre-commit hooks are not invoked
-by the transaction commit helpers.
+Closeout and integration are synchronous. The queued-operation fixtures that used to live here
+drove the detached worker through `OperationRuntime`; commit `173bb01e` (2026-09-10, "Delete the
+detached lifecycle worker and drive every fixture on the synchronous path") deleted that worker and
+removed the fixtures with the driving tests that had already been rewritten on the public tool
+surface. Only the waiting-door fixture kept a consumer, so this module now holds a single helper and
+re-exports nothing. The removal was deliberate, not a lost file: `git log -S '_PendingMemory' --
+mcp/tests` names the same commit.
 
 ## Code Commentary
 
 ### Logic
 
-`selected_fixture` preserves the small waiting-door fixture for a requested memory mode; it does not claim or start a closeout operation. `_selected_fixture` builds the external-memory world, optionally installs the requested repository profile, stages its code and performs the real review/declaration flow.
-
-`_public_apply` calls the actual configured closeout tool with explicit messages and approval. `_start_selected` intercepts only detached worker launch, requires one queued public result and one launch request, then opens the real store and starts `OperationRuntime`. `_committed_state` captures code/memory HEADs, ledger bytes and contract status for unchanged-state assertions.
-
-`_PendingMemory` accepts only a Gate-5 handoff, optionally invokes the actual memory checker phase, and always returns a pending failure result. Its finalizer raises because this fixture has not accepted Gate 5. `_with_memory_owner` substitutes this downstream boundary on the existing selected executor while preserving the other bound services.
-
-The `_component_code_and_memory` and `_component_ledger` helpers invoke real writer owners using explicit closeout input. Their resulting commits are component-test evidence; they do not establish selected lifecycle completion or Gate-5 acceptance. `running_code_operation` separately builds an internal-memory candidate, reviews/declares it, admits the operation through the existing support owner, and starts the actual runtime/store for worker tests.
+`selected_fixture` builds a `QueueFixture` from `test_closeout_queue` for the requested memory mode
+and declares `MASTER_A`, returning the fixture. Selection therefore comes from the queue fixture's
+own door/projection truth rather than from a retained queue lifecycle row, and the helper neither
+claims nor starts a closeout operation.
 
 ### Conventions
 
-Choose the fixture entry point that matches the boundary under test. Scenario-specific mutations remain in callers; this module does not implement production behavior.
+Call the fixture when a test genuinely needs waiting-door source state. Scenario-specific mutations
+stay in callers; this module implements no production behavior and adds no shortcut around the
+public admission, review, or gate-acceptance owners.
 
 ### Invariants And Boundaries
 
-- Waiting-door selection alone grants no operation, commit or certification authority.
-- Public selected-operation fixtures obtain journal authority through the actual configured apply path; detached launch is the explicit injected boundary.
-- Pending memory never reports an accepted Gate 5 or permits finalization, including when it invokes the real checker phase.
-- Concrete writer calls exercise component behavior without claiming lifecycle completion or accepted memory semantics.
+- Waiting-door selection alone grants no operation, commit, or certification authority.
+- The fixture reaches production behavior only through `QueueFixture`; this module composes
+  nothing on top of it.
+- The removed queued-operation fixtures are not replaced here: a test that needs public
+  selected-operation behavior drives the public tools directly.
 
 ### Todos
 
@@ -57,7 +59,8 @@ None recorded.
 
 ## Docs References
 
-No external Domain Documentation source is configured for these repository-owned test contracts. The retained CLIVE history records the fixture's earlier scheduling-only role.
+No external Domain Documentation source is configured for these repository-owned test contracts.
+The retained history records the fixture's earlier scheduling-only role.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
@@ -65,38 +68,34 @@ No external Domain Documentation source is configured for these repository-owned
 
 ## Repo-Internal References
 
-The separate helpers make scheduling, selected lifecycle admission, pending downstream work and writer-component evidence explicit. Their source boundaries should remain visible in each consuming test.
-
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The original fixture remains a waiting-door composition only. | `selected_fixture` | mcp/tests/closeout_fixture_test_support.py:33-36 |
-| The external-memory candidate uses actual profile installation, staging and review/declaration. | `_selected_fixture` | mcp/tests/closeout_fixture_test_support.py:39-47 |
-| The public tool receives explicit commit messages and closeout approval. | `_public_apply` | mcp/tests/closeout_fixture_test_support.py:50-58 |
-| One intercepted launch leads to actual store/runtime startup after queued public admission. | `_start_selected` | mcp/tests/closeout_fixture_test_support.py:61-69 |
-| Commit and ledger observations support unchanged-state assertions. | `_committed_state` | mcp/tests/closeout_fixture_test_support.py:72-79 |
-| The downstream memory fixture remains pending and rejects finalization. | `_PendingMemory` | mcp/tests/closeout_fixture_test_support.py:82-104 |
-| Only the selected executor's continuation service is replaced. | `_with_memory_owner` | mcp/tests/closeout_fixture_test_support.py:107-112 |
-| Code and memory commits are produced by actual component writers. | `_component_code_and_memory` | mcp/tests/closeout_fixture_test_support.py:115-126 |
-| The ledger component writes the exact supplied code-to-memory mapping. | `_component_ledger` | mcp/tests/closeout_fixture_test_support.py:127-136 |
-| Worker fixtures start a real internal-memory operation and runtime. | `running_code_operation` | mcp/tests/closeout_fixture_test_support.py:139-156 |
+| The waiting-door fixture builds a queue fixture for the requested memory mode and declares the master. | `selected_fixture` | mcp/tests/closeout_fixture_test_support.py:11-17 |
 
 ## Cross-Repo References
 
-No independent cross-repository protocol is established here. Temporary external-memory fixtures exercise the repository's own contract and ledger writers.
+No independent cross-repository protocol is established here. Temporary external-memory fixtures
+exercise the repository's own contract and ledger writers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No separate cross-repository evidence is required. | N/A | N/A |
 
-## Current Contract — 260821 CLIVE Final
+## Current Contract
 
-The CLIVE waiting-door behavior remains the contract of `selected_fixture`: it derives selection from current door/projection truth rather than a retained queue lifecycle row. The selected-operation and writer helpers now have distinct, broader test roles described above.
+`selected_fixture` derives selection from current door and projection truth rather than a retained
+queue lifecycle row, and it returns a `QueueFixture` whose only declared input is `MASTER_A`.
 
 ### Current Invariants
 
-- `selected_fixture` creates waiting-door source state for the requested memory mode without granting claim, operation, commit or certification authority.
-- Helpers that start selected lifecycle work use the canonical admission/store owners; component writer helpers do not claim that authority or accepted Gate-5 execution.
+- `selected_fixture` creates waiting-door source state for the requested memory mode without
+  granting claim, operation, commit or certification authority.
+- The module no longer exposes pending-memory doubles, public-apply wrappers, or component writer
+  helpers: those fixtures were removed with the detached-worker tests they served.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator content reconciliation: the module shrank to the single `selected_fixture` helper, removed by `173bb01e` together with the detached lifecycle worker. Recorded that the queued-operation, pending-memory and component-writer fixtures are gone by that deliberate deletion, and replaced their claims with the actual current boundary. The retained claim keeps its behaviour at its current extent.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `selected_fixture` repointed to mcp/tests/closeout_fixture_test_support.py:14-17. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `_component_ledger` repointed to mcp/tests/closeout_fixture_test_support.py:127-136. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `running_code_operation` repointed to mcp/tests/closeout_fixture_test_support.py:139-156. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

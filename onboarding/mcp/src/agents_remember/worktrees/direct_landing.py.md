@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
-| lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -80,8 +80,8 @@ scratch recovery exists.
 - Observing an existing action-required journal is a public refusal (`ok: false`, `state: refused`)
   with the lifecycle operation nested; intermediate journal states never escape as top-level
   direct-landing outcomes.
-- The claimed direct-landing operation must carry the declared dependency set of its admitted
-  inputs before persistence.
+- The claimed direct-landing operation is admitted by its own request; no declared closeout-door
+  dependency is bound before persistence.
 
 ### Todos
 
@@ -95,11 +95,11 @@ No configured Domain Documentation source applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The policy-gated coordinator consumes the admitted contract and one journal generation. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:132-144 |
-| Journaled memory/ledger execution and recovery own all partial-output cuts. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:68-105; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:108-165 |
-| The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:229-296 |
-| The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:54-103 |
-| R03 dependency binding at direct-landing claim. | `_claim_waiting_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:678-701 |
+| The policy-gated coordinator consumes the admitted contract and one journal generation. | `direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:117-129 |
+| Journaled memory/ledger execution and recovery own all partial-output cuts. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
+| The same ledger semantics the worktree path uses. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:236-303 |
+| The application boundary performs closed configured-contract admission and typed projection. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:55-104 |
+| R03 dependency binding is gone from the direct-landing claim: a fresh generation is admitted by the request itself (series contract, branch HEAD commit and tree, effective commit messages) and carries no door publication. | `_create_direct_landing` | mcp/src/agents_remember/worktrees/direct_landing.py:473-507 |
 
 ## Cross-Repo References
 
@@ -121,7 +121,7 @@ The current source seams include `DirectLandingRequest`, `direct_landing`, `requ
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | `DirectLandingRequest`; `direct_landing`; `require_direct_landing_enabled` | mcp/src/agents_remember/worktrees/direct_landing.py:104-119; mcp/src/agents_remember/worktrees/direct_landing.py:132-144; mcp/src/agents_remember/worktrees/direct_landing.py:147-155 |
+| The current module exposes `DirectLandingRequest`, `direct_landing`, `require_direct_landing_enabled` at this ownership boundary. | `DirectLandingRequest`; `direct_landing`; `require_direct_landing_enabled` | mcp/src/agents_remember/worktrees/direct_landing.py:89-104; mcp/src/agents_remember/worktrees/direct_landing.py:117-129; mcp/src/agents_remember/worktrees/direct_landing.py:132-140; mcp/src/agents_remember/worktrees/direct_landing.py:147-155 |
 
 ## 260821-DAGQC-L2 Action-Required Outcome
 
@@ -143,9 +143,13 @@ fallback, or compatibility reader was added.
 The claimed direct-landing generation carries `lifecycle_operation_dependencies`, binding the
 candidate, plan, and input (worker handover:
 notes/reports/260902-CCR-L03-worker-delivery.md). The admitted door was dropped from that binding by
-the closeout-door cut (commit `fad9808e`).
+the closeout-door cut (commit `fad9808e`). That dependency declaration is no longer bound on the
+direct-landing path: `_create_direct_landing` admits a fresh generation from the request itself and
+the record carries no `doorPublication`.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Repaired the R03 claim, which anchored `_claim_waiting_direct_landing` at lines 678-701 of a 576-line file. That helper no longer exists anywhere in the tree and the closeout-door cut (commit `fad9808e`) already removed the door reads; `_create_direct_landing` (473-507) now admits a fresh generation from the request itself (series contract, branch HEAD commit and tree, effective commit messages) with no door publication and no bound `lifecycle_operation_dependencies`.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `direct_landing` repointed to mcp/src/agents_remember/worktrees/direct_landing.py:117-129. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that all five door reads are gone and admission is now the request itself plus the `directExecutionEnabled` policy gate; replaced the `_claim_waiting_direct_landing` binding claim with the current dependency declaration (candidate, plan, input — no door). Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 

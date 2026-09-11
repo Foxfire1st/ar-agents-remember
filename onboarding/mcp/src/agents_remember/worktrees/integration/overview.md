@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T15:02+02:00|
-| lastVerifiedCommitHash | `1eb6301a804a0db1a17bc4d6606be02b90c3825b` |
-| lastVerifiedCommitDate | 2026-09-11T12:48:35+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -131,9 +131,9 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Completed organizational proof binds original selected references through the operation owner. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
 | Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
-| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:125-143; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:170-242 |
+| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165 |
 | Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
-| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:583-593; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:662-694 |
+| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
@@ -283,7 +283,32 @@ and relocated several route members. On this route specifically:
   `memory_quality/` so the pre-closeout quality service owns its own candidate identity
   (`0b63d6fc`, `be517eec`), and `prepared_certification.py` moved the other way (`deb032fb`).
 
+## Terminal Task State Gates Integration-Branch Retirement
+
+Retiring a series' integration branch now depends on the *master's own task document*, not only on an
+enclosure census. `integration_branch_authority.py::_require_series_task_terminal` is that guard,
+shared by the cleanup and abandon arms of `require_terminal_worktree`. It exists because
+`require_series_children_retired` walks `task_root/enclosures`, and a child that was never started
+has no enclosure to walk — so a master whose remaining leaves are all still `planning` reads as fully
+retired there. That is how `ar/260831_lifecycle-owned-completion-relay` could have had its branch
+retired while most of its leaves had never been created.
+
+The vocabulary is deliberately asymmetric. `worktree_cleanup` still requires `Completed` exactly:
+cleanup proves a completion fact. `worktree_abandon` accepts `Completed` **or** `abandoned`, and two
+refusals carry the reasoning: an in-progress master cannot be retired through abandon at all, and an
+`abandoned` master whose contract already reads `integration_status == "completed"` is refused because
+abandoning asserts that none of the work was taken — once part of it integrated, the honest terminal
+route is to mark the never-integrated rows abandoned and complete the master instead.
+`series_closeout.py::_require_atomic_master_complete` keeps its `!= "Completed"` test for the same
+reason and names abandonment distinctly (`atomic-series-closeout-master-abandoned`): an abandoned
+master is reclaimed with `worktree_abandon` and is never closed out. And
+`organizational_completion.py::require_published_organizational_master_completion` reports
+"this organizational master is abandoned, not completed" rather than the generic
+not-durably-published message.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Integration-branch retirement curation: recorded that retiring a series' integration branch now requires the master's own terminal task state through `_require_series_task_terminal`, why the enclosure census cannot see unstarted work, and the deliberate `Completed`-only versus `Completed`-or-`abandoned` asymmetry plus the two named refusals. Content change, not a range repoint.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "LifecycleControlAction = Literal[", "class LifecycleControlCommand:", "def control_operation(", `_operation_specific_projected_result`, `_projected_operation_result`, `operation_projection` repointed to mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T15:02+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: recorded in the current integration boundary that a successful integration reclaims its own enclosure through the existing terminal cleanup procedure, that a refused or partial integration cleans up nothing, and that a cleanup failure does not fail the integration — the refusal is reported and the contract's `cleanup` cell holds `cleanup-pending` for a `retry_cleanup`. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the deleted `integration_quality.py` composition paragraph and its evidence row, corrected the door from contract-owned to journal-owned (`<worktree_group>/reports/closeout-door.json`), narrowed the cancellation-recovery wording to the contract-owned copy that actually went, recorded the four deleted route members and what moved versus what did not, and added the master-completion-is-undecided gap with its two owed checks. Verification metadata remains pinned because only the cut-affected claims were reconciled; this records source documentation only and makes no acceptance or certification claim.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the dead `legacy/` route member and its stale evidence row, repaired the `closeout/memory_candidate_pair.py` reference to `memory_quality/memory_candidate_pair.py`, recorded the deleted lock/door/operation/legacy planes and the four relocated members, and dropped the deleted worker/door wording from the recovery and integration-boundary sections. This records source documentation only; it makes no acceptance or certification claim.

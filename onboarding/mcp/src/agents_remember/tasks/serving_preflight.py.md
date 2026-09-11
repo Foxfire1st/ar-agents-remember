@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/tasks/serving_preflight.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,37 +28,20 @@ restore class.
 
 ### Logic
 
-`TOPOLOGY_SCHEMA_VERSION = "ar-execution-topology/v1"` names the schema the graph operations emit;
-`TOPOLOGY_SERVING_VERSION_FLOOR = "3.0.0rc8"` is the first served distribution known to carry the
-topology fields (rc7 predates them; every later release compares above the floor).
-`require_serving_topology_schema()` has two legs:
+`TOPOLOGY_SCHEMA_VERSION = "ar-execution-topology/v1"` names the schema the graph operations emit.
+`require_serving_topology_schema()` now has **one** leg:
 
 1. **Model self-probe** — the process that will serve is the MCP server running the tool for
    in-process invocations, so it checks `TaskDocument.model_fields` for
    `executionNature`/`executionGraph`; a missing field raises `TopologyServingBuildError`
    (`task-execution-topology-serving-build-unsupported`) naming the missing fields and pointing at
    `docs/reference/execution-topology-migration.md`.
-2. **Installed-distribution check** — when the installed `agents-remember-mcp` distribution is a
-   non-editable wheel below the floor, refuse even when the checkout code on `sys.path` is current
-   (that mixed build is exactly what wrote rc7-unreadable rows). Editable installs pass by
-   construction (the checkout code is the serving code); a source-tree run with no installed
-   distribution passes and relies on the operator contract (run authoring through the deployed
-   serving server).
 
-`_is_editable_install` proves the resolved distribution is served from this checkout with three
-signals: the metadata directory (`*.egg-info` when `mcp/src` is on the import path, or the dist-info
-of an editable install) sits inside the running package's source tree (`_PACKAGE_SOURCE_ROOT`,
-derived from `agents_remember.__file__`); `direct_url.json` declares an editable install; or an
-`__editable__*.pth` sits beside the dist-info. A real installed wheel fails all three and the
-version floor decides. `_below_floor` refuses only **proven** pre-floor releases: dev/post/local
-builds and unparseable versions pass (they are not provably the stale rc7 build), so CI editable
-installs and dev builds are unaffected (L15-R4).
-
-For DAGQC L2 every observable metadata boundary is explicit: distribution discovery, metadata-path
-iteration, path stat, `direct_url.json` read, and version metadata read each translate expected
-environment failures into a chained `TopologyServingBuildError`. The distribution version is read
-once and that snapshot is used for the policy decision. Programmer errors outside the declared
-read/stat/metadata failure families still escape.
+The installed-distribution leg is gone. `TOPOLOGY_SERVING_VERSION_FLOOR`, `_installed_distribution`,
+`_is_editable_install` and `_below_floor` no longer exist in the tree: a task-plane edit does not
+consult the installed distribution version at all, so an authoring run against a stale installed
+wheel is no longer refused here. What survives is the self-probe above plus the operator contract to
+run authoring through the deployed serving server.
 
 ### Conventions
 
@@ -73,13 +56,12 @@ read/stat/metadata failure families still escape.
 - The preflight runs **before** any topology-schema write (validate-then-mutate), including ordinary
   `create`/`replace`/`set_field` edits that emit topology schema bytes (`_edit_emits_topology_schema`
   in `application/task_execution_topology.py`).
-- Editable/dev/post/local installs and source-tree runs pass; only proven pre-floor non-editable
-  wheels refuse.
-- This module is pure policy plus importlib.metadata inspection — it never writes, never mutates,
-  and never touches the coordination root.
-- Expected read/stat/iteration/version failures are total at the public preflight boundary and keep
-  their original cause through exception chaining; broad catch-all translation is forbidden.
-- One preflight uses one distribution-version snapshot.
+- Editable/dev/post/local installs and source-tree runs pass, and so does every other install now:
+  the distribution-version leg was deleted, so installation shape no longer reaches this decision.
+- This module is pure policy plus a model self-probe — it never writes, never mutates, and never
+  touches the coordination root.
+- The remaining failure surface is the self-probe alone; instantiating the preflight raises no
+  bare exception of its own beyond `TopologyServingBuildError`.
 
 ## Docs References
 
@@ -91,10 +73,10 @@ read/stat/metadata failure families still escape.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The preflight gate and its two legs. | `require_serving_topology_schema`; `_installed_distribution`; `_is_editable_install`; `_below_floor` | mcp/src/agents_remember/tasks/serving_preflight.py:55-89; mcp/src/agents_remember/tasks/serving_preflight.py:91-95; mcp/src/agents_remember/tasks/serving_preflight.py:98-132; mcp/src/agents_remember/tasks/serving_preflight.py:143-154 |
-| Wired before any write in graph authoring. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
-| Wired into ordinary topology-emitting edits. | `enforce_execution_topology_edit`; `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:762-813; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:828-842 |
-| Wired into sprint attach/detach through the linkage wrapper. | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:85-91 |
+| The preflight gate is now the model self-probe alone: `require_serving_topology_schema` refuses when the running build's `TaskDocument.model_fields` lack the topology fields. The installed-distribution leg and its helpers `_installed_distribution`, `_is_editable_install`, `_below_floor`, and `TOPOLOGY_SERVING_VERSION_FLOOR` no longer exist in the tree — a task-plane edit never consults the installed distribution version. | `require_serving_topology_schema` | mcp/src/agents_remember/tasks/serving_preflight.py:32-42 |
+| Wired before any write in graph authoring. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:202-285 |
+| Wired into ordinary topology-emitting edits. | `enforce_execution_topology_edit`; `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:780-802; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:877-891; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:828-842 |
+| Wired into sprint attach/detach through the linkage wrapper. | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:84-90 |
 
 ## Cross-Repo References
 
@@ -114,6 +96,9 @@ editable/source-tree handling, release floor, and dev/post/local treatment—rem
 makes the public check total for expected environment failures without hiding programmer defects.
 
 ## Update History
+- 2026-09-11T23:25:00+00:00: Completed the narrative pass the row repair left owed. The Logic section no longer documents a two-leg preflight: it records the single model self-probe and states that `TOPOLOGY_SERVING_VERSION_FLOOR`, `_installed_distribution`, `_is_editable_install` and `_below_floor` no longer exist and that installation shape no longer reaches this decision. The three invariants that described the distribution-version snapshot, its total failure translation and the pre-floor-wheel refusal were replaced with the surviving behavior. Content change, not a range repoint.
+- 2026-09-11T23:05:00+00:00: The row claiming a two-leg preflight anchored `_installed_distribution`, `_is_editable_install`, and `_below_floor`, which no longer exist anywhere in the tree, and cited ranges past the end of a now 42-line module. The installed-distribution leg was deleted — a task-plane edit never consults the installed distribution version — so the row records that removal and anchors the surviving model self-probe `require_serving_topology_schema` at its current definition. The surrounding narrative still describes the removed leg and needs a curator pass.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_require_serving_topology_schema` repointed to mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:84-90. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 

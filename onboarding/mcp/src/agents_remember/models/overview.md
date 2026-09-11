@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-08T16:24:06+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -86,7 +86,7 @@ treated as exact candidate identity.
 builders. It turns the public tool surface and internal builders
 from loose dictionaries into named, inspectable models that can be validated at
 runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
-(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:191-194)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
+(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:193-196)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
@@ -191,6 +191,13 @@ never changes it). `lifecycles/finalize.py`'s `LifecycleFinalizeTaskResponse` ca
 - Every public MCP tool must have exactly one declared response model in
   `PUBLIC_TOOL_RESPONSE_MODELS`; every retained compatibility builder that still
   returns through `_tool_payload` must have one in `TOOL_RESPONSE_MODELS`.
+- **The advertised tuple, the live FastMCP registration, and this registry are three separately
+  declared artifacts** (260831-LOCR-L29). `finalize_tool_response` indexes
+  `TOOL_RESPONSE_MODELS` by tool name, so an advertised name with no registry row raises instead of
+  returning a payload. Compare all three from a live probe server —
+  `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` is that executor. Do not treat the
+  `server_info` payload as surface authority: it reports `mcp.tools.PUBLIC_TOOLS` itself, so
+  comparing it to the tuple is self-referential.
 - Do not rely on Pydantic to silently coerce nested raw dictionaries for owned
   contract objects. Construct nested models explicitly, or call
   `NestedModel.model_validate(...)` only at a narrow raw-adapter boundary.
@@ -244,14 +251,16 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:75-77 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:227-231 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
-| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:186-314 |
+| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:412-416 |
+| Its registry row sits immediately after the integrate sibling. | "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:188-188 |
+| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:236-247; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:250-256; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-315 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
 | Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
-| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
-| Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-135 |
+| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:14-39 |
+| Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-137 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
 | The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:29-34 |
@@ -522,15 +531,16 @@ contracts.
 
 ## Status-Change Wait Response
 
-`models/worktree.py` owns `WorktreeStatusWaitResponse`, and `models/tools/tool_registry.py`
-registers that response for `worktree_status_wait`. It carries a typed outcome, optional successor
-generation and meaningful revision, elapsed/timeout observations, and the coherent lifecycle
-projection. It introduces no public worker PID or private operation key.
+`models/worktree.py` still owns `WorktreeStatusWaitResponse`, but `models/tools/tool_registry.py`
+no longer registers it: the `worktree_status_wait` tool was removed from the public surface, so the
+response class is currently unregistered and unreferenced anywhere in the tree. It carries a typed
+outcome, optional successor generation and meaningful revision, elapsed/timeout observations, and
+the coherent lifecycle projection. It introduces no public worker PID or private operation key.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:335-355 |
-| Public response registration uses the dedicated wait response. | "\"worktree_status_wait\": WorktreeStatusWaitResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
+| Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:184-184 |
 
 
 ## Integrated IAS Recovery Contract
@@ -542,7 +552,36 @@ The changed lifecycle preparation model retains original command ownership and a
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
 
 
+## 260831-LOCR-L29 Public-Surface Repair
+
+`models/worktree.py` gains `WorktreeRecordLandingResponse` (operation literal
+`worktree_record_landing`, carrying `integrationStrategy`, `landedCodeCommit`, and
+`landingTargets`), and `models/tools/tool_registry.py` registers it immediately after
+`worktree_integrate`. This route overview also governs `models/tools/`, which has no nested
+overview of its own.
+
+The route already stated the invariant — every advertised MCP tool has exactly one declared
+response model — and this is the route where it can be violated invisibly. `finalize_tool_response`
+indexes `TOOL_RESPONSE_MODELS` by tool name, so a tool that `mcp/registration/closeout.py` registers
+is published by FastMCP while the missing row makes its own response lookup raise. The tool was
+advertised and unable to return a payload, and the suite stayed green: `server_info` reports
+`PUBLIC_TOOLS` itself, so the only comparison available was self-referential.
+
+The matching census row landed in `mcp/tools/base.py` (61 advertised names, `worktree_record_landing`
+immediately after `worktree_integrate`), and the invariant now has an executor in
+`mcp/tests/test_tools.py::PublicSurfaceInventoryTests`, which compares the live registration order
+to that tuple and drives one `finalize_tool_response` call for the repaired name.
+
 ## Update History
+- 2026-09-11T23:44:56+00:00: Generated citation repair: "\"worktree_sync\": WorktreeSyncResponse," repointed to mcp/src/agents_remember/models/tools/tool_registry.py:184-184. No content impact: mechanical anchor-range projection bound to citation source snapshot fc36bf81fd36002f552f72a34a44e9713fa47fc86ced6632de3215e5011793d3; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: recorded the new
+  `WorktreeRecordLandingResponse` envelope and its `TOOL_RESPONSE_MODELS` row on this route, added
+  the three-artifact invariant (advertised tuple, live registration, response registry) with the
+  self-referential-`server_info` warning, and added the combined reference row. Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-11T23:05:00+00:00: The claim anchored the public wait registration on the `"worktree_status_wait": WorktreeStatusWaitResponse,` row, which no longer exists anywhere in the tree: `mcp/src/agents_remember/models/tools/tool_registry.py` does not import `WorktreeStatusWaitResponse` and its `TOOL_RESPONSE_MODELS` now carries only the remaining worktree commands. The row now records that removal, anchored to the surviving `"worktree_sync": WorktreeSyncResponse,` mapping at 183, and the Status-Change Wait Response prose states that the class in `models/worktree.py` is currently unregistered and unreferenced.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:227-231. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed the worktree vocabulary and wait-response anchors after the frozen model additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
 

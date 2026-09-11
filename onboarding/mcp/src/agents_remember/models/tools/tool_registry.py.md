@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
-| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -37,6 +37,11 @@ orchestration nudge builders remain modeled for trusted callers but are delibera
 ## Invariants And Boundaries
 
 - Every advertised MCP tool has a registered response model.
+- **Registration is what makes an advertised tool answerable.** `finalize_tool_response` indexes
+  `TOOL_RESPONSE_MODELS` by tool name (`models/tools/tool_response.py`), so a name that FastMCP
+  publishes but this registry omits raises `KeyError` inside the tool handler rather than returning
+  a payload. A registered row must also sit in the same relative order as its
+  `mcp.tools.PUBLIC_TOOLS` entry.
 - Internal exact-id operations can be validated without becoming agent-visible tools.
 - Agent-facing structural response models do not expose runtime session, lifecycle, inbox, or gate ids.
 - Field-set strictness and producer-owned value vocabularies are separate contract axes.
@@ -53,10 +58,11 @@ No external domain source governs this repository-local registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:119-140 |
-| The complete registry includes structural agent and gate responses alongside internal exact models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
-| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:235-239 |
-| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:79-81 |
+| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:118-139 |
+| The complete registry includes structural agent and gate responses alongside internal exact models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
+| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:227-231 |
+| The record-landing tool's response model is registered immediately after its integrate sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:188-188 |
+| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:75-77 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -79,7 +85,7 @@ The current source seams include the module-level vocabulary. The model change k
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141; mcp/src/agents_remember/models/tools/tool_registry.py:149-229; mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| The current module exposes the module-level vocabulary at this ownership boundary. | `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:118-139; mcp/src/agents_remember/models/tools/tool_registry.py:147-225; mcp/src/agents_remember/models/tools/tool_registry.py:227-231 |
 
 ## 260821-CLIVE Strict Door Response
 
@@ -99,7 +105,31 @@ success and typed refusal from all four actions passes the same no-extra-fields 
 `WorktreeStatusWaitResponse` (imported from `models.worktree`), so the read-only
 wait tool shares the strict typed response registry with the other worktree tools.
 
+## 260831-LOCR-L29 Record-Landing Registration Row
+
+`TOOL_RESPONSE_MODELS` now maps `worktree_record_landing` to `WorktreeRecordLandingResponse`
+(imported from `models.worktree`), placed immediately after `worktree_integrate` so the registry
+order matches that tool's position in `mcp.tools.PUBLIC_TOOLS`.
+
+This row is the registry half of the public-surface repair, and the reason the hole was invisible.
+`mcp/registration/closeout.py` registered the tool and FastMCP advertised it, while this registry
+had no entry for the name. `finalize_tool_response` indexes this mapping by tool name, so the tool
+was published and could not return a payload — the `KeyError` surfaced where no caller sees the
+model contract that was violated. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` now drives
+one `finalize_tool_response` call for this name as well as comparing registered names to the
+advertised tuple, so a missing row fails in the suite instead of at a caller.
+
 ## Update History
+- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: registered
+  `worktree_record_landing` → `WorktreeRecordLandingResponse` immediately after `worktree_integrate`,
+  recorded the by-name registry lookup as the reason an advertised-but-unregistered tool cannot
+  answer, and added its reference row. Verification metadata remains closeout-owned; no acceptance
+  claim.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`, `TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:118-139, mcp/src/agents_remember/models/tools/tool_registry.py:147-225, mcp/src/agents_remember/models/tools/tool_registry.py:227-231. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `INTERNAL_COMPAT_TOOL_NAMES` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:118-139. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:147-225. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:227-231. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:235-239. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-05T06:24:16+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:79-81. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 

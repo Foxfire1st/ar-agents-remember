@@ -6,8 +6,8 @@
 | path | `mcp/tests/integration_certification_test_support.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-06T14:46:49+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,7 @@ Provides real integration journal ownership and physically published original co
 
 ### Logic
 
-`integration_fixture` creates a Git repository, installs the requested generic profile and commits it before starting integration. It raises the fixture result-document bound to 128 KiB and recomputes the profile digest so complete retained publication bindings fit the admitted declaration. The caller supplies the contract factory. Concrete settings and a repository alias locate that repository; the actual starter creates the durable operation with detached launch replaced by a no-op. `OperationRuntime.start` supplies the running record and store for `IntegrationCertificationOwner`.
+The former `integration_fixture` helper -- which created a Git repository, installed the requested generic profile with the 128 KiB result-document bound, and started the durable integration operation through `OperationRuntime` -- was deleted as unreachable: it had no consumer, and the detached lifecycle worker it drove no longer exists. The surviving fixture surface is `selected_code_fixture` and `structural_quality_references`, while production integration certification ownership remains `IntegrationCertificationOwner`.
 
 `selected_code_fixture` creates a real checkout with the repository profile, derives its candidate lane, freezes the full run and persists admission. The shared injected outcome factory supplies code-rail results while actual publication owners write and reopen the result document. `record_published_generation` constructs original typed terminal references and the fixture requires no recording refusal. This is physical object/publication composition, not ordinary-suite execution in Dagger.
 
@@ -57,11 +57,11 @@ These source anchors establish the actual owner calls, fixture inputs and execut
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The integration owner comes from an actual started operation runtime. | `integration_fixture` | mcp/tests/integration_certification_test_support.py:54-108 |
-| The selected fixture retains one target, prepared run and ordered original terminals. | `SelectedCodeFixture` | mcp/tests/integration_certification_test_support.py:112-124 |
-| Rendering consumes supplied originals and the frozen mode. | `render` | mcp/tests/integration_certification_test_support.py:117-124 |
-| Stored objects derive from a physical publication with injected code execution. | `selected_code_fixture` | mcp/tests/integration_certification_test_support.py:127-162 |
-| Structural references are deterministic shapes without a backing evidence publication. | `structural_quality_references` | mcp/tests/integration_certification_test_support.py:165-184 |
+| The former runtime-owned integration fixture (`integration_fixture`/`IntegrationFixture`) was deleted as unreachable: it had no consumer, and the detached lifecycle worker whose `OperationRuntime` supplied its running record is gone. The surviving real-object fixture in this module is `selected_code_fixture`. | `selected_code_fixture` | mcp/tests/integration_certification_test_support.py:42-77 |
+| The selected fixture retains one target, prepared run and ordered original terminals. | `SelectedCodeFixture` | mcp/tests/integration_certification_test_support.py:26-39 |
+| Rendering consumes supplied originals and the frozen mode. | `render` | mcp/tests/integration_certification_test_support.py:32-39 |
+| Stored objects derive from a physical publication with injected code execution. | `selected_code_fixture` | mcp/tests/integration_certification_test_support.py:42-77 |
+| Structural references are deterministic shapes without a backing evidence publication. | `structural_quality_references` | mcp/tests/integration_certification_test_support.py:80-99 |
 
 ## Cross-Repo References
 
@@ -72,5 +72,10 @@ The modeled or temporary repositories belong to this isolated test composition. 
 | No cross-repository evidence is required. | N/A | N/A |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The claim said the integration owner comes from an actual started operation runtime and anchored it to `integration_fixture`; that helper (and its `IntegrationFixture` dataclass) was deleted as unreachable, and the runtime it drove is gone, so the row now records the removal and points at the surviving `selected_code_fixture`.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `SelectedCodeFixture` repointed to mcp/tests/integration_certification_test_support.py:26-39. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `render` repointed to mcp/tests/integration_certification_test_support.py:32-39. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `selected_code_fixture` repointed to mcp/tests/integration_certification_test_support.py:42-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `structural_quality_references` repointed to mcp/tests/integration_certification_test_support.py:80-99. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-06T14:46:49+00:00 — Created after reviewing actual source at `c69d5171187fa1957025e393270db9f5a864ab14`. Documented runtime ownership, original physical publications and the separate shape-only helper. This source verification makes no gate or acceptance claim.

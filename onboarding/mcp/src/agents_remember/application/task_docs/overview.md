@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -85,7 +85,7 @@ contract per concern.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:89-128; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:131-147; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:150-157; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:160-175 |
+| Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173 |
 | Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
 | Atomic raw-section shape validation and missing-register scaffolding. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
 
@@ -100,7 +100,19 @@ rebuilt from current task truth instead of freezing authoring or carrying stale 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
 
 
+## Commanded-Master Completion Reads Terminal State
+
+`task_execution_topology.py::require_commanded_masters_completed` no longer tests
+`status != "Completed" or completion_blockers(...)`; it asks
+`tasks/readiness.py::master_is_terminal` instead. That is the same judgement the task and worktree
+planes consume, so a commanded master is incomplete only when it is neither `Completed` nor
+`abandoned`. The route's refusal behavior is unchanged — it still names every incomplete master — but
+abandonment now counts as a terminal decision here as it does everywhere else, from one definition
+rather than a locally spelled-out set.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: `require_commanded_masters_completed` now resolves commanded masters through `master_is_terminal` instead of a local `!= "Completed"` test, so an abandoned commanded master counts as terminal. Content change, not a range repoint.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `preview_task_doc_projection_effects`, `preview_task_doc_transaction_projection_effects`, `publish_prepared_task_documents`, `publish_task_doc_set`, `publish_task_doc_transaction_and_refresh` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
 - 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Recorded field-classified invalidation, exact resolved task intent for route review, and dry-run scope preflight. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.

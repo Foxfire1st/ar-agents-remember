@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-05T07:08+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -135,7 +135,19 @@ publication moves the prepared pair under ref safety and creates no merge commit
 memory checks, selected certification, curator coherence, independent review, and full suites are
 explicit developer actions rather than automatic queue steps.
 
+## Resolved Masters Stop Blocking Their Successors
+
+Queue scheduling and projection now resolve masters on *terminal state* rather than completion.
+`closeout_queue_graph.py::graph_context` and `incomplete_predecessor_map` build their blocking set
+with `tasks/readiness.py::master_is_terminal`, so a predecessor master that was `abandoned` resolves
+exactly like a `Completed` one and stops blocking its successors. The reason is stated in the source
+and is a scheduling invariant, not a courtesy: an abandoned master is never going to produce the work
+its dependents wait on, so leaving them blocked forever would make abandonment worse than doing
+nothing. `closeout_projection.py::capture_projection_source` uses the same judgement to classify a
+sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded that queue graph resolution and projection classification consume `master_is_terminal`, so an abandoned predecessor stops blocking its successors and a sprint with an abandoned master classifies as terminal. Content change, not a range repoint.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/queue`, so no route/member/prose/invariant change is required. route-member-count=14; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.

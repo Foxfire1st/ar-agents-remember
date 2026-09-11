@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/start.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -236,15 +236,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:163-200 |
-| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502; mcp/src/agents_remember/worktrees/modules/start.py:136-163 |
-| The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:41-79; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:139-201 |
-| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:31-103 |
-| Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:58-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
-| Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:60-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
+| Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:167-207 |
+| Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. | `status_result`; "def atomic_series_status_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502; mcp/src/agents_remember/worktrees/modules/start.py:137-164 |
+| The selecting transaction owns pause/reconcile/active behavior rather than this public facade. | `activate_atomic_series_contract`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
+| Defines the `WorktreeArgs` dataclass that types every start/attach/status input. | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:32-113 |
+| Provider setup requests are implemented by the providers package. | `ProviderSetupRequest`, `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:547-555 |
+| Background launcher and status projection. | `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running` | mcp/src/agents_remember/application/provider_runtime.py:59-70; mcp/src/agents_remember/application/provider_runtime.py:73-121; mcp/src/agents_remember/application/provider_runtime.py:124-147; mcp/src/agents_remember/application/provider_runtime.py:150-155 |
 | Branch freshness facts come from the shared kernel. | `read_branch_freshness`, `freshness_to_packet` | mcp/src/agents_remember/kernel/git_freshness.py:98-112; mcp/src/agents_remember/kernel/git_freshness.py:158-169 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:468-470 |
-| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side. | `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:130-144; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:472-474 |
+| `ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 
 ## Cross-Repo References
 
@@ -293,7 +293,7 @@ The current source seams include `ProviderStartPaths`, `load_contract_from_args`
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:92-101; mcp/src/agents_remember/worktrees/modules/start.py:104-105; mcp/src/agents_remember/worktrees/modules/start.py:111-136 |
+| The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary. | `ProviderStartPaths`; `load_contract_from_args`; `contract_path_from_args` | mcp/src/agents_remember/worktrees/modules/start.py:93-102; mcp/src/agents_remember/worktrees/modules/start.py:105-106; mcp/src/agents_remember/worktrees/modules/start.py:109-134 |
 
 ## 260821-CLIVE Start Reservation And Task-CAS Boundary
 
@@ -307,6 +307,8 @@ the same reservation; conflicts name task-authority or recovery actions. A succe
 the exact restartable terminal predecessor, never an inferred missing root.
 
 ## Update History
+
+- 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: corrected three stale reference rows against the current source — `status_payload` now cites `guidance.py:472-474`, `amend_contract` cites `worktree_contract.py:197-227`, and this module's public start boundary cites `start.py:94-102; 105-106; 109-134`. This leaf replaced the unconditional `kind == "series"` attach refusal with `_attach_series_result`, which is the state-grounded resume; that behaviour is recorded in the attach row rather than added here. Verification metadata remains closeout-owned.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `status_result`; "def atomic_series_status_projection(" repointed to mcp/src/agents_remember/worktrees/modules/start.py:136-163; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:502-502. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
