@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-08T16:24:06+02:00 |
+| lastUpdated | 2026-09-11T11:04:01+02:00 |
 | lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
 | lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
@@ -94,7 +94,7 @@ from the providers section.
 the single public vocabularies used by application, registration, journal models, and result
 construction. `SyncOperationProjection` is the strict read-only enclosure-root journal view;
 `WorktreeSummary` and `WorktreeStatusResponse` expose it even when the live contract cannot be
-read. `SyncResolutionProjection` says which agent-owned side/worktree/conflict files need action.
+read. `SyncResolutionProjection` says which agent-owned side/worktree/conflict files need action, and its `wipRestore` flag distinguishes a resolution that is re-applying the work-in-progress the sync parked from a plain merge conflict. `sync_transaction_results` emitted that flag from the start but the field was not declared here, so `StrictResponseModel`'s `extra="forbid"` refused the projection and a sync that needed agent action failed with a serialization error instead of the guidance it owed; the field is an optional bool so the two producers that omit it remain valid.
 
 CCR-R25 adds the typed public admission vocabulary. `AtomicSeriesActivationFact` carries the
 read-only source-pair observation used by series status. `AtomicSeriesAdmission` is the bounded
@@ -146,7 +146,7 @@ all-snake payload shape.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `MemorySyncChoice`; `SyncSide`; `SyncPhase`; `SyncOperationState`; `SyncOperationProjection`; `SyncResolutionProjection` | mcp/src/agents_remember/models/worktree.py:56-78; mcp/src/agents_remember/models/worktree.py:122-142 |
+| Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `MemorySyncChoice`; `SyncSide`; `SyncPhase`; `SyncOperationState`; `SyncOperationProjection`; `SyncResolutionProjection` | mcp/src/agents_remember/models/worktree.py:56-78; mcp/src/agents_remember/models/worktree.py:122-153 |
 | Series status and command responses carry optional activation facts and bounded admission evidence. | `AtomicSeriesActivationFact`; `AtomicSeriesAdmission`; `WorktreeSummary`; `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:145-219; mcp/src/agents_remember/models/worktree.py:219-307 |
 | The sync response declares recovery guidance without exposing a public operation id. | `WorktreeSyncResponse` | mcp/src/agents_remember/models/worktree.py:357-368 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading optional next and activation fields without inventing values. | `worktree_status_packet`; `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:65-151; mcp/src/agents_remember/application/worktree_status.py:217-277 |
@@ -215,6 +215,7 @@ on timeout returns the unchanged snapshot and cursor without claiming failure. T
 imports `LifecycleOperationKind` and `LifecycleWaitOutcome` for the vocabulary.
 
 ## Update History
+- 2026-09-11T11:04:01+02:00 — Declared `SyncResolutionProjection.wipRestore`, the parked-WIP marker `sync_transaction_results` has emitted since it introduced the parked-candidate path while `StrictResponseModel`'s `extra="forbid"` refused it, so a sync that parked a dirty leaf and needed the agent to settle the reapply failed on its own projection instead of returning the resolution (code commit `765f1743`). Citation range extended to the new class extent. Only the cut-affected claim was reconciled, so verification metadata remains pinned; source documentation only, no acceptance claim.
 - 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: regenerated model-side citations for the shifted lineage, summary, optional fields and sync-response definitions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented the typed atomic-series activation fact and bounded admission response fields added to the worktree wire models. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
 
