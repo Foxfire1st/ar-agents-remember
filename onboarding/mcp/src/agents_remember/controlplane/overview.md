@@ -5,7 +5,7 @@
 | repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
 | doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
 | lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
 | governingOverview      | `../../../overview.md`                         |
@@ -506,7 +506,7 @@ publication scratch and the JSON artifact remains the survival record.
 
 ## 260815-DAG-L4 L4 Serialization Boundary
 
-Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards.
+Control-plane storage adds a repository-wide integration-authority lock and composes it after sprint queue authority. Task-fact publication, candidate declaration, series terminal publication, and Git mutation therefore share a fail-closed queue-to-repository order instead of racing check-then-act branch guards. That lock module (`controlplane/integration_authority_lock.py`) was deleted with the whole lock plane by the de-entanglement cut (commit `1a0919c1`); there is no queue-to-repository lock order any more.
 
 ## 260815-DAG-L15 Route Impact
 
@@ -518,9 +518,14 @@ Control-plane storage adds a repository-wide integration-authority lock and comp
 
 ## 260821-CLIVE Final Task-Publication And Projection Boundary
 
-Task and door truth is published under `task_publication_lock.py`, a short repository-scoped CAS
-mutex. The canonical mutation is never blocked by the state of a closeout projection. The complete
-transaction is:
+Task and door truth was published under `task_publication_lock.py`, a short repository-scoped CAS
+mutex. **That lock was deleted with the whole lock plane by the de-entanglement cut** (commit
+`1a0919c1`, "delete the lock plane"), together with `controlplane/integration_authority_lock.py` and
+`worktrees/integration/lifecycle/lifecycle_operation_lease.py`. The developer ruling is that these are
+throwaway task documents rather than bank records; the accepted cost is that two concurrent writers
+of the same task document may lose one write. No lock is taken to prove a claim. The canonical
+mutation is still never blocked by the state of a closeout projection. The transaction shape is
+unchanged:
 
 ```text
 task or door change
@@ -560,6 +565,8 @@ this selector instead of re-deriving generation choice.
 address cannot abort unrelated rows.
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: recorded that the lock plane was deleted (commit `1a0919c1`) — `task_publication_lock.py`, `integration_authority_lock.py` and `lifecycle_operation_lease.py` are gone, so task/door publication no longer takes a CAS mutex and there is no queue-to-repository lock order. Only cut-affected claims were reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 
 - 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 

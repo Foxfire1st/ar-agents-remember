@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-09T14:45+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00|
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
@@ -111,8 +111,9 @@ The journal record is the durable authority after scheduling claim transfer. Ret
 ## 260821-CLIVE Final Door, Journal, And Enclosure Models
 
 `door.py` is canonical scheduling intent with exactly waiting/deferred/withdrawn/claimed
-dispositions and immutable task/repository/provenance identity. `door_response.py` is the public
-join result and keeps disposable projection effects outside canonical door state. `operation.py`
+dispositions and immutable task/repository/provenance identity. The public join result
+`door_response.py` was deleted with the closeout-door tool entry point (commit `6982c6a7`); no door
+response model remains on this route. `operation.py`
 owns the durable lifecycle after claim: running state, source-journal identity, commits,
 certification, integration, cancellation, retirement, and supersession survive queue invalidation.
 
@@ -184,6 +185,7 @@ normal closeout/integration workers do not select, populate, or require them. Mo
 normal transaction acceptance evidence.
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: recorded that `door_response.py` was deleted with the closeout-door tool entry point (commit `6982c6a7`) and dropped the stale "public join result" claim. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

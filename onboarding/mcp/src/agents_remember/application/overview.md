@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-08T16:05:21+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
@@ -56,20 +56,18 @@ brief evidence. Ordinary messages derive parent/child addresses without requirin
 private occupant ids remain an execution detail and are never persisted into a complete structural
 destination.
 
-## Durable Lifecycle Application Boundary
+## Durable Lifecycle Application Boundary — detached worker removed
 
-`lifecycle/lifecycle_operation_worker.py` is the detached application owner for closeout and integration.
-Its packaged CLI entry is also the operation process's composition root: it builds and binds the
-default `WorktreeServices` before dispatch, so installed workers use the real adapters without
-requiring an ambient MCP server binding.
-Before that service/config load, the entry declares the explicit `lifecycle-operation`
-execution mode. This admits only the detached plane-owned task worker to live operation authority;
-it does not claim MCP or dashboard daemon ownership and does not weaken ordinary checkout CLI
-isolation.
-It loads the task contract and durable accepted input, reconstructs the captured gate policy and
-candidate identity, delegates to the existing synchronous lifecycle implementation, and publishes
-heartbeat/progress/terminal evidence. Recovery stays attached to the same accepted operation after
-agent or process replacement; callers never supply the private operation key or worker PID.
+This section previously described `lifecycle/lifecycle_operation_worker.py` as the detached
+application owner for closeout and integration, with its own packaged CLI composition root, the
+explicit `lifecycle-operation` execution mode, and heartbeat/progress/terminal publication. That
+module was deleted by the de-entanglement cut (commit `173bb01e`, "delete the detached lifecycle
+worker and drive every fixture on the synchronous path"): the MCP tools now drive
+`worktree_closeout_apply` and `worktree_integrate` in-process, and the record advance moved into
+`worktrees/integration/lifecycle/lifecycle_operation_store.py`. The `application/closeout_door.py`
+door adapter and the `application/lifecycle/legacy_operation_tool.py`,
+`lifecycle_enclosure_tools.py` and `lifecycle_status_wait.py` entry points were deleted by the same
+cut. There is no detached worker composition root or worker-execution mode on this route.
 
 ## Purpose
 
@@ -82,7 +80,7 @@ abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
 
-This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, legacy repair, direct landing, and degraded status.
+This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, direct landing, and degraded status. The legacy-repair adapter and the closeout-door adapter were deleted as capabilities by the de-entanglement cut.
 
 For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP
 execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker
@@ -415,6 +413,7 @@ or independent review. Full suites remain an explicit developer request.
 
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: rewrote the "Durable Lifecycle Application Boundary" section from the deleted detached worker to the in-process synchronous route, removed the deleted legacy-repair and closeout-door adapters from the hot-path summary, and recorded the deletions of `application/closeout_door.py` and the `application/lifecycle/` worker, legacy-tool, enclosure-tool and status-wait entry points. Only cut-affected claims were reconciled; this route's other claims were not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 - 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the unified route-review refusal boundary across application start/admission, certification, and direct closeout. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
