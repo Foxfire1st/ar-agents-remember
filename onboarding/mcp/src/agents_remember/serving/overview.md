@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `8a46bc8d186d9444bf9a83b21ad4683ec4937e3d` |
-| lastVerifiedCommitDate | 2026-09-11T11:04:29+02:00|
+| lastVerifiedCommitHash | `3fc5d7aa20095de50bc53008e9453c612532b97d` |
+| lastVerifiedCommitDate | 2026-09-11T18:38:20+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -363,6 +363,14 @@ Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_st
 `harness_submission_authority.py`; the resume channel runs `terminal_opener.py` →
 `harness_control_runner.py` → `harness_control_factories.py`. `test_harness_control_evidence.py`
 pins the whole seam.
+
+The catalog terminal-evidence lift is a consumer of that bounded substrate:
+`terminal_evidence.py::_validated_evidence_cursor` validates the deque envelope before
+`latest_terminal_evidence` maps frames, rejects unsupported projectors before reading, and
+advances truncated pages only through the last returned sequence. Its Pi path remains bounded
+at 200 entries per page and eight pages per sweep; `test_terminal_evidence_cursors.py` retains
+the focused cursor, refusal, continuation, and liveness-containment checks. This lift does not
+add a history fallback or alter the canonical projector owners.
 
 For the native control-plane substrate, start at
 `harness_control_bridge.py::interrupt` (epoch guard, structural dispatch, bridge-stamped epoch),
@@ -908,6 +916,12 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 ## Update History
 
 - 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
+
+- 2026-09-08T14:39+02:00 — 260831-LOCR-L20 curator reconciliation: added the current
+  terminal-evidence cursor consumer and its no-loss envelope boundary to the serving hot path.
+  The candidate preserves the existing bounded Pi route and canonical projector ownership;
+  verification metadata remains pinned until governed closeout stamps the code commit.
+
 
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
 

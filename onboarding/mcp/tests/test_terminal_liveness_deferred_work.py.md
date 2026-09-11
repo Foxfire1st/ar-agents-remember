@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_liveness_deferred_work.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T14:35+02:00 |
-| lastVerifiedCommitHash |  `8a46bc8d186d9444bf9a83b21ad4683ec4937e3d`|
-| lastVerifiedCommitDate |  2026-09-11T11:04:29+02:00|
+| lastVerifiedCommitHash |  `3fc5d7aa20095de50bc53008e9453c612532b97d`|
+| lastVerifiedCommitDate |  2026-09-11T18:38:20+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,6 +64,14 @@ No meaningful cross-repository implementation boundary is established by this re
 ## Update History
 
 - 2026-09-10T11:53+02:00 — 260831-LOCR-L09 curator: shifted this card's lane citation by one line, `mcp/tests/test-evidence-lanes.toml:103-103` → `104-104`, after the LOCR-L09 row `test_state_signal_boundary_delivery.py` was registered earlier in the same `unit-regression` bracket and moved every following manifest row down one. The anchor and claim bytes are unchanged; no behavioral or verification claim changed.
+
+- 2026-09-10T12:23+02:00 — 260831-LOCR-L20 curator post-sync repair: the L20↔L28 manifest union
+  inserted `test_terminal_evidence_cursors.py` at manifest row 103, shifting this module's own row to
+  104. The lane citation above was recomputed to `mcp/tests/test-evidence-lanes.toml:104-104`; the
+  previous `103-103` now addresses the sibling L20 module's row. Citation coordinates only — the
+  `unit-regression` classification, the hermetic boundary, and all verification ownership are
+  unchanged. Repaired here because the breakage was caused by the union landing in this leaf's
+  manifest candidate; the owning L28 seat may fold it into its own account.
 
 - 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: corrected this module's evidence-lane classification from `integration` to `unit-regression`. It is hermetic and integration was already at exactly its 150-collected-case cap, so the earlier registration would have taken the lane to 155 and broken full-suite collection. The lane citation now names the module's own manifest row (`mcp/tests/test-evidence-lanes.toml:103-103`) instead of a block range, and the Purpose/Conventions wording follows the corrected lane. No behavioral or verification claim changed; verification remains closeout-owned because the source is an uncommitted candidate.
 - 2026-09-08T14:35+02:00 — Created the file card for the R28 deferred-work proof. Recorded the full/starting post-commit ordering, aborted-pass suppression, row-local quarantine continuation, and escaping post-commit failure boundary from the current source. Verification remains closeout-owned because the source is an uncommitted candidate.

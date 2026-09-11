@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `3101516615b99f186a3b8408520eff4241ffcc4d` |
-| lastVerifiedCommitDate | 2026-09-11T18:35:03+02:00|
+| lastVerifiedCommitHash | `3fc5d7aa20095de50bc53008e9453c612532b97d` |
+| lastVerifiedCommitDate | 2026-09-11T18:38:20+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,12 @@
 
 ## Purpose
 
-This route retains a small behavior-oriented verification population plus shared fixtures. A file named `test_*.py` may now contain only builders; its filename and historical sidecar do not establish current test coverage. Read the current file card and source before claiming a scenario is protected or restoring an old matrix.
+This route retains a small behavior-oriented verification population plus shared fixtures. The
+terminal-evidence cursor suite is a focused unit-regression module for no-loss deque envelopes,
+unsupported-harness refusal, bounded Pi continuation, and liveness failure containment. A file
+named `test_*.py` may still contain only builders; its filename and historical sidecar do not
+establish current test coverage. Read the current file card and source before claiming a scenario
+is protected or restoring an old matrix.
 
 ## Hot Path Summary
 
@@ -54,6 +59,8 @@ request.
 | CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, and configured-hook non-invocation; focused behavior evidence only. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
 
+| Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
+
 ## Fixture Roles And Claims
 
 `test_agent_notifier.py` and `test_agent_notifier_ladder.py` supply row/topology builders. `test_codex_app_server_adapter.py` and `test_codex_adapter_thread_demux.py` supply transport/observation helpers. `test_closeout_queue.py`, `test_closeout_projection_member_helpers.py`, `test_final_codex_models.py`, `test_gate_certification_evidence.py`, `test_memory_citation_fix.py` and `test_observer_projection.py` likewise retain shared setup rather than their former standalone matrices.
@@ -82,7 +89,7 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
 
-The frozen L38 candidate added two registered integration checks to its retained population (179 files at that candidate). The current manifest records 105 unit-regression files, 2 public checks, 51 integration files, 14 architecture files and 13 provider files (185 files total); the figure fell from the 188 files the manifest previously recorded because the de-entanglement cut deleted four integration modules — `test_integration_ref_transaction.py`, `test_worktree_integrate_quality_gate.py`, `test_closeout_memory_certification_reuse.py` and `test_prepared_publication_recovery.py`. The count also includes the authorized repair that restored three CCR landing-debt registrations that commit 8885939e created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`, all in unit-regression because those modules previously ran unmarked and the integration lane sits at its 150-collected-case cap), the closeout auto-carry change that registered one new module, `test_sync_parked_candidate.py`, in the existing `unit-regression` lane and extended `test_source_lineage.py` with the `CloseoutSourceLineageHealTests` boundary cases (no case budget was raised), the `test_terminal_liveness_deferred_work.py` row corrected from integration to unit-regression for the same cap reason (the module is hermetic), and this leaf's boundary-delivery module `test_state_signal_boundary_delivery.py`, which contributes six collected unit cases. The two L38 integration cards above describe admission/status projection and route-review transport. The lane-manifest card remains the owner of record for current lane membership; `mcp/tests/test-evidence-lanes.toml.md` carries the current per-lane account and bracket ranges, and file counts are not collected-case counts. These counts and cards are preparation evidence, not Gate 5 acceptance.
+The frozen L38 candidate added two registered integration checks to its retained population (179 files at that candidate). The current manifest records 107 unit-regression files, 2 public checks, 51 integration files, 14 architecture files and 13 provider files (187 files total), the last unit-regression member being this leaf's focused terminal-evidence cursor module `test_terminal_evidence_cursors.py`; the figure fell from the 188 files the manifest previously recorded because the de-entanglement cut deleted four integration modules — `test_integration_ref_transaction.py`, `test_worktree_integrate_quality_gate.py`, `test_closeout_memory_certification_reuse.py` and `test_prepared_publication_recovery.py`. The count also includes the authorized repair that restored three CCR landing-debt registrations that commit 8885939e created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`, all in unit-regression because those modules previously ran unmarked and the integration lane sits at its 150-collected-case cap), the closeout auto-carry change that registered one new module, `test_sync_parked_candidate.py`, in the existing `unit-regression` lane and extended `test_source_lineage.py` with the `CloseoutSourceLineageHealTests` boundary cases (no case budget was raised), the `test_terminal_liveness_deferred_work.py` row corrected from integration to unit-regression for the same cap reason (the module is hermetic), and this leaf's boundary-delivery module `test_state_signal_boundary_delivery.py`, which contributes six collected unit cases. The two L38 integration cards above describe admission/status projection and route-review transport. The lane-manifest card remains the owner of record for current lane membership; `mcp/tests/test-evidence-lanes.toml.md` carries the current per-lane account and bracket ranges, and file counts are not collected-case counts. These counts and cards are preparation evidence, not Gate 5 acceptance.
 
 The current evidence-lifecycle registry declares both registered consumers in each shared
 closeout-input and curator-coherence support row. Registry SHA
@@ -116,12 +123,34 @@ No Domain Documentation entries are configured in the resolved memory root. Curr
 
 - 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: re-derived the retained test population against the current evidence manifest after the authorized repair of three missing CCR landing-debt lane registrations (179 → 186 files: 102 unit-regression, 2 public checks, 55 integration, 14 architecture, 13 provider). This leaf's own deferred-work module also moved from integration to unit-regression for the same 150-case integration cap. Body claim only; no execution, certification or acceptance claim is made.
 
+- 2026-09-10T12:23+02:00 — 260831-LOCR-L20 curator post-sync refresh: reconciled this route's
+  retained-population account to the post-sync manifest union — 187 files (103 unit-regression,
+  2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance). The delta
+  from the recorded 186 is L28's landed `test_terminal_liveness_deferred_work.py` proof, which
+  registers in `unit-regression`. The two synced conflicts were resolved hunk-by-hunk with the synced
+  side authoritative for ranges and structure, and both sides' genuine history entries were retained.
+  Classification and preparation evidence only; no execution, Gate 5, or acceptance claim.
+
+- 2026-09-10T10:55+02:00 — 260831-LOCR-L20 curator manifest refresh: reconciled this route's
+  retained-population account to the repaired closed manifest — 186 files (102 unit-regression,
+  2 public-contract, 55 integration, 14 architecture-fitness, 13 provider-conformance). The delta
+  from the previously recorded 179 is the three CCR transaction-only closeout modules restored by the
+  authorized manifest repair plus the focused terminal-evidence cursor module; the restored modules
+  are `unit-regression` because they had been running unmarked and the integration lane is at its
+  hard cap of 150 collected cases. Classification and preparation evidence only; no execution,
+  Gate 5, or acceptance claim.
+
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ02 preparation recorded the current shared-support consumer declarations and registry/validator identity as non-certifying source evidence; no acceptance claim is made.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
 - 2026-09-08T16:17:10+02:00 — CCR-L38 source-grounded preparation: recorded the two frozen registered admission/route-review checks and reconciled the retained test-lane counts from 177 to 179 files. This records candidate behavior and preparation evidence only; formal review and acceptance remain with closeout/aggregation owners.
+
+- 2026-09-08T14:39+02:00 — 260831-LOCR-L20 curator reconciliation: added the focused
+  terminal-evidence cursor route and its unit-regression boundary to the current test inventory.
+  The module's host result remains development evidence; master review and certification retain
+  their existing owners.
 
 - 2026-09-08T14:38:13+02:00 — 260831-LOCR-L08 curator: independently re-read the existing final-catalog and prepared-memory adapter references against current source; retained both claims and corrected their source ranges.
 
