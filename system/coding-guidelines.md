@@ -415,6 +415,45 @@ A code smell is not automatically a defect.
 3. Behavior-preserving cleanups keep the suite green at each step; do not bundle a risky structural change with unrelated edits.
 4. Correct-but-superlinear is a DEFECT, not a smell: a change that passes every correctness test but composes into an accidentally-quadratic call path (see Anti-Patterns and "Stability, Bounded Resources, and Reclamation" below) ships broken even with a fully green suite. Do not wave it through as style.
 
+## Guard Admissibility
+
+A guard is a refusal written into the code. It is admissible only while all three of these
+hold, and it is removed when they stop holding.
+
+1. **Evidence, not prediction.** The failure it prevents actually happened and can be cited at
+   the guard site — a commit, an incident, a red test, a report. A guard built from a predicted
+   failure mode that nobody observed is a guess, and the guess outlives the reasoning that
+   produced it. Requiring the citation is what makes "painfully evident" checkable rather than a
+   matter of taste.
+2. **Operator-legible.** The refusal tells an operator who does not know the internals what
+   broke, in plain language. A payload that prints `expected == observed` with `matches: true`
+   and still refuses is the exact failure this rule exists to prevent: a refusal that cannot
+   describe its own cause.
+3. **A named remedy.** The refusal advertises what to do next, as an exact tool and arguments
+   where one exists. When no remedy is possible, or the only remedy would defeat the purpose of
+   the implementation, say *that* explicitly rather than leaving it implicit. A refusal with no
+   advertised way forward is indistinguishable from a wall.
+
+**A guard with no cited failure has no intent behind it.** That is the tell, and it is why such
+guards cannot explain themselves: the illegibility is a provenance problem, not a writing
+problem. A design that was thought through end to end can be wrong and still shows a line of
+reasoning that goes somewhere. A speculative guard has no line to follow, so there is nothing to
+argue with and nothing to revise.
+
+**Evidence alone is not sufficient.** A guard is also inadmissible when it fights the goal of
+the implementation it protects, even when the failure it prevents is real — a contract
+byte-freeze with genuine evidence behind it still made the intended recovery path unreachable,
+so the thing it protected could never be finished. A corsett and a slop guard are the same
+mistake from opposite ends.
+
+**Every guard states what it does not cover.** A safeguard that cannot say where its authority
+stops is claiming more than it verifies.
+
+(Developer ruling 2026-09-11, stated as always-operative global doctrine.) Catching engagement:
+the anti-concurrency closeout audit — `notes/2026-09-10-anticonsurrency-smell-audit/CUT-SPEC.md`
+and its ledger. The exemplar that clears the bar is
+`mcp/tests/test_wire_vocabulary_exhaustiveness.py`, which measures 165 of 213 and says so.
+
 ## Stability, Bounded Resources, and Reclamation
 
 D1 — Stability precedes delivery. The liveness and stability of a shared substrate outrank the delivery of any single signal that rides on it. There is no communication with a dead system, so agent communication is best-effort under a system-stability budget: no delivery, retry, escalation, or logging mechanism may threaten the CPU, memory, disk, or I/O of the substrate it runs on. When the two conflict, shed the signal, not the system.

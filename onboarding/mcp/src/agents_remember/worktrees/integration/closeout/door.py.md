@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
 | lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00 |
 | governingOverview | `../overview.md` |
@@ -16,13 +16,30 @@
 
 ## Purpose
 
-Single contract publication owner for closeout-door generations.
+Journal publication owner for closeout-door generations. The door is declared, claimed and proven in
+the journal alone; the worktree contract no longer stores one.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `DoorContractReadFailure`, `DoorPublicationClassification`, `DoorPublicationError`, `door_generation_for_operation`, `successor_waiting_door`, `prepare_door_publication`. The contract owns a write-once closeout-door generation. Publication intent and exact observed contract bytes decide recovery; the queue may consume the published door but cannot synthesize, repair, or retain lifecycle evidence.
+The public surface is `DoorContractReadFailure`, `DoorPublicationClassification`, `DoorPublicationError`, `door_generation_for_operation`, `successor_waiting_door`, `prepare_door_publication`, plus the journal storage accessors `door_journal_path`, `read_published_door`, `write_published_door` and the single live reader `live_closeout_door`. The journal owns a write-once closeout-door generation. Publication intent and the journal's own state transition decide recovery; the queue may consume the published door but cannot synthesize, repair, or retain lifecycle evidence.
+
+**Door storage moved out of the contract (closeout-door cut, commit `fad9808e`).**
+`door_journal_path(contract)` resolves `<worktree_group>/reports/closeout-door.json`;
+`read_published_door` returns the declared generation or `None`; `write_published_door` publishes one
+generation atomically; `publish_door_intent` is the write path. `live_closeout_door(contract,
+record=None)` replaced every `contract.closeout_door` read in the tree. It resolves in order: the
+operation record's own `doorPublication.generation` when a record is supplied, otherwise the
+contract's declared-door journal, falling back to the located lifecycle operation store's retained
+publication. A contract with none of these has no live door — that is an absence, not a conflict, and
+a contract outside the journal is never an error. `WorktreeContract` no longer has a `closeout_door`
+field: a contract that still carries a `closeout_door:` block parses, the key is never read, and the
+next rewrite drops it. The redundant "contract copy equals journal copy" comparisons and the
+contract-byte before/after SHA proof were deleted as requirements rather than satisfied —
+`DoorPublicationEvidence` is now `{state, generation}` and no longer carries
+`expectedBeforeContractSha256` / `expectedPublishedContractSha256` /
+`observedPublishedContractSha256`.
 
 Under CCR-R03@v1 claiming re-requires the waiting generation's declared dependencies
 (`require_closeout_door_dependencies`), and a waiting successor computes its own `closeout-door/v1`
@@ -42,6 +59,9 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 - Queue rows and mutable task documents are not lifecycle evidence or fallback location authorities.
 - A claimed or successor generation must carry a dependency declaration equal to its canonical
   inputs; a stale or missing declaration refuses publication state.
+- **The contract is not a door store.** Door state lives in the journal and in the operation record's
+  own publication; no reader may reintroduce a contract-owned copy, and no comparison may be
+  re-derived against contract bytes. An absent door is an absence, not a conflict.
 
 ### Todos
 
@@ -58,6 +78,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam. | `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:30-74 |
+| The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses. | `door_journal_path`; `read_published_door`; `write_published_door`; `live_closeout_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:178-182; mcp/src/agents_remember/worktrees/integration/closeout/door.py:184-195; mcp/src/agents_remember/worktrees/integration/closeout/door.py:197-204; mcp/src/agents_remember/worktrees/integration/closeout/door.py:206-236 |
 | Claim and successor seams re-require or rebuild the door dependency declaration. | `door_generation_for_operation`; `successor_waiting_door` | mcp/src/agents_remember/worktrees/integration/closeout/door.py:83-120; mcp/src/agents_remember/worktrees/integration/closeout/door.py:121-181 |
 
 ## Cross-Repo References
@@ -66,11 +87,13 @@ No meaningful cross-repository boundary is owned by this file.
 
 ## 260821-CLIVE Sole Door Publication Authority
 
-This module is the sole contract publication/CAS owner for door generations. Only an exact already
+This module is the sole journal publication/CAS owner for door generations. Only an exact already
 published waiting generation may become claimed, and the claimed operation identity is immutable.
 A waiting successor hashes its predecessor edge plus the complete task, repository, and provenance
 evidence. Legal door dispositions remain waiting/deferred/withdrawn/claimed; journal outcomes such
-as cancel, retire, and supersede never masquerade as door states.
+as cancel, retire, and supersede never masquerade as door states. "Contract publication" here meant
+the contract-byte proof that was deleted with the contract field; the sole-authority claim now covers
+the door journal only.
 
 ## 260831-CCR-R03 Dependency-Bound Door Steps
 
@@ -79,6 +102,8 @@ reproven at claim, and the successor declares the exact predecessor generation a
 (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that door storage moved out of the worktree contract into `<worktree_group>/reports/closeout-door.json`, named the journal accessors (`door_journal_path`, `read_published_door`, `write_published_door`) and the single live reader `live_closeout_door` that replaced every `contract.closeout_door` read, and recorded that `DoorPublicationEvidence` shed its three contract-SHA fields to `{state, generation}`. Replaced the contract-publication wording in Purpose, Logic and the sole-authority section, and added the no-contract-door-store invariant. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): widened the claim row and prose cit range to door.py:83-120 so the cited range holds the `door_generation_for_operation` declaration.
 

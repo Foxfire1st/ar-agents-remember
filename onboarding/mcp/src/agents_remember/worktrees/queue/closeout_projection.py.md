@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
 | lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview | `overview.md` |
@@ -28,6 +28,11 @@ than stale rows. Multiple live series contracts are valid census input. For each
 `project_series_activation` observes the independent source-pair selector and contributes only a
 source fact, optional bounded problem, and candidate-local waiting reasons. The projection no longer
 derives a global owner from contract presence or reports a multi-live-series conflict.
+
+Since the closeout-door cut (commit `fad9808e`) a series contributes its door source fact only when it
+has a live door: `_series_source` reads `live_closeout_door(contract)` instead of the removed
+`contract.closeout_door` field, and the per-contract ordering weight and the "absent door means no
+source" branch were deleted with it. A series with no live door simply contributes no door source.
 
 Since 260831-CCR (commit `99dc249b`) every projected member source fact binds the canonical
 task-intent identity of its leaf: `_projection_members` (line 520-552) computes
@@ -95,6 +100,7 @@ L25 candidate `99dc249b`.
 
 ## Update History
 
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that a series contributes its door source fact through `live_closeout_door(contract)` rather than the removed `contract.closeout_door` field, and that the per-contract ordering weight and absent-door branch were deleted. Verification metadata remains pinned because only the cut-affected claim was reconciled; source documentation only, no acceptance claim.
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
   the closeout projection now binds each member source fact to the leaf's canonical task-intent
   identity and refuses sources whose intent cannot be projected. Verified at code commit

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T10:26:37+02:00|
+| lastUpdated | 2026-09-11T12:02+02:00|
 | lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
 | lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
 | governingOverview | `../overview.md` |
@@ -28,13 +28,15 @@ operation journal and Git proof owners; the disposable closeout projection obser
 
 ## Purpose
 
-The integration-authority package owns branch/ref authority, quality and publication fences,
-organizational completion, and recovery. Its committed L2 structure groups root-journal
+The integration-authority package owns branch/ref authority, closeout-door publication and recovery,
+and direct landing. Its committed L2 structure groups root-journal
 generation/control/worker/location logic under `lifecycle/` and direct-landing execution and recovery
 under `direct_landing/`; the remaining integration orchestration stays at this parent route. These
 are ownership-preserving package moves, not compatibility copies of the former flattened modules.
 The bounded schema-1 `legacy/` bridge this route once carried was deleted as a capability by the
 de-entanglement cut (commit `a583beb8`, "delete the legacy operation bridge and its tool surface").
+Integration no longer owns a quality gate, a publication fence, an integration-claim transfer, or an
+organizational-completion boundary; all four were deleted by the closeout-door cut (commit `fad9808e`).
 
 ## Hot Path Summary
 
@@ -49,7 +51,7 @@ queue state cannot hide retained operations.
 
 Master integration, series closeout, closeout/reopen, and the memory carryover paths consume this
 package: branch-backed authority checks (`require_*`), durable lifecycle operation leases, the
-Dagger quality gate checkout, and organizational-completion integration/repair.
+Dagger quality gate checkout, and organizational-completion repair.
 
 MCAR exact-pair admission centralizes live code-worktree and memory-worktree identity in
 `memory_quality/memory_candidate_pair.py` after the de-entanglement cut relocated it out of
@@ -59,12 +61,13 @@ policy is isolated in `closeout/integration_reopen.py`: it permits memory-only s
 only when the source head is either the recorded base or the exact recorded integrated commit;
 unrelated source movement still refuses.
 
-`integration_quality.py` composes the exact-commit full profile through the journal-owned
-`certification.py` selection. Preparation freezes once, readback reopens original publications, and
-R21 selects only the uncertified code suffix. Interrupted attempts retain their original history;
-an unchanged red catalog refuses. Completed organizational proof binds the selected frozen run and
-G1–4 terminal prefix before publication. Ordinary leaves still reuse their exact closeout-certified
-commit. Read [the integration quality card](integration_quality.py.md) for this boundary.
+`integration_quality.py` was deleted by the closeout-door cut (commit `fad9808e`). It had zero callers
+in `src/` before that cut: the integration-time quality gate was already gone, and the module plus its
+two consumers were the last of it. Normal integration therefore runs no acceptance gate of its own —
+`integrate.py` contains no quality reference at all. The surviving route member
+`integration_quality_checkout.py` still owns the detached exact-commit checkout context manager, and
+`certification.py` still owns journal-selected frozen-run certification; both are now consumed outside
+the integration path.
 
 The closeout path uses its distinct selected operation state and an explicit continuation port for
 current memory observation, Gate-5 execution, and finalization. These source boundaries do not
@@ -87,7 +90,11 @@ establish that a production continuation is installed or that the candidate has 
   never disables repository-root, separation, task, or enclosure authority.
 - External-memory ledger order is authoritative: the newest same-code row is current, while older
   exact rows remain audit history. Memory-only landing appends one current row; integration and
-  organizational completion preserve and prove the required exact historical edges.
+  organizational-completion repair preserve and prove the required exact historical edges.
+- The closeout door is journal-owned state (`<worktree_group>/reports/closeout-door.json`, plus the
+  operation record's own publication). `WorktreeContract` no longer carries a `closeout_door` field;
+  a contract that still carries the key parses, the key is never read, and the next rewrite drops it.
+- Integration reports a fact — integrated, checks passed. It never completes a master task document.
 
 ## Recovery Uses Current Ordered Authority
 
@@ -99,10 +106,12 @@ prove the exact memory parent, before/after ledger blobs, and ledger-only change
 same-code rows remain valid audit history.
 
 Cancelled closeout replacement likewise admits only the current retained lifecycle state together
-with the cancelled disposition; the contract-owned waiting door and the detached worker exit proof
-that earlier revisions of this section named were deleted with the door/operation plane. Neither rule
-adds a fallback reader: both narrow recovery to the current canonical authority plus exact retained
-evidence.
+with the cancelled disposition; the detached worker exit proof that earlier revisions of this section
+named was deleted with the operation plane, and the *contract-owned* copy of the waiting door went
+with the contract field. The door itself survives in its own journal and is read through
+`live_closeout_door`, which is what cancellation now consults for the observed disposition. Neither
+rule adds a fallback reader: both narrow recovery to the current canonical authority plus exact
+retained evidence.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
@@ -118,7 +127,7 @@ The route decomposition mirrors those boundaries without adding new authority: n
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Exact integration selection and original-publication readback precede suffix execution. | `prepare_integration_certification`; `_load`; `_execute_integration_gate` | mcp/src/agents_remember/worktrees/integration/certification.py:192-216; mcp/src/agents_remember/worktrees/integration/certification.py:235-296; mcp/src/agents_remember/worktrees/integration/integration_quality.py:166-227 |
+| Exact integration selection and original-publication readback precede suffix execution. | `prepare_integration_certification`; `_load` | mcp/src/agents_remember/worktrees/integration/certification.py:192-216; mcp/src/agents_remember/worktrees/integration/certification.py:235-296 |
 | Completed organizational proof binds original selected references through the operation owner. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
 | Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
@@ -128,7 +137,8 @@ The route decomposition mirrors those boundaries without adding new authority: n
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
-Closeout scheduling intent begins as an immutable contract-owned door generation. Public door
+Closeout scheduling intent begins as an immutable door generation published in its own journal at
+`<worktree_group>/reports/closeout-door.json`. Public door
 commands publish exact task/contract bytes under the short repository-scoped task CAS, then refresh
 the disposable projection as a downstream effect. Starting closeout atomically transfers the exact
 first-ready waiting door into the stable root operation journal; claim intent is durable before
@@ -186,6 +196,62 @@ closeout. The refusal sentence and protected-ref/door classification are unchang
 remains the carryover vehicle rather than this route's prompt. See
 [`integration_resolution_handoff.py`](integration_resolution_handoff.py.md).
 
+## Master Completion Is Undecided
+
+A leaf integrating reports a fact — integrated, checks passed. It may never imply its master is done.
+`publish_organizational_master_completion`, which wrote a master task document to `Completed` by
+inference from a landed leaf, was deleted by the closeout-door cut (commit `fad9808e`) and
+deliberately not replaced. A door-less leaf now yields a genuine absence rather than a reconstructed
+completion plan, so the integration path neither computes nor publishes a master completion.
+
+The current truthful state is that **completing a master is a decision that is not reachable in code
+today**. It is owed two checks that do not exist yet, and the intended entry point is
+`application/worktree_tools.py::lifecycle_finalize_task_tool`, gated on both:
+
+- a reviewer **report must exist** — existence only; it is never read, parsed, hashed or graded;
+- an **approval must be recorded**, widened from `tasks/route_review.py`'s `developerApproval` into
+  one `{approver role/altitude, tentative | final}` concept, so an orchestrator may approve
+  tentatively and the developer's sprint-handover approval is final.
+
+Neither check is built. Master completion is therefore never a side effect of a landing.
+
+The remaining completion machinery in `organizational_completion.py` is largely unreachable after the
+cut. `organizational_completion_plan`, `prepare_organizational_master_completion`,
+`publish_organizational_master_completion` and `require_published_organizational_master_completion`
+all have **zero callers and zero test references**. Only `classify_organizational_master_completion`
+is still reached, from `integration_operation_decision.py`, to classify a retained
+`publication.organizationalCompletion`. The module is the named site of the gap, not a live inference.
+See [`organizational_completion.py`](organizational_completion.py.md).
+
+## Closeout-Door Cut Removals And Relocations
+
+The closeout-door cut (commit `fad9808e`, "Take closeout_door out of the contract and off the
+integration path") removed four modules from this route and moved door storage. The door concept
+itself survives; only its storage and its integration-time consumers were deleted.
+
+- `closeout_door` left `WorktreeContract` entirely — field, parser, writer and
+  `_require_publishable_closeout_door`. A contract that still carries a `closeout_door:` block parses;
+  the key is never read and the next rewrite drops it. Door storage **moved** to its own journal.
+- `integration_claim_transfer.py` (`transfer_and_publish_integration_claim`) — deleted, not
+  relocated. `modules/integrate.py` no longer builds a claim transfer. The compare-and-swap over
+  owner/generation identity it performed has no successor on the integration path.
+- `integration_publication_fence.py` (`IntegrationDoorAuthorityEvidence`,
+  `classify_integration_door_authority`) — deleted, not relocated. The door **reading** it wrapped
+  moved to `closeout/door.py::live_closeout_door`; the integration-time authority classifier did not.
+- `integration_quality.py` — deleted. It already had zero `src/` callers; the integration-time
+  quality gate was gone before this cut.
+- `organizational_completion_integration.py` (`preview_integration_boundary`,
+  `prepare_integration_publication_intent`, `transfer_integration_claim`, `source_operation_matches`)
+  — deleted, not relocated. `modules/integrate.py` no longer builds boundary facts or a publication
+  intent.
+- `DirectLandingResponse.doorGenerationId` was removed, and all five door reads in
+  `worktrees/direct_landing.py` are gone; direct-landing admission is now the request itself plus the
+  `directExecutionEnabled` policy gate.
+
+Deliberately **not** claimed: the door plane survives because `worktree_operation_control` is a
+second consumer on the public tool surface. Its deletion cannot land alone — `closeout_input_test_support.py`
+is an eight-importer hub — and remains a separate, unmade cut.
+
 ## De-Entanglement Cut Removals And Relocations
 
 The de-entanglement cut deleted the lock, door, operation and journal planes and the legacy bridge,
@@ -206,6 +272,7 @@ and relocated several route members. On this route specifically:
   (`0b63d6fc`, `be517eec`), and `prepared_certification.py` moved the other way (`deb032fb`).
 
 ## Update History
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the deleted `integration_quality.py` composition paragraph and its evidence row, corrected the door from contract-owned to journal-owned (`<worktree_group>/reports/closeout-door.json`), narrowed the cancellation-recovery wording to the contract-owned copy that actually went, recorded the four deleted route members and what moved versus what did not, and added the master-completion-is-undecided gap with its two owed checks. Verification metadata remains pinned because only the cut-affected claims were reconciled; this records source documentation only and makes no acceptance or certification claim.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the dead `legacy/` route member and its stale evidence row, repaired the `closeout/memory_candidate_pair.py` reference to `memory_quality/memory_candidate_pair.py`, recorded the deleted lock/door/operation/legacy planes and the four relocated members, and dropped the deleted worker/door wording from the recovery and integration-boundary sections. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Source-moved recovery guidance: the integration-resolution handoff now routes through `worktree_sync` plus a new targeted closeout, while the refusal sentence, door/protected-ref classification, and `replay` support are unchanged. Verification metadata remains closeout-owned.
