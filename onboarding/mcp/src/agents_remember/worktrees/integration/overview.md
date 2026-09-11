@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T12:02+02:00|
+| lastUpdated | 2026-09-11T15:02+02:00|
 | lastVerifiedCommitHash | `1eb6301a804a0db1a17bc4d6606be02b90c3825b` |
 | lastVerifiedCommitDate | 2026-09-11T12:48:35+02:00|
 | governingOverview | `../overview.md` |
@@ -187,6 +187,18 @@ invoking a merge hook. It does not automatically run strict code quality, memory
 certification, curator coherence, or independent review; full suites are an explicit developer
 request. Earlier selected-certificate wording describes retained historical/explicit evidence.
 
+**Cleanup is automatic on a successful integration.** Once the prepared pair has landed and the
+contract records `integration_status="completed"`, integration reclaims its own enclosure by
+running the existing terminal cleanup procedure; there is no separate cleanup prompt. The procedure
+reports, in operator language, what it removed and what it did not across all four target kinds —
+worktrees, merged local task branches, the reports directory, and the enclosure root — and the
+integration result carries that report. The result reloads the contract so its status facts reflect
+the post-cleanup cell. A cleanup failure does not fail the integration: the result still reports
+`integrated`, and the refusal is reported with its reason, cleanup state and blockers. The
+contract's `cleanup` cell keeps the refusal visible as `cleanup-pending`, whose next operation is
+`retry_cleanup` against `worktree_cleanup`. A refused or partial integration cleans up nothing —
+that is exactly when the enclosure evidence is still needed.
+
 ## Source-Moved Recovery Guidance
 
 The integration-resolution handoff's `summary` and `cancel_note` now route a moved
@@ -272,6 +284,7 @@ and relocated several route members. On this route specifically:
   (`0b63d6fc`, `be517eec`), and `prepared_certification.py` moved the other way (`deb032fb`).
 
 ## Update History
+- 2026-09-11T15:02+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: recorded in the current integration boundary that a successful integration reclaims its own enclosure through the existing terminal cleanup procedure, that a refused or partial integration cleans up nothing, and that a cleanup failure does not fail the integration — the refusal is reported and the contract's `cleanup` cell holds `cleanup-pending` for a `retry_cleanup`. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the deleted `integration_quality.py` composition paragraph and its evidence row, corrected the door from contract-owned to journal-owned (`<worktree_group>/reports/closeout-door.json`), narrowed the cancellation-recovery wording to the contract-owned copy that actually went, recorded the four deleted route members and what moved versus what did not, and added the master-completion-is-undecided gap with its two owed checks. Verification metadata remains pinned because only the cut-affected claims were reconciled; this records source documentation only and makes no acceptance or certification claim.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the dead `legacy/` route member and its stale evidence row, repaired the `closeout/memory_candidate_pair.py` reference to `memory_quality/memory_candidate_pair.py`, recorded the deleted lock/door/operation/legacy planes and the four relocated members, and dropped the deleted worker/door wording from the recovery and integration-boundary sections. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
