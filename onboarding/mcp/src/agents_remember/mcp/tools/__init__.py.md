@@ -5,10 +5,14 @@
 | repository             | agents-remember                               |
 | path                   | `mcp/src/agents_remember/mcp/tools/__init__.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-09T06:48+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                    |
+
+## Governing Overview
+
+[MCP tools overview](overview.md)
 
 ## Purpose
 
@@ -30,6 +34,9 @@ compatibility and tests while making `lifecycle_gate_payload` the only public
 agent-facing gate junction. `__all__` lists the full builder import surface, not
 only the advertised MCP tools. 260713-TES-L4 adds `operator_inbox_supersede_payload` to the
 `operator_inbox` import block and `__all__`, exactly per the documented re-export pattern.
+260815-DAG-L16 adds `direct_landing_payload` to the import block and `__all__` per the same pattern.
+260815-DAG-L15 adds `memory_quality_check_start_payload` / `memory_quality_check_poll_payload` to
+the `memory` import block and `__all__` per the same pattern (the async quality surface, L15-R7).
 
 ### Invariants And Boundaries
 
@@ -45,26 +52,86 @@ only the advertised MCP tools. 260713-TES-L4 adds `operator_inbox_supersede_payl
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Conformance test reaches `tools._tool_payload`. | "tools._tool_payload" | mcp/tests/test_tool_response_conformance.py:4-4 |
 | `gate_response_wait_payload` is imported from `gates`. | "from .gates import (" | mcp/src/agents_remember/mcp/tools/__init__.py:20-28 |
-| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:107-107 |
+| `gate_response_wait_payload` is listed in `__all__`. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:116-116 |
 | The gate response wait payload builder is owned by the `gates` submodule. | `gate_response_wait_payload` | mcp/src/agents_remember/mcp/tools/gates.py:171-188 |
-| The post payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-36 |
-| The poll payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_poll_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:51-65 |
-| The consume payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:71-83 |
-| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:54-54 |
+| The post payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-37 |
+| The poll payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_poll_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:51-68 |
+| The consume payload builder is owned by the `operator_inbox` submodule. | `operator_inbox_consume_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:71-86 |
+| The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. | "from .operator_inbox import (" | mcp/src/agents_remember/mcp/tools/__init__.py:60-60 |
 | The orchestration nudge payload builder is owned by the `orchestration` submodule. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:60-60 |
+| The orchestration nudge payload builder is re-exported by this facade. | "from .orchestration import orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:66-66 |
 | The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| The lifecycle finalizer payload builder is re-exported by this facade. | "from .lifecycle_finalize import lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:42-42 |
+| The lifecycle finalizer payload builder is re-exported by this facade. | "from .lifecycle_finalize import lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/__init__.py:46-46 |
 | The terminal payload builders (`attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule. | `attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:27-44; mcp/src/agents_remember/mcp/tools/terminal.py:47-64; mcp/src/agents_remember/mcp/tools/terminal.py:67-84; mcp/src/agents_remember/mcp/tools/terminal.py:87-96 |
-| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:84-84 |
+| The terminal payload builders are re-exported by this facade. | "from .terminal import (" | mcp/src/agents_remember/mcp/tools/__init__.py:90-90 |
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
 
+## 260815-DAG-L3 Queue Payload Export
+
+The tool package now exports `closeout_queue_payload`, keeping the registered task-tool import on
+the same curated payload surface as the other public MCP tools.
+
+## 260815-DAG-L15 Async Memory-Quality Exports
+
+The facade re-exports `memory_quality_check_start_payload` and `memory_quality_check_poll_payload`
+(the async quality surface, L15-R7) from `.memory` in the import block and `__all__`, exactly per
+the documented re-export pattern.
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include the module-level vocabulary. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes the module-level vocabulary at this ownership boundary. | `__all__` | mcp/src/agents_remember/mcp/tools/__init__.py:114-199 |
+
+## 260821-CLIVE Closeout-Door Export
+
+The tools package now exports `closeout_door_payload` alongside the disposable
+`closeout_queue_payload`. The former publishes or observes canonical contract-owned scheduling
+intent; the latter only reads/rebuilds its current projection. Exporting both does not merge their
+authority or introduce a compatibility alias.
+
+## MCAR-L02 Adapter Export
+
+The package exports `curator_coherence_payload` alongside the existing task/door adapters so the
+task registrar imports the one canonical payload boundary. This is wiring only; it creates no
+second action implementation.
+
+## 260831-CCR-L15 Status-Wait Export
+
+The package surface now re-exports `worktree_status_wait_payload` (added to the import
+list and to `__all__`) so registration and conformance imports resolve the read-only
+wait payload from the tools package boundary.
+
 ## Update History
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:116-116. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` package export.
+- 2026-08-29T08:52+02:00 — Exported the sole curator-coherence payload adapter. Verification
+  remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented the canonical closeout-door payload export. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `memory_quality_check_start_payload` /
+  `memory_quality_check_poll_payload` join the `memory` import block and `__all__` per the
+  documented re-export pattern (L15-R7 async quality surface). Verified at code commit de3a0fd9.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `direct_landing_payload` joins the facade imports and
+  `__all__` per the documented re-export pattern; citation ranges regenerated for the L16 line
+  movement. Verified at code commit a9d50e08.
+
+
+- 2026-08-15T09:10+02:00 — L3 content update: recorded the closeout-queue payload export;
+  verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current MCP-tool card for `__init__.py` with structural tool exposure and control-plane ownership boundaries.

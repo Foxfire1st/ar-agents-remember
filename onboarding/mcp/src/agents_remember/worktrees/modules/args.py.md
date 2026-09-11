@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                         |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-08T16:45:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -19,6 +19,8 @@ flowed across those layers (F17), giving every layer a single explicit field set
 to read and write.
 
 ## Code Commentary
+
+`WorktreeArgs` now carries an optional `quality_certification` field for the organizational full-gate proof, and (CCR-R22@v1, L22, commit `685f83c44055`) the optional `certification_profile: Path | None` field: the configured repository-relative certification profile reference forwarded by the application entry points and lifecycle worker into closeout/integration, which the quality gate resolves and admits before any code commit.
 
 L23 adds worker-injected operation fingerprint, candidate-tree, and progress callback fields to `WorktreeArgs`; CLI namespaces cannot populate these plane-owned controls.
 
@@ -45,10 +47,12 @@ recovery selector for worktree start — `fast-forward` (ff stale local source
 branches, then proceed) or `proceed-stale` (explicit override); `None` means
 block when a source branch is behind/diverged from its upstream.
 
-`memory_sync_choice: str | None = None` (GitHub #54 sub-task D): the
-`worktree_sync` recovery selector when the memory work branch has local
-commits and the official memory moved — `merge-memory` or `skip-memory`;
-`None` blocks with `needs-review`.
+`memory_sync_choice: MemorySyncChoice | None` narrows the admitted memory plan to
+`merge-memory` or `skip-memory`. `resolution_action: SyncResolutionAction | None` narrows recovery
+control to `continue` or `cancel`. Both aliases are owned by the public worktree model and travel
+unchanged through application/registration/CLI adapters. The transaction journals the admitted
+memory choice; a later continue/cancel addresses the same contract generation and cannot silently
+change it.
 
 `lifecycle_id: str = ""` (slice 2c): the observable-lifecycle id the application entry point
 resolves (the active lifecycle's id, or a fresh mint when none is active) and
@@ -67,8 +71,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Provider setup config is typed through the companion worktree models module. | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:35-43 |
-| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:96-156 |
+| Public sync choice and resolution-action vocabularies are owned once by the worktree model. | `MemorySyncChoice`; `SyncResolutionAction` | mcp/src/agents_remember/models/worktree.py:65-66 |
+| Provider setup config is typed through the companion worktree models module. | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:36-43 |
+| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:136-194 |
 | Gate delegation policy model (kernel-owned since L9). | "class GatePolicy:"; "DEFAULT_GATE_POLICY = GatePolicy()" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54; mcp/src/agents_remember/kernel/primitives/gate_policy.py:66-66 |
 
 ## Series-Contract Notes
@@ -81,7 +86,42 @@ The internal worktree argument DTO carries accepted candidate, task contract, an
 facts between modules. Public callers still address the canonical task and never supply private
 operation, process, lease, or approval identifiers.
 
+## 260821-CLIVE-L1 Internal Transport
+
+`WorktreeArgs` no longer carries raw code and memory closeout message strings. Closeout execution receives one optional `EffectiveCloseoutInput`, populated only after validation; the remaining `ledger_commit_message` belongs to integration, not closeout. This prevents worker, preview, recovery, and commit code from independently normalizing or defaulting closeout subjects.
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `WorktreeArgs`, `report_operation_progress`. This module remains a public execution adapter over closed admission and exact mutation-owner reread; it does not duplicate reader exception families or lifecycle authority.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Inputs shared by the worktree application layer, CLI, and domain functions. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:35-110 |
+| Advance the plane-owned operation when this call runs under its detached worker. | "def report_operation_progress" | mcp/src/agents_remember/worktrees/modules/args.py:113-116 |
+
+## Current Landed Composition
+
+The internal `integration_certification_owner` field carries the typed journal-owned integration certification continuation. It defaults to absent and is not a public authorization token; the integration owner validates its own authority.
+
 ## Update History
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `MemorySyncChoice`; `SyncResolutionAction` repointed to mcp/src/agents_remember/models/worktree.py:60-60; mcp/src/agents_remember/models/worktree.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional certification_profile field on WorktreeArgs carrying the repository-owned profile reference into closeout/integration.
+
+
+- 2026-08-26T03:37+02:00 — Narrowed sync inputs to shared `MemorySyncChoice` and
+  `SyncResolutionAction` aliases and documented contract-addressed continue/cancel. Verification
+  remains post-Dagger/closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
+- 2026-08-17T12:35+02:00 — 260815-DAG-L5: added the optional integration `quality_certification` field to worktree arguments. Verification remains closeout-owned.
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added the optional integration `quality_certification` field to worktree arguments. Verification remains closeout-owned.
+
 - 2026-08-14T06:36+02:00 — L23 final candidate review: internal worktree arguments carry operation
   progress and accepted-candidate evidence while public tool inputs remain task-addressed.
 
@@ -92,15 +132,31 @@ operation, process, lease, or approval identifiers.
 - 2026-08-02T20:43+02:00 — W2-B08: anchored 3 worktree-argument reference claims with exact model, CLI, and gate-policy anchors; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
 
 - 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
+
 - 2026-07-04T12:32+02:00 — 260703-L4: `WorktreeArgs` now carries
   `gate_policy`, defaulting to all-human, so closeout preview/apply consumes the
   trusted MCP gate delegation policy. Verification metadata pinned until closeout
   stamps the L4 commit.
+
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `WorktreeArgs` now includes `parent_task` and `leaf_id` so all worktree operations can resolve nested active task roots and specific leaf enclosures without filesystem paths. Verification metadata pinned until closeout stamps the code commit.
+
 - 2026-06-13T18:45+02:00 — Slice 2c: added `lifecycle_id: str = ""` (the observable-lifecycle enclosure anchor the controller resolves and `_build_start_contract` stamps into the contract). Verification metadata pinned until closeout stamps the 2c code commit.
+
 - 2026-06-10T09:56+02:00 — Added `memory_sync_choice: str | None = None` (GitHub #54 sub-task D worktree_sync recovery selector).
+
 - 2026-06-10T09:30+02:00 — Added `stale_base_choice: str | None = None` (GitHub #54 stale-base preflight recovery selector).
+
 - 2026-06-10T07:30+02:00 — Added `retry_provider_setup: bool = False` (GitHub #53): on an existing contract, worktree start relaunches background provider setup instead of attaching; refused while a live setup heartbeat exists.
+
 - 2026-06-01T20:45+02:00 — `WorktreeArgs` gained `force` and `teardown_providers` for the abandon/cleanup teardown path.
+
 - 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.
+
+## Governing Overview
+
+[governing overview](overview.md)
+## Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.

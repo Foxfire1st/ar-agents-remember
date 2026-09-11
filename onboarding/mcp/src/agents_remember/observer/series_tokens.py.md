@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/observer/series_tokens.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-01T15:10+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -63,10 +63,9 @@ scope; this file implements an internal projection rollup.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:1000-1000 |
+| The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path. | "class WorkspaceProjection(BaseModel):" | mcp/src/agents_remember/observer/projection.py:1140-1140 |
 | The reducer module defines `build_analytics` for analytics enrichment. | "def build_analytics(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129 |
-| `SeriesNode` exposes the served `seriesTokenTotal` field. | `seriesTokenTotal` | mcp/src/agents_remember/observer/projection.py:716-716 |
-| The projection test module includes a `seriesTokenTotal` regression case. | `seriesTokenTotal` | mcp/tests/test_observer_projection.py:681-681 |
+| SeriesNode exposes the served seriesTokenTotal field, defaulting to zero. | "seriesTokenTotal: int = 0" | mcp/src/agents_remember/observer/projection.py:856-856 |
 
 ## Cross-Repo References
 
@@ -78,6 +77,9 @@ agents-remember workspace projection only.
 | No cross-repo dependency; aggregate tokens are computed from already-projected lifecycle and task-document nodes. | n/a | n/a |
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-04T12:41:53+00:00 — 260731-EFA-L6 S18-B09 curator: split the reducer return and analytics call/order claims onto their frozen-source owners; the landing provenance mismatch remains an explicit Tier-3 item.
@@ -87,7 +89,7 @@ agents-remember workspace projection only.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the three reference
   citations after source movement; the reducer and observer-projection references were repaired.
-  The current `SeriesNode` and `seriesTokenTotal` projection source (cit:([`SeriesNode`, `seriesTokenTotal`], mcp/src/agents_remember/observer/projection.py:691-717)) was re-read and left unchanged.
+  The current `SeriesNode` and `seriesTokenTotal` projection source (cit:([`SeriesNode`, `seriesTokenTotal`], mcp/src/agents_remember/observer/projection.py:832-860)) was re-read and left unchanged.
   Every body claim was re-read against the source and still holds, so no prose changed.
   Squared two ragged frontmatter cells.
 - 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): the `projection.py` citation was

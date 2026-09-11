@@ -96,7 +96,6 @@ regression suite.
 | The pre-refresh stop aborts on non-ok/partial watcher stop before runtime provider refresh proceeds. | `stop_provider_watchers_before_refresh` | mcp/src/agents_remember/install/provider_watchers.py:128-141 |
 | The post-install path starts watchers, checks status, and attempts one non-destructive restart/rebind before adding recovery guidance. | `complete_provider_watcher_rebind` | mcp/src/agents_remember/install/provider_watchers.py:144-166 |
 | Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning. | `install_runtime` | mcp/src/agents_remember/install/runtime.py:462-553 |
-| Focused tests cover stop/start ordering, dry-run reporting, degraded retry, unrecovered failure guidance, and dependency-failure recovery. | `test_runtime_install_provider_deps_rebinds_watchers_around_runner_refresh` | mcp/tests/test_install_runtime.py:166-237 |
 
 ## Cross-Repo References
 

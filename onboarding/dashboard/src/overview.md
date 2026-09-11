@@ -5,10 +5,14 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-13T12:26+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:58:28+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview      | `../../overview.md`                              |
+
+## Hot Path Summary
+
+The cockpit composes projected task and lifecycle state, while `data/` owns server transport and stores and `panels/` owns task/artifact views. For CCR, start with `data/taskArtifacts.ts`, the notes/requirements reader discriminator, and the versioned lifecycle projection with its server-owned meaningful revision.
 
 ## Governing Overview
 
@@ -20,6 +24,12 @@ Operations and Chats project the same real sprint/master/leaf task hierarchy. Ho
 task-document reference plus role; runtime session ids identify only the current occupant. The rail
 keeps one stable row across replacement, while spawn ancestry is available only as a separate
 diagnostic projection. Long live labels remain single-line CSS ellipsis.
+
+ARSPAWN-L2 adds optional `dispatchBriefEntryId` to the terminal-catalog row as private diagnostic
+evidence that the current generation completed its durable one-call dispatch transaction. The
+frontend does not use it as identity or addressing authority. `TaskDocumentRef` is declared locally
+in the dashboard contract (it is neither imported nor generated), and the producer/consumer
+conformance suite pins the final 66-field catalog projection in both directions.
 
 ## L23 Lifecycle Operation Projection
 
@@ -63,6 +73,10 @@ cause exactly one chooser catalog reread and one explicit terminal-socket reatta
 coupled to SSE loss or a background retry loop. Reattach preserves the mounted xterm and durable
 tmux session; transport close alone is not terminal exit.
 
+ARSPAWN-L4 extends that same generated serving-build wire identity with optional Python-source
+digest, exact interpreter, and package root. The frontend remains a diagnostic consumer; it gains
+no package-update or candidate-selection authority.
+
 ## FEUI-MX-FIX-2 Authoritative Session Open
 
 Every browser create entrance now converges on `data/terminalOpen.ts`, the sole client for
@@ -74,7 +88,7 @@ alternate success path.
 
 The dev cockpit scenarios replace transport with request-matched raw and harness responses through
 the real client seam. They remain fixtures governed by this route overview, not a production
-authority — `dev/` is now three files and still does not warrant its own overview.
+authority — `dev/` remains governed by this overview, including its expanded fixture and probe inventory.
 
 ## 260731-EFA-L2 — `dev/` Is A Contract Between Two TypeScript Projects
 
@@ -118,7 +132,7 @@ and its `--check` mode fails drift. The chain therefore separates generated auth
 coverage:
 
 ```text
-observer/projection.py schema --A--> generated types/projection.ts
+models/projections/workspace.py schema --A--> generated types/projection.ts
                                       ↑ type-checked fixture builders
                                       ↕ measured sample coverage
                                fixtures/snapshot.json
@@ -214,7 +228,7 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files(", "def test_committed_generated_files_are_current"], mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:261-261; mcp/tests/test_projection_types_codegen.py:255-255).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:439-439; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-475; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-602).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -438,9 +452,8 @@ references informed product framing only; current code truth stays in agents-rem
 | Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-745 |
 | Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
 | Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| Projection provenance: producer partition/bucket checks feed a schema-generated and stale-checked TypeScript mirror; fixture builders are type-checked against it; `contract.test.ts` measures the separate manual snapshot's coverage. | "The producer-to-TypeScript link is generated and checked"; "WHAT SCHEMA CODEGEN CLOSES"; "def check_state_partition("; "def state_count_fields("; "def workspace_projection_schema("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("; "def test_committed_generated_files_are_current" | dashboard/src/test/contract.test.ts:60-60; dashboard/src/test/fixtures/wire.ts:23-23; mcp/src/agents_remember/code_quality/projection_types.py:59-59; mcp/src/agents_remember/code_quality/projection_types.py:340-340; mcp/src/agents_remember/code_quality/projection_types.py:382-382; mcp/src/agents_remember/code_quality/projection_types.py:509-509; mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:261-261; mcp/tests/test_projection_types_codegen.py:255-255; scripts/sync-projection-types.py:43-51 |
 | Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. | "five rules"; `SCANNED_ROOTS`; "no dashboard test asserts against a payload the server cannot produce" | dashboard/src/test/wireFixtureGuard.ts:1-63; dashboard/src/test/wireFixtureGuard.ts:136-136; dashboard/src/test/wireFixtureGuard.test.ts:266-467 |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:333-337 |
+| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:459-475 |
 | Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
 | JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66 |
 
@@ -477,7 +490,140 @@ The dashboard consumes strict source-lineage projection types, schema, and
 fixtures from the server contract. Engine Room shows the aggregate admission
 state and full summary; it does not compare branches or choose a sync locally.
 
+## 260815-DAG-L4 L4 Projection Contract
+
+The dashboard projection adds the organizational `super-to-leaf` lineage relation and remains generated from the server schema. Organizational direct-super and atomic super-to-master-to-leaf topology therefore use one closed, parity-tested wire vocabulary.
+
+## 260815-DAG-L14 Dashboard Route
+
+The task-document projection types carry sprint structure: `TaskDocNode.seats` (`TaskSeatNode`)
+and optional `TaskSubTaskRefNode.masterRef`; the detail panel threads `docPathForRef` so sprint
+rows open their commanded master document.
+
+
+## 260815-DAG-L12 Route Impact
+
+The sprint execution graph is viewable when present: `types/projection.ts` (+ schema) carry the render-ready `TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode` wire shapes and optional `TaskDocNode.executionGraphView`; `panels/sprint-graph/` is the wave-grid view route; `dev/DevApp.tsx` exposes `/dev/sprint-graph` for mounted-UI evidence; and `fixtures/snapshot.json` exercises the node vocabularies (L12-R1/R2/R4-R7). The sprint-scoped closeout projection is mounted independently, so a valid graph-less atomic-sequential sprint retains scheduling visibility.
+
+## 260821-CLIVE Disposable Scheduling And Discard Audit
+
+The generated projection now exposes closeout scheduling as disposable exact-current state:
+service/source condition, bounded source problems with repair actions, and generation-keyed members
+with producer-owned classification, priority, order, and reasons. The dashboard renders this view
+without owning claims, lifecycle, commit, certification, recovery, or terminal evidence.
+
+Task projections also retain audited discard-before-start history. Detail surfaces show the discarded
+identity, reason, timestamp, and proof separately; Operations appends a distinct discarded count to
+live progress. A discarded item never increments completion. The JSON Schema remains runtime
+authority for numeric, string, fingerprint, and collection refinements; generated TypeScript carries
+deterministic refinement documentation rather than pretending those constraints are structural types.
+
+
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`fixtures/snapshot.json` extended with a super-to-leaf source-relation entry and two execution-graph view nodes (segment + lump with frontier states) for dashboard vocabulary coverage.
+
+## 260824-PDLS Final Projection Reconciliation
+
+The generated dashboard contract removes the impossible `not-created` invalidation outcome and
+the contract suite now forces parity with the producer's always-materialized invalid-empty state.
+This keeps the browser on the projection plane: file absence never becomes queue or lifecycle
+authority.
+
+## Python 3.13 Generated-Schema Representation
+
+The canonical schema now represents named attention and process `Literal` vocabularies as local
+`$defs` enums referenced by their model properties. Their values and the generated TypeScript
+surface are unchanged; the dashboard remains a consumer of one server-owned generated contract.
+
+## 260831-CCR-L23 Notes Takeover Widen
+
+The cockpit takeover now distinguishes the artifact kind it opens: the notes reader view marker is
+`notes-reader` for a notes target and `requirements-reader` for a task-local requirement
+packet, with the shared `TaskArtifactReaderTarget` imported from `data/taskArtifacts.ts`.
+Route-shape, takeovers, and layer retention are unchanged; detail lives in the Cockpit.tsx sidecar.
+
+## CCR-R18@v1 Lifecycle Envelope Mirror
+
+260831-CCR-L18 regenerated the lifecycle-operation projection surface consumed by the dashboard: `types/projection.ts` and `types/projection.schema.json` now carry `schemaVersion`/`stateMatrixVersion`, the `incoherent` status, and the identity/componentBindings/worker/approval/recommendedAction envelope cells; `fixtures/snapshot.json` gained the matching fixture samples; `test/contract.test.ts` registers the new signature site and vocabularies. File-level detail lives in the route sidecars.
+
+## Lifecycle Wait Cursor Mirror
+
+`types/projection.ts` carries optional `meaningfulRevision` and `taskIntent` in the versioned lifecycle
+operation envelope. The revision is a server-owned observation cursor and the intent is a canonical task digest; neither is a browser-produced activity
+counter. `fixtures/snapshot.json` includes the matching sample alongside the coherent projection
+fields; the task-artifact takeover remains independently discriminated by notes/requirements.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:335-360 |
+| The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1225-1225 |
+
+
+## Integrated IAS Recovery Contract
+
+The generated lifecycle phase union and schema now include `recovering-private-preparation`. This is a server-owned recovery state projected through the existing lifecycle view; it adds no frontend command or recovery authority. Keep the schema and TypeScript mirror generated from the same producer.
+
 ## Update History
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
+
+
+
+- 2026-09-05T07:24+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Removed stale dev-file census, corrected schema owner and added normative intent to the current lifecycle mirror account. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: types coverage refreshes the generated `LifecycleOperationProjection` wire mirror with the optional `meaningfulRevision` cursor (interface, schema, fixture sample); route index regenerated.
+
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the regenerated lifecycle operation envelope mirror, fixture samples, and contract vocabulary registrations. File-level detail in the dashboard/src sidecars.
+
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the notes-takeover kind distinction (notes vs requirements reader) in the cockpit shell route.
+
+
+- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: regenerated the diagnostic serving-build
+  mirror with exact Python candidate provenance. Verification remains closeout-owned.
+
+- 2026-08-29T19:04+02:00 — Reconciled the Python 3.13 named-literal `$defs` representation without
+  changing the dashboard wire vocabulary or frontend ownership. Verification remains closeout-owned.
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 final curation: recorded the dashboard-local
+  `TaskDocumentRef` declaration and final 66-field producer/consumer parity while keeping the brief
+  receipt diagnostic-only. No test execution is claimed.
+
+- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 route impact: the terminal-catalog projection accepts
+  the private pinned-brief receipt without changing the task-document-plus-role chat identity.
+  Verification remains closeout-owned.
+
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed exact projection-schema and generated-mirror citation anchors after source movement; the dashboard source-layer architecture is unchanged.
+
+- 2026-08-25T17:21+02:00 — Reconciled the final invalidation outcome and contract-forcing change.
+  Verification remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Added the final CLIVE disposable scheduling and discard-audit route
+  contract, corrected graph-less queue visibility, and retained the newer root-journal lifecycle
+  operation projection boundary.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: the snapshot fixture gained a super-to-leaf relation entry and two execution-graph view nodes. Verified at code commit e5cb139f.
+
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph view types, the new sprint-graph panel route, the dev evidence surface, and the fixture vocabulary. Verified at code commit b7f2c8e2.
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: the dashboard task projection gains
+  `seats` + typed `masterRef`; detail-panel rows open the commanded master directly. Verified at
+  code commit 8071a644.
+
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: generated dashboard projection types and
+  fixtures now expose explicit master nature, the persisted reasoned sprint graph, and derived waves.
+  This leaf adds visibility contracts only; it does not yet add queue or graph UI judgment.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: the dev scenario server now models accepted
   interaction consumption/replay/attention behavior and uses the shared fleet task-document fixture;

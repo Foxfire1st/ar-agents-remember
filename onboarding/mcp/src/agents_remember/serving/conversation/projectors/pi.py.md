@@ -89,7 +89,7 @@ observed entry/tool shapes; the store's block union converges the split tool ite
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The Pi RPC adapter streams live RPC events (tool lifecycle frames) and pages durable entries with native id/parent coordinates. | `_event_stream`; `read_native_page` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:576-611 |
-| The pi fixture records the observed message_end live frame and durable-entry native page rows through the production seam. | "message_end full frame[observed]"; "substrate-evidence/native-page-get-entries" | mcp/tests/fixtures/conversation_runtime/pi-0.80.7.json:39-61 |
+| Historical evidence (retired with the d3610903 suite reduction): The pi fixture recorded the observed message_end live frame and durable-entry native page rows through the production seam. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 | The store unions tool-call blocks by `block_id` so start → update → end keeps the input block. | `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
 | The engine continues native reads eagerly for pi so live items always carry native identity. | `poll_native_continuation` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:283-304 |
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/test/fixtures/wire.ts`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T14:05+02:00                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-07T00:34+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
@@ -40,9 +40,8 @@ cit:(["GENERATED FILE; DO NOT EDIT", "Canonical core model", "Schema artifact", 
 implements both update and check modes cit:([`check`, `main`], scripts/sync-projection-types.py:43-51; scripts/sync-projection-types.py:54-65).
 The fixture contract documents that `snapshot.json` is the independent hand-authored sample while
 schema generation closes producer fields and vocabulary a sample can miss
-cit:(["The fixture-coverage guard", "Python codegen tests plus", "remains a hand-authored sampled payload", "generated contract against that independent sample", "coverage cannot disappear from dashboard fixtures unnoticed", "It has to bite in BOTH directions", "hand-kept mirror does not", "fixture was consumed as", "WHAT SCHEMA CODEGEN CLOSES", "sample cannot", "currently null is *omitted*", "only the schema can", "vocabulary member the server declares", "forces the fixture to exercise every member", "it cannot make up a member", "difference between two field-identical models", "matching the server's two", "structural typing keeps them interchangeable", "generation still emits both named model declarations"], dashboard/src/test/contract.test.ts:24-28; dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:33-34; dashboard/src/test/contract.test.ts:60-68; dashboard/src/test/contract.test.ts:70-70; dashboard/src/test/contract.test.ts:72-72).
-The Python drift suite executes the same generator in `--check` mode and rejects stale generated
-files cit:([`test_documented_check_command_runs_with_its_exact_checkout_environment`, `test_committed_generated_files_are_current`], mcp/tests/test_projection_types_codegen.py:229-264; mcp/tests/test_projection_types_codegen.py:266-271).
+The sample introduces no served field missing from the mirror. cit:(["has no served field the mirror is missing"], dashboard/src/test/contract.test.ts:457-459); The sample covers declared structural paths except explicit residue. cit:(["reaches every declared path except the named residue"], dashboard/src/test/contract.test.ts:473-477); Every sampled registered vocabulary value must be legal. cit:(["carries only values the mirror's vocabulary declares, at every registered path"], dashboard/src/test/contract.test.ts:497-506); The contract keeps master and series sub-task row fields distinct. cit:(["keeps the master and series sub-task row models distinct"], dashboard/src/test/contract.test.ts:606-636).
+The generator’s explicit `--check` command remains available. The former Python drift-test module was retired; it is not current acceptance evidence.
 
 The chain, as drawn in the source:
 
@@ -68,7 +67,8 @@ shapes and vocabularies the fixture contract explicitly measures.
   entry.gate !== undefined)?.gate`. A snapshot that stops sampling one of them fails loudly here instead
   of producing a base quietly missing every field.
 - **The bases** cit:([`BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`, `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`], dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216) — `BASE_LIFECYCLE`, `BASE_GATE`, `BASE_ENCLOSURE`, `BASE_PROVIDER`,
-  `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Each is annotated with the
+  `BASE_TASK_DOC`, `BASE_ENGINE_PROCESS`, `BASE_PICKUP`, `BASE_ATTENTION`. Since 260815-DAG-L14 `BASE_TASK_DOC` also defaults `seats: []` (the new required
+`TaskDocNode` field). Each is annotated with the
   mirror type AND assembled from a served row, so it is pinned from both sides at once: a required field
   the server adds fails to compile until it is filled, and it can only be filled from a served row.
   **Only REQUIRED fields are carried.** Optionals (`gate`, `ask`, `staleSeconds`, `carryoverDoneAt`, …) are left
@@ -86,12 +86,12 @@ shapes and vocabularies the fixture contract explicitly measures.
   override, then sets `metrics: metrics ?? metricsFor(lifecycles)`. **`metrics` is DERIVED from the
   lifecycles by the mirror's own rollup rather than restated beside them** — the hand-kept bucket lists
   are where the `awaiting-developer` gap kept reappearing, on both sides of the wire.
-- **`agentNotifierHeartbeat`** cit:(["The app-injected agent-notifier tick", "absent from the snapshot", "base is a typed literal", `agentNotifierHeartbeat`], dashboard/src/test/fixtures/wire.ts:348-349; dashboard/src/test/fixtures/wire.ts:352-366) — a typed literal, not a served row, because the field is
+- **`agentNotifierHeartbeat`** cit:(["The app-injected agent-notifier tick", "absent from the snapshot", "base is a typed literal", `agentNotifierHeartbeat`], dashboard/src/test/fixtures/wire.ts:349-354) — a typed literal, not a served row, because the field is
   app-injected and therefore absent from the snapshot (`contract.test.ts::KnownUnsampled` names it).
-- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:369-370; dashboard/src/test/fixtures/wire.ts:373-385) — same reasoning: the event channel (`types/event.ts` ←
+- **`observerEvent`** cit:(["An observer-event envelope", "separate contract from the projection", "base cannot come from", `observerEvent`], dashboard/src/test/fixtures/wire.ts:370-375) — same reasoning: the event channel (`types/event.ts` ←
   `observer/events.py`) is a separate contract from the projection, so its base cannot come from
   `snapshot.json`.
-- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:388-389; dashboard/src/test/fixtures/wire.ts:391-394; dashboard/src/test/fixtures/wire.ts:396-398) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
+- **`reparsed(source)`** cit:(["A byte-fresh copy of a projection", "tests need in order to prove", "on purpose. The round-trip answers", "routing it through", "parameter type cannot narrow", "clone keeps the source's type honestly", `reparsed`], dashboard/src/test/fixtures/wire.ts:389-398) — `structuredClone`, deliberately not `JSON.parse(JSON.stringify(…))`.
   The round-trip answers `any`, and `any` assigns to anything, so routing it through
   `asServedProjection` LOOKS like a check and is vacuous — a parameter type cannot narrow an argument
   that is already `any`. This exact function was making that mistake before rule 3 was written, and
@@ -133,8 +133,8 @@ shapes and vocabularies the fixture contract explicitly measures.
 No stale "generated snapshot" wording remains: the source now explicitly pairs the hand-maintained
 sample with the generated producer-to-TypeScript contract
 cit:(["is NOT generated; it remains a hand-maintained", "producer-to-TypeScript link is generated and checked"], dashboard/src/test/fixtures/wire.ts:22-23). The two `generatedAt` field
-references remain ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:336-336; dashboard/src/test/fixtures/wire.ts:380-380). The three docstrings that used to contradict the header now read "the sampled
-payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:65-65), "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:69-69) and "absent from the snapshot" cit:(["absent from the snapshot"], dashboard/src/test/fixtures/wire.ts:348-348).
+references remain ordinary projection data cit:(["generatedAt: SERVED.generatedAt", "ts: SERVED.generatedAt"], dashboard/src/test/fixtures/wire.ts:338-338; dashboard/src/test/fixtures/wire.ts:382-382). The three docstrings that used to contradict the header now read "the sampled
+payload" cit:(["The sampled payload"], dashboard/src/test/fixtures/wire.ts:65-65), "A row the snapshot is expected to carry" cit:(["A row the snapshot is expected to carry"], dashboard/src/test/fixtures/wire.ts:69-69) and "absent from the snapshot" cit:(["absent from the snapshot"], dashboard/src/test/fixtures/wire.ts:350-350).
 
 ## Docs References
 
@@ -157,19 +157,29 @@ does not.
 | `snapshot.json` remains the hand-maintained sample while the source names the producer-to-TypeScript link as generated and checked. | "is NOT generated; it remains a hand-maintained"; "producer-to-TypeScript link is generated and checked" | dashboard/src/test/fixtures/wire.ts:22-23 |
 | `projection.ts` marks itself generated and names its schema, generator, regeneration command, and drift check. | "GENERATED FILE; DO NOT EDIT"; "Canonical core model"; "Schema artifact"; "Served-only tail"; "Generator:"; "Regenerate:"; "Drift check:" | dashboard/src/types/projection.ts:1-7 |
 | The projection generator implements both check and generation paths. | `check`; `main` | scripts/sync-projection-types.py:43-51; scripts/sync-projection-types.py:54-65 |
-| The fixture contract distinguishes its independent sample checks from the producer-schema coverage codegen closes. | "The fixture-coverage guard"; "Python codegen tests plus"; "remains a hand-authored sampled payload"; "generated contract against that independent sample"; "coverage cannot disappear from dashboard fixtures unnoticed"; "It has to bite in BOTH directions"; "hand-kept mirror does not"; "fixture was consumed as"; "WHAT SCHEMA CODEGEN CLOSES"; "sample cannot"; "currently null is *omitted*"; "only the schema can"; "vocabulary member the server declares"; "forces the fixture to exercise every member"; "it cannot make up a member"; "difference between two field-identical models"; "matching the server's two"; "structural typing keeps them interchangeable"; "generation still emits both named model declarations" | dashboard/src/test/contract.test.ts:24-28; dashboard/src/test/contract.test.ts:30-30; dashboard/src/test/contract.test.ts:33-34; dashboard/src/test/contract.test.ts:60-68; dashboard/src/test/contract.test.ts:70-70; dashboard/src/test/contract.test.ts:72-72 |
-| The Python drift test rejects stale committed generated files. | `test_committed_generated_files_are_current` | mcp/tests/test_projection_types_codegen.py:255-260 |
+| The sample introduces no served field missing from the mirror. | "has no served field the mirror is missing" | dashboard/src/test/contract.test.ts:457-459 |
+| The sample covers declared structural paths except explicit residue. | "reaches every declared path except the named residue" | dashboard/src/test/contract.test.ts:473-477 |
+| Every sampled registered vocabulary value must be legal. | "carries only values the mirror's vocabulary declares, at every registered path" | dashboard/src/test/contract.test.ts:497-506 |
+| The contract keeps master and series sub-task row fields distinct. | "keeps the master and series sub-task row models distinct" | dashboard/src/test/contract.test.ts:606-636 |
 | How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted. | "HOW THE DEFAULTS STAY HONEST"; "annotated with the mirror type"; "a required field the server adds fails to compile"; "Only the REQUIRED fields are carried"; "staleSeconds"; "silently change what an attention-queue test is measuring"; `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:15-20; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
 | `demandServed` and the eight served anchors it demands the snapshot keep. | `demandServed`; `SERVED_LIFECYCLE`; `SERVED_ENCLOSURE`; `SERVED_PROVIDER`; `SERVED_TASK_DOC`; `SERVED_ENGINE_PROCESS`; `SERVED_PICKUP`; `SERVED_ATTENTION`; `SERVED_GATE` | dashboard/src/test/fixtures/wire.ts:73-76; dashboard/src/test/fixtures/wire.ts:78-91 |
 | The eight bases, each annotated with a generated mirror type and filled from `SERVED`. | `BASE_LIFECYCLE`; `BASE_GATE`; `BASE_ENCLOSURE`; `BASE_PROVIDER`; `BASE_TASK_DOC`; `BASE_ENGINE_PROCESS`; `BASE_PICKUP`; `BASE_ATTENTION` | dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:109-117; dashboard/src/test/fixtures/wire.ts:119-136; dashboard/src/test/fixtures/wire.ts:138-144; dashboard/src/test/fixtures/wire.ts:146-167; dashboard/src/test/fixtures/wire.ts:169-198; dashboard/src/test/fixtures/wire.ts:200-208; dashboard/src/test/fixtures/wire.ts:210-216 |
 | `EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
-| `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:342-342 |
+| `projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets. | "metrics: metrics ?? metricsFor(lifecycles)" | dashboard/src/test/fixtures/wire.ts:344-344 |
 | `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. | `reparsed` | dashboard/src/test/fixtures/wire.ts:396-398 |
 | `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. | `asServedProjection` | dashboard/src/test/servedProjection.ts:41-43 |
-| The hand-maintained oracle the bases are assembled from — `lifecycles`, `enclosures`, `providers` and the four `analytics` rows the anchors pull (`agentPickups`, `taskDocuments`, `attentionQueue`, `engineProcesses`). | "\"lifecycles\": ["; "\"enclosures\": ["; "\"analytics\": {"; "\"agentPickups\": ["; "\"taskDocuments\": ["; "\"attentionQueue\": ["; "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:4-4; dashboard/src/fixtures/snapshot.json:113-113; dashboard/src/fixtures/snapshot.json:298-298; dashboard/src/fixtures/snapshot.json:358-358; dashboard/src/fixtures/snapshot.json:431-431; dashboard/src/fixtures/snapshot.json:512-512; dashboard/src/fixtures/snapshot.json:550-550 |
+| The fixture bases draw their lifecycle sample from the hand-maintained oracle. | "\"lifecycles\": [" | dashboard/src/fixtures/snapshot.json:1824-1961 |
+| The fixture bases draw their enclosure sample from the same oracle. | "\"enclosures\": [" | dashboard/src/fixtures/snapshot.json:1166-1822 |
+| The oracle carries its independent analytics sample. | "\"analytics\": {" | dashboard/src/fixtures/snapshot.json:3-1112 |
+| The agent-pickup builder takes its sample from analytics. | "\"agentPickups\": [" | dashboard/src/fixtures/snapshot.json:4-41 |
+| The task-document builder takes its sample from analytics. | "\"taskDocuments\": [" | dashboard/src/fixtures/snapshot.json:728-1103 |
+| The attention-item builder takes its sample from analytics. | "\"attentionQueue\": [" | dashboard/src/fixtures/snapshot.json:42-79 |
+| The engine-process builder takes its sample from analytics. | "\"engineProcesses\": [" | dashboard/src/fixtures/snapshot.json:96-574 |
+| The provider builder takes its sample from the top-level providers array. | "const SERVED_PROVIDER = demandServed(SERVED.providers[0], \"providers[0]\");" | dashboard/src/test/fixtures/wire.ts:80-80 |
+| The served snapshot supplies the code provider and memory provider in its top-level provider array. | "\"totalTokens\": 2800 }, \"providers\": [" | dashboard/src/fixtures/snapshot.json:1972-1997 |
 | The override constraint every builder takes, and the three limits it documents. | `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66 |
 | The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. | "catches a smuggled field where there is no assertion to ban"; "fixtures/wire.ts::reparsed" | dashboard/src/test/wireFixtureGuard.test.ts:512-534 |
-| `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
+| `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
 | `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
 | The companion builder module for the conversation grammar. | `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243 |
 
@@ -180,9 +190,28 @@ No cross-repository boundary. The wire this file builds against is a Python↔Ty
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
+
 
 ## Update History
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
+
+- 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Replaced the repeated JSON-key anchor with the unique builder statement and a contextual top-level snapshot anchor; retained both sample-selection and snapshot evidence. This scoped repair does not promote the card's verification stamp or certify a gate.
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
+- 2026-08-20T04:42+02:00 — 260815-DAG-L14: `BASE_TASK_DOC` defaults `seats: []` (new required
+  `TaskDocNode` field); all shifted citation ranges re-pinned to the current source. Verified at
+  code commit 9c3180c1.
+
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the wire TaskDocNode fixture now includes the required
+  empty `executionWaves` field; its existing transport scenario is unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T00:38:37+00:00 |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 
 ## What This Area Is
 
@@ -227,13 +227,13 @@ engine/store and one over a real socket.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The validated IPC reads are the only substrate channels polled. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover"; "def read_submission_authority(self"; "def read_submission_status("; "def read_control_transcript(  # pragma: no cover"; "def read_control_evidence("; "def read_control_native_page(  # pragma: no cover"; "        return read_submission_provenance(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:149-149; mcp/src/agents_remember/serving/harness_control_client.py:642-642; mcp/src/agents_remember/serving/harness_control_client.py:169-169; mcp/src/agents_remember/serving/harness_control_client.py:335-335; mcp/src/agents_remember/serving/harness_control_client.py:351-351; mcp/src/agents_remember/serving/harness_control_client.py:375-375; mcp/src/agents_remember/serving/harness_control_client.py:693-693 |
+| The validated IPC reads are the only substrate channels polled. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover"; "def read_submission_authority(self"; "def read_submission_status("; "def read_control_transcript(  # pragma: no cover"; "def read_control_evidence("; "def read_control_native_page(  # pragma: no cover"; "        return read_submission_provenance(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:149-149; mcp/src/agents_remember/serving/harness_control_client.py:169-169; mcp/src/agents_remember/serving/harness_control_client.py:335-335; mcp/src/agents_remember/serving/harness_control_client.py:351-351; mcp/src/agents_remember/serving/harness_control_client.py:375-375; mcp/src/agents_remember/serving/harness_control_client.py:639-639; mcp/src/agents_remember/serving/harness_control_client.py:690-690 |
 | The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
-| Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "return snapshot_seat_turn_state(snapshot" | mcp/src/agents_remember/serving/hosted_control_projection.py:79-79; mcp/src/agents_remember/serving/hosted_control_projection.py:105-105 |
-| The foundation pin asserts exactly the three owned active routes (page, events, selected-child history) by exact path/method set. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
+| Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "return snapshot_seat_turn_state(snapshot" | mcp/src/agents_remember/serving/hosted_control_projection.py:86-86; mcp/src/agents_remember/serving/hosted_control_projection.py:112-112 |
+
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | "async def conversation_page("; "async def hydrate_agent_history("; "async def conversation_events("; "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The four focused suites cover status, mappers, engine/store, and production routes. | "The active-serving set centers four focused suites"; "per-harness mapper identity/blocks/tools/provenance"; "engine hydration/ordering/idempotence plus the landed"; "production routes over a real socket" | onboarding/mcp/tests/overview.md:803-803; onboarding/mcp/tests/overview.md:805-807 |
+
 
 ## Cross-Repo References
 
@@ -382,9 +382,9 @@ Three things a reader must not mis-read from that table:
   this surface that carry a machine-readable `reason`. Because `_map_typed_error` is the single
   mapper, one table is the complete refusal surface of all three routes.
 
-The enforcement is not the declaration. `mcp/tests/test_serving_response_conformance.py` drives the
-real routes and validates the returned body against the declared model; on these three the decorator
-validates nothing at runtime (all three return a `Response` instance). Its ledger records honestly
+The former route-conformance suite was retired. Declarations alone provide no present validation
+pass: these routes return `Response` instances and bypass automatic response-model serialization.
+The historical suite ledger recorded
 which legs are undriven here: the parent-bridge 400/403/409/422/503 refusals on each route (the
 bridge fixture models the harness edge, not a socket dying mid-write), and the **200 of
 `/conversation/events`**, which needs a live control bridge and a live uvicorn at once — no fixture
@@ -408,6 +408,55 @@ offload are untouched.
 The active conversation routes now import the wire contracts from `models/conversations/` (moved from the serving monolith by L9) and consume the canonical ports from `serving/ports.py`. Route behavior is unchanged.
 
 ## Update History
+
+- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the unchanged active-serving test summary and updated the incoming memory citation after the tests overview grew; retained source verification provenance.
+
+- 2026-09-05T07:53:57+00:00 — No content impact: reread the four focused-suite statements in the final recovered tests overview and moved the current citation from lines 1053–1057 to 1070–1074. All four named anchors and their meaning are preserved. Source verification metadata remains pinned; this records document movement only.
+
+- 2026-09-01T08:17+02:00 — No content impact: rebound the focused-suite citation after the final
+  CCR-R01 test-route account shifted the tests overview. Active-conversation behavior is unchanged;
+  verification metadata remains pinned.
+
+- 2026-09-01T05:25+02:00 — 260831-CCR-L01 Attempt 9 citation maintenance: rebound the
+  focused-suite citation after the tests overview recorded explicit unit-regression ownership.
+  Active-conversation behavior is unchanged; verification metadata remains pinned.
+
+- 2026-09-01T04:37+02:00 — No route impact: rebound the focused-suite citation after the tests
+  overview recorded explicit certification-suite lane ownership. Active-conversation behavior is
+  unchanged, and verification metadata remains pinned.
+
+- 2026-09-01T03:50+02:00 — 260831-CCR-L11 curator citation maintenance: rebound the focused-suite
+  citation from `onboarding/mcp/tests/overview.md:1017-1021` to `onboarding/mcp/tests/overview.md:1032-1036`
+  after L11 inserted certification test-onboarding content. This is citation-range maintenance only;
+  no active-conversation route or source behavior changed, and verification metadata remains pinned.
+
+- 2026-08-31T11:06+02:00 — 260821-ARSPAWN-L5 closeout file-size repair: rebound the
+  focused-suite citation after the tests overview recorded the structural-test relocation.
+  Active-conversation behavior is unchanged; verification metadata remains pinned.
+
+- 2026-08-31T10:36+02:00 — 260821-ARSPAWN-L5 closeout memory repair: rebound the
+  focused-suite citation after the tests overview gained the C09 envelope-decoding evidence.
+  Active-conversation behavior is unchanged; verification metadata remains pinned.
+
+- 2026-08-31T09:55+02:00 — 260821-ARSPAWN-L5 closeout memory repair: widened the focused-suite
+  citation to the exact lines that carry all four named anchors. No active-conversation behavior
+  changed; verification metadata remains pinned.
+
+- 2026-08-29T07:35+02:00 — Rebound the focused-suite citation after the tests overview recorded
+  explicit integration-lane ownership for the future-code candidate matrix; active-serving
+  behavior is unchanged.
+
+- 2026-08-29T05:17+02:00 — A003 citation maintenance: rebound the active-suite range after the
+  future-code test summary gained its concurrency and immutability evidence.
+
+- 2026-08-29T04:55+02:00 — MCAR-L02 citation maintenance: rebound the active-suite overview
+  citation after the tests overview gained the future-code candidate section; the active-serving
+  claim and implementation are unchanged.
+- 2026-08-26T15:20+02:00 — No route impact: re-derived the tests-overview citation after the
+  ledger-focused test documentation moved; the active-serving contract is unchanged.
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: widened the tests-overview citation (834-840 → 838-842) after the mcp/tests overview body gained the ambient-dispatch coverage paragraph; no active-serving contract changed. Verification metadata remains closeout-owned.
+
 - 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 citation maintenance: widened the active-serving test

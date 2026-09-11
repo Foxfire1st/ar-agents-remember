@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/EventRiver.test.tsx`       |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T11:15+02:00                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-08-20T04:44+02:00 |
+| lastVerifiedCommitHash | `9c3180c133fccf98586a87c4b08824edaa3755a7` |
+| lastVerifiedCommitDate | 2026-08-20T01:13:12+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -95,6 +95,13 @@ exists; lifecycle-less workspace diagnostics still render their honest raw fallb
 | `qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests. | `leafTitleForKey` | dashboard/src/data/taskIdentity.ts:118-123 |
 
 ## Update History
+
+- 2026-08-20T04:44+02:00 — 260815-DAG-L14: `taskDoc` fixture defaults `seats: []`. Verified at
+  code commit 9c3180c1.
+
+
+- 2026-08-15T02:16:50+02:00 — No content impact: 260815-DAG-L1 only makes the local TaskDocNode fixture supply the new
+  mechanically derived `executionWaves` field; event-river behavior is otherwise unchanged.
 - 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 8 repository-reference citations and normalized 1 prose citation (8/8 anchored and sourced; scoped citation check clean).
 
 - 2026-08-01T11:15+02:00 — 260731-EFA-L4 curator: corrected the `ev(...)` description. It no longer

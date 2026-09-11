@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/hosted_control_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T01:21+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-10T09:30+02:00 |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4` |
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -28,11 +28,11 @@ carries the multiplexed sub-agent pendings end-to-end into the catalog row.
 
 Snapshot projection preserves existing catalog schema members while adding control state,
 activity, acceptance, vendor identity, pending interaction, sequence, and raw vendor detail.
-cit:([`control_snapshot_entry`], mcp/src/agents_remember/serving/hosted_control_projection.py:35-57) also projects cit:([`control_pending_interactions`], mcp/src/agents_remember/serving/hosted_control_projection.py:47-54): every entry of the snapshot's plural `pending_interactions` tuple
+cit:([`control_snapshot_entry`], mcp/src/agents_remember/serving/hosted_control_projection.py:36-58) also projects cit:([`control_pending_interactions`], mcp/src/agents_remember/serving/hosted_control_projection.py:50-55): every entry of the snapshot's plural `pending_interactions` tuple
 is serialized through the same `pending_interaction_json` wire shape and stored as a list —
 purely additive, so the singular `control_pending_interaction` slot stays the parent-thread
 entry exactly as before, and an empty tuple serializes as `None` (no claim) rather than `[]`.
-Legacy raw-TUI harness rows are explicitly marked unsupported. cit:([`snapshot_turn_state`], mcp/src/agents_remember/serving/hosted_control_projection.py:78-101)
+Legacy raw-TUI harness rows are explicitly marked unsupported. cit:([`snapshot_turn_state`], mcp/src/agents_remember/serving/hosted_control_projection.py:86-112)
 now delegates to `snapshot_seat_turn_state` in the canonical status authority with an optional
 harness parameter: the same canonical classification the Chats serving consumes produces the
 turn state, and the single seat projection rule translates it — parity with the pre-canonical
@@ -70,6 +70,12 @@ seat state from adapter fields; the canonical authority is the only classificati
   `control_pending_interaction` slot remains the parent-thread entry and must not be fed from
   the agent tuple; consumers that do not understand the multiplexed form see exactly the pre-multiplexing
   row shape (empty tuple → `None`, never `[]`).
+- Projection construction and persistence are separable: `control_snapshot_entry` and
+  `legacy_control_unsupported_entry` are pure row builders, and persistence happens only through
+  the guarded wrappers (`project_control_snapshot`, `mark_legacy_control_unsupported`) or through
+  the caller's own single `upsert`. A live-observation path must build the FINAL row (snapshot
+  projection plus `paneDiagnostic`) before its one write, so no intermediate projection variant
+  is persisted and later overwritten.
 
 ### Todos
 
@@ -92,9 +98,10 @@ snapshot grammar defines the multiplexed tuple this module serializes.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical status authority this module now delegates to (classification plus single seat projection rule). | `snapshot_seat_turn_state` | mcp/src/agents_remember/serving/conversation/active/status.py:205-223 |
-| The full-product parity suite pinning the delegated mapping against the pre-canonical one. | `test_projection_across_control_activity_product` | mcp/tests/test_conversation_active_status.py:188-200 |
+
 | `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:32-32 |
-| The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | `control_snapshot_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:35-57 |
+| The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | `control_snapshot_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:36-58 |
+| The pure raw-TUI unsupported projection the liveness sweep composes before its one final upsert; the persistence wrapper delegates to it. | `legacy_control_unsupported_entry`; `mark_legacy_control_unsupported` | mcp/src/agents_remember/serving/hosted_control_projection.py:72-83; mcp/src/agents_remember/serving/hosted_control_projection.py:61-69 |
 | `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | `AdapterSnapshot`, `pending_interaction_json` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/control_wire.py:305-316 |
 
 ## Cross-Repo References
@@ -111,7 +118,32 @@ Hosted control projection now consumes the canonical conversation turn-status au
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+## 260831-LOCR-L22 Current Delta — Pure Legacy Projection Before One Final Upsert
+
+`legacy_control_unsupported_entry` (cit:([`legacy_control_unsupported_entry`], mcp/src/agents_remember/serving/hosted_control_projection.py:72-83))
+returns the raw-TUI unsupported projection without persisting it; `mark_legacy_control_unsupported`
+(cit:([`mark_legacy_control_unsupported`], mcp/src/agents_remember/serving/hosted_control_projection.py:61-69))
+retains its public persistence behavior — it delegates, then upserts only when the projection
+actually differs from the row. The liveness sweep's alive path now composes the FINAL row
+(unsupported projection plus `paneDiagnostic`, or `control_snapshot_entry` plus `paneDiagnostic`)
+and issues exactly one `catalog.upsert`, so an intermediate hosted snapshot or unsupported row is
+never written and then replaced in the same observation. Equal-row upserts no longer dirty the
+caller's catalog batch, which is what makes a repeated clean sweep a zero-replacement sweep.
+
+Observed while reconciling: after this change `project_control_snapshot` and
+`mark_legacy_control_unsupported` have no in-tree caller — only their definitions match. They remain
+public wrappers of the pure builders; removing or repurposing them is not authorized by this leaf
+and would need its own ruling. `control_snapshot_entry` remains a live consumer surface through
+`hosted_readiness.py`. The `paneDiagnostic`-is-diagnostic-only invariant is unchanged.
+
+This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 ## Update History
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: recorded the pure
+  `legacy_control_unsupported_entry` builder, the guarded persistence wrappers, and the
+  one-final-upsert rule for live observation; repaired the moved/off-by-one
+  `control_snapshot_entry`, `control_pending_interactions`, and `snapshot_turn_state` citations.
+  Verification metadata remains pinned until closeout stamps the leaf code commit.
 - 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the forwarded `terminal` parameter
   and terminal precedence in `snapshot_turn_state` (and superseded the "terminal_liveness
   untouched" claim). Verification metadata pinned until closeout stamps the 260713-TES-L2

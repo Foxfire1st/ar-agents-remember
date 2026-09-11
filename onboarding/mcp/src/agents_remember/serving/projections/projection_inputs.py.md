@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/projections/projection_inputs.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -87,13 +87,25 @@ No Domain Documentation source is configured.
 | --- | --- | --- |
 | Projection write edge consumes this retained input state. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | The serialized worker maps watcher wakes to refresh kinds. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
-| Domain invalidation regressions. | `test_heartbeat_and_lifecycle_changes_skip_unrelated_heavy_readers`; `test_task_refresh_replaces_and_reclaims_retained_rows_at_two_sizes` | mcp/tests/test_projection_domain_invalidation.py:64-141; mcp/tests/test_projection_domain_invalidation.py:143-186 |
+
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
+## 2026-08-26 Atomic Task Refresh Retry
+
+Task-domain refresh now sets a pending bit before reading and publishes contracts, enclosures, task
+documents, and series only after every read succeeds. A failure preserves the complete last-good
+snapshot and leaves the bit set; a later heartbeat retries even without another task-domain change.
+Successful publication clears the bit.
+
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_advance_model_age` and confirmed that projection age advancement remains as documented. Verification remains closeout-owned.
+
+- 2026-08-26T10:44:52+02:00 — Reconciled retained projection input state with atomic task refresh and heartbeat retry after transient failure.
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
 
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
 

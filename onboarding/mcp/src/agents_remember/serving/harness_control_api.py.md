@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/harness_control_api.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T08:54+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T08:46+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -64,8 +64,8 @@ declares it unmodified.
 
 None of this validates at runtime — every handler here returns a `JSONResponse` built by `_ok`
 or a failure responder, and FastAPI applies `response_model` only to values it serializes
-itself. The declarations are the contract; `mcp/tests/test_serving_response_conformance.py`
-drives each route and validates the real body against them under `extra="forbid"`. In
+itself. The declarations remain the contract. The former route-conformance suite was retired;
+no present route-validation pass is implied by those declarations. In
 particular, `PublicReceiptWire` / `PublicReconciliationWire` now *declare* the raw-free public
 shape the Invariants below already required — an adapter-private `raw` key reaching the wire is
 a conformance failure, not just a review finding.
@@ -166,15 +166,16 @@ boundaries rather than duplicating their policy.
 | The exact-session client submits whole messages and preserves request correlation. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252 |
 | The exact-session client reconciles a possibly lost submission by request id and bridge epoch. | `reconcile_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:273-303 |
 | Public serializers deliberately omit the internal raw evidence mapping. | `public_receipt_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228 |
-| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:269-269 |
+| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:284-284 |
 | The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:234-234 |
-| The declared models and the shared `SESSION_CONTROL_RESPONSES` table these ten routes name, plus the two submit-only refusals. | `SESSION_CONTROL_RESPONSES`; `PreDispatchFailureRefusal` | mcp/src/agents_remember/serving/response_contract.py:162-168; mcp/src/agents_remember/serving/response_contract.py:1072-1079 |
-| The suite that enforces the declarations by driving every route and validating the real body. | `test_harness_control_routes_conform` | mcp/tests/test_serving_response_conformance_cases_2.py:265-407 |
-| Route tests pin refresh, raw-free public responses, exact correlation, liveness-before-support ordering, and honest set results. | `test_pre_session_capabilities_freeze_envelope_and_refresh` | mcp/tests/test_serving_harness_control_api.py:129-147 |
+| The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals. | "SESSION_CONTROL_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1113-1120 |
+| The submit-specific pre-dispatch refusal carries retry-safe and stage evidence for zero socket-byte delivery. | "class PreDispatchFailureRefusal(" | mcp/src/agents_remember/serving/response_contract.py:162-168 |
+
+
 | The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
 | The immutable runtime authority and scope types this registration constructs. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
 | The server-resolved local-operator resolver bound into the runtime. | `LocalOperatorAuthorizationResolver` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
-| The foundation suite pins this file as the sole global conversation registration seam. | `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:110-122 |
+
 
 ## Cross-Repo References
 
@@ -237,6 +238,9 @@ The shared spine of every control route is now explicit:
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated the shared control table from the submit-specific refusal model; removed the unsupported count of submit-only refusals from this evidence row. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "register_harness_control_routes(" repointed to mcp/src/agents_remember/serving/app.py:284-284. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

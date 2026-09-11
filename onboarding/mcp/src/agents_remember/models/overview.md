@@ -5,16 +5,49 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-13T08:47+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-08T16:24:06+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
 
+## IAS Frozen Activation And Sync Vocabulary
+
+The frozen IAS candidate introduces closed models for one source-pair activation snapshot and one
+stable sync generation. The activation vocabulary now lives under
+`models/structural/atomic_series_activation.py`: it separates selectable state
+(`reconciling|active`) from observed
+state (`vacant|unreadable|reconciling|active`) and binds the selected master plus canonical contract
+path to normalized code/memory source identities and a fingerprint. This is disposable selection,
+not task truth, queue membership, or lifecycle evidence.
+
+Sync models project the stable enclosure-root journal without requiring task-document parsing.
+Public status distinguishes a retained resolution, automatic resume, cancellation, terminal
+completion, malformed/identity-invalid evidence, and bounded quarantine. Exact Git refs, admitted
+heads, and per-side progress remain strict durable state; the response exposes only what an agent
+needs to continue, cancel, or repair. Exact field membership is reconciled to the frozen candidate;
+verification metadata remains closeout-owned until the new code commit exists.
+
+CCR-R25 extends the public worktree wire vocabulary with optional
+`AtomicSeriesActivationFact` and `AtomicSeriesAdmission` fields. Status can carry the exact
+source-pair observation; admission responses can explain a logical blocker or corrective state,
+expected/observed evidence, retry precondition, and contract-bound read-only status action. These
+models validate the projection shape only; selector mutation and recovery remain owned by the
+activation and lifecycle domains.
+
 ## Current Structural Wire Vocabulary
+
+MCAR-L02 adds the strict curator-coherence lifecycle family under
+`models/lifecycles/curator_coherence.py`. It keeps the semantic requirement revision, worker
+delivery attempt, exact source candidates, agent-owned judgments, immutable record generation,
+stable live authority, optional attempt snapshot, and public request/response as separate typed
+identities. The request exposes one closed `status|prepare|publish|validate` action vocabulary;
+publication fields are forbidden on read-only actions, while publish requires every expected
+source identity, predecessor digest, and declared caller. Record validation requires unique exact
+coverage of the structured source-candidate set rather than accepting partial or extra judgments.
 
 `TaskDocumentRef` is the shared repository-qualified work identity. `models/structural/agent.py` and
 `models/structural/gates.py` define the agent-facing request/response families without runtime
@@ -23,11 +56,29 @@ former flat gate model has moved, with its semantic history preserved in the suc
 `TaskDocumentRef` is a frozen value object whose explicit hash uses repository plus path; task
 altitude remains topology-owned rather than becoming a third identity field.
 
+`models/task_document.py` also owns the closed `MasterExecutionNature` wire vocabulary:
+`organizational|atomic`. Persisted task-document schema, observer projection, generated dashboard
+schema, and TypeScript all import or derive from that one enum rather than maintaining parallel
+strings.
+
 `lifecycles/operation.py` adds strict closeout/integration input snapshots, an internal durable
 record, and a deliberately smaller public projection. The record carries private fingerprint,
 candidate tree, PID, approval claim, and recovery details; the projection exposes only the task,
 kind, state, phase, heartbeat, current command, result/failure, and guidance required by agents
 and the dashboard. `models/worktree.py` embeds that projection without publishing operation IDs.
+
+## Shared Serving-Build Wire Identity
+
+ARSPAWN-L4 owns `ServingBuildPayload` in `models/core.py` so dashboard served state and MCP
+`server_info` cannot maintain parallel candidate-identity shapes. Co-location avoids adding a 26th
+flat model module while keeping one strict wire authority. Required version and boot time
+are supplemented by optional content digest, interpreter, package root, checkout commit, dashboard
+fingerprint, and proven-dirty evidence. Absence stays honest unknown; package version alone is not
+treated as exact candidate identity.
+
+## Shared Certification Wire Ownership
+
+[The certification wire route](certification/overview.md) owns shared frozen primitives, canonical corrective dispositions and exact stored-object references. Domain certification and lifecycle models import these concrete values; wire validity does not establish observed authority, execute a gate or select a journal record. Registry/plan compilers and the existing certificate store remain the semantic and storage owners. This extraction changes retrieval ownership while preserving the moved constraints.
 
 ## Purpose
 
@@ -35,10 +86,17 @@ and the dashboard. `models/worktree.py` embeds that projection without publishin
 builders. It turns the public tool surface and internal builders
 from loose dictionaries into named, inspectable models that can be validated at
 runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
-(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:62-65)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
+(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:191-194)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
+
+The model layer now carries closed lifecycle generation, legal-control, enclosure, door, successor, termination, direct-landing, and bounded legacy vocabularies while keeping scheduling projection separate.
+
+The closeout input, source, and projection vocabulary now lives under `models/closeout/`. This is a
+one-to-one package move of the existing typed contracts, not a compatibility namespace: input owns
+accepted plan shape, source owns exact candidate provenance, and projection owns disposable
+scheduling facts while journal models retain lifecycle evidence.
 
 ACPUI-L2 adds `launch-selection-invalid` to the strict terminal spawn response for an incomplete
 role-configured native selection. Existing `resolvedModel`/`resolvedEffort` fields continue to
@@ -54,7 +112,7 @@ HFX2-L15 extends the terminal spawn response with `replacementForLeaf`, resolved
 bound session-log entry/path provenance. Delivery booleans are evidence-specific: context is true
 only for the id-bearing user record, and commands require command plus non-error stdout evidence.
 
-Start with `tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
+Start with `tools/tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled builder
 to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained
 compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. Both are typed
 `dict[str, type[ResponseEnvelope]]` (260731-EFA-L4), not `type[BaseModel]`.
@@ -89,7 +147,9 @@ context-delivery outcome (since 260707-HFX-L3 incl. the failure-evidence `delive
 provenance `launchArgs`/`promptKeywords`/`sessionCommands` + `sessionCommandsDelivered`, and the
 level provenance `spawnLevel`/`spawnLevelSource`; HFX2-L10 adds the
 `spend-override-unsupported` refusal for legacy caller spend fields and maintained harness-native
-spend env keys), and
+spend env keys; since 260821-ARSPAWN-L1 also the caller-kind provenance `spawnedByKind`
+(`plane|ambient|unattributed`) mirroring the catalog row — the provenance the public `dispatch_agent`
+sets by caller kind), and
 `tokens.py` for response token accounting. **260707-HFX-L8** adds two more strict models to
 `terminal.py`: `SessionRetireResponse` (`retired`/`already-retired`/`unknown-session`/
 `unknown-actor`/`retire-refused` statuses, retirement provenance fields, `detail` naming the exact
@@ -152,7 +212,7 @@ never changes it). `lifecycles/finalize.py`'s `LifecycleFinalizeTaskResponse` ca
   `terminal.py` below) — one declaration is the invariant; a particular module owning it is
   not.
 - **Nothing on this route declares a status a producer cannot emit, or omits one it can.**
-  `mcp/tests/test_wire_vocabulary_exhaustiveness.py` measures produced-vs-declared in both
+  The historical wire-vocabulary suite measured produced-vs-declared in both
   directions and is the suite to extend when a new status appears.
 - **Nothing on this route may reach the network while the package is importing.**
   `tokens.py` builds `DEFAULT_TOKEN_COUNTER = TiktokenTokenCounter()` at module
@@ -184,20 +244,20 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
-| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:217-221 |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
+| Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:186-314 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
-| Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
-| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-33 |
-| Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:32-44; mcp/src/agents_remember/models/terminal.py:85-127 |
+| Orchestration response models cover the public manager-nudge helper. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:14-24 |
+| Lifecycle finalizer response model covers the terminal task finalization payload. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:13-37 |
+| Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-135 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
-| Produced-vs-declared vocabulary measurement runs in both directions. | `test_every_contract_literal_validates_at_its_wire_field`; `test_every_repo_state_the_git_facts_reader_writes_validates`; `test_every_next_guidance_literal_validates_at_its_wire_field` | mcp/tests/test_wire_vocabulary_exhaustiveness.py:635-645; mcp/tests/test_wire_vocabulary_exhaustiveness.py:691-706; mcp/tests/test_wire_vocabulary_exhaustiveness.py:741-751 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:14-15; mcp/src/agents_remember/models/worktree.py:17-17; mcp/src/agents_remember/models/worktree.py:19-19 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/models/worktree.py:39-39 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:29-34 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:29-54 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
-| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19 |
+| The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
 ## 260712-TRH-L4 Route Impact
 
@@ -334,7 +394,7 @@ is the single writer and it puts the value into an untyped payload dict. It crea
 `leaf-ref-not-found`/`leaf-ref-ambiguous`) instead of respelling it; `Literal` flattening means
 the published enums are unchanged (`get_args(LeafAssignmentStatus)` is still the same six
 members). The three terminal vocabularies stay declared HERE rather than beside the payload
-builders that write them, and the module says why: `mcp.tools.base` → `models.tool_registry` →
+builders that write them, and the module says why: `mcp.tools.base` → `models.tools.tool_registry` →
 `models.terminal` is an existing import edge, so a `models.terminal` → `mcp.tools.terminal`
 import would close a cycle. The invariant is one declaration, not a particular owner —
 `mcp.tools.terminal` imports these aliases and annotates its status seams with them.
@@ -342,7 +402,7 @@ import would close a cycle. The invariant is one declaration, not a particular o
 `VALID_SESSION_RENAME_STATUSES` are `frozenset(get_args(...))` of their aliases — the runtime
 half derived from the type rather than typed beside it.
 
-**`tool_registry.py` — the loose type that made the token count wrong.** Both registries are
+**`tools/tool_registry.py` — the loose type that made the token count wrong.** Both registries are
 `dict[str, type[ResponseEnvelope]]`. Under the previous `dict[str, type[BaseModel]]`,
 `TOOL_RESPONSE_MODELS[tool].model_validate(payload)` was typed as a bare `BaseModel`, on which
 `nextStep` and `supervisorBanner` are not attributes a checker knows — so the choke point had
@@ -373,7 +433,230 @@ state, recovery, and terminal refusal vocabularies. Worktree, terminal, observer
 and dashboard consumers import or mirror this strict shape instead of accepting
 free strings or agent-supplied identity.
 
+## 260815-DAG-L3 Queue Models
+
+`models/closeout_queue.py` adds the strict action-specific request, categorical scheduling grade,
+exact evidence facts, candidate state machine, atomic blocker, bounded canonical queue state, and
+ready/waiting/blocked/in-flight response projection. Every persisted/public text and collection is
+bounded, impossible state/owner/commit combinations fail validation, external memory requires exact
+evidence while internal/disabled use a typed not-applicable state, and only a one-way lifecycle
+owner fingerprint reaches durable state. Since 260815-DAG-L13 `LANE_OCCUPYING_STATES` narrows the
+landing lane to selected/closeout-in-flight/integration-in-flight candidates (a certified candidate
+no longer occupies it), and the response carries the scheduling readout fields (`mode`,
+`registers`, `laneOwner`, `legalNextOperations`, `acquisitionFacts`). Shared `TaskDocumentRef` values enforce their repository
+and path bounds after canonical normalization, avoiding JSON Schema constraints that the generated
+TypeScript projection could not express truthfully.
+
+## 260815-DAG-L4 L4 Durable Authority Models
+
+Worktree, closeout-queue, and task projections now distinguish organizational direct-super lineage from atomic series lineage and carry exact configured repository, ref, candidate, recovery, and conflict-transaction facts required by the mutation plane.
+
+## 260815-DAG-L15 Route Impact
+
+`MemoryQualityCheckResponse` gained the optional async `status`/`runId` run envelope (L15-R7); the synchronous response shape is unchanged.
+
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`models/closeout_queue.py` moved to the new `models/queue/` sub-route; `models/task_doc.py` `TaskDocResponse` gained the special-op wire fields (the strict-envelope rejection fix).
+
+## 260821-CLIVE-L1 Closeout Vocabulary
+
+`closeout_input.py` adds the raw-message, resolved-plan, enabled/not-applicable leg, structured-refusal, and effective-input vocabulary shared by both closeout routes. Public worktree and direct-landing responses expose that vocabulary. Lifecycle operation records use only the normalized form; no generated subject, blank sentinel, or fallback input remains below validation.
+
+## 260821-CLIVE-L2 Historical Intermediate Architecture
+
+Models validate immutable identity and contradictory evidence but perform no I/O or recovery.
+`models.lifecycles` owns the canonical root-journal vocabulary. The transitional L2
+selected/in-flight/certified queue schema was removed by L3; `models.queue` now exposes only the
+disposable waiting-door projection request/response contract, while
+`models.closeout_projection` owns its strict projection vocabulary.
+
+Registered tool request/response contracts now live under `models/tools/`; the move removes the former flat paths without changing the registry's ownership or creating compatibility exports.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Strict lifecycle operation record/projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:311-403; mcp/src/agents_remember/models/lifecycles/operation_projection.py:341-394 |
+| Queue candidate projection. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:33-38; mcp/src/agents_remember/models/queue/closeout_queue.py:41-62 |
+
+## 260821-DAGQC-L2 Closed Quality And Landing Models
+
+The route adds strict discriminated memory-quality request DTOs and the shared
+`QualityGateResult`/memory-policy models. Closeout and integration no longer expose open quality
+mappings, and stable versus immutable result paths remain distinct. Direct landing keeps exactly
+three top-level outcomes; journal lifecycle evidence is nested.
+
+## 260824-PDLS — Python Test Evidence Model
+
+`test_evidence.py` adds a closed diagnostic/certifying altitude and consumer vocabulary.
+Diagnostic evidence carries exact nodes, exit code, and a structural candidate binding;
+certifying evidence has no public constructor and is minted only from a verified immutable Dagger
+generation. Coverage, quality, retry, route review, lifecycle, closeout, and integration require
+the certifying type, keeping acceptance impossible to express as a generic payload flag.
+
+## 260824-PDLS Final Model Reconciliation
+
+The evidence models close authority, lifetime, cadence, and result vocabularies for diagnostic and
+certifying lanes, while lifecycle models retain strict journal-owned mutation proof. Projection
+invalidation removes the impossible `not-created` outcome, and validator decomposition preserves
+one typed public contract instead of distributing failure-family knowledge across callers.
+
+## 260821-ARSPAWN-L2 Stable Structural Evidence
+
+`TerminalCatalogEntry.dispatch_brief_entry_id` is private durable reconciliation evidence, not a
+structural address. It may be serialized for control-plane recovery and dashboard diagnostics.
+The receipt survives promotion of a staged heir into the same document-and-role seat, but clears
+when document or role changes. Promotion also clears the replacement reference so one row cannot
+remain in both seat generations.
+
+`StructuralOutcome` projects operation, status, canonical task document, role, detail, and
+delivery state while deliberately excluding runtime occupant identity.
+
+## MCAR-L03 Pair Identity Models
+
+`memory_candidate.py` owns the frozen exact-pair schema. Memory-quality, curator-coherence, and
+closeout response models reference that schema rather than copying its fields. Semantic
+requirement versions, delivery attempts, candidate trees, and pair identity remain separate
+contracts.
+
+## Status-Change Wait Response
+
+`models/worktree.py` owns `WorktreeStatusWaitResponse`, and `models/tools/tool_registry.py`
+registers that response for `worktree_status_wait`. It carries a typed outcome, optional successor
+generation and meaningful revision, elapsed/timeout observations, and the coherent lifecycle
+projection. It introduces no public worker PID or private operation key.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:335-355 |
+| Public response registration uses the dedicated wait response. | "\"worktree_status_wait\": WorktreeStatusWaitResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:187-187 |
+
+
+## Integrated IAS Recovery Contract
+
+The changed lifecycle preparation model retains original command ownership and append-only terminal observations through focused validation helpers. Runtime composition and physical Git proof remain outside models. The retained `test_wire_vocabulary_exhaustiveness.py` is now support code without collected test functions; its historical census and deleted cases must not be read as current exhaustive protection.
+
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
 ## Update History
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed the worktree vocabulary and wait-response anchors after the frozen model additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the optional activation fact and bounded admission vocabulary added to worktree response models. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
+
+- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
+
+
+- 2026-09-06T14:48:58+00:00 — Added the nearest certification wire route from source at `c69d5171187fa1957025e393270db9f5a864ab14`; the remaining model domains are outside this bounded routing update. Prior verification stamps and all earlier history are preserved.
+
+
+
+
+
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
+
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes `WorktreeStatusWaitResponse` (`models/worktree.py`) and the `TOOL_RESPONSE_MODELS` row (`models/tools/tool_registry.py`); route index regenerated.
+
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: re-anchored the strict record/projection row after the public projection envelope moved from `operation.py` into `models/lifecycles/operation_projection.py`. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
+
+
+- 2026-08-31T20:30+02:00 — No route impact: 260831-DER changes integration authority
+  classification and direct-landing documentation without adding or changing a model vocabulary.
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: moved the shared serving-build payload
+  into the existing core model module and removed the transient extra module. Verification remains
+  closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: added the shared strict
+  `ServingBuildPayload` authority consumed by both MCP and dashboard serving surfaces. Verification
+  remains closeout-owned.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: added the canonical pair schema and shared wire bindings.
+  Verification remains closeout-owned.
+
+- 2026-08-29T09:45+02:00 — MCAR-L02 route impact: added the strict curator-coherence identity and
+  action family, including exact judgment coverage and separate semantic-revision, delivery-attempt,
+  immutable-generation, stable-authority, and snapshot boundaries. Verification metadata remains
+  closeout-owned until the A005 code commit exists.
+
+- 2026-08-28T14:15+02:00 — PDLS closeout: re-read `test_evidence.py` against the landed candidate;
+  the existing final model reconciliation already describes the closed diagnostic/certifying,
+  authority, cadence, lifetime, and result vocabulary. Stamped committed provenance.
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 private brief evidence, same-seat promotion, and
+  runtime-id-free structural outcome rules onto the IAS models overview. Verification remains
+  closeout-owned.
+
+- 2026-08-26T08:55+02:00 — Finalized the activation/sync vocabulary label against the frozen
+  pass-13 candidate.
+
+- 2026-08-26T08:20+02:00 — Reconciled activation and sync field ownership to the frozen candidate;
+  only commit-derived verification remains open.
+
+- 2026-08-26T06:25+02:00 — Reconciled the structural-limit move: the activation snapshot and
+  archive vocabulary now live under `models/structural/`; the former flat model path has no
+  compatibility owner. Final verification remains post-Dagger owned.
+
+- 2026-08-25T17:21+02:00 — Reconciled the final evidence, lifecycle, and projection model changes.
+  Verification remains closeout-owned.
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `models/closeout/` package move and preserved its typed input/source/projection ownership at the new paths. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
+
+- 2026-08-24T21:23+02:00 — 260824-PDLS added the typed Python evidence firewall.
+
+- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: marked the L2
+  lifecycle-shaped queue model as historical and named the final projection-only model owners.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict quality request/result types and closed direct-landing outcome vocabulary. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `models/tools/` package layout, repaired current registry evidence paths, and verified the governed L2 route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `SpawnAgentSessionResponse` gains the caller-kind provenance `spawnedByKind` (`plane|ambient|unattributed`) mirroring the catalog row; response-model route model unchanged. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: `closeout_queue` moved to the new `models/queue` sub-route; `task_doc.py` gained the special-op wire fields. Verified at code commit e5cb139f.
+
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: MemoryQualityCheckResponse async status/runId envelope (L15-R7). Verified at code commit de3a0fd9.
+
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: new `models/declared_caller.py` (the shared
+  request-carried ambient identity) and `models/direct_landing.py` (`DirectLandingResponse`);
+  `CloseoutQueueRequest.caller` and the structural gate requests carry an optional declared caller;
+  `tool_registry.py` registers `direct_landing`. Verified at code commit a9d50e08.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `models/closeout_queue.py` gained
+  `LANE_OCCUPYING_STATES` and the queue response readout fields (`mode`, `registers`, `laneOwner`,
+  `legalNextOperations`, `acquisitionFacts`); the models-route purpose is unchanged. Verification
+  remains closeout-owned.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added three lifecycle-operation wire models; the models route purpose is unchanged.
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
+
+- 2026-08-15T09:36+02:00 — L3 fast-hook repair: clarified the validator-owned task-reference
+  bounds and why they do not become an unrenderable projection-schema keyword.
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the strict bounded queue request,
+  candidate/state, evidence, blocker, and projection vocabulary. Verification remains closeout-owned.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the shared task-document model vocabulary
+  owns the closed organizational/atomic nature used by both persisted tasks and projection DTOs.
 - 2026-08-14T06:25+02:00 — No route impact: L23 extends the existing lifecycle-operation model
   family with exact candidate/recovery evidence; strict-model ownership and public/private identity
   boundaries remain in the lifecycles child route. Verification remains closeout-owned.

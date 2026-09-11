@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -33,11 +33,21 @@ adherence stops being self-attestation.
 
 ### Logic
 
-The body defines a short-lived reviewer seat at the master-exit and super-exit seams, plus the
-reusable reviewer seat for full-loop and portfolio-plan reviews. Master-exit hands the accumulated
-master branch to the orchestrator; super-exit hands the accumulated super branch to the architect for
-developer review; leaf-level review remains the manager's duty. The lens is refute-or-confirm over
-the seam diff, task documents, and bound rubric, with a verdict artifact rather than a decision.
+The synchronized caller matrix keeps reviewer target-only while making ownership seam-specific:
+the manager dispatches leaf and master-exit reviewers, the architect dispatches the sprint plan
+reviewer, and the orchestrator dispatches the sprint super-exit reviewer. Each generation carries
+that plane-stamped structural parent. An identity-free launcher may target an altitude-valid
+reviewer only for explicit takeover; an ambient sprint reviewer cannot invent architect versus
+orchestrator parentage. Dispatch/tools rows remain structural documentation, not settings keys.
+
+The synchronized reviewer independently validates the exact lightweight worker record and frozen
+expanded-evidence digest/anchor while treating internal protocol events as supporting history, not
+formal attempts to adjudicate.
+
+The body defines one short-lived reviewer role across leaf code/full-loop review, master exit,
+portfolio-plan review, and super exit. Its exact task document fixes the review altitude and its
+generation parent fixes the reporting plane. The lens is refute-or-confirm over the seam diff, task
+documents, and bound rubric, with a verdict artifact rather than a decision.
 
 The three lenses are completion versus task docs, code quality and regressions, and
 onboarding-versus-code. Criteria come from the standing catalog for the review type plus the
@@ -58,8 +68,8 @@ and does not use stdin as a work driver.
 handover gate as **judge evidence** and the gate's decider (manager / orchestrator / developer per the L4
 policy) decides. A **BLOCKING verdict MUST DECOMPOSE INTO FIX LEAVES** — concrete, leaf-shaped findings
 the owning manager (master-exit) or orchestrator (super-exit) can dispatch; a block is **never
-prose-only** — if it cannot be named as fix leaves it is not yet a block. **Leaf-level review is the
-manager's own duty — NOT an adversarial seam.** The reviewer does not escalate up the ladder; an
+prose-only** — if it cannot be named as fix leaves it is not yet a block. Leaf-level review is an
+independent reviewer seam owned and dispatched by the manager. The reviewer does not escalate; an
 un-reviewable change set (missing diff/task docs) is itself a **blocking finding** in the verdict, routed
 to the decider. Findings adopt the refute-or-confirm posture — one that cannot survive an attempt to
 refute it is not a finding.
@@ -67,6 +77,11 @@ refute it is not a finding.
 ### Todos
 
 No task-independent TODO is declared by this job file.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ### Docs References
 
@@ -84,26 +99,26 @@ The reviewer job file is its own source authority for the seat, lenses, seams, d
 | --- | --- | --- |
 | The reviewer is short-lived and self-contained. | "Short-lived and self-contained" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:3-3 |
 | The reviewer receives the brief as its session start. | "Your **brief is your session start**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:4-4 |
-| Dashboard-owned sessions keep this seat reviewer. | "stays reviewer" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:45-45 |
-| A pasted brief for another role is refused and reported through the inbox. | "role is refused and reported" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:46-46 |
-| Review retrieval is refute-or-confirm, and findings must survive attempted refutation. | "findings must survive an attempt to refute them" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:55-55 |
-| Review criteria are not made up on the spot. | "Criteria are never made up on the spot." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:62-62 |
-| Every review runs its type's standing catalog. | "Every review runs its type's STANDING catalog" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:62-62 |
-| The exploratory mandate defaults to two lenses. | "plus an **exploratory mandate**"; "default 2" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:63-64 |
-| The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. | "every master requirement"; "accounted for" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:113-114 |
-| Skipped or reshaped work has a decision-log trail. | "skipped or reshaped work has a decision-log trail" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:114-114 |
-| No unfinished leaf work is hidden inside the handover packet. | "no unfinished leaf work is hidden"; "inside the handover packet" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:114-115 |
-| The code-quality lens checks lint, typecheck, tests, and complexity. | "lint · typecheck · tests · complexity" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:93-93 |
-| The onboarding-vs-code lens checks same-pass sidecars. | "changed source files have same-pass sidecar updates" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:119-119 |
-| Route overviews are current for the master side of the change. | "route overviews are current" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:120-120 |
-| Onboarding evidence records drift and memory-quality checks and names any memory or carry-over gap. | "any memory/carry-over gap is named" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:121-121 |
-| A master-exit block returns to the owning manager as fix leaves. | "returns to the owning **manager**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:122-122 |
-| A super-exit block returns to the orchestrator as fix leaves. | "returns to the **orchestrator**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:145-145 |
-| Reviewer duties include writing a verdict artifact and decomposing blocking verdicts into fix leaves. | "Write the verdict artifact"; "Decompose a blocking verdict into fix leaves" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:158-158; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:168-168 |
-| Reviewer communications use `message_parent` for missing context or structural routing problems without carrying the parent's runtime identity. | "Structural parent message" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:186-186 |
-| The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. | "The verdict artifact plus terminal/finalizer truth is the completion" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:187-187 |
-| Stdin is not a driver for the reviewer. | "Stdin push" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:189-189 |
-| The role's tools are the review surface. | "review surface" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:204-204 |
+| Dashboard-owned sessions keep this seat reviewer. | "stays reviewer" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:51-51 |
+| A pasted brief for another role is refused and reported through the inbox. | "role is refused and reported" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:52-52 |
+| Review retrieval is refute-or-confirm, and findings must survive attempted refutation. | "findings must survive an attempt to refute them" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:102-102 |
+| Review criteria are not made up on the spot. | "Criteria are never made up on the spot." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:109-109 |
+| A first review runs its type's standing catalog. | "A first review runs its type's STANDING catalog" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:108-112 |
+| The exploratory mandate defaults to two lenses. | "plus an **exploratory mandate**"; "default 2" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:110-111 |
+| The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. | "every master requirement"; "accounted for" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:263-264 |
+| Skipped or reshaped work has a decision-log trail. | "skipped or reshaped work has a decision-log trail" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:264-264 |
+| No unfinished leaf work is hidden inside the handover packet. | "no unfinished leaf work is hidden"; "inside the handover packet" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:264-265 |
+| The code-quality lens checks lint, typecheck, tests, and complexity. | "Full lint/typecheck/tests/complexity run" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:228-230 |
+| The onboarding-vs-code lens checks same-pass sidecars. | "changed source files have affected sidecar updates" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:270-273 |
+| Route overviews are current for the master side of the change. | "route overviews are current" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:271-271 |
+| Onboarding evidence reports affected sidecar updates, current route overviews, and scoped c-05 checks; full `drift_check`/`memory_quality_check` evidence is not required for closeout or integration. | "scoped c-05 checks" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:270-273 |
+| A master-exit block returns to the owning manager as fix leaves. | "returns to the owning **manager**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:274-274 |
+| A super-exit block returns to the orchestrator as fix leaves. | "returns to the **orchestrator**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:299-299 |
+| Reviewer duties include writing a verdict artifact and decomposing first-review blocking verdicts into fix leaves. | "Write the verdict artifact"; "Decompose a first-review blocking verdict into fix leaves" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:322-324; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:337-343 |
+| Reviewer communications use `message_parent` for missing context or structural routing problems without carrying the parent's runtime identity. | "Structural parent message" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:365-365 |
+| The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. | "The verdict artifact plus terminal/finalizer truth is the completion" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:366-366 |
+| Stdin is not a driver for the reviewer. | "Stdin push" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:368-368 |
+| The role's tools are the review surface. | "review surface" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:384-384 |
 
 ## Cross-Repo References
 
@@ -117,7 +132,122 @@ No sibling repository evidence is needed for this orchestration job file.
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
+## 260815-DAG-L2 Candidate And Repair Scope
+
+Organizational master-exit review covers the exact proposed final super candidate before its full
+gate and landing; atomic review covers the isolated branch. Plan-review verdicts return to the
+architect. Super-exit blocks decompose to owning/reopened or new scoped leaves and may not authorize
+repair directly on super.
+
+## 260815-DAG-L15 Review-Doctrine
+
+The seat gains a "Review Independence and Evidence-Type Matching" section: the reviewer seat is
+never the author seat — a self-review is returned to the decider as a verdict-laundering finding
+(260815-DAG L7/L8/L9 route reviews were orchestrator self-reviews). Every requirement verdict must
+cite evidence of the requirement's class: rendering → mounted-UI proof, scheduling →
+operation-level proof, data model → artifact-level proof, doctrine → a code anchor (D-1). Evidence
+of the wrong class is a finding, never a pass (L8-R3 was passed on projection-only evidence).
+
+## M38 Reviewer Adjudication Projection
+
+The installed reviewer role independently inspects every cited artifact and gives each stable ID
+its own `accepted` or `rejected` rationale. Missing rationale, missing or wrong-class evidence,
+invalid citations, or missing durable approval forces rejection, and any rejection prevents the
+overall pass. Delta rounds retain accepted rows unless the repair directly regresses them. This
+copy is synchronized doctrine, not an independent review policy.
+Canonical-packet inspection includes the version-addressed path, exact ID/version, approved state,
+and durable corpus ruling; task prose cannot substitute for that source.
+
+## M41-M43 Reviewer Attempt Projection
+
+The packaged reviewer appends a separate record against one exact worker attempt and candidate,
+classifies rejection, and may prove regression without unilaterally reopening acceptance or
+extending scope. Bounded invalidation remains an owning-seat record.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
 ## Update History
+- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the three lens rows against the rewritten criteria text; the code-quality and onboarding-vs-code anchors now name the sentences the lenses actually carry. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "stays reviewer" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:51-51. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "role is refused and reported" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "findings must survive an attempt to refute them" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:102-102. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "Criteria are never made up on the spot." repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:109-109. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "plus an **exploratory mandate**"; "default 2" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:110-110; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "every master requirement"; "accounted for" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:263-263; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:264-264. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "skipped or reshaped work has a decision-log trail" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:264-264. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "no unfinished leaf work is hidden"; "inside the handover packet" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:264-264; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "route overviews are current" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:271-271. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "returns to the owning **manager**" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:274-274. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "Structural parent message" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:365-365. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "The verdict artifact plus terminal/finalizer truth is the completion" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:366-366. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "Stdin push" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:368-368. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: "review surface" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:384-384. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "stays reviewer" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:50-50. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "role is refused and reported" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:51-51. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "findings must survive an attempt to refute them" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:101-101. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Criteria are never made up on the spot." repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:108-108. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "plus an **exploratory mandate**"; "default 2" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:109-109; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "every master requirement"; "accounted for" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:264-264; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "skipped or reshaped work has a decision-log trail" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "no unfinished leaf work is hidden"; "inside the handover packet" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:265-265; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:266-266. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "lint · typecheck · tests · complexity" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:227-227. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "changed source files have same-pass sidecar updates" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:272-272. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "route overviews are current" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:273-273. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "any memory/carry-over gap is named" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:274-274. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "returns to the owning **manager**" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:275-275. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "returns to the **orchestrator**" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:299-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Structural parent message" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:364-364. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "The verdict artifact plus terminal/finalizer truth is the completion" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:365-365. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Stdin push" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:367-367. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "review surface" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:383-383. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: reconciled the packaged
+  reviewer card to leaf/master/plan/super contexts, plane-stamped parent ownership, and independent
+  leaf review. Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only reviewer dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
+
+- 2026-08-28T14:18+02:00 — Reconciled reviewer-doctrine citations with the committed PDLS
+  candidate after the acceptance-envelope wording settled; the contract is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 reviewer evidence boundaries.
+
+- 2026-08-27T18:06+02:00 — M41-M43: synchronized exact-attempt adjudication, failure classes, and
+  regression-proof/owner-invalidation separation.
+
+- 2026-08-27T14:04+02:00 — Tightened installed reviewer adjudication around the approved
+  version-addressed packet and its packet-local durable corpus ruling.
+- 2026-08-27T13:32+02:00 — M39@v1: reviewers inspect the matching canonical packet and reject
+  missing, mismatched, or superseded requirement versions; affected leaves must be rebriefed before
+  new acceptance. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded independent per-ID adjudication and forcing rejection
+  rules. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: the seat gains the Review Independence and
+  Evidence-Type Matching section — never the author seat, and requirement verdicts must cite their
+  evidence class (mounted-UI / operation-level / artifact-level / code anchor). Verified at code
+  commit de3a0fd9.
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized nature-aware review scope, architect plan
+  ownership, and leaf-only repair routing. Verification remains closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: independent reviewers bind verdicts
   to the exact candidate and major ownership route, with same-reviewer delta verification after
   repair. Verification remains closeout-owned.

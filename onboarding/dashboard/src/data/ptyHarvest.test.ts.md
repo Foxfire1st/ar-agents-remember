@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/ptyHarvest.test.ts`          |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ the reviewed task evidence for any current behavioral claim.
 | --- | --- | --- |
 | The module under test. | `parseOsc133` | dashboard/src/data/ptyHarvest.ts:85-91 |
 | The DOM-level archetype/bell cases (hooks per archetype, rail marker). | "two archetypes (R1)", "bell acknowledgment (R7)" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:53-92; dashboard/src/panels/session-cockpit/PtySurface.test.tsx:226-234 |
-| The rail's L6 block (bell marker + tooltip hints; the dot stays pure grammar). | "a harvested bell renders the rail attention marker with a text equivalent (R7)" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:776-784 |
+| The rail's L6 block (bell marker + tooltip hints; the dot stays pure grammar). | "a harvested bell renders the rail attention marker with a text equivalent (R7)" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:737-745 |
 
 ## Cross-Repo References
 

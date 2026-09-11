@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/serving/files.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-06T21:54:05+00:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -33,9 +33,7 @@ pairing in both directions. It is the first serving module to resolve a
 All four routes gained a `response_model` cit:([`register_files_routes`], mcp/src/agents_remember/serving/files.py:296-325). Nothing about the wire changed: every
 handler still returns a `JSONResponse` it built itself, and FastAPI applies `response_model`
 only to values it serializes for you — so on these four the declaration contributes an OpenAPI
-schema and validates nothing at runtime. The enforcement is
-`mcp/tests/test_serving_response_conformance.py`, which drives each route through the real app
-and validates the body that actually came back against the declared model.
+schema and validates nothing at runtime. The former broad conformance suite was removed in IAS testing cleanup. Its historical execution is not current enforcement; the declarations remain the response contract.
 
 The declarations, in `serving/response_contract.py`:
 
@@ -145,9 +143,7 @@ rejected, never silently re-rooted).
   scope/catalog resolution, the HTTP shape, and the read cap.
 - **Enclosure enumeration is on-disk + per-request**, not projection-derived, so a
   newly started or closed worktree appears without a projector tick.
-- **The declared response models are the contract; the conformance suite is the gate.** These
-  handlers return `Response` objects, so a shape change here fails in
-  `test_serving_response_conformance.py`, never at runtime. A new key emitted by `list_dir`,
+- **The declared response models are the contract.** These handlers return `Response` objects, so the model declaration alone does not validate their bodies. The removed conformance suite is not current protection. A new key emitted by `list_dir`,
   `read_file`, `resolve_onboarding` or `resolve_partner` must land in the matching model in
   `serving/response_contract.py` in the same change — `extra="forbid"` makes an undeclared key a
   failure, which is the point.
@@ -157,17 +153,17 @@ rejected, never silently re-rooted).
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). | `_resolve_within` | mcp/src/agents_remember/serving/scope.py:205-213 |
-| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | `add_middleware` | mcp/src/agents_remember/serving/app.py:261-261 |
+| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | `add_middleware` | mcp/src/agents_remember/serving/app.py:275-275 |
 | The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
 | The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. | "test_worktree_support.py" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:152-152 |
 | The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:140-142 |
+| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:145-147 |
 | The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/worktrees/task_resolver.py:80-85 |
-| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1011-1011 |
+| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1058-1058 |
 | The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
-| The test suite for this module. | `test_response_shape_and_filtering_are_unchanged` | mcp/tests/test_serving_files.py:333-394 |
+
 | The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:714-720 |
-| The suite that actually enforces the declarations by driving every route and validating the real body. | `test_files_routes_conform` | mcp/tests/test_serving_response_conformance_cases_1.py:336-392 |
+| Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:303-325 |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -175,7 +171,14 @@ rejected, never silently re-rooted).
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
+
 ## Update History
+
+- 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
+
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `add_middleware` repointed to mcp/src/agents_remember/serving/app.py:275-275. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

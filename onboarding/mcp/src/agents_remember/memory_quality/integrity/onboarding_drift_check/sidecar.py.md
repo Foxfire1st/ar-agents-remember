@@ -43,6 +43,14 @@ date, `1` is drifted, and anything else is drifted with the git error in the not
 `git_ops`, which no longer defines it; `local_change_note` and `local_route_change_note` still come
 from `git_ops`.
 
+The early verdicts are intentionally distinct: missing source-path or verification metadata is
+`missing verification` with medium trust; a deleted source is `orphaned` with low trust; an
+unavailable recorded commit is `drifted` with medium trust and a Git-history explanation. Every row
+retains its classification, trust, affected sections, and specific note so the next repair can
+distinguish absent metadata from deleted source and unavailable history.
+
+cit:([`classify_external_onboarding`], mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:33-112)
+
 ### Invariants And Boundaries
 
 - Reports drift only; it must not rewrite onboarding.

@@ -5,10 +5,56 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated            | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../../../../overview.md`                  |
+| lastUpdated | 2026-09-11T15:04+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| governingOverview      | `../overview.md`                           |
+
+## Governing Overview
+
+[worktrees overview](../overview.md)
+
+## IAS Frozen Public Lifecycle Composition
+
+Start, attach, dispatch, and explicit sync share one atomic-series selecting transaction. A new
+selection auto-pauses the prior live series, publishes `reconciling`, reconciles the exact protected
+code/memory source pair, and publishes `active` only after current-base proof. `worktree_sync`
+becomes a resumable contract-addressed operation: genuine conflicts remain available for agent
+resolution, `continue` validates the staged result, and `cancel` restores only pinned
+operation-owned heads.
+
+Cleanup and abandon remain terminal lifecycle operations, not scheduling mutations. After their
+terminal publication and outside lifecycle/store locks, they may vacate only the exact selected
+terminal contract before destructive contract cleanup. A paused series cannot clear a newer
+selection. Missing or malformed activation/journal authority is not replaced by a legacy or
+queue-derived fallback reader.
+
+Master-series bootstrap also treats the transient-journal to durable-contract handoff as one
+observation boundary. On apply, `startup/start_contract.py` evaluates
+`_bootstrap_preflight_contract` while holding the same per-master `exclusive_access` mutex that
+serializes bootstrap publication. A concurrent loser therefore observes either the live winner
+journal or its published contract; it cannot read before contract publication, wait behind the
+winner, then misclassify the now-retired journal as an orphaned branch. Dry-run remains unlocked
+and write-free. This is synchronization around the canonical journal/contract authorities, not a
+retry, fallback reader, compatibility path, or second lock namespace.
+
+## CCR-R25 Public Start And Status Evidence
+
+`start.py` adds the read-only series activation fact to status results while leaving selection and
+source synchronization in the focused activation transaction. `startup/start_contract.py` now
+turns persisted master task/repository/branch edge mismatches into typed expected/observed
+admission evidence before protected-branch surface calculation, exposing the exact status address
+for recovery. `startup/master_series_admission.py` owns the edge comparison and refusal payload
+projection, while `worktrees/activation/atomic_series_admission.py` remains the shared pure
+diagnostic boundary. Neither path repairs contracts or selector bytes, and logical selection state
+is not presented as proof of a live process.
+
+CQ04 also preserves the concrete parser reason when the authoritative master-contract reread finds
+an unreadable contract after upstream refresh; the typed refusal remains read-only and is returned
+before protected-surface calculation. The same refusal projector bounds both top-level and nested
+observed parser detail when malformed input expands the reason beyond the public response limit.
+CQ01 bounds the activation diagnostic detail used by status and admission, and CQ02 records the
+registered consumer ownership in the evidence catalog.
 
 ## Purpose
 
@@ -17,10 +63,33 @@ behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycl
 status guidance, start preparation, onboarding refresh, strict code-quality gating, closeout, integration,
 cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
-`task_reopen` lives in the tasks package (leaf L11) because it reopens a task, and this route's start path
+`task_reopen` enters through the task-doc application route and executes `worktrees/reopen.py`; this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
+The committed L2 layout groups the start-contract, master-series admission, provider-preflight, leaf-ref, and result helpers
+under `startup/`; `start.py` remains the coordinating mutation entrypoint.
+
+## Current Profile, Publication And Lifecycle Ownership
+
+`quality/gate.py` admits one explicitly configured repository certification profile through `QualityGateTarget`; wrapper presence is no longer authority. The real R11/R22/R21 bridge freezes that profile plus the memory-service rail catalog before Dagger. Leaf acceptance is targeted at closeout; series closeout requires clean landed code and master integration owns the full gate. Required unresolved test ownership refuses before Gate 2 rather than expanding to a full population. The Gate-5 memory preflight starts only after the code gate is green or not required.
+
+`quality/clean_executor.py` publishes immutable schema-3.1 report generations and an atomic current pointer. Fresh and recovery callers retain the exact `publishedResultPath`; the strict reader verifies the declared inventory and candidate identity. Selected certificate records bind complete original manifest snapshots and physically reopened rail bytes. The lifecycle-selected path supplies current-owner callbacks for terminal selection, protected generations and last-moment start authorization. Its admission and code-suffix composition use the existing operation journal; the default production memory/finalization continuation remains unbound.
+
+Older EFA/L23 paragraphs below preserve the migration account and its original flat module names. Their wrapper discovery, local interpreter selection, citation-first ordering and schema-1/2 descriptions are historical; current paths are `quality/gate.py`, `quality/clean_executor.py`, `quality/closeout_memory.py`, and `quality/published_manifest.py`. Provider setup/teardown moved to `application/provider_runtime.py`, and `reopen.py` to `worktrees/`.
 
 ## Hot Path Summary
+
+Public worktree modules consume closed configured-contract admission and preserve their existing mutation locks/rereads. Cleanup and abandon remain fail closed before destructive seams until external terminal archive proof exists.
+
+Quality execution, lifecycle gating, closeout memory checks, and immutable published-manifest reads
+now live under `modules/quality/`. The package is a behavior-preserving ownership/size split: the
+clean executor remains the sole Dagger report publisher, the gate remains the lifecycle consumer,
+closeout memory remains phase composition, and the strict manifest reader admits no fallback or
+permissive compatibility path.
+
+`onboarding_acceptance.py` is the single pure application boundary for candidate-bound
+no-content/no-route decisions. It can reclassify only matching unchanged `stale` bodies as
+accepted; `untraced` authored content remains closed. Closeout preview, reversible admission, and
+post-commit external-memory refresh therefore consume the same validated coherence decision set.
 
 L23 makes Dagger the sole acceptance executor. `clean_quality_executor.py` materializes the exact
 reviewed candidate and required ancestry into the pinned graph, starts a fresh attempt, bounds live
@@ -28,9 +97,10 @@ output, and atomically replaces the enclosure's current reports; there is no loc
 runner. `code_quality_gate.py` plans targeted or full Dagger authority with an explicit diff base.
 `closeout_staged_quality.py` owns the linked/conflict refusals, accepted-tree rechecks, complete
 staging, reviewed hook, and targeted gate. `closeout.py` and `integrate.py` preserve approval and
-merge ordering while rechecking lineage after long quality work; integration remains failure-atomic
-before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
-`start_result.py` separates result projection from start coordination, and the external
+merge ordering while rechecking lineage after long quality work; the closeout lineage boundary now
+self-heals a settleable stale break through the sync transaction, and integration remains
+failure-atomic before source refs move. `git.py` owns exact candidate-tree and repository-identity helpers.
+`startup/start_result.py` separates result projection from start coordination, and the external
 `worktrees/closeout_recovery.py` reconciles post-claim code, memory, and ledger commits without
 replaying completed irreversible steps.
 
@@ -68,7 +138,7 @@ replaying completed irreversible steps.
 
   **Since 260731-EFA-L1 the gate is not scoped to one repository.** The deciders take the code
   worktree `Path` and gate on whether that checkout carries
-  `mcp/src/agents_remember/code_quality/check.py`; the old `repo_name == "agents-remember"`
+  `mcp/test_support/agents_remember_test_support/code_quality/check.py`; the old `repo_name == "agents-remember"`
   condition made the gate a no-op for every consuming repository — the product's actual audience —
   while the product documented it as mandatory. The preview now reports one of three statuses:
   `enforced`, `no-code-commit`, or `wrapper-unavailable`. The last is deliberately *reported*
@@ -164,10 +234,10 @@ needed for cadence.
 interactive fresh-probe surface, while `projected_status_payload` consumes only a pre-observed
 immutable landing snapshot. The recurring projector therefore never invokes `git ls-remote` or
 `gh` through guidance; missing and stale observations remain explicit.
-- `start.py`, `start_contract.py`, `leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
-  `finalize.py`, and `abandon.py`
+- `start.py`, `startup/start_contract.py`, `startup/leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
+  `automatic_cleanup.py`, `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
-  `start.py` calls `start_contract.build_start_contract` to resolve the requested leaf ref through the
+  `start.py` calls `startup.start_contract.build_start_contract` to resolve the requested leaf ref through the
   `worktrees/leaf_refs.py` task-tree resolver before any start write; accepted refs persist the canonical
   task doc id in the leaf contract, while no-match/ambiguous refs return a `WorktreeCommandResult`
   refusal naming the expected `<repo>/<master-folder>/<doc-id>` form and candidates. Standalone/light
@@ -183,7 +253,7 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   block the start with `stale_base_choice` recoveries (`fast-forward` /
   `proceed-stale`), and a missing external memory source branch is
   auto-created at the official memory tip using the code branch name as
-  template. For master tasks, `start_contract.py` creates or loads the root
+  template. For master tasks, `startup/start_contract.py` creates or loads the root
   `series-contract.md` integration contract first, creates the integration branch from the protected/source
   branch, and then starts each leaf from that integration branch with its own
   `enclosures/<leaf-id>/series-contract.md`. `cleanup.py`/`abandon.py` refuse to tear down while a live
@@ -209,6 +279,13 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
   memory-side failure, so integration never lands a half-integrated state.
+  A completed integration then reclaims its own enclosure automatically: `automatic_cleanup.py`
+  (`run_automatic_cleanup`) reruns the existing `cleanup_result` procedure with `approved=True`,
+  `dry_run=False` and `teardown_providers=True`, and reports in operator language what it removed
+  and what it did not across worktrees, merged local branches, the reports directory and the
+  enclosure root. A refused or partial integration cleans up nothing — that is when the evidence is
+  still needed — and a cleanup refusal after a real landing is reported without failing the
+  integration.
   `abandon.py` is the discard-without-integration sibling: it reclaims the
   isolated provider stack and removes worktrees/branches without requiring a
   prior integration.
@@ -220,13 +297,12 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   proof is one parent-child branch edge at a time. PR-gated flows are identical
   after the PR merge has been pulled locally, while squash-merge equivalence is
   not inferred by default.
-- `sync.py` (GitHub #54 sub-task D) owns `worktree_sync`: the mid-task base
-  sync that fetches upstreams, requires the new code tip to be ledger-mapped at
-  the official memory tip, merges the source branch into the code work branch
-  (abort on conflicts), fast-forwards parked memory (or blocks with
-  `memory_sync_choice` recoveries when local memory commits diverge), and
-  advances the contract's recorded base pair with a `sync_log` entry.
-  `guidance.py`'s fetch-free `freshness` block in `worktree_status` is the
+- `sync.py` is the narrow public `worktree_sync` facade. It validates typed input, keeps preview
+  mutation-free, refreshes source evidence before locking, rereads the full contract under
+  authority, and delegates to the ordinary or atomic-series transaction owner. The transaction
+  pins exact refs in the enclosure-root journal, retains code/memory conflicts in `.sync`
+  worktrees, and resumes or cancels through `resolution_action=continue|cancel`; it never silently
+  aborts a conflict. `guidance.py`'s fetch-free `freshness` block in `worktree_status` is the
   detection surface that recommends it.
 - `provider_async.py` owns the background setup launch (daemon thread), the
   durable `setup-progress.json` under the worktree group's provider-runtime
@@ -310,6 +386,21 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   migration sweep, never a per-read side effect, now that `load_contract` is walk-free and never
   normalizes.
 
+## Closeout Auto-Carry And Source-Moved Recovery Guidance
+
+`modules/closeout_lineage.heal_current_source_lineage` is the closeout-family guard clause: it
+carries a settleable stale transitive break (`behind > 0`, including a `diverged` edge, because a
+leaf owning its own commit is normal) through the existing journaled `worktree_sync` transaction,
+re-reads the reloaded contract, and re-proves immediate source heads. `dry_run` refuses with the
+preview duty without mutating; an unprovable projection escalates to the human developer; a retained
+sync conflict hands back both worktrees and their duties. `closeout.py` runs it at both entry points
+and threads the healed contract into candidate revalidation.
+
+The operator-facing recovery prompts moved with it: `integrate._blocked_non_ff_result` and
+`integration/integration_resolution_handoff.py` now route through `worktree_sync` plus a new
+targeted closeout rather than `--strategy replay`. `replay` itself remains supported and is the
+memory-carryover vehicle; only the guidance changed.
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -318,16 +409,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:106-187 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:671-746 |
-| Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:33-531 |
-| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:491-499; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| Stage-before-gate: a created file's lint error fails the gate, the gate's scope equals the commit's content, both preconditions refuse before anything is staged, the reset runs after the conflict check, and a retry commits the tree a first run would. | `CloseoutGateSeesCreatedFilesTests` | mcp/tests/test_worktree_closeout_gate_scope.py:130-208 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:20-20; mcp/src/agents_remember/models/worktree.py:119-119 |
-| The gate replay window: the closeout approval is `applied` before `commit_if_dirty` runs, and a gate failure leaves it `approved` — the two halves of the one-attempt-not-one-success trade. | `ClaimPrecedesTheIrreversibleWorkTests` | mcp/tests/test_gate_replay_window.py:562-671 |
-| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:190-234; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
+| The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
+| Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-44; mcp/src/agents_remember/models/worktree.py:242-242 |
+| Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
+| `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
-## 260731-EFA-L2 Lifecycle Parameter Objects
+## Historical 260731-EFA-L2 Lifecycle Parameter Objects
 
 The worktree lifecycle's long argument lists became frozen value objects, most of which are
 route-level vocabulary rather than local tidy-ups:
@@ -350,7 +440,7 @@ route-level vocabulary rather than local tidy-ups:
 precedence contract. `context.py` builds the kernel resolver's `CoordinationHints` /
 `EnclosureSelector`. Every payload, refusal, recovery choice and written contract is unchanged.
 
-## 260731-EFA-L3 This Route No Longer Runs Its Own Git
+## Historical 260731-EFA-L3 This Route No Longer Runs Its Own Git
 
 **`git.py` used to define its own `run_git`, and it was the kernel's function with the
 environment guard dropped.** Only `kernel/git_command.py`'s copy passed
@@ -429,7 +519,7 @@ repository and asserts the real one received the commit and the decoy did not
 strips the selectors, but the decoy test re-sets them inside its own scope precisely so
 it cannot pass on the conftest's account — do not "simplify" that away.
 
-## 260731-EFA-L4 Typed Vocabularies, And A Gate That Sees What It Certifies
+## Historical 260731-EFA-L4 Typed Vocabularies, And A Gate That Sees What It Certifies
 
 Two independent things landed here, and both are about a check that could be defeated with
 nothing reporting it.
@@ -462,13 +552,13 @@ raised inside an MCP tool handler that has no `except` for one. The rule that ke
 "no `replace` call anywhere may carry one of these six keywords", enforced together with
 `mcp/tests/test_wire_vocabulary_exhaustiveness.py`.
 
-`start_contract.build_start_contract` (line 187) gained a second `except` for the same reason.
+`startup.start_contract.build_start_contract` (line 187) gained a second `except` for the same reason.
 `worktree_start`'s `workflow_kind` and `memory_mode` reach the MCP signature as free `str`
 (the tool declares `workflow_kind: str = "light-task"` and documents `'light-task'` or
 `'chat-task'`), and `worktree_contract._task_vocabulary` now *refuses* an unknown one at both
 contract factories. Nothing between there and the `@server.tool()` handler catches a
 `ContractError`, so line 198 converts it through the new
-`leaf_ref_start.invalid_contract_request_result` (line 38) into the same
+`startup.leaf_ref_start.invalid_contract_request_result` (line 38) into the same
 `WorktreeCommandResult(2, {"state": "invalid-request", …})` shape every other blocked start
 already used, naming the legal set instead of producing a traceback. Note that this `except`
 is broader than its docstring says: it also catches a `ContractError` raised by the
@@ -542,14 +632,9 @@ reset-and-stage step and the gate as four entries where it listed one; and the p
 the index it is handed and says nothing about how it came to look that way, so its failure
 message claims only that nothing was committed, **not** that the staging was undone.
 
-Pinned by `mcp/tests/test_worktree_closeout_quality_gate.py`:
-`CloseoutGateSeesCreatedFilesTests` (a created file's lint error fails the gate; the gate's
-scope is the commit's content), `TaskWorktreePreconditionTests` (the repository's own checkout
-is refused before anything is staged; a series contract's `code_worktree` is exactly that
-checkout), `ConflictedIndexTests::test_the_reset_runs_after_the_conflict_check_not_before_it`,
-and `RetryStagesWhatAFirstRunWouldTests::test_a_retry_commits_the_tree_a_first_run_would`.
+Historical staging tests exercised created-file scope, task-worktree refusal, conflict-before-reset ordering, and retry equivalence. Those named tests were removed; the production staged-quality owner remains the source of these boundaries.
 
-## 260731-EFA-L5 Spending An Approval Is One Step Now, And One Consumer Still Does Not Spend It
+## Historical 260731-EFA-L5 Spending An Approval Is One Step Now, And One Consumer Still Does Not Spend It
 
 This route holds two of the three reproduced ways one human approval could be spent twice. The
 framing worth carrying at route level: **durability of a record is not atomicity of a decision.**
@@ -582,8 +667,7 @@ shapes were reproduced. A two-phase `claimed` state was considered and rejected:
 same write at the same late position with the same failure modes, so it would need a reaper that
 re-opens the window on a timer.
 
-`mcp/tests/test_gate_replay_window.py` pins both halves: the gate is already `applied` by the time
-`commit_if_dirty` runs, and a gate failure leaves it `approved`.
+Historical replay-window tests exercised approval consumption before commit and refusal before consumption. That suite was removed; this paragraph records the earlier design history and is not current test evidence.
 
 ### `integrate.py`: an open decision, deliberately left open
 
@@ -607,7 +691,7 @@ The retention half is already in place: `master-handover-approval` is in
 `interaction_retention.SEAM_CONSUMED_GATE_KINDS`, hence in `CONSUMED_APPROVAL_GATE_KINDS`, so an
 `applied` snapshot of that kind would be retained with no TTL the moment something writes one.
 
-## 260731-EFA-L16 — Closeout's Citation Gate Before The Suite
+## Historical 260731-EFA-L16 — Closeout's Citation Gate Before The Suite
 
 `closeout_result` runs the citation gate (`range_resolution` + `claim_reopen`) before the strict
 wrapper and the code commit — working-tree checks that clear without a commit — and keeps drift,
@@ -616,7 +700,7 @@ commit it was checking against, deadlocking every structural change; `_combined_
 reports the two phases as one gate. The approval claim still precedes the first irreversible
 act.
 
-## 260731-EFA-L17 — The Altitude-Routed Quality Gate
+## Historical 260731-EFA-L17 — The Altitude-Routed Quality Gate
 
 This route owns the quality altitude ladder's machinery half. `code_quality_gate.py` gained
 `QualityGatePlan` (mode `targeted`/`full` + optional cap), `GATE_TARGETED`/`GATE_FULL`, the
@@ -686,7 +770,313 @@ The closeout coordinator now narrows candidate-tree typing only after mandatory 
 quality adapter consistently says `self-owned wrapper` while refusing non-Dagger executors in both
 command and memory-policy builders. Self-repository enforcement and consumer opt-in remain distinct.
 
+## 260815-DAG-L3 Queue-Owned Irreversible Boundaries (Superseded By CLIVE)
+
+This section records the earlier DAG queue design: leaf closeout claimed and certified queue rows,
+integration claimed/consumed them, and task-fact writers published through queue governance. CLIVE
+moved operation recovery, generation controls, worker termination, direct landing, and durable
+mutation evidence to the root journal. L3 then removed the remaining lifecycle-shaped rows and
+task-authoring veto: task truth publishes first, affected projections become invalid-empty, and
+waiting-only rebuild derives solely from exact-current task and door sources.
+
+## 260815-DAG-L4 L4 Exact Worktree Lifecycle
+
+Start, closeout, integrate, sync, cleanup, abandon, and reopen now share task-derived branch authority. Integration uses exact named-ref CAS and crash recovery; atomic series closeout records a complete leaf landing chain; lowest Git/worktree/terminal writers require capabilities instead of trusting caller-supplied branch names.
+
+## 260815-DAG-L13 Atomic-Sequential Lane (Historical, Superseded)
+
+`startup/start_contract.py` gates master series bootstrap on the effective execution nature (a nature-less
+legacy master resolves atomic; organizational semantics exist only under an authored graph) and,
+under the atomic-sequential default, returns a blocked `sequential-lane-owned`
+`WorktreeCommandResult` naming the lane owner and legal next operations instead of starting a
+second in-flight master; the block fails closed when the commanding sprint cannot be resolved.
+Terminal series artifacts are ignored and reported through `startup/start_result.py`'s
+`staleSeriesArtifact` fact. `integrate.py` surfaces the queue consume's stale-by-evidence siblings
+on the result payload (`staleByEvidence`, each naming `worktree_sync`).
+
+IAS supersedes that lane owner. Current start/attach/dispatch selects one master per exact source
+pair, pauses the former without retirement, reconciles before exposure, and leaves task authoring
+upstream. Current queue projection observes the selector and never recreates the old owner from
+contract census.
+
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`closeout_staged_quality.py` moved to the new `worktrees/queue/` sub-route; remaining module import paths updated to the moved `queue`/`integration` packages; `closeout.py` extracted `_closeout_quality_facts`.
+
+## 260821-CLIVE-L1 Execution Modules
+
+`args.py` transports one normalized effective closeout input, while legacy synchronous CLI apply fails closed. `closeout.py` coordinates journal-authorized execution and exact contract finalization and threads that effective value explicitly through every code/external/recovery consumer; external-memory refresh, memory commit, and ledger commit have moved to the new single owner `closeout_external.py`. That owner uses explicit accepted messages and mutation evidence with no generated ledger subject or fallback. Guidance remains contract-pure: it publishes only static `intent_note` and routes exact candidate-derived requirements to preview/apply. Abandon and cleanup call lifecycle compatibility explicitly under the pure serialization lease.
+
+## 260821-CLIVE-L2 Current Architecture
+
+Closeout and integrate start or resume journal generations; sync/cleanup/abandon use the same admission projector but retain their own serialization. No module enumerates lower configured-reader failures or adds a fallback reader. Terminal retirement preserves canonical evidence; deletion is a later archive-proven operation.
+
+`integration_recovery.py` proves exact ref convergence and the external-memory head before finalization recovery. The `startup/` package split keeps start derivation/result collaborators separate from `start.py` without retaining the old flattened import paths.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:226-275; mcp/src/agents_remember/worktrees/modules/closeout.py:688-725 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-710 |
+| Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
+| Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
+
+## 260821-DAGQC-L4 No Route Impact
+
+`code_quality_gate.py` only narrows its host-refusal docstring to the acceptance claim it owns:
+the pinned Dagger graph certifies acceptance. The module inventory and executable topology are
+unchanged. Direct targeted Vitest remains a dashboard-owned diagnostic-only loop; this worktree
+adapter still exposes no host quality executor, bypass, compatibility reader, or fallback.
+
+## Historical 260821-DAGQC-L2 Immutable Quality Publication
+
+`published_quality_manifest.py` is the sole strict schema-1.0 reader for the atomic quality pointer.
+The clean executor writes that contract, and gate recovery consumes one immutable snapshot for
+attestation, artifact integrity, and path resolution. Public recovery retains stable `reportPath`
+and adds optional `publishedResultPath`; no legacy reader or host fallback was introduced. The
+concurrent L4 Vitest diagnostic boundary remains unchanged.
+
+## Historical 260824-PDLS — Dagger Publication Is The Evidence Altitude Boundary
+
+The clean quality executor publishes route-neutral phase timing but mints certifying evidence only
+after verifying one immutable schema-2 report generation and exact candidate tree. Code-quality
+gate fresh/recovery paths consume that typed evidence for lifecycle acceptance. Schema-1 manifests
+remain rejected; diagnostic evidence and timing files cannot substitute for publication.
+
+## 260824-PDLS Final Integration-Evidence Boundary
+
+The integration module consumes the exact Dagger certification and typed publication evidence
+without re-running acceptance or accepting diagnostic output. Ref-state, topology collision, and
+claim-transfer helpers now expose named facts to the integration owner rather than duplicating Git
+and lifecycle policy across call sites.
+
+## MCAR-L02 Closeout Admission Coherence
+
+External-memory leaf closeout now calls the same structured
+`require_current_curator_coherence` validator as public memory readiness and closeout-door
+evidence before citation preflight or the expensive code gate. The result records the exact
+coherence record digest and delivery attempt in preflight facts. No hardcoded Markdown filename or
+task-evidence pointer can select a competing authority.
+
+## MCAR-L03 Exact Pair Admission And Recovery
+
+Closeout preview, apply admission, working-tree memory preflight, terminal result publication, and
+recovery now consume the same `accepted_closeout_memory_pair` adapter. It resolves and revalidates
+the configured leaf's exact code/memory pair, joins it to the current structured coherence record,
+and carries the pair identity in public preview/apply/result payloads. Recovery re-reads the
+contract pair before accepting prior commit evidence; a moved base, wrong checkout, or changed
+contract refuses with typed pair facts instead of resuming against ambient Git. The worktree tool
+boundary translates the shared pair/coherence error families once, without duplicating resolver
+logic or adding a fallback route.
+
+## 260831-CCR-L12 — Cost-Ordered Five-Gate Execution And Shared Dagger Authority
+
+CCR-R12@v4 (commit `cfd09381`) adds `quality/dagger_authority.py` to this route: one host-level,
+repository-external declaration (AR_DAGGER_RUNTIME_AUTHORITY) selects the already-running
+connection-only Dagger endpoint and exact reusable layer store; admission inspects the live engine
+connection-only, freezes an immutable `dagger-runtime-authority/v1` snapshot, registers the exact
+consumer in a locked host-level owner registry (PID-safe process fingerprints, typed
+authority-transition barriers, exact-owner release, crash reconciliation), and every refusal is a
+typed `DaggerRuntimeAuthorityError` before any Dagger command starts. `clean_executor.py` admits or
+reuses the authority for every profile-declared launch and releases the exact owner on
+terminalization; `published_manifest.py` advanced the quality manifest to schema 3.1 with
+`runtimeAuthorityDigest`; `gate.py` threads the digest through report/preview/payload/transcript;
+and `closeout.py` runs its closeout gates in Gate-5 order - the Dagger-backed code-quality gate
+first, the memory-quality pre-refresh only after it is green or not required. The checked-in
+certification profile was regenerated (profile/runtime digests) with explicit per-rail
+`successExitCodes`/`skippedExitCodes` and `consumingGates` declarations.
+
+## 260831-CCR-L13 — Optional Non-Certifying Diagnostic E2E Run Control
+
+CCR-R13@v2 (commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf`, leaf 260831-CCR-L13) adds
+`quality/diagnostic_executor.py` to this route: the run controller for the optional one-replication
+real-Codex diagnostic lane. It consumes the trusted R12 host authority exactly as closeout and
+integration do - admission freezes one existing connection-only runner/store snapshot and registers
+the attempt as a live owner; run executes at most one replication and terminalizes pass/fail from a
+complete diagnostic-altitude manifest (or a typed infrastructure/parser hard failure); abort
+terminalizes with teardown evidence and no pass; and every terminalization releases only the
+attempt's own owner, never retiring a runner or deleting the reusable layer store owned by another
+operation. Gates 1-3 must be green at certifying altitude for the exact candidate before any
+scenario step, and R16 telemetry envelopes are emitted under the diagnostic nonce.
+
+## 260831-CCR-L14 - Final Real-Codex Gate-4 Run Control
+
+CCR-R14@v3 (commit `54ff803a05209e06f732f2de1f90e2a71a069e08`, leaf 260831-CCR-L14) adds
+quality/final_codex_executor.py to this route: the run controller for the certifying two-fresh
+no-retry real-Codex Gate-4 lane. It consumes the trusted R12 host authority exactly as closeout and
+integration do - admission freezes one existing connection-only runner/store snapshot and registers
+the attempt as a live owner only after the exact candidate certifying Gate-1..3 manifests are
+green against the frozen plan; run executes each fresh certifying repetition exactly once and
+terminalizes the run from the complete certifying Gate-4 result manifests (or a typed
+infrastructure/parser hard failure); abort terminalizes the unpublished slots with teardown evidence
+and no pass; and every terminalization releases only the attempt own runtime owner, never retiring
+a runner or deleting the reusable layer store owned by another operation. Retry is disabled for the
+exact same plan identity, and fresh client/process identities are minted per repetition.
+
+## Certificate Records And Executor Evidence
+
+The strict quality gate freezes the exact R11/R22/R21 lane before Dagger. `quality/certification_run.py` reopens the verified decoder artifact and delegates actual terminal catalogs to `quality/certification_records.py`, including available red/interrupted results. The gate records returned terminals and invokes the selected owner callback before propagating recording or process failure. The adapter requires the exact candidate, profile digest, full plan and selection, then reopens nested evidence and artifacts before publishing canonical results/certificates. A decoder omission or an uncertified terminal does not become green evidence.
+
+`quality/certification_evidence.py` reads the bounded gate-record journal and cross-binds its certificate/result objects to complete strict manifest snapshots. Lifecycle selection separately retains explicit original references in the operation journal. `quality/certification_reuse.py` validates zero-start rows against those supplied original objects and physical publication bytes. `clean_executor.py` combines the existing gate-record pins with the caller’s verified selected-graph generations before pruning; confined report reads remain in `report_publication_paths.py`. No historical scan selects authority.
+
+The Dagger interpreter captures executed pass, fail and skipped handles while retaining complete same-gate outcomes and zero-start later gates. `rail_emission.py` distinguishes observed empty output from unavailable streams, keeps exact bounded byte captures and producer file handles apart from the execution handle, and refuses a green rail when required observed evidence is unavailable. `rail_bindings.py` uses stable report-relative locators; dashboard coverage keeps its Vitest source and receives a separate stable publication name.
+
+`profile_results.QualityProgress` carries retained bytes/file handles until `profile_publication.prepare_profile_reports` builds the report branch. Captures are written through a base64 transport that preserves arbitrary byte tails. Required publications are checked on that actual output branch before the final decoder payload is serialized/exported. The finite profile declares all capture paths as octet streams; reference metadata is not substituted for bytes.
+
+The three previously missing Gate-4 producers are connected: Playwright writes the configured browser JSON report, provider pytest writes its phase report, and the teardown adapter validates both successful `L5-C10` checkpoints and summary/report identities before writing the proof. The separate dashboard suite-result writer remains its existing Vitest companion. These `.dagger/` contracts belong in this governing overview because `.dagger/` is excluded from file-card path rules.
+
+`quality/dagger_authority.py` now uses neutral `kernel/file_lock.py` exclusion for the host registry. Checkout durable stores still enforce their coordination guard before entering the same lock implementation. No process-role declaration or second lock namespace is introduced.
+
+Selected closeout admission, original-reference readback and code-suffix execution are composed through the lifecycle journal. Current Gate-5 observation is an explicit continuation-port obligation; the default production continuation remains unbound. Finalization and telemetry obligations are not established by the existence of the quality helpers or separate diagnostic/final-Codex controllers.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Returned terminals are recorded and selected before recording/process refusal propagation. | "def run_strict_code_quality_gate("; "def record_terminal_generation(" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361; mcp/src/agents_remember/worktrees/modules/quality/certification_run.py:47-70 |
+| Recording requires exact admission and physically verified evidence. | `_require_publication_admission`; `_publish_gate_result` | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:291-309; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:394-472 |
+| Gate-record publication bindings retain exact semantic authority and physical generation. | `verify_selected_publications`; `publication_binding`; `protected_certificate_generations` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
+| All runnable sibling rails retain observed terminal facts. | `_execute_gate_rails` | .dagger/src/agents_remember_quality/profile_execution.py:215-292 |
+| Executed outcomes distinguish unavailable streams and retain exact bytes/files. | `terminal_rail_outcome`; `attach_rail_terminal_bindings`; `capture_rail_output` | .dagger/src/agents_remember_quality/rail_emission.py:26-63; .dagger/src/agents_remember_quality/rail_emission.py:66-100; .dagger/src/agents_remember_quality/rail_emission.py:103-117 |
+| Bound artifact metadata names actual observed producer bytes. | `artifact_source_path`; `build_artifact_bindings` | .dagger/src/agents_remember_quality/rail_bindings.py:87-91; .dagger/src/agents_remember_quality/rail_bindings.py:115-144 |
+| The report branch persists retained bytes and exports the authoritative payload. | `prepare_profile_reports`; `export_profile_reports` | .dagger/src/agents_remember_quality/profile_publication.py:18-44; .dagger/src/agents_remember_quality/profile_publication.py:47-67 |
+| Required files are checked on the actual publication branch. | `_verify_required_profile_publications` | .dagger/src/agents_remember_quality/engine_helpers.py:128-166 |
+| Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. | "class QualityProgress" | .dagger/src/agents_remember_quality/profile_results.py:19-34 |
+
+## Selected Quality Execution Routes
+
+The selected code contract and original report transport have a local [execution overview](quality/execution/overview.md). The journal decides the permitted recovery suffix; these owners validate supplied originals, bind the exact sandbox and return real terminal evidence to that journal.
+
+| Source File | Onboarding | Responsibility |
+| --- | --- | --- |
+| `quality/certification_run.py` | [certification_run.py.md](quality/certification_run.py.md) | Actual terminal recording, selected callbacks and complete original code-prefix readback |
+| `quality/certification_terminal.py` | [certification_terminal.py.md](quality/certification_terminal.py.md) | Typed publication outputs and exact planned rail catalog decoding |
+| `quality/certification_reuse.py` | [certification_reuse.py.md](quality/certification_reuse.py.md) | Original-object and physical-publication validation of zero-start rows |
+| `quality/execution/` | [Execution overview](quality/execution/overview.md) | Canonical suffix DTO, frozen declaration bounds and prepared sandbox manifest |
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4. | "class CodeCertificationExecution" | mcp/src/agents_remember/worktrees/modules/quality/execution/models.py:42-100 |
+| Retained transport membership and byte limits come from frozen producer declarations. | `retained_report_inventory`; `snapshot_retained_reports` | mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:37-77; mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py:80-109 |
+| The prepared sandbox reobserves actual comparison source selection before manifest publication. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:122-170 |
+
+## CCR-L42 Refresh Validation Parity
+
+The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+
+## CCR-R12@v5 Current Worktree Transaction Boundary
+
+The closeout/integration module route now treats normal delivery as a transaction boundary. Closeout
+preserves explicit approval, candidate/source identity, Git safety, and recovery evidence, commits
+code through the staged-index transaction helper, performs raw external-memory metadata/entity/index
+refresh, then commits memory content and the ledger mapping. Integration validates and publishes a
+prepared pair with ref/tree compare-and-swap and no merge commit. Normal routes do not automatically
+run strict code quality, memory quality, selected certification, curator coherence, or independent
+review; full suites are an explicit developer request. The older quality-altitude sections remain
+historical context for pre-R12 behavior.
+
 ## Update History
+- 2026-09-11T15:04+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: added `automatic_cleanup.py` to the modules owning the c-09 lifecycle operations, and recorded on the integration description that a completed integration reclaims its enclosure through `run_automatic_cleanup` (reusing `cleanup_result` with `approved=True` / `dry_run=False` / `teardown_providers=True`), that a refused or partial integration cleans up nothing, and that a cleanup refusal is reported without failing the integration. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
+- 2026-09-10T15:06+02:00 — Closeout auto-carry: recorded `modules/closeout_lineage.heal_current_source_lineage` as the self-healing closeout lineage guard and the rewording of the source-moved recovery guidance through `worktree_sync` plus a new targeted closeout. `replay` remains supported. Verification metadata remains closeout-owned.
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
+- 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound startup admission ranges and recorded bounded oversized parser-detail evidence. This remains source-grounded preparation; verification and acceptance remain closeout-owned.
+- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01/CQ02/CQ04 preparation reconciled bounded activation diagnostics, authoritative master-contract reread evidence, and registered support-consumer ownership. These are source-grounded preparation updates only; verification and acceptance remain closeout-owned.
+- 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added the `master_series_admission.py` startup owner and its shared admission-projection boundary to the route explanation. The source remains uncommitted; verification metadata remains closeout-owned.
+- 2026-09-08T17:36:08+02:00 — CCR-L24 inherited citation reconciliation: repointed the route-index refresh anchor to the current L38 onboarding source range while preserving the L38 route overview and worktree-phase authorship. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed route-index and worktree-phase anchors after the frozen source shifts. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented typed master-edge startup refusals and read-only series status activation evidence. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `LifecycleFinalizeTests` repointed to mcp/tests/test_lifecycle_finalize.py:28-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `_execute_gate_rails` repointed to .dagger/src/agents_remember_quality/profile_execution.py:215-292. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-06T15:15:01+00:00 — Added the missing selected-terminal and execution-package routes from actual source at `c69d5171187fa1957025e393270db9f5a864ab14`; corrected the bounded green-only recording and uncomposed-admission claims. Preserved the broad verification stamps and complete prior history; this route update is not gate or acceptance evidence.
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Replaced superseded producer-gap claims with actual emission/export/retention owners, preserved useful publication history and named the remaining ordinary lifecycle gaps.
+
+
+
+
+- 2026-09-05T07:28+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Established explicit current profile/publication/ordering authority and corrected moved source owners while preserving the superseded gate narratives as history. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-09-05T06:12+00:00 — Composed host-authority and optional/final-Codex controller knowledge; documented the actual pre-G1 freeze, green-only record adapter and producer-backed binding limits.
+
+- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): added the CCR-L14 section for the final real-codex run controller (quality/final_codex_executor.py) that consumes the trusted R12 host authority for the certifying two-fresh-no-retry Gate-4 lane. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
+
+
+- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): added the CCR-L13 section for the optional diagnostic run controller (`quality/diagnostic_executor.py`) that consumes the trusted R12 host authority for the non-certifying E2E lane. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
+
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass (route impact): added the CCR-L12 section for the cost-ordered five-gate execution and shared Dagger authority - new `quality/dagger_authority.py` module, authority-bound clean executor, schema-3.1 manifest with `runtimeAuthorityDigest`, gate digest threading, and Gate-5 closeout ordering. Verification metadata stays pinned until closeout stamps the leaf code commit.
+
+
+- 2026-08-30T21:25+02:00 — No route impact: 260821-ARSPAWN-L5 updates the existing clean quality executor's Codex admission pin to 0.151.0; module ownership and publication flow remain unchanged. Verification remains closeout-owned.
+
+- 2026-08-29T22:45+02:00 — MCAR-L03: traced the exact pair adapter through closeout preview,
+  admission, memory preflight, result publication, and recovery; all consumers now expose the same
+  pair identity and typed refusal facts.
+
+- 2026-08-29T18:29+02:00 — Added the shared candidate-bound onboarding-acceptance boundary across
+  preview, closeout admission, and external-memory refresh.
+
+- 2026-08-29T08:52+02:00 — Added shared structured curator-coherence admission before closeout's
+  expensive mutation path. Verification remains closeout-owned.
+
+- 2026-08-26T18:55+02:00 — 260821-ARSPAWN-L2 closeout repair: documented the apply-time
+  master-series bootstrap observation boundary. `_bootstrap_preflight_contract` now runs under the
+  existing per-master bootstrap mutex, so concurrent starters cannot fall between the transient
+  journal and durable contract publication. Dry-run remains unlocked and write-free; no retry,
+  fallback reader, compatibility path, or new lock namespace was added.
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS public lifecycle composition label against the
+  frozen pass-13 candidate.
+
+- 2026-08-25T17:21+02:00 — Reconciled final integration evidence consumption and helper ownership.
+  Verification remains closeout-owned.
+
+- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final `modules/quality/` package split and moved all four preserved sidecars without duplicating the quality authority. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
+
+- 2026-08-24T21:23+02:00 — 260824-PDLS documented the immutable Dagger publication/evidence
+  firewall.
+
+- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: completed the
+  supersession record for queue-owned irreversible state; current modules publish task truth first
+  and rebuild only a disposable waiting-door projection.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: added strict one-snapshot quality publication/recovery and distinct stable/published result paths while preserving L4 diagnostic curation. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-24T13:51:26+02:00 — No route impact: 260821-DAGQC-L4 narrowed the
+  Python quality refusal wording without changing module ownership or execution topology.
+  Dagger acceptance remains pending and closeout-owned.
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `startup/` package move and new integration-recovery owner, repaired current route references, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: `closeout_staged_quality` moved to `worktrees/queue`; module imports updated; `closeout.py` extracted `_closeout_quality_facts`. Verified at code commit e5cb139f.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: recorded the atomic-sequential lane block
+  in `start_contract.py`, the `staleSeriesArtifact` fact in `start_result.py`, and the
+  `staleByEvidence` payload on `integrate.py` results; the modules route purpose is unchanged.
+  Verification remains closeout-owned.
+
+- 2026-08-19T04:20+02:00 — No route impact: 260815-DAG-L10 updated the series worktree-group equality checks in `start_contract.py`/`terminal_validation.py` and narrowed reports-tree preservation in `cleanup.py`/`abandon.py` to legacy series contracts via `legacy_series_reports_is_child_enclosure`; the modules route purpose is unchanged.
+
+- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added integration_publication.py to the modules route; the route purpose is unchanged.
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded queue claim/certify/revalidate/
+  consume order, reversible terminal recovery, and governed lifecycle task writes. Verification
+  remains closeout-owned.
 
 - 2026-08-14T12:13:26+02:00 — R43 curator: recorded candidate typing and builder-level Dagger
   refusal repairs. Verification remains closeout-owned.

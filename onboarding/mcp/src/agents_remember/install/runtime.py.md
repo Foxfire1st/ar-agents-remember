@@ -131,7 +131,6 @@ clients reach it through the `runtime_install` tool.
 | Provider settings generation derives lifecycle settings from MCP authority. | `lifecycle_settings_from_config` | mcp/src/agents_remember/providers/settings.py:25-39 |
 | `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. | `install_runtime` | mcp/src/agents_remember/install/runtime.py:462-553 |
 | Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. | `complete_provider_watcher_rebind` | mcp/src/agents_remember/install/provider_watchers.py:144-166 |
-| Runtime-install tests cover watcher stop/start ordering, dry-run reporting, degraded-status retry, and dependency-install failure recovery. | `test_runtime_install_provider_deps_rebinds_watchers_around_runner_refresh`; `test_runtime_install_provider_deps_dry_run_reports_rebind_without_mutating`; `test_runtime_install_provider_deps_retries_rebind_after_degraded_status`; `test_runtime_install_provider_dependency_failure_attempts_watcher_recovery` | mcp/tests/test_install_runtime.py:166-237; mcp/tests/test_install_runtime.py:239-303; mcp/tests/test_install_runtime.py:305-363; mcp/tests/test_install_runtime.py:413-463 |
 
 ## Update History
 

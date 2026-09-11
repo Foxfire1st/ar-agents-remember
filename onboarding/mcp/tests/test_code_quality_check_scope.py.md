@@ -5,41 +5,72 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_code_quality_check_scope.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-11T23:56+02:00                                            |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                        |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                          |
+| lastUpdated | 2026-09-06T21:38+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-`test_code_quality_check_scope.py` pins repository-derived gate scope, fixed command vectors, and
-the root pytest configuration inherited by raw and wrapped test runs.
+Explicit product/verification package ownership tests.
 
 ## Code Commentary
 
-L23 lets whole-tree scope expectations include the Dagger package when present, while preserving MCP coverage and test roots.
+### Logic
 
-- `GateScopeDerivationTests`
-- `PytestConfigurationTests`
-- `PytestConfigurationTests` asserts root `addopts` contains `-n=auto` alongside the strictness
-  switches; the derived-scope command test remains focused on coverage arguments.
+A newly importable support package refuses until assigned a product or verification owner. Declaring it verification preserves lint/type inclusion while excluding it from product coverage paths. Overlapping and stale ownership declarations refuse.
 
-## Invariants And Boundaries
+### Conventions
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_code_quality_check_scope.py`.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
-## Repo-Internal References
+### Invariants And Boundaries
+
+Coverage paths describe measurement scope, not a percentage requirement. No fallback ownership broadening is allowed for unowned packages.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
-| The configuration regression pins automatic xdist worker selection at the root pytest owner. | "self.assertIn(\"-n=auto\", ini_strings(\"addopts\"))" | mcp/tests/test_code_quality_check_scope.py:215-223 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| New importable package requires explicit product or verification owner. | `test_new_importable_package_requires_explicit_product_or_verification_owner` | mcp/tests/test_code_quality_check_scope.py:15-40 |
+| Package authority rejects overlap and stale declarations. | `test_package_authority_rejects_overlap_and_stale_declarations` | mcp/tests/test_code_quality_check_scope.py:42-71 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
+
+- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: documented exhaustive product-versus-verification
+  package ownership and the overlap/stale/undeclared/empty-product refusal cases.
+
+- 2026-08-26T10:44:52+02:00 — Updated the scope contract to product-only coverage measurement while preserving test execution and whole-tree lint/type ownership.
+- 2026-08-24T21:23+02:00 — Added the typed admission precondition; scope behavior is unchanged.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

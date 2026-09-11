@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-08-13T00:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T07:08+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## What This Area Is
 
@@ -32,6 +32,11 @@ owns the human-first gate delegation policy; `provider_degradation_settings.py` 
 explicit opt-in hard caps while uncapped full gates stay host-managed; `identity.py` owns provider instance naming;
 `version.py` resolves installed distribution metadata through a function seam and falls back to the
 committed source-checkout release identity when package metadata is unavailable.
+
+`RepositoryScope.certification_profile` carries an optional configured profile reference.
+The runtime parser admits only canonical, traversal-free repository-relative POSIX paths;
+absolute paths, backslashes, drive prefixes, and normalization-changing spellings refuse.
+The profile loader and executor remain downstream owners.
 
 ## What Belongs Here
 
@@ -78,7 +83,7 @@ committed source-checkout release identity when package metadata is unavailable.
 | `checkout_coordination.py` | checkout write policy | Prevents unpublished worktree code from selecting or writing the deployed coordinator through supported paths. | covered |
 | `runtime_config.py` | config authority | Every layer reads the same runtime record. | covered |
 | `gate_policy.py` | policy | Human-first gate decisions. | covered |
-| `memory_cap.py` | gate economics | Caps full-wrapper memory at integration. | covered |
+| `memory_cap.py` | gate economics | Plans explicit opt-in full-wrapper caps; uncapped runs remain host-managed. | covered |
 
 ## Local Invariants And Traps
 
@@ -98,7 +103,7 @@ committed source-checkout release identity when package metadata is unavailable.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:90-108; mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:132-155 |
-| The layering rail enforces the total order this route anchors. | `load_contract` | mcp/src/agents_remember/code_quality/layering.py:62-62 |
+| The layering rail enforces the total order this route anchors. | `load_contract` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:62-62 |
 | Structural gate models import the producer-owned gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/structural/gates.py:15-20 |
 
 ## Cross-Repo References
@@ -147,7 +152,20 @@ When adding a primitive:
 2. Keep it import-free of higher packages; declare the vocabulary once.
 3. Run the layering check and structural-coverage suite.
 
+## 260815-DAG-L4 L4 Configured Repository Identity
+
+Runtime configuration is part of protected-ref authority: code and memory Git common directories, memory mode, coordination root, and canonical task tree must match the durable contract before lifecycle journaling or mutation.
+
 ## Update History
+
+- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added configured profile-reference admission and qualified opt-in memory-cap planning. Verification records current source claims, not execution or acceptance.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `runtime_config.py` gains the
+  fail-closed `directExecutionEnabled` policy gate (`parse_direct_execution_enabled`; default
+  `False`; `_checkout_runtime_config` pins it off). Verified at code commit a9d50e08.
+
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
 
 - 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the narrow lifecycle-operation execution mode for the plane-owned detached task worker while retaining an empty daemon role and ordinary checkout isolation. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
 - 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: separated checkout-local coordination authority from the exact enclosure report-artifact target; reports do not become a coordinator and every other durable target remains refused. Verification remains closeout-owned.

@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 52839)
-Total output lines: 2259
-
 # mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview
 
 | Field                  | Value                                            |
@@ -8,14 +5,47 @@ Total output lines: 2259
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-14T12:31:43+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../../../../overview.md`                         |
+| lastUpdated | 2026-09-10T11:42+02:00 |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4` |
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
+| governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
-[mcp/overview.md](../../../../overview.md)
+[mcp/overview.md](../../../overview.md)
+
+## ARSPAWN-L5 A005 Shared Task-Binding Admission
+
+`task_binding.py` is the one preflight for canonical document resolution, role altitude, current
+source lineage, and generation-bound reviewer parent. The plane-private spawn application invokes
+it before settings resolution; `terminal_opener.py` invokes the same API at the final pre-host seam.
+This ordering keeps stale-lineage recovery actionable and prevents a launch-selection refusal from
+hiding a malformed structural claim. There is no filename, settings, or compatibility fallback.
+
+## ARSPAWN-L5 Real Role Startup And Headless Delivery
+
+Codex role seats now remain in startup until the native app-server reports one connected configured
+MCP server advertising exact `dispatch_agent`. The shared readiness parser owns pagination, status,
+tool shape, settled absence, and timeout; the adapter has no alternate tool-name or discovery
+fallback. Dispatch briefs allow one bounded spawn-to-bridge convergence window without creating a
+second caller attempt. Agent-notifier sweeps refresh canonical terminal liveness themselves, so
+queued brief/message progress does not accidentally depend on dashboard browser polling. Control
+socket diagnostics distinguish absent, refused, and timed-out endpoints without claiming process
+death from socket state alone.
+
+## ARSPAWN-L4 Shared Candidate Identity
+
+`build_info.process_serving_build()` now owns one cached identity for the Python process and feeds
+both dashboard serving composition and MCP `server_info`. In addition to version/boot/checkout
+facts, the stamp content-addresses sorted importable Python source and names the exact interpreter
+and package root. This distinguishes equal-version or dirty candidates without making paths part of
+the content digest. `models/core.py` is the one strict wire authority; served state only
+composes it and MCP only projects it.
+
+This identity is diagnostic and acceptance evidence, not package-update policy. Production starter
+registrations continue to launch `uvx --refresh-package agents-remember-mcp
+agents-remember-mcp@latest`; the disposable ARSPAWN acceptance runner launches exact local source
+only so it cannot accidentally certify a stale published artifact.
 
 ## Purpose
 
@@ -49,8 +79,8 @@ and explicitly closes the subscription on disconnect or cancellation.
 
 ### Current Structured-Conversation Contract
 
-`serving/conversation/` is the protocol-neutral contract roof for the future
-Chats interface. Strict Pydantic wire models normalize harness identity, active transcript/event
+The original `serving/conversation/` contract-only leaf established the protocol-neutral roof for the
+Chats interface. Its initial state is recorded in this paragraph; the production children below supersede the empty-router state. Strict Pydantic wire models normalize harness identity, active transcript/event
 pages, independent active/library cursor scopes, evidence-backed status and capabilities,
 operation queue/withdrawal recovery, attachments, and telemetry without claiming that native
 history/control implementations or a renderer already exist. Exactly two read ports define the
@@ -126,14 +156,33 @@ history, not current authority.
 
 Hosted-seat identity is the real task document plus role: sprint roles bind the sprint document,
 manager binds the master, and worker/reviewer/curator bind leaves. `ambient_seat.py` proves callers
-from plane-seeded hosted context; `structural_seats.py` qualifies parent/child relations and singular
-current occupants. `terminal_task_assignment.py` is the one level-neutral binding primitive. Ordinary
+from plane-seeded hosted context and — since 260821-ARSPAWN-L1 — resolves the ambient launcher (a
+process with no `AR_HOSTED_SESSION_ID`) as a typed `AmbientCaller` for `dispatch_agent`;
+`structural_seats.py` qualifies parent/child relations and singular current occupants. Spawn
+provenance now includes caller kind (`spawned_by_kind`, written when set), mapped write-once onto
+the catalog row by `terminal_opener._opened_catalog_entry` via `_preserved` and surfaced on the
+spawn wire as `spawnedByKind`. `terminal_task_assignment.py` is the one level-neutral binding primitive. Ordinary
 inbox traffic is persisted, then re-resolved at post and delivery time so replacement is transparent;
 the initial dispatch brief alone stays exact-pinned internally. One-way startup migrations run before
 strict catalog/control-plane readers; no dual-schema compatibility reader remains. Agent-notifier
 predicate helpers consume the existing `TaskHierarchy` protocol, while production constructs the
 filesystem-backed `TaskDocumentTopology`; this preserves one hierarchy authority without forcing
 callers to depend on its concrete implementation.
+
+State-signal actions revalidate the subject's current task-document binding and derive the structural
+owner immediately before posting. A role/document address without a current occupant is left
+eligible for a later sweep and cannot create a durable row or emitted marker; a typed task-document
+refusal fences only that subject so unrelated findings continue. The canonical structural owner and
+shared delivery path remain the authorities for replacement, ambiguity, and boundary handling.
+
+Boundary handling is now explicit at the drain gate: `state_signals.evaluate_boundary_drain_findings`
+admits a pending row at its target's turn boundary only when `_boundary_follows_last_attempt` says
+that boundary follows the row's last recorded attempt, and a row carrying *no* attempt clock is
+admitted only for a `state-signal` row. That is exactly the state a replacement occupant creates,
+because rebinding a held signal restarts its attempt clock while the generic redelivery path keeps
+suppressing it as a held signal; without the state-signal-scoped admission such a row had no
+delivery path at all. Every other row kind keeps the ordinary redelivery path, and an unparseable
+attempt clock is still refused.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
@@ -185,6 +234,10 @@ byte-identical), an `unsupported` terminal receipt on non-capable adapters, and 
 is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
 at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays the control
 child's obligation.
+
+### Historical Slice-04 Through HFX Serving Account
+
+The following migration account predates the current protocol-owned hosted and conversation paths above. Its pane/log delivery and transport-only framing are history, not current authority.
 
 `serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
 browser-dashboard series): a FastAPI app over the observer projection read side. It
@@ -278,6 +331,10 @@ until then, so hosted-delivery failures do not escalate before the persistent re
 
 ## Hot Path Summary
 
+Serving composes the dashboard application, hosted-session control, projections and notifier. Start at `app.py` for route/lifespan composition, `projector.py` for atomic snapshots and cancellation draining, and `change_watcher.py` for change-or-heartbeat pacing. Watcher lockfile exclusion derives from `kernel.file_lock.lock_path_for` and filters every watched directory; moving this import does not alter suffix, debounce or wake behavior. The host registry and coordinator retain separate policies above that shared kernel mechanism.
+
+## Serving Operating Context
+
 For the active conversation serving, start at
 `conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then
 `conversation/active/service.py` (epoch/cursor checks, atomic page+cursor),
@@ -307,6 +364,14 @@ Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_st
 `harness_control_runner.py` → `harness_control_factories.py`. `test_harness_control_evidence.py`
 pins the whole seam.
 
+The catalog terminal-evidence lift is a consumer of that bounded substrate:
+`terminal_evidence.py::_validated_evidence_cursor` validates the deque envelope before
+`latest_terminal_evidence` maps frames, rejects unsupported projectors before reading, and
+advances truncated pages only through the last returned sequence. Its Pi path remains bounded
+at 200 entries per page and eight pages per sweep; `test_terminal_evidence_cursors.py` retains
+the focused cursor, refusal, continuation, and liveness-containment checks. This lift does not
+add a history fallback or alter the canonical projector owners.
+
 For the native control-plane substrate, start at
 `harness_control_bridge.py::interrupt` (epoch guard, structural dispatch, bridge-stamped epoch),
 then the adapter writes `codex_app_server_adapter.py::interrupt` (exact active turn) and
@@ -325,9 +390,9 @@ For folded-state stream convergence, start at `projector.py::_publish_projection
 registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator
 closure owns subscriber cleanup.
 
-The structured-conversation contract establishes structure rather than a live endpoint path: consumers validate hostile
-normalized products through `conversation/models.py`; future active and library implementations
-must satisfy their separate read ports and cursor purposes; future mutations stay on the control
+The original contract-only leaf established structure before live endpoints: consumers validate hostile
+normalized products through `conversation/models.py`; the now-implemented active and library services
+satisfy their separate read ports and cursor purposes; mutations stay on the control
 router. The root composition is mounted once beside existing harness-control routes. The locked
 repository helper and redacted installed-runtime fixtures are compatibility evidence only and may
 not promote a capability by being present.
@@ -412,13 +477,15 @@ limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cuto
 daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. Resource
 performance work remains queued.
 
-Codex terminal completion with a null protocol `requestId` is resolved only through its text vendor
-correlation on exactly one accepted inbox row for the same hosted session. Missing, non-text,
-unmatched, or ambiguous correlation fails loudly. Completion projects onto that same row as adapter
-delivery metadata while explicit inbox state remains `pending` and unconsumed. With no actual queued
-replacement the adapter reports `idle` / `immediate`; `settling` / `queued` means a replacement is
-actually queued. This is protocol-owned structured behavior, not a fixture-version, parser, pane,
-fallback, or resource performance behavior.
+Codex parent terminal completion carries the durable operation id as protocol `requestId` and the
+native turn id as vendor correlation. The direct id lets an initially queued receipt converge onto
+its exact inbox row when the turn completes. A terminal record that legitimately has a null
+`requestId` is resolved only through its text vendor correlation on exactly one accepted inbox row
+for the same hosted session; missing, non-text, unmatched, or ambiguous correlation fails loudly.
+Completion projects onto that same row as adapter delivery metadata while explicit inbox state
+remains `pending` and unconsumed. With no actual queued replacement the adapter reports `idle` /
+`immediate`; `settling` / `queued` means a replacement is actually queued. This is protocol-owned
+structured behavior, not fixture-version, parser, pane, or resource-performance behavior.
 
 The exact-session Unix IPC response lifecycle contains peer-loss `BrokenPipeError` and
 `ConnectionResetError` only after accepted dispatch, across response write/drain and close/
@@ -451,7 +518,7 @@ same-role holder; attach requires identity for an untyped hand-opened harness; r
 landing paths consume binding identity. The supervisor also preserves role in findings, rows,
 cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
 
-Harness JSONL is the only submitted-delivery authority across spawn, inbox,
+The superseded pre-protocol delivery implementation used harness JSONL as submitted-delivery authority across spawn, inbox,
 supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
 Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
 s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
@@ -463,6 +530,11 @@ A live sixty-second workspace-river compactor runs over virtual locked cursors, 
 served only through `GET /api/task-document`, and the supervisor is current-manager-first,
 chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
 body-free for task documents.
+
+Task-document snapshot serving now carries the compact execution-topology facts needed by the
+dashboard: a commanded master's optional nature, a sprint's canonical graph, and deterministic
+derived waves. The serving route copies validated task authority; it does not choose priorities or
+invent graph positions.
 
 `agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
 `serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
@@ -582,8 +654,8 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   `model/list` page (including hidden rows), retain the catalog at connect, and expose a cold
   initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
   model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
-  readiness; later turns reuse the resolved effort. Initialize identity accepts only the current
-  Codex Desktop host-first product ending in the exact clientInfo name/version suffix, while the
+  readiness; later turns reuse the resolved effort. Initialize identity accepts a product-agnostic
+  server-product/version followed by optional diagnostics ending in the exact clientInfo name/version suffix, while the
   primary product version must still agree with thread evidence.
 
 - `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
@@ -664,7 +736,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   refusals without mutation or the accepted binding), `GET
   /api/terminal/sessions` (return non-terminated sessions via
   `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
-  non-overlapping, rate-limited callers get the persisted catalog; WebSocket attach + the paste
+  non-overlapping; a rate-limited caller still runs the bounded one-second starting-row fast path,
+  and a caller that loses the non-blocking sweep lock returns the last ATOMICALLY REPLACED catalog
+  file (`TerminalCatalog.list_committed()`) rather than a snapshot read that would wait on the
+  active sweep's batch lock; each admitted path observes its selection inside exactly one
+  dirty-gated catalog batch, so a clean sweep performs zero file replacements and a dirty one
+  performs exactly one; WebSocket attach + the paste
   endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
   replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
   `POST /api/terminal/{session}/terminate` (kill tmux and mark the catalog row terminated),
@@ -723,7 +800,7 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   table lives in its docstring), `is_projection_input_event` (drops `*.tmp`, dotfiles, the
   projection's own outputs, workspace non-input churn, and — since 260731-EFA-L5 — **every
   control-plane lockfile by suffix in every watched directory**, through
-  `_DURABLE_LOG_LOCK_SUFFIX`, which is *derived* from `controlplane.durable_store.lock_path_for`
+  `_DURABLE_LOG_LOCK_SUFFIX`, which is *derived* from `kernel.file_lock.lock_path_for`
   rather than spelled out: the old literal `operator-inbox.lock` had stopped matching once the
   lock naming moved to `operator-inbox.jsonl.lock`, and a workspace-scoped basename list could
   never have covered the per-lifecycle `gates.jsonl.lock` at all. These are the busiest writes in
@@ -747,21 +824,13 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   ~780 KB/tick → 0; the dashboard-tab OOM driver). `StableProjectionState` +
   `stable_projection_state` are the projector's per-tick cache.
 - `response_contract.py` — the **declared HTTP wire** (260731-EFA-L4): `WireResponse`
-  (strict/frozen/camel-aliased, `populate_by_name`) and 93 model classes covering every route's
+  (strict/frozen/camel-aliased, `populate_by_name`) and the declared model classes covering every route's
   success and refusal shapes, plus three shared `responses=` tables — `SCOPED_READ_RESPONSES`
   (the files/notes/change-set family), `SESSION_CONTROL_RESPONSES` (every `harness_control_api`
-  route) and `ACTION_RESPONSES`. Declared here and enforced in
-  `mcp/tests/test_serving_response_conformance.py`, because FastAPI validates only the two routes
+  route) and `ACTION_RESPONSES`. Declared here; the former response-conformance suite was retired. FastAPI validates only the two routes
   that return a bare `dict`; see the 260731-EFA-L4 route impact for the exact boundary. Deliberately
-  free of any `serving.conversation` import so it stays importable before that package…22839 tokens truncated…erived** from `lock_path_for` and suffix-matched in every
-  watched directory, which is what lets it cover the per-lifecycle `gates.jsonl.lock` a
-  workspace-scoped basename list structurally could not. Recorded, on the `app.py` sampling-loop
-  bullet, that this route's `_metrics_loop` is now the declared compaction owner of both provider
-  stores, that the ownership is enforced structurally (one reclaim caller each, inside this loop),
-  that neither store earned the operator-inbox's `compaction_owner=None` exception, and the route
-  consequence — provider-log reclamation follows this loop's 30s cadence and every write on the path
-  holds its log's lock. No other route bullet changed: nothing else under `serving/` was touched by
-  this leaf. Verification metadata untouched.
+  free of any `serving.conversation` import so the response-contract module can load independently of conversation composition. The requirement additions declare packet/list/content responses; returning a Response object bypasses automatic response-model serialization; the declaration alone does not prove conformance.
+
 ## L23 Structural Host Boundary
 
 Serving resolves lineage after task-role validation and before host creation or
@@ -775,7 +844,153 @@ The metrics background loop now shields and drains each blocking worker-thread o
 propagating lifespan cancellation. Shutdown therefore cannot finish while sampling, record,
 degradation evaluation, or compaction can still mutate provider metrics state.
 
+## 260815-DAG-L14 Serving Route
+
+The served task-document projection carries sprint `seats` and typed `masterRef` rows; the body
+revision covers `subTasks` + `seats` so an open sprint reader refetches on linkage/seat edits.
+
+
+## 260815-DAG-L12 Route Impact
+
+The task-documents projection readers now wire the render-ready sprint graph view (L12-R4): `_task_documents.py` builds the `executionGraphView` through the `_execution_graph_view` serving seam (tasks-domain walk feeding the primitives-only builder) with the `_master_docs_by_ref` join table, and splits `_task_doc_node` into `_reader_fields` + `_execution_graph_fields`. The dashboard renders projected facts verbatim.
+
+
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+Serving projection/snapshot modules updated their imports to the moved `worktrees/queue/*` and `models/queue/*` locations.
+
+## 260821-CLIVE Serving Route Impact
+
+Serving now preserves leaf execution evidence before bounded retention can reclaim its source row.
+The app composes explicit terminal-catalog and operator-inbox registrars. Terminal liveness releases
+its catalog batch before registering terminated worker/reviewer/curator rows in task truth, then
+compacts only ids the registrar confirms. The notifier likewise registers its inbox snapshot before
+reconcile-and-compact. Missing registrars authorize no task-bound deletion; they do not activate a
+secondary evidence reader or compatibility route.
+
+The serving projection is also aligned with final scheduling ownership. `_closeout_queue.py` reads
+the source-fingerprinted disposable projection and exposes invalid-empty/valid-built condition,
+bounded source problems, and waiting-generation members—never claims, blockers, commits, or
+certification. `_task_documents.py` projects audited discarded-unstarted subtasks as persistent task
+history and includes them in body revision identity.
+
+## 2026-08-26 Projection Retry Reconciliation
+
+The serving projection input state now publishes task-domain snapshots atomically. A failed task
+refresh retains the last good contracts, enclosures, task documents, and series, marks the task
+refresh pending, and forces a later heartbeat to retry even when no new task-domain change signal
+arrives. This keeps transient read failures from poisoning the live dashboard projection or
+requiring an unrelated filesystem event to recover.
+
+## 260821-ARSPAWN-L2 Replacement-Safe Dispatch
+
+`structural_dispatch.py` owns the bounded 4,096-stripe seat serializer and the durable
+pinned-brief queries. Setup or `flock` failure is typed and fail-closed; there is no local-only
+fallback, repository-global lock, or unlink race. Brief viability distinguishes a live or
+retryable generation from superseded, unresolved, or expired evidence.
+
+`DispatchBriefReceiptStore` owns dispatch-specific receipt mutation over the existing catalog
+lock/read/write unit. This keeps commit-point evidence out of the general `TerminalCatalog` lifecycle
+surface without adding a second persistence path or compatibility reader.
+
+`structural_seats.py` resolves a canonical address independently of current occupancy and delegates
+generation selection to `current_seat_occupant`. Inbox delivery resolves the occupant at delivery
+time, while exact dispatch briefs remain pinned to the private spawned generation. This lets
+ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
+
+## 260831-CCR-L23 Task-Local Requirements Routes
+
+L23 registered the read-only task-local requirement surface: `serving/requirements.py`
+walks one canonical `tasks/<repo>/<master>/requirements/` root selected by repository +
+single-segment master + canonical task-document reference and serves the confined GET endpoints
+`/api/requirements/{list,read}` with declared models (`RequirementsListing` /
+`RequirementContents`) under the shared scoped-read refusal table. The route family grew
+from 61 to 63 HTTP routes; composition adds one `register_requirements_routes(app, config)`
+call in `create_app` after the notes routes and before the static mount.
+
+
+## Shared Lock Owner References
+
+The watcher keeps one naming dependency on the actual lock owner; it does not acquire coordinator authority or change projection input scope.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared naming primitive appends the same physical lock suffix. | `lock_path_for` | mcp/src/agents_remember/kernel/file_lock.py:36-38 |
+| Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
+
 ## Update History
+
+- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
+
+- 2026-09-08T14:39+02:00 — 260831-LOCR-L20 curator reconciliation: added the current
+  terminal-evidence cursor consumer and its no-loss envelope boundary to the serving hot path.
+  The candidate preserves the existing bounded Pi route and canonical projector ownership;
+  verification metadata remains pinned until governed closeout stamps the code commit.
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: extended the `GET /api/terminal/sessions` route account with the current sweeper boundary — bounded starting-row fast path while rate-limited, committed-atomic-snapshot return on sweep-lock contention (instead of a snapshot read that waits on the active batch), and one dirty-gated catalog batch per admitted path. Cadence, hysteresis, registration/compaction order, and cross-store post-commit ownership are unchanged and remain with their leaves.
+
+
+- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:28+02:00 — Updated watcher naming ownership to kernel.file_lock, retained filtering and pacing behavior, restored the nearest MCP overview backlink, and made hot-path routing concise without dropping the retained operating account.
+
+
+
+
+- 2026-09-05T07:27+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reviewed the requirement routes, corrected current conversation/initialize ownership and repaired a literal truncated paragraph while retaining recoverable historical provenance. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the task-local requirement routes (`/api/requirements/{list,read}`), the 61-to-63 route growth, and the `requirements.py` module in this route. File-level detail lives in the serving sidecars and the new requirement cards.
+
+
+- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
+  projection on parent Codex completion and deterministic queued-row convergence. Verification
+  remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 recorded connected-`dispatch_agent` role startup, bounded one-call brief convergence, headless liveness refresh, and honest socket-state diagnostics. Verification remains closeout-owned.
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded `models/core.py` as the shared
+  serving-build wire authority. Verification remains closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: recorded the one process-scoped,
+  content-addressed build identity shared by dashboard and MCP surfaces, plus the production
+  self-update versus disposable exact-candidate acceptance boundary. Verification remains
+  closeout-owned.
+
+- 2026-08-28T14:15+02:00 — No parent-route content impact: the landed candidate changes only the
+  Claude mapper inside the governed conversation/projectors child route, whose own overview carries
+  the interaction/mutation-diff semantics. Stamped the serving route to committed provenance.
+
+- 2026-08-26T16:03+02:00 — Recorded dispatch receipt ownership in its dedicated collaborator and removed a pre-existing
+  tool-output truncation banner. The atomic catalog persistence boundary remains singular;
+  verification remains closeout-owned.
+
+
+- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 bounded seat serialization, durable brief evidence, and
+  delivery-time replacement semantics onto the IAS serving overview. Verification remains
+  closeout-owned.
+
+- 2026-08-26T10:44:52+02:00 — Documented atomic task-projection refresh and heartbeat retry after transient failure; runtime lifecycle-projection import relocation has no additional route impact.
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `serving/ambient_seat.py` now owns BOTH dispatch caller resolutions (plane seat + ambient launcher resolved from the process environment); spawn provenance gains caller kind (`spawned_by_kind` write-once via `_preserved`, wire `spawnedByKind`). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: projection/snapshot import paths updated to the moved queue packages. Verified at code commit e5cb139f.
+
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents readers. Verified at code commit b7f2c8e2.
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: served task docs project sprint
+  `seats` + `masterRef` rows. Verified at code commit 8071a644.
+
+
+- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task snapshot serving now exposes the
+  execution-topology facts carried by TaskDocNode; HTTP/catalog authority remains otherwise unchanged.
 
 - 2026-08-14T12:31:43+02:00 — R44 curator: recorded the metrics worker drain that closes the
   lifespan-shutdown write race. Verification remains closeout-owned.

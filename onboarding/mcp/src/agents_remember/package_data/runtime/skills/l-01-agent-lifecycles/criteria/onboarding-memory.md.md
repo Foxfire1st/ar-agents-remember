@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-06T17:35+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -42,12 +42,18 @@ Catalog files live beside the templates under `criteria/` and are bound per revi
 
 ### Invariants And Boundaries
 
-The standing list MUST run every time the catalog binds; amendments land only through the
-promotion ratchet on the loop owner's acceptance.
+When an onboarding/memory review is explicitly requested, the standing list runs and reports each
+criterion; the catalog does not create a routine closeout or integration gate. Amendments land only
+through the promotion ratchet on the loop owner's acceptance.
 
 ### Todos
 
 No TODO is recorded for this catalog.
+
+
+## CCR-R12@v5 Review Scope
+
+This criteria catalog supplies evidence only when the corresponding review is explicitly requested. It does not create a closeout or integration prerequisite; routine handoff uses the worker and curator targeted/scoped check records and preserves any failed or not-run state.
 
 ### Docs References
 
@@ -73,7 +79,13 @@ No sibling repository evidence is needed for this catalog.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## CCR-L42 current candidate
+
+The onboarding-memory criteria now apply exploratory and new-catalog duties only to a baseline review. Fix-verification uses the sealed outstanding IDs and cannot recensus the catalog or add findings.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The onboarding-memory criteria now apply exploratory and new-catalog duties only to a baseline review. Fix-verification uses the sealed outstanding IDs and cannot recensus the catalog or add findings.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
   exact heading/identifier anchors and fixer-generated ranges; exact non-fixing check returns

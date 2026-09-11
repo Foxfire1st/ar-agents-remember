@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/__init__.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -25,27 +25,96 @@ renderer, and the single/batch store helpers.
 
 Re-exports `document` (`TaskDocument` + the node models incl. `SubTaskRef`/`Section`/`HeaderNote`,
 the `DocKind`/`DocStatus`/`StepStatus` Literals, `TASK_DOCUMENT_SCHEMA`, and the
-`step_total`/`step_done`/`current_step` + R1 `series_total`/`series_done` helpers), `render`
+`step_total`/`step_done`/`current_step` + R1 `series_total`/`series_done` helpers), the
+260815-DAG-L11 graph surface (`SprintExecutionNode`/`SprintExecutionEndpoint`/`SprintExecutionEdge`/
+`SprintExecutionGraph`, `LeafPlacement`, `resolve_graph_endpoint`, `derived_leaf_placement`,
+`leaf_placement_facts`, `numbering_drift_hints`), the 260815-DAG-L14 `SprintSeat`/`SprintSeatState` first-class seat surface, `render`
 (`render_markdown`), and
 `store` (`read_task_doc`/`write_task_doc`/`write_task_docs`/`json_path_for`/`markdown_path_for`/
-`doc_stem`). `__all__` lists the full public set.
+`doc_stem`). Since 260831-CCR (commit `99dc249b`) the facade also re-exports the typed
+task-intent slot models `AcceptanceObligationQuestion`, `ApprovedRequirementPacketRef`, and
+`TaskIntentIdentity` (line 11-15, also in `__all__` line 84-117) so callers reference the typed
+intent forms through the package surface. `__all__` lists the full public set.
 
 ### Invariants And Boundaries
 
 - Consumers (the `task_doc` application entry point, the observer S7 reader) import from
   `agents_remember.tasks`; keep the facade re-exporting the full set.
+- The typed task-intent forms are re-exported, not re-defined here; their home is
+  `models/task_intent`.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument) -> str:"; "def write_task_docs(task_root: Path" | mcp/src/agents_remember/tasks/document.py:182-182; mcp/src/agents_remember/tasks/render.py:29-29; mcp/src/agents_remember/tasks/store.py:40-40 |
+| The schema, renderer, and store owned by this package. | "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" | mcp/src/agents_remember/tasks/document.py:642-642; mcp/src/agents_remember/tasks/render.py:45-45; mcp/src/agents_remember/tasks/store.py:112-112 |
+| Current facade re-exports of the typed task-intent slot models. | "from agents_remember.models.task_intent import ("; "__all__ = [" | mcp/src/agents_remember/tasks/__init__.py:11-15; mcp/src/agents_remember/tasks/__init__.py:87-127 |
 
 ## Series-Contract Notes
 
 The package facade exports `TaskEnclosureRef` so task-document callers can construct `enclosures[]` references without importing the model internals directly.
 
+
+## 260815-DAG-L12 Title Join Exports
+
+The facade additionally exports the shared execution-graph title join (L12-R1/R4): `SprintGraphTitles`, `build_graph_titles` (in-memory join), and `read_graph_titles` (disk-backed join) from `execution_graph_titles.py` — the one source of truth the mermaid renderer and the dashboard projection both consume. `__all__` lists the new set.
+
+## 260821-CLIVE Final Task-Package Contract
+
+The facade exports the source-snapshot and transactional-publication primitives that keep canonical
+task writes independent from projection refresh. The application layer computes the affected sprint
+union and publishes bounded projection effects after the accepted task batch; queue state is never a
+task write precondition. The facade also exports the discard/audit/registration types and atomic
+write/remove primitive described below.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations. | "from .document import ("; "from .store import ("; "__all__ = [" | mcp/src/agents_remember/tasks/__init__.py:17-17; mcp/src/agents_remember/tasks/__init__.py:70-70; mcp/src/agents_remember/tasks/__init__.py:87-127 |
+
+## 260821-CLIVE Task Audit And Registration Exports
+
+The task package exports discard source/unstarted proof, discarded-subtask audit, and task-execution
+registration models plus `write_task_docs_and_remove`. These are canonical task-plane types and the
+rollback-safe parent-write/child-removal primitive; they do not give the queue task-history or
+deletion authority.
+
+## CCR-R02@v2 Typed Intent Exports
+
+The facade re-exports `AcceptanceObligationQuestion`, `ApprovedRequirementPacketRef`, and
+`TaskIntentIdentity` per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, giving
+consumers (route review, serving readers, dashboards) one typed import surface for the normative
+intent slots and identity.
+
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "class TaskDocument(_Doc):"; "def render_markdown(doc: TaskDocument, *, graph_titles:"; "def write_task_docs(" repointed to mcp/src/agents_remember/tasks/document.py:642-642; mcp/src/agents_remember/tasks/render.py:45-45; mcp/src/agents_remember/tasks/store.py:112-112. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  facade card updated for the new typed task-intent re-exports (`AcceptanceObligationQuestion`,
+  `ApprovedRequirementPacketRef`, `TaskIntentIdentity` in imports and `__all__`). Verified at
+  code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the facade's unchanged
+  `TaskDocument` export after schema-internal extraction. Verification remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented the new discard, execution-registration, and atomic write/remove exports. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12: the facade additionally exports `SprintGraphTitles`, `build_graph_titles`, and `read_graph_titles` (the shared execution-graph title join); claim re-read and citation ranges regenerated for the new `render_markdown(doc, *, graph_titles=...)` and multi-line `write_task_docs` signatures. Verified at code commit b7f2c8e2.
+
+
+- 2026-08-20T04:18+02:00 — 260815-DAG-L14: the facade additionally exports `SprintSeat` and
+  `SprintSeatState` (the first-class sprint seat surface). Verified at code commit 2f494982.
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the facade additionally exports the segment-graph
+  surface (`SprintExecutionNode`, `SprintExecutionEndpoint`, `LeafPlacement`,
+  `resolve_graph_endpoint`, `derived_leaf_placement`, `leaf_placement_facts`,
+  `numbering_drift_hints`). Verification remains closeout-owned.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the task package facade exports execution nature,
+  sprint graph/edge models, and the cross-root atomic document batch writer.
 - 2026-08-14T06:34+02:00 — L23 final candidate review: task exports expose the canonical document
   and reopen-planning helpers used by lineage/start admission; no second task identity is added.
 
@@ -59,7 +128,7 @@ The package facade exports `TaskEnclosureRef` so task-document callers can const
   controller can persist coupled leaf/master task-document updates through the package surface. Verification
   metadata pinned until closeout stamps the code commit.
 - 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the task package now exports `TaskEnclosureRef`, the JSON task-doc reference that binds leaf documents to enclosure `series-contract.md` paths. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T06:03 — Slice 3c reopened (R4): facade now also re-exports `HeaderNote` (the extra-header-line model). Verification metadata pinned until closeout stamps the R4 code commit.
-- 2026-06-19T03:17 — Slice 3c reopened (R1): facade now also re-exports `series_total`/`series_done` (the master series-progress helpers). Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: facade now also re-exports `SubTaskRef` and `Section` (the master series-index + section models). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1 as the task-document package facade. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-19T06:03+02:00 — Slice 3c reopened (R4): facade now also re-exports `HeaderNote` (the extra-header-line model). Verification metadata pinned until closeout stamps the R4 code commit.
+- 2026-06-19T03:17+02:00 — Slice 3c reopened (R1): facade now also re-exports `series_total`/`series_done` (the master series-progress helpers). Verification metadata pinned until closeout stamps the R1 code commit.
+- 2026-06-14T00:16+02:00 — Slice 3c commit 3: facade now also re-exports `SubTaskRef` and `Section` (the master series-index + section models). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
+- 2026-06-13T22:34+02:00 — Created for slice 3c commit 1 as the task-document package facade. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

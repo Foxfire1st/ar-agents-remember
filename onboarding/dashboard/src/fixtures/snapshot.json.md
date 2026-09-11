@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/fixtures/snapshot.json`           |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T09:30+02:00                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -16,8 +16,8 @@
 
 ## Purpose
 
-The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 764 lines, shaped like the
-persisted `latest-state.json`. Three things read it — `test/contract.test.ts` (which measures the
+The dashboard's stand-in for the server: one `WorkspaceProjection` payload, 1,923 lines at the R03
+commit, shaped like the persisted `latest-state.json`. Three things read it — `test/contract.test.ts` (which measures the
 TypeScript mirror against it in three directions), `test/fixtures/wire.ts` (which takes every builder
 base from it), and `data/store.test.ts`; `e2e-production/cockpit.production.spec.ts` reads it off disk.
 
@@ -27,17 +27,22 @@ producer-to-TypeScript provenance are separate claims. `fixtures/wire.ts` draws 
 
 ```text
 observer/projection.py schema  --generated + stale-checked-->  types/projection.ts
-                                                               ↑ typed fixture builders
-                                                               ↕ measured sample coverage
-                                                        snapshot.json (manual)
+                                                                ↑ typed fixture builders
+                                                                ↕ measured sample coverage
+                                                         snapshot.json (manual)
 ```
 
 So a green sample-coverage build claims that this manual payload exercises the generated mirror.
 The projection generator separately binds that mirror to the producer schema, including fields a
 sample could miss because their values are currently null or absent.
 
-L23 extends the manual sample with lifecycle-operation rows covering both operation kinds and every
-closed status and phase member. The sample carries public progress/result/failure/guidance fields
+L14 extends the manual sample with the new sprint structure: the `dependency-aware sprint` task
+document carries non-empty `seats` (an identity-bearing active orchestrator + an identity-less
+planned strategist) and two typed `masterRef` sub-task rows (both master targets exist in the same
+fixture, so the dev-server exercises the sprint → master navigation for real); every other task
+document defaults `seats: []`.
+
+L23 extends the manual sample with representative lifecycle-operation rows. The sample carries public progress/result/failure/guidance fields
 but no operation key, candidate fingerprint, approval claim, or worker PID, preserving the
 producer's private-plane boundary while making the generated dashboard contract measurable.
 
@@ -45,48 +50,17 @@ producer's private-plane boundary while making the generated dashboard contract 
 
 ### Logic
 
-Top-level keys in wire order: `version` (1), `generatedAt`, `lifecycles`, `enclosures`, `providers`,
-`activeWorktreeGroups`, `metrics`, `analytics`.
+The current serialized fixture starts with `activeWorktreeGroups` and `analytics`; it also carries
+`closeoutQueues`, `enclosures`, `generatedAt`, `lifecycles`, `metrics`, `providers`, and `version` (1).
+Use the current reference rows below for source locations
+cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:2-2).
 
-- **cit:([`lifecycles`], dashboard/src/fixtures/snapshot.json:4-112) — six rows, one per state.** `blocked-001`, `running-000`, `paused-002`,
-  `awaiting-003`, `completed-004`, `abandoned-005`, and their phases spread across all six of `build`,
-  `reframe-research`, `request`, `trust-checkpoint`, `decide`, `close`. Two rows carry a `gate`
-  (`GATE-1` open with `decisions: ["approve","revise"]`, `GATE-0` decided), both with a non-empty
-  `evidenceRefs`. Every row carries `stateEnteredAt`. The `awaiting-developer` row is the state the
-  mirror had never declared, and it is here so the vocabulary check can bite.
-- **cit:(["\"enclosures\": ["], dashboard/src/fixtures/snapshot.json:113-135)** — one enclosure; **two providers** (a code provider and
-  a memory provider) are pinned by cit:(["\"snapshotStaleSeconds\": 3.5"], dashboard/src/fixtures/snapshot.json:282-282),
-  joined by `worktreeGroup: "sim-group"`; **cit:([`activeWorktreeGroups`], dashboard/src/fixtures/snapshot.json:288-288)** —
-  `["sim-group"]`.
-- **cit:([`metrics`], dashboard/src/fixtures/snapshot.json:289-289)** — `lifecycleCount: 6`, one bucket per LIVE state (`runningCount`,
-  `blockedCount`, `pausedCount`, `awaitingDeveloperCount`, each 1), `totalTokens: 2800`, and a
-  `stalenessHistogram` of `{ fresh, aging }`. The four buckets are exactly the keys `metricsFor([])`
-  produces, which is what `contract.test.ts` asserts set-equality on — the terminal pair deliberately
-  has no bucket.
-- **`analytics`** cit:([`analytics`], dashboard/src/fixtures/snapshot.json:169-763) — all thirteen keys present and none empty: cit:([`driftSnapshots`], dashboard/src/fixtures/snapshot.json:299-299),
-  cit:([`stalestSidecars`], dashboard/src/fixtures/snapshot.json:312-312), cit:([`setupSummaries`], dashboard/src/fixtures/snapshot.json:320-320), cit:([`setupProgress`], dashboard/src/fixtures/snapshot.json:331-331), cit:([`routeCoverage`], dashboard/src/fixtures/snapshot.json:341-341),
-  cit:([`toolReports`], dashboard/src/fixtures/snapshot.json:350-350), cit:([`agentPickups`], dashboard/src/fixtures/snapshot.json:358-358), cit:([`expectationRows`], dashboard/src/fixtures/snapshot.json:396-396), cit:([`ledgers`], dashboard/src/fixtures/snapshot.json:413-413),
-  cit:([`taskDocuments`], dashboard/src/fixtures/snapshot.json:431-431), `attentionQueue` (L368, three rows), `engineProcesses` (L406, eight pods),
-  cit:(["\"series\": ["], dashboard/src/fixtures/snapshot.json:944-944).
-
-**The payload is composed to satisfy specific checks, not sampled at random.** `contract.test.ts`
-requires that every closed vocabulary in the mirror is exercised in FULL, pooled per vocabulary rather
-than per path, and this file is built to that requirement:
-
-| Vocabulary | Members | Where the fixture spreads them |
-| --- | --- | --- |
-| `LIFECYCLE_STATES` | 6 | one lifecycle per state |
-| `PHASES` | 6 | one phase per lifecycle |
-| `ATTENTION_SEVERITIES` | 3 | the three `attentionQueue` rows |
-| `ATTENTION_LANES` | 3 | the same three rows |
-| `PROCESS_HEALTHS` | 8 | one health per `engineProcesses` pod |
-| `PROCESS_FACT_STATES` | 6 | pooled across six registered paths — the four commit refs, `providers[].factState`, `landing[].factState` |
-
-Likewise the seven absorbing nodes named in `INDEX_SIGNATURE_SITES` each carry at least one served
-value here (`lifecycles[].ask`, `gate.packet`, `gate.evidenceRefs[]`, `metrics.stalenessHistogram`,
-`driftSnapshots[].counts`, `setupSummaries[].resultCounts`, `engineProcesses[].retryArgs`) — a wall in
-the type-level walk that the payload omitted would be an unreportable gap, so the assertion demands the
-node be present.
+The CCR-R03@v1 curation entry records a formatting-only reserialization at source commit
+`fbc89847233b1c5959f56475f2cb51f936d5ef0b`. That historical statement does not describe
+all later fixture changes: the current operation sample also carries the L15 meaningful revision
+field described below. The current lifecycle sample is
+cit:(["\"lifecycles\": ["], dashboard/src/fixtures/snapshot.json:1824-1961);
+the current metrics sample is cit:(["\"metrics\": {"], dashboard/src/fixtures/snapshot.json:1962-1973).
 
 ### Conventions
 
@@ -110,10 +84,9 @@ node be present.
   once, because `AsJsonModule` accepts `never[]` as assignable to anything and `ServedOnlyPaths<never, …>`
   is `never`. `MirrorOnlyPaths` now names any path that stops being reached, so this is enforced, not
   merely asked for.
-- **Every vocabulary member must stay exercised.** Before this leaf the runtime check covered 2 of 6
-  states, 2 of 6 phases and 1 of 3 severities, so deleting `"close"` from `PHASES` produced zero
-  failures. `contract.test.ts` now asserts set-equality between each vocabulary and what the fixture
-  samples, so both dropping a member from the mirror and dropping its sample from here fail.
+- **Every sampled vocabulary value must be legal, and every registered path must be non-vacuous.**
+  The fixture is representative rather than exhaustive. New producer enum members flow through schema
+  generation and stale-output validation without forcing unrelated full-object rows into this file.
 - **The rows the builders anchor on must keep existing.** `fixtures/wire.ts` calls `demandServed(…)` on
   `lifecycles[0]`, `enclosures[0]`, `providers[0]`, `analytics.taskDocuments[0]`,
   `analytics.engineProcesses[0]`, `analytics.agentPickups[0]`, `analytics.attentionQueue[0]`, and a
@@ -130,8 +103,8 @@ node be present.
 
 1. **It is a sample, not a schema.** A server field typed `T | None` that happens to be null is *omitted*
    by `exclude_none=True`, so no sampled payload can reveal it. Only the schema can.
-2. **It cannot establish producer vocabulary.** The full-coverage assertion forces this sample to
-   exercise every member the generated mirror knows; schema generation owns producer-to-mirror vocabulary.
+2. **It does not establish producer vocabulary.** Schema generation owns exhaustive
+   producer-to-mirror vocabulary. This sample proves only that values it carries are legal.
 3. **It cannot separate two field-identical models.** `SeriesSectionNode` and `TaskSectionNode` declare
    the same three fields, so no payload and no structural walk distinguishes them.
 4. **The sample remains manual while the mirror is generated.** Do not describe this JSON payload as
@@ -154,16 +127,16 @@ absent from the file rather than present as `null`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:4-112 |
-| One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:288-288 |
-| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:289-289 |
-| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:169-763 |
+| Six lifecycles covering all six states and all six phases, two gates with `evidenceRefs`, `stateEnteredAt` on every row. | `lifecycles` | dashboard/src/fixtures/snapshot.json:1824-1824 |
+| One enclosure, two providers, and the `activeWorktreeGroups` join value. | `activeWorktreeGroups` | dashboard/src/fixtures/snapshot.json:2-2 |
+| `metrics` with one bucket per live state and no bucket for the terminal pair. | `metrics` | dashboard/src/fixtures/snapshot.json:1962-1962 |
+| All thirteen analytics keys, none empty, including `expectationRows` and eight `engineProcesses` pods spanning all eight healths. | `analytics` | dashboard/src/fixtures/snapshot.json:3-3 |
 | The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. | `write_projection` | mcp/src/agents_remember/serving/projections/projection_store.py:156-162 |
-| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:53-53; mcp/src/agents_remember/observer/projection.py:990-1009 |
-| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:367-381 |
-| The derived `VOCABULARIES` registry (11 paths, 6 vocabularies) and the full-coverage assertion this payload is composed to satisfy. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:268-293 |
+| The models that define every key here, and the `extra="forbid"` rule that makes an invented field impossible on the wire. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
+| The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. | "the mirror declares everything the server sends" | dashboard/src/test/contract.test.ts:456-470 |
+| The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. | `VOCABULARIES` | dashboard/src/test/contract.test.ts:287-425; dashboard/src/test/contract.test.ts:485-495 |
 | `INDEX_SIGNATURE_SITES` — the seven absorbing nodes this payload must carry a value at, each with a written reason. | `INDEX_SIGNATURE_SITES` | dashboard/src/test/contract.test.ts:221-229 |
-| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:186-186 |
+| `KnownUnsampled` — the two app-injected fields deliberately absent here, and why. | `KnownUnsampled` | dashboard/src/test/contract.test.ts:187-190 |
 | The provenance boundary: this snapshot is manual, while the TypeScript contract is generated and stale-checked from the Pydantic schema. | "is NOT generated" | dashboard/src/test/fixtures/wire.ts:22-35; scripts/sync-projection-types.py:43-65 |
 | `demandServed` and the eight anchor rows the builders require this payload to keep. | `demandServed` | dashboard/src/test/fixtures/wire.ts:73-76 |
 | The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. | `asServedProjection` | dashboard/src/test/servedProjection.ts:22-43 |
@@ -186,7 +159,60 @@ Engine Process fixtures now sample aggregate `current`, `blocked`, and
 contract-addressed `worktree_sync` recovery. These are wire-contract examples,
 not frontend-derived Git facts.
 
+
+## 260815-DAG-L12 Fixture Graph View
+
+The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-ready `executionGraphView` (L12-R4): a segmented master with a joined title and an early leaf, plus a dependent second master waiting on it with a recorded predecessor reason and judgment id. Those rows remain representative contract examples; complete enum ownership stays with schema generation.
+
+
+## 260815-DAG Master Full-Gate Repair
+
+The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "super-to-leaf"`, state `current`) and two execution-graph view nodes (a `segment` with `frontierState: "landed"` and a `lump` with `frontierState: "ready"`) as representative dashboard contract examples.
+
+## 260831-CCR-L15 Fixture Cursor Sample
+
+The hand-kept fixture snapshot now seeds `meaningfulRevision: 1` on the lifecycle
+operation node that previously carried only the revision-less projection fields, so dashboard and
+wire-fixture consumers have a cursor-carrying sample matching the regenerated schema.
+
 ## Update History
+
+- 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
+
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `lifecycles` repointed to dashboard/src/fixtures/snapshot.json:1824-1824. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `metrics` repointed to dashboard/src/fixtures/snapshot.json:1962-1962. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "the mirror declares everything the server sends" repointed to dashboard/src/test/contract.test.ts:456-470. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `meaningfulRevision: 1` fixture sample on the lifecycle operation node.
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the fixture lifecycle-operation envelope additions (identity/componentBindings/worker/approval/recommendedAction + schema/state-matrix versions). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the R03 fixture reserialization (single-line array formatting; 1,979 → 1,923 lines) and refreshed the top-level key anchor ranges; no served-field or value semantics changed.
+
+- 2026-08-25T16:21:43+02:00 — 260824-PDLS-L12 curator: removed the stale claim that this
+  representative payload must instantiate every closed-vocabulary member. The generated schema and
+  stale-output check own exhaustive producer vocabulary; this fixture remains responsible for
+  structural path coverage and legality of sampled values. Verification awaits the candidate code
+  commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: snapshot fixture extended with the super-to-leaf relation and two execution-graph view nodes. Verified at code commit e5cb139f.
+
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   the sprint fixture carries the render-ready `executionGraphView` scenario (L12-R4). Verified at code commit b7f2c8e2.
+
+- 2026-08-20T04:40+02:00 — 260815-DAG-L14: the sprint fixture carries non-empty `seats` (both
+  identity-present and identity-absent members) and two typed `masterRef` rows whose master targets
+  exist in the same fixture; every other task document defaults `seats: []`. Verified at code
+  commit 9c3180c1.
+
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the canonical dashboard snapshot now includes a
+  reasoned sprint execution graph, derived waves, and both organizational and atomic commanded
+  master examples; ordinary masters publish empty derived waves. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: recorded complete lineage vocabulary samples in the canonical snapshot; verification remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: documented the fixture's complete lifecycle-operation kind/status/phase sample and private-identity boundary; verification provenance remains closeout-owned.
 

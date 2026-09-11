@@ -5,71 +5,73 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_codex_native_history.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:38+00:00 |
+| lastVerifiedCommitHash |  `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate |  2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Pins the Codex native-history reader's contract probe, opaque one-shot continuation, explicit
-resource ceilings, cycle/refetch guards, exact legacy fallback, and typed IPC round trip.
+Bounded native-history paging and typed refusal propagation.
 
 ## Code Commentary
 
 ### Logic
 
-The suite proves items-first probing, installed-shaped turns fallback, linear expansion at 10/20/40
-frames, oldest-walk eviction, over-cap refusal, `A -> B -> A` source-cursor termination, and no
-silent fallback after a recognized bounded RPC error. Legacy cases require two exact `-32601`
-responses, apply the source-response ceiling to the aggregate frame bytes, make one `thread/read`
-across multiple AR pages, and reject evicted continuation without refetch.
+Opaque continuation consumes each source page once with one-item bounded requests. A two-cursor cycle terminates before re-requesting a page. A recognized bounded-RPC failure does not silently fall back; oversized materialized responses and both IPC clients retain the typed limit outcome.
 
 ### Conventions
 
-Scaled ceilings make resource behavior deterministic without allocating production-size payloads.
-Exact request lists are assertions: they prevent an implementation from appearing correct while
-reissuing or silently changing history contracts.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Bounded capability is runtime-result authority; version strings are absent from selection tests.
-- Cursor cycles and expired cursors terminate typed.
-- A continuation emits every native id once and decodes each source response once.
-- The complete parsed response ceiling is separate from the 128 MiB transport fuse.
+Materialization ceilings are distinct from transport fuses. The remaining cases do not separately establish expired-cursor or legacy fallback behavior.
 
 ### Todos
 
-None known.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The history reader implements the contracts exercised by this suite. | `CodexNativeHistoryReader`; `read_page` | mcp/src/agents_remember/serving/codex_app_server_history.py:110-612 |
-| Typed native-history errors preserve codes and byte evidence. | `NativeHistoryUnavailable`; `NativeHistoryLimitExceeded` | mcp/src/agents_remember/errors.py:146-151; mcp/src/agents_remember/errors.py:154-166 |
+| Bounded items are probed and opaque cursor consumes each source page once. | `test_bounded_items_are_probed_and_opaque_cursor_consumes_each_source_page_once` | mcp/tests/test_codex_native_history.py:105-136 |
+| Two cursor cycle terminates typed without re requesting a source page. | `test_two_cursor_cycle_terminates_typed_without_re_requesting_a_source_page` | mcp/tests/test_codex_native_history.py:140-173 |
+| Recognized bounded rpc failure never silently falls back. | `test_recognized_bounded_rpc_failure_never_silently_falls_back` | mcp/tests/test_codex_native_history.py:177-192 |
+| Source response over post transport materialization ceiling is typed. | `test_source_response_over_post_transport_materialization_ceiling_is_typed` | mcp/tests/test_codex_native_history.py:196-211 |
+| Native history limit outcome survives both control ipc clients. | `test_native_history_limit_outcome_survives_both_control_ipc_clients` | mcp/tests/test_codex_native_history.py:214-231 |
 
 ## Cross-Repo References
 
-No cross-repository fixture is used.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated the unavailable and bounded-materialization exception definitions. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the native-history errors.py citations (390-397/398-410 to 423-428/431-443) shifted by the CCR-R08 +33-line errors.py insertion. Citation-only re-anchor; no content impact.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

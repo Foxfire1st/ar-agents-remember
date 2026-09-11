@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/mcp/tools/gates.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T12:15+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,10 +53,14 @@ No external domain source governs this repository-local boundary.
 | --- | --- | --- |
 | Structural gate adapters receive typed document-owned requests. | `structural_lifecycle_gate_payload`; `structural_gate_decide_payload`; `structural_gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:77-90; mcp/src/agents_remember/mcp/tools/gates.py:123-136; mcp/src/agents_remember/mcp/tools/gates.py:199-203 |
 | Exact-id gate adapters are separate internal composition seams. | `gate_create_payload`; `gate_decide_payload`; `gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-55; mcp/src/agents_remember/mcp/tools/gates.py:92-110; mcp/src/agents_remember/mcp/tools/gates.py:191-196 |
-| Structural response models omit private correlations. | `StructuralGateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateListResponse` | mcp/src/agents_remember/models/structural/gates.py:108-151 |
-| The response registry distinguishes advertised structural names from internal compatibility builders. | `INTERNAL_COMPAT_TOOL_NAMES`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:113-134; mcp/src/agents_remember/models/tool_registry.py:217-221 |
+| Structural response models omit private correlations. | `StructuralGateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateListResponse` | mcp/src/agents_remember/models/structural/gates.py:108-160 |
+| The response registry distinguishes advertised structural names from internal compatibility builders. | `INTERNAL_COMPAT_TOOL_NAMES`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141; mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 
 ## Update History
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
 - 2026-08-11T12:15+02:00 — Reconciled the card with the structural public boundary: document-and-role
   gate operations are current; exact ids are internal correlations. Verification remains pinned

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `dashboard/scripts/check-diff-coverage.mjs`                 |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:51:32+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`                  |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -16,10 +16,7 @@
 
 ## Purpose
 
-The dashboard per-diff coverage floor (260731-EFA-L8 R7), mirroring the Python
-changed-lines gate. It scores every changed line the v8 report records as an
-executable statement against the Vitest run and fails when the covered share is
-below the floor (default 90%).
+Reports diagnostic changed-line dashboard coverage from the existing v8 artifact. Changed executable statement lines contribute to the denominator; positive execution contributes to the numerator. Missing lines remain visible, but no mandatory percentage or 90% floor can fail delivery. The CLI retains its Dagger admission and missing/malformed artifact failures.
 
 ## Code Commentary
 
@@ -33,8 +30,10 @@ and tallies `{covered, total, missing}` per changed line that carries an
 executable statement (round-8 ruling OPTION 1). `resolveBase` mirrors the Python
 resolver order — `AR_GATE_DIFF_BASE` → `GITHUB_BASE_REF` (`origin/<ref>` then
 `<ref>`) → `@{upstream}` → `origin/HEAD` → `main` → empty tree (F9 parity) — and
-`main()` runs the diff with a 256 MiB pipe buffer so series-fork diffs cannot
-ENOBUFS.
+`main()` first invokes the canonical Dagger-environment validator, then runs the
+diff with a 256 MiB pipe buffer so series-fork diffs cannot ENOBUFS. The guard is
+inside `main`, not module import: Vitest can import and exercise the pure scoring
+helpers directly, while invoking the changed-lines CLI remains Dagger-only.
 
 ### Conventions
 
@@ -44,7 +43,10 @@ Node ESM, pure exported helpers, `#!/usr/bin/env node` runner; read-only.
 
 Only `src/` production lines count; tests, `src/test`, `src/dev`, `src/types` are
 excluded. Files without a v8 entry contribute nothing. The script never modifies
-coverage or git state.
+coverage or git state. Direct targeted Vitest may import the pure helpers for
+diagnostic unit tests, but direct CLI execution cannot score or publish changed-lines
+evidence outside a matching nonce-attested Dagger run. There is no bypass, shadow
+configuration, fallback executor, or compatibility reader.
 
 ### Todos
 
@@ -61,11 +63,15 @@ configured for this file.
 
 ## Repo-Internal References
 
+The exact source declarations below establish the current behavior; this inventory is not execution evidence.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The executable-statement scoring helpers. | `executableStatementLines`; `coveredStatementLines`; `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:14-14; dashboard/scripts/check-diff-coverage.mjs:25-25; dashboard/scripts/check-diff-coverage.mjs:43-43 |
-| The Python-parity base resolution and runner. | "const resolveBase = () => {"; "function main() {" | dashboard/scripts/check-diff-coverage.mjs:108-108; dashboard/scripts/check-diff-coverage.mjs:78-78 |
-| The contract suite pinning the accounting. | "describe(\"check-diff-coverage executable-statement semantics\", () => {" | dashboard/scripts/check-diff-coverage.test.mjs:12-12 |
+| Executable statement-line accounting | `executableStatementLines` | dashboard/scripts/check-diff-coverage.mjs:14-22 |
+| Covered statement ranges | `coveredStatementLines` | dashboard/scripts/check-diff-coverage.mjs:25-36 |
+| Production filtering and changed-line tally | `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:43-76 |
+| Dagger admission and comparison-base selection | `main` | dashboard/scripts/check-diff-coverage.mjs:78-132 |
+| Required coverage artifact and diagnostic result without a floor | `coverage` | dashboard/scripts/check-diff-coverage.mjs:172-204 |
 
 ## Cross-Repo References
 
@@ -77,6 +83,12 @@ No cross-repository implementation source governs this file.
 
 ## Update History
 
+- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: documented the direct-main-only
+  Dagger guard. Pure scoring imports remain available to diagnostic Vitest; direct changed-lines
+  CLI execution and its evidence remain Dagger-only. Verification and acceptance stay
+  closeout-owned.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator (round 8 delta): created this sidecar
   for the executable-statement diff-coverage unit (architect ruling OPTION 1) and
   its base-resolution runner. Verification pinned to `cf5ef50` until closeout

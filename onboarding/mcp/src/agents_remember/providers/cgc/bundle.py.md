@@ -31,7 +31,7 @@ It builds path replacement pairs for POSIX and platform string variants, safely 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | CGC seed orchestration calls this module between export and load. | `rewrite_cgc_bundle_paths` | mcp/src/agents_remember/providers/cgc/seed.py:591-607 |
-| Tests exercise JSON, JSONL, and text rewriting through the provider setup facade export. | `test_rewrite_cgc_bundle_paths_rewrites_json_jsonl_and_text` | mcp/tests/test_provider_setup.py:372-416 |
+
 
 ## Update History
 

@@ -227,11 +227,12 @@ sandboxed inside the interpreter.
 
 Source comments explain the technical **why** of the code and must stand alone for a maintainer who has only this repository.
 
-1. Do not place task, leaf, decision-item, review, requirement, or audit identifiers in source comments.
+1. Do not place task, leaf, decision-item, review, requirement, or audit identifiers in source comments, except the bounded requirement-identifier convention in rule 6.
 2. Do not use conversation provenance such as who requested or ruled on a change, and do not point source comments at report or task paths.
 3. Keep the technical constraint, evidence boundary, invariant, or trade-off that a future maintainer needs to preserve.
 4. Product-role vocabulary is allowed when it names a real runtime role, and shipped `docs/design/` pointers are allowed when they explain the product contract.
 5. Put workflow history and review provenance in Git history, task artifacts, and onboarding rather than source comments.
+6. Bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement identifiers naming a durable leaf requirement or step are allowed in source comments and are the preferred way to tie a comment to its contract (doctrine D-6, reconciled at 260815-DAG-L15). This carves out the bounded identifier convention only: task, chat, review, decision-item, or report provenance and paths stay out of source comments.
 
 ## Required Agent Behavior Before Editing
 
@@ -413,6 +414,45 @@ A code smell is not automatically a defect.
 2. If a flagged smell turns out to be intentional, document the intent at the site (a short comment, or a note here) instead of refactoring it into something worse.
 3. Behavior-preserving cleanups keep the suite green at each step; do not bundle a risky structural change with unrelated edits.
 4. Correct-but-superlinear is a DEFECT, not a smell: a change that passes every correctness test but composes into an accidentally-quadratic call path (see Anti-Patterns and "Stability, Bounded Resources, and Reclamation" below) ships broken even with a fully green suite. Do not wave it through as style.
+
+## Guard Admissibility
+
+A guard is a refusal written into the code. It is admissible only while all three of these
+hold, and it is removed when they stop holding.
+
+1. **Evidence, not prediction.** The failure it prevents actually happened and can be cited at
+   the guard site — a commit, an incident, a red test, a report. A guard built from a predicted
+   failure mode that nobody observed is a guess, and the guess outlives the reasoning that
+   produced it. Requiring the citation is what makes "painfully evident" checkable rather than a
+   matter of taste.
+2. **Operator-legible.** The refusal tells an operator who does not know the internals what
+   broke, in plain language. A payload that prints `expected == observed` with `matches: true`
+   and still refuses is the exact failure this rule exists to prevent: a refusal that cannot
+   describe its own cause.
+3. **A named remedy.** The refusal advertises what to do next, as an exact tool and arguments
+   where one exists. When no remedy is possible, or the only remedy would defeat the purpose of
+   the implementation, say *that* explicitly rather than leaving it implicit. A refusal with no
+   advertised way forward is indistinguishable from a wall.
+
+**A guard with no cited failure has no intent behind it.** That is the tell, and it is why such
+guards cannot explain themselves: the illegibility is a provenance problem, not a writing
+problem. A design that was thought through end to end can be wrong and still shows a line of
+reasoning that goes somewhere. A speculative guard has no line to follow, so there is nothing to
+argue with and nothing to revise.
+
+**Evidence alone is not sufficient.** A guard is also inadmissible when it fights the goal of
+the implementation it protects, even when the failure it prevents is real — a contract
+byte-freeze with genuine evidence behind it still made the intended recovery path unreachable,
+so the thing it protected could never be finished. A corsett and a slop guard are the same
+mistake from opposite ends.
+
+**Every guard states what it does not cover.** A safeguard that cannot say where its authority
+stops is claiming more than it verifies.
+
+(Developer ruling 2026-09-11, stated as always-operative global doctrine.) Catching engagement:
+the anti-concurrency closeout audit — `notes/2026-09-10-anticonsurrency-smell-audit/CUT-SPEC.md`
+and its ledger. The exemplar that clears the bar is
+`mcp/tests/test_wire_vocabulary_exhaustiveness.py`, which measures 165 of 213 and says so.
 
 ## Stability, Bounded Resources, and Reclamation
 

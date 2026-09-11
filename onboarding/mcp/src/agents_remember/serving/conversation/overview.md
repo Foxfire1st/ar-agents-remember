@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 
 ## What This Area Is
 
@@ -229,10 +229,10 @@ composition and authorization contract suites.
 | The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | "class ConversationRuntime" | mcp/src/agents_remember/serving/conversation/runtime.py:59-59 |
 | The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | "class ConversationAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:34-34 |
 | The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:28-28 |
-| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:230-230; mcp/src/agents_remember/serving/harness_control_api.py:186-186 |
+| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:244-244; mcp/src/agents_remember/serving/harness_control_api.py:186-186 |
 | The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:89-89 |
-| The foundation suite verifies two-port topology, child ownership (the active child's exact two routes, the library child's exact five routes, and the control child's exact seventeen routes), one registration seam, exact helper pins, and fixture non-promotion. | "test_exactly_two_conversation_ports_exist" | mcp/tests/test_conversation_foundation.py:24-24 |
-| The composition contract suite proves single installation, duplicate/missing/foreign/missing-member failure, per-app isolation, no import-time singleton, and no production identity-injection or fixture/PTY reliance. | `_NoSessionHost` | mcp/tests/test_conversation_runtime_composition.py:42-47 |
+
+
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | "test_loopback_peers_resolve" | mcp/tests/test_conversation_authorization.py:130-130 |
 
 ## Cross-Repo References
@@ -372,10 +372,11 @@ siblings live. Harness-specific source probing remains in the serving adapter la
 
 **Nothing in this route's contract changed.** `models.py` — the normalized wire grammar, every
 `TypeAlias`, discriminated union, envelope and status/telemetry model — emits exactly what it did.
-Its only edit was the deletion of five `# noqa: UP040` / `# noqa: UP046` directives that had been
-suppressing rules the linter no longer raises, now that Ruff's `target-version` matches the
-package's declared Python 3.11 floor rather than 3.13. The runtime composition authority, the two
-read ports and the three child-router seams are all as described above.
+Its only edit was the deletion of five `# noqa: UP040` / `# noqa: UP046` directives under the then
+current Python 3.11 floor. That sentence is historical: the later project-wide runtime migration
+made Python 3.13 the only supported minor and restored Ruff's `py313` target without changing this
+route's wire contract. The runtime composition authority, the two read ports and the three
+child-router seams are all as described above.
 
 What a reader must know is where the children's new vocabulary lives, because these are the values
 that now cross the seams this route fixes:
@@ -473,6 +474,19 @@ and composition governor for the conversation route; the wire-model governance l
 
 ## Update History
 
+- 2026-09-05T07:22:10Z — CCR L31 independent history readback: restored the original 243-243 coordinate in the dated 2026-08-01 entry and made its historical citation wrapper inert. The retained verification commit 60e429d17e9fcbca3ab1c02563afcaa5761b8c5a was checked and contains the declaration at that exact line; the current-body citation still resolves the current declaration at 244. This preserves historical coordinates without claiming the dated entry was authored against the later candidate.
+
+
+
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-08-29T16:13+02:00 — Marked the former Python 3.11-floor explanation as historical after the
+  repository-wide 3.13-only migration; the conversation wire contract remains unchanged.
+
+- 2026-08-28T14:15+02:00 — Re-read the Claude mapper delta at the conversation boundary. The
+  existing projector child owns its structured interaction, interrupt-correlation, mutation-diff,
+  and malformed-input preservation semantics; no parallel conversation authority was added.
+
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 updates the conversation boundary for native Codex executable resolution and product-agnostic initialize diagnostics: the plane resolves the native executable, while exact client identity remains the handshake authority. Verification provenance remains closeout-owned.
 
 - 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the conversation route's
@@ -508,7 +522,7 @@ and composition governor for the conversation route; the wire-model governance l
   `enables_capabilities: Literal[False]` is at L1281). Seventh: the composition row cited
   `harness_control_api.py` L144-L162, which is `resolve_terminal_open_selection` and was wrong
   BEFORE this leaf; the claim was also wrong on its face — construction happens in
-  cit:(["def create_app"], mcp/src/agents_remember/serving/app.py:230-230), and `harness_control_api.py` L182-L195 is where the single
+  historical-source (recorded verification 60e429d17e9fcbca3ab1c02563afcaa5761b8c5a): `def create_app` at `mcp/src/agents_remember/serving/app.py:243-243`, and `harness_control_api.py` L182-L195 is where the single
   `register_conversation_routes(app, runtime)` install call sits. Corrected the router row's
   "three behavior-empty child routers", contradicted by this same file's own text. Verification
   metadata pinned until closeout stamps the L4 commit.

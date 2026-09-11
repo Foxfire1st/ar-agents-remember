@@ -5,79 +5,92 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_lifecycle_operations.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T15:19+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:46+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-This is the forcing suite for durable asynchronous closeout/integration operations. It proves task-addressed identity, exact retry, immutable candidate capture, legal recovery, cancellation boundaries, detached execution, worker reporting, and public projection privacy.
+Asynchronous lifecycle operation launch and cancellation authority.
 
 ## Code Commentary
 
 ### Logic
 
-Tests create real task contracts and durable operation records, then exercise duplicate convergence, conflicting input refusal, changed candidate identity, stale recovery, exact approval reuse, store corruption and transition guards, cancellation, detached launch, progress, terminal outcomes, closeout/integration dispatch, completion cleanup, and script entry.
-
-The packaged-entry regression now also doubles the service builder and binder, proving `main`
-creates the default `WorktreeServices`, binds that exact instance, and only then calls `run_worker`
-with the parsed contract path and operation kind. This covers the installed-process composition
-boundary rather than merely proving argument parsing and `__main__` exit propagation.
-
-The detached-launch regression separately proves the native environment keeps its installed
-`PYTHONPATH` byte-for-byte and does not inject the task worktree's `mcp/src`, while retaining the
-private process group and task-addressed module invocation. Together the two regressions cover both
-sides of worker bootstrap: select installed code at launch, then bind its real services in `main`.
+Starting returns queued immediately and an exact duplicate observes one launch. A contract lease excludes cross-kind or terminal mutation. Before the boundary, cancellation proves worker exit before releasing its authority. After commit proof, cancellation refuses with immutable-output recovery required and keeps approval claimed.
 
 ### Conventions
 
-Filesystem and model transitions are real; subprocess and lifecycle mutation endpoints are doubled only at their external boundary.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Agents use task and operation kind, never operation keys or worker PIDs.
-- Input, candidate, state fingerprint, and approval claim cannot change across recovery.
-- Cancellation cannot reclaim a consumed approval.
-- A post-boundary failure remains recoverable as the same operation.
+Public projection omits worker internals. An irreversible result cannot make spent approval reusable or turn cancellation into rollback.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this project-owned operation protocol.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No external source governs the internal durable lifecycle state machine. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, observe, retry, recovery, transition, cancellation, launch, worker, and integration edges are all forced. | `test_start_returns_immediately_and_duplicate_observes_one_launch`; `test_worker_parser_main_and_script_entry_use_task_addressing` | mcp/tests/test_lifecycle_operations.py:111-126; mcp/tests/test_lifecycle_operations.py:867-924 |
+| Start returns immediately and duplicate observes one launch. | `test_start_returns_immediately_and_duplicate_observes_one_launch` | mcp/tests/test_lifecycle_operations.py:40-57 |
+| Contract lifecycle lease excludes cross kind and terminal mutation. | `test_contract_lifecycle_lease_excludes_cross_kind_and_terminal_mutation` | mcp/tests/test_lifecycle_operations.py:60-71 |
+| Cancel before boundary proves exit before releasing worker authority. | `test_cancel_before_boundary_proves_exit_before_releasing_worker_authority` | mcp/tests/test_lifecycle_operations.py:74-135 |
+| Cancel after boundary refuses without making approval reusable. | `test_cancel_after_boundary_refuses_without_making_approval_reusable` | mcp/tests/test_lifecycle_operations.py:138-162 |
 
 ## Cross-Repo References
 
-No sibling-repository protocol is exercised.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary worktree contracts isolate each operation proof. | `_contract`; `_input` | mcp/tests/test_lifecycle_operations.py:52-106 |
-
-## L23 Lifecycle Model Package Review
-
-The suite imports closeout/integration operation inputs from `models.lifecycles.operation`, the
-dedicated model owner. Durable operation, installed-runtime selection, service binding, and
-non-daemon authority coverage are unchanged.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
+- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the new operation-location developer-decision binding test. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
+
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile config mock in lifecycle operation dispatch tests.
+
+
+- 2026-08-29T16:27+02:00 — Extended detached-launch forcing to require ownership transfer of the
+  exact `Popen` object to the lifecycle reaper.
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: rebound truthful `queueReleaseFailure`/`safeToReplace` dispatch forcing and the public irreversible-integrate cancellation relationship against accepted tree `4241908c`; verification metadata remains pinned until governed closeout.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: lifecycle-operation imports moved under
+  `worktrees/integration/` and `TaskRef` under `application/task_docs/`; the lease-refusal test now
+  drives `lease.__enter__()` explicitly and the `killpg` mock follows the moved module. Verified at code
+  commit e5cb139f.
+- 2026-08-16T07:05+02:00 — L4 Dagger repair: the closeout dispatch fixture now performs the real queued-to-running-to-completed journal transitions before starting integration, preserving cross-operation lease semantics.
+- 2026-08-16T05:18+02:00 — Dagger fixture repair: integration worker dispatch carries the real absolute runtime settings path created by the shared contract fixture.
+- 2026-08-16T04:06+02:00 — Dagger fixture repair: operation inputs reference a real workspace settings file and cancellation preview patches the canonical configured-contract resolver.
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 - 2026-08-14T06:38+02:00 — L23 final candidate review: lifecycle-operation tests cover idempotent
   start/observe, conflicting fingerprints, detached recovery, monotonic terminal evidence, and the
   pre/post-claim boundary. Verification remains closeout-owned.

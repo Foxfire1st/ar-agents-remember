@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory_quality/check.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Purpose
@@ -24,6 +24,12 @@ name, and exposes `run_memory_quality_check()`. Without drift context, the
 default run is style-only. With `DriftCheckContext`, the default run combines
 `integrity.onboarding_drift_check.summary` with
 `style.update_history.history_order`.
+
+`StyleCheckInputs` carries the selected prepared code-history anchors alongside the code root and
+temporary unstamped base. `run_check()` forwards those anchors to `claim_reopen`, so a prepared
+closeout can verify current working-tree bytes against an explicit predecessor chain while
+standalone checks remain strict. `DriftCheckContext` owns the same history tuple at the combined
+runner boundary; it is comparison context, never a new verification stamp.
 
 Drift rows from `run_drift_summary()` are normalized into quality findings so
 the MCP response has one finding list even when checks come from different
@@ -50,11 +56,11 @@ placement that deadlocked this leaf's own closeout with 115 unresolvable finding
 
 `run_drift_quality_check(drift_context)` branches on the packet's
 status first: anything other than `checked` returns `ok: False` with one synthetic
-`onboarding_drift_check_failed` finding built from `packet.get("error", ...)`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170).
+`onboarding_drift_check_failed` finding built from `packet.get("error", ...)`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:171-212).
 Only past that guard does it read the checked-status keys. Since
 260731-EFA-L4 `run_drift_summary` returns the typed `DriftSummaryPacket`, whose
 `count`/`reportPath`/`actionableCount` are `NotRequired`, so those three reads are
-`.get` rather than `[...]`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170) — the guard has established the status, but
+`.get` rather than `[...]`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:171-212) — the guard has established the status, but
 the TypedDict cannot carry that narrowing across the branch. No emitted value
 changed: `summarize_rows` always sets all three on a `checked` packet.
 
@@ -85,8 +91,13 @@ changed: `summarize_rows` always sets all three on a `checked` packet.
 | Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
 | The declaration of the packet's status vocabulary (in `models/drift.py`) and its `NotRequired` keys. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
 | The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
+| Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs`; `run_check` | mcp/src/agents_remember/memory_quality/check.py:37-76; mcp/src/agents_remember/memory_quality/check.py:144-162 |
 
 ## Update History
+
+- 2026-09-10T04:35+02:00 — CCR-L42 final predecessor-history curation: documented the retained
+  code-history tuple flowing through `StyleCheckInputs`, `DriftCheckContext`, and `run_check()`
+  into current-byte citation validation; verification metadata remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Added opt-in complete drift/report-only materialization and report
   output control for the unified enclosure curator checklist; default quality payloads stay bounded.

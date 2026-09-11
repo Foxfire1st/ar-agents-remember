@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/controlplane/store.py`  |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T00:38:37+00:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -204,12 +204,12 @@ into an inode with no remaining links.
 | --- | --- | --- |
 | The gate envelope serialized and validated here. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:45-77 |
 | Mirrors the observer event store (same append / read / JSONL shape). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the dashboard a co-writer. Cited by symbol, not by line: this file grew ~100 lines mid-leaf and every earlier range into it was invalidated. | `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:139-151; mcp/src/agents_remember/controlplane/durable_store.py:391-446; mcp/src/agents_remember/controlplane/durable_store.py:470-474; mcp/src/agents_remember/controlplane/durable_store.py:477-488; mcp/src/agents_remember/controlplane/durable_store.py:507-514 |
+| The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers. | `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:144-156; mcp/src/agents_remember/controlplane/durable_store.py:320-360; mcp/src/agents_remember/controlplane/durable_store.py:384-388; mcp/src/agents_remember/controlplane/durable_store.py:391-402; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
 | `_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116. | `_reclaim_gate_log`, `record_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:74-80; mcp/src/agents_remember/controlplane/gate_decisions.py:83-128 |
-| `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:53-55; mcp/src/agents_remember/controlplane/interaction_retention.py:184-197 |
+| `CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect. | `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate` | mcp/src/agents_remember/controlplane/interaction_retention.py:52-54; mcp/src/agents_remember/controlplane/interaction_retention.py:199-212 |
 | `evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail. | `evaluate_gate` | mcp/src/agents_remember/controlplane/enforcement.py:52-94 |
-| `_claim_closeout_gate` at closeout.py:513-563: the first production caller of `claim_approval`, and its call site at closeout.py:970 — one statement above the first commit, which is what makes an approval authorise one attempt rather than one success. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:510-560 |
-| `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:105-105 |
+| `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. | `_claim_closeout_gate` | mcp/src/agents_remember/worktrees/modules/closeout.py:376-427 |
+| `read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed. | "def read_gates(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107 |
 
 As of cycle 5 GateStore.find(gate_id) resolves one gate id across the workspace log and every lifecycle log — the seam-decide path: the deciding seat holds only the packet-carried gate id; lifecycle ids stay server-side. Cycle 6 adds `all_current()`, the cross-lifecycle enforcement fold: it merges every gate log (workspace + all lifecycles) last-wins per gate id, so identity-addressed consumers (the integrate-side master-handover guard, which matches by the gate's `enclosure`) can see a seam gate raised on a different lifecycle than the one the consuming contract anchors.
 
@@ -236,7 +236,28 @@ an `applied` snapshot of that kind would already be retained with no TTL the mom
 one. Until then the handover gate is a *guard* (a permitted/refused read) and not a *spend*, and
 nothing prevents the same approved handover gate from permitting two integrations.
 
+
+## Current Durable-Store Lock Composition
+
+Every gate append and read-filter-rewrite still uses the durable-store boundary. That boundary
+first validates the checkout coordination target, then acquires the shared kernel file lock;
+lock-capability failures retain the durable-store error family. Advisory compaction ownership
+does not replace exclusion or the checkout guard.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal. | `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360 |
+
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of the `closeout.py` / `integrate.py` anchors after the closeout auto-carry change shifted their lines; the cited symbols and claims are unchanged.
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `_claim_closeout_gate` repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:367-418. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the durable-store dependency claim and verified the entire unchanged GateStore source against its prior verified commit; advanced the genuine verification to C97 after recording the checkout guard and shared kernel lock composition.
+
+- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
+
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `store.py` with plane-owned seat identity, routing, and enforcement boundaries.

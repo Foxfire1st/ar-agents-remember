@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_mcp_stdio_transport.py`    |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Purpose
@@ -42,9 +42,14 @@ has a real auto-carry candidate. A `ping` test proves the harness itself.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The fixed subprocess boundary used by carryover. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| The package-wide stdin guard that prevents reintroduction. | `test_every_subprocess_call_site_handles_stdin` | mcp/tests/test_subprocess_hygiene.py:44-66 |
+
+## 260815-DAG-L4 Integration-Authority Forcing
+
+This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
 
 ## Update History
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
 
 - 2026-08-02T21:29+02:00 — W2-B08 curator: anchored 4 citation findings to the shared `run_git` subprocess boundary and the package-wide stdin hygiene test. Verification metadata stays pinned until closeout.
 - 2026-07-31T16:35+02:00 — No content impact: the only change to

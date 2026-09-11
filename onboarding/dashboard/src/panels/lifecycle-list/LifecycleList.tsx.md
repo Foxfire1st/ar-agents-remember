@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/panels/lifecycle-list/LifecycleList.tsx` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`       |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -245,19 +245,27 @@ role of its own for the same reason.
 | Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. | "const sizing = css({ flex: \"1 1 0\", minWidth: \"0\", overflowX: \"hidden\" });"; "const listBox = css({"; "const section = css({"; "const row = cva({"; "const rowId = css({"; "const rowSec = css({"; "const rowGate = css({"; "const rowMeta = css({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:61-61; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:87-87; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:98-98; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:116-116; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-180; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:188-188; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:198-198; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:214-214 |
 | `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. | `rowId`; `taskTitle` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:180-187; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:1017-1034 |
 | `docRow`/`seriesRow` build the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. | `docRow`; `seriesRow` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:738-786; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:788-830 |
-| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:23-23 |
+| "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). | "from agents_remember.models.task_document import DocStatus" | mcp/src/agents_remember/tasks/document.py:34-34 |
 | `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. | `Dot`; `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:105-115; dashboard/src/grammar/Dot.tsx:104-114; dashboard/src/grammar/Dot.tsx:119-129 |
 | The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. | "<ListBoxItem" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:647-689 |
 | The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
 | The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls. | `isOrchestrationDoc`; `masterCommandNames`; `orchestratorParentKey` | dashboard/src/data/taskHierarchy.ts:91-95; dashboard/src/data/taskHierarchy.ts:98-103; dashboard/src/data/taskHierarchy.ts:109-122 |
 | The V4 chevron insignia rendered on tier rows (size `row`). | `RankBadge` | dashboard/src/grammar/RankBadge.tsx:44-79 |
-| L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | "renders the orchestration tier above its commanded masters with the V4 treatment (L14)"; "renders NO orchestration row or insignia in a flat run (D3 regression)" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:199-199; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:20-20 |
-| Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | "limits sidebar rows to root docs"; "keeps standalone root task documents visible without listing loose leaf docs"; "exposes the full long task title and row context on title hover" | dashboard/src/panels/lifecycle-list/admission.test.tsx:540-540; dashboard/src/panels/lifecycle-list/admission.test.tsx:19-19; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:257-257 |
+| L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression. | "renders the orchestration tier above its commanded masters with the V4 treatment (L14)"; "renders NO orchestration row or insignia in a flat run (D3 regression)" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:55-148; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:234-290 |
+| Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness. | "limits sidebar rows to root docs"; "keeps standalone root task documents visible without listing loose leaf docs"; "exposes the full long task title and row context on title hover" | dashboard/src/panels/lifecycle-list/admission.test.tsx:19-151; dashboard/src/panels/lifecycle-list/admission.test.tsx:540-572; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:292-354 |
 | `fmtWait` for server-computed stale/wait ages. | `fmtWait` | dashboard/src/data/selectors.ts:108-114 |
 | Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel. | `taskDocSelectionKey`; `seriesSelectionKey`; `lifecycleSelectionKey`; `parseTaskSelection`; `taskLabel`; `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:18-21; dashboard/src/data/taskIdentity.ts:23-46; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:288-293 |
 | The shared `Panel` head/sticky band the pivot sits in. | `Panel` | dashboard/src/grammar/Panel.tsx:48-69 |
 | Task-row pickup spinner/check-chat notice. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
 | Native disclosure control and stable persisted collapse hook used by the hierarchy renderer. | `TaskGroupDisclosure`; `useCollapsedTaskGroups` | dashboard/src/panels/TaskGroupDisclosure.tsx:21-46; dashboard/src/panels/useCollapsedTaskGroups.ts:5-28 |
+
+## 260821-CLIVE Discarded Progress Boundary
+
+Document and series rows pass producer-owned `discardedCount` into `progressHint()`. The visible hint
+keeps normal `done/total` progress and appends a distinct `N discarded` segment. A discarded-before-start
+task therefore remains auditable without incrementing completion or changing active row admission.
+Existing worktree-existence, identity, hierarchy, lifecycle-vs-document state, accessibility, and
+keep-alive boundaries remain unchanged.
 
 ## Current L5I Maintenance
 
@@ -266,6 +274,17 @@ kept-alive rail is hidden, while the render-heavy row/group derivation lives in 
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
 
 ## Update History
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "from agents_remember.models.task_document import DocStatus" repointed to mcp/src/agents_remember/tasks/document.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged `DocStatus`
+  import after task-schema graph-validation extraction. Verification remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Added the separate discarded-count progress segment; discarded work is
+  never counted as completed work.
+- 2026-08-20T04:50+02:00 — 260815-DAG-L14 curator: re-read the `DocStatus` import claim against
+  `tasks/document.py` — the import moved to the new top-of-file role-constant block; wording
+  retained, range regenerated, stamp advanced to code commit 9c3180c1.
+
 
 - 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LifecycleList.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: moved this sidecar from dashboard/src/panels/LifecycleList.tsx to lifecycle-list/LifecycleList.tsx after the frontend-rail naming move; added the L8 Move section. Verification pinned to the leaf base until closeout stamps the code commit.

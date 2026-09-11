@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-05T01:30+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -19,15 +19,16 @@ template owns the review shape; the skill sync process publishes this exact arti
 ### Logic
 
 The report compares current code, existing onboarding/entity intent, and ruled task/design intent.
-It inventories changed sidecars, missing onboarding, route overviews/indexes, drift, and full memory
-quality. The author field names the analysis role or bounded fan-out label, not a runtime sub-agent
-id.
+It inventories changed sidecars, missing onboarding, route overviews/indexes, and drift, and records
+only the affected scoped diagnostics requested for the handoff. The author field names the analysis
+role or bounded fan-out label, not a runtime sub-agent id.
 
 ### Conventions
 
 Changed source sidecars and their nearest governing routes need a substantive current-body update
 plus newest-first history, or a specific sanctioned no-impact attestation after review. Missing
-onboarding and curator-actionable quality findings must reach zero before handoff.
+onboarding and curator-actionable findings are reported with their exact status before handoff;
+routine closeout and integration do not require a full memory-quality certificate.
 
 ### Invariants And Boundaries
 
@@ -39,6 +40,11 @@ onboarding and curator-actionable quality findings must reach zero before handof
 
 None recorded.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ## Repo-Internal References
 
 This bundle copy is written by fan-out sub-agents and consumed by the reviewer's onboarding-vs-code lens and the orchestrator's memory-quality checks.
@@ -46,9 +52,9 @@ This bundle copy is written by fan-out sub-agents and consumed by the reviewer's
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Sync-propagated bundle copy of the canonical templates source. | `# Onboarding-Coherency Template` | skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48 |
-| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | "../templates/onboarding-coherency.md" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:101-101 |
-| The orchestrator's memory-quality checks consume this report; the analysis is written by the orchestrator's own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop. | `## No Native Sub-Agents — role seats only (doctrine, ruled 2026-08-05)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:408-435 |
-| The frame defines the onboarding-vs-code lens as paired read_ar_files + memory_quality_check + drift. | `## The Three Review Lenses` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:76-89 |
+| The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence. | "onboarding-coherency" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:358-359 |
+| The orchestrator's memory-quality checks consume this report; the analysis is written by the orchestrator's own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop. | `## No Native Sub-Agents — role seats only (doctrine, ruled 2026-08-05)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:499-526 |
+| The frame defines the onboarding-vs-code lens as paired read_ar_files + memory_quality_check + drift. | `## The Three Review Lenses` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:212-243 |
 
 ## Cross-Repo References
 
@@ -59,6 +65,11 @@ No sibling repository evidence is needed for this report template.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the reviewer backing-evidence row: reviewer.md names this report in its Artifact Obligations instead of citing the template path from a lens. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "../templates/onboarding-coherency.md" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `## The Three Review Lenses` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:212-243. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-11T19:58+02:00 — Reconciled `onboarding-coherency.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
 - 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 4 citation items; scoped citation check now passes.

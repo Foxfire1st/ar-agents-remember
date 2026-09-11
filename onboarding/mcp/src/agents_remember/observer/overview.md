@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-07T22:45:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-08-29T18:29+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -406,9 +406,8 @@ The slice-3a projection read side:
   bucket the turn-end state never had. The `*Count` fields stay hand-declared because they
   are the served contract the dashboard reads by name; what stops them drifting is that
   `Metrics` is `extra="forbid"` (a bucket the vocabulary needs but the model does not
-  declare raises in `_metrics`, it does not become a silent zero) and that
-  `MetricsBucketVocabularyTests` asserts the declared `*Count` set minus `lifecycleCount`
-  equals the derived set in both directions.
+  declare raises in `_metrics`, it does not become a silent zero). The removed bucket-vocabulary
+  tests do not provide a current bidirectional coverage assertion.
   `str.capitalize` is specifically wrong here and the code says why: it lower-cases the
   tail, which both merges states differing only in tail case and disagrees with the
   TypeScript mirror's `Capitalize<>`, which cannot lower-case a tail.
@@ -610,19 +609,18 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 | Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 | Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
 | `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
-| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:353-353 |
+| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:371-371 |
 | The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
 | `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:38-38 |
 | `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
 | `progress_status` is the setup-progress status record. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The `MetricsBucketVocabularyTests` suite pins the bucket vocabulary. | `MetricsBucketVocabularyTests` | mcp/tests/test_observer_projection_metrics.py:128-233 |
-| The ambient `end()` entry and its focused terminal-state test are named here. | "def end"; `test_the_ambient_end_signal_accepts_exactly_the_terminal_states` | mcp/src/agents_remember/observer/ambient.py:274-274; mcp/tests/test_observer_ambient.py:175-175 |
+| The ambient `end()` entry owns terminal-state publication. | `end` | mcp/src/agents_remember/observer/ambient.py:274-274 |
 | `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
 | The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:221-223 |
 | `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
 | The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
 | `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:221-221 |
+| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:227-227 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -690,10 +688,7 @@ typed a second time. The `Metrics.*Count` *field declarations* are still hand-wr
 deliberately so — they are the served contract the dashboard reads by name and pyright checks by
 name, and pydantic has no way to synthesize them from a mapping. That remaining hand-written half
 is closed on both sides rather than trusted: `extra="forbid"` makes an undeclared bucket raise
-inside `_metrics` on the projection tick, and `MetricsBucketVocabularyTests` asserts the declared
-set equals the derived set in both directions (a bucket no state can fill fails too). The coverage
-test also re-derives the live set as `STATES - TERMINAL_STATES` on purpose, so the measurement is
-not taken with `ACTIVE_STATES`, the instrument it is checking.
+inside `_metrics` on the projection tick, with closed model validation; the former bidirectional bucket test is historical.
 
 Two smaller boundary widenings ride along in `snapshots.py`: `read_engine_process_facts` passes
 `dict(lifecycle_guidance(contract))` and `_cached_local_status` passes
@@ -782,7 +777,57 @@ the strict task-derived source-lineage projection on engine-process facts. The o
 derive authority or Git ancestry itself: worktree status owns that proof, and this route remains
 the read-side projection of its result.
 
+## 260815-DAG-L14 Projection Route
+
+The task-document projection carries first-class sprint structure: `TaskSubTaskRefNode.masterRef`
+and `TaskDocNode.seats` (`TaskSeatNode`), served on sprint docs and defaulted empty elsewhere.
+
+
+## 260815-DAG-L12 Route Impact
+
+New module `projection_graph.py`: the primitives-only render-ready sprint graph view builder
+(`TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode`,
+`build_execution_graph_view`) — the observer package must not import `tasks`, so the serving layer
+feeds it plain data. `projection.py` `TaskDocNode` gains the optional `executionGraphView` field
+(L12-R4); the dashboard renders this view directly and never re-derives waves or frontier state.
+DAGQC L1 makes the title input contract master-qualified: `GraphTitlesLike.leaf_titles` is keyed by
+`(TaskDocumentRef, leaf id)`, and every leaf-title lookup includes the node's owning ref. Equal local
+leaf numbers under separate masters therefore remain distinct through projection; there is no flat
+title-key compatibility reader.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The primitives-only title protocol and projection lookup preserve owning-master identity. | `GraphNodeLike`; `GraphTitlesLike` | mcp/src/agents_remember/observer/projection_graph.py:35-44; mcp/src/agents_remember/observer/projection_graph.py:47-54 |
+| Public-reader regression proves duplicate local leaf numbers retain their owner's title. | `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:146-197 |
+
+
 ## Update History
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` repointed to mcp/tests/test_task_documents_graph_projection.py:146-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-29T18:29+02:00 — Reconciled the orphan-pruning call citation after the coherence/runtime
+  changes shifted its source coordinate; observer behavior is unchanged.
+
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed projection-input, mirror-state, and graph-title citation anchors after source movement; observer read/write ownership is unchanged.
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled the graph-view projection with
+  `(TaskDocumentRef, leaf id)` title identity and the no-flat-reader boundary. Verification
+  metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the primitives-only graph-view projection builder and the `TaskDocNode.executionGraphView` field. Verified at code commit b7f2c8e2.
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task projection gains typed
+  `masterRef` rows and first-class `seats`. Verified at code commit 8071a644.
+
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
+
+- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: TaskDocNode projects declared execution
+  nature, persisted graph edges/reasons, and deterministic waves as facts. It performs no scheduling
+  judgment or priority assignment.
 
 - 2026-08-13T09:05+02:00 — L23 route review: observer lifecycle projection follows the operation
   DTO into `models.lifecycles.operation`; its engine-process projection continues to expose the

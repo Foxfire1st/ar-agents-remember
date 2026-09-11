@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,7 +60,7 @@ record, against the one adapter the authority was constructed with (`self._adapt
 rebound — reconnect for Codex/pi replaces the transport under a fixed adapter, and no adapter in
 this tree binds or drops `submit_with_assets` at runtime), so its answer still holds at dispatch.
 A refusal here is clean and terminal — an `unsupported` receipt, the session untouched — whereas
-refusing at dispatch could only produce an `unknown` ambiguity barrier, because by then the
+refusing at dispatch could only produce an `unknown` ambiguity blocker, because by then the
 authority can no longer say whether bytes crossed the wire. Do not add a second capability check
 downstream; add to this one.
 
@@ -74,7 +74,7 @@ now reads as four named steps:
 - `_preflight_declined` — ask the adapter whether it can take the operation; `True` means stand
   down. A preflight sends no operation bytes, so busy/not-yet-connected simply leaves the record
   queued; an adapter that nonetheless claims it may have sent goes to
-  `_unknown_after_preflight_claim`, which installs the ambiguity barrier and flips the snapshot to
+  `_unknown_after_preflight_claim`, which installs the ambiguity blocker and flips the snapshot to
   disconnected/unknown/unknown.
 - `_claim_head_locked` — re-verify under the lock (timeline head, no active operation, still
   queued, same bridge epoch, snapshot still allows dispatch) and mark it `dispatching`. The
@@ -82,7 +82,7 @@ now reads as four named steps:
 - `_send_and_settle` — issue the claimed operation via `_invoke_adapter` and apply what came back.
   Every failure mode turns on what the adapter can certify: busy, or a disconnect proven pre-write,
   requeues safely; a disconnect that may have sent, any other exception, and an incoherent result
-  all install the ambiguity barrier instead of guessing which side of the wire the bytes are on.
+  all install the ambiguity blocker instead of guessing which side of the wire the bytes are on.
 
 Receipt/result application is likewise split into `_verified_prompt_receipt` (read the adapter's
 result as a receipt for exactly this operation, or a control error), `_accept_prompt_locked`,
@@ -209,12 +209,12 @@ repository-owned.
 | The API registers the submission-ledger routes. | `_register_submission_ledger_routes` | mcp/src/agents_remember/serving/harness_control_api.py:301-339 |
 | The API exposes the submission-authority route. | `api_submission_authority` | mcp/src/agents_remember/serving/harness_control_api.py:306-316 |
 | The status serializer produces the raw-free submission batch. | `submission_status_batch_json` | mcp/src/agents_remember/serving/harness_control_models.py:274-278 |
-| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:957-961 |
-| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:991-1000 |
-| Dedicated tests exercise races, early completion, full-ref reuse, bounds, privacy, and epochs. | `HarnessSubmissionAuthorityTests`; `SubmissionLedgerTests` | mcp/tests/test_harness_submission_authority.py:230-755; mcp/tests/test_harness_submission_authority.py:758-926 |
-| The evidence contract suite exercises provenance end-to-end through bridge → authority → IPC → validated client, including all three sources, not-found, epoch mismatch, and the 1..64 unique-id bound. | `test_submission_provenance_all_sources_epoch_and_bounds` | mcp/tests/test_harness_control_evidence_ipc.py:229-312 |
-| The control-plane contract suite exercises the timeline enumeration (all sources/kinds, paged union, eviction floor, 256-record budget edge), the asset channel (capability gate, digest conflict/dedupe, receipt `assetIds`), and the first-vs-replay recovery through this authority. | `OperationTimelineTests`; `AssetChannelTests`; `AssetNativeConstructionTests`; "class WithdrawalRecoveryTests(unittest.IsolatedAsyncioTestCase):" | mcp/tests/test_harness_control_plane_assets.py:249-483; mcp/tests/test_harness_control_plane_channels.py:52-318; mcp/tests/test_harness_control_plane_channels.py:321-481; mcp/tests/test_harness_control_plane_recovery.py:32-32 |
-| The common conformance suite pins the multiplexed respond: respond-without-parent-operation for agent entries, the entry-thread operation guard for concurrent parent tuple entries, and the plural pending serialization round-trips. | `test_subagent_pending_interaction_responds_without_parent_operation`; `test_parent_thread_tuple_entry_gets_the_operation_guard`; `test_multiplexed_pending_interactions_serialize_through_every_surface` | mcp/tests/test_harness_control_conformance_1.py:437-491; mcp/tests/test_harness_control_conformance_1.py:493-551; mcp/tests/test_harness_control_conformance_1.py:553-612 |
+| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:998-1002 |
+| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:1032-1041 |
+
+
+
+
 
 ## Cross-Repo References
 
@@ -237,6 +237,10 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `SubmissionStatusBatchWire` repointed to mcp/src/agents_remember/serving/response_contract.py:998-1002. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `PublicReceiptWire` repointed to mcp/src/agents_remember/serving/response_contract.py:1032-1041. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

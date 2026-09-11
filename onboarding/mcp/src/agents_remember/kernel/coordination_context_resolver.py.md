@@ -62,7 +62,7 @@ invokes it.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The compatibility facade exposes the package resolver entry point. | "def resolve_coordination_context" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-129 |
-| Resolver shape is covered by the package resolver harness. | "def run_package_resolver" | mcp/tests/test_resolver_parity.py:328-328 |
+| The facade delegates context resolution through its current canonical package owner. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-142 |
 | Focused implementation modules live under the coordination-context package. | "def build_coordination_context" | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-272 |
 
 ## Series-Contract Notes

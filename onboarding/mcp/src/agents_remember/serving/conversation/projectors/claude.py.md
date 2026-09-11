@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-28T07:20+02:00 |
+| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
+| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -151,7 +151,8 @@ None.
 ## Docs References
 
 The resolved `Domain Documentation` registry has no entries. The schema authorities named by the
-module — the stream-json fixtures, the Anthropic content-block grammar as parsed by this
+module — the surviving 2.1.210 turn/interaction fixtures and 2.1.217 interrupt fixture, the
+Anthropic content-block grammar as parsed by this
 repository's adapter, the installed 2.1.216 `command_lifecycle`/`rate_limit_event` contracts
 (the captured 3-state slash-command specimen is preserved as prior art for the later slash-command
 consumers), and the 2.1.220 sub-agent frame shapes (`parent_tool_use_id` sidechains, the
@@ -174,7 +175,7 @@ upsert; the conversation grammar carries the roster identity as `ConversationAge
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper. | "def _handle_replayed_user("; "def _transcript_entry("; `MAX_TRANSCRIPT_TEXT_CHARS`; "def clip_transcript_text(" | mcp/src/agents_remember/serving/claude_stream_protocol.py:21-21; mcp/src/agents_remember/serving/claude_stream_protocol.py:429-429; mcp/src/agents_remember/serving/claude_stream_state.py:628-628; mcp/src/agents_remember/serving/claude_stream_state.py:929-929 |
-| The Claude runtime fixture records runtime/helper versions and sets `enablesCapabilities` to false. | "runtimeVersion"; "helperVersion"; "enablesCapabilities" | mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:5-6; mcp/tests/fixtures/conversation_runtime/claude-2.1.211.json:10-10 |
+| Historical evidence (retired with the d3610903 suite reduction): The Claude runtime fixture recorded runtime/helper versions and sets `enablesCapabilities` to false. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 | The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase. | `ProjectionStore`; `apply_item`; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
 | The engine's echo zipper merges echo and frame channels by strict turn order. | `_zip_entry`; `_drain_one_turn_body` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:82-97; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:99-111 |
 | The conversation grammar declares the `ConversationAgentRef` roster-reference model. |"class ConversationAgentRef"|mcp/src/agents_remember/models/conversations/content.py:139-139|
@@ -229,6 +230,12 @@ shape is still preserved, never guessed.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-28T06:27+02:00 — PDLS wave 005 curator: corrected the module-level schema provenance
+  after the unconsumed 2.1.207 fixture cohort was removed. The surviving locked authorities are
+  the 2.1.210 turn/interaction fixtures and the 2.1.217 interrupt fixture; no compatibility copy or
+  stale memory sidecar remains. Verification metadata stays pinned until closeout stamps the
+  landed code candidate.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

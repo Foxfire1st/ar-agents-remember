@@ -7,9 +7,9 @@
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-08T14:38+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-05T07:12+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## What This Area Is
 
@@ -65,7 +65,9 @@ observer write side through `kernel/primitives/observer_paths.py`).
 1. The serving projection tick enumerates which domain changed (`projection_inputs.py`).
 2. Readers (`snapshots.py`, `snapshots_impl/`) read the producing subsystems' own parsers and project
    inbox entry/subject/owner and expectation task references as canonical `TaskDocumentRef` values;
-   they do not synthesize an agent-visible leaf-address field.
+   they do not synthesize an agent-visible leaf-address field. The task-document reader likewise
+   copies explicit master nature and sprint graph, derives waves from that validated graph, and
+   includes those cells in body-revision identity so topology changes invalidate the projection.
 3. `project_and_write` ties reading, pure reduction, and the atomic write together.
 
 ## Load-Bearing Files
@@ -81,7 +83,8 @@ observer write side through `kernel/primitives/observer_paths.py`).
 
 - Readers reuse the producing subsystem's own parser rather than re-parsing.
 - Projection writes are atomic; readers never observe half-written state.
-- Do not import the observer write side from here (layering: observer is below serving).
+- Readers may consume observer projection/reducer APIs; observer event mutation remains
+  with its write-side owner. Layering permits serving to consume lower observer APIs.
 
 ## Repo-Internal References
 
@@ -140,7 +143,70 @@ The projection route attaches the newest validated lifecycle operation to its ow
 serves bounded phase, timing, command, report, and recovery guidance. Durable store state remains
 authority; projection never exposes worker or resume identity.
 
+## 260815-DAG-L14 Projection Route
+
+`snapshots_impl/_task_documents.py` passes `SubTaskRef.masterRef` through and projects
+`doc.seats` as `TaskSeatNode`; the body revision covers sprint structure.
+
+
+## 260815-DAG-L12 Route Impact
+
+The task-documents snapshot reader (`snapshots_impl/_task_documents.py`) now projects the render-ready `executionGraphView` on sprint documents (L12-R4): `_master_docs_by_ref` indexes valid master payloads from the bounded window, `_execution_graph_view` walks the persisted graph (waves, endpoints, titles, facts) and feeds the primitives-only builder, and `_task_doc_node` splits into the reader-body and execution-graph field groups. Docs without a graph project `None`.
+
+
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+`snapshots_impl/_closeout_queue.py` and `_runtime.py` import paths updated to the moved `worktrees/queue/*` / `models/queue/*`.
+
+## 260821-CLIVE Closeout And Task-History Projection
+
+`snapshots_impl/_closeout_queue.py` captures the exact current projection source for every
+orchestrating sprint, including valid graph-less atomic-sequential sprints, then reads the effective
+disposable projection. It surfaces service condition, source classification/fingerprint/problems,
+and waiting-generation member order/reasons. Invalid, unreadable, missing, or stale bytes become
+invalid-empty rather than disappearing or serving stale candidates.
+
+`snapshots_impl/_task_documents.py` adds typed discarded-unstarted rows and counts to master task
+and series projections. The audited proof/reason/timestamp remain task history and participate in
+body revision identity. Neither projection mutates its source authority.
+
+## CCR Typed Requirement Projection
+
+The task reader now renders approved requirement packet references and acceptance-obligation
+questions as readable strings, while its body-revision digest retains the full typed JSON
+values. This preserves wire compatibility without losing semantic edit invalidation.
+
+## 2026-08-26 Atomic Task Refresh And Retry
+
+`ProjectionInputState._refresh_tasks` builds contracts, enclosures, task documents, and series into
+locals before publishing the new task-domain snapshot. It sets `_task_refresh_pending` before the
+read begins, preserves the previous snapshot if a reader raises, and clears the flag only after all
+four values publish together. A heartbeat therefore retries an interrupted task refresh without
+waiting for a second task mutation. This is part of the route's bounded-retention and atomic
+publication contract, not a cache optimization.
+
 ## Update History
+
+- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added typed requirement/question rendering with semantic body identity and clarified observer read API imports. Verification records source review, not execution or acceptance.
+
+- 2026-08-26T10:44:52+02:00 — Reconciled the projections route with atomic task refresh, retained last-good state, and heartbeat retry semantics.
+- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the effective closeout projection and discarded-unstarted task history surfaces. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: snapshots_impl import paths updated to the moved queue packages. Verified at code commit e5cb139f.
+
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents snapshot reader. Verified at code commit b7f2c8e2.
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `_task_documents.py` projects
+  `masterRef` + `seats` and covers them in the body revision. Verified at code commit 8071a644.
+
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the task-document snapshot slice hydrates
+  master nature and sprint graph, derives waves from the validated graph, and incorporates both into
+  body-revision identity.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: runtime snapshots attach the newest
   validated lifecycle operation and preserve bounded task-addressed phase/report evidence without

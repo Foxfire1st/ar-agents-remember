@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
 
 ## Governing Overview
@@ -24,20 +24,30 @@ current contracts rather than a leaf transcript.
 ## Logic
 
 The curator consumes the real leaf task/design rulings, complete fed code change set, builder turn
-report, reviewer verdict, and existing onboarding/entity knowledge. For every affected contract it
+report, the exact approved stable-ID + version packets, the reviewer's independent per-revision
+verdict, and existing onboarding/entity knowledge. Missing/unapproved/version-mismatched packets
+refuse intake. Rejected or worker-blocked revisions remain report blockers and cannot be promoted
+into current onboarding intent. For every affected contract it
 classifies the implementation as preserving, extending, deliberately superseding, or contradicting
 existing intent. It updates only the proper file card, affected route overview, route index, or
-entity record and writes a durable coherence report for the manager.
+entity record, then supplies exact judgments to the lifecycle API that publishes the sole
+structured coherence authority for the manager.
 
 Current intent, evidence/integrity, and semantic history are kept distinct. Generic category text,
 overview dumping, and task-log repetition are rejected. Mechanical no-impact cards stay precise.
 Forward-looking incidents, opportunities, and hypotheses remain report capture candidates until an
 authorized workflow promotes them.
 
-Before reporting completion, the curator runs current-additions missing-onboarding and the full
-contract-scoped memory-quality worklist, repairs every enforced curator-actionable finding, and
-reruns both. Dirty-source drift and real-commit-derived stamps/fingerprints are reported separately;
-they never excuse an underlying content, citation, shape, history, entity, or index defect.
+Before reporting completion, the curator updates affected onboarding and runs scoped checks, recording
+passed, failed, blocked, and not-run results honestly. Dirty-source drift and real-commit-derived
+stamps/fingerprints are reported separately; they never excuse an underlying content, citation, shape,
+history, entity, or index defect. Full memory quality and certification remain explicit operations,
+not closeout or integration prerequisites.
+
+The role table classifies curator as target-only. Only the manager ordinarily dispatches this leaf
+seat through plane authority; an identity-free developer launcher may target it only for an
+explicit task-seat takeover. The curator has no `dispatch_agent` caller authority or ambient
+fallback, and its dispatch/tools rows are structural documentation rather than settings keys.
 
 ## Conventions
 
@@ -45,8 +55,8 @@ they never excuse an underlying content, citation, shape, history, entity, or in
   before writing.
 - Use one-to-one sidecars and governing overview links; update entities only when a real entity changes.
 - Default bodies hold present intent and boundaries; Update History records concise semantic transitions.
-- Run missing-onboarding plus full leaf-scoped quality, repair every enforced finding, then run
-  indexes, drift classification, and diff checks and report exact classes.
+- Run the scoped onboarding checks for affected docs, repair in-scope findings, and report any check
+  that is failed, blocked, or not-run before the prepared memory leg is handed off.
 - Leave real-commit hashes and entity fingerprints pending until governed closeout creates the commit.
 
 ## Invariants And Boundaries
@@ -54,22 +64,55 @@ they never excuse an underlying content, citation, shape, history, entity, or in
 - Curator writes no code and decides no gate.
 - Curator does not mutate task documents, lifecycle state, worktree contracts, closeout, or integration.
 - Builder, reviewer, curator, and manager remain separate seats and artifacts.
+- Every changed onboarding contract maps to an exact approved requirement revision and accepted
+  reviewer adjudication.
 - Missing evidence or a material three-way contradiction escalates to the owning manager.
-- Curator cannot emit a completion report while its required checks still name actionable work.
+- Curator cannot publish completion authority while its required checks still name actionable work.
 - Runtime ids are private correlations; curator communication uses structural parent messaging and
   the durable report.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The seat definition names the three-way reconciliation and onboarding-only boundary. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| Intake requires ruled intent, the complete change set, existing contracts, and durable reports. | "### 1 — Intake" | skills/l-01-agent-lifecycles/roles/curator.md:63-71 |
-| Inspection classifies contract disposition rather than equating test-green with intent-green. | "### 2 — Inspect" | skills/l-01-agent-lifecycles/roles/curator.md:73-85 |
-| Current intent, evidence, and semantic history are separate information planes. | "### 3 — Write Onboarding Only" | skills/l-01-agent-lifecycles/roles/curator.md:87-127 |
-| Checks require complete missing-onboarding/quality repair before report and distinguish it from closeout-owned commit provenance. | "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| Intake requires exact approved packets/adjudications, ruled intent, the complete change set, existing contracts, and durable reports. | "### 1 — Intake" | skills/l-01-agent-lifecycles/roles/curator.md:63-87 |
+| Inspection classifies contract disposition rather than equating test-green with intent-green. | "### 2 — Inspect" | skills/l-01-agent-lifecycles/roles/curator.md:89-101 |
+| Current intent, evidence, and semantic history are separate information planes. | "### 3 — Write Onboarding Only" | skills/l-01-agent-lifecycles/roles/curator.md:103-143 |
+| Checks require complete missing-onboarding/quality repair before structured publication, distinct from closeout-owned commit provenance. | "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
+
+## 260821-DAGQC-L2 Quality Invocation
+
+Curator doctrine now issues the memory-quality operation through the exact discriminated request
+object. A synchronous repair loop uses `mode: sync`; if async work is selected, `mode: start` is
+followed by `mode: poll` carrying only repository and run id. Capacity refusal means poll/wait and
+retry; it does not authorize an alternate runner or compatibility call.
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified curator as target-only plus explicit
+  ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept
+  structural authority outside settings. Verification remains closeout-owned.
+
+- 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored terminal report with exact
+  lifecycle API publication and validation of the sole structured coherence authority.
+  Verification remains closeout-owned.
+
+- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
+  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
+  the source-specific worker/reviewer/manager/curator boundary.
+
+- 2026-08-27T16:27+02:00 — Requirement-corpus briefing repair: curator intake now receives exact
+  approved revision packets and per-revision adjudication; rejected/blocked delivery cannot become
+  current intent. Verification metadata remains pinned until governed closeout.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: aligned curator doctrine with the canonical strict memory-quality request and retry guidance. Verification metadata remains pinned until architect-owned closeout.
 
 - 2026-08-11T14:40+02:00 — Made current-additions coverage and the full enforced memory-quality
   worklist curator-owned completion conditions while preserving closeout ownership of real-commit metadata.

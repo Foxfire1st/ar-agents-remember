@@ -5,10 +5,14 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/base.py`   |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T21:20+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T08:27+02:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[models overview](overview.md)
 
 ## Purpose
 
@@ -16,20 +20,24 @@
 
 ## Code Commentary
 
-cit:([`StrictResponseModel`], mcp/src/agents_remember/models/base.py:10-13) forbids unknown fields for owned public
-contracts. cit:([`FlexibleResponseModel`], mcp/src/agents_remember/models/base.py:16-19) intentionally allows unknown fields
-for native/detail payloads that must preserve provider or service output.
-cit:([`ResponseModel`], mcp/src/agents_remember/models/base.py:41-60) and cit:([`ToolResponse`], mcp/src/agents_remember/models/base.py:63-66) add the shared `ok`,
+### Logic
+
+cit:([`StrictResponseModel`], mcp/src/agents_remember/models/base.py:13-16) forbids unknown fields for owned public
+contracts. cit:([`FlexibleResponseModel`], mcp/src/agents_remember/models/base.py:19-30) intentionally allows unknown fields
+for native/detail payloads that must preserve provider or service output. Its before-validator
+recursively rejects the reserved snake_case lifecycle decision keys, retaining the single
+camelCase decision vocabulary even inside flexible nested payloads.
+cit:([`ResponseModel`], mcp/src/agents_remember/models/base.py:66-88) and cit:([`ToolResponse`], mcp/src/agents_remember/models/base.py:91-94) add the shared `ok`,
 `tokens`, `tokenizer`, and `tokenCountExact` fields plus JSON-compatible
-`to_payload()` serialization. cit:([`FlexibleResponseEnvelope`], mcp/src/agents_remember/models/base.py:69-84) and
-cit:([`FlexibleToolResponse`], mcp/src/agents_remember/models/base.py:92-95) carry the same envelope fields on the flexible
+`to_payload()` serialization. cit:([`FlexibleResponseEnvelope`], mcp/src/agents_remember/models/base.py:97-114) and
+cit:([`FlexibleToolResponse`], mcp/src/agents_remember/models/base.py:117-120) carry the same envelope fields on the flexible
 (`extra="allow"`) base.
 
-cit:([`ResponseEnvelope`], mcp/src/agents_remember/models/base.py:98-98) is the `TypeAlias` naming the union
+cit:([`ResponseEnvelope`], mcp/src/agents_remember/models/base.py:123-123) is the PEP 695 type alias naming the union
 `ResponseModel | FlexibleResponseEnvelope` — the two families every registered
 tool response belongs to. The strict/flexible split is about `extra`, not about
 the envelope: both carry the same `ok`/`tokens`/`nextStep`/`agentNotifierBanner`
-header. Naming the union is what lets `models.tool_registry` declare
+header. Naming the union is what lets `models.tools.tool_registry` declare
 `dict[str, type[ResponseEnvelope]]` instead of `dict[str, type[BaseModel]]`, and
 that in turn is what makes the two choke-point fields reachable by type from
 `_tool_payload`.
@@ -45,17 +53,15 @@ hints share one vocabulary — a gate junction is just
 `ResponseModel`), so it has no recursive `nextStep` field. Both envelope bases —
 `ResponseModel` (strict) and `FlexibleResponseEnvelope` (flexible) — gain an
 optional `nextStep: NextStep | None = None` field, so every modeled tool
-response can carry the hint (`ResponseModel.nextStep` L51,
-`FlexibleResponseEnvelope.nextStep` L77). It is populated at the
-`mcp/tools/base.py::_tool_payload` choke point (via `next_step_for` from
-`application.next_step`, which returns the model rather than a dump of it) and
-dropped when `None` by `exclude_none=True`, leaving lifecycle-less calls
-unchanged.
+response can carry the hint. The application boundary preserves an explicit producer
+`nextStep`; otherwise it calls `next_step_for`, which returns the model rather than a dump.
+`bound_next_step` then omits guidance whose task address contradicts the response's exact
+contract/enclosure address. A `None` field is dropped by `exclude_none=True`.
 
 `agentNotifierBanner: str | None = None` (260707-HFX2-L2 R5, renamed from `supervisorBanner` in
 260713-TES-L1) is the second
 choke-point field, declared on both envelopes for the same reason `nextStep` is:
-cit:([`ResponseModel`, `FlexibleResponseEnvelope`], mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-87).
+cit:([`ResponseModel`, `FlexibleResponseEnvelope`], mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114).
 During the rename window each envelope ALSO declares the legacy `supervisorBanner: str | None =
 None` alias and `_attach_lifecycle_tail` writes both keys with the same value; the legacy field is
 removed with the window. The field carries the stale-agent-notifier one-liner when the agent-notifier's
@@ -64,14 +70,19 @@ key the choke point writes is a key of THIS envelope.** It was previously
 declared nowhere and stamped onto the already-dumped dict, which put the emitted
 object outside its own model — a stale supervisor made every response fail its
 own `model_validate` — and left the advertised token count short by the whole
-`nextStep` object. cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:49-61)
-sets both fields on the validated response *before* cit:([`finalize_tool_response`], mcp/src/agents_remember/models/tool_response.py:15-26)
+`nextStep` object. cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:84-98)
+sets both fields on the validated response *before* cit:([`finalize_tool_response`], mcp/src/agents_remember/models/tools/tool_response.py:15-26)
 performs the single model dump and token pass, so `finalize_payload_tokens` counts them. The
 flexible envelope declares it too: `extra="allow"` would have accepted it
 undeclared, which is exactly the hole — a tolerated-drift surface tolerates the
 PROVIDER's fields, not this package's.
 
-## Invariants And Boundaries
+### Conventions
+
+Use the strict family for owned response vocabulary and the flexible family only for provider or
+service detail. Both share declared lifecycle fields and the same serialization boundary.
+
+### Invariants And Boundaries
 
 - Default to strict response models for public contracts.
 - Use flexible envelopes only for intentionally raw/detail payloads.
@@ -81,8 +92,8 @@ PROVIDER's fields, not this package's.
   the non-linear front half of a lifecycle carries prose-only hints.
 - `nextStep` and `agentNotifierBanner` (plus the legacy `supervisorBanner` alias during the
   rename window) are optional on both envelopes and excluded
-  when `None`; both are set only at the `_tool_payload` choke point, never by
-  individual tool models.
+  when `None`. The response boundary attaches the banner; a producer may supply an explicit
+  recovery `nextStep`, which takes precedence over ambient guidance after address checking.
 - **What this package writes, this package declares.** A field the choke point
   attaches must be a declared field of the envelope, not a key written into the
   dump. That is what keeps a response inside its own contract and inside its own
@@ -93,17 +104,58 @@ PROVIDER's fields, not this package's.
   satisfy; a new envelope base that is not one of the two families would break
   the registry's annotation, which is the intent.
 
+### Todos
+
+No task-independent follow-up was identified in the reviewed response-envelope behavior.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Current envelope behavior is established by the repository source. | — | — |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Token serialization helpers accept the shared `ResponseModel` family, including concrete tool-response subclasses. | `ResponseModel` | mcp/src/agents_remember/models/tokens.py:252-265 |
-| Public tool payloads validate through concrete subclasses. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| Token serialization helpers accept the shared `ResponseModel` family, including concrete tool-response subclasses. | `ResponseModel` | mcp/src/agents_remember/models/tokens.py:18-18 |
+| Public tool payloads validate through concrete subclasses. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
 | The next-step engine that computes `NextStep` for an active lifecycle; `next_step_for` returns the model, not a dump. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
-| The application response boundary completes the validated response after attaching lifecycle-wide fields (writing both `agentNotifierBanner` and the legacy `supervisorBanner`) and finalizing its payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:49-61 |
-| The registry whose `dict[str, type[ResponseEnvelope]]` annotation is what `ResponseEnvelope` exists for. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
+| The application boundary preserves a producer recovery hint or computes one, rejects contradictory task addresses, writes both banner names, and finalizes once. | `_attach_lifecycle_tail`; `bound_next_step`; `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/application/tool_response.py:84-98 |
+| The registry whose `dict[str, type[ResponseEnvelope]]` annotation is what `ResponseEnvelope` exists for. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:148-227 |
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `StrictResponseModel`, `FlexibleResponseModel`, and `NextStep`.
+Strict responses forbid unknown fields; flexible responses retain provider detail while recursively
+rejecting reserved snake_case decision keys. This module declares response shapes and token fields;
+it does not locate journals or authorize mutation.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes `StrictResponseModel`, `FlexibleResponseModel`, `NextStep` at this ownership boundary. | `StrictResponseModel`; `FlexibleResponseModel`; `NextStep` | mcp/src/agents_remember/models/base.py:13-16; mcp/src/agents_remember/models/base.py:19-30; mcp/src/agents_remember/models/base.py:47-63 |
+
+## Cross-Repo References
+
+No cross-repository implementation boundary is owned by these response primitives.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No applicable cross-repository source was found. | — | — |
 
 ## Update History
+
+- 2026-09-05T08:27+02:00 — L31 native curator: Reviewed the response-envelope and enrichment claims, corrected producer-hint precedence/address binding, and documented reserved-key validation. Under the L31 recovery ruling, three active citation wrappers inside older history were converted to inert historical-source text, preserving their original narratives, coordinates, and the prior recorded card verification identity; current evidence is supplied above. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for `ResponseEnvelope` and confirmed that the strict/flexible response families remain as documented. Verification remains closeout-owned.
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
 
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `agentNotifierBanner` rename and
   the legacy `supervisorBanner` alias declared on both envelopes, written by
@@ -120,17 +172,17 @@ PROVIDER's fields, not this package's.
   `supervisorBanner` — because the field was declared nowhere in the source either: the choke
   point stamped it onto the already-dumped dict, so a stale supervisor produced a response that
   failed its own `model_validate`. Both envelopes now declare `supervisorBanner: str | None = None`
-  cit:([`ResponseModel`, `FlexibleResponseEnvelope`], mcp/src/agents_remember/models/base.py:41-60; mcp/src/agents_remember/models/base.py:69-84), and the application response boundary's
-  cit:([`_attach_lifecycle_tail`, `complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:34-44; mcp/src/agents_remember/application/tool_response.py:47-61)
+  cit:([`ResponseModel`, `FlexibleResponseEnvelope`], mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114), and the application response boundary's
+  historical-source (`_attach_lifecycle_tail`, `complete_tool_response`; mcp/src/agents_remember/application/tool_response.py, original lines 34–44 and 47–61; recorded pre-curation card verification `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`)
   sets it and `nextStep` on the validated response before the single model dump — which also puts
   `nextStep` inside the token count for the first time (cit:([`next_step_for`], mcp/src/agents_remember/application/next_step.py:260-281) now returns the model,
   not a dump). Recorded the new `ResponseEnvelope: TypeAlias = ResponseModel |
-  FlexibleResponseEnvelope` cit:(["ResponseEnvelope: TypeAlias = ResponseModel | FlexibleResponseEnvelope"], mcp/src/agents_remember/models/base.py:98-98) and why it exists: it is the annotation
+  FlexibleResponseEnvelope` cit:(["type ResponseEnvelope = ResponseModel | FlexibleResponseEnvelope"], mcp/src/agents_remember/models/base.py:123-123) and why it exists: it is the annotation
   `models.tool_registry` needs so the two choke-point fields are reachable by type. Added the
   "what this package writes" invariant and the `ResponseEnvelope`
   invariant. Citations: every class in this file gained a line range
-  cit:([`StrictResponseModel`, `FlexibleResponseModel`, `ResponseModel`, `ToolResponse`, `FlexibleResponseEnvelope`, `FlexibleToolResponse`, `ResponseEnvelope`], mcp/src/agents_remember/models/base.py:10-13; mcp/src/agents_remember/models/base.py:16-19; mcp/src/agents_remember/models/base.py:41-63; mcp/src/agents_remember/models/base.py:66-69; mcp/src/agents_remember/models/base.py:72-89; mcp/src/agents_remember/models/base.py:92-95; mcp/src/agents_remember/models/base.py:98-98), the response-boundary reference row was re-pointed to
-  cit:([`_attach_lifecycle_tail`, `complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:34-44; mcp/src/agents_remember/application/tool_response.py:47-61), and the registry row was added with
-  cit:([`TOOL_RESPONSE_MODELS`], mcp/src/agents_remember/models/tool_registry.py:116-179). Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-06-27T18:43+02:00: Added the `NextStep` model (lifecycle next-step hint mirroring `guidance.lifecycle_guidance`; strict, `summary` + optional `nextOperation`/`nextTool`/`nextArgs`/`nextRequiredArgs`) and an optional `nextStep` field on both `ResponseModel` and `FlexibleResponseEnvelope`, populated at the application response boundary (cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:47-61)) and excluded when `None` (task 27).
+  cit:([`StrictResponseModel`, `FlexibleResponseModel`, `ResponseModel`, `ToolResponse`, `FlexibleResponseEnvelope`, `FlexibleToolResponse`, `ResponseEnvelope`], mcp/src/agents_remember/models/base.py:13-16; mcp/src/agents_remember/models/base.py:19-30; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:91-94; mcp/src/agents_remember/models/base.py:97-114; mcp/src/agents_remember/models/base.py:117-120; mcp/src/agents_remember/models/base.py:123-123), the response-boundary reference row was re-pointed to
+  historical-source (`_attach_lifecycle_tail`, `complete_tool_response`; mcp/src/agents_remember/application/tool_response.py, original lines 34–44 and 47–61; recorded pre-curation card verification `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`), and the registry row was added with
+  cit:([`TOOL_RESPONSE_MODELS`], mcp/src/agents_remember/models/tools/tool_registry.py:149-229). Verification metadata pinned until closeout stamps the L4 commit.
+- 2026-06-27T18:43+02:00: Added the `NextStep` model (lifecycle next-step hint mirroring `guidance.lifecycle_guidance`; strict, `summary` + optional `nextOperation`/`nextTool`/`nextArgs`/`nextRequiredArgs`) and an optional `nextStep` field on both `ResponseModel` and `FlexibleResponseEnvelope`, populated at the application response boundary (historical-source (`complete_tool_response`; mcp/src/agents_remember/application/tool_response.py, original lines 47–61; recorded pre-curation card verification `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`)) and excluded when `None` (task 27).
 - 2026-05-28T19:52+02:00: Created for the shared Pydantic response primitives added during the response-contract work.

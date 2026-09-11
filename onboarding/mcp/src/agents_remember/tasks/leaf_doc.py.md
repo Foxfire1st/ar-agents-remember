@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/tasks/leaf_doc.py` |
 | doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-02T01:05+02:00                      |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-20T09:35+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -44,16 +44,44 @@ small `{docPath, lifecycleId, changed}` report, or `None` when the leaf has no d
 - Restamp is idempotent (`changed: false` when the stamp already matches) and total
   (overwrites a stale finalized-lifecycle stamp — a reopened leaf's doc must follow
   the fresh lifecycle, not the old one).
-
+- Since 260815-DAG-L16 `resolve_terminal_leaf_doc` names the missing binding and the recovery
+  (L16-R9): a blank leaf id refuses with "the leaf has no stamped contract binding — re-stamp the
+  series contract (series-contract.md) or use branch-addressed mode for direct execution" instead
+  of the opaque "terminal leaf resolution requires a nonblank leaf id".
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:334-365 |
-| The post-contract-write restamp call site in worktree start. | "restamp_leaf_doc_lifecycle(" | mcp/src/agents_remember/worktrees/modules/start.py:602-602 |
-| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:48-48 |
+| The atomic reopen plan clears the doc's stamp before the next start restamps it. | `_plan_leaf_doc_reset` | mcp/src/agents_remember/worktrees/reopen.py:393-436 |
+| Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. | `_create_start_enclosure` | mcp/src/agents_remember/worktrees/modules/start.py:620-682 |
+| The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). | "def read_task_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:69-69 |
+
+## 260815-DAG-L3 Governed Lifecycle Restamp
+
+`restamp_leaf_doc_lifecycle` now plans the same exact leaf-doc change but delegates publication to
+an injected writer. Worktree start supplies the queue-governed task-fact publisher, so lifecycle
+restamping cannot bypass an active sprint lane or atomic blocker; standalone tests can inject the
+ordinary task-doc writer without duplicating policy.
+
+## CCR-L42 current candidate
+
+Leaf documents now include `LeafEnclosureRegistrationPlan` and exact parent-row registration planning. Missing or mismatched bindings produce typed task-document repair facts before closeout rather than sibling scans or path-name inference.
 
 ## Update History
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Leaf documents now include `LeafEnclosureRegistrationPlan` and exact parent-row registration planning. Missing or mismatched bindings produce typed task-document repair facts before closeout rather than sibling scans or path-name inference.
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `resolve_terminal_leaf_doc` blank-id refusal now names
+  the missing binding and the recovery (L16-R9: re-stamp the series contract / use
+  branch-addressed mode). Verified at code commit a9d50e08.
+
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-15T09:10+02:00 — L3 content update: documented publisher injection for queue-governed
+  leaf lifecycle restamping; verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: updated the reopen reference to the current atomic
   `_plan_leaf_doc_reset` owner; leaf lookup and restart stamping remain unchanged. Verification
   remains closeout-owned.

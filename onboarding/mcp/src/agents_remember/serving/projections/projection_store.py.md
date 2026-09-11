@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/projection_store.py` |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`             |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`             |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -192,24 +192,24 @@ The recurring projection path uses projected status plus the latest landing snap
 | The shared store-root resolver. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 | The append-only store whose logs are read back. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The pure fold this drives. | `project_lifecycle`; `project_workspace` | mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:128-181 |
-| The worker-owned state refreshes task inputs. | `_refresh_tasks` | mcp/src/agents_remember/serving/projections/projection_inputs.py:266-275 |
+| The worker-owned state refreshes task inputs. | `_refresh_tasks` | mcp/src/agents_remember/serving/projections/projection_inputs.py:277-287 |
 | The worker-owned state refreshes engine facts. | `_refresh_engine_facts` | mcp/src/agents_remember/serving/projections/projection_inputs.py:318-343 |
-| The worker-owned state refreshes progress inputs. | `_refresh_progress` | mcp/src/agents_remember/serving/projections/projection_inputs.py:371-377 |
+| The worker-owned state refreshes progress inputs. | `_refresh_progress` | mcp/src/agents_remember/serving/projections/projection_inputs.py:393-399 |
 | Input acquisition and reclamation belong to the worker-owned state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
 | The complete acquired input bundle is represented by `ProjectionInputs`. | `ProjectionInputs` | mcp/src/agents_remember/serving/projections/projection_inputs.py:120-140 |
 | `project_and_write` invokes the input state rather than owning those reads itself. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
-| `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. | "def _refresh_drift(self"; "def prune_orphaned_drift_snapshots(" | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-23; mcp/src/agents_remember/serving/projections/projection_inputs.py:349-354 |
-| The shared per-tick contract snapshot is built once for the projection pass. | "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:82-112; mcp/src/agents_remember/serving/projections/projection_inputs.py:273-273; mcp/src/agents_remember/serving/projections/projection_store.py:100-100; mcp/src/agents_remember/serving/projections/projection_store.py:103-103; mcp/src/agents_remember/serving/projections/projection_store.py:227-227 |
+| `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. | "def _refresh_drift(self"; "def prune_orphaned_drift_snapshots(" | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-23; mcp/src/agents_remember/serving/projections/projection_inputs.py:367-367 |
+| The shared per-tick contract snapshot is built once for the projection pass. | "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:82-82; mcp/src/agents_remember/serving/projections/projection_inputs.py:286-286; mcp/src/agents_remember/serving/projections/projection_store.py:103-103; mcp/src/agents_remember/serving/projections/projection_store.py:227-227 |
 | The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. | `read`; `_refresh_tasks`; `_refresh_providers`; `_refresh_drift` | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264; mcp/src/agents_remember/serving/projections/projection_inputs.py:266-275; mcp/src/agents_remember/serving/projections/projection_inputs.py:297-316; mcp/src/agents_remember/serving/projections/projection_inputs.py:345-350 |
-| A scaling test proves a full `project_and_write` tick enumerates contracts once and reparses nothing unchanged on the next tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged` | mcp/tests/test_projection_scaling_cs6.py:690-728 |
+
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
 | The compact lifecycle-scoped attention acknowledgement store is pruned by `project_and_write`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
 | The atomic-write design requirement and serving placement are specified in §2.5 and §5. | `### 2.5 The observer and its projections`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:241-251; docs/design/observable-lifecycle.md:323-338 |
-| The tick calls the TTL-gated provider refresher before `ProjectionInputState.read`, whose delegated `_refresh_providers` performs provider reads. | "tick.provider_refresher.maybe_refresh("; "inputs = state.read("; `_refresh_providers` | mcp/src/agents_remember/serving/projections/projection_store.py:223-235; mcp/src/agents_remember/serving/projections/projection_inputs.py:297-316 |
+| The tick calls the TTL-gated provider refresher before `ProjectionInputState.read`, whose delegated `_refresh_providers` performs provider reads. | "tick.provider_refresher.maybe_refresh("; "inputs = state.read("; `_refresh_providers` | mcp/src/agents_remember/serving/projections/projection_inputs.py:319-338; mcp/src/agents_remember/serving/projections/projection_store.py:226-226; mcp/src/agents_remember/serving/projections/projection_store.py:228-228 |
 | `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264 |
-| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | "_repo_surface_cache: dict[tuple[tuple[str"; "def _repo_surface_cache_key(config: McpRuntimeConfig) -> tuple[tuple[str"; "repo_surfaces=_gather_repo_surfaces_cached" | mcp/src/agents_remember/serving/projections/projection_store.py:87-87; mcp/src/agents_remember/serving/projections/projection_store.py:232-232; mcp/src/agents_remember/serving/projections/projection_store.py:348-348 |
+| The repo-surface cache memoizes sidecar staleness, route coverage, and ledger reads for a short TTL keyed by configured repo paths. | "_repo_surface_cache: dict[tuple[tuple[str"; "def _repo_surface_cache_key(config: McpRuntimeConfig) -> tuple[tuple[str"; "repo_surfaces=_gather_repo_surfaces_cached" | mcp/src/agents_remember/serving/projections/projection_store.py:87-87; mcp/src/agents_remember/serving/projections/projection_store.py:232-232; mcp/src/agents_remember/serving/projections/projection_store.py:349-349 |
 | Admission policy is centralized in the worktree provider admission helper. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
-| Projection tests prove cached repo surfaces do not cache provider reads. | `test_project_and_write_keeps_provider_reads_on_fast_path_with_cached_surfaces` | mcp/tests/test_observer_projection_ledger.py:399-417 |
+
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -227,6 +227,9 @@ repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` a
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 ## Update History
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
+
 - 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound delegated input refresh, provider ordering, and complete returned bundle claims to operative spans, and bound the shared contract snapshot to its cache threading and in-pass build plus the tick's refresher-before-read call order. Verification metadata unchanged.
 
 - 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 14 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.

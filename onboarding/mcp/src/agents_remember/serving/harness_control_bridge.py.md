@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00|
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -39,7 +39,7 @@ state. Per operation, `submissions()` applies that running-state check and retur
 reconciliation, stop, result validation, and ambiguous-send resolution. Submission receipts remain
 distinct from terminal completion. Event reduction and transcript retention are bounded. Adapter
 failures are classified by the authority: certified pre-send failures can requeue, while a possible
-send or incoherent result installs the ambiguity barrier instead of guessing
+send or incoherent result installs the ambiguity blocker instead of guessing
 cit:([`_send_and_settle`], mcp/src/agents_remember/serving/harness_submission_authority.py:700-727).
 
 The evidence buffer is a bounded per-session deque (default 2000 frames, per-frame 32 KiB clip)
@@ -146,11 +146,11 @@ timeline/provenance reads.
 | The retained `SubmissionLedger` owns provenance and paged operation-timeline reads; private IPC reaches the timeline as `bridge.submissions().ledger.operation_timeline`. | "async def _submission_provenance("; "async def _operation_timeline("; "class SubmissionLedger:" | mcp/src/agents_remember/serving/harness_control_ipc.py:315-326; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:228-238; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
 | Private IPC exposes bridge advertise/set actions under the same exact identity. | `HarnessControlServer`; `_advertise`; `_set_model`; `_set_effort` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
 | The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set). | `AR_EVIDENCE_KEY`; `AR_EVIDENCE_METHOD_KEY`; "class AdapterSnapshot"; "class EvidenceFrame"; "class EvidencePage"; "class NativeEvidencePage"; "class NativePageReader" | mcp/src/agents_remember/models/conversations/evidence.py:17-17; mcp/src/agents_remember/models/conversations/evidence.py:26-26; mcp/src/agents_remember/models/conversations/control_wire.py:127-127; mcp/src/agents_remember/models/conversations/evidence.py:80-80; mcp/src/agents_remember/models/conversations/evidence.py:106-106; mcp/src/agents_remember/models/conversations/evidence.py:128-128; mcp/src/agents_remember/models/conversations/evidence.py:138-138 |
-| Contract tests pin diversion no-leak, buffer bounds, continuation, epoch mismatch, and the provenance delegation through this bridge. | `EvidenceBufferTests`; `EvidenceIpcTests` | mcp/tests/test_harness_control_evidence.py:360-602; mcp/tests/test_harness_control_evidence_ipc.py:48-337 |
+
 | The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | "class InterruptCapableAdapter(Protocol):"; """"Structural native interrupt write; adapters opt in without a base-contract member." | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_bridge.py:273-300 |
 | The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | `HarnessControlServer`; `_interrupt`; `_operation_timeline` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
 | The validated client drives `interrupt_control`/`read_operation_timeline` with strict response validation against this bridge's stamps. | "def interrupt_control("; "opaque cursor coordinates are invalid in the operation timeline domain"; "def _interrupt_result("; "def _operation_timeline(" | mcp/src/agents_remember/serving/_harness_control_parsing.py:252-252; mcp/src/agents_remember/serving/harness_control_client.py:431-451; mcp/src/agents_remember/serving/harness_control_client.py:454-478; mcp/src/agents_remember/serving/_harness_control_parsing.py:277-277 |
-| Contract tests pin the epoch guard, structural refusal naming the adapter, adapter-mint-epoch refusal, and the bridge-stamped epoch. | `InterruptBridgeTests`; `OperationTimelineTests`; `ClientValidationTests` | mcp/tests/test_harness_control_plane.py:289-376; mcp/tests/test_harness_control_plane_assets.py:249-483; mcp/tests/test_harness_control_plane_recovery.py:107-207 |
+
 
 ## Cross-Repo References
 
@@ -186,6 +186,8 @@ moves the process's real ceiling somewhere else. The default values are unchange
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

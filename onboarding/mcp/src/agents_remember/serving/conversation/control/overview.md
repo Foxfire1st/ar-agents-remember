@@ -8,8 +8,8 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
 | lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 
 ## What This Area Is
 
@@ -214,7 +214,7 @@ foundation and four+installed suites pin the slice.
 | `get_conversation_runtime` is the runtime dependency entry. | `get_conversation_runtime` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23 |
 | The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The conversation models define `protect_queue_source_privacy`. | `protect_queue_source_privacy` | mcp/src/agents_remember/models/conversations/submissions.py:34-41 |
-| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/models/conversations/telemetry.py:102-102 |
+| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/models/conversations/telemetry.py:100-100 |
 | `PolicyPart` is declared in the route-local `control/policy.py`. | `PolicyPart` | mcp/src/agents_remember/serving/conversation/control/policy.py:36-43 |
 | `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. | `ConversationPolicyProjection` | mcp/src/agents_remember/serving/conversation/control/policy.py:46-55 |
 | `_map_typed_error` is the control API error-mapping entry. | `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
@@ -228,12 +228,12 @@ foundation and four+installed suites pin the slice.
 | Pi settlement reads the preserved terminal identity through its stop-reason reader. | `_pi_stop_reason` | mcp/src/agents_remember/serving/conversation/control/operations.py:484-511 |
 | `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
 | `capabilities_for` is the active capability-view entry. | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:342-357 |
-| The foundation pin asserts exactly the seventeen owned control routes. | `test_root_composes_three_owned_child_routers` | mcp/tests/test_conversation_foundation.py:32-107 |
-| `CodexInterruptTests` covers codex interrupt and operation behavior. | `CodexInterruptTests` | mcp/tests/test_conversation_control_operations.py:40-192 |
+
+
 | `QueueProjectionTests` covers queue projection behavior. | `QueueProjectionTests` | mcp/tests/test_conversation_control_queue.py:51-208 |
-| `PolicyTelemetryTests` covers policy and telemetry behavior. | `PolicyTelemetryTests` | mcp/tests/test_conversation_control_attachments.py:572-650 |
+
 | `ControlApiTests` covers the real-wire control routes. | `ControlApiTests` | mcp/tests/test_conversation_control_api.py:26-378 |
-| `CodexInstalledControlApiTests` provides the installed control proof. | `CodexInstalledControlApiTests` | mcp/tests/test_conversation_control_installed.py:195-484 |
+
 
 ## Cross-Repo References
 
@@ -384,9 +384,8 @@ import-cycle reason (see `../overview.md`).
 
 **What is and is not enforced.** Every handler here returns a `JSONResponse` it built itself, so
 FastAPI validates none of these declarations at runtime — undoing them would fail no request.
-`mcp/tests/test_serving_response_conformance.py` is the enforcement: it drives the real routes and
-validates the returned body against the model declared for the status that came back. Its ledger is
-honest about the reach: the 404 (no such seat) is driven on all seventeen, the 403 on one, and every
+The former route-conformance suite was retired; declarations alone do not establish a current
+validation pass. Its historical evidence recorded the following reach: the 404 (no such seat) is driven on all seventeen, the 403 on one, and every
 reachable success shape off a live bridge — while the typed-bridge-failure legs (400/409/422/503 on
 most routes) stay declared-and-undriven with a reason, because the bridge fixture models the harness
 edge rather than a stale epoch or a socket that dies mid-write.

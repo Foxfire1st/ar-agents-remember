@@ -5,72 +5,105 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/tests/test_task_reopen.py`            |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                              |
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[tests/overview.md](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_task_reopen.py` covers the L11 reopen semantics in isolation: the `task_reopen`
-guard set and resets, the task-domain leaf-doc lookup/restamp helpers, the
-worktree-start recreate path for reopened contracts, and the abandon-side ambient
-lifecycle end.
+Checks reopen resets the exact contract, leaf document and parent row to planning while preserving the leaf identity and recording the decision. An injected contract-publication failure rolls back document and landing changes. Deleted guard/start/abandon companion suites are not claimed as current tests here.
 
 ## Code Commentary
 
 ### Logic
 
-`_completed_leaf_contract` hand-builds a fully landed leaf enclosure (closeout,
-integration, and cleanup all completed, worktrees absent) under a temp coordination
-root; `_leaf_doc`/`_master_doc` author the matching task documents through the real
-store. `ReopenGuardTests` prove refusal (returncode 2 with named blockers) for an
-in-flight leaf, a series contract, and a leaf whose worktree dir still exists.
-`ReopenResetTests` prove the happy path (contract fields reset, `cleanup: reopened`,
-leaf id unchanged, doc back to `planning` with the audit decision, master index row
-flipped), the dry-run writes-nothing contract, and the doc-less leaf case.
-`LeafDocLookupTests` cover the case-insensitive id/enclosure-ref/stem joins and the
-overwrite-idempotent restamp. `AbandonAmbientLifecycleTests` installs a real
-`AmbientLifecycle` over an `EventStore` and proves `_end_ambient_lifecycle_if_anchored`
-ends only the anchored lifecycle (owner-written `lifecycle.ended` tail).
-`StartAfterReopenTests` run the real `start_result` against an initialized git repo:
-a `cleanup: reopened` contract recreates fresh with the new lifecycle and restamps the
-doc's `lifecycleId`, while a live contract still attaches unchanged. HFX-L4 pins legacy
-stem-shaped contract loading by expecting a reopened legacy enclosure to load with the canonical
-task doc id when the task tree proves the mapping.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
+
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- The reopen tests exercise the module API directly (`reopen_task(contract_path)`),
-  not the MCP transport; the representative-payload conformance for the `task_reopen`
-  tool lives in `test_tool_response_conformance.py`.
-- The start tests create the memory-repo skeleton dirs because coordination context
-  resolution requires them even with memory disabled.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
-## Repo-Internal References
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module under test. | `reopen_task` | mcp/src/agents_remember/worktrees/reopen.py:169-265 |
-| The lookup helper under test. | `find_leaf_doc` | mcp/src/agents_remember/tasks/leaf_doc.py:56-70 |
-| The lifecycle restamp helper under test. | `restamp_leaf_doc_lifecycle` | mcp/src/agents_remember/tasks/leaf_doc.py:178-197 |
-| The recreate-fresh + restamp start path under test. | `start_result`, "restamp_leaf_doc_lifecycle(contract.task_root" | mcp/src/agents_remember/worktrees/modules/start.py:440-451; mcp/src/agents_remember/worktrees/modules/start.py:602-602 |
-| Contract loading preserves a legacy stem-shaped leaf id when the task tree proves the mapping. | `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:436-469 |
-| The canonical contract leaf-id normalization helper is `normalize_contract_leaf_id`. | `normalize_contract_leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:556-579 |
-| The abandon-side ambient end helper under test. | `end_ambient_lifecycle_if_anchored` | mcp/src/agents_remember/application/worktree_tools.py:512-519 |
+| No external domain claim is required. | N/A | N/A |
 
-## L23 Reopen Lineage Regression
+## Repo-Internal References
 
-The reopen fixture now builds a real super/master/leaf contract chain. Advancing
-super proves reopen returns a blocked strict projection before changing either
-the enclosure contract or leaf document; ordinary start-after-reopen coverage
-continues on the same thematic master topology.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:25-66 |
+| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:68-92 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
+
+- 2026-08-26T10:44:52+02:00 — No behavior change: common reopen contract/memory fixtures moved to `task_reopen_test_support`; reopen publication and authority assertions are unchanged.
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-16T05:18+02:00 — Dagger repair: reopen preview proves byte preservation now that dry-run start does not create an authority lock; a missing legacy `master` field still resets the exact canonical parent row derived from task topology.
+- 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: migrated the shared reopen and start-after-reopen fixtures from the retired universal master-series chain to the production organizational direct-super lineage; exact Git commits replace placeholder candidate ids, and successful restart asserts that no series contract is created.
+- 2026-08-16T03:12+02:00 — No content impact: the sprint execution-graph fixture now validates its
+  raw payload through `SprintExecutionGraph` before passing it to `TaskDocument`, satisfying the
+  typed constructor while preserving the same atomic graph and reopen assertions.
+
+- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
+
+- 2026-08-15T10:24+02:00 — L3 file-size repair: moved `ReopenGuardTests` into the focused
+  `test_task_reopen_guards.py` suite; helpers and all reset/restamp/start behavior stay here.
+- 2026-08-15T09:10+02:00 — L3 content update: reconciled the restamp tests with publisher injection
+  and removed the retired direct-call citation; verification remains closeout-owned.
 - 2026-08-14T05:26Z — L23 final curator: re-anchored the ambient-end regression after the helper
   became the public application-level owner; the single-writer lifecycle contract is unchanged.
   Verification remains closeout-owned.

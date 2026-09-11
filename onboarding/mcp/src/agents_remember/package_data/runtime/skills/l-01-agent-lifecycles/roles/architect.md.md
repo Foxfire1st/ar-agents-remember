@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -26,7 +26,8 @@ canonical `skills/l-01-agent-lifecycles/roles/architect.md`.
 ### Spawn Doctrine And tools.md (260731-EFA-L16)
 
 Two developer rulings landed here. First, the immutability clause now binds role-seat creation to
-`spawn_agent_session` explicitly — a role seat is never a native sub-agent — and native sub-agent
+the public `dispatch_agent` transaction — its internal session primitive is plane-owned, and a role
+seat is never a native sub-agent — while native sub-agent
 fan-out is scoped to the one mode where this seat does hands-on work: solo build under the worker
 discipline (developer correction). Once orchestration runs, analysis goes to spawned role seats.
 Second, the Opening Move gained a standing read of the resolved `system/tools.md` — as the repo's
@@ -42,6 +43,18 @@ plan, examples before risky change, and an implementation plan derived from the 
 rather than substituted for them.
 
 ### Logic
+
+The synchronized dispatch table distinguishes ordinary identity-free architect bootstrap from an
+explicit named-role task-seat takeover. Once hosted, architect dispatch remains plane-authorized;
+the dispatch/tools rows describe fixed structural authority and capability rather than settings.
+
+The packaged role dispatches the sprint plan reviewer and receives a plane-stamped reviewer
+generation back at the architect parent address. This is distinct from the orchestrator-stamped
+super reviewer at the same sprint+reviewer seat; architect retirement authority cannot cross that
+generation boundary.
+
+The synchronized architect contract keeps semantic revision under explicit developer approval and
+keeps internal repair/test runs as protocol events until an exact candidate is handed to review.
 
 The packaged architect lifecycle now arrives as a sprint-local command seat launched by free chat.
 Its backend spool-up is scoped to the same repository+sprint binding, so decision custody and
@@ -80,12 +93,27 @@ tiny. Solo/flat hat-collapse is reserved here:
 the architect may wear backend/build hats only when no spawned role owns that work, and
 owner-never-self-approves still holds.
 
+The strategist question is driven by missing or stale evidence-backed topology/classification
+reasoning, not by graph absence. A reviewed graph-less atomic-sequential activation choice is
+valid: canonical commanded-master order is an equal-priority tie-break and exact source-pair
+selection may pause a former master without integration or retirement. When the
+developer sanctions a strategist skip, the orchestrator inherits the complete reasoning duty and
+must author the reasoned plan plus explicit topology choice before manager dispatch; that choice
+may remain graph-less. Adding a master remains one atomic `attach_master` operation, with graph-node
+membership equality required only when a graph exists.
+
 ### Invariants And Boundaries
 
 - The initial developer-facing session is a free-chat launcher; the spawned architect then owns the
   developer conversation, while the orchestrator remains backend-only.
 - Strategist dispatch and the tiny-work short root are explicit developer decisions proposed by
   the architect, never silent defaults.
+- Graph absence alone is neither a strategist trigger nor a defect. The accepted topology choice
+  may be the reviewed graph-less source-pair-selected atomic-sequential default.
+- Task authoring is upstream of selector and queue state; valid planning changes invalidate and
+  rebuild affected disposable projections rather than waiting for runtime scheduling permission.
+- A sanctioned strategist skip transfers the full reasoned-plan and topology-choice duty to the
+  orchestrator; it never permits an unreasoned implicit choice.
 - Escalation terminal custody belongs to the architect; the developer is an authority, not a row
   address.
 - Dashboard-owned role seats are immutable for the session lifetime.
@@ -94,12 +122,27 @@ owner-never-self-approves still holds.
 - Solo/flat hat-collapse is allowed only for the architect owner seat.
 - Spawned roles receive durable refs, not transcript state, and never become the architect.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The canonical architect role is defined in the cited source file. | `# Lifecycle — Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-264 |
-| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:99-99 |
+| This package-data artifact contains the synchronized architect lifecycle. | `# Lifecycle — Architect` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:1-306 |
+| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:36-36 |
+| Master attachment keeps graph-node equality conditional on graph presence. | `## Adding A Master To A Running Sprint` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:95-132 |
+| Event routing repeats that the atomic attachment adds a graph node only when a graph exists and carries a nature ruling when needed. | "Sprint attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:187-187 |
+| The l-01 spine that registers architect as the developer-facing owner seat and owns role-seat immutability. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:123-123 |
 | The backend orchestrator seat that receives architect dispatches and returns developer-worthy items through the relay. | `# Lifecycle — Orchestrator` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:1-14; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:22-38; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:429-448 |
 | The design hat the architect wears inline when shaping intent or task docs. | `# Lifecycle — Designer` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:1-18 |
 
@@ -110,6 +153,12 @@ No sibling repository evidence is needed for this orchestration role file.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
+
+## 260815-DAG-L14 Doctrine Sync
+
+"Adding A Master" is rewritten to the atomic `task_doc.attach_master` flow: one validated batch
+writes the typed `masterRef` row, the `orchestrates` slug, the graph lump node (when the sprint
+has a graph), and the nature assertion.
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
@@ -129,7 +178,94 @@ normal synchronization condition. It routes the contract-addressed recovery
 through the backend and retries the same canonical master seat; it does not
 invent a “part 2” master or burden agents with commit ancestry.
 
+## 260815-DAG-L2 Planning Authority
+
+The architect requires current evidence-backed dependency, route, seam, classification, priority,
+and topology reasoning plus explicit `executionNature` for commanded masters before backend
+execution. It proposes—never auto-dispatches—the strategist, owns the initial and runtime
+plan-review loop, and rules the resulting artifact before orchestrator adoption. The explicit
+topology choice may be a reviewed graph or reviewed graph-less atomic-sequential execution.
+
+## 260815-DAG-L13 Scheduling Default Doctrine
+
+The role treats a graph-less sprint as the atomic-sequential default, not as an error awaiting migration:
+`task_doc.author_execution_graph` owns graph edits, including the first bootstrap onto a
+graph-less sprint; the removed `migrate_execution_topology` is no longer named as the legacy
+cutover path.
+
+## IAS Source-Pair Activation Planning Boundary
+
+The synchronized role now defines that graph-less default through source-pair selection rather
+than full-integration serialization. Selecting another atomic master logically pauses the former
+without deleting its task, branch, worktree, or journal. Dependency truth remains an architect
+judgment, and otherwise-valid task authoring never consults selector or closeout-queue state.
+
+## 260821-DAGQC-L4 Topology-Choice Closure
+
+The synchronized role now closes the graph-optional doctrine end to end: graph absence alone does
+not recommend a strategist pass; a reviewed graph-less atomic-sequential choice can justify a
+skip; and the skip transfers the complete reasoned-plan/topology-choice duty to the orchestrator.
+For sprint attachment, membership and typed rows are always equal, while graph-node equality is
+conditional on an existing graph; the Event Routing shorthand repeats that condition and the
+nature-ruling requirement. No mandatory-graph runtime or compatibility route is introduced.
+
+The synchronized requirement compiler writes immutable version-addressed packets, records the
+durable corpus ruling in every approved packet, and creates a new packet rather than overwriting an
+approved revision when semantics change.
+
+## M43 Requirement-Revision Authority Projection
+
+The packaged architect role now keeps ordinary repairs on delivery-attempt lineage and routes a
+verified requirement contradiction to developer-approved semantic revision. Worker/reviewer
+classification never rewrites the canonical packet.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Sprint attach" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized architect
+  ownership and retirement bounds for the sprint plan-review generation. Verification remains
+  closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized ordinary architect bootstrap versus
+  explicit takeover, sole public dispatch vocabulary, and fixed structural-row ownership.
+  Verification remains closeout-owned.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2 revision-versus-attempt/event authority.
+
+- 2026-08-27T18:06+02:00 — M43: synchronized requirement-revision authority and attempt/version
+  separation from the canonical architect role.
+
+- 2026-08-27T14:04+02:00 — Clarified immutable packet addressing, packet-local corpus approval,
+  and new-file revision handling in the synchronized architect doctrine.
+- 2026-08-27T13:32+02:00 — M39@v1: added the architect-owned requirement-compilation gate before
+  any sprint/master/leaf topology, including clause splitting, canonical packets, fresh-agent cold
+  reads, developer corpus approval, one-primary leaf projection, and targeted version invalidation
+  plus rebriefing. Verification remains closeout-owned.
+
+- 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
+  synchronized architect-role card.
+
+- 2026-08-26T05:20+02:00 — Reconciled the generated architect role with source-pair activation,
+  pause preservation, and task-authoring primacy. Final citation ranges and verification remain
+  post-Dagger/closeout-owned.
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the synchronized
+  architect role to graph-optional planning, complete strategist-skip transfer, and conditional
+  graph-node membership. Canonical/generated sync is architect-reported green; Dagger acceptance
+  and verification stamping remain closeout-owned.
+- 2026-08-20T05:10+02:00 — 260815-DAG-L14: "Adding A Master" rewritten to the atomic
+  `attach_master` flow. Verified at code commit 2f494982.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
+  `author_execution_graph` owns graph edits including the graph-less bootstrap; the
+  `migrate_execution_topology` reference is gone. Verification remains closeout-owned.
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized explicit topology admission and
+  architect-owned strategist/reviewer authority. Verification remains closeout-owned.
 - 2026-08-12T20:10+02:00 — L23 curator: documented replacement-safe thematic-master sync recovery; verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Recorded `architect.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.

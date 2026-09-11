@@ -1,0 +1,114 @@
+# run.py
+
+| Field | Value |
+| ---|---|
+| repository | agents-remember |
+| path | `scripts/e2e_harness/run.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| governingOverview | `scripts/e2e_harness/overview.md` |
+
+## Governing Overview
+
+[Ambient Role-Chat E2E Harness](overview.md)
+
+## Purpose
+
+Owns exact candidate identity, targeted applicability, two fresh scenario replications, per-run
+artifacts, residual-resource acceptance, and the final no-retry summary.
+
+## Code Commentary
+
+### Logic
+
+`main` first requires Dagger admission and declares the test-process boundary, records the Git
+commit and candidate tree, then validates the supplied profile-owned source-selection decision
+against the exact candidate, mode and diff base before executing exactly two fresh roots.
+Non-applicable decisions are refused by this runner; the repository profile prevents their start. `_run_once` always removes its root, captures exceptions as evidence, and writes a run
+report; a root-removal error is recorded separately and fails an otherwise successful run instead
+of being ignored. The summary names zero retries and links both immutable run reports.
+The fixture invocation id is preserved in per-run and aggregate evidence. L5-C10 requires
+both an empty residual-session set and a clean structured teardown result.
+
+Admission is deliberately the first statement in `main`, before argument parsing, report-directory
+creation, candidate inspection, or fixture setup. A direct host invocation therefore fails without
+creating evidence or reaching any tmux command; this safety property does not depend on valid CLI
+arguments.
+
+Under CCR-R03@v1 `_candidate_identity` stages the candidate index in an OS temp directory that is
+proven outside the repository, instead of a scratch directory inside it — so the temporary index
+can never self-include in the hashed candidate tree (the L26-documented diagnostic limitation is
+fixed for this harness) cit:([`_candidate_identity`], scripts/e2e_harness/run.py:206-218).
+
+### Conventions
+
+Immutable invocation context travels as one frozen record. Unix-socket roots are intentionally short,
+and candidate identity is computed before any scenario starts. The candidate-index scratch root must
+never be inside the repository being staged.
+
+### Invariants And Boundaries
+
+- `RUN_COUNT` is exactly two and failed runs are not retried.
+- The repository profile owns dependency scope and zero-start applicability; `selection.py` validates that admitted decision without deriving a competing dependency list.
+- Only Dagger admission can enter the controller; host execution is rejected before all parsing and
+  side effects.
+- Candidate commit/tree, command, diff base, and selected paths appear in durable evidence.
+- Any tmux session or recorded cleanup failure surviving scenario teardown fails L5-C10.
+- Disposable-root cleanup errors are diagnostics; they never replace an earlier primary failure.
+- The candidate tree is hashed from a scratch index outside the repository; `.arspawn-e2e-*`
+  artifacts cannot enter it.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation source is configured.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Candidate and replication evidence is repository-owned and recorded directly. | `_RunContext` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-203 |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Two fresh runs are performed without a retry branch. | `RUN_COUNT` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-158 |
+| Residual tmux ownership is a named acceptance checkpoint. | `_residual_tmux` | scripts/e2e_harness/run.py:111-158; scripts/e2e_harness/run.py:224-240 |
+| R03 outside-repo candidate-index staging. | `_candidate_identity` | scripts/e2e_harness/run.py:206-218 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Run roots and candidate identity stay within the current candidate and disposable fixture. | `_fresh_run_root` | scripts/e2e_harness/run.py:151-159 |
+
+## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=824c84c7c0a6f63ffdc223e2e74d96a8760f70584645cba527ee4abb17db5217; verification metadata remains unchanged because commit-owned realization is pending.
+
+
+- 2026-09-06T23:07:25+00:00 — Reconciled current source ownership and admission behavior for IAS memory recovery; prior verification pins retained.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `_candidate_identity` repointed to scripts/e2e_harness/run.py:206-218. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `_fresh_run_root` repointed to scripts/e2e_harness/run.py:151-159. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `_candidate_identity` repointed to scripts/e2e_harness/run.py:206-218. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the outside-repository candidate-index scratch move in `_candidate_identity`; prior admission-first, two-run, and residual-evidence prose preserved.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: made and documented
+  Dagger admission as the controller's first operation, so malformed or direct host invocations
+  cannot touch reports or tmux. Verification remains closeout-owned.
+
+- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
+  canonical anchored citation format. Verification metadata remains closeout-owned.
+
+- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: preserved the fixture invocation and
+  made structured cleanup failures part of L5-C10 alongside residual-session checks, including
+  non-suppressed disposable-root removal. Verification metadata remains closeout-owned.
+
+- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the exact-candidate, twice-fresh, no-retry acceptance controller. Verification metadata remains closeout-owned.

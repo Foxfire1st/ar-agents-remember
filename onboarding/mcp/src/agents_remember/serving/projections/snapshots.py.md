@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/projections/snapshots.py` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -208,9 +208,9 @@ it builds an `EngineProcessFacts` bundle per contract carrying the status-guidan
 `contract_payload(contract)` (code/memory branches, base commits, worktree paths) and
 `dict(lifecycle_guidance(contract))` — both pure — plus `status` from `_safe_status_payload`.
 Since 260731-EFA-L4 the guidance payload is **widened at the boundary** with an explicit `dict(...)`
-cit:(["def read_engine_process_facts("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238): `read_engine_process_facts`
+cit:(["def read_engine_process_facts("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240): `read_engine_process_facts`
 constructs `EngineProcessFacts` with a plain dictionary guidance payload. The same
-widening is applied to the cached local status in cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:382-382), where the
+widening is applied to the cached local status in cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:384-384), where the
 annotation `value: dict[str, Any] | None` is now declared before the `try` so the `except` branch's
 `None` and the success branch's `dict(projected_status_payload(...))` share one type. Neither change
 alters a served value. `status_payload`
@@ -252,8 +252,8 @@ became something the old handler could not see. It would have escaped `_git_comm
 `_enrich_ledger_rows` and failed the whole projection tick — precisely the promise both entry points
 make: `_ledger_window`'s "best-effort … so the projection tick never fails" and the `LedgerNode`
 builder in `read_ledger`. The degrade is hash-only rows, never an exception, and
-`test_observer_projection.py::LedgerCommitMetaTests::test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`
-cit:([`test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick`], mcp/tests/test_observer_projection_ledger.py:171-197) drives **both** paths through a patched `run_git` that raises `TimeoutExpired`.
+The production best-effort metadata boundary is `_git_commit_meta` (mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:327-362).
+The former timeout-injection regression suite was retired; no current test execution is asserted.
 
 It returns `{}` on any failure (no repo path / git absent / non-zero exit / a raise from the runner),
 and `--ignore-missing` drops a
@@ -411,25 +411,25 @@ Snapshot readers merge the refresher's immutable fact for each contract inside t
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:112-112; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:292-292 |
-| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:171-171 |
-| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:217-217; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:237-237 |
-| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:292-292 |
-| The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:608-654; mcp/src/agents_remember/observer/projection.py:657-672; mcp/src/agents_remember/observer/projection.py:685-711 |
+| `read_task_documents` projects all active task docs, with optional lifecycle attachment for leaves and root masters (`_task_document_lifecycle_maps` + `_task_doc_node(..., include_body=False)`). | "def _task_document_lifecycle_maps(enclosures: list[EnclosureNode]) -> _TaskDocumentLifecycleMaps:"; "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:153-211; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:528-605 |
+| `read_series_documents` selects `kind == "master"` docs and builds the folder-keyed `SeriesNode` aggregation (`seriesId` = the task folder, `doneCount`/`totalCount` from the declared `subTasks`, plus `ageSeconds`). | "def read_series_documents(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:212-259 |
+| Series sub-task rows resolve sibling leaf JSON `createdAt` values (`_series_subtask_nodes` + `_series_subtask_created_at`) and sort oldest-first only when every row has one. | "def _series_subtask_nodes(path: Path"; "def _series_subtask_created_at(base_dir: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:260-295; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:296-320 |
+| Lifecycle task docs now carry their JSON-primary `createdAt` timestamp (`_task_doc_node`, `createdAt=doc.createdAt`). | "def _task_doc_node(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:528-605 |
+| The projection nodes these readers build, including optional `TaskDocNode.lifecycleId`, `TaskDocNode.createdAt`, `SeriesSubTaskNode.createdAt`, and `SeriesNode.objective`. | `TaskDocNode`; `SeriesSubTaskNode`; `SeriesNode` | mcp/src/agents_remember/observer/projection.py:739-812; mcp/src/agents_remember/observer/projection.py:797-812; mcp/src/agents_remember/observer/projection.py:825-851 |
 | The provider current-state path + snapshot shape (surface 1). | `current_state_path` | mcp/src/agents_remember/providers/current_state.py:52-62 |
 | The provider-node projection policy used by `read_providers`. | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
 | Worktree provider readers derive isolated provider container names (`_worktree_providers` → `_worktree_runtime_specs`), inspect Docker (`_inspect_containers`), and convert observed runtime into ready/degraded/failed summaries (`_worktree_runtime_summary`). | `_worktree_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:199-259 |
 | `read_providers` always reads workspace providers and filters worktree provider-state files by admitted active groups (`if active_worktree_groups is not None and group not in active_worktree_groups: continue`). | `read_providers` | mcp/src/agents_remember/serving/projections/snapshots.py:163-181 |
-| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | "def read_engine_process_facts("; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:266-266; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:269-269 |
-| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | "def read_enclosures("; "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:59-59; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:238-238 |
+| `read_engine_process_facts` accepts an `active_worktree_groups` filter and skips a non-admitted group before the derived payload is built. | "def read_engine_process_facts("; "contract.worktree_group.name not in active_worktree_groups"; "cp = contract_payload(contract)" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:268-268; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:271-271 |
+| `read_enclosures` and `read_engine_process_facts` take the keyword-only `contracts` snapshot; `contracts=None` builds a local one-shot snapshot via `build_contract_snapshot`. | "def read_enclosures("; "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:61-61; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240 |
 | The shared per-tick contract snapshot + stat-identity parse cache these readers consume. | `ContractSnapshot`; `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:37-49; mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
-| PTS-L2 tests pin reader-output parity with and without the shared snapshot and one enumeration per full projection tick. | `test_full_projection_tick_enumerates_once_and_reparses_nothing_unchanged`; `test_reader_outputs_equal_with_and_without_shared_snapshot` | mcp/tests/test_projection_scaling_cs6.py:690-728; mcp/tests/test_projection_scaling_cs6.py:730-761 |
+
 | `read_setup_progress_nodes` accepts the same active worktree-group filter used by provider setup projection. | "def read_setup_progress_nodes(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:188-188 |
 | `read_drift_snapshots` carries `checkedAt`/`sourceRoot`/`memoryRoot`/`reportPath` provenance from the persisted snapshot. | "def read_drift_snapshots(coordination_root: Path" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:79-79 |
 | `_git_commit_meta` is this module's only git call, runs on the package's one runner, `kernel.git_command.run_git`, and guards it with `except (OSError, subprocess.SubprocessError)` so the runner's own `TimeoutExpired` cannot escape. | "def _git_commit_meta(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:327-327 |
 | That runner strips the `GIT_DIR`-family selectors, adds `safe.directory`, DEVNULLs stdin, and bounds the call at `GIT_LOCAL_TIMEOUT_SECONDS` (300) by default — the bound whose `subprocess.TimeoutExpired` the widened guard above exists to absorb. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:85-151 |
-| A wedged `git log` degrades both ledger entry points to hash-only rows instead of failing the tick: a patched `run_git` raising `TimeoutExpired` is driven through `_ledger_window` **and** `read_ledger`. | `test_a_wedged_git_log_degrades_to_hash_only_rows_instead_of_failing_the_tick` | mcp/tests/test_observer_projection_ledger.py:171-197 |
-| Task 29 tests pin active-group provider admission, parked provider rejection, setup-progress filtering, and engine-process group filtering. | `WorktreeProviderAdmissionTests`; `test_rejects_parked_terminal_and_non_provider_phase_groups`; `test_read_providers_ignores_unadmitted_worktree_stacks`; `test_active_group_filter_skips_parked_progress`; `test_reader_skips_inactive_engine_process_groups_when_filtered` | mcp/tests/test_observer_projection.py:134-242; mcp/tests/test_observer_projection_engine.py:469-498; mcp/tests/test_observer_projection_readers.py:316-330; mcp/tests/test_observer_projection_snapshot.py:303-329 |
+| Failed Git metadata probing returns an empty metadata map so ledger rows can retain their hashes without fabricated date or subject. | `_git_commit_meta` | mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py:327-362 |
+
 | The worktree contract loader + fields (surfaces 5/6). | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:230-285 |
 | The setup-progress projection (`progress_status`) reused for surface 3. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
 | The memory ledger loader read for surface 8. | `load_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190 |
@@ -446,6 +446,9 @@ reparses only changed/new stat identities and removes deleted entries. The new
 facts on heartbeat ticks.
 
 ## Update History
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over the `snapshots_impl/` subpackage (`_common`, `_analytics`, `_runtime`, `_task_documents`); full public+private surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
@@ -580,7 +583,7 @@ facts on heartbeat ticks.
   the guidance producer's own return through — the carrier is the projection's untyped
   input carrier and the reducer folds it by key name, so the carrier takes a plain
   `dict[str, Any]` and does not propagate a narrower typed shape into a structure that never
-  re-emits its vocabulary. cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:382-382) declares
+  re-emits its vocabulary. cit:(["def _cached_local_status(  # pragma: no cover"], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:384-384) declares
   `value: dict[str, Any] | None` before the `try` and stores
   `dict(projected_status_payload(...))`, so the `except` branch's `None` and the success value
   share one type. No served value changes. **Citation repairs** — the two edits added three lines

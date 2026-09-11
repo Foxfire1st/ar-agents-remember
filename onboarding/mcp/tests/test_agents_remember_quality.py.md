@@ -5,73 +5,117 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_agents_remember_quality.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:38+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-This suite proves the Dagger module itself is pinned, parseable, fail-closed, and builds the intended clean quality graph before live Docker execution is considered trustworthy.
+Focused Dagger graph reporting and admission contracts.
 
 ## Code Commentary
 
 ### Logic
 
-In-process fake Dagger objects record container graph construction. The tests cover pinned
-manifest/image inputs, targeted and full argument selection, real/fake Codex probe wiring,
-export-before-verdict behavior, invalid public inputs, and green/red verification. The public
-`quality` and `verify` functions must receive a nonblank explicit diff base, always forward it to
-the wrapper, and publish `Annotated`/`Doc` help for source, bundle, base, mode, and cap.
+The retained cases keep a non-applicable Gate 4 from claiming real Codex execution, refuse absent or mismatched suite attestation, and force a Gate-1 causal failure while every independent Gate-1 sibling still terminalizes. Later gates remain unstarted and the result preserves runtime authority.
 
 ### Conventions
 
-The suite tests graph semantics without a daemon; live field proof remains a separate Dagger run.
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
-- Unit doubles may replace Dagger transport but not command/graph selection.
-- Reports must export at the exact completed boundary even for a red run.
-- Invalid mode, omitted/blank diff base, or memory inputs refuse.
-- Generated Dagger help is tested as part of the public quality-function contract.
+Fake Dagger objects exercise graph behavior without a live engine. No retained assertion here proves runtime installation ordering, generated help or a complete ambient execution.
 
 ### Todos
 
-None.
+No file-local implementation change is requested by this reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this test contract.
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The test contract is defined by the pinned repository module. | `DAGGER_MANIFEST`; `DAGGER_MODULE` | mcp/tests/test_agents_remember_quality.py:21-22 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
 
 ## Repo-Internal References
 
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Tests cover pinning, Dagger-attestation refusal, single-result export, and real graph construction. | `test_agents_remember_quality_module_is_pinned_and_parseable`; `test_python_suite_refuses_missing_or_mismatched_dagger_attestation`; `test_agents_remember_quality_exports_failures_as_the_only_authoritative_result`; `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` | mcp/tests/test_agents_remember_quality.py:90-232 |
+| Gate four not applicable result does not claim real codex execution. | `test_gate_four_not_applicable_result_does_not_claim_real_codex_execution` | mcp/tests/test_agents_remember_quality.py:139-157 |
+| Python suite refuses missing or mismatched dagger attestation. | `test_python_suite_refuses_missing_or_mismatched_dagger_attestation` | mcp/tests/test_agents_remember_quality.py:160-177 |
+| Dagger quality red gate one still terminalizes every gate one sibling. | `test_dagger_quality_red_gate_one_still_terminalizes_every_gate_one_sibling` | mcp/tests/test_agents_remember_quality.py:180-227 |
 
 ## Cross-Repo References
 
-No sibling-repository boundary is exercised.
+No cross-repository implementation evidence is required for these local test and fixture claims.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Fake Dagger objects isolate graph verification from external transport. | `FakeContainer`; `FakeDag` | mcp/tests/test_agents_remember_quality.py:29-80 |
-
-## R39 Guard Wiring Proof
-
-The quality entry-point tests patch the shared production validator through conftest and require
-its Dagger refusal to become pytest usage failure. They no longer test a second local attestation
-implementation.
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+
+- 2026-09-06T00:17+02:00 — Reconciled the full-mode browser command to its persisted JSON result contract and refreshed current graph-test and shared-fixture reference anchors.
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 4 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated source-path constants from module loading. Selected the two current namespace tests rather than former line ranges. Split four tests and qualified graph execution as fake graph construction, not a live Dagger run. Repointed moved fake definitions to their actual shared support owner. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `test_ambient_role_chat_discovery_decodes_current_codex_tool_result_envelope` repointed to mcp/tests/test_agents_remember_quality.py:312-324. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `test_candidate_setup_precedes_every_attempt_specific_cache_input` repointed to mcp/tests/test_agents_remember_quality.py:327-400. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the five-gate/authority rework of the Dagger-module suite - gate-exhaustion forcing, authority-digest-bound execution manifests, adapter-runtime refusal, and gate-four applicability facts.
+
+
+- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
+  Docs References task-artifact rows as prose (absolute ar-coordination paths are not
+  repo-relative citations and carry no verifiable provenance).
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the distinct ordered installer/link Dagger exec-node proof in `test_candidate_setup_precedes_every_attempt_specific_cache_input`; refreshed citation anchors (pinned-module, attestation, authoritative-result, and graph-construction tests moved to lines 324/635/677/748; `load_dagger_module` to line 65; the retired `test_dagger_quality_builds_the_real_probe_and_targeted_wrapper_graph` name replaced by `test_dagger_quality_executes_the_exact_targeted_profile_plan`). Verification metadata rebased from `f2b7c648` to the bootstrap repair owning commit.
+
+- 2026-08-31T10:33+02:00 — 260821-ARSPAWN-L5 closeout repair: added the forcing regression
+  for strict decoding of Codex's current execution-result envelope after generation 6 reached C09
+  with six successful dispatches but zero decoded success rows. Verification remains closeout-owned.
+
+- 2026-08-31T09:55+02:00 — 260821-ARSPAWN-L5 closeout memory repair: realigned the pinned-module,
+  Dagger-attestation, authoritative-result, and graph-construction citations to their current exact
+  symbol ranges. Behavior and requirement semantics are unchanged; verification remains
+  closeout-owned.
+
+- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: added the structural proof that
+  Codex forwards the fixture tmux namespace into its candidate MCP child and that `exit-empty` is
+  set at server scope. Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the structural
+  proof for truthful attempted/completed/skipped/failed Dagger evidence and derived prompt/protocol
+  claims. Verification remains closeout-owned.
+
+- 2026-08-30T22:33:39+02:00 — 260821-ARSPAWN-L5 recorded structural ownership of the
+  real ambient-role harness and its pre-wrapper Dagger stage. Verification remains closeout-owned.
+
+- 2026-08-29T16:27+02:00 — Added structural graph proof that Dagger builds the canonical source
+  runtime before materializing the candidate and synchronizes its venv before attempt caches.
+
+- 2026-08-28T02:38+02:00 — Recorded the deterministic candidate-base versus attempt-binding
+  boundary and its structural graph regression after repeated evidence runs exposed nonce-driven
+  rebuilds of otherwise identical OS, tool, source, and editable-install layers.
+- 2026-08-27T22:09+02:00 — Documented the focused regression contract that distinguishes actual
+  pytest execution from the wrapper's explicit plan-only `SKIPPED` marker.
+- 2026-08-27T14:36+02:00 — Recorded the explicit `.dagger/src` import boundary after clean Dagger
+  exposed an off-by-one source-root calculation; refreshed the six-route public contract.
+- 2026-08-26T10:44:52+02:00 — Documented the separate non-accepting cadence graph, causal-failure artifact, candidate staging, and exact two-function Dagger public surface.
+- 2026-08-24T21:23+02:00 — Updated admission ownership and added Dagger phase/timestamp wiring proof.
 
 - 2026-08-14T11:27+02:00 — R39 curator: recorded one shared environment-authorization owner.
   Verification remains closeout-owned.

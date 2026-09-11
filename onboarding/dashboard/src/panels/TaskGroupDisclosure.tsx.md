@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/TaskGroupDisclosure.tsx`   |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -59,7 +59,7 @@ repository tests.
 | --- | --- | --- |
 | The parent list computes the descendant-bearing BY REPO condition before rendering the control. | `hasDescendants` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:641-641 |
 | The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. | "<TaskGroupDisclosure" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:664-664 |
-| Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. | "defaults hierarchy disclosures to expanded and renders controls only for parents"; "keeps sprint and master collapse independent without changing selection or BY PHASE" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:134-134; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:115-115 |
+| Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. | "defaults hierarchy disclosures to expanded and renders controls only for parents"; "keeps sprint and master collapse independent without changing selection or BY PHASE" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:150-167; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:169-209 |
 
 ## Cross-Repo References
 

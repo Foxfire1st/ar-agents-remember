@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `dashboard/src/data/taskHierarchy.test.ts` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-24T15:04+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -61,7 +61,8 @@ No Domain Documentation entries are configured in this memory worktree's source 
 | Tests define normalization, precedence, and identity-cache expectations. | "normalizes ..-relative ref files across folders"; "prefers the first series in list order when two series name the same doc"; "prefers the earliest ref by creation order within a series"; "caches per seriesList identity: a fresh array observes new refs" | dashboard/src/data/taskHierarchy.test.ts:43-52; dashboard/src/data/taskHierarchy.test.ts:54-60; dashboard/src/data/taskHierarchy.test.ts:62-74; dashboard/src/data/taskHierarchy.test.ts:97-105 |
 | The `ref` / `series` factories, typed against the mirror rather than asserted past it. | "function ref("; "function series(" | dashboard/src/data/taskHierarchy.test.ts:9-9; dashboard/src/data/taskHierarchy.test.ts:13-13 |
 | The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The two sub-task row models the `ref` factory had to choose between; only `SeriesSubTaskNode` declares `createdAt`. | `TaskSubTaskRefNode`; `SeriesSubTaskNode` | dashboard/src/types/projection.ts:400-407; dashboard/src/types/projection.ts:546-553 |
+| The master task reference declares linkedLifecycleId and masterRef, with no createdAt field. | "export interface TaskSubTaskRefNode {" | dashboard/src/types/projection.ts:793-801 |
+| The series row declares optional createdAt and no linkedLifecycleId. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568 |
 
 ## Cross-Repo References
 
@@ -69,9 +70,27 @@ No meaningful cross-repository references found.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The hierarchy helper is repository-local projection logic. | "describe(\"findParentTaskMatch\", () => {" | dashboard/src/data/taskHierarchy.test.ts:31-31 |
+| The hierarchy helper is repository-local projection logic. | "describe(\"findParentTaskMatch\", () => {" | dashboard/src/data/taskHierarchy.test.ts:33-33 |
+
+## 260821-CLIVE Projection Fixture Alignment
+
+No hierarchy behavior changed. The local `series()` fixture now defaults `discardedCount` to zero
+and `discardedSubTasks` to an empty list because those cells are required on projected series. Parent
+matching, creation-order tie breaking, and the per-list cache boundary remain unchanged.
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+
+- 2026-08-24T15:04+02:00 — No content impact: added the required empty discard-history cells to
+  the local `SeriesNode` test builder; hierarchy assertions and lookup semantics are unchanged.
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
+- 2026-08-20T04:48+02:00 — 260815-DAG-L14 curator: re-read the `TaskSubTaskRefNode` claim — the row
+  model gained the optional typed `masterRef`; wording retained and citation regenerated to the
+  current interface lines. Verification stamp advanced to code commit 9c3180c1.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 

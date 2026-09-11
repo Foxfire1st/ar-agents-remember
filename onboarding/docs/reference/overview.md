@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | docs/reference |
 | doc_type | route-local-overview |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T07:10+00:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -15,8 +15,8 @@
 
 L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and
 cancellation, and Dagger as the sole acceptance executor. Host/unit invocations are diagnostic;
-Python, Vitest, and Playwright refuse direct execution without the Dagger run nonce and container
-attestation.
+Python, Playwright, and changed-lines execution require the Dagger run nonce and container
+attestation; targeted Vitest is a supported non-certifying diagnostic loop.
 
 ### 260713-TES-L1 Rename — Settings And Harness Reference
 
@@ -56,10 +56,16 @@ readiness, catalog-concurrency, and serving-cutover contracts.
 
 ## Hot Path Summary
 
-The current orchestration references describe free chat as the launcher and
-architect/orchestrator/manager as sprint-bound command seats. Any unbound command-seat wording is
-limited to migration compatibility; runtime identity and custody come from persisted
-repository+sprint provenance.
+The current orchestration references describe free chat as the identity-free launcher that, for
+ordinary role-shaped work, compiles the canonical architect brief and calls `dispatch_agent` once
+on the sprint document. An explicit developer-declared task-seat takeover is the bounded exception:
+it targets the named role at that role's canonical task altitude rather than silently turning
+ordinary free chat into a non-architect seat. Plane-hosted architect/orchestrator/manager seats use
+the same public tool with injected seat identity and exact direct-child scope. Caller kind is
+process-derived, the request never supplies caller identity, and a plane refusal never falls back
+to ambient. Runtime identity and custody remain private control-plane evidence behind the canonical
+task-document-plus-role seat. Role-table `dispatch` and `tools` rows describe structural authority
+and capability; they are not settings keys and cannot override that caller matrix.
 
 For native launch and control questions, read `harnesses.md` for the dynamic catalog,
 model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the
@@ -70,25 +76,51 @@ switching supersedes the earlier launch-only assumption without creating a Fable
 Structured hosted dispatch, complete serving reload, and the bounded R9 compatibility exception
 remain separate contracts.
 
-For commit-gate and closeout questions, `mcp-tools.md` is the public tool-surface
-reference, `worktrees-c09.md` owns the quality-before-commit sequence, and
-`skills.md` records that synchronized skill copies are checked at both
-pre-commit and pre-push. Two facts these docs predate (260731-EFA-L1, recorded on
-the root overview): the two hook tiers are not equivalent — pre-commit runs a
-fast staged-content tier without the wrapper, and pre-push runs the
-change-set-scoped targeted Dagger tier (260731-EFA-L17; the full Dagger graph runs once per
-master at the master integration gate) — and the closeout gate
-applies to any repository whose checkout carries the wrapper rather than only to
-`agents-remember`. The skill-copy checks named here do run in both tiers and are
-unaffected.
+For task, closeout, and recovery questions, `mcp-tools.md` is the public tool-surface reference and
+`worktrees-c09.md` explains the operational sequence. Task documents and closeout doors are canonical
+publication authorities; closeout queue state is a disposable projection; the enclosure-external
+journal owns claimed operation/evidence/recovery state; and the stable locator plus external archive
+own terminal cleanup proof. Queue invalidation never blocks task authoring or erases a claimed
+operation.
+
+The quality boundary remains separate. `skills.md` records synchronized skill-copy checks at both
+pre-commit and pre-push. The hook tiers are not equivalent: pre-commit runs a fast staged-content
+tier without the wrapper, pre-push runs the change-set-scoped targeted Dagger tier, and the full
+Dagger graph runs once per master at the master integration gate. Current closeout authority requires the repository's explicit `certificationProfile`;
+wrapper presence and repository-name discovery no longer grant authority.
+
+## CCR Repository Profile And Result Reference
+
+`repository-certification-profile.md` is now the versioned authoring and admission reference
+for Gates 1–4: explicit configured path, exact profile and selector identities, sandbox adapter,
+decoder and bounded publication inventory. Gate 5 stays memory-owned. `settings-json.md`
+assigns execution selection to `repositories.<id>.certificationProfile`;
+`orchestration.qualityGate` now owns only optional resource policy, with no executor setting.
+The quality result's `reportPath` is the human summary. `publishedResultPath` identifies the
+exact immutable decoder artifact for fresh success and recovery, with `resultArtifact`
+carrying its relative identity; no universal result-filename fallback exists. This differs
+from the memory-quality request's separate sync/start/poll result contract below.
+
+## IAS Execution-Topology Reference Impact
+
+`execution-topology-migration.md` now describes graph-less scheduling as exact source-pair
+activation, not a requirement that every master integrate fully before another begins. Canonical
+commanded-master order is only the stable equal-priority tie-break. Selecting another atomic master
+logically pauses and preserves the former while the new selection stays `reconciling` until its
+exact code/memory bases are current.
+
+The reference also makes the ownership boundary explicit: task authoring never reads selector or
+queue state; queue projection observes active/reconciling/paused/vacant facts but owns no lifecycle
+transition; and malformed selector state fails closed only for affected runtime projection or
+admission before an exact selecting operation archives and replaces it. No contract-presence or
+tolerant-reader fallback is documented.
 
 ## 260718-CHATS-L5I Commit-Gate Reference Impact
 
 The public reference route now exposes the same mandatory source-quality order
 as the implementation and runtime guidance. `worktree_closeout_apply` runs the
-strict project-owned wrapper before a source commit — in any repository whose
-checkout carries that wrapper, since 260731-EFA-L1 removed the
-`agents-remember`-only condition;
+admitted repository-profile gate before a source commit. The historical L1 wrapper-presence
+trigger has been superseded by explicit configured profile authority;
 `worktrees-c09.md` places that gate before code, onboarding, memory, and ledger
 commit steps; and the skills reference names both pre-commit and pre-push sync
 checks. These are documentation projections of the existing gate authority, not
@@ -133,11 +165,14 @@ closeout mutation, and still fails closed. What changed is what the gate can cat
    worktree; `route_index_refresh` **writes**, so running it unscoped from inside a leaf dirties
    the official memory repo. The response carries `onboardingRoot`, so the acted-on tree is always
    visible.
-2. **Citation ranges are not repaired by hand.** `agents-remember memory-citations --repo <id>
+2. **Citation repair is source-derived.** `agents-remember memory-citations --repo <id>
    --contract <enclosure contract> [--fix]` regenerates every range that can be regenerated from
    its anchor after a package move and prints a work order for the rest. `--contract` is required,
-   and only pure moves (symbol keeps its name, changes file) are repaired — a rename, deletion, or
-   ambiguous match is refused rather than guessed.
+   and the current fixer proposes uniquely resolvable range/move repairs and deterministic
+   projection work; ambiguous matches remain curator work. At this frozen candidate, L31
+   source audit found declined projection edits can remain staged and cached document bytes
+   lack publication-time revalidation. Treat its dry-run as a proposal, not proof that apply
+   safely refuses every declined row; the R10 repair is still pending.
 3. **Task-document and lifecycle rows were added.** `worktree_cleanup` is explicitly non-terminal
    for task documents; `lifecycle_finalize_task` proves the landed edge and completes the exact
    contract-bound leaf (with parent-row reconciliation); the new Task documents section names
@@ -181,7 +216,83 @@ The settings reference now names Dagger as the only accepted executor, places op
 inside the container wrapper, and removes host systemd/RLIMIT semantics. It also records that leaf
 closeout and master integration are the only acceptance owners.
 
+## 260821-CLIVE Canonical Lifecycle Reference
+
+The public reference route now assigns each mutable fact one owner. Task mutation publishes first,
+then invalidates/rebuilds the affected disposable queue projections and reports bounded effects;
+projection failure cannot roll back task truth. A manager publishes an immutable closeout-door
+generation, and the lifecycle journal atomically claims that exact waiting generation. Commit,
+memory, ledger, review, cancellation, supersession, and recovery evidence live in the journal—not in
+queue rows.
+
+Closeout validates every enabled nonblank commit-message/input field before any claim. Retry and
+repair are task-addressed through advertised controls and exact retained evidence; normal recovery
+does not synthesize a missing initial door or guess a successor. Terminal cleanup/abandon publishes
+and reads back a bounded external archive, receipt, and stable locator before removing the enclosure;
+successor publication proves the exact archived predecessor. Discard-before-start is an audited
+task-document transaction and cannot be used once work has begun.
+
+The tool inventory documents `closeout_door`, status/rebuild-only `closeout_queue`, lifecycle
+operation control, direct landing, adopt, cleanup/abandon, legacy-incident repair, and
+discard-unstarted. These are routed authorities, not compatibility duplicates or raw-Git escape
+hatches.
+
+## 260821-DAGQC Memory-Quality Request Contract
+
+The current `mcp-tools.md` reference uses one `memory_quality_check.request` discriminated by
+`sync | start | poll`. Only sync/start carry contract path and execution/detail scope; poll carries
+repository plus run id. Full leaf sync/start may publish the combined checklist; fresh success uses
+`reportPath`, while `publishedResultPath` is recovery-only. Capacity refusal has no run id, and poll
+cannot smuggle start-only fields. These newer DAGQC facts are additive to the CLIVE lifecycle split.
+
+## 260815-DAG-L15 Route Impact
+
+`execution-topology-migration.md` gained section 4 — the served-build preflight operator contract (run authoring through the deployed serving server; refresh the rc7 venv, L15-R4). The changed file is excluded by pathRules, so this route's onboardable surface is unchanged.
+
+## CCR-L42 Review-Altitude Reference Update
+
+The settings reference now describes route review as applicable at its owning altitude. Atomic
+child leaves defer independent route review to the accumulated canonical master at
+master-to-parent integration; standalone and organizational leaves retain independent leaf
+review. Complexity and loop settings do not disable or move that atomic integration gate, and
+the route-review rule does not replace certifying evidence requirements.
+
 ## Update History
+
+- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current applicable-review
+  and atomic-integration semantics from `docs/reference/settings-json.md`. Source inspection only;
+  verification metadata remains closeout-owned.
+
+- 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled explicit repository-profile authority, fresh/recovery result paths, diagnostic Vitest boundary, and known fixer safety limitation. Verification records current source claims, not execution or acceptance.
+
+- 2026-08-30T12:42+02:00 — 260821-ARSPAWN-L3 review correction: distinguished ordinary
+  architect bootstrap from an explicit named-role takeover and made the structural role-table
+  rows' non-settings boundary explicit. Verification remains closeout-owned.
+
+- 2026-08-30T11:47+02:00 — 260821-ARSPAWN-L3 reconciled the public reference route to one
+  `dispatch_agent` vocabulary, one-call architect bootstrap, disjoint plane/ambient authority, and
+  no fallback. Verification remains closeout-owned.
+
+- 2026-08-26T05:20+02:00 — Reconciled the reference route with the source-pair selector, paused
+  live-master preservation, reconciling-before-active admission, retained conflict
+  continuation/cancellation, unlocked task authoring, disposable queue ownership, and
+  no-fallback boundaries documented in `execution-topology-migration.md`.
+
+- 2026-08-24T15:04+02:00 — Reframed the reference hot path around canonical task/door/journal/
+  locator ownership, disposable queue rebuilds, exact retry/terminal/discard contracts, and preserved
+  the concurrent DAGQC discriminated memory-quality request contract.
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: execution-topology-migration.md gained the served-build preflight operator section (excluded file; onboardable surface unchanged). Verified at code commit de3a0fd9.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `execution-topology-migration.md` was
+  retitled from the migration cutover to graph authoring — the atomic-sequential default covers
+  graph-less sprints and `author_execution_graph` bootstraps the graph; the reference-route model
+  is unchanged. Verification remains closeout-owned.
+- 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `execution-topology-migration.md` (operator migration/rollback reference); the reference-route model is unchanged.
+- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled the documentation route with the final
   settings and altitude contract. Verification remains closeout-owned.
@@ -202,7 +313,7 @@ closeout and master integration are the only acceptance owners.
   control or duplicate drift-report authority remains.
 
 - 2026-08-10T07:30+02:00 — 260805-ARG-L1: `settings-json.md` now documents default-on completion
-  close, the exact durable report barrier, owner exclusions, landed/archive opt-out, and the
+  close, the exact durable report blocker, owner exclusions, landed/archive opt-out, and the
   cheap-first quality/retry contract.
 
 - 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the reference route for sprint-bound command

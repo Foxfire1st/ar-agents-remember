@@ -1,0 +1,138 @@
+# mcp/tests/integration_branch_authority_test_support.py
+
+| Field | Value |
+| --- | --- |
+| repository | agents-remember |
+| path | `mcp/tests/integration_branch_authority_test_support.py` |
+| doc_type | `file-level-onboarding` |
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| governingOverview | `../overview.md` |
+
+## Governing Overview
+
+[governing overview](../overview.md)
+
+## Purpose
+
+Builds repository, contract, task-topology, atomic blocker, closed-leaf and exact-series preview fixtures for retained integration-authority tests. This support module is not itself collected test coverage.
+
+## Code Commentary
+
+Shared fixture construction uses production task documents, queue state, contracts, Git refs and external-memory ledger commits. `_authority_fixture` installs the selected certification profile. `_publish_completed_closeout_fixture` admits leaves through the selected lifecycle input owner before publishing component fixture state; an explicit final-source override models integration targets after admission. Closed external-memory leaf fixtures materialize the contract-required `onboarding/` root before closeout, ensuring conflict and integration tests reach their intended branch-authority seam instead of failing earlier on an invalid memory-candidate shape.
+
+Since 260831-CCR (commit `99dc249b`) the atomic-leaf authority fixtures bind canonical task intent:
+`_record_additional_atomic_leaf_landing` reorders the work so the claimed closeout door is only
+attached after the leaf document and master row are updated (line 500-506), and
+`_claimed_atomic_leaf_door` (line 511-563) now stamps
+`taskIntent=contract_task_intent(leaf, candidate_ref=leaf_ref)` (line 560) on the door it builds,
+so the forced series/door identity includes the exact intent digest.
+
+## Invariants And Boundaries
+
+- Consumers exercise production owners; helper construction alone makes no acceptance or coverage claim.
+- External-memory fixtures must satisfy the same minimum candidate shape as a real leaf, including
+  the onboarding root required by exact code-memory pairing.
+- Refusal cases assert no unauthorized Git, contract, queue, task, or memory mutation.
+- Crash/retry cases retain exact durable identity and expected-old facts.
+- Claimed doors produced by fixtures carry a canonical task-intent identity, matching the
+  production admission requirement.
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Shared production-shaped helpers construct configured repository, closed leaf, atomic sprint, blocker, series, and exact-preview facts. | `_authority_fixture`, `_closed_leaf_worktree`, `_add_atomic_master_to_sprint`, `_assert_exact_series_preview` | mcp/tests/integration_branch_authority_test_support.py:61-90; mcp/tests/integration_branch_authority_test_support.py:177-333; mcp/tests/integration_branch_authority_test_support.py:346-373; mcp/tests/integration_branch_authority_test_support.py:643-697 |
+| Claimed atomic-leaf doors bind the canonical contract task intent after task and series setup. | "def _claimed_atomic_leaf_door(" | mcp/tests/integration_branch_authority_test_support.py:522-588 |
+| Additional atomic leaf landings attach the door only after task-document/master writes. | `_record_additional_atomic_leaf_landing` | mcp/tests/integration_branch_authority_test_support.py:427-508 |
+
+## Documentation References
+
+No configured domain-documentation or cross-repository source applies to this file.
+
+## 260821-CLIVE-L2 Current Regression Contract
+
+The current forcing seams include the module forcing surface. The L2 additions force journal-owned claim transfer, exact protected-ref decisions, source-movement reconciliation, and organizational disposition/repair without queue-owned lifecycle evidence.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The authority fixture constructs configured disposable repositories and task documents. | "def _authority_fixture(" | mcp/tests/integration_branch_authority_test_support.py:189-348 |
+
+## Current Contract — 260821 CLIVE Final
+
+This is the current source-backed contract for this test card. It supersedes any earlier
+queue-lifecycle, blocker-row, replan/drain, or compatibility-reader wording where present.
+
+Provides shared exact-repository, protected-ref, organizational-completion, and atomic-series fixtures for the split integration authority suites.
+
+### Current Invariants
+
+- Fixtures bind current contract, task, door, journal, repository, and ref facts explicitly.
+- No queue row or inferred path substitutes for protected-ref authority.
+
+
+## PDLS Reconciliation
+
+Shared integration-authority builders now expose the canonical current topology and bounded scenario overrides used by collision and publication forcing.
+
+The test continues to exercise production-owned behavior. No diagnostic result is treated as
+certifying evidence and no fallback or threshold exception was introduced.
+
+## CCR-R02@v2 Intent-Bound Door Fixtures
+
+Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, doors produced by these fixtures
+now bind the canonical task-intent digest so authority tests exercise the production currentness
+rule instead of counterfeiting a pre-intent door.
+
+## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=a5aabfbfd3259e1f38bf772c6dd51717ccd2cfe3b5e53a585b5659c8ce0708ba; verification metadata remains unchanged because commit-owned realization is pending.
+
+
+- 2026-09-06T23:08:28+00:00 — Reconciled retained source behavior and fixture limitations for IAS recovery; prior verification pins retained.
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
+  claimed atomic-leaf door fixtures now stamp `taskIntent=contract_task_intent(...)` and the
+  additional-landing helper attaches the door after task/master writes; documented the intent-bound
+  fixture contract. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
+
+- 2026-08-30T05:55+02:00 — MCAR-L03 A005: external-memory closeout fixtures now create the
+  onboarding directory required by the exact pair contract, so lifecycle-conflict tests exercise
+  their intended ordering instead of failing on an incomplete memory fixture.
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
+
+- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-20T05:12+02:00 — L11 landed-wave refresh: the leaf-segment graph-model commit
+  (f2e2f4b9) touched this source; card re-verified against the current file, verification stamp
+  advanced to f2e2f4b9. Body unchanged — the documented contract still holds.
+
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-17T12:30+02:00 — 260815-DAG-L5: extended the support surface for organizational-completion branch and recovery forcing. Verification remains closeout-owned.
+
+- 2026-08-16T05:18+02:00 — Dagger fixture repair: code-only authority fixtures now model configured internal memory explicitly, keeping code-only integration behavior while satisfying exact runtime memory-mode authority.
+- 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: shared closed-leaf helpers now materialize the exact contract-recorded code and external-memory worktrees, and the atomic-series helpers persist each child leaf's exact closeout, integration, queue-binding, and memory-ledger landing facts before series seal tests run.
+- 2026-08-16T03:24+02:00 — 260815-DAG-L4: moved shared configured-repository and closed-leaf fixture builders out of the main authority test so both split suites stay independently importable and below the test-file size limit. Verification remains closeout-owned.
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: created integration-authority forcing support onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.

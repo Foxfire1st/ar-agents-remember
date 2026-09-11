@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-11T14:58+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
+| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
+| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -35,6 +35,10 @@ Contract-scoped application calls supply the leaf base as temporary provenance f
 dirty-tree claims; this is comparison input only and never a verification stamp.
 `curator_checklist.py` renders the full scoped result plus missing-onboarding, route-index, drift,
 and report-only detail into the enclosure's one atomically replaced curator worklist.
+`future_code_candidate.py`, `memory_candidate_pair.py`, and `memory_census_scope.py` are this
+route's memory-candidate roots; the closeout-facing preparation adapter was moved out to
+`worktrees/integration/closeout/prepared_certification.py` so this route keeps no inbound
+dependency on the closeout plane.
 
 ## Route Model
 
@@ -48,19 +52,24 @@ and report-only detail into the enclosure's one atomically replaced curator work
   attention can say which repo/memory pair raised the notice and when it was measured. Task 32 routes
   that writer through the shared observer drift-snapshot path helper so producer
   writes, projection pruning, and cleanup deletion share one filename contract.
-  **260731-EFA-L4 makes this subpackage the declaring owner of the drift-summary wire
-  vocabulary**, not just its producer: `models.py` declares `DriftStatus = Literal["notChecked",
-  "checked", "error"]` and the `DriftSummaryPacket` TypedDict (`status` required; `count`,
-  `actionableCount`, `reportPath`, `actionableSample`, `error` all `NotRequired`), and
-  `summary.py`'s `not_checked`, `run_drift_summary` and `summarize_rows` are annotated with it
-  instead of `dict[str, Any]`. This is an INBOUND dependency edge that did not exist before —
-  `models/drift.py` (context-packet `DriftSummary`), `models/memory.py`
-  (`DriftCheckResponse`) and `application/context_packet.py` all import from here now.
+  The packet owner remains `integrity/onboarding_drift_check/models.py`; it imports the
+  single `DriftStatus` declaration from `models/drift.py`. The packet includes required
+  `status` and optional counts, paths, rows, samples and error. Wire consumers share that
+  lower-layer vocabulary rather than importing a status declaration upward.
 - `integrity/check_missing_onboarding.py` checks only current worktree
   additions so newly added eligible files get sidecars before the code commit.
 - `curator_checklist.py` deterministically separates zeroable curator repairs from truthful
   closeout-only provenance, renders every worklist class, and publishes one operational report
   outside both Git worktrees.
+- `final_certification/` (CCR-R08, added by 260831-CCR-L08) owns the final full
+  memory-coherence certification (Gate 5): the deterministic complete final catalog
+  (`catalog.py`), the closed typed models (`models.py`), the R21 Gate-5 semantic-input
+  assembly and coherence subrecord derivation (`certificate.py`), the executable
+  certification protocol (`certify.py`), and the exact green Gate 1-4 prerequisite adapter
+  (`gate_prefix.py`). The interactive full contract-scoped quality run publishes the
+  non-certifying `finalFullCatalog` readiness projection through the application controller;
+  the certification API requires the R21 certificates and R07 affected-closure plan for green.
+  No production closeout caller currently supplies those inputs or invokes that API.
 - `style/update_history/` checks that onboarding `## Update History` bullets
   are newest-first and timestamped, and contains the dedicated history-order
   fix script.
@@ -82,15 +91,9 @@ and report-only detail into the enclosure's one atomically replaced curator work
   focused fix scripts.
 - New memory-quality checks should be placed under `style/` or `integrity/`
   according to what they validate.
-- **A status this route can emit is declared here, once, and imported by every wire model that
-  carries it** (260731-EFA-L4). `run_drift_summary` produces `notChecked`, `checked` and
-  `error`; before this leaf there were three declarations of that vocabulary — one here (via
-  the packet's actual behaviour), one on `models.drift.DriftStatus` missing `error`, one on
-  `models.memory.DriftCheckStatus` complete but separate. The short copy was reachable: a
-  missing onboarding root makes this route return `{"status": "error", "error": ...}`, so
-  `context_packet(include_drift=true)` against a repo without onboarding raised out of the
-  tool rather than reporting why. Adding a status here now propagates by import; adding one
-  to a wire model instead re-creates the split.
+- `models/drift.py` owns the shared drift-status vocabulary. Packet and response consumers
+  import it; the older EFA-L4 declaring-owner narrative below is historical and was
+  superseded by the L9 layering move.
 - **A `NotRequired` key on `DriftSummaryPacket` must be read with `.get`, including by
   consumers on this route.** `check.py`'s `run_drift_quality_check` reads `count`,
   `reportPath` and `actionableCount` with `.get(...)`, not `[...]`: those keys accompany a
@@ -101,15 +104,15 @@ and report-only detail into the enclosure's one atomically replaced curator work
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | "def memory_quality_check_tool("; "unstamped_code_commit=scope.unstamped_code_commit" | mcp/src/agents_remember/application/memory_tools.py:217-292 |
-| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:32-44; mcp/src/agents_remember/mcp/tools/memory.py:46-63 |
+| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:110-120; mcp/src/agents_remember/application/memory_quality/controller.py:318-360 |
+| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:58-65 |
 | The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
 | The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:46-73 |
-| The two wire models that import this route's status vocabulary instead of retyping it. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
+| The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
 | The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:59-102 |
 | The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:79-126 |
 
-## 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
+## Historical 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
 The check catalogue, the dispatch contract and the diagnostic-only rule are unchanged. What changed
 is that each classifier now emits its verdicts through a single constructor, which is what makes the
@@ -137,7 +140,7 @@ rebuilt at every branch, and a field could silently disagree between two of them
   [kernel/coordination_context](../kernel/coordination_context/overview.md)). Resolved contexts are
   identical.
 
-## 260731-EFA-L3 — Every Verdict Is Now Read Through One Git Runner
+## Historical 260731-EFA-L3 — Every Verdict Is Now Read Through One Git Runner
 
 Every check this route emits is ultimately a statement about *a repository*: which files
 the worktree added, which blobs a source has, whether a recorded commit is in history.
@@ -173,7 +176,7 @@ unchanged. What changed is that a verdict can no longer be computed against a re
 the caller did not name. `mcp/tests/test_git_command.py` holds the proof against a decoy
 repository named by the selectors.
 
-## 260731-EFA-L4 — The Drift Summary Is A Typed Packet With A Named Vocabulary
+## Historical 260731-EFA-L4 — The Drift Summary Is A Typed Packet With A Named Vocabulary
 
 The drift summary crossed three module boundaries as `dict[str, Any]`, which meant its shape
 was agreed by convention at each of them. It is now `DriftSummaryPacket`, a `TypedDict` declared
@@ -221,10 +224,9 @@ surface, clearing with no commit; an anchor that is absent, ambiguous, or lands 
 cited range stays hard (`citation_provenance_invalid` / `citation_claim_reopened`). This is
 what lets a leaf's new-file rows resolve pre-commit instead of failing provenance: regenerated
 ranges point at the new content and the curator's review is the report-only relay.
-Coverage lives in `mcp/tests/test_l6_diff_coverage_claim_reopen.py`
-(`TestLocalChangesNewFile`, lines 143-186) and
-`mcp/tests/test_memory_citation_change_detection.py` (the `test_a_new_source_*` arms in
-`CodeProvenanceTests`, plus the `ChangeRoutingTests` untracked/ignored-local-path assertion).
+Current per-citation routing is owned by `classify_citation` (mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py:254-273).
+The former new-file regression suites were retired; this source contract is not a claim
+of present test coverage.
 
 ## L9 Closeout Repair — Entity Structure Fails Before Code Rails
 
@@ -239,7 +241,166 @@ need the real code commit and refreshed metadata to clear.
 
 The memory-quality callers were rewritten by the L9 caller wave: `DriftStatus`/`DriftSummaryPacket` import from `models/drift.py` (declaration moved by L9), and runtime config from `kernel/primitives/runtime_config.py`. Check behavior is unchanged.
 
+## 260815-DAG-L3 Structured Curator Attestation
+
+The curator checklist now emits a machine-readable `ar-curator-memory-quality/v1` attestation beside
+the rendered report. It binds checklist status and zero/actionable counts, the exact onboarding
+root, the report path and digest, and the complete source-change candidate set. Queue declaration
+requires this structured zero gate; when candidates exist it also requires the canonical leaf
+curator authority to match the set exactly. The former five-column Markdown review
+is historical; current consumers use the structured coherence manifest and record. A free-text ready sentence or
+path mention is not readiness evidence.
+
+## 2026-08-26 Application Controller Boundary
+
+The asynchronous sync/start/poll controller now lives at `application.memory_quality.controller`. This route continues to own the integrity/style checks and their package runner; the application controller composes those checks and finalizes transport responses without duplicating check logic or adding a fallback path.
+
+## MCAR-L02 Deterministic Checklist And Coherence Join
+
+The enclosure-local curator checklist and its `ar-curator-memory-quality/v1` attestation are now
+byte-deterministic for identical inputs; the prior generated timestamp could invalidate a current
+coherence record without a semantic change. The structured attestation remains the exact candidate
+census. Public memory readiness retains raw `qualityChecklistStatus` but reports combined
+`checklistStatus=coherence-required` and `closeoutReady=false` until the same structured authority
+validator used by closeout succeeds.
+
+## MCAR-L03 Pair-Bound Quality Evidence
+
+Full leaf quality receives only a contract-resolved code/onboarding pair and writes that complete
+identity into the structured curator attestation. Repository-only quality remains a diagnostic and
+cannot publish candidate acceptance. Pre/post-scan revalidation makes wrong or raced scope a
+typed refusal before evidence can be accepted.
+
+## 260831-CCR-L08 — Final Full Memory-Coherence Certification (Gate 5)
+
+This route now owns the final full memory-coherence certification package
+(`final_certification/`). The complete Gate-5 catalog is the exhaustion surface: every
+applicable memory checker, the missing-onboarding and route-index alignment owners, the R07
+affected-closure plan, the canonical curator-coherence record, and the exact code/memory
+candidate pair return pass/fail/blocked/not-applicable, and the attestation checks the caller-supplied executed-check population against the plan.
+The `certify_final_full_memory_coherence` function itself consumes those results; it does
+not launch the checkers or independently establish that they ran. The interactive full run projects the deterministic, non-certifying
+`finalFullCatalog` readiness surface onto its result (controller `_attach_final_full_catalog`); the
+executable certification API (green/red/blocked, finalization-eligible only when green) remains
+separate. The current closeout path does not invoke it; a readiness result is not a Gate-5 certificate.
+
+## Deterministic Citation Document Publication
+
+Exact unique anchor repair still uses the shared source-index oracle. In prepared private C `b34f4a59562b76a3e2413027468e0f699117b36f`, the fixer accepts or declines a projection before staging its edit. `citations/documents/transaction.py` owns full-document rendering, grouped generated history, last-read original-byte comparison, source-cell/projection bindings and the identity of the held source-index lease. A conflict refuses the complete affected document batch; independent documents may still publish. Scoped passing normalization uses the same document boundary without inventing a unique-move projection.
+
+LF and CRLF bytes remain lossless. A preview returns a validated prospective final digest while reporting zero completed writes. If an admitted scoped document disappears after a detected conflict, `findingsRemaining` is null and the existing refusal keeps the result red; the checker does not claim an empty successful scan. Initially missing input still refuses before source acquisition.
+
+The application retains write-scope authorization and the source index retains frozen source authority. Neither supplies a memory-file mutex. Atomic replacement avoids partial files but cannot exclude an uncooperative writer between the final read and replacement. Gate 5 and private-candidate delivery remain pending.
+
+[Document publication route](style/citations/documents/overview.md) owns the local file map and transaction invariants.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
+| Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+
+## Gate-5 Registry And Execution Boundary
+
+`gate_five_rails.py` derives one enforcing memory-domain R11 rail per item in the complete
+final catalog. Its configuration identity includes the final catalog version, checker registry
+version and exact population. This is the Gate-5 registry contribution consumed by the R11/R22
+bridge; declaring that contribution does not execute the checkers.
+
+The interactive application controller calls `final_catalog_readiness` with the exact memory tree
+and candidate-pair authority but explicitly passes `affected_closure_plan_digest=None`. The R07
+`compile_affected_closure_plan` / `execute_affected_closure` and R08
+`certify_final_full_memory_coherence` APIs have no production callers outside their own packages
+in the inspected source. Existing closeout memory checks and curator-coherence publication remain
+real behavior, but must not be equated with the new affected-closure/full-certification protocol.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
+| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:553-553 |
+| Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
+
+## Exact Git Candidate Source-Index Composition
+
+Citation `Trees` selects an explicit Git candidate tree when R06/R07 require immutable candidate
+membership. The source index binds that selection separately from the content snapshot: schema-9
+manifest/readiness and SQLite metadata distinguish a Git candidate from ordinary filesystem
+selection. Candidate census includes eligible tracked build/ignored paths, excludes Git metadata
+and refuses unavailable, unsafe or byte-mismatched candidate members. Ordinary filesystem use
+continues to observe eligible dirty and untracked files under its existing traversal policy.
+
+R06 checks the candidate-bound lease, ready record, manifest, census and member content. R07
+validates the lease against its exact unit tree before running the selected-document range checker
+with the same explicit tree. These owners are usable by the recovery verifier; their library
+composition does not close the production execution gap recorded above or replace full Gate 5.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The index opens either the explicit candidate selection or the ordinary filesystem policy. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:323-390 |
+| R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:347-397 |
+| R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
+
+## L34 Preparation Ownership — the closeout adapter moved out
+
+The closeout-facing certification adapter that composed the actual affected closure, full memory
+checks, missing-onboarding/index observations and curator coherence against a proved private code
+view no longer lives here: commit `deb032fb` moved it to
+[worktrees/integration/closeout/prepared_certification.py](../worktrees/integration/closeout/prepared_certification.py.md)
+because a pre-closeout quality service must not depend on the closeout plane. The closeout plane may
+depend on this route; not the reverse. Red results remain evidence and cannot authorize M/L output
+preparation.
+
+## Memory-Candidate Roots Relocated In
+
+The de-entanglement cut moved this route's candidate-identity roots in rather than out:
+`future_code_candidate.py` and `memory_candidate_pair.py` were relocated from
+`worktrees/integration/closeout/` by commit `0b63d6fc`, and `memory_census_scope.py` from the same
+route by commit `be517eec`. They are the route's own memory-candidate owners and carry no closeout
+dependency.
+
+| Source File | Onboarding | Status |
+| --- | --- | --- |
+| `future_code_candidate.py` | [future_code_candidate.py.md](future_code_candidate.py.md) | covered |
+| `memory_candidate_pair.py` | [memory_candidate_pair.py.md](memory_candidate_pair.py.md) | covered |
+| `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
+
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: moved the `prepared_certification.py` sidecar out to `worktrees/integration/closeout/` (commit `deb032fb`) and moved the `future_code_candidate.py`, `memory_candidate_pair.py` and `memory_census_scope.py` sidecars in from the closeout route (commits `0b63d6fc`, `be517eec`), repairing the dead `prepared_certification.py.md` link and recording the new candidate-root ownership. This records source documentation only; it makes no acceptance or certification claim.
+- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored the readiness projection
+  row to the current `_attach_final_full_catalog` declaration; certification ownership and route
+  semantics remain unchanged.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:503-503. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-499. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+
+### 2026-09-06T17:13:06+00:00 — L34 implementation memory
+
+Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
+
+- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Documented the accepted-edit transaction route, exact observed-conflict boundary, CRLF, dry-run counts and nullable scoped recheck at source-reviewed private C b34f4a59; retained all separate Gate-5 readiness/execution limits.
+
+- 2026-09-06T00:23:26+00:00 — L30 recovery: Added the exact Git-candidate index and R06/R07 composition boundary at 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; retained the unresolved production-caller and deterministic-repair limits.
+
+- 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected drift vocabulary ownership, historical Markdown coherence authority, final certification producer claims, and explicit R10 write defects. Verification records source review, not execution or acceptance.
+
+
+- 2026-09-05T06:12+00:00 — Recovered final-catalog knowledge and corrected readiness versus certification ownership; added the Gate-5 rail derivation and the still-unwired R07/R08 execution boundary.
+
+- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: added the
+  `final_certification/` route-model bullet and the CCR-R08 leaf section (final full
+  memory-coherence certification: complete catalog, readiness projection on the full run,
+  executable certification) and re-anchored the controller row shifted by the +57-line change.
+  Verification metadata stays pinned until closeout stamps the code commit.
+
+- 2026-08-29T21:46+02:00 — MCAR-L03: bound leaf quality and curator attestations to the exact
+  code/memory pair. Verification remains closeout-owned.
+
+- 2026-08-29T08:52+02:00 — MCAR-L02 A005: removed timestamp entropy from the curator checklist and
+  joined raw quality with the sole coherence validator. Verification remains closeout-owned.
+
+- 2026-08-26T10:44:52+02:00 — Reconciled the route with the extracted application controller while preserving memory-quality check ownership inside this package.
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded the structured curator
+  attestation and exact source-change disposition contract consumed before queue declaration.
+  Verification remains closeout-owned.
 
 - 2026-08-11T16:54+02:00 — Added the enclosure-local curator checklist owner, combined the
   pre-closeout worklist behind one full scoped quality call, and preserved code/memory mutation and

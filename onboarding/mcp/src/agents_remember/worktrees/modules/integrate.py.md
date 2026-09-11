@@ -5,15 +5,30 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T08:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-11T14:52+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[worktree modules overview](overview.md)
 
 ## Purpose
 
 Owns integration of completed worktree task branches back into their source
 branches.
+
+## CCR-R12@v5 Current Transaction Boundary
+
+Normal integration validates the prepared code/external-memory pair, explicit handover approval,
+source identity, and compare-and-swap/ref safety before protected publication. It does not run
+strict code quality, memory quality, selected certification, curator coherence, or independent
+review as part of the transaction; full suites are only an explicit developer request. Publication
+uses the existing integration ref move (`update-ref`/tree publication through
+`merge_integrated_commits`) and records the resulting pair; it creates no merge commit and hence
+has no merge-hook path. Source movement refuses before protected refs move. The quality-altitude
+material below is historical pre-R12 context.
 
 ## Code Commentary
 
@@ -22,15 +37,20 @@ blocked non-fast-forward cases, optionally replays code and memory content for
 reviewed parallel changes, merges integrated commits, verifies the memory
 ledger mapping, and updates integration fields in the contract.
 
-**Quality altitude ladder (260731-EFA-L17/L24/L23 reopen).** Integration owns acceptance only at
+**Historical pre-CCR-R12 quality altitude ladder (260731-EFA-L17/L24/L23 reopen).** Integration owned acceptance only at
 master altitude. A leaf integration returns `certified-at-leaf-closeout` and lands the exact
 closeout commit without calling the quality decider, settings loader, or Dagger executor again.
 `quality_gate_mode` refuses leaf use and returns `GATE_FULL` only for series/master contracts.
 `_run_integration_quality_gate` therefore runs `run_strict_code_quality_gate` once for master
 integration, with the optional settings-owned memory cap and `master-integration` invocation.
+Since CCR-R22@v1 (L22, commit `685f83c44055`) the quality preview and the full gate forward
+`profile_reference=args.certification_profile` (the configured repository certification profile)
+into `integration_quality`, so the master gate admits the exact repository-owned profile instead
+of a settings executor; the old `requires_integrated_acceptance` repo-name policy was removed.
 Dry-run reports the same ownership without executing it. A full-gate refusal returns
 `blocked-quality-gate` before any source ref moves. `memory_quality_check` remains leaf-closeout
-owned and is not repeated here.
+owned and is not repeated here. **`integration_quality.py` itself was deleted by the closeout-door cut
+(commit `fad9808e`), so this entire ladder is now history with no live module behind it.**
 
 **Two frozen parameter objects and one extracted phase (260731-EFA-L2):**
 
@@ -82,6 +102,35 @@ integration_status="bloqued")` was zero pyright errors even though the wire mode
 persisted contract is byte-identical either way. `replace` is still imported and still used for the
 free-text fields.
 
+**Automatic post-integration cleanup.** `_integrated_result` no longer stops at the contract write.
+After it records `ContractCells(integration_status="completed", cleanup="pending")` it calls
+`run_automatic_cleanup(updated)`, so reclamation follows the successful landing without a further
+prompt — the integration approval that just landed is the authorization for its own terminal
+reclamation. It then reloads the contract from disk (`load_contract(contract.contract_path)`) so the
+payload's status facts report the post-cleanup `cleanup` cell instead of the in-memory `pending`
+write.
+
+The cleanup report is a top-level `cleanup` key on the integrated payload, and the payload summary
+is `"Integration completed. {cleanup summary}"`. Its outcome never changes
+the integration result: the call still returns `returncode 0` and `state "integrated"` when cleanup
+refused, because a refused cleanup is reported (with its `refusal.reason`,
+`refusal.cleanupState`, and `refusal.blockers`) rather than converted into a failed landing. A
+refused or partial integration cleans up nothing — that is exactly when its evidence is needed. The
+contract's `cleanup` cell keeps a refusal visible as `cleanup-pending`, which `lifecycle_guidance`
+renders as the `cleanup-pending` phase whose next operation is `retry_cleanup`. The retired
+`cleanup_question` key is gone from both payloads: the dry run now carries `cleanup_reminder`
+("cleaned up automatically") and the integrated result carries the cleanup report itself.
+
+## Current Source-Moved Guidance
+
+`_blocked_non_ff_result`'s `source branch moved` guidance no longer points at
+`--strategy replay`. It now routes the operator through `worktree_sync` for the owning contract,
+then a retained code-or-memory conflict settlement (re-running the targeted test utility after code
+resolutions), then a re-run of the closeout before retrying the integration. `replay` itself remains
+a supported strategy and the memory-carryover vehicle; only this prompt moved. The sibling
+integration-resolution handoff wording moved the same way — see
+[`integration_resolution_handoff.py`](../integration/integration_resolution_handoff.py.md).
+
 ## Docs References
 
 No external Domain Documentation source is configured for this memory repo.
@@ -90,12 +139,14 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wire model declares `IntegrationStatus` / `CleanupStatus`; worktree_contract imports them and exposes `ContractCells` / `amend_contract` as the typed amendment path. | "class ContractCells"; "def amend_contract"; "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:18-19; mcp/src/agents_remember/worktrees/worktree_contract.py:182-182; mcp/src/agents_remember/worktrees/worktree_contract.py:199-199 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | `blocked_integration_payload`; `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:179-197; mcp/src/agents_remember/worktrees/modules/integrate.py:611-643 |
-| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs full Dagger, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `_quality_gate_preview`, `_run_integration_quality_gate` | mcp/src/agents_remember/worktrees/modules/integrate.py:60-98; mcp/src/agents_remember/worktrees/modules/integrate.py:1032-1067 |
-| The planned gate is carried in the dry-run payload and the integrated result without running on the dry-run path. | `IntegratePreview`, `_dry_run_result`, `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:98-104; mcp/src/agents_remember/worktrees/modules/integrate.py:452-496; mcp/src/agents_remember/worktrees/modules/integrate.py:611-643 |
-| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:49-198 |
-| Worktree tests cover fast-forward integration, fail-closed source-lineage refusal for both non-overlapping and conflicting source movement after closeout, and non-fast-forward refusal without mutation. The stale-source cases direct callers to synchronize before retrying instead of replaying during integration. | `test_integrate_ff_only_fast_forwards_code_and_memory_main`; `test_integrate_refuses_parallel_non_overlapping_source_changes_until_sync`; `test_integrate_refuses_parallel_conflicting_source_changes_until_sync`; `test_integrate_refuses_non_fast_forward_code_without_mutating` | mcp/tests/test_worktree_support_tests_2.py:605-662; mcp/tests/test_worktree_support_tests_2.py:672-715; mcp/tests/test_worktree_support_tests_2.py:717-753; mcp/tests/test_worktree_support_tests_3.py:723-758 |
+| The wire vocabulary declares integration and cleanup states. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:33-34 |
+| The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
+| The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50; mcp/src/agents_remember/worktrees/modules/integrate.py:372-407 |
+| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; `run_automatic_cleanup` | mcp/src/agents_remember/worktrees/modules/integrate.py:372-407; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
+| Historical/removed: leaf integration reused its closeout proof without calling a gate, and series/master integration alone ran the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. The cited `integration_quality.py` was deleted by the closeout-door cut (commit `fad9808e`). | — | — |
+| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:326-343 |
+
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
 
@@ -106,7 +157,134 @@ Series/master integration owns the single full Dagger acceptance before merge, p
 self-repository required-wrapper policy, and revalidates lineage/source tips after the long run.
 A missing Agents Remember wrapper or failed full result blocks before merge.
 
+## 260815-DAG-L3 Integration Seam, Replaced By Journal Transfer
+
+The final integration path does not claim, certify, or consume a mutable queue row. Since the
+closeout-door cut this admission no longer binds a claimed closeout door or a source journal into an
+integration intent — those modules were deleted. Admission is the request plus the branch/ref
+authority checks, and the mutation
+re-proves lineage, commit identity, and protected refs immediately before
+publication. Recovery resumes the same journaled operation generation only from mechanically proven
+evidence; a generic request cannot select or substitute another leaf. Projection refresh after the
+canonical transition is downstream and disposable.
+
+## 260815-DAG-L4 Integration-Authority Impact
+
+L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers,
+and active atomic-series refs are censused across code and external memory. CLIVE narrows the live
+integration boundary to exact journal/door authority, protected-ref CAS, and (for an atomic series)
+the short landing lock; mutable queue serialization is not publication authority.
+
+The final reversible preparation checks the accepted code/external-memory source-tip snapshot before
+the broader lineage diagnostic. A concurrent protected-ref move therefore returns the structured
+`source-moved-during-quality` refusal expected by the retry protocol, before irreversible progress;
+the lineage check still follows when the exact snapshot remains current.
+
+Fresh journaled integrations now enter the normal claim-and-publication path. Recovery publication
+is attempted only when the durable operation carries recovery commits that exactly match the worker
+input. A completed contract without that durable tuple may still be previewed read-only, but apply
+refuses before protected publication; immutable integration authority or self-asserted completed
+fields alone are not recovery evidence.
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `handover_gate_guard`, `unmatched_handover_gate_warning`,
+`blocked_integration_payload`. A waiting projection is admission evidence only. Since the
+closeout-door cut the exact claimed door and source journal no longer transfer authority into the
+integration journal here — that transfer module was deleted; the integration journal still owns its
+own operation generation, and no door claim is matched on this path. The mutation boundary revalidates
+configured contract and protected refs and records publication evidence. Source-ref movement must
+reconcile or complete the same generation.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes `handover_gate_guard`, `unmatched_handover_gate_warning`, `blocked_integration_payload` at this ownership boundary. | `handover_gate_guard`; `unmatched_handover_gate_warning`; "def blocked_integration_payload(" | mcp/src/agents_remember/worktrees/modules/integrate.py:126-152; mcp/src/agents_remember/worktrees/modules/integrate.py:155-191; mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50 |
+
+## 260821-CLIVE Live Atomic Landing Authority
+
+Before an atomic protected-ref publication, integration now calls
+`require_atomic_landing_authority` against current repository/series truth. Conflicting nonterminal
+series targets return the typed atomic-landing blocked result; no durable queue blocker is acquired
+or released. The integration authority lock is held only around the protected publication edge and
+the current contract is re-proved inside it. Completed integrations remain idempotent; organizational
+completion continues through its journaled publication transaction.
+
+## PDLS Reconciliation
+
+Integration recovery now rejects external-memory commit evidence on internal-memory contracts and preserves exact candidate/ref state before invoking the canonical recovery route.
+
+This change preserves the file's existing authority boundary. No threshold exception, silent
+fallback, or compatibility reader was added.
+
+## Current Landed Composition
+
+This module contains no quality reference at all. The integration quality call, `args.integration_certification_owner`, `run_integration_quality_gate` and the configured-profile forwarding described in earlier revisions of this section were deleted with `integration_quality.py` by the closeout-door cut (commit `fad9808e`). Integration lands the prepared pair under the existing authority and ref-safety controls and runs no acceptance gate of its own.
+
+## Closeout-Door Cut: Boundary Facts, Publication Intent And Claim Transfer Removed
+
+The closeout-door cut (commit `fad9808e`) removed three imports from this module and the code that used
+them: `transfer_and_publish_integration_claim` (from `integration_claim_transfer.py`),
+`IntegrationDoorAuthorityConflict` / `integration_door_decision_payload` (from
+`integration_publication_fence.py`), and `IntegrationBoundaryFacts` /
+`prepare_integration_publication_intent` / `preview_integration_boundary` (from
+`organizational_completion_integration.py`). All three modules were deleted.
+
+`_apply_integration` no longer builds boundary facts, a publication intent, or a claim transfer. It
+takes the prepared commit pair straight to publication. Admission for the ordinary integration path is
+therefore the request plus the existing branch/ref authority checks — no door-claim match is performed,
+and `prepared_integration_recovery` was dropped from the preflight results with it. `IntegrationPublication`
+lost its `intent` field for the same reason.
+
 ## Update History
+
+- 2026-09-11T14:52+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: `_integrated_result` now calls `run_automatic_cleanup` on the successful path after writing `integration_status=completed`, reloads the contract so the payload reflects the post-cleanup cell, nests the cleanup report as a top-level `cleanup` key, and reports a cleanup refusal without failing the landing; a refused or partial integration cleans up nothing. Repointed the stale `_integrated_result` ranges (420-450 → 372-407). Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the evidence row citing the deleted `integration_quality.py` and recorded the module has no quality reference at all; corrected the L3 seam and CLIVE-L2 admission wording, which had this module binding a claimed closeout door and source journal into an integration intent — that module was deleted and no door claim is matched on this path; added the boundary-facts/publication-intent/claim-transfer removal section. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: retired the evidence row citing the deleted `test_worktree_integrate_quality_gate.py` altitude matrix. Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
+
+- 2026-09-10T15:06+02:00 — Integration guidance curation: the `blocked-non-ff` / `source branch moved` refusal now routes through `worktree_sync` plus a new targeted closeout instead of `--strategy replay`; recorded that `replay` remains supported and is the carryover vehicle. Re-derived the integrate.py anchors against the current working tree. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:41:10+00:00: Generated citation repair: `_integrated_result`; "def blocked_integration_payload(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:418-448; mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-25. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated wire state vocabulary from the typed amendment record and helper. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding for the master full gate and removal of the requires_integrated_acceptance repo-name policy; refreshed integration_quality citations to the post-cutover ranges.
+| The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:346-389 |
+| The integrated result records the completed publication outcome. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:372-407 |
+| The altitude-proof module this row cited was deleted with the removed closeout fixture chain (commit `9e1743c1`); the altitude matrix it described is no longer retained as test coverage. | — | — |
+| Historical/removed: the direct-legacy-integration cases named here lived in `test_worktree_support_tests_2.py` / `_3.py`, which no longer exist. Journaled production-path suites own successful movement and recovery; this row records the earlier coverage rather than a current test. | N/A | N/A |
+
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: replaced persistent blocker assumptions with live atomic protected-ref authority at the landing edge. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the queue-consume return (stale-by-evidence sibling
+  facts) now lands on the fresh and completed-recovery integration payloads as
+  `staleByEvidence`, each naming `worktree_sync` as recovery. Verification remains closeout-owned.
+
+- 2026-08-17T12:09+02:00 — 260815-DAG-L5: the quality altitude ladder (`quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate`) moved to `integration_quality.py` and `IntegratePreview`/`IntegrationPublication` to `modules/integration_publication.py`; re-pointed the two cited rows to the new owners. Verification remains closeout-owned.
+
+- 2026-08-16T08:12+02:00 — Dagger repair: reordered final source-state diagnostics so the exact accepted-tip race owns the structured pre-CAS refusal before persisted lineage diagnostics.
+
+- 2026-08-16T07:05+02:00 — L4 review repair: completed apply/recovery now requires the operation's exact durable recovery tuple before descendant, ledger, or queue-completion publication.
+
+- 2026-08-16T06:15+02:00 — Dagger repair: separated fresh integration from durable recovery admission so a newly queued graph candidate is claimed before queue-owned publication rather than being misclassified as torn recovery.
+
+- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
+
+- 2026-08-15T09:10+02:00 — L3 content update: recorded the certified claim, final irreversible
+  revalidation, exact consume, and completed-integration recovery path; verification remains
+  closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: replaced leaf targeted reruns with certified-commit reuse
   and retained full acceptance solely at master integration. Verification remains closeout-owned.

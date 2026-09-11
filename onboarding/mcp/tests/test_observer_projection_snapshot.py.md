@@ -5,35 +5,69 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_observer_projection_snapshot.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                        |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                          |
+| lastUpdated | 2026-09-06T21:46+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-Part of the 260731-EFA-L7 in-place split family for `test_observer_projection_snapshot.py`'s source module; covers the behaviours named by its test classes.
+Observer snapshot projection and persisted current-state smoke test.
 
 ## Code Commentary
 
-- `SnapshotReaderTests`
-- `StoreIOTests`
+### Logic
 
-## Invariants And Boundaries
+The fixture builds temporary runtime inputs and drives project-and-write end to end. The retained case requires one lifecycle in the projection and a persisted latest-state.json under the configured observer root.
 
-- The card mirrors the source file one-to-one at `mcp/tests/test_observer_projection_snapshot.py`.
+### Conventions
 
-## Repo-Internal References
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+
+### Invariants And Boundaries
+
+This single smoke case does not prove every historical reader/refusal or root-journal addressing edge. A written projection is derived state rather than mutation authority.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Project and write end to end. | `test_project_and_write_end_to_end` | mcp/tests/test_observer_projection_snapshot.py:90-96 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
+
+- 2026-08-26T10:44:52+02:00 — Added explicit forcing that a pre-locator enclosure remains a structural observer row without inventing lifecycle-operation state.
+
+- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -17,11 +17,39 @@ and the work it must refuse or escalate.
 
 ## Hot Path Summary
 
-Architect owns sprint-level direction. Orchestrator owns the portfolio and manager topology.
-Manager occupies one canonical master and drives the leaf closeout chain. Worker occupies one leaf
-and produces code plus a turn report. Reviewer produces independent verdict evidence. Curator
-occupies one leaf coherence pass and reconciles existing intent, ruled intent, and implemented
-reality into onboarding. Other specialist roles retain their own documented altitude and artifact.
+Manager hosted dispatch consistently names the canonical leaf or master **task document**. That
+vocabulary matches the public structural request and its task-reference authority; generated and
+packaged role projections are synchronized from the canonical role file rather than edited apart.
+
+### IAS Frozen Role Boundary
+
+Architect, strategist, and orchestrator responsibilities operate on canonical task documents, not
+on a queue-owned copy of the plan. They may change approved planning whenever their role authority
+allows; downstream closeout projections are invalidated and rebuilt. For atomic work, selecting a
+different live master pauses the old one and reconciles the new source pair before implementation
+is exposed. No role should discard or terminalize a valid master merely to free scheduling state.
+
+When source reconciliation retains a conflict, the assigned agent resolves and stages it in the
+reported worktree, then continues the same contract-addressed operation or explicitly cancels it.
+Private journal/ref identity stays in the plane; role briefs carry the public contract address and
+recovery guidance.
+
+Architect owns sprint-level direction, the initial plan loop, and the sprint plan-review reviewer.
+Strategist authors the evidence-cited dependency graph when dispatched. Orchestrator adopts the
+ruled artifact, maintains the runtime frontier, and records bounded reprioritization judgments;
+substantial reshapes return through the architect-owned strategist loop. Manager owns readiness
+inside one organizational or atomic master. Worker owns one leaf; reviewer owns independent route
+or completion verdict evidence; and curator reconciles ruled intent with implementation.
+
+Reviewer is one target-only role projected at the reviewed artifact's altitude: leaf, master, or
+sprint. Managers own leaf and master-exit generations, the architect owns the plan generation, and
+the orchestrator owns the super-exit generation. The control plane stamps that structural parent;
+the shared role name and sprint address do not blur plan and super authority.
+
+Organizational masters have no integration branch: their leaves are direct super descendants and
+the final leaf is reviewed and full-gated as part of the exact proposed super candidate before it
+lands. Atomic masters retain the branch-backed, no-partial-exposure block. A failed review routes
+repair to an owning, reopened, or new scoped leaf—never to a master or super workbench.
 
 Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger
 graph is the only Agents Remember acceptance environment. Leaf closeout selects targeted mode
@@ -29,14 +57,34 @@ exactly once; leaf integration and series closeout do not rerun it. The master g
 mode once. Every run receives the explicit task-derived diff base. Host pytest/wrapper execution
 is refused; a constrained lifecycle environment may explicitly configure a hard cap.
 
-The curator's terminal artifact is valid only after current-additions coverage and the full
-leaf-scoped memory-quality worklist have been repaired and rerun. Expected dirty-source drift and
+The manager also owns exact requirement-set compilation: each worker and reviewer receives the
+same stable IDs applicable to the leaf. Workers give delivery and verification evidence per ID;
+reviewers independently inspect that evidence and adjudicate every ID `accepted` or `rejected`.
+Missing or wrong-class evidence, invalid citations, and missing developer approval reject the ID,
+and one rejected ID prevents an overall pass. This requirement-acceptance plane is separate from
+the durable-evidence stable-contract-or-expiry hold point.
+
+The same role chain preserves append-only attempt identity. The worker writes a lightweight,
+candidate-bound delivery record only at review handoff and keeps internal implementation/test/
+evidence events separate; the reviewer writes an independent exact-attempt adjudication; the
+manager records bounded invalidation and rebuilds an observational summary that excludes protocol
+events. Unrelated later candidates do not reopen accepted attempts.
+
+The curator's terminal structured authority is valid only after current-additions coverage and the
+full leaf-scoped memory-quality worklist have been repaired and rerun. The lifecycle API publishes
+that sole candidate-bound authority and renders Markdown from it. Expected dirty-source drift and
 real-commit verification fields remain separately closeout-owned; they do not excuse a repairable
 onboarding or citation finding.
 
-Roles are immutable within dashboard-owned seats. Horizontal role expansion uses structural
-dispatch to another document+role seat; native sub-agents, when allowed by a hands-on role, remain
-read/search helpers and never become AR role seats.
+Roles are immutable within dashboard-owned seats. For ordinary role-shaped work, free chat creates
+the sprint architect through one identity-free `dispatch_agent` call built from the canonical
+architect-brief template; an explicit developer-declared task-seat takeover instead targets the
+named role at its canonical altitude. Once hosted, architect, orchestrator, and manager are plane
+callers with only their documented direct-child scope. Strategist, designer, worker, reviewer,
+curator, and system-specialist are target-only roles. The role-table dispatch/tool rows document
+fixed structural authority and capability, not settings keys. Plane authorization
+failures never retry as ambient launches. Native sub-agents, when allowed by a hands-on role,
+remain read/search helpers and never become AR role seats.
 
 ## Conventions
 
@@ -44,25 +92,36 @@ read/search helpers and never become AR role seats.
 - The source role files are canonical; packaged copies are exact synchronization outputs.
 - Each role writes its artifact of record and communicates structurally one rung at a time.
 - Shared dispatch/authority doctrine remains in the parent `SKILL.md`.
+- Every role table names whether that role is an ambient target, a plane-hosted caller, or
+  target-only; the request never carries a caller-mode selector.
 
 ## Invariants And Boundaries
 
 - Manager owns a real master; worker/reviewer/curator own real leaves.
 - Role replacement preserves the task-document/role address.
+- `dispatch_agent` is the only public spawn verb. Ambient and plane authority are disjoint even
+  though both use the same exact-brief transaction.
 - Builder, reviewer, curator, and owner duties remain separate.
 - Curator completion requires the required missing-onboarding and full-quality reruns to name no
   curator-actionable work.
 - No role absorbs lifecycle machinery, memory duty, or gate authority assigned to another role.
 - Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
+- No role may collapse per-requirement evidence into an aggregate completion claim.
+
+
+## CCR-R12@v5 Lifecycle Boundary
+
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code, memory-content, and ledger legs then move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Curator is a fresh conservative coherence seat with onboarding-only writes and a mandatory pre-closeout repair-and-rerun loop. | "# Lifecycle — Curator"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:1-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| Curator is a fresh conservative coherence seat with onboarding-only writes, a mandatory repair loop, and structured authority publication. | "# Lifecycle — Curator"; "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:1-6; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | Worker is one leaf-scoped builder whose terminal artifact is the turn report. | "# Lifecycle — Worker" | skills/l-01-agent-lifecycles/roles/worker.md:1-33 |
-| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:95-111 |
+| The shared registry enumerates every remaining role file. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
+| Worker and reviewer roles define the two independent halves of per-ID acceptance. | `### 4 — Per-Requirement Acceptance Envelope And Delivery Attempt`; `## Per-Requirement Independent Attempt Adjudication` | skills/l-01-agent-lifecycles/roles/worker.md:77-145; skills/l-01-agent-lifecycles/roles/reviewer.md:101-160 |
 
 ## L23 Role Recovery Semantics
 
@@ -92,8 +151,85 @@ instead of carrying Agents Remember-specific Dagger commands. They retain the on
 no leaf-integration rerun, one master-integration cadence and must fail closed rather than invent a
 runner or fallback.
 
-## Update History
+## 260815-DAG-L14 Roles Route
 
+`roles/orchestrator.md` replaces the seat-row prescription with the seats-structure +
+`attach_master` adoption flow; `roles/strategist.md` and `roles/architect.md` adoption payloads
+updated.
+
+## 260815-DAG-L15 Roles Route
+
+`roles/reviewer.md` gained the Review Independence and Evidence-Type Matching section (no self-review; requirement-evidence-type table: rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level proof, doctrine → code anchor); `roles/orchestrator.md` gained the review-independence paragraph. All 9 generated copy trees are byte-identical via `scripts/sync-skills.py`.
+
+## 260821-DAGQC-L2 Curator Quality Invocation
+
+No role authority changed. Curator doctrine now uses explicit sync/start/poll request objects and
+treats capacity as poll/wait/retry guidance over the same API, never as permission for a fallback.
+
+## CCR-L42 Review-Phase And Altitude Update
+
+The role files now distinguish a complete `reviewMode=baseline` from
+`reviewMode=fix-verification`: the first review seals the agreed scope and issue IDs, while a
+successor verifies only those outstanding IDs and cannot add routes, criteria, or new findings.
+The role chain also records that standalone and organizational leaves carry independent route
+review, atomic child leaves defer to the accumulated master integration review, and workers must
+document applicable targeted checks before handoff. Task-document authority and the three-round
+review limit remain in force.
+
+## Update History
+- 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current review-phase,
+  review-altitude, and worker-check obligations from the canonical role files. Source inspection
+  only; verification metadata remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the four reviewer
+  contexts and plane-stamped parent ownership to the role map. Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the complete role caller-context matrix,
+  separated one-call architect bootstrap from explicit ambient takeover, corrected manager-only
+  leaf-seat dispatch, and kept structural rows outside settings overrides. Verification remains
+  closeout-owned.
+
+- 2026-08-29T09:14+02:00 — MCAR-L02 made lifecycle-published structured coherence authority,
+  rather than hand-authored Markdown, the curator's terminal artifact. Verification remains
+  closeout-owned.
+
+- 2026-08-27T22:15+02:00 — Recorded worker, manager, and reviewer ownership of phase-sensitive
+  malformed-attempt recovery without worker self-rejection.
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 role impact: separated internal protocol events from
+  review-handoff attempts and made leaf records lightweight content-addressed views.
+- 2026-08-27T19:59+02:00 — M40-M45 role impact: recorded worker/reviewer/manager attempt ownership
+  and the accepted-attempt non-reopening boundary.
+- 2026-08-27T12:43+02:00 — M38: recorded exact stable-ID dispatch, the worker acceptance envelope,
+  independent per-ID reviewer adjudication, and separation from durable-evidence promotion.
+  Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
+- 2026-08-26T08:55+02:00 — Finalized the IAS role boundary label against the frozen pass-13
+  candidate.
+
+- 2026-08-24T14:19+02:00 — No route impact: aligned curator quality invocation and capacity guidance with the canonical controller. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: reviewer.md independence + evidence-type section; orchestrator.md independence paragraph. Verified at code commit de3a0fd9.
+
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: orchestrator/strategist/architect role
+  docs updated to the atomic attach flow and seats structure. Verified at code commit 8071a644.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `architect.md` and `orchestrator.md` now
+  name `task_doc.author_execution_graph` as the graph bootstrap/edit seam and teach the
+  atomic-sequential default for graph-less sprints; the `migrate_execution_topology` reference is
+  gone. Role lifecycles are unchanged. Verification remains closeout-owned.
+
+- 2026-08-18T09:25+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: reconciled initial-plan ownership, strategist and
+  orchestrator judgment boundaries, organizational/atomic manager duties, pre-landing completion
+  scope, and leaf-owned remediation. Verification remains closeout-owned.
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled the role route with repository-resolved
   acceptance doctrine. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: manager, reviewer, curator, and orchestrator

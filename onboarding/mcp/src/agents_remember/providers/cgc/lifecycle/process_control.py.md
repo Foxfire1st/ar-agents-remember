@@ -71,7 +71,7 @@ default). The function returns at least 1 and at most `layout_count`.
 | CGC backend startup is delegated to the backend module. | "def cgc_backend_start(args: argparse.Namespace) -> dict[str" | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-390 |
 | Docker watcher command construction lives in the runner module. | "def cgc_runner_image_build(args: argparse.Namespace" | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-37 |
 | `cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result. | "def cgc_refresh_all(args: argparse.Namespace) -> dict[str"; "def cgc_index_concurrency(layout_count: int) -> int:" | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:259-259; mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:175-175 |
-| Unit tests protect the cap defaults, env-override, and boundary conditions. | "def test_default_caps_below_repo_count(self) -> None:"; "def test_env_override_raises_cap(self) -> None:"; "def test_bad_override_falls_back_to_default(self) -> None:"; "def test_zero_layouts_returns_one(self) -> None:" | mcp/tests/test_cgc_index_concurrency.py:22-22; mcp/tests/test_cgc_index_concurrency.py:37-37; mcp/tests/test_cgc_index_concurrency.py:41-41; mcp/tests/test_cgc_index_concurrency.py:45-45 |
+
 
 ## Update History
 

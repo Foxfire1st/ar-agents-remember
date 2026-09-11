@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-07T14:30+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -52,7 +52,7 @@ Module-level surface:
 - `anchor_change` (function, lines 361-419)
 - `dependency_changes` (function, lines 482-513)
 - `evaluate_claim` (function, lines 560-604)
-- `check_onboarding_root` (function, lines 605-681) — Compare every complete claim against its own historical provenance.
+- `check_onboarding_root` (function, lines 613-708) — Compare every complete claim against its own historical provenance; selected prepared runs may retain explicit predecessor-chain code anchors while this function reads current working-tree bytes.
 - Closeout may pass `unstamped_code_commit` for dirty cards only. The checker uses that base as
   comparison provenance without writing a verification stamp; committed unstamped debt remains
   hard, and closeout's post-refresh run supplies no fallback.
@@ -93,9 +93,14 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `anchor_change` (lines 361-419). | `anchor_change` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:361-419 |
 | Defines the function `dependency_changes` (lines 482-513). | `dependency_changes` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:482-513 |
 | Defines the function `evaluate_claim` (lines 560-604). | `evaluate_claim` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:560-604 |
-| Defines the function `check_onboarding_root` (lines 605-681) — Compare every complete claim against its own historical provenance.. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:605-681 |
+| Defines the function `check_onboarding_root` (lines 613-708) — Compare every complete claim against its own historical provenance and pass retained predecessor-chain anchors into `Histories`. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:613-708 |
 
 ## Update History
+
+- 2026-09-10T04:35+02:00 — CCR-L42 final predecessor-history curation: updated the current
+  `check_onboarding_root` body and range to record explicit retained code-history anchors while
+  preserving current working-tree reads and strict standalone provenance; verification metadata
+  remains closeout-owned.
 
 - 2026-08-10T08:20+02:00 — 260805-ARG-L1: added closeout-only temporary base provenance for
   dirty unstamped cards, reusing the Git dirty-path truth that also controls provenance-debt

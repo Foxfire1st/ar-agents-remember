@@ -41,30 +41,36 @@ opensrc fetch https://github.com/anomalyco/opentui        # GitHub
 
 ## Code Quality
 
-Agents Remember acceptance runs only through the pinned Dagger Ubuntu graph. Direct host `pytest`,
-Vitest, Playwright, and `python -m agents_remember.code_quality.check` invocations must refuse; they
-are neither diagnostics nor fallback evidence. Deterministic non-test host checks may be used for
-fast feedback.
+Ordinary Python development uses the repository's direct pytest unit and integration commands.
+Workers report relevant targeted checks, including failures and checks not run; host runs provide
+diagnostic feedback. The old `scripts/test-python` wrapper remains deleted and should not be
+recreated. Targeted Vitest unit/component runs remain diagnostic feedback. Repository
+Playwright/browser acceptance and Dagger certification remain available for an explicitly requested
+quality operation.
 
-The lifecycle owns the two accepted invocations:
+Use focused behavioral checks during implementation and report their exact scope. Full code quality,
+full tests, full memory quality, and whole-candidate review run only after an explicit developer
+request. Closeout and integration are Git code/memory/ledger transactions and do not launch or
+require those operations. When a requested certification run is required, use the current shared
+Dagger configuration and exact source/bundle/base contract; do not allocate another engine or
+substitute a host result for its certificate.
 
-- leaf closeout: `dagger call quality ... --mode=targeted --diff-base=<recorded leaf base>` exactly
-  once, before the leaf commit;
-- master integration: `dagger call quality ... --mode=full --diff-base=<recorded super base>`
-  exactly once, before integrating the master into super.
+The selected collected-case budgets are **1000 unit /150 integration**, including parametrized
+cases. Consolidate overlap before adding a test; each added case must protect a distinct behavior,
+consequential failure, or regression. Any budget growth needs an explicit tradeoff for protection,
+case count, support size and runtime. Moving unit bloat into integration is not a reduction.
 
-Leaf integration, series/master closeout, ordinary push, pull-request validation, tag, and publish
-do not rerun acceptance. Use `dagger call quality --help` for the live source/bundle/base/mode/cap
-argument contract; do not reconstruct omitted arguments from memory. The graph receives the exact
-candidate plus a separate Git ancestry bundle and must not mount the live coordination root,
-credentials, or container socket.
+Coverage percentages are diagnostic, including changed-line coverage. Production CRAP 20 is a
+review trigger: simplify code, add a meaningful behavioral test, or record concise justified
+acceptance. There is no mandatory coverage percentage, score exception registry, or ratchet.
+Lint, formatting, typing, structural rules, test failures and report integrity errors still enforce.
 
-The targeted graph covers changed files, reverse-import closure, the derived test subset,
-coverage/CRAP over changed production modules, changed-lines coverage, and the configured file-size
-rail. The full graph covers the repository suite. A missing graph, missing mandatory diff base,
-invalid Dagger attestation, absent self-owned wrapper, or non-zero result refuses with no host or
-direct-Docker fallback. An explicit lifecycle memory cap is passed to the graph's inner wrapper;
-otherwise the container runtime owns RAM and swap.
+When explicitly requested, the targeted graph covers changed files, reverse-import closure, the
+derived test subset, diagnostic coverage/CRAP over changed production modules, changed-line
+observations, and the configured file-size rail. The full graph covers the repository suite. A
+requested quality run with a missing graph, missing mandatory diff base, invalid Dagger attestation,
+absent self-owned wrapper, or non-zero result refuses with no host or direct-Docker fallback.
+Closeout/integration do not invoke this graph by default.
 
 Every completed lifecycle acceptance run atomically replaces the enclosure's
 `reports/test-results.md` and exports `clean-quality-results.json` as the authoritative result.
@@ -81,19 +87,19 @@ which findings are in touched files, which are inherited/out of scope, and the
 decision for each in-scope issue. Do not summarize quality as only "tests
 passed" when the tools emitted complexity, coverage, or threshold findings.
 
-### Commit-Gate Enforcement
+### Transaction Boundary
 
 The local fast and targeted hook tiers run deterministic non-test checks only: generated-copy
-checks, Ruff, formatting, Pyright, dashboard code generation, lint, and typecheck. The manual full
-hook tier refuses and points to Dagger. Pull requests always run the deterministic non-test GitHub
-check; ordinary branch pushes do not launch a duplicate workflow. The tag-only publish workflow
-requires the tagged commit to be reachable from `origin/main`, then builds and publishes without
-rerunning acceptance.
+checks, Ruff, formatting, Pyright, dashboard code generation, lint, and typecheck. Pull requests
+run the deterministic non-test GitHub check; ordinary branch pushes do not launch a duplicate
+workflow. The tag-only publish workflow requires the tagged commit to be reachable from
+`origin/main`, then builds and publishes without rerunning an optional quality operation.
 
-`worktree_closeout_apply` stages the exact leaf candidate and owns the single targeted Dagger run.
-Leaf integration reuses its certified commit. `worktree_integrate` on a master owns the single full
-Dagger run. The Agents Remember self repository treats removal of its acceptance wrapper as a
-refusal, not `wrapper-unavailable`.
+Closeout and integration use their existing transaction owners and exact source/destination/ref
+authority. Their transaction-owned commit legs also suppress automatic quality and test hooks; the
+ordinary explicit Git hook policy outside closeout/integration remains unchanged. They do not require
+certification, full suites, memory-quality checks, curator certification, or independent review. A
+developer-requested quality run remains lifecycle-owned; focused host results do not mint certificates.
 
 ---
 
@@ -128,7 +134,7 @@ Common commands:
 ```text
 python -m pyright --project .                              # Type-check the configured project scope.
 python -m pyright --project . mcp/src/agents_remember      # Type-check package source paths.
-python -m pyright --project . mcp/src/agents_remember/models mcp/tests/test_code_quality_check.py
+python -m pyright --project . mcp/src/agents_remember/models mcp/tests/test_quality_diagnostics.py
 ```
 
 Pyright is part of both Dagger acceptance modes and must not be scoped out of them. Deterministic
@@ -160,44 +166,44 @@ For more information on radon usage use the official documentation: [Radon Docum
 
 ### Pytest And Coverage
 
-Pytest and Coverage.py execute only inside the nonce-attested Dagger graph. Direct host pytest
-refuses before collection. Leaf closeout derives the targeted selection; master integration runs
-the full selection. Do not hand-pick a host subset for diagnosis or acceptance.
+Run ordinary host pytest for focused development feedback. The root configuration selects units
+by default, and `-m integration` selects the small integration population; `-m ""` selects both.
+An explicitly requested certification wrapper still requires genuine Dagger admission and uses its
+coverage artifacts as diagnostics. A direct host result cannot replace that authority.
 
 ---
 
 ### CRAP-Calculator
 
-CRAP-Calculator combines Radon function-level cyclomatic complexity with Coverage.py JSON line coverage. It reports function-level CRAP scores and derives a per-file rollup from those function scores.
+CRAP-Calculator combines Radon function-level cyclomatic complexity with Coverage.py JSON statement-and-branch coverage. It reports function-level CRAP scores and derives a per-file rollup from those function scores.
 
-The Dagger graph runs CRAP-Calculator against the coverage artifact produced by its own pytest
-selection. The repository threshold is enforced inside both acceptance modes; no host wrapper or
-standalone calculator result can replace that gate. Exported CRAP rows may be inspected for
-refactor scouting after the run.
+The Dagger graph reports production function scores from its coverage artifact. CRAP 20 prompts
+review without failing delivery; missing or malformed coverage still fails report integrity.
+Standalone scores are useful diagnosis, not certification. Tests and verification support do not
+become production CRAP inputs.
 
 ---
 
 ### Quality Working Rules
 
 - Run quality tools from the source repository root, not from the coordinator root.
-- Use deterministic non-test host checks such as Ruff, formatting, Pyright, Radon, dashboard
-  codegen, lint, and typecheck for implementation feedback. Do not run host test suites or the
-  direct wrapper.
-- Do not start an extra Dagger acceptance run during implementation. Leaf closeout owns targeted
-  acceptance once; master integration owns full acceptance once. A failed boundary is repaired and
-  retried through that same lifecycle operation.
+- Use focused pytest, targeted Vitest, Ruff, formatting, Pyright, Radon, dashboard codegen,
+  lint and typecheck for implementation feedback. Preserve Dagger ownership of certification.
+- Run full suites, full memory quality, and whole-candidate review only after an explicit developer
+  request. Necessary repairs use the existing lifecycle operation and exact evidence rather than
+  starting unrelated acceptance loops.
 - Before refactoring complex Python, capture a baseline with Ruff, Pyright, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.
 - Treat `Radon` as a map of risk, not a scoring game. Do not split code into tiny helpers just to lower complexity; split by responsibility and purpose.
 - When touching a function above the repository complexity target, either reduce the complexity locally or tell the developer why the function should remain as-is for now.
-- For Radon or CRAP-Calculator complexity findings in files touched by the current task, ignoring the finding is not an option. Report every in-scope violation with a concrete fix suggestion so the developer can approve that fix or give alternate direction.
+- For production CRAP findings in touched code, report the evidence and choose simpler code, a meaningful behavioral test, or concise justified acceptance. A metric score itself does not require new tests or block delivery.
 - Preserve existing script/function contracts unless the developer explicitly approves a contract change.
 - Prefer facade refactors: keep the current entrypoint stable, move the implementation behind it, and prove behavior with focused tests.
 - If a change worsens complexity or maintainability in touched code, call that out explicitly and explain why it is acceptable or what follow-up is needed.
 - Do not add defensive wrappers, fallbacks, or compatibility layers just to satisfy tools. Defensive code needs a concrete reason.
-- Record the lifecycle-owned Dagger result and any deterministic Ruff/Pyright/Radon feedback in the
-  final answer or task notes when code was changed.
+- Record targeted worker/curator checks and any explicitly requested lifecycle-owned quality result,
+  with failed or not-run checks called out, in the final answer or task notes when code was changed.
 
 ---
 
@@ -220,10 +226,11 @@ npm run lint         # eslint .
 npm run typecheck    # tsc -b
 ```
 
-Vitest, Playwright, coverage, and performance suites are test-capable and run only inside the
-nonce-attested Dagger acceptance graph. Do not invoke `npx vitest`, `npx playwright`, `npm run
-test*`, `npm run e2e`, or `npm run perf:cockpit` from a host seat. Leaf closeout and master
-integration own the accepted Dagger invocations described above.
+Direct targeted Vitest unit/component invocations are allowed from a host seat as diagnostic-only
+feedback. They do not certify the immutable candidate. Playwright, browser/integration, coverage,
+performance, broad `npm run test*`, `npm run e2e`, and `npm run perf:cockpit` suites remain available
+through the explicitly requested quality route. Closeout and master integration own Git
+transactions and do not launch those suites automatically.
 
 **Never type-check the dashboard with `tsc --noEmit`.** It exits 0 without checking
 anything. `dashboard/tsconfig.json` is solution-style — `"files": []`, no `include`, and
@@ -300,3 +307,7 @@ Moved to [`git-workflow.md`](git-workflow.md): the `mcp-vX.Y.Z` tag scheme (→ 
 version-bump locations that must stay in sync, the `Release MCP X.Y.Z: …` commit subject, the
 PR-gated end-to-end release flow (land via PR, then tag the merged commit), and the GitHub Release
 format. This repo keeps release notes in **GitHub Releases**, not a `CHANGELOG.md`.
+
+## Testing Policy Reconciliation
+
+- 2026-09-06T21:35:26+00:00 — Reconciled testing guidance to IAS d3610903 source policy: bounded host development suites, diagnostic coverage/production CRAP 20, and master-end full-suite/review ownership. No new verification result is claimed.

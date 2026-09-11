@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T12:00+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -22,10 +22,26 @@ one-real-master manager lifecycle and owns no separate intent.
 
 ## Logic
 
+The synchronized caller matrix makes the manager an ordinary plane-hosted caller for its direct
+worker/reviewer/curator children and an ambient target only for explicit developer-declared
+takeover. Dispatch/tools rows remain structural documentation, not settings keys.
+
+Reviewer is a direct manager child at two task altitudes: leaf review binds the leaf document and
+master-exit review binds this master document. The control plane stamps both generations back to
+the manager, and retirement remains confined to this manager's own master.
+
+The synchronized manager does not advance attempt IDs at dispatch or during internal reruns,
+validates the content-addressed handoff record, and rebuilds a non-gating summary that excludes
+protocol events.
+
 The packaged source therefore carries the canonical manager's structural leaf dispatch,
 builder/reviewer/curator closeout chain, delegated gate authority, leaf/master quality altitudes,
 subordinate cleanup, and durable master-handover contract unchanged. The sync process copies the
 complete canonical tree; package-local edits are drift, not customization.
+
+Curator dispatch carries the same exact approved revision packets and per-revision reviewer rows
+used by builder/reviewer handoff. A rejected or worker-blocked revision is a curation blocker, not
+authority for current onboarding.
 
 The synchronized quality altitude uses the pinned Dagger graph for Agents Remember acceptance:
 targeted for leaf/focused work and full exactly once at master integration. Both require the
@@ -45,12 +61,18 @@ fallback. A constrained lifecycle environment alone explicitly opts into `memory
 - Runtime packaging cannot expose child occupant ids to the manager model.
 - Builder, reviewer, curator, closeout, and handover separation matches canonical doctrine exactly.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The packaged manager is one master-scoped owner of the leaf closeout chain. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
-| Its hosted child dispatch uses structural task document and role. | "## Hosted Role Dispatch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:41-47 |
+| The packaged manager is one master-scoped owner of the leaf closeout chain. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:11-30 |
+| Its hosted child dispatch uses structural task document and role. | "## Hosted Role Dispatch" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:48-48 |
+| Curator dispatch carries exact approved packets and per-revision reviewer adjudication. | "Curator onboarding handoff." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:244-254 |
 | The canonical source owns this doctrine. | "# Lifecycle — Manager" | skills/l-01-agent-lifecycles/roles/manager.md:1-47 |
 | MCP package data is copied from canonical skills and checked for drift. | "mcp package data"; `sync_target`; `check_targets` | scripts/sync-skills.py:43-47; scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
@@ -81,7 +103,103 @@ The manager resolves each repository executor and evidence contract from its mem
 closeout accepts once, leaf integration reuses the certified commit, and master integration
 accepts full once. Missing or failed required policy refuses; there is no inferred local fallback.
 
+## 260815-DAG-L2 Nature-Aware Completion
+
+Managers report master-local closeout facts and never rank the sprint. Organizational leaves use
+the direct super edge; atomic leaves use the isolated master edge and expose no intermediate state.
+The organizational master-exit reviewer receives the exact proposed final super candidate—prior
+landed contributions plus the proposed final leaf—before the one full check and ref movement.
+
+## 260821-CLIVE Manager Door And Task Duties
+
+The manager now publishes complete canonical closeout-door truth after builder, current route
+review, curator reconciliation, lineage, and task/source/memory/ledger provenance. The waiting door
+is source truth; portfolio comparison and first-ready release remain orchestrator duties, while the
+queue is only their current projection. Managers continue every intrinsically valid task edit and
+relay incomplete `projectionEffects`; evidence-changing edits are re-proven through the door owner,
+never delayed or patched into a row. After claim, status and operation controls address the stable
+root journal, so queue absence or invalidation cannot strand the leaf.
+
+## M38 Exact-Set Dispatch Projection
+
+The installed manager role compiles the leaf-owned and inherited stable requirement IDs, requires
+the complete worker envelope for that set, and sends the identical set to independent review.
+Missing/duplicate IDs or an overall pass with a rejected row fail closed. The evidence-promotion
+hold point remains a separate brief and verdict concern. This projection owns no manager-local
+variant.
+Each row must point to an approved version-addressed packet carrying its durable corpus ruling;
+missing, unapproved, or mismatched revisions are undispatchable.
+
+## M40-M45 Manager Attempt Projection
+
+The packaged manager validates immutable worker/reviewer attempt identity, records bounded
+invalidation after independent regression proof, and maintains only a rebuildable non-gating
+summary over authoritative leaf journals.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
+## MCAR-L02 Manager Coherence Handoff
+
+The manager now requires the curator's validated structured authority, generated projection, and
+exact record/snapshot identities rather than an ambiguous report filename. It keeps semantic
+revision, delivery attempt, and content digest separate and states that memory readiness and
+closeout admission consume the same validator. Historical Markdown cannot satisfy the handoff.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "## Hosted Role Dispatch" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:48-48. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Curator coherence pass — mandatory, not skippable." repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:243-243. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-31T12:00+02:00 — A005 synchronized the canonical manager's explicit leaf/master task
+  document wording into the packaged runtime projection. Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized leaf and
+  master-exit reviewer ownership, task altitude, and manager retirement scope. Verification remains
+  closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only leaf-seat dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
+
+- 2026-08-29T08:52+02:00 — Recast manager closeout intake around the sole validated structured
+  coherence authority. Verification remains closeout-owned.
+
+- 2026-08-28T14:18+02:00 — Reconciled the manager-doctrine source ranges against the committed
+  PDLS candidate after final requirement-ownership edits; the documented behavior is unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 manager attempt/summary boundaries.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized exact-attempt dispatch, owner invalidation, and
+  non-gating master-summary obligations.
+
+- 2026-08-27T16:27+02:00 — Synchronized exact requirement packets and reviewer adjudication into
+  manager-to-curator dispatch. Verification remains closeout-owned.
+
+- 2026-08-27T14:04+02:00 — Tightened the installed manager projection around approved
+  version-addressed packets and their durable corpus rulings.
+- 2026-08-27T13:32+02:00 — M39@v1: manager dispatch now verifies the exact stable ID + version and
+  matching canonical packet for every worker/reviewer row; missing or stale revisions are
+  undispatchable. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded exact-set manager dispatch and same-set review.
+  Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged manager-owned door publication, task-authoring primacy, and journal-only post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized manager-local readiness, nature-aware
+  lineage, and exact pre-landing organizational review scope. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: removed repository-specific commands from the generic
   manager role and retained fixed cadence. Verification remains closeout-owned.

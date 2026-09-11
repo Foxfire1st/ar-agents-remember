@@ -5,36 +5,68 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_file_size_detector.py`                                            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                        |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                          |
+| lastUpdated | 2026-09-06T21:46+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Test suite overview](overview.md)
 
 ## Purpose
 
-The File Size Budget rail suite: bands, exit codes, wrapper wiring, and scope. Pins `band_for` at the written boundaries (1199 under-limit / 1200 hard-limit / 2000 architectural-failure / 4000 emergency-cleanup), `measure` counting newlines like `wc -l` and flagging only the hard limit, the rendered band lines, the unarmed `--report` exit, the armed FAIL exit, the wrapper wiring (the `file-size` step + `file_size_armed` key + `scope.size_paths`), and the empty-measurement refusal.
+File-size measurement and report-versus-enforcement command selection.
 
 ## Code Commentary
 
-- `FileSizeBandsTests` — band boundaries and `wc -l` counting.
-- Detector CLI tests — `--report` exits 0 with findings; enforced mode exits 1 and names the band; no paths exits 1 (fail-closed).
-- Scope/wiring tests — `scope.size_paths` includes index-known Python + `dashboard/src` TS/TSX; the armed key routes through `code_quality/scope.py`.
+### Logic
 
-## Invariants And Boundaries
+Newline counting matches wc-style measurement: 1199 stays below the hard limit while 1200 produces one hard-limit finding. The wrapper includes --report when unarmed and omits it when armed.
 
-- The suite mirrors the detector's own boundaries: counting is newline-based, bands follow the written standard, and unreadable/empty inputs fail closed.
+### Conventions
 
-## Repo-Internal References
+This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+
+### Invariants And Boundaries
+
+The remaining cases do not assert every historical size band, CLI exit or empty-measurement path. Size reporting is distinct from restoring test-count or coverage requirements.
+
+### Todos
+
+No file-local implementation change is requested by this reconciliation.
+
+## Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The detector under test. | "agents_remember.code_quality.file_size" | mcp/src/agents_remember/code_quality/check.py:300-300 |
+| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+
+## Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Measure counts newlines like wc and flags only hard limit. | `test_measure_counts_newlines_like_wc_and_flags_only_hard_limit` | mcp/tests/test_file_size_detector.py:20-34 |
+| Unarmed step reports and armed step fails. | `test_unarmed_step_reports_and_armed_step_fails` | mcp/tests/test_file_size_detector.py:38-68 |
+
+## Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+
+
+- 2026-08-24T21:23+02:00 — Added the typed admission precondition to quality wiring.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the detector suite. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

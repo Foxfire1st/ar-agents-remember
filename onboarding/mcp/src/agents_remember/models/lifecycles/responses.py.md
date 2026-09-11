@@ -5,9 +5,9 @@
 | repository             | agents-remember                                |
 | path                   | `mcp/src/agents_remember/models/lifecycles/responses.py`  |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-13T08:40+02:00                      |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`     |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T08:46+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -61,14 +61,21 @@ registered in `TOOL_RESPONSE_MODELS` and inherit `extra="forbid"`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:66-66 |
+| The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`). | "class ToolResponse(ResponseModel):" | mcp/src/agents_remember/models/base.py:91-91 |
 | The `State`/`Phase` Literals reused as response field types (declared here since L9). | "State = Literal[LiveState"; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/models/lifecycles/responses.py:20-20 |
-| Where these models are registered against tool names. | "\"ping\": PingResponse"; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str" | mcp/src/agents_remember/models/tool_registry.py:145-145; mcp/src/agents_remember/models/tool_registry.py:221-221 |
+| The registry maps lifecycle signal tools to their declared response models. | "\"lifecycle_start\": LifecycleStartResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:204-209 |
+| The public response-model registry filters internal compatibility tool names from the complete model registry. | "PUBLIC_TOOL_RESPONSE_MODELS: dict[str" | mcp/src/agents_remember/models/tools/tool_registry.py:235-239 |
 | The builders that assemble payloads validated against these models; `lifecycle_start_payload` fills `frontHalfRundown`. | "def lifecycle_start_payload() -> dict[str" | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-20 |
 | Owner of the `FRONT_HALF_RUNDOWN` list content emitted as `frontHalfRundown`. | "FRONT_HALF_RUNDOWN: list[str] = [" | mcp/src/agents_remember/application/next_step.py:57-57 |
 | The persisted-record peer these are deliberately *not*. | "class Event(BaseModel):"; "OBSERVER_EVENT_SCHEMA =" | mcp/src/agents_remember/observer/events.py:23-23; mcp/src/agents_remember/observer/events.py:39-39 |
 
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Replaced the unrelated ping example with the lifecycle mapping and separated the public-registry projection. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 - 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved the preserved response-model card into `models/lifecycles/`, made the local vocabulary ownership explicit, and rebound the package-local governing overview and citations. Verification metadata remains closeout-owned.
 
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.

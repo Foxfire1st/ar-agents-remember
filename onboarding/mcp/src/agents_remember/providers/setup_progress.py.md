@@ -70,7 +70,7 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | Provider setup functions announce phases through `setup_progress_from(args)`. | `setup_progress_from` | mcp/src/agents_remember/providers/setup_common.py:25-33 |
 | The worktree launcher creates the file and finishes it from the setup payload. | `launch_provider_setup` | mcp/src/agents_remember/application/provider_runtime.py:73-121 |
-| Unit tests cover the event lifecycle, heartbeat, staleness, and projections. | `SetupProgressFileTests`, `ReadAndProjectionTests` | mcp/tests/test_setup_progress.py:45-143; mcp/tests/test_setup_progress.py:146-221 |
+
 
 ## Update History
 

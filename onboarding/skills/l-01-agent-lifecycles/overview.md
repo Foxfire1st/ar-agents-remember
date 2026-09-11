@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 
 ## Purpose
 
@@ -17,16 +17,71 @@ Generated package/harness trees mirror this route and never define independent b
 
 ## Hot Path Summary
 
-Free chat launches work; architect owns sprint composition; orchestrator owns the portfolio and
-creates one manager per real master; each manager drives worker, reviewer, and curator seats on
-real leaves. Structural task document plus role is the durable address at every altitude. The
-control plane owns current occupancy, readiness, exact first-brief delivery, replacement, and
-terminal correlation.
+### IAS Planning-To-Runtime Boundary
+
+Planning truth is upstream of runtime scheduling. Architect, strategist, and orchestrator seats may
+author otherwise-valid task changes without asking a closeout queue or atomic-series selector for
+permission. A material task change invalidates the affected disposable projection and causes the
+waiting frontier to be recomputed from current truth; it does not freeze task authoring.
+
+Multiple live atomic masters on one protected source pair are normal. Runtime selection exposes one
+master, auto-pauses the previous selection without retiring its task or branch, and requires the new
+selection to reconcile current code/memory sources before implementation admission. Role doctrine
+must treat retained sync conflicts as agent-resolvable, resumable, or cancellable worktree state,
+never as a reason to rewrite planning around a stuck queue. Exact changed doctrine files and
+synchronized copies are reconciled to the frozen candidate; commit verification remains
+closeout-owned.
+
+Free chat launches ordinary role-shaped work by compiling `templates/architect-brief.md` from
+current sprint truth and calling `dispatch_agent` exactly once on the sprint document. An explicit
+developer-declared task-seat takeover instead targets the named role on its canonical task document. Missing plane identity
+selects ambient target-document and architect-altitude validation. After handoff, the architect and
+other spawning seats use the same public verb under plane identity and direct-child scope; a plane
+refusal never becomes an ambient retry. Source-lineage conflicts remain resumable through the
+contract-addressed sync continuation until a genuine semantic ambiguity requires escalation. The
+internal session primitive and readiness/brief correlations remain control-plane details. The architect owns sprint composition and the initial ruled topology.
+When the graph is missing or materially stale, an approved strategist authors the evidence-cited
+plan before the orchestrator exists. The orchestrator adopts that plan, recomputes its ready
+frontier after material events, and records every queue or reprioritization judgment with rationale,
+evidence, author, confidence, and supersession. Structural task document plus role remains the
+durable address at every altitude.
+
+An organizational master is a logical grouping whose ordinary leaves branch directly from the
+current super line and may land independently. An atomic master keeps its own integration branch
+and exposes no partial result; exact source-pair selection controls current implementation
+exposure, while a separate landing authority serializes conflicting protected-ref movement.
+Mechanisms publish facts and candidate sets; architect, strategist, orchestrator, and manager seats
+retain their explicit judgment boundaries. Integration lines are not repair workbenches.
 
 Role continuity is task-document and artifact based. Workers build and report, reviewers provide
 independent verdict evidence, curators reconcile system intent and memory, managers decide
 delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
 fact relay replaces role-local polling and inference.
+
+Reviewer is polymorphic without becoming ambiguous: it binds the exact leaf, master, or sprint
+being reviewed, while the plane stamps the generation's parent document+role. Managers therefore
+own leaf and master-exit review, the architect owns plan review, and the orchestrator owns super
+review. An unstamped sprint reviewer cannot route because choosing between those two sprint planes
+would be invented authority.
+
+Requirement completion is an exact-set protocol. Before dispatch, the manager compiles the stable
+IDs inherited from the master and owned by the leaf. The worker must write one acceptance envelope
+per ID with delivery and verification rationales, independently inspectable citations, and exact
+commands/results or durable evidence. The reviewer receives the same set, inspects the artifacts
+itself, and accepts or rejects every ID separately; an invalid citation, wrong evidence class, or
+missing developer ruling is a requirement rejection and prevents an overall pass. Non-code work
+uses deliverable paths plus stable section anchors rather than invented code fields.
+
+Requirement revisions, delivery attempts, and internal protocol events are separate. Semantic
+revisions require explicit developer approval. Workers advance immutable exact-candidate attempts
+only at review handoff or after reviewer rejection; internal implementation/test/evidence reruns
+remain separate protocol events. Lightweight requirement-specific records link content-addressed
+expanded evidence, reviewers append independent adjudications, and rejected work advances through
+linked successors with one closed failure class. Accepted attempts remain closed across unrelated
+later candidates; only direct-regression proof plus bounded owner invalidation or an approved
+requirement revision can reopen them. Leaf journals remain authority while the master summary
+excludes protocol events, is rebuildable, and never gates tasks, lifecycle, closeout, integration,
+or queues.
 
 The quality altitude ladder uses the pinned Dagger graph for Agents Remember acceptance. Leaf
 closeout selects targeted mode exactly once; leaf integration and series closeout do not rerun it.
@@ -37,7 +92,9 @@ setting rather than role-local judgment.
 A curator completes only after the current-additions missing-onboarding check and full leaf-scoped
 memory-quality worklist have been repaired and rerun. Dirty-source drift and future commit-derived
 verification can be classified as closeout-owned only after no repairable citation, claim, shape,
-history, entity, or index finding remains.
+history, entity, or index finding remains. The curator then publishes the sole structured,
+candidate-bound coherence authority through the lifecycle API; generated Markdown is only its
+human-readable projection.
 
 Before that curator is created, the manager requires the leaf's task-derived source-lineage
 projection to be current and includes it in the complete brief. The structural dispatch transaction
@@ -49,6 +106,10 @@ re-proves lineage before host creation, so a parent move between status and disp
 - Shared rules live in `SKILL.md` and are not restated as competing role-local variants.
 - Runtime package and harness copies are synchronized artifacts of the complete canonical tree.
 - Current intent stays in default bodies; semantic history records transitions without leaf diaries.
+- `dispatch_agent` is the sole public spawn verb; caller kind is derived from process context, never
+  selected in the request.
+- Role-table `dispatch` and `tools` rows are fixed authority/capability documentation rather than
+  settings knobs.
 
 ## Invariants And Boundaries
 
@@ -56,18 +117,29 @@ re-proves lineage before host creation, so a parent move between status and disp
 - Spawn ancestry is provenance, not responsibility topology.
 - Each role acts only at its assigned task altitude and authority boundary.
 - Initial briefs are exact-pinned; ordinary messages re-resolve current structural occupants.
+- Ambient bootstrap and plane-hosted child dispatch share one exact-brief transaction, while their
+  authority checks remain disjoint and never fall back into one another.
 - Curator completion requires zero curator-actionable findings from both required onboarding checks;
-  the coherence report is written only after their repair-and-rerun loop.
+  the structured coherence authority is published only after their repair-and-rerun loop.
 - Commit-derived memory verification follows the real code commit during governed closeout.
+- Aggregate completion prose cannot replace the worker envelope or reviewer adjudication for any
+  stable requirement ID.
+
+
+## CCR-R12@v5 Lifecycle Boundary
+
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code, memory-content, and ledger legs then move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "### Hosted role dispatch is one structural transaction" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:272-272; skills/l-01-agent-lifecycles/SKILL.md:307-307 |
-| Curator owns conservative three-way memory reconciliation and the complete pre-closeout onboarding worklist. | "## What This Seat Is"; "### 4 — Iterate The Checklist, Then Report" | skills/l-01-agent-lifecycles/roles/curator.md:7-47; skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated Series Authority"; "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:473-473; skills/l-01-agent-lifecycles/SKILL.md:422-422; skills/l-01-agent-lifecycles/SKILL.md:466-466 |
+| The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
+| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "## What This Seat Is"; "### 4 — Repair Affected Onboarding, Then Publish" | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | Manager owns one real master and its leaf closeout chain. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
 | Worker owns one real leaf's implementation and durable report. | "## What This Seat Is" | skills/l-01-agent-lifecycles/roles/worker.md:7-17 |
+| The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:295-295 |
 
 ## L23 Pre-Dispatch Lineage
 
@@ -83,8 +155,95 @@ arguments, retry, resources, and evidence from the active repository memory. The
 cadence remains fixed at leaf closeout once and master integration once, with no leaf-integration
 rerun and no inferred fallback.
 
-## Update History
+## 260815-DAG-L14 Doctrine Route
 
+The `l-01-agent-lifecycles` doctrine was synced to the atomic `attach_master` flow and the
+first-class sprint seats structure: `roles/orchestrator.md`, `roles/strategist.md`,
+`roles/architect.md`, `criteria/plan-review.md`, and `templates/orchestration-task.md` all
+updated, with canonical and generated copies kept identical by `scripts/sync-skills.py`.
+
+## 260815-DAG-L15 Review-Doctrine Repair
+
+The review doctrine route was repaired: `roles/reviewer.md` gained the Review Independence and Evidence-Type Matching section (reviewer seat ≠ author seat; rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level proof, doctrine → code anchor); `roles/orchestrator.md` gained the independence paragraph; `criteria/plan-review.md` gained standing PR-8; `criteria/report-verification.md` extended RV-1 to `git diff --summary` mode rows; `criteria/doctrine.md` gained D-6 (bounded `L<leaf>-R<n>`/`S<n>` requirement ids allowed — reconciled with the memory canonical Source Comment Scope rule, folded at master level); `templates/verdict.md` gained rule 7 + the author-seat row; `templates/manager-brief.md` gained the independence/evidence line; `SKILL.md` extended the three-party-loop paragraph. All 9 generated copy trees stay byte-identical via `scripts/sync-skills.py`.
+
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+The `templates/orchestration-task.md` heading was restored to `## Canonical executionGraph Adoption Payload` (the `executionGraph` qualifier phrase restored); all 9 generated copy trees re-synced byte-identically via `scripts/sync-skills.py`.
+
+## 260821-DAGQC-L2 Curator Call Synchronization
+
+No lifecycle topology or authority changed. The curator brief now demonstrates the canonical
+discriminated memory-quality request so fresh seats do not reconstruct the retired flat grammar.
+
+## Update History
+- 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
+
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:295-295. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded task-altitude
+  reviewer binding, generation-bound parent stamping, and the fail-closed unstamped sprint seam.
+  Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted one public `dispatch_agent` verb, separated
+  ordinary architect bootstrap from explicit takeover, clarified fixed role authority versus
+  launch settings, and preserved resumable lineage-conflict recovery. Verification remains
+  closeout-owned.
+
+- 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored coherence report with one
+  lifecycle-published structured authority and a generated Markdown projection. Verification
+  remains closeout-owned.
+
+- 2026-08-28T14:18+02:00 — Reconciled lifecycle overview citations against the committed PDLS
+  candidate; the architect/seat routing and acceptance boundaries are unchanged.
+
+- 2026-08-27T22:15+02:00 — Clarified the route-wide attempt boundary: never-handed-off malformed
+  rows are non-attempt corrections, while handed-off malformed records require reviewer rejection.
+- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 route correction: formal attempts now begin at review
+  handoff, internal protocol events stay separate, and lightweight journal records link frozen
+  expanded evidence without inflating the master summary.
+- 2026-08-27T20:45+02:00 — Clarified that each leaf has one physical append-only attempt journal;
+  worker and reviewer records share that authority while reports and verdicts link exact anchors.
+- 2026-08-27T19:59+02:00 — M40-M45 route impact: recorded leaf-authoritative attempt journals,
+  non-gating summaries, and the M42 distinction between stale in-flight candidates and unrelated
+  post-acceptance movement.
+- 2026-08-27T12:43+02:00 — M38: documented the exact stable-ID acceptance set, worker evidence
+  envelope, independent reviewer adjudication, non-code citation form, and overall no-rejection
+  rule. The durable-evidence promotion hold point remains separately mandatory. Verification
+  metadata stays pinned until governed closeout stamps the PDLS commit.
+
+- 2026-08-26T08:20+02:00 — Reconciled the planning/runtime source-pair boundary and synchronized
+  doctrine set to the frozen candidate; verification remains closeout-owned.
+
+- 2026-08-24T14:19+02:00 — No route impact: aligned the curator brief's quality examples with the canonical sync/start/poll request. Verification metadata remains pinned until architect-owned closeout.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: orchestration-task template heading restored to `## Canonical executionGraph Adoption Payload`; copies re-synced. Verified at code commit e5cb139f.
+
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: review-doctrine repair — no-self-review + evidence-type matching (reviewer/orchestrator), PR-8, RV-1 extension, D-6 bounded requirement ids, verdict/manager-brief templates, SKILL.md three-party loop. Verified at code commit de3a0fd9.
+
+
+- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: doctrine files updated to the
+  `attach_master` flow and seats structure. Verified at code commit 8071a644.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the architect/orchestrator roles and the
+  orchestration-task template now teach the atomic-sequential default — a graph-less sprint runs
+  one master at a time, `task_doc.author_execution_graph` owns graph bootstrap and edits, and the
+  `migrate_execution_topology` cutover reference is gone; lifecycle routing doctrine is unchanged.
+  Verification remains closeout-owned.
+
+- 2026-08-18T09:25+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented architect-owned initial planning,
+  evidence-cited judgment, ready-frontier recomputation, organizational versus atomic master
+  topology, exact pre-landing organizational completion, and the no-workbench boundary.
+  Verification remains closeout-owned.
 - 2026-08-14T11:29+02:00 — R39 curator: removed Agents Remember-specific quality commands from
   generic lifecycle guidance while preserving exact cadence. Verification remains closeout-owned.
 - 2026-08-14T06:25+02:00 — L23 final candidate review: lifecycle doctrine keeps Dagger as the sole

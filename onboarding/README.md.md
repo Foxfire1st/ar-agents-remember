@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `README.md`                                |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:52:19+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -21,6 +21,8 @@
 ## Code Commentary
 
 ### Logic
+
+The landed IAS README now documents ordinary isolated pytest development, explicit integration selection and genuine Dagger-only certification. Its lines269–271 still contain superseded 90%/CRAP30 wording at d3610903; the current policy is diagnostic coverage and production CRAP20 review as declared by AGENTS.md and docs/design/python-pytest-bootstrap.md. This mismatch is a documentation defect, not authority to restore a floor. The primary implementation checkout carries the correction for subsequent delivery.
 
 The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
@@ -60,9 +62,13 @@ default.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
-Since the HFX-L6 review remediation, the post-quickstart workflow sentence and the Workflows docs
-link speak the current `l-01-agent-lifecycles` vocabulary: the developer-facing session is the
-architect, and spawned backend orchestrators plus other role seats follow their role briefs. The
+The post-quickstart workflow sentence now speaks the current `l-01-agent-lifecycles` vocabulary:
+developer-facing free chat answers research inline and, for ordinary role-shaped work, compiles the
+canonical architect brief and calls `dispatch_agent` once on the sprint document. An explicit
+developer-declared task-seat takeover targets the named role on its canonical document instead. The identity-free launcher
+hands over only after the exact brief is durable. Hosted seats use the same tool under structural
+authority, and a plane refusal never falls back to ambient. Spawned backend orchestrators and
+other role seats then follow their role briefs. The
 named build modes remain the research-only exit, the `w-02-light-task-workflow` skill task, and the
 master + light sub-task series (the chat build is retired — chat is never a build route). The
 Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecycle" instead of the
@@ -85,6 +91,10 @@ the rc).
 
 A short `## Live Demo` section sits between Core Features and Requirements. It states that Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable example of the by-path onboarding layer. It surfaces the dogfooding message higher on the page than the existing Contributing-section mention, which still owns the operational instruction to clone that memory and use it while contributing.
 
+The Requirements section now states the bounded Python 3.13 package line and points repository
+developers to the exact source-built 3.13.15 contract in the MCP README. The root README remains a
+public orientation layer; the executable bootstrap and provenance contract stay under `scripts/`.
+
 ### Conventions
 
 - Keep the README short enough to scan.
@@ -96,6 +106,9 @@ A short `## Live Demo` section sits between Core Features and Requirements. It s
 ### Invariants And Boundaries
 
 The README is explanatory, not the implementation source of truth. Runtime behavior belongs to MCP tools, package services, and skills. If README guidance disagrees with helper behavior, verify helper behavior before changing operational assumptions.
+
+The public prerequisite must remain aligned with `mcp/pyproject.toml` (`>=3.13,<3.14`) and must not
+imply that uv may silently select an arbitrary managed Python for repository development.
 
 `docs/**` is currently excluded from file-level onboarding by this repository's path rules, so this README onboarding is the durable file-level companion for the public documentation front door. Repo-level overview onboarding should carry broad documentation-structure context when the docs tree changes.
 
@@ -120,15 +133,16 @@ The README routes readers into the split documentation tree and gives the curren
 | The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. | `## Core Features` | README.md:45-62 |
 | The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. | `## What It Looks Like In Practice` | README.md:63-80 |
 | The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. | `## Live Demo` | README.md:81-87 |
+| The Requirements section names Python 3.13, the bounded package range, and the canonical repository-development runtime documentation. | `## Requirements` | README.md:88-100 |
 | The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. | `## Quickstart` | README.md:101-137 |
 | The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. | `## Documentation` | README.md:178-191 |
 | The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. | `## Run The Dashboard`; "autoStart" | README.md:138-177 |
-| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-272 |
-| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:294-299 |
-| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:300-303 |
-| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:304-308 |
+| The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. | `## Repository Layout` | README.md:192-298 |
+| The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. | `## Status` | README.md:320-325 |
+| The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/`/`ar-memory/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. | `## Stability` | README.md:326-329 |
+| The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). | `## Contributing` | README.md:330-334 |
 | The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. | `# Agents Remember Documentation` | docs/README.md:1-65 |
-| `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | `# Memory your coding agent can trust` | docs/features.md:1-478 |
+| `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. | `# Memory your coding agent can trust` | docs/features.md:1-479 |
 
 ## Cross-Repo References
 
@@ -141,7 +155,7 @@ The README describes external memory in general terms, but this file-level onboa
 ## Current Gate Paragraph (260731-EFA-L1 tiering, 260731-EFA-L2 honesty, 260731-EFA-L17 ladder)
 
 The README's generated-copy section previously said "both hooks also run
-`python -m agents_remember.code_quality.check`". That was retired by L1's tiering, and L2
+`python -m agents_remember_test_support.code_quality.check`". That was retired by L1's tiering, and L2
 then corrected what each tier actually enforces. The public contract the README now
 states:
 
@@ -157,21 +171,13 @@ states:
 - **Radon is printed as a report and cannot fail either tier — it exits 0 whatever it
   finds.** The README says so explicitly rather than listing it beside the enforcing steps.
 
-**Known gap in the source file:** the README's targeted-tier sentence does not name the
-changed-lines coverage floor, which is the wrapper's last and binding step. `CONTRIBUTING.md`
-carries it; the README does not.
-- **Agents Remember acceptance runs through the pinned Dagger graph only.** Leaf and focused
-  work use its targeted mode; the master integration gate runs its full mode exactly once. Both
-  require the leaf/master's explicit Git diff base, and `dagger call quality --help` is the
-  executable public argument contract.
-- Host `pytest` and direct wrapper invocations are refused. Deterministic non-test host checks are
-  feedback only, and a failed Dagger run never falls back to the host.
-- **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
-  pushes do not duplicate it and GitHub does not run acceptance.
-- **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
-  lands that exact commit without a rerun; master integration owns the one full run.
-- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
-  there rather than duplicating them.
+- **Agents Remember acceptance runs through the pinned Dagger graph only**, declared in the
+  repository-owned `mcp/certification-profile-v1.json` and selected explicitly by
+  `repositories.agents-remember.certificationProfile` in the MCP authority settings (CCR-R22@v1,
+  L22, commit `685f83c44055`). Leaf and focused work use its targeted mode; the master
+  integration gate runs its full mode exactly once. Both require the leaf/master's explicit Git
+  diff base; the framework does not discover a wrapper or carry an Agents Remember command/report
+  inventory.
 
 Note that `sync-dashboard.py` is **not** among the generated-copy checks — it is a release
 build step with no `--check` mode, because the bundle it places is no longer in version control.
@@ -204,11 +210,58 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 The README now distinguishes deterministic hooks and pull-request checks from lifecycle
 acceptance. Pre-commit/pre-push and GitHub PR validation are non-test checks; leaf closeout owns
 targeted Dagger once, leaf integration reuses the certified commit, and master integration owns
-full Dagger once. Direct wrapper and host test execution refuse. Retry proof is an internal,
-attested-Dagger optimization rather than a host diagnostic path.
+full Dagger once. Direct pytest, Playwright, changed-lines CLI, and Python-wrapper execution
+refuse. Direct targeted Vitest is supported diagnostic feedback only. Retry proof is an internal,
+attested-Dagger optimization rather than a host acceptance path.
+
+## 260824-PDLS — Contributor-Facing Python Route
+
+The README now says that Python investigation and acceptance both execute in the pinned Dagger
+environment. Candidate A's host command, cohort manifest, static closure classifier, and self-proof
+were deleted after representative exact-candidate measurement failed to justify their cost. The
+seven unique product assertions remain ordinary explicit-lane pytest regressions. Non-accepting
+Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; direct targeted
+Vitest remains the only supported host test diagnostic.
 
 ## Update History
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `## Status` repointed to README.md:320-325. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `## Stability` repointed to README.md:326-329. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: `## Contributing` repointed to README.md:330-334. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the repository-owned profile declaration -- mcp/certification-profile-v1.json selected by repositories.agents-remember.certificationProfile -- replacing the qualityGate.executor settings wording in the acceptance bullet.
+- 2026-09-03T12:30+02:00 -- Host `pytest` is refused and Candidate A's direct wrapper no longer exists. Deterministic
+  non-test host checks are feedback only, and a failed Dagger run never falls back to the host.
+- 2026-09-03T12:30+02:00 -- Direct targeted Vitest unit/component runs are supported as fast diagnostic loops only. They do
+  not provide acceptance, changed-lines coverage, or lifecycle evidence. Playwright, pytest, and
+  changed-lines CLI execution remain Dagger-owned; there is no direct Python wrapper.
+- 2026-09-03T12:30+02:00 -- **GitHub PR validation** runs deterministic non-test checks once per pull request; ordinary
+  pushes do not duplicate it and GitHub does not run acceptance.
+- 2026-09-03T12:30+02:00 -- **Leaf closeout** runs targeted Dagger exactly once before creating the commit. Leaf integration
+  lands that exact commit without a rerun; master integration owns the one full run.
+- 2026-09-03T12:30+02:00 -- The tier table and the staged-content stash contract live in `CONTRIBUTING.md`; the README links
+  there rather than duplicating them.
 
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted the one-call ambient launcher and
+  plane-hosted `dispatch_agent` vocabulary in the public quickstart narrative, distinguishing
+  ordinary architect bootstrap from explicit named-role takeover. Verification remains
+  closeout-owned.
+
+- 2026-08-29T16:27+02:00 — Reconciled the public prerequisite with the project-wide Python 3.13
+  support line and routed exact source-build details to the MCP README.
+
+- 2026-08-28T10:03:40+02:00 — Corrected the current contributor gate summary: host pytest refuses,
+  Candidate A's wrapper is absent, and no Python compatibility route remains.
+
+- 2026-08-28T05:10+02:00 — Reconciled the measured Candidate A retirement and preservation of its
+  unique assertions without a host compatibility route.
+- 2026-08-26T10:44:52+02:00 — Reconciled the contributor-facing diagnostic contract with the sealed direct-cohort manifest and fail-closed content-drift rules that replaced structural admission.
+
+- 2026-08-24T21:23+02:00 — 260824-PDLS added the contributor-facing Python diagnostic boundary.
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded direct targeted Vitest
+  as supported diagnostic-only feedback while preserving Dagger-only pytest, Playwright,
+  changed-lines, direct-wrapper, and acceptance evidence. Removed the now-resolved
+  changed-lines documentation-gap claim. Dagger acceptance remains closeout-owned.
 - 2026-08-14T11:25+02:00 — R39 curator: recorded the no-duplicate workflow topology, direct-host
   refusal, and Dagger-only retry boundary. Verification remains closeout-owned.
 - 2026-08-14T09:37+02:00 — Reopened L23 cadence: public guidance now distinguishes the

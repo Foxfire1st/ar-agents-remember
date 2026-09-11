@@ -72,7 +72,7 @@ contract tests drive both through real requests and prove per-app isolation over
 | Fail-closed runtime retrieval and the reserved `app.state` key live in the runtime module. | "CONVERSATION_RUNTIME_STATE_KEY ="; "class ConversationRuntime:" | mcp/src/agents_remember/serving/conversation/runtime.py:47-47; mcp/src/agents_remember/serving/conversation/runtime.py:59-59 |
 | The bound resolver's loopback-only ruling is what the authorization dependency delegates to. | "Return the local operator binding for a loopback peer; fail closed otherwise." | mcp/src/agents_remember/serving/conversation/authorization.py:93-93 |
 | The package facade re-exports both dependencies beside `ConversationRuntime` and `register_conversation_routes`. | "from agents_remember.serving.conversation.router import register_conversation_routes"; "from agents_remember.serving.conversation.runtime import ConversationRuntime" | mcp/src/agents_remember/serving/conversation/__init__.py:7-8 |
-| Composition tests drive `get_conversation_runtime` through per-app probe routes over `TestClient` and prove missing-install failure. | "def test_missing_installation_fails_closed(tmp_path: Path) -> None:" | mcp/tests/test_conversation_runtime_composition.py:163-163 |
+
 | Authorization tests prove forged browser identity headers are never read and the dependency fails closed off loopback. | "def test_browser_identity_claims_are_never_read(tmp_path: Path) -> None:"; "def test_non_loopback_peers_fail_closed(tmp_path: Path" | mcp/tests/test_conversation_authorization.py:149-149; mcp/tests/test_conversation_authorization.py:168-168 |
 
 ## Cross-Repo References

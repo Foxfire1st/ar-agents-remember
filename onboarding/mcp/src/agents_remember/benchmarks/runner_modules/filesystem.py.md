@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated            | 2026-08-22T10:39+02:00 |
+| lastVerifiedCommitHash | `346507af24396ab7b491e02511c4af006ccd3dc5`
+| lastVerifiedCommitDate | 2026-08-30T07:51:57+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -50,13 +50,14 @@ No external Domain Documentation source is configured for this memory repo.
 | --- | --- | --- |
 | The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.filesystem import *" | mcp/src/agents_remember/benchmarks/runner.py:18-18 |
 | The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
-| Benchmark behavior is covered through the existing worktree/tool test slices. | `test_changed_worktree_paths_includes_long_files` | mcp/tests/test_worktree_support_tests_1.py:1084-1097 |
 
 ## Cross-Repo References
 
 No configured sibling repository is required for this module.
 
 ## Update History
+
+- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
 
 - 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 1 citation finding:
   `test_changed_worktree_paths_includes_long_files` moved to `test_worktree_support.py:1541-1554`.

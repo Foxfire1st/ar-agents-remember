@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T07:20+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -148,6 +148,12 @@ The `/dev/bench` cockpit scenarios replace transport only. Scenario switches rev
 catalog, capability, snapshot, submission-poll, withdrawal, and connection ownership by generation
 before seeding the successor fixture. These reset exports are dev-only authority seams; production
 code must not use them as ordinary recovery APIs.
+
+The shared `dashboardStore.reset()` is the one full dashboard-projection reset used by
+`ScenarioPlayer`. Its single Zustand transaction increments `gen` once and restores every
+scenario-owned projection to its clean initial value, including `closeoutQueues`. This is dev/test
+scenario infrastructure: production does not call `reset()`, and production snapshot/delta queue
+ingestion, ordering/filtering, scheduling, and lifecycle authority remain unchanged.
 
 ### 2026-07-24 Resilient Boot And Steady-State Work
 
@@ -308,14 +314,20 @@ own server contracts, so no external code path is cited as authority.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:114-114 |
+| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:116-116 |
 | Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
 | Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
 | Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:361-387; dashboard/src/data/railModel.ts:414-436 |
-| The single exported creation-order sort and the panel that now imports it instead of keeping a byte-identical copy. | "export function findParentTaskMatch", "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75; dashboard/src/data/taskHierarchy.ts:43-43 |
-| The two distinct sub-task row models and their union, plus the server builder that has already ordered the series rows. | , "class _TaskDocumentLifecycleMaps:" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:37-37;  |
-| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:43-43; scripts/sync-projection-types.py:54-54 |
+| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:397-423; dashboard/src/data/railModel.ts:451-473 |
+| The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
+| The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:329-400; dashboard/src/dev/ScenarioPlayer.tsx:21-39 |
+| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode", "export interface TaskSubTaskRefNode", "export type SubTaskRow" | dashboard/src/types/projection.ts:561-568; dashboard/src/types/projection.ts:793-815 |
+| The server series builder sorts only fully stamped rows before projection. | `_series_subtask_nodes` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:260-277 |
+| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:46-46; scripts/sync-projection-types.py:57-57 |
+
+## Current Requirement Artifact Boundary
+
+`requirements.ts` reads registered requirement documents using a canonical task selector plus document identity; it does not expose arbitrary-path reads. `taskArtifacts.ts` owns the shared target union so notes and requirement documents carry distinct selectors through the same reader surface. Structured requirement rendering retains the backing document identity rather than treating an arbitrary Markdown link as registered authority.
 
 ## Placement Decision
 
@@ -332,7 +344,36 @@ Conversation roster derivation now accepts only backend-minted roster identities
 agent-tagged notices, including selected-child history state, remain conversation items and cannot
 create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
 
+## 260831-CCR-L23 Task-Local Requirements Client
+
+L23 added the task-local requirement-packet client to this route: `data/requirements.ts`
+(typed `listRequirements`/`readRequirement` over `/api/requirements/{list,read}` plus the
+reserved `requirements/` address/reference resolvers) and the shared
+`data/taskArtifacts.ts` discriminated reader target (`TaskArtifactReaderTarget`: notes vs
+requirements with the task-document selector). Consumers: the requirement-link provider, the
+notes-reader viewer, TaskNotes references, and detail-panel task prose.
+
 ## Update History
+
+
+
+- 2026-09-05T07:20+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added the registered requirement artifact boundary and repaired creation-order/model evidence to the real owners. Verification records source review, not execution or acceptance.
+- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the new `requirements.ts` client + `taskArtifacts.ts` artifact-target type modules. File-level detail in the new data cards.
+
+
+- 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
+  route citations after reviewed source movement; the data-route ownership contract is unchanged.
+  Verification remains closeout-owned.
+
+- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the route-level dev/test invariant
+  that the one canonical dashboard reset is total over scenario-owned projections, including
+  `closeoutQueues`, in one Zustand transaction. Production snapshot/delta queue ingestion,
+  ordering/filtering, scheduling, and lifecycle authority remain unchanged. Verification metadata
+  remains pinned until governed closeout stamps the code commit.
+
+- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows. Verification provenance remains closeout-owned.
 

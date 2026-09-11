@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
 | doc_type               | `file-level-onboarding`                            |
 | lastUpdated            | 2026-08-02T01:42+02:00                             |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`         |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`         |
+| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
 | governingOverview      | `overview.md`                                      |
 
 ## Governing Overview
@@ -114,10 +114,10 @@ leaf task doc's R2a is the source of truth), same posture as `turn_state.py`.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:48-48 |
+| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49 |
 | The pane classifier used by that path is `classify_pane_signal`. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
 | `classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
-| The failing-first suite covers five generic pane-signal cases; it does not establish per-harness override coverage. | `PaneSignalClassifierTests` | mcp/tests/test_pane_signals.py:16-43 |
+
 | The adapter exposes `blocked_reason` for final diagnostic classification; it does not expose the stale `composer_state` field. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
 | The R1 delivery contract (`serving/injector.deliver`) reads `HarnessAdapter.blocked_reason` off the FINAL paste capture to classify a modal trap as `blocked(reason)` rather than a bare failed/delivered boolean. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
 

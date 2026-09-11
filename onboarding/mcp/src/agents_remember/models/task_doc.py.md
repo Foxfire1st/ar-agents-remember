@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/models/task_doc.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038` |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
+| lastUpdated | 2026-09-01T03:58+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -43,23 +43,79 @@ Every non-`remove_subtask` operation leaves them `None` (excluded by `exclude_no
 registered model for the `task_doc` row in `PUBLIC_TOOL_RESPONSE_MODELS`. The
 persisted task document itself (`tasks.TaskDocument`) is deliberately not returned.
 
+Since the master full-gate repair (260815-DAG, commit e5cb139f) `TaskDocResponse` also declares the
+**special-op wire fields** for the sprint-linkage and execution-graph authoring surfaces
+(`attach_master`, `detach_master`, `linkage_report`, `author_execution_graph`): `subtaskNumber`,
+`state`, `sprintTaskDocumentRef`, `masterRef`, `graphNode`, `executionNatureAsserted`, `documents`,
+`removedOrchestrates`, `removedGraphNodes`, `masterResolved`, `linkageFacts`, `bootstrapped`,
+`appliedMutations`, `executionWaves`, `leafPlacementFacts`, `numberingHints`. These ops publish
+inside their own functions and return raw operation payloads; without the declaration the
+`extra="forbid"` envelope REJECTED the real payloads after their writes — exactly the
+`remove_subtask` bug class. They are present only on those ops; every other operation leaves them
+`None` (excluded by `exclude_none`). The application entry point now merges the standard
+`task_doc` identity in via `_sprint_doc_identity` in `application/task_docs/task_doc_tools.py`.
+
 ### Invariants And Boundaries
 
 - STRICT AR-owned shape (`extra="forbid"`); register STRICT, not flexible.
 - `lifecycleId` is optional-null so it survives `exclude_none=True` when absent.
 - `masterSync` is optional because light docs, master docs, cross-series refs, and unchanged parent rows
   should not grow response data unnecessarily.
+- Every special-op wire field is optional and op-scoped: a real special op validates against the
+  declared shape, and every other operation stays byte-unchanged.
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tool_registry.py:187-187 |
-| The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:63-66 |
-| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:182-267 |
-| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:122-164 |
+| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:197-197 |
+| The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
+| The persisted task document this response describes (not returns). | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:642-816 |
+| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
+| The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:392-414 |
+
+## 260815-DAG Master Full-Gate Repair
+
+`TaskDocResponse` gained the ~16 optional special-op wire fields so the sprint-linkage and
+execution-graph authoring results validate against the strict `extra="forbid"` envelope after their
+writes (the same defect class as the L18 `remove_subtask` fix), and the application entry point
+merges the standard task-doc identity into those raw operation payloads via
+`_sprint_doc_identity` (mcp/src/agents_remember/application/task_docs/task_doc_tools.py:396-418). The former wire-shape suite
+was retired; these model and application owners remain the current contract authority.
+
+## 260821-CLIVE Discard And Projection-Effect Response Models
+
+`TaskDocResponse` now carries bounded `projectionEffects` for every accepted task mutation. Its
+discard-unstarted branch distinguishes preview, applied, already-discarded, started refusal, and
+ambiguous refusal; it returns the typed parent audit, exact source-state proof, centralized
+unstarted-evidence fingerprint/facts, deleted-or-would-delete paths, and executable next action.
+Planning discard is therefore observable without treating queue state as task history or silently
+turning a started leaf into completion.
 
 ## Update History
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `TaskDocument` repointed to mcp/src/agents_remember/tasks/document.py:642-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged persisted
+  `TaskDocument` model dependency. Verification remains closeout-owned.
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; task-doc response and discard evidence shapes are unchanged.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged typed discard-unstarted evidence/audit and projection effects into the response model card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `TaskDocResponse` declared the
+  optional special-op wire fields (sprint-linkage + execution-graph authoring results) so they
+  validate against `extra="forbid"` after their writes, pairing with the `_sprint_doc_identity`
+  merge in `application/task_docs/task_doc_tools.py`. Verified at code commit e5cb139f.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
+- 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the
+  persisted model gained sprint `seats` and typed `masterRef` rows; wording retained, citation
+  regenerated to the current class lines, stamp advanced to code commit 2f494982.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-03T02:58:43+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact source paths; fixer generated all final ranges.
 
@@ -75,5 +131,5 @@ persisted task document itself (`tasks.TaskDocument`) is deliberately not return
 - 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: added `TaskDocMasterSync` and optional
   `TaskDocResponse.masterSync` so leaf writes can report same-root master-row changes and dry-run master
   previews. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T07:23 — Slice 3c reopened (R5, dry-run/preview): added the additive optional `dryRun`/`rendered`/`diff`/`wouldLose` fields (set only on a `dry_run=true` preview; real-op responses unchanged). Verification metadata pinned until closeout stamps the R5 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the `task_doc` STRICT response model. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- 2026-06-19T07:23+02:00 — Slice 3c reopened (R5, dry-run/preview): added the additive optional `dryRun`/`rendered`/`diff`/`wouldLose` fields (set only on a `dry_run=true` preview; real-op responses unchanged). Verification metadata pinned until closeout stamps the R5 code commit.
+- 2026-06-13T22:34+02:00 — Created for slice 3c commit 1: the `task_doc` STRICT response model. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

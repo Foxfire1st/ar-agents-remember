@@ -53,13 +53,15 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Task-document enumeration and parsing consumer. | "def _iter_task_document_payloads(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:44-44 |
-| Cache scaling regressions. | `TaskDocumentPayloadCacheTests` | mcp/tests/test_task_document_payload_cache.py:18-96 |
 
 ## Cross-Repo References
 
 No meaningful cross-repository references found.
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
 

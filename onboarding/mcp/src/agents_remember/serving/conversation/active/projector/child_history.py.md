@@ -56,7 +56,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Public `AgentHistoryHydration` records status/detail/code, and `agent_history_state_item` renders unavailable/recovered child-local rows. | `AgentHistoryHydration`; `agent_history_state_item` | mcp/src/agents_remember/serving/conversation/active/agent_history.py:19-26; mcp/src/agents_remember/serving/conversation/active/agent_history.py:29-70 |
-| The measured production regression crosses the transport and selected projection path. | `test_measured_history_crosses_transport_probe_ipc_and_selected_projection` | mcp/tests/test_codex_history_production_path.py:281-365 |
+
 | Concurrent reconnect requests share one active projector and return the same page/events/`child_history` object. | `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94 |
 
 ## Cross-Repo References

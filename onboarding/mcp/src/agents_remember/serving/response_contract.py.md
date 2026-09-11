@@ -5,9 +5,9 @@
 | repository             | agents-remember                                         |
 | path                   | `mcp/src/agents_remember/serving/response_contract.py`  |
 | doc_type               | `file-level-onboarding`                                 |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`              |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T22:06:54+00:00 |
+| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
+| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -21,11 +21,35 @@ responses now expose canonical task-document binding rather than leaf-key identi
 
 ## Code Commentary
 
+`WireResponse` is frozen, generates camelCase aliases and forbids extra fields. Separate refusal models declare which identifier each status may echo; an untyped status-plus-arbitrary-data envelope would discard this boundary. Internal population by field name is allowed, so wire validation must still distinguish the emitted alias form. The removed route-conformance matrices are historical evidence, not an active coverage claim. cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:89-109).
+
 ### Logic
 
-`TerminalCatalogEntryWire` mirrors the conditional catalog serializer. Open and seat-conflict models
+`TerminalCatalogEntryWire` mirrors the conditional catalog serializer — since 260821-ARSPAWN-L1 it
+also carries the caller-kind provenance field `spawned_by_kind` (`spawnedByKind` on the wire,
+`str | None`, None default) beside the spawned-by session/lifecycle pair, so `/api/terminal/sessions`
+rows expose caller kind only when set and old rows are unaffected; the module's key-set equality
+test against `TerminalCatalogEntry.to_json` keeps the wire and the hand-rolled serializer in
+lockstep. Open and seat-conflict models
 carry structural identity; task assignment responses return the accepted or refused document and
 role. Other serving response families remain strict and unchanged in responsibility.
+ARSPAWN-L2 also mirrors `dispatch_brief_entry_id` (`dispatchBriefEntryId` on the wire), the private
+catalog receipt used for dispatch reconciliation after inbox compaction.
+ARSPAWN-L5 mirrors `structural_parent_task_document_ref` and `structural_parent_role`, so operator
+projections can distinguish the owner of an exact reviewer generation without consulting spawn
+ancestry or a runtime id.
+
+
+## 260831-CCR-L23 Task-Local Requirement Models
+
+L23 added the strict task-local requirement response models under the shared
+scoped-read refusal table: `RequirementRow` (one canonical Markdown packet:
+name/path/address/size/sha256), `RequirementsListing` (repo/master/document/
+registered + rows for `GET /api/requirements/list`), and
+`RequirementContents` (listing metadata + decoded content for
+`GET /api/requirements/read`). The route family grew from 61 to 63 HTTP routes,
+of which 59 return a `Response` subclass directly (the module header counts were
+advanced to match).
 
 ### Conventions
 
@@ -37,6 +61,9 @@ response models validate where the framework owns serialization.
 - Current public wire responses contain no legacy leaf-binding fields.
 - Session ids remain operator/transport occupant correlation.
 - A seat conflict is reported against task-document-and-role identity.
+- The dispatch receipt is diagnostic/reconciliation evidence, not a public structural address.
+- Reviewer structural parent is a canonical document+role address and remains separate from
+  spawned-by correlation.
 
 ### Todos
 
@@ -50,7 +77,7 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog wire mirrors structural binding and replacement. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:281-360 |
+| The catalog wire mirrors structural binding, replacement, and the private dispatch receipt. | `TerminalCatalogEntryWire` | mcp/src/agents_remember/serving/response_contract.py:281-363 |
 | Open and seat-conflict responses carry structural identity. | `TerminalOpened` | mcp/src/agents_remember/serving/response_contract.py:399-423 |
 | Task assignment success/refusal use task-document identity. | `TerminalTaskAttached` | mcp/src/agents_remember/serving/response_contract.py:442-460 |
 
@@ -59,6 +86,25 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
+
+- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `RequirementRow`/`RequirementsListing`/`RequirementContents` models and the 61-to-63 route-count advance for the new requirement endpoints.
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the reviewer
+  structural-parent pair to the strict terminal catalog wire mirror. Verification remains
+  closeout-owned.
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — No content impact: final ARSPAWN-L2 review confirmed the private
+  receipt field is diagnostic/reconciliation evidence only and the strict wire mirror remains
+  accurate. Verification remains closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: mirrored the catalog's optional private
+  `dispatchBriefEntryId` receipt. Verification remains closeout-owned.
+
+- 2026-08-21T03:30+02:00 — 260821-ARSPAWN-L1 fix round 2: `TerminalCatalogEntryWire` gained `spawned_by_kind` (`spawnedByKind` on the wire, `str | None`, None default) beside the spawned-by pair, mirroring the catalog row's conditional `to_json` emission; old `/api/terminal/sessions` rows unaffected; the key-set equality test keeps wire and serializer in lockstep. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
 
 - 2026-08-11T19:58+02:00 — Aligned the current serving card for `response_contract.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

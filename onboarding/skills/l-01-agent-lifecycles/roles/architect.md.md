@@ -5,28 +5,66 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/architect.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
+[l-01 role overview](overview.md)
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+This source owns the architect role and the pre-topology requirement compiler gate. For ordinary
+role-shaped work, the seat is created by one ambient-launcher `dispatch_agent` call on the canonical
+sprint document with the complete canonical architect brief; after startup, the architect is a plane-hosted caller for its
+documented sprint children. It also creates one immutable, version-addressed canonical packet per
+independently falsifiable revision, records corpus approval in the approved packet, and only then
+projects filtered links into task topology.
 
 ## Code Commentary
 
 ### Logic
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+Free chat resolves the sprint, compiles `templates/architect-brief.md`, and submits the sprint
+document, role `architect`, and exact brief in one identity-free public request. The control plane
+selects the settings profile, proves readiness, durably pins the brief, and publishes the canonical
+seat before handoff. There is no public spawn/readiness/brief sequence, caller identity field, or
+session primitive. Once hosted, the architect's own dispatches use plane identity and direct-child
+scope; any plane refusal remains a plane refusal. An explicit developer-declared task-seat takeover
+uses the same ambient transaction for the named role at its canonical altitude instead of forcing
+an architect bootstrap first.
+
+The architect dispatches the sprint-bound plan reviewer when the portfolio plan reaches its
+independent review seam. That reviewer generation is stamped with the sprint architect as its
+structural parent, which keeps it distinct from the orchestrator-owned super-exit reviewer at the
+same `(sprint document, reviewer)` seat. The architect may retire only its own stamped plan-review
+generation, never a live super reviewer.
+
+The architect compiles and cold-reads the complete requirement corpus before creating task
+topology. A later semantic change retains the stable ID, creates a new version-addressed packet,
+records the new durable ruling, invalidates only affected acceptance, and rebriefs affected leaves.
+
+Delivery roles may diagnose a requirement contradiction but cannot change the packet. The
+architect verifies the contradiction and presents a proposed semantic revision to the developer.
+Implementation, evidence, and test/tool fixes leave the semantic version unchanged and remain
+protocol events until an exact candidate is handed to review. Only that review handoff, or a
+successor handoff after reviewer rejection, advances attempt lineage; only explicit developer
+approval increments the requirement version.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. `dispatch_agent` is the sole public spawn verb, exact-session proof remains fail-closed,
+and plane authorization never falls back to ambient. An approved requirement packet is never
+rewritten in place. A worker/reviewer classification cannot become semantic authority. Role-table
+`dispatch` and `tools` rows are fixed authority/capability descriptions, not settings keys.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Docs References
 
@@ -47,10 +85,6 @@ condition on the existing thematic master, not a reason to fork a replacement
 master. The plane derives ancestry from task structure and returns the contract
 address needed for backend recovery.
 
-## Update History
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics; verification remains closeout-owned.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
 ## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs
 
 The terminal-custody section now says rows whose entire owner chain is dead surface to the
@@ -58,7 +92,63 @@ architect as a mailbox (the timed escalation ladder is retired), rows land at th
 turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
 marker. The developer remains an authority, not an address.
 
+## 260815-DAG-L2 Planning Authority
+
+The architect inspects `executionGraph` plus every commanded master's `executionNature` before
+spawning backend execution. A missing or materially stale topology produces a recommendation to
+run a strategist, never an automatic dispatch. The initial strategist and its plan-review reviewer
+are architect children and finish before the orchestrator exists; runtime reshapes still route
+through that architect-owned loop. A strategist skip authorizes the orchestrator to author the
+same explicit artifact, not an implicit default.
+
+## IAS Source-Pair Activation Planning Boundary
+
+The reviewed graph-less choice is now the source-pair-selected atomic-sequential mode. Canonical
+commanded-master order is only the stable equal-priority tie-break; selecting another atomic master
+may logically pause the former without forcing integration, contract retirement, or process and
+worktree termination. The architect therefore judges dependency truth independently of runtime
+selection and does not manufacture an edge merely to explain serialization.
+
+Task-document authoring remains wholly upstream of activation and queue state. The architect may
+approve otherwise-valid task changes; the affected disposable projection is then invalidated and
+rebuilt. A selector or queue cannot veto planning, and no valid task/master is discarded merely to
+free a runtime selection.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented architect
+  dispatch and retirement authority for the architect-stamped sprint plan reviewer, excluding the
+  orchestrator-owned super generation. Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced the stale caller-visible
+  spawn/readiness/dispatch sequence with one ordinary ambient architect launch transaction,
+  separated explicit named-role takeover, and kept plane authority outside settings. Verification
+  remains closeout-owned.
+
+- 2026-08-27T21:53+02:00 — M40@v2: separated internal repair/test protocol events from formal
+  review-handoff attempt lineage while preserving developer-only semantic revision authority.
+- 2026-08-27T18:06+02:00 — M43: recorded architect/developer authority for requirement revisions
+  and kept ordinary implementation, evidence, and test/tool repairs on attempt lineage rather than
+  semantic versioning.
+- 2026-08-27T14:04+02:00 — M39 clarification: recorded immutable version-addressed packets,
+  packet-local durable corpus approval, and new-file revision handling rather than in-place edits.
+- 2026-08-27T13:32+02:00 — M39@v1: the architect now compiles, splits, packets, cold-reads, and
+  obtains developer approval for requirement revisions before creating topology; leaf projection
+  and version-change invalidation/rebriefing are explicit. Verification remains closeout-owned.
+
+- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
+  reconciling architect activation doctrine.
+
+- 2026-08-26T05:20+02:00 — Reconciled architect doctrine with graph-less source-pair activation,
+  pause-without-retirement, task-authoring primacy, and queue/projection invalidation. Final source
+  ranges and verification remain post-Dagger/closeout-owned.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded architect ownership of strategist planning,
+  explicit topology admission, and the complete/still-valid condition for recommending a skip.
+  Verification remains closeout-owned.
+- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics;
+  verification remains closeout-owned.
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
   entire owner chain is dead surface to the architect as a mailbox, not a ladder rung (the

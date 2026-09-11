@@ -54,7 +54,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Snapshot pending-interaction model. | `PendingInteraction` | mcp/src/agents_remember/models/conversations/control_wire.py:115-123 |
-| Projection transition regressions. | `test_multiplexed_pending_interactions_project_labeled_and_resolve`; `test_concurrent_parent_pendings_all_project_and_resolve_per_id`; `test_parent_singular_rotation_resolves_evicted_and_keeps_rotated_live` | mcp/tests/test_conversation_projector_codex_agents_engine_1.py:255-309; mcp/tests/test_conversation_projector_codex_agents_engine_1.py:311-366; mcp/tests/test_conversation_projector_codex_agents_engine_1.py:368-417 |
+
 
 ## Cross-Repo References
 

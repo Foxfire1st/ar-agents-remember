@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/events.py` |
 | doc_type               | `file-level-onboarding`                     |
 | lastUpdated            | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`  |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                               |
 
 ## Governing Overview
@@ -140,11 +140,11 @@ claims are proven by repository source and tests.
 | The observer event envelope tailed here. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
 | The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The one read/path abstraction (NS #5). | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
-| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:115-115 |
+| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:116-116 |
 | The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
 | `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | `read_new_events` | mcp/src/agents_remember/serving/events.py:189-227 |
 | `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:230-277 |
-| Raw-event tests cover heartbeat skipping, limit batches, dormant pruning without a terminal event, bounded active replay, and no-heartbeat streaming. | `RawEventTests` | mcp/tests/test_serving_raw_events.py:23-389 |
+
 
 ## Cross-Repo References
 

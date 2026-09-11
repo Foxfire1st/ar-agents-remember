@@ -71,7 +71,7 @@ consumes the injected port builder through the documented no-cycle seam.
 | --- | --- | --- |
 | The immutable runtime/scope types and install-once binding used by this factory. | `ConversationScope`; `ConversationRuntime`; `install_conversation_runtime` | mcp/src/agents_remember/serving/conversation/runtime.py:47-52; mcp/src/agents_remember/serving/conversation/runtime.py:55-78; mcp/src/agents_remember/serving/conversation/runtime.py:81-87 |
 | The service module's injected `port_builder` seam. | "port_builder: PortBuilder" | mcp/src/agents_remember/serving/conversation/library/service.py:84-84 |
-| The foundation suite pins per-app isolation and no import-time singleton for the composition this factory preserves. | `test_no_import_time_mutable_singleton`; `test_child_composition_is_isolated_per_app` | mcp/tests/test_conversation_runtime_composition.py:197-208; mcp/tests/test_conversation_runtime_composition.py:211-224 |
+
 
 ## Cross-Repo References
 

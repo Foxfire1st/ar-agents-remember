@@ -73,8 +73,8 @@ protocol checkout cited in the module docstring and below.
 | --- | --- | --- |
 | The local builder inventory, including the `CollabAgents` parameter object. | `CollabAgents` | mcp/tests/_agent_wire_fixtures.py:63-77 |
 | The module docstring records external provenance labels for the fixture shapes; those labels are not protocol proof under this frozen source authority. | `protocol` | mcp/tests/_agent_wire_fixtures.py:1-37 |
-| The demux incident-regression suite imports these local builders. | "from _agent_wire_fixtures import (" | mcp/tests/test_codex_adapter_thread_demux.py:16-29 |
-| The codex projector-agent suite imports these local builders. | "from _agent_wire_fixtures import (" | mcp/tests/test_conversation_projector_codex_agents.py:22-33 |
+| The notification builder retains the caller-supplied method and params. | "def notification(" | mcp/tests/_agent_wire_fixtures.py:51-54 |
+| The collab event builder constructs per-agent status, optional model/effort and tool-call identity. | "def collab_agent_tool_call_item(" | mcp/tests/_agent_wire_fixtures.py:80-106 |
 | The demuxed adapter under test owns the thread registry, per-thread state, and multiplexed pendings. | `CodexAppServerAdapter` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
 
 ## Cross-Repo References

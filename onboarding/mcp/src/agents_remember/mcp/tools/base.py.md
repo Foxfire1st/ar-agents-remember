@@ -5,10 +5,14 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-08-11T10:10+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T08:46+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                  |
+
+## Governing Overview
+
+[MCP tools overview](overview.md)
 
 ## Purpose
 
@@ -20,7 +24,8 @@ L23 makes `citation_fix` and `worktree_operation_cancel` public MCP tools so gua
 
 ### Logic
 
-`PUBLIC_TOOLS` is the 55-name registered surface. Structural agent operations are
+`PUBLIC_TOOLS` is the exact ordered 63-name registered surface.
+Structural agent operations are
 `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
 `message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
 Removed exact-id/leaf-address agent tools are absent. `_tool_payload` passes every application
@@ -28,7 +33,8 @@ result through the shared finalizer.
 
 ### Conventions
 
-Registration and response-model registries must match this tuple exactly.
+Live registration and the public response-model registry must match this tuple exactly. Order is
+part of the advertisement contract; set-only parity is insufficient.
 
 ### Invariants And Boundaries
 
@@ -49,15 +55,71 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:9-65 |
-| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
+| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-72 |
+| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:79-81 |
 | Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
+## 260815-DAG-L3 Public Tool Census
+
+`closeout_queue` is now part of `PUBLIC_TOOLS`, so registry parity, response conformance, and common
+envelope/next-step behavior treat it as a real public MCP surface rather than an internal helper.
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include the module-level vocabulary. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The shared protocol vocabulary declares stdio transport and the public tool-name tuple. | "TRANSPORT ="; "PUBLIC_TOOLS = (" | mcp/src/agents_remember/mcp/tools/base.py:9-75 |
+| The reserved-tool tuple is explicitly empty. | "RESERVED_TOOLS: tuple[str, ...] = ()" | mcp/src/agents_remember/mcp/tools/base.py:76-76 |
+| The protocol adapter delegates response completion to the application boundary. | "def _tool_payload(" | mcp/src/agents_remember/mcp/tools/base.py:79-81 |
+
+## 260821-CLIVE Public Tool Census
+
+`closeout_door` joins the canonical public tool-name set used by response-envelope validation.
+This is an additive public surface with its own strict response model; it is not an internal
+compatibility name and does not change token/envelope finalization for existing tools.
+
+## MCAR-L02 Public Tool Inventory
+
+`PUBLIC_TOOLS` includes exactly one `curator_coherence` name. Status, preparation, publication, and
+validation remain actions of that tool rather than four overlapping public tools.
+
+## 260831-CCR-L15 Status-Wait Public Tool
+
+The public tool census `PUBLIC_TOOLS` adds `worktree_status_wait`, so the
+read-only lifecycle status-change wait is part of the public tool inventory enforced by the
+conformance suite.
+
 ## Update History
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated constant vocabulary from the response-finalization function, including the moved reserved tuple. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:79-81. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded `worktree_status_wait` in the `PUBLIC_TOOLS` census.
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: corrected the current public census to 63 and
+  recorded exact-order parity as the permanent advertisement contract. Verification remains
+  closeout-owned.
+
+- 2026-08-29T08:52+02:00 — Added the one curator-coherence tool name to the public inventory.
+  Verification remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: added the canonical closeout-door name to the documented public census. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `PUBLIC_TOOLS` advertises `direct_landing` (59 names);
+  `_tool_payload` behavior unchanged. Verified at code commit a9d50e08.
+
+
+- 2026-08-15T09:10+02:00 — L3 content update: added closeout_queue to the canonical public tool
+  census; verification remains closeout-owned.
 
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 

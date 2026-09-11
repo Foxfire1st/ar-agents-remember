@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/panels/engine-room/useEngineTimeline.ts`   |
 | doc_type               | `file-level-onboarding`                                   |
 | lastUpdated | 2026-08-01T15:10+02:00 |
-| lastVerifiedCommitHash |                                                           `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |                                                           2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash |                                                           `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate |                                                           2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -122,12 +122,12 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 | `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). | `phaseStage`; `fxSignature`; `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:32-49; dashboard/src/panels/engine-room/useEngineTimeline.ts:54-76; dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
 | `fxSignature`'s refused fold-in now filters `failed`/`stale` only. | `fxSignature` | dashboard/src/panels/engine-room/useEngineTimeline.ts:54-76 |
 | `_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:791-810 |
+| `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:925-969 |
 | RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. | `clearProps` | dashboard/src/panels/engine-room/useEngineTimeline.ts:194-212 |
 | Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe. | `buildFx`; `useEngineTimeline` | dashboard/src/panels/engine-room/useEngineTimeline.ts:83-160; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-247 |
 | The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
 | The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
-| `EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`). | `EngineProcessNode`; `EngineProcessEdge` | dashboard/src/types/projection.ts:152-160; dashboard/src/types/projection.ts:162-202 |
+| `EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`). | `EngineProcessNode`; `EngineProcessEdge` | dashboard/src/types/projection.ts:224-232; dashboard/src/types/projection.ts:234-275 |
 | The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract. | "EnclosureCanvas — GSAP gate (05f §8.4 — no ticker under effects=off)" | dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:55-90 |
 
 ## Current L5I Maintenance
@@ -148,10 +148,10 @@ create a second ticker or alter choreography.
 - 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 13 citation items; scoped citation check now passes.
 
 - 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
-  `observer/projection.py` citation after that module was restructured. cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:791-810),
-  read there: cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:791-810),
-  the nine-state comment directly above cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:791-810), and the class's last field
-  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:791-810) — so the "no `refusedPolarity` field" half of the claim is provable at the range
+  `observer/projection.py` citation after that module was restructured. cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969),
+  read there: cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969),
+  the nine-state comment directly above cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969), and the class's last field
+  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:925-969) — so the "no `refusedPolarity` field" half of the claim is provable at the range
   end. No body claim changed.
 
 - 2026-08-01T10:18+02:00 — 260731-EFA-L4 curator: corrected the `fxSignature` description. The refused

@@ -5,79 +5,96 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_quality_retry_proof.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp/tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Forcing suite for local quality-proof reuse. It proves that retry acceleration is a pipeline
-contract with structural invalidation, not an agent assertion that old tests were probably fine.
+Forces exact quality-proof reuse and dependency-owned delta selection with temporary source, support, fixture and coverage artifacts. Exact identity can reuse a full proof; changed selection, source or global input forces the appropriate fresh population. Support and fixture changes select their declared consumers without adding unaffected tests. This is a proof-selection fixture, not a new live Dagger acceptance run.
 
 ## Code Commentary
 
 ### Logic
 
-The suite writes real Coverage.py databases with collection, changed-test, and unchanged-test
-contexts and proves filtering retains only the unchanged runtime evidence. It rejects support
-modules and deleted tests as delta inputs. A real temporary Git repository then proves the state
-transition from fresh proof publication to exact reuse, changed-test delta, and source-change
-invalidation. The wrapper-level case drives the actual command builder and cache controller: the
-first passed pytest plus post-coverage failure publishes proof; the next test-only edit runs that
-one module with `--cov-append --cov-context=test`; a deliberately inconclusive delta triggers a
-second, fresh full pytest selection and reaches the final verdict. A separate exact-proof case
-forces Ruff to fail and proves cached JSON is discarded, pytest stays skipped, and neither
-coverage-derived rail is called.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
-The production-shaped cases additionally prove tracked directory symlinks are hashed by link
-identity without traversing their targets, malformed inventories and proof artifacts fail closed,
-newly selected test modules qualify only through the explicit delta rule, and the wrapper's
-no-coverage fallback, artifact-preparation refusal, cached-result scope error, and exact
-cached-pytest branches report their own verdicts.
+### Conventions
+
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Coverage context tests use Coverage.py's public `CoverageData` interface.
-- Wrapper proof tests use real Git state and the real snapshot/cache controller.
-- Only external subprocess execution and post-coverage arithmetic are doubled; command selection,
-  manifest publication, filtering, invalidation, and fallback orchestration are real.
-- Cached coverage cannot survive a newly failing cheap rail, even on an exact-tree retry.
-- A local dependency install behind a tracked symlink cannot disable content-addressed reuse or
-  make external dependency bytes part of the repository snapshot.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No external Domain Documentation source is configured for this test contract.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured for this suite. | — | — |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retry proof owns manifest compatibility, context filtering, and publication. | `RetryPlan`; `prepare`; `_filtered_coverage_data` | mcp/src/agents_remember/code_quality/retry_proof.py:63-134; mcp/src/agents_remember/code_quality/retry_proof.py:136-206; mcp/src/agents_remember/code_quality/retry_proof.py:393-444 |
-| The wrapper owns delta command selection, automatic full fallback, and stale-artifact deletion when a cheap rail prevents pytest. | `_pytest_step`; `complete_coverage_rails`; `run_fixed_checks` | mcp/src/agents_remember/code_quality/check.py:261-282; mcp/src/agents_remember/code_quality/check.py:517-559; mcp/src/agents_remember/code_quality/check.py:659-713 |
+| Full proof becomes exact then test delta and source change invalidates | `test_full_proof_becomes_exact_then_test_delta_and_source_change_invalidates` | mcp/tests/test_quality_retry_proof.py:27-93 |
+| Retry reruns declared support and fixture consumers but not unaffected tests | `test_retry_reruns_declared_support_and_fixture_consumers_but_not_unaffected_tests` | mcp/tests/test_quality_retry_proof.py:96-179 |
 
 ## Cross-Repo References
 
-No meaningful cross-repository boundary is exercised.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Temporary repositories and cache directories are isolated inside each test. | — | — |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
+  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 selection-identity
+  forcing — `selection_digest` threaded through inputs/plans, the
+  `exact-selection-identity-changed` stale-identity cache-miss case, and the
+  `selection-digest` manifest finding. Verification is pinned to the owning commit.
+
+- 2026-08-28T11:32+02:00 — Added explicit missing-distribution forcing for retry tool-version
+  identity.
+
+- 2026-08-27T19:13+02:00 — Made nested cache ownership explicit, retained the inner wrapper
+  transcript on assertion failure, and covered the all-contexts-affected delta state.
+- 2026-08-27T18:33+02:00 — Replaced the stale in-place append claim with the isolated
+  retained/fresh database and explicit post-pytest merge contract.
+- 2026-08-27T17:19+02:00 — Updated command proof for the collection/execution split: canonical
+  roots are collected while the retry plugin receives only the affected module path.
+- 2026-08-27T15:11+02:00 — Added the regression boundary for Dagger's per-exec telemetry transport:
+  explicitly named transport changes preserve retry identity, while unclassified environment
+  changes still invalidate it.
+- 2026-08-26T10:44:52+02:00 — Reconciled retry proof with canonical dependency-owned delta selection, declared fixture consumers, global-input invalidation, and removal of the private eligibility heuristic.
+
+- 2026-08-24T21:23+02:00 — Applied the typed Dagger admission boundary to all retry-proof paths.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T12:20+02:00 — Added the real tracked-directory-symlink regression plus fail-closed

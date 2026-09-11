@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T07:20+00:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
@@ -19,7 +19,11 @@
 `document_refs.py` indexes real sprint/master/leaf task documents, validates canonical
 repository-qualified references, and walks containment without synthesizing role anchors. This
 topology supplies structural authorization and dashboard hierarchy; it does not inspect liveness or
-select a runtime occupant.
+select a runtime occupant. Since 260815-DAG-L13 a nature-less standalone master resolves at master
+altitude by default (only an explicit `organizational` standalone stays a dead-end), migration
+recovery strings name the `author_execution_graph` bootstrap, and the public `commanded_masters`
+derives alias-commanded membership for the atomic-sequential default without re-resolving the
+sprint from disk.
 
 ## Purpose
 
@@ -37,8 +41,13 @@ planned and running work from the same JSON source (slice 3c; closes note-03 gap
 
 ## Hot Path Summary
 
+Task JSON remains planning/source truth. The application publisher captures exact source snapshots,
+serializes structural publication, commits task truth plus invalidation for semantic/readiness mutations (observational changes do not invalidate), and then
+rebuilds each waiting projection from current closeout-door facts. Queue state is derived scheduling
+output, so it cannot make an otherwise-valid task mutation unavailable.
+
 The `task_doc` MCP tool authors documents: its application entry point
-(`application/task_doc_tools.py`) loads or creates the JSON, applies one operation,
+(`application/task_docs/task_doc_tools.py`) loads or creates the JSON, applies one operation,
 and rewrites both the JSON and the rendered markdown through this package. Leaf writes
 can also plan a same-root master-row update through `master_sync.py`, so the parent
 master `subTasks[]` checklist follows deterministic leaf facts without overwriting
@@ -52,7 +61,7 @@ together.
 
 - `document.py` — the `ar-task-document/v1` Pydantic schema (`TaskDocument` +
   `Step`/`SubStep`/`Decision`/`CodeExample`, plus `SubTaskRef`/`Section` for masters),
-  the `DocKind` (`light`|`subTask`|`master`), `DocStatus`, and `StepStatus` Literals,
+  the `DocKind` (`light`|`subTask`|`master`) and imported `DocStatus`/`StepStatus` from `models/task_document.py`,
   the progress helpers (`step_total`/`step_done`/`current_step` for leaves; `series_total`/`series_done`
   for a master's `subTasks` checkboxes — R1), the optional leaf-only `codeExamplesNote`
   (R3) plus the leaf header companions `statusNote`/`headerNotes` (`HeaderNote`) and freeform leaf
@@ -64,7 +73,23 @@ together.
   `orchestrates`, freeform-only
   `sections` (R4), and no `codeExamplesNote` alongside non-empty `codeExamples`). A persisted/served
   contract, **not** an MCP response model (peer of `observer.projection`). Leaf docs can name their root
-  `seriesContractPath` and one or more `enclosures[]` leaf enclosure contracts.
+  `seriesContractPath` and one or more `enclosures[]` leaf enclosure contracts. Its
+  `SprintExecutionNode` equality/hash contract is structural node-to-node only; callers use the
+  explicit `.ref` field when they mean the addressed task document. Legacy bare-reference JSON
+  lifting/roundtrip is an independent wire contract.
+- `document_field_effects.py` — the exhaustive schema-derived effect taxonomy. Every persisted
+  root/nested field is classified by structural topology, normative intent, completion readiness,
+  progress, evidence, lifecycle, and/or prose audit; missing, stale, and empty memberships refuse.
+- `execution_graph_validation.py` — the schema's indexed intrinsic graph algorithm. One endpoint
+  index and resolved-edge population feed uniqueness, ownership, DAG, waves, and named cycles while
+  recording exact collection work.
+- `leaf_binding.py` — the pure canonical composite master-row/leaf identity owner shared by
+  lifecycle and semantic-topology consumers. Number, file, ref, directory, id, and stem must agree.
+- `semantic_topology.py` — the strict `semantic-topology/v2` candidate identity: exact refs, one
+  structural parent row, execution nature, and explicit DAG or atomic-sequential placement only.
+- `semantic_topology_graph.py` + `semantic_topology_graph_binding.py` — compare authored/resolved
+  graph bytes, refuse over-budget populations before admission, materialize one recursively immutable
+  graph generation, and index all candidate placements and incident edges for bounded reuse.
 - `render.py` — `render_markdown(doc)`: the only writer of the rendered markdown.
   Section helpers assemble lines from the model (mirroring
   `worktrees.worktree_contract.contract_to_text`); output is deterministic. A step renders a `### {id} — {title}`
@@ -75,7 +100,12 @@ together.
   (and, on an orchestration master, an `**Orchestrates:**` line listing the commanded names — L14),
   and a leaf appends its freeform `sections` after References (R4). A `master`
   dispatches to `_render_master`: an ordered `sections` walk where `freeform` bodies
-  render verbatim and `subTasks`/`sharedDecisions` render the generated list/table.
+  render verbatim and `subTasks`/`sharedDecisions` render the generated list/table. Execution-graph
+  Mermaid declarations and endpoints use one declaration-order ordinal identity map; ref/leaf
+  strings remain human labels and never become private ids.
+- `execution_graph_titles.py` — owns the title join. Master titles use `ref.key`; leaf titles use
+  `(owning TaskDocumentRef, leaf id)`, so equal local row numbers under different masters cannot
+  overwrite or borrow from one another.
 - `store.py` — `read_task_doc` / `write_task_doc` (atomic JSON source + rendered
   `.md`), `write_task_docs` (batch prepare-all-then-write persistence for coupled
   leaf/master edits), and `doc_stem` (`task` for a light **or master** doc, `<slug>` for a sub-task).
@@ -83,6 +113,19 @@ together.
   master discovery, `SubTaskRef` derivation from leaf id/title/rendered filename/status, manual
   `scope` preservation, strict parent-master validation, and the step/substep status collapse that
   maps any active/blocked/done progress to master `inProgress` and all-done progress to `Completed`.
+
+## Current Normative Intent And Evidence Publication
+
+`task_intent.py` derives `task-intent/v1` from the exhaustive field-effect taxonomy. Exact requirement text stays normative; typed approved packet references supplement that text and are checked for task-relative containment and matching packet identity/version. Packet references alone require an explicit v2 cutover. Typed acceptance-obligation questions contribute to the digest; ordinary progress/audit prose does not. The renderer presents both structured forms without converting them back into authority from Markdown.
+
+Route reviews now bind task intent, content digests and declared direct dependencies. Partial content-addressing fields refuse validation, and publication rejects a review with missing task intent. This publication check does not independently recompute every accepted review from source. Mutation classification projects actual before/after field changes into topology, intent, readiness, evidence and operational-audit classes; schema additions cannot silently escape classification.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Canonical task intent is hashed from the validated normative projection. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:180-193 |
+| Exact task text remains mandatory alongside supplemental packet references. | `_requirements` | mcp/src/agents_remember/tasks/task_intent.py:288-309 |
+| Task-document publication rejects a route review missing intent identity. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-231 |
+| Mutation classification consumes the accepted/candidate field delta. | `classify_task_document_mutation` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358 |
 
 ## Invariants And Boundaries
 
@@ -107,6 +150,9 @@ together.
 - Coupled leaf/master writes prepare every JSON and rendered markdown payload before replacing files,
   and reject duplicate output targets up front; that guard is necessary because a coupled operation
   would otherwise silently let one document target overwrite another.
+- Graph node identity, addressed document identity, Mermaid private identity, and human labels are
+  separate contracts: structural nodes compare to nodes, callers project `.ref`, Mermaid ids are
+  ordinal, and leaf titles are master-qualified.
 - **`cleanup: reopened` is no longer written in this route.** Its sole producer, `reopen.py`, moved
   to `worktrees/reopen.py` in 260731-EFA-L6 — see that file's sidecar for the current account. The
   history below is kept because the failure it describes was this route's, and because the reader
@@ -133,17 +179,17 @@ together.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_doc_tools.py:135-186 |
+| The `task_doc` application entry point authors documents through this package. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 | Leaf writes keep same-root master rows synchronized through the dedicated planner. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:34-83 |
 | The task-document renderer regenerates markdown from the validated `TaskDocument`. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
 | The persisted worktree contract is the analogous model-to-text precedent. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:990-1009 |
+| The persisted-contract peer this schema mirrors. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
 ## 260718-CHATS-L5I Current Route Impact
 
 Task reopening now clears the completed landing-final artifact as part of restoring live task state and exposes a clearing failure, so a historical completed landing projection does not survive as the current truth for reopened work. Since 260731-EFA-L6 that clearing lives in `worktrees/reopen.py`, not in this route; the document half of the same reset still runs through this route's `store.py`.
 
-Route indexes are intentionally not regenerated during this partitioned curator pass; the manager will run the single aggregate refresh after all curator ownership is complete. Existing verification metadata remains pre-commit.
+Route indexes remain parent-owned for one aggregate refresh after disjoint curation. This overview records the cumulative frozen-source review; index regeneration and aggregate acceptance are separate work.
 
 ## 260731-EFA-L9 Route Impact — Vocabulary Moved
 
@@ -155,7 +201,155 @@ Task documents are the canonical sprint/master/leaf identity for source lineage,
 durable lifecycle addressing. A cleaned completed leaf is first converted into an exact task-reopen
 plan, before deliberately removed descendant branches can be mistaken for lineage failure.
 
+## Current Task-First Task-Fact Publication
+
+Sprint, master, and leaf documents are planning truth, not queue-owned records. Publication rechecks
+the accepted source bytes, writes the task batch and invalidates every affected waiting projection
+under one short task-publication lock, then rebuilds each projection independently from current
+door facts. Claimed/running lifecycle and commit evidence remains outside that disposable queue
+projection, so invalidation cannot erase an operation already underway.
+
+## 260815-DAG-L4 L4 Topology Publication Authority
+
+Task-document execution-topology edits are validated under the same repository authority as Git mutation. Candidate graphs cannot promote live leaf work branches into protected supers/atomic refs, detach live owners, or contradict an existing atomic series edge.
+
+## 260815-DAG-L14 Task-Document Route
+
+The `ar-task-document/v1` schema gains `SprintSeat`/`seats` (sprint-only, unique among
+non-retired roles) and typed `SubTaskRef.masterRef` rows; the renderer emits real relative
+master links, the generated Master Index for sprints, and the `**Seats:**` header block;
+`validate_sprint_linkage` hard-fails new-shape drift.
+
+## 260815-DAG-L16 Route Impact
+
+`tasks/leaf_doc.py` blank-id refusal now names the missing binding and the recovery (L16-R9:
+re-stamp the series contract / use branch-addressed mode for direct execution). The
+`record_route_review` binding machinery moved to `application/task_doc_route_review.py` (facade
+re-export); the task route's model is unchanged.
+
+## 260815-DAG-L12 Route Impact
+
+The execution graph renders as a deterministic Mermaid `flowchart TD` diagram (L12-R1):
+`render.py` emits subgraph-per-master boxes (title-labeled, truncated leaf nodes, atomic lumps,
+labeled edges) ordered by derived wave then declaration order, with the machine lists alongside.
+DAGQC L1 hardens private identity to collision-free ordinal ids shared by declarations and edge
+endpoints; no sanitizer-derived id remains. `execution_graph_titles.py` owns the shared title join
+(`SprintGraphTitles`, `build_graph_titles`, `read_graph_titles`), with leaf keys qualified by the
+owning `TaskDocumentRef`, and is threaded through `store.py` batch writes and application writers.
+
+
+## 260815-DAG-L15 Route Impact
+
+New `tasks/serving_preflight.py`: the served-build preflight gate (model self-probe + non-editable wheel floor 3.0.0rc8, fail-closed, L15-R4) wired before every topology-schema write. `document.py` acyclicity refusals now name the exact cycle members (F4); `document_refs.py` hosts the shared atomic node-kind rule with the L15-FIX-1 `KeyError` closure.
+
+## Current Architecture After CLIVE And DAGQC L1
+
+Task writes capture and validate their before-state and publish task truth plus projection
+invalidation atomically under the short authority needed for structural/integration races. Waiting
+projection rebuild follows independently. DAGQC L1 makes execution-graph identities explicit:
+structural node equality/hash, `.ref` for document ownership, ordinal Mermaid ids, and
+master-qualified leaf-title keys.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Task source snapshots and publication. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError` | mcp/src/agents_remember/tasks/store.py:22-35; mcp/src/agents_remember/tasks/store.py:38-52 |
+| Application publication transaction. | `TaskDocPublicationTransaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:65-73 |
+| Structural execution-node equality/hash and explicit reference ownership. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
+| Qualified leaf-title join. | `SprintGraphTitles`; `build_graph_titles`; `read_graph_titles` | mcp/src/agents_remember/tasks/execution_graph_titles.py:22-34; mcp/src/agents_remember/tasks/execution_graph_titles.py:37-59; mcp/src/agents_remember/tasks/execution_graph_titles.py:62-77 |
+| Ordinal Mermaid identity allocation and rendering. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:204-245 |
+
+## 260821-DAGQC-L2 Total Serving-Preflight Boundary
+
+`serving_preflight.py` now translates each expected distribution discovery, metadata iteration,
+read, stat, and version failure at one explicit typed boundary, reads version once, and preserves
+the existing topology floor/editable-install policy. Programmer defects are not swallowed by a
+broad fallback.
+
+## Repository Census Ownership
+
+Repository-wide master discovery is exposed once as the module-level
+`repository_master_documents(topology, repository)` query in `document_refs.py`. Execution
+topology, sprint linkage, and topology-internal consumer scans all call that seam. The topology
+object no longer carries parallel public/private master-census methods, so branch-authority checks
+cannot drift across competing APIs.
+
+## 260831-CCR-L01 Stable Semantic Topology Identity
+
+Closeout topology currentness is now a task-domain semantic projection rather than a queue-private
+whole-document digest. The exhaustive field-effect taxonomy makes schema growth explicit;
+`semantic-topology/v2` includes only sprint/master/leaf refs, the uniquely bound structural parent
+row, effective execution nature, and candidate-applicable placement. One bounded immutable graph
+index is shared across the candidate population. The existing task-document schema remains the
+canonical persisted authority, and its intrinsic graph validation is now one indexed analysis
+reused by admission and wave/cycle reads.
+
 ## Update History
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `_requirements` repointed to mcp/src/agents_remember/tasks/task_intent.py:288-309. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `classify_task_document_mutation` repointed to mcp/src/agents_remember/tasks/document_field_effects.py:345-358. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+
+- 2026-09-05T07:20+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected task-tool ownership, status vocabulary, semantic mutation invalidation, and current intent/evidence publication contracts. Verification records source review, not execution or acceptance.
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: added schema-owned field effects, canonical
+  composite leaf binding, `semantic-topology/v2`, one bounded immutable graph index, and the indexed
+  intrinsic graph-validation owner. Verification remains closeout-owned.
+
+- 2026-08-26T10:44:52+02:00 — Added the single module-level repository-master census boundary used by topology and linkage consumers.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: made serving-build inspection total for expected observable failures with one version snapshot. Preserved concurrent CLIVE route curation and verification ownership.
+
+
+- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled task-first publication and the four
+  execution-graph identity planes: structural nodes, explicit refs, ordinal Mermaid ids, and
+  master-qualified leaf titles. Verification metadata remains pinned until architect-owned
+  closeout stamps the real code commit.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: new serving_preflight served-build gate (L15-R4); named cycle-member refusals (F4); shared atomic node-kind rule (F6/L15-FIX-1). Verified at code commit de3a0fd9.
+
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 mermaid document diagram + shared title join (`execution_graph_titles.py`). Verified at code commit b7f2c8e2.
+
+- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: leaf-doc blank-id refusal names binding +
+  recovery (L16-R9); route-review binding machinery extracted to
+  `application/task_doc_route_review.py`. Verified at code commit a9d50e08.
+
+
+- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task document schema gains sprint
+  `seats` + typed `masterRef` rows, the renderer emits real links/seats, and linkage validation
+  is wired. Verified at code commit 8071a644.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `document_refs.py` resolves a nature-less
+  standalone master at master altitude by default, names the `author_execution_graph` bootstrap in
+  migration-required refusals, and exposes `commanded_masters` for the atomic-sequential default's
+  alias-derived membership; the task-route purpose is unchanged. Verification remains
+  closeout-owned.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
+
+- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented queue-governed task
+  publication, whole-lane freeze, atomic recovery scope, and exact sprint completion/reopen rules.
+  Verification remains closeout-owned.
+
+- 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: graph-wave reads now bind
+  validation and derivation to one resolved sprint snapshot, preserving deterministic output if
+  the persisted sprint changes during the operation.
+- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: topology forcing now covers
+  multi-parent wave release, non-sprint use, candidate root/repository confinement, and the exact
+  migration refusal matrix; the task route retains graph-derived ordering as its only ordering
+  mechanism.
+- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: topology lookup now exposes the
+  affected-sprint alias census, closing folder/id/title drift and collision paths while retaining
+  exact graph membership as the one mechanical authority.
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the task route now owns the strict
+  execution-nature and reasoned AON graph schema, exact cross-document membership validation,
+  deterministic graph rendering/waves, and rollback-safe cross-root document publication.
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: task documents expose canonical parent
   series/leaf identity for lineage and route review, and completed-leaf start routes through an

@@ -66,6 +66,14 @@ text). The thread runs the provider setup and finishes the progress with the pay
 `provider_setup_running(contract)` (cit:([`provider_setup_running`], mcp/src/agents_remember/application/provider_runtime.py:150-150)) is the live-fresh-heartbeat guard
 `worktree_cleanup`/`worktree_abandon` use so teardown never races the setup thread.
 
+The background setup job owns its temporary settings cleanup. Successful setup writes the
+provider state through its supplied callback; failed payloads do not publish a success state file.
+A supported setup exception records a failed progress result, and the finally block removes the
+job’s temporary settings on either outcome. The foreground returns starting/status guidance while
+the daemon thread owns completion.
+
+cit:([`launch_provider_setup`], mcp/src/agents_remember/application/provider_runtime.py:73-121)
+
 ### Invariants And Boundaries
 
 - The launcher must return before any provider work happens; the contract must already be

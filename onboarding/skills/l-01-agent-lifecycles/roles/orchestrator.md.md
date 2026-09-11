@@ -5,18 +5,22 @@
 | repository | agents-remember |
 | path | skills/l-01-agent-lifecycles/roles/orchestrator.md |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-10T07:30+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash |  `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate |  2026-09-10T07:24:09+02:00|
 | governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
 
 ## Governing Overview
 
-Governing overview: skills/l-01-agent-lifecycles/roles/overview.md
+[l-01 role overview](overview.md)
 
 ## Purpose
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+This source defines the sprint-bound orchestrator. It is a plane-hosted `dispatch_agent` caller for
+direct manager and system-specialist children; it never selects ambient mode for those calls,
+exposes readiness as a caller step, or retries a plane authorization failure through the launcher
+path. The architect ordinarily creates this seat, while an identity-free developer launcher may
+target it only for an explicit task-seat takeover.
 
 ## Code Commentary
 
@@ -29,17 +33,36 @@ altitude paragraph also makes cheap-first ordering and content-addressed retry a
 exact reuse or selected-test-only delta is automatic, ambiguous deltas run fresh, conservative
 delta coverage falls back to one full selection, and CI never reuses local proof.
 
-The current altitude contract is stricter than that historical retry description: targeted Dagger
-runs exactly once when each leaf closes, leaf integration reruns nothing, and full Dagger runs once
-when the master integrates into super. GitHub PR validation is a separate non-test check.
+The current transaction contract consumes the workers' targeted and curators' scoped evidence while
+keeping closeout and integration as Git operations. Full quality, full tests, full memory quality,
+certification, and review are explicit requests; GitHub PR validation remains a separate policy check.
 
 ### Logic
 
-This source participates in the L4 spawn → readiness → dispatch contract; onboarding preserves one-to-one source mapping and canonical ownership.
+The orchestrator submits a canonical child task document, target role, and complete brief once.
+The control plane privately owns session creation, readiness proof, exact initial-brief pinning,
+and rollback. Its role table therefore advertises the seat as a plane-hosted caller and an ambient
+takeover target, while the public request contains no caller-kind or runtime-identity field. Its
+`dispatch` and `tools` rows are structural documentation rather than settings keys. When the
+developer explicitly selects this seat, the launcher converges on the canonical sprint-bound
+orchestrator seat; it does not manually create or replace a live occupant.
+
+When the execution graph drains, the orchestrator dispatches the sprint-bound super-exit reviewer
+on the canonical sprint document. The plane stamps this generation back to the orchestrator, so its
+signals and verdict return to the super-exit owner rather than the architect's plan-review seam.
+The orchestrator's portfolio retirement authority remains the escape hatch for completed or stuck
+review generations.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. Dispatch proof remains exact-session and fail-closed; plane refusal never becomes an
+ambient retry.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## Docs References
 
@@ -65,7 +88,68 @@ The canonical orchestrator role resolves quality mechanics from the active repos
 keeps acceptance at leaf closeout and master integration only. Repository-specific Dagger/retry
 instructions no longer leak into generic orchestration.
 
+## 260815-DAG-L2 Ready-Frontier And Landing Authority
+
+The orchestrator mechanically recomputes the ready frontier after candidate, blocker, landing, or
+accepted-priority changes, then applies explicit priority judgment with canonical graph node order
+only as the deterministic equal-priority tie-break. Every queue judgment records rationale,
+evidence, author, confidence, and supersession before it changes selection; ordinary bounded
+reprioritization stays here, while a substantial graph/classification reshape is proposed through
+the architect-owned strategist loop.
+
+Organizational leaves land directly on super as released; the final leaf is combined with prior
+contributions into the exact proposed final candidate and receives the one full master gate before
+super moves. Atomic masters expose no intermediate leaf state to super, but source-pair selection
+may pause one live master and select another without retiring either durable branch. The separate
+landing authority serializes only conflicting protected-ref movement. Integration refs are not
+feature/fix workbenches, and super-exit repairs return to an owning, reopened, or newly scoped leaf.
+
+## IAS Activation, Queue, And Reconciliation Boundary
+
+Before a manager or worker receives implementation exposure for an atomic master, the control
+plane selects its exact code/memory source pair as `reconciling`, auto-pauses the former selection,
+reconciles both recorded bases, and publishes `active`. Reviewer and curator inspection does not
+switch selection. Chats, processes, worktrees, contracts, and claimed lifecycle journals remain
+intact across a logical pause.
+
+Task authoring is not subordinate to selection or queue state. Valid task mutations publish first,
+then invalidate/rebuild affected disposable projections. Queue rows merely observe
+active/reconciling/paused/vacant facts and own no lifecycle or commit evidence. A malformed selector
+fails closed only for affected projection/admission and is replaced with archived evidence by an
+exact selecting operation; there is no contract-presence fallback.
+
+Retained sync or integration conflicts are agent-owned when current requirements, code, tests, and
+decisions determine a resolution. Continue or cancel the contract-addressed operation through its
+advertised API; escalate only genuine semantic ambiguity through the architect.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the
+  orchestrator-stamped sprint super reviewer and its separation from the architect plan-review
+  generation. Verification remains closeout-owned.
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: replaced create/replace
+  takeover wording with idempotent canonical-seat convergence. Verification remains
+  closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the orchestrator as a plane-hosted caller
+  and explicit ambient-takeover target, removed caller-visible readiness sequencing, and kept its
+  structural authority outside settings. Verification remains closeout-owned.
+
+- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
+  reconciling orchestrator activation doctrine.
+
+- 2026-08-26T05:20+02:00 — Replaced the global exclusive-blocker reading with exact source-pair
+  selection plus separate landing authority; documented pause preservation, task-authoring
+  primacy, disposable queue projection, and agent-owned resumable conflict resolution.
+  Verification remains post-Dagger/closeout-owned.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded ready-frontier recomputation, auditable queue
+  judgment, organizational direct landing, atomic blockers, and no-workbench repair routing.
+  Verification remains closeout-owned.
 
 - 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical orchestrator guidance with generic
   repository-resolved policy. Verification remains closeout-owned.

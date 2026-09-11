@@ -5,48 +5,118 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-10T18:30+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated | 2026-09-10T09:30+02:00 |
+| lastVerifiedCommitHash |  `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
+| lastVerifiedCommitDate |  2026-09-11T18:44:06+02:00|
+| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Durability, concurrency, lifecycle-state, and structural-seat suite for the terminal catalog.
+Checks terminal catalog durability: landed state stays landed, dispatch-brief receipts are idempotent and reject replacement, torn extra data refuses without erasure, concurrent upserts preserve rows, and cross-instance termination cannot be resurrected. Temporary catalog instances exercise durable state rather than a pure in-memory substitute.
+
+The retained population also pins the catalog unit-of-work contract at the `_write_disk` boundary: a clean batch performs zero physical replacements, one or many logical mutations perform exactly one, a body exception flushes the dirty partial once and leaves later rows untouched, and `list_committed()` reads the last committed file while ordinary `get()` still sees the active batch buffer.
 
 ## Code Commentary
 
 ### Logic
 
-The suite pins `TaskDocumentRef` round-trip/omission/legacy absence, required role validation, dispatch binding fields, `active_for_task` role scoping, replacement copying, landing/termination behavior, atomic writes, and cross-instance conflict composition.
+The current evidence boundary is the source-listed behavior below. The four unit-regression cases
+added for the batch/contention contract patch `catalog._write_disk` and count calls, so the
+assertion is about physical file replacement rather than about in-memory state: the clean case
+re-upserts an equal row inside a batch and records zero writes; the dirty case mutates two rows and
+records one; the dirty-partial case raises from the batch body after the first row's mutation,
+records one write, asserts the first row advanced, asserts the later row did not, and then proves a
+later batch can still commit one write. The committed-buffer case proves the two read surfaces are
+distinct: inside a batch `get()` returns the working buffer while `list_committed()` returns the
+previously committed row. Earlier coverage claims in history describe prior populations and must
+not be used to recreate removed tests or claim they still run.
 
 ### Conventions
 
-Test-only evidence uses deterministic fakes/fixtures and exercises the owning seam directly.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+`unittest.mock.patch.object` wraps the real `_write_disk`, so the assertion counts real atomic
+replacements instead of substituting a fake writer.
 
 ### Invariants And Boundaries
 
-A live seat is unique by canonical task document plus role; terminal and chat roles may share a document; exited/terminated/landed rows do not remain active owners; legacy rows without task identity stay unbound.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Keep the write-count assertions bound to `_write_disk`; do not re-express them as
+`_read`/`_write` buffer assertions, which would stop proving the physical-replacement contract.
+The equal-row no-op guard covers exactly one matching id; duplicate-id cleanup stays on the
+replace-and-append path. Coverage percentages are diagnostic and production CRAP 20 prompts review;
+neither implies an obligation to restore removed cases. Full suites and whole-candidate review
+remain master-end work. This source inspection does not claim a newly executed test or acceptance
+result.
+
+### Todos
+
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local regression contract.
-
-## Repo-Internal References
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current suite declaration anchoring this card. | `_entry` | mcp/tests/test_terminal_catalog.py:28-28 |
+| No external domain claim is required. | N/A | N/A |
+
+## Repo-Internal References
+
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Landed state round trips and is not reanimated | `test_landed_state_round_trips_and_is_not_reanimated` | mcp/tests/test_terminal_catalog.py:61-87 |
+| Dispatch brief receipts are idempotent and refuse a second receipt | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:89-105 |
+| Read refuses torn extra data without erasing evidence | `test_read_refuses_torn_extra_data_without_erasing_evidence` | mcp/tests/test_terminal_catalog.py:107-114 |
+| Concurrent upserts do not lose or corrupt rows | `test_concurrent_upserts_do_not_lose_or_corrupt_rows` | mcp/tests/test_terminal_catalog.py:116-139 |
+| Cross instance termination is sticky and never resurrected | `test_cross_instance_termination_is_sticky_and_never_resurrected` | mcp/tests/test_terminal_catalog.py:141-164 |
+| A batch whose rows do not change performs zero physical file replacements | `test_clean_batch_does_not_replace_catalog` | mcp/tests/test_terminal_catalog.py:166-182 |
+| Inside a batch, `get()` sees the working buffer while `list_committed()` sees the committed row | `test_list_committed_bypasses_batch_buffer_without_changing_list_semantics` | mcp/tests/test_terminal_catalog.py:184-195 |
+| Two logical mutations in one batch produce exactly one replacement | `test_dirty_batch_replaces_catalog_once` | mcp/tests/test_terminal_catalog.py:197-223 |
+| A dirty partial flush persists earlier progress once, leaves later rows untouched, and permits a later batch | `test_dirty_partial_batch_flushes_once_and_releases_for_retry` | mcp/tests/test_terminal_catalog.py:225-257 |
 
 ## Cross-Repo References
 
-No cross-repository implementation source governs this test module.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: reconciled the card with the four retained
+  batch/contention cases (clean zero-replacement, committed-vs-buffer read, dirty one-replacement,
+  dirty-partial flush plus retry) and refreshed the shifted definition ranges. This records test
+  behavior bound to the uncommitted candidate only; verification metadata remains closeout-owned.
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added reviewer parent
+  serialization and address-bound lifetime forcing. Verification remains closeout-owned.
+
+- 2026-08-26T16:03+02:00 — Post-failure repair: rebound receipt assertions to the dedicated
+  `DispatchBriefReceiptStore`, including the missing-row result and second-receipt refusal. No
+  certifying test execution is claimed.
+
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: corrected the governing tests
+  overview and kept this unit's receipt claim limited to idempotent same-generation binding plus
+  second-receipt refusal; cross-address movement is forced in the succession suite. No test
+  execution is claimed.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: added private receipt round-trip/idempotency and
+  staged-heir promotion coverage. Verification remains closeout-owned.
+
+- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Reconciled `test_terminal_catalog.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.

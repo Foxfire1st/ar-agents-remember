@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-30T12:34+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -22,12 +22,21 @@ runtimes and owns no independent doctrine.
 
 ## Logic
 
+The synchronized caller matrix keeps curator target-only: only the owning manager is its ordinary
+plane-hosted caller, while an identity-free launcher may target it only for explicit
+developer-declared takeover. Dispatch/tools rows remain structural documentation, not settings
+keys.
+
 Because synchronization replaces the complete canonical skill tree, the packaged curator has the
 same leaf-scoped onboarding-only seat, three-way intent reconciliation, current/evidence/history
 separation, and the single enclosure-checklist intake/repair loop as the canonical source. The
 full scoped call combines missing-onboarding, quality, stale indexes, source-change candidates, and
 noteworthy evidence; the curator reruns it until the zeroable count clears. Changes must be made
 canonically and propagated; editing this artifact independently creates drift.
+
+The synchronized intake also requires exact approved stable-ID + version packets and the
+reviewer's per-revision adjudication. Rejected or worker-blocked revisions remain blockers and
+cannot become packaged current intent.
 
 ## Conventions
 
@@ -43,12 +52,17 @@ canonically and propagated; editing this artifact independently creates drift.
 - Curator still writes onboarding only and communicates through structural parent messaging/report.
 - The synchronized curator cannot report completion with an enforced curator-actionable finding.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The packaged curator contains the same current seat definition and three-way responsibility. | "## What This Seat Is" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:7-47 |
-| The synchronized check loop requires complete curator-actionable repair before report. | "### 4 — Iterate The Checklist, Then Report" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:136-191 |
+| The synchronized check loop requires complete curator-actionable repair before structured authority publication. | "### 4 — Repair Affected Onboarding, Then Publish" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:153-195 |
 | The canonical source is the doctrine owner. | "# Lifecycle — Curator" | skills/l-01-agent-lifecycles/roles/curator.md:1-47 |
 | MCP package data is an explicit synchronization target. | "mcp package data" | scripts/sync-skills.py:43-47 |
 | Synchronization replaces each target from the canonical tree and then checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
@@ -59,7 +73,43 @@ Curator admission repeats the manager's task-derived lineage proof and requires 
 review bound to the current candidate tree. Curation documents that frozen candidate only and leaves
 commit stamps and lifecycle mutation to closeout.
 
+## 260821-DAGQC-L2 Synchronized Quality Invocation
+
+The packaged curator uses the canonical explicit sync/start/poll request objects. Capacity refusal
+is a retry signal over the same API, never authority for a host runner, fallback, or retired flat
+call. The content remains synchronized from the canonical curator role.
+
+## MCAR-L02 Structured Curator Authority
+
+The curator's last act is now tool-owned publication, not writing or versioning a report. After the
+quality worklist reaches zero, the role prepares the exact tuple set, supplies one non-invented
+disposition/rationale/evidence reference per tuple, publishes the separately identified semantic
+revision and delivery attempt, optionally freezes a snapshot, and validates the sole live
+structured authority. Generated Markdown is returned as projection evidence only.
+
+## CCR-L42 current candidate
+
+Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Curator intake now binds the route-review requirement to altitude: standalone and organizational leaves require a leaf route-review record, while atomic child leaves defer route adjudication to canonical-master integration and retain their other task, code, memory, ledger, and coherence gates.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized manager-only curator dispatch,
+  explicit ambient takeover, and fixed structural-row ownership. Verification remains
+  closeout-owned.
+
+- 2026-08-29T08:52+02:00 — Replaced hand-authored coherence reporting with exact structured
+  publication and validation. Verification remains closeout-owned.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+- 2026-08-27T16:27+02:00 — Synchronized exact requirement-packet and per-revision adjudication
+  intake from canonical curator doctrine. Verification remains closeout-owned.
+
+- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: synchronized curator quality calls and retry guidance from canonical doctrine. Verification metadata remains pinned until architect-owned closeout.
+
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: curator admission requires current
   lineage and a passing exact-candidate route-review record before memory reconciliation starts.
   Verification remains closeout-owned.

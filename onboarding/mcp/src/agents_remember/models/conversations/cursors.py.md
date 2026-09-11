@@ -51,7 +51,6 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Hostile tests pin cursor-brand non-interchangeability. | `test_cursor_bindings_preserve_authorization_identity_scope_and_purpose` | mcp/tests/test_conversation_contracts.py:196-220 |
 
 ## Cross-Repo References
 
@@ -62,6 +61,9 @@ No cross-repository implementation participates.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the cursors layer moved from
   `serving/conversation/_models_wire.py`. Verification metadata pinned until closeout stamps the

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                |
 | path                   | `mcp/src/agents_remember/models/conversations/primitives.py`    |
 | doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-08-08T14:38+02:00                                         |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                     |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-25T08:16+02:00 |
+| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
+| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
 | governingOverview      | `overview.md`                                                  |
 
 ## Governing Overview
@@ -36,8 +36,9 @@ SHA-256 operation-identity specialization.
 
 ### Invariants And Boundaries
 
-- This module must not import any sibling conversation module (it is the layer bottom); the
-  acyclic layering and `model_rebuild()` ordering are pinned by the baseline test.
+- This module must not import any sibling conversation module (it is the layer bottom); the armed
+  layering rail and resolved-forward-reference architecture test preserve that boundary without a
+  task/date snapshot.
 
 ### Todos
 
@@ -55,7 +56,6 @@ No external/domain documentation is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The rebuild-order proof covers the primitives-first import order. | `test_model_rebuild_ordering_is_complete` | mcp/tests/test_model_split_baseline.py:226-226 |
 
 ## Cross-Repo References
 
@@ -67,6 +67,11 @@ No cross-repository implementation participates.
 
 ## Update History
 
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
+
+- 2026-08-25T01:56+02:00 — 260824-PDLS replaced the retired split baseline reference with the
+  stable architecture owner; verification remains closeout-owned.
 - 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the primitives layer moved from
   `serving/conversation/_models_wire.py`. Verification metadata pinned until closeout stamps the
   L9 code commit.

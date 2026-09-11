@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-28T11:32+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -18,6 +18,9 @@ the sync process installs this exact artifact.
 
 ### Logic
 
+The synchronized brief names the next review-handoff attempt without advancing it during internal
+runs and requires a lightweight content-addressed record plus a separate protocol-event log.
+
 The manager calls `dispatch_agent` with the canonical leaf document, role `worker`, and this brief.
 The control plane binds the occupant privately. The worker edits code, runs the scoped checks, and
 writes the builder report; it never commits or writes onboarding. Its curator handoff supplies
@@ -26,8 +29,8 @@ implemented intent before writing memory.
 
 ### Conventions
 
-Fill every placeholder, include exact code and memory worktree paths, state the quality ladder, and
-keep the worker's authority limited to code plus its report. Edit the canonical template and
+Fill every placeholder, include exact code and memory worktree paths, state the relevant targeted
+checks, and keep the worker's authority limited to code plus its report. Edit the canonical template and
 synchronize.
 
 ### Invariants And Boundaries
@@ -40,6 +43,11 @@ synchronize.
 ### Todos
 
 None recorded.
+
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
 ## Cross-Repo Evidence
 
@@ -68,7 +76,67 @@ The template tells the dispatcher to copy repository-specific acceptance command
 and evidence requirements from resolved memory. It forbids an invented runner or fallback and
 keeps acceptance at leaf closeout and master integration only.
 
+## 260815-DAG-L2 Nature-Aware Worker Input
+
+The brief carries the leaf's execution nature and nature-appropriate source edge. It makes the
+single-leaf closeout acceptance and no-integration-rerun contract explicit, while reserving the
+full suite for the exact proposed final organizational candidate or atomic block landing.
+
+## M38 Worker-Brief Projection
+
+The brief now enumerates the exact stable requirement IDs and required evidence class before work
+starts. It requires one full status/rationale/citation/verification/result envelope per ID, the
+additional developer-ruling proof for blocked or approved-change delivery, explicit Checks, and a
+separate durable-evidence hold point. Non-code requirements use deliverable paths and anchors. This
+installed copy is synchronized from canonical source.
+Each row now makes approved revision state and the packet's durable corpus-ruling citation an
+explicit intake condition, not optional context.
+
+## M40/M43 Worker-Brief Projection
+
+The installed brief now carries leaf manifestation, journal path, attempt/predecessor identity,
+candidate identity class, before-handoff immutable append, and the closed failure/revision routing
+contract from the canonical template.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
+## CCR-L42 current candidate
+
+The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2 brief fields and event separation.
+
+- 2026-08-27T18:06+02:00 — M40/M43: synchronized attempt identity and immutable worker-record
+  fields from the canonical brief.
+
+- 2026-08-27T14:04+02:00 — Added explicit approved-state and durable corpus-ruling fields for each
+  version-addressed worker requirement packet.
+- 2026-08-27T13:32+02:00 — M39@v1: applicable requirements are explicit ID + version rows with
+  complete canonical packet links; version mismatch makes the brief undispatchable. Verification
+  remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded exact requirement-set intake and the complete worker
+  evidence contract. Verification metadata stays pinned until governed closeout stamps the PDLS
+  commit.
+
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the
+  leaf-targeted/master-full acceptance boundary. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: made worker acceptance instructions repository-resolved
   and exact-once. Verification remains closeout-owned.

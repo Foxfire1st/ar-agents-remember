@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/providers/lifecycle/log_capture.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -86,8 +86,8 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `provider_watchers_payload` applies `summarize_command_logs` to every watcher tool response. | `provider_watchers_payload` | mcp/src/agents_remember/mcp/tools/providers.py:73-87 |
-| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:31-41 |
-| Unit tests verify per-node success/failure behaviour, `json` always-dropped, secret redaction, and recursive step trimming. | `SummarizeCommandLogsTests` | mcp/tests/test_log_capture.py:31-104 |
+| `worktree_start_payload` applies `summarize_command_logs` to the worktree start tool response. | `worktree_start_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54 |
+
 
 ## Update History
 

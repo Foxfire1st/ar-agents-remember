@@ -5,16 +5,22 @@
 | repository             | agents-remember                              |
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                                   |
+
+## Governing Overview
+
+[MCP tools overview](overview.md)
 
 ## Purpose
 
 Worktree lifecycle payload builders.
 
 ## Code Commentary
+
+`worktree_closeout_apply_payload` forwards the keyword-only `corrective_dispositions` tuple of `RedCatalogDisposition` unchanged to the application entry point. The adapter does not decide whether a failed catalog item may be corrected or accepted.
 
 L23 types integration strategy at the payload edge and adds task-addressed lifecycle-operation cancellation with explicit intent and dry-run forwarding.
 
@@ -40,7 +46,7 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` is newly added (GitHub #54 sub-task D), forwarding `contract_path`/`memory_sync_choice`/`dry_run` to `worktree_sync_tool`. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` forwards the canonical `contract_path`, typed `MemorySyncChoice`, typed `SyncResolutionAction`, and `dry_run` unchanged to `worktree_sync_tool`; it owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -76,6 +82,30 @@ parameter would republish the tool as a nested object.
 - `worktree_start_payload`/`worktree_integrate_payload`/`worktree_cleanup_payload`/`worktree_abandon_payload`
   default `dry_run=False` (act-by-default); the `*_closeout_apply` builders keep
   `dry_run=False` paired with their `*_preview` builders. `dry_run=true` previews.
+- Sync payload transport preserves the shared literal types and canonical contract address; it
+  cannot select by operation id or supply a compatibility fallback.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Repo-Internal References
+
+The source itself and its governing route are sufficient for this thin payload adapter.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Start, sync, attach, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86; mcp/src/agents_remember/mcp/tools/worktree.py:89-98 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned transport adapter.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Series-Contract Notes
 
@@ -86,7 +116,49 @@ Worktree payload builders keep closeout/integration path-explicit while start/at
 The transport adapter now imports `IntegrateStrategy` from `models.lifecycles.operation`, its
 dedicated package owner. Tool payloads, task identity, and forwarding behavior are unchanged.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload`. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:44-54; mcp/src/agents_remember/mcp/tools/worktree.py:57-74; mcp/src/agents_remember/mcp/tools/worktree.py:77-86 |
+
+## 260831-CCR-L15 Status-Wait Payload Export
+
+The module now imports `LifecycleStatusWaitRequest` /
+`worktree_status_wait_tool` and exports
+`worktree_status_wait_payload`, which wraps the read-only wait application tool into the
+standard `_tool_payload` envelope for the public `worktree_status_wait` tool.
+
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=b2a91233ad8b0711876374fe62d6dd92c829fffa1b0e268c60fd8e35fb43199c; verification metadata remains unchanged because commit-owned realization is pending.
+
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` export for the new public wait tool.
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Repo/Cross-Repo reference sections for the
+  changed worktree payload adapter.
+
+- 2026-08-26T03:37+02:00 — Added typed `resolution_action` forwarding beside
+  `memory_sync_choice`; payload transport remains contract-addressed and journal-free. Verification
+  remains post-Dagger/closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the integration-strategy import move and confirmed
   the public tool contract is unchanged; final provenance remains closeout-owned.

@@ -66,7 +66,7 @@ watcher startup so later Compose calls use the same dependency port mappings.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes. | `docker_wait_for_postgres`; `docker_wait_for_ollama`; `grepai_runner_image_build` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:51-68; mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:46-62; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:37-74 |
-| Tests protect Docker-only direct-run rejection, Docker bounded run construction, and full dry-run stack creation. | `test_grepai_direct_run_requires_settings_backed_docker`; `test_grepai_start_dry_run_builds_complete_docker_stack` | mcp/tests/test_provider_lifecycle_parser_1.py:73-107; mcp/tests/test_provider_lifecycle_parser_1.py:145-200 |
+
 
 ## Update History
 

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.test.ts`               |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T09:16+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-24T12:59+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -24,8 +24,9 @@ payloads cost zero store writes, identity stays stable) plus the **long-session 
 simulated idle ticks with event traffic stay flat). Since the 260707-HFX2-L2 fix round, the change
 gate also pins the **`agentNotifierHeartbeat` no-op/write-through split**: an idle re-snapshot with an
 unchanged heartbeat costs zero writes, but a genuinely advanced heartbeat still rides through as
-exactly one write. The sliding-window test is the task-34 guard that the raw Event-River buffer
-stays bounded.
+exactly one write. The suite also pins full scenario reset semantics directly: a typed, nonempty
+closeout queue must become exactly empty through the canonical reset while `gen` advances once.
+The sliding-window test is the task-34 guard that the raw Event-River buffer stays bounded.
 
 ## Code Commentary
 
@@ -45,6 +46,10 @@ to an empty baseline (it does NOT reset `events`/`eventsHydrated`, so the event 
   `applyDelta`'s `lifecycle` upsert and `lifecycle.removed` paths.
 - `replaces metrics / analytics wholesale` — `applyDelta("metrics", …)` swaps the whole object.
 - `marks the connection signal-lost` — `setConn` flips the channel.
+- `clears a seeded closeout queue and increments generation exactly once on reset` — seeds the
+  typed `RESET_QUEUE`, proves the authoritative store is nonempty, invokes
+  `dashboardStore.getState().reset()`, then asserts exact queue emptiness and `gen + 1`. It never
+  hand-clears the queue, so removing the canonical reset assignment makes the regression fail.
 
 **The change-gate describe (260703-L15):** `volatileBump(source, tick)` builds a byte-fresh copy —
 a new object graph, which is what the identity assertions need — with `generatedAt` moved and every
@@ -89,6 +94,8 @@ so a literal `2` would have failed — and a hand-kept literal beside a hand-kep
 second-copy problem itself.
 
 Tests assert on `getState()` snapshots rather than rendered output.
+The reset regression uses a real `CloseoutQueueNode` fixture and the store's public reset action;
+mounted derived-view clearance belongs to `SprintGraphPage.test.tsx` rather than this unit seam.
 
 ### Invariants And Boundaries
 
@@ -98,6 +105,11 @@ Tests assert on `getState()` snapshots rather than rendered output.
   explicitly so it is independent of prior tests.
 - These are store-contract tests; the Event-River rendering/virtualization is covered separately by
   `../panels/EventRiver.test.tsx`.
+- Reset proof must begin from a nonempty queue, call the one canonical reset, assert exact
+  authoritative-store emptiness, and retain the existing one-step generation contract. A manual
+  `setState({ closeoutQueues: [] })`, mock reset, or empty initial fixture would not prove it.
+- This regression covers dev/test scenario infrastructure. It does not specify production queue
+  ingestion, retention, ordering, scheduling, or lifecycle behavior.
 - The two `agentNotifierHeartbeat` cases pin that `applySnapshot`'s idle early-return branch must use a
   field-literal comparator (`heartbeatEquals`) for the heartbeat, never `stableEquals` — reusing
   `stableEquals` would strip `ageSeconds` and silently defeat detection of a genuinely advancing tick.
@@ -122,14 +134,15 @@ the bounded buffer documented in the store sidecar.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| System under test: the Zustand store these reducers belong to. | `dashboardStore` | dashboard/src/data/store.ts:225-347 |
-| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:56-56 |
-| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | "folds a snapshot into id-keyed maps and goes live" | dashboard/src/data/store.test.ts:51-82 |
-| `agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | "applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes"; "applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat" | dashboard/src/data/store.test.ts:121-159 |
+| System under test: the Zustand store these reducers belong to, including its one full reset transaction. | `dashboardStore`; `reset` | dashboard/src/data/store.ts:329-404 |
+| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:62-62 |
+| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | "folds a snapshot into id-keyed maps and goes live" | dashboard/src/data/store.test.ts:71-102 |
+| The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment. | `RESET_QUEUE`; "clears a seeded closeout queue and increments generation exactly once on reset" | dashboard/src/data/store.test.ts:22-40; dashboard/src/data/store.test.ts:104-114 |
+| `agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | "applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes"; "applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat" | dashboard/src/data/store.test.ts:153-190 |
 | The fixture narrowing and the fixture-derived lifecycle count. | "export function asServedProjection" | dashboard/src/test/servedProjection.ts:22-43 |
 | The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/servedProjection.ts:41-43 |
 | `reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder. | `reparsed`; `agentNotifierHeartbeat` | dashboard/src/test/fixtures/wire.ts:352-366; dashboard/src/test/fixtures/wire.ts:396-398 |
-| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:569-581 |
+| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:817-830 |
 
 ## Cross-Repo References
 
@@ -140,6 +153,16 @@ No meaningful cross-repo references found. These tests are local to the dashboar
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `WorkspaceProjection` repointed to dashboard/src/types/projection.ts:817-830. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the typed nonempty closeout-queue
+  fixture and direct canonical-reset regression that proves exact store clearance and one `gen`
+  increment without manual cleanup. Kept the proof at the dev/test state-authority seam; production
+  queue behavior remains outside this suite's contract. Verification metadata remains pinned until
+  governed closeout stamps the code commit.
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md` |
 | doc_type               | `file-level-onboarding`                                                   |
 | lastUpdated            | 2026-07-08T00:00+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`                                |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -46,6 +46,11 @@ File-level onboarding mirrors one source file directly under the resolved onboar
 
 After this working-tree update lands, refresh verification metadata to the committed `c-05-create-or-update-onboarding-files` skill source revision.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+Current contract: curators update affected sidecars, route overviews, indexes, and entity records from current source, preserving body plus history and reporting scoped check results honestly. Closeout consumes that prepared memory leg as a Git transaction; it does not turn onboarding maintenance into an automatic full-memory or certification gate.
+
 ### Docs References
 
 No external domain documentation applies to the repository-local onboarding maintenance contract. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this package behavior is repository source.
@@ -79,6 +84,7 @@ No external domain documentation applies to the repository-local onboarding main
 | No meaningful cross-repo references found for current skill semantics. | n/a | n/a |
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
 
 - 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 9 citation claims; scoped recheck clean (0 findings).
 

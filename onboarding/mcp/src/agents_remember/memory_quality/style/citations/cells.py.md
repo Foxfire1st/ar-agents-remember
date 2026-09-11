@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/memory_quality/style/citations/cells.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -55,6 +55,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 | Defines the function `citation_tables` (lines 67-101) — Every evidence table in one document, current format or not.. | `citation_tables` | mcp/src/agents_remember/memory_quality/style/citations/cells.py:67-101 |
 
 ## Update History
+
+- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=eddf36e082b671d7aabf34ce81a9ad1740177e007052e696ed5319c2a7d31b27; verification metadata remains unchanged because commit-owned realization is pending.
+
 
 - 2026-08-05T03:49+02:00 — 260731-EFA-L6 C1 closeout pass: aligned the Logic bullet and Finding line numbers with the scoped fixer's generated decorator-inclusive range for `CitationTable`; verification metadata unchanged.
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

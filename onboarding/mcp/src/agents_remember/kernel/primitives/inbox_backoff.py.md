@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`       |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-07-31T00:00+02:00                                             |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-06T21:59:04+00:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -51,8 +51,7 @@ not ladder-resolved AND not rate-limited.
 
 `_REDELIVERABLE_DELIVERY_STATES` includes `delivered` deliberately — R1's central claim is that
 `delivered` is never terminal (pasted != perceived), so a delivered-but-unacked row still
-schedules and remains redeliverable; only `consume` (an inbox `state` transition, not a
-`deliveryState` one) stops it.
+schedules and remains redeliverable; a correlated adapter acceptance writes `landed`; any non-pending state, including legacy consumed and ladder-resolved rows, is excluded by `is_due`.
 
 ### Invariants And Boundaries
 
@@ -84,8 +83,8 @@ retry loop.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs. | `next_attempt_at` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:78-95 |
-| The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`. | `is_rate_limited` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:114-130 |
+| The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs. | `next_attempt_at` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:77-94 |
+| The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`. | `is_rate_limited` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:112-128 |
 | The backoff ladder + rate-limit gate mirror `OrchestrationNudgeStore.record`'s elapsed-time check. | `_elapsed_seconds` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:168-172 |
 
 ## Cross-Repo References
@@ -97,6 +96,10 @@ No meaningful cross-repo references found.
 | None. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:59:04+00:00 — Confirmed clamp, floor and composed redelivery predicates against source; corrected retired model-consume wording. Removed test coverage is not claimed. Verification pins unchanged.
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `redeliverable` and confirmed that inbox backoff and ordering behavior remain as documented. Verification remains closeout-owned.
 
 - 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the two `n/a`-anchor
   table citations with exact anchors (`is_rate_limited`, `_elapsed_seconds`) and fixer-generated

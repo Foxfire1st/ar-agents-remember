@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/serving/harness_control_claude.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -144,13 +144,13 @@ normalization.
 | Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked. | `_IDENTITY_CHANGING_COMMANDS`, `_NATIVE_CAPABILITY_COMMANDS`, `command_unsupported_detail` | mcp/src/agents_remember/serving/claude_stream_protocol.py:21-24; mcp/src/agents_remember/serving/claude_stream_protocol.py:352-360 |
 | Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort. | `parse_list_models_response`, `_parse_model`, `_require_unique_model_keys`, `_select_current_model` | mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32; mcp/src/agents_remember/serving/claude_stream_capabilities.py:50-75; mcp/src/agents_remember/serving/claude_stream_capabilities.py:78-83; mcp/src/agents_remember/serving/claude_stream_capabilities.py:86-110 |
 | The shared submission authority admits setters onto the same ordinary-operation timeline as prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so the authority is now the only owner rather than the thing behind a facade. | `_validate_set_result` | mcp/src/agents_remember/serving/harness_submission_authority.py:1010-1023 |
-| Adapter regressions prove token-free discovery, complete selector replacement, end-of-options preservation, forced transient stop, and byte-for-byte normal-start preservation. | `test_discover_uses_only_token_free_bootstrap_and_list_models`, `test_discover_replaces_all_installed_mcp_selector_spellings`, `test_normal_start_preserves_existing_mcp_selectors_byte_for_byte` | mcp/tests/test_harness_control_claude_stream_1.py:33-53; mcp/tests/test_harness_control_claude_stream_1.py:55-167; mcp/tests/test_harness_control_claude_stream_1.py:169-189 |
+
 
 ## Submission Authority Delta
 
 The Claude hosted adapter passes full operation refs through prompt, response, model, and effort
 methods and delegates sole-operation preflight to stream state. An unknown setter remains the common
-authority barrier until exact resolution; it is not released merely because a caller timed out.
+authority blocker until exact resolution; it is not released merely because a caller timed out.
 
 ## Native Interrupt Acceptance Delta
 
@@ -175,6 +175,8 @@ another command's echo. The accepted echoes themselves are unchanged.
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
 ## Update History
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
@@ -209,7 +211,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
   `verify_effective_launch` validates the natively-succeeding launch instead of refusing it. Verification
   metadata stays pinned until closeout stamps the candidate commit.
 - 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware Claude control and the exact unknown-
-  setter barrier.
+  setter blocker.
 
 - 2026-07-16T07:25+02:00 — 260714-ACPUI-L5 curator: documented adapter wiring through a copied
   discovery launch, native MCP selector normalization, forced transient teardown, token/resource

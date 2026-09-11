@@ -87,8 +87,8 @@ fallback runs. The failed seed result is attached to the response as
 | `grepai_backend_start` is the GrepAI backend startup entry. | `grepai_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:444-463 |
 | The embedder lifecycle is the compose-owned startup path that consumes the migrated settings. | `grepai_embedder_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:392-415 |
 | `isolated.py` populates `seedFromContainer` in worktree embedder settings. | `seedFromContainer` | mcp/src/agents_remember/providers/grepai/isolated.py:283-283 |
-| The seed guard and tar-pipe paths are covered by the focused seed tests. | `SeedFromSourceTests` | mcp/tests/test_ollama_model_seed.py:30-55 |
-| The ensure-model short-circuits and pull fallback are covered by the focused ensure tests. | `EnsureModelTests` | mcp/tests/test_ollama_model_seed.py:58-122 |
+
+
 
 ## Update History
 

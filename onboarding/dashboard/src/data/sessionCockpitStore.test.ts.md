@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/data/sessionCockpitStore.test.ts` |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -55,7 +55,7 @@ No Domain Documentation source is configured for this repository; repository cod
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The module under test. | `setOrchestrationTreeView` | dashboard/src/data/sessionCockpitStore.ts:227-227 |
-| The registry the mirror case writes through. | `useSessions` | dashboard/src/data/sessions.ts:524-525 |
+| The registry the mirror case writes through. | `useSessions` | dashboard/src/data/sessions.ts:527-528 |
 
 ## Cross-Repo References
 

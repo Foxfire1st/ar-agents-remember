@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `dashboard/src/data/store.ts`                    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-08T21:20+02:00 |
-| lastVerifiedCommitHash |                                                  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |                                                  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-24T12:59+02:00 |
+| lastVerifiedCommitHash |                                                  `dc03c64a91947cee470622c560c516854eec86b5`|
+| lastVerifiedCommitDate |                                                  2026-08-30T17:41:53+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -19,7 +19,8 @@
 The Zustand vanilla store backing the whole dashboard cockpit. It holds connection state, the latest
 projection split into flat id-keyed maps (`lifecycles` / `enclosures` / `providers`),
 `activeWorktreeGroups` (the worktree-group basenames with a live enclosure — the Topology's active
-scope), `metrics`, `analytics`, the boot-time `servingBuild` stamp (260703-L15 S3), a bounded
+scope), projected `closeoutQueues`, `metrics`, `analytics`, the boot-time `servingBuild` stamp
+(260703-L15 S3), a bounded
 sliding window of raw Event-River events (`EVENT_WINDOW`) retained client-side until reset/reload,
 the event-stream hydration flag, and optimistic attention suppression ids. `useDashboard` is the
 React selector hook every cockpit component reads through. Since 260703-L15 both apply paths are
@@ -71,13 +72,15 @@ in `useStore` for React subscribers. State mutates through these actions:
   are in flight, and restore failed dismissals. Analytics replacement prunes suppression ids that no
   longer exist in the server-computed queue.
 
-**Slice 05o** added the `gen` number field (init `0`) and a `reset()` action. `reset()` clears every
-collection back to empty (`lifecycles`/`enclosures`/`providers` to `{}`, `metrics`/`analytics`/
-`generatedAt` to `null`, `events` to `[]`) AND increments `gen`. The dev bench calls `reset()` on each
-scenario mount; the engine-room canvas is keyed by `gen` so it REMOUNTS cleanly on a scenario switch,
-preventing an exiting Motion failure-overlay (e.g. the FleetingEnclosure) from the previous mode from
-orphaning and bleeding through the scenario dropdown. `reset()` also clears `activeWorktreeGroups` to
-`[]`.
+**Slice 05o** added the `gen` number field (init `0`) and a `reset()` action. `reset()` is the one
+full dashboard-projection reset: one Zustand update increments `gen` exactly once and restores every
+scenario-owned collection to its clean initial value, including `closeoutQueues: []` alongside the
+id-keyed maps, `activeWorktreeGroups`, metrics/analytics, event state, serving/notifier state, and
+attention suppression. The dev bench calls `reset()` on each scenario mount; the engine-room canvas
+is keyed by `gen` so it REMOUNTS cleanly on a scenario switch, preventing an exiting Motion
+failure-overlay (e.g. the FleetingEnclosure) from the previous mode from orphaning and bleeding
+through the scenario dropdown. Production does not call this reset, and the correction does not
+change snapshot/delta queue ingestion, queue ordering/filtering, scheduling, or lifecycle authority.
 
 ### Invariants And Boundaries
 
@@ -109,9 +112,13 @@ orphaning and bleeding through the scenario dropdown. `reset()` also clears `act
   the store bound is about memory, not what the user can scroll.
 - Optimistic attention suppression is client-local display state only; the server remains the authority
   for `analytics.attentionQueue`.
+- A full scenario reset is total over scenario-owned projected state. `closeoutQueues` must clear in
+  the same canonical Zustand transaction as every other projection; a caller-local queue cleanup,
+  second reset authority, or render-time filter would leave shared state dishonest.
 - In PRODUCTION nothing calls `reset()`, so `gen` stays `0` and the canvas is never remounted by it —
   `gen` is a dev-bench affordance, not a production projection field. `reset()` is the only writer of
-  `gen`, and it also clears event hydration and suppressed attention ids for the next scenario.
+  `gen`, clears queue/event/suppression state for the next scenario, and must not be expanded into a
+  production queue-retention policy.
 
 ## Docs References
 
@@ -128,13 +135,15 @@ the reviewed task evidence for any current behavioral claim.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:579-579 |
+| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:828-828 |
 | Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
-| Store state now carries `eventsHydrated` and optimistic `suppressedAttentionIds`. | "export const dashboardStore" | dashboard/src/data/store.ts:318-318 |
-| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:390-390 |
+| Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. | "export const dashboardStore"; `reset` | dashboard/src/data/store.ts:329-400 |
+| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:403-403 |
 | `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
 | `AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-65 |
 | `AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:959-984 |
+| `ScenarioPlayer` invokes the one store reset when a development scenario changes. | `ScenarioPlayer`; `reset` | dashboard/src/dev/ScenarioPlayer.tsx:21-39 |
+| The mounted queue consumer reads `closeoutQueues` directly, scopes by sprint, and renders nothing when no matching queue remains. | `CloseoutQueueImpl` | dashboard/src/panels/CloseoutQueue.tsx:69-83 |
 
 ## Cross-Repo References
 
@@ -146,6 +155,19 @@ cross-repository implementation source that governs its behavior.
 | No applicable cross-repository source was found. | — | — |
 
 ## Update History
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `servingBuild` repointed to dashboard/src/types/projection.ts:828-828. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: documented the canonical scenario reset as
+  total over scenario-owned dashboard projections, including `closeoutQueues`, in one Zustand
+  transaction that increments `gen` once. Preserved the dev/test-only boundary: production
+  snapshot/delta ingestion, queue ordering/filtering, scheduling, and lifecycle authority remain
+  unchanged. Verification metadata remains pinned until governed closeout stamps the code commit.
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `agentNotifierHeartbeat` store

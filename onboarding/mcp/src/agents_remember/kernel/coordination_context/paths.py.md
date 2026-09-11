@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
+| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -52,7 +52,6 @@ No external documentation is needed for this package-local path policy.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Resolver selection uses these path primitives for topology and settings discovery. | `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:74-83; mcp/src/agents_remember/kernel/coordination_context/resolver.py:86-101; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164 |
-| Worktree support tests cover installed-runtime root detection and `.env` non-authority. | `test_resolver_uses_installed_runtime_root_as_coordination_root`, `test_resolver_ignores_dot_env_example_at_runtime` | mcp/tests/test_worktree_support_tests_2.py:837-858; mcp/tests/test_worktree_support_tests_2.py:860-882 |
 
 ## Cross-Repo References
 
@@ -63,6 +62,9 @@ No cross-repository evidence is needed for local path policy.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
 
 - 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: re-anchored the worktree-support test
   row after the source file shifted: `test_resolver_uses_installed_runtime_root_as_coordination_root`

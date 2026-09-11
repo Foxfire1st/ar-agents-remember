@@ -6,8 +6,8 @@
 | path                   | `dashboard/src/dev/fixtures.ts`                  |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated            | 2026-08-01T09:52+02:00                          |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -130,9 +130,10 @@ shape, so both sides of that delegation are cited.
 | `lifecycle()`, provider states, `enclosure()`, and `evt()` retain gallery defaults ahead of `...over`. | `lifecycle`; `providerRole`; `ok`; `down`; `indexing`; `enclosure`; `evt` | dashboard/src/dev/fixtures.ts:32-47; dashboard/src/dev/fixtures.ts:61-62; dashboard/src/dev/fixtures.ts:64-94; dashboard/src/dev/fixtures.ts:96-116; dashboard/src/dev/fixtures.ts:118-125 |
 | The gallery maps Engine Room scenarios through `engineRoomProjection`. | "export const GALLERY: GalleryEntry[] = ["; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:146-146; dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487 |
 | `EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`. | `EMPTY_ANALYTICS` | dashboard/src/test/fixtures/wire.ts:223-237 |
-| `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:333-333 |
+| `projection()` assigns `metrics` from `metricsFor(lifecycles)`. | `metrics` | dashboard/src/test/fixtures/wire.ts:335-344 |
 | The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. | "processes: EngineProcessNode[];"; "workspace: ProviderNode[];"; "ENGINE_ROOM_SCENARIOS.filter"; "projection: engineRoomProjection(scenario)" | dashboard/src/dev/fixtures.ts:484-484; dashboard/src/dev/fixtures.ts:487-487; dashboard/src/panels/engine-room/fixtures.ts:21-22 |
-| `series` and `engineProcesses` live on `WorkspaceProjection["analytics"]`. | `Analytics`; `engineProcesses`; `series`; `WorkspaceProjection` | dashboard/src/types/projection.ts:92-106; dashboard/src/types/projection.ts:569-581 |
+| Analytics requires series and engineProcesses arrays. | "export interface Analytics {" | dashboard/src/types/projection.ts:92-106 |
+| WorkspaceProjection owns analytics as a required field. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:817-830 |
 
 ## Cross-Repo References
 
@@ -148,6 +149,11 @@ models in `mcp/` inside this same repository; nothing here crosses a repository 
 The dev projection fixture now includes `enclosureId`, `leafId`, and `taskRoot` on each `EnclosureNode`, matching the server projection after leaf enclosure contracts moved under `enclosures/<leaf-id>/series-contract.md`. Since 260703-L11 the `enclosure(...)` factory also defaults the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` to `true`, so the seeded gallery enclosures render as live worktrees under the tasks surface's existence-only visibility rule.
 
 ## Update History
+
+- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 

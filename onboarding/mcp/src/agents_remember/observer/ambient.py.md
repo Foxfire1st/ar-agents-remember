@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/ambient.py`    |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T20:09+02:00                      |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T08:46+02:00 |
+| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad`       |
+| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Purpose
@@ -88,7 +88,7 @@ precisely so the parked gate stack keeps its strict "only blocked resumes" guard
 `block`/`resume` are unchanged. The `_tool_payload` choke point calls
 `resume_from_await` automatically when any tool other than the turn-end
 notification fires while awaiting (the auto-dismiss that makes the notification a
-*stop*, not a stall), so `awaiting-developer` is a notification, not a barrier.
+*stop*, not a stall), so `awaiting-developer` is a notification, not a blocker.
 The old `lifecycle_gate`/inbox stack is parked (kept, un-hinted).
 
 `emit_tool(tool_name, payload)` is the choke-point hook: under the lock it
@@ -231,10 +231,10 @@ existing seam rather than adding a second one.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | `TERMINAL_STATES`; `coerce_end_outcome`; `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:108-108; mcp/src/agents_remember/observer/lifecycle_state.py:118-127; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
-| `end` is pinned to hold no string constant from `TERMINAL_STATES` and to convert through the shared function — a structural test, because a copy that happens to agree passes a behavioural one. | `test_the_end_signal_names_no_terminal_state_of_its_own` | mcp/tests/test_observer_ambient.py:181-189 |
 | The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
 | The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
-| `mcp/tools/base.py::_tool_payload` delegates to `application/tool_response.py::complete_tool_response`, the choke point that calls `ambient().emit_tool(...)` for every public tool and (260707-HFX2-L2) reads `.root` to check the agent-notifier heartbeat. | "def complete_tool_response("; "amb.emit_tool(" | mcp/src/agents_remember/application/tool_response.py:53-53; mcp/src/agents_remember/application/tool_response.py:66-66 |
+| The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists. | "def complete_tool_response(" | mcp/src/agents_remember/application/tool_response.py:84-98 |
+| The optional stale-notifier banner reads the ambient root and contains errors before response enrichment. | "def _agent_notifier_banner(" | mcp/src/agents_remember/application/tool_response.py:53-62 |
 | The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:1-1 |
 | The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
 | The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:141-141; mcp/src/agents_remember/application/read_files.py:310-310 |
@@ -245,6 +245,13 @@ existing seam rather than adding a second one.
 | The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:391-402 |
 
 ## Update History
+
+- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+
+
+- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated ambient event emission from notifier-root lookup and made the ambient-presence condition explicit. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
 
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
 - 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13

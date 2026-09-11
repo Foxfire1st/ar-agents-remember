@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-28T11:51+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -18,6 +18,9 @@ this exact artifact.
 ## Code Commentary
 
 ### Logic
+
+The synchronized manager brief distinguishes the next review-handoff attempt from internal
+protocol events and requires a lightweight content-addressed record and non-gating summary.
 
 The orchestrator calls `dispatch_agent` with the canonical master document, role `manager`, and this
 complete brief. The manager dispatches worker/reviewer/curator children on canonical leaf or review
@@ -41,6 +44,11 @@ memory intent inputs for the curator, and synchronize only from the canonical te
 
 None recorded.
 
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
 ## Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -53,8 +61,9 @@ No sibling repository evidence is needed for this doctrine file.
 
 The manager brief now assigns Agents Remember acceptance to the pinned Dagger graph. Leaf and
 focused gates select targeted mode; `worktree_integrate` selects full mode once at master
-altitude. Both use the task-derived explicit diff base. Host pytest and direct wrapper commands
-are refused, never acceptance or an automatic fallback. `memory_quality_check` remains a
+altitude. Both use the task-derived explicit diff base. Host pytest is refused; Candidate A's
+direct wrapper has been deleted rather than retained as an acceptance or fallback route.
+`memory_quality_check` remains a
 per-leaf closeout gate, and omitted required proof refuses the gate.
 
 ## L23 Final Candidate Disposition
@@ -68,7 +77,93 @@ The manager brief requires repository memory to supply executor, environment, ar
 policy, retry rules, and evidence. It preserves one leaf-closeout acceptance and one
 master-integration full acceptance, with no leaf-integration rerun or fallback.
 
+## 260815-DAG-L2 Dispatch And Exit Contract
+
+The brief now carries execution nature, graph reference, nature-appropriate parent edge, and the
+manager's fact-only closeout-ready report. Organizational exit review is explicitly scoped to the
+exact proposed final super candidate containing prior landed contributions plus the proposed final
+leaf. Build concurrency never grants landing order; only orchestrator release does.
+
+## 260815-DAG-L15 Review-Doctrine
+
+The route-review paragraph now states that the reviewer seat must be distinct from the leaf's
+builder seat, and every requirement verdict must cite evidence of the requirement's class —
+rendering → mounted-UI proof, scheduling → operation-level proof, data model → artifact-level
+proof.
+
+## 260821-CLIVE Brief Contract
+
+The brief now requires the manager to declare a complete waiting closeout-door generation rather
+than send an informal queue-readiness row, and to wait for orchestrator release of the current
+first-ready generation. It explicitly keeps task edits live, requires inspection/relay of
+`projectionEffects`, and routes changed waiting evidence through door provenance/disposition.
+Post-claim lifecycle, worker, commit, and recovery evidence is read only from the enclosure-root
+journal via status and advertised controls; projection invalidation is never a lifecycle loss.
+
+## M38 Manager-Brief Projection
+
+The manager brief now requires compilation of the exact stable requirement set, validation of one
+complete worker envelope per ID, and dispatch of the same set for independent reviewer
+adjudication. It forbids aggregate completion and keeps the durable-evidence hold point separate.
+This installed artifact is a synchronized projection only.
+The exact set includes the approved version-addressed packet and its durable corpus ruling for
+every row; an unapproved or mismatched row invalidates dispatch.
+
+## M40-M45 Manager-Brief Projection
+
+The installed manager brief carries exact attempt dispatch/adjudication, failure/revision routing,
+bounded invalidation, and rebuildable non-gating master-summary obligations from the canonical
+template.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
+## CCR-L42 current candidate
+
+The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
+
+- 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
+  authority wording; projection ownership and byte-identity rules remain unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-28T10:03:40+02:00 — Updated the current quality-altitude explanation to record deletion,
+  rather than refusal, of Candidate A's former direct wrapper.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 dispatch and summary semantics.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized the Requirement Attempt Journal manager contract.
+
+- 2026-08-27T14:04+02:00 — Added approved version-addressed packet and durable-ruling admission to
+  the installed manager brief projection.
+- 2026-08-27T13:32+02:00 — M39@v1: the dispatch compiler and master-exit packet now carry the same
+  exact ID + version set and matching canonical packets to workers and reviewers. Verification
+  remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded the exact-set manager obligation and same-set review
+  dispatch. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
+
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: aligned the manager brief with door declaration, task-authoring primacy, and journal-owned post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: the route-review paragraph gains reviewer-seat
+  independence from the builder seat and requirement-evidence-class matching. Verified at code
+  commit de3a0fd9.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized nature-aware dispatch, fact-only readiness,
+  and exact organizational completion candidate. Verification remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: made the quality section repository-generic without
   weakening cadence. Verification remains closeout-owned.

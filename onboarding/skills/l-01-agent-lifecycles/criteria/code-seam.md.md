@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `skills/l-01-agent-lifecycles/criteria/code-seam.md` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T12:08+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-07T00:34+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -51,6 +51,11 @@ defect class.
 
 None.
 
+
+## CCR-R12@v5 Review Scope
+
+This criteria catalog supplies evidence only when the corresponding review is explicitly requested. It does not create a closeout or integration prerequisite; routine handoff uses the worker and curator targeted/scoped check records and preserves any failed or not-run state.
+
 ## Docs References
 
 No relevant external documentation found after checking the resolved source registry; the
@@ -65,7 +70,6 @@ reviewer criteria catalog and the cited catching leaves are the authority.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The canonical criterion file's standing/candidate structure, mirrored into the packaged runtime copies. | `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*` | skills/l-01-agent-lifecycles/criteria/code-seam.md:70-84 |
-| The quiescence executable counterpart (absent-developer fixed-point probe). | `test_unacked_backlog_reaches_a_fixed_point_with_absent_developer` | mcp/tests/test_agent_notifier_ladder.py:691-750 |
 
 ## Cross-Repo References
 
@@ -75,7 +79,12 @@ No meaningful cross-repo references found.
 | --- | --- | --- |
 | Same-repository reviewer doctrine only. | — | — |
 
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+
+- 2026-09-07T00:34+02:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
+
 
 - 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: created this sidecar and recorded the
   coalescing-invariant wording change (`rung` → `attempt`; the timed escalation ladder is

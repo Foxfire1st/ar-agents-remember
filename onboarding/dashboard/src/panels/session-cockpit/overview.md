@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -316,16 +316,16 @@ references, not imported governing implementations, so no cross-repository sourc
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:48-48; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
+| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:49-49; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
 | Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:361-387; dashboard/src/panels/session-cockpit/SessionRail.tsx:160-241 |
+| Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:397-423; dashboard/src/panels/session-cockpit/SessionRail.tsx:161-242 |
 | PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
 | Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
 | Effective keyboard contract. | "export function useEffectiveKeymap(): EffectiveKeymap {"; "export function useKeyboardZones({" | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97; dashboard/src/data/keymap/preferences.ts:369-369 |
 | Dev end-to-end scenario authority. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
 | The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | `SERVED`, `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243; dashboard/src/test/fixtures/wire.ts:66-66 |
 | The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
-| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:366-371 |
+| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:372-377 |
 
 ## Current L5I Route State
 
@@ -410,7 +410,19 @@ behavior change: it prevents a deferred Virtualizer callback from escaping jsdom
 otherwise-green dashboard run while preserving the same intent-lock, follow-on-growth, and
 latest-chip assertions.
 
+## 260815-DAG Master Full-Gate Repair Route Impact
+
+The session-cockpit forcing suites hardened teardown: async `afterEach` clears fake timers / flushes the 150 ms virtualizer scroll-observer debounce before jsdom teardown so orphaned callbacks cannot fire without a `window`.
+
 ## Update History
+
+
+- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+
+- 2026-08-26T10:44:52+02:00 — No route impact: refreshed the `VOCABULARIES` forcing range after test growth; Chats cockpit ownership and behavior are unchanged.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: test `afterEach` hooks now flush virtualizer debounces (fake-timer clear + real-timer 200 ms settle). Verified at code commit e5cb139f.
+
 
 - 2026-08-14T06:25+02:00 — L23 final candidate review: accepted interaction responses consume
   pending prompts and return the session to working/replay state; the fleet scenario now shares the
@@ -458,7 +470,7 @@ latest-chip assertions.
   measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
   `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
   (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`; cit:(["mirror ⊇ served — the server grows", "served ⊇ mirror — the mirror declares", "fixture ⊇ mirror — THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)) plus runtime `VOCABULARIES`
-  assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:268-283) for the string unions `resolveJsonModule` widens to `string`. The
+  assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:287-423) for the string unions `resolveJsonModule` widens to `string`. The
   paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
   `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
   "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the
@@ -478,7 +490,7 @@ latest-chip assertions.
   recorded as a LOSS: its three `control: "starting"` keys are gone, so the surviving
   `not.toContain("adapter starting")` assertions can no longer fail and that guarantee is marked
   superseded here — verified `DetectedHarness` declares exactly `id`/`name`/`detected`
-  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:366-371) on a `WireResponse` with `extra="forbid"`
+  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:372-377) on a `WireResponse` with `extra="forbid"`
   cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:88-100), and
   that `HarnessInfo` mirrors the same three cit:([`HarnessInfo`], dashboard/src/data/harnessCatalog.ts:5-9). Recorded the replacement
   guarantee (typed `HARNESSES` annotation + the per-row `Object.keys` assertion) and the reason the

@@ -5,89 +5,82 @@
 | repository | agents-remember |
 | path | `mcp/tests/test_worktree_quality_gate_runner.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-14T12:13:26+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:45:53+00:00 |
+| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
+| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[tests overview](overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-Owns the Dagger-only quality command, preview, host-refusal, container memory-cap,
-report-replacement, and failure-transport regressions split from the closeout mutation suite.
+Checks that direct host execution cannot run a certification profile and that an interrupted gate preserves the previous completed test report. This refusal concerns the certification wrapper, not ordinary supported host pytest development feedback.
 
 ## Code Commentary
 
 ### Logic
 
-`CodeQualityGateTests` proves wrapper applicability and altitude, exact diff-base forwarding,
-container-runtime-managed and explicitly capped full Dagger gates, immediate host-execution
-refusal, atomic replacement of the one enclosure test report, and bounded failure output.
+The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
+history describe prior populations and must not be used to recreate removed tests or claim they
+still run. The retained behavior and its fixture limits, described above, govern this card.
 
 ### Conventions
 
-Checkout and target helpers remain single-owned in `test_worktree_closeout_quality_gate.py` and are
-imported here; runner policy and closeout mutation are separate test responsibilities.
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
 
 ### Invariants And Boundaries
 
-- Leaf closeout runs targeted Dagger acceptance; master integration runs full Dagger acceptance.
-- Explicit caps report `mode=explicit-cap`; absent caps report
-  `mode=container-host-managed`. Both retain container-runtime-managed swap.
-- Host quality execution refuses before resolving an interpreter or invoking a wrapper.
-- The report path is stable and each completed run replaces its predecessor.
-- Missing wrappers and invalid modes fail loudly rather than weakening the gate.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
+an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
+work. This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-None.
+No additional implementation scope is opened by this memory reconciliation.
 
 ## Docs References
 
-No Domain Documentation source is configured for this repository-local runner suite.
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+| No external domain claim is required. | N/A | N/A |
 
 ## Repo-Internal References
 
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
+
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The runner suite covers preview, execution, cap, report, interpreter, and failure contracts. | `CodeQualityGateTests` | mcp/tests/test_worktree_quality_gate_runner.py:15-445 |
-| Stable helpers remain in the closeout mutation suite. | `_checkout_with_wrapper`; `_quality_target` | mcp/tests/test_worktree_closeout_quality_gate.py:46-50; mcp/tests/test_worktree_closeout_quality_gate.py:53-59 |
+| Host quality execution refuses before running a profile | `test_host_quality_execution_refuses_before_running_a_profile` | mcp/tests/test_worktree_quality_gate_runner.py:17-21 |
+| Interrupted gate keeps the previous completed test report | `test_interrupted_gate_keeps_the_previous_completed_test_report` | mcp/tests/test_worktree_quality_gate_runner.py:24-44 |
 
 ## Cross-Repo References
 
-The runner can certify a consuming repository's checkout when that checkout carries the wrapper.
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Applicability is determined from the supplied checkout rather than a repository name. | `quality_wrapper_path`; `requires_strict_code_quality` | mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:63-65; mcp/src/agents_remember/worktrees/modules/code_quality_gate.py:97-104 |
-
-## L23 Host-Execution Removal
-
-The former local diagnostic runner, interpreter selection, host environment construction,
-systemd/rlimit command planning, and their tests are removed from the acceptance adapter. The
-remaining named local entry point is a refusal surface and never resolves or starts a wrapper.
-
-## R39 Runner Policy Proofs
-
-The runner suite separates consumer adapter opt-in from the Agents Remember self-wrapper policy
-and requires the latter to refuse when missing. It proves local quality execution always raises
-before wrapper resolution, keeps Dagger as the only plan/executor, and removes tests for deleted
-host interpreter, environment, subprocess, and memory-cap machinery.
-
-## R43 Builder-Level Dagger Refusal
-
-The runner suite now calls `_gate_command_parts` and `_memory_policy_payload` with a local executor
-and requires both to reject it with pinned-Dagger guidance. The missing-wrapper assertion uses the
-same `self-owned wrapper` wording as production.
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
+
+- 2026-09-06T15:11:59+00:00 — L33 pending candidate curation: Re-read the prepared source, reconciled profile-required planning and shared fixture ownership, preserved report/cap/host-refusal contracts, and replaced obsolete wrapper/local-builder claims with their current tests. Verification names the real prepared source commit c69d5171187fa1957025e393270db9f5a864ab14; this entry does not claim CCR acceptance.
+
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-target cutover of the quality gate runner tests.
+
+
+- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the quality gate and clean executor package relocations; runner outcome and evidence assertions are unchanged.
+- 2026-08-24T21:23+02:00 — Replaced zero-exit-only fakes with candidate-bound certifying outcomes.
 
 - 2026-08-14T12:13:26+02:00 — R43 curator: recorded builder-level non-Dagger refusal and aligned
   missing-wrapper wording. Verification remains closeout-owned.

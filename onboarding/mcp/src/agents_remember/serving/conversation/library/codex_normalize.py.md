@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/serving/conversation/library/codex_normalize.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
+| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -68,7 +68,7 @@ on fake native payloads; the shared primitives module owns the capping/extractio
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Codex reads normalize items with ordinals, windows, roles, blocks, and provenance through the strict contract validators. | `CodexLibraryTests` | mcp/tests/test_conversation_library_ports.py:221-410 |
+| Native Codex thread turns are flattened into chronological ConversationItem ordinals by the normalization owner. | `conversation_items_from_thread` | mcp/src/agents_remember/serving/conversation/library/codex_normalize.py:42-61 |
 | Shared capping, provenance, and text-extraction primitives this parser builds on. | `capped_text`, `native_provenance`, `text_content_parts` | mcp/src/agents_remember/serving/conversation/library/normalize_common.py:18-23; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:26-31; mcp/src/agents_remember/serving/conversation/library/normalize_common.py:51-56 |
 | The normalized item/block/provenance grammar this parser targets. | "class ConversationItem(WireModel):" | mcp/src/agents_remember/models/conversations/content.py:160-160 |
 
@@ -81,6 +81,8 @@ No meaningful cross-repo boundary exists for this local parser.
 | No meaningful cross-repo references found. | — | — |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for `ToolPhase` and confirmed that Codex terminal-phase normalization remains as documented. Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

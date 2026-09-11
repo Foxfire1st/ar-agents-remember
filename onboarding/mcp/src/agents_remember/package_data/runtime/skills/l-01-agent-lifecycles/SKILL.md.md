@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../overview.md` |
 
 ## Governing Overview
@@ -24,12 +24,28 @@ this artifact byte-for-byte for installed runtimes.
 
 ### Logic
 
+The synchronized M40@v2/M44@v2 doctrine distinguishes developer-approved semantic revisions,
+formal review-handoff attempts, and internal protocol events. Attempts are lightweight,
+requirement-specific records linked to content-addressed expanded evidence; summaries exclude
+protocol events and remain rebuildable/non-gating.
+
 The router selects exactly one role from plane-injected `AR_SPAWN_ROLE`, a fresh role brief, or the
-unbound free-chat launcher. Managed seats bind to canonical sprint, master, or leaf task documents
-plus role. `dispatch_agent` is the one structural child transaction: the control plane authorizes
-the relationship, creates the child, proves readiness, persists the initial brief, and returns only
-structural delivery state. Models never handle occupant, lifecycle, readiness, inbox-address, or
-attachment identifiers.
+unbound free-chat launcher. For ordinary role-shaped work, free chat compiles the canonical
+architect brief and calls `dispatch_agent` once on the sprint document; an explicit
+developer-declared task-seat takeover targets the named role at its canonical altitude. A hosted spawning role uses the same public request
+under plane identity and direct-child scope. Caller kind is process-derived and absent from the
+request. The control plane creates the child, proves readiness, persists the exact initial brief,
+and returns only structural delivery state. A stale, invalid, mismatched, unbound, or unauthorized
+plane identity never falls back to ambient. Models never handle occupant, lifecycle, readiness,
+inbox-address, or attachment identifiers. Ordered source-lineage sync remains resumable through
+advertised conflict continuation, and role-table dispatch/tool rows are structural descriptions,
+not settings keys. An explicit takeover converges idempotently on the canonical seat: a viable
+occupant or durable queued brief is reused, and the launcher never manually replaces an incumbent.
+
+Unknown `AR_SPAWN_ROLE` values and role environments without plane-injected hosted identity fail
+closed; they never fall through to a pasted brief or free-chat launch. Reviewers bind the exact
+leaf, master, or sprint under review, and their manager/architect/orchestrator parent is stamped on
+the generation so a shared sprint reviewer address cannot blur plan and super authority.
 
 ### Conventions
 
@@ -43,11 +59,21 @@ and cross-role invariants.
 - Task-document-plus-role is seat identity; runtime occupant identity stays plane-private.
 - A queued structural dispatch is durable and follows the notifier retry path without duplicate
   briefs or respawn.
+- Ambient bootstrap and plane-hosted child dispatch are disjoint authority modes of the same
+  transaction; no public session primitive or compatibility fallback exists.
 - Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
+- Malformed hosted role identity is a refusal, not an ambient/free-chat fallback.
+- Reviewer routing and retirement use the validated generation parent, never an occupant id or
+  first-role guess.
 
 ### Todos
 
 None recorded.
+
+
+## CCR-R12@v5 Transaction Boundary
+
+Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
 
 ## Docs References
 
@@ -74,7 +100,12 @@ No sibling repository evidence is needed for this doctrine file.
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
-This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
+This sidecar describes the generated runtime copy, not canonical ownership. The source is
+synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process.
+Creation, exact-session readiness, and exact initial-brief delivery remain private phases inside
+one public `dispatch_agent` transaction; callers do not sequence or address those phases.
+Spawned-only or not-ready is not active work; `sessionCommands` remain launch configuration and
+`promptKeywords` apply once during the private readiness-to-brief transition.
 
 
 ### 260713-PHA-L5 Reviewed Hosted Cutover Impact
@@ -106,7 +137,94 @@ The packaged lifecycle roof now treats current task-derived lineage, exact-candi
 route review, and Dagger-only acceptance as shared lifecycle signals. Roles observe task-addressed
 durable operations; they never carry private job or commit identifiers between turns.
 
+## 260815-DAG-L2 Synchronized Execution Topology
+
+This packaged copy carries the fact/judgment split, architect-owned portfolio-plan loop,
+organizational direct-super lineage, atomic isolated-block lineage, and one-full-check-per-master
+completion boundary. It remains byte-identical to the canonical skill across every installed
+target; the runtime package is distribution, not a parallel doctrine authority.
+
+## 260815-DAG-L15 Review-Doctrine
+
+The Three-Party Loop paragraph now makes review independence explicit: the reviewer seat is never
+the author/implementer seat itself (no self-review of one's own leaf), and every requirement
+verdict must cite evidence of the requirement's class — rendering/visibility needs mounted-UI
+proof, scheduling/ordering needs operation-level proof, data-model needs artifact-level proof.
+Evidence of the wrong class is verdict laundering, not a pass.
+
+## M38 Per-Requirement Acceptance Projection
+
+This installed file is the synchronized projection of the canonical exact-set acceptance contract.
+It requires one worker evidence envelope and one independent reviewer adjudication for every stable
+requirement ID, rejects aggregate completion, and keeps the durable-evidence promotion hold point
+separate. It owns no package-local variant of that doctrine.
+Approved packets are immutable version-addressed files and carry the durable corpus ruling that
+every downstream seat verifies before accepting evidence.
+
+## M40-M45 Requirement Attempt Journal Projection
+
+This packaged copy now carries immutable candidate-bound worker attempts, separate independent
+reviewer records, closed failure classes, owner-recorded bounded invalidation, and
+leaf-authoritative/rebuildable non-gating master summaries. The canonical root skill remains the
+only doctrine owner.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
+## CCR-L42 current candidate
+
+The lifecycle doctrine now distinguishes baseline from fix-verification review, seals issue IDs, forbids outside-list review resets, and places atomic-child route review at canonical-master integration. Three rounds are the ordinary maximum; any extra round requires explicit developer authorization.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The lifecycle doctrine now distinguishes baseline from fix-verification review, seals issue IDs, forbids outside-list review resets, and places atomic-child route review at canonical-master integration. Three rounds are the ordinary maximum; any extra round requires explicit developer authorization.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized the
+  malformed-role refusal and polymorphic reviewer parent contract into the packaged onboarding.
+  Verification remains closeout-owned.
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: synchronized the
+  canonical-seat convergence and no-manual-replacement boundary for explicit task-seat takeover.
+  Verification remains closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the one-call architect launcher,
+  separated ordinary bootstrap from explicit named-role takeover, recorded resumable lineage
+  conflicts, and kept structural role rows outside settings. Verification remains closeout-owned.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized review-handoff-only attempts, separate protocol events,
+  and lightweight content-addressed journal semantics from canonical lifecycle doctrine.
+
+- 2026-08-27T18:06+02:00 — M40-M45: synchronized the complete Requirement Attempt Journal contract
+  and explicit non-gating summary boundary from canonical sources.
+
+- 2026-08-27T14:04+02:00 — Clarified the synchronized M39 projection with immutable
+  version-addressed packets and packet-local durable corpus approval.
+- 2026-08-27T13:32+02:00 — M39@v1: requirement compilation now precedes task topology; canonical
+  packets carry stable ID + version, pass a transcript-free cold read, and receive developer corpus
+  approval before filtered task projection. Downstream evidence remains bound to that exact
+  revision. Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded the synchronized per-ID acceptance contract and its
+  separation from durable-evidence promotion. Verification metadata stays pinned until governed
+  closeout stamps the PDLS commit.
+
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: the three-party-loop paragraph now states the reviewer
+  seat is never the author seat and requirement verdicts must cite their evidence class
+  (mounted-UI / operation-level / artifact-level proof). Verified at code commit de3a0fd9.
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized dependency-aware execution topology and
+  its authority/quality-altitude rules into the packaged lifecycle root. Verification remains
+  closeout-owned.
 - 2026-08-14T06:32+02:00 — L23 synchronized runtime doctrine: the lifecycle roof carries
   Dagger-only acceptance, manager lineage preflight, and candidate-bound independent route review
   before curation or lifecycle exit. Verification remains closeout-owned.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/observer/projection.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-29T17:23+02:00 |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                    |
 
 ## Governing Overview
@@ -27,8 +27,17 @@ L23 adds optional `lifecycleOperation` state to `EnclosureNode`; the browser rec
 
 Task, expectation, pickup, and attention projections can expose `TaskDocumentRef` so the dashboard
 joins the same real sprint/master/leaf hierarchy used by routing. `TaskDocNode` remains the
-JSON-primary task view; lifecycle attachment is optional. The observer does not choose current seat
-occupants or authorize relations.
+JSON-primary task view; lifecycle attachment is optional. Since 260815-DAG-L11 the sprint graph
+projection is leaf-segmented: `TaskExecutionNode` (kind `master` lump or `segment` + `leafIds`)
+and `TaskExecutionEndpointNode` (ref + optional segment-sampling `leafId`) mirror the persisted
+schema, with before-validators lifting legacy bare refs into the uniform served shape;
+`TaskExecutionEdgeNode` carries the optional `judgmentId`, and `TaskDocNode.executionWaves` derives
+over execution nodes. The observer does not choose current seat occupants or authorize relations. Since
+260815-DAG-L14 the task projection also carries first-class sprint structure:
+`TaskSubTaskRefNode.masterRef` (the typed commanded-master link — the dashboard opens that
+document directly; `None` for ordinary leaf rows and legacy slug-only rows) and `TaskSeatNode`
+(role/label/identity/state, `extra="forbid"`, mirroring `tasks.document.SprintSeat`), projected
+from `TaskDocument.seats`; `TaskDocNode.seats` defaults to empty so non-sprint docs are untouched.
 
 ### Conventions
 
@@ -52,9 +61,10 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:388-446 |
-| Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:614-661 |
-| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:996-1011 |
+| Pickup and expectation analytics carry structural references. | `AgentPickupNode` | mcp/src/agents_remember/observer/projection.py:392-431 |
+| Task documents remain the real projected hierarchy. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:736-801 |
+| The leaf-segmented graph projection (lump/segment nodes and sampling endpoints). | `TaskExecutionNode`; `TaskExecutionEndpointNode` | mcp/src/agents_remember/observer/projection.py:639-658; mcp/src/agents_remember/observer/projection.py:661-677 |
+| Workspace projection is the schema authority consumed by generation. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
 
 ## Cross-Repo References
 
@@ -72,7 +82,45 @@ Observer projection now imports `LifecycleOperationProjection` from
 `models.lifecycles.operation`. Engine-process composition and the task-derived source-lineage
 projection remain unchanged; this is an ownership-only model move.
 
+
+## 260815-DAG-L12 Render-Ready Graph View
+
+`TaskDocNode` gains the optional `executionGraphView` field (L12-R4): the render-ready per-node sprint graph (`observer/projection_graph.TaskExecutionGraphView`) the dashboard renders directly — node kind, master ref + title, leaf ids + titles, derived wave index, mechanically derived frontier state, execution nature, and predecessors with reasons. The field is `None` for documents without a graph (backward compatible); the dashboard never joins raw refs or re-derives waves.
+
+
+## 260821-CLIVE Disposable Queue And Discard History Projection
+
+Closeout nodes now expose service condition, source classification/fingerprint/problems, and exact
+waiting-generation members with classification, effective priority, order, and reasons. Candidate
+lifecycle state, active blocker, grade mutation, and commit/certification fields are removed.
+Task/master and series nodes also expose typed discarded-unstarted history and counts; `None`
+distinguishes a non-master from a master with an empty audit. The shared discard node/proof models
+come from the dedicated closeout projection module.
+
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for projection attention and process-state vocabularies and confirmed that their documented values and ownership are unchanged. Verification remains closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: reconciled projection models with waiting-only closeout state and audited discarded task history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+
+- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `TaskDocNode` gains the optional render-ready `executionGraphView` field (L12-R4). Verified at code commit b7f2c8e2.
+
+- 2026-08-20T04:24+02:00 — 260815-DAG-L14: `TaskSubTaskRefNode` gains the typed `masterRef`
+  (commanded-master link), `TaskDocNode` gains `seats` (`TaskSeatNode`, `extra="forbid"`), and the
+  served shape mirrors `tasks.document.SprintSeat`. Verified at code commit 9c3180c1.
+
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: added `TaskExecutionNode` / `TaskExecutionEndpointNode`
+  (with bare-ref lifting before-validators); `TaskExecutionEdgeNode` endpoints are now endpoint
+  nodes with an optional `judgmentId`, `TaskExecutionGraphNode.nodes` carries execution nodes, and
+  `TaskDocNode.executionWaves` derives over them; dashboard types are regenerated from this schema.
+  Verification remains closeout-owned.
+
+- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: TaskDocNode now projects declared execution nature,
+  persisted reasoned graph data, and mechanically derived waves using strict graph DTOs.
 
 - 2026-08-13T09:05+02:00 — L23 curator: reviewed the lifecycle projection import move and recorded
   its no-impact boundary; final provenance remains closeout-owned.
@@ -81,10 +129,10 @@ projection remain unchanged; this is an ownership-only model move.
 - 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 - 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound reducer consumption, mirror contract, event envelope, and `ACTIVE_STATES` assignment to operative spans, and extended the series-token row with explicit anchors for the per-reference loop and the token summation body. Verification metadata unchanged.
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the mirror partition narrative to the current `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES` source contract cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21). The local explanation and reference table were then rechecked against the current sources cit:(["STATE OF THE MIRROR"], mcp/src/agents_remember/observer/projection.py:221-221) cit:([`project_workspace`], mcp/src/agents_remember/observer/reducer.py:128-181) cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) cit:([`### 2.5 The observer and its projections`], docs/design/observable-lifecycle.md:241-251) cit:([`## 7. Design Principles Preserved`], docs/design/observable-lifecycle.md:363-390).
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the mirror partition narrative to the current `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES` source contract cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21). The local explanation and reference table were then rechecked against the current sources cit:(["STATE OF THE MIRROR"], mcp/src/agents_remember/observer/projection.py:221-221) cit:([`project_workspace`], mcp/src/agents_remember/observer/reducer.py:128-181) cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) cit:([`### 2.5 The observer and its projections`], docs/design/observable-lifecycle.md:241-251) cit:([`## 7. Design Principles Preserved`], docs/design/observable-lifecycle.md:363-390).
-- 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: documented the vocabulary-derived metrics map, the `awaitingDeveloperCount` bucket, and the collision refusal in the current source cit:([`ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `awaitingDeveloperCount`], mcp/src/agents_remember/observer/projection.py:240-240; mcp/src/agents_remember/observer/projection.py:243-258; mcp/src/agents_remember/observer/projection.py:261-283; mcp/src/agents_remember/observer/projection.py:286-286; mcp/src/agents_remember/observer/projection.py:315-315). The focused projection tests and reducer-side `_metrics` path remain the behavioral evidence cit:(["class MetricsBucketVocabularyTests(unittest.TestCase):", "class StateCountFieldTests(unittest.TestCase):", "def _metrics("], mcp/tests/test_observer_projection_metrics.py:128-128; mcp/tests/test_observer_projection_metrics.py:461-461; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:461-516).
-- 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: documented the vocabulary-derived metrics map, the `awaitingDeveloperCount` bucket, and the collision refusal in the current source cit:([`ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `awaitingDeveloperCount`], mcp/src/agents_remember/observer/projection.py:240-240; mcp/src/agents_remember/observer/projection.py:242-257; mcp/src/agents_remember/observer/projection.py:260-282; mcp/src/agents_remember/observer/projection.py:286-286; mcp/src/agents_remember/observer/projection.py:314-314). The focused projection tests and reducer-side `_metrics` path remain the behavioral evidence cit:(["class MetricsBucketVocabularyTests(unittest.TestCase):", "class StateCountFieldTests(unittest.TestCase):", "def _metrics("], mcp/tests/test_observer_projection_metrics.py:128-128; mcp/tests/test_observer_projection_metrics.py:461-461; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:461-516).
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the mirror partition narrative to the current `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES` source contract cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21). The local explanation and reference table were then rechecked against the current sources cit:(["STATE OF THE MIRROR"], mcp/src/agents_remember/observer/projection.py:227-227) cit:([`project_workspace`], mcp/src/agents_remember/observer/reducer.py:128-181) cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) cit:([`### 2.5 The observer and its projections`], docs/design/observable-lifecycle.md:241-251) cit:([`## 7. Design Principles Preserved`], docs/design/observable-lifecycle.md:363-390).
+- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change): corrected the mirror partition narrative to the current `LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, and `ACTIVE_STATES` source contract cit:([`LIVE_STATES`, `TERMINAL_STATES`, `LIFECYCLE_STATES`, `ACTIVE_STATES`], dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13; dashboard/src/types/projection.ts:21-21). The local explanation and reference table were then rechecked against the current sources cit:(["STATE OF THE MIRROR"], mcp/src/agents_remember/observer/projection.py:227-227) cit:([`project_workspace`], mcp/src/agents_remember/observer/reducer.py:128-181) cit:([`check_state_partition`], mcp/src/agents_remember/observer/lifecycle_state.py:73-98) cit:([`### 2.5 The observer and its projections`], docs/design/observable-lifecycle.md:241-251) cit:([`## 7. Design Principles Preserved`], docs/design/observable-lifecycle.md:363-390).
+- 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: documented the vocabulary-derived metrics map, the `awaitingDeveloperCount` bucket, and the collision refusal in the current source cit:([`ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `awaitingDeveloperCount`], mcp/src/agents_remember/observer/projection.py:246-246; mcp/src/agents_remember/observer/projection.py:249-264; mcp/src/agents_remember/observer/projection.py:267-289; mcp/src/agents_remember/observer/projection.py:292-292; mcp/src/agents_remember/observer/projection.py:321-321). The focused projection tests and reducer-side `_metrics` path remain the behavioral evidence cit:(["class MetricsBucketVocabularyTests(unittest.TestCase):", "class StateCountFieldTests(unittest.TestCase):", "def _metrics("], mcp/tests/test_observer_projection_metrics.py:128-128; mcp/tests/test_observer_projection_metrics.py:461-461; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:461-516).
+- 2026-08-01T00:35+02:00 — 260731-EFA-L4 curator: documented the vocabulary-derived metrics map, the `awaitingDeveloperCount` bucket, and the collision refusal in the current source cit:([`ACTIVE_STATES`, `state_count_field`, `state_count_fields`, `STATE_COUNT_FIELDS`, `awaitingDeveloperCount`], mcp/src/agents_remember/observer/projection.py:246-246; mcp/src/agents_remember/observer/projection.py:249-264; mcp/src/agents_remember/observer/projection.py:267-289; mcp/src/agents_remember/observer/projection.py:292-292; mcp/src/agents_remember/observer/projection.py:321-321). The focused projection tests and reducer-side `_metrics` path remain the behavioral evidence cit:(["class MetricsBucketVocabularyTests(unittest.TestCase):", "class StateCountFieldTests(unittest.TestCase):", "def _metrics("], mcp/tests/test_observer_projection_metrics.py:128-128; mcp/tests/test_observer_projection_metrics.py:461-461; mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-27; mcp/tests/test_observer_projection_metrics.py:128-233; mcp/tests/test_observer_projection_metrics.py:461-516).
 - 2026-07-31T16:35+02:00 — No content impact: the only change to
   `mcp/src/agents_remember/observer/projection.py` since the L2 base commit is the whole-tree
   `ruff format` pass in `00e8379`, which re-wrapped 4 line(s) with no token change whatsoever.

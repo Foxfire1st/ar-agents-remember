@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T14:32+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `../../../../../../../overview.md` |
 
 ## Governing Overview
@@ -24,12 +24,25 @@ exact artifact.
 
 ### Logic
 
+The synchronized caller matrix makes the orchestrator an ordinary plane-hosted caller for direct
+manager/system-specialist children and an ambient target only for explicit developer-declared
+takeover. Dispatch/tools rows remain structural documentation, not settings keys.
+The explicit takeover path converges on the existing canonical sprint seat and does not manually
+replace a viable occupant or duplicate its pinned brief.
+
 The orchestrator owns durable portfolio execution behind the architect. It dispatches managers and
-system specialists with `dispatch_agent` on canonical master or sprint documents, adopts
-architect-ruled plans, processes durable handovers, and decides the one open master handover gate by
-master document and kind. It never handles a child occupant id, exact readiness, raw inbox address,
-attachment id, or packet-carried gate id. Optional designer/strategist seats are architect children;
-reviewers are manager children.
+system specialists with `dispatch_agent` on canonical master or sprint documents, adopts the
+architect-ruled topology choice and its graph only when present, processes durable handovers, and
+decides the one open master handover gate by master document and kind. A developer-sanctioned
+strategist skip transfers the same complete planning duty to this seat; it does not waive
+classification, priority, dependency, coherence, or topology reasoning. It never handles a child
+occupant id, exact readiness, raw inbox address, attachment id, or packet-carried gate id. Optional
+designer/strategist and plan-review reviewer seats are architect children; leaf/master-exit
+reviewers are manager children, and super-exit reviewers are orchestrator children.
+
+The sprint super-exit reviewer generation is stamped with this orchestrator as structural parent,
+so its signals and retirement authority cannot be confused with the architect-stamped plan
+reviewer that uses the same sprint document and role address at a different time.
 
 ### Conventions
 
@@ -43,13 +56,38 @@ role, then synchronize.
 - Structural dispatch and structural gate decision fail closed on missing or ambiguous authority.
 - The orchestrator is backend-only and does not become manager, worker, reviewer, curator, or
   developer-facing architect.
+- A persisted `executionGraph` is optional; the explicit graph-less choice runs the
+  source-pair-selected atomic-sequential default and retains all planning judgments.
+- Task-document mutation is upstream of runtime selection; affected queue projections are
+  invalidated and rebuilt after planning changes.
+- The queue observes activation and owns no lifecycle, commit, or selection evidence.
 - This packaged artifact must remain byte-identical to the canonical role.
 
 ### Todos
 
 None recorded.
 
-## Cross-Repo Evidence
+
+## CCR-R12@v5 Transaction Boundary
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
+## Repo-Internal References
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The synchronized role makes topology choice mandatory but persists an execution graph only when that topology is selected. | `## Job P — Portfolio (streamline + plan)`; `## Job O — Orchestrate (execute the plan)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:183-259; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:260-486 |
+| The orchestration-task template defines one effective priority, graph-less adoption, and the full nodes-plus-evidence-edges bootstrap. | `## Rules`; "## Topology Choice And Canonical executionGraph Adoption Payload" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:14-57; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:127-168 |
+| Root skills are canonical and the sync script publishes byte-identical package and harness copies. | `SkillTarget`; `TARGETS` | scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
+
+## Cross-Repo References
 
 No sibling repository evidence is needed for this doctrine file.
 
@@ -71,17 +109,23 @@ inbox acceptance remains distinct from explicit consumption where applicable.
 
 ### 260731-EFA-L17 — Quality Altitude Ladder
 
-The orchestrator's quality altitude uses the pinned Dagger graph for Agents Remember acceptance.
-Leaf/focused work selects targeted mode; `worktree_integrate` selects full mode exactly once at
-master altitude. Both require the explicit task-derived diff base, and host pytest/wrapper runs
-are refused rather than accepted or used as fallback. `memory_quality_check` stays a per-leaf
-closeout gate; orchestrators do not run a separate full graph per leaf.
+The orchestrator consumes targeted worker checks and scoped curator checks. Full quality, full tests,
+full memory quality, certification, and review remain explicit operations; closeout and integration
+do not infer a quality gate or launch those tools automatically.
+
+## 260815-DAG-L14 Doctrine Sync
+
+The seat-row prescription is replaced by the first-class sprint seats structure plus the atomic
+`attach_master` adoption flow: sprint seats live on the sprint document (`SprintSeat` rows), and
+commanding a master is one validated `task_doc.attach_master` batch (typed `masterRef` row +
+membership slug + nature assertion when needed + graph node only when a graph already exists) —
+never the three-write manual flow.
 
 ## L23 Final Candidate Disposition
 
-The orchestrator observes closeout and integration through canonical task status. Leaf acceptance is
-targeted Dagger; master acceptance is one full Dagger graph at master integration altitude, with no
-model-managed checklist or fallback runner.
+The orchestrator observes closeout and integration through canonical task status. The ordinary path
+publishes the authorized Git transaction; any explicit quality or review operation remains with its
+own lifecycle owner.
 
 ## R39 Generic Quality Altitude
 
@@ -89,7 +133,107 @@ The orchestrator resolves executor, environment, retry, resource, and evidence c
 repository memory rather than supplying Agents Remember-specific instructions. Leaf closeout and
 master integration remain the only acceptance owners.
 
+## 260815-DAG-L2 Ready-Frontier And Landing Authority
+
+The orchestrator recomputes the ready frontier after every material event and records rationale,
+evidence, author, confidence, and supersession before a priority/queue judgment changes selection.
+Organizational leaves land directly as released; the last one forms the exact proposed final
+candidate and receives the full master check before super moves. Atomic masters expose no partial
+leaf state to super; source-pair activation may pause one live master and select another, while the
+separate landing authority serializes protected-ref movement. Integration refs are never repair
+workbenches; fixes return to an owning/reopened or new scoped leaf.
+
+## 260815-DAG-L13 Scheduling Default Doctrine
+
+Adoption doctrine states that a sprint adopted without an `executionGraph` runs the
+atomic-sequential default. If the ruled plan
+later selects an explicit graph, attach every commanded master first, then bootstrap the graph in
+one complete `task_doc.author_execution_graph` batch containing every node and evidence-backed
+edge; only an established graph is edited incrementally. The `migrate_execution_topology`
+legacy-cutover reference is gone.
+
+## 260815-DAG-L15 Review-Doctrine
+
+Job O gains a review-independence and evidence-type paragraph: this seat never reviews its own
+leaf or plan implementation as the "independent" route reviewer (260815-DAG L7/L8/L9 were
+orchestrator self-reviews), and never passes a requirement on evidence of the wrong class —
+rendering/visibility needs mounted-UI proof, scheduling needs operation-level proof, data-model
+needs artifact-level proof. Route reviews come from a distinct reviewer seat; this seat reviews
+only at super-exit, through a spawned reviewer.
+
+## 260821-DAGQC-L4 Planning And Scheduling Closure
+
+Every ready candidate resolves to one effective priority before comparison: its candidate-specific
+row overrides the owning-master default; otherwise the default is inherited. The orchestrator owns
+portfolio-wide comparison of those effective grades, while graph or commanded-master order is only
+an equal-grade tie-break. A missing graph is not a stale-plan signal by itself. The signal is a
+missing/invalid topology choice, missing execution nature, or materially stale dependency,
+classification, or priority model.
+
+Graph-less adoption attaches all masters and stops, selecting atomic-sequential execution. Explicit
+graph adoption from that state attaches all masters first and then publishes one complete
+nodes-plus-evidence-edges batch. No fake graph, partial bootstrap, runtime fallback, or mandatory-
+graph compatibility path exists.
+
+## IAS Activation, Queue, And Conflict Boundary
+
+Before atomic implementation exposure, manager/worker dispatch selects the exact source pair as
+`reconciling`, auto-pauses the former selection, source-syncs the selected master, and publishes
+`active` only when both bases are current. Reviewer/curator inspection does not switch selection,
+and pausing preserves chats, processes, worktrees, contracts, and claimed journals.
+
+Task authoring never waits for activation or queue permission. The queue is a disposable observer
+of active/reconciling/paused/vacant waiting facts. Malformed selector state fails closed only for
+affected runtime admission/projection and is archived/replaced by a selecting operation; no
+contract-presence fallback exists. Technically derivable retained conflicts are resolved through
+the advertised continue/cancel operation; only genuine semantic ambiguity returns to the architect.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: recorded the baseline/fix-verification review packet, atomic-child master-review boundary, and explicit three-round/developer-authorization rule in the synchronized runtime role card.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized the
+  orchestrator-stamped super reviewer and its separation from the architect plan reviewer.
+  Verification remains closeout-owned.
+
+- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: synchronized idempotent
+  canonical-seat convergence for an explicit orchestrator takeover. Verification remains
+  closeout-owned.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the orchestrator's plane caller,
+  explicit ambient-takeover target, and fixed structural-row boundary. Verification remains
+  closeout-owned.
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference headings for this changed
+  synchronized orchestrator-role card.
+
+- 2026-08-26T05:20+02:00 — Reconciled the generated orchestrator role with exact source-pair
+  selection, pause preservation, separate landing authority, task-authoring primacy, disposable
+  queue observation, and agent-owned resumable conflicts. Verification remains closeout-owned.
+
+- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: made strategist-skip reasoning complete, graph
+  persistence and attachment-node creation conditional, priority override/default resolution
+  explicit, and first graph adoption one complete nodes-plus-edges batch. Canonical/generated sync
+  is complete; Dagger acceptance remains closeout-owned and pending.
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: Job O now states review independence — never review
+  your own leaf/plan as the independent route reviewer, and match requirement verdicts to their
+  evidence class. Verified at code commit de3a0fd9.
+
+- 2026-08-20T05:08+02:00 — 260815-DAG-L14: the seat-row prescription is superseded by the sprint
+  seats structure and the atomic `attach_master` adoption flow (canonical + generated copies kept
+  identical by `scripts/sync-skills.py`). Verified at code commit 2f494982.
+
+
+- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
+  graph-less sprints run atomic-sequentially and `author_execution_graph` bootstraps/edits the
+  graph; the `migrate_execution_topology` reference is gone. Verification remains closeout-owned.
+
+- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
+
+- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized ready-frontier judgment records,
+  organizational/atomic landing, reviewer lineage, and no-workbench repair routing. Verification
+  remains closeout-owned.
 
 - 2026-08-14T11:25+02:00 — R39 curator: reconciled the generic orchestrator with
   repository-resolved acceptance and no fallback. Verification remains closeout-owned.

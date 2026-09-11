@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/terminal.py`   |
 | doc_type               | `file-level-onboarding`                           |
 | lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                     |
 
 ## Governing Overview
@@ -58,6 +58,8 @@ No cross-repository implementation dependency governs this file.
 
 ## Update History
 
+- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: repaired 2 stale citation ranges surfaced by the leaf-scoped quality check (`_RETIRE_OK_STATUSES` terminal_tools.py:914→921; `SessionRenameStatus` models/terminal.py:193→194) after the DAG line movement; no content impact on the documented contracts. Verification metadata remains closeout-owned.
+
 - 2026-08-12T20:25+02:00 — L23 curator: re-read the typed refusal seam after spawn refusal construction moved to `application/terminal_spawn_results.py`; the wrapper still delegates and the centralized builder now owns lineage-capable refusal shape. Verification remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n- 2026-08-04T03:21:00+02:00 — S18-SR3-B05 curator: regenerated the separate exact-session refusal protocol binding with the locked scoped fixer and inspected the complete generated function extent; no approved semantic claim changes.
@@ -74,14 +76,14 @@ No cross-repository implementation dependency governs this file.
   takes `SpawnAgentSessionStatus` at the centralized application translator, and the current `_knob_refusal` check table retains that alias while delegating refusal construction
   cit:(["def _knob_refusal("], mcp/src/agents_remember/application/terminal_tools.py:466-484); the new
   cit:([`_retire_payload`], mcp/src/agents_remember/application/terminal_tools.py:917-952)
-  and cit:([`_rename_payload`], mcp/src/agents_remember/application/terminal_tools.py:1090-1111) are the
+  and cit:([`_rename_payload`], mcp/src/agents_remember/application/terminal_tools.py:1112-1133) are the
   single builders for their tools' results, so
   cit:([`session_retire_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:66-83) and
   cit:([`session_rename_payload`], mcp/src/agents_remember/mcp/tools/terminal.py:86-95) no
   longer restate the shape at each call site;
-  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:914-914) gives
+  cit:([`_RETIRE_OK_STATUSES`], mcp/src/agents_remember/application/terminal_tools.py:944-944) gives
   `SessionRetireResponse.ok` one owner. The aliases are imported from `models/terminal.py`
-  cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:51-82; mcp/src/agents_remember/models/terminal.py:161-167; mcp/src/agents_remember/models/terminal.py:193-193)
+  cit:([`SpawnAgentSessionStatus`, `SessionRetireStatus`, `SessionRenameStatus`], mcp/src/agents_remember/models/terminal.py:51-82; mcp/src/agents_remember/models/terminal.py:164-170; mcp/src/agents_remember/models/terminal.py:196-196)
   to avoid the cycle. Recorded
   the finding that `SpawnAgentSessionStatus` folds in `worktrees/leaf_refs.py::LeafRefStatus`, so
   two of the thirteen spawn statuses are produced entirely outside any file enumerating spawn

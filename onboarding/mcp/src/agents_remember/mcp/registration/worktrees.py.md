@@ -5,9 +5,9 @@
 | repository             | agents-remember                                               |
 | path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
 | doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                    |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
+| lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview      | `overview.md`                                                 |
 
 ## Governing Overview
@@ -52,10 +52,12 @@ bundle `resolve_context` uses. Attach is read-only (it mutates no git) and takes
 (`save` promotes an unsaved fleeting lifecycle, `discard` abandons it) to clear the save gate.
 Status reports phase, dirty flags, next-step hints, and the live provider-setup block.
 
-`worktree_sync(contract_path, memory_sync_choice, dry_run)` forwards flat. Its docstring states the
-atomic base-pair advance, the mid-cycle block (the new code tip must be ledger-mapped at the
-official memory tip, otherwise run carryover first), the `merge-memory` / `skip-memory` recovery,
-and the sync-early doctrine.
+`worktree_sync(contract_path, memory_sync_choice, resolution_action, dry_run)` forwards flat with
+shared `Literal` types. Its help now describes retained code/chosen-memory conflicts: the agent
+resolves and stages in the reported worktree, then calls the same contract with
+`resolution_action='continue'`, or restores pinned pre-sync heads with `cancel`. It does not expose
+an operation id or promise abort-on-conflict behavior. `skip-memory` is an admission/preflight
+choice, not a way to change an already-running generation.
 
 ### Invariants And Boundaries
 
@@ -65,15 +67,36 @@ and the sync-early doctrine.
   and `worktree_status` are read-only and take no dry-run flag.
 - Contract creation, git mechanics, provider setup, and lifecycle promotion live in
   `application/worktree_tools.py` and the `worktrees/` package.
+- Registration publishes the shared closed memory-choice/continue/cancel vocabulary; no free-string
+  compatibility parameter or alternate sync tool is registered.
+
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders these forward to. | `worktree_start_payload`, `worktree_attach_payload`, `worktree_status_payload`, `worktree_sync_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:33-43; mcp/src/agents_remember/mcp/tools/worktree.py:46-61; mcp/src/agents_remember/mcp/tools/worktree.py:64-73; mcp/src/agents_remember/mcp/tools/worktree.py:76-77 |
-| `TaskIdentity`, `TaskBases`, `StartExecution`. | `TaskIdentity`, `TaskBases`, `StartExecution` | mcp/src/agents_remember/application/worktree_tools.py:40-54; mcp/src/agents_remember/application/worktree_tools.py:57-71; mcp/src/agents_remember/application/worktree_tools.py:74-82 |
-| `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
-| The three-way split and the light-task default proved through a live server. | `test_worktree_start_splits_identity_bases_and_execution`, `test_worktree_start_defaults_to_a_real_light_task_start` | mcp/tests/test_mcp_registration_wiring_tests_1.py:608-651; mcp/tests/test_mcp_registration_wiring_tests_2.py:29-46 |
+| The public sync declaration exposes typed memory choice and contract-addressed continue/cancel with retained-conflict help. | `worktree_sync` | mcp/src/agents_remember/mcp/registration/worktrees.py:233-259 |
+| The start payload forwards task identity, bases and execution configuration to the application owner. | "def worktree_start_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:51-61 |
+| The attach payload forwards the requested worktree attachment to the application owner. | "def worktree_attach_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:84-93 |
+| The status payload reads status through the application owner. | "def worktree_status_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:96-105 |
+| The sync payload forwards the synchronization request to the application owner. | "def worktree_sync_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:64-81 |
+| The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-29 |
+| The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. | `TaskBases` | mcp/src/agents_remember/application/worktree_tool_requests.py:32-47 |
+| The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. | `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:50-56 |
+| `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned registration surface.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## L23 Final Candidate Disposition
 
@@ -81,7 +104,72 @@ Public worktree registrations remain task-addressed and immediate-returning. Dur
 identity, candidate trees, worker processes, and recovery state stay behind the application/service
 boundary and are not added to the tool schema.
 
+## 260815-DAG-L4 Authority Boundary
+
+L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `register_worktree_tools`. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes `register_worktree_tools` at this ownership boundary. | `register_worktree_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:27-31 |
+
+## 260821-CLIVE Stable-Address Registration Contract
+
+Registered help now makes the address chain explicit: start reserves the configured contract
+address and enclosure manifest before exposing work; attach resumes only through that exact locator
+and never scans task/worktree/report paths; status resolves the independent locator and then either
+the live root journal or exact terminal archive/receipt. Conflicting reservations and invalid
+terminal proof fail closed, with no inferred enclosure-root fallback.
+
+## 260831-CCR-L15 Status-Wait Server Tool
+
+`_register_worktree_observation_tools` now registers the `@server.tool()`
+`worktree_status_wait` tool addressed by `contract_path`,
+`operation_kind`, `expected_generation`, `after_revision`, and
+`timeout_seconds` (default 30.0), dispatching to
+`worktree_status_wait_payload`. The tool docstring promises the read-only CCR-R15 wait
+contract: heartbeats/log growth never wake it, a generation successor wakes an old-generation wait
+with explicit successor information, and wrong contract/generation/cursor and unreadable journals
+refuse typed.
+
 ## Update History
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `worktree_sync` repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:233-259. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait` server-tool registration under the observation tools.
+- 2026-09-03T12:30+02:00 — 260831-CCR provenance-debt repair: replaced the terse multi-anchor `TaskIdentity`, `TaskBases`, `StartExecution` row with three rows, one per distinct definition, pointing each anchor at its unique class definition in application/worktree_tool_requests.py (15-29, 32-47, 50-56) and naming the per-object fields. The names previously resolved 3 times each because worktree_tools.py only imports and annotates them (import lines 113-115, signature annotations 121-124 and 229-232), so occurrence matching found three sites per name; each claim now maps to exactly one definition and verifies uniquely.
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
+  public worktree registration card.
+
+- 2026-08-26T08:30+02:00 — Rebounded the public worktree-registration citation to the frozen
+  helper extent after final consolidation.
+
+- 2026-08-26T03:37+02:00 — Updated the registered sync signature/help for typed retained-conflict
+  continuation and exact cancellation. No operation-id or fallback surface was added. Verification
+  remains post-Dagger/closeout-owned.
+
+- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged stable locator, strict attach, and terminal-aware status semantics. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 - 2026-08-14T06:32+02:00 — No public schema impact: L23 preserves the worktree registration surface
   while closeout/integration run as task-addressed durable operations behind it. Verification
   remains closeout-owned.

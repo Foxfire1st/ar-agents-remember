@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/tasks/document.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                        |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-09T14:45+02:00|
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -48,6 +48,51 @@ it commands (its task folder, doc id, or title — the dashboard matches forgivi
 design — `default_factory=list`, no new `DocKind`, no migration; docs without the field validate
 and serialize exactly as before, and masters named nowhere stay top-level.
 
+Since 260815-DAG-L14 the sprint document also carries first-class `seats` (`SprintSeat`:
+role/label/identity/state — the manager-seat precedent on master docs, so seat task documents leave
+the sprint task index while existing ones stay on disk as historical records) and a `subTasks` row
+may carry a typed `masterRef` (`TaskDocumentRef` — the exact commanded master document it tracks,
+rendered as a real markdown link). Both are sprint-only by validator
+(`_check_sprint_rows_and_seats`): a `masterRef` row or non-empty `seats` requires `kind == "master"`
+with non-empty `orchestrates`; seat roles are unique among planned/active seats (a retired → active
+succession of the same role is the only reading consistent with a `state` field). The role
+altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/strategist/designer/
+system-specialist), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
+`REVIEWER_ALTITUDES` explicitly makes reviewer the one polymorphic role across sprint, master, and
+leaf review manifestations. `SprintSeat` consequently permits reviewer alongside the ordinary
+sprint roles. `document_refs` re-exports these definitions (importing from it here would cycle).
+
+Execution topology is explicit and separate from containment. A commanded master declares the
+closed `executionNature` value `organizational` or `atomic`; an orchestration sprint instead owns a
+`SprintExecutionGraph` of `SprintExecutionNode` nodes and reasoned predecessor/successor edges.
+Since 260815-DAG-L11 a node is either a `master` lump (the whole master) or a `segment` (one master
+ref plus a non-empty, unique `leafIds` list); a legacy bare `{repository, path}` node lifts to a
+lump on parse and serializes back to the bare shape, so lump-only graphs round-trip
+byte-identically. Python equality and hashing are structural node identity only: kind, ref, and
+leaf list. A caller asking which master owns a node compares `node.ref`; a caller selecting a leaf
+uses endpoint resolution. Edges
+(`SprintExecutionEdge`) gain an optional `judgmentId`, and each endpoint is a bare ref or a
+`SprintExecutionEndpoint` (`ref` + `leafId`) addressing the segment that contains that leaf;
+resolution to exactly one node happens in graph validation, never at endpoint parse time. The graph rejects
+duplicate nodes/edges, self edges, undeclared or ambiguous endpoints, blank reasons/judgment ids,
+and cycles; it enforces sprint-wide leaf-ownership uniqueness plus lump/segment mutual exclusion
+per master, then derives deterministic topological waves over nodes without persisting positions.
+Attempt 8 moves that intrinsic algorithm into `execution_graph_validation.py`: one endpoint index
+and one resolved-edge population serve admission, waves, placement predecessors, and deterministic
+cycle discovery. `SprintExecutionGraph` retains the persisted schema and its `ValueError` surface,
+records exact `execution_graph_validation_work`, and delegates both initial admission and later wave
+reads to the same indexed analysis. Named cycle refusals therefore remain unchanged without the
+former duplicate DFS implementation in this already-large schema module.
+Legacy absence remains parseable only for the finite migration path; no validator infers a default.
+
+`derived_leaf_placement` maps one master's planned leaf ids onto its authored segments and derives
+a pure, never-persisted placement for unplaced leafs — a master's leaf set that grew after graph
+authoring — into the master's latest unblocked segment (latest by derived wave, then declaration
+order; `derived_all_blocked` flags the all-segments-blocked fallback). `leaf_placement_facts`
+shapes unknown/unplaced placements as reported facts (never silent, never auto-written), and
+`numbering_drift_hints` reports leaf-numbering inversions across derived waves as facts that never
+refuse.
+
 `step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
 substeps when it has any, else the step itself), and `current_step` returns the first
 in-progress/blocked step, else the first unfinished one, else `None`.
@@ -72,6 +117,13 @@ For lossless round-trip of our real hand files (R4), a leaf doc also carries: a 
 (a `HeaderNote` list → extra `**Key:** value` header lines such as Verified/Source), and freeform
 `sections` (the master-only field, now legal on a leaf, `freeform` kind only — rendered after References as
 the escape hatch for bespoke prose; the standard template sections stay the backbone).
+
+Under CCR-R03@v1 the route-review record became self-content-addressing. `RouteReviewUnit` carries
+`evidenceSha256` per evidence file, and `RouteReviewRecord` carries `verdictSha256`,
+`dependencies` (the typed `route-review/v1` declaration), and `recordDigest`. The record validator
+requires all content-addressing fields together, validates the declaration against the route-review
+policy, and forces `recordDigest` to equal the canonical SHA-256 of the record's own JSON bytes
+cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/route_review.py:36-42; mcp/src/agents_remember/tasks/route_review.py:140-153).
 
 ### Invariants And Boundaries
 
@@ -99,14 +151,40 @@ the escape hatch for bespoke prose; the standard template sections stay the back
   ("a {kind} document has no orchestrates (master-only)") — an orchestration task is a `master`
   doc carrying the field, never a new kind; insignia/hierarchy consumers (observer projection →
   dashboard) treat an empty list as "not an orchestration task".
+- **Acyclicity refusals name the cycle (L15):** `derived_waves` raises with the exact cycle members,
+  never a bare "must be acyclic" — the delegated member search remains deterministic by declaration
+  order and shares the admitted indexed edge population.
+- **One intrinsic graph analysis:** node/leaf/edge validation, wave derivation, placement
+  predecessors, and cycle reporting all consume `execution_graph_validation.py`; the exact operation
+  record is available through `execution_graph_validation_work`.
+- **Node identity is structural:** `SprintExecutionNode` compares only with another node and hashes
+  `(kind, ref, leafIds)`. It never aliases `TaskDocumentRef`; legacy bare-ref lifting and wire
+  serialization are independent and remain unchanged.
+- **Route-review content addressing is all-or-nothing (R03):** partial digest fields, an invalid
+  dependency declaration, or a non-matching record digest all refuse validation, so no record can
+  mix hashed and unhashed evidence.
+
+### Todos
+
+None.
+
+## Docs References
+
+No Domain Documentation sources are configured for this repository-internal persisted model.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The renderer consumes this model. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:28-48 |
-| The store reads/writes this model. | `read_task_doc`; `write_task_doc` | mcp/src/agents_remember/tasks/store.py:32-33; mcp/src/agents_remember/tasks/store.py:36-37 |
-| The persisted-contract peer this mirrors. | `TaskDocNode` | mcp/src/agents_remember/observer/projection.py:608-654 |
+| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
+| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
+| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:285-306 |
+| The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-153 |
+| The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:327-334 |
 
 ## L23 Final Candidate Disposition
 
@@ -114,7 +192,66 @@ Task-document readers derive canonical sprint, master, and leaf containment used
 and route-review authority. Those document relationships, not branch names or runtime ids supplied by
 an agent, select the task boundary.
 
+## 260815-DAG-L15 Named Cycle Refusals
+
+The playthrough F4 finding ("cycle errors never name the cycle members") remains fixed in the graph
+model: `SprintExecutionGraph.derived_waves` raises `execution-graph must be acyclic; cycle members:
+A -> B`. Attempt 8 delegates the Kahn/DFS work to the one indexed intrinsic graph analysis and keeps
+the thin `_find_cycle_members` compatibility helper on the same algorithm. The refusal dialect stays
+a `ValueError`-family shape that the application boundary translates to the typed `TaskDocError`
+family.
+
+## 260831-CCR-R03 Route-Review Content Addressing
+
+The route-review record now binds per-evidence-file SHA-256 digests, the `route-review/v1`
+dependency declaration, and a canonical self-digest; `build_route_review` stamps all three from the
+exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
+
 ## Update History
+
+- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
+- 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_graph_endpoint` repointed to mcp/src/agents_remember/tasks/document.py:285-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
+
+
+- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the route-review record's content-addressing fields (evidence SHA-256 digests, dependencies, recordDigest) and the all-or-nothing validator binding; prior task-schema and graph-model prose preserved.
+
+- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: extracted intrinsic execution-graph
+  validation into one indexed, operation-counted analysis reused by admission, waves, placement,
+  and cycle reporting; preserved the task-document wire and refusal surface. Verification remains
+  closeout-owned.
+
+- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded reviewer as one
+  explicitly polymorphic role across leaf, master, and sprint task documents, including sprint-seat
+  schema admission. Verification remains closeout-owned.
+
+- 2026-08-24T13:43+02:00 — DAGQC L1: removed `SprintExecutionNode` cross-type equality/hash
+  aliasing with `TaskDocumentRef`; node identity is structural and ownership comparisons are
+  explicit through `node.ref`. Legacy lump parse/serialization remains unchanged. Verification
+  metadata remains pinned until closeout.
+
+- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `derived_waves` acyclicity refusals now name the exact
+  cycle members (`_find_cycle_members`/`_residual_adjacency`/`_dfs_cycle_members`/`_CycleSearch`,
+  playthrough F4). Verified at code commit de3a0fd9.
+
+- 2026-08-20T04:14+02:00 — 260815-DAG-L14: `TaskDocument` gained first-class sprint `seats`
+  (`SprintSeat` — role/label/identity/state, sprint-only, unique among non-retired roles) and
+  `SubTaskRef` gained the optional typed `masterRef` (the commanded master document a row tracks).
+  `SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES` moved here as the canonical altitude declaration.
+  Verified at code commit 2f494982.
+
+- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the sprint graph model is now leaf-segmented —
+  `SprintExecutionNode` lumps or per-master segments with legacy bare-ref lifting and byte-identical
+  lump re-serialization, judgment-provenanced edges with segment-sampling endpoints, sprint-wide
+  leaf uniqueness and lump/segment mutual exclusion, node-derived waves, and the pure
+  `derived_leaf_placement` / `leaf_placement_facts` / `numbering_drift_hints` fact helpers.
+  Verification remains closeout-owned.
+
+- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the JSON-primary task schema now distinguishes
+  commanded-master execution nature from sprint-only reasoned AON graphs, derives stable waves, and
+  rejects duplicate, unknown, self-referential, blank-reason, cyclic, or wrong-kind shapes.
 - 2026-08-14T06:34+02:00 — L23 final candidate review: task-document parsing derives canonical
   parent series/master/leaf relationships used by transitive lineage and route-review authority.
   Verification remains closeout-owned.

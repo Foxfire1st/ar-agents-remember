@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/signal_routing.py`           |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-31T04:50+02:00 |
+| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
+| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -24,9 +24,17 @@ catalog occupant after the structural owner is known.
 ### Logic
 
 `derive_signal_owner` walks exactly one role-appropriate parent edge; decision items route to the
-sprint architect. `_current_occupant` prefers the current document binding, accepts a singular
-staged replacement only when no incumbent remains, and refuses ambiguity. Progress checks follow the
-task chain rather than spawn ancestry.
+sprint architect. `_current_occupant` delegates current document/staged-replacement precedence to
+the shared `current_seat_occupant` selector and translates typed occupancy ambiguity into a routing
+error. Progress checks follow the task chain rather than spawn ancestry.
+`StructuralRoutingError` belongs to the shared `AgentsRememberError` family; this adapter uses it
+only to translate the selector's occupancy ambiguity into the routing boundary's own typed meaning.
+
+Reviewers use the same role at three task altitudes and four review contexts. Their catalog
+generation therefore carries a structural-parent document+role stamp. Routing validates that stamp
+and targets the exact manager, architect, or orchestrator owner. Only historical unstamped leaf
+reviewers retain their deterministic manager owner. Unstamped master and sprint reviewers refuse:
+those higher review manifestations require a generation-bound plane stamp and are never inferred.
 
 ### Conventions
 
@@ -38,6 +46,9 @@ agent/lifecycle correlations.
 - Task containment, never spawn ancestry, defines parent routing.
 - Missing or ambiguous occupants are not replaced by a global same-role guess.
 - Runtime correlations are delivery evidence, not the route key.
+- Signal routing does not carry a second implementation of incumbent/heir precedence.
+- A polymorphic reviewer routes by its validated generation-bound parent stamp; the shared reviewer
+  address never authorizes a first-role or guessed sprint owner.
 
 ### Todos
 
@@ -51,15 +62,33 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Current occupant selection is document-and-role scoped and ambiguity-strict. | `_current_occupant` | mcp/src/agents_remember/controlplane/signal_routing.py:44-81 |
-| Owner routing follows structural role and task containment. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:165-196 |
-| Progress evaluation follows the same task chain. | `task_chain_has_progress` | mcp/src/agents_remember/controlplane/signal_routing.py:228-265 |
+| Current occupant selection is document-and-role scoped and ambiguity-strict. | `_current_occupant` | mcp/src/agents_remember/controlplane/signal_routing.py:45-62 |
+| Owner routing follows structural role and task containment. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:206-240 |
+| Reviewer routing validates the altitude-specific parent and limits unstamped migration to historical leaf rows. | `_reviewer_parent_owner`; `_validate_reviewer_parent` | mcp/src/agents_remember/controlplane/signal_routing.py:157-203 |
+| Progress evaluation follows the same task chain. | `task_chain_has_progress` | mcp/src/agents_remember/controlplane/signal_routing.py:273-293 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-08-31T04:59+02:00 — Tightened reviewer signal routing so unstamped master rows no longer
+  invent a manager parent; only the historical leaf-only population receives bounded migration
+  meaning. Verification remains closeout-owned.
+
+- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded
+  generation-bound reviewer owner routing, its altitude matrix, and the fail-closed unstamped
+  sprint boundary. Verification remains closeout-owned.
+
+- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
+
+- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: recorded shared error-family
+  ownership for `StructuralRoutingError`; route semantics remain unchanged. Verification remains
+  closeout-owned.
+
+- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: routed current-generation selection through the
+  shared seat selector and retained typed fail-closed ambiguity. Verification remains closeout-owned.
 
 - 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `signal_routing.py` with plane-owned seat identity, routing, and enforcement boundaries.
 - 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n

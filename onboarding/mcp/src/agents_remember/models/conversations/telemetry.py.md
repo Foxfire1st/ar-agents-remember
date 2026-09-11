@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/src/agents_remember/models/conversations/telemetry.py` |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                        |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-08-29T17:23+02:00                                               |
+| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                                        |
+| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -34,6 +34,16 @@ telemetry, runtime-fixture evidence, and fingerprint behaviours named by its top
 - `RuntimeFixtureEvidence`
 - `operation_fingerprint`
 
+`RuntimeFixtureEvidence` records a runtime observation with its runtime version, capture time,
+production seam, and declared `allowlist-v1` redaction policy. Its `enables_capabilities` field is
+literally false: a recording, version pin, or fixture count cannot enable a runtime capability.
+Each observation retains an explicit reason and distinguishes `observed`, `partial`, `unavailable`,
+and `not-exercised`; unavailable operations must not be rewritten as successful observations.
+The model validates these evidence fields, not whether arbitrary captured text was actually redacted.
+
+cit:([`RuntimeFixtureObservation`], mcp/src/agents_remember/models/conversations/telemetry.py:80-84)
+cit:([`RuntimeFixtureEvidence`], mcp/src/agents_remember/models/conversations/telemetry.py:87-97)
+
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/models/conversations/telemetry.py`.
@@ -45,5 +55,7 @@ telemetry, runtime-fixture evidence, and fingerprint behaviours named by its top
 | The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
 ## Update History
+
+- 2026-08-29T17:23+02:00 — No content impact: reviewed `MetricEvidence` after its Python 3.13 lexical type-parameter migration and confirmed that metric value, evidence, scope, and provenance behavior remain as documented. Verification remains closeout-owned.
 
 - 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

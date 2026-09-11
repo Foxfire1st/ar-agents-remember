@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/provider_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-24T00:27+02:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -131,17 +131,20 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 | Provider summary and diagnostics projection live in the provider status module. | `provider_status_packet`; `provider_diagnostics_packet` | mcp/src/agents_remember/providers/status.py:53-87; mcp/src/agents_remember/providers/status.py:105-127 |
 | Provider response models distinguish compact summaries from diagnostics/native payloads. | `ProviderSummary`; `ProviderStatusResponse`; `ProviderDiagnosticsResponse`; `ProviderNativeToolResponse` | mcp/src/agents_remember/models/providers.py:75-93; mcp/src/agents_remember/models/providers.py:96-119; mcp/src/agents_remember/models/providers.py:138-158; mcp/src/agents_remember/models/providers.py:182-188 |
 | Provider status and diagnostics payload builders produce the application-facing model inputs. | `provider_status_payload`; `provider_diagnostics_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52 |
-| The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:70-72 |
-| Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:47-61 |
-| Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tool_response.py:15-26 |
-| The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tool_registry.py:116-179 |
-| Unit tests guard action naming (refresh rejected), the disk-disabled invalidate-indexes refusal, the always-legal stop, and worktree routing resolution. | `WatcherActionNamingTests`; `WorktreeTargetResolutionTests` | mcp/tests/test_provider_watcher_actions.py:43-77; mcp/tests/test_provider_worktree_routing.py:66-125 |
+| The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:84-98 |
+| Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
+| The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
+| Watcher actions reject ambiguous refresh, retain stop/status, and require live launch authority for start/restart/invalidation. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:50-89 |
 | The launch-authority configuration exposes reload and requirement gates. | `ProviderAuthority`; `reload_provider_authority`; `require_provider_launch_authority` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:151-171; mcp/src/agents_remember/kernel/primitives/runtime_config.py:174-199; mcp/src/agents_remember/kernel/primitives/runtime_config.py:202-221 |
 | The watcher application entry point calls the launch gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
 | The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation. | `grepai_search_tool`; `_provider_operation_result` | mcp/src/agents_remember/application/provider_tools.py:273-303; mcp/src/agents_remember/application/provider_tools.py:736-783 |
-| Containment tests pin the launch gate's refusal and armed-path semantics. | `ReloadProviderAuthorityTests`; `QueryFunnelGateTests` | mcp/tests/test_provider_containment.py:78-121; mcp/tests/test_provider_containment.py:180-196 |
+
 
 ## Update History
+- 2026-09-05T06:24:16+00:00: Generated citation repair: `complete_tool_response` repointed to mcp/src/agents_remember/application/tool_response.py:84-98. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 

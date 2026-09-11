@@ -62,7 +62,7 @@ No Domain Documentation source is configured for this internal package facade.
 | --- | --- | --- |
 | The root function installs the one runtime and mounts the composed router once. | `register_conversation_routes` | mcp/src/agents_remember/serving/conversation/router.py:22-32 |
 | The two re-exported request dependencies are the child-facing consumption seam. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The foundation test requires one stable inclusion seam. | `test_global_registration_has_one_stable_inclusion_seam` | mcp/tests/test_conversation_foundation.py:110-122 |
+
 
 ## Cross-Repo References
 

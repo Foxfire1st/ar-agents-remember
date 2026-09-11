@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`|
+| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -50,7 +50,7 @@ the parser never derives a model/effort paste command from them.
 
 #
 
-- 260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the full base surface (public + private patch targets) is re-exported and pinned by `mcp/tests/test_facade_surface.py`.
+- 260731-EFA-L7 (historical trace): settings responsibilities were split into sibling modules and the then-existing facade suite pinned exports. That suite has since been retired. The current loader is `load_agentic_settings`; this historical record does not establish current export coverage.
 
 ### 260731-EFA-L17/L24 — Optional Quality-Gate Memory Cap
 
@@ -262,7 +262,7 @@ dashboard settings write path are tracked outside as follow-ups.)
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:423-423; docs/reference/settings-json.md:425-426 |
+| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:442-442; docs/reference/settings-json.md:443-443; docs/reference/settings-json.md:440-440 |
 
 ## Repo-Internal References
 

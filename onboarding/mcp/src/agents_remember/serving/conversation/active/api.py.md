@@ -49,7 +49,8 @@ shape.
 
 Nothing validates at runtime — the two JSON handlers return `JSONResponse` and the stream
 returns `StreamingResponse`, and FastAPI applies `response_model` only to values it serializes
-itself. `mcp/tests/test_serving_response_conformance.py` is the gate.
+itself. The former route-conformance suite was retired; declarations alone do not prove
+current route conformance.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current
 source behavior above; verification metadata stays pinned to the pre-commit source history until
@@ -113,9 +114,9 @@ and the production-route suite are the direct evidence.
 | The active service these routes invoke for page assembly and subscription validation. | `active_conversation_service` | mcp/src/agents_remember/serving/conversation/active/service.py:301-308 |
 | The cursor error family mapped to exact statuses here. | `ConversationCursorError` | mcp/src/agents_remember/serving/conversation/active/cursor.py:39-47 |
 | The L0 request dependencies invoked directly in-handler for typed mapping. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The production-route suite driving these routes over a real socket. | `ProductionRouteTests` | mcp/tests/test_conversation_active_api.py:333-348; mcp/tests/test_conversation_active_api.py:379-945 |
+
 | The `CONVERSATION_RESPONSES` table these routes declare and the `AgentHistoryHydrated` model the child-history body finally has. | `CONVERSATION_RESPONSES`; `AgentHistoryHydrated` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
-| The suite that enforces the declarations by driving all three routes and validating the real bodies and SSE frames. | `ServingResponseConformanceTests` | mcp/tests/test_serving_response_conformance.py:792-899 |
+
 
 ## Cross-Repo References
 

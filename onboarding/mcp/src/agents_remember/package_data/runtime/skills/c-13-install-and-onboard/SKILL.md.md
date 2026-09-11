@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-11T15:20+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
+| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `../../../../../../overview.md`            |
 
 ## Governing Overview
@@ -49,6 +49,15 @@ non-native mappings stay explicit. The interview points at `docs/reference/harne
 spawn-surface manual. HFX2-L10 clarifies the authority boundary: ordinary spawning seats cannot pass
 `harness`/`model`/`effort`, direct launch/session spend controls, or harness-native spend/endpoint
 env keys directly; settings are the spend surface.
+
+The installed interview now names `dispatch_agent` as the sole public spawn transaction. A
+plane-hosted seat is recognized by injected plane identity and authorized by its current seat plus
+direct-child scope; an identity-free ambient launcher is authorized by canonical target-document
+resolution plus role altitude. The public request never chooses caller kind or supplies caller
+identity. Both modes consume the same settings profile and private creation/readiness/brief/rollback
+pipeline, while a plane refusal never retries as ambient. The internal session primitive is not
+caller guidance. Ordinary ambient bootstrap targets the sprint architect; only an explicit
+developer-declared task-seat takeover targets another named role at its canonical altitude.
 
 The skill starts with a package-first contract: harness-native files are already
 the copied and rendered starter package's responsibility. Rendering can be done
@@ -107,6 +116,11 @@ the `c-10-adopt-memory-baseline` skill, and context resolution to the `c-08-ar-c
 
 No open file-local todos.
 
+
+## CCR-R12@v5 Transaction Boundary
+
+Repository certification profiles and quality operations are optional explicit setup requests. Their absence does not block routine closeout or integration; this installer only reports configured setup and delegates any requested certification or memory/bootstrap work to its owning workflow.
+
 ## Docs References
 
 Harness-native setup details now live in the install guides and starter packages.
@@ -121,9 +135,9 @@ Harness-native setup details now live in the install guides and starter packages
 | --- | --- | --- |
 | The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
 | Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | `## Stage 0 - Preflight` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:67-103 |
-| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold`, `runtime_install`, `skills_install` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
-| Stage 2 interviews the developer on the agentic settings families and writes the global file seeded by `runtime_install`. | `runtime_install` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-165 |
-| Stage 3/4 delegate memory init, existing-memory adoption, and bootstrap to the existing skills rather than reimplementing them. | `## Stage 3 - Memory Repo: Ask Scaffold Vs Existing`, `## Stage 4 - Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:187-215 |
+| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
+| Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. | `## Stage 2 - Agentic Settings: Interview The Developer` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-189 |
+| Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. | "## Stage 3 - Repository Certification Profile (explicit operation only)"; "## Stage 4 - Memory Repo: Ask Scaffold Vs Existing"; "## Stage 5 - Bootstrap"; "## Stage 6 - Configure Providers To Index" | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:206-243; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:244-262; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:263-272; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:273-297 |
 | The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | "def provider_watchers_tool("; "if action == \"refresh\":"; "if action not in {\"status\", \"start\", \"stop\", \"restart\", \"invalidate-indexes\", \"shutdown-all\"}:"; "if action in {\"start\", \"restart\", \"invalidate-indexes\"}:" | mcp/src/agents_remember/application/provider_tools.py:50-73 |
 | The install-side seeding the interview builds on (copy-if-missing global file). | `seed_agentic_settings` | mcp/src/agents_remember/install/runtime.py:164-180 |
 
@@ -136,6 +150,13 @@ No sibling repository evidence is needed for this skill.
 | No meaningful cross-repo references found. | n/a | n/a |
 
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new Stage 3 (Repository Certification Profile) and the renumbered Stage 4/5/6 in the packaged install-and-onboard skill.
+
+- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the settings interview with the sole
+  public dispatch verb, separated ordinary architect bootstrap from explicit takeover, and retained
+  the two process-derived caller kinds plus no-fallback boundary. Verification remains
+  closeout-owned.
 
 - 2026-08-11T15:20+02:00 — Re-anchored provider-watcher vocabulary and the removed `refresh`
   behavior to the exact declaration and validation branches.
@@ -148,7 +169,7 @@ No sibling repository evidence is needed for this skill.
   `provider_tools.py` link, so they never pointed at that file's material; the row now cites
   `provider_watchers_tool` at `provider_tools.py` L47-L86. Reading it showed the claim was also
   false: the tool no longer accepts `action="refresh"` (it raises and points at `restart` /
-  `invalidate-indexes`), while this SKILL.md's Stage 5 still instructs `refresh`: cit:([`## Stage 5 - Configure Providers To Index`], mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:216-240). The
+  `invalidate-indexes`), while this SKILL.md's Stage 5 still instructs `refresh`: cit:([`## Stage 6 - Configure Providers To Index`], mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:272-297). The
   row now states the tool's real action vocabulary and names that drift instead of asserting a
   refresh path that fails.
 

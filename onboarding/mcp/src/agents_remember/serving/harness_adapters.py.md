@@ -63,7 +63,7 @@ doc's R2 is the source of truth), same posture as `pane_signals.py`/`turn_state.
 | --- | --- | --- |
 | `get_adapter` is the sole entry point `serving.injector.deliver` calls to resolve per-harness behavior for the blocked-check and post-submit-confirmation corroboration. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
 | `boot_ready`/`composer_state` compose `turn_state.classify_turn_state`/`turn_state.boot_ready` and `pane_signals.classify_pane_signal`/`pane_signals.composer_state`/`pane_signals.blocked_reason_label` — the single source of truth for every pattern table. | `classify_turn_state`; `boot_ready` | mcp/src/agents_remember/serving/turn_state.py:157-171; mcp/src/agents_remember/serving/turn_state.py:174-177 |
-| Fixtures for both harnesses across boot/ready/mid-turn/chip-stacked/quota-modal, plus the registry fallback behavior. | `### Logic` | onboarding/mcp/tests/test_harness_adapters.py.md:22-42 |
+
 
 ## Cross-Repo References
 

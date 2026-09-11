@@ -5,9 +5,9 @@
 | repository             | agents-remember                                                    |
 | path                   | `mcp/src/agents_remember/controlplane/expectation_rows.py`         |
 | doc_type               | `file-level-onboarding`                                            |
-| lastUpdated | 2026-08-11T09:50+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-06T21:59:04+00:00 |
+| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
+| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview      | `overview.md`                                                      |
 
 ## Governing Overview
@@ -20,6 +20,8 @@ Stores restart-durable dispatch and gate deadline rows. A subject is structurall
 document plus role, with occupant ids retained only as correlation evidence.
 
 ## Code Commentary
+
+`mark_met` and `mark_missed` leave any non-pending row unchanged, so the first terminal transition and its timestamp win. Pending queries fold by id; source lookup additionally filters the optional kind and selects the latest pending row. Missing row ids refuse. These are owner-visible deadlines: the relay does not evaluate or mark them missed. Source: mcp/src/agents_remember/controlplane/expectation_rows.py:127-143.
 
 ### Logic
 
@@ -59,6 +61,8 @@ No Domain Documentation source is configured.
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-06T21:59:04+00:00 — Preserved source-verified expectation semantics from retired test onboarding; verification pins unchanged.
 - 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
 - 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
@@ -92,7 +96,7 @@ No cross-repository implementation dependency governs this file.
   cit:(["def write_expectation_row("], mcp/src/agents_remember/controlplane/expectation_rows.py:350-350), `find_by_source`/`overdue` L219-L248 (L219, L237), `append` L165-L169 (L165), the
   read pair L137-L144; L171-L217 (`_pending_rows` L137, `read` L171, `read_for_projection` L185,
   `pending` L212, `pending_for_projection` L215), `compact` L286-L334 (L286, `_compact_locked` L299,
-  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:195-195). The **10.20 percent** figure
+  `_replace` L327), and `read_expectation_rows` cit:(["def read_expectation_rows("], mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197). The **10.20 percent** figure
   is now attributed rather than asserted: it appears only in the `durable_store.py` docstring, unlike
   31.45 percent and 11.50 percent, which several independent sites carry. Named the harness that
   produces a loss rate and recorded that no base-commit run of it is stored in the tree, so a reader

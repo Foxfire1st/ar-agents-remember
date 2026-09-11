@@ -46,7 +46,7 @@ masks `PASSWORD=...` values in any string.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Compact builders that pair with the reports. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_watchers_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/providers.py:55-70; mcp/src/agents_remember/mcp/tools/providers.py:90-100 |
-| Budget/prune/redaction tests. | `ToolReportFileTests`; `CompactPayloadBudgetTests` | mcp/tests/test_tool_response_budgets.py:60-108; mcp/tests/test_tool_response_budgets.py:111-263 |
+
 
 ## Update History
 

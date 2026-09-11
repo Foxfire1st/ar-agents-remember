@@ -5,9 +5,9 @@
 | repository             | agents-remember                            |
 | path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T23:59+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-08-28T11:51+02:00 |
+| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
+| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## Purpose
 
@@ -16,6 +16,9 @@ This template is the **mandatory worker hand-off artifact** of the `l-01-agent-l
 ## Code Commentary
 
 ### Logic
+
+The synchronized report separates internal protocol-event rows from formal review-handoff attempt
+records and gives each lightweight attempt a content-addressed expanded-evidence anchor.
 
 The file is a sync-propagated (`scripts/sync-skills.py`) bundle copy of the canonical `skills/l-01-agent-lifecycles/templates/turn-report.md`. It has three parts: a prose header naming the artifact and its writer (`roles/worker.md`), a numbered **Rules** block, and a fenced **Shape** the worker copies verbatim — a metadata table (leaf / master / worker / worktree / status / checks / written) followed by the sections *What Was Done*, *Issues Hit*, *Solved On The Spot*, *What Is Left*, *Onboarding Refreshed*, *Escalations*, and the closing **Respawn State** block that onboards a successor from state alone.
 
@@ -32,6 +35,11 @@ ruling 2026-07-07, 260707-HFX2-L5). The **Respawn State** section must let a fre
 ### Todos
 
 No TODO markers are present in this report template.
+
+
+## CCR-R12@v5 Handoff Boundary
+
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
 ### Docs References
 
@@ -59,7 +67,59 @@ No sibling repository evidence is needed for this report template.
 | --- | --- | --- |
 | No meaningful cross-repo references found. | n/a | n/a |
 
+## M38 Turn-Report Projection
+
+The synchronized report shape repeats a complete acceptance envelope for every stable requirement
+ID and now contains a dedicated Checks section with exact commands and outcomes, closing the former
+brief/report mismatch. It separately records durable-evidence promotion and curator observations;
+neither substitutes for requirement evidence.
+Packet inspection now records the version-addressed path, approved state, matching ID/version, and
+durable corpus ruling before delivery evidence can be review-passable.
+
+## M40/M43 Turn-Report Projection
+
+The installed report is the append-only worker side of the leaf journal. Each record binds exact
+requirement/manifestation, attempt/predecessor, candidate, envelope, checks, append time, and
+classified findings; prior records are immutable.
+
+## 2026-08-27 Attempt Boundary Clarification
+
+This packaged projection preserves the canonical phase boundary: validate before append; a
+malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
+a malformed handed-off attempt requires independent rejection before successor handoff.
+
+## CCR-L42 current candidate
+
+The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
+
 ## Update History
+- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The turn-report template now requires review mode, sealed baseline and outstanding IDs, fixed/unfixed subset dispositions, and a clear separation between worker diagnostic checks and review or certification round accounting.
+
+- 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
+  authority wording; projection ownership and byte-identity rules remain unchanged.
+
+- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
+  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
+  unchanged.
+
+- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
+  contract from canonical lifecycle/task doctrine.
+
+- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 report structure.
+
+- 2026-08-27T18:06+02:00 — M40/M43: synchronized the complete worker attempt record shape.
+
+- 2026-08-27T14:04+02:00 — Added approved version-addressed packet and durable corpus-ruling proof
+  to the installed turn-report envelope.
+- 2026-08-27T13:32+02:00 — M39@v1: each acceptance block now names the stable ID + version and
+  records the matching canonical packet inspection before delivery/verification evidence.
+  Verification remains closeout-owned.
+
+- 2026-08-27T12:43+02:00 — M38: recorded the per-ID envelope and explicit Checks section in the
+  installed report shape. Verification metadata stays pinned until governed closeout stamps the
+  PDLS commit.
+
 
 - 2026-08-11T19:58+02:00 — Recorded `turn-report.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.
 - 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.

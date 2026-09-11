@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-08T17:47:39+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../../overview.md` |
 
 ## Governing Overview
@@ -30,8 +30,8 @@ Module-level surface:
 - `enclosing_span_end` (function, lines 86-90)
 - `cell_spans` (function, lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed.
 - `split_row` (function, lines 119-121) — The cells of a table row, stripped.
-- `fence_delimiter` (function, lines 124-140) — ``(character, length)`` if this line opens or closes a fenced code block.
-- `unfenced_lines` (function, lines 143-164) — ``(zero-based index, line)`` for every line outside a fenced code block.
+- `fence_delimiter` (re-export from `kernel/onboarding_doc.py`) — ``(character, length)`` if this line opens or closes a fenced code block.
+- `unfenced_lines` (re-export from `kernel/onboarding_doc.py`) — ``(zero-based index, line)`` for every line outside a fenced code block.
 
 ### Conventions
 
@@ -53,13 +53,19 @@ This module defines the top-level symbols cited below; each row points at the ex
 | --- | --- | --- |
 | Defines the function `backtick_runs` (lines 20-37) — Every maximal run of backticks, as ``(start, length)``.. | `backtick_runs` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:20-37 |
 | Defines the function `code_span_ranges` (lines 40-63) — Half-open ``(start, end)`` ranges covering each code span, delimiters included.. | `code_span_ranges` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:40-63 |
-| Defines the function `cell_boundaries` (lines 66-83) — Indexes of the pipes that divide this line into table cells.. | `cell_boundaries` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:66-83 |
-| Defines the function `enclosing_span_end` (lines 86-90). | `enclosing_span_end` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:86-90 |
+| Defines the function `cell_boundaries` (lines 66-83) — Indexes of the pipes that divide this line into table cells.. | `cell_boundaries` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:85-102 |
+| Defines the function `enclosing_span_end` (lines 86-90). | `enclosing_span_end` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:105-109 |
 | Defines the function `cell_spans` (lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed.. | `cell_spans` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:93-116 |
-| Defines the function `split_row` (lines 119-121) — The cells of a table row, stripped.. | `split_row` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:119-121 |
-| Defines the function `fence_delimiter` (lines 124-140) — ``(character, length)`` if this line opens or closes a fenced code block.. | `fence_delimiter` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:124-140 |
-| Defines the function `unfenced_lines` (lines 143-164) — ``(zero-based index, line)`` for every line outside a fenced code block.. | `unfenced_lines` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:143-164 |
+| Defines the function `split_row` (lines 119-121) — The cells of a table row, stripped.. | `split_row` | mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:138-140 |
+| Re-exports the kernel `fence_delimiter` helper used for fenced scanning. | "    fence_delimiter," | mcp/src/agents_remember/kernel/onboarding_doc.py:90-106; mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:15-18 |
+| Re-exports the kernel `unfenced_lines` helper used for fence-aware scanning. | "    unfenced_lines," | mcp/src/agents_remember/kernel/onboarding_doc.py:109-130; mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:15-18 |
 
 ## Update History
+
+- 2026-09-08T17:47:39+02:00: CCR-L38 source-grounded preparation made the two re-export anchors exact import lines, retaining the kernel implementation ranges and avoiding ambiguous helper-name matches. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-08T14:45:44+00:00: CCR-L24 preparation corrected the fence-helper entries to describe their kernel re-exports and rebound `cell_boundaries`, `enclosing_span_end`, and `split_row` to the current scanner definitions. Verification metadata remains pinned pending final pair composition.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: `cell_boundaries` repointed to mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:85-102. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: `enclosing_span_end` repointed to mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:105-109. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-08T14:39:58+00:00: Generated citation repair: `split_row` repointed to mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py:138-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

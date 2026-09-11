@@ -53,7 +53,7 @@ No Domain Documentation source is configured.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Claude echo mapping. | `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
-| Ordering and eviction regressions. | `ZipperEvictionGapTests` | mcp/tests/test_conversation_active_service_gaps.py:68-500 |
+
 
 ## Cross-Repo References
 

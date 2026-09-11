@@ -5,15 +5,19 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-04T01:24+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-08T16:24:06+02:00 |
+| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
+| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview      | `overview.md`                              |
+
+## Governing Overview
+
+[application overview](overview.md)
 
 ## Purpose
 
-`worktree_status.py` projects an optional `c-09-git-worktree-manager` skill worktree contract into the read-only
-worktree summary used by context packets.
+`worktree_status.py` projects an optional `c-09-git-worktree-manager` worktree contract and its
+stable enclosure-root sync journal into the read-only worktree summary used by context packets.
 
 ## Code Commentary
 
@@ -23,6 +27,14 @@ states without mutating Git. For valid contracts it delegates to
 context-facing worktree shape. The projection no longer preserves the full
 manager payload as `rawStatus`; `WorktreeSummary` owns the explicit context
 fields.
+
+After the canonical lifecycle locator resolves, the packet observes
+`.lifecycle/sync-operation.json` from the locator's stable `worktree_group` **before** reading the
+contract. The resulting typed `SyncOperationProjection` is preserved in valid-contract packets,
+locator decisions, unreadable-contract decisions, and missing/invalid-contract packets. A broken or
+deleted task contract therefore cannot erase retained conflict, continuation/cancellation, terminal,
+or quarantine evidence. Observation is read-only and contract-addressed; this route does not inspect
+task prose or closeout queue rows to reconstruct sync state.
 
 ### 260731-EFA-L4: the projection *returns* the model instead of a dict to validate
 
@@ -55,6 +67,13 @@ omission so it cannot move again unannounced.
 when `worktree_contract._vocabulary_cell` had to substitute for a token the file carried that its
 vocabulary does not hold.
 
+CCR-R25 extends only the read-only series status projection. After the lifecycle locator and
+contract have been read, a series contract is passed to `atomic_series_status_projection` and
+validated as `AtomicSeriesActivationFact`; leaf packets retain the existing null field. The
+projection reports the address, source-pair fingerprint, selected record, state, and read error
+facts without publishing, repairing, or selecting activation state. `_summary_from_status_payload`
+threads that typed fact into `WorktreeSummary` alongside the stable sync and lifecycle projections.
+
 **`invalidContract` narrowed in meaning without its code changing.** The `except ContractError`
 branch now catches only documents that are not contracts at all — no front matter, an unrecognised
 schema, a missing required field, an external-memory contract with no memory repository. A cell
@@ -70,6 +89,8 @@ able to touch.
   worktrees.
 - Contract parsing failures should become structured packet state rather than
   escaping context packet construction.
+- Stable sync-operation evidence must survive contract read failure and remain present on every
+  summary path once the lifecycle locator establishes the enclosure root.
 - Context packets expose typed lifecycle and next-operation hints, not shell
   command strings or raw manager payloads.
 - **Build the model here; do not hand the caller a dict to validate.** The whole point of the
@@ -79,17 +100,34 @@ able to touch.
   `nextTool` / `nextArgs` / `nextRequiredArgs` — a value this projection invents is by definition
   one no producer declares.
 
+## Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:129-129; mcp/src/agents_remember/worktrees/modules/guidance.py:216-216 |
-| Worktree summary model constrains the context-facing shape. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:96-96 |
+| Status observes the stable sync journal before contract parsing and threads it through all result branches. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-151 |
+| The journal observer returns a typed projection without reading task or queue state. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:308-324 |
+| `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. | `SyncOperationProjection` | mcp/src/agents_remember/models/worktree.py:113-126 |
+| Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
+| Worktree summary model constrains the context-facing shape, including the optional series activation fact. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:219-273 |
 | Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. | "worktree=worktree_status_packet" | mcp/src/agents_remember/application/context_packet.py:96-96 |
-| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/worktrees/modules/guidance.py:125-125 |
-| `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell(", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:106-106; mcp/src/agents_remember/worktrees/worktree_contract.py:285-285 |
-| `_summary_from_status_payload` maps the producer's `unknown_contract_cells` value onto `WorktreeSummary.unknownContractCells`. | "def _summary_from_status_payload"; "unknownContractCells=payload.get"; "unknown_contract_cells" | mcp/src/agents_remember/application/worktree_status.py:64-64; mcp/src/agents_remember/application/worktree_status.py:115-115 |
-| `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:153-153 |
+| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:45-45; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
+| `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell[Cell: str](", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:106-106; mcp/src/agents_remember/worktrees/worktree_contract.py:287-287 |
+| The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. | `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:217-277 |
+| `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-28 |
+
+## Cross-Repo References
+
+No meaningful cross-repository reference applies to this repository-owned status projection.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
 
 ## Series-Contract Notes
 
@@ -107,7 +145,49 @@ ancestry evidence as status rather than copying or re-deriving Git state.
 created by the model package split. Status construction and source-lineage projection semantics are
 unchanged.
 
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `worktree_status_packet`. Status locates normal lifecycle state through locator -> immutable root manifest -> journal and projects legal controls. Its degraded unreadable/pre-adoption decisions are explicit read-only behavior, not a fallback mutation reader.
+
+### Reconciled Source Evidence
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The current module exposes `worktree_status_packet` at this ownership boundary. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:46-128 |
+
+## Current Landed Composition
+
+`project_contract_status` also owns the public status projection. A proven terminal archive projects cleanup-completed or archive-ready with exact accepted cleanup arguments and no live operation rows; malformed terminal-archive evidence returns its typed refusal. Other paths resolve caller authority, project readable or unreadable lifecycle evidence, and replace the plural operation list. This remains read-only.
+
 ## Update History
+- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
+- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed the existing `NextOperation` source coordinate after the frozen model additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
+- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented the read-only `atomicSeriesActivation` status fact and its typed summary mapping from the frozen L38 source. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
+- 2026-09-06T22:41:21+00:00: Generated citation repair: "class ContractBoundaryTests(unittest.TestCase):" repointed to mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-28. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "class WorktreeSummary" repointed to mcp/src/agents_remember/models/worktree.py:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-05T06:24:16+00:00: Generated citation repair: "class WorktreeStatusPayload"; "NextOperation = Literal[" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:126-126; mcp/src/agents_remember/models/worktree.py:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+
+- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
+  status projection card.
+
+- 2026-08-26T03:37+02:00 — Added stable enclosure-root sync-operation projection to every
+  locator-established status path, including missing/unreadable contracts. Recorded that journal
+  observation is independent of task and queue state. Verification remains
+  post-Dagger/closeout-owned.
+
+- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 
 - 2026-08-13T09:05+02:00 — L23 curator: recorded the operation-projection import move and confirmed
   the status/result contract is otherwise unchanged; final provenance remains closeout-owned.

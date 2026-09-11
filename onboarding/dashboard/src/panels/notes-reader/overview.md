@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/notes-reader/`             |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-08-01T13:20+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated | 2026-09-05T06:21+00:00 |
+| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
+| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 | governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
@@ -59,11 +59,7 @@ invalidating the notes-specific assertions.
 
 ## Hot Path Summary
 
-The Notes Reader: a `TaskNotes` list row or a resolved reference opens a full-bleed takeover — a notes-tree
-rail (highlight-follows-selection, reports/ included) over the L9 `/api/notes/list` → a content pane that
-reuses `DualPane` (markdown as a partnerless overview, text through CodeSide, binary placeholder) over
-`/api/notes/read`; rail clicks switch the pane in place, and Back restores the railed Operations view with
-the reader kept mounted-hidden so selection survives.
+`NotesReaderViewer.tsx` is the shared task-artifact takeover: `kind: notes` uses `/api/notes/{list,read}`, while `kind: requirements` uses the canonical task-document-selected `/api/requirements/{list,read}` endpoints. The tree rail and `DualPane` are shared; kind-aware labels prevent requirement packets from being presented as ordinary notes.
 
 ## Repo-Internal References
 
@@ -71,18 +67,48 @@ the reader kept mounted-hidden so selection survives.
 | --- | --- | --- |
 | The read-only notes routes. | `register_notes_routes`; `list_notes`; `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136; mcp/src/agents_remember/serving/notes.py:168-177 |
 | The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`). | `listNotes`; `readNote`; `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:35-41; dashboard/src/data/notes.ts:52-65 |
-| The reused File Viewer content pane (markdown/code/placeholder). | "function noteAsFileContent("; "function dualPaneProps("; "<DualPane {...dualPaneProps(note)} split={false} />" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:118-118; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:131-131; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:196-196 |
-| Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:530-530 |
-| Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:537-537 |
-| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:594-594 |
-| TaskNotes resolves a note reference into a reader target. | "const target = resolveNoteReference(reference" | dashboard/src/panels/TaskNotes.tsx:83-83 |
+| The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. | "function noteAsFileContent("; "function dualPaneProps("; "<DualPane {...dualPaneProps(note)} split={false} />" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:120-137; dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:204-204 |
+| Cockpit defines the note-opening callback. | "const openNotes = useCallback((target: NotesReaderTarget) => {" | dashboard/src/cockpit/Cockpit.tsx:531-535 |
+| Cockpit defines the note-selection callback. | "const selectNote = useCallback(" | dashboard/src/cockpit/Cockpit.tsx:538-541 |
+| Cockpit renders NotesReaderViewer. | "<NotesReaderViewer" | dashboard/src/cockpit/Cockpit.tsx:598-598 |
+| TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. | "function ReferenceList({" | dashboard/src/panels/TaskNotes.tsx:75-129 |
 
 ## Current L5I Route State
 
 The current source-backed Notes Reader integration is recorded by the repository-local references
 above.
 
+## 260831-CCR-L23 Task-Artifact Reader (notes + requirements)
+
+L23 widened this child route from a notes-only reader to a discriminated
+task-artifact reader. `NotesReaderViewer.tsx` now takes the shared
+`TaskArtifactReaderTarget` (`data/taskArtifacts.ts`) with a `kind`
+member: `notes` keeps the unchanged `/api/notes/{list,read}` transport,
+and the new `requirements` kind reads the task-local packet root over
+`/api/requirements/{list,read}` (listing/content hooks branch on the kind and
+map packets into the existing rail/pane). Rail headers, the open-path label, failure
+copy, and the screen root (`data-artifact-kind`) are kind-aware; rendering still
+reuses the File Viewer `DualPane`. Entry surfaces (task prose via
+`Markdown`, `TaskNotes` references, the `DetailPanel` reader) open
+registered requirement packets through the same takeover.
+
 ## Update History
+
+
+
+- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
+
+- 2026-09-05T06:12+00:00 — Preserved the original reader knowledge and updated the hot path to its notes/requirements discriminator.
+
+- 2026-09-04T01:06+02:00 - 260831-CCR-L23 Gate-5 route impact: the notes-reader child route became a task-artifact reader (notes + task-local requirements packets) over `/api/requirements/{list,read}`; file-level detail in the `NotesReaderViewer.tsx` and `NotesReaderViewer.test.tsx` sidecars.
+
+
+- 2026-08-20T05:06+02:00 — No route impact: 260815-DAG-L14 only added `seats: []` to the
+  `NotesReaderViewer` test fixture factory; the notes-reader route purpose is unchanged.
+
+
+- 2026-08-15T02:16:50+02:00 — No route impact: the notes-reader test fixture now supplies empty
+  `executionWaves`; notes-reader behavior and ownership are unchanged.
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: NotesReaderViewer.tsx changed only by behavior-preserving lint remediation.
 
 - 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.

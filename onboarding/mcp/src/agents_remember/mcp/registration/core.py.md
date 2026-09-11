@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-02T01:05+02:00                                   |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`               |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
+| lastUpdated            | 2026-09-06T22:15:27+00:00 |
+| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
+| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -24,13 +24,18 @@ already pass keywords. Registered tools are unchanged.
 
 `register_core_tools(server, config)` declares server identity, the orientation reads, and the two
 installers: `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`,
-`runtime_install`, `skills_install`.
+`runtime_install`, `skills_install`. Its identity family binds the one process-scoped
+`ServingBuildPayload` used by `server_info`.
 
 ## Code Commentary
 
 ### Logic
 
 Seven `@server.tool()` declarations, each forwarding to its `mcp/tools/core.py` payload builder.
+`register_core_tools` obtains one strict payload through the application-owned
+`mcp_serving_build_payload()` gateway and passes that immutable value into the identity registrar;
+every `server_info` call therefore reports the same boot and candidate identity without
+request-time reprobes or an MCP-to-serving domain import.
 The docstrings are the model-visible contract and carry the semantics that are not in the types:
 
 - `ping` — liveness only; no configuration, no side effects.
@@ -60,6 +65,10 @@ The docstrings are the model-visible contract and carry the semantics that are n
   say to preview first; the default does not.
 - No behaviour here. `read_ar_files`'s onboarding-lookup status vocabulary, the route-index rule,
   and the per-session dedup all live in `application/read_files.py`.
+- `server_info` must receive the shared process build; constructing or re-resolving a new build in
+  the handler would break correlation with the dashboard and harness acceptance evidence.
+- Serving-domain ownership stays behind `application.runtime.startup`; this MCP adapter consumes
+  only the strict model payload.
 
 ## Repo-Internal References
 
@@ -67,10 +76,32 @@ The docstrings are the model-visible contract and carry the semantics that are n
 | --- | --- | --- |
 | Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
 | `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_ref.py:14-28 |
-| What each declaration hands its builder, proved through a live server. | `RegistrationWiringTests` | mcp/tests/test_mcp_registration_wiring.py:61-116 |
+| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
 ## Update History
+
+- 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
+
+
+- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: routed serving identity through the
+  application gateway and typed the registrar against `ServingBuildPayload`. Verification remains
+  closeout-owned.
+
+- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: the core registrar now captures the shared
+  process build once and projects it through every `server_info` response. Verification metadata
+  remains pinned until closeout.
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
+
+- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
 - 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.

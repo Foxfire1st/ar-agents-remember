@@ -127,7 +127,7 @@ surface.
 | Restart/rebind recovery wording is shared with runtime-install recovery reporting. | `PROVIDER_WATCHER_RESTART_RECOVERY` | mcp/src/agents_remember/providers/recovery.py:3-7 |
 | The containment metrics store whose rolling current snapshot rides the status packet (containment R4). | "class MetricsSnapshot" | mcp/src/agents_remember/providers/metrics.py:161-161 |
 | Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. | "def refresh_current_provider_state" | mcp/src/agents_remember/providers/status.py:157-157 |
-| Provider current-state tests assert `noWorkspace` stays degraded and that status/diagnostics return the restart recovery action. | `noWorkspace` | mcp/tests/test_provider_current_state.py:141-141 |
+
 | `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | `refresh_current_provider_state` | mcp/src/agents_remember/providers/status.py:157-167 |
 
 ## Update History

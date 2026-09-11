@@ -5,111 +5,145 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-09T19:31+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../overview.md`                                 |
+| lastUpdated | 2026-09-10T10:12:00+02:00 |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`       |
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|| governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[mcp overview](../overview.md)
+[Tests overview](overview.md)
 
 ## Purpose
 
-`test_terminal_liveness.py` (new in **260707-HFX-L5**) pins the catalog liveness hysteresis
-semantics of `serving/terminal_liveness.py` + the liveness transitions in
-`serving/terminal_catalog.py` and the stderr-aware probe classification in
-`serving/terminal.py`. It is the regression net against the false-dead-fleet failure mode: a
-transient tmux command-failure storm must never mass-exit live sessions, and a false exit must
-self-heal. **260707-HFX2-L11** extends the regression net to a second failure mode: landed rows
-must cost the sweeper nothing per-row, at any fleet size, since they now accumulate by design.
-
+Retains the liveness behavior at the sweeper boundary: transient failures stay within the hysteresis window, full catalog probes remain rate-limited by the configured interval, and starting rows use the one-second bounded path. Fake probes, snapshots, and a controlled clock model those boundaries. These tests do not claim lifecycle caller ownership or production wiring.
 ## Code Commentary
-
-### 260707-HFX2-L12 CS-6 Update
-
-The terminal-liveness scaling regression now counts true disk reads/writes separately from in-memory batch operations and proves landed-row-heavy sweeps still perform one disk read and one disk write regardless of catalog size.
 
 ### Logic
 
-Helpers: `_entry(session_id)` builds a running harness `TerminalCatalogEntry` with deterministic
-timestamps; `_Clock` is a dataclass fake clock (`__call__` returns `moment`, `advance(seconds)`
-steps it) injected as the sweeper's `now`, so every case is sleepless. Two fake hosts: `_FakeHost`
-returns a canned `TmuxProbeResult` (with optional `entered`/`release` threading events for the
-overlap case, and a `calls` counter for the rate-limit case); `_TmuxSubprocessProbeHost` calls the
-**real production classifier** `_tmux_probe_session` with `subprocess.run` mocked — the stderr
-cases bite the shipping classification, not a fake.
+The current evidence boundary is the source-listed behavior below. The transient-failure case
+keeps sessions running while the hysteresis window has not elapsed. The full-sweep case keeps the
+configured ten-second admission gate intact. The starting-row case proves the one-second
+eligibility boundary, four-row targeted cap, and persisted readiness transition for a fifth row on
+the following tick. Earlier coverage claims in history describe prior populations and must not be
+used to recreate removed tests or claim they still run.
 
-`TerminalCatalogLivenessTests` builds a temp-dir `TerminalCatalog` per case; `_sweeper(...)`,
-`_snapshot_sweeper(...)`, and `_control_sweeper(...)` construct a
-`TerminalCatalogLivenessSweeper` with one `probe=LivenessProbe(...)` argument carrying the
-hysteresis config plus the injected doubles — `hysteresis=TerminalCatalogLivenessConfig(threshold
-3 / window 5s / pane-gone 1 / interval 0 unless overridden)`, and where a case needs them,
-`pane_capturer=` and `snapshot_reader=`. Only `now=self.clock` stays a loose keyword. Cases:
-
-- `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` — 14 sessions,
-  `tmux-command-failed` on every probe, 3 sweeps over 3 seconds: all rows stay `running` with
-  `liveness_failures == 3` (the count is met but the 5s window is not — no mass exit).
-- `test_pane_gone_evidence_marks_exited_without_command_failure_window` — one `pane-gone` probe
-  marks `exited` immediately with `exit_evidence == "pane-gone"` (definitive evidence, threshold 1,
-  zero window).
-- `test_non_missing_tmux_nonzero_stderr_uses_hysteresis` (L5R2) — a nonzero tmux exit with stderr
-  `error connecting to tmux server` classifies `tmux-command-failed`: the row stays `running`,
-  `liveness_evidence == "tmux-command-failed"`, no `exit_evidence`.
-- `test_missing_session_stderr_uses_pane_gone_behavior` (L5R2) — stderr
-  `can't find session: ar-gone` classifies `pane-gone` and marks `exited`.
-- `test_alive_again_probe_clears_false_liveness_exit` — three spaced command failures exit-mark the
-  row (`exit_evidence == "tmux-command-failed"`), then an alive probe on a later sweep self-heals
-  it to `running` with failures cleared and `exit_evidence` gone.
-- `test_fast_tick_respects_sweep_rate_limit` — with a 30s interval, three `refresh()` calls one
-  second apart make exactly ONE host probe (the dashboard's 1s cadence cannot imply 1s probing).
-- `test_overlapping_sweep_returns_current_catalog_without_second_probe` — a real second thread
-  parks inside the host probe (via the `entered`/`release` events); the concurrent `refresh()`
-  returns the current catalog with NO second probe (`calls == 1`), then the parked sweep completes
-  without error.
-- `test_landed_rows_do_not_add_per_row_sweep_probe_or_catalog_reads` (HFX2-L11 round-2 F1 fix) —
-  a `_CountingCatalog` (subclasses `TerminalCatalog`, counts `_read()` calls) is seeded with N
-  `status="landed"` rows plus one `running` row, then swept; run at N=5 and N=500 the result is
-  byte-identical: exactly one host probe call, one pane capture (the running row only), and
-  exactly 3 catalog `_read()` calls, regardless of how many landed rows exist. This pins
-  `refresh()`'s `_observe_catalog_entry` short-circuit for `status=="landed"` (returns
-  `TerminalLivenessObservation(entry=entry, alive=True)` without calling
-  `observe_terminal_liveness`) as a genuinely flat-cost skip, not just a probe-count reduction —
-  closing the round-1 BLOCK where landed seats were silently enrolled into the sweeper's
-  per-cycle O(N) subprocess / O(N^2) catalog-read cost as they accumulated by design (the 3rd
-  CS-6-class catch on this master after L7/L9).
-
+The current evidence boundary is the source-listed behavior below. `_FakeHost` parks inside
+`probe_session` on events so the first sweep holds the sweeper lock and the catalog batch while a
+contender runs; `_RaisingHost` raises on its first probe to force the lock-release path. The
+contended-full case asserts the contender returns before its 0.25 s join, that the host was probed
+only once across both callers, and that a later `refresh()` probes again. The contended-starting
+case drives the one-second starting fast path with the full-sweep rate limit in force and asserts
+the first sweep was the only probe across both callers. The clean-hosted case wraps
+`catalog._write_disk` and asserts one replacement on the first sweep and zero on an identical
+second sweep. 
 ### Conventions
 
-Uses `unittest` and inserts `mcp/src` on `sys.path` (the suite-wide worktree pin idiom), matching
-the surrounding MCP test suite. Fake clock + fake/mocked hosts keep every case sleepless and
-tmux-free.
-
+The table lists retained test definitions, not collected parametrized or subtest counts.
+Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+This inventory covers the composed module: siblings `260831-LOCR-L12` and `260831-LOCR-L21` and this
+leaf `260831-LOCR-L22` have all landed on the LOCR master integration branch, so the rows above are
+the module's complete retained case set and every cited range was derived from that composed file.
 ### Invariants And Boundaries
 
-No FastAPI routes, WebSockets, or real tmux here — the app wiring is covered by
-`test_terminal_ws.py`, the probe's real-subprocess integration by `test_terminal.py`, and pure
-catalog JSON semantics by `test_terminal_catalog.py`. This file pins hysteresis, evidence
-classification, self-heal, and sweep cadence/overlap only.
+Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
+cases. Keep full-sweep rate limiting inside `TerminalCatalogLivenessSweeper` and keep the
+one-second starting-row path bounded at four rows; the lifecycle cadence and production wiring
+remain owned by the assembled L01/R16/R18 candidate. Coverage percentages are diagnostic and
+production CRAP 20 prompts review; neither implies an obligation to restore removed cases. Full
+suites and whole-candidate review remain master-end work. This source inspection does not claim a
+newly executed test or acceptance result.
+### Todos
 
-## Repo-Internal References
+No additional implementation scope is opened by this memory reconciliation.
+
+## Docs References
+
+The repository has no configured Domain Documentation source. These claims concern its own test
+fixtures and assertions, so the exact retained source is the direct evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The sweeper + shared observation path under test. | `TerminalCatalogLivenessSweeper`; `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:97-212; mcp/src/agents_remember/serving/terminal_liveness.py:282-326 |
-| The liveness transition copiers retain success-side healing and thresholded failure behavior. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:145-145; mcp/src/agents_remember/serving/terminal_catalog.py:149-149 |
-| The catalog records each probe through the success/failure transition copiers. | "def record_liveness_probe("; "updated = entry.with_liveness_success()"; "updated = entry.with_liveness_failure("; "pane_gone_failure_threshold=hysteresis.pane_gone_failure_threshold" | mcp/src/agents_remember/serving/terminal_catalog.py:128-128; mcp/src/agents_remember/serving/terminal_catalog.py:145-145; mcp/src/agents_remember/serving/terminal_catalog.py:149-149; mcp/src/agents_remember/serving/terminal_catalog.py:154-154 |
-| The production observer caller drives the catalog probe on alive and failed paths. | "def observe_terminal_liveness("; "if session is not None and session.is_alive: updated = catalog.record_liveness_probe(entry.id"; "if tmux.exists: updated = catalog.record_liveness_probe(entry.id"; "updated = catalog.record_liveness_probe( entry.id"; "return TerminalLivenessObservation(entry=updated or entry" | mcp/src/agents_remember/serving/terminal_liveness.py:302-302; mcp/src/agents_remember/serving/terminal_liveness.py:318-319; mcp/src/agents_remember/serving/terminal_liveness.py:328-329; mcp/src/agents_remember/serving/terminal_liveness.py:337-338; mcp/src/agents_remember/serving/terminal_liveness.py:344-344 |
-| The production stderr-aware probe classifier the `_TmuxSubprocessProbeHost` cases exercise for real. | `_tmux_missing_session_stderr`; `tmux_probe_session` | mcp/src/agents_remember/serving/terminal_tmux.py:149-176; mcp/src/agents_remember/serving/terminal_tmux.py:179-181 |
-| The catalog JSON/storage unit tests this file deliberately does not duplicate. | `TerminalCatalogTests` | mcp/tests/test_terminal_catalog.py:48-516 |
+| No external domain claim is required. | N/A | N/A |
 
-## 260718-CHATS-L5I Current Delta
+## Repo-Internal References
 
-Liveness regressions now pin the one-second starting-row path and multi-read disconnect hysteresis separately from definitive tmux exit handling.
+Each current definition below can be inspected in the exact source file. Historical references
+to removed methods are superseded by this current inventory.
 
-This entry supersedes conflicting earlier coverage notes while retaining their history; source verification metadata is deliberately unchanged until the code commit.
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Fake fixtures configure and drive the existing host/control-read seams | `_Clock`; `_FakeHost`; `_sweeper`; `_starting_sweeper` | mcp/tests/test_terminal_liveness.py:44-81 |
+| The raising probe double that forces the lock-release path | `_RaisingHost` | mcp/tests/test_terminal_liveness.py:114-124 |
+| Host failures retain the count-plus-window gate, exit-mark and immediate pane-gone transition | `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` | mcp/tests/test_terminal_liveness.py:203-231 |
+| Full sweeps remain rate-limited by the configured interval | `test_full_sweep_rate_limit_is_preserved` | mcp/tests/test_terminal_liveness.py:233-250 |
+| Starting rows use the one-second path and four-row cap | `test_starting_rows_use_one_second_fast_path_and_four_row_cap` | mcp/tests/test_terminal_liveness.py:252-292 |
+| Host failure evidence survives reload and clears after a successful probe | `test_host_failure_series_survives_restart_and_success_resets` | mcp/tests/test_terminal_liveness.py:295-334 |
+| Connected bridge failures require three strikes across reload and reset on success | `test_connected_control_reads_require_three_strikes_across_restart_and_reset` | mcp/tests/test_terminal_liveness.py:336-405 |
+| Alive starting rows remain eligible through delayed bridge reads | `test_alive_starting_row_survives_delayed_bridge_reads` | mcp/tests/test_terminal_liveness.py:407-439 |
+| A contended full sweep returns without waiting and without a second probe | `test_contended_full_sweep_returns_committed_snapshot_without_second_probe` | mcp/tests/test_terminal_liveness.py:442-479 |
+| The sweep lock releases after an observation exception so a later cadence retries | `test_sweep_lock_releases_after_observation_exception_for_later_retry` | mcp/tests/test_terminal_liveness.py:481-491 |
+| A contended starting-row sweep reads the committed snapshot before any catalog list | `test_contended_starting_sweep_reads_committed_snapshot_before_any_catalog_list` | mcp/tests/test_terminal_liveness.py:493-534 |
+| A repeated clean hosted sweep performs zero physical replacements | `test_repeated_clean_hosted_sweep_does_not_replace_catalog` | mcp/tests/test_terminal_liveness.py:536-572 |
+
+## Cross-Repo References
+
+This card establishes test behavior, not a separate cross-repository protocol or live installation.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-11T18:45+02:00 — 260831-LOCR-L22 curator composition: resolved this card's sync merge
+  against the landed L12 and L21 lines and re-derived the inventory and every range from the composed
+  ten-case module. Two merge hazards were handled semantically rather than line-wise: this leaf and
+  L21 both open new cases with the same `TerminalCatalogLivenessSweeper(...)` boilerplate, so a
+  line-based union splices one side's case into the other's, and this leaf's `_RaisingHost` helper
+  and `TerminalEvidenceRead` import sit outside the case bodies. All three lines' contributions are
+  present in their correct owners, and the composed module plus the catalog suite were executed
+  (nineteen cases passed) before these ranges were written. The composition boundary is now closed:
+  no sibling case additions to this module remain unlanded. Verification metadata remains
+  closeout-owned.
+
+- 2026-09-11T18:40+02:00 — 260831-LOCR-L21 curator composition: resolved this card's sync merge
+  against the landed L12 line and re-derived every row above from the composed module. The merge was
+  semantic rather than textual: this leaf extends `test_transient_failure_storm_leaves_sessions_
+  running_until_window_elapsed` with its window-elapsed and pane-gone tail, while L12 inserts two new
+  cases immediately after that same anchor, so a line-wise union splices one side's tail into the
+  other's case. Both contributions are kept in their correct owners and the composed module was
+  executed (six cases passed) before the ranges above were written. Row ownership: L12 contributes
+  the full-sweep and starting-row cases; this leaf contributes the host-restart, connected-
+  three-strike and alive-starting cases plus the storm tail. Verification metadata remains
+  closeout-owned.
+
+- 2026-09-10T10:12:00+02:00 — 260831-LOCR-L12 curator: re-verified every cited range against the
+  current source tree and made the composition boundary explicit. Sibling leaves `260831-LOCR-L21`
+  (three further cases) and `260831-LOCR-L22` (four further cases) modify this same file and had not
+  landed, so this inventory is bounded by what this tree contains and is not the file's final case
+  count. Verification metadata remains pinned until closeout stamps the leaf code commit.
+
+- 2026-09-08T14:23:36+02:00 — 260831-LOCR-L12 curator: reconciled the retained liveness test
+  inventory with the worker's two focused additions. The sidecar now records the configured
+  full-sweep gate and the one-second starting-row/cap behavior, while preserving the boundary
+  that lifecycle ownership and production wiring require the assembled L01/R16/R18 candidate.
+  Verification metadata remains pinned until closeout stamps the leaf code commit.
+
+- 2026-09-10T11:53:11+02:00 — LOCR-R21 curator reconciliation against the relocated base (code `bb38d04e`, memory `e26b55db`) after sibling LOCR-L28 landed: LOCR-L28 did not touch this module, so all five cited ranges were re-checked against the unchanged candidate file and kept; the four collected cases and the 363-line file are unchanged. The composition boundary was re-confirmed — L12 and L22 remain unlanded and their case additions to this module are still absent — and the card now also records that the module is registered in the `integration` lane of `mcp/tests/test-evidence-lanes.toml`, whose declared budget is 150 collected cases. The candidate stays test-only. Verification metadata remains closeout-owned.
+
+- 2026-09-10T10:32:23+02:00 — LOCR-R21 curator reconciliation against the synced base (code `6096941f`, memory `71d7f73a`): re-verified every range cited by this card against the current candidate file and kept each one unchanged — the fixture range spans `_Clock`/`_FakeHost` through `_control_sweeper`, and each of the four case ranges ends on its method's final assertion. The candidate is test-only: `mcp/tests/test_terminal_liveness.py` is the sole changed source, and no production module, threshold, or persisted field moves with it. Recorded the module's composition boundary (L12 and L22 add cases to this same file from their own unlanded worktrees) and the retained-but-uncalled `_control_sweeper` builder. Verification metadata remains closeout-owned.
+
+- 2026-09-08T14:25+02:00 — LOCR-R21 curator: refreshed the card for the current test-only proof boundary. The retained storm now asserts definitive pane-gone exit, and dedicated cases cover persisted host reset, connected three-strike reset, and alive-starting bridge delay. Production liveness thresholds, state fields, and ownership remain unchanged; closeout owns verification stamping.
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: refreshed the card for the retained
+  non-overlap and single-write proof — full and starting contention, exception-driven lock release
+  with later retry, and one-replacement-then-zero for a repeated clean hosted sweep. Cadence (`R12`)
+  and hysteresis (`R21`) ownership is explicitly preserved; closeout owns verification stamping.
+- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+
+
+- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
+  above after source and requirement review. Verification remains closeout-owned.
 
 - 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
