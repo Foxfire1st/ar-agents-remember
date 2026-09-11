@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash |  `1abeed661cbbf813c7c8a1b651a14dbcf2ad2b4e`|
 | lastVerifiedCommitDate |  2026-08-25T17:21:45+02:00|
 | governingOverview | `overview.md` |
@@ -23,6 +23,10 @@ Proves whether a planning leaf is genuinely unstarted before destructive task-do
 ### Logic
 
 It censuses task steps, enclosure contracts, durable operation projections, seats, review artifacts, and commit evidence, then emits one stable recovery route when any execution authority exists.
+
+It no longer emits a `door` fact. The closeout-door cut (commit `fad9808e`) removed both the
+absent-door and present-door `_fact("door", ...)` entries when `contract.closeout_door` stopped
+existing; a contract that still carries the front-matter key is not evidence that the leaf started.
 
 ### Conventions
 
@@ -66,5 +70,6 @@ protocol claim.
 
 ## Update History
 
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that the `door` fact was removed from the unstarted-evidence census when `contract.closeout_door` stopped existing. Verification metadata remains pinned because only the cut-affected claim was reconciled; source documentation only, no acceptance claim.
 - 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
   requirement review. Verification remains closeout-owned.

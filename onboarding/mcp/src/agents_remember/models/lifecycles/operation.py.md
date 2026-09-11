@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/operation.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
+| lastUpdated | 2026-09-11T12:02+02:00|
 | lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
 | lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
@@ -46,11 +46,15 @@ Under CCR-R03@v1 the durable record carries a typed direct-dependency declaratio
 `lifecycle_operation_dependencies` maps the operation kind to the correct record type
 (`lifecycle-closeout-operation/v3` / `lifecycle-direct-landing-operation/v3` /
 `lifecycle-integration-operation/v3`) and declares the admitted candidate state, normalized
-operation input, gate-policy rail plan, and validator; commit operations additionally bind the exact
+operation input, gate-policy rail plan, and validator; the **closeout** operation additionally binds the exact
 code tree, digest-bearing task intent, and admitted closeout-door generation, refusing
 `lifecycle-operation-candidate-dependencies-missing` or
 `lifecycle-operation-door-dependency-missing` when absent
 cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:435-490).
+Since the closeout-door cut (commit `fad9808e`) a **direct landing** binds neither a leaf task intent
+nor a door: `LifecycleOperationRecord` requires the task-intent state for `closeout` only, because a
+direct landing is a series-contract, branch-addressed delivery with no leaf task document to bind and
+no closeout door to state one for it.
 `require_lifecycle_operation_dependencies` refuses `lifecycle-operation-dependencies-stale` when the
 record's declared edges differ from its admitted immutable inputs
 cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:493-508).
@@ -66,9 +70,9 @@ All models forbid extra fields. The input union is discriminated by `kind`; publ
 - Only the public projection crosses the MCP/dashboard boundary.
 - A completed integration result cannot replace its selected frozen run, terminal references, completion identity, or admitted code commit.
 - Selecting or advancing either certification cell changes the meaningful-state projection; heartbeat-only writes still do not.
-- The declared dependencies are the admitted door, certifying plan, and acceptance candidate; a
+- The declared dependencies are the admitted door (closeout only), certifying plan, and acceptance candidate; a
   record never binds a universal candidate tuple, and dependencies are omitted only when the
-  record-type policy proves the record never reads them.
+  record-type policy proves the record never reads them. A direct-landing record declares no door edge.
 
 ### Todos
 
@@ -142,11 +146,13 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 ## 260821-CLIVE Journal-Owned Source And Door Evidence
 
-Integration publication now transfers the exact claimed door plus source operation kind,
+`IntegrationPublicationIntent` still models the exact claimed door plus source operation kind,
 generation, fingerprint, key, and source-journal digest; queue candidate identity is absent.
 Operation generations retain bounded door history and per-scope projection effects. Supersede
-declarations have their own immutable fingerprint, and direct landing may carry the same proven door
-publication. The operation journal is the durable owner of running, commit, certification,
+declarations have their own immutable fingerprint. Direct landing no longer carries a proven door
+publication at all — that field was removed from its record builder by the closeout-door cut
+(commit `fad9808e`), and `integrate.py` no longer constructs an `IntegrationPublicationIntent`. The
+operation journal is the durable owner of running, commit, certification,
 integration, cancellation, retirement, and supersession evidence even when a projection is emptied.
 
 
@@ -159,10 +165,11 @@ fallback, or compatibility reader was added.
 
 ## 260831-CCR-R03 Declared Operation Dependencies
 
-The lifecycle record now carries `dependencies`; every claim, direct-landing, door-intent, and
+The lifecycle record now carries `dependencies`; every claim, closeout door-intent, and
 queued-integrate writer recomputes the exact declaration from the admitted candidate, door, plan,
 and input before persistence, and launch/currentness gates re-require it (worker handover:
-notes/reports/260902-CCR-L03-worker-delivery.md).
+notes/reports/260902-CCR-L03-worker-delivery.md). A direct-landing writer recomputes the same
+declaration from its candidate, plan, and input, without a door edge.
 
 
 ## 260831-CCR-L15 Meaningful-State Revision
@@ -195,6 +202,7 @@ The operation record separately retains private preparation state. Original comm
 | `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. | `_require_canonical_cancellation_handoff` | `mcp/src/agents_remember/models/lifecycles/operation.py:989-1024` |
 
 ## Update History
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that the task-intent requirement narrowed to `closeout` only (a direct landing binds no leaf task intent), that a direct-landing record carries no door publication and declares no door edge, and that `integrate.py` no longer constructs an `IntegrationPublicationIntent`. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "def _require_altitude_authority(record: LifecycleOperationRecord)" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:597-597. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 

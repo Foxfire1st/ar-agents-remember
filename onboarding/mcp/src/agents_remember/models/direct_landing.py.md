@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T14:19+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
 | lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
 | governingOverview | `overview.md` |
@@ -83,11 +83,15 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 ## 260821-DAGQC-L2 Closed Outcome Vocabulary
 
 The response model closes the top-level outcome plane to exactly `landed`, `would-land`, or
-`refused` and declares the door/projection recovery fields separately. Intermediate journal states
+`refused` and declares the projection recovery fields separately. Intermediate journal states
 belong inside the lifecycle projection; they are evidence about how the operation is proceeding,
-not a fourth direct-landing outcome.
+not a fourth direct-landing outcome. The separate `doorGenerationId` recovery field this section
+once carried was removed by the closeout-door cut (commit `fad9808e`); a direct landing no longer
+carries or reports a door generation.
 
 ## Update History
+
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that `DirectLandingResponse.doorGenerationId` was removed and that the closed-outcome section no longer declares a door recovery field. Verification metadata remains pinned because only the cut-affected claim was reconciled; source documentation only, no acceptance claim.
 
 - 2026-08-26T10:44:52+02:00 — No content impact: reviewed closeout input/projection package relocations; direct-landing outcome and nested journal evidence remain unchanged.
 

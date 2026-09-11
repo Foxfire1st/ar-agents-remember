@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/direct_landing.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
 | lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `../../../overview.md` |
@@ -46,10 +46,12 @@ the focused `integration/direct_landing_*` owners. Those owners preserve accepte
 identity, write intent before memory and ledger mutation, journal each produced commit, and resume
 the same generation across crash cuts or unreadable-ledger recovery.
 
-Under CCR-R03@v1 `_claim_waiting_direct_landing` binds the claimed operation's typed dependency
-declaration (`lifecycle_operation_dependencies`) before the direct claim is created, so the landed
-operation content-addresses the admitted door, candidate, plan, and input
-cit:([`_claim_waiting_direct_landing`], mcp/src/agents_remember/worktrees/direct_landing.py:678-701).
+Under CCR-R03@v1 the claimed direct-landing operation carries its typed dependency declaration
+(`lifecycle_operation_dependencies`). Since the closeout-door cut (commit `fad9808e`) that binding no
+longer includes a door: a direct landing is admitted by its own request — the series contract, the
+branch HEAD commit and tree, and the effective commit messages — not by a claimed closeout door. All
+five former door reads are gone, `_claim_waiting_direct_landing` no longer exists, and the record
+carries no `doorPublication`.
 
 ### Conventions
 
@@ -138,11 +140,14 @@ fallback, or compatibility reader was added.
 
 ## 260831-CCR-R03 Dependency-Declared Direct Landing
 
-The claimed direct-landing generation now carries `lifecycle_operation_dependencies`, binding the
-admitted door, candidate, plan, and input (worker handover:
-notes/reports/260902-CCR-L03-worker-delivery.md).
+The claimed direct-landing generation carries `lifecycle_operation_dependencies`, binding the
+candidate, plan, and input (worker handover:
+notes/reports/260902-CCR-L03-worker-delivery.md). The admitted door was dropped from that binding by
+the closeout-door cut (commit `fad9808e`).
 
 ## Update History
+
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that all five door reads are gone and admission is now the request itself plus the `directExecutionEnabled` policy gate; replaced the `_claim_waiting_direct_landing` binding claim with the current dependency declaration (candidate, plan, input — no door). Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the direct-landing claim dependency binding and its launch/currentness re-requirement; prior policy-gated and journaled-execution prose preserved.
 

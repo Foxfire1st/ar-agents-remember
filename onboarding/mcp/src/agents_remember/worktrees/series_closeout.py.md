@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/series_closeout.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
+| lastUpdated | 2026-09-11T12:02+02:00|
 | lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
 | lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `../../../overview.md` |
@@ -30,19 +30,26 @@ coherence, or independent review. Full suites are an explicit developer request.
 
 `_exact_atomic_landing_chain` now returns the ordered landed leaf chain, and `atomic_series_ledger_prefix` derives the newest-first ledger rows that chain contributes.
 
-Closeout and series integration share the same canonical task/contract/door evidence, but only the
+Closeout and series integration share the same canonical task/contract evidence, but only the
 protected landing takes the narrow integration-authority lock. Closeout re-proves completion without
-that landing-only lock. The seal verifies canonical master membership, exact enclosure and claimed-door
+that landing-only lock. The seal verifies canonical master membership, exact enclosure
 identity, code and memory repository identity, each leaf's base-to-integrated edge, content/ledger
 ancestry, and final named-ref tips. Direct commits, missing leaves, foreign copied contracts, mismatched
 code/memory order, and concurrent child admission cannot be absorbed into a master candidate.
+
+Since the closeout-door cut (commit `fad9808e`) the landed-leaf proof no longer consults a door: the
+`_AtomicLandingFacts` carrier and its `door`/`door_sprint`/`door_candidate` comparisons were removed
+from `_require_exact_atomic_landing_chain` and `_atomic_leaf_code_matches` when `contract.closeout_door`
+stopped existing.
 
 Since 260815-DAG-L13 the atomic-master completion proof (`_require_atomic_master_complete`) and
 the series-edge publication (`_publish_atomic_series_edge`) read the **effective** execution
 nature (`scheduling_mode.effective_execution_nature`): a nature-less legacy master executes
 atomically under the atomic-sequential default and closes out without migration (L13-R5a), and a
 graph-less sprint takes the atomic-sequential series path. Graph absence does not weaken canonical
-master/leaf/door re-proof and no projection row is completion authority.
+master/leaf re-proof and no projection row is completion authority.
+
+Since 260831-closeout-door-cut the master/leaf re-proof carries no door dimension at all.
 
 ## Invariants And Boundaries
 
@@ -70,12 +77,14 @@ No configured domain-documentation or cross-repository source applies to this fi
 ## 260821-CLIVE Atomic Completion Re-Proof
 
 Series closeout no longer creates or mutates an initial queue state. It re-proves the atomic master
-is complete and every atomic leaf is landed from canonical task/contract/door evidence, then repeats
+is complete and every atomic leaf is landed from canonical task/contract evidence, then repeats
 that proof under the landing-only integration authority lock immediately before protected
-publication. Door candidate/sprint identities participate in the landed-leaf proof. Scheduling
-projection absence is irrelevant to atomic completion truth.
+publication. Door candidate/sprint identities no longer participate in the landed-leaf proof — that
+comparison was deleted with the contract field by the closeout-door cut (commit `fad9808e`).
+Scheduling projection absence is irrelevant to atomic completion truth.
 
 ## Update History
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: removed the door dimension from the landed-leaf proof claim — `_AtomicLandingFacts` and its `door`/`door_sprint`/`door_candidate` comparisons were deleted with `contract.closeout_door`. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/organizational_completion.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-26T14:32+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
 | lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview | `overview.md` |
@@ -16,7 +16,37 @@
 
 ## Purpose
 
-Computes and publishes the exact completion proof for a branchless organizational master's final-leaf landing.
+Owner of the branchless-organizational-master completion proof and its exact publication bytes. The
+completion-inference that once used this module — "a leaf landed, therefore the master is done" — was
+deleted by the closeout-door cut, so the plan and publication functions here are currently uncalled
+and master completion is undecided.
+
+## Master Completion Is Undecided
+
+A leaf integrating reports a fact: integrated, checks passed. It may never imply its master is done.
+`publish_organizational_master_completion` had exactly one live effect — writing the master task
+document to `Completed` by inference from a landed leaf. That inference was deleted by commit
+`fad9808e` and deliberately **not** re-expressed: a door-less leaf now yields a genuine absence, not a
+reconstructed completion plan.
+
+The current truthful state is that **completing a master is a decision that is not reachable in code
+today**. Two checks are owed and neither is built:
+
+- a reviewer **report must exist** — existence only; it is never read, parsed, hashed or graded;
+- an **approval must be recorded**, widened from `tasks/route_review.py`'s `developerApproval` into
+  one `{approver role/altitude, tentative | final}` concept, so an orchestrator may approve
+  tentatively and the developer's sprint-handover approval is final.
+
+The intended entry point is `application/worktree_tools.py::lifecycle_finalize_task_tool`, gated on
+both checks. Master completion is never a side effect of a landing.
+
+**What is still reachable here.** `organizational_completion_plan`,
+`prepare_organizational_master_completion`, `publish_organizational_master_completion` and
+`require_published_organizational_master_completion` all have zero callers and zero test references
+after the cut; they are retained as the named site of this gap, not as live inference. Only
+`classify_organizational_master_completion` is still reached — called from
+`integration_operation_decision.py` to classify a retained
+`publication.organizationalCompletion`.
 
 ## Code Commentary
 
@@ -31,6 +61,9 @@ completion decision only after protected-ref movement and fingerprint proof agre
 Each sibling's own ledger uses its newest mapping as current authority; the proposed final ledger
 must retain the sibling's exact landed code/memory edge anywhere in history, even when a later
 memory-only row for the same code is newer.
+
+The sibling door read goes through `live_closeout_door(contract)`; the module no longer reads a
+`contract.closeout_door` field, which no longer exists.
 
 ### Invariants And Boundaries
 
@@ -48,7 +81,7 @@ memory-only row for the same code is newer.
 | Scope validation pins executionNature, owning master, and canonical child. | `_completion_scope` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:183-213 |
 | Sibling code ancestry is re-proved against the sprint super. | `_require_landed_sibling` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:460-482 |
 | Sibling memory ancestry, newest current mapping, and exact historical-edge preservation are enforced. | `_require_landed_sibling_memory`, `_sibling_memory_mappings` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:543-556; mcp/src/agents_remember/worktrees/integration/organizational_completion.py:584-616 |
-| Master completion is published only with the exact certified fingerprint. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:313-347 |
+| Master completion is published only with the exact certified fingerprint. This function currently has zero callers and no longer runs on any landing path. | `publish_organizational_master_completion` | mcp/src/agents_remember/worktrees/integration/organizational_completion.py:313-347 |
 
 ## Documentation References
 
@@ -76,8 +109,10 @@ The current source seams include `OrganizationalCompletionError`, `Organizationa
 
 Final-leaf proof is driven by the exact claimed `CloseoutDoorGeneration` and canonical sibling
 contracts. The door itself embeds candidate, master, and sprint binding; sibling-landed checks
-require their own exact claimed doors. Absence of a queue row, candidate collection, or mutable
-blocker state is never organizational-completion evidence.
+require their own exact claimed doors, now read through `live_closeout_door` rather than from a
+contract field. Absence of a queue row, candidate collection, or mutable
+blocker state is never organizational-completion evidence. Since commit `fad9808e` this proof is not
+reached from the integration path at all; see "Master Completion Is Undecided" above.
 
 
 ## PDLS Reconciliation
@@ -87,6 +122,7 @@ Sibling completion proof now separates code ancestry, memory identity/ancestry, 
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that master completion is now explicitly undecided (the landed-leaf inference was deleted, not replaced), added the two owed checks and their intended `lifecycle_finalize_task_tool` entry point, and recorded that the plan/publication functions here now have zero callers while `classify_organizational_master_completion` remains reachable. Replaced the completion-inference Purpose with the completion-proof ownership, and repointed the sibling door read to `live_closeout_door`. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `organizational_completion_plan` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion.py:130-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `_completion_scope` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion.py:183-213. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: `_require_landed_sibling` repointed to mcp/src/agents_remember/worktrees/integration/organizational_completion.py:460-482. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
