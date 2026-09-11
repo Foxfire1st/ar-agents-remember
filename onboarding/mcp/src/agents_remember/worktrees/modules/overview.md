@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
+| lastUpdated | 2026-09-11T15:04+02:00 |
 | lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
 | lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `../overview.md`                           |
@@ -235,7 +235,7 @@ interactive fresh-probe surface, while `projected_status_payload` consumes only 
 immutable landing snapshot. The recurring projector therefore never invokes `git ls-remote` or
 `gh` through guidance; missing and stale observations remain explicit.
 - `start.py`, `startup/start_contract.py`, `startup/leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
-  `finalize.py`, and `abandon.py`
+  `automatic_cleanup.py`, `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
   `start.py` calls `startup.start_contract.build_start_contract` to resolve the requested leaf ref through the
   `worktrees/leaf_refs.py` task-tree resolver before any start write; accepted refs persist the canonical
@@ -279,6 +279,13 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
   memory-side failure, so integration never lands a half-integrated state.
+  A completed integration then reclaims its own enclosure automatically: `automatic_cleanup.py`
+  (`run_automatic_cleanup`) reruns the existing `cleanup_result` procedure with `approved=True`,
+  `dry_run=False` and `teardown_providers=True`, and reports in operator language what it removed
+  and what it did not across worktrees, merged local branches, the reports directory and the
+  enclosure root. A refused or partial integration cleans up nothing — that is when the evidence is
+  still needed — and a cleanup refusal after a real landing is reported without failing the
+  integration.
   `abandon.py` is the discard-without-integration sibling: it reclaims the
   isolated provider stack and removes worktrees/branches without requiring a
   prior integration.
@@ -969,6 +976,7 @@ review; full suites are an explicit developer request. The older quality-altitud
 historical context for pre-R12 behavior.
 
 ## Update History
+- 2026-09-11T15:04+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: added `automatic_cleanup.py` to the modules owning the c-09 lifecycle operations, and recorded on the integration description that a completed integration reclaims its enclosure through `run_automatic_cleanup` (reusing `cleanup_result` with `approved=True` / `dry_run=False` / `teardown_providers=True`), that a refused or partial integration cleans up nothing, and that a cleanup refusal is reported without failing the integration. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry: recorded `modules/closeout_lineage.heal_current_source_lineage` as the self-healing closeout lineage guard and the rewording of the source-moved recovery guidance through `worktree_sync` plus a new targeted closeout. `replay` remains supported. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
