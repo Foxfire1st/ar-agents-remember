@@ -6,8 +6,8 @@
 | path | `mcp/tests/test-evidence-lanes.toml` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash | `3fc5d7aa20095de50bc53008e9453c612532b97d` |
-| lastVerifiedCommitDate | 2026-09-11T18:38:20+02:00|
+| lastVerifiedCommitHash | `11d1ed0e5542818283bf7fb012a7bdd642aaba2e` |
+| lastVerifiedCommitDate | 2026-09-11T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,8 +16,7 @@
 
 ## Purpose
 
-Classifies 187 retained test-shaped modules into explicit evidence categories: 107 unit-regression, 2 public-contract, 51 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` is a unit-regression member. The total fell from the 188 modules the manifest previously recorded because the de-entanglement cut deleted four integration modules — `test_integration_ref_transaction.py`, `test_worktree_integrate_quality_gate.py`, `test_closeout_memory_certification_reuse.py` and `test_prepared_publication_recovery.py`. Every `mcp/tests/test_*.py` module on disk is listed exactly once and no path is duplicated. File counts are not collected-case counts, and the lane bracket is the unit of accounting: unit-regression is the default delivery lane, while the integration lane is capped at 150 collected cases. The closeout auto-carry change registered one new module, `test_sync_parked_candidate.py`, in the existing `unit-regression` lane, and this leaf registered its boundary-delivery module `test_state_signal_boundary_delivery.py` in that same lane; the per-lane counts above are the current source membership.
-
+Classifies 188 retained test-shaped modules into explicit evidence categories: 108 unit-regression, 2 public-contract, 51 integration, 14 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members. The total fell from the 188 modules the manifest previously recorded because the de-entanglement cut deleted four integration modules — `test_integration_ref_transaction.py`, `test_worktree_integrate_quality_gate.py`, `test_closeout_memory_certification_reuse.py` and `test_prepared_publication_recovery.py`. Every `mcp/tests/test_*.py` module on disk is listed exactly once and no path is duplicated. File counts are not collected-case counts, and the lane bracket is the unit of accounting: unit-regression is the default delivery lane, while the integration lane is capped at 150 collected cases. The closeout auto-carry change registered one new module, `test_sync_parked_candidate.py`, in the existing `unit-regression` lane, and this leaf registered its boundary-delivery module `test_state_signal_boundary_delivery.py` in that same lane; the per-lane counts above are the current source membership.
 ## Code Commentary
 
 ### Logic
@@ -76,6 +75,7 @@ the LOCR-L28 landing. That repair is repo-hygiene and is not part of any LOCR re
 - Evidence class is separate from whether a test invokes a real external producer.
 - Current source membership governs; old final-Codex executor/status-wait/deleted-edge lists do not.
 - Host development pytest is supported; only explicit certification requires Dagger admission.
+- Lane membership is additionally bounded by the declared collected-case budgets (`unit_case_budget` 1000, `integration_case_budget` 150). A module that was previously running unmarked already spends unit budget, so registering it as `unit-regression` preserves behaviour; moving it into `integration` can push full-suite collection past the integration cap and fail collection outright. Classification cannot be chosen for semantic tidiness alone.
 - Full suites and whole-candidate review occur at master completion, not once for every lane or leaf.
 - Lane membership must keep each collected population inside its declared case budget: `unit_case_budget` 1000 and `integration_case_budget` 150 (root `pyproject.toml`), enforced in `pytest_collection_finish`. `integration` sits at its 150-case cap, so a module that a full run previously collected unmarked - and therefore already counted as unit - belongs in `unit-regression`; moving it to `integration` refuses collection.
 
@@ -89,16 +89,15 @@ The exact source declarations below establish the current behavior; this invento
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-111 |
-| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:116-168 |
-| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:169-184 |
-| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:185-199 |
-| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:200-201; mcp/tests/test-evidence-lanes.toml:202-203 |
-| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:116-117; mcp/tests/test-evidence-lanes.toml:164-164 |
+| Retained unit-regression membership, including the R28 deferred-work and canonical terminal-evidence mapping proofs | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-114 |
+| Small actual integration file population | `integration` | mcp/tests/test-evidence-lanes.toml:119-171 |
+| Retained structural detector classifications | "architecture-fitness" | mcp/tests/test-evidence-lanes.toml:172-187 |
+| Provider contract classifications | "provider-conformance" | mcp/tests/test-evidence-lanes.toml:188-202 |
+| Empty former stress/migration populations | "stress-durability" | mcp/tests/test-evidence-lanes.toml:203-204; mcp/tests/test-evidence-lanes.toml:205-206 |
+| L38 registered public activation/admission and route-review transport ownership | `integration` | mcp/tests/test-evidence-lanes.toml:120-120; mcp/tests/test-evidence-lanes.toml:167-167 |
 | The new parked-candidate suite is registered in the unit-regression lane. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:95-95 |
-| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:200-201 |
-| LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:90-90 |
-
+| The manifest still has no default classification for an unregistered test file. | "stress-durability" | mcp/tests/test-evidence-lanes.toml:203-204 |
+| LOCR-L09 boundary-delivery forcing module registered in the unit lane | "mcp/tests/test_state_signal_boundary_delivery.py" | mcp/tests/test-evidence-lanes.toml:91-91 |
 ## Cross-Repo References
 
 No separate cross-repository authority is established by this file.
@@ -138,6 +137,14 @@ No separate cross-repository authority is established by this file.
   six lane bracket citations were re-derived against the file as it stood; the preceding L20 entry's
   183 rows was the count before that restoration. This records lane classification only; focused
   execution and any later acceptance remain separately owned.
+
+- 2026-09-10T11:52:46+02:00 — 260831-LOCR-L25 curator: resolved the merge with landed LOCR-L28 (`e26b55db`) and re-derived every lane bracket and the population against the synced manifest: 187 modules — 103 unit-regression (`5-109`), 2 public-contract (`110-113`), 55 integration (`114-170`), 14 architecture-fitness (`171-186`), 13 provider-conformance (`187-201`), with stress-durability (`202-203`) and migration (`204-205`) empty; every row unique and present on disk. Supersedes the 186 / 102 figures recorded above by both leaves. Classification only: lane membership is not execution or acceptance evidence, and verification metadata remains closeout-owned.
+
+- 2026-09-10T11:22:48+02:00 — 260831-LOCR-L25 curator: corrected the lane split for the three restored CCR landing-debt rows. The first registration put `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py` in `integration`, which pushed full-suite collection to 157 against the 150-case integration cap and raised `UsageError` at collection finish; because both modules previously ran unmarked (unit), the behaviour-preserving lane is `unit-regression`. All three restored rows (`test_review_state.py`, `test_task_doc_review_public.py`, `test_transaction_only_worktree_delivery.py`) are now `unit-regression`. Re-derived population: 102 unit-regression / 2 public-contract / **55** integration / 14 architecture-fitness / 13 provider-conformance = 186 files, superseding the 100 / 2 / 57 figures recorded at 11:04 on the same tree. Integration collects 150 (cap 150), unit collects 712 (cap 1000). The bracket ranges were re-measured (`integration` is again 113-169, `unit-regression` 5-108) and the cap consequence is recorded as a current invariant. Classification only: no execution or acceptance claim, and verification metadata remains closeout-owned.
+
+- 2026-09-10T11:04:12+02:00 — 260831-LOCR-L25 curator: re-derived this card against the developer-authorized manifest repair that restored the three CCR landing-debt rows `8885939e` omitted (recorded here as `test_review_state.py` unit-regression; `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py` integration; the three modules already had cards). All five lane bracket ranges and the L38 row were re-measured and the population was recorded as 100 unit-regression / 2 public-contract / 57 integration / 14 architecture-fitness / 13 provider-conformance = 186 files, replacing 99 / 2 / 55 / 14 / 13 = 183. **The 57-integration split in this entry was superseded by the 11:22 correction above; the total of 186 and the restored-row set remain correct.** Classification only: lane membership is not execution or acceptance evidence, and verification metadata remains closeout-owned.
+
+- 2026-09-10T10:06:31+02:00 — 260831-LOCR-L25 curator: registered the new separation-guard module `mcp/tests/test_parked_external_await_separation.py` in the `unit-regression` lane and re-derived every lane bracket and membership range against the current manifest on the leaf candidate base `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`. The recorded population (96 unit / 54 integration / 179 files) had already drifted from the manifest, which held 98 / 55 / 182 before this leaf's row; it is now recorded as 99 / 55 / 183. Classification only: lane membership is not execution or acceptance evidence, and verification metadata remains closeout-owned.
 
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "stress-durability" repointed to mcp/tests/test-evidence-lanes.toml:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 

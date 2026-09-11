@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_state_signal_relay.py`                   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`                                    |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `11d1ed0e5542818283bf7fb012a7bdd642aaba2e`                                    |
+| lastVerifiedCommitDate | 2026-09-11T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Simulates multiple relay ticks to preserve the finished-worker signal even without an inbox row, revalidate topology and landed episodes before non-reaction actions, hold a busy manager at the boundary then land once, rebind a replaced owner, route a master-bound reviewer to the current manager, fence malformed or ambiguous topology per subject, and avoid done signals for killed or hung seats. Injected delivery and clock boundaries make these relay assertions deterministic.
+Simulates multiple relay ticks to preserve the finished-worker signal even without an inbox row, revalidate topology and landed episodes before non-reaction actions, hold a busy manager at the boundary then land once, rebind a replaced owner, route a master-bound reviewer to the current manager, fence malformed or ambiguous topology per subject, avoid done signals for killed or hung seats, and withhold any owner wake while a seat's own turn is still open. Injected delivery and clock boundaries make these relay assertions deterministic.
 
 ## Code Commentary
 
@@ -30,6 +30,12 @@ The current structural-routing cases exercise action-time replacement, missing/a
 topology isolation, owner disappearance after finding revalidation, and action-time refusal without
 publishing a row or source marker. These cases protect the R08 refusal and retry boundary while
 leaving delivery/recovery and canonical seat selection to their owning modules.
+
+The non-completion boundary also covers an open turn. A seat whose `turn_state` is still `working`
+reports nothing to its owner even while stale adapter outcome fields survive on its row; the same
+seat produces exactly one owner-addressed signal once its turn has ended. That case holds the
+ended-turn trigger in place so the parked open-turn external-await design cannot be adopted here as
+a fallback producer.
 
 ### Conventions
 
@@ -63,15 +69,16 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Incident 1 finished worker without inbox row still signals manager | `test_incident_1_finished_worker_without_inbox_row_still_signals_manager` | mcp/tests/test_state_signal_relay.py:259-282 |
-| Non reaction action revalidates current topology and landed episode | `test_non_reaction_action_revalidates_current_topology_and_landed_episode` | mcp/tests/test_state_signal_relay.py:284-344 |
-| Busy manager holds at boundary then lands exactly once | `test_busy_manager_holds_at_boundary_then_lands_exactly_once` | mcp/tests/test_state_signal_relay.py:346-412 |
-| Owner rebinding after manager replacement | `test_owner_rebinding_after_manager_replacement` | mcp/tests/test_state_signal_relay.py:414-431 |
-| Master-bound reviewer reaches the current manager after replacement | `test_master_exit_reviewer_signal_reaches_current_manager` | mcp/tests/test_state_signal_relay.py:437-465 |
-| Missing or ambiguous parent topology fences one subject while preserving an unrelated finding | `test_topology_refusal_fences_one_subject_and_keeps_unrelated_finding` | mcp/tests/test_state_signal_relay.py:467-496 |
-| Owner disappearance after finding revalidation leaves the source eligible and unmarked | `test_owner_disappearance_after_revalidation_keeps_source_eligible` | mcp/tests/test_state_signal_relay.py:498-535 |
-| Action-time topology refusal fences the subject without a marker | `test_action_topology_refusal_fences_subject_without_marker` | mcp/tests/test_state_signal_relay.py:537-554 |
-| No done signal for killed or hung seats | `test_no_done_signal_for_killed_or_hung_seats` | mcp/tests/test_state_signal_relay.py:556-574 |
+| Incident 1 finished worker without inbox row still signals manager | `test_incident_1_finished_worker_without_inbox_row_still_signals_manager` | mcp/tests/test_state_signal_relay.py:264-287 |
+| Non reaction action revalidates current topology and landed episode | `test_non_reaction_action_revalidates_current_topology_and_landed_episode` | mcp/tests/test_state_signal_relay.py:289-349 |
+| Busy manager holds at boundary then lands exactly once | `test_busy_manager_holds_at_boundary_then_lands_exactly_once` | mcp/tests/test_state_signal_relay.py:351-417 |
+| Owner rebinding after manager replacement | `test_owner_rebinding_after_manager_replacement` | mcp/tests/test_state_signal_relay.py:419-436 |
+| Master-bound reviewer reaches the current manager after replacement | `test_master_exit_reviewer_signal_reaches_current_manager` | mcp/tests/test_state_signal_relay.py:438-466 |
+| Missing or ambiguous parent topology fences one subject while preserving an unrelated finding | `test_topology_refusal_fences_one_subject_and_keeps_unrelated_finding` | mcp/tests/test_state_signal_relay.py:468-497 |
+| Owner disappearance after finding revalidation leaves the source eligible and unmarked | `test_owner_disappearance_after_revalidation_keeps_source_eligible` | mcp/tests/test_state_signal_relay.py:499-536 |
+| Action-time topology refusal fences the subject without a marker | `test_action_topology_refusal_fences_subject_without_marker` | mcp/tests/test_state_signal_relay.py:538-555 |
+| No done signal for killed or hung seats | `test_no_done_signal_for_killed_or_hung_seats` | mcp/tests/test_state_signal_relay.py:557-575 |
+| An open turn never wakes the owner before terminal evidence | `test_open_turn_never_wakes_the_owner_before_terminal_evidence` | mcp/tests/test_state_signal_relay.py:577-603 |
 
 ## Cross-Repo References
 
@@ -82,6 +89,8 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-10T10:06:31+02:00 — 260831-LOCR-L25 curator: recorded the added open-turn non-wake case (`test_open_turn_never_wakes_the_owner_before_terminal_evidence`) and re-derived all ten retained case ranges against the current source on the leaf candidate base `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`; the nine pre-existing ranges had drifted and now match the source. This records source behavior, not a test execution or acceptance claim; verification metadata remains closeout-owned.
 
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: reconciled the retained relay test account with the current R08 replacement, topology-refusal, owner-disappearance, and no-marker cases. The card records scenario ownership and source anchors without claiming execution or acceptance.
 
