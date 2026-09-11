@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `e375f2ebdc87f6843bc76168b646d606fa79caec` |
 | lastVerifiedCommitDate | 2026-09-04T20:19:44+02:00 |
 | governingOverview | `../../overview.md` |
@@ -81,9 +81,11 @@ envelope never splice facts from different journal revisions.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The read-only wait snapshot projection entry point. | `observed_operation_projection` | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py:260-278 |
-| The wait controller consuming it for the changed snapshot. | `worktree_status_wait_tool` | mcp/src/agents_remember/application/lifecycle/lifecycle_status_wait.py:81-111 |
+| The application wait controller named here was deleted with the door/operation plane (commit `41b0812e`); this projection now has no public wait caller. | — | — |
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: retired the evidence row citing the deleted `lifecycle_status_wait.py` wait controller. Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
 

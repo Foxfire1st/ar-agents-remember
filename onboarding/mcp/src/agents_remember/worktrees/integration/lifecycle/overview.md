@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:48:58+00:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../overview.md` |
@@ -30,8 +30,19 @@ Read `lifecycle_operations.py` for start/resume/retry and `lifecycle_operation_l
 ## Operating Model
 
 An independent locator addresses one enclosure manifest; that manifest addresses one canonical
-journal. Operations are generation-scoped and lease-owned. Projection is derived from durable
+journal. Operations are generation-scoped. Projection is derived from durable
 evidence and legal controls are calculated without mutating the journal.
+
+## De-Entanglement Cut Removals
+
+The lock, door, operation and journal planes were deleted by the de-entanglement cut. On this route
+that removed `lifecycle_operation_lease.py` (commit `1a0919c1`, "delete the lock plane"): operations
+are no longer lease-owned, nothing takes a lock to prove a claim, and the accepted cost is that two
+concurrent writers of the same record may lose one write. The claims elsewhere on this page that
+name **leases**, the **contract-owned waiting door**, **door rows**, or **worker-exit proof** were
+written against that deleted plane and were not re-derived in this pass; re-read them against the
+synchronous closeout/integration route before relying on them. The surviving members listed in the
+File-Level Onboarding Map above are unaffected — the map carries no deleted card.
 
 ## Local Invariants And Traps
 
@@ -108,6 +119,7 @@ selected certification, curator coherence, and independent review outside normal
 suites are an explicit developer request.
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the `lifecycle_operation_lease.py` card with the deleted lock plane (commit `1a0919c1`) and added a removal note flagging the lease/door/worker-exit claims elsewhere on this page as written against the deleted plane and not re-derived. The File-Level Onboarding Map needed no change — it carried no deleted card. Verification metadata remains pinned because only the cut-affected claims were reconciled. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 

@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-10T15:06+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00|
+| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
+| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -29,15 +29,16 @@ operation journal and Git proof owners; the disposable closeout projection obser
 ## Purpose
 
 The integration-authority package owns branch/ref authority, quality and publication fences,
-organizational completion, and recovery. Its committed L2 structure now groups root-journal
-generation/control/worker/location logic under `lifecycle/`, direct-landing execution and recovery
-under `direct_landing/`, and the bounded removable schema-1 bridge under `legacy/`; the remaining
-integration orchestration stays at this parent route. These are ownership-preserving package moves,
-not compatibility copies of the former flattened modules.
+organizational completion, and recovery. Its committed L2 structure groups root-journal
+generation/control/worker/location logic under `lifecycle/` and direct-landing execution and recovery
+under `direct_landing/`; the remaining integration orchestration stays at this parent route. These
+are ownership-preserving package moves, not compatibility copies of the former flattened modules.
+The bounded schema-1 `legacy/` bridge this route once carried was deleted as a capability by the
+de-entanglement cut (commit `a583beb8`, "delete the legacy operation bridge and its tool surface").
 
 ## Hot Path Summary
 
-Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, bounded legacy repair, and integration reconciliation.
+Normal operation authority is locator -> immutable enclosure-root manifest -> canonical root journal. `lifecycle_operation_location.py` owns path confinement and publication state; `lifecycle_operation_binding.py` owns only the pure canonical identity/digest bytes that publication proves. This route also owns admission-time authoritative reread, generations and controls, exact Git/ref/process evidence, door/successor publication, direct landing, and integration reconciliation. The bounded schema-1 legacy repair route this summary used to list was deleted with the legacy package.
 
 The final size/ownership split places door publication and recovery below `closeout/`, detached
 worker launch/state/termination below `lifecycle/worker/`, cancellation mutation below
@@ -51,7 +52,8 @@ package: branch-backed authority checks (`require_*`), durable lifecycle operati
 Dagger quality gate checkout, and organizational-completion integration/repair.
 
 MCAR exact-pair admission centralizes live code-worktree and memory-worktree identity in
-`closeout/memory_candidate_pair.py`. Configured repository authority remains strict and may
+`memory_quality/memory_candidate_pair.py` after the de-entanglement cut relocated it out of
+`closeout/` (commit `0b63d6fc`). Configured repository authority remains strict and may
 delegate only those duplicate candidate checks to that pair owner. Completed-integration reopen
 policy is isolated in `closeout/integration_reopen.py`: it permits memory-only settings closeout
 only when the source head is either the recorded base or the exact recorded integrated commit;
@@ -96,11 +98,11 @@ immutable suffix; ledger metadata and canonical rendering must match; and the le
 prove the exact memory parent, before/after ledger blobs, and ledger-only changed path. Older exact
 same-code rows remain valid audit history.
 
-Cancelled closeout replacement likewise admits only the current waiting door together with the
-cancelled journal disposition and proven worker exit. Door-publication history remains audit
-evidence, not a uniqueness oracle for a predecessor that the current contract already identifies.
-Neither rule adds a fallback reader: both narrow recovery to the current canonical authority plus
-exact retained evidence.
+Cancelled closeout replacement likewise admits only the current retained lifecycle state together
+with the cancelled disposition; the contract-owned waiting door and the detached worker exit proof
+that earlier revisions of this section named were deleted with the door/operation plane. Neither rule
+adds a fallback reader: both narrow recovery to the current canonical authority plus exact retained
+evidence.
 
 ## 260821-CLIVE-L1 Admission, Identity, And Recovery
 
@@ -108,9 +110,9 @@ Closeout integration separates four owners: the contract lifecycle lease seriali
 
 ## 260821-CLIVE-L2 Current Architecture
 
-One admitted contract observation enters each public mutation flow; the mutation owner rereads that exact authority under its existing lease/lock. Journal input and proven output are immutable. Retry/recover remain same-generation, revise is safe-cancel plus write-ahead successor, and worker authority survives until termination proof. Direct landing journals every memory/ledger cut. Legacy schema-1 repair and pre-locator adoption are explicit removable routes. Terminal cleanup refuses until L5 archive proof.
+One admitted contract observation enters each public mutation flow; the mutation owner rereads that exact authority under its existing lease/lock. Journal input and proven output are immutable. Retry/recover remain same-generation, revise is safe-cancel plus write-ahead successor, and worker authority survives until termination proof. Direct landing journals every memory/ledger cut. Terminal cleanup refuses until L5 archive proof. The legacy schema-1 repair route and the pre-locator adoption route it once listed were deleted as capabilities by the de-entanglement cut.
 
-The route decomposition mirrors those boundaries without adding new authority: normal lifecycle state is under `lifecycle/`, direct landing under `direct_landing/`, and the only schema-1 reader under `legacy/`. Parent-level integration modules coordinate Git/ref publication and organizational repair across those owners.
+The route decomposition mirrors those boundaries without adding new authority: normal lifecycle state is under `lifecycle/` and direct landing under `direct_landing/`. The `legacy/` package that held the only schema-1 reader no longer exists. Parent-level integration modules coordinate Git/ref publication and organizational repair across those owners.
 
 ### Reconciled Source Evidence
 
@@ -122,7 +124,6 @@ The route decomposition mirrors those boundaries without adding new authority: n
 | Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
 | Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:125-143; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:170-242 |
 | Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-110; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:113-170 |
-| Bounded legacy bridge. | `LegacyOperationCommand`; `legacy_operation_action`; `legacy_bridge_removal_guard` | mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:95-102; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:122-162; mcp/src/agents_remember/worktrees/integration/legacy/legacy_operation_bridge.py:165-203 |
 | Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:583-593; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:662-694 |
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
@@ -185,7 +186,27 @@ closeout. The refusal sentence and protected-ref/door classification are unchang
 remains the carryover vehicle rather than this route's prompt. See
 [`integration_resolution_handoff.py`](integration_resolution_handoff.py.md).
 
+## De-Entanglement Cut Removals And Relocations
+
+The de-entanglement cut deleted the lock, door, operation and journal planes and the legacy bridge,
+and relocated several route members. On this route specifically:
+
+- The `legacy/` package was deleted as a capability (commit `a583beb8`) along with its tool surface
+  and the `application/lifecycle/legacy_operation_tool.py` application boundary. There is no
+  schema-1 reader and no `worktree_legacy_operation` tool any more.
+- The lock plane was deleted (commit `1a0919c1`): `controlplane/task_publication_lock.py` and
+  `worktrees/integration/lifecycle/lifecycle_operation_lease.py` are gone. The accepted cost is that
+  two concurrent writers of the same task document may lose one write.
+- The public closeout-door tool entry point was deleted (commit `6982c6a7`) and the detached
+  lifecycle worker was deleted (commit `173bb01e`), moving the record advance into
+  `lifecycle/lifecycle_operation_store.py` and putting closeout/integration on the in-process
+  synchronous route driven by `worktree_closeout_apply` and `worktree_integrate`.
+- `memory_candidate_pair.py`, `future_code_candidate.py` and `memory_census_scope.py` moved to
+  `memory_quality/` so the pre-closeout quality service owns its own candidate identity
+  (`0b63d6fc`, `be517eec`), and `prepared_certification.py` moved the other way (`deb032fb`).
+
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the dead `legacy/` route member and its stale evidence row, repaired the `closeout/memory_candidate_pair.py` reference to `memory_quality/memory_candidate_pair.py`, recorded the deleted lock/door/operation/legacy planes and the four relocated members, and dropped the deleted worker/door wording from the recovery and integration-boundary sections. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Source-moved recovery guidance: the integration-resolution handoff now routes through `worktree_sync` plus a new targeted closeout, while the refusal sentence, door/protected-ref classification, and `replay` support are unchanged. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

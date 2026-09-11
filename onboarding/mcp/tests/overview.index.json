@@ -87,7 +87,6 @@
     "mcp/tests/test_cli_discovery.py",
     "mcp/tests/test_closeout_certification_entrypoint.py",
     "mcp/tests/test_closeout_certification_recovery.py",
-    "mcp/tests/test_closeout_memory_certification_reuse.py",
     "mcp/tests/test_closeout_projection_member_helpers.py",
     "mcp/tests/test_closeout_queue.py",
     "mcp/tests/test_closeout_queue_store.py",
@@ -154,7 +153,6 @@
     "mcp/tests/test_inbox_rebinding_mechanics.py",
     "mcp/tests/test_install_runtime.py",
     "mcp/tests/test_integration_branch_authority.py",
-    "mcp/tests/test_integration_ref_transaction.py",
     "mcp/tests/test_kernel_pure_regressions.py",
     "mcp/tests/test_layering.py",
     "mcp/tests/test_lifecycle_finalize.py",
@@ -181,7 +179,6 @@
     "mcp/tests/test_pi_rpc_adapter_ops_2.py",
     "mcp/tests/test_pi_rpc_process.py",
     "mcp/tests/test_platform_subprocess.py",
-    "mcp/tests/test_prepared_publication_recovery.py",
     "mcp/tests/test_provider_containment.py",
     "mcp/tests/test_provider_current_state.py",
     "mcp/tests/test_provider_degradation.py",
@@ -241,15 +238,14 @@
     "mcp/tests/test_worker_child_processes.py",
     "mcp/tests/test_worktree_closeout_quality_gate.py",
     "mcp/tests/test_worktree_closeout_route_review_transport.py",
-    "mcp/tests/test_worktree_integrate_quality_gate.py",
     "mcp/tests/test_worktree_quality_gate_runner.py",
     "mcp/tests/test_worktree_support.py",
     "mcp/tests/test_worktree_support_tests_1.py",
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 220,
-    "fileSidecars": 236,
+    "sourceFilesInScope": 219,
+    "fileSidecars": 232,
     "childRoutes": 0
   },
   "routingTerms": [

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `5ee86646b27fef04b98bbd94198abb2ee315638d` |
 | lastVerifiedCommitDate | 2026-09-10T12:52:31+02:00|
 | governingOverview | `../overview.md` |
@@ -39,8 +39,7 @@ request.
 | --- | --- | --- |
 | Checkout/host lock composition | `test_checkout_coordination_isolation.py`, `test_dagger_registry_lock.py` | Real path/lock refusal with temporary state; host authority does not open coordinator writes. |
 | Durable state and event-loop liveness | `test_durable_store_contract.py`, `test_cross_store_lock_order.py` | Thread/process ordering and actual store outcomes, bounded by watchdogs. |
-| Deferred terminal work | `test_terminal_liveness_deferred_work.py` | Real catalog/sweeper proof that hosted-interaction syncs and turn callbacks run after commit, aborted batches dispatch nothing, and post-commit failures preserve durable truth. Caller ownership remains adjacent lifecycle work. |
-| Candidate and protected-ref safety | `test_git_command.py`, `test_integration_branch_authority.py`, `test_integration_ref_transaction.py` | Real Git identity, private commits, hooks, race preservation and exact recovery. |
+| Candidate and protected-ref safety | `test_git_command.py`, `test_integration_branch_authority.py` | Real Git identity, private commits, hooks and race preservation. The former `test_integration_ref_transaction.py` was deleted with the removed mid-crash ref-recovery capability. |
 | Registry/certificate semantics | `test_certification_rail_registry.py`, `test_gate_certificate_authority.py` | Typed plan/result contracts and dependency-aware reuse, not a live producer claim. |
 | Memory preparation and repair | `test_memory_quality_runs.py`, `test_citation_document_transaction.py`, `test_memory_citation_fix_scopes.py` | Exact-pair revalidation, document isolation, conflict refusal and preserved evidence. |
 | State-signal structural routing | `test_state_signal_relay.py` | Action-time current-manager replacement, per-subject topology refusal, and no-row/no-marker behavior while an owner is absent. |
@@ -55,7 +54,7 @@ request.
 
 ## Fixture Roles And Claims
 
-`test_agent_notifier.py` and `test_agent_notifier_ladder.py` supply row/topology builders. `test_codex_app_server_adapter.py` and `test_codex_adapter_thread_demux.py` supply transport/observation helpers. `test_terminal_liveness_deferred_work.py` is a retained hermetic proof over temporary real catalogs and the existing sweeper callbacks; it does not establish lifecycle caller ownership or certification. `test_closeout_queue.py`, `test_closeout_projection_member_helpers.py`, `test_final_codex_models.py`, `test_gate_certification_evidence.py`, `test_memory_citation_fix.py` and `test_observer_projection.py` likewise retain shared setup rather than their former standalone matrices. `test_closeout_memory_certification_reuse.py` prepares real source/memory and four code terminals for its consumer; it does not itself retain the old reuse-test cohort.
+`test_agent_notifier.py` and `test_agent_notifier_ladder.py` supply row/topology builders. `test_codex_app_server_adapter.py` and `test_codex_adapter_thread_demux.py` supply transport/observation helpers. `test_closeout_queue.py`, `test_closeout_projection_member_helpers.py`, `test_final_codex_models.py`, `test_gate_certification_evidence.py`, `test_memory_citation_fix.py` and `test_observer_projection.py` likewise retain shared setup rather than their former standalone matrices.
 
 Preserve useful shared fixtures only for real consumers. Fake inspectors, synthetic profile inputs, hand-built report payloads and pending finalizers must stay labeled as such. A source-range citation proves the described assertion exists; only a retained execution record proves it ran. Whole-master review and aggregation must assess actual protection rather than historical test names or counts.
 
@@ -105,6 +104,7 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: four test modules were deleted by the cut and their references removed here — `test_integration_ref_transaction.py` (`173bb01e`, removed with the mid-crash ref-recovery capability), `test_worktree_integrate_quality_gate.py` (`9e1743c1`), and `test_closeout_memory_certification_reuse.py` / `test_prepared_publication_recovery.py` (`2ec5d244`). The candidate/protected-ref row no longer claims exact-recovery coverage it no longer has. Only the deleted-test references were reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no execution or acceptance claim.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry and parked candidate: registered `test_sync_parked_candidate.py` in the unit-regression lane, added the `CloseoutSourceLineageHealTests` boundary class to `test_source_lineage.py`, and reconciled the retained population to 183 files (99 unit, 55 integration). No case budget was raised. Source-route evidence only; no execution or acceptance claim.
 - 2026-09-10T11:55:00+02:00 — Post-sync union curation for 260831-LOCR-L03: kept the sibling's richer current-population paragraph and its R28/landing-debt rationale, framed the L38 candidate's own 179-file figure as historical, recorded the lane-manifest card as owner of record for lane membership, and advanced the counts to the union population (187 files: 103 unit-regression) that includes this leaf's own canonical terminal-evidence mapping row. No range was carried over from the stashed side and no history entry was dropped. This records source documentation only and makes no acceptance or certification claim.
 
