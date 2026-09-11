@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/door.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-11T14:54:00+02:00 |
 | lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
 | lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
@@ -16,7 +16,9 @@
 
 ## Purpose
 
-Contract-owned closeout-door generation and publication evidence.
+Journal-owned closeout-door generation and publication evidence. The door moved out of the
+worktree contract, so this vocabulary carries no contract-byte pair to hash, compare, or re-read;
+the intent names the generation and proving it is the journal's own state transition.
 
 ## Code Commentary
 
@@ -33,6 +35,19 @@ three provenance-record edges, admission, scheduling, validator, and predecessor
 `require_closeout_door_dependencies` refuses `closeout-door-dependencies-stale` when a generation's
 declared inputs no longer match its canonical source facts
 cit:([`DoorDependencyInputs`, `closeout_door_dependencies`, `require_closeout_door_dependencies`], mcp/src/agents_remember/models/lifecycles/door.py:148-160; mcp/src/agents_remember/models/lifecycles/door.py:161-202; mcp/src/agents_remember/models/lifecycles/door.py:203-233).
+
+The door cut narrowed a persisted model, so `DoorPublicationEvidence` also tolerates its own
+retired bytes on read. `_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS` names the three contract-byte
+digests the model carried while the door lived in the worktree contract
+(`expectedBeforeContractSha256`, `expectedPublishedContractSha256`,
+`observedPublishedContractSha256`); a `model_validator(mode="before")` strips exactly those names
+before validation. They are not fields and cannot be written again, but operation records already
+on disk still carry them, and `LifecycleOperationRecord.model_validate` reads them back —
+including when cleanup archives and reads back a leaf's canonical terminal enclosure evidence.
+Only these three names are tolerated, so every other unknown key stays a hard `extra_forbidden`
+refusal. This is the treatment a retired `closeout_door:` contract key already gets: tolerant on
+read, gone on the next rewrite
+cit:([`_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS`, `_drop_retired_contract_digests`], mcp/src/agents_remember/models/lifecycles/door.py:237-241; mcp/src/agents_remember/models/lifecycles/door.py:255-274).
 
 ### Conventions
 
@@ -60,7 +75,8 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration`; `DoorPublicationEvidence` | mcp/src/agents_remember/models/lifecycles/door.py:89-147; mcp/src/agents_remember/models/lifecycles/door.py:234-253 |
+| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | `CloseoutDoorGeneration`; `DoorPublicationEvidence` | mcp/src/agents_remember/models/lifecycles/door.py:89-147; mcp/src/agents_remember/models/lifecycles/door.py:244-274 |
+| The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | `_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS`; `_drop_retired_contract_digests` | mcp/src/agents_remember/models/lifecycles/door.py:237-241; mcp/src/agents_remember/models/lifecycles/door.py:255-274 |
 | The R03 door dependency vocabulary owned by this record type. | `EvidenceDependencies`, `build_evidence_dependencies`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:228-239; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277 |
 
 ## Cross-Repo References
@@ -84,6 +100,8 @@ owners recompute it from the exact candidate tree, topology, intent, and provena
 currentness time (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-11T14:54:00+02:00 — Retired contract-byte digests stay readable at code commit `76ce662a`: recorded the `model_validator(mode="before")` that strips `expectedBeforeContractSha256` / `expectedPublishedContractSha256` / `observedPublishedContractSha256` from persisted `DoorPublicationEvidence` records, so older operation journals load while every other unknown key remains an `extra_forbidden` failure. Corrected the Purpose to the journal-owned door and repointed the `DoorPublicationEvidence` range (234-253 → 244-274). Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed `closeout-door/v1` direct-dependency declaration on the immutable door generation and the new door dependency builders/currentness guards; prior disposition, identity, and provenance prose preserved.
 

@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
+| lastUpdated | 2026-09-11T14:52+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
@@ -101,6 +101,25 @@ integration_status="bloqued")` was zero pyright errors even though the wire mode
 persisted contract is byte-identical either way. `replace` is still imported and still used for the
 free-text fields.
 
+**Automatic post-integration cleanup.** `_integrated_result` no longer stops at the contract write.
+After it records `ContractCells(integration_status="completed", cleanup="pending")` it calls
+`run_automatic_cleanup(updated)`, so reclamation follows the successful landing without a further
+prompt — the integration approval that just landed is the authorization for its own terminal
+reclamation. It then reloads the contract from disk (`load_contract(contract.contract_path)`) so the
+payload's status facts report the post-cleanup `cleanup` cell instead of the in-memory `pending`
+write.
+
+The cleanup report is a top-level `cleanup` key on the integrated payload, and the payload summary
+is `"Integration completed. {cleanup summary}"`. Its outcome never changes
+the integration result: the call still returns `returncode 0` and `state "integrated"` when cleanup
+refused, because a refused cleanup is reported (with its `refusal.reason`,
+`refusal.cleanupState`, and `refusal.blockers`) rather than converted into a failed landing. A
+refused or partial integration cleans up nothing — that is exactly when its evidence is needed. The
+contract's `cleanup` cell keeps a refusal visible as `cleanup-pending`, which `lifecycle_guidance`
+renders as the `cleanup-pending` phase whose next operation is `retry_cleanup`. The retired
+`cleanup_question` key is gone from both payloads: the dry run now carries `cleanup_reminder`
+("cleaned up automatically") and the integrated result carries the cleanup report itself.
+
 ## Current Source-Moved Guidance
 
 `_blocked_non_ff_result`'s `source branch moved` guidance no longer points at
@@ -122,7 +141,8 @@ No external Domain Documentation source is configured for this memory repo.
 | The wire vocabulary declares integration and cleanup states. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:33-34 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50; mcp/src/agents_remember/worktrees/modules/integrate.py:420-450 |
+| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50; mcp/src/agents_remember/worktrees/modules/integrate.py:372-407 |
+| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; `run_automatic_cleanup` | mcp/src/agents_remember/worktrees/modules/integrate.py:372-407; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
 | Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:98-103; mcp/src/agents_remember/worktrees/integration/integration_quality.py:106-135; mcp/src/agents_remember/worktrees/integration/integration_quality.py:138-163 |
 | The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:326-343 |
 
@@ -198,6 +218,8 @@ The integration quality call passes `args.integration_certification_owner` to `r
 
 ## Update History
 
+- 2026-09-11T14:52+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: `_integrated_result` now calls `run_automatic_cleanup` on the successful path after writing `integration_status=completed`, reloads the contract so the payload reflects the post-cleanup cell, nests the cleanup report as a top-level `cleanup` key, and reports a cleanup refusal without failing the landing; a refused or partial integration cleans up nothing. Repointed the stale `_integrated_result` ranges (420-450 → 372-407). Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
+
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: retired the evidence row citing the deleted `test_worktree_integrate_quality_gate.py` altitude matrix. Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-10T15:06+02:00 — Integration guidance curation: the `blocked-non-ff` / `source branch moved` refusal now routes through `worktree_sync` plus a new targeted closeout instead of `--strategy replay`; recorded that `replay` remains supported and is the carryover vehicle. Re-derived the integrate.py anchors against the current working tree. Verification metadata remains closeout-owned.
@@ -209,7 +231,7 @@ The integration quality call passes `args.integration_certification_owner` to `r
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated wire state vocabulary from the typed amendment record and helper. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding for the master full gate and removal of the requires_integrated_acceptance repo-name policy; refreshed integration_quality citations to the post-cutover ranges.
 | The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:346-389 |
-| The integrated result records the completed publication outcome. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:420-450 |
+| The integrated result records the completed publication outcome. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:372-407 |
 | The altitude-proof module this row cited was deleted with the removed closeout fixture chain (commit `9e1743c1`); the altitude matrix it described is no longer retained as test coverage. | — | — |
 | Historical/removed: the direct-legacy-integration cases named here lived in `test_worktree_support_tests_2.py` / `_3.py`, which no longer exist. Journaled production-path suites own successful movement and recovery; this row records the earlier coverage rather than a current test. | N/A | N/A |
 
