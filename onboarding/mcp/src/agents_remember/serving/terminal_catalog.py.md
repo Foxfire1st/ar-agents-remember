@@ -5,9 +5,9 @@
 | repository             | agents-remember                                             |
 | path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`        |
 | doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated | 2026-09-10T09:30+02:00 |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 | governingOverview      | `overview.md`                                               |
 
 ## Governing Overview
@@ -17,7 +17,9 @@
 ## Purpose
 
 Owns the durable hosted-occupant catalog and structural seat queries. It runs the one-way legacy
-catalog migration before strict current parsing.
+catalog migration before strict current parsing. It is also the sole owner of the sweep's unit of
+work: `batch()` is the one place that decides whether a catalog file replacement happens at all,
+and `list_committed()` is the explicit contention read that never joins an active batch.
 
 ## Code Commentary
 
@@ -31,6 +33,35 @@ legacy rows first and then validate the current model; writers do not emit both 
 durable inbox receipt to the exact generation and refuse a different second receipt.
 Address-bound receipt lifetime is owned by the row transformation: same-seat promotion retains it,
 while cross-seat or role movement clears it before this store writes the new row.
+
+`list()` (cit:([`list`], mcp/src/agents_remember/serving/terminal_catalog.py:80-84)) and `get()`
+(cit:([`get`], mcp/src/agents_remember/serving/terminal_catalog.py:94-95)) read the instance
+SNAPSHOT through `_read_snapshot` (cit:([`_read_snapshot`], mcp/src/agents_remember/serving/terminal_catalog.py:364-375)),
+so a same-instance batch exposes its in-memory buffer to them. `list_committed`
+(cit:([`list_committed`], mcp/src/agents_remember/serving/terminal_catalog.py:86-92)) is the
+deliberate exception: it decodes the last atomically replaced file through the existing read-only
+`_read_disk` (cit:([`_read_disk`], mcp/src/agents_remember/serving/terminal_catalog.py:395-420))
+and applies the same non-terminated filter as `list()`. It exists so a sweep that lost the
+non-blocking sweep lock can still return current catalog state: `_read_snapshot` would wait on the
+catalog `RLock` that the winning sweep holds for its whole batch, which is the contended-sweep
+stall this operation removes. It adds no cache, alternate parser, lock branch, or optional-method
+fallback, and it changes nothing about the ordinary read surface.
+
+`upsert` (cit:([`upsert`], mcp/src/agents_remember/serving/terminal_catalog.py:108-116)) short-circuits
+only the exact full-row equality case: exactly one stored row matches the incoming id and compares
+equal, so the call returns without mutating the batch or the file. Any changed field — adapter raw
+payload, cursors, liveness evidence, failure counts/timestamps, or another observation field —
+keeps the row unequal and the write happens. Two or more matching rows (a duplicate-id row) still
+take the existing replace-and-append path, so the guard cannot hide duplicate cleanup.
+
+`batch()` (cit:([`batch`], mcp/src/agents_remember/serving/terminal_catalog.py:281-313)) remains the
+sole catalog unit of work for a sweep: it reads disk once at begin, routes mutators through the
+in-memory buffer (`_read`/`_write`), and in its `finally` performs exactly one atomic
+`_write_disk` (cit:([`_write_disk`], mcp/src/agents_remember/serving/terminal_catalog.py:422-431))
+only when the buffer is dirty. A clean or empty context therefore performs zero physical
+replacements; one or many logical mutations perform one; a body exception after earlier mutations
+flushes the dirty partial once and propagates, leaving later rows unobserved and providing no
+rollback. Nested batches reuse the outer buffer.
 
 ### Conventions
 
@@ -46,6 +77,12 @@ task/structural resolver rather than this persistence class.
 - A staged heir is current only after the incumbent leaves.
 - One generation may bind exactly one pinned dispatch-brief receipt.
 - Receipt evidence cannot migrate to another canonical address.
+- The catalog is the sole owner of the sweep's batch. No caller adds a second transaction, and the
+  batch performs no logical rollback: dirty-partial progress is real durable progress.
+- `list_committed()` must keep reading only the last atomically replaced file. Routing it through
+  the instance snapshot path would reintroduce the contended-sweep wait it exists to remove.
+- The equal-row `upsert` guard changes WHEN a replacement happens, never WHAT a row contains: it
+  is exact full-row equality against exactly one matching id.
 
 ### Todos
 
@@ -59,10 +96,13 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The catalog queries current occupancy by task document and role through the shared selector. | `active_for_task` | mcp/src/agents_remember/serving/terminal_catalog.py:86-95 |
-| One exact generation idempotently binds one durable pinned-brief receipt. | `DispatchBriefReceiptStore` | mcp/src/agents_remember/serving/terminal_catalog.py:419-448 |
-| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:399-399 |
-| The current catalog model owns strict row serialization. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:67-550 |
+| The catalog queries current occupancy by task document and role through the shared selector. | `active_for_task` | mcp/src/agents_remember/serving/terminal_catalog.py:97-106 |
+| One exact generation idempotently binds one durable pinned-brief receipt. | `DispatchBriefReceiptStore` | mcp/src/agents_remember/serving/terminal_catalog.py:434-460 |
+| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:411-411 |
+| The current catalog model owns strict row serialization. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:68-571 |
+| The explicit contention read decodes the last atomically replaced file and never joins an active batch. | `list_committed` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92 |
+| An exactly-equal single matching row is not rewritten; duplicate ids still take the replace-and-append path. | `upsert` | mcp/src/agents_remember/serving/terminal_catalog.py:108-116 |
+| One dirty-gated atomic replacement per batch, including dirty-partial flush on a body exception. | `batch`; `_write_disk` | mcp/src/agents_remember/serving/terminal_catalog.py:281-313; mcp/src/agents_remember/serving/terminal_catalog.py:422-431 |
 
 ## Cross-Repo References
 
@@ -77,8 +117,31 @@ A terminated leaf-execution row past retention is reclaimable only after its id 
 present in the explicit task-registered set. Running, exited, landed, recent, and unregistered leaf
 execution rows remain. Thus ordinary retention cannot turn observed execution into “never started.”
 
+## 260831-LOCR-L22 Current Delta — Committed Read, Equal-Row No-Op, Dirty-Gated Batch
+
+Three catalog-local facts are now explicit, and ordinary read semantics are deliberately unchanged:
+
+1. `list_committed()` is the contention read for a sweep that could not take the non-blocking
+   sweep lock. It decodes the last atomically replaced file directly and applies the same
+   non-terminated filter as `list()`; `list()`/`get()` keep returning the instance snapshot,
+   including an active batch buffer.
+2. `upsert()` no longer dirties the batch when exactly one stored row with the same id compares
+   equal. That is what turns a repeated clean liveness sweep into a zero-replacement sweep, and it
+   is why the liveness projections now build the final row before their single upsert.
+3. `batch()` keeps its current exception semantics: one dirty-gated atomic file replacement on
+   exit, zero when clean, dirty-partial progress flushed once and propagated on a body exception.
+   "Single-write batching" is not all-or-nothing logical rollback, and no caller may add one.
+
+Verified against the uncommitted LOCR-L22 candidate (branch `ar/260831-locr-l22`, HEAD
+`4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`); verification metadata stays pinned until closeout
+stamps the leaf code commit.
+
 ## Update History
 
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: recorded the committed-snapshot contention read,
+  the exact-equal single-row `upsert` no-op guard, and the dirty-gated zero-or-one batch replacement
+  contract; repaired the moved `active_for_task`, `DispatchBriefReceiptStore`, migration, and
+  `TerminalCatalogEntry` citations. Verification metadata remains pinned until closeout.
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: bounded execution-evidence
   compaction to worker/curator and leaf-altitude reviewer generations rather than treating every
   polymorphic reviewer as leaf execution. Verification remains closeout-owned.

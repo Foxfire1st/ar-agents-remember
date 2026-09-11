@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_liveness_deferred_work.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T14:35+02:00 |
-| lastVerifiedCommitHash |  `3fc5d7aa20095de50bc53008e9453c612532b97d`|
-| lastVerifiedCommitDate |  2026-09-11T18:38:20+02:00|
+| lastVerifiedCommitHash |  `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
+| lastVerifiedCommitDate |  2026-09-11T18:44:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,8 +49,8 @@ The test cases are grounded in the production sweeper's batch and deferred-drain
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The full and starting sweeps collect pending syncs inside the catalog batch, then drain them and invoke callbacks after the batch exits. | `refresh`; `_refresh_starting_rows` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-270 |
-| The deferred drain re-reads committed rows before invoking the observer, while the row-local guard records `interactionSyncError` and continues on later rows. | `_run_deferred_interaction_syncs`; `_observe_control_snapshot` | mcp/src/agents_remember/serving/terminal_liveness.py:302-324; mcp/src/agents_remember/serving/terminal_liveness.py:534-584 |
+| The full and starting sweeps collect pending syncs inside the catalog batch, then drain them and invoke callbacks after the batch exits. | `refresh`; `_refresh_starting_rows` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-268 |
+| The deferred drain re-reads committed rows before invoking the observer, while the row-local guard records `interactionSyncError` and continues on later rows. | `_run_deferred_interaction_syncs`; `_observe_control_snapshot` | mcp/src/agents_remember/serving/terminal_liveness.py:300-322; mcp/src/agents_remember/serving/terminal_liveness.py:532-582 |
 | The module exercises full/starting order, aborted-pass suppression, guarded continuation, and post-commit failure durability with the real catalog and sweeper seams. | `TerminalLivenessDeferredWorkTests` | mcp/tests/test_terminal_liveness_deferred_work.py:101-366 |
 | The candidate classifies this module once in the explicit unit-regression lane. | "mcp/tests/test_terminal_liveness_deferred_work.py" | mcp/tests/test-evidence-lanes.toml:106-106 |
 

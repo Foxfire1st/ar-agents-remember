@@ -5,9 +5,9 @@
 | repository             | agents-remember                                          |
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                             |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastUpdated            | 2026-09-10T09:30+02:00 |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`                                             |
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -55,18 +55,27 @@ pairs the (possibly updated) `TerminalCatalogEntry` with an `alive` verdict. `Cl
 `Callable[[], datetime]` with the `utc_now()` default — `serving.app` injects its `now` seam so
 sim/replay wiring keeps ONE timestamp base per app instance (the L5R2 F4 fix).
 
-`TerminalCatalogLivenessSweeper.refresh()` enforces cadence and non-overlap: it returns the
-current `catalog.list()` **without probing** when the sweep is rate-limited
-(`_rate_limited(moment)` — last sweep younger than `sweep_interval_seconds`) or when another
-refresh already holds the non-blocking `threading.Lock` (`acquire(blocking=False)`); inside the
-lock it double-checks the rate limit (two callers can pass the unlocked check), stamps
-`_last_sweep_at`, and runs `_observe_catalog_entry` over every `catalog.list()` row. That helper
-passes `status:"landed"` rows through unchanged without probing; landed/archive seats are frozen
+`TerminalCatalogLivenessSweeper.refresh()` enforces cadence and non-overlap. A call whose moment is
+rate-limited (`_rate_limited(moment)` — last sweep younger than `sweep_interval_seconds`) does not
+probe the full catalog; it delegates to the targeted starting-row fast path
+(`_refresh_starting_rows`, cit:([`_refresh_starting_rows`], mcp/src/agents_remember/serving/terminal_liveness.py:223-268)).
+A call that passes the outer cadence check but cannot take the non-blocking `threading.Lock`
+(`acquire(blocking=False)`) returns `catalog.list_committed()` — the last atomically replaced file —
+and never waits and never runs a second sweep. That distinction is load-bearing: `catalog.list()`
+reads the instance snapshot and would block on the catalog `RLock` the winning sweep holds for its
+whole batch, which is exactly the contended-sweep stall. `list_committed()` is the explicit
+contention read, with no cache, alternate parser, or fallback. Inside the lock the sweep re-checks
+the rate limit (cit:([`_rate_limited`], mcp/src/agents_remember/serving/terminal_liveness.py:277-282)
+— two callers can pass the unlocked check), stamps `_last_sweep_at`, and runs
+`_observe_catalog_entry` (cit:([`_observe_catalog_entry`], mcp/src/agents_remember/serving/terminal_liveness.py:284-298))
+over every `catalog.list()` row inside exactly ONE `catalog.batch()`. That helper passes
+`status:"landed"` rows through unchanged without probing; landed/archive seats are frozen
 inspection artifacts, so the background sweep must not spend per-row tmux capture or catalog-write
 work on them. Non-landed rows still go through `observe_terminal_liveness`, including `exited` rows,
-which is what lets a false exit self-heal within one sweep interval.
+which is what lets a false exit self-heal within one sweep interval. The sweep lock is released in
+`finally`, so a later cadence retries after success, expected failure, or an unexpected exception.
 
-`observe_terminal_liveness(catalog, host, entry, *, checked_at, config=None)` probes ONE row and
+`observe_terminal_liveness(catalog, host, entry, *, checked_at, probe=DEFAULT_LIVENESS_PROBE)` probes ONE row and
 persists the matching hysteresis transition via `catalog.record_liveness_probe(...)`. Evidence
 ladder: an in-process host session with `is_alive` (via the duck-typed `_host_session` /
 `_TerminalSessionLike` runtime protocol) is direct process evidence ⇒ record alive; otherwise
@@ -188,15 +197,27 @@ pane_capturer, on_turn_state_change) is constructor-injected so tests run fake-d
   diagnostics-only and cannot drive readiness, delivery, completion, or supervisor action.
 - The sweeper remains rate-limited and non-overlapping, and process-liveness failures remain
   explicit disconnected/unknown evidence rather than a hidden compatibility fallback.
+- **Contention serves the committed snapshot, never a blocking read.** A `refresh()` that loses the
+  non-blocking sweep lock returns `catalog.list_committed()`; `catalog.list()` belongs only to
+  admitted callers, because the snapshot path would wait on the winning sweep's catalog batch lock.
+- **The starting fast path acquires before it lists.** `_refresh_starting_rows` takes the shared
+  non-blocking lock first, re-checks the starting cadence behind the lock, and only then lists and
+  filters the capped starting selection. An empty selection returns without opening a batch and
+  without stamping `_last_starting_sweep_at`, so an empty tick does not consume the one-second
+  window.
+- **One admitted path owns exactly one batch, and one final row per observation.** Full and
+  starting paths each wrap their observations in a single `catalog.batch()`; the alive projection
+  composes the adapter (or raw-TUI unsupported) projection together with `paneDiagnostic` and
+  issues one `catalog.upsert`, so no intermediate row variant is persisted.
 - Liveness projection never consumes inbox rows. Inbox delivery is inbox-rooted and explicit
   recipient `consume` remains the sole acknowledgement.
 
 The remaining bullets below describe historical hysteresis and diagnostic mechanics retained for
 migration archaeology; they do not override the protocol-backed L5 contract above.
 
-- **Rate limit + non-overlap are advisory availability, not staleness**: a rate-limited or
-  overlapped `refresh()` serves the persisted catalog as-is — callers always get a list, never a
-  block or an error.
+- **Rate limit + non-overlap are advisory availability, not staleness**: a rate-limited `refresh()`
+  still serves the catalog (via the bounded starting-row fast path) and an overlapped one serves
+  the committed atomic snapshot — callers always get a list, never a block or an error.
 - **Hysteresis is evidence-scaled**: `tmux-command-failed` needs threshold × window;
   `pane-gone` marks fast. A genuine whole-server tmux death takes the hysteresis path (~3 sweeps)
   before rows mark exited — the deliberate bias away from false exits (HFX-L5 review, disclosed).
@@ -226,19 +247,21 @@ record.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:282-324 |
+| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:325-367 |
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:61-66 |
-| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/serving/terminal_catalog.py:148-148; mcp/src/agents_remember/serving/terminal_catalog.py:152-152 |
-| The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
-| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:109-196 |
-| The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
-| The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:202-202 |
-| `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `create_app` | mcp/src/agents_remember/serving/app.py:226-285 |
+| The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:62-66 |
+| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/models/terminal_catalog.py:486-516; mcp/src/agents_remember/models/terminal_catalog.py:518-551 |
+| The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
+| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:124-345 |
+| The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:159-173 |
+| The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:201-203 |
+| `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
+| The explicit contention read and dirty-gated batch the sweep depends on. | `list_committed`; `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92; mcp/src/agents_remember/serving/terminal_catalog.py:281-313 |
+| The pure projection helpers the alive path composes before its single final upsert. | `control_snapshot_entry`; `legacy_control_unsupported_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:36-58; mcp/src/agents_remember/serving/hosted_control_projection.py:72-83 |
 
 
 ## Cross-Repo References
@@ -318,7 +341,43 @@ ordering avoids nesting the task CAS beneath the catalog lock. When no registrar
 empty registered set authorizes no task-bound reclamation; there is no second evidence reader or
 fallback scan.
 
+## 260831-LOCR-L22 Current Delta — Committed Contention Read, Admission-Before-List, Final-Only Projection
+
+Three sweeper facts changed, all inside the existing non-blocking single-pass architecture:
+
+1. **Full-sweep contention** returns `self._catalog.list_committed()` instead of `self._catalog.list()`.
+   The previous call could park on the catalog `RLock` held by the active batch, so a contended
+   `refresh()` — the `GET /api/terminal/sessions` path behind startup and steady-state overlap —
+   could stall instead of returning current state.
+2. **The starting-row fast path acquires before it lists.** It previously listed rows, filtered the
+   capped starting selection, and only then attempted the sweep lock, so a contender could block on
+   the active catalog batch during that first list. It now attempts the shared lock first, returns
+   `list_committed()` on contention, and re-checks the starting cadence behind the lock before the
+   first list; an empty selection still returns without opening a batch or consuming the one-second
+   window.
+3. **Final-only liveness projection.** The alive path builds the final row from the pure
+   `control_snapshot_entry` / `legacy_control_unsupported_entry` helpers, adds `paneDiagnostic`, and
+   issues one `catalog.upsert`; a hosted snapshot or legacy unsupported row is no longer persisted
+   and then replaced inside the same observation. Combined with the catalog's equal-row upsert
+   guard, a repeated clean sweep performs zero file replacements.
+
+Preserved by construction: one batch per admitted path, post-lock cadence recheck, `finally`
+release of the sweep lock on success/expected failure/unexpected exception, the deferred
+post-commit interaction drain, and the post-batch registration-then-compaction order. This leaf does
+NOT own cadence values (LOCR-R12), failure hysteresis (LOCR-R21), registration/compaction order
+(LOCR-R23), pane diagnostic authority (LOCR-R27), or cross-store post-commit work (LOCR-R28).
+
+Verified against the uncommitted LOCR-L22 candidate (branch `ar/260831-locr-l22`, HEAD
+`4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`); verification metadata stays pinned until closeout
+stamps the leaf code commit.
+
 ## Update History
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: reconciled the sweeper card with the
+  committed-snapshot contention read, the starting-path admission-before-list ordering, and the
+  final-only liveness projection; repaired the moved `observe_terminal_liveness`,
+  `TerminalCatalogLivenessTests`, `create_app`, `classify_turn_state`, `capture_pane`,
+  `TmuxProbeResult`, and `with_liveness_*` citations. Adjacent ownership (R12/R21/R23/R27/R28) is
+  explicitly preserved. Verification metadata remains pinned until closeout.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `TerminalCatalogLivenessTests` repointed to mcp/tests/test_terminal_liveness.py:109-196. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented post-batch task registration before terminal-catalog reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

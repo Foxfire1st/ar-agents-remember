@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/serving/ports.py`                    |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-08-24T14:43+02:00                                       |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                   |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastUpdated            | 2026-09-08T14:42+02:00                                       |
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`                   |
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -28,10 +28,12 @@ re-exports these names for the conversation package.
 
 `ActiveConversationPort` (cit:(["class ActiveConversationPort"], mcp/src/agents_remember/serving/ports.py:62-62)) and `ConversationLibraryPort`
 (cit:(["class ConversationLibraryPort"], mcp/src/agents_remember/serving/ports.py:94-94)) are the two read protocols; `ControlSessionLike`
-(cit:(["class ControlSessionLike"], mcp/src/agents_remember/serving/ports.py:122-122)), `TerminalCatalogPort` (cit:(["class TerminalCatalogPort"], mcp/src/agents_remember/serving/ports.py:135-135)), and
-`ControlPlanePort` (cit:(["class ControlPlanePort"], mcp/src/agents_remember/serving/ports.py:195-195)) expose the control/terminal seams. The canonical
+(cit:(["class ControlSessionLike"], mcp/src/agents_remember/serving/ports.py:122-122)), `TerminalCatalogPort` (cit:(["class TerminalCatalogPort"], mcp/src/agents_remember/serving/ports.py:135-145)), and
+`ControlPlanePort` (cit:(["class ControlPlanePort"], mcp/src/agents_remember/serving/ports.py:196-196)) expose the control/terminal seams. The canonical
 definitions live here so serving modules can import them without triggering the conversation
-package's route composition; `__all__` (cit:([`__all__`], mcp/src/agents_remember/serving/ports.py:272-278)) curates the surface.
+package's route composition. `TerminalCatalogPort.list` reads the instance snapshot, while
+`list_committed` (cit:([`list_committed`], mcp/src/agents_remember/serving/ports.py:142-142)) explicitly reads the
+last committed atomic snapshot for contention-safe sweeper callers; `__all__` (cit:([`__all__`], mcp/src/agents_remember/serving/ports.py:279-285)) curates the surface.
 
 ### Invariants And Boundaries
 
@@ -74,6 +76,10 @@ registration proof explicit at the deletion boundary; it does not grant the cata
 or permit unregistered worker/reviewer/curator rows to be reclaimed.
 
 ## Update History
+
+- 2026-09-08T14:42+02:00 — 260831-LOCR-L22 curator: recorded the committed-snapshot catalog read
+  exposed by the port and refreshed the moved control-surface/export citations. Verification
+  remains closeout-owned for the uncommitted candidate.
 
 - 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: extended the catalog port with explicit registered execution ids. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 

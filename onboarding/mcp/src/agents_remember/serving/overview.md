@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `3fc5d7aa20095de50bc53008e9453c612532b97d` |
-| lastVerifiedCommitDate | 2026-09-11T18:38:20+02:00|
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4` |
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -736,7 +736,12 @@ The serving layer starts one lifecycle-managed landing refresher for live projec
   refusals without mutation or the accepted binding), `GET
   /api/terminal/sessions` (return non-terminated sessions via
   `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
-  non-overlapping, rate-limited callers get the persisted catalog; WebSocket attach + the paste
+  non-overlapping; a rate-limited caller still runs the bounded one-second starting-row fast path,
+  and a caller that loses the non-blocking sweep lock returns the last ATOMICALLY REPLACED catalog
+  file (`TerminalCatalog.list_committed()`) rather than a snapshot read that would wait on the
+  active sweep's batch lock; each admitted path observes its selection inside exactly one
+  dirty-gated catalog batch, so a clean sweep performs zero file replacements and a dirty one
+  performs exactly one; WebSocket attach + the paste
   endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
   replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
   `POST /api/terminal/{session}/terminate` (kill tmux and mark the catalog row terminated),
@@ -921,6 +926,8 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
   terminal-evidence cursor consumer and its no-loss envelope boundary to the serving hot path.
   The candidate preserves the existing bounded Pi route and canonical projector ownership;
   verification metadata remains pinned until governed closeout stamps the code commit.
+
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: extended the `GET /api/terminal/sessions` route account with the current sweeper boundary — bounded starting-row fast path while rate-limited, committed-atomic-snapshot return on sweep-lock contention (instead of a snapshot read that waits on the active batch), and one dirty-gated catalog batch per admitted path. Cadence, hysteresis, registration/compaction order, and cross-store post-commit ownership are unchanged and remain with their leaves.
 
 
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.

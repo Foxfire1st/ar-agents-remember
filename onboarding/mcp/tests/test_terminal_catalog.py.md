@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | path                   | `mcp/tests/test_terminal_catalog.py`             |
 | doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash |  `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate |  2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-10T09:30+02:00 |
+| lastVerifiedCommitHash |  `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
+| lastVerifiedCommitDate |  2026-09-11T18:44:06+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -18,25 +18,40 @@
 
 Checks terminal catalog durability: landed state stays landed, dispatch-brief receipts are idempotent and reject replacement, torn extra data refuses without erasure, concurrent upserts preserve rows, and cross-instance termination cannot be resurrected. Temporary catalog instances exercise durable state rather than a pure in-memory substitute.
 
+The retained population also pins the catalog unit-of-work contract at the `_write_disk` boundary: a clean batch performs zero physical replacements, one or many logical mutations perform exactly one, a body exception flushes the dirty partial once and leaves later rows untouched, and `list_committed()` reads the last committed file while ordinary `get()` still sees the active batch buffer.
+
 ## Code Commentary
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+The current evidence boundary is the source-listed behavior below. The four unit-regression cases
+added for the batch/contention contract patch `catalog._write_disk` and count calls, so the
+assertion is about physical file replacement rather than about in-memory state: the clean case
+re-upserts an equal row inside a batch and records zero writes; the dirty case mutates two rows and
+records one; the dirty-partial case raises from the batch body after the first row's mutation,
+records one write, asserts the first row advanced, asserts the later row did not, and then proves a
+later batch can still commit one write. The committed-buffer case proves the two read surfaces are
+distinct: inside a batch `get()` returns the working buffer while `list_committed()` returns the
+previously committed row. Earlier coverage claims in history describe prior populations and must
+not be used to recreate removed tests or claim they still run.
 
 ### Conventions
 
 The table lists retained test definitions, not collected parametrized or subtest counts.
 Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+`unittest.mock.patch.object` wraps the real `_write_disk`, so the assertion counts real atomic
+replacements instead of substituting a fake writer.
 
 ### Invariants And Boundaries
 
 Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
-cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
-an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
-work. This source inspection does not claim a newly executed test or acceptance result.
+cases. Keep the write-count assertions bound to `_write_disk`; do not re-express them as
+`_read`/`_write` buffer assertions, which would stop proving the physical-replacement contract.
+The equal-row no-op guard covers exactly one matching id; duplicate-id cleanup stays on the
+replace-and-append path. Coverage percentages are diagnostic and production CRAP 20 prompts review;
+neither implies an obligation to restore removed cases. Full suites and whole-candidate review
+remain master-end work. This source inspection does not claim a newly executed test or acceptance
+result.
 
 ### Todos
 
@@ -58,11 +73,15 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Landed state round trips and is not reanimated | `test_landed_state_round_trips_and_is_not_reanimated` | mcp/tests/test_terminal_catalog.py:59-85 |
-| Dispatch brief receipts are idempotent and refuse a second receipt | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:87-103 |
-| Read refuses torn extra data without erasing evidence | `test_read_refuses_torn_extra_data_without_erasing_evidence` | mcp/tests/test_terminal_catalog.py:105-112 |
-| Concurrent upserts do not lose or corrupt rows | `test_concurrent_upserts_do_not_lose_or_corrupt_rows` | mcp/tests/test_terminal_catalog.py:114-137 |
-| Cross instance termination is sticky and never resurrected | `test_cross_instance_termination_is_sticky_and_never_resurrected` | mcp/tests/test_terminal_catalog.py:139-162 |
+| Landed state round trips and is not reanimated | `test_landed_state_round_trips_and_is_not_reanimated` | mcp/tests/test_terminal_catalog.py:61-87 |
+| Dispatch brief receipts are idempotent and refuse a second receipt | `test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt` | mcp/tests/test_terminal_catalog.py:89-105 |
+| Read refuses torn extra data without erasing evidence | `test_read_refuses_torn_extra_data_without_erasing_evidence` | mcp/tests/test_terminal_catalog.py:107-114 |
+| Concurrent upserts do not lose or corrupt rows | `test_concurrent_upserts_do_not_lose_or_corrupt_rows` | mcp/tests/test_terminal_catalog.py:116-139 |
+| Cross instance termination is sticky and never resurrected | `test_cross_instance_termination_is_sticky_and_never_resurrected` | mcp/tests/test_terminal_catalog.py:141-164 |
+| A batch whose rows do not change performs zero physical file replacements | `test_clean_batch_does_not_replace_catalog` | mcp/tests/test_terminal_catalog.py:166-182 |
+| Inside a batch, `get()` sees the working buffer while `list_committed()` sees the committed row | `test_list_committed_bypasses_batch_buffer_without_changing_list_semantics` | mcp/tests/test_terminal_catalog.py:184-195 |
+| Two logical mutations in one batch produce exactly one replacement | `test_dirty_batch_replaces_catalog_once` | mcp/tests/test_terminal_catalog.py:197-223 |
+| A dirty partial flush persists earlier progress once, leaves later rows untouched, and permits a later batch | `test_dirty_partial_batch_flushes_once_and_releases_for_retry` | mcp/tests/test_terminal_catalog.py:225-257 |
 
 ## Cross-Repo References
 
@@ -74,6 +93,10 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 ## Update History
 
+- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: reconciled the card with the four retained
+  batch/contention cases (clean zero-replacement, committed-vs-buffer read, dirty one-replacement,
+  dirty-partial flush plus retry) and refreshed the shifted definition ranges. This records test
+  behavior bound to the uncommitted candidate only; verification metadata remains closeout-owned.
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
 

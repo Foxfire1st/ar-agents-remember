@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
 | doc_type               | `file-level-onboarding`                                 |
 | lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`|
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
+| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
+| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
 | governingOverview      | `overview.md`                                           |
 
 ## Governing Overview
@@ -91,7 +91,7 @@ path — with pane text captured by `terminal_paste.capture_pane`.
 | --- | --- | --- |
 | `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
 | The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input. | "def capture_pane"; `_capture_pane_argv`; `_CAPTURE_HISTORY_LINES` | mcp/src/agents_remember/serving/terminal_paste.py:40-40; mcp/src/agents_remember/serving/terminal_paste.py:181-182; mcp/src/agents_remember/serving/terminal_paste.py:201-201 |
-| The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:250-264 |
+| The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:265-279 |
 | The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. | `_classify_by_marker_tables`; "key = harness or \"\""; "_HARNESS_WORKING_PATTERNS.get(key"; "_HARNESS_AWAITING_INPUT_PATTERNS.get(key"; "_HARNESS_TURN_ENDED_PATTERNS.get(key" | mcp/src/agents_remember/serving/turn_state.py:140-154 |
 
 | The adapter exposes diagnostic `blocked_reason`; pane classification does not provide a boot-readiness authority method. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
