@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_terminal_liveness.py`            |
 | doc_type               | `file-level-onboarding`                          |
 | lastUpdated | 2026-09-10T10:12:00+02:00 |
-| lastVerifiedCommitHash | `3101516615b99f186a3b8408520eff4241ffcc4d`       |
-| lastVerifiedCommitDate | 2026-09-11T18:35:03+02:00|
+| lastVerifiedCommitHash | `4c58c5741b448ce4e701b37762ddf2c943612cd5`       |
+| lastVerifiedCommitDate | 2026-09-11T18:41:29+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -33,9 +33,11 @@ used to recreate removed tests or claim they still run.
 
 The table lists retained test definitions, not collected parametrized or subtest counts.
 Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
-This inventory is bounded by what this leaf's tree contains: sibling leaves `260831-LOCR-L21` and
-`260831-LOCR-L22` add further cases to this same file and had not landed when it was curated, so the
-rows below are not the file's final case count.
+This inventory covers the composed tree: sibling `260831-LOCR-L12` and this leaf `260831-LOCR-L21`
+have both landed on the LOCR master integration branch, so the rows above span their combined case
+set and every cited range was re-derived from that composed module. Sibling `260831-LOCR-L22` adds
+further cases to this same module and has not landed, so the rows are still not the file's final
+case count.
 
 ### Invariants And Boundaries
 
@@ -67,9 +69,13 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Transient failure storm leaves sessions running until window elapsed | `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` | mcp/tests/test_terminal_liveness.py:186-198 |
-| Full sweeps remain rate-limited by the configured interval | `test_full_sweep_rate_limit_is_preserved` | mcp/tests/test_terminal_liveness.py:200-217 |
-| Starting rows use the one-second path and four-row cap | `test_starting_rows_use_one_second_fast_path_and_four_row_cap` | mcp/tests/test_terminal_liveness.py:219-259 |
+| Fake fixtures configure and drive the existing host/control-read seams | `_Clock`; `_FakeHost`; `_sweeper`; `_starting_sweeper` | mcp/tests/test_terminal_liveness.py:77-184 |
+| Transient failures stay inside the hysteresis window, then exit-mark and pane-gone immediately | `test_transient_failure_storm_leaves_sessions_running_until_window_elapsed` | mcp/tests/test_terminal_liveness.py:187-216 |
+| Full sweeps remain rate-limited by the configured interval | `test_full_sweep_rate_limit_is_preserved` | mcp/tests/test_terminal_liveness.py:217-235 |
+| Starting rows use the one-second path and four-row cap | `test_starting_rows_use_one_second_fast_path_and_four_row_cap` | mcp/tests/test_terminal_liveness.py:236-278 |
+| Host failure evidence survives reload and clears after a successful probe | `test_host_failure_series_survives_restart_and_success_resets` | mcp/tests/test_terminal_liveness.py:279-319 |
+| Connected bridge failures require three strikes across reload and reset on success | `test_connected_control_reads_require_three_strikes_across_restart_and_reset` | mcp/tests/test_terminal_liveness.py:320-390 |
+| Alive starting rows remain eligible through delayed bridge reads | `test_alive_starting_row_survives_delayed_bridge_reads` | mcp/tests/test_terminal_liveness.py:391-425 |
 
 ## Cross-Repo References
 
@@ -80,6 +86,17 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-11T18:40+02:00 — 260831-LOCR-L21 curator composition: resolved this card's sync merge
+  against the landed L12 line and re-derived every row above from the composed module. The merge was
+  semantic rather than textual: this leaf extends `test_transient_failure_storm_leaves_sessions_
+  running_until_window_elapsed` with its window-elapsed and pane-gone tail, while L12 inserts two new
+  cases immediately after that same anchor, so a line-wise union splices one side's tail into the
+  other's case. Both contributions are kept in their correct owners and the composed module was
+  executed (six cases passed) before the ranges above were written. Row ownership: L12 contributes
+  the full-sweep and starting-row cases; this leaf contributes the host-restart, connected-
+  three-strike and alive-starting cases plus the storm tail. Verification metadata remains
+  closeout-owned.
 
 - 2026-09-10T10:12:00+02:00 — 260831-LOCR-L12 curator: re-verified every cited range against the
   current source tree and made the composition boundary explicit. Sibling leaves `260831-LOCR-L21`
@@ -92,6 +109,13 @@ This card establishes test behavior, not a separate cross-repository protocol or
   full-sweep gate and the one-second starting-row/cap behavior, while preserving the boundary
   that lifecycle ownership and production wiring require the assembled L01/R16/R18 candidate.
   Verification metadata remains pinned until closeout stamps the leaf code commit.
+
+- 2026-09-10T11:53:11+02:00 — LOCR-R21 curator reconciliation against the relocated base (code `bb38d04e`, memory `e26b55db`) after sibling LOCR-L28 landed: LOCR-L28 did not touch this module, so all five cited ranges were re-checked against the unchanged candidate file and kept; the four collected cases and the 363-line file are unchanged. The composition boundary was re-confirmed — L12 and L22 remain unlanded and their case additions to this module are still absent — and the card now also records that the module is registered in the `integration` lane of `mcp/tests/test-evidence-lanes.toml`, whose declared budget is 150 collected cases. The candidate stays test-only. Verification metadata remains closeout-owned.
+
+- 2026-09-10T10:32:23+02:00 — LOCR-R21 curator reconciliation against the synced base (code `6096941f`, memory `71d7f73a`): re-verified every range cited by this card against the current candidate file and kept each one unchanged — the fixture range spans `_Clock`/`_FakeHost` through `_control_sweeper`, and each of the four case ranges ends on its method's final assertion. The candidate is test-only: `mcp/tests/test_terminal_liveness.py` is the sole changed source, and no production module, threshold, or persisted field moves with it. Recorded the module's composition boundary (L12 and L22 add cases to this same file from their own unlanded worktrees) and the retained-but-uncalled `_control_sweeper` builder. Verification metadata remains closeout-owned.
+
+- 2026-09-08T14:25+02:00 — LOCR-R21 curator: refreshed the card for the current test-only proof boundary. The retained storm now asserts definitive pane-gone exit, and dedicated cases cover persisted host reset, connected three-strike reset, and alive-starting bridge delay. Production liveness thresholds, state fields, and ownership remain unchanged; closeout owns verification stamping.
+
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 
