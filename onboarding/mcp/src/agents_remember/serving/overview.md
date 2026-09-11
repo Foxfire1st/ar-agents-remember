@@ -5,9 +5,9 @@
 | repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
 | doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-10T11:42+02:00 |
+| lastVerifiedCommitHash | `8a46bc8d186d9444bf9a83b21ad4683ec4937e3d` |
+| lastVerifiedCommitDate | 2026-09-11T11:04:29+02:00|
 | governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
@@ -174,6 +174,15 @@ owner immediately before posting. A role/document address without a current occu
 eligible for a later sweep and cannot create a durable row or emitted marker; a typed task-document
 refusal fences only that subject so unrelated findings continue. The canonical structural owner and
 shared delivery path remain the authorities for replacement, ambiguity, and boundary handling.
+
+Boundary handling is now explicit at the drain gate: `state_signals.evaluate_boundary_drain_findings`
+admits a pending row at its target's turn boundary only when `_boundary_follows_last_attempt` says
+that boundary follows the row's last recorded attempt, and a row carrying *no* attempt clock is
+admitted only for a `state-signal` row. That is exactly the state a replacement occupant creates,
+because rebinding a held signal restarts its attempt clock while the generic redelivery path keeps
+suppressing it as a held signal; without the state-signal-scoped admission such a row had no
+delivery path at all. Every other row kind keeps the ordinary redelivery path, and an unparseable
+attempt clock is still refused.
 
 **`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
 timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
@@ -897,6 +906,8 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 | Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
 
 ## Update History
+
+- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
 
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
 

@@ -203,6 +203,7 @@
     "mcp/tests/test_source_lineage.py",
     "mcp/tests/test_spawn_agent_session.py",
     "mcp/tests/test_sprint_role_seats.py",
+    "mcp/tests/test_state_signal_boundary_delivery.py",
     "mcp/tests/test_state_signal_relay.py",
     "mcp/tests/test_static.py",
     "mcp/tests/test_structural_dispatch_recovery.py",
@@ -244,8 +245,8 @@
     "mcp/tests/test_worktree_sync.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 219,
-    "fileSidecars": 232,
+    "sourceFilesInScope": 220,
+    "fileSidecars": 233,
     "childRoutes": 0
   },
   "routingTerms": [
