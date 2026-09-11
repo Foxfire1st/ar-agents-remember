@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/memory/carryover.py`                |
 | doc_type               | `file-level-onboarding`                                     |
 | lastUpdated            | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `../../../overview.md`                                      |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ define the current write-authority contract; deleted tests provide no current co
 | --- | --- | --- |
 | Target JSON/Markdown settings are scanned for effective write authority with typed-parser equivalence. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 | Route-index rendering requires and reuses explicit repository/storage authority. | "Build route indexes using explicit Git and onboarding-storage authority", `RouteIndexBuildResult` | mcp/src/agents_remember/kernel/route_index.py:85-100; mcp/src/agents_remember/kernel/route_index.py:184-197 |
-| Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:187-190; mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
+| Ledger updates remain delegated to the kernel memory-ledger service. | `load_ledger`, `write_ledger` | mcp/src/agents_remember/kernel/memory_ledger.py:202-205; mcp/src/agents_remember/kernel/memory_ledger.py:216-238 |
 | The one git runner owns selector scrubbing (`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`), the `input_text` stdin path used by `patch_id`, and the timeout classes (`GIT_LOCAL_TIMEOUT_SECONDS = 300`). | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`, `GIT_LOCAL_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:70-70; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151 |
 
 ## Cross-Repo References
@@ -138,6 +138,7 @@ authorization implementation remains package-local.
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `load_ledger`, `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:202-205, mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
 

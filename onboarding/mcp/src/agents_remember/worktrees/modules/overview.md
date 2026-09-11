@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-11T15:04+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -410,10 +410,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
-| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-44; mcp/src/agents_remember/models/worktree.py:242-242 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-35; mcp/src/agents_remember/models/worktree.py:253-253 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -817,8 +817,8 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:226-275; mcp/src/agents_remember/worktrees/modules/closeout.py:688-725 |
-| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-710 |
+| Closeout public execution boundary. | `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
+| Fail-closed cleanup result. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707 |
 | Integration recovery requires exact authority-ref convergence and exact journaled ledger-head proof. | `classify_convergent_recovery_refs`; `prove_external_memory_recovery` | mcp/src/agents_remember/worktrees/modules/integration_recovery.py:18-25; mcp/src/agents_remember/worktrees/modules/integration_recovery.py:28-45 |
 | Start helpers now live below the dedicated startup package marker. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
 
@@ -976,6 +976,9 @@ review; full suites are an explicit developer request. The older quality-altitud
 historical context for pre-R12 behavior.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "WorktreePhase = Literal[", "phase: WorktreePhase", `closeout_preview_payload`, `closeout_result` repointed to mcp/src/agents_remember/models/worktree.py:253-253, mcp/src/agents_remember/models/worktree.py:35-35, mcp/src/agents_remember/worktrees/modules/closeout.py:224-273, mcp/src/agents_remember/worktrees/modules/closeout.py:705-739. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T15:04+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: added `automatic_cleanup.py` to the modules owning the c-09 lifecycle operations, and recorded on the integration description that a completed integration reclaims its enclosure through `run_automatic_cleanup` (reusing `cleanup_result` with `approved=True` / `dry_run=False` / `teardown_providers=True`), that a refused or partial integration cleans up nothing, and that a cleanup refusal is reported without failing the integration. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry: recorded `modules/closeout_lineage.heal_current_source_lineage` as the self-healing closeout lineage guard and the rewording of the source-moved recovery guidance through `worktree_sync` plus a new targeted closeout. `replay` remains supported. Verification metadata remains closeout-owned.

@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T15:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -67,7 +67,7 @@ the blocked-start recovery payloads — those keep their own
 a wider `NextOperation` cannot put "requires developer approval" back into the set
 the context packet's `nextOperation` claims to be.
 
-`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:251-251)) is **omitted rather than `[]`** when there is
+`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:262-262)) is **omitted rather than `[]`** when there is
 nothing to supply. `next_guidance` writes the key only when the next call needs a
 caller-supplied argument; the projection now reports what the producer said
 instead of substituting a value for it. This is a stated wire change: measured
@@ -78,7 +78,7 @@ beyond `nextArgs` — and there is no third state to confuse it with. The same r
 now covers `nextTool` and `nextArgs`, where the old substitution had put an
 un-declarable `""` on the wire.
 
-`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:256-256)) is new. It is present only
+`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:267-267)) is new. It is present only
 when the contract file carried a cell outside its declared vocabulary, formatted
 `"<field>=<raw token> read as <fallback>"`. The `state` is still `active` and
 every other field was computed from the substituted values — this field is the
@@ -139,6 +139,10 @@ all-snake payload shape.
   `state="active"` and with fully populated sibling fields.
 - Worktree command payloads may remain flexible while the service API is still
   carrying operation-specific result blocks.
+- Every advertised public worktree tool's response envelope is declared here AND registered in
+  `models/tools/tool_registry.py`. A model declared without its registry row — or a row without
+  its model — leaves the tool advertised and unable to return a payload, because
+  `finalize_tool_response` indexes that registry by tool name.
 - Sync control/state literals are declared once here and consumed by journal/result/public seams;
   do not retype or widen them into arbitrary strings downstream.
 - Stable sync projection is descriptive only. Models do not locate the journal, select a series,
@@ -154,8 +158,9 @@ all-snake payload shape.
 | Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `MemorySyncChoice`; `SyncSide`; `SyncPhase`; `SyncOperationState`; `SyncOperationProjection`; `SyncResolutionProjection` | mcp/src/agents_remember/models/worktree.py:56-78; mcp/src/agents_remember/models/worktree.py:122-153 |
 | Series status and command responses carry optional activation facts and bounded admission evidence. | `AtomicSeriesActivationFact`; `AtomicSeriesAdmission`; `WorktreeSummary`; `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:145-219; mcp/src/agents_remember/models/worktree.py:219-307 |
 | The sync response declares recovery guidance without exposing a public operation id. | `WorktreeSyncResponse` | mcp/src/agents_remember/models/worktree.py:357-368 |
+| The record-landing envelope declares the landing evidence and its operation literal. | `WorktreeRecordLandingResponse` | mcp/src/agents_remember/models/worktree.py:412-416 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading optional next and activation fields without inventing values. | `worktree_status_packet`; `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:65-151; mcp/src/agents_remember/application/worktree_status.py:217-277 |
-| The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:72-77; mcp/src/agents_remember/worktrees/worktree_contract.py:182-198; mcp/src/agents_remember/worktrees/worktree_contract.py:199-226 |
+| The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:70-75; mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 | The guidance state machine imports and writes `WorktreePhase`, `NextOperation` and `NextTool` (declared in this model since L9), plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10; mcp/src/agents_remember/worktrees/modules/guidance.py:38-55 |
 
 | Public worktree MCP application entry points delegate to the package worktree manager. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:293-316 |
@@ -219,7 +224,31 @@ the typed `outcome` (`LifecycleWaitOutcome`), optional `operationKind`,
 on timeout returns the unchanged snapshot and cursor without claiming failure. The module now
 imports `LifecycleOperationKind` and `LifecycleWaitOutcome` for the vocabulary.
 
+## 260831-LOCR-L29 Record-Landing Wire Response
+
+`WorktreeRecordLandingResponse` (operation literal `worktree_record_landing`) declares the landing
+evidence the `worktree_record_landing` tool returns: `integrationStrategy`, `landedCodeCommit`, and
+`landingTargets`. It inherits `WorktreeCommandResponse`, so it stays flexible for unrelated
+operation data and exposes no operation id, journal address, or Git-mutation authority.
+
+The class exists because the tool was registered and advertised with no response model. The payload
+builder routes every result through `finalize_tool_response`, which indexes `TOOL_RESPONSE_MODELS`
+by tool name, so `worktree_record_landing` raised `KeyError` inside its `@server.tool()` handler
+instead of returning a payload — the advertised tool could not answer at all. Declaring the
+envelope here, together with its registry row in `models/tools/tool_registry.py`, is what makes the
+advertised name reachable at the same strict boundary as `WorktreeIntegrateResponse`.
+
 ## Update History
+- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: declared the
+  `WorktreeRecordLandingResponse` envelope (`worktree_record_landing` literal, `integrationStrategy`,
+  `landedCodeCommit`, `landingTargets`) for the tool that `mcp/registration/closeout.py` already
+  registered, added the model-declaration/registry-pairing invariant, and added its reference row.
+  The tool had been advertised while `finalize_tool_response`'s by-name registry lookup had no entry,
+  so it raised instead of returning a payload. Verification metadata remains closeout-owned; no
+  acceptance claim.
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `ContractCells`, `VALID_CLEANUP_STATUSES`, `VALID_CLOSEOUT_STATUSES`, `VALID_HUMAN_REVIEW_STATUSES`, `VALID_INTEGRATION_STATUSES`, `VALID_MEMORY_MODES`, `VALID_WORKFLOW_KINDS`, `amend_contract` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:179-194, mcp/src/agents_remember/worktrees/worktree_contract.py:197-225, mcp/src/agents_remember/worktrees/worktree_contract.py:70-75. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `nextRequiredArgs` repointed to mcp/src/agents_remember/models/worktree.py:262-262. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `unknownContractCells` repointed to mcp/src/agents_remember/models/worktree.py:267-267. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T15:00+02:00 — Automatic post-integration cleanup vocabulary at code commit `76ce662a`: `NextOperation` replaced `request_cleanup_decision` with `retry_cleanup` (member count unchanged at seven), and the `cleanup_question` projection key is gone. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
 - 2026-09-11T11:04:01+02:00 — Declared `SyncResolutionProjection.wipRestore`, the parked-WIP marker `sync_transaction_results` has emitted since it introduced the parked-candidate path while `StrictResponseModel`'s `extra="forbid"` refused it, so a sync that parked a dirty leaf and needed the agent to settle the reapply failed on its own projection instead of returning the resolution (code commit `765f1743`). Citation range extended to the new class extent. Only the cut-affected claim was reconciled, so verification metadata remains pinned; source documentation only, no acceptance claim.
 

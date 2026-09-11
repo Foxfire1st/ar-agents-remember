@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_source_lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -67,17 +67,17 @@ to removed methods are superseded by this current inventory.
 | Organizational super move blocks the leaf boundary | `test_organizational_super_move_blocks_the_leaf_boundary` | mcp/tests/test_source_lineage.py:76-90 |
 | Start rechecks exact source tips before start effects | `test_start_rechecks_exact_source_tips_before_start_effects` | mcp/tests/test_source_lineage.py:92-125 |
 | Attach refuses before stale task context is resumed | `test_attach_refuses_before_stale_task_context_is_resumed` | mcp/tests/test_source_lineage.py:126-139 |
-| Parent and leaf paths may be sibling worktrees of one repository | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:141-161 |
-| Lifecycle boundary requires the full transitive chain | `test_lifecycle_boundary_requires_the_full_transitive_chain` | mcp/tests/test_source_lineage.py:163-175 |
-| The closeout-boundary class proves the self-healing source-lineage guard. | `CloseoutSourceLineageHealTests` | mcp/tests/test_source_lineage.py:178-184 |
-| A plain fast-forward break is carried by the closeout boundary. | `test_closeout_boundary_heals_a_plain_fast_forward_break` | mcp/tests/test_source_lineage.py:186-202 |
-| A `dry_run` closeout refuses with the preview duty and moves nothing. | `test_closeout_preview_refuses_without_moving_the_break` | mcp/tests/test_source_lineage.py:204-220 |
-| A leaf that owns its own commit is carried (merge, not refusal). | `test_closeout_boundary_carries_a_leaf_that_owns_its_own_commit` | mcp/tests/test_source_lineage.py:222-243 |
-| An unprovable break escalates to the human developer. | `test_unprovable_lineage_escalates_to_the_human_developer` | mcp/tests/test_source_lineage.py:245-263 |
-| A retained sync conflict hands back both worktrees and their duties. | `test_retained_sync_conflict_hands_back_both_worktrees_and_their_duties` | mcp/tests/test_source_lineage.py:265-297 |
-| A dirty (uncommitted) candidate is parked, carried, and returned by the closeout boundary. | `test_closeout_boundary_carries_an_uncommitted_candidate` | mcp/tests/test_source_lineage.py:299-319 |
-| A parked-candidate reapply conflict surfaces as `source-lineage-sync-conflict` with the candidate recoverable. | `test_closeout_boundary_retains_a_parked_candidate_conflict` | mcp/tests/test_source_lineage.py:321-346 |
-| The moved-source integration guidance routes through the sync. | `test_source_moved_integration_guidance_routes_through_the_sync` | mcp/tests/test_source_lineage.py:348-375 |
+| Parent and leaf paths may be sibling worktrees of one repository | `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` | mcp/tests/test_source_lineage.py:190-210 |
+| Lifecycle boundary requires the full transitive chain | `test_lifecycle_boundary_requires_the_full_transitive_chain` | mcp/tests/test_source_lineage.py:212-224 |
+| The closeout-boundary class proves the self-healing source-lineage guard. | `CloseoutSourceLineageHealTests` | mcp/tests/test_source_lineage.py:227-432 |
+| A plain fast-forward break is carried by the closeout boundary. | `test_closeout_boundary_heals_a_plain_fast_forward_break` | mcp/tests/test_source_lineage.py:235-251 |
+| A `dry_run` closeout refuses with the preview duty and moves nothing. | `test_closeout_preview_refuses_without_moving_the_break` | mcp/tests/test_source_lineage.py:253-269 |
+| A leaf that owns its own commit is carried (merge, not refusal). | `test_closeout_boundary_carries_a_leaf_that_owns_its_own_commit` | mcp/tests/test_source_lineage.py:271-292 |
+| An unprovable break escalates to the human developer. | `test_unprovable_lineage_escalates_to_the_human_developer` | mcp/tests/test_source_lineage.py:294-312 |
+| A retained sync conflict hands back both worktrees and their duties. | `test_retained_sync_conflict_hands_back_both_worktrees_and_their_duties` | mcp/tests/test_source_lineage.py:314-348 |
+| A dirty (uncommitted) candidate is parked, carried, and returned by the closeout boundary. | `test_closeout_boundary_carries_an_uncommitted_candidate` | mcp/tests/test_source_lineage.py:350-370 |
+| A parked-candidate reapply conflict surfaces as `source-lineage-sync-conflict` with the candidate recoverable. | `test_closeout_boundary_retains_a_parked_candidate_conflict` | mcp/tests/test_source_lineage.py:372-399 |
+| The moved-source integration guidance routes through the sync. | `test_source_moved_integration_guidance_routes_through_the_sync` | mcp/tests/test_source_lineage.py:401-432 |
 
 ## Cross-Repo References
 
@@ -88,6 +88,17 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_parent_and_leaf_paths_may_be_sibling_worktrees_of_one_repository` repointed to mcp/tests/test_source_lineage.py:190-210. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_lifecycle_boundary_requires_the_full_transitive_chain` repointed to mcp/tests/test_source_lineage.py:212-224. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `CloseoutSourceLineageHealTests` repointed to mcp/tests/test_source_lineage.py:227-432. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_closeout_boundary_heals_a_plain_fast_forward_break` repointed to mcp/tests/test_source_lineage.py:235-251. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_closeout_preview_refuses_without_moving_the_break` repointed to mcp/tests/test_source_lineage.py:253-269. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_closeout_boundary_carries_a_leaf_that_owns_its_own_commit` repointed to mcp/tests/test_source_lineage.py:271-292. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_unprovable_lineage_escalates_to_the_human_developer` repointed to mcp/tests/test_source_lineage.py:294-312. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_retained_sync_conflict_hands_back_both_worktrees_and_their_duties` repointed to mcp/tests/test_source_lineage.py:314-348. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_closeout_boundary_carries_an_uncommitted_candidate` repointed to mcp/tests/test_source_lineage.py:350-370. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_closeout_boundary_retains_a_parked_candidate_conflict` repointed to mcp/tests/test_source_lineage.py:372-399. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_source_moved_integration_guidance_routes_through_the_sync` repointed to mcp/tests/test_source_lineage.py:401-432. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-10T15:06+02:00 — Closeout-heal curation: recorded the `CloseoutSourceLineageHealTests` class and its eight cases (fast-forward carry, read-only preview, leaf-owns-its-commit carry, unprovable escalation, retained-conflict handback, uncommitted-candidate carry, retained parked-candidate conflict, moved-source integration guidance) and re-derived every retained method range against the current working tree. Verification remains closeout-owned.
 

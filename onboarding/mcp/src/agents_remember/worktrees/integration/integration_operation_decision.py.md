@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ The source file is the direct evidence for this file-specific ownership boundary
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` as its public seam. | `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` | mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:33-42; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:45-91; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:94-100 |
+| The module defines `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` as its public seam. | `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` | mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:28-36; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:39-81; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:84-90; mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py:94-100 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `47c8d102c2430d5337dbe207d4601efb4844fec0` |
-| lastVerifiedCommitDate | 2026-09-01T08:53:56+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,6 +49,10 @@ topology validator remains the canonical reference-integrity authority.
   refuse.
 - Graph revision changes when execution structure or a master's execution nature changes.
 - Predecessor completion is a mechanistic fact, not a priority judgment.
+- **Predecessor resolution is terminal, not Completed-only (master abandonment):** the blocking set
+  is built with `tasks/readiness.py::master_is_terminal`, so a predecessor master that was
+  `abandoned` resolves exactly like a `Completed` one and stops blocking its successors. Leaving
+  dependents blocked forever would make abandoning a master worse than doing nothing.
 - No acquisition or in-flight lane facts are owned here.
 - For a graph-less sprint, the migration refusal describes source-pair-selected implementation
   exposure; series-contract presence is not a lane owner.
@@ -66,7 +70,7 @@ No configured Domain Documentation source applies.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Graph construction binds the caller's authored graph to one validated deep-immutable semantic index, then derives the exact queue revision and indexes with the strict/tolerant register split. | `graph_context`; `_sprint_with_bound_graph` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:62-128 |
-| Incomplete predecessors are built in one bounded adjacency pass with master-granular completion. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:340-366 |
+| Incomplete predecessors are built in one bounded adjacency pass with master-granular terminal resolution. | `incomplete_predecessor_map` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:341-369 |
 | Leaf-aware candidate lookups resolve a candidate to its lump or segment node. | `candidate_node`; `candidate_predecessors` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:266-273; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:276-289 |
 | The queue's sort key and waiting reasons consume the candidate's own node. | `ready_sort_key`; `predecessor_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:309-324; mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:299-306 |
 
@@ -94,6 +98,7 @@ graph-less atomic-sequential sprint is valid; the graph never owns in-flight lan
 
 ## Update History
 
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: predecessor resolution now consumes `master_is_terminal` (terminal masters — `Completed` or `abandoned`), so an abandoned predecessor stops blocking its successors. Added the invariant and corrected the `incomplete_predecessor_map` row to its current extent. Content change, not a range repoint.
 - 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: documented the caller-authored graph
   comparison, sole immutable semantic-topology index, and regenerated every moved graph-helper
   range. Verification remains closeout-owned.

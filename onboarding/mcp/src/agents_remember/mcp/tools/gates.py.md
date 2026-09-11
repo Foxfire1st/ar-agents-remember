@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/mcp/tools/gates.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -54,9 +54,10 @@ No external domain source governs this repository-local boundary.
 | Structural gate adapters receive typed document-owned requests. | `structural_lifecycle_gate_payload`; `structural_gate_decide_payload`; `structural_gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:77-90; mcp/src/agents_remember/mcp/tools/gates.py:123-136; mcp/src/agents_remember/mcp/tools/gates.py:199-203 |
 | Exact-id gate adapters are separate internal composition seams. | `gate_create_payload`; `gate_decide_payload`; `gate_list_payload` | mcp/src/agents_remember/mcp/tools/gates.py:44-55; mcp/src/agents_remember/mcp/tools/gates.py:92-110; mcp/src/agents_remember/mcp/tools/gates.py:191-196 |
 | Structural response models omit private correlations. | `StructuralGateResponse`; `LifecycleGateResponse`; `GateDecideResponse`; `GateListResponse` | mcp/src/agents_remember/models/structural/gates.py:108-160 |
-| The response registry distinguishes advertised structural names from internal compatibility builders. | `INTERNAL_COMPAT_TOOL_NAMES`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141; mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| The response registry distinguishes advertised structural names from internal compatibility builders. | `INTERNAL_COMPAT_TOOL_NAMES`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:118-139; mcp/src/agents_remember/models/tools/tool_registry.py:227-231 |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:118-139, mcp/src/agents_remember/models/tools/tool_registry.py:227-231. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
 

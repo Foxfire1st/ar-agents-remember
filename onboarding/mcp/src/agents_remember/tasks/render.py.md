@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/tasks/render.py`  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -95,6 +95,9 @@ durable task identity.
 - A single ordinal allocation table serves declarations and edge endpoints. Do not reintroduce a
   sanitizer, a collision suffix branch, or a second endpoint-id authority.
 - Typed intent slots render as stable strings; decision prose and generic questions stay literal.
+- **Every `DocStatus` needs a marker:** `_MARKER` is a direct lookup, not a defaulting one, so
+  adding a status value without adding its marker raises at render time instead of silently
+  rendering a wrong glyph. `abandoned` renders `⛔` alongside `Completed`/`inProgress`/`planning`.
 
 ### Todos
 
@@ -116,6 +119,7 @@ No Domain Documentation sources are configured for this repository-internal rend
 | Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:310-328; mcp/src/agents_remember/tasks/render.py:331-345; mcp/src/agents_remember/tasks/render.py:348-363; mcp/src/agents_remember/tasks/render.py:366-382 |
 | The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:218-273 |
 | The typed requirement/question renderers and the review task-intent line. | `_requirement_lines`; `_question_lines`; `_route_review_lines` | mcp/src/agents_remember/tasks/render.py:399-407; mcp/src/agents_remember/tasks/render.py:409-417; mcp/src/agents_remember/tasks/render.py:492-512 |
+| The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`. | `_MARKER` | mcp/src/agents_remember/tasks/render.py:84-89 |
 
 
 ## 260815-DAG-L12 Mermaid Document Diagram
@@ -138,6 +142,7 @@ and one-way; markdown never becomes authority.
 
 ## Update History
 
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: `_MARKER` now carries `abandoned` (`⛔`) and is documented as a direct lookup, so every `DocStatus` must have a marker or rendering raises. Added the invariant and its source row. Content change, not a range repoint.
 - 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
 
 

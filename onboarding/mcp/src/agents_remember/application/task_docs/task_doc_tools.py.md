@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -122,20 +122,20 @@ validation failures, and invalid resolvable parent master docs.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:92-108 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:539-551 |
+| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:93-111 |
+| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:544-556 |
 | Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:243-286 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:321-321 |
+| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:316-316 |
 | The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
-| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:642-816 |
-| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
-| The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:111-123 |
+| The schema model this application entry point drives. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:645-819 |
+| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:45-71 |
+| The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:112-124 |
 | The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
-| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:229-286 |
-| The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:303-358 |
-| Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:554-584 |
-| The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-55 |
-| Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. | `_prepare_task_doc_edit` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:361-393 |
+| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:228-283 |
+| The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:214-272; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:304-359 |
+| Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:559-589 |
+| The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51 |
+| Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. | `_prepare_task_doc_edit` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:362-398 |
 
 ## Current Task-First Publication Boundary
 
@@ -174,9 +174,10 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | `TaskDocTarget`; `TaskDocEdit`; `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:134-146; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:149-162; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:211-269 |
+| The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | `TaskDocTarget`; `TaskDocEdit`; `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:137-149; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:152-165; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:214-272 |
 
 ## Update History
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:316-316. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-09T12:22:46+00:00: Generated citation repair: `TaskDocument` repointed to mcp/src/agents_remember/tasks/document.py:642-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `test_replace_rewrites_structural_fields_and_decisions` repointed to mcp/tests/test_task_document_application_1.py:243-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.

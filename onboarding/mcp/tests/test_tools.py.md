@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. These cases establish payload behavior with controlled configuration, not a full server-registration or live-provider suite.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
 
 ## Code Commentary
 
@@ -58,11 +58,14 @@ to removed methods are superseded by this current inventory.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:50-59 |
-| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:61-106 |
-| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:108-143 |
-| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:145-155 |
-| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:157-185 |
+| Ping payload | `test_ping_payload` | mcp/tests/test_tools.py:58-68 |
+| Server info payload reports safe config summary | `test_server_info_payload_reports_safe_config_summary` | mcp/tests/test_tools.py:69-115 |
+| Memory init repairs authority after config write failure | `test_memory_init_repairs_authority_after_config_write_failure` | mcp/tests/test_tools.py:116-152 |
+| Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:153-164 |
+| Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:165-195 |
+| Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-240 |
+| The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-261 |
+| The permissive registration-time config stub both cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:262-273 |
 
 ## Cross-Repo References
 
@@ -72,7 +75,37 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | --- | --- | --- |
 | No external evidence is needed for these assertions. | N/A | N/A |
 
+## Public-Surface Inventory Coverage (260831-LOCR-L29)
+
+`PublicSurfaceInventoryTests` exists because the advertised surface's own agreement was unenforced.
+`server_info` reports `mcp.tools.PUBLIC_TOOLS` itself, so a case that reads that payload and compares
+it to the tuple is self-referential. `worktree_record_landing` shipped registered by
+`mcp/registration/closeout.py`, advertised by FastMCP, and absent from both `PUBLIC_TOOLS` and
+`TOOL_RESPONSE_MODELS`, and the suite stayed green while `finalize_tool_response`'s by-name registry
+lookup made the tool unable to return a payload at all.
+
+`test_live_registration_matches_the_public_inventory_in_order` registers every entry in
+`TOOL_REGISTRARS` against a probe `FastMCP("inventory-probe")` and compares the
+`asyncio.run(server.list_tools())` names to `PUBLIC_TOOLS`. The comparison is ordered because
+FastMCP publishes in registration order, so a misplaced row is a reordering bug rather than a
+missing one. `test_worktree_record_landing_has_a_response_model_that_validates` asserts
+`set(PUBLIC_TOOL_RESPONSE_MODELS) == set(PUBLIC_TOOLS)` and then drives one
+`finalize_tool_response("worktree_record_landing", ...)` call — the call a missing registry row
+raises on, which the surface comparison alone cannot see.
+
+`_permissive_registration_config()` is the stub both cases need. Every registrar only closes over
+the config and none validates it while registering, so a permissive chain keeps these cases about
+the inventory rather than about building a runtime. The probe starts no server process, reads no
+provider state, and reaches no network.
+
 ## Update History
+- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: recorded
+  `PublicSurfaceInventoryTests` (live-registration-order equality with `PUBLIC_TOOLS`, plus a
+  validating `finalize_tool_response` call for `worktree_record_landing`) and its
+  `_permissive_registration_config` stub, corrected the Purpose sentence that claimed this module
+  had no registration coverage, repointed all five shifted retained-test ranges after the import
+  block grew, and added the three new reference rows. Verification metadata remains closeout-owned;
+  no execution or acceptance claim.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 

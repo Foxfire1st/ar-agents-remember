@@ -6,8 +6,8 @@
 | doc_type | `repo-overview` |
 | sourceRoute | . |
 | lastUpdated | 2026-09-07T00:34+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 
 > **Status:** active baseline
 
@@ -826,7 +826,27 @@ selected certification, curator coherence, and independent review are removed fr
 routes. Full suites remain an explicit developer request. The dedicated quality/certification and
 curation tools remain explicit owners rather than hidden transaction steps.
 
+## Repository Impact Of Terminal Abandonment And Pull-Request Landing
+
+Two repository-wide entities changed. `DocStatus` gained `abandoned` as a second *terminal* value,
+and it records a decision rather than a failure: on a master it means nothing of that master
+integrated, so its work was deliberately not taken; on a master row it means that leaf's work was not
+taken while the master still completed. It carries no reason of its own — the reason belongs to the
+declaring operation's audit trail (`skip_step`, `remove_subtask` with a disposition, or the decision
+log). `models/task_document.py` publishes the shared `RESOLVED_MASTER_ROW_STATUSES = {"Completed",
+"abandoned"}` and `tasks/readiness.py::master_is_terminal` is the one judgement every plane reads, so
+the task, worktree, queue and observer routes cannot drift apart on the terminal set.
+
+The second entity is the landing route. `worktree_record_landing` is a new public tool for the
+pull-request route: a PR lands on the remote and never moves refs locally, so `worktree_integrate`
+cannot express it. Both routes now write the same terminal `integration` cell through one shared
+writer (`worktrees/modules/landing_record.py`), and a commit that is not reachable from a landing
+target is refused, so the cell cannot be set from a commit that landed nowhere. Retiring a series'
+integration branch also changed: it now requires the master's own terminal task state rather than
+only an enclosure census, because a child that was never started has no enclosure to walk.
+
 ## Update History
+- 2026-09-11T23:05:00+00:00: Repository-impact curation: recorded `abandoned` as a second terminal `DocStatus` with its two distinct meanings and its single shared judgement, and recorded the new `worktree_record_landing` tool plus the terminal-task-state requirement for integration-branch retirement. Content change, not a range repoint.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
 - 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the staged-quality row: the boundary still owns exact-candidate staging and targeted quality, but the transaction-only closeout no longer imports it. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

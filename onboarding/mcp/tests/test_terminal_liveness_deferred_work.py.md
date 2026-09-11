@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_liveness_deferred_work.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T14:35+02:00 |
-| lastVerifiedCommitHash |  `11d1ed0e5542818283bf7fb012a7bdd642aaba2e`|
-| lastVerifiedCommitDate |  2026-09-11T18:45:26+02:00|
+| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -62,8 +62,6 @@ No meaningful cross-repository implementation boundary is established by this re
 
 ## Update History
 
-- 2026-09-10T11:53+02:00 — 260831-LOCR-L09 curator: shifted this card's lane citation by one line, `mcp/tests/test-evidence-lanes.toml:103-103` → `104-104`, after the LOCR-L09 row `test_state_signal_boundary_delivery.py` was registered earlier in the same `unit-regression` bracket and moved every following manifest row down one. The anchor and claim bytes are unchanged; no behavioral or verification claim changed.
-
 - 2026-09-10T12:23+02:00 — 260831-LOCR-L20 curator post-sync repair: the L20↔L28 manifest union
   inserted `test_terminal_evidence_cursors.py` at manifest row 103, shifting this module's own row to
   104. The lane citation above was recomputed to `mcp/tests/test-evidence-lanes.toml:104-104`; the
@@ -71,6 +69,8 @@ No meaningful cross-repository implementation boundary is established by this re
   `unit-regression` classification, the hermetic boundary, and all verification ownership are
   unchanged. Repaired here because the breakage was caused by the union landing in this leaf's
   manifest candidate; the owning L28 seat may fold it into its own account.
+
+- 2026-09-10T11:53+02:00 — 260831-LOCR-L09 curator: shifted this card's lane citation by one line, `mcp/tests/test-evidence-lanes.toml:103-103` → `104-104`, after the LOCR-L09 row `test_state_signal_boundary_delivery.py` was registered earlier in the same `unit-regression` bracket and moved every following manifest row down one. The anchor and claim bytes are unchanged; no behavioral or verification claim changed.
 
 - 2026-09-10T11:52:46+02:00 — 260831-LOCR-L25 curator: repointed this card's lane citation from `mcp/tests/test-evidence-lanes.toml:103-103` to `104-104`. The move is a pure coordinate shift: L25's new `mcp/tests/test_parked_external_await_separation.py` unit-regression row was inserted above this module's row. The claim, its anchor, and the lane classification are unchanged; no behavioral or verification claim changed, and verification remains closeout-owned.
 

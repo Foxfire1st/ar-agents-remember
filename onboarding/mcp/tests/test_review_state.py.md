@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_review_state.py`         |
 | doc_type               | `file-level-onboarding`                 |
 | lastUpdated            | 2026-09-08T22:13:55+02:00                                     |
-| lastVerifiedCommitHash |                                            `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |                                            2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash |                                            `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate |                                            2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                            |
 
 ## Governing Overview
@@ -30,8 +30,9 @@ pending bit observable; replaying a pending begin is idempotent.
 The baseline test seals two findings on a blocking result, then verifies successor rounds advance
 to rounds two and three while retaining the baseline and shrinking remaining IDs to an empty list.
 The successor-refusal test rejects new IDs, duplicate IDs, and passing results with unresolved IDs.
-The final R27 test rejects recording without `begin_task_review` and rejects a result without a
-valid verdict. The cap tests refuse a fourth ordinary round with an actionable count, accept one
+The final R27 test accepts recording without `begin_task_review` as the baseline and rejects a
+result without a valid verdict. The cap tests refuse a fourth ordinary round with an actionable
+count, accept one
 direct recorded developer approval only at exhaustion, accumulate a second allowance without
 resetting the sealed issue list, and leave exhausted state unchanged for malformed permission
 payloads.
@@ -64,13 +65,13 @@ No external Domain Documentation source governs these repository-owned tests.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Missing/zero state starts round one and pending replay is idempotent. | `test_missing_state_starts_round_one_and_replay_is_pending_idempotent`; `test_explicit_zero_state_starts_round_one` | mcp/tests/test_review_state.py:30-54 |
-| Baseline sealing and successor rounds only shrink remaining IDs. | `test_baseline_seals_findings_and_successors_only_shrink_remaining` | mcp/tests/test_review_state.py:49-80 |
-| Successors reject new, duplicate, reintroduced and unresolved passing IDs. | `test_successor_rejects_new_duplicate_reintroduced_and_unresolved_passing_ids` | mcp/tests/test_review_state.py:83-104 |
-| Recording requires begin and a valid verdict. | `test_record_requires_begin_and_verdict` | mcp/tests/test_review_state.py:115-120 |
-| Ordinary exhaustion refuses a fourth round with count and limit. | `test_default_three_round_limit_refuses_fourth_with_actionable_count` | mcp/tests/test_review_state.py:139-147 |
-| A direct developer permission adds cumulative rounds only after exhaustion and preserves findings. | `test_one_explicit_extra_round_preserves_count_and_issue_list_then_refuses_fifth` | mcp/tests/test_review_state.py:149-190 |
-| Malformed permission payloads leave exhausted state unchanged. | `test_invalid_developer_exception_leaves_exhausted_state_unchanged` | mcp/tests/test_review_state.py:192-209 |
+| Missing/zero state starts round one and pending replay is idempotent. | `test_missing_state_starts_round_one_and_replay_is_pending_idempotent`; `test_explicit_zero_state_starts_round_one` | mcp/tests/test_review_state.py:30-44; mcp/tests/test_review_state.py:47-54 |
+| Baseline sealing and successor rounds only shrink remaining IDs. | `test_baseline_seals_findings_and_successors_only_shrink_remaining` | mcp/tests/test_review_state.py:57-105 |
+| Successors reject new, duplicate, reintroduced and unresolved passing IDs. | `test_successor_rejects_new_duplicate_reintroduced_and_unresolved_passing_ids` | mcp/tests/test_review_state.py:108-129 |
+| Recording without begin starts the baseline and still requires a valid verdict. | `test_record_without_begin_starts_the_baseline_and_still_requires_a_verdict` | mcp/tests/test_review_state.py:132-139 |
+| Ordinary exhaustion refuses a fourth round with count and limit. | `test_default_three_round_limit_refuses_fourth_with_actionable_count` | mcp/tests/test_review_state.py:158-165 |
+| A direct developer permission adds cumulative rounds only after exhaustion and preserves findings. | `test_one_explicit_extra_round_preserves_count_and_issue_list_then_refuses_fifth` | mcp/tests/test_review_state.py:168-208 |
+| Malformed permission payloads leave exhausted state unchanged. | `test_invalid_developer_exception_leaves_exhausted_state_unchanged` | mcp/tests/test_review_state.py:211-228 |
 
 ## Source File Binding
 
@@ -80,6 +81,10 @@ The current L41 source bytes are SHA-256
 verification metadata remains blank until a genuine commit-owned refresh.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: The row cited the deleted `test_record_requires_begin_and_verdict`, which asserted the opposite of the current contract. `test_record_without_begin_starts_the_baseline_and_still_requires_a_verdict` now pins that recording without a prior begin starts the baseline and that only the verdict remains required; the Logic prose was corrected to match.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_successor_rejects_new_duplicate_reintroduced_and_unresolved_passing_ids` repointed to mcp/tests/test_review_state.py:108-129. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_default_three_round_limit_refuses_fourth_with_actionable_count` repointed to mcp/tests/test_review_state.py:158-165. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_invalid_developer_exception_leaves_exhausted_state_unchanged` repointed to mcp/tests/test_review_state.py:211-228. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `b007e8ec8440b0aca8f7897f86108c982ec33e9c03e7517240993282874f5212`, `7707` bytes, `209` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
 

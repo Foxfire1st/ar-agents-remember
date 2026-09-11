@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `3e276f2b2052b641afbee180a472259f21b500df` |
-| lastVerifiedCommitDate | 2026-09-02T14:46:34+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -82,11 +82,11 @@ The source file itself is the current evidence for this file-specific contract.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The module defines the exact task publication request, transaction, and result models. | `TaskDocPublicationConflict`; `TaskDocPublication`; `TaskDocPublicationTransaction`; `TaskDocPublicationResult` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:35-50; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:53-62; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:65-73; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:76-79 |
-| Publication delegates exact validation, task write, affected-scope invalidation, and independent rebuild to the task-first owner. | `publish_task_doc_set`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:82-86; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:131-147; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:150-157; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:160-175 |
-| Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback. | `task_doc_publication_transaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:178-208 |
-| Scope changes bind each candidate to its exact accepted original bytes. | `task_doc_scope_changes` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:211-247 |
-| Dry-run preflight validates source currentness and the classifier-scoped union through the same closure as publication. | `validate_task_doc_transaction`; `require_task_doc_sources_current` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:250-265; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:268-285 |
+| The module defines the exact task publication request, transaction, and result models. | `TaskDocPublicationConflict`; `TaskDocPublication`; `TaskDocPublicationTransaction`; `TaskDocPublicationResult` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:34-49; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:52-61; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:64-72; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:75-78 |
+| Publication delegates exact validation, task write, affected-scope invalidation, and independent rebuild to the task-first owner. | `publish_task_doc_set`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173 |
+| Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback. | `task_doc_publication_transaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:176-206 |
+| Scope changes bind each candidate to its exact accepted original bytes. | `task_doc_scope_changes` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:209-245 |
+| Dry-run preflight validates source currentness and the classifier-scoped union through the same closure as publication. | `validate_task_doc_transaction`; `require_task_doc_sources_current` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:248-259; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:262-279 |
 | Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes. | `TaskDocGraphPublicationTests` | mcp/tests/test_task_doc_graph_publication.py:93-140 |
 
 ## Cross-Repo References
@@ -94,6 +94,9 @@ The source file itself is the current evidence for this file-specific contract.
 No meaningful cross-repository boundary is owned by this file.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `TaskDocPublicationConflict`, `TaskDocPublicationResult`, `TaskDocPublicationTransaction`, `TaskDocPublication`, `preview_task_doc_projection_effects`, `preview_task_doc_transaction_projection_effects`, `publish_task_doc_set`, `publish_task_doc_transaction_and_refresh`, `require_task_doc_sources_current`, `validate_task_doc_transaction` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:248-259, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:262-279, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:34-49, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:52-61, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:64-72, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:75-78, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `task_doc_publication_transaction` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:176-206. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `task_doc_scope_changes` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:209-245. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `TaskDocGraphPublicationTests` repointed to mcp/tests/test_task_doc_graph_publication.py:93-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for

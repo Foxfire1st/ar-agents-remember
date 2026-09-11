@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -89,9 +89,10 @@ matrix in the evidence-dependency test suite fixes the contract.
 | The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | `memory_quality_attestation_dependencies` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:91-129 |
 | The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/ledger/admission/scheduling provenance records. | `closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:161-202 |
 | Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | `lifecycle_operation_dependencies` | mcp/src/agents_remember/models/lifecycles/operation.py:428-484 |
-| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `_require_current_dependencies` | mcp/src/agents_remember/worktrees/route_review.py:294-349; mcp/src/agents_remember/worktrees/route_review.py:478-520 |
+| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `_require_current_dependencies` | mcp/src/agents_remember/worktrees/route_review.py:292-347; mcp/src/agents_remember/worktrees/route_review.py:449-491 |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_require_current_dependencies`, `build_route_review` repointed to mcp/src/agents_remember/worktrees/route_review.py:292-347, mcp/src/agents_remember/worktrees/route_review.py:449-491. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.

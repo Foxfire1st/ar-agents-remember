@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/tasks/document_refs.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -85,6 +85,11 @@ Canonical paths are coordination-root-relative and remain tied to the actual tas
 - This module does not inspect terminal liveness or choose occupants.
 - The atomic node-kind rule is centralized here (single source of truth); the shared helper must
   never raise a raw `KeyError` on a missing nature mapping (L15-FIX-1).
+- **Leaf placement resolves masters on terminal state, not completion:** `execution_leaf_placement`
+  collects the placement-blocking set with `tasks/readiness.py::master_is_terminal`, so an
+  `abandoned` master counts as resolved exactly like a `Completed` one and stops gating the segment
+  that waited on it. This module still does not inspect terminal liveness itself; that judgement
+  stays in `readiness.py`.
 
 ### Todos
 
@@ -100,6 +105,7 @@ None.
 | Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:82-575 |
 | Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:24-157 |
 | The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). | `refuse_segment_nodes_on_atomic_masters` | mcp/src/agents_remember/tasks/document_refs.py:42-59 |
+| Leaf placement builds its blocking set from terminal masters (`Completed` or `abandoned`) through the shared readiness judgement. | `execution_leaf_placement` | mcp/src/agents_remember/tasks/document_refs.py:409-443 |
 
 ## Cross-Repo References
 
@@ -154,6 +160,7 @@ route are removed rather than retained as compatibility readers.
 
 ## Update History
 
+- 2026-09-11T23:05:00+00:00: Master abandonment curation: `execution_leaf_placement` now builds its blocking set from `master_is_terminal` — an `abandoned` master resolves exactly like a `Completed` one — and the invariant plus its source row were added. Content change, not a range repoint.
 - 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the one
   polymorphic reviewer altitude contract while preserving parent ownership as a separate
   generation-bound structural concern. Verification remains closeout-owned.

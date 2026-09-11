@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `7833df0b219bba560f67f6e1158c3f4f155e1ce6` |
-| lastVerifiedCommitDate | 2026-08-26T15:02:28+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Moves exact code and external-memory integration refs with journal-bound compare-and-swap, torn-pair recovery, ledger proof, and checkout refresh.
+Moves exact code and external-memory integration refs with prepared-capability compare-and-swap, ledger proof, and checkout refresh.
 
 ## Code Commentary
 
@@ -27,13 +27,13 @@ already-current code/memory pair; a memory-only change for unchanged code must p
 new current row while retaining the complete source history. Repeated code SHAs in that preserved
 history are valid.
 
-`prepare_integration_ref_move` snapshots exact canonical refs only after plane authority. `merge_integrated_commits` consumes that prepared capability, advances the named refs with expected-old CAS, verifies the external-memory ledger/content ancestry, and records enough state for recovery. Checkout refresh accepts clean old or already-new state, refuses untracked/concurrent changes, and never uses ambient HEAD as the target authority.
+`prepare_integration_ref_move` snapshots exact canonical refs only after `require_authorized_integration_commits` and the live source-tip reads. `merge_integrated_commits` consumes that prepared capability, advances the named refs with expected-old CAS, verifies the external-memory ledger/content ancestry, and refreshes the owned checkouts. Checkout refresh accepts clean old or already-new state, refuses untracked/concurrent changes, and never uses ambient HEAD as the target authority. Mid-crash recovery entry points no longer exist: after a crash between the two ref moves the operator re-runs `worktree_integrate` against the live refs.
 
 ## Invariants And Boundaries
 
-- The lowest ref writer requires an unforgeable prepared/recovery capability.
+- The lowest ref writer requires an unforgeable prepared-move capability.
 - Every ref update names `refs/heads/<canonical>` and includes the expected old object id.
-- External code and memory movement is one recoverable pair; rollback never clobbers a concurrently advanced ref.
+- External code and memory movement is one compare-and-swapped pair; rollback never clobbers a concurrently advanced ref, and a torn pair is repaired by re-running integration rather than an in-process recovery chain.
 - The mapped memory-content commit must descend from the prior memory tip and be reachable from the ledger commit.
 - Atomic-series ledger publication either preserves an already-current exact pair or prepends one
   exact row over the entire prior history; global code-key uniqueness is not an invariant.
@@ -42,10 +42,10 @@ history are valid.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Preparation binds current sources, exact targets, and journal authority. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:96-165 |
-| The integration transaction owns ordered CAS and pair recovery facts. | `merge_integrated_commits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:168-240 |
-| Ledger mapping and ancestry are re-proved at the irreversible owner. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:243-296 |
-| Recovery and checkout refresh are exact and idempotent. | `recover_integration_ref`, `refresh_owned_checkout`, `refresh_recovered_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:323-359; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:376-404; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:407-438 |
+| Preparation binds current sources, exact targets, and journal authority. | `prepare_integration_ref_move` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:101-164 |
+| The integration transaction owns ordered CAS and pair recovery facts. | `merge_integrated_commits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:167-239 |
+| Ledger mapping and ancestry are re-proved at the irreversible owner. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:269-312 |
+| Recovery and checkout refresh: mid-crash integration-ref recovery is deleted, and checkout refresh is exact and idempotent. | `refresh_owned_checkout` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:456-484 |
 
 ## Documentation References
 
@@ -59,9 +59,11 @@ The current source seams include `IntegrationSources`, `IntegrationRefRace`, `In
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `IntegrationSources`, `IntegrationRefRace`, `IntegratedCommits` at this ownership boundary. | `IntegrationSources`; `IntegrationRefRace`; `IntegratedCommits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:35-46; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:49-61; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:67-73 |
+| The current module exposes `IntegrationSources`, `IntegrationRefRace`, `IntegratedCommits` at this ownership boundary. | `IntegrationSources`; `IntegrationRefRace`; `IntegratedCommits` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:40-51; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:54-66; mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:72-78 |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Repaired the recovery/checkout-refresh claim. It named `recover_integration_ref`, `refresh_owned_checkout` and `refresh_recovered_checkout` at lines 323-438; the mid-crash integration-ref recovery chain was deleted as a capability (its only input was the journaled pre-move ref value, which has no durable source), so only `refresh_owned_checkout` survives and the claim now cites its exact current extent 456-484 and records re-run-integrate as the replacement. Card prose claiming journal-bound CAS and torn-pair recovery was corrected with it.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `merge_integrated_commits` repointed to mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:167-239. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-26T14:32+02:00 — Corrected irreversible ledger proof for settings-only memory changes:
   current authority is the newest mapping, and a changed memory state for unchanged code requires

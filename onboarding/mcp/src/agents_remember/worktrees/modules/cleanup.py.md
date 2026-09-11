@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/cleanup.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -182,18 +182,18 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:635-710 |
+| Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707 |
 | The bridge releases only an exact selected series and reports durable release failure. | `with_terminal_atomic_series_release` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py:17-65 |
-| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:35-35 |
+| Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. | "class WorktreeArgs" | mcp/src/agents_remember/worktrees/modules/args.py:33-33 |
 | `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. | "def carryover_done" | mcp/src/agents_remember/worktrees/modules/guidance.py:191-191 |
 | Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. | `legacy_series_reports_is_child_enclosure` | mcp/src/agents_remember/worktrees/modules/terminal_validation.py:73-84 |
 | Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. | `_terminal_mutation_authority` | mcp/src/agents_remember/worktrees/modules/cleanup.py:77-115 |
 | Provider teardown is delegated to this module. | `teardown_worktree_providers` | mcp/src/agents_remember/application/provider_runtime.py:161-180 |
-| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:489-489 |
+| `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. | "def _abandon_branches" | mcp/src/agents_remember/worktrees/modules/abandon.py:482-482 |
 | Shared drift snapshot removal helper used by cleanup. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
 | `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, the remote timeout class `_remote_git` passes. | `GIT_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:93-93 |
-| `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
-| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:948-1023 |
+| `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. | `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
+| Worktree tests cover cleanup preconditions and completed cleanup state. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
@@ -216,7 +216,7 @@ The current source seams include `remove_registered_worktree`, `delete_branch_if
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:180-201; mcp/src/agents_remember/worktrees/modules/cleanup.py:204-226; mcp/src/agents_remember/worktrees/modules/cleanup.py:229-265 |
+| The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. | `remove_registered_worktree`; `delete_branch_if_merged`; `delete_branch_if_merged_into` | mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198; mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223; mcp/src/agents_remember/worktrees/modules/cleanup.py:226-262 |
 
 ## 260821-CLIVE Archive-Before-Cleanup
 
@@ -228,6 +228,12 @@ the ephemeral terminal permit/release seam. Already-completed status returns the
 proof and never reconstructs deleted live state.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `delete_branch_if_merged_into`, `delete_branch_if_merged`, `remove_registered_worktree` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:177-198, mcp/src/agents_remember/worktrees/modules/cleanup.py:201-223, mcp/src/agents_remember/worktrees/modules/cleanup.py:226-262. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "class WorktreeArgs" repointed to mcp/src/agents_remember/worktrees/modules/args.py:33-33. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _abandon_branches" repointed to mcp/src/agents_remember/worktrees/modules/abandon.py:482-482. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `amend_contract` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:197-225. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: "class WorktreeArgs" repointed to mcp/src/agents_remember/worktrees/modules/args.py:35-35. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `GIT_REMOTE_TIMEOUT_SECONDS` repointed to mcp/src/agents_remember/kernel/git_command.py:93-93. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-06T22:41:21+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:948-1023. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.

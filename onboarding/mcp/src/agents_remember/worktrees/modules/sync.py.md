@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/sync.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -84,11 +84,11 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind. | `sync_result`; `_sync_live` | mcp/src/agents_remember/worktrees/modules/sync.py:29-68; mcp/src/agents_remember/worktrees/modules/sync.py:71-100 |
+| The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind. | `sync_result`; `_sync_live` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67; mcp/src/agents_remember/worktrees/modules/sync.py:70-98 |
 | Shared upstream refresh reports per-side evidence without treating the remote as local mutation authority. | `fetch_source_upstreams` | mcp/src/agents_remember/worktrees/sync_source_refresh.py:9-29 |
-| Atomic-series sync binds the public wrapper to the exact transaction: it validates ownership, publishes `reconciling`, reconciles the source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof. | `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:136-163; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:167-229 |
+| Atomic-series sync binds the public wrapper to the exact transaction: it validates ownership, publishes `reconciling`, reconciles the source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof. | `sync_selected_atomic_series_under_authority`; `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:134-161; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
 | Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:83-111 |
-| Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:155-305; mcp/src/agents_remember/worktrees/sync_transaction_state.py:308-324 |
+| Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | Focused integration tests exercise public preview, retained conflicts, continuation, cancellation, and recovery. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:116-195 |
 
 ## Cross-Repo References
@@ -103,6 +103,7 @@ No meaningful cross-repo references found.
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `_sync_live`, `_sync_selected_atomic_series_under_authority`, `observe_sync_operation`, `sync_result`, `sync_selected_atomic_series_under_authority` repointed to mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:134-161, mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226, mcp/src/agents_remember/worktrees/modules/sync.py:28-67, mcp/src/agents_remember/worktrees/modules/sync.py:70-98, mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
 
 - 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.

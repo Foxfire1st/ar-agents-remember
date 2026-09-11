@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/kernel/memory_ledger.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-08-26T14:32+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -34,10 +34,10 @@ the immutable row history.
 
 ### 260731-EFA-L5 R12: `write_ledger` is a plain whole-file write, and that was decided, not missed
 
-cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:193-215) is two statements — `mkdir(parents=True, exist_ok=True)`
+cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:216-238) is two statements — `mkdir(parents=True, exist_ok=True)`
 then `path.write_text(...)`. It got no lock, no temp-and-rename and no `fsync` in the leaf that gave
 all six control-plane JSONL stores exactly those things, and L5 records why in the function's own
-docstring cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:193-215) rather than leaving the omission to be re-litigated. The ruling is **degraded,
+docstring cit:([`write_ledger`], mcp/src/agents_remember/kernel/memory_ledger.py:216-238) rather than leaving the omission to be re-litigated. The ruling is **degraded,
 not unrecoverable**, and it rests on two properties of the callers, both of which are checkable:
 
 - **Every call commits within two statements.** Six call sites across five modules —
@@ -115,9 +115,9 @@ format.
 | --- | --- | --- |
 | The module defines the canonical ledger schema, row and ledger dataclasses, and validation error type (a subclass of "class LedgerError(AgentsRememberError):"). | "class LedgerError(AgentsRememberError):" | mcp/src/agents_remember/kernel/memory_ledger.py:17-41 |
 | `parse_ledger_text()` requires the fenced JSON metadata block, required metadata fields, supported schema, and a valid mapping table. | `parse_ledger_text` | mcp/src/agents_remember/kernel/memory_ledger.py:52-104 |
-| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:147-156; mcp/src/agents_remember/kernel/memory_ledger.py:159-184; mcp/src/agents_remember/kernel/memory_ledger.py:218-229 |
-| `find_mapping()` resolves current newest-first authority, while `contains_mapping()` proves one exact historical edge without imposing global code-key uniqueness. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:232-242 |
-| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | "def write_ledger(path: Path" | mcp/src/agents_remember/kernel/memory_ledger.py:193-215 |
+| `validate_ledger()`, `ledger_to_text()`, and `prepend_mapping()` keep metadata and newest-first rows synchronized. | `validate_ledger`; `ledger_to_text`; `prepend_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:162-171; mcp/src/agents_remember/kernel/memory_ledger.py:174-199; mcp/src/agents_remember/kernel/memory_ledger.py:241-252 |
+| `find_mapping()` resolves current newest-first authority, while `contains_mapping()` proves one exact historical edge without imposing global code-key uniqueness. | `find_mapping`; `contains_mapping` | mcp/src/agents_remember/kernel/memory_ledger.py:255-257; mcp/src/agents_remember/kernel/memory_ledger.py:260-268 |
+| `write_ledger()` is an unguarded whole-file write, and its docstring carries the 260731-EFA-L5 R12 ruling that made that a decision: the durable copy is the git object every caller commits two statements later. | "def write_ledger(path: Path" | mcp/src/agents_remember/kernel/memory_ledger.py:216-216 |
 | The contract this file was measured against and deliberately left off — what an unconditional per-log lock buys, and why a store whose durability rests on a deployment fact is the defect L5 was called in to repair. | "contract for control-plane JSONL stores" | mcp/src/agents_remember/controlplane/durable_store.py:1-1 |
 
 ## Cross-Repo References
@@ -132,6 +132,11 @@ file and the `c-09-git-worktree-manager` skill worktree manager.
 | The irreversible integration transaction loads the exact named-ref ledger and requires its existing code-to-memory row to match the accepted content commit before moving protected refs. | `require_integrated_ledger_mapping` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:229-282 |
 
 ## Update History
+- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `ledger_to_text`, `prepend_mapping`, `validate_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:162-171, mcp/src/agents_remember/kernel/memory_ledger.py:174-199, mcp/src/agents_remember/kernel/memory_ledger.py:241-252. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `find_mapping`; `contains_mapping` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:255-257; mcp/src/agents_remember/kernel/memory_ledger.py:260-268. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: "def write_ledger(path: Path" repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-216. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-11T22:39:01+00:00: Generated citation repair: `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:41:10+00:00: Generated citation repair: "existing_mapping = find_mapping(ledger" repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:64-64. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
 
 - 2026-08-26T14:32+02:00 — Corrected the ledger contract after the IAS activation regression:

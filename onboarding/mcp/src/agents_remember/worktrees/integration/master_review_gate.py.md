@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/master_review_gate.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-09T14:10+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
+| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -57,8 +57,8 @@ No relevant domain documentation was configured for this repository-internal int
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Typed master-review refusal projection. | `master_route_review_block`; `master_route_review_refusal` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:53-95 |
-| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:696-734; mcp/src/agents_remember/worktrees/modules/integrate.py:970-1033; mcp/src/agents_remember/worktrees/series_closeout.py:61-78 |
+| Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`. | `blocked_integration_payload` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-39 |
+| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:403-426; mcp/src/agents_remember/worktrees/modules/integrate.py:551-614; mcp/src/agents_remember/worktrees/series_closeout.py:53-69 |
 
 ## Cross-Repo References
 
