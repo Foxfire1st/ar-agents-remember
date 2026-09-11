@@ -1,1 +1,10 @@
 .grepai/
+
+# Generated route indexes. Derived artifacts: `build_route_indexes` regenerates them from the
+# onboarding tree and the source checkout, and `memory/carryover.py` documents them as never
+# copied from a source. Tracking them made every merge a conflict between two independently
+# correct regenerations, so they are a cache now, not content. The read path tolerates absence
+# by design (`kernel/sidecar_pairing.py`: "the route index is the authority when present, never
+# a crash when absent") and falls back to a direct sidecar probe, and the remaining readers
+# discover them with `rglob`.
+onboarding/**/overview.index.json
