@@ -5,9 +5,9 @@
 | repository             | agents-remember                                           |
 | path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
 | doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
+| lastUpdated | 2026-09-10T11:42+02:00 |
+| lastVerifiedCommitHash | `8a46bc8d186d9444bf9a83b21ad4683ec4937e3d`|
+| lastVerifiedCommitDate | 2026-09-11T11:04:29+02:00|
 | governingOverview      | `overview.md`                                             |
 
 ## Governing Overview
@@ -16,8 +16,9 @@
 
 ## Purpose
 
-Derives terminal-outcome, compound-idle, and non-reaction findings from catalog truth using real
-task-document containment for manager ownership.
+Derives terminal-outcome, compound-idle, non-reaction, and boundary-drain findings from catalog
+truth using real task-document containment for manager ownership. The boundary-drain gate decides
+whether a pending inbox row has a new delivery opportunity at its target's current turn boundary.
 
 ## Code Commentary
 
@@ -29,11 +30,20 @@ manager structurally through the shared incumbent/staged-heir selector. Compound
 projected from the same running-manager snapshot consumed by the canonical selector, so each
 non-ambiguous document necessarily has a primary or staged-replacement claimant; no synthetic
 missing-occupant fallback is part of that path. Observer sweeps suppress a finding for an ambiguous
-occupant fallback is part of that path. Observer sweeps suppress a finding for an ambiguous or
-malformed task-document route rather than choosing a generation or aborting unrelated seats.
+occupant rather than choosing a generation; a finding for an ambiguous or
+malformed task-document route is suppressed the same way, without aborting unrelated seats.
 `TaskDocumentRefError` is therefore a per-subject fence at state-signal finding evaluation;
 action-time owner derivation remains a separate revalidation boundary. Inbox delivery/landing
 remains owned by the shared durable message path.
+
+`evaluate_boundary_drain_findings` is the boundary-delivery gate for a pending inbox row. It asks
+`_boundary_follows_last_attempt(entry, boundary_at)` whether the target's current turn boundary is a
+new delivery opportunity. A row carrying no attempt clock is a drain candidate only when
+`messageKind == "state-signal"`: rebinding a held signal to a replacement occupant resets that clock
+(`attemptCount=0`, `lastAttemptAt=None`), the generic redelivery path then suppresses the row through
+`state_signal_held_on_boundary`, and this boundary gate is its only remaining delivery path. Every
+other no-attempt row keeps the ordinary redelivery path and is still refused here. A parseable
+attempt clock still requires `boundary_at > attempted_at`; an unparseable clock is refused.
 
 Reviewer subjects are polymorphic: leaf and master reviewers route to their manager, while sprint
 reviewers route to the architect or orchestrator stamped on that generation. The non-reaction
@@ -57,6 +67,10 @@ Task hierarchy determines ownership; runtime ids only correlate observed episode
   which guarantees a claimant after ambiguity is excluded.
 - Findings arise from terminal/turn evidence, not model artifact judgment.
 - State-signal delivery still obeys the target turn boundary.
+- Boundary-drain eligibility for a pending row with no attempt clock is state-signal-scoped; every
+  other row kind keeps the ordinary redelivery path, and an unparseable attempt clock never drains.
+- A pending row whose target has no classified turn boundary is not drained by this gate; the row
+  stays durable and pending, so that is a delay and not row loss.
 - Ambiguity is local to the affected canonical seat; observers neither guess nor fail the whole
   sweep.
 - Reviewer notification follows the generation's structural parent, while non-reviewer expansion
@@ -74,16 +88,21 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:159-173 |
-| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous or malformed subjects. | `evaluate_state_signal_findings`; `_safe_state_signal_finding` | mcp/src/agents_remember/serving/state_signals.py:198-218 |
-| Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:240-343 |
-| Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. | `_notifier_subject_owner_id` | mcp/src/agents_remember/serving/state_signals.py:396-413 |
+| Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:160-174 |
+| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous or malformed subjects. | `evaluate_state_signal_findings`; `_safe_state_signal_finding` | mcp/src/agents_remember/serving/state_signals.py:199-218 |
+| A held state-signal row is suppressed from the generic redelivery path while its resolved target is running. | `state_signal_held_on_boundary` | mcp/src/agents_remember/serving/state_signals.py:188-196 |
+| Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:286-305 |
+| Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. | `_notifier_subject_owner_id` | mcp/src/agents_remember/serving/state_signals.py:397-414 |
+| Boundary drain admits a pending row whose target turn boundary follows its last recorded attempt. | `_boundary_follows_last_attempt` | mcp/src/agents_remember/serving/state_signals.py:440-456 |
+| Boundary-drain eligibility for a no-attempt row is state-signal-scoped; the sweep reuses the same durable pending row. | `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:459-498 |
 
 ## Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
 ## Update History
+
+- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: recorded the boundary-drain predicate `_boundary_follows_last_attempt` and its call from `evaluate_boundary_drain_findings` — a pending row with no attempt clock is drainable only for `messageKind == "state-signal"` (the set whose clock an occupant rebind resets and whose push the boundary gate owns), while every other kind and every unparseable clock keep the previous refusal. Also repaired a duplicated garbled sentence in the Logic section and re-derived the construct ranges. Verification metadata remains closeout-owned.
 
 - 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: recorded the typed task-document refusal fence in state-signal evaluation, preserving local suppression and later retry while leaving canonical seat selection and delivery ownership unchanged.
 
