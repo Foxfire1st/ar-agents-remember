@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
 | lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
 | governingOverview | `../overview.md` |
@@ -80,12 +80,14 @@ helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, `MemoryCandidatePairIdentity` | mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py:48-144 |
-| Code candidate tree comes from the closeout future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py:25-54 |
+| Pair identity and roots come from the canonical memory candidate pair owner. | `resolve_memory_candidate_pair`, `MemoryCandidatePairIdentity` | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:48-144 |
+| Code candidate tree comes from the memory-quality future-code capture. | `capture_future_code_candidate` | mcp/src/agents_remember/memory_quality/future_code_candidate.py:25-54 |
 | Intent identity and topology fingerprint come from R02/R01 owners. | `task_intent_identity`, `candidate_task_topology_fingerprint` | mcp/src/agents_remember/tasks/task_intent.py:180-212; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:190-211 |
 | Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. | `observe_scope_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-99 |
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the pair-resolver and future-code-capture citations to their relocated `memory_quality/` paths (commits `0b63d6fc`). Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=bb14594e277a8bc3ba7a0c8937f85adb359aa250a6a7cbd9793600d0bee68048; verification metadata remains unchanged because commit-owned realization is pending.
 

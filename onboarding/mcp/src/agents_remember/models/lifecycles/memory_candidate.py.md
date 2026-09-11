@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/models/lifecycles/memory_candidate.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T05:55+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
 | lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
 | governingOverview | `overview.md` |
@@ -42,7 +42,7 @@ branch, base, onboarding, ledger, repository, or contract-address change does.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The strict frozen pair wire contract declares every required authority cell. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10 |
-| The resolver is the sole producer of this identity. | `resolve_memory_candidate_pair` | mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py:48-144 |
+| The resolver is the sole producer of this identity. | `resolve_memory_candidate_pair` | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:48-144 |
 
 ## Cross-Repo References
 
@@ -50,6 +50,8 @@ No cross-repository implementation reference applies; configured Agents Remember
 both repository addresses.
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the resolver citation to its relocated `memory_quality/memory_candidate_pair.py` path (commit `0b63d6fc`). Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 
 - 2026-08-30T05:55+02:00 — MCAR-L03 A005: moved the lifecycle identity under the lifecycle
   model package so the root models package remains within its structural limit; semantics are

@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview | `../../../overview.md` |
@@ -275,10 +275,11 @@ filesystem names carry no lifecycle or semantic authority.
 
 ## MCAR-L03 Exact Pair Resolver
 
-`memory_candidate_pair.py` is the sole read-only authority for worktree-backed memory candidates.
-It proves requested contract/repository identity, live roots, Git repository membership, checked
-out work branches, source/base equality, and base ancestry before emitting the shared pair model.
-No queue, report, repo-id lookup, branch switch, or fallback participates.
+`memory_candidate_pair.py` — relocated from `worktrees/integration/closeout/` to `memory_quality/` by
+the de-entanglement cut (commit `0b63d6fc`) — is the sole read-only authority for worktree-backed
+memory candidates. It proves requested contract/repository identity, live roots, Git repository
+membership, checked out work branches, source/base equality, and base ancestry before emitting the
+shared pair model. No queue, report, repo-id lookup, branch switch, or fallback participates.
 
 ## 260831-CCR-L01 Shared Leaf Identity Boundary
 
@@ -308,6 +309,7 @@ quality, selected certification, curator coherence, independent review, and full
 automatic transaction steps; full suites require an explicit developer request.
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repaired the exact-pair resolver reference, which now lives at `memory_quality/memory_candidate_pair.py` after commit `0b63d6fc` relocated it out of `closeout/`. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
 - 2026-09-10T15:06+02:00 — Closeout auto-carry and parked candidate: recorded that the sync transaction parks and returns a dirty moving side's candidate (park, journal, restore on completed/resume/cancel, finalize refusal), and that the closeout-family lineage guard self-heals a settleable stale break through that transaction. Re-derived the sync anchors against the current working tree. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

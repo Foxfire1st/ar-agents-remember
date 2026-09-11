@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
+| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
+| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -35,6 +35,10 @@ Contract-scoped application calls supply the leaf base as temporary provenance f
 dirty-tree claims; this is comparison input only and never a verification stamp.
 `curator_checklist.py` renders the full scoped result plus missing-onboarding, route-index, drift,
 and report-only detail into the enclosure's one atomically replaced curator worklist.
+`future_code_candidate.py`, `memory_candidate_pair.py`, and `memory_census_scope.py` are this
+route's memory-candidate roots; the closeout-facing preparation adapter was moved out to
+`worktrees/integration/closeout/prepared_certification.py` so this route keeps no inbound
+dependency on the closeout plane.
 
 ## Route Model
 
@@ -335,11 +339,32 @@ composition does not close the production execution gap recorded above or replac
 | R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:347-397 |
 | R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
 
-## L34 Preparation Ownership
+## L34 Preparation Ownership — the closeout adapter moved out
 
-[prepared_certification.py](prepared_certification.py.md) composes the actual affected closure, full memory checks, missing-onboarding/index observations and curator coherence against a proved private code view. Its original result/catalog publication is selected through the existing lifecycle owner; red results remain evidence and cannot authorize M/L output preparation.
+The closeout-facing certification adapter that composed the actual affected closure, full memory
+checks, missing-onboarding/index observations and curator coherence against a proved private code
+view no longer lives here: commit `deb032fb` moved it to
+[worktrees/integration/closeout/prepared_certification.py](../worktrees/integration/closeout/prepared_certification.py.md)
+because a pre-closeout quality service must not depend on the closeout plane. The closeout plane may
+depend on this route; not the reverse. Red results remain evidence and cannot authorize M/L output
+preparation.
+
+## Memory-Candidate Roots Relocated In
+
+The de-entanglement cut moved this route's candidate-identity roots in rather than out:
+`future_code_candidate.py` and `memory_candidate_pair.py` were relocated from
+`worktrees/integration/closeout/` by commit `0b63d6fc`, and `memory_census_scope.py` from the same
+route by commit `be517eec`. They are the route's own memory-candidate owners and carry no closeout
+dependency.
+
+| Source File | Onboarding | Status |
+| --- | --- | --- |
+| `future_code_candidate.py` | [future_code_candidate.py.md](future_code_candidate.py.md) | covered |
+| `memory_candidate_pair.py` | [memory_candidate_pair.py.md](memory_candidate_pair.py.md) | covered |
+| `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: moved the `prepared_certification.py` sidecar out to `worktrees/integration/closeout/` (commit `deb032fb`) and moved the `future_code_candidate.py`, `memory_candidate_pair.py` and `memory_census_scope.py` sidecars in from the closeout route (commits `0b63d6fc`, `be517eec`), repairing the dead `prepared_certification.py.md` link and recording the new candidate-root ownership. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored the readiness projection
   row to the current `_attach_final_full_catalog` declaration; certification ownership and route
   semantics remain unchanged.

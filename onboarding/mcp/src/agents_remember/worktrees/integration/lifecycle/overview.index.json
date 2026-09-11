@@ -32,7 +32,6 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py",
-    "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py",
     "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location_errors.py",
@@ -53,8 +52,8 @@
     "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 38,
-    "fileSidecars": 35,
+    "sourceFilesInScope": 37,
+    "fileSidecars": 34,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -85,7 +84,6 @@
     "init__",
     "integration",
     "launch",
-    "lease",
     "lifecycle",
     "lifecycle_closeout_claim_evidence",
     "lifecycle_completed_disposition",
@@ -99,7 +97,6 @@
     "lifecycle_operation_controls",
     "lifecycle_operation_door_control",
     "lifecycle_operation_identity",
-    "lifecycle_operation_lease",
     "lifecycle_operation_live_decision",
     "lifecycle_operation_location",
     "lifecycle_operation_location_errors",
@@ -156,11 +153,11 @@
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_door_control.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_lease.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py",
       "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location_errors.py",
-      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py",
+      "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_read_decision.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -193,8 +190,6 @@
       "lifecycle_operation_door_control",
       "lifecycle_operation_identity.py",
       "lifecycle_operation_identity",
-      "lifecycle_operation_lease.py",
-      "lifecycle_operation_lease",
       "lifecycle_operation_live_decision.py",
       "lifecycle_operation_live_decision",
       "lifecycle_operation_location.py",
@@ -210,7 +205,9 @@
       "lifecycle_operation_request.py",
       "lifecycle_operation_request",
       "lifecycle_operation_store.py",
-      "lifecycle_operation_store"
+      "lifecycle_operation_store",
+      "lifecycle_operations.py",
+      "lifecycle_operations"
     ]
   },
   "fallback": {

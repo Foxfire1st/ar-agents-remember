@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-10T15:06+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
 | lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 | governingOverview      | `overview.md`                              |
@@ -197,6 +197,9 @@ fallback, or compatibility reader was added.
 The integration quality call passes `args.integration_certification_owner` to `run_integration_quality_gate`; journal selection/reuse authority travels through this typed owner rather than an injected ad-hoc gate runner. The configured repository profile is still forwarded.
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: retired the evidence row citing the deleted `test_worktree_integrate_quality_gate.py` altitude matrix. Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
+
 - 2026-09-10T15:06+02:00 — Integration guidance curation: the `blocked-non-ff` / `source branch moved` refusal now routes through `worktree_sync` plus a new targeted closeout instead of `--strategy replay`; recorded that `replay` remains supported and is the carryover vehicle. Re-derived the integrate.py anchors against the current working tree. Verification metadata remains closeout-owned.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
 
@@ -207,7 +210,7 @@ The integration quality call passes `args.integration_certification_owner` to `r
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding for the master full gate and removal of the requires_integrated_acceptance repo-name policy; refreshed integration_quality citations to the post-cutover ranges.
 | The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:346-389 |
 | The integrated result records the completed publication outcome. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:420-450 |
-| The altitude proofs cover leaf no-rerun, series full, host-managed absence, explicit settings caps, refusal-before-merge, and dry-run preview. | `IntegrationQualityGateAltitudeTests` | mcp/tests/test_worktree_integrate_quality_gate.py:191-251 |
+| The altitude-proof module this row cited was deleted with the removed closeout fixture chain (commit `9e1743c1`); the altitude matrix it described is no longer retained as test coverage. | — | — |
 | Historical/removed: the direct-legacy-integration cases named here lived in `test_worktree_support_tests_2.py` / `_3.py`, which no longer exist. Journaled production-path suites own successful movement and recovery; this row records the earlier coverage rather than a current test. | N/A | N/A |
 
 
