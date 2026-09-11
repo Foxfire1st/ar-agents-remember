@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-08T17:47:39+02:00 |
+| lastUpdated | 2026-09-11T12:02+02:00 |
 | lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
 | lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
 | governingOverview      | `overview.md`                                 |
@@ -377,15 +377,17 @@ read/refusing-write behavior.
 ## Historical 260815-DAG-L3 Queue Binding (Removed)
 
 The intermediate contract persisted sprint/candidate queue binding cells. CLIVE final deletes those
-cells rather than keeping a compatibility reader. The typed `closeout_door` is the sole canonical
-scheduling generation on the contract; projection membership is recomputed, and claimed lifecycle
-evidence transfers to the stable journal.
+cells rather than keeping a compatibility reader. For a period the typed `closeout_door` was the sole
+canonical scheduling generation on the contract; projection membership is recomputed, and claimed
+lifecycle evidence transfers to the stable journal. **That contract-owned door is itself now gone** —
+see "260821-CLIVE Door-Only Scheduling Authority" below.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
 Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
 and active atomic-series refs are censused across code and external memory. The contract contributes
-exact repository/task/door facts to those owners; it no longer carries mutable queue binding state.
+exact repository and task facts to those owners; it no longer carries mutable queue binding state, and
+it no longer carries door facts.
 
 ## 260821-CLIVE-L1 Canonical Contract Publication
 
@@ -401,7 +403,7 @@ The current source seams include `ContractError`, `ContractCells`, `amend_contra
 | --- | --- | --- |
 | The current module exposes `ContractError`, `ContractCells`, `amend_contract` at this ownership boundary. | `ContractError`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:90-91; mcp/src/agents_remember/worktrees/worktree_contract.py:180-195; mcp/src/agents_remember/worktrees/worktree_contract.py:198-226 |
 
-## 260821-CLIVE Door-Only Scheduling Authority
+## 260821-CLIVE Door-Only Scheduling Authority (Superseded)
 
 The contract no longer persists `queue_sprint_task_document` or
 `queue_candidate_task_document`. Canonical scheduling intent is the typed `closeout_door`; queue
@@ -409,19 +411,32 @@ membership is derived elsewhere and cannot be reconstructed as durable binding. 
 parses exact retained/archive bytes using the same validation as `load_contract`, without creating a
 temporary-file authority. Existing strict writer, normalization, and unknown-cell behavior remain.
 
+## Closeout-Door Cut: The Contract No Longer Stores A Door
 
-## CCR-R02@v2 Publishable Closeout Door
+The closeout-door cut (commit `fad9808e`) took `closeout_door` out of `WorktreeContract` **entirely** —
+field, parser, writer and the publish guard. It superseded the section above, which had named the typed
+`closeout_door` as the contract's canonical scheduling generation.
 
-`contract_publication_text` (line 483) now refuses to publish a contract whose live closeout door
-predates canonical task intent: `_require_publishable_closeout_door` (line 853-863) runs after
-validation and calls `require_task_intent_identity(contract.closeout_door.taskIntent, owner=
-"closeout-door", next_action="closeout_door.update-provenance")`, translating `TaskIntentError`
-into a path-naming `ContractError`. A legacy door therefore stays readable but its exact bytes
-cannot be republished as current contract truth without `update-provenance` first
-(`requirements/CCR-R02-v2-normative-task-intent-identity.md`). Part of the landed L25 candidate
-`99dc249b`.
+The door now lives in its own journal at `<worktree_group>/reports/closeout-door.json`, plus the
+operation record's own publication, and is read through the single accessor
+`closeout/door.py::live_closeout_door(contract, record=None)`. A contract that still carries a
+`closeout_door:` block **parses**: the key is never read, and the next `write_contract` rewrite drops
+it. Nothing in this module validates, renders, or proves door bytes any more, so there is no
+contract-byte before/after SHA proof to satisfy.
+
+## CCR-R02@v2 Publishable Closeout Door (Removed)
+
+This section recorded that `contract_publication_text` refused to publish a contract whose live
+closeout door predated canonical task intent, through `_require_publishable_closeout_door` calling
+`require_task_intent_identity(contract.closeout_door.taskIntent, owner="closeout-door", ...)` and
+translating `TaskIntentError` into a path-naming `ContractError`. It was landed in candidate
+`99dc249b`. That guard was deleted by commit `fad9808e` along with the field it read. Task-intent
+identity is now proven where the door is published (the door journal / operation journal), not at
+contract publication; `closeout_door.update-provenance` is likewise no longer a contract-publish
+refusal. No compatibility reader for a legacy door was retained.
 
 ## Update History
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that `closeout_door` left `WorktreeContract` entirely (field, parser, writer and `_require_publishable_closeout_door`), that a contract still carrying the key parses with the key never read and dropped by the next rewrite, and that door storage moved to `<worktree_group>/reports/closeout-door.json` behind `live_closeout_door`. Added the "Closeout-Door Cut" section, marked the door-only scheduling-authority section superseded, and recorded the CCR-R02@v2 publish guard as removed so `update-provenance` is no longer a contract-publish refusal. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation rebound the public start-contract wrapper citation to its current definition; contract vocabulary ownership is unchanged and no acceptance claim is made.
 - 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound `build_start_contract` to its current public wrapper after the startup module moved. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.

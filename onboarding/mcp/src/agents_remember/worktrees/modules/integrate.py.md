@@ -5,7 +5,7 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-11T10:26:37+02:00|
+| lastUpdated | 2026-09-11T12:02+02:00|
 | lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4` |
 | lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
 | governingOverview      | `overview.md`                              |
@@ -49,7 +49,8 @@ into `integration_quality`, so the master gate admits the exact repository-owned
 of a settings executor; the old `requires_integrated_acceptance` repo-name policy was removed.
 Dry-run reports the same ownership without executing it. A full-gate refusal returns
 `blocked-quality-gate` before any source ref moves. `memory_quality_check` remains leaf-closeout
-owned and is not repeated here.
+owned and is not repeated here. **`integration_quality.py` itself was deleted by the closeout-door cut
+(commit `fad9808e`), so this entire ladder is now history with no live module behind it.**
 
 **Two frozen parameter objects and one extracted phase (260731-EFA-L2):**
 
@@ -123,7 +124,6 @@ No external Domain Documentation source is configured for this memory repo.
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:181-196 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:199-227 |
 | This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:25-50; mcp/src/agents_remember/worktrees/modules/integrate.py:420-450 |
-| Leaf integration reuses its closeout proof without calling a gate; series/master integration alone runs the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. | `quality_gate_mode`, `quality_gate_preview`, `run_integration_quality_gate` | mcp/src/agents_remember/worktrees/integration/integration_quality.py:98-103; mcp/src/agents_remember/worktrees/integration/integration_quality.py:106-135; mcp/src/agents_remember/worktrees/integration/integration_quality.py:138-163 |
 | The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:326-343 |
 
 
@@ -138,9 +138,11 @@ A missing Agents Remember wrapper or failed full result blocks before merge.
 
 ## 260815-DAG-L3 Integration Seam, Replaced By Journal Transfer
 
-The final integration path does not claim, certify, or consume a mutable queue row. Admission binds
-the exact claimed closeout door and completed retained source journal into integration intent, then
-re-proves task topology, source-journal digest, commit identity, and protected refs immediately before
+The final integration path does not claim, certify, or consume a mutable queue row. Since the
+closeout-door cut this admission no longer binds a claimed closeout door or a source journal into an
+integration intent — those modules were deleted. Admission is the request plus the branch/ref
+authority checks, and the mutation
+re-proves lineage, commit identity, and protected refs immediately before
 publication. Recovery resumes the same journaled operation generation only from mechanically proven
 evidence; a generic request cannot select or substitute another leaf. Projection refresh after the
 canonical transition is downstream and disposable.
@@ -166,8 +168,10 @@ fields alone are not recovery evidence.
 ## 260821-CLIVE-L2 Current Contract
 
 The current source seams include `handover_gate_guard`, `unmatched_handover_gate_warning`,
-`blocked_integration_payload`. A waiting projection is admission evidence only; the exact claimed door
-and source journal transfer authority into the integration journal. The mutation boundary revalidates
+`blocked_integration_payload`. A waiting projection is admission evidence only. Since the
+closeout-door cut the exact claimed door and source journal no longer transfer authority into the
+integration journal here — that transfer module was deleted; the integration journal still owns its
+own operation generation, and no door claim is matched on this path. The mutation boundary revalidates
 configured contract and protected refs and records publication evidence. Source-ref movement must
 reconcile or complete the same generation.
 
@@ -195,10 +199,26 @@ fallback, or compatibility reader was added.
 
 ## Current Landed Composition
 
-The integration quality call passes `args.integration_certification_owner` to `run_integration_quality_gate`; journal selection/reuse authority travels through this typed owner rather than an injected ad-hoc gate runner. The configured repository profile is still forwarded.
+This module contains no quality reference at all. The integration quality call, `args.integration_certification_owner`, `run_integration_quality_gate` and the configured-profile forwarding described in earlier revisions of this section were deleted with `integration_quality.py` by the closeout-door cut (commit `fad9808e`). Integration lands the prepared pair under the existing authority and ref-safety controls and runs no acceptance gate of its own.
+
+## Closeout-Door Cut: Boundary Facts, Publication Intent And Claim Transfer Removed
+
+The closeout-door cut (commit `fad9808e`) removed three imports from this module and the code that used
+them: `transfer_and_publish_integration_claim` (from `integration_claim_transfer.py`),
+`IntegrationDoorAuthorityConflict` / `integration_door_decision_payload` (from
+`integration_publication_fence.py`), and `IntegrationBoundaryFacts` /
+`prepare_integration_publication_intent` / `preview_integration_boundary` (from
+`organizational_completion_integration.py`). All three modules were deleted.
+
+`_apply_integration` no longer builds boundary facts, a publication intent, or a claim transfer. It
+takes the prepared commit pair straight to publication. Admission for the ordinary integration path is
+therefore the request plus the existing branch/ref authority checks — no door-claim match is performed,
+and `prepared_integration_recovery` was dropped from the preflight results with it. `IntegrationPublication`
+lost its `intent` field for the same reason.
 
 ## Update History
 
+- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the evidence row citing the deleted `integration_quality.py` and recorded the module has no quality reference at all; corrected the L3 seam and CLIVE-L2 admission wording, which had this module binding a claimed closeout door and source journal into an integration intent — that module was deleted and no door claim is matched on this path; added the boundary-facts/publication-intent/claim-transfer removal section. Verification metadata remains pinned because only the cut-affected claims were reconciled; source documentation only, no acceptance claim.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: retired the evidence row citing the deleted `test_worktree_integrate_quality_gate.py` altitude matrix. Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-10T15:06+02:00 — Integration guidance curation: the `blocked-non-ff` / `source branch moved` refusal now routes through `worktree_sync` plus a new targeted closeout instead of `--strategy replay`; recorded that `replay` remains supported and is the carryover vehicle. Re-derived the integrate.py anchors against the current working tree. Verification metadata remains closeout-owned.
