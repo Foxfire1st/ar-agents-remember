@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_terminal_liveness_deferred_work.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-08T14:35+02:00 |
-| lastVerifiedCommitHash |  `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
-| lastVerifiedCommitDate |  2026-09-11T18:44:06+02:00|
+| lastVerifiedCommitHash |  `11d1ed0e5542818283bf7fb012a7bdd642aaba2e`|
+| lastVerifiedCommitDate |  2026-09-11T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -52,8 +52,7 @@ The test cases are grounded in the production sweeper's batch and deferred-drain
 | The full and starting sweeps collect pending syncs inside the catalog batch, then drain them and invoke callbacks after the batch exits. | `refresh`; `_refresh_starting_rows` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-268 |
 | The deferred drain re-reads committed rows before invoking the observer, while the row-local guard records `interactionSyncError` and continues on later rows. | `_run_deferred_interaction_syncs`; `_observe_control_snapshot` | mcp/src/agents_remember/serving/terminal_liveness.py:300-322; mcp/src/agents_remember/serving/terminal_liveness.py:532-582 |
 | The module exercises full/starting order, aborted-pass suppression, guarded continuation, and post-commit failure durability with the real catalog and sweeper seams. | `TerminalLivenessDeferredWorkTests` | mcp/tests/test_terminal_liveness_deferred_work.py:101-366 |
-| The candidate classifies this module once in the explicit unit-regression lane. | "mcp/tests/test_terminal_liveness_deferred_work.py" | mcp/tests/test-evidence-lanes.toml:106-106 |
-
+| The candidate classifies this module once in the explicit unit-regression lane. | "mcp/tests/test_terminal_liveness_deferred_work.py" | mcp/tests/test-evidence-lanes.toml:109-109 |
 ## Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned unit-regression module.
@@ -72,6 +71,8 @@ No meaningful cross-repository implementation boundary is established by this re
   `unit-regression` classification, the hermetic boundary, and all verification ownership are
   unchanged. Repaired here because the breakage was caused by the union landing in this leaf's
   manifest candidate; the owning L28 seat may fold it into its own account.
+
+- 2026-09-10T11:52:46+02:00 — 260831-LOCR-L25 curator: repointed this card's lane citation from `mcp/tests/test-evidence-lanes.toml:103-103` to `104-104`. The move is a pure coordinate shift: L25's new `mcp/tests/test_parked_external_await_separation.py` unit-regression row was inserted above this module's row. The claim, its anchor, and the lane classification are unchanged; no behavioral or verification claim changed, and verification remains closeout-owned.
 
 - 2026-09-10T11:24+02:00 — 260831-LOCR-L28 curator: corrected this module's evidence-lane classification from `integration` to `unit-regression`. It is hermetic and integration was already at exactly its 150-collected-case cap, so the earlier registration would have taken the lane to 155 and broken full-suite collection. The lane citation now names the module's own manifest row (`mcp/tests/test-evidence-lanes.toml:103-103`) instead of a block range, and the Purpose/Conventions wording follows the corrected lane. No behavioral or verification claim changed; verification remains closeout-owned because the source is an uncommitted candidate.
 - 2026-09-08T14:35+02:00 — Created the file card for the R28 deferred-work proof. Recorded the full/starting post-commit ordering, aborted-pass suppression, row-local quarantine continuation, and escaping post-commit failure boundary from the current source. Verification remains closeout-owned because the source is an uncommitted candidate.
