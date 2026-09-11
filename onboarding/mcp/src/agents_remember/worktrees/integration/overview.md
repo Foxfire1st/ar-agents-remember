@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T12:02+02:00|
-| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
-| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
+| lastVerifiedCommitHash | `1eb6301a804a0db1a17bc4d6606be02b90c3825b` |
+| lastVerifiedCommitDate | 2026-09-11T12:48:35+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
