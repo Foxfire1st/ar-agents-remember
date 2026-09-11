@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T21:58:28+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
+| lastVerifiedCommitHash | `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d` |
+| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -22,7 +22,8 @@ evidence, candidate acceptance evidence, and the durable operation journal.
 
 ## Hot Path Summary
 
-`future_code_candidate.py` derives the exact isolated-index pre-commit route identity;
+`prepared_certification.py` (relocated here from `memory_quality/` by commit `deb032fb`) composes the
+actual affected closure and full memory checks against a proved private code view;
 `curator_coherence.py` captures and validates the exact code/memory/task/attestation candidate;
 `curator_coherence_publication.py` publishes the sole live content-addressed authority;
 `curator_coherence_judgments.py` binds agent-owned decisions to evidence bytes; and
@@ -42,6 +43,23 @@ refuses current use and names republishing, rather than accepting topology alone
 removal. Historical generations remain audit evidence. These existing door/journal owners
 are distinct from the selected certification graph: admission and code-suffix execution are now
 composed under `certification/`; prepared-memory and finalization execution are separate registered continuation responsibilities.
+
+## De-Entanglement Cut Relocations
+
+Three member cards left this route and one arrived, all by explicit relocation commits:
+
+- `future_code_candidate.py`, `memory_candidate_pair.py` (commit `0b63d6fc`) and
+  `memory_census_scope.py` (commit `be517eec`) moved to `memory_quality/`, because a pre-closeout
+  quality service must be able to mint and prove its own memory-candidate identity without the
+  closeout plane. This route may depend on `memory_quality/`; not the reverse.
+- `prepared_certification.py` moved in from `memory_quality/` (commit `deb032fb`) as the
+  closeout-facing certification adapter.
+
+The public closeout-door *tool entry point* was deleted by the same cut (commit `6982c6a7`, which
+removed `application/closeout_door.py`, `mcp/tools/closeout_door.py`, the `models/lifecycles/door_response.py`
+response model and the tool registration). The closeout-internal door modules on this route
+(`door.py`, `door_control.py`, `door_evidence.py`, `door_source.py`, `initial_door_recovery.py`)
+were not removed by that commit.
 
 ## Selected Certification Route
 
@@ -66,7 +84,7 @@ composed under `certification/`; prepared-memory and finalization execution are 
 | --- | --- | --- |
 | `door_source.py` | [door_source.py.md](door_source.py.md) | covered |
 | `ledger_recovery.py` | [ledger_recovery.py.md](ledger_recovery.py.md) | covered |
-| `future_code_candidate.py` | [future_code_candidate.py.md](future_code_candidate.py.md) | covered |
+| `prepared_certification.py` | [prepared_certification.py.md](prepared_certification.py.md) | covered |
 | `curator_coherence.py` | [curator_coherence.py.md](curator_coherence.py.md) | covered |
 | `curator_coherence_judgments.py` | [curator_coherence_judgments.py.md](curator_coherence_judgments.py.md) | covered |
 | `curator_coherence_publication.py` | [curator_coherence_publication.py.md](curator_coherence_publication.py.md) | covered |
@@ -100,6 +118,7 @@ The parity candidate composes the sidecar and governing route body/history check
 
 
 ## Update History
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: moved the `future_code_candidate.py`, `memory_candidate_pair.py` and `memory_census_scope.py` sidecars out to `memory_quality/` and moved the `prepared_certification.py` sidecar in, repaired the dead `future_code_candidate.py.md` map link, and recorded that the public closeout-door tool entry point was deleted while the closeout-internal door modules remain. This records source documentation only; it makes no acceptance or certification claim.
 - 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
 - 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration/closeout`, so no route/member/prose/invariant change is required. route-member-count=42; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.

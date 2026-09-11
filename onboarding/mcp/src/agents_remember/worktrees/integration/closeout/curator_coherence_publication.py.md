@@ -5,7 +5,7 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
 | lastVerifiedCommitHash | `fbc89847233b1c5959f56475f2cb51f936d5ef0b` |
 | lastVerifiedCommitDate | 2026-09-02T07:47:04+02:00|
 | governingOverview | `overview.md` |
@@ -84,7 +84,7 @@ No meaningful cross-repository reference applies.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The task publication lock is scoped to the configured coordination repository. | `task_publication_lock` | mcp/src/agents_remember/controlplane/task_publication_lock.py:18-36 |
+| The task publication lock this route once consulted was deleted with the whole lock plane (commit `1a0919c1`); publication no longer takes a CAS mutex. | — | — |
 
 ## MCAR-L03 Pair-Bound Publication
 
@@ -99,6 +99,8 @@ observed inputs before CAS installation (worker handover:
 notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: retired the evidence row citing the deleted `task_publication_lock.py` and recorded that publication no longer takes a CAS mutex. Verification metadata remains pinned because only the cut-affected reference was reconciled; source documentation only, no acceptance claim.
 
 - 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the dependency declaration built by `_record` during publication; prior CAS, retry-identity, and pair publication prose preserved.
 

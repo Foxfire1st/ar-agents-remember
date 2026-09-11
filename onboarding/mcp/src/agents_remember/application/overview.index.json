@@ -33,7 +33,6 @@
   "coveredFiles": [
     "mcp/src/agents_remember/application/__init__.py",
     "mcp/src/agents_remember/application/benchmark_tools.py",
-    "mcp/src/agents_remember/application/closeout_door.py",
     "mcp/src/agents_remember/application/closeout_queue.py",
     "mcp/src/agents_remember/application/completion_cleanup.py",
     "mcp/src/agents_remember/application/context_packet.py",
@@ -62,8 +61,8 @@
     "mcp/src/agents_remember/application/worktree_tools.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 66,
-    "fileSidecars": 29,
+    "sourceFilesInScope": 61,
+    "fileSidecars": 28,
     "childRoutes": 4
   },
   "routingTerms": [
@@ -75,7 +74,6 @@
     "census",
     "cleanup",
     "closeout",
-    "closeout_door",
     "closeout_queue",
     "coherence",
     "completion",
@@ -88,7 +86,6 @@
     "curator",
     "curator_coherence",
     "docs",
-    "door",
     "files",
     "gate",
     "gate_tools",
@@ -146,7 +143,7 @@
     "worktree_tools"
   ],
   "hotPath": {
-    "summary": "This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, legacy repair, direct landing, and degraded status. For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undeclared linked worktree entry paths therefore cannot inherit the deployed coordination root. The curr...",
+    "summary": "This route owns the single closed configured-contract admission result/projector and the task-addressed application adapters over lifecycle location, controls, adoption, direct landing, and degraded status. The legacy-repair adapter and the closeout-door adapter were deleted as capabilities by the de-entanglement cut. For 260731-EFA-L21, `runtime/startup.py` is the trusted MCP declaration boundary: it declares MCP execution before loading runtime configuration. Dashboard foreground, daemon, and reload-worker entry paths make the corresponding dashboard declaration in their CLI route. Undecl...",
     "candidateHints": [
       "mcp/src/agents_remember/application",
       "mcp/src/agents_remember/application/lifecycle",
@@ -155,7 +152,6 @@
       "mcp/src/agents_remember/application/task_docs",
       "mcp/src/agents_remember/application/__init__.py",
       "mcp/src/agents_remember/application/benchmark_tools.py",
-      "mcp/src/agents_remember/application/closeout_door.py",
       "mcp/src/agents_remember/application/closeout_queue.py",
       "mcp/src/agents_remember/application/completion_cleanup.py",
       "mcp/src/agents_remember/application/context_packet.py",
@@ -171,15 +167,14 @@
       "mcp/src/agents_remember/application/memory_scope.py",
       "mcp/src/agents_remember/application/memory_tools.py",
       "mcp/src/agents_remember/application/next_step.py",
-      "mcp/src/agents_remember/application/operator_inbox_tools.py"
+      "mcp/src/agents_remember/application/operator_inbox_tools.py",
+      "mcp/src/agents_remember/application/orchestration_tools.py"
     ],
     "anchorHints": [
       "__init__.py",
       "__init__",
       "benchmark_tools.py",
       "benchmark_tools",
-      "closeout_door.py",
-      "closeout_door",
       "closeout_queue.py",
       "closeout_queue",
       "completion_cleanup.py",
@@ -221,7 +216,9 @@
       "terminal_tools.py",
       "terminal_tools",
       "tool_response.py",
-      "tool_response"
+      "tool_response",
+      "worktree_services.py",
+      "worktree_services"
     ]
   },
   "fallback": {

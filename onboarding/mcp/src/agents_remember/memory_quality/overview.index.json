@@ -24,6 +24,7 @@
     "mcp/src/agents_remember/memory_quality/final_certification/certificate.py",
     "mcp/src/agents_remember/memory_quality/final_certification/certify.py",
     "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py",
+    "mcp/src/agents_remember/memory_quality/future_code_candidate.py",
     "mcp/src/agents_remember/memory_quality/gate_five_rails.py",
     "mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py",
     "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py",
@@ -50,8 +51,9 @@
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py",
     "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/unclaimed_entities.py",
+    "mcp/src/agents_remember/memory_quality/memory_candidate_pair.py",
     "mcp/src/agents_remember/memory_quality/memory_census.py",
-    "mcp/src/agents_remember/memory_quality/prepared_certification.py",
+    "mcp/src/agents_remember/memory_quality/memory_census_scope.py",
     "mcp/src/agents_remember/memory_quality/style/__init__.py",
     "mcp/src/agents_remember/memory_quality/style/changed_lines.py",
     "mcp/src/agents_remember/memory_quality/style/citations/__init__.py",
@@ -92,8 +94,8 @@
     "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 76,
-    "fileSidecars": 74,
+    "sourceFilesInScope": 78,
+    "fileSidecars": 76,
     "childRoutes": 1
   },
   "routingTerms": [
@@ -122,6 +124,7 @@
     "claim",
     "claim_change_router",
     "claim_reopen",
+    "code",
     "compiler",
     "curator",
     "curator_checklist",
@@ -151,6 +154,8 @@
     "fix",
     "fixer",
     "form",
+    "future",
+    "future_code_candidate",
     "gate",
     "gate_five_rails",
     "gate_prefix",
@@ -173,10 +178,7 @@
     "markers",
     "mcp",
     "memory",
-    "memory_census",
-    "memory_quality",
-    "migration",
-    "missing"
+    "memory_candidate_pair"
   ],
   "hotPath": {
     "summary": "`check.py` is the public package-level runner. It can execute style-only checks without repository context, or combine drift integrity and style checks when an MCP application entry point supplies `DriftCheckContext`. Drift logic lives under `integrity/onboarding_drift_check/`; the pre-code-commit missing-onboarding check lives at `integrity/check_missing_onboarding.py`; update-history ordering lives under `style/update_history/`. The history-order checker is diagnostic; the matching `history_order_fix.py` module is the explicit mutating script for timestamped history-order fixes. `style/do...",
@@ -192,6 +194,7 @@
       "mcp/src/agents_remember/memory_quality/final_certification/certificate.py",
       "mcp/src/agents_remember/memory_quality/final_certification/certify.py",
       "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py",
+      "mcp/src/agents_remember/memory_quality/future_code_candidate.py",
       "mcp/src/agents_remember/memory_quality/gate_five_rails.py",
       "mcp/src/agents_remember/memory_quality/incremental_scope",
       "mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py",
@@ -203,8 +206,7 @@
       "mcp/src/agents_remember/memory_quality/incremental_scope/errors.py",
       "mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py",
       "mcp/src/agents_remember/memory_quality/incremental_scope/models.py",
-      "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py",
-      "mcp/src/agents_remember/memory_quality/incremental_scope/registry.py"
+      "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -221,6 +223,8 @@
       "certify",
       "gate_prefix.py",
       "gate_prefix",
+      "future_code_candidate.py",
+      "future_code_candidate",
       "gate_five_rails.py",
       "gate_five_rails",
       "affected_execution.py",
@@ -252,9 +256,7 @@
       "drift.py",
       "drift",
       "entities.py",
-      "entities",
-      "git_ops.py",
-      "git_ops"
+      "entities"
     ]
   },
   "fallback": {

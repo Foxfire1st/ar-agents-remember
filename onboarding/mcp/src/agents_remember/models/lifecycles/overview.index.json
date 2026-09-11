@@ -15,7 +15,6 @@
     "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
     "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
     "mcp/src/agents_remember/models/lifecycles/door.py",
-    "mcp/src/agents_remember/models/lifecycles/door_response.py",
     "mcp/src/agents_remember/models/lifecycles/enclosure.py",
     "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
     "mcp/src/agents_remember/models/lifecycles/finalize.py",
@@ -36,8 +35,8 @@
     "mcp/src/agents_remember/models/lifecycles/termination.py"
   ],
   "coverageCounts": {
-    "sourceFilesInScope": 24,
-    "fileSidecars": 24,
+    "sourceFilesInScope": 23,
+    "fileSidecars": 23,
     "childRoutes": 0
   },
   "routingTerms": [
@@ -53,7 +52,6 @@
     "direct",
     "direct_landing",
     "door",
-    "door_response",
     "enclosure",
     "evidence",
     "evidence_dependencies",
@@ -84,7 +82,6 @@
     "prepared_memory",
     "projection",
     "remember",
-    "response",
     "responses",
     "src",
     "state",
@@ -100,7 +97,6 @@
       "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
       "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
       "mcp/src/agents_remember/models/lifecycles/door.py",
-      "mcp/src/agents_remember/models/lifecycles/door_response.py",
       "mcp/src/agents_remember/models/lifecycles/enclosure.py",
       "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
       "mcp/src/agents_remember/models/lifecycles/finalize.py",
@@ -117,7 +113,8 @@
       "mcp/src/agents_remember/models/lifecycles/preparation.py",
       "mcp/src/agents_remember/models/lifecycles/preparation_state.py",
       "mcp/src/agents_remember/models/lifecycles/prepared_memory.py",
-      "mcp/src/agents_remember/models/lifecycles/responses.py"
+      "mcp/src/agents_remember/models/lifecycles/responses.py",
+      "mcp/src/agents_remember/models/lifecycles/termination.py"
     ],
     "anchorHints": [
       "__init__.py",
@@ -130,8 +127,6 @@
       "direct_landing",
       "door.py",
       "door",
-      "door_response.py",
-      "door_response",
       "enclosure.py",
       "enclosure",
       "evidence_dependencies.py",
@@ -167,7 +162,9 @@
       "responses.py",
       "responses",
       "termination.py",
-      "termination"
+      "termination",
+      "mcp/src/agents_remember/models/lifecycles/",
+      "route-local-overview"
     ]
   },
   "fallback": {

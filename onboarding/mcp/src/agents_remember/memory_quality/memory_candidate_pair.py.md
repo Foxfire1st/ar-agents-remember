@@ -1,18 +1,18 @@
-# mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py
+# mcp/src/agents_remember/memory_quality/memory_candidate_pair.py
 
 | Field | Value |
 | --- | --- |
 | repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py` |
+| path | `mcp/src/agents_remember/memory_quality/memory_candidate_pair.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T07:05+02:00 |
-| lastVerifiedCommitHash |  `346507af24396ab7b491e02511c4af006ccd3dc5`|
-| lastVerifiedCommitDate |  2026-08-30T07:51:57+02:00|
+| lastUpdated | 2026-09-11T10:26:37+02:00 |
+| lastVerifiedCommitHash |  `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d`|
+| lastVerifiedCommitDate | 2026-09-11T09:51:31+02:00 |
 | governingOverview | `overview.md` |
 
 ## Governing Overview
 
-[worktrees overview](overview.md)
+[memory quality overview](overview.md)
 
 ## Purpose
 
@@ -51,9 +51,9 @@ detection.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Pair resolution and digest construction are centralized. | `resolve_memory_candidate_pair` | mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py:48-144 |
-| Requested authority is compared before candidate work begins. | `_require_requested_authority` | mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py:145-175 |
-| Work branch, accepted source head, and ancestry are all proven without mutation. | `_require_branch_plan` | mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py:290-353 |
+| Pair resolution and digest construction are centralized. | `resolve_memory_candidate_pair` | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:48-144 |
+| Requested authority is compared before candidate work begins. | `_require_requested_authority` | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:145-175 |
+| Work branch, accepted source head, and ancestry are all proven without mutation. | `_require_branch_plan` | mcp/src/agents_remember/memory_quality/memory_candidate_pair.py:290-353 |
 
 ## Cross-Repo References
 
@@ -61,6 +61,8 @@ No additional repository is consulted. The configured contract identifies both s
 repositories.
 
 ## Update History
+
+- 2026-09-11T10:26:37+02:00 — Moved the mirrored sidecar from `mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pair.py` to `mcp/src/agents_remember/memory_quality/memory_candidate_pair.py`. Relocated with the de-entanglement cut (commit `0b63d6fc`, "relocate the two memory-candidate roots out of closeout") so the pre-closeout `memory_quality` service owns its exact-pair resolver. The source blob is byte-identical to the pre-move file; every cited anchor range was re-verified against the new path and is unchanged. Governing overview link repointed to the memory quality overview. Verification metadata refreshed to code commit `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d`.
 
 - 2026-08-30T07:05+02:00 — MCAR-L03 A008: made admitted-object shape validation precede the
   exact reread, preserving both field-specific refusal and strict canonical contract writes.
