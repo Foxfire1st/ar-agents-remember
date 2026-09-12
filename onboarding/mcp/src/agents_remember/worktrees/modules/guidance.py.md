@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated            | 2026-09-11T14:56+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -29,6 +29,12 @@ Five `Literal` aliases and four `TypedDict`s now sit above the state machine tha
 | `NextTool` | `worktree_status`, `worktree_closeout_apply`, `worktree_integrate`, `memory_carryover_apply`, `worktree_cleanup` |
 | `RecoveryOperation` | `request_commit_approval`, `choose_memory_recovery`, `choose_provider_setup_recovery`, `choose_stale_base_recovery`, `choose_memory_sync_recovery` |
 | `RecoveryTool` | `worktree_start`, `worktree_sync`, `worktree_closeout_apply` |
+
+`WorktreePhase` deliberately still holds exactly those eight members. A checkpointed contract
+projects as `worktree-started` rather than as a ninth member (260831-LOCR-L30): the alias is a closed
+`Literal` mirrored by the dashboard at six sites across five files (the full list is in the
+checkpointed-phase note under `_post_integration_phase` below), and
+`worktree-started` is the honest phase for a series that is still working. Do not add a member for it.
 
 **Why here.** This module is the state machine that emits every one of these values, and
 `models.worktree.WorktreeSummary` imports `WorktreePhase` / `NextOperation` / `NextTool` for the
@@ -106,7 +112,8 @@ toward closeout.
 - `_reclaimed_phase(contract) -> LifecycleGuidance | None` — the terminal phases, where the
   worktrees are gone: `cleanup-completed` and `abandoned`.
 - `_post_integration_phase(contract) -> LifecycleGuidance | None` — integration has been attempted:
-  `integration-blocked`, or it landed and `carryover-pending` / `cleanup-pending` follow.
+  `integration-blocked`, or it landed and `carryover-pending` / `cleanup-pending` follow, or it
+  landed at a checkpoint and the series keeps working (`worktree-started`, 260831-LOCR-L30).
 - `_pre_integration_phase(contract) -> LifecycleGuidance` — still working: `integration-pending`,
   closeout-approved, closeout-pending, `worktree-started`. This one always returns a phase, which
   is why it terminates the chain.
@@ -154,6 +161,38 @@ refusal, then retry worktree_cleanup." and its next operation is `retry_cleanup`
 `worktree_cleanup` and the contract's next args — no longer a `request_cleanup_decision` dry-run
 preview. `request_cleanup_decision` no longer exists as a `NextOperation` member, and the
 integration projection carries no `cleanup_question`.
+
+**A checkpointed contract projects as still working (260831-LOCR-L30).**
+`_post_integration_phase` gained a `checkpointed` branch
+cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:307-307)
+that returns phase **`worktree-started`** with `nextOperation: "continue_work"` and
+`nextTool: "worktree_status"` (contract args), and a summary stating that the series landed into its
+source branch but remains open and that cleanup is deliberately not pending:
+
+> Integration is checkpointed: the series has landed into its source branch but remains open, and
+> cleanup is deliberately not pending. Continue the remaining work; the series integrates again when
+> it completes.
+
+Two properties of this projection are deliberate and should not be "fixed" later:
+
+- **No new `WorktreePhase` member.** `WorktreePhase` is a closed `Literal` in `models/worktree.py`
+  whose members the dashboard mirrors at **five files / six sites** — the complete list, because a
+  reader who trusts a shorter one will add the member after updating only part of it:
+  1. `dashboard/src/panels/EngineRoom.tsx:59-66` — `LIFECYCLE_PHASES` (the human-gated phase chip
+     set); `"integration-pending"` at `:63`
+  2. `dashboard/src/panels/engine-room/BootTimeline.tsx:88` — a phase list
+  3. `dashboard/src/panels/engine-room/BootTimeline.tsx:110` — phase ordering (`return 1; // push`)
+  4. `dashboard/src/panels/engine-room/useEngineTimeline.ts:41` — the timeline switch
+  5. `dashboard/src/panels/engine-room/buildEngineRoomModel.ts:16` — `PHASE_ORDER`
+  6. `dashboard/src/panels/engine-room/geometry.ts:218` — `LANDING_PHASES`
+
+  A new member is therefore a cross-codebase change, and
+  `worktree-started` is the honest phase for a series that is still working. The checkpoint truth
+  lives in the summary, which is where a reader needs it.
+- **It is not a fallthrough.** Without this branch a checkpointed contract fell through to the
+  pre-integration `integration-pending` phase, whose next tool is `worktree_integrate` — a route that
+  refuses while the series is open. The `checkpointed` branch exists precisely so the projection stops
+  telling an open series to integrate.
 
 New imports back this: `LedgerError`/`find_mapping`/`load_ledger` from
 `kernel.memory_ledger`, and `run_git` — since 260731-EFA-L3 from
@@ -211,15 +250,17 @@ No external Domain Documentation source is configured for this memory repo.
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | Context packet worktree status consumes the facade-exported status payload. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:65-152 |
-| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:472-474 |
+| `status_payload` composes the best-effort landing arc (remote/PR probe) via this module. | `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:494-496 |
 | `carryover_done` reads the exact task-derived memory source ref, requires the row's memory commit to equal the recorded integrated content, and proves that content is reachable from the ledger tip. | `carryover_done` | mcp/src/agents_remember/worktrees/modules/guidance.py:191-222 |
 | Cleanup hard-guards on `carryover_done` before deleting the parked memory branch. | "carryover_done(contract)" | mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669 |
 | Guidance imports the `WorktreePhase` / `NextOperation` / `NextTool` aliases from the wire model in one grouped import rather than restating them. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The six persisted contract vocabularies (declared in models/worktree.py / kernel) imported for `WorktreeStatusFacts`. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/worktree_contract.py:19-19 |
 | `unknown_cells` is the source of `unknown_contract_cells`. | `unknown_cells` | mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
 | Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:274-274; mcp/src/agents_remember/worktrees/modules/start.py:328-328; mcp/src/agents_remember/worktrees/modules/start.py:468-468 |
-| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:245-245 |
+| The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:255-255 |
 | The fifth recovery action, `choose_memory_sync_recovery`, is emitted by `memory_choice_required`. | `memory_choice_required` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50 |
+| A checkpointed contract projects as the existing `worktree-started` phase and keeps working. | "if contract.integration_status == \"checkpointed\":" | mcp/src/agents_remember/worktrees/modules/guidance.py:307-307 |
+| The closed phase set the checkpoint projection deliberately does not extend. | `WorktreePhase` | mcp/src/agents_remember/models/worktree.py:40-48 |
 
 ## Invariants And Boundaries
 
@@ -256,6 +297,21 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 Pre-integration guidance stays contract-pure. It publishes only the static orchestration requirement `intent_note` and tells the caller that exact commit-message requirements are resolved from the current candidate by closeout preview or apply. It deliberately does not inspect the worktree, derive a candidate-sensitive plan, or restate message applicability: the normalizer owns that decision after candidate capture.
 
 ## Update History
+- 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the "no new `WorktreePhase`
+  member" bullet's dashboard list was incomplete (three of six sites). Replaced it with the full
+  five-file / six-site list — `EngineRoom.tsx:59-66` (`LIFECYCLE_PHASES`, `"integration-pending"` at
+  `:63`), `BootTimeline.tsx:88` and `:110`, `useEngineTimeline.ts:41`,
+  `buildEngineRoomModel.ts:16`, `geometry.ts:218` — and made the summary sentence above defer to it.
+  Content change, not a range repoint; verification metadata remains closeout-owned.
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: `_post_integration_phase` gained a
+  `checkpointed` branch projecting the existing `worktree-started` phase with
+  `continue_work`/`worktree_status` and a summary carrying the checkpoint truth. Recorded the two
+  deliberate properties: no new `WorktreePhase` member (closed `Literal` mirrored by the dashboard at
+  six sites across five files, listed in full in the bullet above) and that this is a real branch, not
+  a fallthrough — before it, a checkpointed contract read as `integration-pending` pointing at
+  `worktree_integrate`, which refuses while the series is open. Verification metadata remains
+  closeout-owned; no acceptance claim.
+- 2026-09-12T01:26:36+00:00: Generated citation repair: `request_commit_approval` repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:255-255. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b5cbe38ab438de766feb0fc3860228f5125b623ebbee641f90211d51326d68e; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "choose_memory_recovery", "choose_provider_setup_recovery", "choose_stale_base_recovery" repointed to mcp/src/agents_remember/worktrees/modules/start.py:274-274, mcp/src/agents_remember/worktrees/modules/start.py:328-328, mcp/src/agents_remember/worktrees/modules/start.py:468-468. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:472-474. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "carryover_done(contract)" repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:669-669. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

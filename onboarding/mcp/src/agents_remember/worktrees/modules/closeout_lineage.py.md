@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/modules/closeout_lineage.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -108,7 +108,7 @@ No Domain Documentation source is configured for this memory root.
 | The projection, refusal vocabulary, and ordered sync recoveries this module consumes are owned by the lineage policy. | `source_lineage_for_contract`; `lineage_refusal` | mcp/src/agents_remember/worktrees/source_lineage.py:94-107; mcp/src/agents_remember/worktrees/source_lineage.py:110-122 |
 | The projected state and its ordered `recoveries` are the shared wire model. | `SourceLineageProjection`; `SourceLineageRecovery` | mcp/src/agents_remember/models/worktree.py:105-110; mcp/src/agents_remember/models/worktree.py:113-119 |
 | The heal runs the ordinary public sync result for the owning contract. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
-| Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. | `_validate_closeout_source_state`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:306-316; mcp/src/agents_remember/worktrees/modules/closeout.py:600-609 |
+| Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. | `_validate_closeout_source_state`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:316-328; mcp/src/agents_remember/worktrees/modules/closeout.py:610-622 |
 
 ## Cross-Repo References
 

@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_record_landing.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-12T00:33+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,32 +27,37 @@ that suite's whole transitive support closure.
 
 ### Logic
 
-`_fixture(root)` cit:([`_fixture`], mcp/tests/test_record_landing.py:43-43) creates a real Git
+`_fixture(root)` cit:([`_fixture`], mcp/tests/test_record_landing.py:44-67) creates a real Git
 repository with `main`, `super`, and `ar/master`, then builds a series contract over it with
 `memory_mode="disabled"` — so no memory repository is needed and the route's own logic is what is
-under test. `_commit_on` cit:([`_commit_on`], mcp/tests/test_record_landing.py:67-67) commits on a
+under test. `_commit_on` cit:([`_commit_on`], mcp/tests/test_record_landing.py:68-75) commits on a
 named branch and returns the resulting SHA, which is what the route records. `_record`
-cit:([`_record`], mcp/tests/test_record_landing.py:75-75) is the approved-call shorthand; it is
+cit:([`_record`], mcp/tests/test_record_landing.py:76-91) is the approved-call shorthand; it is
 explicitly typed rather than `**over: object`, which would erase the argument types the route
 validates.
 
-`RecordLandingTests` cit:([`RecordLandingTests`], mcp/tests/test_record_landing.py:91-91) holds six
+`RecordLandingTests` cit:([`RecordLandingTests`], mcp/tests/test_record_landing.py:92-195) holds seven
 cases:
 
-- `test_landed_commit_sets_the_terminal_integration_cell` cit:(["test_landed_commit_sets_the_terminal_integration_cell"], mcp/tests/test_record_landing.py:92-92)
+- `test_landed_commit_sets_the_terminal_integration_cell` cit:(["test_landed_commit_sets_the_terminal_integration_cell"], mcp/tests/test_record_landing.py:93-93)
   — the happy path; asserts the stored contract reads `completed`, carries the `pr` strategy label,
   and holds the exact landed commit.
-- `test_commit_that_landed_nowhere_is_refused` cit:(["test_commit_that_landed_nowhere_is_refused"], mcp/tests/test_record_landing.py:105-105)
+- `test_commit_that_landed_nowhere_is_refused` cit:(["test_commit_that_landed_nowhere_is_refused"], mcp/tests/test_record_landing.py:106-106)
   — commits on a side branch that is not merged into either landing target and asserts the refusal
   message plus an untouched `not-started` cell. This is the anti-fabrication guard.
-- `test_recording_requires_approval` cit:(["test_recording_requires_approval"], mcp/tests/test_record_landing.py:123-123)
+- `test_recording_requires_approval` cit:(["test_recording_requires_approval"], mcp/tests/test_record_landing.py:124-124)
   — an unapproved, non-dry-run call raises before any write.
-- `test_a_missing_commit_argument_is_refused` cit:(["test_a_missing_commit_argument_is_refused"], mcp/tests/test_record_landing.py:135-135)
+- `test_a_missing_commit_argument_is_refused` cit:(["test_a_missing_commit_argument_is_refused"], mcp/tests/test_record_landing.py:136-136)
   — the route cannot be invoked without naming the commit that landed.
-- `test_dry_run_records_nothing` cit:(["test_dry_run_records_nothing"], mcp/tests/test_record_landing.py:144-144)
+- `test_dry_run_records_nothing` cit:(["test_dry_run_records_nothing"], mcp/tests/test_record_landing.py:145-145)
   — reports `would-record` and leaves the cell `not-started`.
-- `test_recording_twice_is_idempotent` cit:(["test_recording_twice_is_idempotent"], mcp/tests/test_record_landing.py:162-162)
+- `test_recording_twice_is_idempotent` cit:(["test_recording_twice_is_idempotent"], mcp/tests/test_record_landing.py:163-163)
   — a repeat reports `already-recorded` rather than writing again.
+- `test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration` cit:(["test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration"], mcp/tests/test_record_landing.py:173-173)
+  — 260831-LOCR-L30 follow-up: with the contract set to `checkpointed`, the route reports
+  `already-recorded` and both stored cells keep the values the checkpoint wrote. It exists because the
+  full-record path writes `completed` + `cleanup="pending"`, the exact state `worktree_cleanup`
+  requires, so taking it would have made an open series reclaimable.
 
 ### Conventions
 
@@ -60,7 +65,7 @@ The suite is a unittest class, matching the surrounding `mcp/tests` convention, 
 the ordinary unit population: the route avoids `status_payload`, so no bound worktree services are
 needed and no `@pytest.mark.integration` marker is required.
 
-`_git` cit:([`_git`], mcp/tests/test_record_landing.py:32-32) passes the identity via `-c` flags
+`_git` cit:([`_git`], mcp/tests/test_record_landing.py:33-43) passes the identity via `-c` flags
 rather than relying on repository or global Git configuration, so the fixture works on a machine with
 no configured user.
 
@@ -71,8 +76,9 @@ no configured user.
   `mcp/tests/evidence-lifecycle.toml`; this suite avoids that coupling on purpose. If a future case
   genuinely needs the shared lineage fixture, that declaration is the price and it must be added in
   the same change.
-- **The refusals are the point, not incidental coverage.** Each of the three failure cases protects a
-  distinct way the terminal cell could be set wrongly or prematurely.
+- **The refusals are the point, not incidental coverage.** Each failure case protects a distinct way
+  the terminal cell could be set wrongly or prematurely — including the newest one, which protects the
+  cell from being *over*written on a checkpointed series.
 - **Assert the stored contract, not only the payload.** A payload state can be right while the write
   was skipped or duplicated; the cases reload the contract to check the durable result.
 
@@ -93,8 +99,9 @@ concern this repository's own contract write, so the retained source is the dire
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The route under test: approval gate, landing targets, ancestry refusal, dry run. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:55-117 |
-| The shared writer whose cell the happy path asserts. | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-47 |
+| The route under test: approval gate, landing targets, ancestry refusal, dry run. | `record_landing_result` | mcp/src/agents_remember/worktrees/modules/record_landing.py:58-143 |
+| The widened `already-recorded` guard the new case pins: a checkpointed series is not upgraded into a reclaimable integration. | "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/modules/record_landing.py:70-70 |
+| The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30). | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
 | The contract fields the recorded commits land in. | `integration_strategy`; `integrated_code_commit` | mcp/src/agents_remember/worktrees/worktree_contract.py:260-263 |
 | The consumer-side guard that reads the cell this route sets. | "integration_status != \"completed\"" | mcp/src/agents_remember/worktrees/modules/cleanup.py:664-664 |
 | The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. | "mcp/tests/fixtures/repository_profiles/node/package.json" | mcp/tests/evidence-lifecycle.toml:551-582 |
@@ -109,6 +116,15 @@ directory; no sibling repository or external system participates.
 | No meaningful cross-repo references found. | N/A | N/A |
 
 ## Update History
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: added
+  `test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration` (the suite now holds
+  seven cases), recorded what it pins and why, added the guard's reference row, and re-derived every
+  range shifted by the new `from dataclasses import replace` import and the appended case. Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: re-derived the two source ranges this card cites
+  (the route moved to 58-131 and the shared writer to 37-68 after the writer gained `LandedIntegration`
+  and the `checkpoint` flag). No behavior this card documents changed. Verification metadata remains
+  closeout-owned.
 - 2026-09-11T23:05:00+00:00: The consumer-side guard cited the bare backticked expression `integration_status != "completed"`, which is not an anchor, and the catalog row cited `[[artifact]]` with a rangeless Source; both now use double-quoted literal anchors -- the exact guard expression at cleanup.py:664 and one of the four lineage-consumer artifact entries in mcp/tests/evidence-lifecycle.toml -- because `[[artifact]]` resolves many times in that file and no single target could be chosen.
 
 - 2026-09-12T00:33+02:00 — Created by the LOCR-L29 curator pass. Documents the six cases, the

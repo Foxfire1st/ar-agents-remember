@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
 | doc_type               | `file-level-onboarding`                         |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                                   |
 
 ## Governing Overview
@@ -29,11 +29,17 @@ L23 types integration strategy at the payload edge and adds task-addressed lifec
 Holds `worktree_start_payload`, `worktree_attach_payload`,
 `worktree_status_payload`, `worktree_closeout_preview_payload`,
 `worktree_closeout_apply_payload`, `worktree_integrate_payload`,
+`worktree_checkpoint_landing_payload`, `worktree_record_landing_payload`,
 `worktree_cleanup_payload`, and `worktree_abandon_payload`. Each forwards typed
 arguments to the matching `application.worktree_tools` function and returns
 through `base._tool_payload`. The former `direct_closeout_preview_payload` /
 `direct_closeout_apply_payload` builders were removed with the direct-closeout
 tool surface (issue #62): closeout is worktree-only.
+
+`worktree_checkpoint_landing_payload` (260831-LOCR-L30) forwards `contract_path`, the typed
+`strategy`, `ledger_commit_message`, and `dry_run` to `worktree_checkpoint_landing_tool`, the
+partial-master landing route; like its integrate sibling it is transport-thin and owns no authority
+or completion decision of its own.
 
 `worktree_start_payload` now wraps its application entry point result with
 `summarize_command_logs` (imported from `providers.lifecycle.log_capture`)
@@ -98,7 +104,8 @@ The source itself and its governing route are sufficient for this thin payload a
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Start, sync, attach, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:41-51; mcp/src/agents_remember/mcp/tools/worktree.py:54-71; mcp/src/agents_remember/mcp/tools/worktree.py:74-83; mcp/src/agents_remember/mcp/tools/worktree.py:86-95 |
+| Start, sync, attach, and status payload builders preserve typed application inputs. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload`; `worktree_status_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:42-54; mcp/src/agents_remember/mcp/tools/worktree.py:55-74; mcp/src/agents_remember/mcp/tools/worktree.py:75-86; mcp/src/agents_remember/mcp/tools/worktree.py:87-98 |
+| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | `worktree_checkpoint_landing_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:150-169 |
 
 ## Cross-Repo References
 
@@ -124,7 +131,7 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:41-51; mcp/src/agents_remember/mcp/tools/worktree.py:54-71; mcp/src/agents_remember/mcp/tools/worktree.py:74-83 |
+| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | `worktree_start_payload`; `worktree_sync_payload`; `worktree_attach_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:42-54; mcp/src/agents_remember/mcp/tools/worktree.py:55-74; mcp/src/agents_remember/mcp/tools/worktree.py:75-86 |
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 
@@ -134,6 +141,12 @@ The module now imports `LifecycleStatusWaitRequest` /
 standard `_tool_payload` envelope for the public `worktree_status_wait` tool.
 
 ## Update History
+
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing_payload` to
+  the builder inventory and its reference row, and re-derived the payload-builder ranges shifted by
+  it. Transport plumbing only; the entry point that owns the checkpoint decision is
+  `application/worktree_tools.py::worktree_checkpoint_landing_tool`. Verification metadata remains
+  closeout-owned; no acceptance claim.
 
 - 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: repointed the payload-builder reference rows to the extents those builders occupy now (`worktree_start_payload` 41-51, `worktree_sync_payload` 54-71, `worktree_attach_payload` 74-83, `worktree_status_payload` 86-95) after `worktree_record_landing_payload` was added to the module by this leaf; prose unchanged. Verification metadata remains closeout-owned.
 

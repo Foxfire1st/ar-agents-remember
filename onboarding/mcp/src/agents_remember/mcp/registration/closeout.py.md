@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
 | lastUpdated | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -50,7 +50,14 @@ unchanged.
 `direct_landing` (the explicitly selected branch-addressed delivery for a leaf implemented without
 an enclosure — L16-R8, policy-gated by `directExecutionEnabled`),
 `worktree_closeout_preview`, `worktree_closeout_apply`,
-`worktree_integrate`, `worktree_cleanup`, `worktree_abandon`.
+`worktree_integrate`, `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_abandon`.
+
+`worktree_checkpoint_landing` (260831-LOCR-L30) is the partial-master landing route registered
+between `worktree_integrate` and `worktree_record_landing`. Its published docstring is the contract
+a client sees: it lands an **unfinished** atomic master's accumulated line and keeps the master open,
+shares `worktree_integrate`'s whole preflight and ref move while dropping only the two completion
+assumptions, records the integration cell as `checkpointed` rather than `completed`, retires nothing
+and runs no cleanup, and is MUTATING with a `dry_run` preview.
 
 The public registration entry delegates to four cohesive helpers:
 `_register_direct_landing_tools` for the branch-addressed direct landing (260815-DAG-L16),
@@ -108,12 +115,16 @@ The three destructive tools forward flat:
 - `worktree_integrate(contract_path, strategy='ff-only'|'replay', ledger_commit_message, dry_run)` —
   runs the altitude-routed quality gate before any merge (leaf targeted, master full and
   host-managed by default), then moves branch refs; protected branches need explicit approval.
+- `worktree_checkpoint_landing(contract_path, strategy='ff-only'|'replay', ledger_commit_message,
+  dry_run)` — moves the same refs for an **unfinished** atomic master and keeps the master open;
+  records `checkpointed`, retires nothing, runs no cleanup.
 - `worktree_cleanup(contract_path, dry_run, teardown_providers=True)` — removes worktrees and merged
   task branches **after** integration, and by default reclaims the worktree's isolated provider stack.
 - `worktree_abandon(contract_path, dry_run, force)` — discards a task without integrating it. Unlike
   cleanup it needs no completed integration; without `force` it refuses dirty worktrees and unmerged
   branches and reports the commits, with `force=true` it discards them
-  (`git worktree remove --force`, `git branch -D`).
+  (`git worktree remove --force`, `git branch -D`). Since 260831-LOCR-L30 the series abandon guard
+  also refuses a master whose integration cell reads `checkpointed`, not only `completed`.
 
 ### Invariants And Boundaries
 
@@ -140,7 +151,8 @@ The three destructive tools forward flat:
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:98-106 |
+| The payload builders these forward to. | `worktree_closeout_preview_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:99-109 |
+| The checkpoint-landing tool declaration and the payload builder it forwards to. | "def worktree_checkpoint_landing("; "def worktree_checkpoint_landing_payload(" | mcp/src/agents_remember/mcp/registration/closeout.py:180-202; mcp/src/agents_remember/mcp/tools/worktree.py:150-169 |
 | `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. | `CloseoutCommitMessages`; `CloseoutApproval` | mcp/src/agents_remember/application/worktree_tool_requests.py:111-117; mcp/src/agents_remember/application/worktree_tool_requests.py:134-139 |
 | Refuse to stage anywhere except a task's own throwaway worktree. | "def _refuse_outside_a_linked_worktree" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:25-41 |
 | Refuse before staging when the checkout has unresolved conflicts. | "def _refuse_conflicted_worktree" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:44-56 |
@@ -169,7 +181,7 @@ The current source seams include `register_closeout_tools`. The public schema/co
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes `register_closeout_tools` at this ownership boundary. | `register_closeout_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:36-41 |
+| The current module exposes `register_closeout_tools` at this ownership boundary. | `register_closeout_tools` | mcp/src/agents_remember/mcp/registration/closeout.py:37-44 |
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -182,6 +194,11 @@ mismatched evidence refuses deletion. Shared grade/admission request types come 
 closeout-source model.
 
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: registered `worktree_checkpoint_landing` in
+  `_register_integration_command_tools` between `worktree_integrate` and `worktree_record_landing`,
+  recorded its published docstring contract, added it to the landing-half purpose list and the
+  destructive-tools list, noted the widened series abandon guard, and re-derived the shifted
+  reference ranges. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_closeout_preview_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:98-106. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `register_closeout_tools` repointed to mcp/src/agents_remember/mcp/registration/closeout.py:36-41. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

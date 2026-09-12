@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -58,11 +58,12 @@ No external domain source governs this repository-local registry.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:118-139 |
-| The complete registry includes structural agent and gate responses alongside internal exact models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
-| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:227-231 |
-| The record-landing tool's response model is registered immediately after its integrate sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:188-188 |
-| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:75-77 |
+| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
+| The complete registry includes structural agent and gate responses alongside internal exact models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:149-229 |
+| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
+| The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. | `worktree_checkpoint_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:189-189 |
+| The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:190-190 |
+| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 
 ## L23 Lifecycle Model Package Review
 
@@ -85,7 +86,7 @@ The current source seams include the module-level vocabulary. The model change k
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:118-139; mcp/src/agents_remember/models/tools/tool_registry.py:147-225; mcp/src/agents_remember/models/tools/tool_registry.py:227-231 |
+| The current module exposes the module-level vocabulary at this ownership boundary. | `INTERNAL_COMPAT_TOOL_NAMES`; `TOOL_RESPONSE_MODELS`; `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141; mcp/src/agents_remember/models/tools/tool_registry.py:149-229; mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 
 ## 260821-CLIVE Strict Door Response
 
@@ -108,7 +109,8 @@ wait tool shares the strict typed response registry with the other worktree tool
 ## 260831-LOCR-L29 Record-Landing Registration Row
 
 `TOOL_RESPONSE_MODELS` now maps `worktree_record_landing` to `WorktreeRecordLandingResponse`
-(imported from `models.worktree`), placed immediately after `worktree_integrate` so the registry
+(imported from `models.worktree`), placed immediately after `worktree_integrate` — its position at
+that leaf; since 260831-LOCR-L30 the checkpoint-landing row sits between them — so the registry
 order matches that tool's position in `mcp.tools.PUBLIC_TOOLS`.
 
 This row is the registry half of the public-surface repair, and the reason the hole was invisible.
@@ -119,7 +121,27 @@ model contract that was violated. `mcp/tests/test_tools.py::PublicSurfaceInvento
 one `finalize_tool_response` call for this name as well as comparing registered names to the
 advertised tuple, so a missing row fails in the suite instead of at a caller.
 
+## 260831-LOCR-L30 Checkpoint-Landing Registration Row
+
+`TOOL_RESPONSE_MODELS` now maps `worktree_checkpoint_landing` to
+`WorktreeCheckpointLandingResponse` (imported from `models.worktree`), inserted between
+`worktree_integrate` and `worktree_record_landing` so the registry order matches that name's position
+in `mcp.tools.PUBLIC_TOOLS`.
+
+This is the second tool to exercise the L29 rule by construction rather than by repair: a name that
+`mcp/registration/closeout.py` registers and FastMCP advertises but this mapping omits raises
+`KeyError` inside the tool handler, because `finalize_tool_response` indexes this registry by tool
+name. The two landing tools are also why a *set* comparison is not enough — they sit adjacent in the
+registry and their payloads differ only in the operation literal, so
+`mcp/tests/test_tools.py::PublicSurfaceInventoryTests` drives one `finalize_tool_response` call per
+name as well as comparing registered names to the advertised tuple.
+
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: registered
+  `worktree_checkpoint_landing` → `WorktreeCheckpointLandingResponse` between the integrate and
+  record-landing rows, recorded the by-name registry lookup as the reason the row is mandatory, and
+  re-derived this card's reference ranges. Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: registered
   `worktree_record_landing` → `WorktreeRecordLandingResponse` immediately after `worktree_integrate`,
   recorded the by-name registry lookup as the reason an advertised-but-unregistered tool cannot

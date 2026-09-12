@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -46,20 +46,27 @@ Six `Literal` aliases replace the loose `str` fields on `WorktreeContract`:
 | `MemoryMode` | `internal`, `external`, `disabled` | (derived — see `_memory_mode_fallback`) |
 | `HumanReviewStatus` | `pending-review`, `approved` | `DEFAULT_HUMAN_REVIEW_STATUS` |
 | `CloseoutStatus` | `not-started`, `completed` | `DEFAULT_CLOSEOUT_STATUS` |
-| `IntegrationStatus` | `not-started`, `completed`, `blocked` | `DEFAULT_INTEGRATION_STATUS` |
+| `IntegrationStatus` | `not-started`, `completed`, `blocked`, `checkpointed` | `DEFAULT_INTEGRATION_STATUS` |
 | `CleanupStatus` | `pending`, `completed`, `abandoned`, `reopened` | `DEFAULT_CLEANUP_STATUS = "pending"` |
 
 Each `VALID_*` frozenset is `frozenset(get_args(<Alias>))`, derived rather than retyped, so a member
 can only ever be added in one place. `VALID_MEMORY_MODES` was previously a hand-written set literal;
 `VALID_KINDS` is unchanged and is still a plain set (`kind` has no `Literal`).
 
-**This is where these values are born and where they die** — `worktree_start` writes the file, the
-lifecycle tools rewrite it, and `models.worktree` imports these same aliases for the response
-boundary. One declaration is what turns "a writer emits a value the wire model rejects" into a type
-error at the writer instead of a pydantic `ValidationError` escaping an MCP tool handler that has no
-`except` anywhere on its path. `cleanup: reopened` (written by `worktrees/reopen.py`) and
-`workflow_kind: chat-task` (`worktree_start`'s own documented argument) were both missing from the
-`Literal` the packet validated against.
+**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:29-31; mcp/src/agents_remember/models/worktree.py:38-39) and imported back here
+cit:(["from agents_remember.models.worktree import ("], mcp/src/agents_remember/worktrees/worktree_contract.py:19-26); this module derives the runtime `VALID_*` frozensets from them. The members are still
+added in exactly one place, which is the property this section describes — adding one here instead
+would recreate the drift it was written to prevent. `checkpointed` reached the persisted contract
+this way in 260831-LOCR-L30: the checkpoint landing route writes it and `VALID_INTEGRATION_STATUSES`
+accepts it with no second edit.
+
+**This is where these values are enforced** — `worktree_start` writes the file, the lifecycle tools
+rewrite it, and every read validates each cell against the `VALID_*` frozenset derived here from the
+`models.worktree` aliases. One declaration is what turns "a writer emits a value the wire model
+rejects" into a type error at the writer instead of a pydantic `ValidationError` escaping an MCP tool
+handler that has no `except` anywhere on its path. `cleanup: reopened` (written by
+`worktrees/reopen.py`) and `workflow_kind: chat-task` (`worktree_start`'s own documented argument)
+were both missing from the `Literal` the packet validated against.
 
 `WorkflowKind` deliberately holds only the two task formats a producer can write. The bare `chat`
 and `light` the pre-L4 union also carried had no writer at all and were dropped.
@@ -436,6 +443,12 @@ contract publication; `closeout_door.update-provenance` is likewise no longer a 
 refusal. No compatibility reader for a legacy door was retained.
 
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: `IntegrationStatus` gained `checkpointed` in the
+  persisted vocabulary, so `VALID_INTEGRATION_STATUSES` accepts the value the checkpoint landing
+  route writes. Corrected this section's framing — the six `Literal` aliases are declared in
+  `models/worktree.py` and imported here, while this module derives the `VALID_*` frozensets — which
+  the previous "declared here / born and die here" wording contradicted. Verification metadata
+  remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION", `ContractCells`, `ContractError`, `_contract_from_data`, `_contract_vocabularies`, `_extract_front_matter`, `_require_supported_schema_version`, `amend_contract`, `validate_contract` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:179-194, mcp/src/agents_remember/worktrees/worktree_contract.py:197-225, mcp/src/agents_remember/worktrees/worktree_contract.py:45-45, mcp/src/agents_remember/worktrees/worktree_contract.py:754-769, mcp/src/agents_remember/worktrees/worktree_contract.py:772-827, mcp/src/agents_remember/worktrees/worktree_contract.py:830-843, mcp/src/agents_remember/worktrees/worktree_contract.py:89-90, mcp/src/agents_remember/worktrees/worktree_contract.py:892-905, mcp/src/agents_remember/worktrees/worktree_contract.py:985-1056. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_task_vocabulary` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:159-176. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `load_contract` repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:434-464. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -429,7 +429,27 @@ commit the PR landed on the protected branch, and the memory pair is optional be
 may not have run yet when the landing is recorded — the cleanup guard checks carryover separately and
 refuses until it is done.
 
+## Checkpoint Landing Gets Its Own Application Entry Point (260831-LOCR-L30)
+
+The application layer gained a second landing entry point beside the PR tail.
+`worktree_tools.py::worktree_checkpoint_landing_tool` admits the configured contract, refuses through
+the same projector, builds `WorktreeArgs` with `approved=not dry_run`, the typed `strategy` and the
+configured `gate_policy` (the same master-exit seam pass-through `worktree_integrate_tool` uses), and
+delegates to `git_worktree_manager.checkpoint_landing_result(args, configured.contract)`.
+
+The entry point is deliberately as thin as its integrate sibling: eligibility, the series authority,
+and the recorded state all live below it, and it runs none of the completion-edge work
+`worktree_integrate_tool` performs — in particular no `auto_complete_seats` call, because a checkpoint
+retires nothing. It is also the only landing entry point that does not need the master to be finished,
+which is exactly why it is a separate tool rather than a flag on `worktree_integrate`: a caller that
+invokes it has chosen a non-final landing on purpose.
+
 ## Update History
+- 2026-09-12T02:55+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the new
+  `worktree_checkpoint_landing_tool` entry point on this route, its admission/argument/delegation
+  shape, why it runs no completion-edge work, and why it is a separate public tool rather than a flag
+  on `worktree_integrate`. Content change, not a range repoint; verification metadata remains
+  closeout-owned.
 - 2026-09-11T23:05:00+00:00: Pull-request landing curation: recorded the new `worktree_record_landing_tool` entry point and its `LandedCommits` parameter object, and why it shares the single landed-integration writer with `worktree_integrate` instead of writing the integration cell itself. Content change, not a range repoint.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: rewrote the "Durable Lifecycle Application Boundary" section from the deleted detached worker to the in-process synchronous route, removed the deleted legacy-repair and closeout-door adapters from the hot-path summary, and recorded the deletions of `application/closeout_door.py` and the `application/lifecycle/` worker, legacy-tool, enclosure-tool and status-wait entry points. Only cut-affected claims were reconciled; this route's other claims were not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
 - 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.

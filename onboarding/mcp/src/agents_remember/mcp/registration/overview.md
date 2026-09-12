@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 | doc_type               | `route-local-overview`                           |
 | lastUpdated | 2026-09-05T07:22+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `../../../../../overview.md`                     |
 
 ## IAS Worktree Advertisement
@@ -83,19 +83,22 @@ for keeping registration declarations separate from implementation.
 | `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
 | `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
 | `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync` — the working half of a task. |
-| `closeout.py`       | `direct_landing`, `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_record_landing`, `worktree_operation_control`, `worktree_cleanup`, `worktree_abandon` — the landing half. `worktree_legacy_operation` was removed from this registrar and exists nowhere in the tree. |
+| `closeout.py`       | `direct_landing`, `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_checkpoint_landing`, `worktree_record_landing`, `worktree_operation_control`, `worktree_cleanup`, `worktree_abandon` — the landing half. `worktree_legacy_operation` was removed from this registrar and exists nowhere in the tree. |
 | `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `curator_coherence`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph), the classification/wave previews, and the policy-gated `branch_addressed` direct-execution mode (L16-R6), while closeout-queue mutations use a strict action-specific request and the hosted seat or — when none exists — a request-carried declared caller (L16-R2). `closeout_door` was deleted from this registrar with the door-operation-journal cut (commit `6982c6a7`). |
 | `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
 | `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
 | `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
 | `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
 
-Twelve registrars, 60 tools registered by decorator, and `mcp/tools/base.py::PUBLIC_TOOLS` lists
-60 names. The two sets are not identical today: `worktree_record_landing` is registered by
-`closeout.py` but is absent from `PUBLIC_TOOLS`, while `task_doc` is in `PUBLIC_TOOLS` and is
-registered by a helper rather than a decorator. `mcp/public_surface.py` asserts the exact live
-`list_tools()` order against `PUBLIC_TOOLS` together with response-model projection, dispatch schema,
-and description, so a tool missing from that list is a surface violation until both sides agree.
+Twelve registrars and 62 tools registered by decorator, and `mcp/tools/base.py::PUBLIC_TOOLS` lists
+the same 62 names. The two sets are equal, and since 260831-LOCR-L29 that equality is checked
+directly: `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` registers every `TOOL_REGISTRARS`
+entry against a probe `FastMCP` and compares the live `list_tools()` order against `PUBLIC_TOOLS`.
+`mcp/public_surface.py` asserts the same live order together with response-model projection, dispatch
+schema, and description, so a tool missing from that list is a surface violation until both sides
+agree. The L29 repair is what made the sets agree — before it `worktree_record_landing` was
+registered by `closeout.py` while absent from `PUBLIC_TOOLS` — and 260831-LOCR-L30 added
+`worktree_checkpoint_landing` to both sides at once.
 
 ## Hot Path Summary
 
@@ -161,8 +164,8 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:75-77 |
-| `PUBLIC_TOOLS` — the advertised name list this package must match. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-71 |
+| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| `PUBLIC_TOOLS` — the advertised name list this package must match (62 names). | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-73 |
 | The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
 | `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
 
@@ -295,6 +298,12 @@ certification, curator coherence, or independent review; full suites are an expl
 request. The historical altitude-ladder section above remains context for the superseded contract.
 
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing` to the
+  `closeout.py` registrar row, and corrected the route census to the measured state — 12 registrars,
+  62 decorator-registered tools, 62 names in `PUBLIC_TOOLS`, the two sets equal. The previous count
+  line still described the pre-L29 gap (`worktree_record_landing` registered but unadvertised,
+  `task_doc` helper-registered), which the L29 repair closed. Re-derived the shifted reference ranges.
+  Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:20:00+00:00: Route inventory corrected against the current registrars. The `closeout.py` row now lists this change's new `worktree_record_landing` and records that `worktree_legacy_operation` exists nowhere; the `tasks.py` row drops `closeout_door`, deleted with the door-operation-journal cut (`6982c6a7`); and the count line no longer claims 64 advertised tools. That line now records the provable relationship instead of an equality: 12 registrar modules, 60 tools registered by decorator, 60 names in `PUBLIC_TOOLS`, with `worktree_record_landing` registered but absent from `PUBLIC_TOOLS` and `task_doc` in `PUBLIC_TOOLS` but helper-registered — which is what `public_surface.py` compares. Content change, not a range repoint.
 - 2026-09-11T23:05:00+00:00: The route no longer owns `worktree_enclosure_adopt_payload` or a `worktree_status_wait` registration: `registration/worktrees.py:17-22` imports only the start, attach, status and sync payload builders and registers `worktree_start`, `worktree_attach`, `worktree_status` (139-166) and `worktree_sync`, while enclosure adoption survives only as the lifecycle-owned `preview_lifecycle_enclosure_adoption`/`apply_lifecycle_enclosure_adoption` service with no public payload builder or registered tool. Both evidence rows and the Status-Change Wait section were rewritten to that current state, and the `worktrees.py` Layout row now lists the four registered tools.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

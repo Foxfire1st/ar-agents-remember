@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T15:02+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -296,9 +296,11 @@ retired while most of its leaves had never been created.
 The vocabulary is deliberately asymmetric. `worktree_cleanup` still requires `Completed` exactly:
 cleanup proves a completion fact. `worktree_abandon` accepts `Completed` **or** `abandoned`, and two
 refusals carry the reasoning: an in-progress master cannot be retired through abandon at all, and an
-`abandoned` master whose contract already reads `integration_status == "completed"` is refused because
-abandoning asserts that none of the work was taken — once part of it integrated, the honest terminal
-route is to mark the never-integrated rows abandoned and complete the master instead.
+`abandoned` master whose contract already records a landed line — `integration_status` in
+`{"completed", "checkpointed"}` (260831-LOCR-L30) — is refused because abandoning asserts that none
+of the work was taken. Once part of it landed, finally or at a checkpoint of a still-open master, the
+honest terminal route is to mark the never-integrated rows abandoned and complete the master instead.
+The refusal message names both states: "this master already landed work into its source branch".
 `series_closeout.py::_require_atomic_master_complete` keeps its `!= "Completed"` test for the same
 reason and names abandonment distinctly (`atomic-series-closeout-master-abandoned`): an abandoned
 master is reclaimed with `worktree_abandon` and is never closed out. And
@@ -306,7 +308,25 @@ master is reclaimed with `worktree_abandon` and is never closed out. And
 "this organizational master is abandoned, not completed" rather than the generic
 not-durably-published message.
 
+## 260831-LOCR-L30 Checkpoint Landing On This Route
+
+`worktrees/series_closeout.py` gained `publish_series_checkpoint_under_authority`, the non-final
+master exit, and `worktrees/modules/integrate.py` gained the `checkpoint_landing_result` route that
+reaches it through the keyword-only `checkpoint` flag. The route keeps every ref-protecting authority
+this overview describes — the series contract binding, the atomic landing authority, the
+replay/ff source-state gate, the source-lineage proof and the master-handover gate — and drops only
+the two completion assumptions the final series route proves (`_require_atomic_master_complete`,
+`_require_every_atomic_leaf_landed`). It runs no cleanup and records `checkpointed` rather than
+`completed`, so the master keeps its worktrees, branches and enclosure. A master that is already
+`Completed` is refused with `atomic-series-checkpoint-master-complete`, so a checkpoint can never
+downgrade a finished integration. Detail lives on the `series_closeout.py`, `integrate.py`,
+`landing_record.py` and `integration_branch_authority.py` file cards.
+
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the non-final series exit and the
+  checkpoint integration route on this route, and widened the abandon-refusal account from
+  `integration_status == "completed"` to `{"completed", "checkpointed"}` with the value behind it.
+  Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Integration-branch retirement curation: recorded that retiring a series' integration branch now requires the master's own terminal task state through `_require_series_task_terminal`, why the enclosure census cannot see unstarted work, and the deliberate `Completed`-only versus `Completed`-or-`abandoned` asymmetry plus the two named refusals. Content change, not a range repoint.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "LifecycleControlAction = Literal[", "class LifecycleControlCommand:", "def control_operation(", `_operation_specific_projected_result`, `_projected_operation_result`, `operation_projection` repointed to mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T15:02+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: recorded in the current integration boundary that a successful integration reclaims its own enclosure through the existing terminal cleanup procedure, that a refused or partial integration cleans up nothing, and that a cleanup failure does not fail the integration — the refusal is reported and the contract's `cleanup` cell holds `cleanup-pending` for a `retry_cleanup`. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.

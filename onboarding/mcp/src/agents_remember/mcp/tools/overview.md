@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 | doc_type               | `route-local-overview`                         |
 | lastUpdated | 2026-09-05T07:22+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `../../../../../overview.md`                   |
 
 ## IAS Frozen Worktree Payload Boundary
@@ -168,11 +168,11 @@ calling me" session-id resolution anywhere in this codebase.
 
 ## Current Response And Adapter Ownership
 
-`base.py` lists exactly 61 public tools and forwards `_tool_payload` to `application/tool_response.py::complete_tool_response`. That application owner attaches bounded task-addressed guidance and notifier banners before `models/tools/tool_response.py::finalize_tool_response` performs its single validation/dump/token pass, then emits the completed call. `application/next_step.py` owns guidance. Gate policy and gate-log reclamation now live in `application/gate_tools.py`; this route's `gates.py` forwards public structural requests and separately retained internal exact-id adapters. `terminal.py`, `operator_inbox.py`, and the nudge helper likewise retain internal adapters; their exports do not advertise tools. `leaf_ref.py` is absent.
+`base.py` lists exactly 62 public tools and forwards `_tool_payload` to `application/tool_response.py::complete_tool_response`. That application owner attaches bounded task-addressed guidance and notifier banners before `models/tools/tool_response.py::finalize_tool_response` performs its single validation/dump/token pass, then emits the completed call. `application/next_step.py` owns guidance. Gate policy and gate-log reclamation now live in `application/gate_tools.py`; this route's `gates.py` forwards public structural requests and separately retained internal exact-id adapters. `terminal.py`, `operator_inbox.py`, and the nudge helper likewise retain internal adapters; their exports do not advertise tools. `leaf_ref.py` is absent.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The MCP adapter delegates completed-response ownership to the application. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:75-77 |
+| The MCP adapter delegates completed-response ownership to the application. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | The application attaches bounded guidance and records the completed result after finalization. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:84-98 |
 | Wire validation and token finalization consume the enriched model in one serialization pass. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
 
@@ -180,12 +180,12 @@ calling me" session-id resolution anywhere in this codebase.
 
 | Module          | Owns                                                                       |
 | --------------- | -------------------------------------------------------------------------- |
-| `base.py`       | `TRANSPORT`, exact ordered `PUBLIC_TOOLS` (61), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
+| `base.py`       | `TRANSPORT`, exact ordered `PUBLIC_TOOLS` (62), `RESERVED_TOOLS` (empty), and `_tool_payload` — the choke point. Since 260731-EFA-L4 its order is: `model_validate` → (in-lifecycle only) `_attach_lifecycle_tail` → ONE `model_dump(mode="json", exclude_none=True)` → `finalize_payload_tokens` → `amb.emit_tool`. `_attach_lifecycle_tail(response, amb, tool_name)` runs the task-28 `awaiting-developer` auto-dismiss (`amb.resume_from_await()` for every tool except `lifecycle_turn_end_notification` — the name guard is mandatory, since the notification itself flows through here in the same call that set the state), then assigns `response.nextStep = next_step_for(...)` and `response.supervisorBanner = _agent_notifier_banner(amb)`. Both are assigned unconditionally, `None` included, because `exclude_none=True` drops them — so a lifecycle-less or live-supervisor response is byte-identical to before. Both remain exception-safe and never raise into the tool path (`_agent_notifier_banner` swallows an unreadable heartbeat file). |
 | `next_step.py`  | The lifecycle next-step engine (task 27): pure `compute_next_step` maps the projected lifecycle state to one `NextStep` hint. Front half (no worktree contract yet) is a stable prose pointer back to the one-time `lifecycle_start` rundown (`FRONT_HALF_RUNDOWN`), and HFX-L6 rewrites that role framing around the architect-default developer-facing lifecycle with spawned backend orchestrators and curator closeout seats. Linear half (from `worktree_start`) delegates to `worktrees/modules/guidance.lifecycle_guidance` and overlays a turn-end hint at the gate moments. Task 28 made NOTIFY-AND-CONTINUE the active turn-end model: the `decide`/`_gate_after`/rundown ACTIVE hints now point at `lifecycle_turn_end_notification` (notify + stop, no wait), and a new `awaiting-developer` branch returns a `nextTool=None` stop hint. The `blocked` branch (a raised `lifecycle_gate` → `amb.block()`) still returns the `_AWAIT_GATE` await-developer hint at `lifecycle_resume` — the PARKED gate path, valid but un-hinted. A terminal `lifecycle_end` returns the loop-back hint. Edge `next_step_for` resolves state/contract/guidance and is exception-contained. 260731-EFA-L4: `next_step_for` returns `NextStep \| None` — the MODEL, not a dump of it — because the hint is a declared field of the response envelope and serializing it is the choke point's single `model_dump`; returning a dict here is what made the hint a key written into an already-dumped, already-token-counted payload. `_guidance_for` correspondingly widens `lifecycle_guidance`'s TypedDict with `dict(...)`: this hint layer reads guidance defensively by key and never re-emits its vocabulary. |
 | `core.py`       | ping, server_info, context_packet, runtime_install, resolve_context, skills_install; `server_info` carries the shared boot-resolved serving-build payload; `compact_runtime_install_payload`. |
 | `memory.py`     | drift_check, memory_quality_check, route_index_refresh, memory_init, baseline status/adopt, carryover plan/apply; `compact_carryover_payload`. |
 | `providers.py`  | provider status/diagnostics/watchers, GrepAI search/trace, CGC query tools; `compact_diagnostics_payload`, `compact_watchers_payload`. |
-| `worktree.py`   | worktree start/attach/status/sync/closeout/integrate/cleanup/abandon, including `parent_task`/`leaf_id` forwarding for leaf enclosure lookup. |
+| `worktree.py`   | worktree start/attach/status/sync/closeout/integrate/checkpoint-landing/cleanup/abandon, including `parent_task`/`leaf_id` forwarding for leaf enclosure lookup. |
 | `benchmark.py`  | codex_benchmark_prepare, codex_benchmark_run.                              |
 | `lifecycle.py`  | lifecycle signal builders driving the observer ambient lifecycle; `lifecycle_block_payload` is retained for lower-level compatibility. Since task 27 `lifecycle_start_payload` also emits the one-time `frontHalfRundown` (`next_step.py`'s `FRONT_HALF_RUNDOWN`). Task 28 adds `lifecycle_turn_end_notification_payload(summary)` — the NOTIFY-AND-CONTINUE turn end: drives `await_developer` → `awaiting-developer` and returns immediately (no gate, no wait), the one builder the choke-point auto-dismiss skips by name. |
 | `lifecycle_finalize.py` | the terminal `lifecycle_finalize_task` builder, forwarding to the worktree finalizer and strict response model. |
@@ -270,8 +270,8 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:118-139 |
-| The record-landing name sits in the advertised tuple immediately after its integrate sibling. | `worktree_record_landing` | mcp/src/agents_remember/mcp/tools/base.py:50-50 |
+| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-141 |
+| The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/mcp/tools/base.py:50-51 |
 | Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests` | mcp/tests/test_models.py:16-26 |
 | The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
 | The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
@@ -388,7 +388,7 @@ Tool payload composition preserves the closed application result vocabulary. The
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:167-174 |
+| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:188-197 |
 
 ## 260821-DAGQC-L2 Typed Memory-Quality Adapters
 
@@ -411,12 +411,27 @@ without adding polling, retry, cancellation, cursor advancement or journal mutat
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. | "def worktree_attach_payload(" | mcp/src/agents_remember/mcp/tools/worktree.py:74-83 |
+| The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. | "def worktree_attach_payload(" | mcp/src/agents_remember/mcp/tools/worktree.py:75-86 |
+
+## 260831-LOCR-L30 Checkpoint-Landing Tool
+
+This route's advertised surface grew by one name: `worktree_checkpoint_landing`, listed in
+`base.py`'s `PUBLIC_TOOLS` immediately after `worktree_integrate` (the tuple now holds 62 names) and
+built by `mcp/tools/worktree.py::worktree_checkpoint_landing_payload`, which forwards to
+`application/worktree_tools.py::worktree_checkpoint_landing_tool`. It is registered by
+`mcp/registration/closeout.py`'s `_register_integration_command_tools` and carries
+`models/worktree.py::WorktreeCheckpointLandingResponse` through
+`models/tools/tool_registry.py::TOOL_RESPONSE_MODELS` — all three places a public tool must appear.
+
+The three-part requirement is the L29 lesson applied by construction rather than by repair, and the
+two landing tools are why the inventory suite drives one `finalize_tool_response` call per name:
+their payloads differ only in the operation literal, so a set comparison would pass a registry swap.
 
 ## 260831-LOCR-L29 Public-Inventory Repair
 
 `base.py`'s `PUBLIC_TOOLS` gained `worktree_record_landing` immediately after `worktree_integrate`,
-and the tuple now holds 61 names. `mcp/tools/worktree.py`'s
+and the tuple held 61 names at that leaf (62 since 260831-LOCR-L30 added the checkpoint landing
+route). `mcp/tools/worktree.py`'s
 `worktree_record_landing_payload` and its `mcp/registration/closeout.py` declaration both already
 existed, so the tool was registered and advertised while the census omitted it.
 
@@ -430,6 +445,11 @@ now registers every `TOOL_REGISTRARS` entry against a probe `FastMCP` and compar
 this tuple.
 
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the new `worktree_checkpoint_landing`
+  name in this route's census (62), its payload builder and registered declaration, and the
+  three-part public-tool requirement; corrected the two stale 61-name counts and re-derived the
+  shifted `worktree.py`/`base.py`/registry ranges. Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: recorded the
   `worktree_record_landing` census addition for this route's choke point, corrected the two stale
   public-census counts on this card (64 → 61 and 63 → 61), stated the live-probe invariant with the

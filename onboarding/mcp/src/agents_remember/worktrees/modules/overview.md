@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-11T15:04+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -413,7 +413,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:35-35; mcp/src/agents_remember/models/worktree.py:253-253 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:258-258; mcp/src/agents_remember/models/worktree.py:40-40 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -541,8 +541,8 @@ these have no vocabulary to check against, which is exactly why they stay where 
 | --- | --- |
 | `abandon.py` line 74 | `cleanup="abandoned"` |
 | `cleanup.py` line 395 | `cleanup="completed"` |
-| `integrate.py` line 120 | `integration_status="blocked"` |
-| `integrate.py` line 490 | `integration_status="completed"`, `cleanup="pending"` |
+| `integration/master_review_gate.py` (the `blocked_integration_payload` owner since the closeout-door cut) | `integration_status="blocked"` |
+| `modules/landing_record.py` (the single landing writer since L29; `integrate.py::_integrated_result` and `_checkpoint_result` both call it) | `integration_status="completed"`, `cleanup="pending"` — or `integration_status="checkpointed"` with `cleanup` untouched when `checkpoint=True` (260831-LOCR-L30) |
 | `closeout.py` line 831 (`ContractCells` at 848) | `human_review_status`, `closeout_status`, `integration_status`, `cleanup` |
 | `start.py` line 141 | `memory_mode="disabled"` (the memory-disabled downgrade) |
 
@@ -975,7 +975,54 @@ run strict code quality, memory quality, selected certification, curator coheren
 review; full suites are an explicit developer request. The older quality-altitude sections remain
 historical context for pre-R12 behavior.
 
+## 260831-LOCR-L30 Checkpoint Landing In This Route
+
+`integrate.py` gained `checkpoint_landing_result` and `_checkpoint_result`, and
+`landing_record.py`'s single writer gained `LandedIntegration` plus a `checkpoint` flag. The
+keyword-only flag threads through `_continue_integration` → `_handover_or_apply_integration` →
+`_apply_integration` → `_publish_integration_edge` → `_checkpoint_result`, defaulted `False` at every
+step so the final route is unchanged. The checkpoint path selects
+`series_closeout.publish_series_checkpoint_under_authority`, records `checkpointed` through the
+shared writer, and runs no automatic cleanup, so a paused master keeps its worktrees, branches and
+enclosure. `record_landing.py` (the PR route) calls the same writer with the bundled
+`LandedIntegration` and no checkpoint flag, so the terminal `integration` cell still has exactly one
+definition. `git_worktree_manager.py` re-exports `checkpoint_landing_result`.
+
+The typed-vocabulary table below therefore names `landing_record.py` as the call site of the landing
+cells rather than `integrate.py`, and `integration/master_review_gate.py` as the `blocked` call site.
+
+### The Three Downstream Readers A Checkpoint Had To Teach
+
+Fixing the writer was not enough: three readers keyed on `integration_status == "completed"` and
+described a checkpointed series wrongly. All three are now corrected in-tree, and each is documented
+where it lives rather than here.
+
+- `guidance.py::_post_integration_phase` gained a `checkpointed` branch returning the existing
+  `worktree-started` phase with `continue_work` / `worktree_status`; without it the projection fell
+  through to `integration-pending` and pointed an open series at `worktree_integrate`, which refuses
+  it. No new `WorktreePhase` member was added — the alias is a closed `Literal` mirrored by the
+  dashboard, and the summary carries the checkpoint truth.
+- `closeout.py::_landed_source_heads` (renamed from `_completed_integration_source_heads`) now admits
+  the commit a checkpoint recorded as an expected source head; base-only heads made the checkpoint's
+  own landed move refuse as "source branch moved since task start".
+- `record_landing.py`'s `already-recorded` guard covers `checkpointed` too, so the pull-request route
+  cannot upgrade an open series into `completed` + `cleanup="pending"`.
+
+The remaining `integration_status == "completed"` sites are deliberate: they ask "is this contract
+complete?", and a checkpoint must read as not complete. They are listed and dispositioned on the
+`closeout.py` card.
+
 ## Update History
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded the three downstream readers the
+  checkpoint state had to teach (guidance's `worktree-started` projection, closeout's
+  `_landed_source_heads`, the pull-request `already-recorded` guard), and that the remaining
+  completed-only sites are deliberate with their census on the `closeout.py` card. Verification
+  metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the checkpoint integration route, the
+  `LandedIntegration`/`checkpoint` widening of the single landing writer, and corrected the
+  typed-vocabulary call-site table, which still placed the `blocked` and
+  `completed`/`cleanup="pending"` cells inline in `integrate.py`. Verification metadata remains
+  closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "WorktreePhase = Literal[", "phase: WorktreePhase", `closeout_preview_payload`, `closeout_result` repointed to mcp/src/agents_remember/models/worktree.py:253-253, mcp/src/agents_remember/models/worktree.py:35-35, mcp/src/agents_remember/worktrees/modules/closeout.py:224-273, mcp/src/agents_remember/worktrees/modules/closeout.py:705-739. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `WorktreeSupportTests` repointed to mcp/tests/test_worktree_support.py:831-906. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -114,7 +114,33 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
 
-The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 188 test-shaped modules: 108 unit-regression, 2 public-contract, 51 integration, 14 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty. That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 150-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 196 test-shaped modules: 114 unit-regression, 2 public-contract, 52 integration, 15 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty. That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 150-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+
+260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
+load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
+refuses a manifest that omits one — so the seven tracked modules that declared no lane (one of them,
+`test_record_landing.py`, shipped by the immediately preceding leaf) were a hard load failure rather
+than a silent default. The leaf's own `test_checkpoint_landing.py` joined them. Detail lives in the
+`test-evidence-lanes.toml` card, which is the owner of record for lane membership.
+
+The same leaf's follow-up added three more forcing cases, one per behaviour the checkpoint state had
+to teach, and this route gained two new file cards with them:
+
+- `test_post_integration_cleanup_guidance.py::test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate`
+  — a checkpointed contract projects `worktree-started` + `continue_work` + `worktree_status`, not
+  `integration-pending` + `worktree_integrate` (the tool that refuses while the series is open).
+- `test_record_landing.py::RecordLandingTests::test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration`
+  — the pull-request route reports `already-recorded` for a checkpointed contract and leaves both cells
+  as the checkpoint wrote them.
+- `test_closeout_kept_rules_pins.py::test_r3_closeout_accepts_the_source_head_a_checkpoint_landed`
+  — the ancestry validator accepts the commit a checkpoint recorded as its own landed head, with
+  `test_r3_closeout_refuses_when_the_source_branch_moved` still refusing foreign movement.
+
+The latter two modules had no file card before this pass and are now covered
+(`test_post_integration_cleanup_guidance.py.md`, `test_closeout_kept_rules_pins.py.md`). All three
+cases were proven non-vacuous by temporary production mutation, which is why each is documented as the
+assertion set that failed without its fix. Lane membership is unchanged: all three files were already
+registered, so no manifest row moved.
 The current evidence-lifecycle registry declares both registered consumers in each shared
 closeout-input and curator-coherence support row. Registry SHA
 `15bea1c01f402c382dad1667dec601313bb8aabfc511bb8cedac66076287606a1` and validator PASS42 are
@@ -154,6 +180,18 @@ These current source and policy ranges establish the development/certification d
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded the three new forcing cases (guidance
+  checkpoint projection, the pull-request `already-recorded` guard, the checkpoint landed source
+  head) and that two of those modules — `test_post_integration_cleanup_guidance.py` and
+  `test_closeout_kept_rules_pins.py` — gained file cards, so this route's covered set grew by two.
+  Lane membership is unchanged. Source-route documentation only: no execution, acceptance or
+  certification claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: reconciled the retained population to the current
+  manifest (196 modules: 114 unit-regression, 2 public-contract, 52 integration, 15
+  architecture-fitness, 13 provider-conformance) and recorded the fail-closed repair that made the
+  manifest loadable — seven tracked modules had declared no lane, seven plus this leaf's own new
+  module were registered. Source-route documentation only: no execution, acceptance or certification
+  claim, and lane membership stays owned by the `test-evidence-lanes.toml` card.
 - 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: added the
   `PublicSurfaceInventoryTests` row to the retained behavioral routes and a Public-Surface Inventory
   Contract section recording why the advertised/inventoried/registered agreement needed an executor
