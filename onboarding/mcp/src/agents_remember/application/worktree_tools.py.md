@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -226,7 +226,7 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 | The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:427-465 |
 | Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | Worktree service behavior is owned by the worktree manager and modules. | "from agents_remember.worktrees.modules.finalize import FinalizeArgs" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:31-37 |
-| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`, `WorktreeCommandResponse`, `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:235-290; mcp/src/agents_remember/models/worktree.py:292-324; mcp/src/agents_remember/models/worktree.py:417-422 |
+| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`, `WorktreeCommandResponse`, `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:237-293; mcp/src/agents_remember/models/worktree.py:294-371; mcp/src/agents_remember/models/worktree.py:463-470 |
 | Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | "def route_review_refusal_fields("; "def _worktree_closeout(" | mcp/src/agents_remember/application/worktree_tools.py:885-885; mcp/src/agents_remember/worktrees/route_review.py:253-253 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |

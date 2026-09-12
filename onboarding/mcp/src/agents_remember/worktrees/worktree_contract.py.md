@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/worktree_contract.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T12:02+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `overview.md`                                 |
 
 ## Governing Overview
@@ -53,7 +53,7 @@ Each `VALID_*` frozenset is `frozenset(get_args(<Alias>))`, derived rather than 
 can only ever be added in one place. `VALID_MEMORY_MODES` was previously a hand-written set literal;
 `VALID_KINDS` is unchanged and is still a plain set (`kind` has no `Literal`).
 
-**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:29-31; mcp/src/agents_remember/models/worktree.py:38-39) and imported back here
+**These aliases are now declared in `models/worktree.py`** cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:30-32; mcp/src/agents_remember/models/worktree.py:39-40) and imported back here
 cit:(["from agents_remember.models.worktree import ("], mcp/src/agents_remember/worktrees/worktree_contract.py:19-26); this module derives the runtime `VALID_*` frozensets from them. The members are still
 added in exactly one place, which is the property this section describes — adding one here instead
 would recreate the drift it was written to prevent. `checkpointed` reached the persisted contract

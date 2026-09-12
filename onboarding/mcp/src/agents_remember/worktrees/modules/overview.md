@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-12T19:50+02:00 |
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -446,7 +446,7 @@ No external Domain Documentation source is configured for this memory repo.
 | Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
 | Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | `_integrated_result`; `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/integrate.py:375-410; mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:258-258; mcp/src/agents_remember/models/worktree.py:40-40 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:260-260; mcp/src/agents_remember/models/worktree.py:41-41 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 

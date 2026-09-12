@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-08T16:24:06+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-12T22:55+02:00 |
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -117,9 +117,12 @@ No Domain Documentation source is configured for this memory root.
 | Worktree lifecycle status and next hints are composed by the worktree manager. | "def lifecycle_guidance(", "def next_guidance(" | mcp/src/agents_remember/worktrees/modules/guidance.py:130-130; mcp/src/agents_remember/worktrees/modules/guidance.py:225-225 |
 | Worktree summary model constrains the context-facing shape, including the optional series activation fact. | "class WorktreeSummary" | mcp/src/agents_remember/models/worktree.py:219-273 |
 | Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. | "worktree=worktree_status_packet" | mcp/src/agents_remember/application/context_packet.py:96-96 |
-| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:50-50; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
+| `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). | "class WorktreeStatusPayload", "NextOperation = Literal[" | mcp/src/agents_remember/models/worktree.py:51-51; mcp/src/agents_remember/worktrees/modules/guidance.py:126-126 |
 | `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell[Cell: str](", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:104-104; mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
 | The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. | `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:217-277 |
+| The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:377-419 |
+| The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. | `nextAction`; `nextTool`; `nextArgs`; `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-333; mcp/src/agents_remember/models/worktree.py:358-369 |
+| The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. | `test_archive_ready_status_names_the_accepted_cleanup_operation` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219 |
 | `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-28 |
 
 ## Cross-Repo References
@@ -159,7 +162,54 @@ The current source seams include `worktree_status_packet`. Status locates normal
 
 `project_contract_status` also owns the public status projection. A proven terminal archive projects cleanup-completed or archive-ready with exact accepted cleanup arguments and no live operation rows; malformed terminal-archive evidence returns its typed refusal. Other paths resolve caller authority, project readable or unreadable lifecycle evidence, and replace the plural operation list. This remains read-only.
 
+## 260831-LOCR-L32 The Terminal Next Move Is Enforced Downstream
+
+`_project_terminal_contract_status`
+cit:([`_project_terminal_contract_status`], mcp/src/agents_remember/application/worktree_status.py:377-419) writes a next-move triple into the `worktree_status`
+payload: `nextAction`, `nextTool` (from `TerminalCleanupOperation`, i.e. `worktree_cleanup` or
+`worktree_abandon`) and `nextArgs` (the accepted cleanup arguments plus `contract_path` and
+`dry_run`). **That write is now typed and enforced**, at the single validation point every public tool
+response crosses — `TOOL_RESPONSE_MODELS["worktree_status"].model_validate(payload)`.
+
+- `models/worktree.py::WorktreeCommandResponse` declares the three keys
+  cit:([`nextAction`, `nextTool`, `nextArgs`], mcp/src/agents_remember/models/worktree.py:331-333), and
+  `WorktreeStatusResponse` inherits them. Before this leaf the envelope resolved to
+  `FlexibleResponseModel` (`extra="allow"`) and declared none of them, so the triple rode through as
+  an unchecked extra: `worktree_abandon` reached the wire without ever being a `NextTool` member, and
+  `model_validate({"ok": True, "nextTool": "not_a_tool"})` succeeded.
+- `WorktreeCommandResponse._require_registered_public_next_tool`
+  cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:358-369) now refuses any
+  `nextTool` outside `PUBLIC_TOOLS` with `nextTool must name a registered public tool`.
+
+Two things are worth stating plainly, because earlier accounts of this seam got them wrong and one
+may still be found elsewhere:
+
+1. **The emitted guidance was always correct.** The args the projector writes match the real tool
+   signatures, so retrying the named tool was — and is — the right resume action. The defect was
+   missing typing and missing enforcement, not wrong guidance. Nothing in this module's projection
+   behavior changed for this leaf: **this route is unchanged by 260831-LOCR-L32**; the change is
+   entirely in the model it validates into.
+2. **`WorktreeSummary` is never on this path.** It is constructed only here, in
+   `worktree_status_packet`'s own helpers for the `context_packet` surface, so its single-value
+   `nextAction: Literal["developer-decision"] | None` stays honest and must not be widened.
+
+**The rule is per surface.** The worktree surface's next move must name a registered *public* tool;
+the `task_doc` surface may name a non-public one (`session_retire`). That is why the invariant lives on
+`WorktreeCommandResponse` and not on the shared flexible envelope, and why widening `PUBLIC_TOOLS` would
+be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives this module's real
+`worktree_status_payload` into the archive-ready state for both cleanup verbs and pins all of it.
+
 ## Update History
+- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: recorded that this module's terminal-status next
+  move (`nextAction` / `nextTool` / `nextArgs` from `_project_terminal_contract_status`) is now typed
+  and enforced downstream — declared on `WorktreeCommandResponse` and refused by its
+  `PUBLIC_TOOLS` membership validator (`_require_registered_public_next_tool`) — and stated explicitly
+  that this route's own
+  projection behavior is unchanged by the leaf and that the emitted guidance was always correct. Added
+  a per-surface note (`task_doc` may name the non-public `session_retire`; do not widen
+  `PUBLIC_TOOLS`) and three reference rows, including the new suite that exercises this module's real
+  `worktree_status_payload`. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: "class WorktreeStatusPayload"; "NextOperation = Literal[" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:126-126; mcp/src/agents_remember/models/worktree.py:51-51. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T01:06:15+00:00: Generated citation repair: `SyncOperationProjection` repointed to mcp/src/agents_remember/models/worktree.py:127-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T01:06:15+00:00: Generated citation repair: "class WorktreeStatusPayload"; "NextOperation = Literal[" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:126-126; mcp/src/agents_remember/models/worktree.py:50-50. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def _vocabulary_cell[Cell: str](", "unknown_cells: tuple[str" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:104-104, mcp/src/agents_remember/worktrees/worktree_contract.py:283-283. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.

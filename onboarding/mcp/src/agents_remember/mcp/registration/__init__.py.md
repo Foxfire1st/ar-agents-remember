@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/__init__.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-07-31T15:31+02:00                                       |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`                   |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
+| lastUpdated            | 2026-09-12T22:55+02:00                                       |
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d`                   |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -39,7 +39,9 @@ instance) and nothing else; every `@server.tool()` definition lives in a family 
 
 - Adding a tool means editing one family module. Adding a family means a new module plus one entry
   in this tuple — `create_server` should never grow a special case.
-- The tuple's order is the order the server advertises tools in. `mcp/tools/base.py::PUBLIC_TOOLS`
+- The tuple's order is the order the server advertises tools in. `PUBLIC_TOOLS`
+  (defined at `mcp/src/agents_remember/models/tools/public_roster.py:22-85`, re-exported by
+  `mcp/tools/base.py`)
   is the authority on the advertised name set; `mcp/tests/test_tools.py` compares it against a live
   server's `list_tools()` and against `server_info`'s exact list.
 - Importing this package imports every family module, which imports every payload builder. Keep it
@@ -50,9 +52,16 @@ instance) and nothing else; every `@server.tool()` definition lives in a family 
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The `create_server` consumer iterates `TOOL_REGISTRARS`. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The advertised tool-name list is defined by `PUBLIC_TOOLS`. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-69 |
+| The advertised tool-name list's one definition, re-exported unchanged by the adapter. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 
 ## Update History
+
+- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: renamed the roster's home. `PUBLIC_TOOLS` is no
+  longer declared in `mcp/tools/base.py`; its one definition is the zero-import leaf
+  `models/tools/public_roster.py:22-85`, which the adapter re-exports unchanged (same object, same
+  order, same 62 names), so this package's exact-order comparison is unaffected. Repointed the
+  invariant prose and the reference row; no behavioral claim changed. Verification metadata remains
+  closeout-owned; no acceptance claim.
 
 - 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 

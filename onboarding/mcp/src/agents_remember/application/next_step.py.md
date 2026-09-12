@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/next_step.py`     |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -210,7 +210,7 @@ and the ambient lifecycle / phase definitions.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. | `_attach_lifecycle_tail`; `bound_next_step`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/mcp/tools/base.py:75-77 |
+| The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. | `_attach_lifecycle_tail`; `bound_next_step`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:47-63; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114 |
 | `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:225-235 |
 | `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:228-283; mcp/src/agents_remember/worktrees/worktree_contract.py:434-464 |
