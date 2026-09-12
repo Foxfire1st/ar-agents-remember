@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-11T15:00+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-12T19:50+02:00 |
+| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
+| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -21,7 +21,7 @@ projection.
 cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:235-291) is the strict context-packet shape for the
 `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and
 **since 260731-EFA-L4 every shared lifecycle vocabulary is imported from the
-module that produces it; only `WorktreeState` remains local** cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:232-232). `WorktreeSummary` itself is declared at
+module that produces it; only `WorktreeState` remains local** cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:233-233). `WorktreeSummary` itself is declared at
 cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:235-291). The command response models
 remain flexible because worktree service results can carry operation-specific
 planning and closeout fields.
@@ -38,17 +38,97 @@ planning and closeout fields.
 | `cleanup` | `CleanupStatus` = `pending \| completed \| abandoned \| reopened` | this file L39 |
 | `phase` | `WorktreePhase` (8 members) | this file L40 |
 | `nextOperation` | `NextOperation` (7 members) | this file L50 |
-| `nextTool` | `NextTool` (5 members) | this file L59 |
+| `nextTool` | `NextTool` (6 members) | this file L59 |
 | `state` | `WorktreeState` — the ONE alias still declared here | this file L232 |
 
 `WorktreeState` stays local on purpose: `application.worktree_status.worktree_status_packet`
 constructs this model directly and is its only writer, so the projection there is
 already the single writer the type checker can see.
 
-**Automatic-cleanup rename.** `request_cleanup_decision` left the `NextOperation` set and
-`retry_cleanup` took its place, so the count stays seven. The value now names the retry a caller
-makes when the automatic post-integration cleanup did not complete, rather than a prompt asking
-whether to clean up; the integration projection's `cleanup_question` went with it.
+**Cleanup vocabulary, and the one member deliberately kept (260831-LOCR-L31).**
+`request_cleanup_decision` left `NextOperation` one leaf earlier and `retry_cleanup` took its place;
+this leaf removed `retry_cleanup` again and `finalize` took *its* place, so the count is still seven.
+`retry_cleanup` had exactly one writer — the `cleanup-pending` phase of
+`guidance._post_integration_phase` — and that branch now routes `finalize` /
+`lifecycle_finalize_task`, so the member was removed rather than left declared beside its own
+replacement. `NextTool` gained `lifecycle_finalize_task` (now six members), because a `NextOperation`
+the wire cannot pair with a tool is half a move.
+
+**`NextTool."worktree_cleanup"` is kept, and it is not orphaned.** `guidance.py` no longer emits it
+anywhere; its remaining producer is
+`application/worktree_status.py::_project_terminal_contract_status`
+cit:([`_project_terminal_contract_status`], mcp/src/agents_remember/application/worktree_status.py:377-419),
+which sets `"nextTool": archive.cleanupOperation` for a terminal contract, and `cleanupOperation` is
+`TerminalCleanupOperation = Literal["worktree_cleanup", "worktree_abandon"]`
+cit:([`TerminalCleanupOperation`], mcp/src/agents_remember/models/lifecycles/enclosure.py:14-14). Do not
+"tidy" the member away: it is one of the two values that route actually emits.
+
+**The terminal-status projector writes an undeclared pair on the flexible envelope — verified
+mechanism, correct behaviour, missing types.** This paragraph replaces two earlier attempts at the
+same claim, both wrong in opposite directions: the write does **not** land on `WorktreeSummary` and
+does **not** violate one of its declared fields, and it does **not** fail validation either.
+
+`worktree_status` is validated at exactly one place,
+`TOOL_RESPONSE_MODELS[tool_name].model_validate(payload)`
+cit:(["TOOL_RESPONSE_MODELS[tool_name].model_validate(payload)"], mcp/src/agents_remember/models/tools/tool_response.py:23-23),
+and that registry maps `"worktree_status"` to `WorktreeStatusResponse`
+cit:(["\"worktree_status\": WorktreeStatusResponse"], mcp/src/agents_remember/models/tools/tool_registry.py:184-184;
+mcp/src/agents_remember/models/worktree.py:335-335). That model resolves down through
+`WorktreeCommandResponse` → `FlexibleToolResponse` → `FlexibleResponseEnvelope` →
+`FlexibleResponseModel`, whose `model_config` is
+`ConfigDict(extra="allow")`
+cit:(["model_config = ConfigDict(extra=\"allow\")"], mcp/src/agents_remember/models/base.py:19-22).
+`WorktreeCommandResponse` and `WorktreeStatusResponse` together declare **none** of `nextAction` /
+`nextTool` / `nextArgs`. So the projector's pair passes through **verbatim and unchecked**:
+`WorktreeStatusResponse.model_validate({... "nextTool": "worktree_abandon" ...})` returns those keys
+unchanged, raises nothing, and `"nextAction" in WorktreeStatusResponse.model_fields` is `False`.
+
+**`WorktreeSummary` is never on that path, and do not "fix" it as if it were.** It is constructed only
+inside `worktree_status_packet`'s own helpers for the `context_packet` surface —
+`application/worktree_status.py:79`, `:120`, `:199`, `:242` — so the projector's dict never reaches it,
+and `WorktreeSummary`'s single-value
+`nextAction: Literal["developer-decision"] | None = None`
+cit:(["developer-decision"], mcp/src/agents_remember/models/worktree.py:281-281) is **honest where it
+lives**, because that literal's one producer hard-codes `"developer-decision"`. Two facts do stay true,
+and they are why this is a vocabulary gap rather than a crash: `"worktree_abandon"` has never been a
+`NextTool` member, and that written `nextTool` is unchecked.
+
+**The branch is reachable, and the guidance it emits is correct.** The terminal archive and receipt are
+published (locator → `terminal-archived`) *before* the surviving contract is amended: `cleanup.py`
+completes its guard around `amend_contract(contract, ContractCells(cleanup="completed"))`
+cit:(["amend_contract(contract, ContractCells(cleanup=\"completed\"))"], mcp/src/agents_remember/worktrees/modules/cleanup.py:925-930),
+and `abandon.py` does the same around `cleanup="abandoned"`
+cit:(["amend_contract(contract, ContractCells(cleanup=\"abandoned\"))"], mcp/src/agents_remember/worktrees/modules/abandon.py:344-349).
+Both writes are wrapped in `guard.complete(..., rollback_publish=...)`, so a **failed publication
+deliberately restores the archived contract while the locator stays `terminal-archived`** — which is
+exactly the state the projector serves, `"terminal-archive-ready"`
+cit:(["terminal-archive-ready"], mcp/src/agents_remember/application/worktree_status.py:384-384).
+Demonstrated end-to-end for both `worktree_cleanup` and `worktree_abandon`: no validation error,
+`nextAction` / `nextTool` emitted verbatim, `state: terminal-archive-ready`. The emitted `nextArgs`
+match the real tool signatures, so **retrying the named tool is the correct resume action**. This is an
+unenforced-vocabulary gap, not broken guidance.
+
+**Recommended fix — recorded, not implemented.**
+- Declare the three guidance keys on `WorktreeCommandResponse` (`models/worktree.py:293`) as loose
+  types — `nextAction: str | None`, `nextTool: str | None`, `nextArgs: dict[str, Any] | None` —
+  consistent with siblings on that family that already declare `nextAction: str | None` (`:394`).
+- Do **not** add `"worktree_abandon"` to `NextTool`: that alias is the guidance machine's output type
+  (`worktrees/modules/guidance.py`), the machine cannot emit abandon, and this repo's doctrine for it is
+  produced-set == declared-set.
+- Do **not** widen `WorktreeSummary.nextAction`, and do **not** narrow the flexible envelope to a
+  literal: producers on that family emit many tools, so a narrow literal would convert today's
+  silently-unchecked key into a *new* runtime failure.
+- The right invariant is that every emitted `nextTool` is a **registered public tool**.
+
+**The invariant that would have caught this has no executor left.**
+`mcp/tests/test_wire_vocabulary_exhaustiveness.py` retains only its docstring, helpers and "test moved
+verbatim in L7 split" breadcrumbs — it contains **zero** `def test_` functions. Its docstring still
+describes `GuidanceWalkTests`, `ProducedLiteralTests` and `AdvertisedVocabularyTests` in the present
+tense, but the bodies are gone, so the produced == declared invariant for `NextTool` is currently
+**unenforced**
+cit:(["R10: every value a producer can emit validates at the wire boundary it crosses."], mcp/tests/test_wire_vocabulary_exhaustiveness.py:1-230).
+That is why the fix above must be argued from doctrine rather than from a failing test, and it is the
+gap to close first.
 
 **What the hand-written copies had cost.** They had drifted from their producers
 in six places at once, all of them writable and none of them validated:
@@ -68,7 +148,7 @@ the blocked-start recovery payloads — those keep their own
 a wider `NextOperation` cannot put "requires developer approval" back into the set
 the context packet's `nextOperation` claims to be.
 
-`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:267-267)) is **omitted rather than `[]`** when there is
+`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:268-268)) is **omitted rather than `[]`** when there is
 nothing to supply. `next_guidance` writes the key only when the next call needs a
 caller-supplied argument; the projection now reports what the producer said
 instead of substituting a value for it. This is a stated wire change: measured
@@ -79,7 +159,7 @@ beyond `nextArgs` — and there is no third state to confuse it with. The same r
 now covers `nextTool` and `nextArgs`, where the old substitution had put an
 un-declarable `""` on the wire.
 
-`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:272-272)) is new. It is present only
+`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:273-273)) is new. It is present only
 when the contract file carried a cell outside its declared vocabulary, formatted
 `"<field>=<raw token> read as <fallback>"`. The `state` is still `active` and
 every other field was computed from the substituted values — this field is the
@@ -133,6 +213,19 @@ all-snake payload shape.
   difference that made the packet raise on 77.5% of the contracts on disk.
 - **`WorktreeState` is the only local alias**, and only because
   `application.worktree_status` constructs this model directly and is its sole writer.
+- **`NextTool."worktree_cleanup"` is deliberately retained (260831-LOCR-L31).** `guidance.py` no
+  longer emits it, but `_project_terminal_contract_status` does, so removing the member would make a
+  live projection unrepresentable. A member goes when its **last** producer goes, not its last
+  guidance caller.
+- **The terminal-status pair is undeclared on the flexible envelope — verified mechanism, not an
+  accident.** `_project_terminal_contract_status` writes `nextAction` / `nextTool` from
+  `TerminalCleanupOperation`; `WorktreeStatusResponse` inherits `extra="allow"` from
+  `FlexibleResponseModel` and declares none of those keys, so the write passes through verbatim and
+  unchecked instead of failing. `WorktreeSummary` is never on that path, and its single-value
+  `nextAction` literal stays honest there. The emitted guidance is correct — retrying the named tool
+  resumes — so this is a missing-typing gap, not broken guidance. Recorded with its recommended fix,
+  and with the fact that `test_wire_vocabulary_exhaustiveness.py` currently has **no test bodies** to
+  enforce the produced == declared invariant.
 - Absent is the shape for `nextTool` / `nextArgs` / `nextRequiredArgs`. The
   projection reports what the producer wrote and never fills a hole the producer
   left; `""`, `{}` and `[]` are not substitutes for an omitted key.
@@ -162,6 +255,14 @@ all-snake payload shape.
 | The record-landing envelope declares the landing evidence and its operation literal. | `WorktreeRecordLandingResponse` | mcp/src/agents_remember/models/worktree.py:425-429 |
 | The checkpoint-landing envelope declares the four commits a paused master landed and its operation literal. | `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:417-422 |
 | The `checkpointed` member the checkpoint writer records and the persisted-contract vocabulary derives. | `IntegrationStatus` | mcp/src/agents_remember/models/worktree.py:38-38 |
+| The two `NextOperation`/`NextTool` members this leaf moved: `finalize` in place of `retry_cleanup`, and `lifecycle_finalize_task` added. | `NextOperation`; `NextTool` | mcp/src/agents_remember/models/worktree.py:50-58; mcp/src/agents_remember/models/worktree.py:59-66 |
+| The producer that keeps `NextTool."worktree_cleanup"` live after `guidance.py` stopped emitting it, and the closed two-member cleanup-operation vocabulary it copies from. | `_project_terminal_contract_status`; `TerminalCleanupOperation` | mcp/src/agents_remember/application/worktree_status.py:377-419; mcp/src/agents_remember/models/lifecycles/enclosure.py:14-14 |
+| The single validation point every public tool response crosses, and the registry row that resolves `worktree_status` to the flexible command envelope. | "TOOL_RESPONSE_MODELS[tool_name].model_validate(payload)"; "\"worktree_status\": WorktreeStatusResponse" | mcp/src/agents_remember/models/tools/tool_response.py:23-23; mcp/src/agents_remember/models/tools/tool_registry.py:184-184; mcp/src/agents_remember/models/worktree.py:335-335 |
+| The `extra="allow"` config on the flexible envelope that lets the undeclared `nextAction` / `nextTool` pair through verbatim and unchecked. | "model_config = ConfigDict(extra=\"allow\")" | mcp/src/agents_remember/models/base.py:19-22 |
+| The `nextAction` literal this file **does** declare, and which stays honest because its only producer hard-codes it — do not widen it. | "developer-decision" | mcp/src/agents_remember/models/worktree.py:281-281 |
+| The reachable terminal state the projector serves once a failed contract amendment is rolled back while the locator stays `terminal-archived`. | "terminal-archive-ready" | mcp/src/agents_remember/application/worktree_status.py:384-384 |
+| The two guarded contract amendments whose rolled-back publication produces that state, for cleanup and abandon respectively. | "amend_contract(contract, ContractCells(cleanup=\"completed\"))"; "amend_contract(contract, ContractCells(cleanup=\"abandoned\"))" | mcp/src/agents_remember/worktrees/modules/cleanup.py:925-930; mcp/src/agents_remember/worktrees/modules/abandon.py:344-349 |
+| The module that should enforce produced == declared for `NextTool` and currently has **zero** test bodies — only this docstring, helpers and "moved verbatim" breadcrumbs remain. | "R10: every value a producer can emit validates at the wire boundary it crosses." | mcp/tests/test_wire_vocabulary_exhaustiveness.py:1-230 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading optional next and activation fields without inventing values. | `worktree_status_packet`; `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:65-151; mcp/src/agents_remember/application/worktree_status.py:217-277 |
 | The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:70-75; mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 | The guidance state machine imports and writes `WorktreePhase`, `NextOperation` and `NextTool` (declared in this model since L9), plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10; mcp/src/agents_remember/worktrees/modules/guidance.py:38-55 |
@@ -257,7 +358,7 @@ read path would reject.
 
 **`WorktreePhase` deliberately did not gain a member for the checkpoint state.** A checkpointed
 contract projects through the existing `worktree-started` phase
-cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:307-307).
+cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:308-308).
 `WorktreePhase` is a closed `Literal` cit:([`WorktreePhase`], mcp/src/agents_remember/models/worktree.py:40-48) whose members the dashboard mirrors at five files / six sites
 cit:([`LIFECYCLE_PHASES`], dashboard/src/panels/EngineRoom.tsx:59-66): `EngineRoom.tsx:59-66`
 (`LIFECYCLE_PHASES`, `"integration-pending"` at `:63`), `BootTimeline.tsx:88` and `:110`,
@@ -287,6 +388,57 @@ Declaring the envelope here, together with its registry row in
 boundary as `WorktreeIntegrateResponse`.
 
 ## Update History
+- 2026-09-12T20:12+02:00 — **Final correction: the seam accounts in the two entries below are
+  superseded by the verified mechanism.** An earlier revision of this card claimed the projector's
+  write violated `WorktreeSummary`'s typed `nextAction` on a strict model; that is false, because
+  `WorktreeSummary` is never on that path. The settled account — `WorktreeStatusResponse` inherits
+  `extra="allow"` and declares none of the three keys, so the pair passes through verbatim and
+  unchecked; `WorktreeSummary.nextAction` is honest where it lives; the branch is reachable via the
+  rolled-back contract amendment that leaves the locator `terminal-archived`; the emitted guidance is
+  correct and retrying the named tool resumes; only the typing is missing; and
+  `test_wire_vocabulary_exhaustiveness.py` has no test bodies left to enforce the invariant — is in
+  the Code Commentary, the invariant list and the 20:02 entry. I verified that mechanism statically
+  against the leaf: the single `model_validate` site, the registry row, the `extra="allow"` config,
+  zero `nextAction`/`nextTool`/`nextArgs` declarations on the envelope, the `terminal-archive-ready`
+  projector branch, both guarded amendments, and the absence of `def test_` in the exhaustiveness
+  module. Verified stamps untouched; no acceptance claim.
+- 2026-09-12T20:02+02:00 — **Seam mechanism settled (supersedes the 19:50 wording and the earlier
+  "strict model / type violation" account).** `worktree_status` validates at exactly one place,
+  `TOOL_RESPONSE_MODELS[tool_name].model_validate(payload)` (`models/tools/tool_response.py:23`), and
+  the registry maps it to `WorktreeStatusResponse` (`models/tools/tool_registry.py:184`,
+  `models/worktree.py:335`), which resolves down through `WorktreeCommandResponse` →
+  `FlexibleToolResponse` → `FlexibleResponseEnvelope` → `FlexibleResponseModel` with
+  `extra="allow"` (`models/base.py:19-22`) and declares **none** of `nextAction` / `nextTool` /
+  `nextArgs`. So the projector's pair passes through **verbatim and unchecked** — no error — and
+  `WorktreeSummary` is never on that path (constructed only in `worktree_status_packet`'s helpers at
+  `application/worktree_status.py:79, 120, 199, 242`), so its single-value `nextAction` literal at
+  `models/worktree.py:281` is honest where it lives. The branch is reachable — the terminal archive
+  publishes before the contract amendment, and both `cleanup.py:925-930` and `abandon.py:344-349` wrap
+  the amendment so a failed publication rolls the contract back while the locator stays
+  `terminal-archived`, which the projector reports as `terminal-archive-ready`
+  (`worktree_status.py:384`) — and the emitted guidance is **correct**: the pair is emitted verbatim,
+  `nextArgs` match the real tool signatures, and retrying the named tool resumes. Recorded the
+  recommended fix (declare the three keys loosely on `WorktreeCommandResponse`; do not add
+  `worktree_abandon` to `NextTool`; do not widen `WorktreeSummary.nextAction`; do not narrow the
+  flexible envelope; the right invariant is that every emitted `nextTool` is a registered public
+  tool) and the related gap that `test_wire_vocabulary_exhaustiveness.py` retains **zero** `def
+  test_` bodies, leaving produced == declared unenforced. Verification metadata remains
+  closeout-owned; no acceptance claim, and no terminal-status behavior was changed.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: `WorktreeState` repointed to mcp/src/agents_remember/models/worktree.py:233-233. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: `nextRequiredArgs` repointed to mcp/src/agents_remember/models/worktree.py:268-268. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: `unknownContractCells` repointed to mcp/src/agents_remember/models/worktree.py:273-273. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: "if contract.integration_status == \"checkpointed\":" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:308-308. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 cleanup-vocabulary move: `NextOperation` dropped
+  `retry_cleanup` (whose only writer, `guidance._post_integration_phase`'s `cleanup-pending` branch,
+  now routes finalization) and gained `finalize`, so the member count stays seven; `NextTool` gained
+  `lifecycle_finalize_task` and is now six. Recorded **`NextTool."worktree_cleanup"` as deliberately
+  kept rather than orphaned** — its remaining producer is
+  `application/worktree_status.py::_project_terminal_contract_status`, which copies
+  `TerminalCleanupOperation` (`worktree_cleanup` | `worktree_abandon`) into `nextTool` — and recorded
+  the seam that write opens; **its mechanism is settled in the 20:02 entry above, which supersedes
+  this sentence's original wording** (the write lands on the flexible `WorktreeStatusResponse`
+  envelope, not on `WorktreeSummary`). Added two invariants and four reference rows. Verification
+  metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the "no new `WorktreePhase`
   member" note named three dashboard mirrors where there are six. Replaced it with the full
   five-file / six-site list (`EngineRoom.tsx:59-66` `LIFECYCLE_PHASES` with `"integration-pending"`

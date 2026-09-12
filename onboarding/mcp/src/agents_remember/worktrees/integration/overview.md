@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T15:02+02:00|
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-12T19:50+02:00|
+| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
+| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -187,17 +187,28 @@ invoking a merge hook. It does not automatically run strict code quality, memory
 certification, curator coherence, or independent review; full suites are an explicit developer
 request. Earlier selected-certificate wording describes retained historical/explicit evidence.
 
-**Cleanup is automatic on a successful integration.** Once the prepared pair has landed and the
-contract records `integration_status="completed"`, integration reclaims its own enclosure by
-running the existing terminal cleanup procedure; there is no separate cleanup prompt. The procedure
-reports, in operator language, what it removed and what it did not across all four target kinds —
-worktrees, merged local task branches, the reports directory, and the enclosure root — and the
-integration result carries that report. The result reloads the contract so its status facts reflect
-the post-cleanup cell. A cleanup failure does not fail the integration: the result still reports
-`integrated`, and the refusal is reported with its reason, cleanup state and blockers. The
-contract's `cleanup` cell keeps the refusal visible as `cleanup-pending`, whose next operation is
-`retry_cleanup` against `worktree_cleanup`. A refused or partial integration cleans up nothing —
-that is exactly when the enclosure evidence is still needed.
+**Reclamation is automatic and unprompted — and it is not integration's (260831-LOCR-L31).** A
+successful integration publishes the landed pair through the shared landing writer, records
+`integration_status="completed"` with `cleanup="pending"`, and **stops there**. It reclaims nothing,
+and the integration result carries no cleanup report: its `cleanup` key is the untouched contract cell
+and its summary says the worktrees are reclaimed when the task edge is finalized. Terminal
+reclamation belongs to `lifecycle_finalize_task`, which runs the existing terminal cleanup procedure
+and shapes the operator report — the inventory of what was removed and what was left in place across
+all four target kinds (worktrees, merged local task branches, the reports directory, and the enclosure
+root).
+
+**Why it moved.** Reclaiming inside integration completed the enclosure's cleanup cell before
+integration returned, so the one guard that routes a landed leaf onward to `lifecycle_finalize_task`
+(`next_step.py::_gate_after`, keyed on `contract.cleanup != "completed"`) could never fire. A genuine
+landing therefore reported `nextOperation: "done"` while the leaf's task document stayed `planning`
+and its master row stayed `inProgress` — silently, on leaves L29 and L30. Keeping the landing and the
+reclamation in one function made the edge that finalizes the task unreachable.
+
+Because reclamation now runs after the landing, a cleanup refusal **blocks finalization** rather than
+being reported beside a completed landing: the leaf document and its master row are left open over an
+enclosure that is still on disk, which is exactly the honest state. A refused or partial integration
+still cleans up nothing, and a dry-run finalization reports cleanup's own plan unshaped instead of a
+completed-reclamation sentence.
 
 ## Source-Moved Recovery Guidance
 
@@ -323,6 +334,17 @@ downgrade a finished integration. Detail lives on the `series_closeout.py`, `int
 `landing_record.py` and `integration_branch_authority.py` file cards.
 
 ## Update History
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 route impact: integration no longer reclaims. Replaced the
+  "cleanup is automatic on a successful integration" boundary with the landed-and-stop account, and
+  recorded **why** the ownership moved: reclaiming inline completed the enclosure's cleanup cell before
+  integration returned, so the `next_step.py::_gate_after` guard keyed on `contract.cleanup !=
+  "completed"` could never fire — a genuine landing reported `nextOperation: "done"` while the leaf
+  document stayed `planning` and its master row stayed `inProgress`, silently on L29 and L30. Recorded
+  that the result carries no cleanup report (the `cleanup` key is the untouched contract cell), that
+  `lifecycle_finalize_task` owns the terminal procedure and its shape, and that a cleanup refusal now
+  blocks finalization instead of being reported beside a completed landing. The retired
+  `retry_cleanup` next operation is no longer this route's post-landing projection. Verification
+  metadata remains closeout-owned; no route acceptance claim.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the non-final series exit and the
   checkpoint integration route on this route, and widened the abandon-refusal account from
   `integration_status == "completed"` to `{"completed", "checkpointed"}` with the value behind it.

@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-11T15:04+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-12T19:50+02:00 |
+| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
+| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -61,7 +61,7 @@ registered consumer ownership in the evidence catalog.
 The `worktrees/modules` package contains the extracted implementation modules
 behind the `git_worktree_manager.py` facade. It separates Git adapters, lifecycle
 status guidance, start preparation, onboarding refresh, strict code-quality gating, closeout, integration,
-cleanup, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
+cleanup, cleanup report shaping, lifecycle finalization, abandon, provider teardown, start-contract leaf-ref normalization, the typed cross-layer argument DTO, and CLI
 argument wiring while preserving the public facade import path. Reopen is deliberately NOT here:
 `task_reopen` enters through the task-doc application route and executes `worktrees/reopen.py`; this route's start path
 merely honors its `cleanup: reopened` tombstone (recreate fresh, restamp the leaf doc's lifecycle).
@@ -202,6 +202,24 @@ replaying completed irreversible steps.
   vocabulary that `worktree_contract._vocabulary_cell` substituted for. It is the one place a
   degraded contract read becomes visible to whoever called a worktree tool, and it says that
   the phase beside it was computed from the substituted values.
+  **`NextTool."worktree_cleanup"` is deliberately retained (260831-LOCR-L31).** This module's
+  `cleanup-pending` branch was its last writer here, but it is not orphaned:
+  `application/worktree_status.py::_project_terminal_contract_status` sets
+  `"nextTool": archive.cleanupOperation` on a terminal contract, and `cleanupOperation` is
+  `TerminalCleanupOperation = Literal["worktree_cleanup", "worktree_abandon"]`. That producer also
+  writes the same value into `nextAction`, and the pair is **undeclared and unchecked**: the
+  `worktree_status` payload validates through `WorktreeStatusResponse`, which inherits
+  `extra="allow"` from `FlexibleResponseModel` and declares none of `nextAction` / `nextTool` /
+  `nextArgs`, so the values pass through verbatim with no error. `WorktreeSummary` is never on that
+  path — it is built only inside `worktree_status_packet`'s helpers — so its single-value
+  `nextAction` literal (`Literal["developer-decision"]`) stays honest where it lives.
+  `"worktree_abandon"` has never been a `NextTool` member, so that `nextTool` is out-of-vocabulary.
+  The branch is reachable (a failed contract amendment is rolled back while the locator stays
+  `terminal-archived` → `terminal-archive-ready`), the emitted guidance is **correct** — retrying the
+  named tool resumes — and only the typing is missing. The mechanism, the recommended fix, and the
+  fact that `test_wire_vocabulary_exhaustiveness.py` no longer has test bodies to enforce
+  produced == declared are recorded on `models/worktree.py.md`. Do not reconcile this by deleting
+  `worktree_cleanup`.
 - `landing.py` (slice 5h; hardened 5l P2) observes the successful-landing arc
   best-effort — `git ls-remote` branch tips (`origin/<feat>`, `origin/mem-main`) +
   a best-effort `gh pr list`, all timeout-bounded and `stdin=DEVNULL` (the #49
@@ -235,8 +253,10 @@ interactive fresh-probe surface, while `projected_status_payload` consumes only 
 immutable landing snapshot. The recurring projector therefore never invokes `git ls-remote` or
 `gh` through guidance; missing and stale observations remain explicit.
 - `start.py`, `startup/start_contract.py`, `startup/leaf_ref_start.py`, `closeout.py`, `integrate.py`, `cleanup.py`,
-  `automatic_cleanup.py`, `finalize.py`, and `abandon.py`
+  `finalize.py`, and `abandon.py`
   own the named `c-09-git-worktree-manager` skill lifecycle operations.
+  `cleanup_report.py` is deliberately **not** in that list: it owns no operation, only the operator
+  report for a reclamation `finalize.py` already performed (260831-LOCR-L31).
   `start.py` calls `startup.start_contract.build_start_contract` to resolve the requested leaf ref through the
   `worktrees/leaf_refs.py` task-tree resolver before any start write; accepted refs persist the canonical
   task doc id in the leaf contract, while no-match/ambiguous refs return a `WorktreeCommandResult`
@@ -279,13 +299,24 @@ immutable landing snapshot. The recurring projector therefore never invokes `git
   memory fast-forwards atomically: it pre-validates that both fast-forwards are
   possible before mutating either branch and rolls both heads back on any
   memory-side failure, so integration never lands a half-integrated state.
-  A completed integration then reclaims its own enclosure automatically: `automatic_cleanup.py`
-  (`run_automatic_cleanup`) reruns the existing `cleanup_result` procedure with `approved=True`,
-  `dry_run=False` and `teardown_providers=True`, and reports in operator language what it removed
-  and what it did not across worktrees, merged local branches, the reports directory and the
-  enclosure root. A refused or partial integration cleans up nothing — that is when the evidence is
-  still needed — and a cleanup refusal after a real landing is reported without failing the
-  integration.
+  **Integration lands and stops; finalization reclaims (260831-LOCR-L31).** A completed integration
+  publishes the landed refs through `landing_record.py::record_landed_integration` and returns. It
+  runs no cleanup and its payload carries no cleanup report — the `cleanup` key there is the untouched
+  contract cell. Terminal reclamation belongs to `finalize.py::_run_or_verify_cleanup`, which runs the
+  existing `cleanup_result` procedure with `approved=not dry_run` / `teardown_providers` and shapes a
+  real successful reclamation through the pure shaper `cleanup_report.py::cleanup_report`.
+  **Why the ownership moved:** while `_integrated_result` reclaimed inline, cleanup had already
+  reached `completed` when it returned, so the one guard that routes a landed leaf to
+  `lifecycle_finalize_task` (`next_step.py::_gate_after`, keyed on `contract.cleanup != "completed"`)
+  could never fire. A real landing therefore reported `nextOperation: "done"` while the leaf document
+  stayed `planning` and its master row stayed `inProgress` — silently, on leaves L29 and L30.
+  A refused or partial integration cleans up nothing — that is when the enclosure evidence is still
+  needed — and a cleanup refusal at finalization now **blocks the task-edge close** instead of being
+  reported after a landing that already claimed to be done. A checkpoint landing reclaims nothing
+  either, and a paused master is never finalized, so it keeps its worktrees, branches and enclosure.
+  The report shaper is gated by its caller: a dry run or a nonzero cleanup return code is passed
+  through in cleanup's own words, because a preview must not assert a reclamation that never happened
+  and a refusal must keep its `blockers` and partial inventory.
   `abandon.py` is the discard-without-integration sibling: it reclaims the
   isolated provider stack and removes worktrees/branches without requiring a
   prior integration.
@@ -412,6 +443,8 @@ No external Domain Documentation source is configured for this memory repo.
 | The package is imported through the public worktree manager facade. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:96-167 |
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
+| Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
+| Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | `_integrated_result`; `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/integrate.py:375-410; mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
 | The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:258-258; mcp/src/agents_remember/models/worktree.py:40-40 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
@@ -1013,6 +1046,36 @@ complete?", and a checkpoint must read as not complete. They are listed and disp
 `closeout.py` card.
 
 ## Update History
+- 2026-09-12T20:12+02:00 — **Final correction: the seam account in the two entries below is
+  superseded by the verified mechanism.** The body previously said the projector's write violated
+  `WorktreeSummary`'s typed `nextAction` on a strict model; that is false — `WorktreeSummary` is never
+  on that path. The settled account, now in the body and on `models/worktree.py.md`, is that
+  `WorktreeStatusResponse` inherits `extra="allow"` (`FlexibleResponseModel`) and declares none of
+  `nextAction` / `nextTool` / `nextArgs`, so the projector's pair passes through verbatim and
+  unchecked; `WorktreeSummary.nextAction` is honest where it lives; the branch is reachable via the
+  rolled-back contract amendment that leaves the locator `terminal-archived`; the emitted guidance is
+  correct and retrying the named tool resumes; only the typing is missing; and
+  `test_wire_vocabulary_exhaustiveness.py` has no test bodies left to enforce produced == declared.
+  The `NextTool."worktree_cleanup"` retention and its reason are unchanged. Verification metadata
+  remains closeout-owned; no route acceptance claim.
+- 2026-09-12T20:02+02:00 — **Body corrected (superseded by the 20:12 entry above): `WorktreeSummary`
+  does declare `nextAction`**, as `Literal["developer-decision"] | None = None`
+  (`models/worktree.py:281`, inside the class at :236-292). The earlier claim that it was undeclared
+  was false. See the 20:12 entry for the verified mechanism that replaces the interim "strict model /
+  type violation" reading. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 route impact: recorded that integration lands the refs and
+  stops while `finalize.py::_run_or_verify_cleanup` owns terminal reclamation, with the pure shaper
+  `cleanup_report.py::cleanup_report` producing the operator report for a completed reclamation and
+  its caller gating a dry run or a nonzero return code out of that shaping. Recorded **why** the
+  ownership moved: reclaiming inline left `cleanup` already `completed` when `_integrated_result`
+  returned, so the `next_step.py::_gate_after` guard keyed on that cell could never fire and leaves
+  L29/L30 reported `done` with `planning` leaf documents and `inProgress` master rows. Dropped the
+  deleted `automatic_cleanup.py` from this route's operation-owner list, noted `cleanup_report.py` owns
+  no operation, added "cleanup report shaping" to the purpose, and recorded that
+  `NextTool."worktree_cleanup"` is deliberately retained because
+  `application/worktree_status.py::_project_terminal_contract_status` still emits it — together with
+  the seam that write opens; **its mechanism is settled in the 20:12 entry above**. Added two
+  reference rows. Verification metadata remains closeout-owned; no route acceptance claim.
 - 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded the three downstream readers the
   checkpoint state had to teach (guidance's `worktree-started` projection, closeout's
   `_landed_source_heads`, the pull-request `already-recorded` guard), and that the remaining
