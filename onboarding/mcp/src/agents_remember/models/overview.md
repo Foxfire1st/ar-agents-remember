@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-08T16:24:06+02:00 |
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastUpdated | 2026-09-12T22:55+02:00 |
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -116,6 +116,11 @@ Start with `tools/tool_registry.py`: `TOOL_RESPONSE_MODELS` maps every modeled b
 to one response model, while `PUBLIC_TOOL_RESPONSE_MODELS` filters out retained
 compatibility builders so it matches `mcp.tools.PUBLIC_TOOLS`. Both are typed
 `dict[str, type[ResponseEnvelope]]` (260731-EFA-L4), not `type[BaseModel]`.
+`tools/public_roster.py` (260831-LOCR-L32) is the route's zero-import leaf holding the single
+definition of the advertised tuple `PUBLIC_TOOLS` (62 ordered names, L22-L85); `mcp/tools/base.py`
+re-exports the identical object. It lives here because a `models` response model now reads it —
+`models/worktree.py` enforces the worktree surface's next-move vocabulary against it — and
+`models → mcp` would be a `layers.toml` violation.
 `base.py` defines strict response envelopes, intentionally
 flexible detail envelopes, token metadata fields, and the strict `NextStep`
 lifecycle-hint model carried by an optional `nextStep` field on BOTH envelope
@@ -251,11 +256,13 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
+| The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
+| The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | `nextAction`; `nextTool`; `nextArgs`; `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-333; mcp/src/agents_remember/models/worktree.py:358-369 |
 | The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
-| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:425-429 |
-| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:417-422 |
+| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:471-471 |
+| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:463-463 |
 | The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:189-189; mcp/src/agents_remember/models/tools/tool_registry.py:190-190 |
 | Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:236-247; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:250-256; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-315 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
@@ -264,8 +271,8 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | Terminal response models cover trusted task-seat assignment and internal hosted-session spawn. | `AttachTerminalSessionToTaskResponse`; `SpawnAgentSessionResponse` | mcp/src/agents_remember/models/terminal.py:35-48; mcp/src/agents_remember/models/terminal.py:91-137 |
 | The next-step engine that fills `nextStep` from the active lifecycle. | `nextStep` | mcp/src/agents_remember/application/next_step.py:260-270 |
 | The wire-test module documents the 165-of-213 `context_packet` baseline. | "165 of the 213" | mcp/tests/test_wire_vocabulary_exhaustiveness.py:7-7 |
-| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:29-39 |
-| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:40-40; mcp/src/agents_remember/models/worktree.py:50-50; mcp/src/agents_remember/models/worktree.py:59-59 |
+| The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. | "from agents_remember.kernel.coordination_context.models import MemoryMode"; "WorkflowKind = Literal["; "HumanReviewStatus = Literal["; "LifecycleStatus = CloseoutStatus"; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:9-9; mcp/src/agents_remember/models/worktree.py:30-40 |
+| The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). | "WorktreePhase = Literal["; "NextOperation = Literal["; "NextTool = Literal[" | mcp/src/agents_remember/models/worktree.py:41-41; mcp/src/agents_remember/models/worktree.py:51-51; mcp/src/agents_remember/models/worktree.py:60-60 |
 | Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. | "from agents_remember.models.worktree import (" | mcp/src/agents_remember/worktrees/modules/guidance.py:10-14 |
 | The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-20 |
 
@@ -540,7 +547,7 @@ the coherent lifecycle projection. It introduces no public worker PID or private
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:335-355 |
+| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:397-397 |
 | Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:185-185 |
 
 
@@ -588,7 +595,44 @@ invariant now has an executor in
 `mcp/tests/test_tools.py::PublicSurfaceInventoryTests`, which compares the live registration order
 to that tuple and drives one `finalize_tool_response` call for the repaired name.
 
+## 260831-LOCR-L32 The Public Roster Joins This Route, And The Worktree Next Move Is Enforced
+
+This route's `tools/` leaf gained `public_roster.py` — a zero-import module whose whole body is the
+62-name literal `PUBLIC_TOOLS`
+cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-85). It is the tuple's **single definition**; `mcp/tools/base.py`
+now re-exports that identical object instead of declaring its own, so
+`agents_remember.mcp.tools.PUBLIC_TOOLS`, `PUBLIC_TOOL_RESPONSE_MODELS`, the live registration order,
+and the `public_surface` pin all still name the same tuple with no consumer change.
+
+The roster lives here because a model needs to read it. `models/worktree.py::WorktreeCommandResponse`
+now declares `nextAction` / `nextTool` / `nextArgs`
+cit:([`nextAction`, `nextTool`, `nextArgs`], mcp/src/agents_remember/models/worktree.py:331-333) and refuses a `nextTool` outside
+`PUBLIC_TOOLS` through `_require_registered_public_next_tool`
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:358-369). Before this leaf the
+envelope inherited `extra="allow"` and declared none of those keys, so
+`application/worktree_status.py::_project_terminal_contract_status`'s write crossed the wire verbatim
+and unchecked — `worktree_abandon` reached the wire as a `nextTool` without ever being a `NextTool`
+member. `models → mcp` would be a `layers.toml` violation (models = 2, mcp = 22), a function-local
+import trips `ruff PLC0415`, and module-level imports in either direction are circular — so the tuple's
+move into this route is the precondition of the fix, not a companion cleanup. The layering checker
+returned to its exact baseline of 16 violations with no `models → mcp` edge and no new cycle.
+
+**The invariant is per surface.** The worktree surface's next move must name a registered *public*
+tool; the `task_doc` surface may name the registered-but-non-public `session_retire`
+(`TaskDocResponse` is not a `WorktreeCommandResponse`). Do not widen `PUBLIC_TOOLS` to cover it.
+
 ## Update History
+- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: added this route's new `tools/public_roster.py`
+  leaf (the single `PUBLIC_TOOLS` definition) to the entry-point prose and the reference table, and
+  recorded the worktree next-move declarations (`models/worktree.py:331-333`) plus their `PUBLIC_TOOLS`
+  membership validator (`:358-369`) as this route's enforcement of the advertised vocabulary. Recorded
+  why the roster had to move here (the `models → mcp` layering violation, the unwritable `PLC0415`
+  local import, and the circular module-level imports) and the per-surface rule. Verification metadata
+  remains closeout-owned; no acceptance claim.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:471-471. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:463-463. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:397-397. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded `WorktreeCheckpointLandingResponse`, the
   new `checkpointed` member of `IntegrationStatus`, and the registry row between the integrate and
   record-landing rows; corrected the L29 section's 61-name census to the historical reading and

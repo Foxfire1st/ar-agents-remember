@@ -6,8 +6,8 @@
 | path | `mcp/tests/test_parked_external_await_separation.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-09-10T10:06:31+02:00 |
-| lastVerifiedCommitHash | `11d1ed0e5542818283bf7fb012a7bdd642aaba2e` |
-| lastVerifiedCommitDate | 2026-09-11T18:45:26+02:00|
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -81,7 +81,7 @@ These ranges record current source, not a recorded test execution.
 | The relay's expectation kind is the Literal that must not gain a parked value. | `ExpectationKind` | mcp/src/agents_remember/controlplane/expectation_rows.py:43-45 |
 | The parked row payload is rejected at model validation, not merely omitted from a set. | `ExpectationRow` | mcp/src/agents_remember/controlplane/expectation_rows.py:49-55 |
 | The dispatch-surface kind set is the second definition the guard requires to stay parked-free. | `KNOWN_EXPECTATION_KINDS` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:125-125 |
-| The advertised public capability set is what the no-wait-registration assertion inspects. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-75 |
+| The advertised public capability set is what the no-wait-registration assertion inspects. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
 
 ## Cross-Repo References
 

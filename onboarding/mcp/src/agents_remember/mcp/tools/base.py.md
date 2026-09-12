@@ -5,9 +5,9 @@
 | repository             | agents-remember                             |
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-12T22:55+02:00 |
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -16,28 +16,48 @@
 
 ## Purpose
 
-Owns the exact advertised MCP tool-name tuple and the one shared response-finalization adapter.
+Owns the one shared response-finalization adapter, and **re-exports** the advertised MCP tool-name
+tuple from its single definition in `models`.
 
 ## Code Commentary
 
-L23 makes `citation_fix` and `worktree_operation_cancel` public MCP tools so guarded memory repair and task-addressed cancellation use the tool plane.
+The module is 24 lines. It declares `TRANSPORT`, an empty `RESERVED_TOOLS`, `__all__`, and
+`_tool_payload` — and defines nothing else. `PUBLIC_TOOLS` is imported at L14 and declared as an
+export by `__all__` at L19.
 
 ### Logic
 
-`PUBLIC_TOOLS` is the exact ordered 62-name registered surface (260831-LOCR-L30).
+**`PUBLIC_TOOLS` is no longer defined here (260831-LOCR-L32).** The exact ordered 62-name tuple now
+lives at `mcp/src/agents_remember/models/tools/public_roster.py:22-85`; L14 imports it and L19's
+`__all__` declares the re-export, because this is not an `__init__.py` (where ruff exempts the `X as
+X` idiom) and a bare import would otherwise read as unused. The object is identical — same tuple,
+same order, same 62 unique names — so `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the
+same object and every existing consumer is unchanged.
+
+The relocation is what made the roster readable from `models`: a `models → mcp` import is a
+`layers.toml` violation (models = 2, mcp = 22; the `mcp` charter forbids any import from below), a
+function-local import trips `ruff PLC0415` with suppressions forbidden in this repository, and
+module-level imports in either direction are circular. `models/worktree.py` now reads the roster to
+enforce the worktree surface's next-move vocabulary; the roster's own card records why.
+
 Structural agent operations are
 `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
 `message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
-Removed exact-id/leaf-address agent tools are absent. `_tool_payload` passes every application
-result through the shared finalizer.
+Removed exact-id/leaf-address agent tools are absent. `_tool_payload`
+cit:([`_tool_payload`], mcp/src/agents_remember/mcp/tools/base.py:22-24) passes every
+application result through `application/tool_response.py::complete_tool_response`.
 
 ### Conventions
 
-Live registration and the public response-model registry must match this tuple exactly. Order is
-part of the advertisement contract; set-only parity is insufficient.
+Live registration and the public response-model registry must match the advertised tuple exactly.
+Order is part of the advertisement contract; set-only parity is insufficient. A change to the roster
+is a change to `models/tools/public_roster.py`, never a second tuple here.
 
 ### Invariants And Boundaries
 
+- **This module re-exports the roster; it does not own it.** Do not re-declare `PUBLIC_TOOLS` here,
+  and do not add a derived copy — the single definition is what keeps `mcp.tools.base.PUBLIC_TOOLS`
+  and the model-layer reader the same object.
 - Public tool names cannot restore session/lifecycle/inbox/gate-id cognition.
 - Structural operations use document+role vocabulary.
 - Every public result passes the common response finalizer.
@@ -55,9 +75,10 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-73 |
+| The advertised tuple names the structural public surface, and is now defined in the `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
+| The adapter re-exports the roster through `__all__` instead of declaring its own copy. | "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/mcp/tools/base.py:19-19 |
 | The live registration is compared to this tuple, in order, by the inventory suite. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-281 |
-| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
+| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
 ## Cross-Repo References
@@ -77,9 +98,10 @@ The current source seams include the module-level vocabulary. The public schema/
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The shared protocol vocabulary declares stdio transport and the public tool-name tuple. | "TRANSPORT ="; "PUBLIC_TOOLS = (" | mcp/src/agents_remember/mcp/tools/base.py:9-75 |
-| The reserved-tool tuple is explicitly empty. | "RESERVED_TOOLS: tuple[str, ...] = ()" | mcp/src/agents_remember/mcp/tools/base.py:74-74 |
-| The protocol adapter delegates response completion to the application boundary. | "def _tool_payload(" | mcp/src/agents_remember/mcp/tools/base.py:77-77 |
+| The shared protocol vocabulary declares stdio transport. | "TRANSPORT =" | mcp/src/agents_remember/mcp/tools/base.py:16-16 |
+| The public tool-name tuple's one definition, moved out of this adapter by 260831-LOCR-L32. | "PUBLIC_TOOLS = (" | mcp/src/agents_remember/models/tools/public_roster.py:22-22 |
+| The reserved-tool tuple is explicitly empty. | "RESERVED_TOOLS: tuple[str, ...] = ()" | mcp/src/agents_remember/mcp/tools/base.py:17-17 |
+| The protocol adapter delegates response completion to the application boundary. | "def _tool_payload(" | mcp/src/agents_remember/mcp/tools/base.py:22-22 |
 
 ## 260821-CLIVE Public Tool Census
 
@@ -136,7 +158,49 @@ answer. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` now drives a vali
 cannot tell the two landing tools apart — they sit next to each other in the registry and their
 payloads differ only in the operation literal, so a swap would still pass a set check.
 
+## 260831-LOCR-L32 The Roster Moves To `models` — This Card Is Now A Re-Export
+
+`PUBLIC_TOOLS` left this module. The 62-name tuple's one definition is now
+`mcp/src/agents_remember/models/tools/public_roster.py:22-85`, a zero-import `models` leaf; this
+module imports it at L14 and declares the re-export through `__all__` at L19, so
+`mcp.tools.base.PUBLIC_TOOLS` resolves the same object and every consumer, the `public_surface` pin,
+and `PUBLIC_TOOL_RESPONSE_MODELS` are unchanged. This file shrank from 79 lines to **24**:
+`TRANSPORT` moved L9 → L16, `RESERVED_TOOLS` L74 → L17, and `_tool_payload` L77-L79 → L22-L24.
+
+**Why it moved — this is the point of the change, not a tidy-up.** The roster living in `mcp` is
+precisely why the worktree next-move vocabulary could not be enforced at the model boundary.
+`application/worktree_status.py::_project_terminal_contract_status` writes `nextAction` / `nextTool` /
+`nextArgs` into the payload validated once against `WorktreeStatusResponse`, whose envelope declared
+none of them under `extra="allow"`, so the values crossed the wire verbatim and unchecked. Enforcing
+that vocabulary requires `models/worktree.py` to read `PUBLIC_TOOLS`, and from `mcp` that read is
+unwritable: `models → mcp` is a `layers.toml` violation (models = 2, mcp = 22; the `mcp` charter
+forbids any import from below), a function-local import trips `ruff PLC0415` and suppressions are
+forbidden here, and module-level imports in either direction are circular. Moving the tuple to a
+zero-import `models` leaf makes the check *expressible* instead of special-cased, and matches
+`layers.toml`'s own doctrine that wire vocabulary is defined in `models` and imported by the decider.
+The layering checker returned to its exact baseline of 16 violations, with no `models → mcp` edge and
+no new cycle.
+
+**The dated entries below describe the tuple at their own leaf.** They remain accurate history — the
+names, counts and registry rules they record still hold — but the roster's *location* in each of them
+is `mcp/tools/base.py`. Read them as history; read the roster's current home from
+`models/tools/public_roster.py`. Where one of them says the `base.py` tuple "is the authority on the
+advertised name set", that now means the re-exported object, which is the same object.
+
 ## Update History
+- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: **`PUBLIC_TOOLS` moved out of this module.** The
+  tuple's one definition is now `models/tools/public_roster.py:22-85`; this card's Purpose, Code
+  Commentary, Conventions, invariants and reference rows are rewritten to describe a 24-line
+  re-export (L14 import, L19 `__all__`) instead of the definition site, this file's `TRANSPORT`,
+  `RESERVED_TOOLS` and `_tool_payload` ranges are re-derived to L16 / L17 / L22-L24, and the new
+  section records why the move was needed (the `models → mcp` layering violation, the unwritable
+  `PLC0415` local import, and the circular module-level imports that blocked the worktree next-move
+  check). Also removed a stale Code Commentary sentence that claimed L23 exported
+  `worktree_operation_cancel` as a public tool: L23 is now the body of `_tool_payload`, and that name
+  is not in the roster. Verification metadata remains closeout-owned; no acceptance claim.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: "RESERVED_TOOLS: tuple[str, ...] = ()" repointed to mcp/src/agents_remember/mcp/tools/base.py:17-17. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T20:53:11+00:00: Generated citation repair: "def _tool_payload(" repointed to mcp/src/agents_remember/mcp/tools/base.py:22-22. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: `PUBLIC_TOOLS` grew to 62 with
   `worktree_checkpoint_landing` immediately after `worktree_integrate`, and recorded the
   three-registry requirement plus the new per-tool response-model case. Re-derived this card's

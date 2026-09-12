@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
-| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
+| lastUpdated | 2026-09-12T22:55+02:00 |
+| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
+| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -68,6 +68,7 @@ request.
 
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
 | Public tool-surface inventory | `test_tools.py` (`PublicSurfaceInventoryTests`) | Live registration order against a probe `FastMCP` equals `PUBLIC_TOOLS`, and the advertised names have response models that validate. Hermetic inventory contract: the probe starts no server and touches no provider. |
+| Worktree next-move typing and enforcement | `test_worktree_status_terminal_next_tool.py` | The `terminal-archive-ready` branch of `worktree_status` names the accepted cleanup operation, its emitted args bind to the real tool signature (checked with `inspect.signature(...).bind`), the envelope declares `nextAction`/`nextTool`/`nextArgs`, and the `PUBLIC_TOOLS` membership validator is driven in both directions. Integration lane: real worktree services and a real repository under `tmp_path`. First coverage of that branch. |
 
 ## Fixture Roles And Claims
 
@@ -114,7 +115,7 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
 
-The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 196 test-shaped modules: 114 unit-regression, 2 public-contract, 52 integration, 15 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty. That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 150-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 197 test-shaped modules: 114 unit-regression, 2 public-contract, 53 integration, 15 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (260831-LOCR-L32 added the one integration member; the declared collected-case budgets are 1000 unit and 200 integration). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 150-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -161,6 +162,22 @@ rather than at a caller. `_permissive_registration_config()` only has to satisfy
 close over the config without reading it during registration, so these cases stay about the
 inventory rather than about building a runtime; the probe is hermetic and reaches no network.
 
+`test_worktree_status_terminal_next_tool.py` (260831-LOCR-L32) is the same shape of executor one layer
+down: the *advertised vocabulary of one surface* had no enforcement. `PUBLIC_TOOLS` moved from
+`mcp/tools/base.py` to the zero-import `models` leaf `models/tools/public_roster.py`
+cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-85) so that
+`models/worktree.py::WorktreeCommandResponse` could read it, declare `nextAction` / `nextTool` /
+`nextArgs`
+cit:([`nextAction`, `nextTool`, `nextArgs`], mcp/src/agents_remember/models/worktree.py:331-333), and refuse a `nextTool` outside the roster
+(`_require_registered_public_next_tool`
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:358-369)). Before that the envelope was `extra="allow"` and
+declared none of the keys, so `application/worktree_status.py::_project_terminal_contract_status`'s
+write crossed the wire verbatim and unchecked. The suite reaches the real `terminal-archive-ready`
+state for both `worktree_cleanup` and `worktree_abandon`, binds the emitted args against the real
+builder signature, and pins the validator in both directions — including that the registered but
+non-public `session_retire` is refused on the worktree surface while the `task_doc` surface still
+accepts it. That branch had **zero** coverage before this module.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
@@ -174,12 +191,24 @@ These current source and policy ranges establish the development/certification d
 | Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 | The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-261 |
+| The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
+| The worktree surface's declared next move and the membership validator this route's new module pins. | `nextAction`; `nextTool`; `nextArgs`; `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-333; mcp/src/agents_remember/models/worktree.py:358-369 |
+| The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
 
 ## Docs And Cross-Repo References
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: added a `Retained Behavioral Routes` row and a
+  Public-Surface Inventory Contract paragraph for the new integration module
+  `test_worktree_status_terminal_next_tool.py`, which is the first coverage of the
+  `terminal-archive-ready` branch and the executor for the worktree surface's advertised next move.
+  Reconciled the route population to the current manifest (197 modules: 114 unit-regression, 2
+  public-contract, 53 integration, 15 architecture-fitness, 13 provider-conformance; budgets 1000
+  unit / 200 integration) and added three reference rows. Source-route documentation only: no
+  execution, acceptance or certification claim, and lane membership stays owned by the
+  `test-evidence-lanes.toml` card.
 - 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded the three new forcing cases (guidance
   checkpoint projection, the pull-request `already-recorded` guard, the checkpoint landed source
   head) and that two of those modules — `test_post_integration_cleanup_guidance.py` and
