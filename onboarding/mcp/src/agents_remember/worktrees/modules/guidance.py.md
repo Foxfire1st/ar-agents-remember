@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/guidance.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-11T14:56+02:00|
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated            | 2026-09-12T19:50+02:00|
+| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
+| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -25,8 +25,8 @@ Five `Literal` aliases and four `TypedDict`s now sit above the state machine tha
 | Alias | Members |
 | --- | --- |
 | `WorktreePhase` | `worktree-started`, `closeout-pending`, `integration-pending`, `integration-blocked`, `carryover-pending`, `cleanup-pending`, `cleanup-completed`, `abandoned` |
-| `NextOperation` | `continue_work`, `closeout`, `request_integration_decision`, `developer_decision`, `request_carryover_decision`, `retry_cleanup`, `done` |
-| `NextTool` | `worktree_status`, `worktree_closeout_apply`, `worktree_integrate`, `memory_carryover_apply`, `worktree_cleanup` |
+| `NextOperation` | `continue_work`, `closeout`, `request_integration_decision`, `developer_decision`, `request_carryover_decision`, `finalize`, `done` |
+| `NextTool` | `worktree_status`, `worktree_closeout_apply`, `worktree_integrate`, `memory_carryover_plan`, `worktree_cleanup`, `lifecycle_finalize_task` |
 | `RecoveryOperation` | `request_commit_approval`, `choose_memory_recovery`, `choose_provider_setup_recovery`, `choose_stale_base_recovery`, `choose_memory_sync_recovery` |
 | `RecoveryTool` | `worktree_start`, `worktree_sync`, `worktree_closeout_apply` |
 
@@ -154,17 +154,32 @@ making carryover a distinct lifecycle phase **between integration and cleanup**:
   `carryoverDoneAt` (the milestone time from `carryover_done`, surfaced onto
   `EngineProcessNode.carryoverDoneAt` for the dashboard; 5k renders the seam).
 
-Since reclamation became an automatic post-integration step, this phase is what a caller sees when
-that step did not finish. Its summary reads "Carryover completed, but the automatic
-post-integration cleanup did not complete. Read the integration result's cleanup report, clear the
-refusal, then retry worktree_cleanup." and its next operation is `retry_cleanup` with
-`worktree_cleanup` and the contract's next args — no longer a `request_cleanup_decision` dry-run
-preview. `request_cleanup_decision` no longer exists as a `NextOperation` member, and the
-integration projection carries no `cleanup_question`.
+**`cleanup-pending` is the moment before the terminal edge (260831-LOCR-L31).** The phase name is
+unchanged and `carryoverDoneAt` is untouched, but what it *means* has narrowed: reclamation no longer
+happens inside `worktree_integrate`, so a landed contract with carryover done is no longer "the
+automatic cleanup did not finish" — it is a leaf whose refs have landed and whose task edge has not
+been finalized yet. That is the one guard that routes a landed leaf onward, so this branch is now
+reachable in the ordinary successful flow rather than only after a cleanup failure.
+
+It routes `next_guidance("finalize", tool="lifecycle_finalize_task", args=contract_next_args(contract),
+required_args=["contract_path"])`
+cit:(["tool=\"lifecycle_finalize_task\""], mcp/src/agents_remember/worktrees/modules/guidance.py:301-305)
+with a rewritten summary:
+
+> The landing is complete; the remaining move is finalizing the task edge, which reclaims the code
+> and memory worktrees and reconciles the leaf document and its master row.
+
+`nextRequiredArgs` is carried because `lifecycle_finalize_task` is addressed by contract: without it
+an operator is told to call a tool while being given no argument that names the edge. The vocabulary
+moved with the branch — `finalize` replaced `retry_cleanup` in `NextOperation` (whose only writer was
+the branch being replaced) and `lifecycle_finalize_task` joined `NextTool`. `retry_cleanup` is
+**removed, not parked beside its replacement**: a nameable operation no procedure can produce is
+exactly the drift the vocabulary exists to prevent. `request_cleanup_decision` was already gone, and
+the integration projection still carries no `cleanup_question`.
 
 **A checkpointed contract projects as still working (260831-LOCR-L30).**
 `_post_integration_phase` gained a `checkpointed` branch
-cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:307-307)
+cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:308-308)
 that returns phase **`worktree-started`** with `nextOperation: "continue_work"` and
 `nextTool: "worktree_status"` (contract args), and a summary stating that the series landed into its
 source branch but remains open and that cleanup is deliberately not pending:
@@ -259,8 +274,10 @@ No external Domain Documentation source is configured for this memory repo.
 | Three of the five `recovery_guidance` callers: the blocked memory, provider-setup and stale-base starts. | "choose_memory_recovery"; "choose_provider_setup_recovery"; "choose_stale_base_recovery" | mcp/src/agents_remember/worktrees/modules/start.py:274-274; mcp/src/agents_remember/worktrees/modules/start.py:328-328; mcp/src/agents_remember/worktrees/modules/start.py:468-468 |
 | The fourth: the closeout preview's `request_commit_approval` gate. | `request_commit_approval` | mcp/src/agents_remember/worktrees/modules/closeout.py:255-255 |
 | The fifth recovery action, `choose_memory_sync_recovery`, is emitted by `memory_choice_required`. | `memory_choice_required` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:28-50 |
-| A checkpointed contract projects as the existing `worktree-started` phase and keeps working. | "if contract.integration_status == \"checkpointed\":" | mcp/src/agents_remember/worktrees/modules/guidance.py:307-307 |
+| A checkpointed contract projects as the existing `worktree-started` phase and keeps working. | "if contract.integration_status == \"checkpointed\":" | mcp/src/agents_remember/worktrees/modules/guidance.py:308-308 |
 | The closed phase set the checkpoint projection deliberately does not extend. | `WorktreePhase` | mcp/src/agents_remember/models/worktree.py:40-48 |
+| The `cleanup-pending` branch now names the terminal move and its one required argument, instead of a cleanup retry. | "tool=\"lifecycle_finalize_task\"" | mcp/src/agents_remember/worktrees/modules/guidance.py:301-305 |
+| The two vocabulary members this branch's rewrite moved: `finalize` replaced `retry_cleanup` in `NextOperation` (member count unchanged at seven) and `lifecycle_finalize_task` joined `NextTool` (now six); the tool it replaced on this path is `worktree_cleanup`, which the wire still declares because a terminal contract projection writes it. | `NextOperation`; `NextTool` | mcp/src/agents_remember/models/worktree.py:50-58; mcp/src/agents_remember/models/worktree.py:59-66 |
 
 ## Invariants And Boundaries
 
@@ -276,6 +293,9 @@ No external Domain Documentation source is configured for this memory repo.
   the absence.
 - `unknown_contract_cells` is additive and normally absent; its presence means the phase beside it
   was computed from substituted values.
+- **A `NextOperation`/`NextTool` member goes when its last writer goes.** `retry_cleanup` was removed
+  with the branch that emitted it rather than left declared beside `finalize`; a value no procedure
+  can produce is drift the packet cannot detect, because the model accepts it either way.
 
 ## Series-Contract Notes
 
@@ -297,6 +317,19 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 Pre-integration guidance stays contract-pure. It publishes only the static orchestration requirement `intent_note` and tells the caller that exact commit-message requirements are resolved from the current candidate by closeout preview or apply. It deliberately does not inspect the worktree, derive a candidate-sensitive plan, or restate message applicability: the normalizer owns that decision after candidate capture.
 
 ## Update History
+- 2026-09-12T17:57:35+00:00: Generated citation repair: "if contract.integration_status == \"checkpointed\":" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:308-308. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T17:57:35+00:00: Generated citation repair: "if contract.integration_status == \"checkpointed\":" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:308-308. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 root integration to `lifecycle_finalize_task`: the
+  `cleanup-pending` branch no longer describes a failed automatic post-integration cleanup. It now
+  projects the ordinary moment before the terminal edge — landed refs, carryover done, task edge not
+  yet finalized — and routes `finalize` / `lifecycle_finalize_task` with
+  `required_args=["contract_path"]` so an operator is handed the argument that names the edge.
+  Recorded that `finalize` replaced `retry_cleanup` in `NextOperation` (removed rather than parked,
+  because the branch that emitted it was its only writer) and that `lifecycle_finalize_task` joined
+  `NextTool`; corrected this card's `NextTool` transcription, which read `memory_carryover_apply` for
+  the member `guidance._post_integration_phase` actually emits, `memory_carryover_plan`. Added an
+  invariant that a vocabulary member goes when its last writer goes, plus two reference rows.
+  Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the "no new `WorktreePhase`
   member" bullet's dashboard list was incomplete (three of six sites). Replaced it with the full
   five-file / six-site list — `EngineRoom.tsx:59-66` (`LIFECYCLE_PHASES`, `"integration-pending"` at

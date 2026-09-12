@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-11T14:52+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-12T19:50+02:00 |
+| lastVerifiedCommitHash | `532aaa786becbb7d9f87bb64235fc804d7074743` |
+| lastVerifiedCommitDate | 2026-09-12T22:27:17+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -113,24 +113,34 @@ persisted contract is byte-identical either way. `replace` is still used for the
 (`integration_strategy` and the three commits), which have no vocabulary to be checked against —
 now inside `landing_record.py` rather than here.
 
-**Automatic post-integration cleanup.** `_integrated_result` no longer stops at the contract write.
-After the shared writer records `integration_status="completed", cleanup="pending"` it calls
-`run_automatic_cleanup(updated)`, so reclamation follows the successful landing without a further
-prompt — the integration approval that just landed is the authorization for its own terminal
-reclamation. It then reloads the contract from disk (`load_contract(contract.contract_path)`) so the
-payload's status facts report the post-cleanup `cleanup` cell instead of the in-memory `pending`
-write.
+**Landing publishes the integration cell and stops (260831-LOCR-L31).** `_integrated_result`
+cit:([`_integrated_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:375-410) writes
+the landed facts through the shared writer — `record_landed_integration` records
+`integration_status="completed", cleanup="pending"` — reloads the contract so the payload's status
+facts come from disk, and returns. It reclaims nothing, and the integrated payload no longer carries
+a `"cleanup"` report key at all: the writer's return value is deliberately not bound, because
+nothing downstream of it needed the amended contract.
 
-The cleanup report is a top-level `cleanup` key on the integrated payload, and the payload summary
-is `"Integration completed. {cleanup summary}"`. Its outcome never changes
-the integration result: the call still returns `returncode 0` and `state "integrated"` when cleanup
-refused, because a refused cleanup is reported (with its `refusal.reason`,
-`refusal.cleanupState`, and `refusal.blockers`) rather than converted into a failed landing. A
-refused or partial integration cleans up nothing — that is exactly when its evidence is needed. The
-contract's `cleanup` cell keeps a refusal visible as `cleanup-pending`, which `lifecycle_guidance`
-renders as the `cleanup-pending` phase whose next operation is `retry_cleanup`. The retired
-`cleanup_question` key is gone from both payloads: the dry run now carries `cleanup_reminder`
-("cleaned up automatically") and the integrated result carries the cleanup report itself.
+**That ownership move is the fix, not a tidy-up.** Reclamation used to run here, inline, through
+`automatic_cleanup.run_automatic_cleanup`. Because cleanup had already reached `completed` by the time
+this function returned, the one guard that routes a landed leaf onward to `lifecycle_finalize_task`
+(`next_step.py::_gate_after`, keyed on `contract.cleanup != "completed"`) could never fire. A real
+landing therefore reported `nextOperation: "done"` while the leaf's task document stayed `planning`
+and its master row stayed `inProgress` — and it did so silently, on leaves L29 and L30.
+`lifecycle_finalize_task` now owns terminal reclamation and is the **only** route that reaches it;
+`worktree_integrate` lands the refs and hands the task edge on.
+
+Two wire-visible surfaces were re-worded to match, and neither is cosmetic:
+
+- the dry run's `cleanup_reminder` now reads "On apply, the integration lands the refs; the code and
+  memory worktrees are reclaimed when the task edge is finalized."
+- the integrated payload's `summary` now reads "Integration completed; the refs are landed and the
+  code and memory worktrees are reclaimed when the task edge is finalized."
+
+The `cleanup` key on an integrated payload is now the untouched contract cell (`"pending"`), not a
+report, so a caller cannot mistake a landing for a reclamation — and a refused or partial integration
+still changes nothing, which is exactly when the enclosure evidence is still needed. The retired
+`cleanup_question` key stays gone from both payloads.
 
 ## Current Source-Moved Guidance
 
@@ -153,11 +163,11 @@ No external Domain Documentation source is configured for this memory repo.
 | The wire vocabulary declares integration and cleanup states, including the `checkpointed` member this route's checkpoint path records. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:38-39 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
-| This module reaches the persisted vocabulary writes through two owners: the blocked cell here and the landing cells in the shared writer the final and checkpoint results both call. | "def blocked_integration_payload("; `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14; mcp/src/agents_remember/worktrees/modules/integrate.py:373-408; mcp/src/agents_remember/worktrees/modules/integrate.py:674-714 |
-| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; "cleanup = run_automatic_cleanup(updated)" | mcp/src/agents_remember/worktrees/modules/integrate.py:373-408; mcp/src/agents_remember/worktrees/modules/integrate.py:392-392; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
-| A checkpoint landing records `checkpointed` through the same writer and does NOT reclaim, so the open master keeps its worktrees, branches and enclosure. | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:674-714 |
+| This module reaches the persisted vocabulary writes through two owners: the blocked cell here and the landing cells in the shared writer the final and checkpoint results both call. | "def blocked_integration_payload("; `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14; mcp/src/agents_remember/worktrees/modules/integrate.py:375-410; mcp/src/agents_remember/worktrees/modules/integrate.py:678-717 |
+| Landing publishes the integration cell and stops: the refs are landed, no removal inventory is produced, and the payload's `cleanup` key is the untouched contract cell. Reclamation belongs to `lifecycle_finalize_task`, whose `_run_or_verify_cleanup` runs the same terminal procedure and shapes its report. | `_integrated_result`; "reclaimed when the task edge is finalized" | mcp/src/agents_remember/worktrees/modules/integrate.py:375-410; mcp/src/agents_remember/worktrees/modules/integrate.py:399-400; mcp/src/agents_remember/worktrees/modules/finalize.py:277-311 |
+| A checkpoint landing records `checkpointed` through the same writer and reclaims nothing either, so the open master keeps its worktrees, branches and enclosure; a paused master is never finalized. | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:678-717 |
 | The checkpoint route's series authority keeps every ref guard and drops only the two completion assumptions, refusing an already-completed master. | `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:72-108 |
-| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:279-298 |
+| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:278-295 |
 | Historical/removed: leaf integration reused its closeout proof without calling a gate, and series/master integration alone ran the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. The cited `integration_quality.py` was deleted by the closeout-door cut (commit `fad9808e`). | — | — |
 
 
@@ -266,12 +276,16 @@ places:
   the contract validation, the replay/ff source-state gate, the source-lineage proof and the
   master-handover gate, and drops only the two completion assumptions. A master that is already
   `Completed` is refused there with `atomic-series-checkpoint-master-complete`.
-- Its recorded state comes from `_checkpoint_result` cit:([`_checkpoint_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:674-714) instead of `_integrated_result`
-  cit:([`_integrated_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:373-408). `_checkpoint_result` writes `checkpointed` through the shared writer and
-  **does not run `run_automatic_cleanup`**, so the master keeps its worktrees, its branches and its
-  enclosure, and the integration cell never claims a completion that has not happened. Its payload
-  summary states this in operator language: the line landed, the master stays open, nothing was
-  retired and no cleanup ran.
+- Its recorded state comes from `_checkpoint_result` cit:([`_checkpoint_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:678-717) instead of `_integrated_result`
+  cit:([`_integrated_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:375-410).
+  `_checkpoint_result` writes `checkpointed` through the shared writer and reclaims nothing, so the
+  master keeps its worktrees, its branches and its enclosure, and the integration cell never claims a
+  completion that has not happened. Since 260831-LOCR-L31 that "reclaims nothing" clause is the
+  property of **both** landing routes rather than the checkpoint's distinguishing feature — its
+  docstring was corrected accordingly, because the old phrasing ("does not run the automatic
+  cleanup") had become vacuous once no landing route reclaims. A paused master is never finalized, so
+  it is never reclaimed. Its payload summary states this in operator language: the line landed, the
+  master stays open, nothing was retired and no cleanup ran.
 
 The `checkpoint` flag is threaded, keyword-only and defaulted to `False` at every step, so the final
 route's behavior is byte-identical: `_continue_integration(checkpoint=…)` →
@@ -285,6 +299,20 @@ reached by the public `worktree_checkpoint_landing` tool; the payload builder an
 point are documented on their own cards.
 
 ## Update History
+- 2026-09-12T17:57:35+00:00: Generated citation repair: `_blocked_non_ff_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:278-295. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 root integration to `lifecycle_finalize_task`:
+  `_integrated_result` no longer reclaims. Replaced the "Automatic post-integration cleanup" section
+  with the landed-and-stop boundary, and recorded **why the removal is the fix**: because cleanup ran
+  inline and had already reached `completed` when the function returned, the one guard that routes a
+  landed leaf to `lifecycle_finalize_task` (`next_step.py::_gate_after`, keyed on
+  `contract.cleanup != "completed"`) could never fire — a real landing reported `nextOperation: "done"`
+  while the leaf document stayed `planning` and its master row stayed `inProgress`, silently, on L29
+  and L30. Recorded that the payload no longer carries a `"cleanup"` report key (the key is now the
+  untouched contract cell), the two re-worded wire surfaces (`cleanup_reminder` and the integrated
+  `summary`), and the corrected `_checkpoint_result` docstring clause that had become vacuous once no
+  landing route reclaims. Re-pointed the shifted `_integrated_result` (373-408 → 375-410),
+  `_checkpoint_result` (674-714 → 678-717) and `_dry_run_result` ranges. Verification metadata remains
+  closeout-owned; no acceptance claim.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `checkpoint_landing_result` and
   `_checkpoint_result`, the keyword-only `checkpoint` flag threaded through
   `_continue_integration`/`_handover_or_apply_integration`/`_apply_integration`/`_publish_integration_edge`,
@@ -314,8 +342,8 @@ point are documented on their own cards.
 
 - 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated wire state vocabulary from the typed amendment record and helper. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 - 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile_reference forwarding for the master full gate and removal of the requires_integrated_acceptance repo-name policy; refreshed integration_quality citations to the post-cutover ranges.
-| The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:346-389 |
-| The integrated result records the completed publication outcome. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:372-407 |
+| The planned gate is carried in the typed dry-run payload without executing publication. | `IntegratePreview`; `_dry_run_result` | mcp/src/agents_remember/worktrees/modules/integration_publication.py:30-35; mcp/src/agents_remember/worktrees/modules/integrate.py:298-344 |
+| The integrated result records the completed publication outcome and promises only the landing. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:375-410 |
 | The altitude-proof module this row cited was deleted with the removed closeout fixture chain (commit `9e1743c1`); the altitude matrix it described is no longer retained as test coverage. | — | — |
 | Historical/removed: the direct-legacy-integration cases named here lived in `test_worktree_support_tests_2.py` / `_3.py`, which no longer exist. Journaled production-path suites own successful movement and recovery; this row records the earlier coverage rather than a current test. | N/A | N/A |
 
