@@ -6,8 +6,8 @@
 | path                   | `mcp/tests/test_tools.py`                  |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,7 +16,7 @@
 
 ## Purpose
 
-Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
+Checks ping and safe server-info payloads, memory-initialization authority repair after config-write failure, and typed CGC/grepAI input refusal before provider execution. Since 260831-LOCR-L29 it also holds the public-surface inventory contract: the live registration order must equal `PUBLIC_TOOLS`, and every advertised name must have a response model that validates; 260831-LOCR-L30 added the per-tool response-model case for the checkpoint landing tool. These cases establish payload behavior with controlled configuration; the registration probe builds no runtime and no live provider is exercised.
 
 ## Code Commentary
 
@@ -64,8 +64,9 @@ to removed methods are superseded by this current inventory.
 | Typed cgc payloads reject invalid inputs before provider execution | `test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution` | mcp/tests/test_tools.py:153-164 |
 | Grepai payloads reject invalid scope and trace inputs | `test_grepai_payloads_reject_invalid_scope_and_trace_inputs` | mcp/tests/test_tools.py:165-195 |
 | Live FastMCP registration order equals the advertised public tuple | `test_live_registration_matches_the_public_inventory_in_order` | mcp/tests/test_tools.py:230-240 |
-| The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-261 |
-| The permissive registration-time config stub both cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:262-273 |
+| The record-landing tool has a registered response model that validates | `test_worktree_record_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:241-259 |
+| The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish | `test_worktree_checkpoint_landing_has_a_response_model_that_validates` | mcp/tests/test_tools.py:261-280 |
+| The permissive registration-time config stub both cases build against | `_permissive_registration_config` | mcp/tests/test_tools.py:283-296 |
 
 ## Cross-Repo References
 
@@ -98,7 +99,25 @@ the config and none validates it while registering, so a permissive chain keeps 
 the inventory rather than about building a runtime. The probe starts no server process, reads no
 provider state, and reaches no network.
 
+### Why There Is A Case Per Landing Tool (260831-LOCR-L30)
+
+`test_worktree_checkpoint_landing_has_a_response_model_that_validates` exists because the L29 case's
+set comparison cannot distinguish the two landing envelopes: `worktree_checkpoint_landing` and
+`worktree_record_landing` sit adjacent in `TOOL_RESPONSE_MODELS` and declare the same field names
+apart from the operation literal, so a registry swap between them still validates as a set. The L30
+case drives `finalize_tool_response("worktree_checkpoint_landing", …)` with the checkpoint payload
+(`state: "checkpointed"`, `integratedCodeCommit`, empty memory and ledger commits) and asserts the
+returned operation, which is what pins the name to the model that declares its literal.
+
+The general rule the two cases establish: one validating call per public tool name, not one for the
+whole registry.
+
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added the
+  `test_worktree_checkpoint_landing_has_a_response_model_that_validates` case, recorded why a per-name
+  case is required (the two landing envelopes differ only in the operation literal, so a set
+  comparison misses a swap), corrected the Purpose sentence, and re-derived the shifted retained-test
+  and stub ranges. Verification metadata remains closeout-owned; no execution or acceptance claim.
 - 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: recorded
   `PublicSurfaceInventoryTests` (live-registration-order equality with `PUBLIC_TOOLS`, plus a
   validating `finalize_tool_response` call for `worktree_record_landing`) and its

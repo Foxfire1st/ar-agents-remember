@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/application/next_step.py`     |
 | doc_type               | `file-level-onboarding`                                |
 | lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                                          |
 
 ## Governing Overview
@@ -96,6 +96,16 @@ a context `summary`) — notify and stop, no gate, no wait — replacing the pri
 uses distinct preview/apply tools, but integrate/finalize reuse one tool with a
 `dry_run` arg — so the not-yet-applied contract state (not the args) distinguishes
 dry-run from apply.
+
+The two integration-status conditions bracket a checkpointed series correctly and were **reviewed and
+deliberately left unchanged** by 260831-LOCR-L30:
+`worktree_integrate` && `integration_status != "completed"` still fires for a checkpointed series
+cit:(["and contract.integration_status != \"completed\""], mcp/src/agents_remember/application/next_step.py:217-217),
+so it gets "Integration dry-run verified — ready to integrate" — right, because it integrates again
+when it completes; and `lifecycle_finalize_task` && `integration_status == "completed"` does **not**
+fire for one cit:(["and contract.integration_status == \"completed\""], mcp/src/agents_remember/application/next_step.py:229-229),
+so it gets no "stop before reclaiming the worktrees" hint — also right, because a checkpointed series
+is not terminal. Do not widen either to include `checkpointed`.
 
 `_from_guidance(dict)` maps the `lifecycle_guidance` dict onto the shared
 `NextStep` shape, defensively coercing types: `summary` via `str(...)`,
@@ -226,6 +236,12 @@ No meaningful cross-repo references found.
 | The reviewed response-hint boundary is internal to this repository. | — | — |
 
 ## Update History
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded that this file's two
+  integration-status dry-run gates bracket a checkpointed series correctly and are deliberately
+  unchanged — the `worktree_integrate` gate fires for it (`!= "completed"`, so "ready to integrate"
+  is right), and the `lifecycle_finalize_task` gate does not (`== "completed"`, so the reclaim hint
+  is correctly withheld from a non-terminal series). Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `WorktreeContract`, `_attach_lifecycle_tail`, `_tool_payload`, `bound_next_step`, `load_contract` repointed to mcp/src/agents_remember/application/tool_response.py:30-50, mcp/src/agents_remember/application/tool_response.py:65-81, mcp/src/agents_remember/mcp/tools/base.py:75-77, mcp/src/agents_remember/worktrees/worktree_contract.py:228-283, mcp/src/agents_remember/worktrees/worktree_contract.py:434-464. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
 - 2026-09-05T08:27+02:00 — L31 native curator: Reviewed current response enrichment and documented explicit producer-hint precedence plus exact task-address binding; retained the model-before-serialization contract and refreshed the response-boundary evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.

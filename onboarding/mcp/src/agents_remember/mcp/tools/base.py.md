@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/mcp/tools/base.py`    |
 | doc_type               | `file-level-onboarding`                        |
 | lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                                  |
 
 ## Governing Overview
@@ -24,7 +24,7 @@ L23 makes `citation_fix` and `worktree_operation_cancel` public MCP tools so gua
 
 ### Logic
 
-`PUBLIC_TOOLS` is the exact ordered 61-name registered surface (260831-LOCR-L29).
+`PUBLIC_TOOLS` is the exact ordered 62-name registered surface (260831-LOCR-L30).
 Structural agent operations are
 `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
 `message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
@@ -55,9 +55,9 @@ No Domain Documentation source is configured.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-72 |
-| The live registration is compared to this tuple, in order, by the inventory suite. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-261 |
-| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:75-77 |
+| The advertised tuple names the structural public surface. | `PUBLIC_TOOLS` | mcp/src/agents_remember/mcp/tools/base.py:10-73 |
+| The live registration is compared to this tuple, in order, by the inventory suite. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-281 |
+| The shared adapter finalizes one application result. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:77-79 |
 | Registrars are the only published declaration family. | `TOOL_REGISTRARS` | mcp/src/agents_remember/mcp/registration/__init__.py:36-49 |
 
 ## Cross-Repo References
@@ -78,8 +78,8 @@ The current source seams include the module-level vocabulary. The public schema/
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The shared protocol vocabulary declares stdio transport and the public tool-name tuple. | "TRANSPORT ="; "PUBLIC_TOOLS = (" | mcp/src/agents_remember/mcp/tools/base.py:9-75 |
-| The reserved-tool tuple is explicitly empty. | "RESERVED_TOOLS: tuple[str, ...] = ()" | mcp/src/agents_remember/mcp/tools/base.py:73-73 |
-| The protocol adapter delegates response completion to the application boundary. | "def _tool_payload(" | mcp/src/agents_remember/mcp/tools/base.py:76-76 |
+| The reserved-tool tuple is explicitly empty. | "RESERVED_TOOLS: tuple[str, ...] = ()" | mcp/src/agents_remember/mcp/tools/base.py:74-74 |
+| The protocol adapter delegates response completion to the application boundary. | "def _tool_payload(" | mcp/src/agents_remember/mcp/tools/base.py:77-77 |
 
 ## 260821-CLIVE Public Tool Census
 
@@ -101,7 +101,8 @@ conformance suite.
 ## 260831-LOCR-L29 Public-Inventory Repair — The Self-Referential Test
 
 `PUBLIC_TOOLS` gained `worktree_record_landing` immediately after `worktree_integrate`, so the tuple
-again names every tool the server advertises and holds 61 entries.
+again named every tool the server advertises and held 61 entries at that leaf (62 since
+260831-LOCR-L30 added the checkpoint landing route).
 
 The gap was not cosmetic. `mcp/registration/closeout.py` registered the tool and FastMCP published
 it, while this tuple and `models/tools/tool_registry.py` both omitted it — and
@@ -120,7 +121,26 @@ the comparison because publication follows registration order, so a misplaced ro
 bug rather than a missing one. Do not replace this with an assertion against `server_info`: that
 payload is this tuple, and comparing a tuple to itself is the failure mode the repair removed.
 
+## 260831-LOCR-L30 Checkpoint Landing Joins The Census
+
+`PUBLIC_TOOLS` gained `worktree_checkpoint_landing` immediately after `worktree_integrate`, so the
+tuple again names every tool the server advertises and holds **62** entries. The same change register
+the name in `mcp/registration/closeout.py`, in `models/tools/tool_registry.py::TOOL_RESPONSE_MODELS`,
+and in `models/worktree.py::WorktreeCheckpointLandingResponse`.
+
+This is the three-registry rule the L29 repair established, exercised a second time by construction
+rather than by repair: a public tool needs the advertised tuple, the by-name response-model registry,
+**and** its envelope model, and missing any one of them leaves the tool published but unable to
+answer. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` now drives a validating
+`finalize_tool_response` call for the checkpoint name as well, because the set comparison alone
+cannot tell the two landing tools apart — they sit next to each other in the registry and their
+payloads differ only in the operation literal, so a swap would still pass a set check.
+
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: `PUBLIC_TOOLS` grew to 62 with
+  `worktree_checkpoint_landing` immediately after `worktree_integrate`, and recorded the
+  three-registry requirement plus the new per-tool response-model case. Re-derived this card's
+  reference ranges. Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:44:56+00:00: Generated citation repair: "RESERVED_TOOLS: tuple[str, ...] = ()" repointed to mcp/src/agents_remember/mcp/tools/base.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot fc36bf81fd36002f552f72a34a44e9713fa47fc86ced6632de3215e5011793d3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T23:44:56+00:00: Generated citation repair: "def _tool_payload(" repointed to mcp/src/agents_remember/mcp/tools/base.py:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot fc36bf81fd36002f552f72a34a44e9713fa47fc86ced6632de3215e5011793d3; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: added `worktree_record_landing`

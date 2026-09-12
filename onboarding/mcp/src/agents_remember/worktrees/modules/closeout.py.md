@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/closeout.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-10T15:06+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -313,6 +313,63 @@ phase alone.
 
 No external Domain Documentation source is configured for this memory repo.
 
+## A Checkpointed Series Passes Its Own Landed Source Head (260831-LOCR-L30)
+
+`_validate_closeout_source_heads` asserts that the live source-branch head is one *this contract's
+own landing legitimately produced*: the recorded base, plus the commit the contract records as
+landed. That set is computed by `_landed_source_heads(contract, base, integrated)`
+cit:([`_landed_source_heads`], mcp/src/agents_remember/worktrees/modules/closeout.py:144-160) — the
+former `_completed_integration_source_heads`, renamed because its condition is no longer about
+"completed" integration.
+
+The condition widened from `contract.integration_status == "completed"` to
+`contract.integration_status in {"completed", "checkpointed"}`
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout.py:156-156).
+
+**Why the old form was wrong.** A checkpoint also moves the source branch forward, and it records the
+commit it moved the branch to. Keying the expected set on `completed` alone therefore made the
+checkpoint's *own* recorded landing look like foreign movement, and the next closeout refused with
+`RuntimeError: code source branch moved since task start` — AR's own landing reported as an outside
+move. A source that genuinely moved anywhere else still matches neither head and is still refused;
+the widening admits exactly one additional head, the one the checkpoint recorded.
+
+**Why the refused party is exactly the checkpointed master.** `closeout_result`
+cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:715-752) is the single closeout entry point and dispatches on nothing; `_closeout_entry`
+cit:([`_closeout_entry`], mcp/src/agents_remember/worktrees/modules/closeout.py:825-848) reaches the
+validator for **series** contracts too — its only `kind` branch (the leaf-only binding refusal) is
+`if contract.kind == "leaf":` at line 831 and returns early for leaves rather than excluding series.
+And a checkpointed contract is always `kind == "series"`: `integrate.py:456` refuses anything else
+with "checkpoint landing is defined only for an atomic series contract". So the path that used to
+refuse is the checkpointed series' own next closeout.
+
+### The Remaining `== "completed"` Sites Are Deliberate
+
+`_landed_source_heads` and `guidance.py::_post_integration_phase` were the only two sites that
+needed widening, because they are the two that ask *"did a landing this contract performed move the
+ref?"*. Every other `integration_status == "completed"` in the tree asks *"is this contract
+complete?"*, and for that question a checkpoint must read as **not complete** — that is the whole
+point of the state. They are reviewed and deliberately unchanged; do not "fix" them:
+
+- `application/next_step.py` holds two adjacent dry-run gates that bracket the checkpoint correctly.
+  The `worktree_integrate` gate keys on `integration_status != "completed"`
+  cit:(["and contract.integration_status != \"completed\""], mcp/src/agents_remember/application/next_step.py:217-217), so a checkpointed
+  series still gets "Integration dry-run verified — ready to integrate", which is right because it
+  integrates again when it completes. The `lifecycle_finalize_task` gate keys on
+  `integration_status == "completed"`
+  cit:(["and contract.integration_status == \"completed\""], mcp/src/agents_remember/application/next_step.py:229-229), so a checkpointed series does **not** get the "stop
+  before reclaiming the worktrees" hint, which is also right because it is not terminal.
+- `worktrees/integration/organizational_completion.py:447` and
+  `memory_quality/memory_candidate_pair.py:95` / `:112` read completion as the predicate for their
+  own facts; a checkpoint is not that fact.
+- `worktrees/integration/atomic_series_landing.py:111` and
+  `worktrees/activation/atomic_series_activation.py:517` treat `completed` or a terminal `cleanup`
+  as the terminal-series signal, which a checkpointed series is not.
+- `worktrees/integration/lifecycle/lifecycle_completed_disposition.py:138` and
+  `application/task_docs/task_unstarted_evidence.py:545` likewise assert completion; a checkpoint
+  must not satisfy them.
+- `worktrees/modules/guidance.py:267` is the `completed` branch of `_post_integration_phase`; its
+  sibling `checkpointed` branch at `:307` is what the checkpoint uses instead.
+
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
@@ -329,10 +386,10 @@ No external Domain Documentation source is configured for this memory repo.
 | `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. | `require_git` | mcp/src/agents_remember/worktrees/modules/git.py:25-30 |
 | Closeout imports the self-healing lineage guard that carries a settleable stale break through the existing sync. | "heal_current_source_lineage," | mcp/src/agents_remember/worktrees/modules/closeout.py:37-37 |
 | Closeout's import block takes the queue preview and recovery owners and imports no code-quality gate; the staged-quality owner `gate_staged_code` lives only in its own module. | "from agents_remember.worktrees.queue.closeout_preview import ("; "def gate_staged_code(" | mcp/src/agents_remember/worktrees/modules/closeout.py:65-69; mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-165 |
-| Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. | "def _revalidate_candidate("; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:600-600; mcp/src/agents_remember/worktrees/modules/closeout.py:705-705 |
+| Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. | "def _revalidate_candidate("; "def closeout_result(" | mcp/src/agents_remember/worktrees/modules/closeout.py:610-610; mcp/src/agents_remember/worktrees/modules/closeout.py:715-715 |
 | The extracted owner binds and certifies the exact staged candidate. | "def gate_staged_code(" | mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py:139-139 |
 | The closeout transaction runs no code-quality gate and no memory pre-refresh; the memory-quality phase owners remain standalone in their own module. | "def run_memory_quality_phase("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-54; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-170; mcp/src/agents_remember/worktrees/modules/guidance.py:472-474 |
+| `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. | `recovery_guidance`, `RecoveryOperation`, `status_payload` | mcp/src/agents_remember/worktrees/modules/guidance.py:38-49; mcp/src/agents_remember/worktrees/modules/guidance.py:147-172; mcp/src/agents_remember/worktrees/modules/guidance.py:494-496 |
 | `ContractCells` and `amend_contract` define the contract-cell amendment API. | `ContractCells`, `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 | Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:440-476 |
 
@@ -410,7 +467,9 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 | Finding | Anchor | Source |
 | --- | --- | --- |
 | The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. | `closeout_changed_paths`; `closeout_preview_payload`; `closeout_result` | mcp/src/agents_remember/worktrees/modules/closeout.py:93-111; mcp/src/agents_remember/worktrees/modules/closeout.py:224-273; mcp/src/agents_remember/worktrees/modules/closeout.py:705-739 |
-| The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. | `_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:276-303; mcp/src/agents_remember/worktrees/modules/closeout.py:306-316; mcp/src/agents_remember/worktrees/modules/closeout.py:600-609 |
+| The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. | `_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:316-328; mcp/src/agents_remember/worktrees/modules/closeout.py:286-315; mcp/src/agents_remember/worktrees/modules/closeout.py:610-622 |
+| The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. | `_landed_source_heads`; "contract.integration_status in {\"completed\", \"checkpointed\"} and integrated" | mcp/src/agents_remember/worktrees/modules/closeout.py:144-160; mcp/src/agents_remember/worktrees/modules/closeout.py:156-156 |
+| The single closeout entry and the entry helper that reaches the validator for series contracts too. | `closeout_result`; `_closeout_entry` | mcp/src/agents_remember/worktrees/modules/closeout.py:715-752; mcp/src/agents_remember/worktrees/modules/closeout.py:825-848 |
 | The closeout entry threads the healed contract through preflight and the locked publication callback. | `closeout_result`; `_publish_closeout_candidate`; `_closeout_entry` | mcp/src/agents_remember/worktrees/modules/closeout.py:705-739; mcp/src/agents_remember/worktrees/modules/closeout.py:752-812; mcp/src/agents_remember/worktrees/modules/closeout.py:815-838 |
 
 ## 260821-CLIVE Journal-Owned Claim Boundary
@@ -440,6 +499,15 @@ stale after commits; it never re-resolves from repository id. The pair policy li
 closeout pairing module rather than adding another resolver to this orchestration module.
 
 ## Update History
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: `_completed_integration_source_heads` renamed
+  to `_landed_source_heads` and its condition widened from `== "completed"` to
+  `in {"completed", "checkpointed"}`. Recorded why the old form was wrong (a checkpoint moves the
+  source branch and records that commit, so base-only heads made AR's own landing refuse as "source
+  branch moved since task start") and why the refused party is exactly the checkpointed master
+  (`closeout_result` dispatches on nothing; `_closeout_entry`'s only `kind` branch returns early for
+  leaves; a checkpointed contract is always `kind == "series"`). Added the disposition census for
+  every remaining `integration_status == "completed"` site as reviewed-and-deliberate. Verification
+  metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def _revalidate_candidate(", "def closeout_result(", `ContractCells`, `RecoveryOperation`, `_closeout_entry`, `_publish_closeout_candidate`, `_revalidate_candidate`, `_validate_closeout_source_heads`, `_validate_closeout_source_state`, `amend_contract`, `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result`, `ledger_to_text`, `load_ledger`, `parse_ledger_text`, `recovery_guidance`, `status_payload` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:174-199, mcp/src/agents_remember/kernel/memory_ledger.py:202-205, mcp/src/agents_remember/kernel/memory_ledger.py:52-57, mcp/src/agents_remember/worktrees/modules/closeout.py:224-273, mcp/src/agents_remember/worktrees/modules/closeout.py:276-303, mcp/src/agents_remember/worktrees/modules/closeout.py:306-316, mcp/src/agents_remember/worktrees/modules/closeout.py:600-600, mcp/src/agents_remember/worktrees/modules/closeout.py:600-609, mcp/src/agents_remember/worktrees/modules/closeout.py:705-705, mcp/src/agents_remember/worktrees/modules/closeout.py:705-739, mcp/src/agents_remember/worktrees/modules/closeout.py:752-812, mcp/src/agents_remember/worktrees/modules/closeout.py:815-838, mcp/src/agents_remember/worktrees/modules/closeout.py:93-111, mcp/src/agents_remember/worktrees/modules/guidance.py:147-170, mcp/src/agents_remember/worktrees/modules/guidance.py:38-49, mcp/src/agents_remember/worktrees/modules/guidance.py:472-474, mcp/src/agents_remember/worktrees/worktree_contract.py:179-194, mcp/src/agents_remember/worktrees/worktree_contract.py:197-225. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `test_roundtrip_preserves_newest_same_code_history` repointed to mcp/tests/test_memory_ledger.py:32-47. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "heal_current_source_lineage," repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:37-37. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

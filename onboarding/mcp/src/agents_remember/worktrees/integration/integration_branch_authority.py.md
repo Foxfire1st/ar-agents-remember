@@ -6,8 +6,8 @@
 | path | `mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py` |
 | doc_type | `file-level-onboarding` |
 | lastUpdated | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -49,6 +49,21 @@ refs through `require_series_contract_authority`; any other contract kind refuse
 guard enables the source-pair selecting transaction without making a protected series branch an
 ordinary workbench or weakening its task-derived ownership.
 
+## 260831-LOCR-L30 Abandon Refuses A Checkpointed Master
+
+`_require_series_task_terminal` cit:([`_require_series_task_terminal`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279) is the guard shared by the cleanup and abandon arms of
+`require_terminal_worktree`. It refuses to retire a series' integration branch when the master's task
+document is `abandoned` **and** `contract.integration_status` is in `{"completed", "checkpointed"}`
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"}"], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:266-266).
+
+Abandoning a master asserts that none of its work was taken. Once part of it landed — finally
+(`completed`) or at a checkpoint of a master that is still open (`checkpointed`) — that assertion is
+false, and the honest terminal route is completion: mark the rows that never integrated `abandoned`
+and complete the master. The refusal message was widened with the value to match: it now reads "this
+master already landed work into its source branch", because `checkpointed` is precisely the case a
+partial landing used to hide — the master's line was already upstream while the contract still read
+`not-started`, and that is what made a partial master's retirement look safe.
+
 ## Invariants And Boundaries
 
 - Protected surfaces are repo-global for a Git common directory, not local to the current sprint.
@@ -59,15 +74,20 @@ ordinary workbench or weakening its task-derived ownership.
   transaction-bound permit issued by `atomic_series_terminal.py`; no queue owns terminal authority.
 - Sync may operate on a series only through exact series-contract authority; ordinary leaf and
   protected series admission remain distinct branches.
+- **A landed line blocks abandonment, in either landing state.** The abandon arm must keep refusing
+  whenever the integration cell records that work left the master — `completed` or `checkpointed` —
+  because `checkpointed` exists to keep a paused master's landed content honest and therefore cannot
+  be treated as "nothing was taken".
 
 ## Repo-Internal References
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:56-57; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:65-66; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:69-132 |
-| Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:440-473; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:476-501 |
-| New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:581-595 |
-| Sync admits either an ordinary leaf workbench or exact task-owned series authority. | `require_sync_worktree` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:347-356 |
+| Public census and target projection derive exact protected surfaces. | `integration_surfaces`, `integration_targets` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:65-68; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:69-134 |
+| Topology publication validates candidate ownership before task facts can create a protected collision. | `require_topology_publication_authority`, `require_topology_migration_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:443-478; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:479-506 |
+| New-surface validation recognizes only the exact canonical atomic series contract and branch. | `_atomic_surface_has_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:584-600 |
+| Sync admits either an ordinary leaf workbench or exact task-owned series authority. | `require_sync_worktree` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:350-361 |
+| The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. | `_require_series_task_terminal`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:233-279; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:266-266 |
 
 ## Docs References
 
@@ -91,7 +111,7 @@ the exact accepted task generation remains the input to one resolver boundary.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | `require_topology_publication_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:440-473 |
+| Live leaf publication resolves the candidate through the unified topology API with accepted overrides. | `require_topology_publication_authority` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:443-478 |
 
 ## 260821-CLIVE Queue-Binding Removal
 
@@ -108,6 +128,11 @@ Topology collision and deleted-owner repair logic moved into dedicated owners; t
 This change preserves the file's existing authority boundary. No threshold exception, silent
 fallback, or compatibility reader was added.
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded that the shared
+  `_require_series_task_terminal` guard now refuses abandon when the integration cell reads
+  `checkpointed` as well as `completed`, why a landed line blocks abandonment in both landing states,
+  and the widened refusal wording; re-derived the reference ranges in this card. Verification
+  metadata remains closeout-owned; no acceptance claim.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `require_sync_worktree` repointed to mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:347-356. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: `require_topology_publication_authority` repointed to mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:440-473. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-08T14:39:58+00:00: Generated citation repair: `_atomic_surface_has_series` repointed to mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:543-557. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.

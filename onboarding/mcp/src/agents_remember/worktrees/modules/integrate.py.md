@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/worktrees/modules/integrate.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T14:52+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -17,7 +17,9 @@
 ## Purpose
 
 Owns integration of completed worktree task branches back into their source
-branches.
+branches. Since 260831-LOCR-L30 it also owns the **checkpoint** route
+(`checkpoint_landing_result`), which lands an unfinished atomic master's accumulated line into its
+super branch without closing the master.
 
 ## CCR-R12@v5 Current Transaction Boundary
 
@@ -67,10 +69,11 @@ owned and is not repeated here. **`integration_quality.py` itself was deleted by
   Every step past the replay decision — the merge, the contract rewrite, the result payload —
   consumes all three or none, so `_merge_integrated_commits(contract, commits)` and
   `_integrated_result(contract, args, commits, *, handover_warning)` take the triple.
-- **`_apply_integration(contract, args, sources, *, handover_warning)`** — the real (non-dry-run)
-  path lifted out of `integrate_result`: land the code commit, then the memory commits, then merge
-  both into their sources. `integrate_result` now reads as guard, replay decision, dry-run branch,
-  delegate.
+- **`_apply_integration(contract, args, sources, *, handover_warning, checkpoint=False)`** — the real
+  (non-dry-run) path lifted out of `integrate_result`: land the code commit, then the memory commits,
+  then merge both into their sources. `integrate_result` now reads as guard, replay decision,
+  dry-run branch, delegate. Since 260831-LOCR-L30 it also selects the series authority and the
+  recorded state from `checkpoint`.
 
 The merge of integrated commits is all-or-nothing: both the code and memory
 fast-forwards are pre-validated as ancestors before either branch is mutated,
@@ -86,24 +89,32 @@ gate, before replaying memory, and once more immediately before `source-merge`. 
 `source-moved-during-quality` with a retry preview and performs no source ref movement; the quality
 result therefore cannot certify a candidate assembled from older source tips.
 
-**Contract writes go through `ContractCells` (260731-EFA-L4).** This module moves two of the six
-persisted vocabulary cells, and both now take the typed path:
+**Contract writes go through `ContractCells` (260731-EFA-L4), and the landing cells through one
+shared writer (260831-LOCR-L29/L30).** This module reaches the persisted vocabulary cells on two
+paths:
 
-- `blocked_integration_payload` — `amend_contract(contract, ContractCells(integration_status="blocked"))`.
-- `_integrated_result` — `amend_contract(replace(contract, integration_strategy=…,
-  integrated_code_commit=…, integrated_memory_content_commit=…, integrated_ledger_commit=…),
-  ContractCells(integration_status="completed", cleanup="pending"))`.
+- `blocked_integration_payload` via `integration/master_review_gate.py` —
+  `amend_contract(contract, ContractCells(integration_status="blocked"))`
+  cit:(["def blocked_integration_payload("], mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14).
+- The final and checkpoint integration cells via
+  `modules/landing_record.py::record_landed_integration`, which owns the `ContractCells` amendment
+  itself: `_integrated_result` passes `LandedIntegration(...)` alone (which selects
+  `integration_status="completed", cleanup="pending"`) and `_checkpoint_result` passes the same
+  record with `checkpoint=True` (which selects `checkpointed` and leaves `cleanup` untouched)
+  cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68).
+  This module no longer amends those two cells inline — the writer is the single definition of
+  "landed", and the commit triple, the strategy string and the checkpoint/final distinction all
+  travel through it.
 
-The split inside `_integrated_result` is the pattern: the two vocabulary cells go through
-`ContractCells` so pyright checks them, while the commit hashes and the strategy string — which have
-no vocabulary to be checked against — stay on `replace`. That is the whole reason for the change:
-typeshed declares `dataclasses.replace` as `**changes: Any`, so `replace(contract,
-integration_status="bloqued")` was zero pyright errors even though the wire model rejects it. The
-persisted contract is byte-identical either way. `replace` is still imported and still used for the
-free-text fields.
+The typed record remains the reason the cells are safe to write: typeshed declares
+`dataclasses.replace` as `**changes: Any`, so an off-vocabulary literal such as
+`integration_status="bloqued"` was zero pyright errors even though the wire model rejects it. The
+persisted contract is byte-identical either way. `replace` is still used for the free-text fields
+(`integration_strategy` and the three commits), which have no vocabulary to be checked against —
+now inside `landing_record.py` rather than here.
 
 **Automatic post-integration cleanup.** `_integrated_result` no longer stops at the contract write.
-After it records `ContractCells(integration_status="completed", cleanup="pending")` it calls
+After the shared writer records `integration_status="completed", cleanup="pending"` it calls
 `run_automatic_cleanup(updated)`, so reclamation follows the successful landing without a further
 prompt — the integration approval that just landed is the authorization for its own terminal
 reclamation. It then reloads the contract from disk (`load_contract(contract.contract_path)`) so the
@@ -139,13 +150,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The wire vocabulary declares integration and cleanup states. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:33-34 |
+| The wire vocabulary declares integration and cleanup states, including the `checkpointed` member this route's checkpoint path records. | "IntegrationStatus = Literal["; "CleanupStatus = Literal[" | mcp/src/agents_remember/models/worktree.py:38-39 |
 | The typed contract amendment record holds the six optional vocabulary cells. | "class ContractCells:" | mcp/src/agents_remember/worktrees/worktree_contract.py:180-180 |
 | The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. | "def amend_contract(" | mcp/src/agents_remember/worktrees/worktree_contract.py:197-197 |
-| This module uses that typed path for both persisted vocabulary writes: blocked integration and completed integration with cleanup pending. | "def blocked_integration_payload("; `_integrated_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14; mcp/src/agents_remember/worktrees/modules/integrate.py:369-400 |
-| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; "cleanup = run_automatic_cleanup(updated)" | mcp/src/agents_remember/worktrees/modules/integrate.py:369-400; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
+| This module reaches the persisted vocabulary writes through two owners: the blocked cell here and the landing cells in the shared writer the final and checkpoint results both call. | "def blocked_integration_payload("; `_integrated_result`; `_checkpoint_result` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-14; mcp/src/agents_remember/worktrees/modules/integrate.py:373-408; mcp/src/agents_remember/worktrees/modules/integrate.py:674-714 |
+| Completed integration reclaims automatically through `run_automatic_cleanup`, reloads the post-cleanup status, and reports a cleanup refusal without failing the landing. | `_integrated_result`; "cleanup = run_automatic_cleanup(updated)" | mcp/src/agents_remember/worktrees/modules/integrate.py:373-408; mcp/src/agents_remember/worktrees/modules/integrate.py:392-392; mcp/src/agents_remember/worktrees/modules/automatic_cleanup.py:28-53 |
+| A checkpoint landing records `checkpointed` through the same writer and does NOT reclaim, so the open master keeps its worktrees, branches and enclosure. | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:674-714 |
+| The checkpoint route's series authority keeps every ref guard and drops only the two completion assumptions, refusing an already-completed master. | `publish_series_checkpoint_under_authority` | mcp/src/agents_remember/worktrees/series_closeout.py:72-108 |
+| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:279-298 |
 | Historical/removed: leaf integration reused its closeout proof without calling a gate, and series/master integration alone ran the profile-declared full adapter, with an optional settings-owned cap and enclosure-owned reports. The cited `integration_quality.py` was deleted by the closeout-door cut (commit `fad9808e`). | — | — |
-| The source-moved refusal now routes recovery through `worktree_sync` plus a new targeted closeout, never through `--strategy replay`. | `_blocked_non_ff_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:275-292 |
 
 
 As of cycle 6 the master-exit seam consumer is re-addressed by MASTER identity: the pure `handover_gate_guard` helper folds EVERY gate log (`GateStore.all_current()` — the raiser's lifecycle differs from the integrating contract's) and selects `master-handover-approval` gates whose `enclosure` matches the contract's `task_name` or `parent_task_name`; the latest matching gate must be policy-valid-approved under the CONFIGURED policy (`args.gate_policy`, now threaded from the application entry point) or the non-dry run returns handover-gate-blocked. Gateless — no gate addressed to this master — stays additive. Cycle 7 makes the exact-string address and the preview honest (AR4-1b/AR4-2): the pure sibling `unmatched_handover_gate_warning` reports, when NO gate addresses this contract but open `master-handover-approval` gates exist in the fold, a `handover_gate_warning` payload field (`unmatched_open_gates` + a verify-the-enclosure-spelling note) on the dry-run and integrated results, so a typo'd enclosure is loud instead of silently gateless; and the guard is now EVALUATED on the dry-run path too — enforced only on the real run — with the preview carrying `handover_gate` (`permitted`/`gateId`/`reason`) and a summary naming `handover-gate-blocked` when the real run would refuse, while the dry-run path persists no contract mutation.
@@ -237,7 +250,50 @@ therefore the request plus the existing branch/ref authority checks — no door-
 and `prepared_integration_recovery` was dropped from the preflight results with it. `IntegrationPublication`
 lost its `intent` field for the same reason.
 
+## 260831-LOCR-L30 Checkpoint Landing (The Partial-Master Verb)
+
+`integrate_result` closes a finished master. `checkpoint_landing_result(args, current_contract)` cit:([`checkpoint_landing_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:435-469) pauses an unfinished one: it lands that master's accumulated line into its super branch
+and keeps the master open. Before it existed a partial master could not land at all, because
+`publish_series_integration_under_authority` structurally proves the master is complete — its task
+document `Completed` and one landed enclosure per canonical leaf — and a paused master has neither.
+
+It shares the entire preflight and the ref move with the final route and differs in exactly two
+places:
+
+- Its series authority is `publish_series_checkpoint_under_authority`
+  (cit:([`publish_series_checkpoint_under_authority`], mcp/src/agents_remember/worktrees/series_closeout.py:72-108)),
+  which keeps the series contract binding, the atomic landing authority, the integration targets,
+  the contract validation, the replay/ff source-state gate, the source-lineage proof and the
+  master-handover gate, and drops only the two completion assumptions. A master that is already
+  `Completed` is refused there with `atomic-series-checkpoint-master-complete`.
+- Its recorded state comes from `_checkpoint_result` cit:([`_checkpoint_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:674-714) instead of `_integrated_result`
+  cit:([`_integrated_result`], mcp/src/agents_remember/worktrees/modules/integrate.py:373-408). `_checkpoint_result` writes `checkpointed` through the shared writer and
+  **does not run `run_automatic_cleanup`**, so the master keeps its worktrees, its branches and its
+  enclosure, and the integration cell never claims a completion that has not happened. Its payload
+  summary states this in operator language: the line landed, the master stays open, nothing was
+  retired and no cleanup ran.
+
+The `checkpoint` flag is threaded, keyword-only and defaulted to `False` at every step, so the final
+route's behavior is byte-identical: `_continue_integration(checkpoint=…)` →
+`_handover_or_apply_integration(checkpoint=…)` → `_apply_integration(checkpoint=…)` →
+`_publish_integration_edge(checkpoint=…)` → `_checkpoint_result`. `checkpoint_landing_result` also
+refuses a non-`series` contract outright (an ordinary leaf lands through `worktree_integrate`) and
+requires explicit approval on a non-dry-run.
+
+`checkpoint_landing_result` is re-exported from the `worktrees/git_worktree_manager.py` facade and
+reached by the public `worktree_checkpoint_landing` tool; the payload builder and application entry
+point are documented on their own cards.
+
 ## Update History
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `checkpoint_landing_result` and
+  `_checkpoint_result`, the keyword-only `checkpoint` flag threaded through
+  `_continue_integration`/`_handover_or_apply_integration`/`_apply_integration`/`_publish_integration_edge`,
+  and the `publish_series_checkpoint_under_authority` selection; recorded that the checkpoint path
+  records `checkpointed` and runs no cleanup, and corrected the `ContractCells` section, which still
+  described `_integrated_result` amending the landing cells inline after the L29 extraction moved
+  those writes into `landing_record.py` (the L30 change then widened that writer to take
+  `LandedIntegration`). Re-derived the shifted reference ranges. Verification metadata remains
+  closeout-owned; no acceptance claim.
 - 2026-09-11T23:05:00+00:00: The completed-integration row anchored the bare symbol `run_automatic_cleanup`, which now resolves three times across the two cited files (import and call in `integrate.py`, definition in `automatic_cleanup.py`), so the claim's provenance could not be compared. The anchor is now the exact call text `cleanup = run_automatic_cleanup(updated)` at `integrate.py` line 386, which occurs once in the cited sources; the claim's wording and both cited extents are unchanged.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "class ContractCells:" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-11T22:39:01+00:00: Generated citation repair: "def amend_contract(" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.

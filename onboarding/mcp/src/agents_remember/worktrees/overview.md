@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -322,7 +322,59 @@ requiring `Completed` exactly and `worktree_abandon` accepting `Completed` or `a
 (`atomic-series-closeout-master-abandoned`) because closeout proves a completion fact and abandonment
 is reclaimed through `worktree_abandon`.
 
+## Route Impact: Checkpoint Landing (260831-LOCR-L30)
+
+This route gained the partial-master landing verb, and it is the first way a series' integration refs
+can move without the master being complete. `series_closeout.py::publish_series_checkpoint_under_authority`
+keeps every authority that protects other owners' refs and drops only the two completion assumptions
+the final series route proves; it refuses an already-`Completed` master
+(`atomic-series-checkpoint-master-complete`), so a checkpoint can never downgrade a finished
+integration. `modules/integrate.py::checkpoint_landing_result` threads a keyword-only
+`checkpoint` flag through the shared preflight and ref move, and
+`modules/landing_record.py::record_landed_integration` now writes either `checkpointed` (cleanup
+untouched) or `completed` + `cleanup="pending"` from that flag, so the terminal `integration` cell
+still has exactly one writer. The facade re-exports `checkpoint_landing_result`, and the public
+`worktree_checkpoint_landing` tool exposes it.
+
+The same leaf widened the series abandon guard: `worktree_abandon` now refuses a master whose
+integration cell records **any** landed line — `completed` or `checkpointed` — because abandoning
+asserts that none of the work was taken.
+
+A checkpointed contract projects as **still working**, and the projection is deliberate.
+`worktrees/modules/guidance.py::_post_integration_phase` gained a `checkpointed` branch that returns
+phase `worktree-started` with `nextOperation: "continue_work"` / `nextTool: "worktree_status"`, and a
+summary stating that the series has landed into its source branch but remains open and that cleanup
+is deliberately not pending. No new `WorktreePhase` member was added: `WorktreePhase` is a closed
+`Literal` in `models/worktree.py` mirrored by the dashboard at five files / six sites —
+`EngineRoom.tsx:59-66` (`LIFECYCLE_PHASES`, `"integration-pending"` at `:63`), `BootTimeline.tsx:88`
+and `:110`, `useEngineTimeline.ts:41`, `buildEngineRoomModel.ts:16` (`PHASE_ORDER`) and
+`geometry.ts:218` (`LANDING_PHASES`) — so a new member would be a cross-codebase change, and
+`worktree-started` is the honest phase for a series that is still working — the summary carries the
+checkpoint truth. The full list is maintained in the `guidance.py` card. Before this branch existed
+the contract fell through to the pre-integration
+`integration-pending` phase, which points at `worktree_integrate`, a tool that refuses while the
+series is open.
+
+The pull-request landing route keeps the same guarantee from its side: `record_landing.py`'s
+`already-recorded` short-circuit now covers `{"completed", "checkpointed"}`, so a checkpointed series
+cannot be re-recorded into `completed` + `cleanup="pending"` — the state `worktree_cleanup` requires.
+Completion still travels through `worktree_integrate`, which reaches it only once the series is
+genuinely terminal.
+
 ## Update History
+- 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the checkpoint projection note
+  named three dashboard mirrors of `WorktreePhase` where there are six; it now lists all five files /
+  six sites and defers to the `guidance.py` card as the maintained list. Content change, not a range
+  repoint; verification metadata remains closeout-owned.
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: replaced the recorded checkpoint guidance gap
+  with the implemented behavior — `_post_integration_phase` now has a `checkpointed` branch projecting
+  `worktree-started` + `continue_work`/`worktree_status`, with the closed-`WorktreePhase` rationale —
+  and recorded the widened `already-recorded` guard on the pull-request route. Verification metadata
+  remains closeout-owned; no acceptance claim.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the non-final series exit on this route,
+  the single-writer cell that now carries two landing outcomes, the widened series abandon guard, and
+  the guidance phase gap for `checkpointed`. Verification metadata remains closeout-owned; no
+  acceptance claim.
 - 2026-09-11T23:05:00+00:00: Route-impact curation for this route: recorded the new `record_landing_result` facade export and shared landed-integration writer, the terminal-task-state requirement for integration-branch retirement with its cleanup/abandon asymmetry, and the named abandoned-master closeout refusal. Content change, not a range repoint.
 - 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `activate_atomic_series_contract`, `observe_sync_operation`, `reconcile_selected_series_under_authority` repointed to mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121, mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100, mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 - 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repaired the exact-pair resolver reference, which now lives at `memory_quality/memory_candidate_pair.py` after commit `0b63d6fc` relocated it out of `closeout/`. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.

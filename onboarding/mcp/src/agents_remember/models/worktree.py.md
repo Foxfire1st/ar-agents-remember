@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/models/worktree.py` |
 | doc_type               | `file-level-onboarding`                    |
 | lastUpdated | 2026-09-11T15:00+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
+| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
+| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -18,10 +18,11 @@ projection.
 
 ## Code Commentary
 
-cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:219-273) is the strict context-packet shape for the
+cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:235-291) is the strict context-packet shape for the
 `c-09-git-worktree-manager` lifecycle. Its vocabulary fields are typed, and
 **since 260731-EFA-L4 every shared lifecycle vocabulary is imported from the
-module that produces it; only `WorktreeState` remains local** (cit:([`WorktreeSummary`, `WorktreeState`], mcp/src/agents_remember/models/worktree.py:216-216; mcp/src/agents_remember/models/worktree.py:219-273)). The command response models
+module that produces it; only `WorktreeState` remains local** cit:([`WorktreeState`], mcp/src/agents_remember/models/worktree.py:232-232). `WorktreeSummary` itself is declared at
+cit:([`WorktreeSummary`], mcp/src/agents_remember/models/worktree.py:235-291). The command response models
 remain flexible because worktree service results can carry operation-specific
 planning and closeout fields.
 
@@ -29,16 +30,16 @@ planning and closeout fields.
 
 | Field | Alias | Declared in |
 | --- | --- | --- |
-| `workflowKind` | `WorkflowKind` = `chat-task \| light-task` | `worktrees/worktree_contract.py` L50 |
-| `memoryMode` | `MemoryMode` = `internal \| external \| disabled` | `worktree_contract.py` L51 |
-| `humanReviewStatus` | `HumanReviewStatus` = `pending-review \| approved` | `worktree_contract.py` L52 |
-| `closeoutStatus` | `CloseoutStatus`, imported **as `LifecycleStatus`** (the published wire name) = `not-started \| completed` | `worktree_contract.py` L53 |
-| `integrationStatus` | `IntegrationStatus` = `not-started \| completed \| blocked` | `worktree_contract.py` L54 |
-| `cleanup` | `CleanupStatus` = `pending \| completed \| abandoned \| reopened` | `worktree_contract.py` L55 |
-| `phase` | `WorktreePhase` (8 members) | `worktrees/modules/guidance.py` L28-L37 |
-| `nextOperation` | `NextOperation` (7 members) | `guidance.py` L38-L46 |
-| `nextTool` | `NextTool` (5 members) | `guidance.py` L47-L53 |
-| `state` | `WorktreeState` — the ONE alias still declared here (L33) | this file |
+| `workflowKind` | `WorkflowKind` = `chat-task \| light-task` | this file L29 |
+| `memoryMode` | `MemoryMode` = `internal \| external \| disabled` | imported from the kernel (L9) and re-exported here |
+| `humanReviewStatus` | `HumanReviewStatus` = `pending-review \| approved` | this file L30 |
+| `closeoutStatus` | `CloseoutStatus`, imported **as `LifecycleStatus`** (the published wire name) = `not-started \| completed` | this file L31-L32 |
+| `integrationStatus` | `IntegrationStatus` = `not-started \| completed \| blocked \| checkpointed` | this file L38 |
+| `cleanup` | `CleanupStatus` = `pending \| completed \| abandoned \| reopened` | this file L39 |
+| `phase` | `WorktreePhase` (8 members) | this file L40 |
+| `nextOperation` | `NextOperation` (7 members) | this file L50 |
+| `nextTool` | `NextTool` (5 members) | this file L59 |
+| `state` | `WorktreeState` — the ONE alias still declared here | this file L232 |
 
 `WorktreeState` stays local on purpose: `application.worktree_status.worktree_status_packet`
 constructs this model directly and is its only writer, so the projection there is
@@ -67,7 +68,7 @@ the blocked-start recovery payloads — those keep their own
 a wider `NextOperation` cannot put "requires developer approval" back into the set
 the context packet's `nextOperation` claims to be.
 
-`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:262-262)) is **omitted rather than `[]`** when there is
+`nextRequiredArgs` (cit:([`nextRequiredArgs`], mcp/src/agents_remember/models/worktree.py:267-267)) is **omitted rather than `[]`** when there is
 nothing to supply. `next_guidance` writes the key only when the next call needs a
 caller-supplied argument; the projection now reports what the producer said
 instead of substituting a value for it. This is a stated wire change: measured
@@ -78,7 +79,7 @@ beyond `nextArgs` — and there is no third state to confuse it with. The same r
 now covers `nextTool` and `nextArgs`, where the old substitution had put an
 un-declarable `""` on the wire.
 
-`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:267-267)) is new. It is present only
+`unknownContractCells: list[str] | None` (cit:([`unknownContractCells`], mcp/src/agents_remember/models/worktree.py:272-272)) is new. It is present only
 when the contract file carried a cell outside its declared vocabulary, formatted
 `"<field>=<raw token> read as <fallback>"`. The `state` is still `active` and
 every other field was computed from the substituted values — this field is the
@@ -157,8 +158,10 @@ all-snake payload shape.
 | --- | --- | --- |
 | Sync control, side, phase, operation-state, and strict projection shapes are declared together. | `SyncResolutionAction`; `MemorySyncChoice`; `SyncSide`; `SyncPhase`; `SyncOperationState`; `SyncOperationProjection`; `SyncResolutionProjection` | mcp/src/agents_remember/models/worktree.py:56-78; mcp/src/agents_remember/models/worktree.py:122-153 |
 | Series status and command responses carry optional activation facts and bounded admission evidence. | `AtomicSeriesActivationFact`; `AtomicSeriesAdmission`; `WorktreeSummary`; `WorktreeCommandResponse` | mcp/src/agents_remember/models/worktree.py:145-219; mcp/src/agents_remember/models/worktree.py:219-307 |
-| The sync response declares recovery guidance without exposing a public operation id. | `WorktreeSyncResponse` | mcp/src/agents_remember/models/worktree.py:357-368 |
-| The record-landing envelope declares the landing evidence and its operation literal. | `WorktreeRecordLandingResponse` | mcp/src/agents_remember/models/worktree.py:412-416 |
+| The sync response declares recovery guidance without exposing a public operation id. | `WorktreeSyncResponse` | mcp/src/agents_remember/models/worktree.py:373-384 |
+| The record-landing envelope declares the landing evidence and its operation literal. | `WorktreeRecordLandingResponse` | mcp/src/agents_remember/models/worktree.py:425-429 |
+| The checkpoint-landing envelope declares the four commits a paused master landed and its operation literal. | `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:417-422 |
+| The `checkpointed` member the checkpoint writer records and the persisted-contract vocabulary derives. | `IntegrationStatus` | mcp/src/agents_remember/models/worktree.py:38-38 |
 | The sole writer of `WorktreeSummary`: `worktree_status_packet` returns the MODEL now, and `_summary_from_status_payload` projects field by field, reading optional next and activation fields without inventing values. | `worktree_status_packet`; `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:65-151; mcp/src/agents_remember/application/worktree_status.py:217-277 |
 | The six persisted contract vocabularies (`WorkflowKind` … `CleanupStatus`) with their `VALID_*` frozensets, the `ContractCells` typed write record and `amend_contract`. | `VALID_WORKFLOW_KINDS`; `VALID_MEMORY_MODES`; `VALID_HUMAN_REVIEW_STATUSES`; `VALID_CLOSEOUT_STATUSES`; `VALID_INTEGRATION_STATUSES`; `VALID_CLEANUP_STATUSES`; `ContractCells`; `amend_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:70-75; mcp/src/agents_remember/worktrees/worktree_contract.py:179-194; mcp/src/agents_remember/worktrees/worktree_contract.py:197-225 |
 | The guidance state machine imports and writes `WorktreePhase`, `NextOperation` and `NextTool` (declared in this model since L9), plus the separate `RecoveryOperation`/`RecoveryTool` that deliberately do NOT reach this model. | "from agents_remember.models.worktree import ("; `RecoveryOperation`; `RecoveryTool` | mcp/src/agents_remember/worktrees/modules/guidance.py:10-10; mcp/src/agents_remember/worktrees/modules/guidance.py:38-55 |
@@ -238,7 +241,69 @@ instead of returning a payload — the advertised tool could not answer at all. 
 envelope here, together with its registry row in `models/tools/tool_registry.py`, is what makes the
 advertised name reachable at the same strict boundary as `WorktreeIntegrateResponse`.
 
+## 260831-LOCR-L30 Checkpointed Integration And Its Wire Envelope
+
+`IntegrationStatus` gained a fourth member, `checkpointed` cit:([`IntegrationStatus`], mcp/src/agents_remember/models/worktree.py:38-38). It names the state a series
+master enters when its accumulated line has landed into its super branch **and the master stays
+open**. Before it existed, a partially landed master had to report `not-started` — "nothing of mine
+has left" — while its content was already upstream, and that is exactly the state that made a
+partial master's retirement look safe. The producer is
+`worktrees/modules/landing_record.py::record_landed_integration`, which writes `checkpointed` for a
+checkpoint and `completed` + `cleanup="pending"` for a final landing
+cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:37-67).
+Because `worktrees/worktree_contract.py` derives `VALID_INTEGRATION_STATUSES` from this alias, the
+new member is immediately readable and writable on the persisted contract rather than a value the
+read path would reject.
+
+**`WorktreePhase` deliberately did not gain a member for the checkpoint state.** A checkpointed
+contract projects through the existing `worktree-started` phase
+cit:(["if contract.integration_status == \"checkpointed\":"], mcp/src/agents_remember/worktrees/modules/guidance.py:307-307).
+`WorktreePhase` is a closed `Literal` cit:([`WorktreePhase`], mcp/src/agents_remember/models/worktree.py:40-48) whose members the dashboard mirrors at five files / six sites
+cit:([`LIFECYCLE_PHASES`], dashboard/src/panels/EngineRoom.tsx:59-66): `EngineRoom.tsx:59-66`
+(`LIFECYCLE_PHASES`, `"integration-pending"` at `:63`), `BootTimeline.tsx:88` and `:110`,
+`useEngineTimeline.ts:41`, `buildEngineRoomModel.ts:16` (`PHASE_ORDER`) and `geometry.ts:218`
+(`LANDING_PHASES`). A ninth member would therefore be a
+cross-codebase change, and a series that is still working is honestly `worktree-started`; the
+checkpoint truth rides in the guidance summary instead. Do not add a member for it here.
+
+The declaration site in the table above is this file, not `worktree_contract.py`: all the shared
+lifecycle vocabularies that card lists are declared here cit:([`WorkflowKind`, `HumanReviewStatus`, `CloseoutStatus`, `IntegrationStatus`, `CleanupStatus`], mcp/src/agents_remember/models/worktree.py:29-31; mcp/src/agents_remember/models/worktree.py:38-39)
+(`MemoryMode` is imported from the kernel and re-exported) and imported back by
+`worktrees/worktree_contract.py` cit:(["from agents_remember.models.worktree import ("], mcp/src/agents_remember/worktrees/worktree_contract.py:19-26), which only derives the runtime `VALID_*` frozensets from
+them.
+
+`WorktreeCheckpointLandingResponse` (operation literal `worktree_checkpoint_landing`) declares the
+checkpoint landing evidence cit:([`WorktreeCheckpointLandingResponse`], mcp/src/agents_remember/models/worktree.py:417-422): `integrationStrategy`, `integratedCodeCommit`,
+`integratedMemoryContentCommit`, and `integratedLedgerCommit`. It inherits
+`WorktreeCommandResponse`, so it stays flexible for unrelated operation data and exposes no
+operation id, journal address, or Git-mutation authority.
+
+The class exists because the tool was registered and advertised with no response model — the same
+hole `WorktreeRecordLandingResponse` closed one leaf earlier. `finalize_tool_response` indexes
+`models/tools/tool_registry.py::TOOL_RESPONSE_MODELS` by tool name, so a published tool whose name
+has no row raises `KeyError` inside its `@server.tool()` handler instead of returning a payload.
+Declaring the envelope here, together with its registry row in
+`models/tools/tool_registry.py`, is what keeps the advertised name answerable at the same strict
+boundary as `WorktreeIntegrateResponse`.
+
 ## Update History
+- 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the "no new `WorktreePhase`
+  member" note named three dashboard mirrors where there are six. Replaced it with the full
+  five-file / six-site list (`EngineRoom.tsx:59-66` `LIFECYCLE_PHASES` with `"integration-pending"`
+  at `:63`, `BootTimeline.tsx:88` and `:110`, `useEngineTimeline.ts:41`, `buildEngineRoomModel.ts:16`,
+  `geometry.ts:218`). Content change, not a range repoint; verification metadata remains
+  closeout-owned.
+- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded that `WorktreePhase` deliberately
+  gained no member for the checkpoint state — a checkpointed contract projects as the existing
+  `worktree-started` phase because the alias is a closed `Literal` mirrored by the dashboard, and the
+  checkpoint truth rides in the guidance summary. Verification metadata remains closeout-owned; no
+  acceptance claim.
+- 2026-09-12T01:06:15+00:00: Generated citation repair: `WorkflowKind`; `HumanReviewStatus`; `CloseoutStatus`; `IntegrationStatus`; `CleanupStatus` repointed to mcp/src/agents_remember/models/worktree.py:29-29; mcp/src/agents_remember/models/worktree.py:30-30; mcp/src/agents_remember/models/worktree.py:31-31; mcp/src/agents_remember/models/worktree.py:38-38; mcp/src/agents_remember/models/worktree.py:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `checkpointed` to `IntegrationStatus` in the
+  declaration table (and corrected that row's declaration site, which still named
+  `worktree_contract.py`), declared `WorktreeCheckpointLandingResponse` and the four commit fields it
+  publishes, and recorded why the envelope is required for the advertised tool to answer. Verification
+  metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: declared the
   `WorktreeRecordLandingResponse` envelope (`worktree_record_landing` literal, `integrationStrategy`,
   `landedCodeCommit`, `landingTargets`) for the tool that `mcp/registration/closeout.py` already
