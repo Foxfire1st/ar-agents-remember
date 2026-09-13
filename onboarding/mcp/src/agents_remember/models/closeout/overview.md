@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/models/closeout` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `9f0309447d6820d90e59279abc84f87f1ccbb3b3`|
-| lastVerifiedCommitDate |  2026-09-13T22:28:36+02:00|
+| lastVerifiedCommitHash |  `5bb124d43ea7b234edd570cf3995521e708714bd`|
+| lastVerifiedCommitDate |  2026-09-13T23:22:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -26,6 +26,12 @@ trailer naming the code commit that same closeout landed; both sanctioned closeo
 closeout in `worktrees/modules/closeout_external.py` and branch-addressed direct landing in
 `worktrees/integration/direct_landing/direct_landing_execution.py` — render their memory-content commit
 message through it, and `message_for` stays the raw public echo that the ledger leg still uses.
+
+**This route renders the attribution; it no longer owns the key.** Since 260913-LCA-L2 the trailer key
+is declared once in `kernel/memory_attribution.py` — the reader of the hashed object, one rank below
+`models` in `layers.toml` — and `input.py` imports it (`input.py:9`), so
+`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit. The direction is fixed by the
+layer contract rather than by preference: a kernel module importing a model would import upward.
 
 ## Hot Path Summary
 
@@ -53,6 +59,16 @@ No configured external source applies. Queue producers and application consumers
 through same-repository source references.
 
 ## Update History
+
+- 2026-09-13T23:20+02:00 — 260913-LCA-L2 route refresh (uncommitted change set on
+  `ar/260913-lca-l2-ar`): corrected the ownership sentence this route inherited from 260913-LCA-L1.
+  The key is no longer declared here: `CODE_COMMIT_TRAILER_KEY` lives in
+  `kernel/memory_attribution.py` (the reader) and `input.py` imports it at `input.py:9`, so this route
+  renders the attribution through the imported key rather than owning a literal. The direction is the
+  one `layers.toml` permits — `kernel` ranks below `models`, and a kernel module importing a model
+  would import upward — and `grep -rn '"Code-Commit"' --include=*.py mcp/` now has exactly one hit.
+  The entry below stands as the record of what was true when L1 wrote it. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-09-13T22:22+02:00 — 260913-LCA-L6 route refresh (uncommitted change set on `ar/260913-lca-l6-ar`):
   corrected the Hot Path Summary and the population-bound invariant, which claimed the projection

@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
-| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -670,6 +670,15 @@ waiting reasons. Real wave dependencies still gate through the sprint execution 
 this change.
 
 ## Update History
+- 2026-09-13T23:21+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`):
+  correction to the entry below, which is kept as the record of what was true when L1 wrote it. This
+  route renders the memory-content attribution but no longer owns its key: `CODE_COMMIT_TRAILER_KEY`
+  is declared once in `kernel/memory_attribution.py` — the reader of the hashed object, one rank below
+  `models` in `layers.toml` — and `models/closeout/input.py` imports it at `input.py:9`, so
+  `grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit and the two-literal drift the L1
+  entry's wording implied is gone. The layer contract fixes the direction: a kernel module importing a
+  model would import upward. Content change; verification metadata remains closeout-owned and no
+  acceptance claim is made.
 - 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded that
   this route now owns the one rendering of the memory-content commit message —
   `models/closeout/input.py`'s `CODE_COMMIT_TRAILER_KEY` and

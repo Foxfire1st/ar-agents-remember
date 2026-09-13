@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
-| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -73,6 +73,7 @@ checks for the branch-addressed route.
 | Protocol framing | `test_codex_native_history.py`, `test_pi_rpc_process.py` | Bounded paging/correlation and real fixture subprocess behavior. |
 | L38 actionable admission and closeout transport | `test_activation_admission_registered.py`, `test_worktree_closeout_route_review_transport.py` | Registered response-shape and refusal-projection checks, including bounded malformed-contract parser detail, for the frozen candidate. The activation admission is contract-scoped: a refusal carries no `classification`/`blocking`/`sourcePair*` key and never names a foreign master as blocker or retry precondition. Preparation evidence only. |
 | CCR-R12 transaction-only delivery | `test_transaction_only_worktree_delivery.py` | Real public closeout/integration code-memory-ledger delivery, source-movement refusal, configured-hook non-invocation, and the memory-content commit's one `Code-Commit:` trailer read back out of the object (the `memory.md`-only ledger commit carrying none); focused behavior evidence only. |
+| Ledger attribution and the projected source ledger | `test_memory_ledger.py`, `test_worktree_sync.py` | The projection equals the rows the tracked table carried at every checkpoint of an attributed line, a hand edit to the table cannot move it, the pre-trailer history reads its own blob, the bootstrap source contributes no rows, and a code tip the official memory line does not map still refuses by name without advancing the work branch. The ledger cases are the `unit-regression` lane and the sync case is the `integration` lane; the mid-cycle case's refusal comes from the named-ref ledger read, not from the projected source. |
 | Closeout auto-carry and parked candidate | `test_source_lineage.py` (`CloseoutSourceLineageHealTests`), `test_sync_parked_candidate.py` | The closeout boundary carries a settleable stale break, refuses a preview without mutating, escalates an unprovable break, and returns a parked dirty candidate through the sync transaction (restore on completed/resume/cancel, kept unmerged-index refusal); transaction-level detail lives in the new unit-lane module. |
 
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
@@ -232,6 +233,39 @@ verdict/state-string shape) and the reasons for each disposition are recorded on
 the only recorded `UNREPRODUCED FLAKE` of this leaf — seen once on a mutated build, never on the real
 tree — documented on its own card.
 
+## 260913-LCA-L2 Ledger Attribution Coverage
+
+The ledger's source became the memory commits' own `Code-Commit:` attribution, and this route carries
+the proof for both halves of that sentence.
+
+`test_memory_ledger.py` grew a second fixture world and ten cases. `_AttributedWorld` builds a line
+where each mapping is two commits — the content commit carrying the trailer and the ledger commit
+pinning the row into `memory.md` and carrying none — with one code commit attributed twice (the
+superseding pair the ledger keeps both copies of) and one memory commit carrying no trailer. The
+closed-loop case asserts the projection equals the rows the tracked table carried at **every**
+checkpoint of that line; the hand-edit case writes a row into the table under a matching header and
+asserts the projection does not move; the remaining cases cover the pre-trailer blob fallback, the
+bootstrap source that contributes no rows, `exclude` selecting a branch's own commits, the
+last-block-wins parse that ignores a body mention, the trailer naming a commit the code repository
+lacks, a multi-trailer final block read by key, a mapping that arrived through a merge, and the round
+trip that proves the writer's key and the reader's key are one key. The six pre-existing projection
+cases in the same file still hold because they reach the reader through the per-commit blob fallback,
+which is why that fallback cannot be removed without losing their rows.
+
+**The literal `Code-Commit` text in these test modules is a deliberate independent oracle.** A case
+that read `CODE_COMMIT_TRAILER_KEY` would follow a wrong constant instead of catching it, so the
+trailer-parse and trailer-round-trip cases spell the key out and must not be "corrected" to import the
+constant. The one case that does touch the constant —
+`test_the_rendered_trailer_is_the_one_the_reader_parses` — uses it to prove the *writer* renders the
+key the reader parses, and proves it through a real commit rather than by comparing two literals.
+
+`test_worktree_sync.py` gained the suite's first coverage of the mid-cycle refusal: a code tip the
+official memory line does not map returns `blocked` with `official line is mid-cycle`, leaves the work
+branch at its pre-sync head, and syncs once the pair is completed. That refusal is produced by the
+**named-ref** ledger read in `sync_transaction_authority.preflight_official_pair`, not by the
+projected source ledger, so the case is the regression guard that this leaf's reader change left the
+detection where it was.
+
 ## Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
@@ -260,12 +294,37 @@ These current source and policy ranges establish the development/certification d
 | The lane registration the fail-closed manifest requires for that module. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:153-153 |
 | The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. | `class ActivationFixture`; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:58-106; mcp/tests/test_atomic_series_activation.py:117-140; mcp/tests/test_atomic_series_activation.py:174-209 |
 | The registered admission refusal now addresses only the addressed contract's own state. | `test_registered_sync_refusal_addresses_only_this_contracts_own_state` | mcp/tests/test_activation_admission_registered.py:178-221 |
+| The L2 attributed fixture line and the ten ledger-attribution cases: the every-checkpoint closed loop, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap source, `exclude`, the last-block-wins parse, the unknown-code-commit drop, the by-key multi-trailer read, the merged-in mapping, and the writer/reader key round trip. | `_AttributedWorld`; `test_projection_is_the_ledger_the_attributed_history_records`; `test_projection_reads_the_trailer_and_never_the_live_table`; `test_projection_reads_an_unattributed_commit_from_its_own_ledger`; `test_projection_contributes_nothing_for_a_source_that_says_nothing`; `test_attribution_reads_only_the_commits_a_caller_asks_for`; `test_trailer_parse_takes_the_last_block_and_ignores_a_body_mention`; `test_attribution_reports_only_commits_the_code_repository_holds`; `test_attribution_reads_a_message_whose_final_block_carries_several_trailers`; `test_the_rendered_trailer_is_the_one_the_reader_parses`; `test_attribution_reads_a_mapping_that_arrived_through_a_merge` | mcp/tests/test_memory_ledger.py:323-379; mcp/tests/test_memory_ledger.py:382-409; mcp/tests/test_memory_ledger.py:412-431; mcp/tests/test_memory_ledger.py:434-458; mcp/tests/test_memory_ledger.py:461-467; mcp/tests/test_memory_ledger.py:470-486; mcp/tests/test_memory_ledger.py:489-512; mcp/tests/test_memory_ledger.py:515-527; mcp/tests/test_memory_ledger.py:530-559; mcp/tests/test_memory_ledger.py:562-597; mcp/tests/test_memory_ledger.py:600-630 |
+| The L2 mid-cycle case: the refusal by name, the unmoved work branch, and the completed pair that then syncs. | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `map_official_memory` | mcp/tests/test_worktree_sync.py:176-204; mcp/tests/test_worktree_sync.py:101-110 |
+| The named-ref refusal the mid-cycle case guards, and the reader under test on the other side. | `preflight_official_pair`; `attributed_commits` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_attribution.py:113-144 |
 
 ## Docs And Cross-Repo References
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-13T23:25+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the ledger
+  attribution group gained a tenth case, `test_the_rendered_trailer_is_the_one_the_reader_parses`,
+  after the writer and the reader were found to hold two separate `Code-Commit` literals (found by
+  the L2 curator's first pass and reported to the owner, who fixed the code in the same change set).
+  It renders
+  through the real writer, commits the message and reads the code commit back out through the real
+  reader, so a writer-side key change loses the row and fails that case instead of passing silently.
+  Registered it in the route paragraph and the reference row, and recorded the rule a future curator
+  needs: the literal `Code-Commit` text in these test modules is a deliberate independent oracle and
+  must not be "corrected" to read the constant. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:12+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`):
+  registered the nine new `test_memory_ledger.py` cases that prove the ledger's source is the memory
+  commits' own `Code-Commit:` attribution — the every-checkpoint closed loop against the tracked
+  table, the hand edit that cannot move the projection, the pre-trailer blob fallback, the bootstrap
+  source that contributes no rows, `exclude`, the last-block-wins parse, the unknown-code-commit
+  drop, the by-key multi-trailer read, and the merged-in mapping — plus the `test_worktree_sync.py`
+  case that is the suite's first coverage of the `official line is mid-cycle` refusal, which comes
+  from the named-ref ledger read rather than the projected source. Added the route paragraph, the
+  retained-route row and the reference rows; recorded that the six pre-existing projection cases in
+  the same file still pass only because of the per-commit blob fallback. Verification metadata
+  remains closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
   CCR-R12@v5 transaction-only route now also proves the memory attribution — the new
   `_assert_memory_attribution` reader checks the memory-content commit's `%B`, the exactly-one

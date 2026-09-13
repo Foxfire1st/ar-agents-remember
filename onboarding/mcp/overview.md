@@ -6,8 +6,8 @@
 | sourceRoute            | `mcp/`                                     |
 | doc_type               | `route-local-overview`                     |
 | lastUpdated | 2026-09-10T06:03:57+00:00|
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1148,7 +1148,62 @@ suites are only an explicit developer request. Quality and memory tools remain a
 preparation or diagnostic routes, and retained certification models/documentation are historical or
 explicit evidence rather than a normal closeout prerequisite.
 
+## 260913-LCA-L2 Ledger Attribution Reader In The Kernel
+
+The package's ledger plane gained its second kernel authority, and the two are deliberately separate.
+`kernel/memory_ledger.py` still owns the ledger **format** — parse, validate, serialize, prepend. The
+new [kernel/memory_attribution.py](src/agents_remember/kernel/memory_attribution.py.md) owns the
+ledger's **attribution**: it reads the `Code-Commit:` trailer each memory-content commit carries back
+out of the history (`attributed_commits` walks the whole ancestry from a given commit,
+`ledger_rows_from_attribution` turns each trailer into one row, `parse_code_commit_trailer` is the
+message-level reader) and it declares the one `git cat-file -e <commit>^{commit}` object test.
+`worktrees/ledger_projection` imports both: its `code_commit_exists` is now a delegation, and its
+`read_ledger_source` projects the complete source ledger from the attribution instead of reading the
+blob at `commit:memory.md`, with a per-commit fallback to that commit's own blob for the pre-trailer
+history. The reader change is documented on the
+[worktrees route](src/agents_remember/worktrees/overview.md).
+
+Two boundaries belong on this route because they are package-level. The trailer is inside the hashed
+commit object, so an attribution cannot be added or altered after the fact — `git notes` was rejected
+for exactly that reason, and that is what makes the attribution evidence rather than a claim. And the
+tracked ledger commit is **not** retired: `memory.md` is still written, committed and proved by the
+closeout family, and retiring that tracked form across closeout, direct landing, queue recovery,
+series closeout, integration and sync is a separate leaf of the same master.
+
+The key is declared once, here in the kernel, and the model imports it. The first version of this
+change set left two literals — one in this module and one in `models/closeout/input.py`, which
+declared its own `CODE_COMMIT_TRAILER_KEY = "Code-Commit"` while claiming to import it — and that
+shape fails silently, because a writer emitting trailers the reader ignores looks like "no attribution
+exists" rather than like a bug. The model now imports the constant (`input.py:9`), so
+`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit, this module's declaration, and
+every other occurrence is prose. The direction is the one `layers.toml` permits rather than a
+preference: `order = [errors, kernel, models, ...]` with "a module in package P may import package Q
+only when rank(Q) < rank(P)" means a kernel module importing a model would import upward, and a grep
+over `mcp/src/agents_remember/kernel/` finds zero imports of `agents_remember.models`. The round trip
+is guarded by a case that renders through the real writer, commits the message and reads the code
+commit back out through the real reader.
+
 ## Update History
+- 2026-09-13T23:23+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the measured
+  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
+  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
+  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
+  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
+  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
+  that a case now round-trips the real writer's rendered message through a real commit and the real
+  reader. The entry below stands as the record of what was true when it was written. Verification
+  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
+- 2026-09-13T23:11+02:00 — 260913-LCA-L2 route impact (uncommitted change set on
+  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
+  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
+  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
+  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
+  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
+  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
+  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
+  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
+  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
+  verification stamp advanced.
 - 2026-09-13T19:02+02:00 — 260831-LOCR-L37 route impact: the advertised MCP surface gained one tool,
   `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
   `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and

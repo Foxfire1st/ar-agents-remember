@@ -6,8 +6,8 @@
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `1ddf7fdac40fa3e9c30b8ded693d440e07d6a8b6` |
-| lastVerifiedCommitDate | 2026-09-13T22:07:53+02:00|
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -1143,10 +1143,18 @@ refuses a leaf and a master that took a checkpoint landing can still admit the n
 
 A closeout's memory content is now attributed inside the commit object rather than only beside it in
 the tracked ledger table. `EffectiveCloseoutInput.memory_content_message(code_commit)`
-(`models/closeout/input.py`, with `CODE_COMMIT_TRAILER_KEY = "Code-Commit"`) returns the closeout's own
+(`models/closeout/input.py`) returns the closeout's own
 message verbatim and appends the trailer as its own final paragraph, so
 `git interpret-trailers --parse` and `git log --format='%(trailers:key=Code-Commit)'` both read it as
 data and `Code-Commit: <sha>` names the code commit that same closeout landed.
+
+The key itself is declared once, and not here: since 260913-LCA-L2 it lives in
+`kernel/memory_attribution.py` — the module that reads the trailer back out of the history — and
+`models/closeout/input.py` imports it (`input.py:9`). The direction is fixed by `layers.toml`
+(`kernel` ranks below `models`, so a kernel module importing a model would import upward), and
+`grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit. The writer and the reader
+therefore cannot drift into two literals, which is the failure this section's whole design is about:
+a writer whose key the reader does not parse looks like "no attribution exists" rather than like a bug.
 
 That is the one definition, and both sanctioned routes render through it: this route's
 `_commit_memory_content` (`closeout_external.py`, handed `code_commit=change.commit` by
@@ -1168,6 +1176,15 @@ second trailered commit for one code commit would project a duplicate row. Absen
 not a legacy state to tolerate.
 
 ## Update History
+- 2026-09-13T23:22+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`): corrected
+  the ownership sentence in the attribution section above, which placed
+  `CODE_COMMIT_TRAILER_KEY = "Code-Commit"` in `models/closeout/input.py`. The key is declared once in
+  `kernel/memory_attribution.py` (the reader) and imported by that model (`input.py:9`), so
+  `grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit; the direction is the one
+  `layers.toml` permits, since `kernel` ranks below `models`. The render path, the two routes and the
+  `memory.md`-only ledger exclusion this section documents are unchanged. The entry below stands as
+  the record of what was true when L1 wrote it. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 - 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded
   that the memory-content commit closeout creates is now attributed inside the object — exactly one
   `Code-Commit: <sha>` trailer naming the code commit that same closeout landed, rendered by the single

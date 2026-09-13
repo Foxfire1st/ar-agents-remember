@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/src/agents_remember/worktrees/ledger_projection.py` |
 | doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T17:35+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
+| lastUpdated | 2026-09-13T23:07+02:00 |
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -27,6 +27,14 @@ the integration-side check already enforced: the complete source ledger as the t
 source order, the branch's own true mappings ahead of that tail newest-first, and a header naming
 the projection's first row.
 
+Since 260913-LCA-L2 the **source** half of that is itself derived: the complete source ledger is the
+memory commits' own `Code-Commit:` trailers, read back through
+`kernel/memory_attribution.py::attributed_commits`, rather than the blob at `commit:memory.md`. A
+commit written before the trailer rule carries no trailer, so *that commit alone* is read from its
+own ledger blob — a reading rule scoped to the commit being read, not a caller-selected mode, and
+the backfill retires it without touching a caller. The tracked ledger commit is **not** retired by
+that change: `memory.md` is still written, committed and proved by the closeout family.
+
 Nothing here reads or writes onboarding prose. The projection owns the mapping table and its
 header alone.
 
@@ -36,21 +44,21 @@ header alone.
 
 A mapping the branch claims is *true* only when the code repository really holds its code commit
 and its memory commit is reachable from the memory state the ledger is written for.
-`_own_row_candidates` cit:([`_own_row_candidates`], mcp/src/agents_remember/worktrees/ledger_projection.py:499-518) keeps the source rows and the branch's own
-candidates, `_untrue_reason` cit:([`_untrue_reason`], mcp/src/agents_remember/worktrees/ledger_projection.py:536-543) names `code-commit-missing` or
-`memory-commit-unreachable` for each dropped row, and `_newest_first` cit:([`_newest_first`], mcp/src/agents_remember/worktrees/ledger_projection.py:544-564) orders the branch's
+`_own_row_candidates` cit:([`_own_row_candidates`], mcp/src/agents_remember/worktrees/ledger_projection.py:562-579) keeps the source rows and the branch's own
+candidates, `_untrue_reason` cit:([`_untrue_reason`], mcp/src/agents_remember/worktrees/ledger_projection.py:599-604) names `code-commit-missing` or
+`memory-commit-unreachable` for each dropped row, and `_newest_first` cit:([`_newest_first`], mcp/src/agents_remember/worktrees/ledger_projection.py:607-625) orders the branch's
 own true rows ahead of the source tail. Untrue rows are dropped (that is how a superseded row
 leaves the table), duplicated source rows are collapsed, and a table whose tail is not the source
 is reordered. Only an input that cannot be read at all refuses, and each refusal names its remedy.
 
-`project_ledger` cit:([`project_ledger`], mcp/src/agents_remember/worktrees/ledger_projection.py:437-498) assembles the result;
-`LedgerProjection` cit:([`LedgerProjection`], mcp/src/agents_remember/worktrees/ledger_projection.py:122-242) carries the source, the observed rows and bytes, the projected
+`project_ledger` cit:([`project_ledger`], mcp/src/agents_remember/worktrees/ledger_projection.py:500-559) assembles the result;
+`LedgerProjection` cit:([`LedgerProjection`], mcp/src/agents_remember/worktrees/ledger_projection.py:130-248) carries the source, the observed rows and bytes, the projected
 table, and the difference between them. Three questions are answered separately, because they are
 different claims:
 
-- `is_fixed_point` cit:([`is_fixed_point`], mcp/src/agents_remember/worktrees/ledger_projection.py:142-150) — is the observed table already *its own* projection, rows and
+- `is_fixed_point` cit:([`is_fixed_point`], mcp/src/agents_remember/worktrees/ledger_projection.py:150-158) — is the observed table already *its own* projection, rows and
   header, semantically rather than byte-exact?
-- `is_interleaved_projection` cit:([`is_interleaved_projection`], mcp/src/agents_remember/worktrees/ledger_projection.py:153-183) — is it that projection with the branch's own rows
+- `is_interleaved_projection` cit:([`is_interleaved_projection`], mcp/src/agents_remember/worktrees/ledger_projection.py:161-191) — is it that projection with the branch's own rows
   placed elsewhere? A master's ledger does not arrive the way a leaf's does: a leaf's closeout
   *writes* the table, while a master's line accumulates one closeout per leaf and can absorb its
   own source through a merge, so a union merge can interleave the two sides' rows instead of
@@ -58,16 +66,16 @@ different claims:
   duplicated or untrue, source rows still in source order — and leaves only placement to the
   merge. Order is not otherwise free, because a reader resolves a code commit to the FIRST row
   naming it, so the accepted table must resolve every code commit the way the projection does.
-- `needs_write` cit:([`needs_write`], mcp/src/agents_remember/worktrees/ledger_projection.py:196-204) — are the bytes on disk not the canonical rendering? The closeout
+- `needs_write` cit:([`needs_write`], mcp/src/agents_remember/worktrees/ledger_projection.py:204-212) — are the bytes on disk not the canonical rendering? The closeout
   writer is the one caller that must decide whether to touch the file at all, and a table already
   correct stays byte-identical and produces no ledger commit.
 
-`operator_payload` cit:([`operator_payload`], mcp/src/agents_remember/worktrees/ledger_projection.py:206-227) renders what recomputation changed in row terms —
+`operator_payload` cit:([`operator_payload`], mcp/src/agents_remember/worktrees/ledger_projection.py:214-235) renders what recomputation changed in row terms —
 `rowsAdded`, `rowsRemoved`, `rowsReordered`, `removedReasons`, the header before/after and the
 row counts — bounding the row lists at `_PAYLOAD_ROW_LIMIT` so a pathological ledger cannot
 inflate a tool response.
 
-`observed_ledger_state` cit:([`observed_ledger_state`], mcp/src/agents_remember/worktrees/ledger_projection.py:405-435) is the one place that decides **which bytes are observed and which
+`observed_ledger_state` cit:([`observed_ledger_state`], mcp/src/agents_remember/worktrees/ledger_projection.py:468-497) is the one place that decides **which bytes are observed and which
 memory state the rows must be true against**, and it answers for both contract shapes. A leaf
 writes its ledger inside its own memory worktree, so the file on disk is the observed table and
 `head_commit(memory_worktree)` is the reachable state. A series owns no memory worktree at all,
@@ -77,21 +85,49 @@ state: the tip is the artifact its closeout records and its integration lands. R
 file for a series is not an option — there is none — and reading a stale one would be worse,
 because the evidence would describe a table the contract no longer names.
 
-`contract_ledger_projection` cit:([`contract_ledger_projection`], mcp/src/agents_remember/worktrees/ledger_projection.py:372-404) builds the one projection for a live external-memory
-contract: the source rows come from `read_ledger_source` cit:([`read_ledger_source`], mcp/src/agents_remember/worktrees/ledger_projection.py:271-301) at
-`resolve_memory_source_commit` cit:([`resolve_memory_source_commit`], mcp/src/agents_remember/worktrees/ledger_projection.py:243-270), the observed table and reachable state from
-`observed_ledger_state`, and row truth from `code_commit_exists` cit:([`code_commit_exists`], mcp/src/agents_remember/worktrees/ledger_projection.py:341-346) plus `is_ancestor`. A
-memory source that resolves but carries no ledger yet (the bootstrap state) contributes no rows
-instead of refusing. `read_ledger_text` cit:([`read_ledger_text`], mcp/src/agents_remember/worktrees/ledger_projection.py:325-340) deliberately uses the
+**The source ledger is now projected from the commits' own attribution, not read from a blob.**
+`read_ledger_source` cit:([`read_ledger_source`], mcp/src/agents_remember/worktrees/ledger_projection.py:279-311) asks
+`kernel/memory_attribution.attributed_commits` for the commits reachable from the exact commit it
+was given, turns them into rows with `ledger_rows_from_attribution`, and returns those rows as the
+complete source ledger as soon as there is at least one
+(`_source_ledger_with_rows` cit:([`_source_ledger_with_rows`], mcp/src/agents_remember/worktrees/ledger_projection.py:344-362)). Only when the whole
+walk attributes nothing does it read **that commit's own** ledger blob
+(`_source_ledger_from_blob` cit:([`_source_ledger_from_blob`], mcp/src/agents_remember/worktrees/ledger_projection.py:314-341)), which is the
+pre-trailer history's only record of its own mappings. The fallback is a property of the commit
+being read rather than a caller-selected mode — there is no flag, no second reader and no
+per-caller switch — and the history-wide backfill retires it by writing the trailer onto those
+commits, after which there is nothing left for it to find. Two inputs still refuse: a history the
+attribution module cannot walk (its error is converted into a `LedgerProjectionRefusal` carrying
+`_SOURCE_REMEDY`), and — on the fallback path — a blob that exists and cannot be parsed.
+`_source_ledger_with_rows` supplies
+**rows only**; the metadata fields are left empty because no trailer records them, and
+`project_ledger` recomputes the header from row one while keeping the observed table's own
+`repoName` and base fields, which is the one promise `validate_ledger` makes about a header.
+
+Two consequences are load-bearing. The projection's trailing rows are now the *mapping the history
+carries* rather than the bytes a previous round wrote down, so a hand edit to the table cannot move
+them. And the fallback is not decorative on the real repository: at tip `5e4899ea` **0 of the 958
+reachable memory commits carry the trailer**, so the projection there returns the tracked table's
+476 rows through the per-commit blob path, which is the same bytes and the same parser the direct
+comparison would use. The attribution path is what the fixture cases drive, and making the real
+history carry it is a separate leaf.
+
+`contract_ledger_projection` cit:([`contract_ledger_projection`], mcp/src/agents_remember/worktrees/ledger_projection.py:435-465) builds the one projection for a live external-memory
+contract: the source rows come from `read_ledger_source` at
+`resolve_memory_source_commit` cit:([`resolve_memory_source_commit`], mcp/src/agents_remember/worktrees/ledger_projection.py:251-276), the observed table and reachable state from
+`observed_ledger_state`, and row truth from `code_commit_exists` cit:([`code_commit_exists`], mcp/src/agents_remember/worktrees/ledger_projection.py:404-407) — which now
+delegates to the attribution module's single `cat-file -e` definition instead of repeating it —
+plus `is_ancestor`. A memory source that resolves but carries no ledger yet (the bootstrap state)
+contributes no rows instead of refusing. `read_ledger_text` cit:([`read_ledger_text`], mcp/src/agents_remember/worktrees/ledger_projection.py:388-401) deliberately uses the
 **unvalidated** parse, because a header disagreeing with its own first row is one of the shapes
-the repair exists to fix; structural damage still refuses. `inspect_ledger_projection` cit:([`inspect_ledger_projection`], mcp/src/agents_remember/worktrees/ledger_projection.py:347-371)
+the repair exists to fix; structural damage still refuses. `inspect_ledger_projection` cit:([`inspect_ledger_projection`], mcp/src/agents_remember/worktrees/ledger_projection.py:410-432)
 reports diverged/already-correct evidence for the re-run and recovery paths without writing, and
 **never raises**, because it is evidence about a completed step rather than a new gate on it.
 
 ### Conventions
 
 A `@dataclass(frozen=True)` result family — `LedgerSource`, `LedgerWorld`, `LedgerRowRemoval`,
-`LedgerProjection` — over plain functions, with `LEDGER_RELATIVE_PATH = "memory.md"` cit:([`LEDGER_RELATIVE_PATH`], mcp/src/agents_remember/worktrees/ledger_projection.py:52-52)
+`LedgerProjection` — over plain functions, with `LEDGER_RELATIVE_PATH = "memory.md"` cit:([`LEDGER_RELATIVE_PATH`], mcp/src/agents_remember/worktrees/ledger_projection.py:60-60)
 as the single declaration of the ledger's path, shared with `series_closeout.py`. Every refusal
 is a `LedgerProjectionRefusal` carrying a named remedy: `_REPAIR_REMEDY` for a malformed observed
 table (re-run `worktree_closeout_apply`, which recomputes it) and `_SOURCE_REMEDY` for a missing
@@ -105,6 +141,16 @@ or unreadable source. Refusal codes are the validator's vocabulary (`code-commit
 - **The source is the contract's memory source commit, resolved once.** The projection and the
   integration-side check measure one world; a source that resolves but has no ledger is empty,
   never an error.
+- **The source ledger is the attributed history, not the blob.** `read_ledger_source` returns the
+  rows the reachable memory commits' `Code-Commit:` trailers name, in the walk's own order; the
+  table the source carried is no longer what the projection calls the source. A source whose whole
+  walk attributes nothing is read from that commit's own blob, which is the pre-trailer history's
+  only record — a reading rule scoped to the commit being read, retired by the history-wide
+  backfill, with no caller-visible mode and no second reader.
+- **The tracked ledger commit is not retired here.** `memory.md` is still written, committed and
+  proved by the closeout family and the ledger leg still exists across closeout, direct landing,
+  queue recovery, series closeout, integration and sync. This module changed where the *source* is
+  read from, nothing else.
 - **Row truth is proved against the repository, not the table.** A claimed code commit must exist
   and its memory content must be reachable from the state the ledger is written for.
 - **A series reads its ledger from its memory work-branch tip.** There is no series memory
@@ -132,12 +178,16 @@ here is about this repository's own ledger projection and is proved by the retai
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The projection's deterministic form: source tail in source order, own true rows ahead of it newest-first, header naming the first row. | `project_ledger`; `read_ledger_source`; `resolve_memory_source_commit` | mcp/src/agents_remember/worktrees/ledger_projection.py:437-498; mcp/src/agents_remember/worktrees/ledger_projection.py:271-301; mcp/src/agents_remember/worktrees/ledger_projection.py:243-270 |
-| The projection result and its three separate acceptance questions. | `LedgerProjection`; `is_fixed_point`; `is_interleaved_projection`; `needs_write` | mcp/src/agents_remember/worktrees/ledger_projection.py:122-242; mcp/src/agents_remember/worktrees/ledger_projection.py:142-150; mcp/src/agents_remember/worktrees/ledger_projection.py:153-183; mcp/src/agents_remember/worktrees/ledger_projection.py:196-204 |
-| Which bytes are observed and which memory state the rows must be true against, for a leaf and for a series. | `observed_ledger_state` | mcp/src/agents_remember/worktrees/ledger_projection.py:405-435 |
-| The one live-contract projection: world facts in, difference out, with the unvalidated observed parse. | `contract_ledger_projection`; `read_ledger_text`; `code_commit_exists` | mcp/src/agents_remember/worktrees/ledger_projection.py:372-404; mcp/src/agents_remember/worktrees/ledger_projection.py:325-340; mcp/src/agents_remember/worktrees/ledger_projection.py:341-346 |
-| Read-only divergence evidence for the re-run and recovery paths, which reports instead of raising. | `inspect_ledger_projection` | mcp/src/agents_remember/worktrees/ledger_projection.py:347-371 |
-| Row-level truth and the bounded operator report. | `_own_row_candidates`; `_untrue_reason`; `_newest_first`; `operator_payload` | mcp/src/agents_remember/worktrees/ledger_projection.py:499-518; mcp/src/agents_remember/worktrees/ledger_projection.py:536-543; mcp/src/agents_remember/worktrees/ledger_projection.py:544-564; mcp/src/agents_remember/worktrees/ledger_projection.py:206-227 |
+| The projection's deterministic form: source tail in source order, own true rows ahead of it newest-first, header naming the first row. | `project_ledger`; `read_ledger_source`; `resolve_memory_source_commit` | mcp/src/agents_remember/worktrees/ledger_projection.py:500-559; mcp/src/agents_remember/worktrees/ledger_projection.py:279-311; mcp/src/agents_remember/worktrees/ledger_projection.py:251-276 |
+| The source ledger is projected from the memory commits' own attribution; the ledger blob is read only for a commit whose whole walk attributes nothing. | `read_ledger_source`; `_source_ledger_with_rows`; `_source_ledger_from_blob` | mcp/src/agents_remember/worktrees/ledger_projection.py:279-311; mcp/src/agents_remember/worktrees/ledger_projection.py:344-362; mcp/src/agents_remember/worktrees/ledger_projection.py:314-341 |
+| The attribution reader itself: the full-ancestry traverse, the one-row-per-trailer map, and the code-commit truth test. | `attributed_commits`; `ledger_rows_from_attribution`; `MemoryAttributionError` | mcp/src/agents_remember/kernel/memory_attribution.py:113-144; mcp/src/agents_remember/kernel/memory_attribution.py:178-197; mcp/src/agents_remember/kernel/memory_attribution.py:65-66 |
+| The projection result and its three separate acceptance questions. | `LedgerProjection`; `is_fixed_point`; `is_interleaved_projection`; `needs_write` | mcp/src/agents_remember/worktrees/ledger_projection.py:130-248; mcp/src/agents_remember/worktrees/ledger_projection.py:150-158; mcp/src/agents_remember/worktrees/ledger_projection.py:161-191; mcp/src/agents_remember/worktrees/ledger_projection.py:204-212 |
+| Which bytes are observed and which memory state the rows must be true against, for a leaf and for a series. | `observed_ledger_state` | mcp/src/agents_remember/worktrees/ledger_projection.py:468-497 |
+| The one live-contract projection: world facts in, difference out, with the unvalidated observed parse. | `contract_ledger_projection`; `read_ledger_text`; `code_commit_exists` | mcp/src/agents_remember/worktrees/ledger_projection.py:435-465; mcp/src/agents_remember/worktrees/ledger_projection.py:388-401; mcp/src/agents_remember/worktrees/ledger_projection.py:404-407 |
+| The single `cat-file -e` object test this module's `code_commit_exists` now delegates to. | `code_commit_exists` | mcp/src/agents_remember/kernel/memory_attribution.py:172-175 |
+| Read-only divergence evidence for the re-run and recovery paths, which reports instead of raising. | `inspect_ledger_projection` | mcp/src/agents_remember/worktrees/ledger_projection.py:410-432 |
+| Row-level truth and the bounded operator report. | `_own_row_candidates`; `_untrue_reason`; `_newest_first`; `operator_payload` | mcp/src/agents_remember/worktrees/ledger_projection.py:562-579; mcp/src/agents_remember/worktrees/ledger_projection.py:599-604; mcp/src/agents_remember/worktrees/ledger_projection.py:607-625; mcp/src/agents_remember/worktrees/ledger_projection.py:214-235 |
+| The checked-out-history reader also serves a test fixture that writes no trailers, which is why the per-commit blob fallback cannot be removed without losing rows there. | `read_ledger_source` | mcp/tests/test_checkpoint_landing_end_to_end.py:521-521; mcp/tests/test_memory_ledger.py:116-116 |
 | The leaf ledger-commit leg passes this closeout's own new row as an addition and writes only when the bytes must change. | "repair = contract_ledger_projection(contract, additions)" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:202-243 |
 | The series reader consumes the observed state directly (its reconciled-prefix census) and requires the landed table to be this projection. | "ledger_text, _tip = observed_ledger_state(series)"; "projection = contract_ledger_projection(contract)" | mcp/src/agents_remember/worktrees/series_closeout.py:573-591; mcp/src/agents_remember/worktrees/series_closeout.py:914-930 |
 | The checkpoint landing accepts an interleaved projection, the weaker question reserved for a union-merged ledger. | `is_interleaved_projection` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:409-412 |
@@ -151,9 +201,23 @@ contract; no sibling repository or external system is reached by any other route
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The memory repository and ledger path are the contract's, never an ambient checkout. | `contract_ledger_projection`; `observed_ledger_state` | mcp/src/agents_remember/worktrees/ledger_projection.py:372-404; mcp/src/agents_remember/worktrees/ledger_projection.py:405-435 |
+| The memory repository and ledger path are the contract's, never an ambient checkout. | `contract_ledger_projection`; `observed_ledger_state` | mcp/src/agents_remember/worktrees/ledger_projection.py:435-465; mcp/src/agents_remember/worktrees/ledger_projection.py:468-497 |
 
 ## Update History
+
+- 2026-09-13T23:07+02:00 — 260913-LCA-L2 curator (uncommitted change set on `ar/260913-lca-l2-ar`):
+  corrected the claim that the source ledger is read from the tracked `memory.md` blob.
+  `read_ledger_source` now projects the complete source ledger from the memory commits' own
+  `Code-Commit:` trailers via `kernel/memory_attribution.py`, and reads **that commit's own** blob
+  only when the whole walk attributes nothing (the pre-trailer history), a reading rule scoped to
+  the commit being read rather than a caller-selected mode. Recorded the new helpers
+  (`_source_ledger_with_rows`, `_source_ledger_from_blob`), the delegation of `code_commit_exists`
+  to the attribution module's single `cat-file -e` definition, the measured real-repository state
+  (0 of 958 reachable memory commits carry the trailer at tip `5e4899ea`, so the 476 rows the
+  projection returns there come through the fallback), and the boundary the changed claim moved:
+  the tracked ledger commit is **not** retired by this change. Repointed every citation in this
+  card to its current range in the grown module. Verification metadata remains closeout-owned; no
+  acceptance claim and no verification stamp advanced.
 
 - 2026-09-13T17:35+02:00 — 260831-LOCR-L36 curator: created the one-to-one sidecar for this
   module. Documents the deterministic projection and its developer-ruling origin, the three

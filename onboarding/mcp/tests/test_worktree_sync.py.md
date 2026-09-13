@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/tests/test_worktree_sync.py`          |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`                         |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
+| lastUpdated | 2026-09-13T23:09+02:00 |
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd`                         |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -16,20 +16,41 @@
 
 ## Purpose
 
-Exercises real code/external-memory synchronization: a pure fast-forward advances both sides and contract, a code merge conflict stays recoverable and can continue, and a nonregular journal is renamed/quarantined without following it. Recovery uses the exact contract and ledger pair, not an inferred ambient checkout.
+Exercises real code/external-memory synchronization: a pure fast-forward advances both sides and contract, a code merge conflict stays recoverable and can continue, a code tip the official memory line does not map refuses **by name** and succeeds once the pair is completed, and a nonregular journal is renamed/quarantined without following it. Recovery uses the exact contract and ledger pair, not an inferred ambient checkout.
 
 ## Code Commentary
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+The retained cases drive the public `sync_result` over `SyncFixture`, one live code/memory worktree
+pair per case. `move_official_code` cit:([`move_official_code`], mcp/tests/test_worktree_sync.py:97-99) advances the official
+code line and `map_official_memory` cit:([`map_official_memory`], mcp/tests/test_worktree_sync.py:101-110) lands an official memory
+content commit plus a ledger row mapping a given code tip, which is how a case builds either half of
+the official pair.
+
+The mid-cycle case
+cit:([`test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`], mcp/tests/test_worktree_sync.py:176-204) advances only
+the code line and asserts the refusal end to end: return code 2, state `blocked`, the summary
+containing `official line is mid-cycle`, and the work branch's HEAD **not** advanced to the admitted
+tip — then maps the tip into the official memory ledger and asserts the same call returns `synced`
+with the work branch at that tip. The refusal itself is produced by
+`sync_transaction_authority.preflight_official_pair`
+cit:([`preflight_official_pair`], mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158), which reads the
+official memory ledger blob at the named ref and resolves the code tip with `find_mapping`; that is
+the named-ref read path, and this leaf's change to the *source*-ledger reader does not touch it. The
+case is the suite's first coverage of the refusal at all, and it is the regression guard that the
+source-reader change left the detection where it was.
+
+The source-listed behavior below is the current evidence boundary. Earlier coverage claims in history
+describe prior populations and must not be used to recreate removed tests or claim they still run.
+The retained behavior and its fixture limits govern this card.
 
 ### Conventions
 
 The table lists retained test definitions, not collected parametrized or subtest counts.
 Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+The module is registered in the `integration` evidence lane (`mcp/tests/test-evidence-lanes.toml`);
+a lane registration says where the module executes, not that any case in it has run.
 
 ### Invariants And Boundaries
 
@@ -60,7 +81,10 @@ to removed methods are superseded by this current inventory.
 | --- | --- | --- |
 | Pure fast forward sync advances both sides and contract | `test_pure_fast_forward_sync_advances_both_sides_and_contract` | mcp/tests/test_worktree_sync.py:117-137 |
 | Code merge conflict is retained and can continue | `test_code_merge_conflict_is_retained_and_can_continue` | mcp/tests/test_worktree_sync.py:139-174 |
-| Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:176-195 |
+| A code tip the official memory line does not map refuses by name, leaves the work branch where it was, and succeeds once the pair is completed | `test_a_code_tip_with_no_attributing_memory_commit_refuses_by_name`; `move_official_code`; `map_official_memory` | mcp/tests/test_worktree_sync.py:176-204; mcp/tests/test_worktree_sync.py:97-99; mcp/tests/test_worktree_sync.py:101-110 |
+| The refusal this case guards is the named-ref ledger read, not the projected source ledger | `preflight_official_pair`; `find_mapping` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:126-158; mcp/src/agents_remember/kernel/memory_ledger.py:255-257 |
+| Nonregular journal is renamed without following and quarantined | `test_nonregular_journal_is_renamed_without_following_and_quarantined` | mcp/tests/test_worktree_sync.py:206-225 |
+| The evidence lane the module executes in, which is where it runs rather than proof that it ran. | "mcp/tests/test_worktree_sync.py" | mcp/tests/test-evidence-lanes.toml:182-182 |
 
 ## Cross-Repo References
 
@@ -71,6 +95,17 @@ This card establishes test behavior, not a separate cross-repository protocol or
 | No external evidence is needed for these assertions. | N/A | N/A |
 
 ## Update History
+
+- 2026-09-13T23:09+02:00 — 260913-LCA-L2 curator (uncommitted change set on `ar/260913-lca-l2-ar`):
+  recorded the added mid-cycle case — a code tip the official memory line does not map refuses with
+  `official line is mid-cycle`, leaves the work branch at its pre-sync head, and syncs once the pair
+  is completed — together with the two fixture helpers it drives and the boundary that the refusal
+  comes from `sync_transaction_authority.preflight_official_pair`'s named-ref ledger read rather
+  than from the source-ledger reader this leaf changed. Repointed the stale citation for
+  `test_nonregular_journal_is_renamed_without_following_and_quarantined` (176-195 → 206-225) after
+  the insertion shifted it, and recorded the module's `integration` lane registration with the
+  statement that registration is not execution evidence. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
 
 - 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
 

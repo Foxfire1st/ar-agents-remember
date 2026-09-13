@@ -6,8 +6,8 @@
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
 | lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
+| lastVerifiedCommitHash | `5bb124d43ea7b234edd570cf3995521e708714bd` |
+| lastVerifiedCommitDate | 2026-09-13T23:22:52+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -191,6 +191,10 @@ memory-carryover vehicle.
   selection/cancellation paths.
 - External-memory ledgers are newest-first state history. Sync preserves every exact parent row and
   accepts repeated code commits; the newest matching row remains current authority.
+- **The source ledger is the attributed history, not the tracked table (260913-LCA-L2).** The
+  projection's trailing rows are the reachable memory commits' own `Code-Commit:` trailers, read
+  through `kernel/memory_attribution.py`; the tracked ledger commit, every named-ref reader of it and
+  the ledger commit leg itself are unchanged, and retiring that tracked form is a separate leaf.
 - Cleanup may release only an exact selected terminal contract and must do so before deleting the
   canonical contract pointer needed to prove identity.
 - **The stop is not a publication (260831-LOCR-L37), and a master is not sealed by its own landing
@@ -547,7 +551,75 @@ regression: no single-boundary case could have seen it, because every operation 
 own. Leaf start and closeout use the fixture's structural equivalents, which the module docstring
 states; the master-level beats are the registered tools.
 
+## Route Impact: The Ledger's Source Is The Attribution (260913-LCA-L2)
+
+`ledger_projection.read_ledger_source` no longer reads the complete source ledger out of the blob at
+`commit:memory.md`. It projects it from the memory commits' own attribution: the new kernel module
+`mcp/src/agents_remember/kernel/memory_attribution.py` walks the whole ancestry from the exact source
+commit it is given, turns every `Code-Commit:` trailer into one row, and the projection takes those
+rows as its trailing tail. A commit written before the trailer rule carries no trailer, so **that
+commit alone** is read from its own ledger blob — a reading rule scoped to the commit being read,
+not a caller-selected mode: there is no flag, no second reader and no per-caller switch, and the
+history-wide backfill retires it by writing the trailer onto those commits. A source that resolves
+and carries neither contributes no rows, which is the bootstrap state the ledger-creation paths
+start from; a history that cannot be walked and a blob that exists and cannot be parsed both still
+refuse with their remedy. `ledger_projection.code_commit_exists` is now a delegation to the
+attribution module's single `cat-file -e` definition rather than a second copy of that test.
+
+**The walk is the whole ancestry because a memory line merges.** Measured on the real memory
+repository at tip `5e4899ea` with `git merge-base --is-ancestor` (the projection's own truth test,
+which resolves object names): the tracked table's 476 rows name 442 memory commits on the tip's
+first-parent line and 34 that are not on it, and 21 of those 34 are still ancestors of the tip — so
+a first-parent-only walk would silently drop 21 mappings the full walk reaches, which is the
+"partial coverage looks like a gap" failure the trailer rule exists to prevent. 463 of the 476 rows
+name an ancestor in total (the 442 on the line plus the 21 off it), and the remaining 13 name a
+memory commit that is not an ancestor at all; those cannot appear in the projection by its own rules,
+which is "a row the history does not carry is not a row" rather than something a hand edit fixes. The
+older figures in the module's own docstring — 35 rows off the line, 441 on it, 462 reachable, 14 not —
+came from comparing the table's written cells against `git rev-list` output as TEXT; the whole
+difference is the table's single truncated memory-commit cell (`684c33b2`), which resolves to a real
+ancestor on the first-parent line but never matches a full object name as text.
+
+**What did not change, and must not be described as changed.** The tracked ledger commit is **not**
+retired. `memory.md` is still written, committed and proved by this route's closeout family, its
+ledger leg is still one of a closeout's three commit legs, and the named-ref readers on this route —
+`sync_transaction_authority`, `series_closeout`, `integration_ref_transaction`,
+`organizational_completion`, the queue's `closeout_recovery`, and the closeout preparation's
+`memory_output` and `finalization` — still read, inject and validate the ledger blob exactly as
+before. The ledger commit's tree is built by **injecting the ledger blob as an index entry**
+(`preparation/memory_output.py::_ledger_tree` runs
+`update-index --add --cacheinfo 100644,<blob>,memory.md` against a temporary index and writes the
+tree) rather than by writing a file
+someone edits, which is why the tracked form is a commit shape: retiring it means retiring the
+ledger-commit leg across worktree closeout, direct landing, queue recovery, series closeout,
+integration and sync, and that is a separate leaf of this master, deliberately not half-landed here.
+
+**On the real repository the per-commit fallback is the live path.** At `5e4899ea`, 0 of the 958
+reachable memory commits carry the trailer, so the 476 rows the projection returns there are the
+ones the per-commit blob read yields — the same bytes and the same parser the direct comparison
+would use. The attribution path itself is proved by `mcp/tests/test_memory_ledger.py`'s attributed
+fixture line, and making the real history carry it is the master's backfill leaf.
+
 ## Update History
+- 2026-09-13T23:26+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): corrected the
+  ancestry census in the route-impact section below to name its method and carry the full figures —
+  `git merge-base --is-ancestor` at tip `5e4899ea` gives 442 rows on the first-parent line, 34 off it,
+  21 of those 34 still ancestors, 463 rows naming an ancestor in total and 13 naming none — and
+  stated that the module docstring's older 35/441/462/14 figures came from comparing the table's
+  written cells against `git rev-list` output as text, the whole difference being the table's single
+  truncated memory-commit cell `684c33b2`. No claim about the projection, the fallback or the
+  unretired ledger commit changed. Verification metadata remains closeout-owned; no acceptance claim
+  and no verification stamp advanced.
+- 2026-09-13T23:10+02:00 — 260913-LCA-L2 curator (uncommitted change set on `ar/260913-lca-l2-ar`):
+  recorded that this route's source-ledger reader now projects the complete source ledger from the
+  memory commits' own `Code-Commit:` attribution through the new `kernel/memory_attribution.py`,
+  with the per-commit blob read kept only for a commit whose whole walk attributes nothing; stated
+  the measured reason the walk is the full ancestry (476 rows, 442 on the first-parent line, 34 off
+  it, 21 of those still ancestors, 13 not ancestors at all), the real-repository state that the
+  fallback is the live path at `5e4899ea` (0 of 958 commits trailered), and the boundary the change
+  did not cross — the tracked ledger commit and every named-ref reader of it are unchanged and their
+  retirement is a separate leaf. Added the matching local invariant. Verification metadata remains
+  closeout-owned; no acceptance claim and no verification stamp advanced.
 - 2026-09-13T20:42+02:00 — Recorded the child-admission seal removal and the already-vacant stop on this
   route (uncommitted 260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): the
   deleted `atomic_series_seal.py` and its call sites, the `require_parent_series` rename, the pause's
