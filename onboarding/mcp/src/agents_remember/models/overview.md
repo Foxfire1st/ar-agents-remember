@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
@@ -258,11 +258,11 @@ L14: the task-doc node model exposes the optional `orchestrates` list and the se
 | --- | --- | --- |
 | Public MCP payload builders validate through the response model registry. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
 | The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | `nextAction`; `nextTool`; `nextArgs`; `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-333; mcp/src/agents_remember/models/worktree.py:358-369 |
+| The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:334-340; mcp/src/agents_remember/models/worktree.py:367-376 |
 | The registry maps every modeled builder and the advertised public subset to response models. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:231-235 |
 | Contract tests prove public tool coverage and schema generation. | `PublicToolResponseModelTests`; `test_every_public_tool_has_a_response_model`; `test_every_public_tool_response_model_generates_json_schema` | mcp/tests/test_models.py:16-26 |
-| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:471-471 |
-| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:463-463 |
+| The record-landing envelope is declared on this route. | "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:478-478 |
+| The checkpoint-landing envelope is declared on this route. | "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:470-470 |
 | The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. | "\"worktree_checkpoint_landing\": WorktreeCheckpointLandingResponse,"; "\"worktree_record_landing\": WorktreeRecordLandingResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:189-189; mcp/src/agents_remember/models/tools/tool_registry.py:190-190 |
 | Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. | `CuratorCoherenceRecord`; `CuratorCoherenceAuthority`; `CuratorCoherenceSnapshot`; `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:236-247; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:250-256; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-315 |
 | Operator inbox response models cover post, poll, consume, and hosted-delivery metadata. | `OperatorInboxPostResponse`; `OperatorInboxPollResponse`; `OperatorInboxConsumeResponse` | mcp/src/agents_remember/models/operator_inbox.py:54-79; mcp/src/agents_remember/models/operator_inbox.py:82-89; mcp/src/agents_remember/models/operator_inbox.py:92-98 |
@@ -547,7 +547,7 @@ the coherent lifecycle projection. It introduces no public worker PID or private
 
 | Finding | Anchor | Source |
 | --- | --- | --- |
-| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:397-397 |
+| The read-only wait response exposes outcomes and cursors without private worker authority. | "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" | mcp/src/agents_remember/models/worktree.py:404-404 |
 | Public response registration no longer carries the dedicated wait response: `worktree_status_wait` is absent from `TOOL_RESPONSE_MODELS`, so `WorktreeStatusWaitResponse` stays defined in `models/worktree.py` with no registered tool. | "\"worktree_sync\": WorktreeSyncResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:185-185 |
 
 
@@ -573,6 +573,14 @@ landing envelope is why the registry cannot be checked as a set alone. The two t
 the registry and their payloads differ only in the operation literal, so a swap between them would
 still validate as a set. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` drives one
 `finalize_tool_response` call per name for that reason.
+
+**260831-LOCR-L34** adds `worktree_checkpoint_landing` to the `NextTool` vocabulary
+cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:60-74) — the checkpoint's preview and its
+`integration-ref-race` refusal both emit it, and it is a registered public tool — while deliberately
+leaving `NextOperation` unchanged, because pausing a master is the existing
+`request_integration_decision` intent rather than a lifecycle phase. The reasoning and the
+reviewed-and-not-changed row live on the `models/worktree.py` card; the preview/apply parity invariant
+that produced the repair is inventoried on the `worktrees/overview.md` route.
 
 ## 260831-LOCR-L29 Public-Surface Repair
 
@@ -606,9 +614,9 @@ and the `public_surface` pin all still name the same tuple with no consumer chan
 
 The roster lives here because a model needs to read it. `models/worktree.py::WorktreeCommandResponse`
 now declares `nextAction` / `nextTool` / `nextArgs`
-cit:([`nextAction`, `nextTool`, `nextArgs`], mcp/src/agents_remember/models/worktree.py:331-333) and refuses a `nextTool` outside
+cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:334-340) and refuses a `nextTool` outside
 `PUBLIC_TOOLS` through `_require_registered_public_next_tool`
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:358-369). Before this leaf the
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:367-376). Before this leaf the
 envelope inherited `extra="allow"` and declared none of those keys, so
 `application/worktree_status.py::_project_terminal_contract_status`'s write crossed the wire verbatim
 and unchecked — `worktree_abandon` reached the wire as a `nextTool` without ever being a `NextTool`
@@ -622,6 +630,16 @@ tool; the `task_doc` surface may name the registered-but-non-public `session_ret
 (`TaskDocResponse` is not a `WorktreeCommandResponse`). Do not widen `PUBLIC_TOOLS` to cover it.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded on this route that `NextTool` gained
+  `worktree_checkpoint_landing` while `NextOperation` was deliberately left unchanged (pausing a
+  master is the existing `request_integration_decision` intent, not a phase), and pointed to the
+  `models/worktree.py` card for the reasoning and to the `worktrees/overview.md` route for the
+  preview/apply parity invariant behind the repair. Content change, not a range repoint; verification
+  metadata remains closeout-owned and no acceptance claim is made.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:478-478. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:470-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: "class WorktreeStatusWaitResponse(WorktreeCommandResponse):" repointed to mcp/src/agents_remember/models/worktree.py:404-404. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: added this route's new `tools/public_roster.py`
   leaf (the single `PUBLIC_TOOLS` definition) to the entry-point prose and the reference table, and
   recorded the worktree next-move declarations (`models/worktree.py:331-333`) plus their `PUBLIC_TOOLS`

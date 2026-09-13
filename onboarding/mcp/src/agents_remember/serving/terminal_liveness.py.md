@@ -6,8 +6,8 @@
 | path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
 | doc_type               | `file-level-onboarding`                                  |
 | lastUpdated            | 2026-09-10T09:30+02:00 |
-| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`                                             |
-| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080`                                             |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `overview.md`                                            |
 
 ## Governing Overview
@@ -256,7 +256,7 @@ record.
 | The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:62-66 |
 | The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/models/terminal_catalog.py:486-516; mcp/src/agents_remember/models/terminal_catalog.py:518-551 |
 | The app wiring: one sweeper behind `GET /api/terminal/sessions`, direct observations on WebSocket attach + paste, injected clock. | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
-| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches. | `TerminalCatalogLivenessTests` | mcp/tests/test_terminal_liveness.py:124-345 |
+| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches. | "class TerminalCatalogLivenessTests(unittest.TestCase):" | mcp/tests/test_terminal_liveness.py:127-570 |
 | The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:159-173 |
 | The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:201-203 |
 | `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
@@ -372,6 +372,7 @@ Verified against the uncommitted LOCR-L22 candidate (branch `ar/260831-locr-l22`
 stamps the leaf code commit.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: reconciled the sweeper card with the
   committed-snapshot contention read, the starting-path admission-before-list ordering, and the
   final-only liveness projection; repaired the moved `observe_terminal_liveness`,

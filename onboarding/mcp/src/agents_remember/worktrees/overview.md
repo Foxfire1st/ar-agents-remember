@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview | `../../../overview.md` |
 
 ## Governing Overview
@@ -326,15 +326,16 @@ is reclaimed through `worktree_abandon`.
 
 This route gained the partial-master landing verb, and it is the first way a series' integration refs
 can move without the master being complete. `series_closeout.py::publish_series_checkpoint_under_authority`
-keeps every authority that protects other owners' refs and drops only the two completion assumptions
-the final series route proves; it refuses an already-`Completed` master
+keeps every authority that protects other owners' refs and drops only the completion assumptions the
+final series route proves; it refuses an already-`Completed` master
 (`atomic-series-checkpoint-master-complete`), so a checkpoint can never downgrade a finished
-integration. `modules/integrate.py::checkpoint_landing_result` threads a keyword-only
-`checkpoint` flag through the shared preflight and ref move, and
-`modules/landing_record.py::record_landed_integration` now writes either `checkpointed` (cleanup
-untouched) or `completed` + `cleanup="pending"` from that flag, so the terminal `integration` cell
-still has exactly one writer. The facade re-exports `checkpoint_landing_result`, and the public
-`worktree_checkpoint_landing` tool exposes it.
+integration. **The L30 text below is superseded by the L34 section above**: the `checkpoint` flag it
+describes is now the `CheckpointLanding` value carrying the route's own captured refs, and the
+closeout requirement L30 silently also demanded is now stated and evaluated on the preview too.
+`modules/landing_record.py::record_landed_integration` still writes either `checkpointed` (cleanup
+untouched) or `completed` + `cleanup="pending"` from that route's landing shape, so the terminal
+`integration` cell still has exactly one writer. The facade re-exports `checkpoint_landing_result`,
+and the public `worktree_checkpoint_landing` tool exposes it.
 
 The same leaf widened the series abandon guard: `worktree_abandon` now refuses a master whose
 integration cell records **any** landed line — `completed` or `checkpointed` — because abandoning
@@ -361,7 +362,88 @@ cannot be re-recorded into `completed` + `cleanup="pending"` — the state `work
 Completion still travels through `worktree_integrate`, which reaches it only once the series is
 genuinely terminal.
 
+## Route Impact: Preview/Apply Parity And The Checkpoint Reachability Repair (260831-LOCR-L34)
+
+**The invariant: a preview that plans an operation does not enforce it, and the two surfaces must be
+maintained as one.** A dry run is read as a promise — by a human deciding what to do next and by an
+agent composing the next call — but it is only a *plan*. When the preview and the apply are two
+implementations of the same eligibility decision, the plan can promise an operation the apply will
+refuse, and nothing in the system notices. Six instances were found, **every one of them by
+exercising an operation rather than by reading it**, plus one adjacent shape.
+
+### The instance inventory
+
+| # | Surface | The divergence | Status |
+| --- | --- | --- | --- |
+| 1 | series **closeout** | `closeout_preview_payload` answered `would-closeout` while the apply refused on master completion — 19 blockers on LOCR. This is the original, and it misled a human into writing a false note. | **Fixed** (L34): the gate is `series_closeout.require_closeout_publication_authority`, one definition with two callers. |
+| 2 | `worktree_checkpoint_landing` | preview vs apply eligibility were computed separately. | **Fixed** (L34): both read `checkpoint_landing_eligibility` / `CheckpointLanding`. |
+| 3 | `integration-ref-race` payload | `nextTool` was the hardcoded literal `"worktree_integrate"`, so a checkpoint losing the compare-and-swap told the operator to re-run the **wrong tool**. | **Fixed** (L34): `_publish_integration_edge` takes a required `operation` name threaded from the route. |
+| 4 | the checkpoint's ledger projection | the preview said `would-checkpoint`; the apply refused on the projection. | **Fixed** (L34): `_require_ledger_projection` runs before the dry-run branch. |
+| 5 | the ordinary `worktree_integrate` dry run | it did not evaluate the ledger projection at all. | **Fixed** (L34): the same shared call covers both routes. |
+| 6 | `worktree_start` | its dry run skips `require_current_start_task_binding` and `require_current_leaf_enclosure_binding`. | **Reported, not fixed.** This is deliberately a reservation compare-and-swap, **not safely separable** into a preview-side evaluation; recorded with that reasoning so it is not "fixed" blindly. |
+| 7 | `memory_carryover_plan` / `memory_carryover_apply` | the plan evaluates its own authority while the apply additionally enforces `require_ordinary_repository_checkout` and `ensure_clean`. | **Reported, not fixed.** Outside this leaf. |
+| — | `worktree_abandon` / `worktree_cleanup` | an **adjacent shape**: the gate IS evaluated on the dry run and blockers *are* reported, but the dry run returns `ok=true, state="would-abandon"` / `"would-cleanup"` where the apply returns `ok=false, state="abandon-blocked"` / `"blocked"`; `worktree_cleanup`'s summary is also generic and does not mention the blockers, unlike abandon's. | **Reported, not fixed.** A verdict/state-string difference, not a missing evaluation, on two routes outside this leaf; turning them into refusals is a public state-vocabulary change. |
+
+Instances 1-5 are fixed in this leaf; 6, 7 and the adjacent shape are recorded so the next reader has
+the inventory instead of rediscovering it one operation at a time. This matters especially because the
+planned ledger migration is a bulk mechanical pass over exactly these surfaces.
+
+### What L34 changed on this route
+
+The checkpoint route written by L30 was **unreachable in both directions**: it required
+`closeout_status == "completed"`, while the only operation producing that cell (the series closeout)
+requires the master complete and every atomic leaf landed, and the checkpoint in turn refused an
+already-`Completed` master. L30's own note admitted the real ref move was never proven end to end,
+which is how it survived.
+
+- `worktrees/series_closeout.py` gained `SeriesCheckpointRefs` / `capture_series_checkpoint_refs`
+  (the live code and memory work-branch tips plus their proved ledger mapping, proved through the same
+  `exact_series_memory_closeout` the final route uses) and `require_series_checkpoint_authority` (the
+  master-complete refusal, one definition with two callers). `publish_series_checkpoint_under_authority`
+  now **requires** `expected` and revalidates it against the live tips at publication
+  (`atomic-series-checkpoint-candidate-moved`), so a candidate that moves between preview and apply
+  refuses instead of landing a pair the preview never showed.
+- `worktrees/modules/integrate.py` gained `CheckpointLanding` and
+  `checkpoint_landing_eligibility` — **the ONE eligibility decision both the preview and the apply
+  read** — plus `_checkpoint_dry_run_result`, the shared `_require_ledger_projection`, `_route_commits`,
+  `_landing_admission`, and the required `operation` name on `_publish_integration_edge`. The
+  checkpoint path no longer calls `validate_integrate_contract`, whose series arm is byte-identical to
+  the two ref-shape checks the capture already makes.
+- `worktrees/integration/integration_ref_transaction.py` gained `LandingAdmission` (the admitted
+  candidate plus the ledger-proof shape) in place of a single keyword-only prefix argument, and
+  `_require_preserved_ledger_history` takes the leaf **projection** form for a paused series — a
+  smaller promise, not a dropped one, because the completed leaf-chain census is exactly one of the
+  completion facts the checkpoint route does not require. The transaction's own boundary read remains
+  authoritative, re-taken under the transaction immediately before the irreversible ref move.
+- `worktrees/modules/closeout.py`'s `closeout_preview_payload` now calls the extracted
+  `require_closeout_publication_authority`, closing instance 1 (see the `closeout.py` card).
+- `models/worktree.py`'s `NextTool` gained `worktree_checkpoint_landing`; `NextOperation` was
+  deliberately not widened (see the `models/worktree.py` card).
+- `application/worktree_tools.py` and `mcp/registration/closeout.py` corrected the published
+  docstrings, which had described the route as dropping only two of the three completion assumptions
+  — a client-facing promise that was false.
+
+### Where this is tested
+
+The new `mcp/tests/test_checkpoint_landing_end_to_end.py` (integration lane) drives the **public**
+operations over real temporary Git repositories: an unfinished master with `closeout_status` still
+`not-started` checkpoints end to end (both destination refs and the ledger verified), retry is
+idempotent, continued work advances the refs again, a hand-edited ledger is refused at **both**
+surfaces, a divergent ledger on the ordinary leaf route is refused at **both** surfaces, the ref race
+names the checkpoint as the tool to re-run, and the closeout preview/apply parity case. See its card
+for the recorded `UNREPRODUCED FLAKE` note above
+`test_checkpoint_landing_requires_explicit_developer_approval`.
+
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
+  with its full instance inventory (five fixed; `worktree_start` and the memory-carryover pair
+  reported-not-fixed with their reasons; and the `worktree_abandon`/`worktree_cleanup`
+  verdict/state-string adjacent shape), and the checkpoint reachability repair that produced it — the
+  captured `SeriesCheckpointRefs` candidate with its required, revalidated `expected` argument, the one
+  `checkpoint_landing_eligibility` decision both surfaces read, the shared ledger proof, the required
+  `operation` name on the protected-ref edge, and the closeout preview gate extraction. Content change,
+  not a range repoint; verification metadata remains closeout-owned and no acceptance claim is made.
 - 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the checkpoint projection note
   named three dashboard mirrors of `WorktreePhase` where there are six; it now lists all five files /
   six sites and defers to the `guidance.py` card as the maintained list. Content change, not a range

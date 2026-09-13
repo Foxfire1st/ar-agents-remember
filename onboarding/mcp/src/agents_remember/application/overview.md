@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -444,7 +444,24 @@ retires nothing. It is also the only landing entry point that does not need the 
 which is exactly why it is a separate tool rather than a flag on `worktree_integrate`: a caller that
 invokes it has chosen a non-final landing on purpose.
 
+**260831-LOCR-L34 corrected this entry point's published docstring, and the correction is
+substantive.** It had said the route drops only the two "master is finished" assumptions; the route
+also required a **completed closeout**, which is why it was unreachable in both directions — a partial
+master could never satisfy it, and a complete one was refused by the downgrade guard. The docstring now
+names the full refusal set (`worktree_integrate` proves the task document `Completed`, one landed
+enclosure per canonical leaf, **and a completed closeout**) and states that the checkpoint captures the
+master's own live code and memory work-branch tips and proves the existing ledger maps the code ref
+before landing exactly those. Published text is the only thing a client reads, so it is contract rather
+than comment. The preview/apply parity invariant that produced this repair is inventoried on the
+`worktrees/overview.md` route and in `memory_quality/overview.md`.
+
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded the corrected `worktree_checkpoint_landing_tool`
+  docstring on this route — the published text had omitted the completed-closeout requirement, which
+  was the reason the route was unreachable — and pointed to the preview/apply parity invariant
+  inventory on the worktrees route overview and in `memory_quality/overview.md`. Content change, not a
+  range repoint; verification metadata remains closeout-owned and no acceptance claim is made.
 - 2026-09-12T02:55+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the new
   `worktree_checkpoint_landing_tool` entry point on this route, its admission/argument/delegation
   shape, why it runs no completion-edge work, and why it is a separate public tool rather than a flag

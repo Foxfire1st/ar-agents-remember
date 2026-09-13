@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_status.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Governing Overview
@@ -121,7 +121,7 @@ No Domain Documentation source is configured for this memory root.
 | `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. | "def _vocabulary_cell[Cell: str](", "unknown_cells: tuple[str" | mcp/src/agents_remember/worktrees/worktree_contract.py:104-104; mcp/src/agents_remember/worktrees/worktree_contract.py:283-283 |
 | The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. | `_summary_from_status_payload` | mcp/src/agents_remember/application/worktree_status.py:217-277 |
 | The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:377-419 |
-| The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. | `nextAction`; `nextTool`; `nextArgs`; `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-333; mcp/src/agents_remember/models/worktree.py:358-369 |
+| The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:334-340; mcp/src/agents_remember/models/worktree.py:367-376 |
 | The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. | `test_archive_ready_status_names_the_accepted_cleanup_operation` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219 |
 | `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. | "class ContractBoundaryTests(unittest.TestCase):" | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:28-28 |
 
@@ -172,13 +172,13 @@ payload: `nextAction`, `nextTool` (from `TerminalCleanupOperation`, i.e. `worktr
 response crosses — `TOOL_RESPONSE_MODELS["worktree_status"].model_validate(payload)`.
 
 - `models/worktree.py::WorktreeCommandResponse` declares the three keys
-  cit:([`nextAction`, `nextTool`, `nextArgs`], mcp/src/agents_remember/models/worktree.py:331-333), and
+  cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:334-340), and
   `WorktreeStatusResponse` inherits them. Before this leaf the envelope resolved to
   `FlexibleResponseModel` (`extra="allow"`) and declared none of them, so the triple rode through as
   an unchecked extra: `worktree_abandon` reached the wire without ever being a `NextTool` member, and
   `model_validate({"ok": True, "nextTool": "not_a_tool"})` succeeded.
 - `WorktreeCommandResponse._require_registered_public_next_tool`
-  cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:358-369) now refuses any
+  cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:367-376) now refuses any
   `nextTool` outside `PUBLIC_TOOLS` with `nextTool must name a registered public tool`.
 
 Two things are worth stating plainly, because earlier accounts of this seam got them wrong and one
@@ -200,6 +200,7 @@ be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives 
 `worktree_status_payload` into the archive-ready state for both cleanup verbs and pins all of it.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: recorded that this module's terminal-status next
   move (`nextAction` / `nextTool` / `nextArgs` from `_project_terminal_contract_status`) is now typed
   and enforced downstream — declared on `WorktreeCommandResponse` and refused by its

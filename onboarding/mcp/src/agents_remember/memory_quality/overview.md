@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
 | doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
@@ -99,6 +99,41 @@ dependency on the closeout plane.
   `reportPath` and `actionableCount` with `.get(...)`, not `[...]`: those keys accompany a
   `checked` status only, which the guard above the return has established but the type cannot
   carry across.
+- **A preview that plans an operation does not enforce it, and the two surfaces must be maintained
+  as one (260831-LOCR-L34).** Every diagnostic on this route has a non-mutating preview and a
+  mutating apply — `citation_fix`'s dry run and apply, `memory_quality_check`'s report vs the
+  closeout-owned refresh, the citation document transaction's prospective digest vs its write. A plan
+  is read as a promise by a human deciding what to do next and by an agent composing the next call, so
+  a preview that answers "this would succeed" while its apply refuses is a defect in the plan, not
+  merely in the apply. The inventory of known instances (and the deliberate exceptions) is maintained
+  on the `worktrees/overview.md` route; this route's own previews are subject to the same rule.
+
+## The Preview/Apply Parity Invariant (260831-LOCR-L34)
+
+The invariant was established while repairing the worktree checkpoint route, and it is recorded here as
+well as on the `worktrees/overview.md` route because **the memory-quality surfaces are the ones a bulk
+mechanical migration will touch next**. `citation_fix`, the citation document transaction, and the
+onboarding refresh plan each present a preview and an apply that must agree about eligibility; the
+route-observed instances below are the evidence that this agreement is not self-maintaining:
+
+- five instances where a preview promised what its apply refused were **fixed** in the leaf that found
+  them (series closeout's `would-closeout` on a partial master — the original, and the one that misled
+  a human into writing a false note; the checkpoint route's eligibility; the `integration-ref-race`
+  payload's hardcoded `nextTool`; the checkpoint's ledger projection; and the ordinary integration dry
+  run's unevaluated projection);
+- two were **reported and deliberately not fixed** (`worktree_start`, whose dry run skips two binding
+  checks because that is a reservation compare-and-swap and not safely separable; and the
+  `memory_carryover_plan` / `memory_carryover_apply` pair, where the apply additionally enforces
+  `require_ordinary_repository_checkout` and `ensure_clean`);
+- one **adjacent shape** is recorded: `worktree_abandon` / `worktree_cleanup` evaluate their preflight
+  on the dry run and report blockers, but return `ok=true, state="would-abandon"` / `"would-cleanup"`
+  where the apply returns `ok=false, state="abandon-blocked"` / `"blocked"`, and `worktree_cleanup`'s
+  summary does not name the blockers at all. That is a verdict/state-string divergence, not a missing
+  evaluation, and turning it into a refusal would be a public state-vocabulary change.
+
+Every one of the six was found by **exercising an operation rather than by reading it**. That is the
+practical rule for this route: when a preview and an apply are two implementations of one decision,
+exercise the pair, and prefer a single shared eligibility evaluation over two agreeing copies.
 
 ## Repo-Internal References
 
@@ -397,6 +432,16 @@ dependency.
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:05+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
+  as both an invariant bullet and a section, naming the five fixed instances, the two
+  reported-not-fixed ones (`worktree_start`'s non-separable reservation CAS; the memory-carryover
+  plan/apply pair) and the `worktree_abandon`/`worktree_cleanup` verdict/state-string adjacent shape,
+  with the observation that every instance was found by exercising an operation rather than by reading
+  it. Recorded why this route carries it: its own `citation_fix` / citation-transaction /
+  onboarding-refresh previews are the surfaces a planned bulk mechanical migration will touch next.
+  The full inventory remains owned by the `worktrees/overview.md` route. Content change, not a range
+  repoint; verification metadata remains closeout-owned and no acceptance claim is made.
 - 2026-09-13T02:05+02:00 — 260831-LOCR-L33 route curation (delta after publish): the projected-range
   review item is now **enforced** (`severity="error" if bullets else "warning"`) rather than
   report-only, so a mechanically projected range blocks until it is disposed of; recorded the

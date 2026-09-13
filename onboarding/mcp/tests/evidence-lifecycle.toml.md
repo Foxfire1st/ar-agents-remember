@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | path | `mcp/tests/evidence-lifecycle.toml` |
 | doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview | `overview.md` |
 
 ## Governing Overview
@@ -60,9 +60,10 @@ The exact source declarations below establish the current behavior; this invento
 | Retained registry fixture ownership and current consumer declarations | "mcp/tests/certification_registry_test_support.py" | mcp/tests/evidence-lifecycle.toml:493-510 |
 | Profile support and current consumer declarations | "repository-certification-profile-test-port" | mcp/tests/evidence-lifecycle.toml:512-548 |
 | Closeout-input support declares the activation/admission and route-review registered consumers. | "mcp/tests/closeout_input_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-283 |
-| Curator-coherence support declares the activation/admission and route-review registered consumers. | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:335-335 |
-| The enclosure/worktree fixture composition the L32 suite imports, and the consumer row that now names it. | "mcp/tests/lifecycle_enclosure_test_support.py" | mcp/tests/evidence-lifecycle.toml:442-442; mcp/tests/evidence-lifecycle.toml:457-457 |
-| The L32 suite's consumer rows on the closeout-input and curator-coherence support artifacts. | "mcp/tests/test_worktree_status_terminal_next_tool.py" | mcp/tests/evidence-lifecycle.toml:329-329; mcp/tests/evidence-lifecycle.toml:381-381 |
+| Curator-coherence support declares the activation/admission and route-review registered consumers. | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:336-336 |
+| The enclosure/worktree fixture composition the L32 suite imports; the artifact's `path` cell is the unique anchor because the bare quoted path also appears in consumer lists. | "path = \"mcp/tests/lifecycle_enclosure_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:444-444 |
+| The L32 suite is a registered consumer in both shared-support artifacts. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-333; mcp/tests/evidence-lifecycle.toml:336-386 |
+| The L34 boundary suite is a registered consumer in both shared-support artifacts. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-333; mcp/tests/evidence-lifecycle.toml:336-386 |
 
 ## Cross-Repo References
 
@@ -80,13 +81,40 @@ re-categorised, so the catalog's population is unchanged:
 
 | Artifact | Why the suite consumes it | Consumer row |
 | --- | --- | --- |
-| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:329` |
-| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:381` |
-| `mcp/tests/lifecycle_enclosure_test_support.py` | `publish_test_enclosure` — the suite's terminal-archive fixture is a real published enclosure | `mcp/tests/evidence-lifecycle.toml:457` |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:330` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:383` |
+| `mcp/tests/lifecycle_enclosure_test_support.py` | `publish_test_enclosure` — the suite's terminal-archive fixture is a real published enclosure | `mcp/tests/evidence-lifecycle.toml:461` |
 
 Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
 
+## 260831-LOCR-L34 Two More Consumer Rows
+
+The leaf's new `mcp/tests/test_checkpoint_landing_end_to_end.py` was added as an exact consumer of the
+same two shared-support artifacts the L32 suite consumes, again through `QueueFixture`'s transitive
+composition. No artifact row was added, removed or re-categorised, so the declared population is
+unchanged; the insertion did shift the later consumer rows, which are re-derived below.
+
+| Artifact | Why the suite consumes it | Consumer row |
+| --- | --- | --- |
+| `mcp/tests/closeout_input_test_support.py` | transitive typed closeout-input/repository-authority composition the worktree-service fixture relies on | `mcp/tests/evidence-lifecycle.toml:304` |
+| `mcp/tests/curator_coherence_test_support.py` | transitive typed task-topology/attestation fixture composition, same route | `mcp/tests/evidence-lifecycle.toml:357` |
+
+Consumer declarations are ownership accounting only; they are not execution or acceptance evidence.
+The three L32 rows moved with the insertion (`closeout_input_test_support.py` 329 → 330,
+`curator_coherence_test_support.py` 381 → 383, the `lifecycle_enclosure_test_support.py` artifact row
+442 → 444 with the L32 suite's consumer entry at 457 → 461) and this card's references now name the
+current lines.
+
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:12+00:00 — 260831-LOCR-L34 curator: recorded
+  `mcp/tests/test_checkpoint_landing_end_to_end.py` as an exact consumer of
+  `closeout_input_test_support.py` (row 304) and `curator_coherence_test_support.py` (row 357), both
+  reached transitively through `QueueFixture`. No artifact row was added or re-categorised, so the
+  declared population is unchanged; the insertion shifted three later consumer rows, which are
+  re-derived and re-cited here (330, 383, 459). Verification metadata remains closeout-owned; no
+  acceptance claim.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: "mcp/tests/curator_coherence_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:336-336. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: recorded the new
   `mcp/tests/test_worktree_status_terminal_next_tool.py` as an exact consumer of three existing
   shared-support artifacts (`closeout_input_test_support.py` at row 329,

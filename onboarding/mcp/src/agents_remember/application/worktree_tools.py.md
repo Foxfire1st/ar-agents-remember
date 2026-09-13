@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
 | doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `overview.md`                              |
 
 ## Purpose
@@ -155,19 +155,31 @@ persistent current, route an unsaved fleeting through the save gate —
 `SaveGateRequired` when `on_unsaved` is absent). Both helpers no-op when no
 ambient is installed (CLI/tests).
 
-## 260831-LOCR-L30 Checkpoint Landing Entry Point
+## 260831-LOCR-L30/L34 Checkpoint Landing Entry Point
 
 `worktree_checkpoint_landing_tool(config, *, contract_path, strategy="ff-only",
-ledger_commit_message="", dry_run=False)` cit:([`worktree_checkpoint_landing_tool`], mcp/src/agents_remember/application/worktree_tools.py:427-465) is the application entry point for the
+ledger_commit_message="", dry_run=False)` cit:([`worktree_checkpoint_landing_tool`], mcp/src/agents_remember/application/worktree_tools.py:427-469) is the application entry point for the
 partial-master landing route. It admits the configured contract, builds `WorktreeArgs` with
 `approved=not dry_run` and the configured `gate_policy` (the same seam-guard pass-through
 `worktree_integrate_tool` uses), and delegates to
 `git_worktree_manager.checkpoint_landing_result(args, configured.contract)`.
 
+The docstring was corrected by 260831-LOCR-L34, and the correction is the point rather than
+cosmetics: it had said the route "drops only the two assumptions that the master is finished", which
+was true of L30's intent and false of its behavior — the route also required the master to have
+**closed out**, which is why it was unreachable from both directions. It now states that
+`worktree_integrate` proves the master complete *and* that it has closed out, that a paused master has
+none of those, that the checkpoint captures the master's own committed refs (the live series code
+work branch tip and the live memory work branch tip), proves the existing ledger maps the code ref,
+lands exactly those, requires the same explicit developer approval (`dry_run=False`), and keeps the
+master's worktrees, branches and enclosure.
+
 The entry point adds no behavior of its own beyond admission and argument building: whether the
-master is eligible to land without being complete, which series authority runs, and what state is
-recorded all live in `worktrees/modules/integrate.py`'s `checkpoint_landing_result` and
-`worktrees/series_closeout.py`'s `publish_series_checkpoint_under_authority`. It does **not** run the
+master is eligible to land without being complete, which series authority runs, which refs are
+captured and revalidated, and what state is recorded all live in
+`worktrees/modules/integrate.py`'s `checkpoint_landing_eligibility`/`checkpoint_landing_result` and
+`worktrees/series_closeout.py`'s `capture_series_checkpoint_refs`/`publish_series_checkpoint_under_authority`.
+It does **not** run the
 auto-land seat hook that follows a successful final `worktree_integrate_tool` call, because nothing
 is being retired.
 
@@ -223,11 +235,11 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 | --- | --- | --- |
 | Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:277-302 |
 | Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:319-338 |
-| The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:427-465 |
+| The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:427-469 |
 | Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385 |
 | Worktree service behavior is owned by the worktree manager and modules. | "from agents_remember.worktrees.modules.finalize import FinalizeArgs" | mcp/src/agents_remember/worktrees/git_worktree_manager.py:31-37 |
 | Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`, `WorktreeCommandResponse`, `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:237-293; mcp/src/agents_remember/models/worktree.py:294-371; mcp/src/agents_remember/models/worktree.py:463-470 |
-| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | "def route_review_refusal_fields("; "def _worktree_closeout(" | mcp/src/agents_remember/application/worktree_tools.py:885-885; mcp/src/agents_remember/worktrees/route_review.py:253-253 |
+| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | "def route_review_refusal_fields("; "def _worktree_closeout(" | mcp/src/agents_remember/application/worktree_tools.py:889-889; mcp/src/agents_remember/worktrees/route_review.py:253-253 |
 | Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo`, `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:20-28; mcp/src/agents_remember/kernel/authority.py:31-39 |
 | Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:58-157 |
 | The on-disk provider authority reload consumed before provider setup (containment R1). | "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:", "def worktree_start_tool(" | mcp/src/agents_remember/application/worktree_tools.py:103-103; mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189 |
@@ -302,6 +314,17 @@ revalidates independently before mutation.
 Status now delegates its contract/terminal projection to `application.worktree_status.project_contract_status`. Closeout apply forwards typed `corrective_dispositions` into durable admission, and certification contract refusals are translated through the shared certification refusal owner. Preview does not launch the operation.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T08:50+00:00 — 260831-LOCR-L34: recorded the corrected entry-point docstring. It had
+  claimed the route drops only the two "master is finished" assumptions, which omitted the
+  **completed-closeout** requirement that made the route unreachable in both directions; it now
+  states that `worktree_integrate` proves completion *and* a completed closeout, that a paused master
+  has none of those, that the checkpoint captures the master's own committed refs and proves their
+  ledger mapping, and that the explicit developer approval is unchanged. Also named the new owners
+  (`checkpoint_landing_eligibility`, `capture_series_checkpoint_refs`) and re-derived the reference
+  range (427-465 → 427-469). No behavior change in this file: docstring only. Verification metadata
+  remains closeout-owned; no acceptance claim.
+- 2026-09-13T08:49:05+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:253-253; mcp/src/agents_remember/application/worktree_tools.py:889-889. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing_tool`, the
   application entry point that admits the configured contract, builds the arguments with the
   configured gate policy, and delegates to `checkpoint_landing_result`; recorded that it runs no

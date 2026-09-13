@@ -5,9 +5,9 @@
 | repository | agents-remember |
 | sourceRoute | `mcp/tests/` |
 | doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview | `../overview.md` |
 
 ## Governing Overview
@@ -69,6 +69,7 @@ request.
 | Terminal evidence cursors | `test_terminal_evidence_cursors.py` | Focused deque envelope validation, no-advance refusal, bounded Pi continuation, and liveness containment; unit evidence only. |
 | Public tool-surface inventory | `test_tools.py` (`PublicSurfaceInventoryTests`) | Live registration order against a probe `FastMCP` equals `PUBLIC_TOOLS`, and the advertised names have response models that validate. Hermetic inventory contract: the probe starts no server and touches no provider. |
 | Worktree next-move typing and enforcement | `test_worktree_status_terminal_next_tool.py` | The `terminal-archive-ready` branch of `worktree_status` names the accepted cleanup operation, its emitted args bind to the real tool signature (checked with `inspect.signature(...).bind`), the envelope declares `nextAction`/`nextTool`/`nextArgs`, and the `PUBLIC_TOOLS` membership validator is driven in both directions. Integration lane: real worktree services and a real repository under `tmp_path`. First coverage of that branch. |
+| Checkpoint landing plan/apply parity | `test_checkpoint_landing_end_to_end.py` | The public `worktree_checkpoint_landing` route checkpoints an unfinished master (`closeout_status` still `not-started`) end to end over real temporary Git repositories — both destination refs and the ledger verified, retry idempotent, continued work advancing the refs again — and every refusal (a candidate whose ledger does not map the code ref, a hand-edited master ledger, a divergent leaf ledger on the ordinary route, a completed master) fires at **both** the preview and the apply, including the original closeout `would-closeout`-vs-refusal instance. Integration lane. The preview/apply parity invariant and its instance inventory live on the `worktrees/overview.md` route and in `memory_quality/overview.md`. |
 
 ## Fixture Roles And Claims
 
@@ -131,7 +132,7 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root, ledger and contract digest. A changed pair or candidate must refuse stale publication. Metadata stamping and ledger alignment cannot substitute for semantic memory repair.
 
-The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 197 test-shaped modules: 114 unit-regression, 2 public-contract, 53 integration, 15 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (260831-LOCR-L32 added the one integration member; the declared collected-case budgets are 1000 unit and 200 integration). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 150-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
+The frozen L38 candidate added two registered integration checks to the retained population; the two L38 integration cards above describe admission/status projection and route-review transport. The current manifest records 198 test-shaped modules: 114 unit-regression, 2 public-contract, 54 integration, 15 architecture-fitness and 13 provider-conformance, with stress-durability and migration empty (260831-LOCR-L32 added one integration member — `test_worktree_status_terminal_next_tool.py` — and 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py`; the declared collected-case budgets are 1000 unit and 200 integration). That population was repaired, not merely recounted. The authorized repair restored three CCR landing-debt registrations that commit `8885939e` created but omitted from this manifest (`test_review_state.py`, `test_task_doc_review_public.py` and `test_transaction_only_worktree_delivery.py`), all three in `unit-regression`: those modules previously ran unmarked, and the integration lane sits at its 200-collected-case cap, so an `integration` row for them pushed full-suite collection past the cap and failed collection. The same cap reason moved this route's own `test_terminal_liveness_deferred_work.py` row from integration to `unit-regression`; the module is hermetic. The remaining new unit-regression row is the parked-external-await separation guard in the route table above. Every restored module already had its file card. Membership remains selection and cost classification only; it is not execution or acceptance evidence, and it does not restore any retired matrix.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -184,15 +185,41 @@ down: the *advertised vocabulary of one surface* had no enforcement. `PUBLIC_TOO
 cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-85) so that
 `models/worktree.py::WorktreeCommandResponse` could read it, declare `nextAction` / `nextTool` /
 `nextArgs`
-cit:([`nextAction`, `nextTool`, `nextArgs`], mcp/src/agents_remember/models/worktree.py:331-333), and refuse a `nextTool` outside the roster
+cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:334-340), and refuse a `nextTool` outside the roster
 (`_require_registered_public_next_tool`
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:358-369)). Before that the envelope was `extra="allow"` and
+cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:367-376)). Before that the envelope was `extra="allow"` and
 declared none of the keys, so `application/worktree_status.py::_project_terminal_contract_status`'s
 write crossed the wire verbatim and unchecked. The suite reaches the real `terminal-archive-ready`
 state for both `worktree_cleanup` and `worktree_abandon`, binds the emitted args against the real
 builder signature, and pins the validator in both directions — including that the registered but
 non-public `session_retire` is refused on the worktree surface while the `task_doc` surface still
 accepts it. That branch had **zero** coverage before this module.
+
+## Checkpoint Landing Plan/Apply Parity
+
+`test_checkpoint_landing_end_to_end.py` (260831-LOCR-L34) is the boundary executor for the rule the
+leaf is really about: **a preview that plans an operation does not enforce it, and the two surfaces
+must be maintained as one.** The seam-level checkpoint suite proved each gate in isolation; this
+module drives the registered public operations over one real temporary Git world per case and asserts
+that the pair agrees.
+
+It is deliberately not a duplicate of the seam suite:
+
+- it starts from the state the deadlock made unreachable — a master whose `closeout_status` is still
+  `not-started`, asserted rather than fabricated — and verifies both destination refs and the ledger
+  mapping after a successful checkpoint, so the route is proven reachable end to end rather than only
+  eligible;
+- it exercises refusal parity by iterating `(dry_run=True, dry_run=False)` for each divergent ledger
+  and asserting the same refusal text and the same unmoved refs on both surfaces, which is what
+  catches a preview and an apply implemented separately;
+- it drives the **public** `worktree_checkpoint_landing_tool` and the public closeout preview/apply
+  tools, because the original defect lived in the tool surface a caller actually reaches.
+
+The invariant, its full instance inventory (five fixed, two reported-not-fixed, one adjacent
+verdict/state-string shape) and the reasons for each disposition are recorded on the
+`worktrees/overview.md` route and summarized in `memory_quality/overview.md`. The module also carries
+the only recorded `UNREPRODUCED FLAKE` of this leaf — seen once on a mutated build, never on the real
+tree — documented on its own card.
 
 ## Repo-Internal References
 
@@ -208,14 +235,28 @@ These current source and policy ranges establish the development/certification d
 | Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
 | The live public-surface inventory contract for the advertised MCP tool tuple. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-261 |
 | The advertised roster the inventory comparison uses, in its new zero-import `models` leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
-| The worktree surface's declared next move and the membership validator this route's new module pins. | `nextAction`; `nextTool`; `nextArgs`; `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-333; mcp/src/agents_remember/models/worktree.py:358-369 |
+| The worktree surface's declared next move and the membership validator this route's new module pins. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:334-340; mcp/src/agents_remember/models/worktree.py:367-376 |
 | The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. | `test_archive_ready_status_names_the_accepted_cleanup_operation`; `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219; mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
+| The L34 boundary module: the public checkpoint route end to end, and both surfaces' refusals for each divergent ledger and for a completed master. | `CheckpointPausesAnUnfinishedMasterTests`; `test_an_unfinished_master_checkpoints_its_own_refs_end_to_end`; `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses`; `test_a_hand_edited_master_ledger_is_refused_by_the_preview_and_the_apply` | mcp/tests/test_checkpoint_landing_end_to_end.py:268-656; mcp/tests/test_checkpoint_landing_end_to_end.py:296-355; mcp/tests/test_checkpoint_landing_end_to_end.py:421-452; mcp/tests/test_checkpoint_landing_end_to_end.py:565-596 |
+| The recorded flake note the L34 module carries. | "UNREPRODUCED FLAKE, RECORDED 2026-09-13" | mcp/tests/test_checkpoint_landing_end_to_end.py:626-637 |
 
 ## Docs And Cross-Repo References
 
 No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:12+00:00 — 260831-LOCR-L34 curator: added a `Retained Behavioral Routes` row and a
+  Checkpoint Landing Plan/Apply Parity section for the new integration module
+  `test_checkpoint_landing_end_to_end.py`, which drives the public checkpoint and closeout operations
+  over real temporary Git repositories and asserts that each divergence refuses at **both** the
+  preview and the apply — the boundary executor for the preview/apply parity invariant, whose full
+  inventory lives on the `worktrees/overview.md` route. Reconciled the route population to the current
+  manifest (198 modules: 114 unit-regression, 2 public-contract, 54 integration, 15
+  architecture-fitness, 13 provider-conformance; budgets 1000 unit / 200 integration) and corrected the
+  last stale "150-collected-case cap" bound in the same paragraph. Added three reference rows.
+  Source-route documentation only: no execution, acceptance or certification claim, and lane
+  membership stays owned by the `test-evidence-lanes.toml` card.
 - 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded in the route body that the citation
   fixtures now build real Git provenance (`Tree.history`/`stamp`/`remove_source`, the `stamp`
   metadata row written inside the metadata table, and the header-anchored `Tree.row` locator;

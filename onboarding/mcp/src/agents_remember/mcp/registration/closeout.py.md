@@ -5,9 +5,9 @@
 | repository             | agents-remember                                              |
 | path                   | `mcp/src/agents_remember/mcp/registration/closeout.py`       |
 | doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `5410fb07d0d3a73f4d81d57ed020bbfcdaaa2267` |
-| lastVerifiedCommitDate | 2026-09-12T18:45:26+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `overview.md`                                                |
 
 ## Governing Overview
@@ -52,12 +52,18 @@ an enclosure — L16-R8, policy-gated by `directExecutionEnabled`),
 `worktree_closeout_preview`, `worktree_closeout_apply`,
 `worktree_integrate`, `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_abandon`.
 
-`worktree_checkpoint_landing` (260831-LOCR-L30) is the partial-master landing route registered
-between `worktree_integrate` and `worktree_record_landing`. Its published docstring is the contract
-a client sees: it lands an **unfinished** atomic master's accumulated line and keeps the master open,
-shares `worktree_integrate`'s whole preflight and ref move while dropping only the two completion
-assumptions, records the integration cell as `checkpointed` rather than `completed`, retires nothing
-and runs no cleanup, and is MUTATING with a `dry_run` preview.
+`worktree_checkpoint_landing` (260831-LOCR-L30, docstring corrected by 260831-LOCR-L34) is the
+partial-master landing route registered between `worktree_integrate` and `worktree_record_landing`.
+Its published docstring is the contract a client sees: it lands an **unfinished** atomic master's
+accumulated line and keeps the master open, shares `worktree_integrate`'s whole preflight and ref move
+while dropping only the completion assumptions (`worktree_integrate` proves the task document
+`Completed`, one landed enclosure per canonical leaf, **and a completed closeout** — a paused master
+has none of those), captures the master's own committed refs (the live series code work branch tip
+and the live memory work branch tip) and proves the existing ledger maps the code ref before landing
+exactly those, records the integration cell as `checkpointed` rather than `completed`, retires nothing
+and runs no cleanup, and is MUTATING with a `dry_run` preview. The L34 correction matters because the
+published text is the only thing a client reads: the old wording omitted the closeout requirement,
+which is exactly what made the route unreachable.
 
 The public registration entry delegates to four cohesive helpers:
 `_register_direct_landing_tools` for the branch-addressed direct landing (260815-DAG-L16),
@@ -117,7 +123,9 @@ The three destructive tools forward flat:
   host-managed by default), then moves branch refs; protected branches need explicit approval.
 - `worktree_checkpoint_landing(contract_path, strategy='ff-only'|'replay', ledger_commit_message,
   dry_run)` — moves the same refs for an **unfinished** atomic master and keeps the master open;
-  records `checkpointed`, retires nothing, runs no cleanup.
+  requires the same explicit developer approval as `worktree_integrate`; captures the master's own
+  live code and memory work-branch tips and proves their ledger mapping; records `checkpointed`,
+  retires nothing, runs no cleanup.
 - `worktree_cleanup(contract_path, dry_run, teardown_providers=True)` — removes worktrees and merged
   task branches **after** integration, and by default reclaims the worktree's isolated provider stack.
 - `worktree_abandon(contract_path, dry_run, force)` — discards a task without integrating it. Unlike
@@ -146,6 +154,11 @@ The three destructive tools forward flat:
   whenever the behaviour behind them changes.
 - Keep internal registrar helper names ending in `_tools`; the suffix is part of the narrow
   structural-rule attribution for this declaration-only route.
+- **The checkpoint docstring must name the whole completion refusal set, not two of three
+  (260831-LOCR-L34).** It said the route dropped only the two "master is finished" assumptions while
+  the code also demanded a completed closeout — and that omission described a route a client could
+  not actually use. A published refusal list is a promise about what will *not* happen; keep it
+  complete when the gate changes.
 
 ## Repo-Internal References
 
@@ -194,6 +207,15 @@ mismatched evidence refuses deletion. Shared grade/admission request types come 
 closeout-source model.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T08:50+00:00 — 260831-LOCR-L34: recorded the corrected published docstring for
+  `worktree_checkpoint_landing`. It had listed only the two "master is finished" assumptions the route
+  drops, omitting the **completed-closeout** requirement `worktree_integrate` also proves — the
+  omission described a route no client could use. The docstring and this card now state the full
+  refusal set, that the checkpoint captures the master's own committed refs and proves their ledger
+  mapping, and that the explicit developer approval is unchanged. Added the matching invariant that a
+  published refusal list must stay complete. Docstring only in the source; no behavior change.
+  Verification metadata remains closeout-owned; no acceptance claim.
 - 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: registered `worktree_checkpoint_landing` in
   `_register_integration_command_tools` between `worktree_integrate` and `worktree_record_landing`,
   recorded its published docstring contract, added it to the landing-half purpose list and the

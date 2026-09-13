@@ -5,9 +5,9 @@
 | repository             | agents-remember                         |
 | doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/worktrees/modules` |
-| lastUpdated | 2026-09-12T19:50+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
+| lastUpdated | 2026-09-13T11:43+02:00 |
+| lastVerifiedCommitHash | `c4fc0ee2418ccef5a02de3823141a82092b84080` |
+| lastVerifiedCommitDate | 2026-09-13T11:55:12+02:00|
 | governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
@@ -444,9 +444,9 @@ No external Domain Documentation source is configured for this memory repo.
 | Focused worktree tests exercise the facade and operation payloads. | `WorktreeSupportTests` | mcp/tests/test_worktree_support.py:831-906 |
 | Finalizer tests cover landed-commit proof, cleanup blocking, dry-run, and task-document reconciliation. | `LifecycleFinalizeTests` | mcp/tests/test_lifecycle_finalize.py:28-176 |
 | Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. | `_run_or_verify_cleanup`; `cleanup_report` | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
-| Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | `_integrated_result`; `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/integrate.py:375-410; mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
+| Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. | "def _integrated_result("; "def record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/integrate.py:598-635; mcp/src/agents_remember/worktrees/modules/landing_record.py:37-68 |
 | Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. | `refresh_route_indexes_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:513-521; mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:260-260; mcp/src/agents_remember/models/worktree.py:41-41 |
+| The lifecycle state carries the optional worktree phase the panels render. | "phase: WorktreePhase"; "WorktreePhase = Literal[" | mcp/src/agents_remember/models/worktree.py:267-267; mcp/src/agents_remember/models/worktree.py:41-41 |
 | Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. | `_existing_master_series_contract`; `_master_series_expected_edges`; `_master_series_observed_edges` | mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:153-215; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:279-324; mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py:327-374 |
 | `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. | `claim_approval` | mcp/src/agents_remember/controlplane/store.py:199-246; mcp/src/agents_remember/controlplane/interaction_retention.py:48-50; mcp/src/agents_remember/controlplane/interaction_retention.py:185-191 |
 
@@ -1008,18 +1008,29 @@ run strict code quality, memory quality, selected certification, curator coheren
 review; full suites are an explicit developer request. The older quality-altitude sections remain
 historical context for pre-R12 behavior.
 
-## 260831-LOCR-L30 Checkpoint Landing In This Route
+## 260831-LOCR-L30/L34 Checkpoint Landing In This Route
 
 `integrate.py` gained `checkpoint_landing_result` and `_checkpoint_result`, and
-`landing_record.py`'s single writer gained `LandedIntegration` plus a `checkpoint` flag. The
-keyword-only flag threads through `_continue_integration` → `_handover_or_apply_integration` →
-`_apply_integration` → `_publish_integration_edge` → `_checkpoint_result`, defaulted `False` at every
-step so the final route is unchanged. The checkpoint path selects
-`series_closeout.publish_series_checkpoint_under_authority`, records `checkpointed` through the
-shared writer, and runs no automatic cleanup, so a paused master keeps its worktrees, branches and
-enclosure. `record_landing.py` (the PR route) calls the same writer with the bundled
+`landing_record.py`'s single writer gained `LandedIntegration` plus a `checkpoint` flag. The checkpoint
+path selects `series_closeout.publish_series_checkpoint_under_authority`, records `checkpointed`
+through the shared writer, and runs no automatic cleanup, so a paused master keeps its worktrees,
+branches and enclosure. `record_landing.py` (the PR route) calls the same writer with the bundled
 `LandedIntegration` and no checkpoint flag, so the terminal `integration` cell still has exactly one
 definition. `git_worktree_manager.py` re-exports `checkpoint_landing_result`.
+
+**Superseded by 260831-LOCR-L34, which repaired the route's reachability.** The keyword-only
+`checkpoint: bool` flag is gone; `checkpoint_landing_result` now reads the `CheckpointLanding` value
+built by `checkpoint_landing_eligibility` — the route's own capture of the live series code and memory
+work-branch tips plus their proved ledger mapping — because the old path read the contract's closeout
+cells, which a paused master does not have and which made the route unreachable in both directions. The
+checkpoint no longer calls `validate_integrate_contract`. L34 also made the ledger projection a
+preview-side proof for **both** routes (`_require_ledger_projection` runs before the dry-run branch),
+gave the protected-ref edge a required `operation` name so a checkpoint's `integration-ref-race`
+payload routes the operator back to the checkpoint rather than to `worktree_integrate`, and extracted
+the closeout completion gate into `series_closeout.require_closeout_publication_authority` so
+`closeout_preview_payload` refuses what the closeout apply refuses. The full preview/apply parity
+invariant and its instance inventory live on [the worktrees route overview](../overview.md) and in
+[`memory_quality/overview.md`](../../memory_quality/overview.md).
 
 The typed-vocabulary table below therefore names `landing_record.py` as the call site of the landing
 cells rather than `integrate.py`, and `integration/master_review_gate.py` as the `blocked` call site.
@@ -1046,6 +1057,17 @@ complete?", and a checkpoint must read as not complete. They are listed and disp
 `closeout.py` card.
 
 ## Update History
+- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
+- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded that the L30 checkpoint route was unreachable in
+  both directions and what replaced its mechanism — the `CheckpointLanding` value from
+  `checkpoint_landing_eligibility` instead of the closeout-cell read and the `checkpoint: bool` flag,
+  the removal of `validate_integrate_contract` from that path, the shared `_require_ledger_projection`
+  before the dry-run branch for both routes, the required `operation` name on the protected-ref edge
+  fixing the `integration-ref-race` `nextTool`, and the closeout gate extraction into
+  `series_closeout.require_closeout_publication_authority`. Pointed to the full preview/apply parity
+  invariant and instance inventory on the worktrees route overview and in `memory_quality/overview.md`.
+  Content change, not a range repoint; verification metadata remains closeout-owned and no acceptance
+  claim is made.
 - 2026-09-12T20:12+02:00 — **Final correction: the seam account in the two entries below is
   superseded by the verified mechanism.** The body previously said the projector's write violated
   `WorktreeSummary`'s typed `nextAction` on a strict model; that is false — `WorktreeSummary` is never
